@@ -38,6 +38,7 @@
             <visible>Control.Isvisible(53)</visible>
         </control>
         <include content="View_Info_Grouplist">
+            <param name="title" value="$INFO[Container(503).ListItem.TVShowTitle]" />
             <param name="container" value="Container(503)." />
             <param name="plot" value="$INFO[Container(503).ListItem.Plot]" />
             <param name="plotheight" value="auto" />
@@ -56,92 +57,115 @@
             <include>Animation_Down</include>
             <include content="View_53_Episodes_List">
                 <content target="videos" sortby="episode">$INFO[Container(53).ListItemAbsolute(0).FolderPath]</content>
-                <visible>Integer.IsEqual(Container(53).CurrentItem,1)</visible>
+                <visible>[!Container(53).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container(53).CurrentItem,1)]</visible>
             </include>
             <include content="View_53_Episodes_List">
                 <content target="videos" sortby="episode">$INFO[Container(53).ListItemAbsolute(1).FolderPath]</content>
-                <visible>Integer.IsEqual(Container(53).CurrentItem,2)</visible>
+                <visible>[!Container(53).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container(53).CurrentItem,2)] | [Container(53).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container(53).CurrentItem,1)]</visible>
             </include>
             <include content="View_53_Episodes_List">
                 <content target="videos" sortby="episode">$INFO[Container(53).ListItemAbsolute(2).FolderPath]</content>
-                <visible>Integer.IsEqual(Container(53).CurrentItem,3)</visible>
+                <visible>[!Container(53).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container(53).CurrentItem,3)] | [Container(53).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container(53).CurrentItem,2)]</visible>
             </include>
             <include content="View_53_Episodes_List">
                 <content target="videos" sortby="episode">$INFO[Container(53).ListItemAbsolute(3).FolderPath]</content>
-                <visible>Integer.IsEqual(Container(53).CurrentItem,4)</visible>
+                <visible>[!Container(53).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container(53).CurrentItem,4)] | [Container(53).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container(53).CurrentItem,3)]</visible>
             </include>
             <include content="View_53_Episodes_List">
                 <content target="videos" sortby="episode">$INFO[Container(53).ListItemAbsolute(4).FolderPath]</content>
-                <visible>Integer.IsEqual(Container(53).CurrentItem,5)</visible>
+                <visible>[!Container(53).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container(53).CurrentItem,5)] | [Container(53).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container(53).CurrentItem,4)]</visible>
             </include>
             <include content="View_53_Episodes_List">
                 <content target="videos" sortby="episode">$INFO[Container(53).ListItemAbsolute(5).FolderPath]</content>
-                <visible>Integer.IsEqual(Container(53).CurrentItem,6)</visible>
+                <visible>[!Container(53).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container(53).CurrentItem,6)] | [Container(53).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container(53).CurrentItem,5)]</visible>
             </include>
             <include content="View_53_Episodes_List">
                 <content target="videos" sortby="episode">$INFO[Container(53).ListItemAbsolute(6).FolderPath]</content>
-                <visible>Integer.IsEqual(Container(53).CurrentItem,7)</visible>
+                <visible>[!Container(53).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container(53).CurrentItem,7)] | [Container(53).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container(53).CurrentItem,6)]</visible>
             </include>
             <include content="View_53_Episodes_List">
                 <content target="videos" sortby="episode">$INFO[Container(53).ListItemAbsolute(7).FolderPath]</content>
-                <visible>Integer.IsEqual(Container(53).CurrentItem,8)</visible>
+                <visible>[!Container(53).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container(53).CurrentItem,8)] | [Container(53).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container(53).CurrentItem,7)]</visible>
             </include>
             <include content="View_53_Episodes_List">
                 <content target="videos" sortby="episode">$INFO[Container(53).ListItemAbsolute(8).FolderPath]</content>
-                <visible>Integer.IsEqual(Container(53).CurrentItem,9)</visible>
+                <visible>[!Container(53).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container(53).CurrentItem,9)] | [Container(53).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container(53).CurrentItem,8)]</visible>
             </include>
             <include content="View_53_Episodes_List">
                 <content target="videos" sortby="episode">$INFO[Container(53).ListItemAbsolute(9).FolderPath]</content>
-                <visible>Integer.IsEqual(Container(53).CurrentItem,10)</visible>
+                <visible>[!Container(53).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container(53).CurrentItem,10)] | [Container(53).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container(53).CurrentItem,9)]</visible>
             </include>
             <include content="View_53_Episodes_List">
                 <content target="videos" sortby="episode">$INFO[Container(53).ListItemAbsolute(10).FolderPath]</content>
-                <visible>Integer.IsEqual(Container(53).CurrentItem,11)</visible>
+                <visible>[!Container(53).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container(53).CurrentItem,11)] | [Container(53).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container(53).CurrentItem,10)]</visible>
             </include>
             <include content="View_53_Episodes_List">
                 <content target="videos" sortby="episode">$INFO[Container(53).ListItemAbsolute(11).FolderPath]</content>
-                <visible>Integer.IsEqual(Container(53).CurrentItem,12)</visible>
+                <visible>[!Container(53).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container(53).CurrentItem,12)] | [Container(53).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container(53).CurrentItem,11)]</visible>
             </include>
             <include content="View_53_Episodes_List">
                 <content target="videos" sortby="episode">$INFO[Container(53).ListItemAbsolute(12).FolderPath]</content>
-                <visible>Integer.IsEqual(Container(53).CurrentItem,13)</visible>
+                <visible>[!Container(53).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container(53).CurrentItem,13)] | [Container(53).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container(53).CurrentItem,12)]</visible>
             </include>
             <include content="View_53_Episodes_List">
                 <content target="videos" sortby="episode">$INFO[Container(53).ListItemAbsolute(13).FolderPath]</content>
-                <visible>Integer.IsEqual(Container(53).CurrentItem,14)</visible>
+                <visible>[!Container(53).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container(53).CurrentItem,14)] | [Container(53).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container(53).CurrentItem,13)]</visible>
             </include>
             <include content="View_53_Episodes_List">
                 <content target="videos" sortby="episode">$INFO[Container(53).ListItemAbsolute(14).FolderPath]</content>
-                <visible>Integer.IsEqual(Container(53).CurrentItem,15)</visible>
+                <visible>[!Container(53).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container(53).CurrentItem,15)] | [Container(53).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container(53).CurrentItem,14)]</visible>
             </include>
             <include content="View_53_Episodes_List">
                 <content target="videos" sortby="episode">$INFO[Container(53).ListItemAbsolute(15).FolderPath]</content>
-                <visible>Integer.IsEqual(Container(53).CurrentItem,16)</visible>
+                <visible>[!Container(53).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container(53).CurrentItem,16)] | [Container(53).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container(53).CurrentItem,15)]</visible>
             </include>
             <include content="View_53_Episodes_List">
                 <content target="videos" sortby="episode">$INFO[Container(53).ListItemAbsolute(16).FolderPath]</content>
-                <visible>Integer.IsEqual(Container(53).CurrentItem,17)</visible>
+                <visible>[!Container(53).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container(53).CurrentItem,17)] | [Container(53).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container(53).CurrentItem,16)]</visible>
             </include>
             <include content="View_53_Episodes_List">
                 <content target="videos" sortby="episode">$INFO[Container(53).ListItemAbsolute(17).FolderPath]</content>
-                <visible>Integer.IsEqual(Container(53).CurrentItem,18)</visible>
+                <visible>[!Container(53).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container(53).CurrentItem,18)] | [Container(53).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container(53).CurrentItem,17)]</visible>
             </include>
             <include content="View_53_Episodes_List">
                 <content target="videos" sortby="episode">$INFO[Container(53).ListItemAbsolute(18).FolderPath]</content>
-                <visible>Integer.IsEqual(Container(53).CurrentItem,19)</visible>
+                <visible>[!Container(53).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container(53).CurrentItem,19)] | [Container(53).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container(53).CurrentItem,18)]</visible>
             </include>
             <include content="View_53_Episodes_List">
                 <content target="videos" sortby="episode">$INFO[Container(53).ListItemAbsolute(19).FolderPath]</content>
-                <visible>Integer.IsEqual(Container(53).CurrentItem,20)</visible>
+                <visible>[!Container(53).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container(53).CurrentItem,20)] | [Container(53).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container(53).CurrentItem,19)]</visible>
             </include>
             <include content="View_53_Episodes_List">
                 <content target="videos" sortby="episode">$INFO[Container(53).ListItem.FolderPath]</content>
-                <visible>!Integer.IsEqual(Container(53).CurrentItem,1) + !Integer.IsEqual(Container(53).CurrentItem,2) + !Integer.IsEqual(Container(53).CurrentItem,3) + !Integer.IsEqual(Container(53).CurrentItem,4) + !Integer.IsEqual(Container(53).CurrentItem,5) + !Integer.IsEqual(Container(53).CurrentItem,6) + !Integer.IsEqual(Container(53).CurrentItem,7) + !Integer.IsEqual(Container(53).CurrentItem,8) + !Integer.IsEqual(Container(53).CurrentItem,9) + !Integer.IsEqual(Container(53).CurrentItem,10) + !Integer.IsEqual(Container(53).CurrentItem,11) + !Integer.IsEqual(Container(53).CurrentItem,12) + !Integer.IsEqual(Container(53).CurrentItem,13) + !Integer.IsEqual(Container(53).CurrentItem,14) + !Integer.IsEqual(Container(53).CurrentItem,15) + !Integer.IsEqual(Container(53).CurrentItem,16) + !Integer.IsEqual(Container(53).CurrentItem,17) + !Integer.IsEqual(Container(53).CurrentItem,18) + !Integer.IsEqual(Container(53).CurrentItem,19) + !Integer.IsEqual(Container(53).CurrentItem,20)</visible>
+                <visible>!Container(53).ListItem.IsParentFolder + !Integer.IsEqual(Container(53).CurrentItem,1) + !Integer.IsEqual(Container(53).CurrentItem,2) + !Integer.IsEqual(Container(53).CurrentItem,3) + !Integer.IsEqual(Container(53).CurrentItem,4) + !Integer.IsEqual(Container(53).CurrentItem,5) + !Integer.IsEqual(Container(53).CurrentItem,6) + !Integer.IsEqual(Container(53).CurrentItem,7) + !Integer.IsEqual(Container(53).CurrentItem,8) + !Integer.IsEqual(Container(53).CurrentItem,9) + !Integer.IsEqual(Container(53).CurrentItem,10) + !Integer.IsEqual(Container(53).CurrentItem,11) + !Integer.IsEqual(Container(53).CurrentItem,12) + !Integer.IsEqual(Container(53).CurrentItem,13) + !Integer.IsEqual(Container(53).CurrentItem,14) + !Integer.IsEqual(Container(53).CurrentItem,15) + !Integer.IsEqual(Container(53).CurrentItem,16) + !Integer.IsEqual(Container(53).CurrentItem,17) + !Integer.IsEqual(Container(53).CurrentItem,18) + !Integer.IsEqual(Container(53).CurrentItem,19) + [!Integer.IsEqual(Container(53).CurrentItem,20) | Container(53).ListItemAbsolute(0).IsParentFolder]</visible>
+            </include>
+            <include content="Viewtype_Poster">
+                <param name="id" value="503" />
+                <bottom>-20</bottom>
+                <left>-80</left>
+                <right>-80</right>
+                <onback>53</onback>
+                <onup>53</onup>
+                <ondown>60</ondown>
+                <pagecontrol>60</pagecontrol>
+                <onunfocus>ClearProperty(TMDbHelper.WidgetContainer,Home)</onunfocus>
+                <onclick condition="!Container($PARAM[id]).ListItem.IsFolder">PlayMedia($INFO[Container($PARAM[id]).ListItem.FileNameAndPath])</onclick>
+                <onclick condition="Container($PARAM[id]).ListItem.IsFolder">Container.Update($INFO[Container($PARAM[id]).ListItem.FolderPath])</onclick>
+                <onclick>SetFocus(53)</onclick>
+                <visible>Container(53).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container(53).CurrentItem,0)</visible>
+                <content target="videos">$INFO[Container(53).FolderPath]</content>
             </include>
             <include content="Home_Hub_Widget_Label">
                 <param name="id" value="503" />
                 <param name="label" value="$INFO[Container(53).ListItem.Label]" />
-                <param name="altlabel" value="$INFO[Control.GetLabel(3),, ]$INFO[Control.GetLabel(4)]" />
+                <param name="altlabel" value="$LOCALIZE[31213]: $LOCALIZE[20359] $LOCALIZE[584]" />
+                <visible>![Container(53).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container(53).CurrentItem,0)]</visible>
+            </include>
+            <include content="Home_Hub_Widget_Label">
+                <param name="id" value="503" />
+                <param name="label" value="Seasons" />
+                <param name="altlabel" value="$LOCALIZE[31213]: $LOCALIZE[20373] $LOCALIZE[584]" />
+                <visible>[Container(53).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container(53).CurrentItem,0)]</visible>
             </include>
         </control>
     </include>

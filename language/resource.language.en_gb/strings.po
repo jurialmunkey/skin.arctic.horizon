@@ -1049,6 +1049,11 @@ msgctxt "#31212"
 msgid "Random Shows"
 msgstr ""
 
+#: /1080i/Includes_View_53_Seasons.xml
+msgctxt "#31213"
+msgid "Sort by"
+msgstr ""
+
 #: /shortcuts/overrides.xml
 msgctxt "#31214"
 msgid "Recently Added Episodes"
