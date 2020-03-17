@@ -7,6 +7,7 @@
             <param name="viewtype-include" value="Viewtype_Landscape" />
             <param name="icon" value="$VAR[Image_Landscape]" />
             <param name="info" value="trakt_calendar" />
+            <param name="movement" value="3" />
         </include>
     </controls>
 </window>

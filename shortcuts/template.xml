@@ -233,8 +233,8 @@
                         <param name="condition" value="[!ControlGroup(3000).HasFocus() + System.IdleTime(1) + !Skin.HasSetting(DisableAutoScrollWidgets) + Integer.IsEqual(Container(3000).NumItems,1)] | [$PYTHON['true' if widgetAspect in 'Banner' else 'false'] + !Control.HasFocus($PYTHON[30000 + int(mainmenuid) * 100 + int(id)])]" />
                     </include>
                     <movement>$SKINSHORTCUTS[widgetMovement]</movement>
-                    <content target="$SKINSHORTCUTS[widgetTarget]" limit="$SKINSHORTCUTS[widgetLimit]" sortby="$SKINSHORTCUTS[widgetSortby]" sortorder="$SKINSHORTCUTS[widgetSortorder]">$SKINSHORTCUTS[widgetPath]</content>
                     <content><include condition="$SKINSHORTCUTS[widgetSubmenu]">skinshortcuts-submenu</include></content>
+                    <content target="$SKINSHORTCUTS[widgetTarget]" limit="$SKINSHORTCUTS[widgetLimit]" sortby="$SKINSHORTCUTS[widgetSortby]" sortorder="$SKINSHORTCUTS[widgetSortorder]">$SKINSHORTCUTS[widgetPath]</content>
                 </include>
             </controls>
         </items>
