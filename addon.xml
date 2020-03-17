@@ -5,7 +5,7 @@
         <import addon="script.colorbox" version="2.0.0" />
         <import addon="script.image.resource.select" version="0.0.5" />
         <import addon="plugin.program.autocompletion" version="1.0.1" />
-        <import addon="plugin.video.themoviedb.helper" version="2.2.82" />
+        <import addon="plugin.video.themoviedb.helper" version="2.2.83" />
         <import addon="resource.images.studios.white" version="0.0.10" />
         <import addon="resource.images.weathericons.white" version="0.0.1" />
         <import addon="resource.images.moviegenreicons.transparent" version="0.0.6" />

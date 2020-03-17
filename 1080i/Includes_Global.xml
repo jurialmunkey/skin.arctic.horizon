@@ -77,7 +77,7 @@
             <fadetime>600</fadetime>
             <imagepath background="true">$VAR[Global_Background_Image_Var]</imagepath>
             <visible>System.HasAddon(script.colorbox)</visible>
-            <visible>!Skin.HasSetting(DisableBlur)</visible>
+            <visible>![!System.HasAddon(script.colorbox) | Skin.HasSetting(DisableBlur)]</visible>
         </control>
         <include condition="!Skin.HasSetting(global.showvideo)">Global_Videowindow_Hidden</include>
         <include>Global_Background_Main</include>
@@ -105,13 +105,13 @@
                 <width>1920</width>
                 <height>1080</height>
                 <aspectratio>scale</aspectratio>
-                <include condition="!Skin.HasSetting(DisableBlur)">Defs_Global_Fade_Blur</include>
+                <include condition="![!System.HasAddon(script.colorbox) | Skin.HasSetting(DisableBlur)]">Defs_Global_Fade_Blur</include>
                 <fadetime>600</fadetime>
                 <imagepath background="true">$VAR[Global_Background_Image]</imagepath>
-                <animation effect="fade" end="50" condition="!Skin.HasSetting(DisableBlur)">Conditional</animation>
-                <animation effect="fade" end="40" condition="Skin.HasSetting(DisableBlur)">Conditional</animation>
+                <animation effect="fade" end="50" condition="![!System.HasAddon(script.colorbox) | Skin.HasSetting(DisableBlur)]">Conditional</animation>
+                <animation effect="fade" end="40" condition="[!System.HasAddon(script.colorbox) | Skin.HasSetting(DisableBlur)]">Conditional</animation>
                 <visible>$EXP[Exp_GlobalBackground]</visible>
-                <animation effect="fade" start="100" end="0" time="2000" tween="cubic" easing="inout" condition="Window.IsVisible(DialogBusy.xml) + Skin.HasSetting(DisableBlur)">Conditional</animation>
+                <animation effect="fade" start="100" end="0" time="2000" tween="cubic" easing="inout" condition="Window.IsVisible(DialogBusy.xml) + [!System.HasAddon(script.colorbox) | Skin.HasSetting(DisableBlur)]">Conditional</animation>
             </control>
             <control type="group">
                 <visible>Window.IsVisible(DialogBusy.xml)</visible>
@@ -131,11 +131,11 @@
             <nested />
             <control type="image">
                 <texture colordiffuse="$VAR[ColorHighlight4]" background="true">common/vignette-white.png</texture>
-                <visible>Skin.HasSetting(DisableBlur)</visible>
+                <visible>[!System.HasAddon(script.colorbox) | Skin.HasSetting(DisableBlur)]</visible>
             </control>
             <control type="image">
                 <texture background="true">common/vignette-full.png</texture>
-                <visible>Skin.HasSetting(DisableBlur)</visible>
+                <visible>[!System.HasAddon(script.colorbox) | Skin.HasSetting(DisableBlur)]</visible>
             </control>
         </control>
     </include>
@@ -149,16 +149,16 @@
 
     <variable name="Global_Background_Image">
         <value condition="Skin.HasSetting(NoFanart)">$VAR[Global_Background_Image_NoFanart]</value>
-        <value condition="!Skin.HasSetting(DisableBlur)">$INFO[Window(home).Property(ImageFilterFIVE)]</value>
+        <value condition="![!System.HasAddon(script.colorbox) | Skin.HasSetting(DisableBlur)]">$INFO[Window(home).Property(ImageFilterFIVE)]</value>
         <value>$VAR[Global_Background_Image_Var]</value>
     </variable>
 
     <variable name="Global_Background_Image_Var">
         <value condition="Skin.HasSetting(NoFanart) | ListItem.IsParentFolder">$VAR[Global_Background_Image_NoFanart]</value>
-        <value condition="!Skin.HasSetting(DisableBlur) + !Skin.HasSetting(EnableFanartBlur) + !String.IsEmpty(Container.ListItem.Art(season.poster))">$INFO[Container.ListItem.Art(season.poster)]</value>
-        <value condition="!Skin.HasSetting(DisableBlur) + !Skin.HasSetting(EnableFanartBlur) + !String.IsEmpty(Container.ListItem.Art(poster))">$INFO[Container.ListItem.Art(poster)]</value>
-        <value condition="!Skin.HasSetting(DisableBlur) + !Skin.HasSetting(EnableFanartBlur) + !String.IsEmpty(Container.ListItem.Art(tvshow.poster))">$INFO[Container.ListItem.Art(tvshow.poster)]</value>
-        <value condition="!Skin.HasSetting(DisableBlur) + !Skin.HasSetting(EnableFanartBlur) + !String.IsEmpty(Container.ListItem.Art(thumb)) + !String.StartsWith(Container.ListItem.Art(thumb),special://skin/extras/icons/) + !String.StartsWith(Container.ListItem.Art(thumb),Default)">$INFO[Container.ListItem.Art(thumb)]</value>
+        <value condition="![!System.HasAddon(script.colorbox) | Skin.HasSetting(DisableBlur)] + !Skin.HasSetting(EnableFanartBlur) + !String.IsEmpty(Container.ListItem.Art(season.poster))">$INFO[Container.ListItem.Art(season.poster)]</value>
+        <value condition="![!System.HasAddon(script.colorbox) | Skin.HasSetting(DisableBlur)] + !Skin.HasSetting(EnableFanartBlur) + !String.IsEmpty(Container.ListItem.Art(poster))">$INFO[Container.ListItem.Art(poster)]</value>
+        <value condition="![!System.HasAddon(script.colorbox) | Skin.HasSetting(DisableBlur)] + !Skin.HasSetting(EnableFanartBlur) + !String.IsEmpty(Container.ListItem.Art(tvshow.poster))">$INFO[Container.ListItem.Art(tvshow.poster)]</value>
+        <value condition="![!System.HasAddon(script.colorbox) | Skin.HasSetting(DisableBlur)] + !Skin.HasSetting(EnableFanartBlur) + !String.IsEmpty(Container.ListItem.Art(thumb)) + !String.StartsWith(Container.ListItem.Art(thumb),special://skin/extras/icons/) + !String.StartsWith(Container.ListItem.Art(thumb),Default)">$INFO[Container.ListItem.Art(thumb)]</value>
 
         
         <!-- Next up -->

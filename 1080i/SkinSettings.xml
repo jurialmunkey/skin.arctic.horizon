@@ -183,9 +183,9 @@
                         <label2>$VAR[Label_Setting_BackgroundStyle]</label2>
                         <include>Defs_RadioButton_NoTexture</include>
                         <onclick condition="!System.HasAddon(script.colorbox)">InstallAddon(script.colorbox)</onclick>
-                        <onclick condition="System.HasAddon(script.colorbox) + Skin.HasSetting(DisableBlur)">SetProperty(FIVE_daemon_set,blur,home)</onclick>
-                        <onclick condition="System.HasAddon(script.colorbox) + Skin.HasSetting(DisableBlur)">RunScript(script.colorbox,daemon=True)</onclick>
-                        <onclick condition="System.HasAddon(script.colorbox) + Skin.HasSetting(DisableBlur)">AlarmClock(nms1,SetProperty(NINE_manual_set,"var=quality,set=$INFO[Skin.String(colorbox_quality)]|var=blursize,set=$INFO[Skin.String(colorbox_blursize)]|var=bitsize,set=$INFO[Skin.String(colorbox_bitsize)]|var=pixelsize,set=$INFO[Skin.String(colorbox_pixelsize)]|var=black,set=$INFO[Skin.String(colorbox_black)]|var=white,set=$INFO[Skin.String(colorbox_white)]",home),00:05,true)</onclick>
+                        <onclick condition="System.HasAddon(script.colorbox) + [!System.HasAddon(script.colorbox) | Skin.HasSetting(DisableBlur)]">SetProperty(FIVE_daemon_set,blur,home)</onclick>
+                        <onclick condition="System.HasAddon(script.colorbox) + [!System.HasAddon(script.colorbox) | Skin.HasSetting(DisableBlur)]">RunScript(script.colorbox,daemon=True)</onclick>
+                        <onclick condition="System.HasAddon(script.colorbox) + [!System.HasAddon(script.colorbox) | Skin.HasSetting(DisableBlur)]">AlarmClock(nms1,SetProperty(NINE_manual_set,"var=quality,set=$INFO[Skin.String(colorbox_quality)]|var=blursize,set=$INFO[Skin.String(colorbox_blursize)]|var=bitsize,set=$INFO[Skin.String(colorbox_bitsize)]|var=pixelsize,set=$INFO[Skin.String(colorbox_pixelsize)]|var=black,set=$INFO[Skin.String(colorbox_black)]|var=white,set=$INFO[Skin.String(colorbox_white)]",home),00:05,true)</onclick>
                         <onclick condition="System.HasAddon(script.colorbox)">Skin.ToggleSetting(DisableBlur)</onclick>
                     </control>
 
@@ -246,7 +246,7 @@
                         <include>Defs_Settings_Button</include>
                         <label>$LOCALIZE[31060]</label>
                         <onclick>ActivateWindow(1116)</onclick>
-                        <enable>!Skin.HasSetting(DisableBlur) + System.HasAddon(script.colorbox)</enable>
+                        <enable>![!System.HasAddon(script.colorbox) | Skin.HasSetting(DisableBlur)] + System.HasAddon(script.colorbox)</enable>
                     </control> -->
 
                     <control type="radiobutton" id="19208" description="Use poster for blur">
@@ -255,7 +255,7 @@
                         <label>$LOCALIZE[31133]</label>
                         <selected>!Skin.HasSetting(EnableFanartBlur)</selected>
                         <onclick>Skin.ToggleSetting(EnableFanartBlur)</onclick>
-                        <enable>!Skin.HasSetting(DisableBlur) + System.HasAddon(script.colorbox)</enable>
+                        <enable>![!System.HasAddon(script.colorbox) | Skin.HasSetting(DisableBlur)] + System.HasAddon(script.colorbox)</enable>
                     </control>
 
 
@@ -305,7 +305,7 @@
                         <include>Defs_Settings_Button</include>
                         <label>Overlay colour</label>
                         <label2>$INFO[Skin.String(overlaycolor.name)]</label2>
-                        <visible>Skin.HasSetting(DisableBlur)</visible>
+                        <visible>[!System.HasAddon(script.colorbox) | Skin.HasSetting(DisableBlur)]</visible>
                         <onclick condition="!System.HasAddon(script.skin.helper.colorpicker)">InstallAddon(script.skin.helper.colorpicker)</onclick>
                         <onclick>RunScript(script.skin.helper.colorpicker,skinstring=overlaycolor.name)</onclick>
                     </control>
