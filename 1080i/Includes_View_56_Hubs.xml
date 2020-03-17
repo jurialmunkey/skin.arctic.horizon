@@ -25,7 +25,7 @@
             <include content="Viewtype_Landscape">
                 <animation effect="fade" start="100" end="0" condition="Container(560).IsUpdating">Conditional</animation>
                 <param name="id" value="560" />
-                <visible>Container(56).ListItem.IsFolder</visible>
+                <visible>Container(56).ListItem.IsFolder + !Container(56).ListItem.IsParentFolder</visible>
                 <bottom>-20</bottom>
                 <left>-80</left>
                 <right>-80</right>
