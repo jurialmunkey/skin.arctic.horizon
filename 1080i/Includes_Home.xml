@@ -227,94 +227,6 @@
         </definition>
     </include>
 
-    <include name="Home_Horizontal_Fixed_List">
-        <param name="focused-width" default="292" />
-        <definition>
-            <control type="panel" id="$PARAM[id]">
-                <nested />
-                <top>0</top>
-                <left>-18</left>
-                <left>258</left>
-                <right>-270</right>
-                <movement>100</movement>
-                <orientation>horizontal</orientation>
-                <itemlayout width="92" height="70">
-                    <control type="image">
-                        <height>70</height>
-                        <width>70</width>
-                        <texture colordiffuse="main_fg_30">$INFO[ListItem.Icon]</texture>
-                        <visible>String.StartsWith(ListItem.Icon,special://skin/extras/icons/)</visible>
-                    </control>
-                    <control type="image">
-                        <height>70</height>
-                        <width>70</width>
-                        <bordersize>14</bordersize>
-                        <texture diffuse="diffuse/circle.png" colordiffuse="77ffffff">$INFO[ListItem.Icon]</texture>
-                        <visible>!String.StartsWith(ListItem.Icon,special://skin/extras/icons/)</visible>
-                    </control>
-                </itemlayout>
-                <focusedlayout width="92" height="70">
-                    <control type="image">
-                        <height>70</height>
-                        <width>70</width>
-                        <texture colordiffuse="main_fg_100">$INFO[ListItem.Icon]</texture>
-                        <visible>String.StartsWith(ListItem.Icon,special://skin/extras/icons/)</visible>
-                    </control>
-                    <control type="image">
-                        <height>70</height>
-                        <width>70</width>
-                        <bordersize>14</bordersize>
-                        <texture diffuse="diffuse/circle.png" colordiffuse="ffffffff">$INFO[ListItem.Icon]</texture>
-                        <visible>!String.StartsWith(ListItem.Icon,special://skin/extras/icons/)</visible>
-                    </control>
-                </focusedlayout>
-            </control>
-        </definition>
-    </include>
-
-    <include name="Home_CornerIcon_Template">
-        <control type="button" id="$PARAM[id]">
-            <height>70</height>
-            <width>70</width>
-            <onleft>SetFocus(301,9999,absolute)</onleft>
-            <onright>SetFocus(301,0,absolute)</onright>
-            <aspectratio>keep</aspectratio>
-            <texturenofocus colordiffuse="main_fg_30">$PARAM[icon]</texturenofocus>
-            <texturefocus colordiffuse="main_fg_100">$PARAM[icon]</texturefocus>
-            <onfocus>ClearProperty(WidgetFocus,Home)</onfocus>
-            <nested />
-        </control>
-    </include>
-
-    <include name="Home_Horizontal_Fixed">
-        <control type="group">
-            <nested />
-            <top>60</top>
-            <left>view_pad</left>
-            <height>80</height>
-            <width>1000</width>
-        </control>
-    </include>
-
-
-    <include name="Home_Multi_Movement">
-
-        <!-- <onleft condition="Integer.IsGreater(Container(302).NumItems,0)">302</onleft> -->
-
-        <onleft condition="!String.IsEmpty(Container(3700).ListItemAbsolute(0).Property(list)) + !String.IsEqual(Container(3700).ListItemAbsolute(0).Property(list),Settings) + !String.IsEqual(Container(3700).ListItemAbsolute(0).Property(list),Weather)">SetFocus($INFO[Window(Home).Property(CurrentWidget)],9999,absolute)</onleft>
-
-        <onright condition="!String.IsEmpty(Container(3700).ListItemAbsolute(0).Property(list)) + !String.IsEqual(Container(3700).ListItemAbsolute(0).Property(list),Settings) + !String.IsEqual(Container(3700).ListItemAbsolute(0).Property(list),Weather)">SetFocus($INFO[Window(Home).Property(CurrentWidget)],0,absolute)</onright>
-
-        <onright condition="!String.IsEmpty(Container(3700).ListItemAbsolute(0).Property(list)) + !String.IsEqual(Container(3700).ListItemAbsolute(0).Property(list),Settings) + !String.IsEqual(Container(3700).ListItemAbsolute(0).Property(list),Weather)">3000</onright>
-
-        <onright condition="String.IsEqual(Container(3700).ListItemAbsolute(0).Property(list),Settings)">5000</onright>
-        <onright condition="String.IsEqual(Container(3700).ListItemAbsolute(0).Property(list),Weather)">3600</onright>
-        <onright condition="String.IsEmpty(Container(3700).ListItemAbsolute(0).Property(list))">3001</onright>
-        <onfocus>ClearProperty(WidgetFocus,Home)</onfocus>
-        <onfocus>ClearProperty(TMDbHelper.WidgetContainer,Home)</onfocus>
-
-    </include>
-
     <include name="Home_Menu_Header">
         <param name="labelvisible" default="true" />
         <param name="icononly" default="false" />
@@ -454,9 +366,7 @@
                         <param name="font" value="font_mainmenu" />
                         <param name="icononly" value="true" />
                         <param name="focusbutton" value="$PARAM[focusbutton]" />
-                        <onleft condition="Window.IsVisible(1110)">ActivateWindow(Home)</onleft>
-                        <onright condition="Window.IsVisible(1110)">SetFocus(302,0,absolute)</onright>
-                        <include condition="Window.IsVisible(Home)">Home_Multi_Movement</include>
+                        <onfocus>ClearProperty(TMDbHelper.WidgetContainer,Home)</onfocus>
                         <onback>3000</onback>
                         <onfocus>ClearProperty(WidgetMovement)</onfocus>
                         <onfocus>ClearProperty(WidgetFocus)</onfocus>
