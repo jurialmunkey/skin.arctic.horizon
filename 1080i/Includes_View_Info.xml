@@ -77,7 +77,7 @@
                 <param name="visible" value="!String.IsEmpty(ListItem.Property(Addon.ID)) + !String.IsEqual(ListItem.Label2,Enabled) + !String.IsEqual(Container.FolderPath,addons://repos/) + Window.IsVisible(AddonBrowser.xml)" />
                 <onclick>InstallAddon($INFO[ListItem.Property(Addon.ID)])</onclick>
             </include>
-            <include content="Object_Info_Button" description="Play">
+            <!-- <include content="Object_Info_Button" description="Play">
                 <param name="id" value="3101" />
                 <param name="groupid" value="3001" />
                 <param name="label" value="$LOCALIZE[208]" />
@@ -88,6 +88,17 @@
                 <onclick condition="!ListItem.IsFolder">Action(Play)</onclick>
                 <onclick condition="ListItem.IsFolder + !String.IsEmpty(ListItem.Property(tmdb_id)) + String.IsEqual(ListItem.DBType,movie)">RunPlugin(plugin://plugin.video.themoviedb.helper/?info=play&amp;tmdb_id=$INFO[ListItem.Property(tmdb_id)]&amp;type=movie)</onclick>
                 <onclick condition="ListItem.IsFolder + !String.IsEmpty(ListItem.Property(tmdb_id)) + String.IsEqual(ListItem.DBType,episode)">RunPlugin(plugin://plugin.video.themoviedb.helper/?info=play&amp;tmdb_id=$INFO[ListItem.Property(tmdb_id)]&amp;type=episode&amp;season=$INFO[ListItem.Season]&amp;episode=$INFO[ListItem.Episode])</onclick>
+            </include> -->
+
+            <include content="Object_Info_Button" description="Play">
+                <param name="id" value="3101" />
+                <param name="groupid" value="3001" />
+                <param name="label" value="Info" />
+                <param name="icon" value="special://skin/extras/icons/info2.png" />
+                <param name="ondown" value="50" />
+                <param name="visible" value="String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,episode) | String.IsEqual(ListItem.DBType,video) | String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,season) | ListItem.IsCollection" />
+                <onclick>SetFocus(50)</onclick>
+                <onclick>Action(Info)</onclick>
             </include>
             
             <include content="Object_Info_Button" description="Trailer">

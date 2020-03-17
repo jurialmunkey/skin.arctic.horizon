@@ -327,7 +327,7 @@
             <param name="groupid" value="3008" />
             <param name="label" value="$LOCALIZE[208]" />
             <param name="icon" value="special://skin/extras/icons/play3.png" />
-            <param name="visible" value="Control.IsEnabled(8) + !ListItem.IsFolder + !ListItem.IsCollection + String.IsEmpty(ListItem.Property(tmdb_id))" />
+            <param name="visible" value="Control.IsEnabled(8) + !ListItem.IsFolder + !ListItem.IsCollection" />
             <onclick>RunScript(plugin.video.themoviedb.helper,close_dialog=1190,playmedia=$INFO[ListItem.FileNameAndPath])</onclick>
             <onup>9601</onup>
         </include>
@@ -337,13 +337,14 @@
             <param name="label" value="$LOCALIZE[1024]" />
             <param name="icon" value="special://skin/extras/icons/folder.png" />
             <param name="visible" value="Control.IsEnabled(8) + [ListItem.IsFolder | ListItem.IsCollection] + String.IsEmpty(ListItem.Property(tmdb_id))" />
-            <onclick>Dialog.Close(12003)</onclick>
+            <onclick>SendClick(8)</onclick>
+            <!-- <onclick>Dialog.Close(12003)</onclick>
             <onclick>Dialog.Close(1140)</onclick>
             <onclick condition="Window.IsVisible(MyVideoNav.xml)">Container.Update($INFO[ListItem.FolderPath])</onclick>
-            <onclick condition="!Window.IsVisible(MyVideoNav.xml)">ActivateWindow(videos,$INFO[ListItem.FolderPath],return)</onclick>
+            <onclick condition="!Window.IsVisible(MyVideoNav.xml)">ActivateWindow(videos,$INFO[ListItem.FolderPath],return)</onclick> -->
             <onup>9601</onup>
         </include>
-        <include content="$PARAM[buttoninclude]">
+        <!-- <include content="$PARAM[buttoninclude]">
             <param name="id" value="3108" />
             <param name="groupid" value="3208" />
             <param name="label" value="$LOCALIZE[208]" />
@@ -358,7 +359,7 @@
             <onclick condition="String.IsEqual(ListItem.DBType,episode) + Window.IsVisible(MyVideoNav.xml)">Container.Update($INFO[ListItem.FolderPath])</onclick>
             <onclick condition="String.IsEqual(ListItem.DBType,episode) + !Window.IsVisible(MyVideoNav.xml)">ActivateWindow(videos,$INFO[ListItem.FolderPath],return)</onclick>
             <onup>9601</onup>
-        </include>
+        </include> -->
         <!-- <include content="$PARAM[buttoninclude]">
             <param name="id" value="3103" />
             <param name="groupid" value="3203" />
