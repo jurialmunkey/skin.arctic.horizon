@@ -8,26 +8,6 @@
     <widgetRename>True</widgetRename>
     <widget label="8">Weather</widget>
     <widget label="5">Settings</widget>
-
-    <!-- Additional Onclick for Submenu Hub -->
-    <override action="ActivateWindow(1135)">
-        <action>SetProperty(submenuVisibility,$INFO[Container(301).ListItem.Property(submenuVisibility)],home)</action>
-        <action>SetProperty(mainmenuid,$INFO[Container(301).ListItem.Property(id)],home)</action>
-        <action>SetProperty(leftHeader,$INFO[Container(301).ListItem.Label],home)</action>
-        <action>SetProperty(widgetName,$INFO[Container(301).ListItem.Property(widgetName)],home)</action>
-        <action>SetProperty(widgetName.backgroundWidget,$INFO[Container(301).ListItem.Property(widgetName.backgroundWidget)],home)</action>
-        <action>SetProperty(widgetPath,$INFO[Container(301).ListItem.Property(widgetPath)],home)</action>
-        <action>SetProperty(widgetTarget,$INFO[Container(301).ListItem.Property(widgetTarget)],home)</action>
-        <action>SetProperty(widgetAspect,$INFO[Container(301).ListItem.Property(widgetAspect)],home)</action>
-        <action>ActivateWindow(1135)</action>
-    </override>
-
-    <!-- Additional Onclick for Custom Hub -->
-    <override action="ActivateWindow(1134)">
-        <action>SetProperty(leftHeader,$INFO[ListItem.Label],home)</action>
-        <action>SetProperty(1134_Node,$INFO[ListItem.Property(1134_Node)],home)</action>
-        <action>ActivateWindow(1134)</action>
-    </override>
     
     <!-- Warning to Remove Settings -->
     <warn heading="31176" message="31177">ActivateWindow(Settings)</warn>
@@ -140,17 +120,17 @@
     <propertySettings property="widgetLimit" buttonID="9905" title="Widget Item Limit" />
 
     <!-- Search Item Default Properties -->
-    <propertydefault labelID="artists" group="searchmenu" property="widgetAspect">Small Square</propertydefault>
-    <propertydefault labelID="albums" group="searchmenu" property="widgetAspect">Small Square</propertydefault>
-    <propertydefault labelID="add-ons" group="searchmenu" property="widgetAspect">Small Square</propertydefault>
-    <propertydefault labelID="spotifyartists" group="searchmenu" property="widgetAspect">Small Square</propertydefault>
-    <propertydefault labelID="spotifyalbums" group="searchmenu" property="widgetAspect">Small Square</propertydefault>
-    <propertydefault labelID="spotifysongs" group="searchmenu" property="widgetAspect">Small Square</propertydefault>
-    <propertydefault labelID="spotifyplaylists" group="searchmenu" property="widgetAspect">Small Square</propertydefault>
-    <propertydefault labelID="musicvideos" group="searchmenu" property="widgetAspect">Small Square</propertydefault>
-    <propertydefault labelID="musicvideoartists" group="searchmenu" property="widgetAspect">Small Square</propertydefault>
-    <propertydefault labelID="youtube" group="searchmenu" property="widgetAspect">Small Landscape</propertydefault>
-    <propertydefault labelID="episodes" group="searchmenu" property="widgetAspect">Small Landscape</propertydefault>
+    <propertydefault labelID="artists" group="searchmenu" property="widgetAspect">Square</propertydefault>
+    <propertydefault labelID="albums" group="searchmenu" property="widgetAspect">Square</propertydefault>
+    <propertydefault labelID="add-ons" group="searchmenu" property="widgetAspect">Square</propertydefault>
+    <propertydefault labelID="spotifyartists" group="searchmenu" property="widgetAspect">Square</propertydefault>
+    <propertydefault labelID="spotifyalbums" group="searchmenu" property="widgetAspect">Square</propertydefault>
+    <propertydefault labelID="spotifysongs" group="searchmenu" property="widgetAspect">Square</propertydefault>
+    <propertydefault labelID="spotifyplaylists" group="searchmenu" property="widgetAspect">Square</propertydefault>
+    <propertydefault labelID="musicvideos" group="searchmenu" property="widgetAspect">Square</propertydefault>
+    <propertydefault labelID="musicvideoartists" group="searchmenu" property="widgetAspect">Square</propertydefault>
+    <propertydefault labelID="youtube" group="searchmenu" property="widgetAspect">Landscape</propertydefault>
+    <propertydefault labelID="episodes" group="searchmenu" property="widgetAspect">Landscape</propertydefault>
 
     <!-- Icon Overrides -->
     <icon labelID="livetv">special://skin/extras/icons/livetv.png</icon>
@@ -245,8 +225,9 @@
             <shortcut label="$LOCALIZE[10821]" type="32021" icon="special://skin/extras/icons/games.png">ActivateWindow(Games)</shortcut>
             <shortcut label="$LOCALIZE[137]" type="$LOCALIZE[31018]" icon="special://skin/extras/icons/search.png">Skin.SetString(SearchTerm)</shortcut>
             <shortcut label="$LOCALIZE[33060]" type="$LOCALIZE[31018]" icon="special://skin/extras/icons/power.png">ActivateWindow(shutdownmenu)</shortcut>
-            <shortcut label="$LOCALIZE[31429]" type="32021" icon="special://skin/extras/icons/planetickets.png">ActivateWindow(1110)</shortcut>
-            <shortcut label="$LOCALIZE[31035]" type="32021" icon="special://skin/extras/icons/passports.png">SetFocus(302)</shortcut>
+            <shortcut label="$LOCALIZE[31429]" type="32021" icon="special://skin/extras/icons/compass.png">ActivateWindow(1110)</shortcut>
+            <shortcut label="Next Aired - Library" type="32021" icon="special://skin/extras/icons/antenna.png">ActivateWindow(1111)</shortcut>
+            <shortcut label="Next Aired - Trakt" type="32021" icon="special://skin/extras/icons/announce.png">ActivateWindow(1112)</shortcut>
             <shortcut label="$LOCALIZE[31017]" type="32010" icon="special://skin/extras/icons/shipping.png">||BROWSE||script.skin.helper.service/?action=smartshortcuts</shortcut>
         </node>
         <node label="32030">

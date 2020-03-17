@@ -1012,7 +1012,7 @@
             <control type="group">
                 <include>Topbar_Left</include>
                 <include>Defs_InfoDialog_Visible</include>
-                <include>Animation_FadeInOut_Common</include>
+                <include>Animation_Common</include>
                 <include content="DialogVideoInfo_MainGroup">
                     <left>0</left>
                     <include content="DialogVideoInfo_WidgetGroupList">
