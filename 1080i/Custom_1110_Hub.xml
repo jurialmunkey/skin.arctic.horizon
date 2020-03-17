@@ -51,7 +51,7 @@
                     <control type="group" description="Top Half">
                         <include content="View_Info_Grouplist">
                             <param name="container" value="Container(5610)." />
-                            <param name="title" value="$INFO[Container(5610).ListItem.Title]" />
+                            <param name="title" value="$VAR[Label_Hub_InfoTitle]" />
                             <param name="plot" value="$INFO[Container(5610).ListItem.Plot]" />
                             <param name="plotheight" value="auto" />
                             <top>-15</top>

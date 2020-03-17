@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
+    <variable name="Label_Hub_InfoTitle">
+        <value condition="[String.IsEqual(Container(5610).ListItem.DBType,tvshow) | String.IsEqual(Container(5610).ListItem.DBType,season) | String.IsEqual(Container(5610).ListItem.DBType,episode)] + !String.IsEmpty(Container(5610).ListItem.TvShowTitle)">$INFO[Container(5610).ListItem.TvShowTitle]</value>
+        <value>$INFO[Container(5610).ListItem.Title]</value>
+    </variable>
+
     <variable name="Label_Hub_WidgetName">
-        <value condition="!String.IsEmpty(Container(302).ListItem.Property(widgetName)) + !String.IsEmpty(Container(302).ListItem.Property(widgetPath))">$INFO[Container(302).ListItem.Property(widgetName)]</value>
+        <value condition="">$INFO[Container(302).ListItem.Property(widgetName)]</value>
         <value>$INFO[Window(Home).Property(Hub.widgetName)]</value>
     </variable>
 
