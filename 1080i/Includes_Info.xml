@@ -172,6 +172,7 @@
             <param name="label" value="$LOCALIZE[19165]" />
             <param name="icon" value="special://skin/extras/icons/signpost.png" />
             <param name="visible" value="Control.IsVisible(5) + Window.IsActive(PVRGuideInfo)" />
+            <onclick>SendClick(5)</onclick>
         </include>
         <!-- Switch -->
         <include content="Object_Info_Button">
@@ -180,6 +181,7 @@
             <param name="label" value="$INFO[Control.GetLabel(6)]" />
             <param name="icon" value="special://skin/extras/icons/alarm.png" />
             <param name="visible" value="Control.IsVisible(6) + Window.IsActive(PVRGuideInfo)" />
+            <onclick>SendClick(6)</onclick>
         </include>
         <!-- Switch -->
         <include content="Object_Info_Button">
@@ -188,6 +190,7 @@
             <param name="label" value="Play Recording" />
             <param name="icon" value="special://skin/extras/icons/database.png" />
             <param name="visible" value="Control.IsVisible(8) + [Window.IsActive(PVRGuideInfo) | Window.IsActive(PVRRecordingInfo)]" />
+            <onclick>SendClick(8)</onclick>
         </include>
         <!-- Switch -->
         <include content="Object_Info_Button">
@@ -196,6 +199,7 @@
             <param name="label" value="Play" />
             <param name="icon" value="special://skin/extras/icons/play3.png" />
             <param name="visible" value="Control.IsVisible(10) + Window.IsActive(PVRGuideInfo)" />
+            <onclick>SendClick(10)</onclick>
         </include>
         <!-- Similar -->
         <include content="Object_Info_Button">
@@ -204,6 +208,7 @@
             <param name="label" value="Similar" />
             <param name="icon" value="special://skin/extras/icons/search.png" />
             <param name="visible" value="Control.IsVisible(4) + Window.IsActive(PVRGuideInfo)" />
+            <onclick>SendClick(4)</onclick>
         </include>
     </include>
 
