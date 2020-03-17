@@ -29,7 +29,6 @@
             <screenshot>resources/screenshot-03.jpg</screenshot>
             <screenshot>resources/screenshot-04.jpg</screenshot>
             <screenshot>resources/screenshot-05.jpg</screenshot>
-            <screenshot>resources/screenshot-06.jpg</screenshot>
         </assets>
     </extension>
 </addon>
