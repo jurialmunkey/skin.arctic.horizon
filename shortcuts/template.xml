@@ -54,7 +54,7 @@
         <property name="submenuVisibility" tag="property" attribute="name|submenuVisibility"/>
         <controls>
             <control type="group">
-                <visible allowhiddenfocus="true">String.IsEqual(Container(301).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility])</visible>
+                <visible>String.IsEqual(Container(301).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility])</visible>
                 <include content="Animation_UpDown">
                     <param name="visible" value="String.IsEqual(Container(301).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility])" />
                 </include>

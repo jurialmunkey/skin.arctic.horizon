@@ -394,61 +394,11 @@
         <param name="icononly" default="false" />
         <definition>
             <control type="list" id="$PARAM[id]">
-                <left>-450</left>
                 <top>view_pad</top>
                 <bottom>view_pad</bottom>
                 <orientation>vertical</orientation>
-                <itemlayout height="item_list_height" width="900" condition="!$PARAM[icononly]">
+                <itemlayout height="item_list_height" width="160">
                     <control type="group">
-                        <left>450</left>
-                        <control type="image">
-                            <right>20</right>
-                            <width>item_list_height</width>
-                            <height>item_list_height</height>
-                            <bordersize>8</bordersize>
-                            <texture background="true" colordiffuse="dialog_fg_70">$INFO[ListItem.Icon]</texture>
-                        </control>
-                        <control type="label">
-                            <bottom>2</bottom>
-                            <right>120</right>
-                            <align>right</align>
-                            <textcolor>dialog_fg_70</textcolor>
-                            <font>$PARAM[font]_small</font>
-                            <label>$INFO[ListItem.Label]</label>
-                        </control>
-                    </control>
-                </itemlayout>
-                <focusedlayout height="item_list_height" width="900" condition="!$PARAM[icononly]">
-                    <include condition="$PARAM[focusbutton]">Home_Menu_FocusButton</include>
-                    <control type="image">
-                        <texture colordiffuse="$VAR[ColorHighlight]">common/white.png</texture>
-                    </control>
-                    <control type="group">
-                        <left>450</left>
-                        <control type="image">
-                            <texture colordiffuse="$VAR[ColorHighlight3]">common/white-gradient.png</texture>
-                        </control>
-                        <control type="image">
-                            <right>20</right>
-                            <width>item_list_height</width>
-                            <height>item_list_height</height>
-                            <bordersize>8</bordersize>
-                            <texture background="true" colordiffuse="Selected">$INFO[ListItem.Icon]</texture>
-                        </control>
-                        <control type="label">
-                            <bottom>2</bottom>
-                            <right>120</right>
-                            <align>right</align>
-                            <aligny>center</aligny>
-                            <textcolor>Selected</textcolor>
-                            <font>$PARAM[font]</font>
-                            <label>$INFO[ListItem.Label]</label>
-                        </control>
-                    </control>
-                </focusedlayout>
-                <itemlayout height="item_list_height" width="610" condition="$PARAM[icononly]">
-                    <control type="group">
-                        <left>450</left>
                         <control type="image">
                             <right>40</right>
                             <width>item_list_height</width>
@@ -458,13 +408,12 @@
                         </control>
                     </control>
                 </itemlayout>
-                <focusedlayout height="item_list_height" width="610" condition="$PARAM[icononly]">
+                <focusedlayout height="item_list_height" width="160">
                     <include condition="$PARAM[focusbutton]">Home_Menu_FocusButton</include>
                     <control type="image">
                         <texture colordiffuse="$VAR[ColorHighlight]">common/white.png</texture>
                     </control>
                     <control type="group">
-                        <left>450</left>
                         <control type="image">
                             <texture colordiffuse="$VAR[ColorHighlight3]">common/white-gradient.png</texture>
                         </control>
@@ -488,7 +437,7 @@
         <param name="submenu" default="true" />
         <definition>
             <include content="Viewtype_Panel">
-                <param name="width" value="450" />
+                <param name="width" value="160" />
                 <param name="background" value="false" />
                 <param name="logohastext" value="false" />
                 <control type="group">
