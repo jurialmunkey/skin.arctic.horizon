@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Foundation -->
+<window id="107">
+    <controls>
+        <control type="group">
+            <visible>!Window.IsVisible(Startup.xml)</visible>
+            <visible>!Window.IsVisible(DialogBusy.xml)</visible>
+            <visible>!Window.IsVisible(DialogVolumeBar.xml)</visible>
+            <control type="group">
+                <include content="Dialog_Notification_Group" condition="![Window.IsVisible(SkinSettings.xml) | Window.IsVisible(SettingsCategory.xml) | Window.IsVisible(SettingsProfile.xml) | Window.IsVisible(SettingsSystemInfo.xml)]">
+                    <param name="main_id" value="9401" />
+                    <param name="sub_id" value="9402" />
+                    <param name="label" value="$INFO[Control.GetLabel(401)]" />
+                    <param name="label2" value="$INFO[Control.GetLabel(402)]" />
+                </include>
+                <include content="Dialog_Notification_Group" condition="[Window.IsVisible(SkinSettings.xml) | Window.IsVisible(SettingsCategory.xml) | Window.IsVisible(SettingsProfile.xml) | Window.IsVisible(SettingsSystemInfo.xml)]">
+                    <param name="main_id" value="9401" />
+                    <param name="sub_id" value="9402" />
+                    <param name="label" value="$INFO[Control.GetLabel(401)]" />
+                    <param name="label2" value="$INFO[Control.GetLabel(402)]" />
+                    <param name="fgcolor" value="panel_fg" />
+                </include>
+            </control>
+        </control>
+
+        <control type="label" id="401">
+            <include>Defs_Hidden_Button</include>
+        </control>
+        <control type="label" id="402">
+            <include>Defs_Hidden_Button</include>
+        </control>
+    </controls>
+</window>

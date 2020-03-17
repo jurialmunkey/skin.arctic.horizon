@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Foundation -->
+<window id="129">
+    <defaultcontrol always="true">10</defaultcontrol>
+
+
+    <controls>
+
+        <include>Global_Overlay</include>
+
+        <control type="group">
+            <include content="Dialog_Standard_Group">
+                <param name="width" value="1336" />
+                <param name="height" value="940" />
+            </include>
+            <control type="label" id="2">
+                <include>Dialog_Standard_Header</include>
+            </control>
+
+            <include content="Dialog_Standard_List">
+                <param name="id" value="10" />
+                <param name="list_style" value="Dialog_Standard_List_Itemlayout_Simple" />
+                <param name="left_pad" value="10" />
+                <param name="checkmark" value="false" />
+                <param name="ondown" value="12" />
+                <param name="onright" value="8000" />
+            </include>
+
+            <control type="group">
+                <bottom>236</bottom>
+                <include>Dialog_Separator_Right</include>
+            </control>
+            <control type="group">
+                <include>Dialog_Standard_Right_Group</include>
+                <control type="grouplist" id="8000">
+                    <onleft>10</onleft>
+                    <ondown>12</ondown>
+                    <orientation>vertical</orientation>
+                    <itemgap>0</itemgap>
+                    <control type="button" id="11">
+                    <description>Browse</description>
+                        <label>1024</label>
+                        <include>Dialog_Standard_Right_Buttons</include>
+                    </control>
+                    <control type="button" id="13">
+                        <description>Add</description>
+                        <label>15019</label>
+                        <include>Dialog_Standard_Right_Buttons</include>
+                    </control>
+                    <control type="button" id="14">
+                        <description>Remove</description>
+                        <label>1210</label>
+                        <include>Dialog_Standard_Right_Buttons</include>
+                    </control>
+                </control>
+            </control>
+
+            <control type="grouplist">
+                <bottom>dialog_pad</bottom>
+                <left>dialog_pad</left>
+                <right>dialog_pad</right>
+                <orientation>vertical</orientation>
+                <itemgap>dialog_pad</itemgap>
+                <align>bottom</align>
+                <onup>10</onup>
+                <control type="edit" id="12">
+                    <description>Name</description>
+                    <top>672</top>
+                    <label/>
+                    <align>left</align>
+                    <textoffsetx>30</textoffsetx>
+                    <onup>10</onup>
+                    <onleft>12</onleft>
+                    <onright>18</onright>
+                    <ondown>9000</ondown>
+                    <texturenofocus colordiffuse="dialog_fg_12" border="5">common/box.png</texturenofocus>
+                    <include>Dialog_Standard_Right_Buttons</include>
+                </control>
+                <control type="grouplist" id="9000">
+                    <onup>12</onup>
+                    <height>item_list_height</height>
+                    <align>center</align>
+                    <orientation>horizontal</orientation>
+                    <itemgap>dialog_pad</itemgap>
+                    <control type="button" id="18">
+                        <label>186</label>
+                        <width>312</width>
+                        <texturenofocus colordiffuse="dialog_fg_12" border="5">common/box.png</texturenofocus>
+                        <include>Dialog_Standard_Right_Buttons</include>
+                    </control>
+                    <control type="button" id="19">
+                        <label>222</label>
+                        <width>312</width>
+                        <texturenofocus colordiffuse="dialog_fg_12" border="5">common/box.png</texturenofocus>
+                        <include>Dialog_Standard_Right_Buttons</include>
+                    </control>
+                </control>
+            </control>
+
+            
+        </control>
+    </controls>
+
+</window>

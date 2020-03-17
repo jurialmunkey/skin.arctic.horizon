@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+    
+    <include name="Weather">
+        <control type="group">
+            <nested />
+            <control type="grouplist">
+                <itemgap>0</itemgap>
+                <width>750</width>
+                <usecontrolcoords>true</usecontrolcoords>
+                <orientation>vertical</orientation>
+                <control type="label">
+                    <top>-15</top>
+                    <width>auto</width>
+                    <label>$INFO[Weather.Location]</label>
+                    <aligny>top</aligny>
+                    <height>72</height>
+                    <textcolor>main_fg_100</textcolor>
+                    <font>font_title_large</font>
+                </control>
+                <control type="label">
+                    <height>85</height>
+                    <width>auto</width>
+                    <label>$INFO[Window(Weather).Property(WeatherProvider)]</label>
+                    <aligny>top</aligny>
+                    <textcolor>main_fg_100</textcolor>
+                    <font>font_small</font>
+                </control>
+                <include content="Weather_IconCurrent">
+                    <width>240</width>
+                    <height>240</height>
+                    <control type="label">
+                        <top>0</top>
+                        <left>320</left>
+                        <aligny>center</aligny>
+                        <align>left</align>
+                        <font>font_weather_currenttemp</font>
+                        <textcolor>main_fg_90</textcolor>
+                        <label fallback="N/A">$INFO[Window(Weather).Property(Current.Temperature),[B],[/B]°]</label>
+                    </control>
+                </include>
+                <control type="label">
+                    <top>40</top>
+                    <height>35</height>
+                    <width>auto</width>
+                    <label>$INFO[System.Date]</label>
+                    <aligny>top</aligny>
+                    <textcolor>main_fg_100</textcolor>
+                    <font>font_tiny_bold</font>
+                </control>
+                <control type="label">
+                    <height>60</height>
+                    <width>auto</width>
+                    <label>Weekly Forecast</label>
+                    <aligny>top</aligny>
+                    <textcolor>main_fg_70</textcolor>
+                    <font>font_tiny</font>
+                </control>
+            </control>
+            <control type="grouplist">
+                <top>170</top>
+                <left>720</left>
+                <width>1100</width>
+                <itemgap>0</itemgap>
+                <usecontrolcoords>true</usecontrolcoords>
+                <orientation>vertical</orientation>
+                <visible>!Control.HasFocus(302)</visible>
+                <include>Animation_FadeInOut</include>
+                <control type="label">
+                    <width>auto</width>
+                    <label>Current Conditions</label>
+                    <aligny>top</aligny>
+                    <align>left</align>
+                    <height>45</height>
+                    <textcolor>main_fg_90</textcolor>
+                    <font>font_title_small</font>
+                </control>
+                <control type="label">
+                    <width>auto</width>
+                    <label>$INFO[Window(Weather).Property(Day0.HighTemp),[COLOR=main_fg_70]High ,°[/COLOR]]$INFO[Window(Weather).Property(Day0.LowTemp),  |  [COLOR=main_fg_70]Low ,°[/COLOR]]$INFO[Window(Weather).Property(Current.FeelsLike),  |  [COLOR=main_fg_70]Feels Like ,°[/COLOR]]$INFO[Window(Weather).Property(Current.DewPoint),  |  [COLOR=main_fg_70]Dew Point ,°[/COLOR]]$INFO[Window(Weather).Property(Current.Humidity),  |  [COLOR=main_fg_70]Humidity ,[/COLOR]]</label>
+                    <aligny>top</aligny>
+                    <align>left</align>
+                    <height>60</height>
+                    <textcolor>$VAR[ColorHighlight]</textcolor>
+                    <font>font_small</font>
+                </control>
+                <control type="label">
+                    <width>auto</width>
+                    <label>$INFO[Weather.Conditions]$INFO[Window(Weather).Property(Current.Wind),$COMMA Wind ,]$INFO[Window(Weather).Property(Current.RainSince9),$COMMA ,mm of Rain]</label>
+                    <align>left</align>
+                    <aligny>top</aligny>
+                    <height>35</height>
+                    <textcolor>main_fg_100</textcolor>
+                    <font>font_small_bold</font>
+                </control>
+                <control type="label">
+                    <width>auto</width>
+                    <label>$VAR[Weather_Sunrise,[COLOR=main_fg_70]Sunrise ,[/COLOR]]$VAR[Weather_Sunset,  |  [COLOR=main_fg_70]Sunset ,[/COLOR]]$INFO[Window(Weather).Property(Current.UVIndex),  |  [COLOR=main_fg_70]UV Index ,[/COLOR]]</label>
+                    <aligny>top</aligny>
+                    <align>left</align>
+                    <height>45</height>
+                    <textcolor>$VAR[ColorHighlight]</textcolor>
+                    <font>font_small</font>
+                </control>
+            </control>
+            <control type="grouplist">
+                <bottom>0</bottom>
+                <left>-65</left>
+                <height>270</height>
+                <orientation>horizontal</orientation>
+                <itemgap>0</itemgap>
+                <include content="Weather_DailyForecast">
+                    <param name="day" value="Day0" />
+                    <param name="label" value="Today" />
+                </include>
+                <include content="Weather_DailyForecast">
+                    <param name="day" value="Day1" />
+                    <param name="label" value="$INFO[Window(Weather).Property(Day1.Title)]" />
+                    <animation effect="slide" end="22" time="300" tween="quadratic" condition="Control.HasFocus(301) | Control.HasFocus(302) | Control.HasFocus(303)">Conditional</animation>
+                </include>
+                <include content="Weather_DailyForecast">
+                    <param name="day" value="Day2" />
+                    <param name="label" value="$INFO[Window(Weather).Property(Day2.Title)]" />
+                    <animation effect="slide" end="44" time="300" tween="quadratic" condition="Control.HasFocus(301) | Control.HasFocus(302) | Control.HasFocus(303)">Conditional</animation>
+                </include>
+                <include content="Weather_DailyForecast">
+                    <param name="day" value="Day3" />
+                    <param name="label" value="$INFO[Window(Weather).Property(Day3.Title)]" />
+                    <animation effect="slide" end="66" time="300" tween="quadratic" condition="Control.HasFocus(301) | Control.HasFocus(302) | Control.HasFocus(303)">Conditional</animation>
+                </include>
+                <include content="Weather_DailyForecast">
+                    <param name="day" value="Day4" />
+                    <param name="label" value="$INFO[Window(Weather).Property(Day4.Title)]" />
+                    <animation effect="slide" end="88" time="300" tween="quadratic" condition="Control.HasFocus(301) | Control.HasFocus(302) | Control.HasFocus(303)">Conditional</animation>
+                </include>
+                <include content="Weather_DailyForecast">
+                    <param name="day" value="Day5" />
+                    <param name="label" value="$INFO[Window(Weather).Property(Day5.Title)]" />
+                    <animation effect="slide" end="110" time="300" tween="quadratic" condition="Control.HasFocus(301) | Control.HasFocus(302) | Control.HasFocus(303)">Conditional</animation>
+                </include>
+                <include content="Weather_DailyForecast">
+                    <param name="day" value="Day6" />
+                    <param name="label" value="$INFO[Window(Weather).Property(Day6.Title)]" />
+                    <animation effect="slide" end="132" time="300" tween="quadratic" condition="Control.HasFocus(301) | Control.HasFocus(302) | Control.HasFocus(303)">Conditional</animation>
+                </include>
+            </control>
+        </control>
+    </include>
+
+    <include name="Weather_IconCurrent">
+        <control type="group">
+            <nested />
+            <control type="image">
+                <aspectratio align="center" aligny="center">keep</aspectratio>
+                <texture>$INFO[Window(weather).Property(Current.ConditionIcon)]</texture>
+                <visible>[String.IsEmpty(Skin.String(weather.icons.path)) | String.Contains(Skin.String(weather.icons.path),Default)]</visible>
+            </control>
+            <control type="image">
+                <aspectratio align="center" aligny="center">keep</aspectratio>
+                <texture colordiffuse="main_fg_90">$INFO[Skin.String(weather.icons.path),,/]$INFO[Window(weather).Property(Current.FanartCode),,.png]</texture>
+                <visible>![String.IsEmpty(Skin.String(weather.icons.path)) | String.Contains(Skin.String(weather.icons.path),Default)] + !String.Contains(Skin.String(weather.icons.path),animated)</visible>
+            </control>
+            <control type="multiimage">
+                <timeperimage>50</timeperimage>
+                <aspectratio align="center" aligny="center">keep</aspectratio>
+                <fadetime>10</fadetime>
+                <imagepath>$INFO[Skin.String(weather.icons.path),,/]$INFO[Window(weather).Property(Current.FanartCode)]</imagepath>
+                <visible>![String.IsEmpty(Skin.String(weather.icons.path)) | String.Contains(Skin.String(weather.icons.path),Default)] + String.Contains(Skin.String(weather.icons.path),animated)</visible>
+            </control>
+        </control>
+    </include>
+
+    <include name="Weather_DailyForecast">
+        <control type="group">
+            <width>270</width>
+            <nested />
+            <control type="image">
+                <centerleft>50%</centerleft>
+                <top>10</top>
+                <height>160</height>
+                <width>160</width>
+                <aspectratio align="center" aligny="center">keep</aspectratio>
+                <texture>$INFO[Window(weather).Property($PARAM[day].OutlookIcon)]</texture>
+                <visible>[String.IsEmpty(Skin.String(weather.icons.path)) | String.Contains(Skin.String(weather.icons.path),Default)]</visible>
+            </control>
+            <control type="image">
+                <centerleft>50%</centerleft>
+                <top>10</top>
+                <height>160</height>
+                <width>160</width>
+                <aspectratio align="center" aligny="center">keep</aspectratio>
+                <texture colordiffuse="main_fg_90">$INFO[Skin.String(weather.icons.path),,/]$INFO[Window(weather).Property($PARAM[day].FanartCode),,.png]</texture>
+                <visible>![String.IsEmpty(Skin.String(weather.icons.path)) | String.Contains(Skin.String(weather.icons.path),Default)] + !String.Contains(Skin.String(weather.icons.path),animated)</visible>
+            </control>
+            <control type="multiimage">
+                <centerleft>50%</centerleft>
+                <top>10</top>
+                <height>160</height>
+                <width>160</width>
+                <timeperimage>50</timeperimage>
+                <aspectratio align="center" aligny="center">keep</aspectratio>
+                <fadetime>10</fadetime>
+                <imagepath>$INFO[Skin.String(weather.icons.path),,/]$INFO[Window(weather).Property($PARAM[day].FanartCode)]</imagepath>
+                <visible>![String.IsEmpty(Skin.String(weather.icons.path)) | String.Contains(Skin.String(weather.icons.path),Default)] + String.Contains(Skin.String(weather.icons.path),animated)</visible>
+            </control>
+            <control type="label">
+                <bottom>0</bottom>
+                <height>32</height>
+                <left>20</left>
+                <right>20</right>
+                <align>center</align>
+                <font>font_plotbox</font>
+                <textcolor>main_fg_70</textcolor>
+                <label fallback="N/A">$PARAM[label]</label>
+            </control>
+            <control type="label">
+                <top>140</top>
+                <left>0</left>
+                <right>0</right>
+                <align>center</align>
+                <font>font_weather_bold</font>
+                <textcolor>main_fg_90</textcolor>
+                <label fallback="N/A"> $INFO[Window(Weather).Property($PARAM[day].HighTemp),[B],[/B]°]$INFO[Window(Weather).Property($PARAM[day].LowTemp), ,°]</label>
+            </control>
+        </control>
+    </include>
+
+    <variable name="Weather_Sunrise">
+        <value condition="!String.IsEmpty(Window(Weather).Property(Current.Sunrise))">$INFO[Window(Weather).Property(Current.Sunrise)]</value>
+        <value condition="!String.IsEmpty(Window(Weather).Property(Today.Sunrise))">$INFO[Window(Weather).Property(Today.Sunrise)]</value>
+    </variable>
+
+    <variable name="Weather_Sunset">
+        <value condition="!String.IsEmpty(Window(Weather).Property(Current.Sunset))">$INFO[Window(Weather).Property(Current.Sunset)]</value>
+        <value condition="!String.IsEmpty(Window(Weather).Property(Today.Sunset))">$INFO[Window(Weather).Property(Today.Sunset)]</value>
+    </variable>
+
+    <variable name="Weather_LowTemp">
+        <value condition="!String.IsEmpty(Window(Weather).Property(Current.LowTemp))">$INFO[Window(Weather).Property(Current.LowTemp),,°]</value>
+        <value condition="!String.IsEmpty(Window(Weather).Property(Day0.LowTemp))">$INFO[Window(Weather).Property(Day0.LowTemp),,°]</value>
+    </variable>
+    <variable name="Weather_HighTemp">
+        <value condition="!String.IsEmpty(Window(Weather).Property(Current.HighTemp))">$INFO[Window(Weather).Property(Current.HighTemp),,°]</value>
+        <value condition="!String.IsEmpty(Window(Weather).Property(Day0.HighTemp))">$INFO[Window(Weather).Property(Day0.HighTemp),,°]</value>
+    </variable>
+
+    <variable name="Weather_UVIndex_Label">
+        <value condition="!String.IsEmpty(Window(Weather).Property(Current.UVIndex))">$LOCALIZE[403]</value>
+        <value condition="!String.IsEmpty(Window(Weather).Property(Current.Precipitation))">$INFO[Window(Weather).Property(Current.Precipitation),$LOCALIZE[1448] ,]</value>
+    </variable>
+
+    <variable name="Weather_UVIndex_Info">
+        <value condition="!String.IsEmpty(Window(Weather).Property(Current.UVIndex))">$INFO[Window(Weather).Property(Current.UVIndex)]</value>
+        <value condition="!String.IsEmpty(Window(Weather).Property(Current.Cloudiness))">$INFO[Window(Weather).Property(Current.Cloudiness),$LOCALIZE[31068] ,]</value>
+    </variable>
+</includes>

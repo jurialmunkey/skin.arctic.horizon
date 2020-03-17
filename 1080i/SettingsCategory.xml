@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Foundation -->
+<window id="12">
+    <defaultcontrol always="true">300</defaultcontrol>
+    <include>Defs_Settings_OnLoad</include>
+    <onunload condition="!Skin.HasSetting(startup.init)">Skin.SetBool(startup.init)</onunload>
+    <controls>
+
+        <include>Global_Background</include>
+        <include>Defs_Settings_Background</include>
+        
+        
+        <control type="group">
+            <include>Dialog_Settings_Group</include>
+    
+            <include content="Defs_Settings_Changer">
+                <onright>3</onright>
+            </include>
+
+            
+
+            <control type="group">
+                <left>item_list_height</left>
+                <!-- Left Gradient Fade -->
+                <include content="Defs_Settings_Gradient">
+                    <param name="id" value="3" />
+                    <top>item_list_height_half</top>
+                    <height>item_list_height</height>
+                    <width>dialog_side_grouplist</width>
+                    <visible>!Control.HasFocus(300) + !Control.HasFocus(20)</visible>
+                </include>
+                <!-- Right Gradient -->
+                <include content="Defs_Settings_Gradient">
+                    <param name="id" value="5" />
+                    <top>item_list_height_half</top>
+                    <height>item_list_height</height>
+                    <left>dialog_side_grouplist</left>
+                    <right>0</right>
+                    <visible>ControlGroup(5).HasFocus()</visible>
+                </include>
+                <!-- Expert Settings Button -->
+                <control type="group">
+                    <top>item_list_height_half</top>
+                    <control type="group">
+                        <top>dialog_settings_grouplist_height</top>
+                        <height>item_list_height</height>
+                        <width>dialog_side_grouplist</width>
+                        <visible>Control.HasFocus(20)</visible>
+                        <control type="image">
+                            <texture colordiffuse="$VAR[ColorHighlight]">common/white.png</texture>
+                        </control>
+                        <control type="image">
+                            <texture colordiffuse="$VAR[ColorHighlight3]">common/white-gradient.png</texture>
+                        </control>
+                    </control>
+                </control>
+                <control type="grouplist" id="3">
+                    <description>button area</description>
+                    <left>0</left>
+                    <top>item_list_height_half</top>
+                    <width>dialog_side_grouplist</width>
+                    <height>dialog_settings_grouplist_height</height>
+                    <itemgap>0</itemgap>
+                    <onright>5</onright>
+                    <ondown>20</ondown>
+                    <include>Defs_Settings_OnLeft</include>
+                </control>
+
+                
+                <control type="button" id="20">
+                    <width>dialog_side_grouplist</width>
+                    <bottom>item_list_height_half</bottom>
+                    <textoffsetx>77</textoffsetx>
+                    <onup>3</onup>
+                    <textcolor>dialog_fg_30</textcolor>
+                    <font>font_statusbar</font>
+                    <onclick>SettingsLevelChange</onclick>
+                    <focusedcolor>Selected</focusedcolor>
+                    <!-- <texturefocus colordiffuse="$VAR[ColorHighlight]">common/white.png</texturefocus> -->
+                    <include>Defs_Settings_Button</include>
+                </control>
+                <control type="image">
+                    <left>15</left>
+                    <bottom>item_list_height_half</bottom>
+                    <height>item_list_height</height>
+                    <width>52</width>
+                    <aspectratio aligny="center">keep</aspectratio>
+                    <texture colordiffuse="dialog_fg_30">osd/settings.png</texture>
+                    <visible>!Control.HasFocus(20)</visible>
+                </control>
+                <control type="image">
+                    <left>15</left>
+                    <bottom>item_list_height_half</bottom>
+                    <height>item_list_height</height>
+                    <width>52</width>
+                    <aspectratio aligny="center">keep</aspectratio>
+                    <texture colordiffuse="Selected">osd/settings.png</texture>
+                    <visible>Control.HasFocus(20)</visible>
+                </control>
+
+                
+                <control type="grouplist" id="5">
+                    <description>control area</description>
+                    <left>dialog_side_grouplist</left>
+                    <top>item_list_height_half</top>
+                    <right>0</right>
+                    <height>dialog_settings_grouplist_height</height>
+                    <itemgap>0</itemgap>
+                    <onleft>3</onleft>
+                    <pagecontrol>61</pagecontrol>
+                    <usecontrolcoords>true</usecontrolcoords>
+                </control>
+
+                <include content="Dialog_Separator">
+                    <param name="top" value="item_list_height_half" />
+                    <param name="bottom" value="item_list_height_half" />
+                </include>
+            </control>
+
+            <include content="Dialog_Separator">
+                <param name="top" value="item_list_height_half" />
+                <param name="bottom" value="item_list_height_half" />
+                <param name="left" value="item_list_height" />
+            </include>
+        </control>
+
+        <include>Object_Settings_Info</include>
+     
+        <control type="button" id="7">
+            <description>Default Button</description>
+            <include>Defs_Settings_Button</include>
+        </control>
+
+        <control type="radiobutton" id="8">
+            <description>Default Radio Button</description>
+            <include>Defs_Settings_Button</include>
+        </control>
+
+        <control type="spincontrolex" id="9">
+            <description>Default Spin Control</description>
+            <include>Defs_Settings_Button</include>
+        </control>
+
+        <control type="togglebutton" id="10">
+            <width>450</width>
+            <description>Default Category Button</description>
+            <include>Defs_Settings_Button</include>
+        </control>
+
+        <control type="label" id="14">
+            <include>Dialog_Standard_HintLabel</include>
+        </control>
+
+    </controls>
+
+</window>

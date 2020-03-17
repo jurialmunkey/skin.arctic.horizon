@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+    <defaultcontrol always="true">9000</defaultcontrol>
+
+    <controls>
+
+        <include content="Object_ShadowSpot_Group">
+            <param name="width" value="800" />
+            <param name="height" value="450" />
+            <visible>!VideoPlayer.Content(livetv)</visible>
+            <include content="Object_ShadowSpot_Grouplist">
+                <include content="Object_ShadowSpot_Label">
+                    <param name="label" value="Player Process Info" />
+                    <param name="font" value="font_small_bold" />
+                    <param name="textcolor" value="panel_fg_100" />
+                    <param name="height" value="50" />
+                    <param name="top" value="-10" />
+                </include>
+                <include content="Object_ShadowSpot_Label">
+                    <param name="label" value="$INFO[Player.Process(videodecoder),[COLOR panel_fg_100]$LOCALIZE[31279]:[/COLOR] ]$VAR[Label_VideoHWDecoder, (,)]" />
+                </include>
+                <include content="Object_ShadowSpot_Label">
+                    <param name="label" value="$INFO[Player.Process(pixformat),[COLOR panel_fg_100]$LOCALIZE[31280]:[/COLOR] ]" />
+                </include>
+                <include content="Object_ShadowSpot_Label">
+                    <param name="label" value="$INFO[Player.Process(deintmethod),[COLOR panel_fg_100]$LOCALIZE[16038]:[/COLOR] ]" />
+                </include>
+                <include content="Object_ShadowSpot_Label">
+                    <param name="label" value="$INFO[Player.Process(videowidth),[COLOR panel_fg_100]$LOCALIZE[38031]:[/COLOR] ,x]$INFO[Player.Process(videoheight),, px]$INFO[Player.Process(videodar),$COMMA , AR]$INFO[Player.Process(videofps),$COMMA , FPS]" />
+                </include>
+                <include content="Object_ShadowSpot_Label">
+                    <param name="label" value="[COLOR panel_fg_100]$LOCALIZE[460]:[/COLOR] $INFO[Player.Process(audiochannels),,$COMMA ]$INFO[Player.Process(audiodecoder)]$INFO[Player.Process(audiobitspersample),$COMMA , bits]$INFO[Player.Process(audiosamplerate),$COMMA , Hz]" />
+                </include>
+            </include>
+        </include>
+
+        <include content="Object_ShadowSpot_Group">
+            <param name="width" value="800" />
+            <param name="height" value="1080" />
+            <visible>VideoPlayer.Content(livetv)</visible>
+            <include content="Object_ShadowSpot_Grouplist">
+                <include content="Object_ShadowSpot_Label">
+                    <param name="label" value="Player Process Info" />
+                    <param name="font" value="font_small_bold" />
+                    <param name="textcolor" value="panel_fg_100" />
+                    <param name="height" value="50" />
+                    <param name="top" value="-10" />
+                </include>
+                <include content="Object_ShadowSpot_Label">
+                    <param name="label" value="$INFO[Player.Process(videodecoder),[COLOR panel_fg_100]$LOCALIZE[31279]:[/COLOR] ]$VAR[Label_VideoHWDecoder, (,)]" />
+                </include>
+                <include content="Object_ShadowSpot_Label">
+                    <param name="label" value="$INFO[Player.Process(pixformat),[COLOR panel_fg_100]$LOCALIZE[31280]:[/COLOR] ]" />
+                </include>
+                <include content="Object_ShadowSpot_Label">
+                    <param name="label" value="$INFO[Player.Process(deintmethod),[COLOR panel_fg_100]$LOCALIZE[16038]:[/COLOR] ]" />
+                </include>
+                <include content="Object_ShadowSpot_Label">
+                    <param name="label" value="$INFO[Player.Process(videowidth),[COLOR panel_fg_100]$LOCALIZE[38031]:[/COLOR] ,x]$INFO[Player.Process(videoheight),, px]$INFO[Player.Process(videodar),$COMMA , AR]$INFO[Player.Process(videofps),$COMMA , FPS]" />
+                </include>
+                <include content="Object_ShadowSpot_Label">
+                    <param name="label" value="[COLOR panel_fg_100]$LOCALIZE[460]:[/COLOR] $INFO[Player.Process(audiochannels),,$COMMA ]$INFO[Player.Process(audiodecoder)]$INFO[Player.Process(audiobitspersample),$COMMA , bits]$INFO[Player.Process(audiosamplerate),$COMMA , Hz]" />
+                </include>
+                <include content="Object_ShadowSpot_Label">
+                    <param name="label" value="PVR Stream" />
+                    <param name="font" value="font_small_bold" />
+                    <param name="textcolor" value="panel_fg_100" />
+                    <param name="height" value="50" />
+                    <param name="top" value="50" />
+                </include>
+                <include content="Object_ShadowSpot_Label">
+                    <param name="label" value="$INFO[System.CpuUsage,[COLOR panel_fg_100]$LOCALIZE[13271][/COLOR] ,       ]$INFO[System.Memory(used.percent),[COLOR panel_fg_100]RAM:[/COLOR] ,]" />
+                </include>
+                <include content="Object_ShadowSpot_Label">
+                    <param name="label" value="$INFO[PVR.ActStreamServiceName,[COLOR panel_fg_100]$LOCALIZE[19099]:[/COLOR] ]" />
+                </include>
+                <include content="Object_ShadowSpot_Label">
+                    <param name="label" value="$INFO[PVR.ActStreamProviderName,[COLOR panel_fg_100]$LOCALIZE[19101]:[/COLOR] ]" />
+                </include>
+                <include content="Object_ShadowSpot_Label">
+                    <param name="label" value="$INFO[PVR.ActStreamClient,[COLOR panel_fg_100]$LOCALIZE[19012]:[/COLOR] ]" />
+                </include>
+                <include content="Object_ShadowSpot_Label">
+                    <param name="label" value="$INFO[PVR.ActStreamDevice,[COLOR panel_fg_100]$LOCALIZE[19006]:[/COLOR] ]" />
+                </include>
+                <include content="Object_ShadowSpot_Label">
+                    <param name="label" value="$INFO[PVR.ActStreamStatus,[COLOR panel_fg_100]$LOCALIZE[19007]:[/COLOR] ]" />
+                </include>
+                <include content="Object_ShadowSpot_Label">
+                    <param name="label" value="$INFO[PVR.ActStreamEncryptionName,[COLOR panel_fg_100]$LOCALIZE[19015]:[/COLOR] ]" />
+                </include>
+                <include content="Object_ShadowSpot_Label">
+                    <param name="label" value="$INFO[PVR.ActStreamBer,[COLOR panel_fg_100]$LOCALIZE[19010]:[/COLOR] ]" />
+                </include>
+                <include content="Object_ShadowSpot_Label">
+                    <param name="label" value="$INFO[PVR.ActStreamUnc,[COLOR panel_fg_100]$LOCALIZE[19011]:[/COLOR] ]" />
+                </include>
+                <include content="Object_ShadowSpot_Label">
+                    <param name="label" value="$INFO[PVR.ActStreamMux,[COLOR panel_fg_100]$LOCALIZE[19100]:[/COLOR] ]" />
+                </include>
+                <include content="Object_ShadowSpot_Label">
+                    <param name="top" value="30" />
+                    <param name="label" value="$INFO[PVR.ActStreamSignal,[COLOR panel_fg_100]$LOCALIZE[19008]:[/COLOR] ]" />
+                </include>
+                <control type="group">
+                    <height>40</height>
+                    <control type="progress">
+                        <top>5</top>
+                        <width>66%</width>
+                        <height>10</height>
+                        <info>PVR.ActStreamProgrSignal</info>
+                    </control>
+                </control>
+                <include content="Object_ShadowSpot_Label">
+                    <param name="top" value="15" />
+                    <param name="label" value="$INFO[PVR.ActStreamSNR,[COLOR panel_fg_100]$LOCALIZE[19009]:[/COLOR] ]" />
+                </include>
+                <control type="group">
+                    <height>40</height>
+                    <control type="progress">
+                        <top>5</top>
+                        <width>66%</width>
+                        <height>10</height>
+                        <info>PVR.ActStreamProgrSNR</info>
+                    </control>
+                </control>
+            </include>
+        </include>
+
+
+        <control type="group">
+            <include>Animation_FadeIn</include>
+            <include>Animation_FadeOut</include>
+            <top>0</top>
+            <width>1920</width>
+            <height>420</height>
+
+            <control type="button" id="9000">
+                <visible allowhiddenfocus="true">false</visible>
+                <onclick>Close</onclick>
+                <onleft>Close</onleft>
+                <onright>Close</onright>
+                <onup>Close</onup>
+                <ondown>Close</ondown>
+            </control>
+
+            
+
+        </control>
+
+    </controls>
+
+</window>

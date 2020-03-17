@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Foundation -->
+<window id="147">
+    <defaultcontrol>61</defaultcontrol>
+
+    <controls>
+
+        <include>Global_Overlay</include>
+
+        <control type="group">
+            <height>500</height>
+            <include>Dialog_Standard_Group</include>
+
+            <!-- Header -->
+            <control type="label" id="1">
+                <include>Dialog_Standard_Header</include>
+                <label>13406</label>
+            </control>
+
+            <control type="textbox" id="5">
+                <description>textarea</description>
+                <left>30</left>
+                <right>30</right>
+                <top>110</top>
+                <font>font_plotbox</font>
+                <height>360</height>
+                <align>left</align>
+            </control>
+
+            <control type="scrollbar" id="61">
+                <right>30</right>
+                <top>110</top>
+                <width>8</width>
+                <height>350</height>
+                <onleft>Close</onleft>
+                <onright>Close</onright>
+                <ondown>61</ondown>
+                <onup>61</onup>
+                <showonepage>true</showonepage>
+                <texturesliderbackground colordiffuse="00ffffff">common/white.png</texturesliderbackground>
+                <texturesliderbar colordiffuse="00ffffff">common/white.png</texturesliderbar>
+                <texturesliderbarfocus colordiffuse="00ffffff">common/white.png</texturesliderbarfocus>
+            </control>
+
+        </control>
+
+    </controls>
+
+</window>

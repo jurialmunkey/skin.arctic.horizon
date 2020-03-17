@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window type="window">
+    <defaultcontrol always="true">570</defaultcontrol>
+    <views>570</views>
+    <controls>
+        <include>Global_Background</include>
+        <include>Defs_Settings_Background</include>
+        <control type="group">
+            <include>Dialog_Settings_Group</include>
+            <control type="label">
+                <include>Dialog_Standard_Header</include>
+                <label>$LOCALIZE[14111]</label>
+            </control>
+
+            <include content="Dialog_Standard_List">
+                <param name="id" value="570" />
+                <param name="itemheight" value="item_biglist_height" />
+                <param name="list_style" value="Dialog_Standard_List_Itemlayout_Complex" />
+                <param name="width" value="1360" />
+                <param name="onup" value="570" />
+                <param name="ondown" value="570" />
+                <param name="onright" value="9001" />
+                <param name="onleft" value="9001" />
+            </include>
+
+            <!-- Buttons -->
+            <control type="grouplist" id="9001">
+                <include>Dialog_Standard_Right_Group</include>
+                <onleft>570</onleft>
+                <onright>570</onright>
+                <control type="button" id="9002">
+                    <label>$LOCALIZE[15067]</label>
+                    <onclick>Close</onclick>
+                    <include>Dialog_Standard_Right_Buttons</include>
+                </control>
+                <control type="togglebutton" id="4">
+                    <include>Dialog_Standard_Right_Buttons</include>
+                    <label>$LOCALIZE[31374]: $LOCALIZE[584]</label>
+                    <altlabel>$LOCALIZE[31374]: $LOCALIZE[585]</altlabel>
+                </control>
+                <control type="button" id="20">
+                    <label>$LOCALIZE[192]</label>
+                    <include>Dialog_Standard_Right_Buttons</include>
+                </control>
+                <control type="button" id="21">
+                    <include>Dialog_Standard_Right_Buttons</include>
+                </control>
+                <control type="radiobutton" id="22">
+                    <align>left</align>
+                    <textoffsetx>20</textoffsetx>
+                    <include>Dialog_Standard_Right_Buttons</include>
+                    <radioposx>290</radioposx>
+                </control>
+            </control>
+            <include>Dialog_Separator_Right</include>
+        </control>
+    </controls>
+</window>

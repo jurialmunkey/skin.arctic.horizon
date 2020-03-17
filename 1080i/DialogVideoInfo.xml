@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window id="2003">
+    <defaultcontrol always="true">300</defaultcontrol>
+    <onload>ClearProperty(FilePath,home)</onload>
+    <onload>ClearProperty(Header_Left_Text)</onload>
+    <onload>ClearProperty(Header_Center_Text)</onload>
+    <onload>ClearProperty(OSD_Menu,Home)</onload>
+    <onunload>ClearProperty(FilePath,home)</onunload>
+    <onunload>ClearProperty(OSD_Menu,Home)</onunload>
+    <onload>SetProperty(TMDBHelper.Info.OriginalPath,$INFO[ListItem.FolderPath],Home)</onload>
+    <controls>
+
+        <!-- Main Group -->
+        <include condition="!String.IsEqual(ListItem.DBType,musicvideo) + !String.Contains(ListItem.FolderPath,type=person)">DialogVideoInfo</include>
+        <include condition="String.IsEqual(ListItem.DBType,musicvideo)">DialogMusicInfo</include>
+        <include condition="!String.IsEqual(ListItem.DBType,musicvideo) + String.Contains(ListItem.FolderPath,type=person)">DialogPersonInfo</include>
+
+
+        <control type="group">
+            <visible>Control.HasFocus(3600)</visible>
+            <include>Animation_FadeInOut</include>
+            <include>Global_Overlay</include>
+        </control>
+        <include content="OSD_Menu_List">
+            <param name="id" value="3600" />
+            <param name="osd_id" value="300" />
+            <param name="content" value="Items_Info_Manage" />
+            <param name="label" value="Manage" />
+            <param name="height" value="442" />
+        </include>
+        <control type="button" id="6">
+            <include>Defs_Hidden_Button</include>
+        </control>
+        <control type="button" id="8">
+            <include>Defs_Hidden_Button</include>
+        </control>
+        <control type="button" id="10">
+            <include>Defs_Hidden_Button</include>
+        </control>
+
+    </controls>
+</window>

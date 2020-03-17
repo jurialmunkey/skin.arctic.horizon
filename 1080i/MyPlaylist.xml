@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Foundation -->
+<window id="6">
+    <defaultcontrol always="true">50</defaultcontrol>
+    <menucontrol>300</menucontrol>
+    
+    <include>ViewIDs</include>
+    
+    <controls>
+        <include>Viewtypes</include>
+
+        <!-- <control type="list" id="300">
+            <ondown>50</ondown>
+            <include>Topbar_Menu_Layout</include>
+            <include>Items_Playlist</include>
+        </control> -->
+        <!-- Hidden Buttons -->
+        <include>Defs_Options_StandardButtons</include>
+        <control type="button" id="21">
+            <description>Save</description>
+            <label>$LOCALIZE[190]</label>
+            <include>Defs_Hidden_Button</include>
+        </control>
+        <control type="button" id="22">
+            <description>Clear</description>
+            <label>$LOCALIZE[192]</label>
+            <include>Defs_Hidden_Button</include>
+        </control>
+        <control type="button" id="23">
+            <label>$LOCALIZE[208]</label>
+            <description>Play</description>
+            <include>Defs_Hidden_Button</include>
+        </control>
+        <control type="button" id="26">
+            <description>Repeat</description>
+            <include>Defs_Hidden_Button</include>
+        </control>
+        <control type="togglebutton" id="20">
+            <description>Shuffle</description>
+            <label>$LOCALIZE[191]: $LOCALIZE[351]</label>
+            <altlabel>$LOCALIZE[191]: $LOCALIZE[16041]</altlabel>
+            <usealttexture>Playlist.IsRandom</usealttexture>
+            <include>Defs_Hidden_Button</include>
+        </control>
+    </controls>
+
+</window>

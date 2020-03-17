@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+    <defaultcontrol always="true">11</defaultcontrol>
+    <controls>
+        <control type="progress" id="9911">
+            <visible>false</visible>
+            <info>Container(11).ListItem.Progress</info>
+        </control>
+        <control type="progress" id="9912">
+            <visible>false</visible>
+            <info>Container(11).ListItem(1).Progress</info>
+        </control>
+        <control type="group">
+            <left>view_pad</left>
+            <right>view_pad</right>
+            <top>view_pad</top>
+            <bottom>view_pad</bottom>
+
+            <control type="group">
+                <left>0</left>
+                <width>227</width>
+                <height>227</height>
+                <bottom>0</bottom>
+                <control type="image">
+                    <texture colordiffuse="panel_bg" border="10">common/box.png</texture>
+                </control>
+                <control type="image">
+                    <aspectratio>keep</aspectratio>
+                    <bordersize>20</bordersize>
+                    <texture background="true">$INFO[ListItem.Icon]</texture>
+                </control>
+            </control>
+
+            <control type="wraplist" id="11">
+                <left>231</left>
+                <width>1533</width>
+                <bottom>0</bottom>
+                <height>231</height>
+                <orientation>horizontal</orientation>
+                <focusposition>0</focusposition>
+                <movement>0</movement>
+                <itemlayout width="766.5" height="231">
+                    <control type="group">
+                        <width>762.5</width>
+                        <top>4</top>
+                        <bottom>0</bottom>
+                        <control type="image">
+                            <texture colordiffuse="panel_bg" border="10">common/box.png</texture>
+                        </control>
+                        <control type="group">
+                            <left>30</left>
+                            <right>30</right>
+                            <top>25</top>
+                            <bottom>25</bottom>
+                            <control type="label">
+                                <font>font_button</font>
+                                <aligny>top</aligny>
+                                <textcolor>panel_fg_100</textcolor>
+                                <selectedcolor>panel_fg_100</selectedcolor>
+                                <label>Now Playing</label>
+                                <visible>Integer.IsGreater(Control.GetLabel(9912),0) + Integer.IsLess(Control.GetLabel(9912),100)</visible>
+                            </control>
+                            <control type="label">
+                                <font>font_button</font>
+                                <aligny>top</aligny>
+                                <textcolor>panel_fg_100</textcolor>
+                                <selectedcolor>panel_fg_100</selectedcolor>
+                                <label>$INFO[ListItem.StartDate]</label>
+                                <visible>!Integer.IsGreater(Control.GetLabel(9912),0) | !Integer.IsLess(Control.GetLabel(9912),100)</visible>
+                            </control>
+                            <control type="label">
+                                <font>font_title_small</font>
+                                <top>40</top>
+                                <aligny>top</aligny>
+                                <textcolor>panel_fg_100</textcolor>
+                                <selectedcolor>panel_fg_100</selectedcolor>
+                                <visible>!String.IsEmpty(ListItem.Title)</visible>
+                                <label>$INFO[ListItem.Title]</label>
+                            </control>
+                            <control type="label">
+                                <font>font_title_small</font>
+                                <top>40</top>
+                                <aligny>top</aligny>
+                                <textcolor>panel_fg_100</textcolor>
+                                <selectedcolor>panel_fg_100</selectedcolor>
+                                <visible>String.IsEmpty(ListItem.Title)</visible>
+                                <label>$INFO[ListItem.Label]</label>
+                            </control>
+                            <control type="progress">
+                                <top>110</top>
+                                <height>12</height>
+                                <visible>ListItem.HasEpg</visible>
+                                <info>ListItem.Progress</info>
+                                <texturebg colordiffuse="panel_fg_12" border="4">diffuse/progress-bg.png</texturebg>
+                                <visible>!Integer.IsEqual(Control.GetLabel(9912),0)</visible>
+                            </control>
+                            <control type="image">
+                                <top>110</top>
+                                <height>12</height>
+                                <visible>ListItem.HasEpg</visible>
+                                <texture colordiffuse="panel_fg_12" border="4">diffuse/progress-bg.png</texture>
+                                <visible>Integer.IsEqual(Control.GetLabel(9912),0)</visible>
+                            </control>
+                            <control type="label">
+                                <font>font_tiny</font>
+                                <top>140</top>
+                                <aligny>top</aligny>
+                                <textcolor>panel_fg_100</textcolor>
+                                <selectedcolor>panel_fg_100</selectedcolor>
+                                <label>$INFO[ListItem.Genre]</label>
+                            </control>
+                            <control type="label">
+                                <font>font_tiny</font>
+                                <top>140</top>
+                                <aligny>top</aligny>
+                                <align>right</align>
+                                <textcolor>panel_fg_100</textcolor>
+                                <selectedcolor>panel_fg_100</selectedcolor>
+                                <label>$INFO[ListItem.StartTime]$INFO[ListItem.EndTime, - ,]</label>
+                            </control>
+                        </control>
+                    </control>
+                </itemlayout>
+                <focusedlayout width="766.5" height="231">
+                    <control type="group">
+                        <width>762.5</width>
+                        <top>4</top>
+                        <bottom>0</bottom>
+                        <control type="image">
+                            <texture colordiffuse="panel_bg" border="10">common/box.png</texture>
+                        </control>
+                        <control type="group">
+                            <left>30</left>
+                            <right>30</right>
+                            <top>25</top>
+                            <bottom>25</bottom>
+                            <control type="label">
+                                <font>font_button</font>
+                                <aligny>top</aligny>
+                                <textcolor>panel_fg_100</textcolor>
+                                <selectedcolor>panel_fg_100</selectedcolor>
+                                <label>Now Playing</label>
+                                <visible>Integer.IsGreater(Control.GetLabel(9911),0) + Integer.IsLess(Control.GetLabel(9911),100)</visible>
+                            </control>
+                            <control type="label">
+                                <font>font_button</font>
+                                <aligny>top</aligny>
+                                <textcolor>panel_fg_100</textcolor>
+                                <selectedcolor>panel_fg_100</selectedcolor>
+                                <label>$INFO[ListItem.StartDate]</label>
+                                <visible>!Integer.IsGreater(Control.GetLabel(9911),0) | !Integer.IsLess(Control.GetLabel(9911),100)</visible>
+                            </control>
+                            <control type="label">
+                                <font>font_title_small</font>
+                                <top>40</top>
+                                <aligny>top</aligny>
+                                <textcolor>panel_fg_100</textcolor>
+                                <selectedcolor>panel_fg_100</selectedcolor>
+                                <visible>!String.IsEmpty(ListItem.Title)</visible>
+                                <label>$INFO[ListItem.Title]</label>
+                            </control>
+                            <control type="label">
+                                <font>font_title_small</font>
+                                <top>40</top>
+                                <aligny>top</aligny>
+                                <textcolor>panel_fg_100</textcolor>
+                                <selectedcolor>panel_fg_100</selectedcolor>
+                                <visible>String.IsEmpty(ListItem.Title)</visible>
+                                <label>$INFO[ListItem.Label]</label>
+                            </control>
+                            <control type="progress">
+                                <top>110</top>
+                                <height>12</height>
+                                <visible>ListItem.HasEpg</visible>
+                                <info>ListItem.Progress</info>
+                                <texturebg colordiffuse="panel_fg_12" border="4">diffuse/progress-bg.png</texturebg>
+                                <visible>!Integer.IsEqual(Control.GetLabel(9911),0)</visible>
+                            </control>
+                            <control type="image">
+                                <top>110</top>
+                                <height>12</height>
+                                <visible>ListItem.HasEpg</visible>
+                                <texture colordiffuse="panel_fg_12" border="4">diffuse/progress-bg.png</texture>
+                                <visible>Integer.IsEqual(Control.GetLabel(9911),0)</visible>
+                            </control>
+                            <control type="label">
+                                <font>font_tiny</font>
+                                <top>140</top>
+                                <aligny>top</aligny>
+                                <textcolor>panel_fg_100</textcolor>
+                                <selectedcolor>panel_fg_100</selectedcolor>
+                                <label>$INFO[ListItem.Genre]</label>
+                            </control>
+                            <control type="label">
+                                <font>font_tiny</font>
+                                <top>140</top>
+                                <aligny>top</aligny>
+                                <align>right</align>
+                                <textcolor>panel_fg_100</textcolor>
+                                <selectedcolor>panel_fg_100</selectedcolor>
+                                <label>$INFO[ListItem.StartTime]$INFO[ListItem.EndTime, - ,]</label>
+                            </control>
+                        </control>
+                    </control>
+                </focusedlayout>
+            </control>
+        </control>
+    </controls>
+</window>

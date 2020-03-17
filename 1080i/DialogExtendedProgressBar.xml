@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window type="dialog">
+    <onload condition="Library.IsScanningVideo + Skin.HasSetting(UpdateArt.Enabled)">SetProperty(UpdateArt,1)</onload>
+    <onunload condition="!String.IsEmpty(Window.Property(UpdateArt)) + Skin.HasSetting(UpdateArt.Enabled)">XBMC.RunScript(script.artwork.downloader,mode=custom,silent=true,landscape,clearlogo,clearart)</onunload>
+    <onunload condition="!String.IsEmpty(Window.Property(UpdateArt)) + Skin.HasSetting(UpdateArt.Enabled)">ClearProperty(UpdateArt)</onunload>
+    <controls>
+
+        <control type="group">
+            <visible>!Window.IsVisible(DialogNotification.xml)</visible>
+            <visible>!Window.IsVisible(fullscreenvideo)</visible>
+            <visible>!Window.IsVisible(visualisation)</visible>
+            <visible>!Window.IsVisible(Startup.xml)</visible>
+            <include condition="![Window.IsVisible(SkinSettings.xml) | Window.IsVisible(SettingsCategory.xml) | Window.IsVisible(SettingsProfile.xml) | Window.IsVisible(SettingsSystemInfo.xml)]">Dialog_Notification_Group</include>
+            <include content="Dialog_Notification_Group" condition="[Window.IsVisible(SkinSettings.xml) | Window.IsVisible(SettingsCategory.xml) | Window.IsVisible(SettingsProfile.xml) | Window.IsVisible(SettingsSystemInfo.xml)]">
+                <param name="fgcolor" value="panel_fg" />
+            </include>
+        </control>
+
+        <control type="progress" id="32">
+            <left>-2000</left>
+            <width>100</width>
+            <height>1</height>
+            <info>Player.Progress</info>
+            <animation effect="fade" start="0" end="0" condition="true">Conditional</animation>
+        </control>
+    </controls>
+</window>

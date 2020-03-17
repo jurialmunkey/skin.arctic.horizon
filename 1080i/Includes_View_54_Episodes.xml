@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+
+    <include name="View_54_Episodes">
+        <control type="group">
+            <visible>Control.IsVisible(54)</visible>
+            <include>Animation_Down</include>
+            <include content="Viewtype_Landscape">
+                <param name="id" value="54" />
+                <left>-80</left>
+                <right>-80</right>
+                <bottom>-20</bottom>
+                <include>Viewtype_Movement</include>
+                <pagecontrol>60</pagecontrol>
+                <visible>Container.Content(artists) | Container.Content(episodes) | Container.Content(videos) | Container.Content(sets) | String.IsEqual(Container.PluginName,plugin.video.abc_iview) | Window.IsVisible(MyPVRRecordings.xml) | String.StartsWith(Container.FolderPath,plugin://plugin.video.themoviedb.helper/?info=fanart)</visible>
+                <visible>!Window.IsVisible(MyPlaylist.xml)</visible>
+            </include>
+            <include content="Home_Hub_Widget_Label">
+                <param name="id" value="54" />
+                <param name="label" value="$VAR[Label_Header_Center]" />
+                <param name="altlabel" value="$INFO[Control.GetLabel(3),, ]$INFO[Control.GetLabel(4)]" />
+            </include>
+        </control>
+    </include>
+
+</includes>
+

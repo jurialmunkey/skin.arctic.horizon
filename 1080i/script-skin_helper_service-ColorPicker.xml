@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+    <defaultcontrol always="true">9000</defaultcontrol>
+    <controls>
+        <control type="button" id="3011"><visible allowhiddenfocus="true">false</visible></control>
+        <control type="group" id="3020">
+            <control type="label" id="3016"><visible allowhiddenfocus="true">false</visible></control>
+            <control type="slider" id="3015"><visible allowhiddenfocus="true">false</visible></control>
+            <control type="label" id="3017"><visible allowhiddenfocus="true">false</visible></control>
+        </control>
+        <control type="group">
+            <width>1300</width>
+            <height>720</height>
+            <include>Dialog_Standard_Group</include>
+
+            <!-- Header -->
+            <control type="label">
+                <include>Dialog_Standard_Header</include>
+                <label>$ADDON[script.skin.helper.colorpicker 32011]</label>
+            </control>
+            <control type="panel" id="3110">
+                <onup>9000</onup>
+                <ondown>noop</ondown>
+                <right>360</right>
+                <left>30</left>
+                <top>100</top>
+                <bottom>20</bottom>
+                <onleft>9000</onleft>
+                <onright>9000</onright>
+                <scrolltime>200</scrolltime>
+                <orientation>vertical</orientation>
+                <preloaditems>2</preloaditems>
+                <itemlayout width="100" height="100">
+                    <control type="image">
+                        <left>0</left>
+                        <top>0</top>
+                        <right>10</right>
+                        <bottom>10</bottom>
+                        <texture colordiffuse="dialog_fg_12" border="5">common/box.png</texture>
+                    </control>
+                    <control type="image">
+                        <top>10</top>
+                        <left>10</left>
+                        <right>20</right>
+                        <bottom>20</bottom>
+                        <texture background="true">$INFO[ListItem.Icon]</texture>
+                    </control>
+                </itemlayout>
+                <focusedlayout width="100" height="100">
+                    <control type="image">
+                        <top>0</top>
+                        <left>0</left>
+                        <right>10</right>
+                        <bottom>10</bottom>
+                        <texture background="true" diffuse="common/box.png">$INFO[ListItem.Icon]</texture>
+                    </control>
+                </focusedlayout>
+            </control>
+
+            <!-- Button grouplist -->
+            <control type="grouplist" id="9000">
+                <top>100</top>
+                <include>Dialog_Standard_Right_Grouplist</include>
+                <onleft>3110</onleft>
+                <onright>3110</onright>
+                <onup>9000</onup>
+                <ondown>9000</ondown>
+                <!-- EDIT -->
+                <control type="button" id="3010">
+                    <textoffsetx>10</textoffsetx>
+                    <label>$ADDON[script.skin.helper.colorpicker 32012]$INFO[Window.Property(colorstring),  ,]</label>
+                    <include>Dialog_Standard_Right_Buttons</include>
+                </control>
+                <!-- CHOOSE PALETTE -->
+                <control type="button" id="3030">
+                    <textoffsetx>10</textoffsetx>
+                    <label>31433</label>
+                    <include>Dialog_Standard_Right_Buttons</include>
+                </control>
+                <!-- SAVE -->
+                <control type="button" id="3012">
+                    <label>190</label>
+                    <include>Dialog_Standard_Right_Buttons</include>
+                </control>
+            </control>
+        </control>
+        
+    </controls>
+</window>

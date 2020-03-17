@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Foundation -->
+<window id="145">
+    <defaultcontrol always="true">11</defaultcontrol>
+
+    <zorder>5</zorder>
+
+    <controls>
+        <control type="group">
+            <include>Animation_FadeIn_Slide</include>
+            <centerleft>50%</centerleft>
+            <top>-20</top>
+            <width>780</width>
+            <height>182</height>
+            <control type="image">
+                <left>-16</left>
+                <right>-16</right>
+                <top>-116</top>
+                <bottom>-16</bottom>
+                <bordertexture border="32">common/shadow-dialog-24.png</bordertexture>
+                <bordersize>24</bordersize>
+                <texture border="16" colordiffuse="dialog_bg_100">common/dialog.png</texture>
+            </control>
+            
+            <control type="label" id="10">
+                <description>Heading</description>
+                <top>20</top>
+                <left>30</left>
+                <right>30</right>
+                <font>font_medium_bold</font>
+                <textcolor>dialog_fg_70</textcolor>
+                <height>70</height>
+            </control>
+
+            <control type="label" id="12">
+                <description>Label</description>
+                <top>20</top>
+                <left>30</left>
+                <right>30</right>
+                <font>font_small_bold</font>
+                <textcolor>dialog_fg_70</textcolor>
+                <height>70</height>
+                <align>right</align>
+            </control>
+            <!-- Left Center Point -->
+            <control type="image">
+                <description>Slider</description>
+                <top>112</top>
+                <centerleft>25%</centerleft>
+                <width>4</width>
+                <height>8</height>
+                <texture colordiffuse="dialog_fg_12">common/white.png</texture>
+            </control>
+            <control type="image">
+                <description>Slider</description>
+                <top>132</top>
+                <centerleft>25%</centerleft>
+                <width>4</width>
+                <height>8</height>
+                <texture colordiffuse="dialog_fg_12">common/white.png</texture>
+            </control>
+            <!-- Mid Point -->
+            <control type="image">
+                <description>Slider</description>
+                <top>108</top>
+                <centerleft>50%</centerleft>
+                <width>4</width>
+                <height>12</height>
+                <texture colordiffuse="dialog_fg_12">common/white.png</texture>
+            </control>
+            <control type="image">
+                <description>Slider</description>
+                <top>132</top>
+                <centerleft>50%</centerleft>
+                <width>4</width>
+                <height>12</height>
+                <texture colordiffuse="dialog_fg_12">common/white.png</texture>
+            </control>
+            <!-- Right Center Point -->
+            <control type="image">
+                <description>Slider</description>
+                <top>112</top>
+                <centerleft>75%</centerleft>
+                <width>4</width>
+                <height>8</height>
+                <texture colordiffuse="dialog_fg_12">common/white.png</texture>
+            </control>
+            <control type="image">
+                <description>Slider</description>
+                <top>132</top>
+                <centerleft>75%</centerleft>
+                <width>4</width>
+                <height>8</height>
+                <texture colordiffuse="dialog_fg_12">common/white.png</texture>
+            </control>
+            <!-- Slider -->
+            <control type="slider" id="11">
+                <description>Slider</description>
+                <top>120</top>
+                <left>30</left>
+                <width>720</width>
+                <height>12</height>
+                <onleft>11</onleft>
+                <onright>11</onright>
+                <texturesliderbar colordiffuse="dialog_fg_12" border="4">diffuse/progress-bg.png</texturesliderbar>
+                <textureslidernibfocus colordiffuse="$VAR[ColorHighlight]" border="4">diffuse/progress-nib.png</textureslidernibfocus>
+                <textureslidernib colordiffuse="dialog_fg_30" border="4">diffuse/progress-nib.png</textureslidernib>
+            </control>
+
+        </control>
+
+    </controls>
+
+</window>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+    
+    <!-- <constant name="widgets_group_top">-180</constant>
+    <constant name="widgets_group_height">1080</constant>
+    <constant name="widgets_group_itemgap">-710</constant>
+    <constant name="widgets_item_height">700</constant>
+    <constant name="widgets_label_top">390</constant>
+    <constant name="widgets_item_top">380</constant>
+    <constant name="widgets_bumper_top">500</constant>
+    <constant name="widgets_bumper_bottom">430</constant> -->
+
+    <!-- Home Widgets -->
+    <constant name="widgets_group_top">0</constant>
+    <constant name="widgets_group_height">860</constant>
+    <constant name="widgets_group_itemgap">-50</constant>
+    <constant name="widgets_item_height">380</constant>
+    <constant name="widgets_label_top">50</constant>
+    <constant name="widgets_item_top">50</constant>
+    <constant name="widgets_bumper_top">0</constant>
+    <constant name="widgets_bumper_bottom">50</constant>
+
+    <constant name="widgets_settings_top_item_height">500</constant>
+    <constant name="widgets_settings_top_label_top">50</constant>
+    <constant name="widgets_settings_top_item_top">50</constant>
+
+    <constant name="widgets_settings_bottom_item_height">260</constant>
+    <constant name="widgets_settings_bottom_label_top">50</constant>
+    <constant name="widgets_settings_bottom_item_top">50</constant>
+    
+    <!-- Info Dialog Widgets -->
+    <constant name="infowidgets_group_height">860</constant>
+    <constant name="infowidgets_group_itemgap">-50</constant>
+    <constant name="infowidgets_item_height">380</constant>
+    <constant name="infowidgets_label_top">50</constant>
+    <constant name="infowidgets_item_top">50</constant>
+    <constant name="item_widget_details_height">430</constant>
+
+    <constant name="view_pad">80</constant>
+    <constant name="view_top">200</constant>
+    <constant name="view_header">40</constant>
+    <constant name="view_width">1800</constant>
+    <constant name="view_list_height">800</constant>
+    <constant name="view_list_center">600</constant>
+    <constant name="view_list_width">1760</constant>
+    
+    
+    <constant name="view_poster_height">830</constant>
+    <constant name="view_poster_width">570</constant>
+    <constant name="view_info_left">700</constant>
+
+    <constant name="item_list_height">80</constant>
+    <constant name="item_list_height_half">40</constant>
+    <constant name="item_biglist_height">160</constant>
+    <constant name="item_icon_height">350</constant>
+    <constant name="item_settings_height">240</constant>
+    <constant name="item_square_width">300</constant>
+    <constant name="item_landscape_width">450</constant>
+    <constant name="item_poster_width">257.14</constant>
+
+    <constant name="dialog_top">120</constant>
+    <constant name="dialog_pad">30</constant>
+    <constant name="dialog_side_grouplist">400</constant>
+    <constant name="dialog_right_iconwidth">340</constant>
+    <constant name="dialog_settings_grouplist_height">640</constant>
+    <constant name="dialog_skinsettings_grouplist_height">720</constant>
+
+    <constant name="item_row_height">435</constant>
+    <constant name="item_cast_height">405</constant>
+</includes>

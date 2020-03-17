@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Foundation -->
+<window type="dialog" id="1115">
+
+    <onload condition="!Window.IsActive(visualisation)">FullScreen</onload>
+    <visible>Player.HasAudio + [System.IdleTime(2) | Integer.IsGreater(MusicPlayer.Time,0)] + Skin.HasSetting(AutoMusicVis)</visible>
+    <controls></controls>
+</window>

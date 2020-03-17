@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window id="20">
+    <defaultcontrol always="true">50</defaultcontrol>
+    <menucontrol>300</menucontrol>
+    <include>ViewIDs</include>
+    <controls>
+        <include>Viewtypes</include>
+
+        <!-- Hidden Buttons -->
+        <include>Defs_Options_StandardButtons</include>
+        <control type="button" id="5">
+            <description>Settings</description>
+            <label>5</label>
+            <include>Defs_Hidden_Button</include>
+        </control>
+        <control type="button" id="9">
+            <description>Check for updates</description>
+            <label>24034</label>
+            <include>Defs_Hidden_Button</include>
+        </control>
+        <control type="radiobutton" id="7">
+            <description>Hide Foriegn</description>
+            <label>25001</label>
+            <include>Defs_Hidden_Button</include>
+        </control>
+        <control type="radiobutton" id="8">
+            <description>Hide incompat</description>
+            <label>24999</label>
+            <include>Defs_Hidden_Button</include>
+        </control>
+    </controls>
+
+</window>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Foundation -->
+<window id="139">
+    <defaultcontrol always="true">5</defaultcontrol>
+
+
+    <controls>
+
+        <include>Global_Overlay</include>
+
+        <control type="group">
+            <include content="Dialog_Standard_Group">
+                <param name="width" value="1100" />
+                <param name="height" value="946" />
+            </include>
+
+
+            <control type="label">
+                <label>13406</label>
+                <include>Dialog_Standard_Header</include>
+            </control>
+
+            <control type="list" id="5">
+                <left>20</left>
+                <top>100</top>
+                <bottom>10</bottom>
+                <width>1060</width>
+                <onleft>5</onleft>
+                <onright>5</onright>
+                <onup>5</onup>
+                <ondown>5</ondown>
+
+                <itemlayout height="76" width="1060">
+
+                    <control type="image">
+                        <width>1060</width>
+                        <height>66</height>
+                        <texture border="5" colordiffuse="dialog_fg_12">common/box.png</texture>
+                    </control>
+
+                    <control type="label">
+                        <left>30</left>
+                        <width>50%</width>
+                        <height>66</height>
+                        <info>ListItem.Label</info>
+                    </control>
+
+                    <control type="label">
+                        <right>30</right>
+                        <width>50%</width>
+                        <height>66</height>
+                        <align>right</align>
+                        <font>font_tiny</font>
+                        <info>ListItem.Label2</info>
+                    </control>
+
+                </itemlayout>
+
+                <focusedlayout height="76" width="1060">
+
+                    <control type="image">
+                        <width>1060</width>
+                        <height>66</height>
+                        <texture border="5" colordiffuse="$VAR[ColorHighlight]">common/box.png</texture>
+                    </control>
+
+                    <control type="label">
+                        <left>30</left>
+                        <width>50%</width>
+                        <height>66</height>
+                        <textcolor>Selected</textcolor>
+                        <info>ListItem.Label</info>
+                    </control>
+
+                    <control type="label">
+                        <right>30</right>
+                        <width>50%</width>
+                        <height>66</height>
+                        <align>right</align>
+                        <font>font_tiny</font>
+                        <textcolor>Selected</textcolor>
+                        <info>ListItem.Label2</info>
+                    </control>
+
+                </focusedlayout>
+
+            </control>
+
+        </control>
+
+    </controls>
+
+</window>

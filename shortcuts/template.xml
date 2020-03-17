@@ -1,0 +1,586 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template>
+    <submenu include="widgets" container="302" level="1">
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[1]">1</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[2]">2</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[3]">3</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[4]">4</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[5]">5</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[6]">6</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[7]">7</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[8]">8</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[9]">9</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[10]">10</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[11]">11</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[12]">12</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[13]">13</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[14]">14</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[15]">15</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[16]">16</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[17]">17</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[18]">18</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[19]">19</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[20]">20</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[21]">21</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[22]">22</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[23]">23</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[24]">24</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[25]">25</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[26]">26</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[27]">27</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[28]">28</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[29]">29</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[30]">30</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[31]">31</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[32]">32</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[33]">33</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[34]">34</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[35]">35</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[36]">36</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[37]">37</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[38]">38</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[39]">39</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[40]">40</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[41]">41</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[42]">42</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[43]">43</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[44]">44</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[45]">45</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[46]">46</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[47]">47</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[48]">48</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[49]">49</property>
+        <property name="mainmenuid">50</property>
+        <property name="submenuVisibility" tag="property" attribute="name|submenuVisibility"/>
+        <controls>
+            <control type="group">
+                <visible allowhiddenfocus="true">String.IsEqual(Container(301).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility])</visible>
+                <include content="Animation_UpDown">
+                    <param name="visible" value="String.IsEqual(Container(301).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility])" />
+                </include>
+                <include content="Viewtype_BackPanel">
+                    <height>480</height>
+                    <left>20</left>
+                    <bottom>-65</bottom>
+                    <visible>Integer.IsEqual(Container($PYTHON[50000 + int(mainmenuid) * 100]).NumItems,1)</visible>
+                    <visible>Control.IsVisible($PYTHON[30001 + int(mainmenuid) * 100])</visible>
+                </include>
+                <control type="grouplist" id="$PYTHON[50000 + int(mainmenuid) * 100]">
+                    <top>widgets_group_top</top>
+                    <height>widgets_group_height</height>
+                    <orientation>vertical</orientation>
+                    <itemgap>widgets_group_itemgap</itemgap>
+                    <usecontrolcoords>true</usecontrolcoords>
+                    <scrolltime tween="quadratic">400</scrolltime>
+                    <onleft>SetProperty(CurrentWidget,$INFO[System.CurrentControlID])</onleft>
+                    <onleft>301</onleft>
+                    <include>Home_Movement_Widgets_UpDown</include>
+                    <onup>SetFocus($PYTHON[49900 + int(mainmenuid) * 100])</onup>
+                    <ondown>SetFocus($PYTHON[50100 + int(mainmenuid) * 100])</ondown>
+                    <onright>SetProperty(CurrentWidget,$INFO[System.CurrentControlID])</onright>
+                    <onright>301</onright>
+                    <control type="group" id="$PYTHON[30099 + int(mainmenuid) * 100]"><height>widgets_bumper_top</height></control>
+                    <include content="Home_Vertical_Info">
+                        <param name="font" value="font_title" />
+                        <param name="plotheight" value="200" />
+                        <param name="titleheight" value="60" />
+                        <param name="id" value="$PYTHON[30001 + int(mainmenuid) * 100]" />
+                        <param name="group1-id" value="$PYTHON[30097 + int(mainmenuid) * 100]" />
+                        <param name="group2-id" value="$PYTHON[30096 + int(mainmenuid) * 100]" />
+                        <top>widgets_label_top</top>
+                        <height>item_widget_details_height</height>
+                        <visible>Integer.IsEqual(Container($PYTHON[50000 + int(mainmenuid) * 100]).NumItems,1)</visible>
+                        <visible>Control.IsVisible($PYTHON[30001 + int(mainmenuid) * 100])</visible>
+                    </include>
+                    <skinshortcuts insert="widgets">items</skinshortcuts>
+                    <control type="group" id="$PYTHON[30098 + int(mainmenuid) * 100]"><height>widgets_bumper_bottom</height></control>
+                </control>
+            </control>
+        </controls>
+        <items insert="widgets">
+            <condition tag="property" attribute="name|list" />
+            <property name="isWidget" tag="property" attribute="name|list" value="Weather">false</property>
+            <property name="isWidget" tag="property" attribute="name|list" value="Settings">false</property>
+            <property name="isWidget" tag="property" attribute="name|list">true</property>
+            <property name="isWidget">false</property>
+
+            <property name="isSettings" tag="property" attribute="name|list" value="Settings">true</property>
+            <property name="isSettings">false</property>
+
+            <property name="widgetInclude" tag="property" attribute="name|list" value="Submenu">Viewtype_Tags</property>
+            <property name="widgetInclude" tag="property" attribute="name|widgetAspect" value="Banner">Viewtype_BigBanner</property>
+            <property name="widgetInclude" tag="property" attribute="name|widgetAspect" value="Square">Viewtype_Square</property>
+            <property name="widgetInclude" tag="property" attribute="name|widgetAspect" value="Small Square">Viewtype_Square</property>
+            <property name="widgetInclude" tag="property" attribute="name|widgetAspect" value="Landscape">Viewtype_Landscape</property>
+            <property name="widgetInclude" tag="property" attribute="name|widgetAspect" value="Small Landscape">Viewtype_Landscape</property>
+            <property name="widgetInclude">Viewtype_Poster</property>
+            <property name="widgetMovement" tag="property" attribute="name|list" value="Submenu">5</property>
+            <property name="widgetMovement" tag="property" attribute="name|widgetAspect" value="Banner">0</property>
+            <property name="widgetMovement" tag="property" attribute="name|widgetAspect" value="Square">5</property>
+            <property name="widgetMovement" tag="property" attribute="name|widgetAspect" value="Small Square">5</property>
+            <property name="widgetMovement" tag="property" attribute="name|widgetAspect" value="Landscape">3</property>
+            <property name="widgetMovement" tag="property" attribute="name|widgetAspect" value="Small Landscape">3</property>
+            <property name="widgetMovement">6</property>
+            <property name="widgetAspect" tag="property" attribute="name|widgetAspect" />
+            <property name="widgetAspect">Poster</property>
+            <property name="widgetTarget" tag="property" attribute="name|widgetTarget" />
+            <property name="widgetTarget">videos</property>
+            <property name="widgetName" tag="label" />
+            <property name="widgetName">$LOCALIZE[31105]</property>
+            <property name="widgetSubmenu" tag="property" attribute="name|list" value="Submenu">True</property>
+            <property name="widgetSubmenu">False</property>
+            <property name="widgetPath" tag="property" attribute="name|list" />
+            <property name="widgetSortby" tag="property" attribute="name|widgetSortby" />
+            <property name="widgetSortorder" tag="property" attribute="name|widgetSortorder" />
+            <property name="widgetLimit" tag="property" attribute="name|widgetLimit" />
+
+            <property name="mainmenuid" tag="property" attribute="name|mainmenuid" />
+
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[1]">1</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[2]">2</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[3]">3</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[4]">4</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[5]">5</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[6]">6</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[7]">7</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[8]">8</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[9]">9</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[10]">10</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[11]">11</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[12]">12</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[13]">13</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[14]">14</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[15]">15</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[16]">16</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[17]">17</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[18]">18</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[19]">19</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[20]">20</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[21]">21</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[22]">22</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[23]">23</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[24]">24</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[25]">25</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[26]">26</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[27]">27</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[28]">28</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[29]">29</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[30]">30</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[31]">31</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[32]">32</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[33]">33</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[34]">34</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[35]">35</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[36]">36</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[37]">37</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[38]">38</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[39]">39</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[40]">40</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[41]">41</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[42]">42</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[43]">43</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[44]">44</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[45]">45</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[46]">46</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[47]">47</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[48]">48</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[49]">49</property>
+            <property name="id">50</property>
+            <controls>
+                <include content="Info_Widget_Poster" condition="$SKINSHORTCUTS[isSettings]">
+                    <param name="groupid" value="$PYTHON[40000 + int(mainmenuid) * 100 + int(id)]" />
+                    <param name="id" value="$PYTHON[30000 + int(mainmenuid) * 100 + int(id)]" />
+                    <param name="label" value="$SKINSHORTCUTS[widgetName]" />
+                    <param name="spinner-visible" value="!Integer.IsGreater(Container($PYTHON[30000 + int(mainmenuid) * 100 + int(id)]).NumItems,0)" />
+                    <param name="visible" value="[Integer.IsGreater(Container($PYTHON[30000 + int(mainmenuid) * 100 + int(id)]).NumItems,0) | Container($PYTHON[30000 + int(mainmenuid) * 100 + int(id)]).IsUpdating]" />
+                    <param name="viewtype-include" value="Viewtype_Settings" />
+                    <param name="widget-type" value="widgets_settings_top" />
+                    <onback>SetFocus($PYTHON[int(mainmenuid)]3101)</onback>
+                    <onback>301</onback>
+                    <include>Items_Settings_Main</include>
+                    
+                </include>
+                <include content="Info_Widget_Poster" condition="$SKINSHORTCUTS[isSettings]">
+                    <param name="groupid" value="$PYTHON[41000 + int(mainmenuid) * 100 + int(id)]" />
+                    <param name="id" value="$PYTHON[31000 + int(mainmenuid) * 100 + int(id)]" />
+                    <param name="label" value="Management" />
+                    <param name="spinner-visible" value="!Integer.IsGreater(Container($PYTHON[31000 + int(mainmenuid) * 100 + int(id)]).NumItems,0)" />
+                    <param name="visible" value="[Integer.IsGreater(Container($PYTHON[31000 + int(mainmenuid) * 100 + int(id)]).NumItems,0) | Container($PYTHON[31000 + int(mainmenuid) * 100 + int(id)]).IsUpdating]" />
+                    <param name="viewtype-include" value="Viewtype_Settings" />
+                    <param name="widget-type" value="widgets_settings_bottom" />
+                    <onback>SetFocus($PYTHON[int(mainmenuid)]3101)</onback>
+                    <onback>301</onback>
+                    <include>Items_Settings_System</include>
+                </include>
+                <include content="Home_Weather_Button" condition="!$SKINSHORTCUTS[isWidget] + !$SKINSHORTCUTS[isSettings]">
+                    <param name="id" value="$PYTHON[30000 + int(mainmenuid) * 100 + int(id)]" />
+                    <onback>SetFocus($PYTHON[int(mainmenuid)]3101)</onback>
+                    <onback>301</onback>
+                    <onfocus>SetProperty(TMDbHelper.WidgetContainer,$NUMBER[$PYTHON[30000 + int(mainmenuid) * 100 + int(id)]],Home)</onfocus>
+                </include>
+                <include content="Info_Widget_Poster" condition="$SKINSHORTCUTS[isWidget]">
+                    <param name="groupid" value="$PYTHON[40000 + int(mainmenuid) * 100 + int(id)]" />
+                    <param name="id" value="$PYTHON[30000 + int(mainmenuid) * 100 + int(id)]" />
+                    <param name="label" value="$SKINSHORTCUTS[widgetName]" />
+                    <param name="spinner-visible" value="!Integer.IsGreater(Container($PYTHON[30000 + int(mainmenuid) * 100 + int(id)]).NumItems,0)" />
+                    <param name="visible" value="[Integer.IsGreater(Container($PYTHON[30000 + int(mainmenuid) * 100 + int(id)]).NumItems,0) | Container($PYTHON[30000 + int(mainmenuid) * 100 + int(id)]).IsUpdating]" />
+                    <param name="viewtype-include" value="$SKINSHORTCUTS[widgetInclude]" />
+                    <param name="widget-type" value="widgets" />
+                    <onback>SetFocus($PYTHON[int(mainmenuid)]3101)</onback>
+                    <onback>301</onback>
+                    <onfocus>SetProperty(TMDbHelper.WidgetContainer,$NUMBER[$PYTHON[30000 + int(mainmenuid) * 100 + int(id)]],Home)</onfocus>
+                    <include content="Defs_AutoScroll">
+                        <param name="condition" value="[!ControlGroup(3000).HasFocus() + System.IdleTime(1) + !Skin.HasSetting(DisableAutoScrollWidgets) + Integer.IsEqual(Container(3000).NumItems,1)] | [$PYTHON['true' if widgetAspect in 'Banner' else 'false'] + !Control.HasFocus($PYTHON[30000 + int(mainmenuid) * 100 + int(id)])]" />
+                    </include>
+                    <movement>$SKINSHORTCUTS[widgetMovement]</movement>
+                    <content target="$SKINSHORTCUTS[widgetTarget]" limit="$SKINSHORTCUTS[widgetLimit]" sortby="$SKINSHORTCUTS[widgetSortby]" sortorder="$SKINSHORTCUTS[widgetSortorder]">$SKINSHORTCUTS[widgetPath]</content>
+                    <content><include condition="$SKINSHORTCUTS[widgetSubmenu]">skinshortcuts-submenu</include></content>
+                </include>
+            </controls>
+        </items>
+    </submenu>
+
+    <other include="spotlight-mainmenu" container="302">
+        <property name="widgetTarget" tag="property" attribute="name|widgetTarget" />
+        <property name="widgetName" tag="property" attribute="name|widgetName" />
+        <property name="widgetPath" tag="property" attribute="name|widgetPath" />
+        <property name="widgetTarget">$INFO[Skin.String(widgetTarget)]</property>
+        <property name="widgetPath">$INFO[Skin.String(widgetPath)]</property>
+        <property name="widgetInclude" tag="property" attribute="name|widgetAspect" value="Landscape">Viewtype_Landscape</property>
+        <property name="widgetInclude" tag="property" attribute="name|widgetAspect" value="Square">Viewtype_Square</property>
+        <property name="widgetInclude" tag="property" attribute="name|widgetAspect" value="Banner">Viewtype_BigBanner</property>
+        <property name="widgetInclude">Viewtype_Poster</property>
+        <controls>
+            <include content="$SKINSHORTCUTS[widgetInclude]">
+                <param name="id" value="5610" />
+                <param name="viewsides" value="-80" />
+                <left>-80</left>
+                <right>-80</right>
+                <bottom>-20</bottom>
+                <onup>302</onup>
+                <ondown>60</ondown>
+                <pagecontrol>60</pagecontrol>
+                <content target="$SKINSHORTCUTS[widgetTarget]">$SKINSHORTCUTS[widgetPath]</content>
+                <skinshortcuts>visibility</skinshortcuts>
+                <visible>String.IsEmpty(Container(302).ListItem.Property(widgetPath))</visible>
+            </include>
+            
+        </controls>
+    </other>
+      
+    <submenuOther include="spotlight-submenu" container="302">
+        <property name="widgetTarget" tag="property" attribute="name|widgetTarget" />
+        <property name="widgetName" tag="property" attribute="name|widgetName" />
+        <property name="widgetPath" tag="property" attribute="name|widgetPath" />
+        <property name="submenuVisibility" tag="property" attribute="name|group" />
+        <property name="submenuVisibility">noMenu</property>
+        <property name="id" tag="property" attribute="name|id" />
+        <property name="widgetInclude" tag="property" attribute="name|widgetAspect" value="Landscape">Viewtype_Landscape</property>
+        <property name="widgetInclude" tag="property" attribute="name|widgetAspect" value="Square">Viewtype_Square</property>
+        <property name="widgetInclude" tag="property" attribute="name|widgetAspect" value="Banner">Viewtype_BigBanner</property>
+        <property name="widgetInclude">Viewtype_Poster</property>
+        <controls>
+            <include content="$SKINSHORTCUTS[widgetInclude]">
+                <param name="id" value="5610" />
+                <param name="viewsides" value="-80" />
+                <left>-80</left>
+                <right>-80</right>
+                <bottom>-20</bottom>
+                <onup>302</onup>
+                <ondown>60</ondown>
+                <pagecontrol>60</pagecontrol>
+                <content target="$SKINSHORTCUTS[widgetTarget]">$SKINSHORTCUTS[widgetPath]</content>
+                <visible>String.IsEqual(Container(301).ListItem.Property(submenuVisibility),num-$SKINSHORTCUTS[submenuVisibility]) | String.IsEqual(Container(301).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility])</visible>
+                <visible>String.IsEqual(Container(302).ListItem.Property(id),$SKINSHORTCUTS[id])</visible>
+            </include>
+        </controls>
+    </submenuOther>
+
+    <submenu include="hubmenu">
+        <controls>
+            <skinshortcuts insert="hubmenu">items</skinshortcuts>
+        </controls>
+        <items insert="hubmenu">
+            <property name="mainmenuid" tag="property" attribute="name|mainmenuid" />
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[1]">1</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[2]">2</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[3]">3</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[4]">4</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[5]">5</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[6]">6</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[7]">7</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[8]">8</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[9]">9</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[10]">10</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[11]">11</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[12]">12</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[13]">13</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[14]">14</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[15]">15</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[16]">16</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[17]">17</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[18]">18</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[19]">19</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[20]">20</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[21]">21</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[22]">22</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[23]">23</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[24]">24</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[25]">25</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[26]">26</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[27]">27</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[28]">28</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[29]">29</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[30]">30</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[31]">31</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[32]">32</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[33]">33</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[34]">34</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[35]">35</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[36]">36</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[37]">37</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[38]">38</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[39]">39</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[40]">40</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[41]">41</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[42]">42</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[43]">43</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[44]">44</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[45]">45</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[46]">46</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[47]">47</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[48]">48</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[49]">49</property>
+            <property name="id">50</property>
+
+            <property name="label" tag="label" />
+            <property name="icon" tag="icon" />
+            <property name="submenuVisibility" tag="property" attribute="name|group" />
+            <property name="submenuVisibility">noMenu</property>
+            <property name="widgetPath" tag="property" attribute="name|widgetPath" />
+            <property name="widgetName" tag="property" attribute="name|widgetName" />
+            <property name="onclick" tag="onclick" />
+            <controls>
+                <include content="Object_Info_Button">
+                    <param name="id" value="$PYTHON[70000 + int(mainmenuid) * 100 + int(id)]" />
+                    <param name="groupid" value="$PYTHON[80000 + int(mainmenuid) * 100 + int(id)]" />
+                    <param name="label" value="$SKINSHORTCUTS[label]" />
+                    <param name="icon" value="$SKINSHORTCUTS[icon]" />
+                    <param name="ondown" value="5610" />
+                    <param name="visible" value="String.IsEqual(Container(301).ListItem.Property(submenuVisibility),num-$SKINSHORTCUTS[submenuVisibility]) | String.IsEqual(Container(301).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility])" />
+                    <onfocus>SetProperty(SubMenu.ID,$NUMBER[$SKINSHORTCUTS[id]],Home)</onfocus>
+                    <onfocus>SetProperty(SubMenu.widgetPath,$SKINSHORTCUTS[widgetPath],Home)</onfocus>
+                    <onfocus>SetProperty(SubMenu.widgetName,$LOCALIZE[$SKINSHORTCUTS[widgetName]],Home)</onfocus>
+                    <onclick>$SKINSHORTCUTS[onclick]</onclick>
+                </include>
+            </controls>
+        </items>
+    </submenu>
+
+    <submenu include="search" name="searchmenu">
+        <controls>
+            <skinshortcuts insert="searchlist">items</skinshortcuts>
+        </controls>
+        <items insert="searchlist">
+            <property name="widgetLabel" tag="label" />
+
+            <property name="widgetPath" tag="property" attribute="name|list" value="DefaultSearch-Movies">videodb://movies/titles/?xsp=%7B%22order%22%3A%7B%22direction%22%3A%22ascending%22%2C%22ignorefolders%22%3A0%2C%22method%22%3A%22sorttitle%22%7D%2C%22rules%22%3A%7B%22and%22%3A%5B%7B%22field%22%3A%22title%22%2C%22operator%22%3A%22contains%22%2C%22value%22%3A%5B%22</property>
+            <property name="widgetPath2" tag="property" attribute="name|list" value="DefaultSearch-Movies">%22%5D%7D%5D%7D%2C%22type%22%3A%22movies%22%7D</property>
+
+            <property name="widgetPath" tag="property" attribute="name|list" value="DefaultSearch-TvShows">videodb://tvshows/titles/?xsp=%7B%22order%22%3A%7B%22direction%22%3A%22ascending%22%2C%22ignorefolders%22%3A0%2C%22method%22%3A%22sorttitle%22%7D%2C%22rules%22%3A%7B%22and%22%3A%5B%7B%22field%22%3A%22title%22%2C%22operator%22%3A%22contains%22%2C%22value%22%3A%5B%22</property>
+            <property name="widgetPath2" tag="property" attribute="name|list" value="DefaultSearch-TvShows">%22%5D%7D%5D%7D%2C%22type%22%3A%22tvshows%22%7D</property>
+
+            <property name="widgetPath" tag="property" attribute="name|list" value="DefaultSearch-Episodes">videodb://tvshows/titles/-1/-1/-1/-1/?xsp=%7B%22order%22%3A%7B%22direction%22%3A%22ascending%22%2C%22ignorefolders%22%3A0%2C%22method%22%3A%22sorttitle%22%7D%2C%22rules%22%3A%7B%22and%22%3A%5B%7B%22field%22%3A%22title%22%2C%22operator%22%3A%22contains%22%2C%22value%22%3A%5B%22</property>
+            <property name="widgetPath2" tag="property" attribute="name|list" value="DefaultSearch-Episodes">%22%5D%7D%5D%7D%2C%22type%22%3A%22episodes%22%7D</property>
+
+            <property name="widgetPath" tag="property" attribute="name|list" value="DefaultSearch-Genres">videodb://movies/titles/?xsp=%7B%22order%22%3A%7B%22direction%22%3A%22ascending%22%2C%22ignorefolders%22%3A0%2C%22method%22%3A%22sorttitle%22%7D%2C%22rules%22%3A%7B%22and%22%3A%5B%7B%22field%22%3A%22genre%22%2C%22operator%22%3A%22contains%22%2C%22value%22%3A%5B%22</property>
+            <property name="widgetPath2" tag="property" attribute="name|list" value="DefaultSearch-Genres">%22%5D%7D%5D%7D%2C%22type%22%3A%22movies%22%7D</property>
+
+            <property name="widgetPath" tag="property" attribute="name|list" value="DefaultSearch-Year">videodb://movies/titles/?xsp=%7B%22order%22%3A%7B%22direction%22%3A%22ascending%22%2C%22ignorefolders%22%3A0%2C%22method%22%3A%22sorttitle%22%7D%2C%22rules%22%3A%7B%22and%22%3A%5B%7B%22field%22%3A%22year%22%2C%22operator%22%3A%22contains%22%2C%22value%22%3A%5B%22</property>
+            <property name="widgetPath2" tag="property" attribute="name|list" value="DefaultSearch-Year">%22%5D%7D%5D%7D%2C%22type%22%3A%22movies%22%7D</property>
+
+            <property name="widgetPath" tag="property" attribute="name|list" value="DefaultSearch-Studio">videodb://movies/titles/?xsp=%7B%22order%22%3A%7B%22direction%22%3A%22ascending%22%2C%22ignorefolders%22%3A0%2C%22method%22%3A%22sorttitle%22%7D%2C%22rules%22%3A%7B%22and%22%3A%5B%7B%22field%22%3A%22studio%22%2C%22operator%22%3A%22contains%22%2C%22value%22%3A%5B%22</property>
+            <property name="widgetPath2" tag="property" attribute="name|list" value="DefaultSearch-Studio">%22%5D%7D%5D%7D%2C%22type%22%3A%22movies%22%7D</property>
+
+            <property name="widgetPath" tag="property" attribute="name|list" value="DefaultSearch-Country">videodb://movies/titles/?xsp=%7B%22order%22%3A%7B%22direction%22%3A%22ascending%22%2C%22ignorefolders%22%3A0%2C%22method%22%3A%22sorttitle%22%7D%2C%22rules%22%3A%7B%22and%22%3A%5B%7B%22field%22%3A%22country%22%2C%22operator%22%3A%22is%22%2C%22value%22%3A%5B%22</property>
+            <property name="widgetPath2" tag="property" attribute="name|list" value="DefaultSearch-Country">%22%5D%7D%5D%7D%2C%22type%22%3A%22movies%22%7D</property>
+
+            <property name="widgetPath" tag="property" attribute="name|list" value="DefaultSearch-Actor">videodb://movies/titles/?xsp=%7B%22order%22%3A%7B%22direction%22%3A%22ascending%22%2C%22ignorefolders%22%3A0%2C%22method%22%3A%22sorttitle%22%7D%2C%22rules%22%3A%7B%22and%22%3A%5B%7B%22field%22%3A%22actor%22%2C%22operator%22%3A%22contains%22%2C%22value%22%3A%5B%22</property>
+            <property name="widgetPath2" tag="property" attribute="name|list" value="DefaultSearch-Actor">%22%5D%7D%5D%7D%2C%22type%22%3A%22movies%22%7D</property>
+
+            <property name="widgetPath" tag="property" attribute="name|list" value="DefaultSearch-Director">videodb://movies/titles/?xsp=%7B%22order%22%3A%7B%22direction%22%3A%22ascending%22%2C%22ignorefolders%22%3A0%2C%22method%22%3A%22sorttitle%22%7D%2C%22rules%22%3A%7B%22and%22%3A%5B%7B%22field%22%3A%22director%22%2C%22operator%22%3A%22contains%22%2C%22value%22%3A%5B%22</property>
+            <property name="widgetPath2" tag="property" attribute="name|list" value="DefaultSearch-Director">%22%5D%7D%5D%7D%2C%22type%22%3A%22movies%22%7D</property>
+
+            <property name="widgetPath" tag="property" attribute="name|list" value="DefaultSearch-Albums">musicdb://albums/?xsp=%7B%22order%22%3A%7B%22direction%22%3A%22ascending%22%2C%22ignorefolders%22%3A0%2C%22method%22%3A%22sorttitle%22%7D%2C%22rules%22%3A%7B%22and%22%3A%5B%7B%22field%22%3A%22album%22%2C%22operator%22%3A%22contains%22%2C%22value%22%3A%5B%22</property>
+            <property name="widgetPath2" tag="property" attribute="name|list" value="DefaultSearch-Albums">%22%5D%7D%5D%7D%2C%22type%22%3A%22albums%22%7D</property>
+
+            <property name="widgetPath" tag="property" attribute="name|list" value="DefaultSearch-Artists">musicdb://artists/?xsp=%7B%22order%22%3A%7B%22direction%22%3A%22ascending%22%2C%22ignorefolders%22%3A0%2C%22method%22%3A%22sorttitle%22%7D%2C%22rules%22%3A%7B%22and%22%3A%5B%7B%22field%22%3A%22artist%22%2C%22operator%22%3A%22contains%22%2C%22value%22%3A%5B%22</property>
+            <property name="widgetPath2" tag="property" attribute="name|list" value="DefaultSearch-Artists">%22%5D%7D%5D%7D%2C%22type%22%3A%22artists%22%7D</property>
+
+            <property name="widgetPath" tag="property" attribute="name|list" value="DefaultSearch-MusicVideos">videodb://musicvideos/titles/?xsp=%7b%22order%22%3a%7b%22direction%22%3a%22ascending%22%2c%22ignorefolders%22%3a0%2c%22method%22%3a%22sorttitle%22%7d%2c%22rules%22%3a%7b%22and%22%3a%5b%7b%22field%22%3a%22title%22%2c%22operator%22%3a%22contains%22%2c%22value%22%3a%5b%22</property>
+            <property name="widgetPath2" tag="property" attribute="name|list" value="DefaultSearch-MusicVideos">%22%5d%7d%5d%7d%2c%22type%22%3a%22musicvideos%22%7d</property>
+
+            <property name="widgetPath" tag="property" attribute="name|list" value="DefaultSearch-MusicVideoArtists">videodb://musicvideos/titles/?xsp=%7b%22order%22%3a%7b%22direction%22%3a%22ascending%22%2c%22ignorefolders%22%3a0%2c%22method%22%3a%22sorttitle%22%7d%2c%22rules%22%3a%7b%22and%22%3a%5b%7b%22field%22%3a%22artist%22%2c%22operator%22%3a%22contains%22%2c%22value%22%3a%5b%22</property>
+            <property name="widgetPath2" tag="property" attribute="name|list" value="DefaultSearch-MusicVideoArtists">%22%5d%7d%5d%7d%2c%22type%22%3a%22musicvideos%22%7d</property>
+            <property name="widgetPath" tag="property" attribute="name|list" value="DefaultSearch-Youtube">plugin://plugin.video.youtube/search/?q=</property>
+            <property name="widgetPath2" tag="property" attribute="name|list" value="DefaultSearch-Youtube">&amp;search_type=notvalid</property>
+
+            <property name="widgetPath" tag="property" attribute="name|list" value="DefaultSearch-Netflix">plugin://plugin.video.netflix/directory/search/search/</property>
+            <property name="widgetPath2" tag="property" attribute="name|list" value="DefaultSearch-Netflix">/</property>
+
+            <property name="widgetPath" tag="property" attribute="name|list" value="DefaultSearch-Addons">addons://search/</property>
+            <property name="widgetPath" tag="property" attribute="name|list" value="DefaultSearch-SpotifyArtists">plugin://plugin.audio.spotify/?action=search_artists&amp;artistid=</property>
+            <property name="widgetPath" tag="property" attribute="name|list" value="DefaultSearch-SpotifyAlbums">plugin://plugin.audio.spotify/?action=search_albums&amp;albumid=</property>
+            <property name="widgetPath" tag="property" attribute="name|list" value="DefaultSearch-SpotifySongs">plugin://plugin.audio.spotify/?action=search_albums&amp;songid=</property>
+            <property name="widgetPath" tag="property" attribute="name|list" value="DefaultSearch-SpotifyPlaylists">plugin://plugin.audio.spotify/?action=search_songs&amp;playlistid=</property>
+            <property name="widgetPath" tag="property" attribute="name|list" value="DefaultSearch-SpotifyPlaylists">plugin://plugin.audio.spotify/?action=search_playlists&amp;playlistid=</property>
+            <property name="widgetPath" tag="property" attribute="name|list"/>
+
+            <property name="widgetLimit" tag="property" attribute="name|widgetLimit" />
+
+            <property name="widgetTarget" tag="property" attribute="name|list" value="DefaultSearch-Albums">music</property>
+            <property name="widgetTarget" tag="property" attribute="name|list" value="DefaultSearch-Artists">music</property>
+            <property name="widgetTarget" tag="property" attribute="name|list" value="DefaultSearch-Addons">addons</property>
+            <property name="widgetTarget" tag="property" attribute="name|list" value="DefaultSearch-SpotifyArtists">music</property>
+            <property name="widgetTarget" tag="property" attribute="name|list" value="DefaultSearch-SpotifyAlbums">music</property>
+            <property name="widgetTarget" tag="property" attribute="name|list" value="DefaultSearch-SpotifySongs">music</property>
+            <property name="widgetTarget" tag="property" attribute="name|list" value="DefaultSearch-SpotifyPlaylists">music</property>
+            <property name="widgetTarget" tag="property" attribute="name|widgetTarget" />
+            <property name="widgetTarget">videos</property>
+
+            <property name="widgetInclude" tag="property" attribute="name|widgetAspect" value="Banner">Viewtype_BigBanner</property>
+            <property name="widgetInclude" tag="property" attribute="name|widgetAspect" value="Square">Viewtype_Square</property>
+            <property name="widgetInclude" tag="property" attribute="name|widgetAspect" value="Small Square">Viewtype_Square</property>
+            <property name="widgetInclude" tag="property" attribute="name|widgetAspect" value="Landscape">Viewtype_Landscape</property>
+            <property name="widgetInclude" tag="property" attribute="name|widgetAspect" value="Small Landscape">Viewtype_Landscape</property>
+            <property name="widgetInclude">Viewtype_Poster</property>
+
+            <property name="widgetMovement" tag="property" attribute="name|widgetAspect" value="Banner">0</property>
+            <property name="widgetMovement" tag="property" attribute="name|widgetAspect" value="Square">5</property>
+            <property name="widgetMovement" tag="property" attribute="name|widgetAspect" value="Small Square">5</property>
+            <property name="widgetMovement" tag="property" attribute="name|widgetAspect" value="Landscape">3</property>
+            <property name="widgetMovement" tag="property" attribute="name|widgetAspect" value="Small Landscape">3</property>
+            <property name="widgetMovement">6</property>
+
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[1]">1</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[2]">2</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[3]">3</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[4]">4</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[5]">5</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[6]">6</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[7]">7</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[8]">8</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[9]">9</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[10]">10</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[11]">11</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[12]">12</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[13]">13</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[14]">14</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[15]">15</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[16]">16</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[17]">17</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[18]">18</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[19]">19</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[20]">20</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[21]">21</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[22]">22</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[23]">23</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[24]">24</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[25]">25</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[26]">26</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[27]">27</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[28]">28</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[29]">29</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[30]">30</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[31]">31</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[32]">32</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[33]">33</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[34]">34</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[35]">35</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[36]">36</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[37]">37</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[38]">38</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[39]">39</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[40]">40</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[41]">41</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[42]">42</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[43]">43</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[44]">44</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[45]">45</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[46]">46</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[47]">47</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[48]">48</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[49]">49</property>
+            <property name="id">50</property>
+            <controls>
+                <include content="Info_Widget_Poster">
+                    <param name="id" value="$PYTHON[int(id) + 30100]" />
+                    <param name="groupid" value="$PYTHON[int(id) + 40100]" />
+                    <param name="label" value="$SKINSHORTCUTS[widgetLabel]$INFO[Container($PYTHON[int(id) + 30100]).NumItems, (,)]" />
+                    <param name="viewtype-include" value="$SKINSHORTCUTS[widgetInclude]" />
+                    <param name="widget-type" value="infowidgets" />
+                    <movement>$SKINSHORTCUTS[widgetMovement]</movement>
+                    <content target="$SKINSHORTCUTS[widgetTarget]" limit="$SKINSHORTCUTS[widgetLimit]" >$SKINSHORTCUTS[widgetPath]$INFO[Skin.String(SearchTerm)]$SKINSHORTCUTS[widgetPath2]</content>
+                </include>
+            </controls>
+        </items>
+    </submenu>
+
+    <other include="onright">
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[1]">1</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[2]">2</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[3]">3</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[4]">4</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[5]">5</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[6]">6</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[7]">7</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[8]">8</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[9]">9</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[10]">10</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[11]">11</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[12]">12</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[13]">13</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[14]">14</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[15]">15</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[16]">16</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[17]">17</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[18]">18</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[19]">19</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[20]">20</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[21]">21</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[22]">22</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[23]">23</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[24]">24</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[25]">25</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[26]">26</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[27]">27</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[28]">28</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[29]">29</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[30]">30</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[31]">31</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[32]">32</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[33]">33</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[34]">34</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[35]">35</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[36]">36</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[37]">37</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[38]">38</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[39]">39</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[40]">40</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[41]">41</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[42]">42</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[43]">43</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[44]">44</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[45]">45</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[46]">46</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[47]">47</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[48]">48</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[49]">49</property>
+        <property name="id">50</property>
+        <property name="submenuVisibility" tag="property" attribute="name|submenuVisibility"/>
+        <controls>
+            <onright condition="String.IsEqual(Container(301).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility]) + !Integer.IsEqual(Container(3700).NumItems,0)">SetFocus($PYTHON[50000 + int(id) * 100])</onright>
+            <onright condition="Integer.IsEqual(Container(3700).NumItems,0)">SetFocus(3001)</onright>
+        </controls>
+    </other>
+</template>

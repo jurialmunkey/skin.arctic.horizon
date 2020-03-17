@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Foundation -->
+<window>
+    <defaultcontrol allways="true">50</defaultcontrol>
+    <onload>ClearProperty(oldfocus)</onload>
+    <views>50</views>
+    <controls>
+
+        <include>Global_Background</include>
+        <control type="list" id="300">
+            <top>30</top>
+            <onup>50</onup>
+            <ondown condition="!String.IsEqual(Window.Property(oldfocus),SetFocus(100))">50</ondown>
+            <ondown condition="String.IsEqual(Window.Property(oldfocus),SetFocus(100))">100</ondown>
+            <include content="Topbar_Menu_Layout">
+                <param name="visible" value="true" />
+            </include>
+            <content>
+                <item>
+                    <label>$INFO[Control.GetLabel(6)]</label>
+                    <onclick>SendClick(6)</onclick>
+                    <icon>special://skin/extras/icons/folder.png</icon>
+                </item>
+                <item>
+                    <label>$INFO[Control.GetLabel(7)]</label>
+                    <onclick>SendClick(7)</onclick>
+                    <icon>special://skin/extras/icons/files.png</icon>
+                </item>
+                <item>
+                    <label>$INFO[Control.GetLabel(8)]</label>
+                    <onclick>SendClick(8)</onclick>
+                    <icon>special://skin/extras/icons/disabled.png</icon>
+                </item>
+            </content>
+        </control>
+        <include>Topbar_Info</include>
+
+        <control type="label" id="12">
+            <visible>false</visible>
+        </control>
+        <control type="label" id="101">
+            <visible>false</visible>
+        </control>
+
+        <control type="scrollbar" id="62">
+            <showonepage>false</showonepage>
+            <orientation>vertical</orientation>
+            <left>0</left>
+            <width>8</width>
+            <top>0</top>
+            <height>1080</height>
+            <onleft>300</onleft>
+            <onright>50</onright>
+            <texturesliderbackground colordiffuse="main_fg_12" border="4">common/white.png</texturesliderbackground>
+            <texturesliderbar colordiffuse="main_fg_30" border="4">scrollbar/scrollv.png</texturesliderbar>
+            <texturesliderbarfocus colordiffuse="$VAR[ColorHighlight]" border="4">scrollbar/scrollv.png</texturesliderbarfocus>
+            <animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(62) + !Container(50).Scrolling">Conditional</animation>
+            <include>Animation_FadeIn</include>
+            <include>Animation_FadeOut</include>
+        </control>
+        <control type="scrollbar" id="61">
+            <showonepage>false</showonepage>
+            <orientation>vertical</orientation>
+            <right>0</right>
+            <width>8</width>
+            <top>0</top>
+            <height>1080</height>
+            <onleft>100</onleft>
+            <onright>300</onright>
+            <texturesliderbackground colordiffuse="main_fg_12" border="4">common/white.png</texturesliderbackground>
+            <texturesliderbar colordiffuse="main_fg_30" border="4">scrollbar/scrollv.png</texturesliderbar>
+            <texturesliderbarfocus colordiffuse="$VAR[ColorHighlight]" border="4">scrollbar/scrollv.png</texturesliderbarfocus>
+            <animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(61) + !Container(100).Scrolling">Conditional</animation>
+            <include>Animation_FadeIn</include>
+            <include>Animation_FadeOut</include>
+        </control>
+
+        <control type="group">
+            <include>View_Pad</include>
+            <control type="group">
+                <include>Animation_Left</include>
+                <description>Left panel</description>
+                <left>view_pad</left>
+                <top>view_pad</top>
+                <bottom>view_pad</bottom>
+                <width>890</width>
+                <control type="group">
+                    <include content="Dialog_Standard_Group">
+                        <param name="width" value="890" />
+                        <param name="height" value="908" />
+                        <param name="animation" value="false" />
+                    </include>
+                    <control type="label">
+                        <description>Header Label</description>
+                        <top>0</top>
+                        <left>30</left>
+                        <right>170</right>
+                        <height>75</height>
+                        <align>left</align>
+                        <font>font_small_bold</font>
+                        <haspath>true</haspath>
+                        <textcolor>dialog_fg_70</textcolor>
+                        <label>$LOCALIZE[2]$INFO[Control.GetLabel(12),  -  ,]</label>
+                    </control>
+                    <control type="list" id="50">
+                        <description>Left File List</description>
+                        <left>0</left>
+                        <width>890</width>
+                        <top>75</top>
+                        <onleft>62</onleft>
+                        <onright>100</onright>
+                        <onfocus>SetProperty(oldfocus,SetFocus(50))</onfocus>
+                        <onup>300</onup>
+                        <ondown>noop</ondown>
+                        <pagecontrol>62</pagecontrol>
+                        <itemlayout height="75" width="890">
+                            <control type="label">
+                                <left>30</left>
+                                <width>720</width>
+                                <align>left</align>
+                                <textcolor>dialog_fg_70</textcolor>
+                                <info>ListItem.Label</info>
+                            </control>
+
+                            <control type="label">
+                                <right>30</right>
+                                <width>150</width>
+                                <align>right</align>
+                                <font>font_tiny</font>
+                                <textcolor>dialog_fg_70</textcolor>
+                                <info>ListItem.Label2</info>
+                            </control>
+
+                        </itemlayout>
+
+                        <focusedlayout height="75" width="890">
+
+                            <control type="group">
+                                <width>100%</width>
+                                <height>100%</height>
+                                <animation effect="fade" start="100" end="50" condition="!Control.HasFocus(50)">Conditional</animation>
+                                <control type="image">
+                                    <texture colordiffuse="$VAR[ColorHighlight]">common/white.png</texture>
+                                </control>
+                            </control>
+
+                            <control type="label">
+                                <left>30</left>
+                                <width>720</width>
+                                <align>left</align>
+                                <textcolor>Selected</textcolor>
+                                <info>ListItem.Label</info>
+                            </control>
+
+                            <control type="label">
+                                <right>30</right>
+                                <width>720</width>
+                                <align>right</align>
+                                <textcolor>Selected</textcolor>
+                                <font>font_tiny</font>
+                                <info>ListItem.Label2</info>
+                            </control>
+
+                        </focusedlayout>
+                    </control>
+                </control>
+            </control>
+            <control type="group">
+                <right>view_pad</right>
+                <top>view_pad</top>
+                <bottom>view_pad</bottom>
+                <width>890</width>
+                <include>Animation_Right</include>
+                <control type="group">
+                    <include content="Dialog_Standard_Group">
+                        <param name="width" value="890" />
+                        <param name="height" value="908" />
+                        <param name="animation" value="false" />
+                    </include>
+                    <control type="label">
+                        <description>Header Label</description>
+                        <top>0</top>
+                        <left>30</left>
+                        <right>130</right>
+                        <height>75</height>
+                        <align>left</align>
+                        <haspath>true</haspath>
+                        <font>font_small_bold</font>
+                        <textcolor>dialog_fg_70</textcolor>
+                        <label>$LOCALIZE[559]$INFO[Control.GetLabel(101),  -  ,]</label>
+                    </control>
+
+                    <control type="list" id="100">
+                        <description>Left File List</description>
+                        <right>0</right>
+                        <width>890</width>
+                        <top>75</top>
+                        <onleft>50</onleft>
+                        <onright>61</onright>
+                        <onfocus>SetProperty(oldfocus,SetFocus(100))</onfocus>
+                        <onup>300</onup>
+                        <ondown>noop</ondown>
+                        <pagecontrol>61</pagecontrol>
+                        <itemlayout height="75" width="890">
+                            <control type="label">
+                                <left>30</left>
+                                <width>720</width>
+                                <align>left</align>
+                                <textcolor>dialog_fg_70</textcolor>
+                                <info>ListItem.Label</info>
+                            </control>
+                            <control type="label">
+                                <right>30</right>
+                                <width>150</width>
+                                <align>right</align>
+                                <font>font_tiny</font>
+                                <textcolor>dialog_fg_70</textcolor>
+                                <info>ListItem.Label2</info>
+                            </control>
+                        </itemlayout>
+                        <focusedlayout height="75" width="890">
+                            <control type="group">
+                                <width>100%</width>
+                                <height>100%</height>
+                                <animation effect="fade" start="100" end="50" condition="!Control.HasFocus(100)">Conditional</animation>
+                                <control type="image">
+                                    <texture colordiffuse="$VAR[ColorHighlight]">common/white.png</texture>
+                                </control>
+                            </control>
+                            <control type="label">
+                                <left>30</left>
+                                <width>720</width>
+                                <align>left</align>
+                                <textcolor>Selected</textcolor>
+                                <info>ListItem.Label</info>
+                            </control>
+                            <control type="label">
+                                <right>30</right>
+                                <width>720</width>
+                                <align>right</align>
+                                <textcolor>Selected</textcolor>
+                                <font>font_tiny</font>
+                                <info>ListItem.Label2</info>
+                            </control>
+                        </focusedlayout>
+                    </control>
+                    
+                </control>
+            </control>
+        </control>
+
+        <control type="button" id="6">
+            <label>502</label>
+            <description>Open</description>
+            <include>Defs_Hidden_Button</include>
+        </control>
+        <control type="button" id="7">
+            <label>190</label>
+            <description>Save</description>
+            <include>Defs_Hidden_Button</include>
+        </control>
+        <control type="button" id="8">
+            <label>192</label>
+            <description>Clear</description>
+            <include>Defs_Hidden_Button</include>
+        </control> 
+
+    </controls>
+
+</window>

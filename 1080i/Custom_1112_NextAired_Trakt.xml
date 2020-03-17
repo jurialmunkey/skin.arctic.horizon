@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window type="window" id="1112">
+    <defaultcontrol always="true">4100</defaultcontrol>
+    <onload>SetProperty(Header_Left_Text,Trakt Calendar)</onload>
+    <controls>
+        <include content="Viewtype_Calendar">
+            <param name="viewtype-include" value="Viewtype_Landscape" />
+            <param name="icon" value="$VAR[Image_Landscape]" />
+            <param name="info" value="trakt_calendar" />
+        </include>
+    </controls>
+</window>

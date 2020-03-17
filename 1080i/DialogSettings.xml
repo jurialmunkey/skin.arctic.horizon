@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+
+    <controls>
+        <control type="group">
+            <animation effect="fade" start="100" end="0" time="400" condition="Window.IsVisible(SliderDialog)">Conditional</animation>
+            <include>Global_Overlay</include>
+        </control>
+
+        <control type="group">
+            <visible>!Window.IsVisible(SliderDialog)</visible>
+            <include content="Dialog_Standard_Group">
+                <param name="width" value="1420" />
+                <param name="height" value="950" />
+            </include>
+
+            <control type="label" id="2">
+                <include>Dialog_Standard_Header</include>
+            </control>
+
+            <!-- Right Gradient -->
+            <include content="Defs_Settings_Gradient">
+                <param name="id" value="5" />
+                <top>dialog_top</top>
+                <right>dialog_side_grouplist</right>
+                <height>item_list_height</height>
+                <visible>ControlGroup(5).HasFocus()</visible>
+            </include>
+
+            <control type="grouplist" id="5">
+                <description>control area</description>
+                <left>0</left>
+                <top>dialog_top</top>
+                <right>dialog_side_grouplist</right>
+                <bottom>dialog_pad</bottom>
+                <itemgap>0</itemgap>
+                <onup>5</onup>
+                <ondown>5</ondown>
+                <onright>61</onright>
+                <pagecontrol>61</pagecontrol>
+                <usecontrolcoords>true</usecontrolcoords>
+            </control>
+
+            <include content="Dialog_Scrollbar">
+                <param name="onleft" value="5" />
+            </include>
+            
+           
+            <control type="group">
+                <include>Dialog_Standard_Right_Group</include>
+                <control type="grouplist" id="8000">
+                    <onleft>61</onleft>
+                    <orientation>vertical</orientation>
+                    <itemgap>0</itemgap>
+                    <control type="button" id="28" description="OK">
+                        <label>186</label>
+                        <include>Dialog_Standard_Right_Buttons</include>
+                    </control>
+                    <control type="button" id="29" description="Cancel">
+                        <label>222</label>
+                        <include>Dialog_Standard_Right_Buttons</include>
+                    </control>
+                    <control type="button" id="30" description="Defaults">
+                        <label>409</label>
+                        <include>Dialog_Standard_Right_Buttons</include>
+                    </control>
+                </control>
+            </control>
+        </control>
+        <include>Dialog_Default_Buttons</include>
+    </controls>
+
+</window>

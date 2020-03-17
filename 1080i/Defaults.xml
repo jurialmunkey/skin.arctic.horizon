@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Foundation -->
+<includes>
+
+    <default type="label">
+        <aligny>center</aligny>
+        <font>font_small</font>
+        <textcolor>dialog_fg_70</textcolor>
+        <focusedcolor>dialog_fg_70</focusedcolor>
+        <selectedcolor>$VAR[ColorHighlight]</selectedcolor>
+        <disabledcolor>dialog_fg_30</disabledcolor>
+    </default>
+
+    <default type="edit">
+        <align>center</align>
+        <aligny>center</aligny>
+        <font>font_small</font>
+        <textoffsetx>30</textoffsetx>
+        <textcolor>dialog_fg_70</textcolor>
+        <focusedcolor>Selected</focusedcolor>
+        <selectedcolor>$VAR[ColorHighlight]</selectedcolor>
+        <disabledcolor>dialog_fg_12</disabledcolor>
+        <texturefocus colordiffuse="dialog_bg_30">common/white.png</texturefocus>
+        <texturenofocus/>
+        <pulseonselect>false</pulseonselect>
+    </default>
+
+    <default type="fadelabel">
+        <align>left</align>
+        <aligny>center</aligny>
+        <font>font_small</font>
+        <textcolor>dialog_fg_70</textcolor>
+        <focusedcolor>Selected</focusedcolor>
+        <selectedcolor>$VAR[ColorHighlight]</selectedcolor>
+        <disabledcolor>dialog_fg_12</disabledcolor>
+        <scrollout>false</scrollout>
+        <pauseatend>2000</pauseatend>
+    </default>
+
+    <default type="image">
+    </default>
+
+    <default type="button">
+        <align>center</align>
+        <aligny>center</aligny>
+        <font>font_small</font>
+        <textoffsetx>30</textoffsetx>
+        <textcolor>dialog_fg_70</textcolor>
+        <focusedcolor>Selected</focusedcolor>
+        <disabledcolor>dialog_fg_30</disabledcolor>
+        <selectedcolor>$VAR[ColorHighlight]</selectedcolor>
+        <texturefocus colordiffuse="dialog_bg_12">common/white.png</texturefocus>
+        <texturenofocus/>
+        <pulseonselect>false</pulseonselect>
+    </default>
+
+    <default type="togglebutton">
+        <align>center</align>
+        <aligny>center</aligny>
+        <font>font_small</font>
+        <textoffsetx>30</textoffsetx>
+        <textcolor>dialog_fg_70</textcolor>
+        <focusedcolor>Selected</focusedcolor>
+        <selectedcolor>$VAR[ColorHighlight]</selectedcolor>
+        <disabledcolor>dialog_fg_30</disabledcolor>
+        <texturefocus colordiffuse="dialog_bg_12">common/white.png</texturefocus>
+        <texturenofocus/>
+        <alttexturefocus colordiffuse="dialog_bg_12">common/white.png</alttexturefocus>
+        <alttexturenofocus/>
+        <pulseonselect>false</pulseonselect>
+    </default>
+
+    <default type="radiobutton">
+        <align>center</align>
+        <aligny>center</aligny>
+        <font>font_small</font>
+        <radioposx>1250</radioposx>
+        <radiowidth>32</radiowidth>
+        <radioheight>32</radioheight>
+        <textoffsetx>30</textoffsetx>
+        <textcolor>dialog_fg_70</textcolor>
+        <focusedcolor>Selected</focusedcolor>
+        <disabledcolor>dialog_fg_12</disabledcolor>
+        <selectedcolor>$VAR[ColorHighlight]</selectedcolor>
+        <texturefocus colordiffuse="dialog_bg_12">common/white.png</texturefocus>
+        <texturenofocus/>
+        <textureradioondisabled colordiffuse="dialog_fg_12">buttons/radio-on.png</textureradioondisabled>
+        <textureradiooffdisabled colordiffuse="dialog_fg_12">buttons/radio-off.png</textureradiooffdisabled>
+        <textureradioonfocus colordiffuse="Selected">buttons/radio-on.png</textureradioonfocus>
+        <textureradioofffocus colordiffuse="Selected">buttons/radio-off.png</textureradioofffocus>
+        <textureradioonnofocus colordiffuse="dialog_fg_70">buttons/radio-on.png</textureradioonnofocus>
+        <textureradiooffnofocus colordiffuse="dialog_fg_30">buttons/radio-off.png</textureradiooffnofocus>
+        <textoffsetx>30</textoffsetx>
+        <pulseonselect>false</pulseonselect>
+    </default>
+
+    <default type="spincontrolex">
+        <font>font_small</font>
+        <spinwidth>32</spinwidth>
+        <spinheight>32</spinheight>
+        <textcolor>dialog_fg_70</textcolor>
+        <focusedcolor>Selected</focusedcolor>
+        <disabledcolor>dialog_fg_12</disabledcolor>
+        <selectedcolor>$VAR[ColorHighlight]</selectedcolor>
+        <texturefocus colordiffuse="dialog_bg_12">common/white.png</texturefocus>
+        <texturenofocus/>
+        <textureup flipy="true" colordiffuse="dialog_fg_30">buttons/spin-down.png</textureup>
+        <texturedown colordiffuse="dialog_fg_30">buttons/spin-down.png</texturedown>
+        <textureupfocus flipy="true" colordiffuse="Selected">buttons/spin-down.png</textureupfocus>
+        <texturedownfocus colordiffuse="Selected">buttons/spin-down.png</texturedownfocus>
+        <textureupdisabled flipy="true" colordiffuse="dialog_fg_12">buttons/spin-down.png</textureupdisabled>
+        <texturedowndisabled colordiffuse="dialog_fg_12">buttons/spin-down.png</texturedowndisabled>
+        <textoffsetx>30</textoffsetx>
+        <align>left</align>
+        <aligny>center</aligny>
+        <reverse>yes</reverse>
+        <pulseonselect>false</pulseonselect>
+    </default>
+
+    <default type="spincontrol">
+        <font>font_small</font>
+        <spinwidth>32</spinwidth>
+        <spinheight>32</spinheight>
+        <textcolor>dialog_fg_70</textcolor>
+        <focusedcolor>Selected</focusedcolor>
+        <disabledcolor>dialog_fg_12</disabledcolor>
+        <selectedcolor>$VAR[ColorHighlight]</selectedcolor>
+        <texturefocus colordiffuse="dialog_bg_12">common/white.png</texturefocus>
+        <texturenofocus/>
+        <textureup flipy="true" colordiffuse="dialog_fg_30">buttons/spin-down.png</textureup>
+        <texturedown colordiffuse="dialog_fg_30">buttons/spin-down.png</texturedown>
+        <textureupfocus flipy="true" colordiffuse="Selected">buttons/spin-down.png</textureupfocus>
+        <texturedownfocus colordiffuse="Selected">buttons/spin-down.png</texturedownfocus>
+        <textureupdisabled flipy="true" colordiffuse="dialog_fg_12">buttons/spin-down.png</textureupdisabled>
+        <texturedowndisabled colordiffuse="dialog_fg_12">buttons/spin-down.png</texturedowndisabled>
+        <textoffsetx>30</textoffsetx>
+        <align>left</align>
+        <aligny>center</aligny>
+        <reverse>yes</reverse>
+        <pulseonselect>false</pulseonselect>
+    </default>
+
+
+
+    <default type="progress">
+        <texturebg colordiffuse="2f5f5f5f" border="4">diffuse/progress-bg.png</texturebg>
+        <lefttexture colordiffuse="$VAR[ColorHighlight]" border="4">diffuse/progress-left.png</lefttexture>
+        <midtexture colordiffuse="$VAR[ColorHighlight]" border="4">diffuse/progress-end.png</midtexture>
+        <righttexture colordiffuse="$VAR[ColorHighlight]" border="4">diffuse/progress-right.png</righttexture>
+        <overlaytexture/>
+    </default>
+
+    <default type="slider">
+        <width>360</width>
+        <height>12</height>
+        <orientation>horizontal</orientation>
+        <texturefocus/>
+        <texturenofocus/>
+        <pulseonselect>false</pulseonselect>
+        <texturesliderbar colordiffuse="dialog_fg_12" border="6">slider/slider_bg.png</texturesliderbar>
+        <textureslidernib colordiffuse="dialog_fg_30" border="6">slider/slider_nib.png</textureslidernib>
+        <textureslidernibfocus colordiffuse="Selected" border="6">slider/slider_nib.png</textureslidernibfocus>
+    </default>
+
+    <default type="sliderex">
+        <orientation>horizontal</orientation>
+        <selectedcolor>$VAR[ColorHighlight]</selectedcolor>
+        <sliderwidth>192</sliderwidth>
+        <sliderheight>12</sliderheight>
+        <pulseonselect>false</pulseonselect>
+        <texturesliderbar colordiffuse="dialog_fg_12" border="6">slider/slider_bg.png</texturesliderbar>
+        <textureslidernib colordiffuse="dialog_fg_30" border="6">slider/slider_nib.png</textureslidernib>
+        <textureslidernibfocus colordiffuse="Selected" border="6">slider/slider_nib.png</textureslidernibfocus>
+        <font>font_small</font>
+        <aligny>center</aligny>
+        <textcolor>dialog_fg_70</textcolor>
+        <focusedcolor>Selected</focusedcolor>
+        <disabledcolor>dialog_fg_12</disabledcolor>
+        <textoffsetx>30</textoffsetx>
+        <textoffsety>0</textoffsety>
+    </default>
+
+    <default type="scrollbar">
+        <width>8</width>
+        <texturesliderbackground colordiffuse="dialog_fg_12" border="4">common/white.png</texturesliderbackground>
+        <texturesliderbar colordiffuse="dialog_fg_30" border="4">scrollbar/scrollv.png</texturesliderbar>
+        <texturesliderbarfocus colordiffuse="$VAR[ColorHighlight]" border="4">scrollbar/scrollv.png</texturesliderbarfocus>
+        <textureslidernib/>
+        <textureslidernibfocus/>
+        <showonepage>false</showonepage>
+        <orientation>vertical</orientation>
+    </default>
+
+
+
+    <default type="textbox">
+        <font>font_small</font>
+        <textcolor>dialog_fg_70</textcolor>
+        <shadowcolor/>
+        <selectedcolor>$VAR[ColorHighlight]</selectedcolor>
+        <pagecontrol>61</pagecontrol>
+        <autoscroll delay="6000" time="3000" repeat="10000"/>
+    </default>
+
+    <expression name="Exp_TrailerWindow">[Control.HasFocus(9608) + Player.HasVideo]</expression>
+
+    <expression name="Exp_SortLetterIsNumber">[String.IsEqual(ListItem.SortLetter,$NUMBER[0]) | String.IsEqual(ListItem.SortLetter,$NUMBER[1]) | String.IsEqual(ListItem.SortLetter,$NUMBER[2]) | String.IsEqual(ListItem.SortLetter,$NUMBER[3]) | String.IsEqual(ListItem.SortLetter,$NUMBER[4]) | String.IsEqual(ListItem.SortLetter,$NUMBER[5]) | String.IsEqual(ListItem.SortLetter,$NUMBER[6]) | String.IsEqual(ListItem.SortLetter,$NUMBER[7]) | String.IsEqual(ListItem.SortLetter,$NUMBER[8]) | String.IsEqual(ListItem.SortLetter,$NUMBER[9])]</expression>
+
+    <expression name="Exp_CommonAnimation">[$EXP[Exp_ShowPlotOverlay] | $EXP[Exp_InfoVisible] | Window.IsVisible(1142)]</expression>
+    <expression name="Exp_InfoVisible">[Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(DialogMusicInfo.xml) | Window.IsVisible(DialogAddonInfo.xml) | Window.IsVisible(1140) | Window.IsVisible(DialogPVRInfo.xml)]</expression>
+    <expression name="Exp_InfoActive">[Window.IsActive(DialogVideoInfo.xml) | Window.IsActive(DialogMusicInfo.xml) | Window.IsActive(DialogAddonInfo.xml) | Window.IsActive(1140) | Window.IsActive(DialogPVRInfo.xml)]</expression>
+
+    <expression name="Exp_IsPluginAdvancedLauncher">[String.StartsWith(Container.FolderPath,plugin://plugin.program.advanced.launcher/) | String.StartsWith(Container.FolderPath,plugin://plugin.program.advanced.emulator.launcher/) | String.StartsWith(Container.FolderPath,plugin://plugin.program.advanced.MAME.launcher/)]</expression>
+
+    <expression name="Exp_ShowPlotOverlay">[ControlGroup(9601).HasFocus() | Control.HasFocus(9603)]</expression>
+
+    <expression name="Exp_GlobalBackground">[!Player.HasMedia | [Player.HasVideo + !Skin.HasSetting(global.showvideo)] | [!Skin.HasSetting(global.showvisualisation) + Player.HasAudio] | [Player.HasAudio + !String.IsEmpty(Window(Home).Property(PlayingBackgroundMedia))]]</expression>
+
+</includes>

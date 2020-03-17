@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window type="window" id="1110">
+    <defaultcontrol always="false">300</defaultcontrol>
+    <onload>SetProperty(TMDbHelper.WidgetContainer,5610,Home)</onload>
+    <onunload>ClearProperty(TMDbHelper.WidgetContainer,Home)</onunload>
+    <controls>
+        <control type="list" id="301">
+            <top>-1000</top>
+            <left>-1000</left>
+            <width>1</width>
+            <height>1</height>
+            <onleft>303</onleft>
+            <onright>303</onright>
+            <onfocus>SetFocus(303)</onfocus>
+            <itemlayout />
+            <focusedlayout />
+            <content>
+                <item>
+                    <label>$INFO[Window(Home).Property(Hub.Label)]</label>
+                    <property name="submenuVisibility">$INFO[Window(Home).Property(Hub.submenuVisibility)]</property>
+                </item>
+            </content>
+        </control>
+        <control type="list" id="302">
+            <top>-1000</top>
+            <left>-1000</left>
+            <width>1</width>
+            <height>1</height>
+            <onleft>300</onleft>
+            <onright>300</onright>
+            <onfocus>SetFocus(300)</onfocus>
+            <itemlayout />
+            <focusedlayout />
+            <content>
+                <item>
+                    <label>$INFO[Window(Home).Property(Hub.SubMenu.Label)]</label>
+                    <property name="id">$INFO[Window(Home).Property(SubMenu.ID)]</property>
+                    <property name="widgetPath">$INFO[Window(Home).Property(SubMenu.widgetPath)]</property>
+                    <property name="widgetName">$INFO[Window(Home).Property(SubMenu.widgetName)]</property>
+                </item>
+            </content>
+        </control>
+        <include content="Viewtype_Main">
+            <control type="group">
+                <include>Animation_Common</include>
+                <visible allowhiddenfocus="true">!Window.IsVisible(1142) + !Window.IsVisible(1143) + !$EXP[Exp_ShowPlotOverlay] + !$EXP[Exp_InfoVisible]</visible>
+                <control type="group">
+                    <include>View_Pad</include>
+
+                    <!-- Top Half -->
+                    <control type="group" description="Top Half">
+                        <include content="View_Info_Grouplist">
+                            <param name="container" value="Container(5610)." />
+                            <param name="title" value="$INFO[Container(5610).ListItem.Title]" />
+                            <param name="plot" value="$INFO[Container(5610).ListItem.Plot]" />
+                            <param name="plotheight" value="auto" />
+                            <top>-15</top>
+                            <height>285</height>
+                            <include>Viewtype_Info_Right</include>
+                            <visible>!String.IsEmpty(Container(5610).ListItem.Title)</visible>
+                        </include>
+                        <control type="grouplist">
+                            <top>-15</top>
+                            <height>285</height>
+                            <orientation>vertical</orientation>
+                            <usecontrolcoords>true</usecontrolcoords>
+                            <itemgap>0</itemgap>
+                            <visible>String.IsEmpty(Container(5610).ListItem.Title)</visible>
+                            <include content="Object_Info_Title">
+                                <param name="label" value="$INFO[System.Time]" />
+                            </include>
+                            <include content="Object_Info_Line_Label">
+                                <param name="label" value="$INFO[System.Date]" />
+                                <param name="textcolor" value="main_fg_100" />
+                                <param name="divider" value="false" />
+                            </include>
+                        </control>
+                        <include content="View_Hub_Buttons">
+                            <param name="grouplistid" value="300" />
+                        </include>
+                    </control>
+
+                    <!-- Bottom Half -->
+                    <control type="group" description="Bottom Half">
+                        <include>Animation_Down</include>
+                        <include content="Viewtype_BackPanel">
+                            <height>480</height>
+                        </include>
+                        <include content="Home_Hub_Widget_Label">
+                            <param name="id" value="5610" />
+                            <param name="label" value="$VAR[Label_Hub_WidgetName]" />
+                        </include>
+                        <include>skinshortcuts-template-spotlight-mainmenu</include>
+                        <include>skinshortcuts-template-spotlight-submenu</include>
+                    </control>
+                </control>
+                <include>Topbar_Left</include>
+            </control>
+        </include>
+        
+        <include>Topbar_Right</include>
+    </controls>
+</window>

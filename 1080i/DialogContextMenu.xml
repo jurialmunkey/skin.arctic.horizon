@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Foundation -->
+<window id="106">
+    <defaultcontrol always="true">1000</defaultcontrol>
+
+    <coordinates>
+        <origin x="0" y="0" />
+    </coordinates>
+
+    <controls>
+        <include>Global_Overlay</include>
+        <control type="group">
+            <centerleft>50%</centerleft>
+            <centertop>50%</centertop>
+            <include>Animation_FadeIn_SlideUp</include>
+            <include>Animation_FadeOut</include>
+            <width>506</width>
+            <height>884</height>
+            <animation effect="slide" end="0,item_list_height_half" condition="true">Conditional</animation>
+            <animation effect="slide" end="0,item_list_height_half" condition="Integer.IsLess(Container(996).NumItems,10)">Conditional</animation>
+            <animation effect="slide" end="0,item_list_height_half" condition="Integer.IsLess(Container(996).NumItems,9)">Conditional</animation>
+            <animation effect="slide" end="0,item_list_height_half" condition="Integer.IsLess(Container(996).NumItems,8)">Conditional</animation>
+            <animation effect="slide" end="0,item_list_height_half" condition="Integer.IsLess(Container(996).NumItems,7)">Conditional</animation>
+            <animation effect="slide" end="0,item_list_height_half" condition="Integer.IsLess(Container(996).NumItems,6)">Conditional</animation>
+            <animation effect="slide" end="0,item_list_height_half" condition="Integer.IsLess(Container(996).NumItems,5)">Conditional</animation>
+            <animation effect="slide" end="0,item_list_height_half" condition="Integer.IsLess(Container(996).NumItems,4)">Conditional</animation>
+            <animation effect="slide" end="0,item_list_height_half" condition="Integer.IsLess(Container(996).NumItems,3)">Conditional</animation>
+            <animation effect="slide" end="0,item_list_height_half" condition="Integer.IsLess(Container(996).NumItems,2)">Conditional</animation>
+
+            <control type="image" id="999">
+                <description>background image</description>
+                <bottom>0</bottom>
+                <width>506</width>
+                <height>954</height>
+                <bordertexture border="32">common/shadow-dialog-24.png</bordertexture>
+                <bordersize>24</bordersize>
+                <texture border="16" colordiffuse="dialog_bg_100">common/dialog.png</texture>
+            </control>
+            <control type="image">
+                <top>42</top>
+                <left>24</left>
+                <width>458</width>
+                <height>item_list_height</height>
+                <texture colordiffuse="$VAR[ColorHighlight]">common/white.png</texture>
+                <animation effect="slide" end="0,item_list_height" condition="Integer.IsGreater(Container(996).Position,0)">Conditional</animation>
+                <animation effect="slide" end="0,item_list_height" condition="Integer.IsGreater(Container(996).Position,1)">Conditional</animation>
+                <animation effect="slide" end="0,item_list_height" condition="Integer.IsGreater(Container(996).Position,2)">Conditional</animation>
+                <animation effect="slide" end="0,item_list_height" condition="Integer.IsGreater(Container(996).Position,3)">Conditional</animation>
+                <animation effect="slide" end="0,item_list_height" condition="Integer.IsGreater(Container(996).Position,4)">Conditional</animation>
+                <animation effect="slide" end="0,item_list_height" condition="Integer.IsGreater(Container(996).Position,5)">Conditional</animation>
+                <animation effect="slide" end="0,item_list_height" condition="Integer.IsGreater(Container(996).Position,6)">Conditional</animation>
+                <animation effect="slide" end="0,item_list_height" condition="Integer.IsGreater(Container(996).Position,7)">Conditional</animation>
+                <animation effect="slide" end="0,item_list_height" condition="Integer.IsGreater(Container(996).Position,8)">Conditional</animation>
+            </control>
+            <control type="label">
+                <top>-45</top>
+                <width>458</width>
+                <height>item_list_height</height>
+                <left>24</left>
+                <textcolor>dialog_fg_70</textcolor>
+                <font>font_small_bold</font>
+                <label>$LOCALIZE[31059]</label>
+                <align>left</align>
+                <textoffsetx>30</textoffsetx>
+            </control>
+            <control type="image">
+                <top>-37</top>
+                <width>458</width>
+                <height>64</height>
+                <left>16</left>
+                <aspectratio align="right">keep</aspectratio>
+                <texture colordiffuse="$VAR[ColorHighlight]">special://skin/extras/icons/kodi.png</texture>
+            </control>
+            <control type="grouplist" id="996">
+                <description>grouplist for context buttons</description>
+                <left>24</left>
+                <bottom>42</bottom>
+                <width>458</width>
+                <height>view_list_height</height>
+                <itemgap>0</itemgap>
+                <onleft>Back</onleft>
+                <onright>Back</onright>
+            </control>
+            <control type="button" id="1000">
+                <description>Buttons</description>
+                <onleft>Back</onleft>
+                <onright>Back</onright>
+                <width>458</width>
+                <include>Defs_Context_Button</include>
+            </control>
+
+            <control type="image">
+                <left>245</left>
+                <top>-70</top>
+                <width>16</width>
+                <height>16</height>
+                <visible>Container(996).HasNext | Container(996).HasPrevious</visible>
+                <texture flipy="true" colordiffuse="main_fg_100">common/arrow-small.png</texture>
+            </control>
+            <control type="image">
+                <left>245</left>
+                <bottom>0</bottom>
+                <width>16</width>
+                <height>16</height>
+                <visible>Container(996).HasNext | Container(996).HasPrevious</visible>
+                <texture colordiffuse="main_fg_100">common/arrow-small.png</texture>
+            </control>
+        </control>
+    </controls>
+
+</window>

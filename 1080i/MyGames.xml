@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Foundation -->
+<window id="2">
+    <defaultcontrol always="true">500</defaultcontrol>
+    <menucontrol>300</menucontrol>
+    <views>500,510</views>    
+    <controls>
+        <include>Global_Background</include>
+        <include>Topbar_Right</include>
+        <control type="group">
+            <visible allowhiddenfocus="true">!$EXP[Exp_ShowPlotOverlay]</visible>
+            <include>Animation_FadeInOut</include>
+            <include>View_500_List_Square</include>
+            <include>View_510_Wall_Square</include>
+        </control>
+
+        <control type="list" id="300">
+            <ondown>500</ondown>
+            <include>Topbar_Menu_Layout</include>
+            <include>Items_View</include>
+        </control>
+        <include>Defs_Options_StandardButtons</include>
+    </controls>
+
+</window>

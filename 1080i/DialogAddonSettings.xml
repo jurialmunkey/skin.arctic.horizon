@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Foundation -->
+<window id="10140">
+    <defaultcontrol always="true">3</defaultcontrol>
+
+
+    <controls>
+
+        <include>Global_Overlay</include>
+
+        <control type="group">
+            <include content="Dialog_Standard_Group">
+                <param name="width" value="1820" />
+                <param name="height" value="970" />
+            </include>
+
+            <control type="label" id="2">
+                <include>Dialog_Standard_Header</include>
+            </control>
+
+            <!-- Left Gradient Fade -->
+            <include content="Defs_Settings_Gradient">
+                <param name="id" value="3" />
+                <top>dialog_top</top>
+                <width>dialog_side_grouplist</width>
+                <height>item_list_height</height>
+            </include>
+            <!-- Right Gradient -->
+            <include content="Defs_Settings_Gradient">
+                <param name="id" value="5" />
+                <left>dialog_side_grouplist</left>
+                <top>dialog_top</top>
+                <right>dialog_side_grouplist</right>
+                <height>item_list_height</height>
+                <visible>ControlGroup(5).HasFocus()</visible>
+            </include>
+
+            <control type="grouplist" id="3">
+                <description>button area</description>
+                <left>0</left>
+                <top>dialog_top</top>
+                <width>dialog_side_grouplist</width>
+                <bottom>dialog_pad</bottom>
+                <itemgap>0</itemgap>
+                <onleft>9001</onleft>
+                <onright>5</onright>
+                <onup>3</onup>
+                <ondown>3</ondown>
+            </control>
+
+            <include>Dialog_Separator</include>
+
+            <control type="grouplist" id="5">
+                <description>control area</description>
+                <left>dialog_side_grouplist</left>
+                <top>dialog_top</top>
+                <right>dialog_side_grouplist</right>
+                <bottom>dialog_pad</bottom>
+                <itemgap>0</itemgap>
+                <onup>5</onup>
+                <ondown>5</ondown>
+                <onright>61</onright>
+                <onleft>3</onleft>
+                <pagecontrol>61</pagecontrol>
+                <usecontrolcoords>true</usecontrolcoords>
+            </control>
+
+            <include content="Dialog_Scrollbar">
+                <param name="onleft" value="5" />
+            </include>
+           
+            <control type="group">
+                <include>Dialog_Standard_Right_Group</include>
+                <!-- <include content="Dialog_Standard_Right_Buttons_Gradient">
+                    <visible>Control.HasFocus(28)</visible>
+                </include> -->
+                <control type="image">
+                    <bottom>0</bottom>
+                    <height>dialog_right_iconwidth</height>
+                    <texture>$VAR[Image_AddonImage]</texture>
+                    <aspectratio align="center" aligny="bottom">keep</aspectratio>
+                </control>
+                <control type="grouplist" id="8000">
+                    <onleft>61</onleft>
+                    <orientation>vertical</orientation>
+                    <itemgap>0</itemgap>
+                    <control type="button" id="28" description="OK">
+                        <label>186</label>
+                        <include>Dialog_Standard_Right_Buttons</include>
+                    </control>
+                    <control type="button" id="29" description="Cancel">
+                        <label>222</label>
+                        <include>Dialog_Standard_Right_Buttons</include>
+                    </control>
+                    <control type="button" id="30" description="Cancel">
+                        <label>409</label>
+                        <include>Dialog_Standard_Right_Buttons</include>
+                    </control>
+                </control>
+            </control>
+        </control>
+
+        <include>Dialog_Default_Buttons</include>
+        <control type="togglebutton" id="10">
+            <description>Default Category Button</description>
+            <width>dialog_side_grouplist</width>
+            <include>Dialog_Standard_Button</include>
+        </control>
+
+    </controls>
+
+</window>

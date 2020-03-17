@@ -1,0 +1,97 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<shortcuts>
+    <shortcut>
+        <label2>Power Menu Shortcut</label2>
+        <label>$LOCALIZE[20183]</label>
+        <action>ReloadSkin()</action>
+        <icon>special://skin/extras/icons/power.png</icon>
+    </shortcut>
+    <shortcut>
+        <label2>Power Menu Shortcut</label2>
+        <label>13012</label>
+        <action>XBMC.Quit()</action>
+        <visible>System.ShowExitButton</visible>
+        <icon>special://skin/extras/icons/power.png</icon>
+    </shortcut>
+    <shortcut>
+        <label2>Power Menu Shortcut</label2>
+        <label>13016</label>
+        <action>XBMC.Powerdown()</action>
+        <visible>System.CanPowerDown</visible>
+        <icon>special://skin/extras/icons/power.png</icon>
+    </shortcut>
+    <shortcut>
+        <label2>Power Menu Shortcut</label2>
+        <label>13011</label>
+        <action>XBMC.Suspend()</action>
+        <visible>System.CanSuspend</visible>
+        <icon>special://skin/extras/icons/power.png</icon>
+    </shortcut>
+    <shortcut>
+        <label2>Power Menu Shortcut</label2>
+        <label>13010</label>
+        <action>XBMC.Hibernate()</action>
+        <visible>System.CanHibernate</visible>
+        <icon>special://skin/extras/icons/power.png</icon>
+    </shortcut>
+    <shortcut>
+        <label2>Power Menu Shortcut</label2>
+        <label>13013</label>
+        <action>XBMC.Reset()</action>
+        <visible>System.CanReboot</visible>
+        <icon>special://skin/extras/icons/power.png</icon>
+    </shortcut>
+    <shortcut>
+        <label2>Power Menu Shortcut</label2>
+        <label>20126</label>
+        <action>dialog.close(all,true)</action>
+        <action>System.LogOff</action>
+        <visible>System.HasLoginScreen | IntegerGreaterThan(System.ProfileCount,1)</visible>
+        <visible>System.Loggedon</visible>
+        <icon>special://skin/extras/icons/power.png</icon>
+    </shortcut>
+    <shortcut>
+        <label2>Power Menu Shortcut</label2>
+        <label>20046</label>
+        <altlabel>20045</altlabel>
+        <usealttexture>!System.IsMaster</usealttexture>
+        <action>xbmc.mastermode</action>
+        <visible>System.HasLocks</visible>
+        <icon>special://skin/extras/icons/power.png</icon>
+    </shortcut>
+    <shortcut>
+        <label2>Power Menu Shortcut</label2>
+        <label>13017</label>
+        <action>XBMC.InhibitIdleShutdown(true)</action>
+        <visible>System.HasShutdown +!System.IsInhibit</visible>
+        <icon>special://skin/extras/icons/power.png</icon>
+    </shortcut>
+    <shortcut>
+        <label2>Power Menu Shortcut</label2>
+        <label>13018</label>
+        <action>XBMC.InhibitIdleShutdown(false)</action>
+        <visible>System.HasShutdown + System.IsInhibit</visible>
+        <icon>special://skin/extras/icons/power.png</icon>
+    </shortcut>
+    <shortcut>
+        <label2>Power Menu Shortcut</label2>
+        <label>20150</label>
+        <action>XBMC.AlarmClock(shutdowntimer,XBMC.Shutdown())</action>
+        <visible>!System.HasAlarm(shutdowntimer)</visible>
+        <visible>System.CanPowerDown | System.CanSuspend | System.CanHibernate</visible>
+        <icon>special://skin/extras/icons/power.png</icon>
+    </shortcut>
+    <shortcut>
+        <label2>Power Menu Shortcut</label2>
+        <label>20151</label>
+        <action>XBMC.CancelAlarm(shutdowntimer)</action>
+        <visible>System.HasAlarm(shutdowntimer)</visible>
+        <icon>special://skin/extras/icons/power.png</icon>
+    </shortcut>
+    <shortcut>
+        <label2>Power Menu Shortcut</label2>
+        <label>5</label>
+        <action>ActivateWindow(Settings)</action>
+        <icon>special://skin/extras/icons/power.png</icon>
+    </shortcut>
+</shortcuts>

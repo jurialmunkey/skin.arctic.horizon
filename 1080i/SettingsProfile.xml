@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Foundation -->
+<window id="34">
+    <defaultcontrol always="true">300</defaultcontrol>
+    <include>Defs_Settings_OnLoad</include>
+    <controls>
+
+        <include>Global_Background</include>
+        <include>Defs_Settings_Background</include>
+        <control type="group">
+            <include>Dialog_Settings_Group</include>
+    
+            <include content="Defs_Settings_Changer">
+                <onright>4</onright>
+            </include>
+
+            <include content="Dialog_Separator">
+                <param name="top" value="41" />
+                <param name="bottom" value="41" />
+                <param name="left" value="item_list_height" />
+            </include>
+
+            <control type="group">
+                <left>item_list_height</left>
+
+                <control type="group">
+                    <top>41</top>
+                    <height>item_list_height</height>
+                    <width>dialog_side_grouplist</width>
+                    <visible>Control.HasFocus(4)</visible>
+                    <control type="image">
+                        <texture colordiffuse="$VAR[ColorHighlight]">common/white.png</texture>
+                    </control>
+                    <control type="image">
+                        <texture colordiffuse="$VAR[ColorHighlight3]">common/white-gradient.png</texture>
+                    </control>
+                </control>
+
+                <control type="radiobutton" id="4">
+                    <description>button area</description>
+                    <left>0</left>
+                    <top>41</top>
+                    <width>dialog_side_grouplist</width>
+                    <onright>2</onright>
+                    <include>Defs_Settings_OnLeft</include>
+                    <label>20096</label>
+                    <radioposx>350</radioposx>
+                    <include>Defs_Settings_Button</include>
+                </control>
+
+                <include content="Dialog_Separator">
+                    <param name="top" value="41" />
+                    <param name="bottom" value="41" />
+                </include>
+
+                <control type="panel" id="2">
+                    <description>control area</description>
+                    <left>dialog_side_grouplist</left>
+                    <top>41</top>
+                    <right>0</right>
+                    <height>738</height>
+                    <onleft>4</onleft>
+                    <itemlayout height="80" width="1300">
+                        <control type="label">
+                            <right>50</right>
+                            <left>50</left>
+                            <textcolor>dialog_fg_70</textcolor>
+                            <info>ListItem.Label</info>
+                        </control>
+                        <control type="label">
+                            <right>50</right>
+                            <left>50</left>
+                            <align>right</align>
+                            <font>font_tiny</font>
+                            <textcolor>dialog_fg_70</textcolor>
+                            <info>ListItem.Label2</info>
+                        </control>
+                    </itemlayout>
+
+                    <focusedlayout height="80" width="1300">
+                        <control type="group">
+                            <control type="image">
+                                <texture border="5" colordiffuse="$VAR[ColorHighlight]">common/white.png</texture>
+                            </control>
+                            <control type="image">
+                                <texture colordiffuse="$VAR[ColorHighlight3]">common/white-gradient.png</texture>
+                            </control>
+                            <control type="label">
+                                <left>50</left>
+                                <right>50</right>
+                                <textcolor>Selected</textcolor>
+                                <info>ListItem.Label</info>
+                            </control>
+                            <control type="label">
+                                <right>50</right>
+                                <left>50</left>
+                                <align>right</align>
+                                <font>font_tiny</font>
+                                <textcolor>Selected</textcolor>
+                                <info>ListItem.Label2</info>
+                            </control>
+                        </control>
+                    </focusedlayout>
+                </control>
+            </control>
+        </control>
+        
+    </controls>
+
+</window>

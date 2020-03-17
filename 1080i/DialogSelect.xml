@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Foundation -->
+<window id="2000">
+    <defaultcontrol>3</defaultcontrol>
+    <controls>
+        <include condition="![Window.IsActive(gamestretchmode) | Window.IsActive(gamevideofilter) | Window.IsActive(gamevideorotation)]">Dialog_Select_Standard</include>
+        <include condition="Window.IsActive(gamestretchmode) | Window.IsActive(gamevideofilter) | Window.IsActive(gamevideorotation)">Dialog_Select_Game</include>
+
+        
+    </controls>
+</window>

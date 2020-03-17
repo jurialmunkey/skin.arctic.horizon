@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window id="605">
+    <defaultcontrol always="true">20</defaultcontrol>
+    <controls>
+        <include>Global_Overlay</include>
+
+        <control type="group">
+            <include content="Dialog_Standard_Group">
+                <param name="width" value="1820" />
+                <param name="height" value="950" />
+            </include>
+
+            <control type="label" id="2">
+                <label>$LOCALIZE[19199] • $LOCALIZE[19023]</label>
+                <include>Dialog_Standard_Header</include>
+            </control>
+
+            <include content="Dialog_Standard_List">
+                <param name="id" value="20" />
+                <param name="list_style" value="Dialog_Standard_List_Itemlayout_ChannelManager" />
+                <param name="left_pad" value="10" />
+                <param name="checkmark" value="false" />
+                <param name="onright" value="9000" />
+                <param name="width" value="600" />
+            </include>
+
+            <control type="group">
+                <left>200</left>
+                <include>Dialog_Separator</include>
+            </control>
+
+            <!-- Right Gradient -->
+            <include content="Defs_Settings_Gradient">
+                <param name="id" value="9000" />
+                <left>600</left>
+                <top>dialog_top</top>
+                <right>dialog_side_grouplist</right>
+                <height>item_list_height</height>
+                <visible>ControlGroup(9000).HasFocus()</visible>
+            </include>
+            <control type="grouplist" id="9000">
+                <description>control area</description>
+                <left>600</left>
+                <top>dialog_top</top>
+                <right>dialog_side_grouplist</right>
+                <bottom>dialog_pad</bottom>
+                <itemgap>0</itemgap>
+                <onup>9000</onup>
+                <ondown>9000</ondown>
+                <onright>8000</onright>
+                <onleft>20</onleft>
+                <usecontrolcoords>true</usecontrolcoords>
+                <control type="radiobutton" id="7" description="Channel activated">
+                    <include>Dialog_Standard_Button</include>
+                    <radioposx>760</radioposx>
+                    <label>19074</label>
+                </control>
+                <control type="edit" id="8" description="Channel name">
+                    <include>Dialog_Standard_Button</include>
+                    <label>19201</label>
+                </control>
+                <control type="button" id="9" description="Channel logo Button">
+                    <include>Dialog_Standard_Button</include>
+                    <label>19202</label>
+                </control>
+                <control type="radiobutton" id="12" description="EPG activated">
+                    <include>Dialog_Standard_Button</include>
+                    <radioposx>760</radioposx>
+                    <label>19206</label>
+                </control>
+                <control type="spincontrolex" id="13" description="EPG source">
+                    <include>Dialog_Standard_Button</include>
+                    <label>19200</label>
+                </control>
+                <control type="radiobutton" id="14" description="Parental locked">
+                    <include>Dialog_Standard_Button</include>
+                    <radioposx>760</radioposx>
+                    <label>19267</label>
+                </control>
+                <control type="button" id="30" description="Group Manager Button">
+                    <include>Dialog_Standard_Button</include>
+                    <label>19205</label>
+                </control>
+                <control type="button" id="34" description="TV/Radio Button">
+                    <include>Dialog_Standard_Button</include>
+                    <label>$LOCALIZE[19021] / $LOCALIZE[19020]</label>
+                </control>
+                <control type="button" id="31" description="Create channel Button">
+                    <include>Dialog_Standard_Button</include>
+                    <label>19204</label>
+                </control>
+            </control>
+
+            <include>Dialog_Separator_Right</include>
+
+            <control type="group">
+                <include>Dialog_Standard_Right_Group</include>
+                <include content="Dialog_Standard_Image">
+                    <param name="id" value="20" />
+                </include>
+                <control type="grouplist" id="8000">
+                    <onleft>9000</onleft>
+                    <orientation>vertical</orientation>
+                    <itemgap>0</itemgap>
+                    <control type="button" id="4" description="OK">
+                        <label>186</label>
+                        <include>Dialog_Standard_Right_Buttons</include>
+                    </control>
+                    <control type="button" id="5" description="Apply">
+                        <label>$LOCALIZE[31412]</label>
+                        <include>Dialog_Standard_Right_Buttons</include>
+                    </control>
+                    <control type="button" id="6" description="Cancel">
+                        <label>$LOCALIZE[222]</label>
+                        <include>Dialog_Standard_Right_Buttons</include>
+                    </control>
+                </control>
+            </control>
+        </control>
+
+        
+    </controls>
+</window>

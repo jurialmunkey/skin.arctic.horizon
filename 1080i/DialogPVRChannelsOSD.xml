@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+    <defaultcontrol always="true">11</defaultcontrol>
+    <controls>
+        <control type="group">
+            <include>Animation_Left</include>
+            <width>900</width>
+            <control type="image">
+                <texture colordiffuse="panel_bg">common/white.png</texture>
+            </control>
+            <include content="Topbar_Left">
+                <param name="fgcolor" value="panel_fg" />
+            </include>
+            <include content="Topbar_Right">
+                <param name="fgcolor" value="panel_fg" />
+            </include>
+            <control type="group">
+                <include>View_Pad</include>
+                <control type="label">
+                    <top>0</top>
+                    <height>item_list_height_half</height>
+                    <width>521</width>
+                    <align>left</align>
+                    <aligny>top</aligny>
+                    <font>font_tiny_bold</font>
+                    <label>$INFO[VideoPlayer.ChannelGroup ]</label>
+                    <textcolor>panel_fg_70</textcolor>
+                </control>
+                <control type="label">
+                    <top>item_list_height_half</top>
+                    <height>item_list_height_half</height>
+                    <width>521</width>
+                    <align>left</align>
+                    <aligny>top</aligny>
+                    <font>font_statusbar</font>
+                    <label>$INFO[System.Date]</label>
+                    <textcolor>panel_fg_70</textcolor>
+                </control>
+                <control type="wraplist" id="11">
+                    <left>0</left>
+                    <width>740</width>
+                    <top>view_pad</top>
+                    <height>720</height>
+                    <orientation>vertical</orientation>
+                    <focusposition>3</focusposition>
+                    <movement>0</movement>
+                    <itemlayout width="740" height="120">
+                        <control type="group">
+                            <width>120</width>
+                            <control type="image">
+                                <top>4</top>
+                                <right>4</right>
+                                <texture colordiffuse="panel_fg_12" border="10">common/box.png</texture>
+                            </control>
+                            <include content="Object_PVR_Icon">
+                                <param name="font" value="font_statusbar_bold" />
+                            </include>
+                        </control>
+                        <control type="group">
+                            <left>120</left>
+                            <include content="View_PVR_OSD_ItemLayout_Item">
+                                <param name="fgcolor" value="panel_fg_70" />
+                                <param name="panelcolor" value="panel_fg_12" />
+                                <param name="selectstripecolor" value="panel_fg_12" />
+                            </include>
+                        </control>
+                    </itemlayout>
+                    <focusedlayout width="740" height="120">
+                        <control type="group">
+                            <width>120</width>
+                            <control type="image">
+                                <top>4</top>
+                                <right>4</right>
+                                <texture colordiffuse="$VAR[ColorHighlight]" border="10">common/box.png</texture>
+                            </control>
+                            <control type="image">
+                                <top>4</top>
+                                <right>4</right>
+                                <texture colordiffuse="$VAR[ColorHighlight3]" border="10">common/box-gradient.png</texture>
+                            </control>
+                            <include content="Object_PVR_Icon">
+                                <param name="font" value="font_statusbar_bold" />
+                            </include>
+                        </control>
+                        <control type="group">
+                            <left>120</left>
+                            <control type="image">
+                                <top>4</top>
+                                <right>4</right>
+                                <texture colordiffuse="$VAR[ColorHighlight]" border="10">common/box.png</texture>
+                            </control>
+                            <control type="image">
+                                <top>4</top>
+                                <right>4</right>
+                                <texture colordiffuse="$VAR[ColorHighlight3]" border="10">common/box-gradient.png</texture>
+                            </control>
+                            <include content="View_PVR_OSD_ItemLayout_Item">
+                                <param name="fgcolor" value="Selected" />
+                                <param name="panelcolor" value="00ffffff" />
+                                <param name="selectstripecolor" value="panel_fg_12" />
+                            </include>
+                        </control>
+                    </focusedlayout>
+                </control>
+            </control>
+        </control>
+        
+    </controls>
+</window>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window type="dialog" id="1140">
+    <defaultcontrol always="true">300</defaultcontrol>
+    <onunload condition="Window.IsVisible(1136)">RunScript(plugin.video.themoviedb.helper,del_path,call_auto=1190)</onunload>
+    <onload>SetProperty(Header_Center_Text,$LOCALIZE[14116])</onload>
+    <onload>SetProperty(Header_Left_Text,$LOCALIZE[31006])</onload>
+    <controls>
+        <!-- Top Info -->
+        <control type="group">
+            <animation effect="fade" condition="Window.IsVisible(Home.xml)" time="1" delay="350" start="0" end="100">WindowOpen</animation>
+            <include content="Topbar_Right">
+                <param name="info_hide" value="false" />
+            </include>
+        </control>
+
+        <include>DialogVideoInfo</include>
+    </controls>
+</window>

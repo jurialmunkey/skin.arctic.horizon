@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Foundation -->
+<window id="120">
+    <onload condition="!Player.PauseEnabled">SetFocus(15)</onload>
+    <onload condition="Player.PauseEnabled">SetFocus(14)</onload>
+    <controls>
+        <control type="group">
+            <include>Animation_FadeIn</include>
+            <include>Animation_FadeOut</include>
+            <control type="grouplist" id="9000">
+                <align>center</align>
+                <height>48</height>
+                <centerbottom>165</centerbottom>
+                <itemgap>28</itemgap>
+                <orientation>horizontal</orientation>
+                <usecontrolcoords>true</usecontrolcoords>
+                <include>OSD_Controls</include>
+            </control>
+            <control type="group">
+                <height>30</height>
+                <width>640</width>
+                <centerbottom>108</centerbottom>
+                <centerleft>50%</centerleft>
+                <control type="label">
+                    <textcolor>panel_fg_30</textcolor>
+                    <font>font_tiny_bold</font>
+                    <height>30</height>
+                    <aligny>center</aligny>
+                    <align>center</align>
+                    <label>$INFO[Player.Time,[COLOR=panel_fg_70],[/COLOR]]$INFO[Player.Duration,  •  [COLOR=panel_fg_70],[/COLOR]]</label>
+                </control>
+                <!-- <control type="label">
+                    <textcolor>panel_fg_70</textcolor>
+                    <font>font_tiny</font>
+                    <height>30</height>
+                    <aligny>center</aligny>
+                    <align>right</align>
+                    <label>$INFO[Player.Duration]</label>
+                </control> -->
+            </control>
+        </control>
+
+        <control type="slider">
+            <bottom>58</bottom>
+            <left>398</left>
+            <height>24</height>
+            <width>564</width>
+            <texturesliderbar/>
+            <textureslidernib/>
+            <textureslidernibfocus/>
+            <info>Player.Progress</info>
+            <action>seek</action>
+        </control>
+
+        <include content="OSD_Menu_List">
+            <param name="content" value="Items_OSD_MusicVis" />
+            <param name="height" value="662" />
+            <param name="id" value="3112" />
+            <param name="label" value="$LOCALIZE[33063]" />
+            <param name="position" value="80,60" />
+        </include>
+
+    </controls>
+
+</window>

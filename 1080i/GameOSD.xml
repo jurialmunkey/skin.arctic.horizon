@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<window>
+    <defaultcontrol always="true">1103</defaultcontrol>
+    <controls>
+        <control type="group" id="1">
+            <control type="group">
+                <visible>!Window.IsActive(GameVideoFilter) + !Window.IsActive(GameStretchMode) + !Window.IsActive(GameControllers) + !Window.IsActive(GameVideoRotation)</visible>
+                <include>Global_Overlay</include>
+            </control>
+            <control type="group" id="10">
+                <visible>System.GetBool(gamesgeneral.showosdhelp)</visible>
+                <visible>!Window.IsActive(GameVideoFilter) + !Window.IsActive(GameStretchMode) + !Window.IsActive(GameControllers) + !Window.IsActive(GameVideoRotation)</visible>
+                <include content="Dialog_Standard_Group">
+                    <param name="width" value="700" />
+                    <param name="height" value="1000" />
+                </include>
+
+                <control type="label" id="2">
+                    <description>Header Label</description>
+                    <label>$LOCALIZE[19033]</label>
+                    <include>Dialog_Standard_Header</include>
+                </control>
+
+                <control type="grouplist" id="1100">
+                    <description>Control Area</description>
+                    <left>20</left>
+                    <right>20</right>
+                    <top>100</top>
+                    <height>900</height>
+                    <itemgap>10</itemgap>
+                    <orientation>vertical</orientation>
+                    <usecontrolcoords>true</usecontrolcoords>
+                    <control type="textbox" id="1101">
+                        <description>Help text</description>
+                        <left>30</left>
+                        <right>30</right>
+                        <height>130</height>
+                        <font>font_tiny</font>
+                        <textcolor>dialog_fg_70</textcolor>
+                    </control>
+                    <control type="gamecontroller" id="1102">
+                        <centerleft>50%</centerleft>
+                        <width>640</width>
+                        <height>640</height>
+                    </control>
+                    <control type="textbox">
+                        <description>Additional help text. This will be removed in future versions.</description>
+                        <top>-50</top>
+                        <left>30</left>
+                        <right>30</right>
+                        <height>40</height>
+                        <aligny>top</aligny>
+                        <font>font_tiny</font>
+                        <textcolor>dialog_fg_70</textcolor>
+                        <label>$LOCALIZE[35236]</label>
+                    </control>
+                </control>
+
+                <control type="grouplist">
+                    <include>Dialog_Standard_OkCancel_GroupList</include>
+                    <control type="button">
+                        <description>OK Button - Fake Being Selected</description>
+                        <label>$LOCALIZE[186]</label>
+                        <onclick>Action(Close)</onclick>
+                        <textcolor>Selected</textcolor>
+                        <texturenofocus colordiffuse="$VAR[ColorHighlight]" border="8">common/box.png</texturenofocus>
+                        <include>Dialog_Standard_OkCancel</include>
+                    </control>
+                </control>
+            </control>
+
+            <control type="group" id="20">
+                <visible>!System.GetBool(gamesgeneral.showosdhelp)</visible>
+                <visible>!Window.IsActive(GameVideoFilter) + !Window.IsActive(GameStretchMode) + !Window.IsActive(GameControllers) + !Window.IsActive(GameVideoRotation)</visible>
+                <include>Animation_FadeIn_SlideUp</include>
+                <control type="group">
+                    <height>812</height>
+                    <include>Defs_Powermenu_Group</include>
+                    <include>Defs_Options_Texture</include>
+                </control>
+                <control type="group">
+                    <animation effect="slide" end="0,39" condition="true">Conditional</animation>
+                    <height>742</height>
+                    <include>Defs_Powermenu_Group</include>
+                    <control type="label" id="3">
+                        <top>-64</top>
+                        <width>458</width>
+                        <height>80</height>
+                        <left>8</left>
+                        <textcolor>dialog_fg_70</textcolor>
+                        <font>font_small_bold</font>
+                        <label>$LOCALIZE[35221]</label>
+                        <align>left</align>
+                        <textoffsetx>30</textoffsetx>
+                    </control>
+                    <control type="image">
+                        <top>-56</top>
+                        <width>458</width>
+                        <height>64</height>
+                        <left>-8</left>
+                        <aspectratio align="right">keep</aspectratio>
+                        <texture colordiffuse="dialog_fg_70">special://skin/extras/icons/kodi.png</texture>
+                    </control>
+                    <control type="list" id="1103">
+                        <onleft>Back</onleft>
+                        <onright>Back</onright>
+                        <defaultcontrol always="true">2101</defaultcontrol>
+                        <include>Defs_Options_Grouplist</include>
+                        <itemlayout width="450" height="item_list_height">
+                            <control type="label">
+                                <font>font_tiny</font>
+                                <align>left</align>
+                                <left>30</left>
+                                <aligny>center</aligny>
+                                <textcolor>dialog_fg_70</textcolor>
+                                <label>$INFO[ListItem.Label]</label>
+                            </control>
+                        </itemlayout>
+                        <focusedlayout width="450" height="item_list_height">
+                            <control type="image">
+                                <texture colordiffuse="$VAR[ColorHighlight]">common/white.png</texture>
+                            </control>
+                            <control type="label">
+                                <font>font_tiny</font>
+                                <align>left</align>
+                                <left>30</left>
+                                <aligny>center</aligny>
+                                <textcolor>Selected</textcolor>
+                                <label>$INFO[ListItem.Label]</label>
+                            </control>
+                        </focusedlayout>
+                        <content>
+                            <item id="2101">
+                                <description>Pause / Resume button</description>
+                                <label>$LOCALIZE[35224]</label>
+                                <label2>Select + X</label2>
+                                <icon>osd/fullscreen/buttons/play.png</icon>
+                                <onclick>Play</onclick>
+                            </item>
+                            <item id="2102">
+                                <description>Reset button</description>
+                                <label>$LOCALIZE[13007]</label>
+                                <icon>osd/fullscreen/buttons/reset.png</icon>
+                                <onclick>PlayerControl(Reset)</onclick>
+                            </item>
+                            <item id="2103">
+                                <description>Stop button</description>
+                                <label>$LOCALIZE[35222]</label>
+                                <label2>Select + Start</label2>
+                                <icon>osd/fullscreen/buttons/stop.png</icon>
+                                <onclick>Stop</onclick>
+                            </item>
+
+                            <!-- Games -->
+                            <item id="14101">
+                                <description>Video filter button</description>
+                                <label>$LOCALIZE[35225]</label>
+                                <onclick>ActivateWindow(GameVideoFilter)</onclick>
+                            </item>
+                            <item id="14102">
+                                <description>Stretch mode button</description>
+                                <label>$LOCALIZE[35233]</label>
+                                <onclick>ActivateWindow(GameStretchMode)</onclick>
+                            </item>
+                            <item id="14106">
+                                <description>Video rotation button</description>
+                                <label>$LOCALIZE[35227]</label>
+                                <onclick>ActivateWindow(GameVideoRotation)</onclick>
+                            </item>
+                            <item id="14104">
+                                <description>Volume button</description>
+                                <label>$LOCALIZE[13376]</label>
+                                <label2>[COLOR grey]Select + Right Stick[/COLOR]</label2>
+                                <onclick>ActivateWindow(GameVolume)</onclick>
+                            </item>
+                            <item id="14103">
+                                <description>Controller settings button</description>
+                                <label>$LOCALIZE[35234]</label>
+                                <onclick>ActivateWindow(GameControllers)</onclick>
+                            </item>
+                            <item id="14105">
+                                <description>Advanced settings</description>
+                                <label>$LOCALIZE[35226]</label>
+                                <onclick>ActivateWindow(GameAdvancedSettings)</onclick>
+                            </item>
+                        </content>
+                    </control>
+                </control>
+            </control>
+        </control>
+    </controls>
+</window>

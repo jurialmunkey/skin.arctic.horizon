@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Foundation -->
+<window type="dialog" id="1120">
+    <defaultcontrol always="true">9000</defaultcontrol>
+    <controls>
+        <include>Global_Overlay</include>
+        <control type="group">
+            <include content="Dialog_Standard_Group">
+                <param name="width" value="1180" />
+                <param name="height" value="910" />
+            </include>
+
+            <control type="label">
+                <description>Header Label</description>
+                <label>$LOCALIZE[31166]</label>
+                <include>Dialog_Standard_Header</include>
+            </control>
+
+            <control type="grouplist" id="9000">
+                <onright>61</onright>
+                <description>Control Area</description>
+                <width>780</width>
+                <top>dialog_top</top>
+                <height>780</height>
+                <itemgap>0</itemgap>
+                <pagecontrol>61</pagecontrol>
+                <orientation>vertical</orientation>
+                <usecontrolcoords>true</usecontrolcoords>
+                <control type="radiobutton" id="9001">
+                    <label>$LOCALIZE[342]</label>
+                    <radioposx>730</radioposx>
+                    <include>Dialog_Standard_Button</include>
+                    <onclick>Skin.ToggleSetting(DisableSearchList.Movies)</onclick>
+                    <selected>!Skin.HasSetting(DisableSearchList.Movies)</selected>
+                </control>
+                <control type="radiobutton" id="9002">
+                    <label>$LOCALIZE[20343]</label>
+                    <radioposx>730</radioposx>
+                    <include>Dialog_Standard_Button</include>
+                    <onclick>Skin.ToggleSetting(DisableSearchList.TvShows)</onclick>
+                    <selected>!Skin.HasSetting(DisableSearchList.TvShows)</selected>
+                </control>
+                <control type="radiobutton" id="9003">
+                    <label>$LOCALIZE[20360]</label>
+                    <radioposx>730</radioposx>
+                    <include>Dialog_Standard_Button</include>
+                    <onclick>Skin.ToggleSetting(DisableSearchList.Episodes)</onclick>
+                    <selected>!Skin.HasSetting(DisableSearchList.Episodes)</selected>
+                </control>
+                <control type="radiobutton" id="9004">
+                    <label>$LOCALIZE[515]</label>
+                    <radioposx>730</radioposx>
+                    <include>Dialog_Standard_Button</include>
+                    <onclick>Skin.ToggleSetting(DisableSearchList.Genre)</onclick>
+                    <selected>!Skin.HasSetting(DisableSearchList.Genre)</selected>
+                </control>
+                <control type="radiobutton" id="9005">
+                    <label>$LOCALIZE[345]</label>
+                    <radioposx>730</radioposx>
+                    <include>Dialog_Standard_Button</include>
+                    <onclick>Skin.ToggleSetting(DisableSearchList.Year)</onclick>
+                    <selected>!Skin.HasSetting(DisableSearchList.Year)</selected>
+                </control>
+                <control type="radiobutton" id="9006">
+                    <label>$LOCALIZE[572]</label>
+                    <radioposx>730</radioposx>
+                    <include>Dialog_Standard_Button</include>
+                    <onclick>Skin.ToggleSetting(DisableSearchList.Studio)</onclick>
+                    <selected>!Skin.HasSetting(DisableSearchList.Studio)</selected>
+                </control>
+                <control type="radiobutton" id="9007">
+                    <label>$LOCALIZE[574]</label>
+                    <radioposx>730</radioposx>
+                    <include>Dialog_Standard_Button</include>
+                    <onclick>Skin.ToggleSetting(DisableSearchList.Country)</onclick>
+                    <selected>!Skin.HasSetting(DisableSearchList.Country)</selected>
+                </control>
+                <control type="radiobutton" id="9008">
+                    <label>$LOCALIZE[20337]</label>
+                    <radioposx>730</radioposx>
+                    <include>Dialog_Standard_Button</include>
+                    <onclick>Skin.ToggleSetting(DisableSearchList.Actor)</onclick>
+                    <selected>!Skin.HasSetting(DisableSearchList.Actor)</selected>
+                </control>
+                <control type="radiobutton" id="9009">
+                    <label>$LOCALIZE[20339]</label>
+                    <radioposx>730</radioposx>
+                    <include>Dialog_Standard_Button</include>
+                    <onclick>Skin.ToggleSetting(DisableSearchList.Director)</onclick>
+                    <selected>!Skin.HasSetting(DisableSearchList.Director)</selected>
+                </control>
+                <control type="radiobutton" id="9010">
+                    <label>$LOCALIZE[132]</label>
+                    <radioposx>730</radioposx>
+                    <include>Dialog_Standard_Button</include>
+                    <onclick>Skin.ToggleSetting(DisableSearchList.Albums)</onclick>
+                    <selected>!Skin.HasSetting(DisableSearchList.Albums)</selected>
+                </control>
+                <control type="radiobutton" id="9011">
+                    <label>$LOCALIZE[133]</label>
+                    <radioposx>730</radioposx>
+                    <include>Dialog_Standard_Button</include>
+                    <onclick>Skin.ToggleSetting(DisableSearchList.Artists)</onclick>
+                    <selected>!Skin.HasSetting(DisableSearchList.Artists)</selected>
+                </control>
+                <control type="radiobutton" id="9012">
+                    <label>$LOCALIZE[31157]</label>
+                    <radioposx>730</radioposx>
+                    <include>Dialog_Standard_Button</include>
+                    <onclick>Skin.ToggleSetting(DisableSearchList.ArtistAlbums)</onclick>
+                    <selected>!Skin.HasSetting(DisableSearchList.ArtistAlbums)</selected>
+                    <enable>!Skin.HasSetting(DisableSearchList.Artists)</enable>
+                </control>
+                <control type="radiobutton" id="9013">
+                    <label>$LOCALIZE[20389]</label>
+                    <radioposx>730</radioposx>
+                    <include>Dialog_Standard_Button</include>
+                    <onclick>Skin.ToggleSetting(DisableSearchList.MusicVideos)</onclick>
+                    <selected>!Skin.HasSetting(DisableSearchList.MusicVideos)</selected>
+                </control>
+                <control type="radiobutton" id="9014">
+                    <label>$LOCALIZE[31167]</label>
+                    <radioposx>730</radioposx>
+                    <include>Dialog_Standard_Button</include>
+                    <onclick>Skin.ToggleSetting(DisableSearchList.MusicVideoArtists)</onclick>
+                    <selected>!Skin.HasSetting(DisableSearchList.MusicVideoArtists)</selected>
+                </control>
+                <control type="radiobutton" id="9015">
+                    <label>$LOCALIZE[24001]</label>
+                    <radioposx>730</radioposx>
+                    <include>Dialog_Standard_Button</include>
+                    <onclick>Skin.ToggleSetting(DisableSearchList.Addons)</onclick>
+                    <selected>!Skin.HasSetting(DisableSearchList.Addons)</selected>
+                </control>
+                <control type="radiobutton" id="9016">
+                    <label>YouTube</label>
+                    <radioposx>730</radioposx>
+                    <include>Dialog_Standard_Button</include>
+                    <onclick>Skin.ToggleSetting(DisableSearchList.YouTube)</onclick>
+                    <selected>!Skin.HasSetting(DisableSearchList.YouTube)</selected>
+                </control>
+                <control type="button" id="9099">
+                    <label>$LOCALIZE[31169]</label>
+                    <include>Dialog_Standard_Button</include>
+                    <onclick>RunScript(script.skinshortcuts,type=manage&amp;group=searchmenu)</onclick>
+                </control>
+            </control>
+
+            <include content="Dialog_Scrollbar">
+                <param name="onleft" value="9000" />
+            </include>
+            
+           
+            <control type="group">
+                <include>Dialog_Standard_Right_Group</include>
+                <control type="grouplist" id="8000">
+                    <onleft>61</onleft>
+                    <orientation>vertical</orientation>
+                    <itemgap>0</itemgap>
+                    <control type="button" id="8001" description="Close">
+                        <label>$LOCALIZE[15067]</label>
+                        <onclick>Close</onclick>
+                        <include>Dialog_Standard_Right_Buttons</include>
+                    </control>
+                </control>
+            </control>
+        </control>
+    </controls>
+</window>

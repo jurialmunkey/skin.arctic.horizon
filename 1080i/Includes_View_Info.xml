@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+
+    <include name="View_Info_Grouplist">
+        <param name="container" default="" />
+        <param name="plotheight" default="120" />
+        <param name="plotmaxheight" default="120" />
+        <param name="codectop" default="20" />
+        <param name="visible-details" default="true" />
+        <param name="ratings" default="true" />
+        <definition>
+            <control type="grouplist">
+                <orientation>vertical</orientation>
+                <usecontrolcoords>true</usecontrolcoords>
+                <itemgap>0</itemgap>
+                <include content="Object_Info_Title">
+                    <param name="label" value="$PARAM[title]" />
+                </include>
+                <include content="Object_Info_Line">
+                    <param name="container" value="$PARAM[container]" />
+                </include>
+                <include content="Object_Info_Ratings" condition="$PARAM[ratings]">
+                    <param name="container" value="$PARAM[container]" />
+                    <visible>$PARAM[visible-details]</visible>
+                    <visible>String.IsEqual($PARAM[container]ListItem.DBType,movie) | String.IsEqual($PARAM[container]ListItem.DBType,episode) | String.IsEqual($PARAM[container]ListItem.DBType,tvshow) | String.IsEqual($PARAM[container]ListItem.DBType,season) | String.IsEqual($PARAM[container]ListItem.DBType,set)</visible>
+                </include>
+                <include content="Object_Info_Title">
+                    <param name="font" value="font_small_bold" />
+                    <param name="titleheight" value="10" />
+                    <param name="label" value="$INFO[$PARAM[container]ListItem.Title]" />
+                    <top>30</top>
+                    <visible>String.IsEqual($PARAM[container]ListItem.DBType,episode)</visible>
+                    <visible>$PARAM[visible-details]</visible>
+                </include>
+                <!-- <include content="Object_Info_Title">
+                    <param name="font" value="font_small_bold" />
+                    <param name="titleheight" value="10" />
+                    <param name="label" value="$INFO[$PARAM[container]ListItem.Genre]" />
+                    <top>30</top>
+                    <visible>!String.IsEmpty($PARAM[container]ListItem.Genre)</visible>
+                    <visible>!String.IsEqual($PARAM[container]ListItem.DBType,episode)</visible>
+                    <visible>$PARAM[visible-details]</visible>
+                </include> -->
+                <include content="Object_Info_Plot">
+                    <param name="maxheight" value="$PARAM[plotmaxheight]" />
+                    <param name="height" value="$PARAM[plotheight]" />
+                    <param name="label" value="$PARAM[plot]" />
+                    <visible>$PARAM[visible-details]</visible>
+                </include>
+                <nested />
+            </control>
+            
+        </definition>
+    </include>
+
+    <include name="View_Hub_Buttons">
+        <control type="grouplist" id="$PARAM[grouplistid]">
+            <!-- <onleft>301</onleft>
+            <onleft>ClearProperty(SubMenu.ID,Home)</onleft>
+            <onleft>ClearProperty(SubMenu.widgetPath,Home)</onleft>
+            <onleft>ClearProperty(SubMenu.widgetName,Home)</onleft> -->
+            <include>Defs_ButtonList</include>
+            <include>skinshortcuts-template-hubmenu</include>
+        </control>
+    </include>
+
+
+    <include name="View_Info_Buttons">
+        <control type="grouplist" id="$PARAM[grouplistid]">
+            <include>Defs_ButtonList</include>
+            <include content="Object_Info_Button" description="Install">
+                <param name="id" value="3108" />
+                <param name="groupid" value="3008" />
+                <param name="label" value="$LOCALIZE[24038]" />
+                <param name="icon" value="special://skin/extras/icons/download.png" />
+                <param name="ondown" value="50" />
+                <param name="visible" value="!String.IsEmpty(ListItem.Property(Addon.ID)) + !String.IsEqual(ListItem.Label2,Enabled) + !String.IsEqual(Container.FolderPath,addons://repos/) + Window.IsVisible(AddonBrowser.xml)" />
+                <onclick>InstallAddon($INFO[ListItem.Property(Addon.ID)])</onclick>
+            </include>
+            <include content="Object_Info_Button" description="Play">
+                <param name="id" value="3101" />
+                <param name="groupid" value="3001" />
+                <param name="label" value="$LOCALIZE[208]" />
+                <param name="icon" value="special://skin/extras/icons/play3.png" />
+                <param name="ondown" value="50" />
+                <param name="visible" value="[!ListItem.IsFolder | !String.IsEmpty(ListItem.Property(tmdb_id))] + [String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,episode) | String.IsEqual(ListItem.DBType,video)]" />
+                <onclick>SetFocus(50)</onclick>
+                <onclick condition="!ListItem.IsFolder">Action(Play)</onclick>
+                <onclick condition="ListItem.IsFolder + !String.IsEmpty(ListItem.Property(tmdb_id)) + String.IsEqual(ListItem.DBType,movie)">RunPlugin(plugin://plugin.video.themoviedb.helper/?info=play&amp;tmdb_id=$INFO[ListItem.Property(tmdb_id)]&amp;type=movie)</onclick>
+                <onclick condition="ListItem.IsFolder + !String.IsEmpty(ListItem.Property(tmdb_id)) + String.IsEqual(ListItem.DBType,episode)">RunPlugin(plugin://plugin.video.themoviedb.helper/?info=play&amp;tmdb_id=$INFO[ListItem.Property(tmdb_id)]&amp;type=episode&amp;season=$INFO[ListItem.Season]&amp;episode=$INFO[ListItem.Episode])</onclick>
+            </include>
+            
+            <include content="Object_Info_Button" description="Trailer">
+                <param name="id" value="3105" />
+                <param name="groupid" value="3005" />
+                <param name="label" value="$LOCALIZE[20410]" />
+                <param name="icon" value="special://skin/extras/icons/video.png" />
+                <param name="ondown" value="50" />
+                <param name="visible" value="!String.IsEmpty(ListItem.Trailer)" />
+                <onclick>PlayMedia($INFO[ListItem.Trailer])</onclick>
+            </include>
+            
+            <include content="Object_Info_Button" description="Similar">
+                <param name="id" value="3103" />
+                <param name="groupid" value="3003" />
+                <param name="label" value="$LOCALIZE[31135]" />
+                <param name="icon" value="special://skin/extras/icons/fire2.png" />
+                <param name="ondown" value="50" />
+                <param name="visible" value="String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,season) | String.IsEqual(ListItem.DBType,episode)" />
+                <onclick>SetFocus(9200)</onclick>
+                <!-- <onclick>SetFocus(50)</onclick> -->
+                <!-- <onclick>Container.Update($VAR[Info_Recommended])</onclick> -->
+                <!-- <onclick>ActivateWindow(1142)</onclick> -->
+            </include>
+            
+            <include content="Object_Info_Button" description="Overview">
+                <param name="id" value="3106" />
+                <param name="groupid" value="3006" />
+                <param name="label" value="$LOCALIZE[31208]" />
+                <param name="icon" value="special://skin/extras/icons/infobubble.png" />
+                <param name="ondown" value="50" />
+                <onclick>SetFocus(9601)</onclick>
+            </include>
+
+            <include content="Object_Info_Button" description="Options">
+                <param name="id" value="3102" />
+                <param name="groupid" value="3002" />
+                <param name="label" value="$LOCALIZE[33063]" />
+                <param name="icon" value="special://skin/extras/icons/playlist.png" />
+                <param name="ondown" value="50" />
+                <param name="visible" value="true" />
+                <onclick>SetFocus(9000)</onclick>
+            </include>
+            <nested />
+        </control>
+    </include>
+
+</includes>
+

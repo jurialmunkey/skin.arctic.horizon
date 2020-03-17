@@ -1,0 +1,558 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+
+    <include name="Home_Movement_Widgets_UpDown">
+        <onup>ClearProperty(CurrentWidget)</onup>
+        <ondown>ClearProperty(CurrentWidget)</ondown>
+        <onup>SetProperty(WidgetFocus,1)</onup>
+        <ondown>SetProperty(WidgetFocus,1)</ondown>
+        <include>Home_Movement_UpDown</include>
+        <onup>SetFocus(3992)</onup>
+        <ondown>SetFocus(3992)</ondown>
+    </include>
+
+    <include name="Home_Movement_UpDown">
+        <onup>SetProperty(WidgetMovement,OnUp)</onup>
+        <onup>Control.Move(301,-1)</onup>
+        <ondown>SetProperty(WidgetMovement,OnDown)</ondown>
+        <ondown>Control.Move(301,1)</ondown>
+    </include>
+
+    <include name="Home_Weather_Button">
+        <control type="button" id="$PARAM[id]">
+            <description>Weather Jump</description>
+            <include>Defs_Hidden_Button</include>
+            <onclick>ActivateWindow(Weather)</onclick>
+            <nested />
+        </control>
+    </include>
+
+    <include name="Home_Multi">
+        <include>Home_Menu_Vertical</include>
+
+        <!-- Main Group -->
+        <include content="Viewtype_Main">
+            <include>Animation_Home_Slide</include>
+            <control type="group">
+                <visible>!$EXP[Exp_InfoVisible]</visible>
+                <include>Animation_Common</include>
+                <control type="group">
+                    <include>Animation_FadeInOut_Common</include>
+                    <include>View_Pad</include>
+                    <control type="group">
+                        <top>-20</top>
+                        <right>-100</right>
+                        <left>-100</left>
+                        <bottom>-15</bottom>
+                        <control type="button" id="3992">
+                            <width>1</width>
+                            <height>1</height>
+                            <left>-2000</left>
+                            <include>Home_Movement_UpDown</include>
+                            <onleft>ClearProperty(WidgetMovement)</onleft>
+                            <onleft>301</onleft>
+                            <include>skinshortcuts-template-onright</include>
+                            <onright>ClearProperty(WidgetMovement)</onright>
+                            <onclick>ClearProperty(WidgetMovement)</onclick>
+                            <onclick condition="!String.IsEmpty(Window.Property(WidgetFocus))">SetFocus(3000)</onclick>
+                            <onclick condition="String.IsEmpty(Window.Property(WidgetFocus))">SetProperty(301Click,1)</onclick>
+                            <onclick condition="String.IsEmpty(Window.Property(WidgetFocus))">SetFocus(301)</onclick>
+                            <onclick condition="String.IsEmpty(Window.Property(WidgetFocus))">Action(Select)</onclick>
+                            <onfocus>ClearProperty(301Click)</onfocus>
+                            <onback>301</onback>
+                            <onback>ClearProperty(WidgetMovement)</onback>
+                            <visible allowhiddenfocus="true">Control.HasFocus(3992)</visible>
+                        </control>
+                        <control type="button" id="3990">
+                            <width>1</width>
+                            <height>1</height>
+                            <left>-2000</left>
+                            <animation effect="fade" time="300" start="100" end="0">Focus</animation>
+                            <onfocus>SetFocus(3000)</onfocus>
+                            <onclick>noop</onclick>
+                            <visible allowhiddenfocus="true">Control.HasFocus(3990)</visible>
+                        </control>
+                        <control type="button" id="3991">
+                            <width>1</width>
+                            <height>1</height>
+                            <left>-2000</left>
+                            <animation effect="fade" time="300" start="100" end="0">Focus</animation>
+                            <onfocus>SetFocus(3000)</onfocus>
+                            <onclick>noop</onclick>
+                            <visible allowhiddenfocus="true">Control.HasFocus(3991)</visible>
+                        </control>
+                        <control type="group" id="3000">
+                            <animation type="Conditional" condition="Control.IsVisible(3990)" reversible="false">
+                                <effect type="slide" end="0,20" time="60" tween="sine" />
+                                <effect type="slide" end="0,-20" time="180" tween="sine" delay="80" />
+                            </animation>
+                            <animation type="Conditional" condition="Control.IsVisible(3991)" reversible="false">
+                                <effect type="slide" end="0,-20" time="60" tween="sine" />
+                                <effect type="slide" end="0,20" time="180" tween="sine" delay="80" />
+                            </animation>
+                            <include>skinshortcuts-template-widgets</include>
+                            <control type="group">
+                                <visible>String.IsEqual(Container(3700).ListItemAbsolute(0).Property(list),Weather) + Weather.IsFetched</visible>
+                                <include content="Animation_UpDown">
+                                    <param name="visible" value="String.IsEqual(Container(3700).ListItemAbsolute(0).Property(list),Weather) + Weather.IsFetched" />
+                                </include>
+                                <include content="Weather">
+                                    <left>100</left>
+                                    <right>100</right>
+                                    <top>20</top>
+                                    <bottom>20</bottom>
+                                </include>
+                                <!-- <control type="button" id="3600">
+                                    <description>Weather Jump</description>
+                                    <include>Defs_Hidden_Button</include>
+                                    <onup>301</onup>
+                                    <ondown>301</ondown>
+                                    <onleft>301</onleft>
+                                    <onright>301</onright>
+                                    <onback>301</onback>
+                                    <onclick>ActivateWindow(Weather)</onclick>
+                                </control> -->
+                            </control>
+                            <control type="group">
+                                <visible>Integer.IsEqual(Container(3700).NumItems,0)</visible>
+                                <left>20</left>
+                                <right>20</right>
+                                <top>-180</top>
+                                <bottom>-65</bottom>
+                                <include content="Animation_UpDown">
+                                    <param name="visible" value="Integer.IsEqual(Container(3700).NumItems,0)" />
+                                </include>
+                                <include content="Home_Widget_Fullscreen">
+                                    <onleft>301</onleft>
+                                    <onback>301</onback>
+                                    <include>Home_Movement_Widgets_UpDown</include>
+                                    <onfocus>SetProperty(TMDbHelper.WidgetContainer,3001,Home)</onfocus>
+                                </include>
+                            </control>
+                        </control>
+                    </control>
+                    
+                </control>
+                <include>Topbar_Left</include>
+            </control>
+                
+                
+        </include>
+
+        <!-- Clock -->
+        <include>Topbar_Right</include>
+    </include>
+
+    <include name="Home_Widget_Fullscreen_Info">
+        <control type="image">
+            <texture background="true" colordiffuse="cdffffff">common/vignette-home.png</texture>
+        </control>
+        <control type="grouplist">
+            <left>view_pad</left>
+            <top>65</top>
+            <bottom>view_pad</bottom>
+            <width>1100</width>
+            <align>bottom</align>
+            <orientation>vertical</orientation>
+            <usecontrolcoords>true</usecontrolcoords>
+            <itemgap>0</itemgap>
+            <include content="Object_Info_Title">
+                <param name="label" value="$INFO[Container($PARAM[id]).ListItem.Title]" />
+            </include>
+            <include content="Object_Info_Line">
+                <param name="container" value="Container($PARAM[id])." />
+            </include>
+            <include content="Object_Info_Ratings">
+                <param name="container" value="Container($PARAM[id])." />
+            </include>
+            <include content="Object_Info_Plot">
+                <param name="maxheight" value="80" />
+                <param name="height" value="auto" />
+                <param name="label" value="$INFO[Container($PARAM[id]).ListItem.Plot]" />
+            </include>
+        </control>
+        <control type="image">
+            <right>view_pad</right>
+            <bottom>view_pad</bottom>
+            <aspectratio align="right" aligny="bottom">keep</aspectratio>
+            <height>80</height>
+            <fadetime>200</fadetime>
+            <texture background="true">$VAR[Image_Home_ClearLogo]</texture>
+        </control>
+    </include>
+    <include name="Home_Widget_Fullscreen">
+        <param name="content" default="$INFO[Skin.String(widgetPath)]" />
+        <param name="sortby" default="random" />
+        <param name="target" default="videos" />
+        <param name="id" default="3001" />
+        <definition>
+            <control type="list" id="$PARAM[id]">
+                <nested />
+                <orientation>horizontal</orientation>
+                <itemlayout width="1920" height="1080">
+                    <control type="image">
+                        <texture background="true">$VAR[Image_Fanart]</texture>
+                    </control>
+                </itemlayout>
+                <focusedlayout width="1920" height="1080">
+                    <control type="image">
+                        <texture background="true">$VAR[Image_Fanart]</texture>
+                    </control>
+                </focusedlayout>
+                <content target="videos" sortby="random">$PARAM[content]</content>
+            </control>
+            
+            <include content="Home_Widget_Fullscreen_Info">
+                <param name="id" value="$PARAM[id]" />
+            </include>
+        </definition>
+    </include>
+
+    <include name="Home_Hub_Widget_Label">
+        <param name="label" default="$VAR[Label_WidgetName]" />
+        <definition>
+            <control type="group">
+                <nested />
+                <left>-15</left>
+                <top>358</top>
+                <include content="View_Cast_Toplabel">
+                    <param name="groupid" value="$PARAM[groupid]" />
+                    <param name="id" value="$PARAM[id]" />
+                    <param name="label" value="$PARAM[label]" />
+                    <param name="altlabel" value="$PARAM[altlabel]" />
+                    <param name="showtitle" value="$PARAM[showtitle]" />
+                    <param name="altid" value="$PARAM[altid]" />
+                </include>
+            </control>
+        </definition>
+    </include>
+
+    <include name="Home_Horizontal_Fixed_List">
+        <param name="focused-width" default="292" />
+        <definition>
+            <control type="panel" id="$PARAM[id]">
+                <nested />
+                <top>0</top>
+                <left>-18</left>
+                <left>258</left>
+                <right>-270</right>
+                <movement>100</movement>
+                <orientation>horizontal</orientation>
+                <itemlayout width="92" height="70">
+                    <control type="image">
+                        <height>70</height>
+                        <width>70</width>
+                        <texture colordiffuse="main_fg_30">$INFO[ListItem.Icon]</texture>
+                        <visible>String.StartsWith(ListItem.Icon,special://skin/extras/icons/)</visible>
+                    </control>
+                    <control type="image">
+                        <height>70</height>
+                        <width>70</width>
+                        <bordersize>14</bordersize>
+                        <texture diffuse="diffuse/circle.png" colordiffuse="77ffffff">$INFO[ListItem.Icon]</texture>
+                        <visible>!String.StartsWith(ListItem.Icon,special://skin/extras/icons/)</visible>
+                    </control>
+                </itemlayout>
+                <focusedlayout width="92" height="70">
+                    <control type="image">
+                        <height>70</height>
+                        <width>70</width>
+                        <texture colordiffuse="main_fg_100">$INFO[ListItem.Icon]</texture>
+                        <visible>String.StartsWith(ListItem.Icon,special://skin/extras/icons/)</visible>
+                    </control>
+                    <control type="image">
+                        <height>70</height>
+                        <width>70</width>
+                        <bordersize>14</bordersize>
+                        <texture diffuse="diffuse/circle.png" colordiffuse="ffffffff">$INFO[ListItem.Icon]</texture>
+                        <visible>!String.StartsWith(ListItem.Icon,special://skin/extras/icons/)</visible>
+                    </control>
+                </focusedlayout>
+            </control>
+        </definition>
+    </include>
+
+    <include name="Home_CornerIcon_Template">
+        <control type="button" id="$PARAM[id]">
+            <height>70</height>
+            <width>70</width>
+            <onleft>SetFocus(301,9999,absolute)</onleft>
+            <onright>SetFocus(301,0,absolute)</onright>
+            <aspectratio>keep</aspectratio>
+            <texturenofocus colordiffuse="main_fg_30">$PARAM[icon]</texturenofocus>
+            <texturefocus colordiffuse="main_fg_100">$PARAM[icon]</texturefocus>
+            <onfocus>ClearProperty(WidgetFocus,Home)</onfocus>
+            <nested />
+        </control>
+    </include>
+
+    <include name="Home_Horizontal_Fixed">
+        <control type="group">
+            <nested />
+            <top>60</top>
+            <left>view_pad</left>
+            <height>80</height>
+            <width>1000</width>
+        </control>
+    </include>
+
+
+    <include name="Home_Multi_Movement">
+
+        <!-- <onleft condition="Integer.IsGreater(Container(302).NumItems,0)">302</onleft> -->
+
+        <onleft condition="!String.IsEmpty(Container(3700).ListItemAbsolute(0).Property(list)) + !String.IsEqual(Container(3700).ListItemAbsolute(0).Property(list),Settings) + !String.IsEqual(Container(3700).ListItemAbsolute(0).Property(list),Weather)">SetFocus($INFO[Window(Home).Property(CurrentWidget)],9999,absolute)</onleft>
+
+        <onright condition="!String.IsEmpty(Container(3700).ListItemAbsolute(0).Property(list)) + !String.IsEqual(Container(3700).ListItemAbsolute(0).Property(list),Settings) + !String.IsEqual(Container(3700).ListItemAbsolute(0).Property(list),Weather)">SetFocus($INFO[Window(Home).Property(CurrentWidget)],0,absolute)</onright>
+
+        <onright condition="!String.IsEmpty(Container(3700).ListItemAbsolute(0).Property(list)) + !String.IsEqual(Container(3700).ListItemAbsolute(0).Property(list),Settings) + !String.IsEqual(Container(3700).ListItemAbsolute(0).Property(list),Weather)">3000</onright>
+
+        <onright condition="String.IsEqual(Container(3700).ListItemAbsolute(0).Property(list),Settings)">5000</onright>
+        <onright condition="String.IsEqual(Container(3700).ListItemAbsolute(0).Property(list),Weather)">3600</onright>
+        <onright condition="String.IsEmpty(Container(3700).ListItemAbsolute(0).Property(list))">3001</onright>
+        <onfocus>ClearProperty(WidgetFocus,Home)</onfocus>
+        <onfocus>ClearProperty(TMDbHelper.WidgetContainer,Home)</onfocus>
+
+    </include>
+
+    <include name="Home_Menu_Header">
+        <param name="labelvisible" default="true" />
+        <param name="icononly" default="false" />
+        <param name="width" default="450" />
+        <definition>
+            <control type="group">
+                <top>-24</top>
+                <width>$PARAM[width]</width>
+                <height>item_list_height</height>
+                <nested />
+                <control type="image">
+                    <top>78</top>
+                    <height>1</height>
+                    <left>41</left>
+                    <right>41</right>
+                    <texture colordiffuse="dialog_fg_30">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <top>79</top>
+                    <height>1</height>
+                    <left>41</left>
+                    <right>41</right>
+                    <texture colordiffuse="dialog_bg_30">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <left>40</left>
+                    <bottom>-4</bottom>
+                    <width>item_list_height</width>
+                    <height>item_list_height</height>
+                    <bordersize>8</bordersize>
+                    <texture background="true" colordiffuse="dialog_fg_70">$PARAM[icon]</texture>
+                    <visible>$PARAM[icononly]</visible>
+                </control>
+                <control type="image">
+                    <right>20</right>
+                    <bottom>-4</bottom>
+                    <width>item_list_height</width>
+                    <height>item_list_height</height>
+                    <bordersize>8</bordersize>
+                    <texture background="true" colordiffuse="dialog_fg_70">$PARAM[icon]</texture>
+                    <visible>!$PARAM[icononly]</visible>
+                    <visible>$PARAM[labelvisible]</visible>
+                    <include>Animation_KodiLogo</include>
+                </control>
+                <control type="label">
+                    <bottom>0</bottom>
+                    <left>140</left>
+                    <right>120</right>
+                    <right>view_pad</right>
+                    <align>right</align>
+                    <aligny>center</aligny>
+                    <textcolor>dialog_fg_70</textcolor>
+                    <font>font_mainmenu</font>
+                    <label>$PARAM[label]</label>
+                    <visible>!$PARAM[icononly]</visible>
+                    <visible>$PARAM[labelvisible]</visible>
+                    <include>Animation_KodiLogo</include>
+                </control>
+            </control>
+        </definition>
+    </include>
+
+    <include name="Home_Menu_FocusButton">
+        <control type="button">
+            <include>Defs_Hidden_Button</include>
+            <onfocus>SetProperty(Hub.Label,$INFO[Container($PARAM[mainmenu-id]).ListItem.Label],Home)</onfocus>
+            <onfocus>SetProperty(Hub.submenuVisibility,$INFO[Container($PARAM[mainmenu-id]).ListItem.Property(submenuVisibility)],Home)</onfocus>
+            <onfocus>SetProperty(Hub.widgetPath,$INFO[Container($PARAM[mainmenu-id]).ListItem.Property(widgetPath)],Home)</onfocus>
+            <onfocus>SetProperty(Hub.widgetTarget,$INFO[Container($PARAM[mainmenu-id]).ListItem.Property(widgetTarget)],Home)</onfocus>
+            <onfocus>SetProperty(Hub.widgetName,$INFO[Container($PARAM[mainmenu-id]).ListItem.Property(widgetName)],Home)</onfocus>
+            <onfocus>SetProperty(Hub.widgetAspect,$INFO[Container($PARAM[mainmenu-id]).ListItem.Property(widgetAspect)],Home)</onfocus>
+        </control>
+    </include>
+
+    <include name="Home_Menu">
+        <param name="focusbutton" default="false" />
+        <param name="icononly" default="false" />
+        <definition>
+            <control type="list" id="$PARAM[id]">
+                <left>-450</left>
+                <top>view_pad</top>
+                <bottom>view_pad</bottom>
+                <orientation>vertical</orientation>
+                <itemlayout height="item_list_height" width="900" condition="!$PARAM[icononly]">
+                    <control type="group">
+                        <left>450</left>
+                        <control type="image">
+                            <right>20</right>
+                            <width>item_list_height</width>
+                            <height>item_list_height</height>
+                            <bordersize>8</bordersize>
+                            <texture background="true" colordiffuse="dialog_fg_70">$INFO[ListItem.Icon]</texture>
+                        </control>
+                        <control type="label">
+                            <bottom>2</bottom>
+                            <right>120</right>
+                            <align>right</align>
+                            <textcolor>dialog_fg_70</textcolor>
+                            <font>$PARAM[font]_small</font>
+                            <label>$INFO[ListItem.Label]</label>
+                        </control>
+                    </control>
+                </itemlayout>
+                <focusedlayout height="item_list_height" width="900" condition="!$PARAM[icononly]">
+                    <include condition="$PARAM[focusbutton]">Home_Menu_FocusButton</include>
+                    <control type="image">
+                        <texture colordiffuse="$VAR[ColorHighlight]">common/white.png</texture>
+                    </control>
+                    <control type="group">
+                        <left>450</left>
+                        <control type="image">
+                            <texture colordiffuse="$VAR[ColorHighlight3]">common/white-gradient.png</texture>
+                        </control>
+                        <control type="image">
+                            <right>20</right>
+                            <width>item_list_height</width>
+                            <height>item_list_height</height>
+                            <bordersize>8</bordersize>
+                            <texture background="true" colordiffuse="Selected">$INFO[ListItem.Icon]</texture>
+                        </control>
+                        <control type="label">
+                            <bottom>2</bottom>
+                            <right>120</right>
+                            <align>right</align>
+                            <aligny>center</aligny>
+                            <textcolor>Selected</textcolor>
+                            <font>$PARAM[font]</font>
+                            <label>$INFO[ListItem.Label]</label>
+                        </control>
+                    </control>
+                </focusedlayout>
+                <itemlayout height="item_list_height" width="610" condition="$PARAM[icononly]">
+                    <control type="group">
+                        <left>450</left>
+                        <control type="image">
+                            <right>40</right>
+                            <width>item_list_height</width>
+                            <height>item_list_height</height>
+                            <bordersize>8</bordersize>
+                            <texture background="true" colordiffuse="dialog_fg_70">$INFO[ListItem.Icon]</texture>
+                        </control>
+                    </control>
+                </itemlayout>
+                <focusedlayout height="item_list_height" width="610" condition="$PARAM[icononly]">
+                    <include condition="$PARAM[focusbutton]">Home_Menu_FocusButton</include>
+                    <control type="image">
+                        <texture colordiffuse="$VAR[ColorHighlight]">common/white.png</texture>
+                    </control>
+                    <control type="group">
+                        <left>450</left>
+                        <control type="image">
+                            <texture colordiffuse="$VAR[ColorHighlight3]">common/white-gradient.png</texture>
+                        </control>
+                        <control type="image">
+                            <right>40</right>
+                            <width>item_list_height</width>
+                            <height>item_list_height</height>
+                            <bordersize>8</bordersize>
+                            <texture background="true" colordiffuse="Selected">$INFO[ListItem.Icon]</texture>
+                        </control>
+                    </control>
+                </focusedlayout>
+                <nested />
+            </control>
+        </definition>
+    </include>
+
+    <include name="Home_Menu_Vertical">
+        <param name="mainmenu-id" default="301" />
+        <param name="focusbutton" default="false" />
+        <param name="submenu" default="true" />
+        <definition>
+            <include content="Viewtype_Panel">
+                <param name="width" value="450" />
+                <param name="background" value="false" />
+                <param name="logohastext" value="false" />
+                <control type="group">
+                    <top>view_top</top>
+                    <include content="Home_Menu_Header">
+                        <param name="labelvisible" value="false" />
+                        <param name="width" value="160" />
+                        <param name="icon" value="special://skin/extras/icons/home.png" />
+                        <param name="icononly" value="true" />
+                        <animation effect="fade" start="0" end="100" time="1" reversible="false" delay="400">Visible</animation>
+                    </include>
+                    <include content="Home_Menu">
+                        <param name="id" value="$PARAM[mainmenu-id]" />
+                        <param name="font" value="font_mainmenu" />
+                        <param name="icononly" value="true" />
+                        <param name="focusbutton" value="$PARAM[focusbutton]" />
+                        <onleft condition="Window.IsVisible(1110)">ActivateWindow(Home)</onleft>
+                        <onright condition="Window.IsVisible(1110)">SetFocus(302,0,absolute)</onright>
+                        <include condition="Window.IsVisible(Home)">Home_Multi_Movement</include>
+                        <onback>3000</onback>
+                        <onfocus>ClearProperty(WidgetMovement)</onfocus>
+                        <onfocus>ClearProperty(WidgetFocus)</onfocus>
+                        <onfocus condition="String.IsEmpty(Window.Property(301Click))">SetFocus(3992)</onfocus>
+                        <onfocus>ClearProperty(301Click)</onfocus>
+                        <animation effect="fade" start="0" end="100" time="1" reversible="false" delay="400">Visible</animation>
+                        <content><include>skinshortcuts-mainmenu</include></content>
+                    </include>
+                </control>
+            </include>
+        </definition>
+    </include>
+
+    <include name="Home_Vertical_Info">
+        <param name="plotheight" default="200" />
+        <definition>
+            <control type="group" id="$PARAM[group1-id]">
+                <nested />
+                <visible>!String.IsEmpty(Container($PARAM[id]).ListItem.TvShowTitle)</visible>
+                <include content="View_Info_Grouplist">
+                    <param name="title" value="$INFO[Container($PARAM[id]).ListItem.TvShowTitle]" />
+                    <param name="container" value="Container($PARAM[id])." />
+                    <param name="plot" value="$INFO[Container($PARAM[id]).ListItem.Plot]" />
+                    <param name="ratings" value="false" />
+                    <param name="plotheight" value="$PARAM[plotheight]" />
+                    <top>5</top>
+                    <left>100</left>
+                    <right>580</right>
+                </include>
+            </control>
+            <control type="group" id="$PARAM[group2-id]">
+                <nested />
+                <visible>String.IsEmpty(Container($PARAM[id]).ListItem.TvShowTitle)</visible>
+                <include content="View_Info_Grouplist">
+                    <param name="title" value="$INFO[Container($PARAM[id]).ListItem.Title]" />
+                    <param name="container" value="Container($PARAM[id])." />
+                    <param name="plot" value="$INFO[Container($PARAM[id]).ListItem.Plot]" />
+                    <param name="ratings" value="false" />
+                    <param name="plotheight" value="$PARAM[plotheight]" />
+                    <top>5</top>
+                    <left>100</left>
+                    <right>580</right>
+                </include>
+            </control>
+        </definition>
+    </include>
+</includes>
+

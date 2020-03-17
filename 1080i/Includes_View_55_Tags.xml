@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+    <include name="View_55_Tags">
+        <control type="group">
+            <visible>Control.IsVisible(55)</visible>
+            <include>Animation_Down</include>
+            <include content="Viewtype_Tags">
+                <param name="id" value="55" />
+                <param name="altid" value="550" />
+                <param name="control-type" value="panel" />
+                <param name="orientation" value="horizontal" />
+                <param name="height" value="600" />
+                <param name="itemlayout-height" value="200" />
+                <left>-80</left>
+                <right>-80</right>
+                <bottom>-20</bottom>
+                <pagecontrol>60</pagecontrol>
+                <include>Viewtype_Movement</include>
+                <visible>Container.Content() + String.IsEmpty(Container.PluginName)</visible>
+                <visible>!Window.IsVisible(MyPlaylist.xml)</visible>
+            </include>
+
+            <include content="Home_Hub_Widget_Label">
+                <param name="id" value="55" />
+                <param name="altid" value="550" />
+                <param name="label" value="$VAR[Label_Header_Center]" />
+                <param name="altlabel" value="$INFO[Control.GetLabel(3),, ]$INFO[Control.GetLabel(4)]" />
+                <top>120</top>
+            </include>
+           
+        </control>
+    </include>
+</includes>
+

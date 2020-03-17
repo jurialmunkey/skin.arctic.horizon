@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Foundation -->
+<window id="7">
+    <defaultcontrol always="true">300</defaultcontrol>
+    <include>Defs_Settings_OnLoad</include>
+    <controls>
+
+        <include>Global_Background</include>
+        <include>Defs_Settings_Background</include>
+        <control type="group">
+            <include>Dialog_Settings_Group</include>
+    
+            <include content="Defs_Settings_Changer">
+                <onright>50</onright>
+            </include>
+
+            <include content="Dialog_Separator">
+                <param name="top" value="item_list_height_half" />
+                <param name="bottom" value="item_list_height_half" />
+                <param name="left" value="item_list_height" />
+            </include>
+
+            <control type="group">
+                <left>item_list_height</left>
+                <!-- Left Gradient Fade -->
+                <include content="Defs_Settings_Gradient">
+                    <param name="id" value="50" />
+                    <top>item_list_height_half</top>
+                    <height>item_list_height</height>
+                    <width>dialog_side_grouplist</width>
+                    <visible>!Control.HasFocus(300) + !Control.HasFocus(20)</visible>
+                </include>
+                <control type="grouplist" id="50">
+                    <description>button area</description>
+                    <left>0</left>
+                    <top>item_list_height_half</top>
+                    <width>dialog_side_grouplist</width>
+                    <height>738</height>
+                    <itemgap>0</itemgap>
+                    <include>Defs_Settings_OnLeft</include>
+                    <control type="button" id="95">
+                        <description>General</description>
+                        <include>Defs_Settings_Button</include>
+                        <label>20037</label>
+                    </control>
+
+                    <control type="button" id="94">
+                        <description>Storage</description>
+                        <include>Defs_Settings_Button</include>
+                        <label>13277</label>
+                    </control>
+
+                    <control type="button" id="96">
+                        <description>Network</description>
+                        <include>Defs_Settings_Button</include>
+                        <label>13279</label>
+                    </control>
+
+                    <control type="button" id="97">
+                        <description>Video</description>
+                        <include>Defs_Settings_Button</include>
+                        <label>13280</label>
+                    </control>
+
+                    <control type="button" id="98">
+                        <description>Hardware</description>
+                        <include>Defs_Settings_Button</include>
+                        <label>13281</label>
+                    </control>
+
+                    <control type="button" id="99">
+                        <description>Live TV</description>
+                        <include>Defs_Settings_Button</include>
+                        <label>19012</label>
+                    </control>
+
+                    <control type="button" id="100">
+                        <description>Privacy</description>
+                        <include>Defs_Settings_Button</include>
+                        <label>$LOCALIZE[12389]</label>
+                    </control>
+                </control>
+
+                <include content="Dialog_Separator">
+                    <param name="top" value="item_list_height_half" />
+                    <param name="bottom" value="item_list_height_half" />
+                </include>
+
+                <control type="textbox" id="30">
+                    <left>430</left>
+                    <top>item_list_height_half</top>
+                    <right>view_pad</right>
+                    <bottom>item_list_height_half</bottom>
+                    <description>Label 2</description>
+                    <font>font_plotbox</font>
+                </control>
+
+                <control type="grouplist">
+                    <description>control area</description>
+                    <left>dialog_side_grouplist</left>
+                    <top>item_list_height_half</top>
+                    <right>0</right>
+                    <height>738</height>
+                    <itemgap>0</itemgap>
+                    <onleft>3</onleft>
+                    <pagecontrol>61</pagecontrol>
+                    <usecontrolcoords>true</usecontrolcoords>
+                    <control type="label">
+                        <description>Label 52</description>
+                        <textcolor>dialog_fg_70</textcolor>
+                        <font>font_small_mono</font>
+                        <height>60</height>
+                        <include>Defs_Settings_Button</include>
+                        <label>$INFO[Control.GetLabel(52)]$INFO[System.FriendlyName, - ,]</label>
+                        <visible>!Control.IsVisible(30)</visible>
+                    </control>
+                    <control type="label">
+                        <top>20</top>
+                        <left>30</left>
+                        <aligny>top</aligny>
+                        <height>50</height>
+                        <label fallback="19055">$INFO[system.memory(used.percent),$LOCALIZE[31104]: ,]</label>
+                        <textcolor>dialog_fg_70</textcolor>
+                        <font>font_small_mono</font>
+                        <visible>!Control.IsVisible(30)</visible>
+                    </control>
+                    <include content="Defs_Progress_Gradient">
+                        <param name="id" value="24" />
+                        <param name="top" value="-16" />
+                        <left>30</left>
+                        <height>16</height>
+                        <width>406</width>
+                        <info>system.memory(used)</info>
+                        <visible>!Control.IsVisible(30)</visible>
+                    </include>
+                    <control type="label">
+                        <top>-66</top>
+                        <left>480</left>
+                        <aligny>top</aligny>
+                        <height>50</height>
+                        <label fallback="19055">$INFO[System.CPUUsage,$LOCALIZE[13271] ,]</label>
+                        <textcolor>dialog_fg_70</textcolor>
+                        <font>font_small_mono</font>
+                        <visible>!Control.IsVisible(30)</visible>
+                    </control>
+                    <include content="Defs_Progress_Gradient">
+                        <param name="id" value="22" />
+                        <param name="top" value="-16" />
+                        <description>CPU BAR</description>
+                        <left>480</left>
+                        <height>16</height>
+                        <right>view_pad</right>
+                        <info>System.CPUUsage</info>
+                        <include>Defs_Settings_Button</include>
+                        <visible>!Control.IsVisible(30)</visible>
+                    </include>
+                    
+
+                    <control type="label" id="2">
+                        <description>Label 2</description>
+                        <textcolor>dialog_fg_70</textcolor>
+                        <font>font_small_mono</font>
+                        <height>60</height>
+                        <include>Defs_Settings_Button</include>
+                    </control>
+
+                    <control type="label" id="3">
+                        <description>Label 3</description>
+                        <textcolor>dialog_fg_70</textcolor>
+                        <font>font_small_mono</font>
+                        <height>60</height>
+                        <include>Defs_Settings_Button</include>
+                    </control>
+
+                    <control type="label" id="4">
+                        <description>Label 4</description>
+                        <textcolor>dialog_fg_70</textcolor>
+                        <font>font_small_mono</font>
+                        <height>60</height>
+                        <include>Defs_Settings_Button</include>
+                    </control>
+
+                    <control type="label" id="5">
+                        <description>Label 5</description>
+                        <textcolor>dialog_fg_70</textcolor>
+                        <font>font_small_mono</font>
+                        <height>60</height>
+                        <include>Defs_Settings_Button</include>
+                    </control>
+
+                    <control type="label" id="6">
+                        <description>Label 6</description>
+                        <textcolor>dialog_fg_70</textcolor>
+                        <font>font_small_mono</font>
+                        <height>60</height>
+                        <include>Defs_Settings_Button</include>
+                    </control>
+
+                    <control type="label" id="7">
+                        <description>Label 7</description>
+                        <textcolor>dialog_fg_70</textcolor>
+                        <font>font_small_mono</font>
+                        <height>60</height>
+                        <include>Defs_Settings_Button</include>
+                    </control>
+
+                    <control type="label" id="8">
+                        <description>Label 8</description>
+                        <textcolor>dialog_fg_70</textcolor>
+                        <font>font_small_mono</font>
+                        <height>60</height>
+                        <include>Defs_Settings_Button</include>
+                    </control>
+
+                    <control type="label" id="9">
+                        <description>Label 9</description>
+                        <textcolor>dialog_fg_70</textcolor>
+                        <font>font_small_mono</font>
+                        <height>60</height>
+                        <include>Defs_Settings_Button</include>
+                    </control>
+
+                    <control type="label" id="10">
+                        <description>Label 10</description>
+                        <textcolor>dialog_fg_70</textcolor>
+                        <font>font_small_mono</font>
+                        <height>60</height>
+                        <include>Defs_Settings_Button</include>
+                    </control>
+
+                    <control type="label" id="11">
+                        <description>Label 11</description>
+                        <textcolor>dialog_fg_70</textcolor>
+                        <font>font_small_mono</font>
+                        <height>60</height>
+                        <include>Defs_Settings_Button</include>
+                    </control>
+                </control>
+            </control>
+        </control>
+        <control type="label" id="52" description="XBMC Build Version">
+            <visible>false</visible>
+        </control>
+    </controls>
+
+</window>

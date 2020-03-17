@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window id="2003">
+    <defaultcontrol always="true">300</defaultcontrol>
+    <controls>
+        <control type="button" id="4"><include>Defs_Visible_Button</include></control>
+        <control type="button" id="5"><include>Defs_Visible_Button</include></control>
+        <control type="button" id="6"><include>Defs_Visible_Button</include></control>
+        <control type="button" id="8"><include>Defs_Visible_Button</include></control>
+        <control type="button" id="10"><include>Defs_Visible_Button</include></control>
+        
+        <include content="DialogVideoInfo_Left">
+            <param name="poster" value="false" />
+            <include>Animation_Left_Delay</include>
+            <control type="group">
+                <top>view_top</top>
+                <left>view_pad</left>
+                <bottom>view_pad</bottom>
+                <include content="View_50_Poster">
+                    <param name="diffuse" value="diffuse/poster-big.png" />
+                    <param name="icon" value="$INFO[Window(Home).Property(TMDbHelper.ListItem.Poster)]" />
+                    <param name="visible" value="!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Poster))" />
+                </include>
+                <include content="View_50_Poster">
+                    <param name="diffuse" value="diffuse/poster-big.png" />
+                    <param name="height" value="view_poster_width" />
+                    <param name="visible" value="String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Poster))" />
+                    <param name="aspectratio" value="keep" />
+                    <param name="bordersize" value="90" />
+                </include>
+            </control>
+        </include>
+
+
+        <!-- Main Group -->
+        <include content="DialogVideoInfo_MainGroup">
+            <include content="DialogVideoInfo_WidgetGroupList">
+                <include>Animation_Right_Delay</include>
+                <include content="DialogVideoInfo_MainInfo">
+                    <height>880</height>
+                    <control type="grouplist">
+                        <orientation>vertical</orientation>
+                        <usecontrolcoords>true</usecontrolcoords>
+                        <itemgap>0</itemgap>
+                        <height>720</height>
+                        <include content="Object_Info_Title">
+                            <param name="label" value="$VAR[Label_MainTitle]" />
+                        </include>
+                        <include content="Object_Info_Line_Label">
+                            <param name="label" value="$VAR[Label_SubTitle]" />
+                            <param name="textcolor" value="$VAR[ColorHighlight]" />
+                            <param name="divider" value="false" />
+                        </include>
+                        <include content="Object_Info_Ratings">
+                            <visible>!String.IsEmpty(Window(Home).Property(TMDBHelper.ListItem.tmdb_rating)) | !String.IsEmpty(Window(Home).Property(TMDBHelper.ListItem.trakt_rating))</visible>
+                        </include>
+                        <include content="Object_Info_Title">
+                            <param name="font" value="font_small_bold" />
+                            <param name="titleheight" value="10" />
+                            <param name="label" value="$INFO[ListItem.Genre]" />
+                            <top>30</top>
+                            <visible>!String.IsEmpty(ListItem.Genre)</visible>
+                        </include>
+                        <include content="Object_Info_Plot">
+                            <param name="maxheight" value="auto" />
+                            <param name="height" value="auto" />
+                        </include>
+                        <include content="Object_Info_Title">
+                            <param name="font" value="font_small_bold" />
+                            <param name="titleheight" value="10" />
+                            <param name="label" value="Cast" />
+                            <top>30</top>
+                            <visible>!String.IsEmpty(Window(Home).Property(TMDBHelper.ListItem.Cast.1.Name))</visible>
+                        </include>
+                        <include content="Object_Info_Plot">
+                            <param name="maxheight" value="auto" />
+                            <param name="height" value="auto" />
+                            <param name="label" value="$INFO[Window(Home).Property(TMDBHelper.ListItem.Cast.1.Name)]$INFO[Window(Home).Property(TMDBHelper.ListItem.Cast.1.Role), as ,]$INFO[Window(Home).Property(TMDBHelper.ListItem.Cast.2.Name),  /  ,]$INFO[Window(Home).Property(TMDBHelper.ListItem.Cast.2.Role), as ,]$INFO[Window(Home).Property(TMDBHelper.ListItem.Cast.3.Name),  /  ,]$INFO[Window(Home).Property(TMDBHelper.ListItem.Cast.3.Role), as ,]$INFO[Window(Home).Property(TMDBHelper.ListItem.Cast.4.Name),  /  ,]$INFO[Window(Home).Property(TMDBHelper.ListItem.Cast.4.Role), as ,]$INFO[Window(Home).Property(TMDBHelper.ListItem.Cast.5.Name),  /  ,]$INFO[Window(Home).Property(TMDBHelper.ListItem.Cast.5.Role), as ,]$INFO[Window(Home).Property(TMDBHelper.ListItem.Cast.6.Name),  /  ,]$INFO[Window(Home).Property(TMDBHelper.ListItem.Cast.6.Role), as ,]$INFO[Window(Home).Property(TMDBHelper.ListItem.Cast.7.Name),  /  ,]$INFO[Window(Home).Property(TMDBHelper.ListItem.Cast.7.Role), as ,]$INFO[Window(Home).Property(TMDBHelper.ListItem.Cast.8.Name),  /  ,]$INFO[Window(Home).Property(TMDBHelper.ListItem.Cast.8.Role), as ,]$INFO[Window(Home).Property(TMDBHelper.ListItem.Cast.9.Name),  /  ,]$INFO[Window(Home).Property(TMDBHelper.ListItem.Cast.9.Role), as ,]$INFO[Window(Home).Property(TMDBHelper.ListItem.Cast.10.Name),  /  ,]$INFO[Window(Home).Property(TMDBHelper.ListItem.Cast.10.Role), as ,]" />
+                            <visible>!String.IsEmpty(Window(Home).Property(TMDBHelper.ListItem.Cast.1.Name))</visible>
+                        </include>
+                    </control>
+                    <include content="Info_Button_Grouplist">
+                        <param name="includebuttons" value="Info_Buttons_PVR" />
+                        <bottom>24</bottom>
+                    </include>
+                </include>
+                
+            </include>
+        </include>
+       
+        <include>Object_PlotOverlay</include>
+
+    </controls>
+
+</window>

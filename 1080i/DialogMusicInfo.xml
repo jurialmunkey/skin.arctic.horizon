@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Foundation -->
+<window id="2001">
+    <defaultcontrol always="true">300</defaultcontrol>
+    <controls>
+        
+        
+        <!-- Main Group -->
+        <include>DialogMusicInfo</include>
+        <control type="group">
+            <visible>Control.HasFocus(3600)</visible>
+            <include>Animation_FadeInOut</include>
+            <include>Global_Overlay</include>
+        </control>
+        <include content="OSD_Menu_List">
+            <param name="id" value="3600" />
+            <param name="osd_id" value="300" />
+            <param name="content" value="Items_Info_Manage" />
+            <param name="label" value="Manage" />
+            <param name="height" value="442" />
+        </include>
+        <control type="button" id="6">
+            <include>Defs_Hidden_Button</include>
+        </control>
+        <control type="button" id="10">
+            <include>Defs_Hidden_Button</include>
+        </control>
+    
+    </controls>
+
+</window>

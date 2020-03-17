@@ -1,0 +1,538 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+
+    <variable name="Info_Episodes">
+        <value condition="!String.IsEqual(Container(5006).ListItem.Label,Next Up) + !Container(5006).IsUpdating + Integer.IsGreater(Container(5006).NumItems,0) + !String.IsEmpty(Container(5006).ListItem.FolderPath) + String.IsEqual(ListItem.DBType,tvshow) + ListItem.IsFolder">$INFO[Container(5006).ListItem.FolderPath]</value>
+        <value>noop</value>
+    </variable>
+
+    <variable name="Info_NextUp">
+        <value condition="String.IsEqual(Container(5006).ListItem.Label,Next Up) + !Container(5006).IsUpdating + Integer.IsGreater(Container(5006).NumItems,0) + String.IsEqual(ListItem.DBType,tvshow) + ListItem.IsFolder">videodb://inprogresstvshows/$INFO[ListItem.DBID]/-2/?tvshowid=$INFO[ListItem.DBID]</value>
+        <value>noop</value>
+    </variable>
+
+    <variable name="Info_Param_IMDB_or_QUERY">
+        <value condition="String.IsEqual(ListItem.DBType,movie) + !String.IsEmpty(ListItem.Property(imdb_id))">imdb_id=$INFO[ListItem.Property(imdb_id)]</value>
+        <value condition="String.IsEqual(ListItem.DBType,movie) + !String.IsEmpty(ListItem.IMDBNumber) + !String.StartsWith(ListItem.IMDBNumber,xx)">imdb_id=$INFO[ListItem.IMDBNumber]</value>
+        <value condition="[String.IsEqual(ListItem.DBType,season) | String.IsEqual(ListItem.DBType,episode) | String.StartsWith(ListItem.Label,Season)] + !String.IsEmpty(ListItem.TvShowTitle)">query=$INFO[ListItem.TvShowTitle]</value>
+        <value condition="!String.IsEmpty(ListItem.Title) + !String.IsEmpty(ListItem.Year)">query=$INFO[ListItem.Title]&amp;year=$INFO[ListItem.Year]</value>
+        <value condition="!String.IsEmpty(ListItem.Title)">query=$INFO[ListItem.Title]</value>
+        <value>query=$INFO[ListItem.Label]</value>
+    </variable>
+
+    <variable name="Info_Param_Type">
+        <value condition="String.IsEqual(ListItem.DBType,movie) | ListItem.IsCollection | String.IsEqual(ListItem.DBType,set)">type=movie</value>
+        <value condition="String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,season) | String.IsEqual(ListItem.DBType,episode)">type=tv</value>
+    </variable>
+
+    <variable name="Info_Fanart">
+        <value condition="[String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,season) | String.IsEqual(ListItem.DBType,episode)] + !Skin.HasSetting(DisableExtendedInfo) + System.HasAddon(plugin.video.themoviedb.helper)">plugin://plugin.video.themoviedb.helper/?info=fanart&amp;$VAR[Info_Param_Type]&amp;$VAR[Info_Param_IMDB_or_QUERY]</value>
+    </variable>
+
+    <include name="Info_Fanart_List"><content target="images">$VAR[Info_Fanart]</content></include>
+
+    <variable name="Info_Posters">
+        <value condition="[String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,season) | String.IsEqual(ListItem.DBType,episode)] + !Skin.HasSetting(DisableExtendedInfo) + System.HasAddon(plugin.video.themoviedb.helper)">plugin://plugin.video.themoviedb.helper/?info=posters&amp;$VAR[Info_Param_Type]&amp;$VAR[Info_Param_IMDB_or_QUERY]</value>
+    </variable>
+
+    <variable name="Info_PersonImages">
+        <value condition="String.Contains(ListItem.FolderPath,type=person)">plugin://plugin.video.themoviedb.helper?info=images&amp;type=person&amp;tmdb_id=$INFO[ListItem.Property(tmdb_id)]</value>
+    </variable>
+
+    <variable name="Info_Sets">
+        <value condition="String.IsEqual(ListItem.DBType,movie) + !Skin.HasSetting(DisableExtendedInfo) + System.HasAddon(plugin.video.themoviedb.helper) + !String.IsEmpty(ListItem.Set)">plugin://plugin.video.themoviedb.helper/?info=collection&amp;type=movie&amp;query=$INFO[ListItem.Set]</value>
+        <value condition="ListItem.IsCollection + !Skin.HasSetting(DisableExtendedInfo) + System.HasAddon(plugin.video.themoviedb.helper) + !String.IsEmpty(ListItem.Title)">plugin://plugin.video.themoviedb.helper/?info=collection&amp;type=movie&amp;query=$INFO[ListItem.Title]</value>
+        <value condition="String.IsEqual(ListItem.DBType,movie)">$INFO[ListItem.SetID,videodb://movies/sets/,/]</value>
+    </variable>
+
+    <variable name="Info_Seasons">
+        <value condition="!String.IsEmpty(ListItem.DBID) + String.IsEqual(ListItem.DBType,tvshow) + ListItem.IsFolder">$INFO[ListItem.DBID,videodb://tvshows/titles/,/]</value>
+        <value condition="String.IsEqual(ListItem.DBType,tvshow) + ListItem.IsFolder + String.IsEqual(ListItem.Label,ListItem.TvShowTitle)">$INFO[ListItem.FolderPath]</value>
+        <value>noop</value>
+    </variable>
+
+    <variable name="Info_Similar">
+        <value condition="[String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,season) | String.IsEqual(ListItem.DBType,episode)] + !Skin.HasSetting(DisableExtendedInfo) + System.HasAddon(plugin.video.themoviedb.helper)">plugin://plugin.video.themoviedb.helper/?info=similar&amp;$VAR[Info_Param_Type]&amp;$VAR[Info_Param_IMDB_or_QUERY]</value>
+    </variable>
+
+    <variable name="Info_CastFeature">
+        <value condition="String.IsEqual(ListItem.DBType,movie) + !Skin.HasSetting(DisableExtendedInfo) + System.HasAddon(plugin.video.themoviedb.helper)">plugin://plugin.video.themoviedb.helper/?info=discover&amp;type=movie&amp;with_cast=$INFO[Container(50).ListItemAbsolute(0).Label]$INFO[Container(50).ListItemAbsolute(1).Label, / ,]$INFO[Container(50).ListItemAbsolute(2).Label, / ,]&amp;with_separator=OR&amp;exclude_key=title&amp;exclude_value=$INFO[ListItem.Title]</value>
+        <value condition="String.IsEqual(ListItem.DBType,movie)">videodb://movies/titles/?xsp=%7B%22rules%22%3A%7B%22or%22%3A%5B%7B%22field%22%3A%22actor%22%2C%22operator%22%3A%22is%22%2C%22value%22%3A%5B%22$INFO[Container(50).ListItemAbsolute(0).Label]%22%5D%7D%2C%7B%22field%22%3A%22actor%22%2C%22operator%22%3A%22is%22%2C%22value%22%3A%5B%22$INFO[Container(50).ListItemAbsolute(1).Label]%22%5D%7D%2C%7B%22field%22%3A%22actor%22%2C%22operator%22%3A%22is%22%2C%22value%22%3A%5B%22$INFO[Container(50).ListItemAbsolute(2).Label]%22%5D%7D%2C%7B%22field%22%3A%22actor%22%2C%22operator%22%3A%22is%22%2C%22value%22%3A%5B%22$INFO[Container(50).ListItemAbsolute(3).Label]%22%5D%7D%2C%7B%22field%22%3A%22actor%22%2C%22operator%22%3A%22is%22%2C%22value%22%3A%5B%22$INFO[Container(50).ListItemAbsolute(4).Label]%22%5D%7D%2C%7B%22field%22%3A%22actor%22%2C%22operator%22%3A%22is%22%2C%22value%22%3A%5B%22$INFO[Container(50).ListItemAbsolute(5).Label]%22%5D%7D%2C%7B%22field%22%3A%22actor%22%2C%22operator%22%3A%22is%22%2C%22value%22%3A%5B%22$INFO[Container(50).ListItemAbsolute(6).Label]%22%5D%7D%5D%7D%2C%22type%22%3A%22movies%22%7D</value>
+    </variable>
+
+    <variable name="Info_CastMembers">
+        <value condition="[String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,season) | String.IsEqual(ListItem.DBType,episode)] + !Skin.HasSetting(DisableExtendedInfo) + System.HasAddon(plugin.video.themoviedb.helper)">plugin://plugin.video.themoviedb.helper/?info=cast&amp;$VAR[Info_Param_Type]&amp;$VAR[Info_Param_IMDB_or_QUERY]</value>
+    </variable>
+
+    <variable name="Info_CrewMembers">
+        <value condition="[String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,season) | String.IsEqual(ListItem.DBType,episode)] + !Skin.HasSetting(DisableExtendedInfo) + System.HasAddon(plugin.video.themoviedb.helper)">plugin://plugin.video.themoviedb.helper/?info=crew&amp;$VAR[Info_Param_Type]&amp;$VAR[Info_Param_IMDB_or_QUERY]</value>
+    </variable>
+
+    <variable name="Info_Youtube">
+        <value condition="!String.IsEmpty(ListItem.TvShowTitle) + System.HasAddon(plugin.video.youtube)">$INFO[ListItem.TvShowTitle,plugin://plugin.video.youtube/search/?q=,]</value>
+        <value condition="!String.IsEmpty(ListItem.Artist) + System.HasAddon(plugin.video.youtube)">$INFO[ListItem.Artist,plugin://plugin.video.youtube/search/?q=,]</value>
+        <value condition="!String.IsEmpty(ListItem.Title) + System.HasAddon(plugin.video.youtube)">$INFO[ListItem.Title,plugin://plugin.video.youtube/search/?q=,]</value>
+        <value condition="System.HasAddon(plugin.video.youtube)">$INFO[ListItem.Label,plugin://plugin.video.youtube/search/?q=,]</value>
+    </variable>
+
+    <variable name="Info_FromDirector">
+        <value condition="String.IsEqual(ListItem.DBType,movie) + !Skin.HasSetting(DisableExtendedInfo) + System.HasAddon(plugin.video.themoviedb.helper)">plugin://plugin.video.themoviedb.helper/?info=crew_in_movies&amp;type=person&amp;filter_key=job&amp;filter_value=Director&amp;query=$INFO[ListItem.Director]&amp;exclude_key=title&amp;exclude_value=$INFO[ListItem.Title]</value>
+        <value condition="String.IsEqual(ListItem.DBType,movie)">videodb://movies/titles/?xsp=%7b%22rules%22%3a%7b%22and%22%3a%5b%7b%22field%22%3a%22director%22%2c%22operator%22%3a%22is%22%2c%22value%22%3a%5b%22$INFO[ListItem.Director]%22%5d%7d%5d%7d%2c%22type%22%3a%22movies%22%7d</value>
+    </variable>
+
+    <variable name="Info_FromStudio">
+        <value condition="String.IsEqual(ListItem.DBType,movie) + !Skin.HasSetting(DisableExtendedInfo) + System.HasAddon(plugin.video.themoviedb.helper)">plugin://plugin.video.themoviedb.helper?info=discover&amp;type=movie&amp;with_companies=$INFO[ListItem.Studio]&amp;exclude_key=title&amp;exclude_value=$INFO[ListItem.Title]</value>
+        <value condition="String.IsEqual(ListItem.DBType,movie)">videodb://movies/titles/?xsp=%7b%22rules%22%3a%7b%22and%22%3a%5b%7b%22field%22%3a%22studio%22%2c%22operator%22%3a%22is%22%2c%22value%22%3a%5b%22$INFO[ListItem.Studio]%22%5d%7d%5d%7d%2c%22type%22%3a%22movies%22%7d</value>
+    </variable>
+
+    <variable name="Info_FromYear">
+        <value condition="String.IsEqual(ListItem.DBType,movie) + !Skin.HasSetting(DisableExtendedInfo) + System.HasAddon(plugin.video.themoviedb.helper)">plugin://plugin.video.themoviedb.helper?info=discover&amp;type=movie&amp;primary_release_year=$INFO[ListItem.Year]&amp;exclude_key=title&amp;exclude_value=$INFO[ListItem.Title]</value>
+        <!-- <value condition="String.IsEqual(ListItem.DBType,tvshow) + !Skin.HasSetting(DisableExtendedInfo) + System.HasAddon(plugin.video.themoviedb.helper)">plugin://plugin.video.themoviedb.helper?info=discover&amp;type=tv&amp;first_air_date_year=$INFO[ListItem.Year]</value> -->
+    </variable>
+
+    <variable name="Info_FromGenre">
+        <value condition="[String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,season) | String.IsEqual(ListItem.DBType,episode)] + !Skin.HasSetting(DisableExtendedInfo) + System.HasAddon(plugin.video.themoviedb.helper)">plugin://plugin.video.themoviedb.helper?info=discover&amp;$VAR[Info_Param_Type]&amp;with_genres=$INFO[ListItem.Genre]&amp;exclude_key=title&amp;exclude_value=$INFO[ListItem.Title]</value>
+    </variable>
+
+    <variable name="Info_Recommended">
+        <value condition="[String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,season) | String.IsEqual(ListItem.DBType,episode)] + !Skin.HasSetting(DisableExtendedInfo) + System.HasAddon(plugin.video.themoviedb.helper)">plugin://plugin.video.themoviedb.helper/?info=recommendations&amp;$VAR[Info_Param_Type]&amp;$VAR[Info_Param_IMDB_or_QUERY]</value>
+    </variable>
+
+    <variable name="Info_Cast_List01">
+        <value condition="!Container(9999).IsUpdating + Integer.IsGreater(Container(9999).NumItems,0)">$INFO[Container(9999).ListItemAbsolute(1).FolderPath]</value>
+        <value>videodb://</value>
+    </variable>
+    <variable name="Info_Cast_List02">
+        <value condition="!Container(9999).IsUpdating + Integer.IsGreater(Container(9999).NumItems,0)">$INFO[Container(9999).ListItemAbsolute(2).FolderPath]</value>
+        <value>videodb://</value>
+    </variable>
+    <variable name="Info_Cast_List03">
+        <value condition="!Container(9999).IsUpdating + Integer.IsGreater(Container(9999).NumItems,0)">$INFO[Container(9999).ListItemAbsolute(3).FolderPath]</value>
+        <value>videodb://</value>
+    </variable>
+    <variable name="Info_Cast_List04">
+        <value condition="!Container(9999).IsUpdating + Integer.IsGreater(Container(9999).NumItems,0)">$INFO[Container(9999).ListItemAbsolute(4).FolderPath]</value>
+        <value>videodb://</value>
+    </variable>
+    <variable name="Info_Cast_List05">
+        <value condition="!Container(3100).IsUpdating + Integer.IsGreater(Container(3100).NumItems,0)">$INFO[Container(3100).ListItemAbsolute(5).FolderPath]</value>
+        <value>videodb://</value>
+    </variable>
+
+    <include name="Info_Widget_Poster">
+        <param name="includecondition" default="true" />
+        <param name="id" default="5001" />
+        <param name="groupid" default="7001" />
+        <param name="minnumitems" default="1" />
+        <param name="label" default="$INFO[ListItem.Title]" />
+        <param name="labelinclude" default="Defs_Null" />
+        <param name="visible" default="true" />
+        <param name="label-visible" default="true" />
+        <param name="control-type" default="fixedlist" />
+        <param name="castlabel" default="false" />
+        <param name="landscape" default="false" />
+        <param name="hideisupdating" default="false" />
+        <param name="viewtype-include" default="Viewtype_Poster" />
+        <param name="widget-type" default="infowidgets" />
+        <definition>
+            <include content="View_Cast_Toplabel" condition="$PARAM[includecondition]">
+                <param name="groupid" value="$PARAM[groupid]" />
+                <param name="id" value="$PARAM[id]" />
+                <param name="label" value="$PARAM[label]" />
+                <param name="spinner-visible" value="!Integer.IsGreater(Container($PARAM[id]).NumItems,$PARAM[minnumitems])  | [Container($PARAM[id]).IsUpdating + $PARAM[hideisupdating]]" />
+                <param name="widget-type" value="$PARAM[widget-type]" />
+                <visible>$PARAM[visible]</visible>
+                <visible>$PARAM[label-visible]</visible>
+                <visible>Integer.IsGreater(Container($PARAM[id]).NumItems,$PARAM[minnumitems]) | Container($PARAM[id]).IsUpdating</visible>
+                <left>85</left>
+            </include>
+            <include content="$PARAM[viewtype-include]" condition="$PARAM[includecondition]">
+                <param name="id" value="$PARAM[id]" />
+                <param name="height" value="$PARAM[widget-type]_item_height" />
+                <param name="castlabel" value="$PARAM[castlabel]" />
+                <param name="label2" value="$PARAM[label2]" />
+                <param name="icon" value="$PARAM[icon]" />
+                <param name="control-type" value="$PARAM[control-type]" />
+                <nested />
+                <top>$PARAM[widget-type]_item_top</top>
+                <left>20</left>
+                <right>20</right>
+                <visible>$PARAM[visible]</visible>
+                <visible>Integer.IsGreater(Container($PARAM[id]).NumItems,$PARAM[minnumitems]) | Container($PARAM[id]).IsUpdating</visible>
+                <animation effect="fade" start="100" end="0" condition="!Integer.IsGreater(Container($PARAM[id]).NumItems,$PARAM[minnumitems])  | [Container($PARAM[id]).IsUpdating + $PARAM[hideisupdating]]">Conditional</animation>
+                <movement>6</movement>
+            </include>
+        </definition>
+    </include>
+    
+    <include name="Info_Buttons_PVR">
+        <include content="Object_Info_Button">
+            <param name="id" value="8105" />
+            <param name="groupid" value="8005" />
+            <param name="label" value="$LOCALIZE[19165]" />
+            <param name="icon" value="special://skin/extras/icons/signpost.png" />
+            <param name="visible" value="Control.IsVisible(5) + Window.IsActive(PVRGuideInfo)" />
+        </include>
+        <!-- Switch -->
+        <include content="Object_Info_Button">
+            <param name="id" value="8106" />
+            <param name="groupid" value="8006" />
+            <param name="label" value="$INFO[Control.GetLabel(6)]" />
+            <param name="icon" value="special://skin/extras/icons/alarm.png" />
+            <param name="visible" value="Control.IsVisible(6) + Window.IsActive(PVRGuideInfo)" />
+        </include>
+        <!-- Switch -->
+        <include content="Object_Info_Button">
+            <param name="id" value="8108" />
+            <param name="groupid" value="8008" />
+            <param name="label" value="Play Recording" />
+            <param name="icon" value="special://skin/extras/icons/database.png" />
+            <param name="visible" value="Control.IsVisible(8) + [Window.IsActive(PVRGuideInfo) | Window.IsActive(PVRRecordingInfo)]" />
+        </include>
+        <!-- Switch -->
+        <include content="Object_Info_Button">
+            <param name="id" value="8110" />
+            <param name="groupid" value="8010" />
+            <param name="label" value="Play" />
+            <param name="icon" value="special://skin/extras/icons/play3.png" />
+            <param name="visible" value="Control.IsVisible(10) + Window.IsActive(PVRGuideInfo)" />
+        </include>
+        <!-- Similar -->
+        <include content="Object_Info_Button">
+            <param name="id" value="8104" />
+            <param name="groupid" value="8004" />
+            <param name="label" value="Similar" />
+            <param name="icon" value="special://skin/extras/icons/search.png" />
+            <param name="visible" value="Control.IsVisible(4) + Window.IsActive(PVRGuideInfo)" />
+        </include>
+    </include>
+
+    <include name="Info_Buttons_Addon">
+        <include content="$PARAM[buttoninclude]">
+            <param name="id" value="8112" />
+            <param name="groupid" value="8012" />
+            <param name="icon" value="special://skin/extras/icons/play3.png" />
+            <param name="visible" value="Control.IsEnabled(12)" />
+            <param name="label" value="$INFO[Control.GetLabel(12)]" />
+            <ondown>50</ondown>
+            <onup>50</onup>
+            <onclick>SendClick(12)</onclick>
+        </include>
+
+        <!-- enable /disable -->
+        <include content="$PARAM[buttoninclude]">
+            <param name="id" value="8107" />
+            <param name="groupid" value="8007" />
+            <param name="icon" value="$VAR[Image_AddonInfo_Enable]" />
+            <param name="visible" value="Control.IsEnabled(7) + !Skin.HasSetting(KioskMode)" />
+            <param name="label" value="$INFO[Control.GetLabel(7)]" />
+            <ondown>50</ondown>
+            <onup>50</onup>
+            <onclick>SendClick(7)</onclick>
+        </include>
+
+        <!-- install / uninstall -->
+        <include content="$PARAM[buttoninclude]">
+            <param name="id" value="8106" />
+            <param name="groupid" value="8006" />
+            <param name="icon" value="$VAR[Image_AddonInfo_Install]" />
+            <param name="visible" value="Control.IsEnabled(6) + !Skin.HasSetting(KioskMode)" />
+            <param name="label" value="$INFO[Control.GetLabel(6)]" />
+            <ondown>50</ondown>
+            <onup>50</onup>
+            <onclick>SendClick(6)</onclick>
+        </include>
+
+        <!-- Update -->
+        <!-- <include content="$PARAM[buttoninclude]">
+            <param name="id" value="8108" />
+            <param name="groupid" value="8008" />
+            <param name="label" value="$LOCALIZE[24069]" />
+            <param name="icon" value="special://skin/extras/icons/update.png" />
+            <param name="visible" value="Control.IsEnabled(8) + !Skin.HasSetting(KioskMode)" />
+            <ondown>50</ondown>
+            <onup>50</onup>
+            <onfocus>SetProperty(FilePath,1,Home)</onfocus>
+            <onunfocus>ClearProperty(FilePath,Home)</onunfocus>
+            <onclick>SendClick(8)</onclick>
+        </include> -->
+
+        <!-- Settings -->
+        <include content="$PARAM[buttoninclude]">
+            <param name="id" value="8109" />
+            <param name="groupid" value="8009" />
+            <param name="label" value="Options" />
+            <param name="icon" value="special://skin/extras/icons/playlist.png" />
+            <param name="visible" value="!Skin.HasSetting(KioskMode)" />
+            <ondown>50</ondown>
+            <onup>50</onup>
+            <onclick>SetFocus(3600)</onclick>
+        </include>
+        <!-- <include content="$PARAM[buttoninclude]">
+            <param name="id" value="8109" />
+            <param name="groupid" value="8009" />
+            <param name="label" value="$LOCALIZE[5]" />
+            <param name="icon" value="special://skin/extras/icons/settings.png" />
+            <param name="visible" value="Control.IsEnabled(9) + !Skin.HasSetting(KioskMode)" />
+            <ondown>50</ondown>
+            <onup>50</onup>
+            <onclick>SendClick(9)</onclick>
+        </include> -->
+
+        <!-- Dependencies -->
+        <!-- <include content="$PARAM[buttoninclude]">
+            <param name="id" value="8110" />
+            <param name="groupid" value="8010" />
+            <param name="label" value="Depends" />
+            <param name="icon" value="special://skin/extras/icons/dependencies.png" />
+            <param name="visible" value="Control.IsEnabled(10) + !Skin.HasSetting(KioskMode)" />
+            <ondown>50</ondown>
+            <onup>50</onup>
+            <onclick>SendClick(10)</onclick>
+        </include> -->
+
+        <!-- Auto Up -->
+        <!-- <include content="$PARAM[buttoninclude]">
+            <param name="id" value="8113" />
+            <param name="groupid" value="8013" />
+            <param name="width" value="auto" />
+            <param name="label" value="Auto" />
+            <param name="icon" value="$VAR[Image_AutoUpdate]" />
+            <param name="visible" value="Control.IsEnabled(13) + !Skin.HasSetting(KioskMode)" />
+            <ondown>50</ondown>
+            <onup>50</onup>
+            <onclick>SetFocus(13)</onclick>
+            <onclick>Action(Select)</onclick>
+            <onclick>SetFocus(8113)</onclick>
+        </include> -->
+    </include>
+
+    <include name="Info_Buttons_Video">
+        <include content="$PARAM[buttoninclude]">
+            <param name="id" value="3101" />
+            <param name="groupid" value="3201" />
+            <param name="label" value="Collection" />
+            <param name="icon" value="special://skin/extras/icons/collection.png" />
+            <param name="visible" value="ListItem.IsCollection" />
+            <onclick>SetFocus(5003)</onclick>
+            <onup>9601</onup>
+        </include>
+        <include content="$PARAM[buttoninclude]">
+            <param name="id" value="3308" />
+            <param name="groupid" value="3008" />
+            <param name="label" value="$LOCALIZE[208]" />
+            <param name="icon" value="special://skin/extras/icons/play3.png" />
+            <param name="visible" value="Control.IsEnabled(8) + !ListItem.IsFolder + !ListItem.IsCollection + String.IsEmpty(ListItem.Property(tmdb_id))" />
+            <onclick>RunScript(plugin.video.themoviedb.helper,close_dialog=1190,playmedia=$INFO[ListItem.FileNameAndPath])</onclick>
+            <onup>9601</onup>
+        </include>
+        <include content="$PARAM[buttoninclude]">
+            <param name="id" value="3104" />
+            <param name="groupid" value="3204" />
+            <param name="label" value="$LOCALIZE[1024]" />
+            <param name="icon" value="special://skin/extras/icons/folder.png" />
+            <param name="visible" value="Control.IsEnabled(8) + [ListItem.IsFolder | ListItem.IsCollection] + String.IsEmpty(ListItem.Property(tmdb_id))" />
+            <onclick>Dialog.Close(12003)</onclick>
+            <onclick>Dialog.Close(1140)</onclick>
+            <onclick condition="Window.IsVisible(MyVideoNav.xml)">Container.Update($INFO[ListItem.FolderPath])</onclick>
+            <onclick condition="!Window.IsVisible(MyVideoNav.xml)">ActivateWindow(videos,$INFO[ListItem.FolderPath],return)</onclick>
+            <onup>9601</onup>
+        </include>
+        <include content="$PARAM[buttoninclude]">
+            <param name="id" value="3108" />
+            <param name="groupid" value="3208" />
+            <param name="label" value="$LOCALIZE[208]" />
+            <param name="icon" value="special://skin/extras/icons/play3.png" />
+            <param name="visible" value="Control.IsEnabled(8) + !String.IsEmpty(ListItem.Property(tmdb_id))" />
+            <onclick>RunScript(plugin.video.themoviedb.helper,close_dialog=1190)</onclick>
+            <onclick>Dialog.Close(1140)</onclick>
+            <onclick>Dialog.Close(1142)</onclick>
+            <onclick>Dialog.Close(1143)</onclick>
+            <onclick condition="String.IsEqual(ListItem.DBType,movie)">RunPlugin(plugin://plugin.video.themoviedb.helper/?info=play&amp;tmdb_id=$INFO[ListItem.Property(tmdb_id)]&amp;type=movie)</onclick>
+            <onclick condition="String.IsEqual(ListItem.DBType,episode)">RunPlugin(plugin://plugin.video.themoviedb.helper/?info=play&amp;tmdb_id=$INFO[ListItem.Property(tmdb_id)]&amp;type=episode&amp;season=$INFO[ListItem.Season]&amp;episode=$INFO[ListItem.Episode])</onclick>
+            <onclick condition="String.IsEqual(ListItem.DBType,episode) + Window.IsVisible(MyVideoNav.xml)">Container.Update($INFO[ListItem.FolderPath])</onclick>
+            <onclick condition="String.IsEqual(ListItem.DBType,episode) + !Window.IsVisible(MyVideoNav.xml)">ActivateWindow(videos,$INFO[ListItem.FolderPath],return)</onclick>
+            <onup>9601</onup>
+        </include>
+        <!-- <include content="$PARAM[buttoninclude]">
+            <param name="id" value="3103" />
+            <param name="groupid" value="3203" />
+            <param name="label" value="Search" />
+            <param name="icon" value="special://skin/extras/icons/search.png" />
+            <param name="visible" value="!String.IsEmpty(ListItem.Property(tmdb_id))" />
+            <onclick>Dialog.Close(12003)</onclick>
+            <onclick>Skin.Reset(SearchTerm)</onclick>
+            <onclick>Skin.SetString(SearchTerm, $INFO[ListItem.Title])</onclick>
+            <onclick>ActivateWindow(1138)</onclick>
+            <onup>9601</onup>
+        </include> -->
+        
+        <include content="$PARAM[buttoninclude]">
+            <param name="id" value="3111" />
+            <param name="groupid" value="3011" />
+            <param name="label" value="Trailer" />
+            <param name="icon" value="special://skin/extras/icons/video.png" />
+            <param name="visible" value="!String.IsEmpty(ListItem.Trailer)" />
+            <onclick>PlayMedia($INFO[ListItem.Trailer],False,1)</onclick>
+            <onclick>SetFocus(9608)</onclick>
+            <onup>9601</onup>
+        </include>
+
+        <include content="$PARAM[buttoninclude]">
+            <param name="id" value="3103" />
+            <param name="groupid" value="3203" />
+            <param name="label" value="Watchlist" />
+            <param name="icon" value="special://skin/extras/icons/watchlist.png" />
+            <param name="visible" value="!String.IsEmpty(ListItem.Property(tmdb_id)) + [String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,tvshow)]" />
+            <onclick>RunScript(plugin.video.themoviedb.helper,sync_trakt=watchlist,tmdb_id=$INFO[ListItem.Property(tmdb_id)],$VAR[Info_Param_Type],cache_refresh)</onclick>
+            <onup>9601</onup>
+        </include>
+        
+        <include content="$PARAM[buttoninclude]">
+            <param name="id" value="7" />
+            <param name="groupid" value="3007" />
+            <param name="label" value="Rating" />
+            <param name="icon" value="special://skin/extras/icons/userrating.png" />
+            <param name="visible" value="Control.IsEnabled(7) + !ListItem.IsCollection" />
+            <onup>9601</onup>
+        </include>
+
+        <include content="$PARAM[buttoninclude]">
+            <param name="id" value="3105" />
+            <param name="groupid" value="3205" />
+            <param name="label" value="Overview" />
+            <param name="icon" value="special://skin/extras/icons/infobubble.png" />
+            <onclick>SetFocus(9601)</onclick>
+            <onup>9601</onup>
+        </include>
+
+        <include content="$PARAM[buttoninclude]">
+            <param name="id" value="3106" />
+            <param name="groupid" value="3206" />
+            <param name="label" value="Manage" />
+            <param name="icon" value="special://skin/extras/icons/settings.png" />
+            <param name="visible" value="Control.IsEnabled(6) + !Skin.HasSetting(KioskMode)" />
+            <onclick>SetFocus(3600)</onclick>
+            <onup>9601</onup>
+        </include>
+    </include>
+
+    <include name="Info_Buttons_Music">
+        <include content="$PARAM[buttoninclude]">
+            <param name="id" value="3101" />
+            <param name="groupid" value="3201" />
+            <param name="label" value="$LOCALIZE[208]" />
+            <param name="icon" value="special://skin/extras/icons/play3.png" />
+            <param name="visible" value="!String.IsEqual(ListItem.DBType,artist)" />
+            <onclick condition="String.IsEmpty(ListItem.DBID)">PlayMedia($INFO[ListItem.FilenameAndPath])</onclick>
+            <onclick condition="System.HasAddon(script.playalbum) + String.IsEqual(ListItem.DBType,album)">RunScript(script.playalbum,albumid=$INFO[ListItem.DBID])</onclick>
+            <onclick condition="System.HasAddon(script.playalbum) + String.IsEqual(ListItem.DBType,song)">RunScript(script.playalbum,songid=$INFO[ListItem.DBID])</onclick>
+            <onclick condition="System.HasAddon(script.playalbum)">Action(close)</onclick>
+            <onclick condition="!System.HasAddon(script.playalbum) + !String.IsEmpty(ListItem.DBID)">InstallAddon(script.playalbum)</onclick>
+            <onup>9601</onup>
+            <ondown>5001</ondown>
+        </include>
+        <include content="$PARAM[buttoninclude]">
+            <param name="id" value="3102" />
+            <param name="groupid" value="3202" />
+            <param name="label" value="$LOCALIZE[31141]" />
+            <param name="icon" value="special://skin/extras/icons/youtube.png" />
+            <param name="visible" value="System.HasAddon(plugin.video.youtube)" />
+            <onclick>Close</onclick>
+            <onclick>ActivateWindow(videos,plugin://plugin.video.youtube/search/?q=$INFO[ListItem.Artist],return)</onclick>
+            <onclick>SetFocus(50)</onclick>
+            <onup>9601</onup>
+            <ondown>5001</ondown>
+        </include>
+        <include content="$PARAM[buttoninclude]">
+            <param name="id" value="3106" />
+            <param name="groupid" value="3206" />
+            <param name="label" value="Manage" />
+            <param name="icon" value="special://skin/extras/icons/settings.png" />
+            <param name="visible" value="Control.IsEnabled(6) + !Skin.HasSetting(KioskMode)" />
+            <onfocus>SetProperty(FilePath,1,Home)</onfocus>
+            <onunfocus>ClearProperty(FilePath,Home)</onunfocus>
+            <onclick>SetFocus(3600)</onclick>
+            <onup>9601</onup>
+            <ondown>5001</ondown>
+        </include>
+    </include>
+
+    <include name="Info_Button_Grouplist">
+        <param name="includebuttons" default="Info_Buttons_Video" />
+        <definition>
+            <control type="grouplist" id="300">
+                <nested />
+                <bottom>10</bottom>
+                <onup>9601</onup>
+                <ondown>5000</ondown>
+                <include>Defs_ButtonList</include>
+                <include content="$PARAM[includebuttons]">
+                    <param name="buttoninclude" value="Object_Info_Button" />
+                </include>
+            </control>
+        </definition>
+    </include>
+
+    <include name="Info_ImageViewer">
+        <param name="listid" default="5006" />
+        <param name="buttonid" default="9506" />
+        <param name="art" default="Art(poster)" />
+        <definition>
+            <control type="button" id="$PARAM[buttonid]">
+                <include>Defs_Hidden_Button</include>
+                <onleft>Control.Move($PARAM[listid],-1)</onleft>
+                <onright>Control.Move($PARAM[listid],1)</onright>
+                <onback>$PARAM[listid]</onback>
+                <onup>$PARAM[listid]</onup>
+                <ondown>$PARAM[listid]</ondown>
+            </control>
+            <control type="group">
+                <include>Animation_FadeInOut</include>
+                <include>Global_Overlay</include>
+                <include>Global_Overlay</include>
+                <visible>Control.HasFocus($PARAM[buttonid])</visible>
+                <control type="group">
+                    <animation effect="slide" tween="quadratic" end="-1920" start="0" time="400" condition="!Container($PARAM[listid]).OnNext" reversible="false">Conditional</animation>
+                    <animation effect="slide" tween="quadratic" end="1920" start="0" time="400" condition="!Container($PARAM[listid]).OnPrevious" reversible="false">Conditional</animation>
+
+                    <control type="image">
+                        <left>-1920</left>
+                        <width>1920</width>
+                        <aspectratio>keep</aspectratio>
+                        <texture background="true">$INFO[Container($PARAM[listid]).ListItem(-1).$PARAM[art]]</texture>
+                    </control>
+                    <control type="image">
+                        <width>1920</width>
+                        <aspectratio>keep</aspectratio>
+                        <texture background="true">$INFO[Container($PARAM[listid]).ListItem.$PARAM[art]]</texture>
+                    </control>
+                    <control type="image">
+                        <right>-1920</right>
+                        <width>1920</width>
+                        <aspectratio>keep</aspectratio>
+                        <texture background="true">$INFO[Container($PARAM[listid]).ListItem(1).$PARAM[art]]</texture>
+                    </control>
+                </control>
+
+                <control type="group">
+                    <visible>System.IdleTime(3)</visible>
+                    <animation effect="fade" start="0" end="100" time="500" reversible="false">Visible</animation>
+                    <control type="image">
+                        <width>120</width>
+                        <height>120</height>
+                        <centertop>50%</centertop>
+                        <texture colordiffuse="panel_fg_70" flipx="true">common/arrow-240.png</texture>
+                    </control>
+                    <control type="image">
+                        <right>0</right>
+                        <width>120</width>
+                        <height>120</height>
+                        <centertop>50%</centertop>
+                        <texture colordiffuse="panel_fg_70" flipx="false">common/arrow-240.png</texture>
+                    </control>
+                </control>
+            </control>
+        </definition>
+    </include>
+</includes>

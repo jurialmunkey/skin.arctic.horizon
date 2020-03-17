@@ -1,0 +1,503 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<overrides>
+
+    <widgetPlaylists>True</widgetPlaylists>
+    <thumbnailBrowseDefault>special://skin/extras/icons/</thumbnailBrowseDefault>
+    <backgroundBrowse>True</backgroundBrowse>
+    <background label="::PLAYLIST::">playlistBackground</background>
+    <widgetRename>True</widgetRename>
+    <widget label="8">Weather</widget>
+    <widget label="5">Settings</widget>
+
+    <!-- Additional Onclick for Submenu Hub -->
+    <override action="ActivateWindow(1135)">
+        <action>SetProperty(submenuVisibility,$INFO[Container(301).ListItem.Property(submenuVisibility)],home)</action>
+        <action>SetProperty(mainmenuid,$INFO[Container(301).ListItem.Property(id)],home)</action>
+        <action>SetProperty(leftHeader,$INFO[Container(301).ListItem.Label],home)</action>
+        <action>SetProperty(widgetName,$INFO[Container(301).ListItem.Property(widgetName)],home)</action>
+        <action>SetProperty(widgetName.backgroundWidget,$INFO[Container(301).ListItem.Property(widgetName.backgroundWidget)],home)</action>
+        <action>SetProperty(widgetPath,$INFO[Container(301).ListItem.Property(widgetPath)],home)</action>
+        <action>SetProperty(widgetTarget,$INFO[Container(301).ListItem.Property(widgetTarget)],home)</action>
+        <action>SetProperty(widgetAspect,$INFO[Container(301).ListItem.Property(widgetAspect)],home)</action>
+        <action>ActivateWindow(1135)</action>
+    </override>
+
+    <!-- Additional Onclick for Custom Hub -->
+    <override action="ActivateWindow(1134)">
+        <action>SetProperty(leftHeader,$INFO[ListItem.Label],home)</action>
+        <action>SetProperty(1134_Node,$INFO[ListItem.Property(1134_Node)],home)</action>
+        <action>ActivateWindow(1134)</action>
+    </override>
+    
+    <!-- Warning to Remove Settings -->
+    <warn heading="31176" message="31177">ActivateWindow(Settings)</warn>
+
+    <!-- For Power Menu -->
+    <groupoverride group="powermenu" condition="Window.IsActive(DialogButtonMenu.xml)">Close</groupoverride>
+
+    <override action="Skin.SetString(SearchTerm)">
+        <action>Skin.Reset(SearchTerm)</action>
+        <action>Skin.SetString(SearchTerm)</action>
+        <action>ActivateWindow(1138)</action>
+    </override>
+
+    <override action="globaloverride" group="mainmenu">
+        <action>SetProperty(Hub.Label,$INFO[Container(301).ListItem.Label],Home)</action>
+        <action>SetProperty(Hub.submenuVisibility,$INFO[Container(301).ListItem.Property(submenuVisibility)],Home)</action>
+        <action>SetProperty(Hub.widgetPath,$INFO[Container(301).ListItem.Property(widgetPath)],Home)</action>
+        <action>SetProperty(Hub.widgetTarget,$INFO[Container(301).ListItem.Property(widgetTarget)],Home)</action>
+        <action>SetProperty(Hub.widgetName,$INFO[Container(301).ListItem.Property(widgetName)],Home)</action>
+        <action>SetProperty(Hub.widgetAspect,$INFO[Container(301).ListItem.Property(widgetAspect)],Home)</action>
+        <action>::ACTION::</action>
+    </override>
+
+    <!-- Property defaults for widgets -->
+    <!-- Movies -->
+    <propertydefault labelID="31210" group="20342.1" property="widgetAspect">Landscape</propertydefault>
+    <!-- TV Shows -->
+    <propertydefault labelID="31173" group="tvshows.1" property="widgetAspect">Landscape</propertydefault>
+    <!-- Music -->
+    <propertydefault labelID="31173" group="2.1" property="widgetAspect">Square</propertydefault>
+    <propertydefault labelID="31173" group="2.1" property="widgetTarget">music</propertydefault>
+    <propertydefault labelID="31211" group="2.1" property="widgetAspect">Square</propertydefault>
+    <propertydefault labelID="31211" group="2.1" property="widgetTarget">music</propertydefault>
+    <!-- Addons -->
+    <propertydefault labelID="1037" group="24001.1" property="widgetAspect">Square</propertydefault>
+    <propertydefault labelID="1037" group="24001.1" property="widgetTarget">videos</propertydefault>
+    <propertydefault labelID="1037" group="24001.1" property="widgetSortby">lastused</propertydefault>
+    <propertydefault labelID="1037" group="24001.1" property="widgetSortorder">descending</propertydefault>
+    <propertydefault labelID="1038" group="24001.1" property="widgetAspect">Square</propertydefault>
+    <propertydefault labelID="1038" group="24001.1" property="widgetTarget">music</propertydefault>
+    <propertydefault labelID="1038" group="24001.1" property="widgetSortby">lastused</propertydefault>
+    <propertydefault labelID="1038" group="24001.1" property="widgetSortorder">descending</propertydefault>
+    <propertydefault labelID="0" group="24001.1" property="widgetAspect">Square</propertydefault>
+    <propertydefault labelID="0" group="24001.1" property="widgetTarget">programs</propertydefault>
+    <propertydefault labelID="0" group="24001.1" property="widgetSortby">lastused</propertydefault>
+    <propertydefault labelID="0" group="24001.1" property="widgetSortorder">descending</propertydefault>
+    <!-- Live TV -->
+    <propertydefault labelID="568" group="31103.1" property="widgetAspect">Square</propertydefault>
+    <propertydefault labelID="568" group="31103.1" property="widgetTarget">videos</propertydefault>
+    <propertydefault labelID="568" group="31103.1" property="widgetSortby">lastplayed</propertydefault>
+    <propertydefault labelID="568" group="31103.1" property="widgetSortorder">descending</propertydefault>
+
+
+    <!-- Properties -->
+    <!-- Widget Aspect -->
+    <property property="widgetAspect">Poster</property>
+    <property property="widgetAspect">Square</property>
+    <property property="widgetAspect">Landscape</property>
+    <property property="widgetAspect">Banner</property>
+    <propertySettings property="widgetAspect" buttonID="9901" title="Widget Aspect Ratio" />
+
+    <!-- Widget Target -->
+    <property property="widgetTarget">videos</property>
+    <property property="widgetTarget">music</property>
+    <property property="widgetTarget">pictures</property>
+    <property property="widgetTarget">programs</property>
+    <propertySettings property="widgetTarget" buttonID="9902" title="Widget Content Type" />
+
+    <!-- Widget Sort -->
+    <property property="widgetSortby">name</property>
+    <property property="widgetSortby">random</property>
+    <property property="widgetSortby">dateadded</property>
+    <property property="widgetSortby">lastplayed</property>
+    <property property="widgetSortby">playcount</property>
+    <property property="widgetSortby">year</property>
+    <property property="widgetSortby">rating</property>
+    <property property="widgetSortby">userrating</property>
+    <property property="widgetSortby">votes</property>
+    <property property="widgetSortby">genre</property>
+    <property property="widgetSortby">country</property>
+    <property property="widgetSortby">studio</property>
+    <property property="widgetSortby">playlistorder</property>
+    <property property="widgetSortby">episodenumber</property>
+    <property property="widgetSortby">season</property>
+    <property property="widgetSortby">numberofepisodes</property>
+    <property property="widgetSortby">numberofwatchedepisodes</property>
+    <property property="widgetSortby">tvshowstatus</property>
+    <property property="widgetSortby">tvshowtitle</property>
+    <property property="widgetSortby">file</property>
+    <property property="widgetSortby">title</property>
+    <property property="widgetSortby">tracknumber</property>
+    <property property="widgetSortby">time</property>
+    <property property="widgetSortby">artist</property>
+    <property property="widgetSortby">album</property>
+    <property property="widgetSortby">lastupdated</property>
+    <property property="widgetSortby">lastused</property>
+    
+    <propertySettings property="widgetSortby" buttonID="9903" title="Widget Sort Method" />
+
+    <!-- Widget Direction -->
+    <property property="widgetSortorder">ascending</property>
+    <property property="widgetSortorder">descending</property>
+    <propertySettings property="widgetSortorder" buttonID="9904" title="Widget Sort Direction" />
+
+    <!-- Widget Limit -->
+    <property property="widgetLimit" label="10 ">$NUMBER[10]</property>
+    <property property="widgetLimit" label="25 ">$NUMBER[25]</property>
+    <property property="widgetLimit" label="50 ">$NUMBER[50]</property>
+    <property property="widgetLimit" label="100 ">$NUMBER[100]</property>
+    <propertySettings property="widgetLimit" buttonID="9905" title="Widget Item Limit" />
+
+    <!-- Search Item Default Properties -->
+    <propertydefault labelID="artists" group="searchmenu" property="widgetAspect">Small Square</propertydefault>
+    <propertydefault labelID="albums" group="searchmenu" property="widgetAspect">Small Square</propertydefault>
+    <propertydefault labelID="add-ons" group="searchmenu" property="widgetAspect">Small Square</propertydefault>
+    <propertydefault labelID="spotifyartists" group="searchmenu" property="widgetAspect">Small Square</propertydefault>
+    <propertydefault labelID="spotifyalbums" group="searchmenu" property="widgetAspect">Small Square</propertydefault>
+    <propertydefault labelID="spotifysongs" group="searchmenu" property="widgetAspect">Small Square</propertydefault>
+    <propertydefault labelID="spotifyplaylists" group="searchmenu" property="widgetAspect">Small Square</propertydefault>
+    <propertydefault labelID="musicvideos" group="searchmenu" property="widgetAspect">Small Square</propertydefault>
+    <propertydefault labelID="musicvideoartists" group="searchmenu" property="widgetAspect">Small Square</propertydefault>
+    <propertydefault labelID="youtube" group="searchmenu" property="widgetAspect">Small Landscape</propertydefault>
+    <propertydefault labelID="episodes" group="searchmenu" property="widgetAspect">Small Landscape</propertydefault>
+
+    <!-- Icon Overrides -->
+    <icon labelID="livetv">special://skin/extras/icons/livetv.png</icon>
+    <icon labelID="radio">special://skin/extras/icons/radio.png</icon>
+    <icon labelID="weather">special://skin/extras/icons/sun.png</icon>
+    <icon labelID="submenu">special://skin/extras/icons/playlist.png</icon>
+    <icon labelID="settings">special://skin/extras/icons/settings.png</icon>
+    <icon labelID="13200">special://skin/extras/icons/actor.png</icon>
+    <icon labelID="10007">special://skin/extras/icons/sysinfo.png</icon>
+    <icon labelID="1036">special://skin/extras/icons/favourites2.png</icon>
+    <icon labelID="626">special://skin/extras/icons/recentlyadded.png</icon>
+    <icon labelID="10504">special://skin/extras/icons/top100.png</icon>
+    <icon labelID="10505">special://skin/extras/icons/top100.png</icon>
+    <icon labelID="480">special://skin/extras/icons/eye.png</icon>
+    <icon labelID="3">special://skin/extras/icons/videoplay.png</icon>
+    <icon labelID="19020">special://skin/extras/icons/livetv.png</icon>
+    <icon labelID="2">special://skin/extras/icons/songs.png</icon>
+    <icon labelID="1">special://skin/extras/icons/pictures.png</icon>
+    <icon labelID="10511">special://skin/extras/icons/sysinfo.png</icon>
+    <icon labelID="systeminfo">special://skin/extras/icons/sysinfo.png</icon>
+    <icon labelID="8">special://skin/extras/icons/sun.png</icon>
+    <icon labelID="31163">special://skin/extras/icons/playlist.png</icon>
+    <icon labelID="24001">special://skin/extras/icons/addons.png</icon>
+    <icon labelID="14036">special://skin/extras/icons/network.png</icon>
+    <icon labelID="13000">special://skin/extras/icons/configure.png</icon>
+    <icon labelID="20077">special://skin/extras/icons/year.png</icon>
+    <icon labelID="13013">special://skin/extras/icons/power.png</icon>
+    <icon labelID="13005">special://skin/extras/icons/power.png</icon>
+    <icon labelID="13016">special://skin/extras/icons/power.png</icon>
+    <icon labelID="13009">special://skin/extras/icons/power.png</icon>
+    <icon labelID="13010">special://skin/extras/icons/power.png</icon>
+    <icon labelID="13011">special://skin/extras/icons/power.png</icon>
+    <icon labelID="20126">special://skin/extras/icons/power.png</icon>
+    <icon labelID="360">special://skin/extras/icons/eye.png</icon>
+    <icon labelID="13014">special://skin/extras/icons/sort-up.png</icon>
+    <icon labelID="20045">special://skin/extras/icons/artist.png</icon>
+    <icon labelID="600">special://skin/extras/icons/cd.png</icon>
+    <icon labelID="32046">special://skin/extras/icons/update.png</icon>
+    <icon labelID="32047">special://skin/extras/icons/update.png</icon>
+    <icon labelID="32055">special://skin/extras/icons/wand.png</icon>
+    <icon labelID="32056">special://skin/extras/icons/wand.png</icon>
+    <icon image="DefaultShortcut.png">special://skin/extras/icons/shortcut.png</icon>
+    <icon image="Events.png">special://skin/extras/icons/clipboard.png</icon>
+    <icon image="DefaultVideo.png">special://skin/extras/icons/video.png</icon>
+    <icon image="DefaultMovies.png">special://skin/extras/icons/film.png</icon>
+    <icon image="DefaultTVShows.png">special://skin/extras/icons/tv.png</icon>
+    <icon image="DefaultAudio.png">special://skin/extras/icons/songs.png</icon>
+    <icon image="DefaultMusicAlbums.png">special://skin/extras/icons/songs.png</icon>
+    <icon image="DefaultMusicVideos.png">special://skin/extras/icons/musicvideo.png</icon>
+    <icon image="DefaultPicture.png">special://skin/extras/icons/pictures.png</icon>
+    <icon image="DefaultProgram.png">special://skin/extras/icons/addons.png</icon>
+    <icon image="DefaultDVDFull.png">special://skin/extras/icons/cd.png</icon>
+    <icon image="DefaultFolder.png">special://skin/extras/icons/folder.png</icon>
+    <icon image="UnknownUser.png">special://skin/extras/icons/actor.png</icon>
+    <icon image="DefaultVideoPlaylists.png">special://skin/extras/icons/playlist.png</icon>
+    <icon image="DefaultMusicPlaylists.png">special://skin/extras/icons/playlist.png</icon>
+    <icon image="DefaultRecentlyAddedMovies.png">special://skin/extras/icons/recentlyadded.png</icon>
+    <icon image="DefaultActor.png">special://skin/extras/icons/artist.png</icon>
+    <icon image="DefaultCountry.png">special://skin/extras/icons/world.png</icon>
+    <icon image="DefaultDirector.png">special://skin/extras/icons/director.png</icon>
+    <icon image="DefaultGenre.png">special://skin/extras/icons/genre.png</icon>
+    <icon image="DefaultMusicGenre.png">special://skin/extras/icons/audiogenre.png</icon>
+    <icon image="DefaultSets.png">special://skin/extras/icons/sets.png</icon>
+    <icon image="DefaultStudios.png">special://skin/extras/icons/director.png</icon>
+    <icon image="DefaultTags.png">special://skin/extras/icons/tags.png</icon>
+    <icon image="DefaultMovieTitle.png">special://skin/extras/icons/film.png</icon>
+    <icon image="DefaultTVShowTitle.png">special://skin/extras/icons/tv.png</icon>
+    <icon image="DefaultMusicVideoTitle.png">special://skin/extras/icons/musicvideo.png</icon>
+    <icon image="DefaultYear.png">special://skin/extras/icons/year.png</icon>
+    <icon image="DefaultRecentlyAddedEpisodes.png">special://skin/extras/icons/recentlyadded.png</icon>
+    <icon image="DefaultRecentlyAddedMusicVideos.png">special://skin/extras/icons/recentlyadded.png</icon>
+    <icon image="DefaultInProgressShows.png">special://skin/extras/icons/recentlyadded.png</icon>
+    <icon image="DefaultMusicArtists.png">special://skin/extras/icons/artist.png</icon>
+    <icon image="DefaultMusicGenres.png">special://skin/extras/icons/audiogenre.png</icon>
+    <icon image="DefaultMusicSongs.png">special://skin/extras/icons/song.png</icon>
+    <icon image="DefaultMusicYears.png">special://skin/extras/icons/years.png</icon>
+    <icon image="DefaultMusicTop100.png">special://skin/extras/icons/top100.png</icon>
+    <icon image="DefaultMusicRecentlyAdded.png">special://skin/extras/icons/recentlyadded.png</icon>
+    <icon image="DefaultMusicRecentlyPlayed.png">special://skin/extras/icons/recent.png</icon>
+    <icon image="DefaultAddonVideo.png">special://skin/extras/icons/video-addons.png</icon>
+    <icon image="DefaultAddonMusic.png">special://skin/extras/icons/songs.png</icon>
+    <icon image="DefaultAddonProgram.png">special://skin/extras/icons/addons.png</icon>
+
+    <availableshortcutlabel action="ActivateWindow(Videos)">$LOCALIZE[3]</availableshortcutlabel>
+    <availableshortcutlabel action="ActivateWindow(Music)">$LOCALIZE[2]</availableshortcutlabel>
+
+    <!-- GROUPINGS -->
+    <!-- Main Grouping -->
+    <groupings>
+        <node label="32029">
+            <content>common</content>
+            <shortcut label="$LOCALIZE[10821]" type="32021" icon="special://skin/extras/icons/games.png">ActivateWindow(Games)</shortcut>
+            <shortcut label="$LOCALIZE[137]" type="$LOCALIZE[31018]" icon="special://skin/extras/icons/search.png">Skin.SetString(SearchTerm)</shortcut>
+            <shortcut label="$LOCALIZE[33060]" type="$LOCALIZE[31018]" icon="special://skin/extras/icons/power.png">ActivateWindow(shutdownmenu)</shortcut>
+            <shortcut label="$LOCALIZE[31429]" type="32021" icon="special://skin/extras/icons/planetickets.png">ActivateWindow(1110)</shortcut>
+            <shortcut label="$LOCALIZE[31035]" type="32021" icon="special://skin/extras/icons/passports.png">SetFocus(302)</shortcut>
+            <shortcut label="$LOCALIZE[31017]" type="32010" icon="special://skin/extras/icons/shipping.png">||BROWSE||script.skin.helper.service/?action=smartshortcuts</shortcut>
+        </node>
+        <node label="32030">
+            <content>video</content>
+            <node label="32040">
+                <content>playlist-video</content>
+            </node>
+            <node label="32010">
+                <shortcut label="1037" type="32014" icon="DefaultAddonVideo.png">ActivateWindow(Videos,Addons,return)</shortcut>
+                <content>addon-video</content>
+            </node>
+            <node label="32075">
+                <content>videosources</content>
+                <content>upnp-video</content>
+            </node>
+        </node>
+        <node label="32031">
+            <content>music</content>
+            <node label="32040">
+                <content>playlist-audio</content>
+            </node>
+            <node label="32011">
+                <shortcut label="1038" type="32019" icon="DefaultAddonMusic.png">ActivateWindow(MusicLibrary,Addons,return)</shortcut>
+                <content>addon-audio</content>
+            </node>
+            <node label="32075">
+                <content>musicsources</content>
+                <content>upnp-music</content>
+            </node>
+        </node>
+        <node label="32017" condition="System.GetBool(pvrmanager.enabled)" version="13">
+            <content>pvr</content>
+            <node label="19023">
+                <content>pvr-tv</content>
+            </node>
+            <node label="19024">
+                <content>pvr-radio</content>
+            </node>
+        </node>
+        <node label="32017" condition="PVR.HasTVChannels" version="14">
+            <content>pvr</content>
+            <node label="19023">
+                <content>pvr-tv</content>
+            </node>
+        </node>
+        <node label="32087" condition="PVR.HasRadioChannels" version="14">
+            <content>radio</content>
+            <node label="19024">
+                <content>pvr-radio</content>
+            </node>
+        </node>
+        <node label="32020">
+            <content>picturesources</content>
+        </node>
+        <node label="32007">
+            <node label="32009">
+                <shortcut label="10001" type="32021" icon="DefaultAddonProgram.png">ActivateWindow(Programs,Addons,return)</shortcut>
+                <content>addon-program</content>
+            </node>
+            <node label="32010">
+                <shortcut label="1037" type="32014" icon="DefaultAddonVideo.png">ActivateWindow(Videos,Addons,return)</shortcut>
+                <content>addon-video</content>
+            </node>
+            <node label="32011">
+                <shortcut label="1038" type="32019" icon="DefaultAddonMusic.png">ActivateWindow(MusicLibrary,Addons,return)</shortcut>
+                <content>addon-audio</content>
+            </node>
+            <node label="32012">
+                <shortcut label="1039" type="32020" icon="DefaultAddonPicture.png">ActivateWindow(Pictures,Addons,return)</shortcut>
+                <content>addon-image</content>
+            </node>
+        </node>
+        <node label="32006">
+            <content>favourite</content>
+        </node>
+        <node label="10004">
+            <content>settings</content>
+        </node>
+        <node label="32054">
+            <content>commands</content>
+        </node>
+    </groupings>
+
+    <!-- Video Grouping -->
+    <video-groupings>
+        <node label="32040">
+            <content>playlist-video</content>
+        </node>
+        <node label="32010">
+            <shortcut label="1037" type="32014" icon="DefaultAddonVideo.png">ActivateWindow(Videos,Addons,return)</shortcut>
+            <content>addon-video</content>
+        </node>
+        <content>video</content>
+
+    </video-groupings>
+
+    <!-- customsearch Grouping -->
+    <customsearch-groupings>
+        <node label="32010">
+            <content>addon-video</content>
+        </node>
+        <node label="32011">
+            <content>addon-audio</content>
+        </node>
+        <node label="32012">
+            <content>addon-image</content>
+        </node>
+        <node label="32009">
+            <content>addon-program</content>
+        </node>
+    </customsearch-groupings>
+    <customsearchdefaultitems-groupings>
+        <shortcut label="Movies" type="571" icon="special://skin/extras/icons/film.png">DefaultSearch-Movies</shortcut>
+        <shortcut label="Tv Shows" type="571" icon="special://skin/extras/icons/tv.png">DefaultSearch-TvShows</shortcut>
+        <shortcut label="Episodes" type="571" icon="special://skin/extras/icons/tv.png">DefaultSearch-Episodes</shortcut>
+        <shortcut label="Genres" type="571" icon="special://skin/extras/icons/genres.png">DefaultSearch-Genres</shortcut>
+        <shortcut label="Year" type="571" icon="special://skin/extras/icons/years.png">DefaultSearch-Year</shortcut>
+        <shortcut label="Studio" type="571" icon="special://skin/extras/icons/studio.png">DefaultSearch-Studio</shortcut>
+        <shortcut label="Country" type="571" icon="special://skin/extras/icons/country.png">DefaultSearch-Country</shortcut>
+        <shortcut label="Actor" type="571" icon="special://skin/extras/icons/person.png">DefaultSearch-Actor</shortcut>
+        <shortcut label="Director" type="571" icon="special://skin/extras/icons/person.png">DefaultSearch-Director</shortcut>
+        <shortcut label="Albums" type="571" icon="special://skin/extras/icons/songs.png">DefaultSearch-Albums</shortcut>
+        <shortcut label="Artists" type="571" icon="special://skin/extras/icons/songs.png">DefaultSearch-Artists</shortcut>
+        <shortcut label="Music Videos" type="571" icon="special://skin/extras/icons/musicvideo.png">DefaultSearch-MusicVideos</shortcut>
+        <shortcut label="Music Video Artists" type="571" icon="special://skin/extras/icons/musicvideo.png">DefaultSearch-MusicVideoArtists</shortcut>
+        <shortcut label="Add-ons" type="571" icon="special://skin/extras/icons/addons.png">DefaultSearch-Addons</shortcut>
+        <shortcut label="Youtube" type="571" icon="special://skin/extras/icons/youtube.png">DefaultSearch-Youtube</shortcut>
+        <shortcut label="Netflix" type="571" icon="special://skin/extras/icons/netflix.png">DefaultSearch-Netflix</shortcut>
+        <shortcut label="Spotify Artists" type="571" icon="special://skin/extras/icons/spotify.png">DefaultSearch-SpotifyArtists</shortcut>
+        <shortcut label="Spotify Albums" type="571" icon="special://skin/extras/icons/spotify.png">DefaultSearch-SpotifyAlbums</shortcut>
+        <shortcut label="Spotify Songs" type="571" icon="special://skin/extras/icons/spotify.png">DefaultSearch-SpotifySongs</shortcut>
+        <shortcut label="Spotify Playlists" type="571" icon="special://skin/extras/icons/spotify.png">DefaultSearch-SpotifyPlaylists</shortcut>
+    </customsearchdefaultitems-groupings>
+
+    <!-- Hub Grouping -->
+    <customhub-groupings>
+        <node label="32010">
+            <shortcut label="1037" type="32014" icon="DefaultAddonVideo.png">ActivateWindow(Videos,Addons,return)</shortcut>
+            <content>addon-video</content>
+        </node>
+        <content>video</content>
+        <content>music</content>
+    </customhub-groupings>
+
+    <!-- Widget Grouping -->
+    <widget-groupings>
+        <node label="$LOCALIZE[31183]">
+            <node label="$LOCALIZE[342]">
+                <shortcut widget="NewMovies" label="$LOCALIZE[31185]" icon="DefaultRecentlyAddedMovies.png" widgetTarget="video">special://skin/extras/playlists/NewMovies.xsp</shortcut>
+                <shortcut widget="RecentMovies" label="$LOCALIZE[31190]" icon="DefaultMusicRecentlyPlayed.png" widgetTarget="video">special://skin/extras/playlists/RecentMovies.xsp</shortcut>
+                <shortcut widget="RandomMovies" label="$LOCALIZE[31200]" icon="DefaultMovies.png" widgetTarget="video">special://skin/extras/playlists/RandomMovies.xsp</shortcut>
+                <shortcut widget="InProgressMovies" label="$LOCALIZE[31216]" icon="special://skin/extras/icons/timer.png" widgetTarget="video">special://skin/extras/playlists/InProgressMovies.xsp</shortcut>
+                <shortcut widget="TopRatedMovies" label="$LOCALIZE[31225]" icon="DefaultMusicTop100Albums.png" widgetTarget="video">special://skin/extras/playlists/TopRatedMovies.xsp</shortcut>
+                <shortcut widget="Top250Movies" label="$LOCALIZE[31276]" icon="DefaultMusicTop100Albums.png" widgetTarget="video">special://skin/extras/playlists/Top250Movies.xsp</shortcut>
+                <shortcut widget="UnwatchedMovies" label="$LOCALIZE[31278]" icon="DefaultMovies.png" widgetTarget="video">special://skin/extras/playlists/UnwatchedMovies.xsp</shortcut>
+                <shortcut widget="MovieNodes" label="$LOCALIZE[31296]" icon="special://skin/extras/icons/title.png" widgetTarget="video">library://video/movies/</shortcut>
+                <shortcut widget="MovieGenres" label="$LOCALIZE[31257]" icon="DefaultGenre.png" widgetTarget="video">library://video/movies/genres.xml</shortcut>
+                <shortcut widget="MovieSets" label="$LOCALIZE[31260]" icon="DefaultSets.png" widgetTarget="video">videodb://movies/sets/</shortcut>
+            </node>
+            <node label="$LOCALIZE[31301]">
+                <shortcut widget="NewTvShows" label="$LOCALIZE[31367]" icon="DefaultRecentlyAddedMovies.png" widgetTarget="video">special://skin/extras/playlists/NewShows.xsp</shortcut>
+                <shortcut widget="RecentTvShows" label="$LOCALIZE[31194]" icon="DefaultMusicRecentlyPlayed.png" widgetTarget="video">special://skin/extras/playlists/RecentTvShows.xsp</shortcut>
+                <shortcut widget="InProgress" label="$LOCALIZE[31196]" icon="special://skin/extras/icons/timer.png" widgetTarget="video">library://video/tvshows/inprogressshows.xml</shortcut>
+                <shortcut widget="RandomTvShows" label="$LOCALIZE[31233]" icon="DefaultTVShows.png" widgetTarget="video">special://skin/extras/playlists/RandomTvShows.xsp</shortcut>
+                <shortcut widget="TopRatedTvShows" label="$LOCALIZE[31222]" icon="DefaultMusicTop100Albums.png" widgetTarget="video">special://skin/extras/playlists/TopRatedTvShows.xsp</shortcut>
+                <shortcut widget="TvShowNodes" label="$LOCALIZE[31297]" icon="special://skin/extras/icons/title.png" widgetTarget="video">library://video/tvshows/</shortcut>
+                <shortcut widget="TvShowGenres" label="$LOCALIZE[31274]" icon="DefaultGenre.png" widgetTarget="video">library://video/tvshows/genres.xml</shortcut>
+            </node>
+            <node label="$LOCALIZE[20360]">
+                <shortcut widget="NewEpisodes" label="$LOCALIZE[31214]" icon="DefaultRecentlyAddedMovies.png" widgetTarget="video">special://skin/extras/playlists/NewEpisodes.xsp</shortcut>
+                <shortcut widget="Recent Episodes" label="$LOCALIZE[31198]" icon="DefaultMusicRecentlyPlayed.png" widgetTarget="video">special://skin/extras/playlists/RecentEpisodes.xsp</shortcut>
+                <shortcut widget="RandomEpisodes" label="$LOCALIZE[31202]" icon="DefaultTVShows.png" widgetTarget="video">special://skin/extras/playlists/RandomEpisodes.xsp</shortcut>
+                <shortcut widget="UnwatchedEpisodes" label="$LOCALIZE[31283]" icon="DefaultTVShows.png" widgetTarget="video">special://skin/extras/playlists/UnwatchedEpisodes.xsp</shortcut>
+                <shortcut widget="InProgressEpisodes" label="$LOCALIZE[31218]" icon="special://skin/extras/icons/timer.png" widgetTarget="video">special://skin/extras/playlists/InProgressEpisodes.xsp</shortcut>
+                <shortcut widget="TopRatedEpisodes" label="$LOCALIZE[31230]" icon="DefaultMusicTop100Albums.png" widgetTarget="video">special://skin/extras/playlists/TopRatedEpisodes.xsp</shortcut>
+                
+            </node>
+            <node label="$LOCALIZE[249]">
+                <shortcut widget="NewAlbums" label="$LOCALIZE[31238]" icon="DefaultMusicRecentlyAdded.png" widgetTarget="music">musicdb://recentlyaddedalbums/</shortcut>
+                <shortcut widget="RecentAlbums" label="$LOCALIZE[31242]" icon="DefaultMusicRecentlyPlayed.png" widgetTarget="music">musicdb://recentlyplayedalbums/</shortcut>
+                <shortcut widget="TopAlbums" label="$LOCALIZE[31243]" icon="DefaultMusicTop100Albums.png" widgetTarget="music">musicdb://top100/albums/</shortcut>
+                <shortcut widget="RandomAlbums" label="$LOCALIZE[31187]" icon="DefaultMusicAlbums.png" widgetTarget="music">special://skin/extras/playlists/RandomAlbums.xsp</shortcut>
+                <shortcut widget="RandomArtists" label="$LOCALIZE[31295]" icon="DefaultMusicArtists.png" widgetTarget="music">special://skin/extras/playlists/RandomArtists.xsp</shortcut>
+                <shortcut widget="MusicNodes" label="$LOCALIZE[31300]" icon="special://skin/extras/icons/title.png" widgetTarget="music">library://music/</shortcut>
+            </node>
+            <node label="$LOCALIZE[31343]">
+                <shortcut widget="LastPlayedChannels" label="$LOCALIZE[31381]" icon="DefaultAddonPVRClient.png" widgetTarget="pvr">pvr://channels/tv/*?view=lastplayed</shortcut>
+                <shortcut widget="AllChannels" label="$LOCALIZE[19287]" icon="DefaultAddonPVRClient.png" widgetTarget="pvr">pvr://channels/tv/*</shortcut>
+                <shortcut widget="ActiveRecordings" label="$LOCALIZE[31382]" icon="DefaultAddonPVRClient.png" widgetTarget="pvr">pvr://recordings/tv/active?view=flat</shortcut>
+                <shortcut widget="GroupedActiveRecordings" label="$LOCALIZE[31383]" icon="DefaultAddonPVRClient.png" widgetTarget="pvr">pvr://recordings/tv/active?view=grouped</shortcut>
+                <shortcut widget="DeletedRecordings" label="$LOCALIZE[19184]" icon="DefaultAddonPVRClient.png" widgetTarget="pvr">pvr://recordings/tv/deleted?view=flat</shortcut>
+                <shortcut widget="GroupedDeletedRecordings" label="$LOCALIZE[31384]" icon="DefaultAddonPVRClient.png" widgetTarget="pvr">pvr://recordings/tv/deleted?view=grouped</shortcut>
+                <shortcut widget="Timers" label="$LOCALIZE[19040]" icon="DefaultAddonPVRClient.png" widgetTarget="pvr">pvr://timers/tv/timers</shortcut>
+            </node>
+            <node label="$LOCALIZE[29921]">
+                <content>widgets</content>
+                <shortcut widget="Submenu" label="Submenu" icon="DefaultPlaylist.png">Submenu</shortcut>
+                <shortcut widget="VideoSources" label="$LOCALIZE[31159]" icon="DefaultVideo.png" widgetTarget="video">sources://video/</shortcut>
+                <shortcut widget="MusicSources" label="$LOCALIZE[31302]" icon="DefaultMusicSongs.png" widgetTarget="music">sources://music/</shortcut>
+                <shortcut widget="PictureSources" label="$LOCALIZE[31304]" icon="DefaultPicture.png" widgetTarget="pictures">sources://pictures/</shortcut>
+            </node>
+        </node>
+        <shortcut label="$LOCALIZE[31182]" icon="DefaultFolder.png" condition="System.HasAddon(script.skin.helper.service)">||BROWSE||script.skin.helper.service/?action=widgets&amp;path=skinplaylists,librarydataprovider,scriptwidgets,smartshortcuts,pvr</shortcut>
+        <node label="32007">
+            <node label="32010">
+                <content>addon-video</content>
+            </node>
+            <node label="32011">
+                <content>addon-audio</content>
+            </node>
+            <node label="32012">
+                <content>addon-image</content>
+            </node>
+            <node label="32009">
+                <content>addon-program-plugin</content>
+            </node>
+            <shortcut label="10001" type="32021" icon="DefaultAddonProgram.png" widget="addon" widgetType="program" widgetTarget="programs">addons://sources/executable/</shortcut>
+            <shortcut label="20244" type="32021" icon="DefaultAddonProgram.png" widget="addon" widgetType="program" widgetTarget="programs" condition="System.Platform.Android">androidapp://sources/apps/</shortcut>
+            <shortcut label="1037" type="32014" icon="DefaultAddonVideo.png" widget="addon" widgetType="video" widgetTarget="video">addons://sources/video/</shortcut>
+            <shortcut label="1038" type="32019" icon="DefaultAddonMusic.png" widget="addon" widgetType="music" widgetTarget="music">addons://sources/audio/</shortcut>
+            <shortcut label="1039" type="32020" icon="DefaultAddonPicture.png" widget="addon" widgetType="picture" widgetTarget="pictures">addons://sources/image/</shortcut>
+        </node>
+        <node label="32030">
+            <content>video</content>
+            <node label="32040">
+                <content>playlist-video</content>
+            </node>
+            <node label="32010">
+                <content>addon-video</content>
+            </node>
+            <node label="32075">
+                <content>videosources</content>
+            </node>
+        </node>
+        <node label="32031">
+            <content>music</content>
+            <node label="32040">
+                <content>playlist-audio</content>
+            </node>
+            <node label="32011">
+                <content>addon-audio</content>
+            </node>
+            <node label="32075">
+                <content>musicsources</content>
+            </node>
+        </node>
+        <node label="32020">
+            <content>picturesources</content>
+        </node>
+        
+        
+    </widget-groupings>
+
+</overrides>

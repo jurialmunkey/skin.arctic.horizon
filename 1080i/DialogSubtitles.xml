@@ -1,0 +1,244 @@
+<window type="dialog">
+    <defaultcontrol always="true">120</defaultcontrol>
+    <controls>
+        <include>Global_Overlay</include>
+
+        <control type="group">
+            <include content="Dialog_Standard_Group">
+                <param name="width" value="1820" />
+                <param name="height" value="980" />
+            </include>
+
+            <control type="label" id="100">
+                <include>Dialog_Standard_Header</include>
+                <label>$LOCALIZE[31037]</label>
+            </control>
+
+            <control type="label">
+                <description>Path</description>
+                <bottom>10</bottom>
+                <height>60</height>
+                <aligny>center</aligny>
+                <left>30</left>
+                <right>30</right>
+                <font>font_tiny</font>
+                <textcolor>dialog_fg_70</textcolor>
+                <label>$INFO[Control.GetLabel(140),,   ]$INFO[Player.FileName]</label>
+                <scroll>true</scroll>
+            </control>
+
+            <control type="label" id="140"><visible allowhiddenfocus="true">false</visible></control>
+
+            <!-- Selection List -->
+            <control type="panel" id="120">
+                <left>0</left>
+                <top>dialog_top</top>
+                <right>dialog_side_grouplist</right>
+                <height>view_list_height</height>
+                <onleft>8000</onleft>
+                <onright>61</onright>
+                <onup>450</onup>
+                <ondown>450</ondown>
+                <pagecontrol>61</pagecontrol>
+                <itemlayout height="item_list_height" width="1420">
+                    <control type="image">
+                        <left>30</left>
+                        <centertop>50%</centertop>
+                        <width>44</width>
+                        <height>44</height>
+                        <texture fallback="DefaultAddonNone.png">subs/$INFO[ListItem.Thumb].png</texture>
+                    </control>
+                    <control type="image">
+                        <left>100</left>
+                        <centertop>50%</centertop>
+                        <width>100</width>
+                        <height>24</height>
+                        <aspectratio align="left">keep</aspectratio>
+                        <texture>subs/icon_close_caption.png</texture>
+                        <visible>!ListItem.property(hearing_imp)</visible>
+                        <colordiffuse>dialog_fg_12</colordiffuse>
+                    </control>
+                    <control type="image">
+                        <left>150</left>
+                        <centertop>50%</centertop>
+                        <width>100</width>
+                        <height>24</height>
+                        <aspectratio align="left">keep</aspectratio>
+                        <texture>subs/icon_sync.png</texture>
+                        <visible>!ListItem.property(sync)</visible>
+                        <colordiffuse>dialog_fg_12</colordiffuse>
+                    </control>
+                    <control type="image">
+                        <left>100</left>
+                        <centertop>50%</centertop>
+                        <width>100</width>
+                        <height>24</height>
+                        <colordiffuse>dialog_fg_70</colordiffuse>
+                        <aspectratio align="left">keep</aspectratio>
+                        <texture>subs/icon_close_caption.png</texture>
+                        <visible>ListItem.property(hearing_imp)</visible>
+                    </control>
+                    <control type="image">
+                        <left>150</left>
+                        <centertop>50%</centertop>
+                        <width>100</width>
+                        <height>24</height>
+                        <colordiffuse>dialog_fg_70</colordiffuse>
+                        <aspectratio align="left">keep</aspectratio>
+                        <texture>subs/icon_sync.png</texture>
+                        <visible>ListItem.property(sync)</visible>
+                    </control>
+                    <control type="label">
+                        <left>250</left>
+                        <right>30</right>
+                        <height>item_list_height</height>
+                        <aligny>center</aligny>
+                        <label>$INFO[ListItem.Label,,  •  ]$INFO[ListItem.Label2]</label>
+                        <textcolor>dialog_fg_70</textcolor>
+                        <font>font_small</font>
+                        <scroll>false</scroll>
+                    </control>
+
+                </itemlayout>
+
+                <focusedlayout height="item_list_height" width="1420">
+                    <control type="image">
+                        <texture colordiffuse="$VAR[ColorHighlight]">common/white.png</texture>
+                    </control>
+                    <control type="image">
+                        <left>30</left>
+                        <centertop>50%</centertop>
+                        <width>44</width>
+                        <height>44</height>
+                        <texture fallback="DefaultAddonNone.png">subs/$INFO[ListItem.Thumb].png</texture>
+                    </control>
+                    <control type="image">
+                        <left>100</left>
+                        <centertop>50%</centertop>
+                        <width>100</width>
+                        <height>24</height>
+                        <aspectratio align="left">keep</aspectratio>
+                        <texture>subs/icon_close_caption.png</texture>
+                        <visible>!ListItem.property(hearing_imp)</visible>
+                        <colordiffuse>panel_fg_12</colordiffuse>
+                    </control>
+                    <control type="image">
+                        <left>150</left>
+                        <centertop>50%</centertop>
+                        <width>100</width>
+                        <height>24</height>
+                        <aspectratio align="left">keep</aspectratio>
+                        <texture>subs/icon_sync.png</texture>
+                        <visible>!ListItem.property(sync)</visible>
+                        <colordiffuse>panel_fg_12</colordiffuse>
+                    </control>
+                    <control type="image">
+                        <left>100</left>
+                        <centertop>50%</centertop>
+                        <width>100</width>
+                        <height>24</height>
+                        <colordiffuse>Selected</colordiffuse>
+                        <aspectratio align="left">keep</aspectratio>
+                        <texture>subs/icon_close_caption.png</texture>
+                        <visible>ListItem.property(hearing_imp)</visible>
+                    </control>
+                    <control type="image">
+                        <left>150</left>
+                        <centertop>50%</centertop>
+                        <width>100</width>
+                        <height>24</height>
+                        <colordiffuse>Selected</colordiffuse>
+                        <aspectratio align="left">keep</aspectratio>
+                        <texture>subs/icon_sync.png</texture>
+                        <visible>ListItem.property(sync)</visible>
+                    </control>
+                    <control type="label">
+                        <left>250</left>
+                        <right>30</right>
+                        <height>item_list_height</height>
+                        <aligny>center</aligny>
+                        <label>$INFO[ListItem.Label,,  •  ]$INFO[ListItem.Label2]</label>
+                        <textcolor>Selected</textcolor>
+                        <font>font_small</font>
+                        <scroll>true</scroll>
+                    </control>
+
+                </focusedlayout>
+            </control>
+
+            <include content="Dialog_Scrollbar">
+                <param name="onleft" value="120" />
+            </include>
+
+            <!-- Buttons -->
+            <control type="group">
+                <include>Dialog_Standard_Right_Group</include>
+                <control type="image" id="110">
+                    <bottom>0</bottom>
+                    <height>dialog_right_iconwidth</height>
+                    <aspectratio align="center" aligny="bottom">keep</aspectratio>
+                </control>
+                <control type="grouplist" id="8000">
+                    <onleft>61</onleft>
+                    <orientation>vertical</orientation>
+                    <itemgap>0</itemgap>
+                    <control type="button" id="8001" description="Cancel">
+                        <label>222</label>
+                        <onclick>Close</onclick>
+                        <include>Dialog_Standard_Right_Buttons</include>
+                    </control>
+                    <control type="button" id="160" description="Cancel">
+                        <label>413</label>
+                        <include>Dialog_Standard_Right_Buttons</include>
+                    </control>
+                    <control type="list" id="150">
+                        <description>Button Area</description>
+                        <height>390</height>
+                        <width>dialog_right_iconwidth</width>
+                        <onleft>61</onleft>
+                        <onright>120</onright>
+                        <onup>160</onup>
+                        <orientation>vertical</orientation>
+                        <scrolltime>0</scrolltime>
+                        <itemlayout height="78" width="dialog_right_iconwidth">
+                            <control type="label">
+                                <label>$INFO[ListItem.Label]</label>
+                                <selectedcolor>dialog_fg_70</selectedcolor>
+                                <include>Dialog_Standard_Right_Buttons</include>
+                            </control>
+                        </itemlayout>
+                        <focusedlayout height="78" width="dialog_right_iconwidth">
+                            <control type="image">
+                                <texture border="5" colordiffuse="$VAR[ColorHighlight]">common/box.png</texture>
+                                <visible>Control.HasFocus(150)</visible>
+                            </control>
+                            <control type="label">
+                                <label>$INFO[ListItem.Label]</label>
+                                <textcolor>Selected</textcolor>
+                                <selectedcolor>Selected</selectedcolor>
+                                <include>Dialog_Standard_Right_Buttons</include>
+                                <visible>Control.HasFocus(150)</visible>
+                            </control>
+                            <control type="label">
+                                <label>$INFO[ListItem.Label]</label>
+                                <selectedcolor>dialog_fg_70</selectedcolor>
+                                <include>Dialog_Standard_Right_Buttons</include>
+                                <visible>!Control.HasFocus(150)</visible>
+                            </control>
+                        </focusedlayout>
+                    </control>
+                </control>
+            </control>
+
+            <!-- Separator -->
+            <control type="image">
+                <right></right>
+                <top>100</top>
+                <height>687</height>
+                <width>2</width>
+                <texture colordiffuse="dialog_fg_12">common/white.png</texture>
+            </control>
+
+        </control>
+    </controls>
+</window>

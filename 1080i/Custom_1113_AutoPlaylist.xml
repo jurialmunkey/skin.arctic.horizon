@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Foundation -->
+<window type="window" id="1113">
+    <defaultcontrol always="true">9000</defaultcontrol>
+    <controls>
+        <control type="button" id="9000">
+            <left>-100</left>
+            <width>10</width>
+            <onfocus>AlarmClock(tryagain,SetFocus(9002),00:01,silent)</onfocus>
+            <onfocus condition="!String.IsEmpty(Skin.String(StartupPlaylist)) + !Player.HasMedia">PlayMedia($ESCINFO[Skin.String(StartupPlaylist)],1)</onfocus>
+        </control>
+        <control type="button" id="9001">
+            <left>-100</left>
+            <width>10</width>
+            <onfocus condition="!Player.HasMedia">ReplaceWindow($INFO[System.StartupWindow])</onfocus>
+            <onfocus condition="Player.HasMedia">AlarmClock(tryagain,SetFocus(9002),00:01,silent)</onfocus>
+        </control>
+        <control type="button" id="9002">
+            <left>-100</left>
+            <width>10</width>
+            <onfocus>SetFocus(9001)</onfocus>
+        </control>
+        <control type="image" description="Background">
+            <include>Dimensions_Fullscreen</include>
+            <texture colordiffuse="black">common/white.png</texture>
+        </control>
+        <control type="videowindow">
+            <visible>Player.HasVideo</visible>
+            <include>Dimensions_Fullscreen</include>
+        </control>
+    </controls>
+</window>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+    <menucontrol>300</menucontrol>
+    <background>0</background>
+    <defaultcontrol always="true">10</defaultcontrol>
+    
+    <views>10</views>
+    
+    <controls>
+        <include>Global_Background</include>
+        <include>Topbar_Right</include>
+        
+        <control type="group" id="50">
+            <visible allowhiddenfocus="true">!Window.IsVisible(1142) + !Window.IsVisible(1143) + !$EXP[Exp_ShowPlotOverlay] + !$EXP[Exp_InfoVisible]</visible>
+            <include>Animation_Common</include>
+            <control type="group">
+                <visible>Control.IsVisible(10)</visible>
+                <include>View_Pad</include>
+                <control type="group">
+                    <include condition="Skin.HasSetting(PVRGuide.Info)">View_PVR_Guide_Top</include>
+                    <include content="View_PVR_ChannelGroups">
+                        <ondown>10</ondown>
+                        <onup>10</onup>
+                    </include>
+                    <include>View_PVR_EpgGrid</include>
+                </control>
+                <include condition="Skin.HasSetting(PVRGuide.Info)">View_PVR_Guide_Info</include>
+            </control>
+            <include>Topbar_Left</include>
+        </control>
+
+        <control type="label" id="30">
+            <description>Groups</description>
+            <include>Defs_Hidden_Button</include>
+        </control>
+
+    </controls>
+</window>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Foundation -->
+<window id="2005">
+    <onload>ClearProperty(ViewType,Home)</onload>
+    <controls>
+
+        <include content="Object_ShadowSpot_Group">
+            <param name="id" value="0" />
+            <param name="width" value="960" />
+            <param name="height" value="200" />
+            <visible>Control.IsVisible(10) | Control.IsVisible(11) | Control.IsVisible(12)</visible>
+            <include content="Object_ShadowSpot_Grouplist">
+                <include content="Object_ShadowSpot_Label">
+                    <param name="id" value="10" />
+                    <param name="textcolor" value="panel_fg_100" />
+                </include>
+                <include content="Object_ShadowSpot_Label">
+                    <param name="id" value="11" />
+                    <param name="textcolor" value="panel_fg_100" />
+                </include>
+                <include content="Object_ShadowSpot_Label">
+                    <param name="id" value="12" />
+                    <param name="textcolor" value="panel_fg_100" />
+                </include>
+            </include>
+        </include>
+    </controls>
+
+</window>

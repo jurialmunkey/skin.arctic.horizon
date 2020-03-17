@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+    <include name="View_52_Posters">
+        <control type="group">
+            <visible>Control.IsVisible(52)</visible>
+            <include>Animation_Down</include>
+            <include content="Viewtype_Poster">
+                <param name="id" value="52" />
+                <param name="castlabel" value="Container.Content(actors)" />
+                <param name="label2" value="ListItem.Property(role)" />
+                <bottom>-20</bottom>
+                <left>-80</left>
+                <right>-80</right>
+                <include>Viewtype_Movement</include>
+                <visible>Container.Content(actors) | Container.Content(tvshows) | Container.Content(movies)</visible>
+                <visible>!Window.IsVisible(MyPlaylist.xml)</visible>
+            </include>
+            <include content="Home_Hub_Widget_Label">
+                <param name="id" value="52" />
+                <param name="label" value="$VAR[Label_Header_Center]" />
+                <param name="altlabel" value="$INFO[Control.GetLabel(3),, ]$INFO[Control.GetLabel(4)]" />
+            </include>
+        </control>
+    </include>
+</includes>
+

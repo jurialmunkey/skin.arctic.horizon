@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Foundation -->
+<window type="dialog" id="134">
+    <defaultcontrol always="true">450</defaultcontrol>
+
+
+    <controls>
+
+        <include>Global_Background</include>
+        <include>Topbar_Right</include>
+        <include>Topbar_Left</include>
+
+        <control type="group">
+            <include>View_Pad</include>
+            <include>Animation_Down</include>
+            <control type="grouplist">
+                <top>-15</top>
+                <orientation>vertical</orientation>
+                <usecontrolcoords>true</usecontrolcoords>
+                <itemgap>0</itemgap>
+                <include content="Object_Info_Title">
+                    <param name="label" value="$INFO[ListItem.Label]" />
+                </include>
+                <include>Object_Info_Line</include>
+            </control>
+            <include content="Viewtype_Square">
+                <param name="id" value="450" />
+                <param name="control-type" value="panel" />
+                <param name="orientation" value="vertical" />
+                <param name="height" value="800" />
+                <param name="aspectratio" value="keep" />
+                <left>-80</left>
+                <right>-80</right>
+                <bottom>-120</bottom>
+                <include>Viewtype_Movement</include>
+            </include>
+        </control>
+
+    </controls>
+
+</window>

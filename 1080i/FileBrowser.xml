@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Foundation -->
+<window id="126">
+    <defaultcontrol always="true">450</defaultcontrol>
+
+
+    <controls>
+
+        <include>Global_Overlay</include>
+
+        <control type="group">
+            <include content="Dialog_Standard_Group">
+                <param name="width" value="1336" />
+                <param name="height" value="990" />
+            </include>
+            <control type="label" id="411">
+                <include>Dialog_Standard_Header</include>
+            </control>
+
+            <control type="label" id="412">
+                <bottom>0</bottom>
+                <height>56</height>
+                <textcolor>dialog_fg_30</textcolor>
+                <font>font_statusbar</font>
+                <haspath>true</haspath>
+                <left>20</left>
+                <right>20</right>
+            </control>
+
+            <control type="group">
+                <include content="Dialog_Standard_List">
+                    <param name="id" value="450" />
+                    <param name="onup" value="450" />
+                    <param name="ondown" value="450" />
+                    <param name="itemheight" value="item_biglist_height" />
+                    <param name="list_style" value="Dialog_Standard_List_Itemlayout_Complex" />
+                    <param name="left_pad" value="0" />
+                    <param name="checkmark" value="false" />
+                    <param name="itemlayout_condition" value="![[String.StartsWith(ListItem.FolderPath,special://skin/extras/icons/) + !String.IsEqual(ListItem.Label,icons)]  | [String.StartsWith(Container(450).ListItem(1).FolderPath,special://skin/extras/icons/) + ListItem.IsParentFolder]]" />
+                    <itemlayout height="156" width="156" condition="[[String.StartsWith(ListItem.FolderPath,special://skin/extras/icons/) + !String.IsEqual(ListItem.Label,icons)]  | [String.StartsWith(Container(450).ListItem(1).FolderPath,special://skin/extras/icons/) + ListItem.IsParentFolder]]">
+                        <control type="image">
+                            <bordersize>15</bordersize>
+                            <aspectratio scalediffuse="false">keep</aspectratio>
+                            <texture fallback="DefaultAddonNone.png" background="true">$INFO[Listitem.Icon]</texture>
+                            <visible>!String.Contains(ListItem.Path,special://skin/extras/icons) + !String.StartsWith(ListItem.Icon,Default)</visible>
+                        </control>
+                        <control type="image">
+                            <colordiffuse>dialog_fg_70</colordiffuse>
+                            <bordersize>15</bordersize>
+                            <aspectratio scalediffuse="false">keep</aspectratio>
+                            <texture fallback="DefaultAddonNone.png" background="true">$INFO[Listitem.Icon]</texture>
+                            <visible>String.Contains(ListItem.Path,special://skin/extras/icons) | String.StartsWith(ListItem.Icon,Default)</visible>
+                        </control>
+                    </itemlayout>
+                    <focusedlayout height="156" width="156" condition="[[String.StartsWith(ListItem.FolderPath,special://skin/extras/icons/) + !String.IsEqual(ListItem.Label,icons)]  | [String.StartsWith(Container(450).ListItem(1).FolderPath,special://skin/extras/icons/) + ListItem.IsParentFolder]]">
+                        <control type="image">
+                            <texture colordiffuse="$VAR[ColorHighlight]">common/white.png</texture>
+                        </control>
+                        <control type="image">
+                            <bordersize>15</bordersize>
+                            <aspectratio scalediffuse="false">keep</aspectratio>
+                            <texture fallback="DefaultAddonNone.png" background="true">$INFO[Listitem.Icon]</texture>
+                        </control>
+                    </focusedlayout>
+                </include>
+
+                <control type="group">
+                    <include>Dialog_Standard_Right_Group</include>
+                    <include content="Dialog_Standard_Image">
+                        <param name="id" value="450" />
+                        <param name="image" value="ListItem.Icon" />
+                    </include>
+                    <control type="grouplist" id="8000">
+                        <onleft>61</onleft>
+                        <orientation>vertical</orientation>
+                        <itemgap>0</itemgap>
+                        <control type="button" id="413">
+                            <description>Ok</description>
+                            <label>186</label>
+                            <include>Dialog_Standard_Right_Buttons</include>
+                        </control>
+                        <control type="button" id="414">
+                            <description>Cancel</description>
+                            <label>222</label>
+                            <include>Dialog_Standard_Right_Buttons</include>
+                        </control>
+                        <control type="button" id="415">
+                            <description>Create Folder</description>
+                            <label>119</label>
+                            <include>Dialog_Standard_Right_Buttons</include>
+                        </control>
+                    </control>
+                </control>
+
+                <control type="group">
+                    <bottom>20</bottom>
+                    <include content="Dialog_Scrollbar">
+                        <param name="onleft" value="450" />
+                    </include>
+                </control>
+            </control>
+        </control>
+    </controls>
+</window>

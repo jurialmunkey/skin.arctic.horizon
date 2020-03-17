@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window id="2007">
+    <!-- <defaultcontrol always="true">9000</defaultcontrol>
+    <controls>
+        <control type="list" id="9000">
+            <orientation>horizontal</orientation>
+            <itemlayout width="1920" height="1080">
+                <control type="image">
+                    <width>500</width>
+                    <texture>$INFO[ListItem.FileNameAndPath]</texture>
+                </control>
+            </itemlayout>
+            <focusedlayout width="1920" height="1080">
+                <control type="image">
+                    <width>500</width>
+                    <texture>$INFO[ListItem.FileNameAndPath]</texture>
+                </control>
+            </focusedlayout>
+            <content>$INFO[Container.FolderPath]</content>
+        </control>
+    </controls> -->
+</window>

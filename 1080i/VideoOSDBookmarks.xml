@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Foundation -->
+<window id="125">
+    <defaultcontrol always="true">2</defaultcontrol>
+    <controls>
+        <control type="group">
+            <bottom>0</bottom>
+            <height>610</height>
+            <include>Animation_FadeIn</include>
+            <include>Animation_FadeOut</include>
+            <control type="image">
+                <texture colordiffuse="panel_bg">common/white.png</texture>
+            </control>
+            <control type="image">
+                <top>-24</top>
+                <height>24</height>
+                <width>100%</width>
+                <texture flipy="true">common/shadow-line-24.png</texture>
+            </control>
+            <control type="grouplist" id="9000">
+                <centerleft>50%</centerleft>
+                <top>40</top>
+                <width>1080</width>
+                <height>item_list_height</height>
+                <itemgap>40</itemgap>
+                <align>center</align>
+                <orientation>horizontal</orientation>
+                <onleft>9000</onleft>
+                <onright>9000</onright>
+                <onup>11</onup>
+                <ondown>11</ondown>
+
+                <control type="button" id="2">
+                    <description>Create Bookmark button</description>
+                    <label>294</label>
+                    <width>330</width>
+                    <texturefocus colordiffuse="$VAR[ColorHighlight]" border="5">common/box.png</texturefocus>
+                    <texturenofocus colordiffuse="panel_fg_12" border="5">common/box.png</texturenofocus>
+                    <textcolor>panel_fg_70</textcolor>
+                    <include>Dialog_Standard_Right_Buttons</include>
+                </control>
+
+                <control type="button" id="3">
+                    <description>Clear Bookmark button</description>
+                    <label>296</label>
+                    <width>330</width>
+                    <texturefocus colordiffuse="$VAR[ColorHighlight]" border="5">common/box.png</texturefocus>
+                    <texturenofocus colordiffuse="panel_fg_12" border="5">common/box.png</texturenofocus>
+                    <textcolor>panel_fg_70</textcolor>
+                    <include>Dialog_Standard_Right_Buttons</include>
+                </control>
+
+                <control type="button" id="4">
+                    <description>Clear Bookmark button</description>
+                    <label>20406</label>
+                    <width>330</width>
+                    <texturefocus colordiffuse="$VAR[ColorHighlight]" border="5">common/box.png</texturefocus>
+                    <texturenofocus colordiffuse="panel_fg_12" border="5">common/box.png</texturenofocus>
+                    <textcolor>panel_fg_70</textcolor>
+                    <include>Dialog_Standard_Right_Buttons</include>
+                    <visible>videoplayer.content(episodes)</visible>
+                </control>
+            </control>
+            <control type="group">
+                <left>view_pad</left>
+                <right>view_pad</right>
+                <bottom>view_pad</bottom>
+                <height>370</height>
+                <include>Animation_Common</include>
+                <visible>Control.IsVisible(11)</visible>
+                <include content="View_51_Wall_Container">
+                    <param name="id" value="11" />
+                    <param name="height" value="item_row_height" />
+                    <param name="itemwidth" value="item_landscape_width" />
+                    <param name="itemheight" value="item_row_height" />
+                    <param name="icon" value="$INFO[ListItem.Icon]" />
+                    <param name="iconheight" value="item_icon_height" />
+                    <param name="diffuse" value="diffuse/landscape-std.png" />
+                    <param name="forced" value="false" />
+                    <param name="labelinclude" value="View_Bookmarks_Label" />
+                    <param name="visible" value="true" />
+                    <orientation>horizontal</orientation>
+                    <onup>9000</onup>
+                    <ondown>9000</ondown>
+                </include>
+            </control>
+        </control>
+    </controls>
+</window>

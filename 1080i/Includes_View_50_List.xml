@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+
+    <include name="View_50_FileList">
+        <control type="group">
+            <visible>Control.IsVisible(50)</visible>
+            <include>Animation_Down</include>
+            <control type="group">
+                <right>-20</right>
+                <bottom>-20</bottom>
+                <height>600</height>
+                <width>1026</width>
+                <control type="group">
+                    <visible>!String.Contains(Container.FolderPath,info=user_discover)</visible>
+                    <include content="Viewtype_Landscape_Itemlayout">
+                        <param name="selectbox" value="false" />
+                        <param name="id" value="50" />
+                        <param name="icon" value="$VAR[Image_Fanart]" />
+                        <param name="diffuse" value="diffuse/landscape-big.png" />
+                        <param name="textbox-height" value="0" />
+                        <param name="textbox-visible" value="false" />
+                    </include>
+                </control>
+                <control type="group">
+                    <visible>String.Contains(Container.FolderPath,info=user_discover)</visible>
+                    <include content="Viewtype_Landscape_Itemlayout">
+                        <param name="selectbox" value="false" />
+                        <param name="id" value="50" />
+                        <param name="icon" value="noop" />
+                        <param name="diffuse" value="diffuse/landscape-big.png" />
+                        <param name="textbox-height" value="0" />
+                        <param name="textbox-visible" value="false" />
+                    </include>
+                    <control type="multiimage">
+                        <animation effect="fade" start="0" end="100" time="1000" tween="cubic" easing="inout" reversible="false">Visible</animation>
+                        <animation effect="fade" end="0" start="100" time="1000" tween="cubic" easing="inout">Hidden</animation>
+                        <animation effect="fade" start="100" end="10" condition="true">Conditional</animation>
+                        <timeperimage>50</timeperimage>
+                        <aspectratio align="center" aligny="center">stretch</aspectratio>
+                        <fadetime>10</fadetime>
+                        <imagepath diffuse="diffuse/landscape-big.png">$VAR[Global_BusyLoader]</imagepath>
+                        <include content="Defs_Pad">
+                            <param name="pad" value="20" />
+                        </include>
+                        <randomize>false</randomize>
+                        <visible>Container(5052).IsUpdating</visible>
+                    </control>
+                    <control type="group">
+                        <centerleft>50%</centerleft>
+                        <width>240</width>
+                        <visible>Container(5052).IsUpdating</visible>
+                        <include content="Defs_BusySpinner">
+                            <param name="label" value="$LOCALIZE[31428]..." />
+                        </include>
+                    </control>
+                </control>
+            </control>
+            <control type="group">
+                <left>-20</left>
+                <bottom>-20</bottom>
+                <right>1006</right>
+                <height>600</height>
+                <include>Object_PosterBack</include>
+            </control>
+            <include content="Viewtype_FileList">
+                <param name="id" value="50" />
+                <param name="itemlayout-width" value="734" />
+                <width>734</width>
+                <left>0</left>
+                <bottom>0</bottom>
+                <height>560</height>
+                <onleft>304</onleft>
+                <onright>5052</onright>
+                <animation effect="slide" end="0,-80" condition="Integer.IsLess(Container.NumAllItems,7)">Conditional</animation>
+                <animation effect="slide" end="0,-80" condition="Integer.IsLess(Container.NumAllItems,5)">Conditional</animation>
+                <animation effect="slide" end="0,-80" condition="Integer.IsLess(Container.NumAllItems,3)">Conditional</animation>
+                <visible>Container.Content(files) | [String.IsEqual(Container.PluginName,plugin.video.themoviedb.helper) + [String.Contains(Container.FolderPath,info=details)]] | Window.IsVisible(MyPVRRecordings.xml) | Window.IsVisible(videoplaylist)</visible>
+            </include>
+            <include content="Home_Hub_Widget_Label">
+                <param name="id" value="50" />
+                <param name="label" value="$VAR[Label_Header_Center]" />
+                <param name="altlabel" value="$INFO[Control.GetLabel(3),, ]$INFO[Control.GetLabel(4)]" />
+                <top>120</top>
+            </include>
+            <control type="wraplist" id="5052">
+                <right>0</right>
+                <bottom>0</bottom>
+                <height>560</height>
+                <width>986</width>
+                <onback>50</onback>
+                <onleft>50</onleft>
+                <onright>Down</onright>
+                <orientation>vertical</orientation>
+                <visible>String.Contains(Container.FolderPath,info=user_discover)</visible>
+                <animation effect="fade" start="100" end="0" time="300" condition="Container(5052).IsUpdating">Conditional</animation>
+                <include content="Defs_AutoScroll"><param name="condition" value="!Control.HasFocus(5052)" /></include>
+                <itemlayout width="986" height="560">
+                    <control type="image">
+                        <aspectratio scalediffuse="false">scale</aspectratio>
+                        <texture background="true" diffuse="diffuse/landscape-big.png">$VAR[Image_Landscape]</texture>
+                    </control>
+                </itemlayout>
+                <focusedlayout width="986" height="560">
+                    <control type="image">
+                        <aspectratio scalediffuse="false">scale</aspectratio>
+                        <texture background="true" diffuse="diffuse/landscape-big.png">$VAR[Image_Landscape]</texture>
+                    </control>
+                </focusedlayout>
+                <content target="videos" limit="10">$INFO[Container(50).ListItemAbsolute(0).FolderPath]</content>
+            </control>
+            <control type="image">
+                <right>-20</right>
+                <bottom>-20</bottom>
+                <height>200</height>
+                <width>1026</width>
+                <bordersize>45</bordersize>
+                <aspectratio align="left">keep</aspectratio>
+                <texture background="true">$INFO[Container(5052).ListItem.Art(clearlogo)]</texture>
+                <animation effect="fade" start="100" end="0" time="300" condition="Container(5052).IsUpdating">Conditional</animation>
+                <visible>String.Contains(Container.FolderPath,info=user_discover)</visible>
+            </control>
+            <control type="group">
+                <right>-15</right>
+                <bottom>-15</bottom>
+                <height>590</height>
+                <width>1016</width>
+                <visible>Control.HasFocus(5052)</visible>
+                <visible>String.Contains(Container.FolderPath,info=user_discover)</visible>
+                <include>View_Selectbox</include>
+            </control>
+        </control>
+    </include>
+
+    <include name="View_500_SongList">
+        
+        <control type="group">
+            <visible>Control.IsVisible(500)</visible>
+            <include>Animation_Down</include>
+            <control type="group">
+                <left>-20</left>
+                <bottom>-20</bottom>
+                <right>580</right>
+                <height>600</height>
+                <include>Object_PosterBack</include>
+            </control>
+            <include content="Viewtype_FileList">
+                <param name="id" value="500" />
+                <param name="itemlayout-width" value="1160" />
+                <width>1160</width>
+                <height>560</height>
+                <onleft>304</onleft>
+                <onright>304</onright>
+                <left>0</left>
+                <bottom>0</bottom>
+                <animation effect="slide" end="0,-80" condition="Integer.IsLess(Container.NumAllItems,7)">Conditional</animation>
+                <animation effect="slide" end="0,-80" condition="Integer.IsLess(Container.NumAllItems,5)">Conditional</animation>
+                <animation effect="slide" end="0,-80" condition="Integer.IsLess(Container.NumAllItems,3)">Conditional</animation>
+                <visible>Container.Content(songs) | [Container.Content() + !String.IsEmpty(Container.PluginName)] | [Container.Content(addons) + !String.IsEmpty(Container.PluginName)] | Window.IsVisible(MyPVRSearch.xml) | Window.IsVisible(MyPVRTimers.xml) | Window.IsVisible(musicplaylist)</visible>
+                <visible>!Window.IsVisible(MyPVRRecordings.xml)</visible>
+            </include>
+            <control type="group">
+                <right>-20</right>
+                <bottom>-20</bottom>
+                <height>600</height>
+                <width>600</width>
+                <include content="Viewtype_Landscape_Itemlayout">
+                    <param name="selectbox" value="false" />
+                    <param name="id" value="500" />
+                    <param name="icon" value="$VAR[Image_Poster]" />
+                    <param name="diffuse" value="diffuse/square-big.png" />
+                    <param name="textbox-height" value="0" />
+                    <param name="textbox-visible" value="false" />
+                </include>
+            </control>
+            <include content="Home_Hub_Widget_Label">
+                <param name="id" value="500" />
+                <param name="label" value="$VAR[Label_Header_Center]" />
+                <param name="altlabel" value="$INFO[Control.GetLabel(3),, ]$INFO[Control.GetLabel(4)]" />
+                <top>120</top>
+            </include>
+        </control>
+    </include>
+
+    <include name="View_50_List_Control">
+        <param name="itemlayout" default="View_50_Itemlayout" />
+        <param name="itemheight" default="item_list_height" />
+        <param name="altid" default="999999" />
+        <param name="height" default="view_list_height" />
+        <param name="top" default="0" />
+        <param name="controllayout" default="View_Vertical" />
+        <param name="controltype" default="panel" />
+        <param name="viewtype" default="$LOCALIZE[535]" />
+        <param name="viewtypename" default="list" />
+        <param name="forced" default="false" />
+        <param name="flipsides" default="false" />
+        <definition>
+            <control type="$PARAM[controltype]" id="$PARAM[id]">
+                <nested />
+                <scrolltime tween="quadratic">400</scrolltime>
+                <top>$PARAM[top]</top>
+                <visible>$PARAM[visible]</visible>
+                <left>$PARAM[left]</left>
+                <right>$PARAM[right]</right>
+                <height>$PARAM[height]</height>
+                <include>$PARAM[controllayout]</include>
+                <pagecontrol>60</pagecontrol>
+                <viewtype label="$PARAM[viewtype]">$PARAM[viewtypename]</viewtype>
+                <itemlayout height="$PARAM[itemheight]">
+                    <include content="$PARAM[itemlayout]">
+                        <param name="itemheight" value="$PARAM[itemheight]" />
+                    </include>
+                </itemlayout>
+                <focusedlayout height="$PARAM[itemheight]">
+                    <control type="group">
+                        <visible>!Control.HasFocus($PARAM[id]) + !Control.HasFocus($PARAM[altid])</visible>
+                        <include content="$PARAM[itemlayout]">
+                            <param name="itemheight" value="$PARAM[itemheight]" />
+                        </include>
+                    </control>
+                    <control type="group">
+                        <visible>Control.HasFocus($PARAM[id]) | Control.HasFocus($PARAM[altid])</visible>
+                        <include content="$PARAM[itemlayout]">
+                            <param name="fgcolor" value="main_bg" />
+                            <param name="bgcolor" value="main_fg" />
+                            <param name="panelcolor" value="main_fg_100" />
+                            <param name="selectbox" value="true" />
+                            <param name="itemheight" value="$PARAM[itemheight]" />
+                        </include>
+                    </control>
+                </focusedlayout>
+            </control>
+        </definition>
+    </include>
+
+    <include name="View_50_Poster">
+        <param name="height" default="view_poster_height" />
+        <param name="width" default="view_poster_width" />
+        <param name="include" default="Defs_Null" />
+        <param name="visible" default="true" />
+        <param name="left" default="-15" />
+        <param name="fadetime" default="0" />
+        <param name="top" default="-15" />
+        <definition>
+            <control type="group">
+                <top>$PARAM[top]</top>
+                <left>$PARAM[left]</left>
+                <width>$PARAM[width]</width>
+                <include>$PARAM[include]</include>
+                <visible>$PARAM[visible]</visible>
+                <control type="group">
+                    <height>$PARAM[height]</height>
+                    <include content="Object_PosterBack">
+                        <param name="pad" value="-5" />
+                    </include>
+                    <include content="Object_DefaultIcon">
+                        <param name="icon" value="$PARAM[defaulticon]" />
+                        <param name="visible" value="$PARAM[defaulticonvisible]" />
+                    </include>
+                    <include content="Object_Poster">
+                        <param name="icon" value="$PARAM[icon]" />
+                        <param name="aspectratio" value="$PARAM[aspectratio]" />
+                        <param name="diffuse" value="$PARAM[diffuse]" />
+                        <param name="fadetime" value="$PARAM[fadetime]" />
+                        <param name="visible" value="$PARAM[iconvisible]" />
+                        <param name="bordersize" value="$PARAM[bordersize]" />
+                    </include>
+                </control>
+            </control>
+        </definition>
+    </include>
+
+</includes>
+

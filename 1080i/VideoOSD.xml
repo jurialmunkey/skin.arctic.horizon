@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Foundation -->
+<window id="2901">
+    <onload condition="!Player.PauseEnabled + String.IsEmpty(Window(Home).Property(OSDViewMode))">SetFocus(15)</onload>
+    <onload condition="Player.PauseEnabled + String.IsEmpty(Window(Home).Property(OSDViewMode))">SetFocus(14)</onload>
+    <onload condition="!String.IsEmpty(Window(Home).Property(OSDViewMode))">SetFocus(3112)</onload>
+    <onload condition="!String.IsEmpty(Window(Home).Property(OSDViewMode))">ClearProperty(OSDViewMode,Home)</onload>
+    <onunload>ClearProperty(OSDInfo,Home)</onunload>
+    <controls>
+
+        <control type="group">
+            <visible>!Window.IsVisible(DialogPlayerProcessInfo.xml)</visible>
+            <control type="group">
+                <include condition="String.IsEmpty(Window(Home).Property(OSDViewMode))">Animation_FadeIn</include>
+                <visible>!Window.IsVisible(DialogSlider.xml)</visible>
+                <visible>!Window.IsVisible(VideoOSDBookmarks.xml)</visible>
+                <animation effect="fade" start="100" end="0" time="200" condition="Control.HasFocus(9605)">Conditional</animation>
+                    
+                <control type="grouplist" id="9000">
+                    <include condition="!VideoPlayer.Content(musicvideos)">OSD_VideoPosition</include>
+                    <include condition="VideoPlayer.Content(musicvideos)">OSD_MusicPosition</include>
+                    <!-- <include condition="VideoPlayer.Content(LiveTV)">OSD_LiveTVPosition</include> -->
+                    <itemgap>32</itemgap>
+
+                    <onup condition="String.IsEmpty(Window(Home).Property(OSDInfo))">SetProperty(OSDInfo,1,Home)</onup>
+                    <onup condition="!String.IsEmpty(Window(Home).Property(OSDInfo))">ClearProperty(OSDInfo,Home)</onup>
+                    <ondown condition="String.IsEmpty(Window(Home).Property(OSDInfo))">Close</ondown>
+                    <ondown condition="!String.IsEmpty(Window(Home).Property(OSDInfo))">ClearProperty(OSDInfo,Home)</ondown>
+
+
+                    <orientation>horizontal</orientation>
+                    <usecontrolcoords>true</usecontrolcoords>
+                    <include>OSD_Controls</include>
+                </control>
+            </control>
+
+            <include content="OSD_Menu_List">
+                <param name="content" value="Items_OSD_Settings" />
+                <param name="height" value="608" />
+                <param name="id" value="3112" />
+                <param name="label" value="$LOCALIZE[33063]" />
+                <param name="position" value="330,116" />
+            </include>
+
+            <control type="group">
+                <include condition="String.IsEmpty(Window(Home).Property(OSDViewMode))">Animation_FadeIn</include>
+                <visible>Window.IsVisible(DialogVideoInfo.xml)</visible>
+                <include>Global_Background</include>
+                <include>Topbar_Right</include>
+            </control>
+
+            <control type="slider">
+                <bottom>112</bottom>
+                <height>32</height>
+                <left>view_pad</left>
+                <width>1800</width>
+                <texturesliderbar/>
+                <textureslidernib/>
+                <textureslidernibfocus/>
+                <info>Player.Progress</info>
+                <action>seek</action>
+            </control>
+        </control>
+
+    </controls>
+
+</window>

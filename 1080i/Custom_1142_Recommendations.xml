@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window type="dialog" id="1142">
+    <defaultcontrol always="true">4100</defaultcontrol>
+    <onload>SetProperty(Header_Center_Text,$LOCALIZE[14116])</onload>
+    <onload>SetProperty(Header_Left_Text,$LOCALIZE[31006])</onload>
+    <controls>
+        <control type="group">
+            <visible>!$EXP[Exp_InfoVisible]</visible>
+            <include>Animation_Common</include>
+            <include content="DialogVideoInfo_Left">
+                <include>Animation_Left_Delay</include>
+            </include>
+            <include content="DialogVideoInfo_MainGroup">
+                <include>Animation_Right_Delay</include>
+                <include content="DialogVideoInfo_WidgetGroupList">
+                    <onup>Close</onup>
+                    <ondown>Close</ondown>
+                    <include>DialogVideoInfo_Widget_Recommended</include>
+                    <include>DialogVideoInfo_Widget_Similar</include>
+                </include>
+            </include>
+        </control>
+    </controls>
+</window>

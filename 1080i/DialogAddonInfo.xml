@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Foundation -->
+<window id="146">
+    <defaultcontrol always="true">300</defaultcontrol>
+    <onunload>ClearProperty(OSD_Menu,Home)</onunload>
+    <onload>ClearProperty(OSD_Menu,Home)</onload>
+    <controls>
+
+        <control type="button" id="6"><include>Defs_Hidden_Button</include></control>
+        <control type="button" id="7"><include>Defs_Hidden_Button</include></control>
+        <control type="button" id="8"><include>Defs_Hidden_Button</include></control>
+        <control type="button" id="9"><include>Defs_Hidden_Button</include></control>
+        <control type="button" id="10"><include>Defs_Hidden_Button</include></control>
+        <control type="button" id="12"><include>Defs_Hidden_Button</include></control>
+        <control type="radiobutton" id="13"><include>Defs_Hidden_Button</include></control>
+
+
+        <include content="DialogVideoInfo_Left">
+            <param name="poster" value="false" />
+            <include>Animation_Left_Delay</include>
+            <control type="group">
+                <top>view_top</top>
+                <left>view_pad</left>
+                <bottom>view_pad</bottom>
+                <include content="View_50_Poster">
+                    <param name="visible" value="true" />
+                    <param name="diffuse" value="diffuse/poster-big.png" />
+                    <param name="height" value="view_poster_width" />
+                </include>
+            </control>
+        </include>
+
+
+        <include content="DialogVideoInfo_MainGroup">
+            <include content="DialogVideoInfo_WidgetGroupList">
+                <include>Animation_Right_Delay</include>
+                <include content="DialogVideoInfo_MainInfo">
+                    <control type="grouplist">
+                        <orientation>vertical</orientation>
+                        <usecontrolcoords>true</usecontrolcoords>
+                        <itemgap>0</itemgap>
+                        <include content="Object_Info_Title">
+                            <param name="label" value="$INFO[ListItem.Label]" />
+                        </include>
+                        <include content="Object_Info_Line_Label">
+                            <param name="label" value="$VAR[Label_SubTitle]" />
+                            <param name="textcolor" value="$VAR[ColorHighlight]" />
+                            <param name="divider" value="false" />
+                        </include>
+                        <include content="Object_Info_Plot">
+                            <param name="maxheight" value="120" />
+                            <param name="height" value="auto" />
+                        </include>
+                    </control>
+                    <include content="Info_Button_Grouplist">
+                        <param name="includebuttons" value="Info_Buttons_Addon" />
+                    </include>
+                </include>
+                <include content="Info_Widget_Poster">
+                    <param name="includecondition" value="true" />
+                    <param name="id" value="50" />
+                    <param name="groupid" value="5000" />
+                    <param name="label" value="Screenshots" />
+                    <param name="viewtype-include" value="Viewtype_Landscape" />
+                    <param name="visible" value="true" />
+                    <include>Defs_InfoList_OnBack</include>
+                    <movement>1</movement>
+                </include>
+                <control type="group">
+                    <top>infowidgets_item_top</top>
+                    <height>item_widget_details_height</height>
+                    <visible>Integer.IsEqual(Container(50).NumItems,0)</visible>
+                    <control type="textbox">
+                        <top>-10</top>
+                        <left>100</left>
+                        <height>400</height>
+                        <align>left</align>
+                        <font>font_plotbox</font>
+                        <textcolor>main_fg_70</textcolor>
+                        <label>$INFO[ListItem.AddonNews]</label>
+                    </control>
+                </control>
+            </include>
+        </include>
+
+        
+
+        <include content="OSD_Menu_List">
+            <param name="id" value="3600" />
+            <param name="osd_id" value="300" />
+            <param name="content" value="Items_Info_Manage_Addons" />
+            <param name="label" value="Options" />
+            <param name="height" value="442" />
+        </include>
+
+        <include>Object_PlotOverlay</include>
+    </controls>
+</window>

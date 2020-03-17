@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<colors>
+    <!-- Main -->
+    <color name="main_fg_100">ffdedede</color>
+    <color name="main_fg_90">e7dedede</color>
+    <color name="main_fg_70">b3dedede</color>
+    <color name="main_fg_30">4ddedede</color>
+    <color name="main_fg_12">1fdedede</color>
+
+    <color name="main_bg_100">ff181818</color>
+    <color name="main_bg_90">e7181818</color>
+    <color name="main_bg_70">b3181818</color>
+    <color name="main_bg_30">4d181818</color>
+    <color name="main_bg_12">1f181818</color>
+
+    <color name="main_half">4d9f9f9f</color>
+
+    <!-- Dialogs -->
+    <color name="dialog_bg_100">FFcccccc</color>
+    <color name="dialog_bg_70">B3cccccc</color>
+    <color name="dialog_bg_30">4Dcccccc</color>
+    <color name="dialog_bg_12">1Fcccccc</color>
+
+    <color name="dialog_fg_100">FF181818</color>
+    <color name="dialog_fg_70">B3181818</color>
+    <color name="dialog_fg_30">4D181818</color>
+    <color name="dialog_fg_12">1F181818</color>
+
+    <!-- Panels -->
+    <color name="panel_bg">c5000000</color>
+    <color name="panel_fg_100">FFededed</color>
+    <color name="panel_fg_70">B3ededed</color>
+    <color name="panel_fg_30">4Dededed</color>
+    <color name="panel_fg_12">1Fededed</color>
+
+    <!-- Highlight -->
+    <color name="Highlight">ff0385b5</color>
+    <color name="Gradient">ff35e55e</color>
+    <color name="Selected">ffffffff</color>
+
+    <!-- Shadows -->
+    <color name="Shadow">55ffffff</color>
+    
+    <!-- Background -->
+    <color name="HomePanel">e7181818</color>
+    <color name="Background">ff181818</color>
+    <color name="PosterBack">ffcccccc</color>
+    <color name="AltPosterBack">27dedede</color>
+
+</colors>

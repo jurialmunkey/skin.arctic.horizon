@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Foundation -->
+<window id="3">
+    <defaultcontrol always="true">20</defaultcontrol>
+    <controls>
+
+        <include>Global_Background</include>
+        <include>Topbar_Right</include>
+        <include>Topbar_Left</include>
+            
+        <control type="group">
+            <include>View_Pad</include>
+            <control type="grouplist">
+                <top>-15</top>
+                <orientation>vertical</orientation>
+                <usecontrolcoords>true</usecontrolcoords>
+                <itemgap>0</itemgap>
+                <include content="Object_Info_Title">
+                </include>
+                <include content="Object_Info_Line">
+                </include>
+            </control>
+
+            <control type="group">
+                <include>Animation_Down</include>
+                <include content="Viewtype_BackPanel">
+                    <height>720</height>
+                </include>
+            
+                <control type="group">
+                    <description>Left panel</description>
+                    <left>0</left>
+                    <top>0</top>
+                    <bottom>0</bottom>
+                    <width>860</width>
+                    <control type="group">
+                        <left>-20</left>
+                        <bottom>-20</bottom>
+                        <width>900</width>
+                        <height>600</height>
+                        <include>Object_PosterBack</include>
+                    </control>
+                    <control type="scrollbar" id="62">
+                        <showonepage>false</showonepage>
+                        <orientation>vertical</orientation>
+                        <left>-44</left>
+                        <width>8</width>
+                        <bottom>0</bottom>
+                        <height>560</height>
+                        <onleft>noop</onleft>
+                        <onright>20</onright>
+                        <texturesliderbackground colordiffuse="main_fg_12" border="4">scrollbar/scrollv.png</texturesliderbackground>
+                        <texturesliderbar colordiffuse="main_fg_30" border="4">scrollbar/scrollv.png</texturesliderbar>
+                        <texturesliderbarfocus colordiffuse="main_fg_100" border="4">scrollbar/scrollv.png</texturesliderbarfocus>
+                        <animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(62) + !Container(20).Scrolling">Conditional</animation>
+                        <include>Animation_FadeIn</include>
+                        <include>Animation_FadeOut</include>
+                    </control>
+                    <control type="label" id="101">
+                        <description>Header Label</description>
+                        <bottom>560</bottom>
+                        <left>0</left>
+                        <right>170</right>
+                        <height>item_list_height</height>
+                        <align>left</align>
+                        <font>font_tiny_bold</font>
+                        <haspath>true</haspath>
+                        <textcolor>main_fg_70</textcolor>
+                    </control>
+                    <control type="label" id="12">
+                        <description>Header Label</description>
+                        <bottom>560</bottom>
+                        <left>0</left>
+                        <right>0</right>
+                        <height>item_list_height</height>
+                        <align>right</align>
+                        <font>font_tiny</font>
+                        <textcolor>main_fg_70</textcolor>
+                    </control>
+                    <control type="fixedlist" id="20">
+                        <description>Left File List</description>
+                        <left>0</left>
+                        <width>860</width>
+                        <bottom>0</bottom>
+                        <height>560</height>
+                        <onleft>62</onleft>
+                        <onright>21</onright>
+                        <onup>20</onup>
+                        <ondown>20</ondown>
+                        <pagecontrol>62</pagecontrol>
+                        <focusposition>3</focusposition>
+                        <movement>3</movement>
+                        <animation effect="slide" end="0,-80" condition="Integer.IsLess(Container(20).NumAllItems,7)">Conditional</animation>
+                        <animation effect="slide" end="0,-80" condition="Integer.IsLess(Container(20).NumAllItems,5)">Conditional</animation>
+                        <animation effect="slide" end="0,-80" condition="Integer.IsLess(Container(20).NumAllItems,3)">Conditional</animation>
+                        <itemlayout height="item_list_height" width="860">
+                            <control type="label">
+                                <left>20</left>
+                                <width>720</width>
+                                <align>left</align>
+                                <textcolor>main_fg_70</textcolor>
+                                <info>ListItem.Label</info>
+                                <animation effect="slide" start="0" end="54,0" condition="ListItem.IsSelected">Conditional</animation>
+                            </control>
+
+                            <control type="label">
+                                <right>20</right>
+                                <width>150</width>
+                                <align>right</align>
+                                <font>font_tiny</font>
+                                <textcolor>main_fg_70</textcolor>
+                                <info>ListItem.Label2</info>
+
+                            </control>
+
+                            <control type="image">
+                                <left>20</left>
+                                <centertop>50%</centertop>
+                                <width>24</width>
+                                <height>24</height>
+                                <texture colordiffuse="$VAR[ColorHighlight]">osd/minicheck.png</texture>
+                                <visible>ListItem.IsSelected</visible>
+                            </control>
+
+                        </itemlayout>
+
+                        <focusedlayout height="item_list_height" width="860">
+
+                            <include content="View_List_Selectbox">
+                                <param name="id" value="20" />
+                            </include>
+
+                            <control type="label">
+                                <left>20</left>
+                                <width>720</width>
+                                <align>left</align>
+                                <selectedcolor>main_fg_100</selectedcolor>
+                                <textcolor>main_fg_100</textcolor>
+                                <info>ListItem.Label</info>
+                                <animation effect="slide" start="0" end="54,0" condition="ListItem.IsSelected">Conditional</animation>
+                            </control>
+
+                            <control type="label">
+                                <right>20</right>
+                                <width>720</width>
+                                <align>right</align>
+                                <selectedcolor>main_fg_100</selectedcolor>
+                                <textcolor>main_fg_100</textcolor>
+                                <font>font_tiny</font>
+                                <info>ListItem.Label2</info>
+                                
+                            </control>
+
+                            <control type="image">
+                                <left>20</left>
+                                <centertop>50%</centertop>
+                                <width>24</width>
+                                <height>24</height>
+                                <texture colordiffuse="main_fg_100">osd/minicheck.png</texture>
+                                <visible>ListItem.IsSelected</visible>
+                            </control>
+
+                        </focusedlayout>
+                    </control>
+                </control>
+                <control type="group">
+                    <right>0</right>
+                    <top>0</top>
+                    <width>860</width>
+                    <bottom>0</bottom>
+                    <control type="group">
+                        <left>-20</left>
+                        <bottom>-20</bottom>
+                        <width>900</width>
+                        <height>600</height>
+                        <include>Object_PosterBack</include>
+                    </control>
+                    <control type="scrollbar" id="61">
+                        <showonepage>false</showonepage>
+                        <orientation>vertical</orientation>
+                        <right>-44</right>
+                        <width>8</width>
+                        <bottom>0</bottom>
+                        <height>560</height>
+                        <onleft>21</onleft>
+                        <onright>noop</onright>
+                        <texturesliderbackground colordiffuse="main_fg_12" border="4">scrollbar/scrollv.png</texturesliderbackground>
+                        <texturesliderbar colordiffuse="main_fg_30" border="4">scrollbar/scrollv.png</texturesliderbar>
+                        <texturesliderbarfocus colordiffuse="main_fg_100" border="4">scrollbar/scrollv.png</texturesliderbarfocus>
+                        <animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(61) + !Container(21).Scrolling">Conditional</animation>
+                        <include>Animation_FadeIn</include>
+                        <include>Animation_FadeOut</include>
+                    </control>
+                    <control type="label" id="102">
+                        <description>Header Label</description>
+                        <bottom>560</bottom>
+                        <left>0</left>
+                        <right>130</right>
+                        <height>item_list_height</height>
+                        <align>left</align>
+                        <haspath>true</haspath>
+                        <font>font_tiny_bold</font>
+                        <textcolor>main_fg_70</textcolor>
+                    </control>
+                    <control type="label" id="13">
+                        <description>Header Label</description>
+                        <bottom>560</bottom>
+                        <left>0</left>
+                        <right>0</right>
+                        <height>item_list_height</height>
+                        <align>right</align>
+                        <font>font_tiny</font>
+                        <textcolor>main_fg_70</textcolor>
+                    </control>
+
+                    <control type="fixedlist" id="21">
+                        <description>Left File List</description>
+                        <right>0</right>
+                        <width>860</width>
+                        <bottom>0</bottom>
+                        <height>560</height>
+                        <onleft>20</onleft>
+                        <onright>61</onright>
+                        <onup>21</onup>
+                        <ondown>21</ondown>
+                        <pagecontrol>61</pagecontrol>
+                        <focusposition>3</focusposition>
+                        <movement>3</movement>
+                        <animation effect="slide" end="0,-80" condition="Integer.IsLess(Container(21).NumAllItems,7)">Conditional</animation>
+                        <animation effect="slide" end="0,-80" condition="Integer.IsLess(Container(21).NumAllItems,5)">Conditional</animation>
+                        <animation effect="slide" end="0,-80" condition="Integer.IsLess(Container(21).NumAllItems,3)">Conditional</animation>
+                        <itemlayout height="item_list_height" width="860">
+                            <control type="label">
+                                <left>20</left>
+                                <width>720</width>
+                                <align>left</align>
+                                <textcolor>main_fg_70</textcolor>
+                                <info>ListItem.Label</info>
+                                <animation effect="slide" start="0" end="54,0" condition="ListItem.IsSelected">Conditional</animation>
+                            </control>
+                            <control type="label">
+                                <right>20</right>
+                                <width>150</width>
+                                <align>right</align>
+                                <font>font_tiny</font>
+                                <textcolor>main_fg_70</textcolor>
+                                <info>ListItem.Label2</info>
+                            </control>
+                            <control type="image">
+                                <left>20</left>
+                                <centertop>50%</centertop>
+                                <width>24</width>
+                                <height>24</height>
+                                <texture colordiffuse="$VAR[ColorHighlight]">osd/minicheck.png</texture>
+                                <visible>ListItem.IsSelected</visible>
+                            </control>
+                        </itemlayout>
+                        <focusedlayout height="item_list_height" width="860">
+                            <include content="View_List_Selectbox">
+                                <param name="id" value="21" />
+                            </include>
+
+                            <control type="label">
+                                <left>20</left>
+                                <width>720</width>
+                                <align>left</align>
+                                <selectedcolor>main_fg_100</selectedcolor>
+                                <textcolor>main_fg_100</textcolor>
+                                <info>ListItem.Label</info>
+                                <animation effect="slide" start="0" end="54,0" condition="ListItem.IsSelected">Conditional</animation>
+                            </control>
+
+                            <control type="label">
+                                <right>20</right>
+                                <width>720</width>
+                                <align>right</align>
+                                <selectedcolor>main_fg_100</selectedcolor>
+                                <textcolor>main_fg_100</textcolor>
+                                <font>font_tiny</font>
+                                <info>ListItem.Label2</info>
+                                
+                            </control>
+
+                            <control type="image">
+                                <left>20</left>
+                                <centertop>50%</centertop>
+                                <width>24</width>
+                                <height>24</height>
+                                <texture colordiffuse="main_fg_100">osd/minicheck.png</texture>
+                                <visible>ListItem.IsSelected</visible>
+                            </control>
+                        </focusedlayout>
+                    </control>
+                </control>
+            </control>
+        </control>
+
+    </controls>
+
+</window>

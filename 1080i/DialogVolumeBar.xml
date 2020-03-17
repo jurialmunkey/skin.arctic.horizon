@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Foundation -->
+<window id="104">
+    <zorder>10</zorder>
+    <controls>
+        <control type="group">
+            <include content="Dialog_Notification_Group">
+                <param name="progress" value="Control.GetLabel(933)" />
+                <param name="progress-id" value="933" />
+                <param name="main_id" value="9901" />
+                <param name="sub_id" value="9902" />
+                <param name="nowplaying" value="true" />
+                <param name="icon" value="special://skin/extras/icons/volume.png" />
+                <param name="label" value="Volume$INFO[Control.GetLabel(933), ,%]" />
+                <param name="label2" value="$INFO[Player.Volume]" />
+            </include>
+        </control>
+
+        
+
+        <control type="progress" id="933">
+            <texturebg></texturebg>
+            <lefttexture></lefttexture>
+            <midtexture></midtexture>
+            <righttexture></righttexture>
+            <info>Player.Volume</info>
+            <visible>false</visible>
+        </control>
+
+    </controls>
+
+</window>

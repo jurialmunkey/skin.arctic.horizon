@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Foundation -->
+<window id="11">
+	<defaultcontrol always="true">8</defaultcontrol>
+
+
+	<controls>
+
+		<control type="videowindow" id="20">
+			<description>videowindow</description>
+			<include>Dimensions_Fullscreen</include>
+		</control>
+
+		<control type="mover" id="8">
+			<description>top left mover</description>
+			<left>0</left>
+			<top>0</top>
+			<width>192</width>
+			<height>192</height>
+			<texturefocus>other_textures/CalibrateTopLeft.png</texturefocus>
+			<texturenofocus/>
+		</control>
+
+		<control type="mover" id="9">
+			<description>right bottom mover</description>
+			<left>1050</left>
+			<top>750</top>
+			<width>192</width>
+			<height>192</height>
+			<texturefocus>other_textures/CalibrateBottomRight.png</texturefocus>
+			<texturenofocus/>
+		</control>
+
+		<control type="mover" id="10">
+			<description>subtitle position mover</description>
+			<left>300</left>
+			<top>750</top>
+			<width>768</width>
+			<height>192</height>
+			<texturefocus>other_textures/CalibrateSubtitles.png</texturefocus>
+			<texturenofocus/>
+		</control>
+
+		<control type="resize" id="11">
+			<description>pixel aspect ratio box</description>
+			<left>0</left>
+			<top>348</top>
+			<width>384</width>
+			<height>384</height>
+			<texturefocus>other_textures/CalibratePixelRatio.png</texturefocus>
+			<texturenofocus/>
+		</control>
+
+		<control type="label" id="2">
+			<description>coordinates label</description>
+			<left>30</left>
+			<top>0</top>
+			<width>1860</width>
+			<align>center</align>
+            <font>font_small</font>
+            <textcolor>main_fg_100</textcolor>
+			<label/>
+		</control>
+
+		<control type="label" id="3">
+			<description>help information</description>
+			<left>30</left>
+			<top>100</top>
+			<width>1860</width>
+			<align>center</align>
+            <font>font_small</font>
+            <textcolor>main_fg_100</textcolor>
+			<label/>
+		</control>
+
+	</controls>
+
+</window>

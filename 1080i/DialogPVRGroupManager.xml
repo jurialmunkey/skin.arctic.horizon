@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window id="604">
+    <defaultcontrol always="true">29</defaultcontrol>
+    <controls>
+        <include>Global_Overlay</include>
+
+        <control type="group">
+            <include content="Dialog_Standard_Group">
+                <param name="width" value="1820" />
+                <param name="height" value="990" />
+            </include>
+
+            <control type="label" id="2">
+                <label>$LOCALIZE[19199] • $INFO[Control.GetLabel(20)]</label>
+                <include>Dialog_Standard_Header</include>
+            </control>
+
+            <control type="label" id="20">
+                <description>Name label</description>
+                <include>Defs_Hidden_Button</include>
+            </control>
+
+            <control type="group">
+                <left>0</left>
+                <width>dialog_side_grouplist</width>
+                <include>Dialog_Separator</include>
+                <control type="group">
+                    <control type="label">
+                        <description>Name label</description>
+                        <top>dialog_top</top>
+                        <label>$LOCALIZE[19146]</label>
+                        <include>Dialog_Standard_HintLabel</include>
+                    </control>
+                    <control type="group">
+                        <top>item_list_height_half</top>
+                        <include content="Dialog_Standard_List">
+                            <param name="id" value="13" />
+                            <param name="list_style" value="Dialog_Standard_List_Itemlayout_GroupManager" />
+                            <param name="left_pad" value="10" />
+                            <param name="checkmark" value="false" />
+                            <param name="onleft" value="8000" />
+                            <param name="onright" value="12" />
+                            <param name="width" value="400" />
+                        </include>
+                    </control>
+                </control>
+                
+            </control>
+
+            <control type="group">
+                <left>dialog_side_grouplist</left>
+                <width>510</width>
+                <include content="Dialog_Separator">
+                    <param name="left" value="510" />
+                </include>
+                <control type="group">
+                    <control type="label" id="22">
+                        <description>Name label</description>
+                        <top>dialog_top</top>
+                        <include>Dialog_Standard_HintLabel</include>
+                    </control>
+                    <control type="group">
+                        <top>item_list_height_half</top>
+                        <include content="Dialog_Standard_List">
+                            <param name="id" value="12" />
+                            <param name="list_style" value="Dialog_Standard_List_Itemlayout_GroupManager" />
+                            <param name="left_pad" value="10" />
+                            <param name="checkmark" value="false" />
+                            <param name="onleft" value="13" />
+                            <param name="onright" value="11" />
+                            <param name="width" value="510" />
+                        </include>
+                    </control>
+                </control>
+            </control>
+            <control type="group">
+                <right>dialog_side_grouplist</right>
+                <width>510</width>
+                <include content="Dialog_Separator">
+                    <param name="left" value="510" />
+                </include>
+                <control type="group">
+                    <control type="label" id="21">
+                        <description>Name label</description>
+                        <top>dialog_top</top>
+                        <include>Dialog_Standard_HintLabel</include>
+                    </control>
+                    <control type="group">
+                        <top>item_list_height_half</top>
+                        <include content="Dialog_Standard_List">
+                            <param name="id" value="11" />
+                            <param name="list_style" value="Dialog_Standard_List_Itemlayout_GroupManager" />
+                            <param name="left_pad" value="10" />
+                            <param name="checkmark" value="false" />
+                            <param name="onleft" value="12" />
+                            <param name="onright" value="8000" />
+                            <param name="width" value="510" />
+                        </include>
+                    </control>
+                </control>
+            </control>
+            <control type="grouplist" id="8000">
+                <description>button area</description>
+                <right>dialog_pad</right>
+                <top>dialog_top</top>
+                <width>dialog_right_iconwidth</width>
+                <bottom>dialog_pad</bottom>
+                <itemgap>0</itemgap>
+                <onleft>11</onleft>
+                <onright>13</onright>
+                <onup>7000</onup>
+                <ondown>7000</ondown>
+                <control type="radiobutton" id="25">
+                    <description>Hide group</description>
+                    <label>19289</label>
+                    <radioposx>285</radioposx>
+                    <align>left</align>
+                    <include>Dialog_Standard_Right_Buttons</include>
+                </control>
+                <control type="button" id="26">
+                    <description>Add group</description>
+                    <label>15019</label>
+                    <align>left</align>
+                    <include>Dialog_Standard_Right_Buttons</include>
+                </control>
+                <control type="button" id="27">
+                    <description>Rename group</description>
+                    <label>$LOCALIZE[118]</label>
+                    <align>left</align>
+                    <include>Dialog_Standard_Right_Buttons</include>
+                </control>
+                <control type="button" id="28">
+                    <description>Delete group</description>
+                    <label>$LOCALIZE[117]</label>
+                    <align>left</align>
+                    <include>Dialog_Standard_Right_Buttons</include>
+                </control>
+                <control type="button" id="29">
+                    <description>OK</description>
+                    <label>$LOCALIZE[186]</label>
+                    <align>left</align>
+                    <include>Dialog_Standard_Right_Buttons</include>
+                </control>
+            </control>
+
+
+        </control>
+
+        
+    </controls>
+</window>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+    <include name="DialogMusicInfo">
+        <include content="DialogVideoInfo_Left">
+            <param name="poster" value="false" />
+            <include>Animation_Left_Delay</include>
+            <control type="group">
+                <top>view_top</top>
+                <left>view_pad</left>
+                <bottom>view_pad</bottom>
+                <control type="image">
+                    <bottom>40</bottom>
+                    <left>-15</left>
+                    <texture background="true">$VAR[Image_ClearLogo]</texture>
+                    <aspectratio aligny="bottom">keep</aspectratio>
+                    <height>150</height>
+                    <width>view_poster_width</width>
+                </control>
+                <include content="View_50_Poster">
+                    <param name="visible" value="true" />
+                    <param name="diffuse" value="diffuse/poster-big.png" />
+                    <param name="height" value="view_poster_width" />
+                </include>
+            </control>
+        </include>
+
+
+        <include content="DialogVideoInfo_MainGroup">
+            <include content="DialogVideoInfo_WidgetGroupList">
+                <include>Animation_Right_Delay</include>
+                <include content="DialogVideoInfo_MainInfo">
+                    <control type="grouplist">
+                        <orientation>vertical</orientation>
+                        <usecontrolcoords>true</usecontrolcoords>
+                        <itemgap>0</itemgap>
+                        <include content="Object_Info_Title">
+                            <param name="label" value="$INFO[ListItem.TrackNumber,,. ]$INFO[ListItem.Title]" />
+                            <visible>!String.IsEqual(ListItem.DBType,artist)</visible>
+                        </include>
+                        <include content="Object_Info_Title">
+                            <param name="label" value="$INFO[ListItem.Label]" />
+                            <visible>String.IsEqual(ListItem.DBType,artist)</visible>
+                        </include>
+                        <include content="Object_Info_Line_Label">
+                            <param name="label" value="$VAR[Label_SubTitle]" />
+                            <param name="textcolor" value="$VAR[ColorHighlight]" />
+                            <param name="divider" value="false" />
+                        </include>
+                        <include content="Object_Info_Plot">
+                            <param name="maxheight" value="120" />
+                            <param name="height" value="auto" />
+                        </include>
+                    </control>
+                    <include content="Info_Button_Grouplist">
+                        <param name="includebuttons" value="Info_Buttons_Music" />
+                    </include>
+                </include>
+                <include content="Info_Widget_Poster">
+                    <param name="includecondition" value="true" />
+                    <param name="id" value="5000" />
+                    <param name="groupid" value="5100" />
+                    <param name="label" value="Albums by $INFO[ListItem.Artist]" />
+                    <param name="viewtype-include" value="Viewtype_Square" />
+                    <param name="visible" value="Container.Content(artists)" />
+                    <include>Defs_InfoList_OnBack</include>
+                    <movement>2</movement>
+                    <content limit="25" target="music">musicdb://artists/$INFO[ListItem.DBID]</content>
+                </include>
+                <include content="Info_Widget_Poster">
+                    <param name="includecondition" value="true" />
+                    <param name="id" value="5002" />
+                    <param name="groupid" value="5102" />
+                    <param name="label" value="Other Albums by $INFO[ListItem.Artist]" />
+                    <param name="viewtype-include" value="Viewtype_Square" />
+                    <param name="visible" value="Container.Content(songs) | Container.Content(albums)" />
+                    <include>Defs_InfoList_OnBack</include>
+                    <movement>2</movement>
+                    <content limit="25" target="music">musicdb://albums/?xsp=%7b%22rules%22%3a%7b%22and%22%3a%5b%7b%22field%22%3a%22artist%22%2c%22operator%22%3a%22is%22%2c%22value%22%3a%5b%22$INFO[ListItem.AlbumArtist]%22%5d%7d%2c%7b%22field%22%3a%22album%22%2c%22operator%22%3a%22isnot%22%2c%22value%22%3a%5b%22$INFO[ListItem.Album]%22%5d%7d%5d%7d%2c%22type%22%3a%22albums%22%7d</content>
+                </include>
+            </include>
+        </include>
+        <include>Object_PlotOverlay</include>
+    </include>
+</includes>

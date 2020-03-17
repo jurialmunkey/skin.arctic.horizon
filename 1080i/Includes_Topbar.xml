@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+    <!-- ====== -->
+    <!-- Common -->
+    <!-- ====== -->
+
+    <include name="Topbar_Left">
+        <param name="fgcolor" default="main_fg" />
+        <param name="label" default="$VAR[Label_Header_Content]" />
+        <param name="visible" default="!$EXP[Exp_InfoActive]" />
+        <definition>
+            <control type="group">
+                <top>view_pad</top>
+                <left>view_pad</left>
+                <height>view_header</height>
+                <align>left</align>
+                <visible>$PARAM[visible]</visible>
+                <include>Animation_FadeInOut</include>
+                <control type="grouplist">
+                    <top>-20</top>
+                    <bottom>-20</bottom>
+                    <itemgap>0</itemgap>
+                    <orientation>horizontal</orientation>
+                    <usecontrolcoords>true</usecontrolcoords>
+                    <visible>!Window.IsVisible(DialogBusy.xml)</visible>
+                    <control type="label">
+                        <aligny>center</aligny>
+                        <font>font_topbar</font>
+                        <textcolor>$PARAM[fgcolor]_100</textcolor>
+                        <label>$PARAM[label]</label>
+                    </control>
+                </control>
+            </control>
+        </definition>
+    </include>
+
+    <include name="Topbar_Right">
+        <param name="fgcolor" default="main_fg" />
+        <definition>
+            <control type="group">
+                <top>view_pad</top>
+                <height>view_header</height>
+                <control type="grouplist">
+                    <visible>!Window.IsVisible(DialogNotification.xml)</visible>
+                    <visible>!Window.IsVisible(DialogExtendedProgressBar.xml)</visible>
+                    <visible>!Window.IsVisible(DialogVolumeBar.xml)</visible>
+                    <visible>!Player.HasMedia | Window.IsVisible(fullscreenvideo)</visible>
+                    <right>view_pad</right>
+                    <align>right</align>
+                    <orientation>horizontal</orientation>
+                    <itemgap>0</itemgap>
+                    <width>700</width>
+                    <usecontrolcoords>true</usecontrolcoords>
+                    <control type="group">
+                        <width>64</width>
+                        <control type="image">
+                            <centertop>50%</centertop>
+                            <height>40</height>
+                            <aspectratio>keep</aspectratio>
+                            <texture colordiffuse="$PARAM[fgcolor]_100">$INFO[Weather.FanartCode,resource://resource.images.weathericons.white/,.png]</texture>
+                        </control>
+                        <visible>Weather.IsFetched</visible>
+                    </control>
+                    <control type="label">
+                        <width>auto</width>
+                        <font>font_small</font>
+                        <textcolor>$PARAM[fgcolor]_100</textcolor>
+                        <label>$INFO[Weather.Temperature]</label>
+                        <visible>Weather.IsFetched</visible>
+                    </control>
+                    <control type="label">
+                        <width>auto</width>
+                        <font>font_small</font>
+                        <textcolor>$VAR[ColorHighlight]</textcolor>
+                        <label>  |  </label>
+                        <visible>[!String.IsEmpty(Weather.Temperature) + Weather.IsFetched]</visible>
+                    </control>
+                    <control type="label">
+                        <width>auto</width>
+                        <font>font_small</font>
+                        <textcolor>$PARAM[fgcolor]_100</textcolor>
+                        <label>$INFO[System.Time]</label>
+                    </control>
+                </control>
+            </control>
+        </definition>
+    </include>
+
+</includes>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Foundation -->
+<window id="101">
+    <onunload condition="String.IsEmpty(Window(Home).Property(SkinInitStarted))">ReplaceWindow(Startup.xml)</onunload>
+    <controls>
+
+        <include>Global_Overlay</include>
+
+        <control type="group">
+            <include>Dialog_Confirm</include>
+            <control type="grouplist">
+                <top>310</top>
+                <height>78</height>
+                <width>100%</width>
+                <align>center</align>
+                <orientation>horizontal</orientation>
+                <itemgap>30</itemgap>
+                <control type="button" id="12">
+                    <description>Extra button</description>
+                    <width>320</width>
+                    <label></label>
+                    <font>font_button</font>
+                    <include content="Defs_ButtonType"><param name="texturefocus" value="true" /></include>
+                    <include content="Defs_ButtonType"><param name="alttexturefocus" value="true" /></include>
+                    <texturenofocus colordiffuse="dialog_fg_12" border="5">common/box.png</texturenofocus>
+                </control>
+                <control type="button" id="11">
+                    <description>Yes</description>
+                    <width>320</width>
+                    <label>107</label>
+                    <font>font_button</font>
+                    <include content="Defs_ButtonType"><param name="texturefocus" value="true" /></include>
+                    <include content="Defs_ButtonType"><param name="alttexturefocus" value="true" /></include>
+                    <texturenofocus colordiffuse="dialog_fg_12" border="5">common/box.png</texturenofocus>
+                </control>
+                <control type="button" id="10">
+                    <description>No</description>
+                    <width>320</width>
+                    <label>106</label>
+                    <font>font_button</font>
+                    <include content="Defs_ButtonType"><param name="texturefocus" value="true" /></include>
+                    <include content="Defs_ButtonType"><param name="alttexturefocus" value="true" /></include>
+                    <texturenofocus colordiffuse="dialog_fg_12" border="5">common/box.png</texturenofocus>
+                </control>
+            </control>
+            <control type="progress" id="20">
+                <description>Progressbar</description>
+                <left>15</left>
+                <right>15</right>
+                <bottom>440</bottom>
+                <height>16</height>
+                <info>System.Progressbar</info>
+                <texturebg colordiffuse="dialog_fg_30" border="4">diffuse/progress-bg.png</texturebg>
+            </control>
+
+        </control>
+
+    </controls>
+
+</window>

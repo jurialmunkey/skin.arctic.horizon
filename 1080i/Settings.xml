@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Foundation -->
+<window id="4">
+    <defaultcontrol always="false">5000</defaultcontrol>
+    <controls>
+        <include>Global_Background</include>
+        <include>Topbar_Right</include>
+        <include>Topbar_Left</include>
+        <include content="View_Settings">
+            <include>View_Pad</include>
+        </include>
+    </controls>
+</window>

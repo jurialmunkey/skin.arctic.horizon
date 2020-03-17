@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Foundation -->
+<window id="2600">
+    <defaultcontrol always="true">50</defaultcontrol>
+    <menucontrol>3000</menucontrol>
+    <controls>
+
+        <include>Global_Background</include>
+        <include>Topbar_Left</include>
+        <include>Topbar_Right</include>
+        
+        <include content="Weather">
+            <top>view_top</top>
+            <left>view_pad</left>
+            <right>view_pad</right>
+            <bottom>view_pad</bottom>
+            <include>Animation_Common</include>
+        </include>
+
+        <control type="button" id="50">
+            <onleft>SetFocus(3000)</onleft>
+            <onup>SetFocus(3000)</onup>
+            <ondown>SetFocus(3000)</ondown>
+            <onright>SetFocus(3000)</onright>
+            <onclick>Weather.LocationNext</onclick>
+            <include>Defs_Hidden_Button</include>
+        </control>
+
+        <control type="group">
+            <include>Global_Overlay</include>
+            <visible>Control.HasFocus(3000)</visible>
+            <include>Animation_FadeInOut</include>
+        </control>
+        <include content="OSD_Menu_List">
+            <param name="id" value="3000" />
+            <param name="osd_id" value="50" />
+            <param name="content" value="Items_Weather" />
+            <param name="label" value="Weather" />
+            <param name="height" value="524" />
+        </include>
+
+        <!-- Refresh -->
+        <control type="button" id="2">
+            <onleft>SetFocus(3000)</onleft>
+            <onup>SetFocus(3000)</onup>
+            <ondown>SetFocus(3000)</ondown>
+            <onright>SetFocus(3000)</onright>
+            <onclick>SetFocus(3000)</onclick>
+            <onfocus>SetFocus(3000)</onfocus>
+            <description>Refresh</description>
+            <label>$LOCALIZE[184]</label>
+            <include>Defs_Hidden_Button</include>
+        </control>
+        <!-- Change Location -->
+        <control type="button" id="9002">
+            <label>$LOCALIZE[31217]</label>
+            <onclick>Weather.LocationNext</onclick>
+            <include>Defs_Hidden_Button</include>
+        </control>
+        <!-- Weather Settings -->
+        <control type="button" id="9004">
+            <label>10140</label>
+            <onclick>Addon.OpenSettings($INFO[Weather.Plugin])</onclick>
+            <include>Defs_Hidden_Button</include>
+        </control>
+        <!-- Settings -->
+        <control type="button" id="9005">
+            <label>5</label>
+            <onclick>ActivateWindow(ServiceSettings,weather)</onclick>
+            <include>Defs_Hidden_Button</include>
+        </control>
+        <!-- Weather Icons -->
+        <control type="button" id="9006">
+            <label>$LOCALIZE[536]</label>
+            <include>Defs_Hidden_Button</include>
+            <onclick>RunScript(script.image.resource.select,property=weather.icons&amp;type=resource.images.weathericons)</onclick>
+        </control>
+        <!-- Weather Fanart -->
+        <control type="togglebutton" id="9007">
+            <label>$LOCALIZE[31008]</label>
+            <altlabel>$LOCALIZE[31012]</altlabel>
+            <include>Defs_Hidden_Button</include>
+            <usealttexture>System.HasAddon(resource.images.weatherfanart.multi)</usealttexture>
+            <enable>!System.HasAddon(resource.images.weatherfanart.multi)</enable>
+            <onclick condition="!System.HasAddon(resource.images.weatherfanart.multi)">InstallAddon(resource.images.weatherfanart.multi)</onclick>
+        </control>
+    </controls>
+
+</window>

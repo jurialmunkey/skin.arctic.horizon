@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+    <menucontrol>300</menucontrol>
+    <background>0</background>
+    <defaultcontrol always="true">50</defaultcontrol>
+    <include>ViewIDs</include>
+    <controls>
+        <include>Global_Background</include>
+        <include>Topbar_Right</include>
+        <include>Viewtypes</include>
+
+        <include>Defs_Options_StandardButtons</include>
+        <control type="button" id="28">
+            <description>Groups</description>
+            <include>Defs_Hidden_Button</include>
+        </control>
+    </controls>
+</window>

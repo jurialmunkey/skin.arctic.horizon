@@ -1,0 +1,60 @@
+VIEWS
+50-500
+
+MENU
+300
+
+HOME
+301     Main
+302     Submenu
+303     Corner Icon
+3000    Widget Grouplist
+3600    Weather Widget Button
+3700    Widget Count
+3800    Playlist Background
+3999    Grouplist Bumper
+39999   Main Widget
+49999   Main Widget Group Label
+59999   Main Widget Grouplist
+3MMXX   Widgets MM=MainMenuID XX=ID
+4MMXX   Group Label
+
+SEARCH
+301XX   Widget
+401XX   Group Label
+
+VIDEOINFO
+50      Cast List
+300     Button Grouplist
+3000    Info Group
+30XX    Button Label Builtin ID
+31XX    Button ID
+32XX    Button Label
+3600    Manage Menu
+4000    Widget Group
+4100    Widget Grouplist
+50XX    Widget
+51XX    Widget Label
+5000    Cast
+5001    Crew
+5002    Collection
+5003    Collection Cast
+5004    Director
+5005    Studio
+5006    Recommended
+5007    Similar
+5008    Year
+5009    Genre
+5010    Cast Feature In
+5011    Youtube
+5099    Posters
+5999    Widget Grouplist Bumper
+6000    Image Gallery
+6100    Image Gallery Group
+6200    Image Gallery Viewer
+6299    Posters Viewer
+9000    Main Grouplist
+
+GLOBALS
+9601    Plot Overlay
+19001   Actor Details

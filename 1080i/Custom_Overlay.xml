@@ -1,0 +1,901 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window type="dialog" id="1199">
+    <zorder>2</zorder>
+    <visible>!Window.IsVisible(startup)</visible>
+    <visible>Skin.HasSetting(DebugInfo) | Skin.HasSetting(DebugGrid)</visible>
+    <controls>
+
+        <control type="group">
+            <visible>Skin.HasSetting(DebugInfo) | Skin.HasSetting(DebugGrid)</visible>
+            <control type="grouplist">
+                <left>80</left>
+                <itemgap>79</itemgap>
+                <orientation>horizontal</orientation>
+                <control type="image">
+                    <width>1</width>
+                    <texture colordiffuse="44ff0000">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <width>1</width>
+                    <texture colordiffuse="44ff0000">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <width>1</width>
+                    <texture colordiffuse="44ff0000">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <width>1</width>
+                    <texture colordiffuse="44ff0000">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <width>1</width>
+                    <texture colordiffuse="44ff0000">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <width>1</width>
+                    <texture colordiffuse="44ff0000">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <width>1</width>
+                    <texture colordiffuse="44ff0000">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <width>1</width>
+                    <texture colordiffuse="44ff0000">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <width>1</width>
+                    <texture colordiffuse="44ff0000">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <width>1</width>
+                    <texture colordiffuse="44ff0000">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <width>1</width>
+                    <texture colordiffuse="44ff0000">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <width>1</width>
+                    <texture colordiffuse="44ff0000">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <width>1</width>
+                    <texture colordiffuse="44ff0000">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <width>1</width>
+                    <texture colordiffuse="44ff0000">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <width>1</width>
+                    <texture colordiffuse="44ff0000">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <width>1</width>
+                    <texture colordiffuse="44ff0000">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <width>1</width>
+                    <texture colordiffuse="44ff0000">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <width>1</width>
+                    <texture colordiffuse="44ff0000">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <width>1</width>
+                    <texture colordiffuse="44ff0000">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <width>1</width>
+                    <texture colordiffuse="44ff0000">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <width>1</width>
+                    <texture colordiffuse="44ff0000">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <width>1</width>
+                    <texture colordiffuse="44ff0000">common/white.png</texture>
+                </control>
+            </control>
+
+            <control type="grouplist">
+                <top>200</top>
+                <itemgap>79</itemgap>
+                <control type="image">
+                    <height>1</height>
+                    <texture colordiffuse="44ff0000">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <height>1</height>
+                    <texture colordiffuse="44ff0000">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <height>1</height>
+                    <texture colordiffuse="44ff0000">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <height>1</height>
+                    <texture colordiffuse="44ff0000">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <height>1</height>
+                    <texture colordiffuse="44ff0000">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <height>1</height>
+                    <texture colordiffuse="44ff0000">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <height>1</height>
+                    <texture colordiffuse="44ff0000">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <height>1</height>
+                    <texture colordiffuse="44ff0000">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <height>1</height>
+                    <texture colordiffuse="44ff0000">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <height>1</height>
+                    <texture colordiffuse="44ff0000">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <height>1</height>
+                    <texture colordiffuse="44ff0000">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <height>1</height>
+                    <texture colordiffuse="44ff0000">common/white.png</texture>
+                </control>
+            </control>
+
+            <control type="group">
+                <control type="image">
+                    <left>view_pad</left>
+                    <width>1</width>
+                    <texture colordiffuse="red">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <right>view_pad</right>
+                    <width>1</width>
+                    <texture colordiffuse="red">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <centertop>600</centertop>
+                    <height>1</height>
+                    <texture colordiffuse="red">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <top>view_pad</top>
+                    <height>1</height>
+                    <texture colordiffuse="red">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <top>120</top>
+                    <height>1</height>
+                    <texture colordiffuse="red">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <top>view_top</top>
+                    <height>1</height>
+                    <texture colordiffuse="red">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <bottom>view_pad</bottom>
+                    <height>1</height>
+                    <texture colordiffuse="red">common/white.png</texture>
+                </control>
+            </control>
+        </control>
+
+        <control type="group">
+            <visible>Skin.HasSetting(DebugInfo)</visible>
+            <!-- Window/Dialog debug -->
+            <control type="grouplist">
+                <posx>15</posx>
+                <posy>15</posy>
+                <width>780</width>
+                <height>450</height>
+                <itemgap>12</itemgap>
+
+                <!-- Window labels -->
+                <control type="label">
+                    <include>Defs_CustomOverlay_Label</include>
+                    <label>AddonBrowser.xml</label>
+                    <visible>Window.IsVisible(AddonBrowser.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <include>Defs_CustomOverlay_Label</include>
+                    <label>FileManager.xml</label>
+                    <visible>Window.IsVisible(FileManager.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <include>Defs_CustomOverlay_Label</include>
+                    <label>Home.xml</label>
+                    <visible>Window.IsVisible(Home.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <include>Defs_CustomOverlay_Label</include>
+                    <label>LoginScreen.xml</label>
+                    <visible>Window.IsVisible(LoginScreen.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <include>Defs_CustomOverlay_Label</include>
+                    <label>script-NextAired-TVGuide2.xml</label>
+                    <visible>Window.IsVisible(script-NextAired-TVGuide2.xml)</visible>
+                </control>
+                <control type="label">
+                    <include>Defs_CustomOverlay_Label</include>
+                    <label>script-NextAired-TVGuide.xml</label>
+                    <visible>Window.IsVisible(script-NextAired-TVGuide.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <include>Defs_CustomOverlay_Label</include>
+                    <label>MyMusicNav.xml</label>
+                    <visible>Window.IsVisible(MyMusicNav.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <include>Defs_CustomOverlay_Label</include>
+                    <label>MyMusicPlaylist.xml</label>
+                    <visible>Window.IsVisible(MyMusicPlaylist.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <include>Defs_CustomOverlay_Label</include>
+                    <label>MyMusicPlaylistEditor.xml</label>
+                    <visible>Window.IsVisible(MyMusicPlaylistEditor.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <include>Defs_CustomOverlay_Label</include>
+                    <label>MyMusicSongs.xml</label>
+                    <visible>Window.IsVisible(MyMusicSongs.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <include>Defs_CustomOverlay_Label</include>
+                    <label>MyPics.xml</label>
+                    <visible>Window.IsVisible(MyPics.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <include>Defs_CustomOverlay_Label</include>
+                    <label>MyPrograms.xml</label>
+                    <visible>Window.IsVisible(MyPrograms.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <include>Defs_CustomOverlay_Label</include>
+                    <label>MyPVR.xml</label>
+                    <visible>Window.IsVisible(MyPVR.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <include>Defs_CustomOverlay_Label</include>
+                    <label>MyVideoNav.xml</label>
+                    <visible>Window.IsVisible(MyVideoNav.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <include>Defs_CustomOverlay_Label</include>
+                    <label>MyVideoPlaylist.xml</label>
+                    <visible>Window.IsVisible(MyVideoPlaylist.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <include>Defs_CustomOverlay_Label</include>
+                    <label>MyWeather.xml</label>
+                    <visible>Window.IsVisible(MyWeather.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <include>Defs_CustomOverlay_Label</include>
+                    <label>Settings.xml</label>
+                    <visible>Window.IsVisible(Settings.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <include>Defs_CustomOverlay_Label</include>
+                    <label>SettingsCategory.xml</label>
+                    <visible>Window.IsVisible(SettingsCategory.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <include>Defs_CustomOverlay_Label</include>
+                    <label>SettingsProfile.xml</label>
+                    <visible>Window.IsVisible(SettingsProfile.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <include>Defs_CustomOverlay_Label</include>
+                    <label>SkinSettings.xml</label>
+                    <visible>Window.IsVisible(SkinSettings.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <include>Defs_CustomOverlay_Label</include>
+                    <label>VideoFullScreen.xml</label>
+                    <visible>Window.IsVisible(VideoFullScreen.xml)</visible>
+                </control>
+
+                <!-- Dialog labels -->
+
+                <control type="label">
+                    <textcolor>FFFF0000</textcolor>
+                    <include>Defs_CustomOverlay_Label</include>
+                    <label>DialogAddonInfo.xml</label>
+                    <visible>Window.IsVisible(DialogAddonInfo.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <textcolor>FFFF0000</textcolor>
+                    <include>Defs_CustomOverlay_Label</include>
+                    <label>DialogAddonSettings.xml</label>
+                    <visible>Window.IsVisible(DialogAddonSettings.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <textcolor>FFFF0000</textcolor>
+                    <include>Defs_CustomOverlay_Label</include>
+                    <label>DialogAlbumInfo.xml</label>
+                    <visible>Window.IsVisible(DialogAlbumInfo.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <textcolor>FFFF0000</textcolor>
+                    <include>Defs_CustomOverlay_Label</include>
+                    <label>DialogBusy.xml</label>
+                    <visible>Window.IsVisible(DialogBusy.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <textcolor>FFFF0000</textcolor>
+                    <include>Defs_CustomOverlay_Label</include>
+                    <label>DialogButtonMenu.xml</label>
+                    <visible>Window.IsVisible(DialogButtonMenu.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <textcolor>FFFF0000</textcolor>
+                    <include>Defs_CustomOverlay_Label</include>
+                    <label>DialogContentSettings.xml</label>
+                    <visible>Window.IsVisible(DialogContentSettings.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <textcolor>FFFF0000</textcolor>
+                    <include>Defs_CustomOverlay_Label</include>
+                    <label>DialogContextMenu.xml</label>
+                    <visible>Window.IsVisible(DialogContextMenu.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <textcolor>FFFF0000</textcolor>
+                    <include>Defs_CustomOverlay_Label</include>
+                    <label>DialogExtendedProgressBar.xml</label>
+                    <visible>Window.IsVisible(DialogExtendedProgressBar.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <textcolor>FFFF0000</textcolor>
+                    <include>Defs_CustomOverlay_Label</include>
+                    <label>DialogFavourites.xml</label>
+                    <visible>Window.IsVisible(DialogFavourites.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <textcolor>FFFF0000</textcolor>
+                    <include>Defs_CustomOverlay_Label</include>
+                    <label>DialogFileStacking.xml</label>
+                    <visible>Window.IsVisible(DialogFileStacking.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <textcolor>FFFF0000</textcolor>
+                    <include>Defs_CustomOverlay_Label</include>
+                    <label>DialogFullScreenInfo.xml</label>
+                    <visible>Window.IsVisible(DialogFullScreenInfo.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <textcolor>FFFF0000</textcolor>
+                    <include>Defs_CustomOverlay_Label</include>
+                    <label>DialogKaiToast.xml</label>
+                    <visible>Window.IsVisible(DialogKaiToast.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <textcolor>FFFF0000</textcolor>
+                    <include>Defs_CustomOverlay_Label</include>
+                    <label>DialogKaraokeSongSelector.xml</label>
+                    <visible>Window.IsVisible(DialogKaraokeSongSelector.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <textcolor>FFFF0000</textcolor>
+                    <include>Defs_CustomOverlay_Label</include>
+                    <label>DialogKaraokeSongSelectorLarge.xml</label>
+                    <visible>Window.IsVisible(DialogKaraokeSongSelectorLarge.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <textcolor>FFFF0000</textcolor>
+                    <include>Defs_CustomOverlay_Label</include>
+                    <label>DialogKeyboard.xml</label>
+                    <visible>Window.IsVisible(DialogKeyboard.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <textcolor>FFFF0000</textcolor>
+                    <include>Defs_CustomOverlay_Label</include>
+                    <label>DialogMediaFilter.xml</label>
+                    <visible>Window.IsVisible(DialogMediaFilter.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <textcolor>FFFF0000</textcolor>
+                    <include>Defs_CustomOverlay_Label</include>
+                    <label>DialogMediaSource.xml</label>
+                    <visible>Window.IsVisible(DialogMediaSource.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <textcolor>FFFF0000</textcolor>
+                    <include>Defs_CustomOverlay_Label</include>
+                    <label>DialogMuteBug.xml</label>
+                    <visible>Window.IsVisible(DialogMuteBug.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <textcolor>FFFF0000</textcolor>
+                    <include>Defs_CustomOverlay_Label</include>
+                    <label>DialogNetworkSetup.xml</label>
+                    <visible>Window.IsVisible(DialogNetworkSetup.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <textcolor>FFFF0000</textcolor>
+                    <include>Defs_CustomOverlay_Label</include>
+                    <label>DialogNumeric.xml</label>
+                    <visible>Window.IsVisible(DialogNumeric.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <textcolor>FFFF0000</textcolor>
+                    <include>Defs_CustomOverlay_Label</include>
+                    <label>DialogOK.xml</label>
+                    <visible>Window.IsVisible(DialogOK.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <textcolor>FFFF0000</textcolor>
+                    <include>Defs_CustomOverlay_Label</include>
+                    <label>DialogPeripheralManager.xml</label>
+                    <visible>Window.IsVisible(DialogPeripheralManager.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <textcolor>FFFF0000</textcolor>
+                    <include>Defs_CustomOverlay_Label</include>
+                    <label>DialogPeripheralSettings.xml</label>
+                    <visible>Window.IsVisible(DialogPeripheralSettings.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <textcolor>FFFF0000</textcolor>
+                    <include>Defs_CustomOverlay_Label</include>
+                    <label>DialogPictureInfo.xml</label>
+                    <visible>Window.IsVisible(DialogPictureInfo.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <textcolor>FFFF0000</textcolor>
+                    <include>Defs_CustomOverlay_Label</include>
+                    <label>DialogProgress.xml</label>
+                    <visible>Window.IsVisible(DialogProgress.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <textcolor>FFFF0000</textcolor>
+                    <include>Defs_CustomOverlay_Label</include>
+                    <label>DialogPVRChannelManager.xml</label>
+                    <visible>Window.IsVisible(DialogPVRChannelManager.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <textcolor>FFFF0000</textcolor>
+                    <include>Defs_CustomOverlay_Label</include>
+                    <label>DialogPVRChannelsOSD.xml</label>
+                    <visible>Window.IsVisible(DialogPVRChannelsOSD.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <textcolor>FFFF0000</textcolor>
+                    <include>Defs_CustomOverlay_Label</include>
+                    <label>DialogPVRGroupManager.xml</label>
+                    <visible>Window.IsVisible(DialogPVRGroupManager.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <textcolor>FFFF0000</textcolor>
+                    <include>Defs_CustomOverlay_Label</include>
+                    <label>DialogPVRGuideInfo.xml</label>
+                    <visible>Window.IsVisible(DialogPVRGuideInfo.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <textcolor>FFFF0000</textcolor>
+                    <include>Defs_CustomOverlay_Label</include>
+                    <label>DialogPVRGuideOSD.xml</label>
+                    <visible>Window.IsVisible(DialogPVRGuideOSD.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <textcolor>FFFF0000</textcolor>
+                    <include>Defs_CustomOverlay_Label</include>
+                    <label>DialogPVRGuideSearch.xml</label>
+                    <visible>Window.IsVisible(DialogPVRGuideSearch.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <textcolor>FFFF0000</textcolor>
+                    <include>Defs_CustomOverlay_Label</include>
+                    <label>DialogPVRRecordingInfo.xml</label>
+                    <visible>Window.IsVisible(DialogPVRRecordingInfo.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <textcolor>FFFF0000</textcolor>
+                    <include>Defs_CustomOverlay_Label</include>
+                    <label>DialogPVRTimerSettings.xml</label>
+                    <visible>Window.IsVisible(DialogPVRTimerSettings.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <textcolor>FFFF0000</textcolor>
+                    <include>Defs_CustomOverlay_Label</include>
+                    <label>DialogSeekbar.xml</label>
+                    <visible>Window.IsVisible(DialogSeekbar.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <textcolor>FFFF0000</textcolor>
+                    <include>Defs_CustomOverlay_Label</include>
+                    <label>DialogSelect.xml</label>
+                    <visible>Window.IsVisible(DialogSelect.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <textcolor>FFFF0000</textcolor>
+                    <include>Defs_CustomOverlay_Label</include>
+                    <label>DialogSlider.xml</label>
+                    <visible>Window.IsVisible(DialogSlider.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <textcolor>FFFF0000</textcolor>
+                    <include>Defs_CustomOverlay_Label</include>
+                    <label>DialogSongInfo.xml</label>
+                    <visible>Window.IsVisible(DialogSongInfo.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <textcolor>FFFF0000</textcolor>
+                    <include>Defs_CustomOverlay_Label</include>
+                    <label>DialogSubtitles.xml</label>
+                    <visible>Window.IsVisible(DialogSubtitles.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <textcolor>FFFF0000</textcolor>
+                    <include>Defs_CustomOverlay_Label</include>
+                    <label>DialogTextViewer.xml</label>
+                    <visible>Window.IsVisible(DialogTextViewer.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <textcolor>FFFF0000</textcolor>
+                    <include>Defs_CustomOverlay_Label</include>
+                    <label>DialogVideoInfo.xml</label>
+                    <visible>Window.IsVisible(DialogVideoInfo.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <textcolor>FFFF0000</textcolor>
+                    <include>Defs_CustomOverlay_Label</include>
+                    <label>DialogVolumeBar.xml</label>
+                    <visible>Window.IsVisible(DialogVolumeBar.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <textcolor>FFFF0000</textcolor>
+                    <include>Defs_CustomOverlay_Label</include>
+                    <label>DialogYesNo.xml</label>
+                    <visible>Window.IsVisible(DialogYesNo.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <textcolor>FFFF0000</textcolor>
+                    <include>Defs_CustomOverlay_Label</include>
+                    <label>FileBrowser.xml</label>
+                    <visible>Window.IsVisible(FileBrowser.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <textcolor>FFFF0000</textcolor>
+                    <include>Defs_CustomOverlay_Label</include>
+                    <label>LockSettings.xml</label>
+                    <visible>Window.IsVisible(LockSettings.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <textcolor>FFFF0000</textcolor>
+                    <include>Defs_CustomOverlay_Label</include>
+                    <label>MusicKaraokeLyrics.xml</label>
+                    <visible>Window.IsVisible(MusicKaraokeLyrics.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <textcolor>FFFF0000</textcolor>
+                    <include>Defs_CustomOverlay_Label</include>
+                    <label>MusicOSD.xml</label>
+                    <visible>Window.IsVisible(MusicOSD.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <textcolor>FFFF0000</textcolor>
+                    <include>Defs_CustomOverlay_Label</include>
+                    <label>MusicOverlay.xml</label>
+                    <visible>Window.IsVisible(MusicOverlay.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <textcolor>FFFF0000</textcolor>
+                    <include>Defs_CustomOverlay_Label</include>
+                    <label>MusicVisualisation.xml</label>
+                    <visible>Window.IsVisible(MusicVisualisation.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <textcolor>FFFF0000</textcolor>
+                    <include>Defs_CustomOverlay_Label</include>
+                    <label>PlayerControls.xml</label>
+                    <visible>Window.IsVisible(PlayerControls.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <textcolor>FFFF0000</textcolor>
+                    <include>Defs_CustomOverlay_Label</include>
+                    <label>ProfileSettings.xml</label>
+                    <visible>Window.IsVisible(ProfileSettings.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <textcolor>FFFF0000</textcolor>
+                    <include>Defs_CustomOverlay_Label</include>
+                    <label>SettingsScreenCalibration.xml</label>
+                    <visible>Window.IsVisible(SettingsScreenCalibration.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <textcolor>FFFF0000</textcolor>
+                    <include>Defs_CustomOverlay_Label</include>
+                    <label>SettingsSystemInfo.xml</label>
+                    <visible>Window.IsVisible(SettingsSystemInfo.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <textcolor>FFFF0000</textcolor>
+                    <include>Defs_CustomOverlay_Label</include>
+                    <label>SlideShow.xml</label>
+                    <visible>Window.IsVisible(SlideShow.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <textcolor>FFFF0000</textcolor>
+                    <include>Defs_CustomOverlay_Label</include>
+                    <label>SmartPlaylistEditor.xml</label>
+                    <visible>Window.IsVisible(SmartPlaylistEditor.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <textcolor>FFFF0000</textcolor>
+                    <include>Defs_CustomOverlay_Label</include>
+                    <label>SmartPlaylistRule.xml</label>
+                    <visible>Window.IsVisible(SmartPlaylistRule.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <textcolor>FFFF0000</textcolor>
+                    <include>Defs_CustomOverlay_Label</include>
+                    <label>VideoOSD.xml</label>
+                    <visible>Window.IsVisible(VideoOSD.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <textcolor>FFFF0000</textcolor>
+                    <include>Defs_CustomOverlay_Label</include>
+                    <label>VideoOSDBookmarks.xml</label>
+                    <visible>Window.IsVisible(VideoOSDBookmarks.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <textcolor>FFFF0000</textcolor>
+                    <include>Defs_CustomOverlay_Label</include>
+                    <label>VideoOSDSettings.xml</label>
+                    <visible>Window.IsVisible(VideoOSDSettings.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <textcolor>FFFF0000</textcolor>
+                    <include>Defs_CustomOverlay_Label</include>
+                    <label>VideoOverlay.xml</label>
+                    <visible>Window.IsVisible(VideoOverlay.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <textcolor>FFFF0000</textcolor>
+                    <include>Defs_CustomOverlay_Label</include>
+                    <label>VisualisationPresetList.xml</label>
+                    <visible>Window.IsVisible(VisualisationPresetList.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <textcolor>FFFF0000</textcolor>
+                    <include>Defs_CustomOverlay_Label</include>
+                    <label>Custom_1140_SetsInfo.xml</label>
+                    <visible>Window.IsVisible(Custom_1140_SetsInfo.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <textcolor>FFFF0000</textcolor>
+                    <include>Defs_CustomOverlay_Label</include>
+                    <label>Custom_1136_TMDB_Info.xml</label>
+                    <visible>Window.IsVisible(Custom_1136_TMDB_Info.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <textcolor>FFFF0000</textcolor>
+                    <include>Defs_CustomOverlay_Label</include>
+                    <label>Custom_1137_TMDB_Info_Reload.xml</label>
+                    <visible>Window.IsVisible(Custom_1137_TMDB_Info_Reload.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <textcolor>FFFF0000</textcolor>
+                    <include>Defs_CustomOverlay_Label</include>
+                    <label>Custom_1190</label>
+                    <visible>Window.IsVisible(1190)</visible>
+                </control>
+
+                <control type="label">
+                    <textcolor>FFFF0000</textcolor>
+                    <include>Defs_CustomOverlay_Label</include>
+                    <label>Custom_1191</label>
+                    <visible>Window.IsVisible(1191)</visible>
+                </control>
+
+                <control type="label">
+                    <textcolor>FFFF0000</textcolor>
+                    <include>Defs_CustomOverlay_Label</include>
+                    <label>Custom_1192</label>
+                    <visible>Window.IsVisible(1192)</visible>
+                </control>
+
+            </control>
+
+            <!-- Control label -->
+            <control type="label">
+                <right>15</right>
+                <top>15</top>
+                <width>780</width>
+                <height>42</height>
+                <textcolor>FFff00FF</textcolor>
+                <font>font_tiny</font>
+                <shadowcolor>ff000000</shadowcolor>
+                <align>right</align>
+                <label>$INFO[System.CurrentControl][CR][COLOR=FF00FF00]$INFO[System.CurrentWindow][/COLOR]</label>
+                
+            </control>
+
+            <control type="label">
+                <right>15</right>
+                <posy>80</posy>
+                <height>110</height>
+                <textcolor>FF00FFFF</textcolor>
+                <font>font_tiny</font>
+                <shadowcolor>ff000000</shadowcolor>
+                <align>right</align>
+                <label>$INFO[ListItem.FolderPath]</label>
+                
+            </control>
+
+            <control type="textbox">
+                <left>15</left>
+                <posy>180</posy>
+                <height>110</height>
+                <right>500</right>
+                <textcolor>FFFF00FF</textcolor>
+                <font>font_tiny</font>
+                <shadowcolor>ff000000</shadowcolor>
+                <align>left</align>
+                <label>$INFO[Window(Home).Property(TMDBHelper.ListItem.tvshow.tvdb_id)]$INFO[Window(Home).Property(TMDBHelper.ListItem.tvdb_id)]</label>
+                
+            </control>
+
+            <!-- Path label -->
+
+            <control type="label">
+                <posx>15r</posx>
+                <posy>180</posy>
+                <width>1620</width>
+                <height>500</height>
+                <textcolor>FFFFFF00</textcolor>
+                <shadowcolor>ff000000</shadowcolor>
+                
+                <font>font_tiny</font>
+                <shadowcolor>ff000000</shadowcolor>
+                <align>right</align>
+                <aligny>top</aligny>
+
+                <label>[COLOR=FF00FF00]$INFO[System.CurrentControlID,ID  ][/COLOR]
+                    $INFO[Container.Content(),[COLOR=FFFF00FF]CONTENT  [/COLOR],]$INFO[ListItem.DBType,[COLOR=FFFF00FF]  DBTYPE  [/COLOR],]$INFO[ListItem.Property(dbtype),[COLOR=FFFF00FF]  PROP_DBTYPE  [/COLOR],]$INFO[Container.SortMethod,[COLOR=FFFF00FF]  SORT  [/COLOR],]
+                    $INFO[ListItem.Label,[COLOR=FFFF00FF]  LABEL  [/COLOR],]$INFO[ListItem.Title,[COLOR=FFFF00FF]  TITLE  [/COLOR],]
+                    $INFO[Window(Home).Property(TMDbHelper.ListItem.Label),[COLOR=FFFF00FF]  SM.LABEL  [/COLOR],]$INFO[Window(Home).Property(TMDbHelper.ListItem.Title),[COLOR=FFFF00FF]  SM.TITLE  [/COLOR],]
+                    $INFO[ListItem.Rating,[COLOR=FFFF00FF]  RATING  [/COLOR],]$INFO[ListItem.UserRating,[COLOR=FFFF00FF]  USER RATING  [/COLOR],]
+                     $INFO[ListItem.Duration,[COLOR=FFFF00FF]  DURATION  [/COLOR],]
+                    $INFO[Window(Home).Property(TMDbHelper.IsUpdating),[COLOR=FFFF00FF]  SM.ISUPDATING  [/COLOR],]
+                    $INFO[ListItem.VideoCodec,[COLOR=FFFF00FF]CODEC  [/COLOR],]$INFO[ListItem.VideoAspect,[COLOR=FFFF00FF]  ASPECT  [/COLOR],]$INFO[ListItem.VideoResolution,[COLOR=FFFF00FF]  RES  [/COLOR],]$INFO[ListItem.AudioCodec,[COLOR=FFFF00FF]  CODEC  [/COLOR],]$INFO[ListItem.AudioChannels,[COLOR=FFFF00FF]  CHANNELS  [/COLOR],]
+                    $INFO[ListItem.Property(NumItems.TMDB.Cast),[COLOR=FFFF00FF]CASTIN  [/COLOR],]$INFO[ListItem.Property(NumItems.TMDB.Crew),[COLOR=FFFF00FF]  CREWIN  [/COLOR],]$INFO[ListItem.Property(NumItems.TMDB.Total),[COLOR=FFFF00FF]  TOTAL  [/COLOR],]
+                    $INFO[ListItem.DBID,[COLOR=FFFF00FF]DBID  [/COLOR],]$INFO[ListItem.IMDBNumber,[COLOR=FFFF00FF]  IMDB  [/COLOR],]$INFO[ListItem.Property(tmdb_id),[COLOR=FFFF00FF]  TMDB  [/COLOR],]$INFO[ListItem.Property(tvshow.tmdb_id),[COLOR=FFFF00FF]  TMDB TV  [/COLOR],]
+                    $INFO[Container.NumItems,[COLOR=FFFF00FF]NUM ITEMS:  [/COLOR],]$INFO[Container.Property(NumItems.DBID),  [COLOR=FFFF00FF]KODI:  [/COLOR],]$INFO[Container.Property(NumItems.TMDB),[COLOR=FFFF00FF]  TMDB:  [/COLOR],]
+                    $INFO[ListItem.Season,[COLOR=FFFF00FF]SEASON  [/COLOR],]$INFO[ListItem.Episode,[COLOR=FFFF00FF]  EPISODE  [/COLOR],]
+                    $INFO[ListItem.Property(UnWatchedEpisodes),[COLOR=FFFF00FF]U  [/COLOR],]$INFO[ListItem.Property(WatchedEpisodes),  [COLOR=FFFF00FF]W  [/COLOR],]$INFO[ListItem.PlayCount,  [COLOR=FFFF00FF]P  [/COLOR],]$INFO[ListItem.LastPlayed,   [COLOR=FFFF00FF]LP  [/COLOR],]$INFO[ListItem.Overlay,  [COLOR=FFFF00FF]O  [/COLOR],]
+                    $INFO[Container.PluginName,[COLOR=FFFF00FF]PLUGIN  [/COLOR],]$INFO[Container.PluginCategory,  [COLOR=FFFF00FF]NAME  [/COLOR],]</label>
+                
+            </control>
+
+            <control type="label">
+                <left>15</left>
+                <bottom>80</bottom>
+                <right>15</right>
+                <height>160</height>
+                <textcolor>FF00FFFF</textcolor>
+                <scroll>true</scroll>
+                <font>font_tiny</font>
+                <shadowcolor>ff000000</shadowcolor>
+                <align>left</align>
+                <aligny>center</aligny>
+                <label>$INFO[Window(Home).Property(TMDbHelper.Path.Current)][CR]$INFO[Window(Home).Property(TMDbHelper.Position),Position: ]$INFO[Window(Home).Property(TMDbHelper.Locked),  Locked: ]</label>
+                
+            </control>
+
+            <control type="label">
+                <left>15</left>
+                <bottom>0</bottom>
+                <right>15</right>
+                <height>80</height>
+                <textcolor>FFFF0000</textcolor>
+                <scroll>true</scroll>
+                <font>font_tiny</font>
+                <shadowcolor>ff000000</shadowcolor>
+                <align>left</align>
+                <aligny>center</aligny>
+                <label>[COLOR=FF00FF00]$INFO[Container.FolderName,, - ][/COLOR]$INFO[Container.FolderPath]</label>
+                
+            </control>
+        </control>
+
+    </controls>
+</window>

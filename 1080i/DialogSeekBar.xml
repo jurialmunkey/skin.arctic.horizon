@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Foundation -->
+<window id="115">
+    <defaultcontrol always="true">901</defaultcontrol>
+    <zorder>0</zorder>
+    <visible>!Player.HasGame + !Window.IsVisible(DialogPlayerProcessInfo.xml) + !Window.IsVisible(DialogSlider.xml) + [VideoPlayer.IsFullscreen | Window.IsVisible(MusicVisualisation.xml)] + [Window.IsVisible(videoosd) | Window.IsVisible(musicosd) | Player.Caching | Player.ShowInfo | Player.Seeking | Player.DisplayAfterSeek | Player.Paused | Player.Forwarding | Player.Rewinding | Window.IsActive(DialogFullScreenInfo.xml) | !String.IsEmpty(Window(Home).Property(OSDInfo)) | !String.IsEmpty(Player.SeekNumeric) | !String.IsEmpty(PVR.ChannelNumberInput) | [!Skin.HasSetting(DisableMusicVideoAutoInfo) + Window.IsVisible(VideoFullScreen.xml) + VideoPlayer.Content(musicvideos)]]</visible>
+    <animation effect="fade" start="0" end="100" time="300">WindowOpen</animation>
+    <animation effect="fade" end="0" start="100" time="300">WindowClose</animation>
+    <animation effect="fade" start="0" end="100" time="300">VisibleChange</animation>
+    <onload condition="!String.IsEmpty(Window(Home).Property(OSDExtendedInfo)) + Player.Paused + !Skin.HasSetting(DontPauseOSD)">Play</onload>
+    <onload condition="!String.IsEmpty(Window(Home).Property(OSDExtendedInfo))">ClearProperty(OSDExtendedInfo,Home)</onload>
+    <controls>
+        
+        <control type="group">
+            <visible>!Integer.IsEqual(Player.CacheLevel,100)</visible>
+            <visible>!Player.Seeking + !Player.DisplayAfterSeek</visible>
+            <visible>Player.Caching</visible>
+            <include>Global_Overlay</include>
+            <control type="group">
+                <height>170</height>
+                <width>720</width>
+                <centerleft>50%</centerleft>
+                <centertop>50%</centertop>
+                <control type="image">
+                    <description>Busy animation</description>
+                    <centerleft>50%</centerleft>
+                    <top>0</top>
+                    <width>100</width>
+                    <height>100</height>
+                    <texture>dialog/loading-back-dl.png</texture>
+                    <aspectratio>keep</aspectratio>
+                </control>
+                <control type="image">
+                    <centerleft>50%</centerleft>
+                    <top>0</top>
+                    <width>100</width>
+                    <height>100</height>
+                    <texture colordiffuse="$VAR[ColorHighlight]">$INFO[Player.CacheLevel,progress/circle/p,.png]</texture>
+                    <aspectratio align="center">keep</aspectratio>
+                </control>
+                <control type="label" id="6655">
+                    <description>Busy label</description>
+                    <centerleft>50%</centerleft>
+                    <bottom>0</bottom>
+                    <width>720</width>
+                    <height>100</height>
+                    <aligny>center</aligny>
+                    <align>center</align>
+                    <label>$LOCALIZE[439] $INFO[Player.CacheLevel,, %]</label>
+                    <textcolor>ffededed</textcolor>
+                </control>
+            </control>
+        </control>
+
+        <!-- <include condition="Window.IsVisible(VideoFullScreen.xml) + VideoPlayer.Content(LiveTV)">OSD_LiveTV_Seekbar</include> -->
+
+        <include condition="Window.IsVisible(VideoFullScreen.xml)">OSD_Video_Seekbar</include>
+        
+        <include condition="Window.IsVisible(VideoFullScreen.xml)" content="OSD_Music_Info">
+            <param name="player" value="VideoPlayer" />
+            <param name="rating" value="VideoPlayer.Rating" />
+            <param name="artwork" value="VideoPlayer.Cover" />
+        </include>
+
+        <control type="image">
+            <texture background="true">$INFO[Player.Icon]</texture>
+            <aspectratio align="left" aligny="top">keep</aspectratio>
+            <left>view_pad</left>
+            <top>view_pad</top>
+            <width>256</width>
+            <height>128</height>
+            <visible>VideoPlayer.Content(LiveTV)</visible>
+        </control>
+
+        <control type="grouplist">
+            <right>0</right>
+            <top>0</top>
+            <height>180</height>
+            <align>right</align>
+            <orientation>horizontal</orientation>
+            <control type="button">
+                <include>Animation_FadeIn</include>
+                <right>0</right>
+                <top>0</top>
+                <height>180</height>
+                <textoffsetx>view_pad</textoffsetx>
+                <texturefocus>common/shadowspot.png</texturefocus>
+                <texturenofocus>common/shadowspot.png</texturenofocus>
+                <textcolor>panel_fg_100</textcolor>
+                <font>font_tiny</font>
+                <label>Seek to $INFO[Player.SeekNumeric]</label>
+                <width>auto</width>
+                <aligny>center</aligny>
+                <visible>!String.IsEmpty(Player.SeekNumeric)</visible>
+            </control>
+        </control>
+
+        <control type="grouplist">
+            <right>view_pad</right>
+            <top>view_pad</top>
+            <align>right</align>
+            <orientation>horizontal</orientation>
+            <control type="button">
+                <right>0</right>
+                <top>0</top>
+                <height>90</height>
+                <texturefocus colordiffuse="panel_bg" border="10">common/box.png</texturefocus>
+                <texturenofocus colordiffuse="panel_bg" border="10">common/box.png</texturenofocus>
+                <textcolor>panel_fg_100</textcolor>
+                <label>$INFO[PVR.ChannelNumberInput]</label>
+                <width>auto</width>
+                <aligny>center</aligny>
+                <font>font_title</font>
+                <visible>!String.IsEmpty(PVR.ChannelNumberInput)</visible>
+            </control>
+        </control>
+
+    </controls>
+
+</window>
