@@ -1179,6 +1179,7 @@
                                 <font>font_tiny</font>
                                 <align>left</align>
                                 <left>30</left>
+                                <right>30</right>
                                 <aligny>center</aligny>
                                 <textcolor>dialog_fg_70</textcolor>
                                 <label>[CAPITALIZE]$INFO[ListItem.Label][/CAPITALIZE]</label>
@@ -1195,6 +1196,7 @@
                                 <font>font_tiny</font>
                                 <align>left</align>
                                 <left>30</left>
+                                <right>30</right>
                                 <aligny>center</aligny>
                                 <textcolor>Selected</textcolor>
                                 <label>[CAPITALIZE]$INFO[ListItem.Label][/CAPITALIZE]</label>
