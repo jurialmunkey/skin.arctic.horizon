@@ -54,10 +54,11 @@
 
         <include content="OSD_Menu_List">
             <param name="content" value="Items_OSD_MusicVis" />
-            <param name="height" value="662" />
+            <param name="height" value="680" />
             <param name="id" value="3112" />
             <param name="label" value="$LOCALIZE[33063]" />
-            <param name="position" value="80,60" />
+            <param name="position" value="300,0" />
+            <param name="icon-visible" value="true" />
         </include>
 
     </controls>

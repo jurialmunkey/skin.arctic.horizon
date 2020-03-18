@@ -1131,6 +1131,7 @@
         <param name="label" default="Subtitles" />
         <param name="position" default="0,0" />
         <param name="osd_id" default="9000" />
+        <param name="icon-visible" default="false" />
         <definition>
             <control type="group">
                 <include condition="String.IsEmpty(Window(Home).Property(OSDViewMode))">Animation_FadeIn_SlideUp</include>
@@ -1184,6 +1185,12 @@
                                 <textcolor>dialog_fg_70</textcolor>
                                 <label>[CAPITALIZE]$INFO[ListItem.Label][/CAPITALIZE]</label>
                             </control>
+                            <control type="image">
+                                <bordersize>10</bordersize>
+                                <aspectratio align="right">keep</aspectratio>
+                                <texture colordiffuse="dialog_fg_70">$INFO[ListItem.Icon]</texture>
+                                <visible>$PARAM[icon-visible]</visible>
+                            </control>
                         </itemlayout>
                         <focusedlayout width="450" height="item_list_height">
                             <control type="image">
@@ -1200,6 +1207,12 @@
                                 <aligny>center</aligny>
                                 <textcolor>Selected</textcolor>
                                 <label>[CAPITALIZE]$INFO[ListItem.Label][/CAPITALIZE]</label>
+                            </control>
+                            <control type="image">
+                                <bordersize>10</bordersize>
+                                <aspectratio align="right">keep</aspectratio>
+                                <texture colordiffuse="Selected">$INFO[ListItem.Icon]</texture>
+                                <visible>$PARAM[icon-visible]</visible>
                             </control>
                         </focusedlayout>
                         <include>$PARAM[content]</include>

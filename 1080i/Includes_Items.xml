@@ -207,11 +207,13 @@
                 <label>$LOCALIZE[108]: $LOCALIZE[16041]</label>
                 <visible>!Skin.HasSetting(ArtistSlideShow.Disabled)</visible>
                 <onclick>Skin.ToggleSetting(ArtistSlideShow.Disabled)</onclick>
+                <icon>special://skin/extras/icons/actor.png</icon>
             </item>
             <item>
                 <label>$LOCALIZE[108]: $LOCALIZE[16039]</label>
                 <visible>Skin.HasSetting(ArtistSlideShow.Disabled)</visible>
                 <onclick>Skin.ToggleSetting(ArtistSlideShow.Disabled)</onclick>
+                <icon>special://skin/extras/icons/actor.png</icon>
             </item>
 
             <!-- Visualisation -->
@@ -220,12 +222,15 @@
                 <visible>Skin.HasSetting(OSDVisualisation.ShowFanart)</visible>
                 <onclick>Skin.ToggleSetting(OSDVisualisation.ShowFanart)</onclick>
                 <visible>Skin.HasSetting(musicvis.fanartfallback) | [!Skin.HasSetting(ArtistSlideShow.Disabled)]</visible>
+                <icon>special://skin/extras/icons/atom.png</icon>
             </item>
             <item>
                 <label>$LOCALIZE[250]: $LOCALIZE[16039]</label>
                 <visible>!Skin.HasSetting(OSDVisualisation.ShowFanart)</visible>
                 <onclick>Skin.ToggleSetting(OSDVisualisation.ShowFanart)</onclick>
+                <onclick>SendClick(500)</onclick>
                 <visible>Skin.HasSetting(musicvis.fanartfallback) | [!Skin.HasSetting(ArtistSlideShow.Disabled)]</visible>
+                <icon>special://skin/extras/icons/atom.png</icon>
             </item>
 
             <!-- Animate -->
@@ -234,12 +239,14 @@
                 <visible>Skin.HasSetting(ArtistSlideshow.Animate)</visible>
                 <onclick>Skin.ToggleSetting(ArtistSlideshow.Animate)</onclick>
                 <visible>Skin.HasSetting(musicvis.fanartfallback) | [!Skin.HasSetting(ArtistSlideShow.Disabled)]</visible>
+                <icon>special://skin/extras/icons/lightbulb3.png</icon>
             </item>
             <item>
                 <label>$LOCALIZE[20079]: $LOCALIZE[16039]</label>
                 <visible>!Skin.HasSetting(ArtistSlideshow.Animate)</visible>
                 <onclick>Skin.ToggleSetting(ArtistSlideshow.Animate)</onclick>
                 <visible>Skin.HasSetting(musicvis.fanartfallback) | [!Skin.HasSetting(ArtistSlideShow.Disabled)]</visible>
+                <icon>special://skin/extras/icons/lightbulb3.png</icon>
             </item>
 
             <!-- Colour overlay -->
@@ -247,11 +254,13 @@
                 <label>$LOCALIZE[31131]: $LOCALIZE[16041]</label>
                 <visible>!Skin.HasSetting(HideOSDDiffuseColors)</visible>
                 <onclick>Skin.ToggleSetting(HideOSDDiffuseColors)</onclick>
+                <icon>special://skin/extras/icons/paintbucket3.png</icon>
             </item>
             <item>
                 <label>$LOCALIZE[31131]: $LOCALIZE[16039]</label>
                 <visible>Skin.HasSetting(HideOSDDiffuseColors)</visible>
                 <onclick>Skin.ToggleSetting(HideOSDDiffuseColors)</onclick>
+                <icon>special://skin/extras/icons/paintbucket3.png</icon>
             </item>
 
             <!-- Scroll text overlay -->
@@ -259,23 +268,35 @@
                 <label>$LOCALIZE[31142]: $LOCALIZE[16041]</label>
                 <visible>!Skin.HasSetting(HideOSDScrollingText)</visible>
                 <onclick>Skin.ToggleSetting(HideOSDScrollingText)</onclick>
+                <icon>special://skin/extras/icons/quote.png</icon>
             </item>
             <item>
                 <label>$LOCALIZE[31142]: $LOCALIZE[16039]</label>
                 <visible>Skin.HasSetting(HideOSDScrollingText)</visible>
                 <onclick>Skin.ToggleSetting(HideOSDScrollingText)</onclick>
+                <icon>special://skin/extras/icons/quote.png</icon>
             </item>
 
             <item>
                 <description>Rate Song</description>
                 <label>$LOCALIZE[31311]</label>
+                <icon>special://skin/extras/icons/userrating.png</icon>
                 <onclick>Close</onclick>
                 <onclick>setrating</onclick>
             </item>
-            <item>
+            <!-- <item>
                 <description>Vis</description>
                 <label>250</label>
                 <onclick>SendClick(500)</onclick>
+                <icon>special://skin/extras/icons/atom.png</icon>
+            </item> -->
+            <item>
+                <description>Playlist</description>
+                <label>$LOCALIZE[559]</label>
+                <icon>special://skin/extras/icons/playlist2.png</icon>
+                <onclick>Close</onclick>
+                <onclick>Close</onclick>
+                <onclick>ActivateWindow(musicplaylist)</onclick>
             </item>
             <!-- <item>
                 <label>24013</label>
