@@ -29,9 +29,9 @@
             <param name="id" value="1297" />
         </include>
 
-        <!-- <include content="Topbar_Left">
-            <param name="label" value="$INFO[Skin.String(screensaver.arctic.mirage.label)]" />
-        </include> -->
+        <include content="Topbar_Left">
+            <param name="label" value="$INFO[Skin.String(screensaver.arctic.mirage.name)]" />
+        </include>
         <include>Topbar_Right</include>
 
         <control type="image" id="1298">
