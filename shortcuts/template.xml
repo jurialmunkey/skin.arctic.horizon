@@ -354,6 +354,7 @@
             <property name="id">50</property>
 
             <property name="label" tag="label" />
+            <property name="icon" tag="thumb" />
             <property name="icon" tag="icon" />
             <property name="submenuVisibility" tag="property" attribute="name|group" />
             <property name="submenuVisibility">noMenu</property>
