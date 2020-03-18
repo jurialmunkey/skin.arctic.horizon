@@ -9,8 +9,6 @@
     <onunload>ClearProperty(OSD_Menu,Home)</onunload>
     <controls>
         <include>Viewtypes</include>
-        <include>Viewtype_Options</include>
-        <include>Object_PlotOverlay</include>
 
         <control type="group">
             <visible>Control.HasFocus(9200)</visible>

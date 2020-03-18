@@ -6,8 +6,6 @@
     
     <include>ViewIDs</include>
     <controls>
-        <include>Global_Background</include>
-        <include>Topbar_Right</include>
         <include>Viewtypes</include>
 
         <include>Defs_Options_StandardButtons</include>

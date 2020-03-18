@@ -7,8 +7,6 @@
     <controls>
 
         <include>Viewtypes</include>
-        <include>Viewtype_Options</include>
-        <include>Object_PlotOverlay</include>
         
         <!-- Hidden Buttons -->
         <include>Defs_Options_StandardButtons</include>
