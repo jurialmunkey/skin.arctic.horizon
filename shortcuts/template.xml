@@ -223,7 +223,7 @@
                     <param name="id" value="$PYTHON[30000 + int(mainmenuid) * 100 + int(id)]" />
                     <param name="label" value="$SKINSHORTCUTS[widgetName]" />
                     <param name="spinner-visible" value="!Integer.IsGreater(Container($PYTHON[30000 + int(mainmenuid) * 100 + int(id)]).NumItems,0)" />
-                    <param name="visible" value="[Integer.IsGreater(Container($PYTHON[30000 + int(mainmenuid) * 100 + int(id)]).NumItems,0) | Container($PYTHON[30000 + int(mainmenuid) * 100 + int(id)]).IsUpdating]" />
+                    <param name="visible" value="true" />
                     <param name="viewtype-include" value="$SKINSHORTCUTS[widgetInclude]" />
                     <param name="widget-type" value="widgets" />
                     <onback>SetFocus($PYTHON[int(mainmenuid)]3101)</onback>

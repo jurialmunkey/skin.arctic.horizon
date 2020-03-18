@@ -778,6 +778,7 @@
                 <include condition="$PARAM[selectbox]" content="View_List_Selectbox">
                     <param name="id" value="$PARAM[id]" />
                 </include>
+                
                 <control type="group">
                     <include>Defs_Pad</include>
                     <!-- Textlabel -->

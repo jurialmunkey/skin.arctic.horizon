@@ -123,7 +123,7 @@
         <param name="includecondition" default="true" />
         <param name="id" default="5001" />
         <param name="groupid" default="7001" />
-        <param name="minnumitems" default="1" />
+        <param name="minnumitems" default="0" />
         <param name="label" default="$INFO[ListItem.Title]" />
         <param name="labelinclude" default="Defs_Null" />
         <param name="visible" default="true" />
