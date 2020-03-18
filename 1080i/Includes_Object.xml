@@ -2422,13 +2422,12 @@
             <texturesliderbar colordiffuse="main_fg_30" border="4">scrollbar/scrollv.png</texturesliderbar>
             <texturesliderbarfocus colordiffuse="main_fg_100" border="4">scrollbar/scrollv.png</texturesliderbarfocus>
             <animation effect="fade" start="100" end="0" time="400" condition="!Control.HasFocus(60)">Conditional</animation>
-            <!-- <visible>![String.IsEqual(Container.SortMethod,$LOCALIZE[551]) | String.IsEqual(Container.SortMethod,$LOCALIZE[556]) | String.IsEqual(Container.SortMethod,$LOCALIZE[561])]</visible> -->
+            <visible>![String.IsEqual(Container.SortMethod,$LOCALIZE[551]) | String.IsEqual(Container.SortMethod,$LOCALIZE[556]) | String.IsEqual(Container.SortMethod,$LOCALIZE[561])]</visible>
             <include>Animation_FadeIn</include>
             <include>Animation_FadeOut</include>
         </control>
 
         <control type="button" id="60">
-            <visible>false</visible>
             <visible>$PARAM[visible]</visible>
             <visible>[String.IsEqual(Container.SortMethod,$LOCALIZE[551]) | String.IsEqual(Container.SortMethod,$LOCALIZE[556]) | String.IsEqual(Container.SortMethod,$LOCALIZE[561])]</visible>
             <font />
@@ -2440,8 +2439,7 @@
             <width>1760</width>
             <centerbottom>30</centerbottom>
             <onup>50</onup>
-            <ondown>SetFocus(50)</ondown>
-            <ondown condition="String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,season) | String.IsEqual(ListItem.DBType,episode)">ActivateWindow(1142)</ondown>
+            <onback>50</onback>
             <onright>SetFocus(50)</onright>
             <onright>Action(nextletter)</onright>
             <onright condition="!Container.HasNext | String.IsEqual(ListItem.SortLetter,Z)">Action(jumpsms2)</onright>
@@ -2459,7 +2457,6 @@
         </control>
 
         <control type="grouplist">
-            <visible>false</visible>
             <visible>$PARAM[visible]</visible>
             <centerbottom>40</centerbottom>
             <height>52</height>
