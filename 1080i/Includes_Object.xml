@@ -2576,6 +2576,32 @@
                 <include>Animation_Left_Delay</include>
                 <include>Defs_InfoDialog_Visible</include>
                 <visible>$EXP[Exp_ShowPlotOverlay]</visible>
+                <visible>[String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,episode) | String.IsEqual(ListItem.DBType,set)]</visible>
+            </include>
+            <include content="DialogVideoInfo_Left">
+                <param name="poster" value="false" />
+                <include>Animation_Left_Delay</include>
+                <include>Defs_InfoDialog_Visible</include>
+                <visible>$EXP[Exp_ShowPlotOverlay]</visible>
+                <visible>![String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,episode) | String.IsEqual(ListItem.DBType,set)]</visible>
+                <control type="group">
+                    <top>view_top</top>
+                    <left>view_pad</left>
+                    <bottom>view_pad</bottom>
+                    <control type="image">
+                        <bottom>40</bottom>
+                        <left>-15</left>
+                        <texture background="true">$VAR[Image_ClearLogo]</texture>
+                        <aspectratio aligny="bottom">keep</aspectratio>
+                        <height>150</height>
+                        <width>view_poster_width</width>
+                    </control>
+                    <include content="View_50_Poster">
+                        <param name="visible" value="true" />
+                        <param name="diffuse" value="diffuse/poster-big.png" />
+                        <param name="height" value="view_poster_width" />
+                    </include>
+                </control>
             </include>
 
 

@@ -6,9 +6,9 @@
     <include>ViewIDs</include>
     <controls>
 
-        <include>Global_Background</include>
-        <include>Topbar_Right</include>
         <include>Viewtypes</include>
+        <include>Viewtype_Options</include>
+        <include>Object_PlotOverlay</include>
         
         <!-- Hidden Buttons -->
         <include>Defs_Options_StandardButtons</include>

@@ -96,7 +96,7 @@
                 <param name="label" value="Info" />
                 <param name="icon" value="special://skin/extras/icons/info2.png" />
                 <param name="ondown" value="50" />
-                <param name="visible" value="String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,episode) | String.IsEqual(ListItem.DBType,video) | String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,season) | ListItem.IsCollection" />
+                <param name="visible" value="String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,episode) | String.IsEqual(ListItem.DBType,video) | String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,season) | ListItem.IsCollection | String.IsEqual(ListItem.DBType,album) | String.IsEqual(ListItem.DBType,artist) | String.IsEqual(ListItem.DBType,song)" />
                 <onclick>SetFocus(50)</onclick>
                 <onclick>Action(Info)</onclick>
             </include>
