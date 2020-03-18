@@ -336,42 +336,14 @@
             <param name="groupid" value="3204" />
             <param name="label" value="$LOCALIZE[1024]" />
             <param name="icon" value="special://skin/extras/icons/folder.png" />
-            <param name="visible" value="Control.IsEnabled(8) + [ListItem.IsFolder | ListItem.IsCollection] + String.IsEmpty(ListItem.Property(tmdb_id))" />
-            <onclick>SendClick(8)</onclick>
-            <!-- <onclick>Dialog.Close(12003)</onclick>
-            <onclick>Dialog.Close(1140)</onclick>
-            <onclick condition="Window.IsVisible(MyVideoNav.xml)">Container.Update($INFO[ListItem.FolderPath])</onclick>
-            <onclick condition="!Window.IsVisible(MyVideoNav.xml)">ActivateWindow(videos,$INFO[ListItem.FolderPath],return)</onclick> -->
+            <param name="visible" value="[ListItem.IsFolder | ListItem.IsCollection]" />
+            <onclick condition="Window.IsVisible(MyVideoNav.xml) + String.IsEmpty(ListItem.DBID)">RunScript(plugin.video.themoviedb.helper,close_dialog=1190,call_update=$INFO[ListItem.FolderPath])</onclick>
+            <onclick condition="Window.IsVisible(MyVideoNav.xml) + !String.IsEmpty(ListItem.DBID) + String.IsEqual(ListItem.DBType,tvshow)">RunScript(plugin.video.themoviedb.helper,close_dialog=1190,call_update=$INFO[ListItem.DBID,videodb://tvshows/titles/,/])</onclick>
+
+            <onclick condition="!Window.IsVisible(MyVideoNav.xml) + String.IsEmpty(ListItem.DBID)">RunScript(plugin.video.themoviedb.helper,close_dialog=1190,call_path=$INFO[ListItem.FolderPath])</onclick>
+            <onclick condition="!Window.IsVisible(MyVideoNav.xml) + !String.IsEmpty(ListItem.DBID) + String.IsEqual(ListItem.DBType,tvshow)">RunScript(plugin.video.themoviedb.helper,close_dialog=1190,call_path=$INFO[ListItem.DBID,videodb://tvshows/titles/,/])</onclick>
             <onup>9601</onup>
         </include>
-        <!-- <include content="$PARAM[buttoninclude]">
-            <param name="id" value="3108" />
-            <param name="groupid" value="3208" />
-            <param name="label" value="$LOCALIZE[208]" />
-            <param name="icon" value="special://skin/extras/icons/play3.png" />
-            <param name="visible" value="Control.IsEnabled(8) + !String.IsEmpty(ListItem.Property(tmdb_id))" />
-            <onclick>RunScript(plugin.video.themoviedb.helper,close_dialog=1190)</onclick>
-            <onclick>Dialog.Close(1140)</onclick>
-            <onclick>Dialog.Close(1142)</onclick>
-            <onclick>Dialog.Close(1143)</onclick>
-            <onclick condition="String.IsEqual(ListItem.DBType,movie)">RunPlugin(plugin://plugin.video.themoviedb.helper/?info=play&amp;tmdb_id=$INFO[ListItem.Property(tmdb_id)]&amp;type=movie)</onclick>
-            <onclick condition="String.IsEqual(ListItem.DBType,episode)">RunPlugin(plugin://plugin.video.themoviedb.helper/?info=play&amp;tmdb_id=$INFO[ListItem.Property(tmdb_id)]&amp;type=episode&amp;season=$INFO[ListItem.Season]&amp;episode=$INFO[ListItem.Episode])</onclick>
-            <onclick condition="String.IsEqual(ListItem.DBType,episode) + Window.IsVisible(MyVideoNav.xml)">Container.Update($INFO[ListItem.FolderPath])</onclick>
-            <onclick condition="String.IsEqual(ListItem.DBType,episode) + !Window.IsVisible(MyVideoNav.xml)">ActivateWindow(videos,$INFO[ListItem.FolderPath],return)</onclick>
-            <onup>9601</onup>
-        </include> -->
-        <!-- <include content="$PARAM[buttoninclude]">
-            <param name="id" value="3103" />
-            <param name="groupid" value="3203" />
-            <param name="label" value="Search" />
-            <param name="icon" value="special://skin/extras/icons/search.png" />
-            <param name="visible" value="!String.IsEmpty(ListItem.Property(tmdb_id))" />
-            <onclick>Dialog.Close(12003)</onclick>
-            <onclick>Skin.Reset(SearchTerm)</onclick>
-            <onclick>Skin.SetString(SearchTerm, $INFO[ListItem.Title])</onclick>
-            <onclick>ActivateWindow(1138)</onclick>
-            <onup>9601</onup>
-        </include> -->
         
         <include content="$PARAM[buttoninclude]">
             <param name="id" value="3111" />
