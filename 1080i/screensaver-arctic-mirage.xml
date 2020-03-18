@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<window>
+    <defaultcontrol always="true">1297</defaultcontrol>
+    <onload>SetProperty(TMDbHelper.WidgetContainer,1297,Home)</onload>
+    <onunload>ClearProperty(TMDbHelper.WidgetContainer,Home)</onunload>
+    <controls>
+        <control type="image">
+            <texture colordiffuse="Background">common/bg.jpg</texture>
+        </control>
+
+        <control type="list" id="1297">
+            <content sortby="random">$INFO[Skin.String(screensaver.arctic.mirage.path)]</content>
+            <autoscroll time="20000">true</autoscroll>
+            <orientation>horizontal</orientation>
+            <itemlayout />
+            <focusedlayout />
+        </control>
+
+        <control type="image">
+            <fadetime>800</fadetime>
+            <width>1920</width>
+            <height>1080</height>
+            <texture background="true">$INFO[ListItem.Art(fanart)]</texture>
+            <animation effect="zoom" start="110" end="130" center="auto" time="10000" tween="sine" easing="inout" pulse="true" condition="true">Conditional</animation>
+            <animation effect="slide" start="-30,-30" end="30,30" time="6000" tween="sine" easing="inout" pulse="true" condition="true">Conditional</animation>
+        </control>
+
+        <include content="Home_Widget_Fullscreen_Info">
+            <param name="id" value="1297" />
+        </include>
+
+        <!-- <include content="Topbar_Left">
+            <param name="label" value="$INFO[Skin.String(screensaver.arctic.mirage.label)]" />
+        </include> -->
+        <include>Topbar_Right</include>
+
+        <control type="image" id="1298">
+            <fadetime>800</fadetime>
+            <width>1</width>
+            <height>1</height>
+            <top>-1000</top>
+            <left>-1000</left>
+            <texture />
+        </control>
+
+    </controls>
+</window>
