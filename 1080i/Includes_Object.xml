@@ -2356,7 +2356,7 @@
     <include name="Object_Scrollbars">
 
         <include content="Object_Scrollbar_Horz">
-            <param name="visible" value="Control.IsVisible(51) | Control.IsVisible(52) | Control.IsVisible(53) | Control.IsVisible(54) | Control.IsVisible(55)" />
+            <param name="visible" value="Control.IsVisible(51) | Control.IsVisible(52) | Control.IsVisible(53) | Control.IsVisible(54) | Control.IsVisible(55) | Control.IsVisible(56)" />
         </include>
     </include>
 
@@ -2416,20 +2416,22 @@
             <centerbottom>40</centerbottom>
             <showonepage>false</showonepage>
             <orientation>horizontal</orientation>
-            <onup>50</onup>
+            <onup condition="![Control.IsVisible(560) | Control.IsVisible(503)]">50</onup>
+            <onup condition="Control.IsVisible(560)">560</onup>
+            <onup condition="Control.IsVisible(503)">503</onup>
             <visible>$PARAM[visible]</visible>
             <texturesliderbackground colordiffuse="main_fg_12" border="4">common/white.png</texturesliderbackground>
             <texturesliderbar colordiffuse="main_fg_30" border="4">scrollbar/scrollv.png</texturesliderbar>
             <texturesliderbarfocus colordiffuse="main_fg_100" border="4">scrollbar/scrollv.png</texturesliderbarfocus>
             <animation effect="fade" start="100" end="0" time="400" condition="!Control.HasFocus(60)">Conditional</animation>
-            <visible>![String.IsEqual(Container.SortMethod,$LOCALIZE[551]) | String.IsEqual(Container.SortMethod,$LOCALIZE[556]) | String.IsEqual(Container.SortMethod,$LOCALIZE[561])]</visible>
+            <visible>![String.IsEqual(Container.SortMethod,$LOCALIZE[551]) | String.IsEqual(Container.SortMethod,$LOCALIZE[556]) | String.IsEqual(Container.SortMethod,$LOCALIZE[561])] | Control.IsVisible(56) | Control.IsVisible(53)</visible>
             <include>Animation_FadeIn</include>
             <include>Animation_FadeOut</include>
         </control>
 
         <control type="button" id="60">
             <visible>$PARAM[visible]</visible>
-            <visible>[String.IsEqual(Container.SortMethod,$LOCALIZE[551]) | String.IsEqual(Container.SortMethod,$LOCALIZE[556]) | String.IsEqual(Container.SortMethod,$LOCALIZE[561])]</visible>
+            <visible>[String.IsEqual(Container.SortMethod,$LOCALIZE[551]) | String.IsEqual(Container.SortMethod,$LOCALIZE[556]) | String.IsEqual(Container.SortMethod,$LOCALIZE[561])] + ![Control.IsVisible(56) | Control.IsVisible(53)]</visible>
             <font />
             <texturefocus />
             <texturenofocus />
@@ -2495,7 +2497,7 @@
             <include content="Object_AlphabetLetter"><param name="label" value="X" /></include>
             <include content="Object_AlphabetLetter"><param name="label" value="Y" /></include>
             <include content="Object_AlphabetLetter"><param name="label" value="Z" /></include>
-            <visible>[String.IsEqual(Container.SortMethod,$LOCALIZE[551]) | String.IsEqual(Container.SortMethod,$LOCALIZE[556]) | String.IsEqual(Container.SortMethod,$LOCALIZE[561])]</visible>
+            <visible>[String.IsEqual(Container.SortMethod,$LOCALIZE[551]) | String.IsEqual(Container.SortMethod,$LOCALIZE[556]) | String.IsEqual(Container.SortMethod,$LOCALIZE[561])] + ![Control.IsVisible(56) | Control.IsVisible(53)]</visible>
         </control>
     </include>
 
@@ -2576,14 +2578,14 @@
                 <include>Animation_Left_Delay</include>
                 <include>Defs_InfoDialog_Visible</include>
                 <visible>$EXP[Exp_ShowPlotOverlay]</visible>
-                <visible>[String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,episode) | String.IsEqual(ListItem.DBType,set)]</visible>
+                <visible>[String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,episode) | String.IsEqual(ListItem.DBType,set) | String.IsEqual(ListItem.DBType,actor)]</visible>
             </include>
             <include content="DialogVideoInfo_Left">
                 <param name="poster" value="false" />
                 <include>Animation_Left_Delay</include>
                 <include>Defs_InfoDialog_Visible</include>
                 <visible>$EXP[Exp_ShowPlotOverlay]</visible>
-                <visible>![String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,episode) | String.IsEqual(ListItem.DBType,set)]</visible>
+                <visible>![String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,episode) | String.IsEqual(ListItem.DBType,set) | String.IsEqual(ListItem.DBType,actor)]</visible>
                 <control type="group">
                     <top>view_top</top>
                     <left>view_pad</left>

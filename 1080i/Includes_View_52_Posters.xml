@@ -11,6 +11,7 @@
                 <bottom>-20</bottom>
                 <left>-80</left>
                 <right>-80</right>
+                <onfocus>ClearProperty(TMDbHelper.WidgetContainer,Home)</onfocus>
                 <include>Viewtype_Movement</include>
                 <visible>Container.Content(actors) | Container.Content(tvshows) | Container.Content(movies)</visible>
                 <visible>!Window.IsVisible(MyPlaylist.xml)</visible>

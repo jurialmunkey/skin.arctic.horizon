@@ -17,7 +17,8 @@
                             <top>-15</top>
                             <height>285</height>
                             <visible>!Control.HasFocus(503)</visible>
-                            <visible>![Control.IsVisible(50) | Control.IsVisible(500) | Control.IsVisible(55) | Control.IsVisible(520) | Control.IsVisible(56)]</visible>
+                            <visible>!Control.IsVisible(56)</visible>
+                            <visible>![Control.IsVisible(50) | Control.IsVisible(500) | Control.IsVisible(55) | Control.IsVisible(520)]</visible>
                             <include>Viewtype_Info_Right</include>
                         </include>
                         <include content="View_Info_Grouplist">
@@ -26,7 +27,8 @@
                             <param name="visible-details" value="false" />
                             <top>-15</top>
                             <height>285</height>
-                            <visible>[Control.IsVisible(50) | Control.IsVisible(500) | Control.IsVisible(55) | Control.IsVisible(520) | Control.IsVisible(56)]</visible>
+                            <visible>[Control.IsVisible(50) | Control.IsVisible(500) | Control.IsVisible(55) | Control.IsVisible(520)]</visible>
+                            <visible>!Control.IsVisible(56)</visible>
                             <include>Viewtype_Info_Right</include>
                         </include>
                         <control type="image">
@@ -37,7 +39,7 @@
                             <texture background="true">$VAR[Image_ClearArt]</texture>
                             <aspectratio align="right" aligny="bottom" scalediffuse="false">keep</aspectratio>
                             <bordersize>15</bordersize>
-                            <visible>Control.IsVisible(51) | Control.IsVisible(52) | Control.IsVisible(53) | Control.IsVisible(54)</visible>
+                            <visible>Control.IsVisible(51) | Control.IsVisible(52) | Control.IsVisible(53) | Control.IsVisible(54) | Control.IsVisible(56)</visible>
                             <visible>!String.IsEmpty(ListItem.Art(clearart)) | !String.IsEmpty(ListItem.Art(tvshow.clearart)) | !String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.clearart)) | !String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.tvshow.clearart))</visible>
                         </control>
                         <control type="image">
@@ -77,13 +79,13 @@
                         <include content="Viewtype_BackPanel">
                             <include>Animation_Down</include>
                             <visible>!Integer.IsEqual(Container.NumItems,0)</visible>
-                            <visible>[Control.IsVisible(50) | Control.IsVisible(500) | Control.IsVisible(56) | Control.IsVisible(55)]</visible>
+                            <visible>[Control.IsVisible(50) | Control.IsVisible(500) | Control.IsVisible(55)]</visible>
                             <height>720</height>
                         </include>
                         <include content="Viewtype_BackPanel">
                             <include>Animation_Down</include>
                             <visible>!Integer.IsEqual(Container.NumItems,0)</visible>
-                            <visible>![Control.IsVisible(50) | Control.IsVisible(500) | Control.IsVisible(55) | Control.IsVisible(56)]</visible>
+                            <visible>![Control.IsVisible(50) | Control.IsVisible(500) | Control.IsVisible(55)]</visible>
                             <height>480</height>
                         </include>
                         <include>View_50_FileList</include>
@@ -990,7 +992,7 @@
                 <width>110</width>
                 <texture border="0,50,50,50" colordiffuse="$PARAM[colordiffuse-texture]" flipx="true">$PARAM[texture]</texture>
             </control>
-            <control type="group">
+            <!-- <control type="group">
                 <visible>!String.IsEqual(ListItem.DBType,genre) + !String.EndsWith(Container.FolderPath,Genres)</visible>
                 <control type="image">
                     <left>24</left>
@@ -1008,9 +1010,9 @@
                     <texture colordiffuse="$PARAM[colordiffuse-icon]">$INFO[ListItem.Property(icon)]</texture>
                     <visible>!String.IsEmpty(ListItem.Property(icon))</visible>
                 </control>
-            </control>
+            </control> -->
             <control type="label">
-                <left>90</left>
+                <left>40</left>
                 <align>center</align>
                 <right>30</right>
                 <font>font_info_buttons</font>

@@ -1,16 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
     <include name="View_56_Hubs">
+        <include content="Viewtype_Buttons">
+            <param name="id" value="56" />
+            <param name="itemlayout-width" value="280" />
+            <param name="offset" value="0" />
+            <param name="control-type" value="fixedlist" />
+            <movement>3</movement>
+            <preloaditems>2</preloaditems>
+            <height>120</height>
+            <width>1120</width>
+            <pagecontrol>61</pagecontrol>
+            <onup>SetFocus(9000)</onup>
+            <ondown>560</ondown>
+            <onfocus>SetProperty(TMDbHelper.WidgetContainer,560,Home)</onfocus>
+            <left>-20</left>
+            <bottom>400</bottom>
+            <animation effect="fade" start="0" end="100" time="400" tween="cubic" easing="inout" reversible="false" delay="200" condition="Container.Content(playlists) | Container.Content(tags) | Container.Content(countries) | Container.Content(genres) | Container.Content(studios) | Container.Content(years) | Container.Content(directors)">Conditional</animation>
+            <visible>Container.Content(playlists) | Container.Content(tags) | Container.Content(countries) | Container.Content(genres) | Container.Content(studios) | Container.Content(years) | Container.Content(directors)</visible>
+        </include>
+        <include content="View_Info_Grouplist">
+            <param name="title" value="$INFO[Container(560).ListItem.Title]" />
+            <param name="container" value="Container(560)." />
+            <param name="plot" value="$INFO[Container(560).ListItem.Plot]" />
+            <param name="plotheight" value="auto" />
+            <top>-15</top>
+            <height>285</height>
+            <visible>Control.IsVisible(56)</visible>
+            <include>Viewtype_Info_Right</include>
+            <visible>Integer.IsGreater(Container(560).NumItems,0)</visible>
+        </include>
         <control type="group">
             <visible>Control.IsVisible(56)</visible>
             <include>Animation_Down</include>
-            <include content="Home_Hub_Widget_Label">
+            <!-- <include content="Home_Hub_Widget_Label">
                 <param name="id" value="56" />
                 <param name="label" value="$VAR[Label_Header_Center]" />
                 <param name="altlabel" value="$INFO[Control.GetLabel(3),, ]$INFO[Control.GetLabel(4)]" />
                 <top>118</top>
-            </include>
-            <include content="Viewtype_Square">
+            </include> -->
+            <!-- <include content="Viewtype_Square">
                 <param name="id" value="56" />
                 <param name="itemlayout-height" value="170" />
                 <param name="textbox-height" value="50" />
@@ -21,7 +50,7 @@
                 <onup>304</onup>
                 <visible>Container.Content(playlists) | Container.Content(tags) | Container.Content(countries) | Container.Content(genres) | Container.Content(studios) | Container.Content(years) | Container.Content(directors)</visible>
                 <visible>!Window.IsVisible(MyPlaylist.xml)</visible>
-            </include>
+            </include> -->
             <include content="Viewtype_Landscape">
                 <animation effect="fade" start="100" end="0" condition="Container(560).IsUpdating">Conditional</animation>
                 <param name="id" value="560" />
@@ -34,6 +63,8 @@
                 <onclick condition="ListItem.IsFolder">Container.Update($INFO[ListItem.FolderPath])</onclick>
                 <onclick>SetFocus(56)</onclick>
                 <onback>56</onback>
+                <pagecontrol>60</pagecontrol>
+                <ondown>SetFocus(60)</ondown>
                 <content target="videos">$INFO[Container(56).ListItem.FolderPath]</content>
             </include>
             <include content="Home_Hub_Widget_Label">

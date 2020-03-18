@@ -11,6 +11,7 @@
                 <right>-80</right>
                 <bottom>-20</bottom>
                 <pagecontrol>60</pagecontrol>
+                <onfocus>ClearProperty(TMDbHelper.WidgetContainer,Home)</onfocus>
                 <include>Viewtype_Movement</include>
                 <visible>[Container.Content(addons) + String.IsEmpty(Container.PluginName)] | Container.Content(albums) | Container.Content(images)</visible>
                 <visible>!Window.IsVisible(MyPlaylist.xml)</visible>

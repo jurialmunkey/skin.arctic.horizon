@@ -16,6 +16,7 @@
                 <bottom>-20</bottom>
                 <pagecontrol>60</pagecontrol>
                 <include>Viewtype_Movement</include>
+                <onfocus>ClearProperty(TMDbHelper.WidgetContainer,Home)</onfocus>
                 <visible>Container.Content() + String.IsEmpty(Container.PluginName)</visible>
                 <visible>!Window.IsVisible(MyPlaylist.xml)</visible>
             </include>

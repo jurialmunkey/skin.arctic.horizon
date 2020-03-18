@@ -12,6 +12,7 @@
                 <bottom>-20</bottom>
                 <include>Viewtype_Movement</include>
                 <pagecontrol>60</pagecontrol>
+                <onfocus>ClearProperty(TMDbHelper.WidgetContainer,Home)</onfocus>
                 <visible>Container.Content(artists) | Container.Content(episodes) | Container.Content(videos) | Container.Content(sets) | String.IsEqual(Container.PluginName,plugin.video.abc_iview) | Window.IsVisible(MyPVRRecordings.xml) | String.StartsWith(Container.FolderPath,plugin://plugin.video.themoviedb.helper/?info=fanart)</visible>
                 <visible>!Window.IsVisible(MyPlaylist.xml)</visible>
             </include>
