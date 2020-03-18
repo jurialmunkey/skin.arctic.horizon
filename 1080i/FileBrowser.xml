@@ -54,7 +54,10 @@
                     </itemlayout>
                     <focusedlayout height="156" width="156" condition="[[String.StartsWith(ListItem.FolderPath,special://skin/extras/icons/) + !String.IsEqual(ListItem.Label,icons)]  | [String.StartsWith(Container(450).ListItem(1).FolderPath,special://skin/extras/icons/) + ListItem.IsParentFolder]]">
                         <control type="image">
-                            <texture colordiffuse="$VAR[ColorHighlight]">common/white.png</texture>
+                            <texture colordiffuse="$VAR[ColorHighlight]" border="10">common/box.png</texture>
+                        </control>
+                        <control type="image">
+                            <texture colordiffuse="$VAR[ColorHighlight3]" border="10">common/box-gradient.png</texture>
                         </control>
                         <control type="image">
                             <bordersize>15</bordersize>

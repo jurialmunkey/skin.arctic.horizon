@@ -140,7 +140,7 @@
                         <height>64</height>
                         <left>-8</left>
                         <aspectratio align="right">keep</aspectratio>
-                        <texture colordiffuse="$VAR[ColorHighlight]">special://skin/extras/icons/kodi.png</texture>
+                        <texture colordiffuse="$VAR[ColorHighlight]">$VAR[Image_SkinLogo]</texture>
                     </control>
                     <control type="list" id="$PARAM[id]">
                         <nested />

@@ -152,15 +152,25 @@
                 <control type="image">
                     <left>16</left>
                     <width>128</width>
-                    <bordersize>8</bordersize>
-                    <texture colordiffuse="$VAR[ColorHighlight]">special://skin/extras/icons/kodi.png</texture>
+                    <bordersize>20</bordersize>
+                    <visible>!Skin.HasSetting(ProfilePicture)</visible>
+                    <texture colordiffuse="$VAR[ColorHighlight]">$VAR[Image_SkinLogo]</texture>
                 </control>
-                <!-- <control type="image">
-                    <left>16</left>
-                    <width>128</width>
-                    <bordersize>32</bordersize>
-                    <texture diffuse="diffuse/circle.png">$INFO[System.ProfileThumb]</texture>
-                </control> -->
+                <control type="group">
+                    <visible>Skin.HasSetting(ProfilePicture)</visible>
+                    <control type="image">
+                        <left>16</left>
+                        <width>128</width>
+                        <bordersize>35</bordersize>
+                        <texture colordiffuse="dialog_fg_70">diffuse/circle.png</texture>
+                    </control>
+                    <control type="image">
+                        <left>16</left>
+                        <width>128</width>
+                        <bordersize>38</bordersize>
+                        <texture diffuse="diffuse/circle.png">$INFO[System.ProfileThumb]</texture>
+                    </control>
+                </control>
                 <control type="label">
                     <top>3</top>
                     <left>140</left>

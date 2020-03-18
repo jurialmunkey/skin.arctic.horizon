@@ -165,6 +165,23 @@
                         <onclick>RunScript(script.toolbox,info=selectdialog,header=$LOCALIZE[31150])</onclick>
                     </control>
 
+                    <control type="radiobutton" id="19107" description="Profile Pic">
+                        <visible>Integer.IsEqual(Window.Property(CurrentFocus),9001)</visible>
+                        <include>Defs_Settings_Button</include>
+                        <label>Display profile picture</label>
+                        <selected>Skin.HasSetting(ProfilePicture)</selected>
+                        <onclick>Skin.ToggleSetting(ProfilePicture)</onclick>
+                    </control>
+
+                    <control type="button" id="19108" description="Profile Pic">
+                        <visible>Integer.IsEqual(Window.Property(CurrentFocus),9001)</visible>
+                        <include>Defs_Settings_Button</include>
+                        <label>Choose skin logo</label>
+                        <label2>$INFO[Skin.String(SkinLogo)]</label2>
+                        <onclick>Skin.SetImage(SkinLogo,special://skin/extras/icons/)</onclick>
+                    </control>
+
+
                     
 
                     <!-- ========== -->

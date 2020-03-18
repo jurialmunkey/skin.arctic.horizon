@@ -99,7 +99,7 @@
                         <height>64</height>
                         <left>-8</left>
                         <aspectratio align="right">keep</aspectratio>
-                        <texture colordiffuse="dialog_fg_70">special://skin/extras/icons/kodi.png</texture>
+                        <texture colordiffuse="dialog_fg_70">$VAR[Image_SkinLogo]</texture>
                     </control>
                     <control type="list" id="1103">
                         <onleft>Back</onleft>
