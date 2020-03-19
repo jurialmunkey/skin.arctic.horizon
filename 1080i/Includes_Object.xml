@@ -2409,6 +2409,7 @@
     <include name="Object_Scrollbar_Horz">
         <control type="scrollbar" id="60">
             <onback>50</onback>
+            <ondown>SetFocus(9200)</ondown>
             <height>8</height>
             <left>view_pad</left>
             <right>view_pad</right>
@@ -2442,6 +2443,7 @@
             <centerbottom>30</centerbottom>
             <onup>50</onup>
             <onback>50</onback>
+            <ondown>SetFocus(9200)</ondown>
             <onright>SetFocus(50)</onright>
             <onright>Action(nextletter)</onright>
             <onright condition="!Container.HasNext | String.IsEqual(ListItem.SortLetter,Z)">Action(jumpsms2)</onright>
@@ -2578,14 +2580,14 @@
                 <include>Animation_Left_Delay</include>
                 <include>Defs_InfoDialog_Visible</include>
                 <visible>$EXP[Exp_ShowPlotOverlay]</visible>
-                <visible>[String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,episode) | String.IsEqual(ListItem.DBType,set) | String.IsEqual(ListItem.DBType,actor)]</visible>
+                <visible>[String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,episode) | String.IsEqual(ListItem.DBType,set) | String.IsEqual(ListItem.DBType,actor) | String.IsEqual(ListItem.DBType,season)]</visible>
             </include>
             <include content="DialogVideoInfo_Left">
                 <param name="poster" value="false" />
                 <include>Animation_Left_Delay</include>
                 <include>Defs_InfoDialog_Visible</include>
                 <visible>$EXP[Exp_ShowPlotOverlay]</visible>
-                <visible>![String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,episode) | String.IsEqual(ListItem.DBType,set) | String.IsEqual(ListItem.DBType,actor)]</visible>
+                <visible>![String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,episode) | String.IsEqual(ListItem.DBType,set) | String.IsEqual(ListItem.DBType,actor) | String.IsEqual(ListItem.DBType,season)]</visible>
                 <control type="group">
                     <top>view_top</top>
                     <left>view_pad</left>
