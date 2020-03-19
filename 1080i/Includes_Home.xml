@@ -190,6 +190,7 @@
             <control type="list" id="$PARAM[id]">
                 <nested />
                 <orientation>horizontal</orientation>
+                <scrolltime tween="quadratic">400</scrolltime>
                 <itemlayout width="1920" height="1080">
                     <control type="image">
                         <texture background="true">$VAR[Image_Fanart]</texture>
@@ -201,6 +202,9 @@
                     </control>
                 </focusedlayout>
                 <content target="videos" sortby="random">$PARAM[content]</content>
+                <include content="Defs_AutoScroll">
+                    <param name="condition" value="!Control.HasFocus(3001) + System.IdleTime(1) + !Skin.HasSetting(DisableAutoScrollWidgets)" />
+                </include>
             </control>
             
             <include content="Home_Widget_Fullscreen_Info">
