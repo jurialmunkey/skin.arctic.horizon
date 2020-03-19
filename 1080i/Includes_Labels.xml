@@ -6,7 +6,7 @@
     </variable>
 
     <variable name="Label_Hub_WidgetName">
-        <value condition="">$INFO[Container(302).ListItem.Property(widgetName)]</value>
+        <value condition="!String.IsEmpty(Container(302).ListItem.Property(widgetPath))">$INFO[Container(302).ListItem.Property(widgetName)]</value>
         <value>$INFO[Window(Home).Property(Hub.widgetName)]</value>
     </variable>
 
