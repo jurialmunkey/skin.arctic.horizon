@@ -134,6 +134,7 @@
         <param name="hideisupdating" default="false" />
         <param name="viewtype-include" default="Viewtype_Poster" />
         <param name="widget-type" default="infowidgets" />
+        <param name="issubmenu" default="false" />
         <definition>
             <include content="View_Cast_Toplabel" condition="$PARAM[includecondition]">
                 <param name="groupid" value="$PARAM[groupid]" />
@@ -143,7 +144,7 @@
                 <param name="widget-type" value="$PARAM[widget-type]" />
                 <visible>$PARAM[visible]</visible>
                 <visible>$PARAM[label-visible]</visible>
-                <visible>Integer.IsGreater(Container($PARAM[id]).NumItems,$PARAM[minnumitems]) | Container($PARAM[id]).IsUpdating</visible>
+                <visible>[Integer.IsGreater(Container($PARAM[id]).NumItems,$PARAM[minnumitems]) | Container($PARAM[id]).IsUpdating] | $PARAM[issubmenu]</visible>
                 <left>85</left>
             </include>
             <include content="$PARAM[viewtype-include]" condition="$PARAM[includecondition]">
@@ -158,7 +159,7 @@
                 <left>20</left>
                 <right>20</right>
                 <visible>$PARAM[visible]</visible>
-                <visible>Integer.IsGreater(Container($PARAM[id]).NumItems,$PARAM[minnumitems]) | Container($PARAM[id]).IsUpdating</visible>
+                <visible>[Integer.IsGreater(Container($PARAM[id]).NumItems,$PARAM[minnumitems]) | Container($PARAM[id]).IsUpdating] | $PARAM[issubmenu]</visible>
                 <animation effect="fade" start="100" end="0" condition="!Integer.IsGreater(Container($PARAM[id]).NumItems,$PARAM[minnumitems])  | [Container($PARAM[id]).IsUpdating + $PARAM[hideisupdating]]">Conditional</animation>
                 <movement>6</movement>
             </include>

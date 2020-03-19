@@ -226,6 +226,7 @@
                     <param name="visible" value="true" />
                     <param name="viewtype-include" value="$SKINSHORTCUTS[widgetInclude]" />
                     <param name="widget-type" value="widgets" />
+                    <param name="issubmenu" value="$SKINSHORTCUTS[widgetSubmenu]" />
                     <onback>SetFocus($PYTHON[int(mainmenuid)]3101)</onback>
                     <onback>301</onback>
                     <onfocus>SetProperty(TMDbHelper.WidgetContainer,$NUMBER[$PYTHON[30000 + int(mainmenuid) * 100 + int(id)]],Home)</onfocus>
