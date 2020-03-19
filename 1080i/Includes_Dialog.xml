@@ -68,63 +68,63 @@
                 <visible>$PARAM[visible]</visible>
                 <control type="group">
                     <visible>Integer.IsGreater(Container($PARAM[id]).NumItems,7)</visible>
-                    <height>766</height>
+                    <height>768</height>
                     <include>Defs_Powermenu_Group</include>
                     <include>Defs_Options_Texture</include>
                 </control>
                 <control type="group">
                     <visible>Integer.IsEqual(Container($PARAM[id]).NumItems,7)</visible>
-                    <height>684</height>
+                    <height>688</height>
                     <include>Defs_Powermenu_Group</include>
                     <include>Defs_Options_Texture</include>
                 </control>
                 <control type="group">
                     <visible>Integer.IsEqual(Container($PARAM[id]).NumItems,6)</visible>
-                    <height>602</height>
+                    <height>608</height>
                     <include>Defs_Powermenu_Group</include>
                     <include>Defs_Options_Texture</include>
                 </control>
                 <control type="group">
                     <visible>Integer.IsEqual(Container($PARAM[id]).NumItems,5)</visible>
-                    <height>520</height>
+                    <height>528</height>
                     <include>Defs_Powermenu_Group</include>
                     <include>Defs_Options_Texture</include>
                 </control>
                 <control type="group">
                     <visible>Integer.IsEqual(Container($PARAM[id]).NumItems,4)</visible>
-                    <height>438</height>
+                    <height>448</height>
                     <include>Defs_Powermenu_Group</include>
                     <include>Defs_Options_Texture</include>
                 </control>
                 <control type="group">
                     <visible>Integer.IsEqual(Container($PARAM[id]).NumItems,3)</visible>
-                    <height>356</height>
+                    <height>368</height>
                     <include>Defs_Powermenu_Group</include>
                     <include>Defs_Options_Texture</include>
                 </control>
                 <control type="group">
                     <visible>Integer.IsEqual(Container($PARAM[id]).NumItems,2)</visible>
-                    <height>274</height>
+                    <height>288</height>
                     <include>Defs_Powermenu_Group</include>
                     <include>Defs_Options_Texture</include>
                 </control>
                 <control type="group">
                     <visible>Integer.IsEqual(Container($PARAM[id]).NumItems,1)</visible>
-                    <height>192</height>
+                    <height>208</height>
                     <include>Defs_Powermenu_Group</include>
                     <include>Defs_Options_Texture</include>
                 </control>
                 <control type="group">
-                    <animation effect="slide" end="0,41" condition="Integer.IsLess(Container($PARAM[id]).NumItems,8)">Conditional</animation>
-                    <animation effect="slide" end="0,41" condition="Integer.IsLess(Container($PARAM[id]).NumItems,7)">Conditional</animation>
-                    <animation effect="slide" end="0,41" condition="Integer.IsLess(Container($PARAM[id]).NumItems,6)">Conditional</animation>
-                    <animation effect="slide" end="0,41" condition="Integer.IsLess(Container($PARAM[id]).NumItems,5)">Conditional</animation>
-                    <animation effect="slide" end="0,41" condition="Integer.IsLess(Container($PARAM[id]).NumItems,4)">Conditional</animation>
-                    <animation effect="slide" end="0,41" condition="Integer.IsLess(Container($PARAM[id]).NumItems,3)">Conditional</animation>
-                    <animation effect="slide" end="0,41" condition="Integer.IsLess(Container($PARAM[id]).NumItems,2)">Conditional</animation>
+                    <animation effect="slide" end="0,item_list_height_half" condition="Integer.IsLess(Container($PARAM[id]).NumItems,8)">Conditional</animation>
+                    <animation effect="slide" end="0,item_list_height_half" condition="Integer.IsLess(Container($PARAM[id]).NumItems,7)">Conditional</animation>
+                    <animation effect="slide" end="0,item_list_height_half" condition="Integer.IsLess(Container($PARAM[id]).NumItems,6)">Conditional</animation>
+                    <animation effect="slide" end="0,item_list_height_half" condition="Integer.IsLess(Container($PARAM[id]).NumItems,5)">Conditional</animation>
+                    <animation effect="slide" end="0,item_list_height_half" condition="Integer.IsLess(Container($PARAM[id]).NumItems,4)">Conditional</animation>
+                    <animation effect="slide" end="0,item_list_height_half" condition="Integer.IsLess(Container($PARAM[id]).NumItems,3)">Conditional</animation>
+                    <animation effect="slide" end="0,item_list_height_half" condition="Integer.IsLess(Container($PARAM[id]).NumItems,2)">Conditional</animation>
                     <include>Defs_Powermenu_Group</include>
                     <control type="label">
-                        <top>-45</top>
+                        <top>-36</top>
                         <width>458</width>
                         <height>item_list_height</height>
                         <left>8</left>
@@ -135,7 +135,7 @@
                         <textoffsetx>30</textoffsetx>
                     </control>
                     <control type="image">
-                        <top>-37</top>
+                        <top>-30</top>
                         <width>458</width>
                         <height>64</height>
                         <left>-8</left>
@@ -143,10 +143,9 @@
                         <texture colordiffuse="$VAR[ColorHighlight]">$VAR[Image_SkinLogo]</texture>
                     </control>
                     <control type="list" id="$PARAM[id]">
-                        <nested />
                         <onleft>Back</onleft>
                         <onright>Back</onright>
-                        <top>39</top>
+                        <top>48</top>
                         <include>Defs_Options_Grouplist</include>
                         <itemlayout width="450" height="item_list_height">
                             <control type="label">

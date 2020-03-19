@@ -16,8 +16,8 @@
             <onfocus>SetProperty(TMDbHelper.WidgetContainer,560,Home)</onfocus>
             <left>-20</left>
             <bottom>400</bottom>
-            <animation effect="fade" start="0" end="100" time="400" tween="cubic" easing="inout" reversible="false" delay="200" condition="Container.Content(playlists) | Container.Content(tags) | Container.Content(countries) | Container.Content(genres) | Container.Content(studios) | Container.Content(years) | Container.Content(directors)">Conditional</animation>
-            <visible>Container.Content(playlists) | Container.Content(tags) | Container.Content(countries) | Container.Content(genres) | Container.Content(studios) | Container.Content(years) | Container.Content(directors)</visible>
+            <animation effect="fade" start="0" end="100" time="400" tween="cubic" easing="inout" reversible="false" delay="200" condition="$EXP[Exp_View56Hubs]">Conditional</animation>
+            <visible>$EXP[Exp_View56Hubs]</visible>
         </include>
         <include content="View_Info_Grouplist">
             <param name="title" value="$INFO[Container(560).ListItem.Title]" />

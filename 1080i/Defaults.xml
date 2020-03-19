@@ -202,6 +202,10 @@
         <autoscroll delay="6000" time="3000" repeat="10000"/>
     </default>
 
+    <expression name="Exp_View55Tags">[[Container.Content(playlists) | [Container.Content() + String.IsEmpty(Container.PluginName)] | [[Container.Content(tags) | Container.Content(countries) | Container.Content(genres) | Container.Content(studios) | Container.Content(years) | Container.Content(directors)] + !String.IsEmpty(Container.PluginName)]] + !Window.IsVisible(MyPlaylist.xml)]</expression>
+
+    <expression name="Exp_View56Hubs">[[Container.Content(tags) | Container.Content(countries) | Container.Content(genres) | Container.Content(studios) | Container.Content(years) | Container.Content(directors)] + String.IsEmpty(Container.PluginName)]</expression>
+
     <expression name="Exp_TrailerWindow">[Control.HasFocus(9608) + Player.HasVideo]</expression>
 
     <expression name="Exp_SortLetterIsNumber">[String.IsEqual(ListItem.SortLetter,$NUMBER[0]) | String.IsEqual(ListItem.SortLetter,$NUMBER[1]) | String.IsEqual(ListItem.SortLetter,$NUMBER[2]) | String.IsEqual(ListItem.SortLetter,$NUMBER[3]) | String.IsEqual(ListItem.SortLetter,$NUMBER[4]) | String.IsEqual(ListItem.SortLetter,$NUMBER[5]) | String.IsEqual(ListItem.SortLetter,$NUMBER[6]) | String.IsEqual(ListItem.SortLetter,$NUMBER[7]) | String.IsEqual(ListItem.SortLetter,$NUMBER[8]) | String.IsEqual(ListItem.SortLetter,$NUMBER[9])]</expression>

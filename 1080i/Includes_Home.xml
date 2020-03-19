@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
 
+    <include name="Home_Submenu_Content"><content><include>skinshortcuts-submenu</include></content></include>
+
     <include name="Home_Movement_Widgets_UpDown">
         <onup>ClearProperty(CurrentWidget)</onup>
         <ondown>ClearProperty(CurrentWidget)</ondown>
@@ -50,7 +52,7 @@
                             <left>-2000</left>
                             <include>Home_Movement_UpDown</include>
                             <onleft>ClearProperty(WidgetMovement)</onleft>
-                            <onleft>301</onleft>
+                            <onleft>SetFocus(302)</onleft>
                             <include>skinshortcuts-template-onright</include>
                             <onright>ClearProperty(WidgetMovement)</onright>
                             <onclick>ClearProperty(WidgetMovement)</onclick>
@@ -135,8 +137,31 @@
                 </control>
                 <include>Topbar_Left</include>
             </control>
-                
-                
+
+            <!-- <control type="group">
+                <animation effect="fade" start="0" end="100" condition="Control.HasFocus(302)" reversible="false">Conditional</animation>
+                <animation effect="fade" start="100" end="0" condition="!Control.HasFocus(302)" reversible="false">Conditional</animation>
+                <include>Global_Overlay</include>
+            
+                <control type="group">
+                    <left>-1368</left>
+                    <top>40</top>
+                    <animation effect="slide" end="0,-40" condition="Integer.IsLess(Container(302).NumItems,8)">Conditional</animation>
+                    <animation effect="slide" end="0,-40" condition="Integer.IsLess(Container(302).NumItems,7)">Conditional</animation>
+                    <animation effect="slide" end="0,-40" condition="Integer.IsLess(Container(302).NumItems,6)">Conditional</animation>
+                    <animation effect="slide" end="0,-40" condition="Integer.IsLess(Container(302).NumItems,5)">Conditional</animation>
+                    <animation effect="slide" end="0,-40" condition="Integer.IsLess(Container(302).NumItems,4)">Conditional</animation>
+                    <animation effect="slide" end="0,-40" condition="Integer.IsLess(Container(302).NumItems,3)">Conditional</animation>
+                    <animation effect="slide" end="0,-40" condition="Integer.IsLess(Container(302).NumItems,2)">Conditional</animation>
+                    <include content="Dialog_PowerMenu">
+                        <param name="id" value="302" />
+                        <param name="header" value="Submenu" />
+                        <param name="items" value="Home_Submenu_Content" />
+                        <param name="visible" value="true" />
+                        <param name="icon-visible" value="true" />
+                    </include>
+                </control>
+            </control> -->
         </include>
 
         <!-- Clock -->
@@ -373,6 +398,7 @@
                         <param name="focusbutton" value="$PARAM[focusbutton]" />
                         <onfocus>ClearProperty(TMDbHelper.WidgetContainer,Home)</onfocus>
                         <onback>3000</onback>
+                        <onleft>SetFocus(302)</onleft>
                         <onfocus>ClearProperty(WidgetMovement)</onfocus>
                         <onfocus>ClearProperty(WidgetFocus)</onfocus>
                         <onfocus condition="String.IsEmpty(Window.Property(301Click))">SetFocus(3992)</onfocus>

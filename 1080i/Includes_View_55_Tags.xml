@@ -17,8 +17,7 @@
                 <pagecontrol>60</pagecontrol>
                 <include>Viewtype_Movement</include>
                 <onfocus>ClearProperty(TMDbHelper.WidgetContainer,Home)</onfocus>
-                <visible>Container.Content() + String.IsEmpty(Container.PluginName)</visible>
-                <visible>!Window.IsVisible(MyPlaylist.xml)</visible>
+                <visible>$EXP[Exp_View55Tags]</visible>
             </include>
 
             <include content="Home_Hub_Widget_Label">
