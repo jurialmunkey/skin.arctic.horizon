@@ -11,7 +11,7 @@
         <control type="group">
             <include content="Dialog_Standard_Group">
                 <param name="width" value="1820" />
-                <param name="height" value="970" />
+                <param name="height" value="950" />
             </include>
 
             <control type="label" id="2">

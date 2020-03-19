@@ -162,13 +162,14 @@
             <include content="Object_Info_Line">
                 <param name="container" value="Container($PARAM[id])." />
             </include>
-            <include content="Object_Info_Ratings">
+            <!-- <include content="Object_Info_Ratings">
                 <param name="container" value="Container($PARAM[id])." />
-            </include>
+            </include> -->
             <include content="Object_Info_Plot">
                 <param name="maxheight" value="80" />
                 <param name="height" value="auto" />
                 <param name="label" value="$INFO[Container($PARAM[id]).ListItem.Plot]" />
+                <top>10</top>
             </include>
         </control>
         <control type="image">
