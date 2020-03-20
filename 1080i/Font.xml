@@ -88,6 +88,13 @@
             <aspect>0.9</aspect>
         </font>
         <font>
+            <name>font_plotbox_small</name>
+            <filename>Roboto-Regular-Linespacing.ttf</filename>
+            <linespacing>1</linespacing>
+            <size>25</size>
+            <aspect>0.9</aspect>
+        </font>
+        <font>
             <name>font_weather_small</name>
             <filename>Roboto-Regular-Linespacing.ttf</filename>
             <size>26</size>

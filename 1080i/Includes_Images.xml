@@ -6,6 +6,13 @@
         <value>special://skin/extras/icons/kodi.png</value>
     </variable>
 
+    <variable name="Image_ClearArt_Widget">
+        <value condition="!String.IsEmpty(ListItem.Art(clearart))">$INFO[ListItem.Art(clearart)]</value>
+        <value condition="!String.IsEmpty(ListItem.Art(tvshow.clearart))">$INFO[ListItem.Art(tvshow.clearart)]</value>
+        <value condition="!String.IsEmpty(ListItem.Art(clearlogo))">$INFO[ListItem.Art(clearlogo)]</value>
+        <value condition="!String.IsEmpty(ListItem.Art(tvshow.clearlogo))">$INFO[ListItem.Art(tvshow.clearlogo)]</value>
+    </variable>
+
     <variable name="Image_ClearArt">
         <value condition="!String.IsEmpty(ListItem.Art(clearart))">$INFO[ListItem.Art(clearart)]</value>
         <value condition="!String.IsEmpty(ListItem.Art(tvshow.clearart))">$INFO[ListItem.Art(tvshow.clearart)]</value>
