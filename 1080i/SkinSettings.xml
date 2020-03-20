@@ -165,10 +165,24 @@
                         <onclick>RunScript(script.toolbox,info=selectdialog,header=$LOCALIZE[31150])</onclick>
                     </control>
 
+                    <control type="radiobutton" id="19109" description="Autoscroll Widgets">
+                        <visible>Integer.IsEqual(Window.Property(CurrentFocus),9001)</visible>
+                        <include>Defs_Settings_Button</include>
+                        <label>Widget autoscroll</label>
+                        <selected>!Skin.HasSetting(DisableAutoScrollWidgets)</selected>
+                        <onclick>Skin.ToggleSetting(DisableAutoScrollWidgets)</onclick>
+                    </control>
+
+                    <control type="label" id="19182" description="LABEL">
+                        <visible>Integer.IsEqual(Window.Property(CurrentFocus),9001)</visible>
+                        <include>Dialog_Standard_HintLabel</include>
+                        <label>Logos and Icons</label>
+                    </control>
+
                     <control type="radiobutton" id="19107" description="Profile Pic">
                         <visible>Integer.IsEqual(Window.Property(CurrentFocus),9001)</visible>
                         <include>Defs_Settings_Button</include>
-                        <label>Display profile picture</label>
+                        <label>Show profile picture on main menu</label>
                         <selected>Skin.HasSetting(ProfilePicture)</selected>
                         <onclick>Skin.ToggleSetting(ProfilePicture)</onclick>
                     </control>
@@ -176,10 +190,12 @@
                     <control type="button" id="19108" description="Profile Pic">
                         <visible>Integer.IsEqual(Window.Property(CurrentFocus),9001)</visible>
                         <include>Defs_Settings_Button</include>
-                        <label>Choose skin logo</label>
+                        <label>Skin logo</label>
                         <label2>$INFO[Skin.String(SkinLogo)]</label2>
                         <onclick>Skin.SetImage(SkinLogo,special://skin/extras/icons/)</onclick>
                     </control>
+
+
 
 
                     
@@ -187,23 +203,11 @@
                     <!-- ========== -->
                     <!-- Background -->
                     <!-- ========== -->
+
                     <control type="label" id="19281" description="LABEL">
                         <visible>Integer.IsEqual(Window.Property(CurrentFocus),9002)</visible>
                         <include>Dialog_Standard_HintLabel</include>
                         <label>$LOCALIZE[31140]</label>
-                    </control>
-
-                    <control type="radiobutton" id="19202" description="Blur background fanart">
-                        <visible>Integer.IsEqual(Window.Property(CurrentFocus),9002)</visible>
-                        <include>Defs_Settings_Button</include>
-                        <label>Background style</label>
-                        <label2>$VAR[Label_Setting_BackgroundStyle]</label2>
-                        <include>Defs_RadioButton_NoTexture</include>
-                        <onclick condition="!System.HasAddon(script.colorbox)">InstallAddon(script.colorbox)</onclick>
-                        <onclick condition="System.HasAddon(script.colorbox) + [!System.HasAddon(script.colorbox) | Skin.HasSetting(DisableBlur)]">SetProperty(FIVE_daemon_set,blur,home)</onclick>
-                        <onclick condition="System.HasAddon(script.colorbox) + [!System.HasAddon(script.colorbox) | Skin.HasSetting(DisableBlur)]">RunScript(script.colorbox,daemon=True)</onclick>
-                        <onclick condition="System.HasAddon(script.colorbox) + [!System.HasAddon(script.colorbox) | Skin.HasSetting(DisableBlur)]">AlarmClock(nms1,SetProperty(NINE_manual_set,"var=quality,set=$INFO[Skin.String(colorbox_quality)]|var=blursize,set=$INFO[Skin.String(colorbox_blursize)]|var=bitsize,set=$INFO[Skin.String(colorbox_bitsize)]|var=pixelsize,set=$INFO[Skin.String(colorbox_pixelsize)]|var=black,set=$INFO[Skin.String(colorbox_black)]|var=white,set=$INFO[Skin.String(colorbox_white)]",home),00:05,true)</onclick>
-                        <onclick condition="System.HasAddon(script.colorbox)">Skin.ToggleSetting(DisableBlur)</onclick>
                     </control>
 
                     <control type="radiobutton" id="19201" description="No fanart">
@@ -225,14 +229,6 @@
                         <onclick>SetProperty(Dialog.2.Label,$LOCALIZE[31271])</onclick>
                         <onclick>SetProperty(Dialog.2.BuiltIn,Skin.SetImage(fanart.fallback))</onclick>
                         <onclick>RunScript(script.toolbox,info=selectdialog,header=$LOCALIZE[31150])</onclick>
-                    </control>
-
-                    <control type="radiobutton" id="19205" description="Show video in background">
-                        <visible>Integer.IsEqual(Window.Property(CurrentFocus),9002)</visible>
-                        <include>Defs_Settings_Button</include>
-                        <label>31111</label>
-                        <selected>Skin.HasSetting(global.showvideo)</selected>
-                        <onclick>Skin.ToggleSetting(global.showvideo)</onclick>
                     </control>
 
                     <control type="button" id="192047" description="Set Timer Per Image">
@@ -258,14 +254,35 @@
                         <onclick>RunScript(script.toolbox,info=selectdialog,header=$LOCALIZE[31128])</onclick>
                     </control>
 
-                    <!-- <control type="button" id="192055" description="Blur settings">
+                    <control type="radiobutton" id="19205" description="Show video in background">
                         <visible>Integer.IsEqual(Window.Property(CurrentFocus),9002)</visible>
                         <include>Defs_Settings_Button</include>
-                        <label>$LOCALIZE[31060]</label>
-                        <onclick>ActivateWindow(1116)</onclick>
-                        <enable>![!System.HasAddon(script.colorbox) | Skin.HasSetting(DisableBlur)] + System.HasAddon(script.colorbox)</enable>
-                    </control> -->
+                        <label>31111</label>
+                        <selected>Skin.HasSetting(global.showvideo)</selected>
+                        <onclick>Skin.ToggleSetting(global.showvideo)</onclick>
+                    </control>
 
+                    <control type="label" id="19283" description="LABEL">
+                        <visible>Integer.IsEqual(Window.Property(CurrentFocus),9002)</visible>
+                        <include>Dialog_Standard_HintLabel</include>
+                        <label>Background Effects</label>
+                    </control>
+
+
+                    <control type="radiobutton" id="19202" description="Blur background fanart">
+                        <visible>Integer.IsEqual(Window.Property(CurrentFocus),9002)</visible>
+                        <include>Defs_Settings_Button</include>
+                        <label>Background style</label>
+                        <label2>$VAR[Label_Setting_BackgroundStyle]</label2>
+                        <include>Defs_RadioButton_NoTexture</include>
+                        <onclick condition="!System.HasAddon(script.colorbox)">InstallAddon(script.colorbox)</onclick>
+                        <onclick condition="System.HasAddon(script.colorbox) + [!System.HasAddon(script.colorbox) | Skin.HasSetting(DisableBlur)]">SetProperty(FIVE_daemon_set,blur,home)</onclick>
+                        <onclick condition="System.HasAddon(script.colorbox) + [!System.HasAddon(script.colorbox) | Skin.HasSetting(DisableBlur)]">RunScript(script.colorbox,daemon=True)</onclick>
+                        <onclick condition="System.HasAddon(script.colorbox) + [!System.HasAddon(script.colorbox) | Skin.HasSetting(DisableBlur)]">AlarmClock(nms1,SetProperty(NINE_manual_set,"var=quality,set=$INFO[Skin.String(colorbox_quality)]|var=blursize,set=$INFO[Skin.String(colorbox_blursize)]|var=bitsize,set=$INFO[Skin.String(colorbox_bitsize)]|var=pixelsize,set=$INFO[Skin.String(colorbox_pixelsize)]|var=black,set=$INFO[Skin.String(colorbox_black)]|var=white,set=$INFO[Skin.String(colorbox_white)]",home),00:05,true)</onclick>
+                        <onclick condition="System.HasAddon(script.colorbox)">Skin.ToggleSetting(DisableBlur)</onclick>
+                    </control>
+
+                    
                     <control type="radiobutton" id="19208" description="Use poster for blur">
                         <visible>Integer.IsEqual(Window.Property(CurrentFocus),9002)</visible>
                         <include>Defs_Settings_Button</include>
@@ -275,8 +292,6 @@
                         <enable>![!System.HasAddon(script.colorbox) | Skin.HasSetting(DisableBlur)] + System.HasAddon(script.colorbox)</enable>
                     </control>
 
-
-
                     <control type="radiobutton" id="19277" description="Shadowlines">
                         <visible>Integer.IsEqual(Window.Property(CurrentFocus),9002)</visible>
                         <include>Defs_Settings_Button</include>
@@ -284,10 +299,6 @@
                         <selected>Skin.HasSetting(ShadowLines)</selected>
                         <onclick>Skin.ToggleSetting(ShadowLines)</onclick>
                     </control>
-
-                    
-
-                    
 
                     <!-- ============= -->
                     <!-- Miscellaneous -->
@@ -430,6 +441,14 @@
                         <include>Defs_Settings_Button</include>
                         <selected>!Skin.HasSetting(DisableLandscapeArt)</selected>
                         <onclick>Skin.ToggleSetting(DisableLandscapeArt)</onclick>
+                    </control>
+
+                    <control type="radiobutton" id="19432">
+                        <visible>Integer.IsEqual(Window.Property(CurrentFocus),9004)</visible>
+                        <label>$LOCALIZE[31215]</label>
+                        <include>Defs_Settings_Button</include>
+                        <selected>Skin.HasSetting(EnablePlotAutoScroll)</selected>
+                        <onclick>Skin.ToggleSetting(EnablePlotAutoScroll)</onclick>
                     </control>
 
                     <control type="label" id="19382" description="LABEL">

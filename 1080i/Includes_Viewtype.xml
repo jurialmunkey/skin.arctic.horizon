@@ -12,7 +12,7 @@
                     <control type="group" description="Top Half">
                         <visible>!Integer.IsEqual(Container.NumItems,0)</visible>
                         <include content="View_Info_Grouplist">
-                            <param name="plotheight" value="auto" />
+                            <param name="plotheight" value="80" />
                             <param name="container" value="Container." />
                             <top>-15</top>
                             <height>285</height>

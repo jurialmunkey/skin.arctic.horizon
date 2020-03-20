@@ -1059,6 +1059,11 @@ msgctxt "#31214"
 msgid "Recently Added Episodes"
 msgstr ""
 
+#: /1080i/SkinSettings.xml
+msgctxt "#31215"
+msgid "Autoscroll plot"
+msgstr ""
+
 #: /shortcuts/overrides.xml
 msgctxt "#31216"
 msgid "In Progress Movies"

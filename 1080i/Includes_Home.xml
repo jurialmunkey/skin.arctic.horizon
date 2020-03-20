@@ -196,6 +196,35 @@
                 <param name="label" value="$INFO[Container($PARAM[id]).ListItem.Plot]" />
                 <top>10</top>
             </include>
+            <!-- <control type="grouplist">
+                <left>-20</left>
+                <right>-26</right>
+                <align>left</align>
+                <height>80</height>
+                <orientation>horizontal</orientation>
+                <usecontrolcoords>true</usecontrolcoords>
+                <itemgap>-10</itemgap>
+                <include content="Object_Info_Button" description="Play">
+                    <param name="id" value="3101" />
+                    <param name="groupid" value="3001" />
+                    <param name="label" value="Play" />
+                    <param name="icon" value="special://skin/extras/icons/play3.png" />
+                    <param name="ondown" value="50" />
+                    <param name="visible" value="true" />
+                    <onclick>SetFocus(50)</onclick>
+                    <onclick>Action(Info)</onclick>
+                </include>
+                <include content="Object_Info_Button" description="Play">
+                    <param name="id" value="3102" />
+                    <param name="groupid" value="3002" />
+                    <param name="label" value="More Information" />
+                    <param name="icon" value="special://skin/extras/icons/info2.png" />
+                    <param name="ondown" value="50" />
+                    <param name="visible" value="true" />
+                    <onclick>SetFocus(50)</onclick>
+                    <onclick>Action(Info)</onclick>
+                </include>
+            </control> -->
         </control>
         <control type="image">
             <right>view_pad</right>

@@ -1100,7 +1100,7 @@
                 <aligny>top</aligny>
                 <textcolor>main_fg_70</textcolor>
                 <font>font_plotbox</font>
-                <autoscroll>false</autoscroll>
+                <autoscroll>Skin.HasSetting(EnablePlotAutoScroll)</autoscroll>
             </control>
         </definition>
     </include>
