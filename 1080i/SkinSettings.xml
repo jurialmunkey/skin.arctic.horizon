@@ -168,7 +168,7 @@
                     <control type="radiobutton" id="19109" description="Autoscroll Widgets">
                         <visible>Integer.IsEqual(Window.Property(CurrentFocus),9001)</visible>
                         <include>Defs_Settings_Button</include>
-                        <label>Widget autoscroll</label>
+                        <label>Autoscroll widgets</label>
                         <selected>!Skin.HasSetting(DisableAutoScrollWidgets)</selected>
                         <onclick>Skin.ToggleSetting(DisableAutoScrollWidgets)</onclick>
                     </control>
