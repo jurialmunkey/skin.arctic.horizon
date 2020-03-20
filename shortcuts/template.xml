@@ -581,7 +581,8 @@
         <property name="id">50</property>
         <property name="submenuVisibility" tag="property" attribute="name|submenuVisibility"/>
         <controls>
-            <onright condition="String.IsEqual(Container(301).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility]) + !Integer.IsEqual(Container(3700).NumItems,0)">SetFocus($PYTHON[50000 + int(id) * 100])</onright>
+            <onright condition="String.IsEqual(Container(301).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility]) + !Integer.IsEqual(Container(3700).NumItems,0) + String.IsEmpty(Window(Home).Property(CurrentWidget))">SetFocus($PYTHON[50000 + int(id) * 100])</onright>
+            <onright condition="String.IsEqual(Container(301).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility]) + !Integer.IsEqual(Container(3700).NumItems,0) + !String.IsEmpty(Window(Home).Property(CurrentWidget))">SetFocus($INFO[Window(Home).Property(CurrentWidget)],0,absolute)</onright>
             <onright condition="Integer.IsEqual(Container(3700).NumItems,0)">SetFocus(3001)</onright>
         </controls>
     </other>

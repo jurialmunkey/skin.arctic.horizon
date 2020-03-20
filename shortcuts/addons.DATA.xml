@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<shortcuts>
+    <shortcut>
+        <label>$LOCALIZE[1037]</label>
+        <label2 />
+        <icon>special://skin/extras/icons/video-addons.png</icon>
+        <thumb />
+        <action>ActivateWindow(Videos,addons://sources/video,return)</action>
+    </shortcut>
+    <shortcut>
+        <label>$LOCALIZE[1038]</label>
+        <label2 />
+        <icon>special://skin/extras/icons/songs.png</icon>
+        <thumb />
+        <action>ActivateWindow(Music,addons://sources/audio,return)</action>
+    </shortcut>
+    <shortcut>
+        <label>$LOCALIZE[1043]</label>
+        <label2 />
+        <icon>special://skin/extras/icons/addons.png</icon>
+        <thumb />
+        <action>ActivateWindow(Programs,addons://sources/executable,return)</action>
+    </shortcut>
+    <shortcut>
+        <label>$LOCALIZE[1039]</label>
+        <label2 />
+        <icon>special://skin/extras/icons/pictures.png</icon>
+        <thumb />
+        <action>ActivateWindow(Pictures,addons://sources/image,return)</action>
+    </shortcut>
+    <shortcut>
+        <label>$LOCALIZE[24032]</label>
+        <label2 />
+        <icon>special://skin/extras/icons/database.png</icon>
+        <thumb />
+        <action>ActivateWindow(AddonBrowser,addons://user/all,return)</action>
+    </shortcut>
+    <shortcut>
+        <label>$LOCALIZE[1]</label>
+        <label2 />
+        <icon>special://skin/extras/icons/pictures.png</icon>
+        <thumb />
+        <action>ActivateWindow(Pictures)</action>
+    </shortcut>
+    <shortcut>
+        <label>$LOCALIZE[8]</label>
+        <label2 />
+        <icon>special://skin/extras/icons/sun.png</icon>
+        <thumb />
+        <action>ActivateWindow(Weather)</action>
+    </shortcut>
+</shortcuts>

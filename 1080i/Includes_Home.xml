@@ -4,8 +4,6 @@
     <include name="Home_Submenu_Content"><content><include>skinshortcuts-submenu</include></content></include>
 
     <include name="Home_Movement_Widgets_UpDown">
-        <onup>ClearProperty(CurrentWidget)</onup>
-        <ondown>ClearProperty(CurrentWidget)</ondown>
         <onup>SetProperty(WidgetFocus,1)</onup>
         <ondown>SetProperty(WidgetFocus,1)</ondown>
         <include>Home_Movement_UpDown</include>
@@ -14,6 +12,8 @@
     </include>
 
     <include name="Home_Movement_UpDown">
+        <onup>ClearProperty(CurrentWidget)</onup>
+        <ondown>ClearProperty(CurrentWidget)</ondown>
         <onup>SetProperty(WidgetMovement,OnUp)</onup>
         <onup>Control.Move(301,-1)</onup>
         <ondown>SetProperty(WidgetMovement,OnDown)</ondown>
@@ -52,7 +52,7 @@
                             <left>-2000</left>
                             <include>Home_Movement_UpDown</include>
                             <onleft>ClearProperty(WidgetMovement)</onleft>
-                            <onleft>SetFocus(302)</onleft>
+                            <onleft>SetFocus($INFO[Window(Home).Property(CurrentWidget)],9999,absolute)</onleft>
                             <include>skinshortcuts-template-onright</include>
                             <onright>ClearProperty(WidgetMovement)</onright>
                             <onclick>ClearProperty(WidgetMovement)</onclick>

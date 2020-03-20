@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<shortcuts>
+    <shortcut>
+        <label>$LOCALIZE[1037]</label>
+        <label2 />
+        <icon />
+        <thumb />
+        <action>ActivateWindow(Videos,addons://sources/video/,return)</action>
+    </shortcut>
+    <shortcut>
+        <label>$LOCALIZE[1038]</label>
+        <label2 />
+        <icon />
+        <thumb />
+        <action>ActivateWindow(Music,addons://sources/audio/,return)</action>
+    </shortcut>
+    <shortcut>
+        <label>$LOCALIZE[0]</label>
+        <label2 />
+        <icon />
+        <thumb />
+        <action>ActivateWindow(Programs,addons://sources/executable/,return)</action>
+    </shortcut>
+    <shortcut>
+        <label>Submenu</label>
+        <label2 />
+        <icon />
+        <thumb />
+        <action>Submenu</action>
+    </shortcut>
+</shortcuts>
