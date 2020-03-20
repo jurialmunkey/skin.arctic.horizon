@@ -31,8 +31,6 @@
 
     <include name="Home_Multi">
         <include>Home_Menu_Vertical</include>
-
-        <!-- Main Group -->
         <include content="Viewtype_Main">
             <include>Animation_Home_Slide</include>
             <control type="group">

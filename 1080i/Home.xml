@@ -8,8 +8,6 @@
     <onload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=301&amp;levels=1&amp;group=mainmenu|powermenu|searchmenu)</onload>
     <onload condition="String.IsEmpty(Window(Home).Property(SkinSplashStarted))">AlarmClock(SkinSplashStarted,SetProperty(SkinSplashStarted,1,home),00:01,silent,false)</onload>
     <onunload>ClearProperty(TMDbHelper.WidgetContainer,Home)</onunload>
-
-    <!-- <onload>SetProperty(TMDbHelper.WidgetContainer,30101,Home)</onload> -->
     <controls>
         <control type="button" id="308">
             <description>Menu Jump</description>
