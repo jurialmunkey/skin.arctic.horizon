@@ -2358,6 +2358,25 @@
         <include content="Object_Scrollbar_Horz">
             <param name="visible" value="Control.IsVisible(51) | Control.IsVisible(52) | Control.IsVisible(53) | Control.IsVisible(54) | Control.IsVisible(55) | Control.IsVisible(56)" />
         </include>
+
+        <control type="scrollbar" id="64">
+            <onback>50</onback>
+            <height>560</height>
+            <top>440</top>
+            <width>8</width>
+            <centerleft>item_list_height_half</centerleft>
+            <onright>50</onright>
+            <centerbottom>40</centerbottom>
+            <showonepage>false</showonepage>
+            <orientation>vertical</orientation>
+            <visible>Control.IsVisible(50) | Control.IsVisible(500)</visible>
+            <texturesliderbackground colordiffuse="main_fg_12" border="4">scrollbar/scrollv.png</texturesliderbackground>
+            <texturesliderbar colordiffuse="main_fg_30" border="4">scrollbar/scrollv.png</texturesliderbar>
+            <texturesliderbarfocus colordiffuse="main_fg_100" border="4">scrollbar/scrollv.png</texturesliderbarfocus>
+            <animation effect="fade" start="100" end="0" time="400" condition="!Control.HasFocus(64)">Conditional</animation>
+            <include>Animation_FadeIn</include>
+            <include>Animation_FadeOut</include>
+        </control>
     </include>
 
     <include name="Object_AlphabetLetter">
@@ -2421,7 +2440,7 @@
             <onup condition="Control.IsVisible(560)">560</onup>
             <onup condition="Control.IsVisible(503)">503</onup>
             <visible>$PARAM[visible]</visible>
-            <texturesliderbackground colordiffuse="main_fg_12" border="4">common/white.png</texturesliderbackground>
+            <texturesliderbackground colordiffuse="main_fg_12" border="4">scrollbar/scrollv.png</texturesliderbackground>
             <texturesliderbar colordiffuse="main_fg_30" border="4">scrollbar/scrollv.png</texturesliderbar>
             <texturesliderbarfocus colordiffuse="main_fg_100" border="4">scrollbar/scrollv.png</texturesliderbarfocus>
             <animation effect="fade" start="100" end="0" time="400" condition="!Control.HasFocus(60)">Conditional</animation>

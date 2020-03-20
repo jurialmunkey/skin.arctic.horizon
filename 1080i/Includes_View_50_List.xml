@@ -69,8 +69,9 @@
                 <left>0</left>
                 <bottom>0</bottom>
                 <height>560</height>
-                <onleft>304</onleft>
+                <onleft>64</onleft>
                 <onright>5052</onright>
+                <pagecontrol>64</pagecontrol>
                 <animation effect="slide" end="0,-80" condition="Integer.IsLess(Container.NumAllItems,7)">Conditional</animation>
                 <animation effect="slide" end="0,-80" condition="Integer.IsLess(Container.NumAllItems,5)">Conditional</animation>
                 <animation effect="slide" end="0,-80" condition="Integer.IsLess(Container.NumAllItems,3)">Conditional</animation>
@@ -148,10 +149,11 @@
                 <param name="itemlayout-width" value="1160" />
                 <width>1160</width>
                 <height>560</height>
-                <onleft>304</onleft>
+                <onleft>64</onleft>
                 <onright>304</onright>
                 <left>0</left>
                 <bottom>0</bottom>
+                <pagecontrol>64</pagecontrol>
                 <animation effect="slide" end="0,-80" condition="Integer.IsLess(Container.NumAllItems,7)">Conditional</animation>
                 <animation effect="slide" end="0,-80" condition="Integer.IsLess(Container.NumAllItems,5)">Conditional</animation>
                 <animation effect="slide" end="0,-80" condition="Integer.IsLess(Container.NumAllItems,3)">Conditional</animation>
