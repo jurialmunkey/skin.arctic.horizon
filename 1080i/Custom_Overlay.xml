@@ -102,6 +102,108 @@
             </control>
 
             <control type="grouplist">
+                <left>40</left>
+                <itemgap>79</itemgap>
+                <orientation>horizontal</orientation>
+                <control type="image">
+                    <width>1</width>
+                    <texture colordiffuse="22ff00ff">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <width>1</width>
+                    <texture colordiffuse="22ff00ff">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <width>1</width>
+                    <texture colordiffuse="22ff00ff">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <width>1</width>
+                    <texture colordiffuse="22ff00ff">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <width>1</width>
+                    <texture colordiffuse="22ff00ff">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <width>1</width>
+                    <texture colordiffuse="22ff00ff">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <width>1</width>
+                    <texture colordiffuse="22ff00ff">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <width>1</width>
+                    <texture colordiffuse="22ff00ff">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <width>1</width>
+                    <texture colordiffuse="22ff00ff">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <width>1</width>
+                    <texture colordiffuse="22ff00ff">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <width>1</width>
+                    <texture colordiffuse="22ff00ff">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <width>1</width>
+                    <texture colordiffuse="22ff00ff">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <width>1</width>
+                    <texture colordiffuse="22ff00ff">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <width>1</width>
+                    <texture colordiffuse="22ff00ff">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <width>1</width>
+                    <texture colordiffuse="22ff00ff">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <width>1</width>
+                    <texture colordiffuse="22ff00ff">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <width>1</width>
+                    <texture colordiffuse="22ff00ff">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <width>1</width>
+                    <texture colordiffuse="22ff00ff">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <width>1</width>
+                    <texture colordiffuse="22ff00ff">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <width>1</width>
+                    <texture colordiffuse="22ff00ff">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <width>1</width>
+                    <texture colordiffuse="22ff00ff">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <width>1</width>
+                    <texture colordiffuse="22ff00ff">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <width>1</width>
+                    <texture colordiffuse="22ff00ff">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <width>1</width>
+                    <texture colordiffuse="22ff00ff">common/white.png</texture>
+                </control>
+            </control>
+
+            <control type="grouplist">
                 <top>200</top>
                 <itemgap>79</itemgap>
                 <control type="image">
@@ -151,6 +253,64 @@
                 <control type="image">
                     <height>1</height>
                     <texture colordiffuse="44ff0000">common/white.png</texture>
+                </control>
+            </control>
+
+            <control type="image">
+                <top>40</top>
+                <height>1</height>
+                <texture colordiffuse="22ff00ff">common/white.png</texture>
+            </control>
+            <control type="grouplist">
+                <top>160</top>
+                <itemgap>79</itemgap>
+                <control type="image">
+                    <height>1</height>
+                    <texture colordiffuse="22ff00ff">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <height>1</height>
+                    <texture colordiffuse="22ff00ff">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <height>1</height>
+                    <texture colordiffuse="22ff00ff">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <height>1</height>
+                    <texture colordiffuse="22ff00ff">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <height>1</height>
+                    <texture colordiffuse="22ff00ff">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <height>1</height>
+                    <texture colordiffuse="22ff00ff">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <height>1</height>
+                    <texture colordiffuse="22ff00ff">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <height>1</height>
+                    <texture colordiffuse="22ff00ff">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <height>1</height>
+                    <texture colordiffuse="22ff00ff">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <height>1</height>
+                    <texture colordiffuse="22ff00ff">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <height>1</height>
+                    <texture colordiffuse="22ff00ff">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <height>1</height>
+                    <texture colordiffuse="22ff00ff">common/white.png</texture>
                 </control>
             </control>
 

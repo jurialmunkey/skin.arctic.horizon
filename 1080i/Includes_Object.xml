@@ -1094,7 +1094,7 @@
         <definition>
             <control type="textbox">
                 <nested />
-                <top>32</top>
+                <top>35</top>
                 <label>$PARAM[label]</label>
                 <height max="$PARAM[maxheight]">$PARAM[height]</height>
                 <aligny>top</aligny>
