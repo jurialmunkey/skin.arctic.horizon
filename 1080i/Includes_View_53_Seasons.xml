@@ -3,10 +3,10 @@
     <include name="View_53_Seasons">
         <include content="Viewtype_Buttons">
             <param name="id" value="53" />
-            <param name="itemlayout-width" value="224" />
+            <param name="itemlayout-width" value="280" />
             <param name="offset" value="0" />
             <param name="control-type" value="fixedlist" />
-            <movement>4</movement>
+            <movement>3</movement>
             <preloaditems>2</preloaditems>
             <height>120</height>
             <width>1120</width>
