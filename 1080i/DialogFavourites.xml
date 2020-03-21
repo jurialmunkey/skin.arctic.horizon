@@ -2,7 +2,7 @@
 <!-- Foundation -->
 <window type="dialog" id="134">
     <defaultcontrol always="true">450</defaultcontrol>
-
+    <animation effect="fade" start="100" end="0" time="100">WindowClose</animation>
 
     <controls>
 
