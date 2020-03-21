@@ -8,6 +8,11 @@
     <onunload>ClearProperty(OSDInfo,Home)</onunload>
     <controls>
 
+        <control type="button">
+            <visible allowhiddenfocus="true">false</visible>
+            <onclick>Action(Close)</onclick>
+        </control>
+
         <control type="group">
             <visible>!Window.IsVisible(DialogPlayerProcessInfo.xml)</visible>
             <control type="group">
@@ -44,14 +49,14 @@
 
             <control type="group">
                 <include condition="String.IsEmpty(Window(Home).Property(OSDViewMode))">Animation_FadeIn</include>
-                <visible>Window.IsVisible(DialogVideoInfo.xml)</visible>
+                <visible>Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(DialogPVRInfo.xml)</visible>
                 <include>Global_Background</include>
                 <include>Topbar_Right</include>
             </control>
 
             <control type="slider">
                 <bottom>112</bottom>
-                <height>32</height>
+                <height>64</height>
                 <left>view_pad</left>
                 <width>1800</width>
                 <texturesliderbar/>
