@@ -366,14 +366,20 @@
                 <include content="Object_Info_Button">
                     <param name="id" value="$PYTHON[70000 + int(mainmenuid) * 100 + int(id)]" />
                     <param name="groupid" value="$PYTHON[80000 + int(mainmenuid) * 100 + int(id)]" />
-                    <param name="label" value="$SKINSHORTCUTS[label]" />
-                    <param name="icon" value="$SKINSHORTCUTS[icon]" />
+                    <param name="label" value="$INFO[Container(302).ListItemAbsolute($PYTHON[int(id) - 1]).Label]" />
+                    <param name="icon" value="$INFO[Container(302).ListItemAbsolute($PYTHON[int(id) - 1]).Icon]" />
                     <param name="ondown" value="5610" />
-                    <param name="visible" value="String.IsEqual(Container(301).ListItem.Property(submenuVisibility),num-$SKINSHORTCUTS[submenuVisibility]) | String.IsEqual(Container(301).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility])" />
-                    <onfocus>SetProperty(SubMenu.ID,$NUMBER[$SKINSHORTCUTS[id]],Home)</onfocus>
-                    <onfocus>SetProperty(SubMenu.widgetPath,$SKINSHORTCUTS[widgetPath],Home)</onfocus>
-                    <onfocus>SetProperty(SubMenu.widgetName,$LOCALIZE[$SKINSHORTCUTS[widgetName]],Home)</onfocus>
-                    <onclick>$SKINSHORTCUTS[onclick]</onclick>
+                    <param name="controltype" value="togglebutton" />
+                    <param name="visible" value="[String.IsEqual(Container(301).ListItem.Property(submenuVisibility),num-$SKINSHORTCUTS[submenuVisibility]) | String.IsEqual(Container(301).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility])] + !String.IsEmpty(Container(302).ListItemAbsolute($PYTHON[int(id) - 1]).Label)" />
+                    <param name="focused" value="String.IsEqual(Container(302).ListItemAbsolute($PYTHON[int(id) - 1]).Label,Container(302).ListItem.Label) + Control.HasFocus(302)" />
+                    <onfocus>SetFocus(302,$PYTHON[int(id) - 1],absolute)</onfocus>
+                    <onclick>SetFocus(302)</onclick>
+                    <onclick>Action(Select)</onclick>
+                    <onclick>SetFocus($PYTHON[70000 + int(mainmenuid) * 100 + int(id)])</onclick>
+                    <alttexturenofocus border="0,50,50,50" flipx="true" colordiffuse="Selected">common/button-view-fo.png</alttexturenofocus>
+                    <alttexturefocus border="0,50,50,50" flipx="true" colordiffuse="Selected">common/button-view-fo.png</alttexturefocus>
+                    <altlabel>[COLOR=panel_bg]$INFO[Container(302).ListItemAbsolute($PYTHON[int(id) - 1]).Label,,][/COLOR][COLOR=00ffffff]------[/COLOR]</altlabel>
+                    <usealttexture>String.IsEqual(Container(302).ListItemAbsolute($PYTHON[int(id) - 1]).Label,Container(302).ListItem.Label) + Control.HasFocus(302)</usealttexture>
                 </include>
             </controls>
         </items>

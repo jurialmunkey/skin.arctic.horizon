@@ -9,9 +9,9 @@
             <left>-1000</left>
             <width>1</width>
             <height>1</height>
-            <onleft>303</onleft>
-            <onright>303</onright>
-            <onfocus>SetFocus(303)</onfocus>
+            <onleft>300</onleft>
+            <onright>300</onright>
+            <onfocus>SetFocus(300)</onfocus>
             <itemlayout />
             <focusedlayout />
             <content>
@@ -24,21 +24,24 @@
         <control type="list" id="302">
             <top>-1000</top>
             <left>-1000</left>
-            <width>1</width>
+            <width>1000</width>
             <height>1</height>
-            <onleft>300</onleft>
+            <orientation>horizontal</orientation>
+            <!-- <onleft>300</onleft>
             <onright>300</onright>
-            <onfocus>SetFocus(300)</onfocus>
-            <itemlayout />
-            <focusedlayout />
-            <content>
+            <onfocus>SetFocus(300)</onfocus> -->
+            <ondown>5610</ondown>
+            <itemlayout width="1"/>
+            <focusedlayout width="1"/>
+            <include>Items_SubMenu</include>
+            <!-- <content>
                 <item>
                     <label>$INFO[Window(Home).Property(Hub.SubMenu.Label)]</label>
                     <property name="id">$INFO[Window(Home).Property(SubMenu.ID)]</property>
                     <property name="widgetPath">$INFO[Window(Home).Property(SubMenu.widgetPath)]</property>
                     <property name="widgetName">$INFO[Window(Home).Property(SubMenu.widgetName)]</property>
                 </item>
-            </content>
+            </content> -->
         </control>
         <include content="Viewtype_Main">
             <control type="group">

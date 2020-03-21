@@ -1291,6 +1291,7 @@
         <param name="controltype" default="button" />
         <param name="ondown" default="5000" />
         <param name="width" default="auto" />
+        <param name="focused" default="false" />
         <definition>
             <control type="group" id="$PARAM[groupid]">
                 <left>0</left>
@@ -1298,14 +1299,14 @@
                 <height>100</height>
                 <visible>$PARAM[visible]</visible>
                 <include content="Object_Info_Button_Left">
-                    <param name="visible" value="Control.HasFocus($PARAM[id])" />
+                    <param name="visible" value="Control.HasFocus($PARAM[id]) | $PARAM[focused]" />
                     <param name="texture" value="common/button-view-fo.png" />
                     <param name="icon" value="$PARAM[icon]" />
                     <param name="colordiffuse-icon" value="panel_bg" />
                     <param name="colordiffuse-texture" value="Selected" />
                 </include>
                 <include content="Object_Info_Button_Left">
-                    <param name="visible" value="!Control.HasFocus($PARAM[id])" />
+                    <param name="visible" value="![Control.HasFocus($PARAM[id]) | $PARAM[focused]]" />
                     <param name="texture" value="common/button-view-nf.png" />
                     <param name="icon" value="$PARAM[icon]" />
                     <param name="colordiffuse-icon" value="main_fg_70" />
@@ -1321,7 +1322,7 @@
                 <texturenofocus border="0,50,50,50" flipx="true" colordiffuse="main_fg_12">common/button-view-nf.png</texturenofocus>
                 <texturefocus border="0,50,50,50" flipx="true" colordiffuse="Selected">common/button-view-fo.png</texturefocus>
                 <font>font_info_buttons</font>
-                <label>$PARAM[label]        </label>
+                <label>$PARAM[label][COLOR=00ffffff]------[/COLOR]</label>
                 <align>left</align>
                 <textoffsetx>10</textoffsetx>
                 <textcolor>main_fg_70</textcolor>
