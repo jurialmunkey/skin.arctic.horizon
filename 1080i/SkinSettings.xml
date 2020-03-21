@@ -518,15 +518,41 @@
                         <onclick>Skin.ToggleSetting(OSDSubtitleSettings)</onclick>
                     </control>
 
+                    <control type="radiobutton" id="19522" description="Show clearart">
+                        <visible>Integer.IsEqual(Window.Property(CurrentFocus),9005)</visible>
+                        <include>Defs_Settings_Button</include>
+                        <label>Autoclose OSD</label>
+                        <label2>$INFO[Skin.String(OSD_Timeout),,       ]</label2>
+                        <onclick condition="!System.HasAddon(script.toolbox)">InstallAddon(script.toolbox)</onclick>
+                        <onclick>SetProperty(Dialog.1.Label,$LOCALIZE[13170])</onclick>
+                        <onclick>SetProperty(Dialog.1.BuiltIn,Skin.Reset(OSD_Timeout))</onclick>
+                        <onclick>SetProperty(Dialog.2.Label,$LOCALIZE[31221])</onclick>
+                        <onclick>SetProperty(Dialog.2.BuiltIn,Skin.SetString(OSD_Timeout,$LOCALIZE[31221]))</onclick>
+                        <onclick>SetProperty(Dialog.3.Label,$LOCALIZE[31223])</onclick>
+                        <onclick>SetProperty(Dialog.3.BuiltIn,Skin.SetString(OSD_Timeout,$LOCALIZE[31223]))</onclick>
+                        <onclick>SetProperty(Dialog.4.Label,$LOCALIZE[31117])</onclick>
+                        <onclick>SetProperty(Dialog.4.BuiltIn,Skin.SetString(OSD_Timeout,$LOCALIZE[31117]))</onclick>
+                        <onclick>SetProperty(Dialog.5.Label,$LOCALIZE[31123])</onclick>
+                        <onclick>SetProperty(Dialog.5.BuiltIn,Skin.SetString(OSD_Timeout,$LOCALIZE[31123]))</onclick>
+                        <onclick>SetProperty(Dialog.6.Label,$LOCALIZE[31124])</onclick>
+                        <onclick>SetProperty(Dialog.6.BuiltIn,Skin.SetString(OSD_Timeout,$LOCALIZE[31124]))</onclick>
+                        <onclick>SetProperty(Dialog.7.Label,$LOCALIZE[31125])</onclick>
+                        <onclick>SetProperty(Dialog.7.BuiltIn,Skin.SetString(OSD_Timeout,$LOCALIZE[31125]))</onclick>
+                        <onclick>SetProperty(Dialog.8.Label,$LOCALIZE[31126])</onclick>
+                        <onclick>SetProperty(Dialog.8.BuiltIn,Skin.SetString(OSD_Timeout,$LOCALIZE[31126]))</onclick>
+                        <onclick>RunScript(script.toolbox,info=selectdialog,header=Autoclose OSD)</onclick>>
+                        <selected>!String.IsEmpty(Skin.String(OSD_Timeout))</selected>
+                    </control>
 
-                    <control type="radiobutton" id="19521" description="Show clearart">
+
+                    <!-- <control type="radiobutton" id="19521" description="Show clearart">
                         <visible>Integer.IsEqual(Window.Property(CurrentFocus),9005)</visible>
                         <include>Defs_Settings_Button</include>
                         <label>$LOCALIZE[31434]</label>
                         <selected>Skin.HasSetting(ShowOSDClearArt)</selected>
                         <onclick>Skin.ToggleSetting(ShowOSDClearArt)</onclick>
                         <enable>!Skin.HasSetting(ShowInfoPaused)</enable>
-                    </control>
+                    </control> -->
 
                     <control type="label" id="19507" description="LABEL MUSIC OSD">
                         <visible>Integer.IsEqual(Window.Property(CurrentFocus),9005)</visible>

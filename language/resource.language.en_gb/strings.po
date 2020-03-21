@@ -1079,13 +1079,43 @@ msgctxt "#31218"
 msgid "In Progress Episodes"
 msgstr ""
 
+#: /1080i/SkinSettings.xml
+msgctxt "#31219"
+msgid "Seconds"
+msgstr ""
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31220"
+msgid "Minute"
+msgstr ""
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31221"
+msgid "3 seconds"
+msgstr ""
+
 #: /shortcuts/overrides.xml
 msgctxt "#31222"
 msgid "Top Rated TV Shows"
 msgstr ""
 
+#: /1080i/SkinSettings.xml
+msgctxt "#31223"
+msgid "5 seconds"
+msgstr ""
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31224"
+msgid "1 Minute"
+msgstr ""
+
 msgctxt "#31225"
 msgid "Top Rated Movies"
+msgstr ""
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31226"
+msgid "Select OSD Timeout"
 msgstr ""
 
 #: /shortcuts/overrides.xml

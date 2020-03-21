@@ -773,6 +773,18 @@
         </control>
     </include>
 
+    <include name="OSD_Button_OnFocus">
+        <onfocus condition="!String.IsEmpty(Window(Home).Property(OSDExtendedInfo)) + Player.Paused + !Skin.HasSetting(DontPauseOSD)">Play</onfocus>
+        <onfocus condition="!String.IsEmpty(Window(Home).Property(OSDExtendedInfo))">ClearProperty(OSDExtendedInfo,Home)</onfocus>
+        <onfocus>ClearProperty(OSD_Menu,Home)</onfocus>
+        <onfocus condition="Skin.String(OSD_Timeout,$LOCALIZE[31221])">AlarmClock(osd_timeout,SetFocus(99220),00:03,silent)</onfocus>
+        <onfocus condition="Skin.String(OSD_Timeout,$LOCALIZE[31223])">AlarmClock(osd_timeout,SetFocus(99220),00:05,silent)</onfocus>
+        <onfocus condition="Skin.String(OSD_Timeout,$LOCALIZE[31117])">AlarmClock(osd_timeout,SetFocus(99220),00:10,silent)</onfocus>
+        <onfocus condition="Skin.String(OSD_Timeout,$LOCALIZE[31123])">AlarmClock(osd_timeout,SetFocus(99220),00:15,silent)</onfocus>
+        <onfocus condition="Skin.String(OSD_Timeout,$LOCALIZE[31124])">AlarmClock(osd_timeout,SetFocus(99220),00:20,silent)</onfocus>
+        <onfocus condition="Skin.String(OSD_Timeout,$LOCALIZE[31125])">AlarmClock(osd_timeout,SetFocus(99220),00:30,silent)</onfocus>
+        <onfocus condition="Skin.String(OSD_Timeout,$LOCALIZE[31126])">AlarmClock(osd_timeout,SetFocus(99220),01:00,silent)</onfocus>
+    </include>
 
     <include name="OSD_Controls">
 
@@ -792,9 +804,7 @@
             <enable>PVR.CanRecordPlayingChannel</enable>
             <visible>VideoPlayer.Content(LiveTV)</visible>
             <animation effect="fade" start="100" end="33" time="100" condition="!PVR.CanRecordPlayingChannel">Conditional</animation>
-            <onfocus condition="!String.IsEmpty(Window(Home).Property(OSDExtendedInfo)) + Player.Paused + !Skin.HasSetting(DontPauseOSD)">Play</onfocus>
-            <onfocus condition="!String.IsEmpty(Window(Home).Property(OSDExtendedInfo))">ClearProperty(OSDExtendedInfo,Home)</onfocus>
-            <onfocus>ClearProperty(OSD_Menu,Home)</onfocus>
+            <include>OSD_Button_OnFocus</include>
         </control>
 
         <control type="button" id="12">
@@ -807,9 +817,7 @@
             <texturefocus colordiffuse="$VAR[ColorHighlight]" flipx="true">osd/next.png</texturefocus>
             <texturenofocus colordiffuse="panel_fg_70" flipx="true">osd/next.png</texturenofocus>
             <onclick>PlayerControl(Previous)</onclick>
-            <onfocus condition="!String.IsEmpty(Window(Home).Property(OSDExtendedInfo)) + Player.Paused + !Skin.HasSetting(DontPauseOSD)">Play</onfocus>
-            <onfocus condition="!String.IsEmpty(Window(Home).Property(OSDExtendedInfo))">ClearProperty(OSDExtendedInfo,Home)</onfocus>
-            <onfocus>ClearProperty(OSD_Menu,Home)</onfocus>
+            <include>OSD_Button_OnFocus</include>
         </control>
 
         <control type="button" id="13">
@@ -822,9 +830,7 @@
             <texturefocus colordiffuse="$VAR[ColorHighlight]" flipx="true">osd/ff.png</texturefocus>
             <texturenofocus colordiffuse="panel_fg_70" flipx="true">osd/ff.png</texturenofocus>
             <onclick>PlayerControl(Rewind)</onclick>
-            <onfocus condition="!String.IsEmpty(Window(Home).Property(OSDExtendedInfo)) + Player.Paused + !Skin.HasSetting(DontPauseOSD)">Play</onfocus>
-            <onfocus condition="!String.IsEmpty(Window(Home).Property(OSDExtendedInfo))">ClearProperty(OSDExtendedInfo,Home)</onfocus>
-            <onfocus>ClearProperty(OSD_Menu,Home)</onfocus>
+            <include>OSD_Button_OnFocus</include>
         </control>
 
         <control type="togglebutton" id="14">
@@ -843,9 +849,7 @@
             <onclick>PlayerControl(Play)</onclick>
             <visible>Player.PauseEnabled</visible>
             <animation effect="fade" start="100" end="33" time="100" condition="!Player.PauseEnabled">Conditional</animation>
-            <onfocus condition="!String.IsEmpty(Window(Home).Property(OSDExtendedInfo)) + Player.Paused + !Skin.HasSetting(DontPauseOSD)">Play</onfocus>
-            <onfocus condition="!String.IsEmpty(Window(Home).Property(OSDExtendedInfo))">ClearProperty(OSDExtendedInfo,Home)</onfocus>
-            <onfocus>ClearProperty(OSD_Menu,Home)</onfocus>
+            <include>OSD_Button_OnFocus</include>
         </control>
 
         <control type="button" id="15">
@@ -858,9 +862,7 @@
             <texturefocus colordiffuse="$VAR[ColorHighlight]">osd/stop.png</texturefocus>
             <texturenofocus colordiffuse="panel_fg_70">osd/stop.png</texturenofocus>
             <onclick>PlayerControl(Stop)</onclick>
-            <onfocus condition="!String.IsEmpty(Window(Home).Property(OSDExtendedInfo)) + Player.Paused + !Skin.HasSetting(DontPauseOSD)">Play</onfocus>
-            <onfocus condition="!String.IsEmpty(Window(Home).Property(OSDExtendedInfo))">ClearProperty(OSDExtendedInfo,Home)</onfocus>
-            <onfocus>ClearProperty(OSD_Menu,Home)</onfocus>
+            <include>OSD_Button_OnFocus</include>
         </control>
 
         <control type="button" id="16">
@@ -873,9 +875,7 @@
             <texturefocus colordiffuse="$VAR[ColorHighlight]">osd/ff.png</texturefocus>
             <texturenofocus colordiffuse="panel_fg_70">osd/ff.png</texturenofocus>
             <onclick>PlayerControl(Forward)</onclick>
-            <onfocus condition="!String.IsEmpty(Window(Home).Property(OSDExtendedInfo)) + Player.Paused + !Skin.HasSetting(DontPauseOSD)">Play</onfocus>
-            <onfocus condition="!String.IsEmpty(Window(Home).Property(OSDExtendedInfo))">ClearProperty(OSDExtendedInfo,Home)</onfocus>
-            <onfocus>ClearProperty(OSD_Menu,Home)</onfocus>
+            <include>OSD_Button_OnFocus</include>
         </control>
 
         <control type="button" id="17">
@@ -888,9 +888,7 @@
             <texturefocus colordiffuse="$VAR[ColorHighlight]">osd/next.png</texturefocus>
             <texturenofocus colordiffuse="panel_fg_70">osd/next.png</texturenofocus>
             <onclick>PlayerControl(Next)</onclick>
-            <onfocus condition="!String.IsEmpty(Window(Home).Property(OSDExtendedInfo)) + Player.Paused + !Skin.HasSetting(DontPauseOSD)">Play</onfocus>
-            <onfocus condition="!String.IsEmpty(Window(Home).Property(OSDExtendedInfo))">ClearProperty(OSDExtendedInfo,Home)</onfocus>
-            <onfocus>ClearProperty(OSD_Menu,Home)</onfocus>
+            <include>OSD_Button_OnFocus</include>
         </control>
         <!-- <control type="button" id="39">
             <centertop>50%</centertop>
@@ -903,9 +901,7 @@
             <texturenofocus colordiffuse="panel_fg_70">osd/audio-settings.png</texturenofocus>
             <onclick condition="Skin.HasSetting(OSDAudioSettings)">ActivateWindow(osdaudiosettings)</onclick>
             <onclick condition="!Skin.HasSetting(OSDAudioSettings)">Action(AudioNextLanguage)</onclick>
-            <onfocus condition="!String.IsEmpty(Window(Home).Property(OSDExtendedInfo)) + Player.Paused + !Skin.HasSetting(DontPauseOSD)">Play</onfocus>
-            <onfocus condition="!String.IsEmpty(Window(Home).Property(OSDExtendedInfo))">ClearProperty(OSDExtendedInfo,Home)</onfocus>
-            <onfocus>ClearProperty(OSD_Menu,Home)</onfocus>
+            <include>OSD_Button_OnFocus</include>
             <visible>Window.IsVisible(videoosd)</visible>
             <visible>!VideoPlayer.Content(musicvideos)</visible>
         </control> -->
@@ -922,9 +918,7 @@
             <onclick condition="!Skin.HasSetting(OSDSubtitleSettings) + VideoPlayer.HasSubtitles">NextSubtitle</onclick>
             <onclick condition="!Skin.HasSetting(OSDSubtitleSettings) + !VideoPlayer.HasSubtitles">Close</onclick>
             <onclick condition="!Skin.HasSetting(OSDSubtitleSettings) + !VideoPlayer.HasSubtitles">ActivateWindow(SubtitleSearch)</onclick>
-            <onfocus condition="!String.IsEmpty(Window(Home).Property(OSDExtendedInfo)) + Player.Paused + !Skin.HasSetting(DontPauseOSD)">Play</onfocus>
-            <onfocus condition="!String.IsEmpty(Window(Home).Property(OSDExtendedInfo))">ClearProperty(OSDExtendedInfo,Home)</onfocus>
-            <onfocus>ClearProperty(OSD_Menu,Home)</onfocus>
+            <include>OSD_Button_OnFocus</include>
             <visible>Window.IsVisible(videoosd)</visible>
             <visible>!VideoPlayer.Content(musicvideos)</visible>
         </control>
@@ -945,9 +939,7 @@
             <onclick condition="VideoPlayer.Content(movies) + String.IsEmpty(VideoPlayer.IMDBNumber)">RunScript(plugin.video.themoviedb.helper,add_path=plugin://plugin.video.themoviedb.helper/?info=details&amp;type=movie&amp;query=$INFO[Player.Title],call_auto=1190,return)</onclick>
             <onclick condition="[VideoPlayer.Content(tvshows) | VideoPlayer.Content(episodes)]">RunScript(plugin.video.themoviedb.helper,add_path=plugin://plugin.video.themoviedb.helper/?info=details&amp;type=tv&amp;query=$INFO[VideoPlayer.TvShowTitle],call_auto=1190,return)</onclick>
 
-            <onfocus condition="!String.IsEmpty(Window(Home).Property(OSDExtendedInfo)) + Player.Paused + !Skin.HasSetting(DontPauseOSD)">Play</onfocus>
-            <onfocus condition="!String.IsEmpty(Window(Home).Property(OSDExtendedInfo))">ClearProperty(OSDExtendedInfo,Home)</onfocus>
-            <onfocus>ClearProperty(OSD_Menu,Home)</onfocus>
+            <include>OSD_Button_OnFocus</include>
             <visible>Window.IsVisible(videoosd)</visible>
             <visible>!VideoPlayer.Content(livetv)</visible>
         </control>
@@ -963,9 +955,7 @@
             <alttexturenofocus colordiffuse="$VAR[ColorHighlight]">osd/repeat-off.png</alttexturenofocus>
             <texturefocus colordiffuse="$VAR[ColorHighlight]">osd/repeat-off.png</texturefocus>
             <texturenofocus colordiffuse="panel_fg_70">osd/repeat-off.png</texturenofocus>
-            <onfocus condition="!String.IsEmpty(Window(Home).Property(OSDExtendedInfo)) + Player.Paused + !Skin.HasSetting(DontPauseOSD)">Play</onfocus>
-            <onfocus condition="!String.IsEmpty(Window(Home).Property(OSDExtendedInfo))">ClearProperty(OSDExtendedInfo,Home)</onfocus>
-            <onfocus>ClearProperty(OSD_Menu,Home)</onfocus>
+            <include>OSD_Button_OnFocus</include>
             <onclick>XBMC.PlayerControl(Repeat)</onclick>
             <visible>Window.IsVisible(musicosd)</visible>
             <visible>!Playlist.IsRepeatOne + !Playlist.IsRepeat</visible>
@@ -982,9 +972,7 @@
             <alttexturenofocus colordiffuse="$VAR[ColorHighlight]">osd/repeat-one.png</alttexturenofocus>
             <texturefocus colordiffuse="$VAR[ColorHighlight]">osd/repeat-one.png</texturefocus>
             <texturenofocus colordiffuse="panel_fg_70">osd/repeat-one.png</texturenofocus>
-            <onfocus condition="!String.IsEmpty(Window(Home).Property(OSDExtendedInfo)) + Player.Paused + !Skin.HasSetting(DontPauseOSD)">Play</onfocus>
-            <onfocus condition="!String.IsEmpty(Window(Home).Property(OSDExtendedInfo))">ClearProperty(OSDExtendedInfo,Home)</onfocus>
-            <onfocus>ClearProperty(OSD_Menu,Home)</onfocus>
+            <include>OSD_Button_OnFocus</include>
             <onclick>XBMC.PlayerControl(Repeat)</onclick>
             <visible>Window.IsVisible(musicosd)</visible>
             <visible>Playlist.IsRepeatOne</visible>
@@ -1001,9 +989,7 @@
             <alttexturenofocus colordiffuse="$VAR[ColorHighlight]">osd/repeat-all.png</alttexturenofocus>
             <texturefocus colordiffuse="$VAR[ColorHighlight]">osd/repeat-all.png</texturefocus>
             <texturenofocus colordiffuse="panel_fg_70">osd/repeat-all.png</texturenofocus>
-            <onfocus condition="!String.IsEmpty(Window(Home).Property(OSDExtendedInfo)) + Player.Paused + !Skin.HasSetting(DontPauseOSD)">Play</onfocus>
-            <onfocus condition="!String.IsEmpty(Window(Home).Property(OSDExtendedInfo))">ClearProperty(OSDExtendedInfo,Home)</onfocus>
-            <onfocus>ClearProperty(OSD_Menu,Home)</onfocus>
+            <include>OSD_Button_OnFocus</include>
             <onclick>XBMC.PlayerControl(Repeat)</onclick>
             <visible>Window.IsVisible(musicosd)</visible>
             <visible>Playlist.IsRepeat</visible>
@@ -1020,9 +1006,7 @@
             <texturenofocus colordiffuse="panel_fg_70">osd/shuffle.png</texturenofocus>
             <alttexturefocus colordiffuse="$VAR[ColorHighlight]">osd/shuffle-on.png</alttexturefocus>
             <alttexturenofocus colordiffuse="panel_fg_70">osd/shuffle-on.png</alttexturenofocus>
-            <onfocus condition="!String.IsEmpty(Window(Home).Property(OSDExtendedInfo)) + Player.Paused + !Skin.HasSetting(DontPauseOSD)">Play</onfocus>
-            <onfocus condition="!String.IsEmpty(Window(Home).Property(OSDExtendedInfo))">ClearProperty(OSDExtendedInfo,Home)</onfocus>
-            <onfocus>ClearProperty(OSD_Menu,Home)</onfocus>
+            <include>OSD_Button_OnFocus</include>
             <onclick>XBMC.PlayerControl(Random)</onclick>
             <visible>Window.IsVisible(musicosd)</visible>
         </control>
@@ -1037,9 +1021,7 @@
             <texturenofocus colordiffuse="panel_fg_70">osd/playlist.png</texturenofocus>
             <onclick>Close</onclick>
             <onclick>ActivateWindow(musicplaylist)</onclick>
-            <onfocus condition="!String.IsEmpty(Window(Home).Property(OSDExtendedInfo)) + Player.Paused + !Skin.HasSetting(DontPauseOSD)">Play</onfocus>
-            <onfocus condition="!String.IsEmpty(Window(Home).Property(OSDExtendedInfo))">ClearProperty(OSDExtendedInfo,Home)</onfocus>
-            <onfocus>ClearProperty(OSD_Menu,Home)</onfocus>
+            <include>OSD_Button_OnFocus</include>
             <visible>Window.IsVisible(musicosd)</visible>
         </control> -->
         <control type="button" id="25">
@@ -1096,9 +1078,7 @@
             <texturenofocus colordiffuse="panel_fg_70">osd/playlist.png</texturenofocus>
             <onclick>Close</onclick>
             <onclick>ActivateWindow(tvguide,,return)</onclick>
-            <onfocus condition="!String.IsEmpty(Window(Home).Property(OSDExtendedInfo)) + Player.Paused + !Skin.HasSetting(DontPauseOSD)">Play</onfocus>
-            <onfocus condition="!String.IsEmpty(Window(Home).Property(OSDExtendedInfo))">ClearProperty(OSDExtendedInfo,Home)</onfocus>
-            <onfocus>ClearProperty(OSD_Menu,Home)</onfocus>
+            <include>OSD_Button_OnFocus</include>
             <visible>Window.IsVisible(videoosd)</visible>
             <visible>VideoPlayer.Content(livetv)</visible>
         </control>
@@ -1114,9 +1094,7 @@
             <texturenofocus colordiffuse="panel_fg_70">osd/3d.png</texturenofocus>
             <onclick>StereoMode</onclick>
             <visible>VideoPlayer.IsStereoscopic</visible>
-            <onfocus condition="!String.IsEmpty(Window(Home).Property(OSDExtendedInfo)) + Player.Paused + !Skin.HasSetting(DontPauseOSD)">Play</onfocus>
-            <onfocus condition="!String.IsEmpty(Window(Home).Property(OSDExtendedInfo))">ClearProperty(OSDExtendedInfo,Home)</onfocus>
-            <onfocus>ClearProperty(OSD_Menu,Home)</onfocus>
+            <include>OSD_Button_OnFocus</include>
             <visible>Window.IsVisible(videoosd)</visible>
             <visible>!VideoPlayer.Content(livetv)</visible>
         </control>

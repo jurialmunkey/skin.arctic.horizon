@@ -8,6 +8,11 @@
     <onunload>ClearProperty(OSDInfo,Home)</onunload>
     <controls>
 
+        <control type="button" id="99220">
+            <include>Defs_Hidden_Button</include>
+            <onfocus condition="Window.IsVisible(videoosd)">Action(Close)</onfocus>
+        </control>
+
         <control type="button">
             <visible allowhiddenfocus="true">false</visible>
             <onclick>Action(Close)</onclick>
