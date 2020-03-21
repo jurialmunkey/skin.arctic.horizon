@@ -146,7 +146,7 @@
 
     <include name="OSD_LiveTV_Seekbar">
         <control type="group">
-            <visible>!Window.IsVisible(DialogPVRChannelsOSD.xml) + !Window.IsVisible(DialogPVRChannelGuide.xml) + !Window.IsVisible(1139)</visible>
+            <visible>!Window.IsVisible(DialogPVRChannelsOSD.xml) + !Window.IsVisible(DialogPVRChannelGuide.xml)</visible>
             <left>view_pad</left>
             <right>view_pad</right>
             <top>view_pad</top>

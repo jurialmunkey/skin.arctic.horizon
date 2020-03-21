@@ -11,7 +11,7 @@
         <include>Topbar_Right</include>
         
         <control type="group" id="50">
-            <visible allowhiddenfocus="true">!Window.IsVisible(1142) + !Window.IsVisible(1143) + !$EXP[Exp_ShowPlotOverlay] + !$EXP[Exp_InfoVisible]</visible>
+            <visible allowhiddenfocus="true">!Window.IsVisible(1142) + !$EXP[Exp_ShowPlotOverlay] + !$EXP[Exp_InfoVisible]</visible>
             <include>Animation_Common</include>
             <control type="group">
                 <visible>Control.IsVisible(10)</visible>

@@ -514,7 +514,6 @@
             <param name="hideisupdating" value="true" />
             <onclick>Dialog.Close(1140)</onclick>
             <onclick>Dialog.Close(1142)</onclick>
-            <onclick>Dialog.Close(1143)</onclick>
             <onclick>SetFocus(5999)</onclick>
             <onclick>SetFocus(300)</onclick>
             <onclick>PlayMedia($INFO[Container(5041).ListItem.FileNameAndPath])</onclick>

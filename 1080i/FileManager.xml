@@ -15,10 +15,8 @@
                 <orientation>vertical</orientation>
                 <usecontrolcoords>true</usecontrolcoords>
                 <itemgap>0</itemgap>
-                <include content="Object_Info_Title">
-                </include>
-                <include content="Object_Info_Line">
-                </include>
+                <include>Object_Info_Title</include>
+                <include>Object_Info_Line</include>
             </control>
 
             <control type="group">

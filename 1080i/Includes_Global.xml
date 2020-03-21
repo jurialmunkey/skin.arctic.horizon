@@ -141,8 +141,8 @@
     </include>
 
     <variable name="Global_Background_Image_NoFanart">
-        <value condition="[Window.IsVisible(home) | Window.IsVisible(1135)] + !String.IsEmpty(Container(301).ListItem.Property(backgroundPlaylist))">$INFO[Container(3800).ListItem.Art(fanart)]</value>
-        <value condition="[Window.IsVisible(home) | Window.IsVisible(1135)] + !String.IsEmpty(Container(301).ListItem.Property(Background))">$INFO[Container(301).ListItem.Property(Background)]</value>
+        <value condition="Window.IsVisible(Home) + !String.IsEmpty(Container(301).ListItem.Property(backgroundPlaylist))">$INFO[Container(3800).ListItem.Art(fanart)]</value>
+        <value condition="Window.IsVisible(Home) + !String.IsEmpty(Container(301).ListItem.Property(Background))">$INFO[Container(301).ListItem.Property(Background)]</value>
         <value condition="!String.IsEmpty(Skin.String(fanart.fallback))">$INFO[Skin.String(fanart.fallback)]</value>
         <value>special://skin/extras/backgrounds/mountains3.jpg</value>
     </variable>
@@ -225,10 +225,9 @@
 
         <!-- Home Fanart Menu -->
         <value condition="Window.IsVisible(home) + !String.IsEmpty(Skin.String(HomeBackgroundImage)) + String.IsEmpty(Container(301).ListItem.Property(Background)) + String.IsEmpty(Container(301).ListItem.Property(backgroundPlaylist))">$INFO[Skin.String(HomeBackgroundImage)]</value>
-        <value condition="Window.IsVisible(home) + !String.IsEmpty(Container(5600).ListItem.Art(fanart)) + String.IsEmpty(Container(301).ListItem.Property(Background)) + String.IsEmpty(Container(301).ListItem.Property(backgroundPlaylist))">$INFO[Container(5600).ListItem.Art(fanart)]</value>
 
         <!-- Submenu Hub -->
-        <value condition="Window.IsVisible(1135) + !String.IsEmpty(Container(5610).ListItem.Art(fanart))">$INFO[Container(5610).ListItem.Art(fanart)]</value>
+        <value condition="Window.IsVisible(1110) + !String.IsEmpty(Container(5610).ListItem.Art(fanart))">$INFO[Container(5610).ListItem.Art(fanart)]</value>
 
         <!-- Pictures -->
         <value condition="Window.IsVisible(MyPics.xml) + !String.IsEmpty(ListItem.FileNameAndPath)">$INFO[ListItem.FileNameAndPath]</value>

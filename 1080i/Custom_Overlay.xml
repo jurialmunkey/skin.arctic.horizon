@@ -939,20 +939,6 @@
                     <visible>Window.IsVisible(1190)</visible>
                 </control>
 
-                <control type="label">
-                    <textcolor>FFFF0000</textcolor>
-                    <include>Defs_CustomOverlay_Label</include>
-                    <label>Custom_1191</label>
-                    <visible>Window.IsVisible(1191)</visible>
-                </control>
-
-                <control type="label">
-                    <textcolor>FFFF0000</textcolor>
-                    <include>Defs_CustomOverlay_Label</include>
-                    <label>Custom_1192</label>
-                    <visible>Window.IsVisible(1192)</visible>
-                </control>
-
             </control>
 
             <!-- Control label -->

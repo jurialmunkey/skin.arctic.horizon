@@ -2634,7 +2634,7 @@
                 <right>view_pad</right>
                 <top>view_top</top>
                 <bottom>view_pad</bottom>
-                <visible>$EXP[Exp_ShowPlotOverlay] + !Window.IsVisible(1143)</visible>
+                <visible>$EXP[Exp_ShowPlotOverlay]</visible>
                 <include>Animation_Right_Delay</include>
                 <control type="group">
                     <left>view_info_left</left>
