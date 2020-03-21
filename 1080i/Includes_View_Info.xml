@@ -68,6 +68,15 @@
     <include name="View_Info_Buttons">
         <control type="grouplist" id="$PARAM[grouplistid]">
             <include>Defs_ButtonList</include>
+            <include content="Object_Info_Button" description="Options">
+                <param name="id" value="3109" />
+                <param name="groupid" value="3009" />
+                <param name="label" value="$LOCALIZE[5]" />
+                <param name="icon" value="special://skin/extras/icons/settings.png" />
+                <param name="ondown" value="50" />
+                <param name="visible" value="!String.IsEmpty(ListItem.Property(Addon.ID)) + String.IsEqual(ListItem.Label2,Enabled) + !String.IsEqual(Container.FolderPath,addons://repos/) + Window.IsVisible(AddonBrowser.xml)" />
+                <onclick>Addon.OpenSettings($INFO[ListItem.Property(Addon.ID)])</onclick>
+            </include>
             <include content="Object_Info_Button" description="Install">
                 <param name="id" value="3108" />
                 <param name="groupid" value="3008" />
@@ -142,6 +151,8 @@
                 <param name="visible" value="true" />
                 <onclick>SetFocus(9000)</onclick>
             </include>
+
+            
             <nested />
         </control>
     </include>

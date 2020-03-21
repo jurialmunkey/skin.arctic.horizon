@@ -658,7 +658,7 @@
 
             <!-- Settings -->
             <item>
-                <label>$INFO[Control.GetLabel(5)]</label>
+                <label>Kodi $LOCALIZE[5]</label>
                 <icon>special://skin/extras/icons/settings.png</icon>
                 <onclick>SendClick(5)</onclick>
                 <visible>Control.IsEnabled(5)</visible>

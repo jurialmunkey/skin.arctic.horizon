@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+    <defaultcontrol always="true">3012</defaultcontrol>
+    <onload>Dialog.Close(fullscreeninfo,true)</onload>
+    <onload>Dialog.Close(videoosd,true)</onload>
+    <include>Animation_FadeIn</include>
+    <controls>
+        <control type="image">
+            <height>360</height>
+            <top>0</top>
+            <texture flipy="true">common/dim-osd.png</texture>
+        </control>
+        <control type="group">
+            <include content="View_Pad">
+                <param name="top" value="view_pad" />
+            </include>
+            <control type="group">
+                <height>160</height>
+                <control type="group">
+                    <width>284</width>
+                    <include content="Object_PosterBack">
+                        <param name="pad" value="-20" />
+                    </include>
+                    <control type="image">
+                        <texture>$INFO[Window.Property(landscape)]</texture>
+                        <aspectratio>scale</aspectratio>
+                    </control>
+                    <control type="image">
+                        <texture>$INFO[Window.Property(fanart)]</texture>
+                        <aspectratio>scale</aspectratio>
+                        <visible>String.IsEmpty(Window.Property(landscape))</visible>
+                    </control>
+                    <control type="image">
+                        <texture>$INFO[Window.Property(thumb)]</texture>
+                        <aspectratio>scale</aspectratio>
+                        <visible>String.IsEmpty(Window.Property(landscape)) + String.IsEmpty(Window.Property(fanart))</visible>
+                    </control>
+                    <control type="progress" id="3014">
+                        <bottom>0</bottom>
+                        <height>8</height>
+                        <texturebg colordiffuse="dialog_fg_30" border="4">diffuse/progress-bg.png</texturebg>
+                    </control>
+                </control>
+                <control type="group">
+                    <left>284</left>
+                    <control type="grouplist">
+                        <top>-10</top>
+                        <left>40</left>
+                        <orientation>vertical</orientation>
+                        <usecontrolcoords>true</usecontrolcoords>
+                        <itemgap>0</itemgap>
+                        <include content="Object_Info_Title">
+                            <param name="font" value="font_title" />
+                            <param name="textcolor" value="$VAR[ColorHighlight]" />
+                        <param name="label" value="[COLOR=panel_fg_100]$LOCALIZE[31227] [/COLOR]$INFO[Window.Property(remaining)][COLOR=panel_fg_100] [LOWERCASE]$LOCALIZE[31219][/LOWERCASE]...[/COLOR]" />
+                        </include>
+                        <control type="grouplist">
+                            <top>-20</top>
+                            <height>42</height>
+                            <orientation>horizontal</orientation>
+                            <usecontrolcoords>true</usecontrolcoords>
+                            <itemgap>0</itemgap>
+                            <include content="Object_Info_Line_Label">
+                                <param name="label" value="$INFO[Window.Property(tvshowtitle)]" />
+                                <param name="textcolor" value="panel_fg_100" />
+                                <param name="divider" value="false" />
+                                <param name="fallback" value="19055" />
+                                <param name="visible" value="true" />
+                            </include>
+                            <include content="Object_Info_Line_Label">
+                                <param name="label" value="$INFO[Window.Property(season),S,]$INFO[Window.Property(episode),E,]" />
+                                <param name="textcolor" value="panel_fg_100" />
+                                <param name="visible" value="!String.IsEmpty(Window.Property(episode))" />
+                            </include>
+                            <include content="Object_Info_Line_Label">
+                                <param name="label" value="$INFO[Window.Property(title)]" />
+                                <param name="textcolor" value="panel_fg_100" />
+                                <param name="visible" value="!String.IsEmpty(Window.Property(title))" />
+                            </include>
+                            <include content="Object_Info_Line_Label">
+                                <param name="label" value="$INFO[Window.Property(year)]" />
+                                <param name="textcolor" value="panel_fg_100" />
+                                <param name="visible" value="!String.IsEmpty(Window.Property(year))" />
+                            </include>
+                            <include content="Object_Info_Line_Label">
+                                <param name="label" value="$INFO[Window.Property(rating)]" />
+                                <param name="textcolor" value="panel_fg_100" />
+                                <param name="visible" value="!String.IsEmpty(Window.Property(rating))" />
+                            </include>
+                        </control>
+                            
+                    </control>
+                    <control type="grouplist">
+                        <left>20</left>
+                        <bottom>-40</bottom>
+                        <align>left</align>
+                        <height>120</height>
+                        <orientation>horizontal</orientation>
+                        <usecontrolcoords>true</usecontrolcoords>
+                        <itemgap>-10</itemgap>
+                        <include content="Object_Info_Button">
+                            <param name="id" value="3012" />
+                            <param name="groupid" value="5012" />
+                            <param name="label" value="$ADDON[service.upnext 30006]" />
+                            <param name="icon" value="special://skin/extras/icons/play3.png" />
+                            <param name="visible" value="true" />
+                        </include>
+                        <include content="Object_Info_Button">
+                            <param name="id" value="4013" />
+                            <param name="groupid" value="5013" />
+                            <param name="label" value="$ADDON[service.upnext 30034]" />
+                            <param name="icon" value="special://skin/extras/icons/disabled.png" />
+                            <param name="visible" value="true" />
+                            <onclick>SetFocus(3013)</onclick>
+                            <onclick>Action(Select)</onclick>
+                        </include>
+                    </control>
+                </control>
+            </control>
+        </control>
+
+        <control type="button" id="3013">
+            <include>Defs_Hidden_Button</include>
+        </control>
+    </controls>
+</window>

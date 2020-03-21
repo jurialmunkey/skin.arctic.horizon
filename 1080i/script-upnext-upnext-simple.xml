@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+    <defaultcontrol always="true">20</defaultcontrol>
+    <onload>Dialog.Close(fullscreeninfo,true)</onload>
+    <onload>Dialog.Close(videoosd,true)</onload>
+    <include>Animation_FadeIn</include>
+    <controls>
+        <control type="image">
+            <height>240</height>
+            <top>0</top>
+            <texture flipy="true">common/dim-osd.png</texture>
+        </control>
+        <control type="group">
+            <include content="View_Pad">
+                <param name="top" value="view_pad" />
+            </include>
+            <control type="grouplist" id="20">
+                <left>-20</left>
+                <top>-20</top>
+                <align>left</align>
+                <height>120</height>
+                <orientation>horizontal</orientation>
+                <usecontrolcoords>true</usecontrolcoords>
+                <itemgap>-10</itemgap>
+                <include content="Object_Info_Button">
+                    <param name="id" value="3012" />
+                    <param name="groupid" value="5012" />
+                    <param name="label" value="$LOCALIZE[31227] [COLOR=$VAR[ColorHighlight]]$INFO[Window.Property(remaining)][/COLOR] $LOCALIZE[31219]..." />
+                    <param name="icon" value="special://skin/extras/icons/play3.png" />
+                    <param name="visible" value="true" />
+                </include>
+                <include content="Object_Info_Button">
+                    <param name="id" value="4013" />
+                    <param name="groupid" value="5013" />
+                    <param name="label" value="$ADDON[service.upnext 30034]" />
+                    <param name="icon" value="special://skin/extras/icons/disabled.png" />
+                    <param name="visible" value="true" />
+                    <onclick>SetFocus(3013)</onclick>
+                    <onclick>Action(Select)</onclick>
+                </include>
+            </control>
+        </control>
+
+        <control type="button" id="3013">
+            <include>Defs_Hidden_Button</include>
+        </control>
+        <control type="progress" id="3014">
+            <visible>false</visible>
+        </control>
+    </controls>
+</window>

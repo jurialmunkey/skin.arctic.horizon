@@ -1118,6 +1118,16 @@ msgctxt "#31226"
 msgid "Select OSD Timeout"
 msgstr ""
 
+#: /1080i/script-upnext-upnext.xml
+msgctxt "#31227"
+msgid "Up Next in"
+msgstr ""
+
+#: /1080i/script-upnext-stillwatching-simple.xml
+msgctxt "#31228"
+msgid "Continue Watching in"
+msgstr ""
+
 #: /shortcuts/overrides.xml
 msgctxt "#31230"
 msgid "Top Rated Episodes"
