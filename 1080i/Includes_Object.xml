@@ -1317,6 +1317,7 @@
         <param name="ondown" default="5000" />
         <param name="width" default="auto" />
         <param name="focused" default="false" />
+        <param name="onup" default="SetFocus(9602)" />
         <definition>
             <control type="group" id="$PARAM[groupid]">
                 <left>0</left>
@@ -1353,7 +1354,7 @@
                 <textcolor>main_fg_70</textcolor>
                 <focusedcolor>panel_bg</focusedcolor>
                 <nested />
-                <onup>SetFocus(9602)</onup>
+                <onup>$PARAM[onup]</onup>
             </control>
         </definition>
     </include>
