@@ -45,11 +45,7 @@
                         <include content="Object_Info_Title">
                             <param name="label" value="$VAR[Label_MainTitle]" />
                         </include>
-                        <include content="Object_Info_Line_Label">
-                            <param name="label" value="$VAR[Label_SubTitle]" />
-                            <param name="textcolor" value="$VAR[ColorHighlight]" />
-                            <param name="divider" value="false" />
-                        </include>
+                        <include>Object_Info_Line</include>
                         <include content="Object_Info_Ratings">
                             <visible>!String.IsEmpty(Window(Home).Property(TMDBHelper.ListItem.tmdb_rating)) | !String.IsEmpty(Window(Home).Property(TMDBHelper.ListItem.trakt_rating))</visible>
                         </include>

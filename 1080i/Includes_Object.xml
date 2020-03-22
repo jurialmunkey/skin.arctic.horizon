@@ -979,6 +979,26 @@
         </include>
     </include>
 
+    <include name="Object_Info_Line_PVR">
+        <include content="Object_Info_Line_Label">
+            <param name="label" value="$INFO[$PARAM[container]ListItem.ChannelName]" />
+            <param name="textcolor" value="$PARAM[textcolor]" />
+            <param name="divider" value="false" />
+            <param name="fallback" value="19055" />
+            <param name="visible" value="$PARAM[visible]" />
+        </include>
+        <include content="Object_Info_Line_Label">
+            <param name="label" value="$INFO[$PARAM[container]ListItem.StartDate]" />
+            <param name="textcolor" value="$PARAM[textcolor]" />
+            <param name="visible" value="!String.IsEmpty($PARAM[container]ListItem.StartDate) + $PARAM[visible]" />
+        </include>
+        <include content="Object_Info_Line_Label">
+            <param name="label" value="$INFO[$PARAM[container]ListItem.StartTime]$INFO[$PARAM[container]ListItem.EndTime, - ,]" />
+            <param name="textcolor" value="$PARAM[textcolor]" />
+            <param name="visible" value="!String.IsEmpty($PARAM[container]ListItem.StartTime) + $PARAM[visible]" />
+        </include>
+    </include>
+
     <include name="Object_Info_Line_Fallback">
         <include content="Object_Info_Line_Label">
             <param name="label" value="$INFO[System.Date]" />
@@ -1009,7 +1029,7 @@
                 <include content="Object_Info_Line_Fallback">
                     <param name="textcolor" value="$PARAM[textcolor]" />
                     <param name="container" value="$PARAM[container]" />
-                    <param name="visible" value="!String.IsEqual($PARAM[container]ListItem.DBType,movie) + !String.IsEqual($PARAM[container]ListItem.DBType,tvshow) + !String.IsEqual($PARAM[container]ListItem.DBType,season) + !String.IsEqual($PARAM[container]ListItem.DBType,episode) + !String.IsEqual($PARAM[container]ListItem.DBType,actor) + !String.IsEqual($PARAM[container]ListItem.DBType,artist) + !String.IsEqual($PARAM[container]ListItem.DBType,album) + !String.IsEqual($PARAM[container]ListItem.DBType,song) + ![Container.Content(addons) + String.IsEmpty(Container.PluginName)]" />
+                    <param name="visible" value="!String.IsEqual($PARAM[container]ListItem.DBType,movie) + !String.IsEqual($PARAM[container]ListItem.DBType,tvshow) + !String.IsEqual($PARAM[container]ListItem.DBType,season) + !String.IsEqual($PARAM[container]ListItem.DBType,episode) + !String.IsEqual($PARAM[container]ListItem.DBType,actor) + !String.IsEqual($PARAM[container]ListItem.DBType,artist) + !String.IsEqual($PARAM[container]ListItem.DBType,album) + !String.IsEqual($PARAM[container]ListItem.DBType,song) + ![Container.Content(addons) + String.IsEmpty(Container.PluginName)] + ![String.StartsWith($PARAM[container]ListItem.FolderPath,pvr://) | Window.IsVisible(DialogPVRInfo.xml)]" />
                 </include>
                 <include content="Object_Info_Line_Movies">
                     <param name="textcolor" value="$PARAM[textcolor]" />
@@ -1045,6 +1065,11 @@
                     <param name="textcolor" value="$PARAM[textcolor]" />
                     <param name="container" value="$PARAM[container]" />
                     <param name="visible" value="[Container.Content(addons) + String.IsEmpty(Container.PluginName)]" />
+                </include>
+                <include content="Object_Info_Line_PVR">
+                    <param name="textcolor" value="$PARAM[textcolor]" />
+                    <param name="container" value="$PARAM[container]" />
+                    <param name="visible" value="[String.StartsWith($PARAM[container]ListItem.FolderPath,pvr://) | Window.IsVisible(DialogPVRInfo.xml)]" />
                 </include>
                 <nested />
             </control>

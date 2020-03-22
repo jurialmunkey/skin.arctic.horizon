@@ -384,7 +384,7 @@
 
         <value condition="Container.Content(episodes)">$INFO[ListItem.Studio,[COLOR=main_fg_100],[/COLOR]  ]$INFO[ListItem.Premiered,[COLOR=main_fg_100],[/COLOR]]</value>
 
-        <value condition="Window.IsVisible(DialogPVRInfo.xml)">$INFO[ListItem.ChannelName,[COLOR=main_fg_100],[/COLOR]  |  ]$INFO[ListItem.StartDate,[COLOR=main_fg_100],[/COLOR]  |  ]$INFO[ListItem.StartTime,[COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.EndTime,[COLOR=main_fg_100] - ,[/COLOR]]</value>
+        <value condition="Window.IsVisible(DialogPVRInfo.xml) | String.StartsWith(ListItem.FolderPath,pvr://)">$INFO[ListItem.ChannelName,[COLOR=main_fg_100],[/COLOR]  |  ]$INFO[ListItem.StartDate,[COLOR=main_fg_100],[/COLOR]  |  ]$INFO[ListItem.StartTime,[COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.EndTime,[COLOR=main_fg_100] - ,[/COLOR]]</value>
 
         <value condition="!String.IsEmpty(ListItem.Genre)">$INFO[ListItem.Genre,[COLOR=main_fg_100],[/COLOR]]</value>
 
@@ -427,14 +427,6 @@
         <value>$INFO[ListItem.Tagline,[B],[/B][CR]]$INFO[ListItem.Artist,[B],[/B][CR]]$VAR[Label_Plot]</value>
     </variable>
 
-    <variable name="Label_56_Heading">
-        <value condition="Container.Content(studios)">Films From This Studio</value>
-        <value condition="Container.Content(countries)">Films Made in This Country</value>
-        <value condition="Container.Content(years)">Films Released in This Year</value>
-        <value condition="Container.Content(genres)">Films From This Genre</value>
-        <value condition="Container.Content(directors)">Films by This Director</value>
-    </variable>
-    
     <variable name="Label_Plot">
         <value condition="Control.HasFocus(531) + !String.IsEmpty(Container(531).ListItem.Plot)">$INFO[Container(531).ListItem.Plot]</value>
         <value condition="!String.IsEmpty(ListItem.Property(Artist_Description))">$INFO[ListItem.Property(Artist_Description)]</value>

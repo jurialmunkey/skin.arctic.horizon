@@ -443,31 +443,38 @@
         <definition>
             <control type="group" id="$PARAM[group1-id]">
                 <nested />
-                <visible>!String.IsEmpty(Container($PARAM[id]).ListItem.TvShowTitle)</visible>
-                <include content="View_Info_Grouplist">
-                    <param name="title" value="$INFO[Container($PARAM[id]).ListItem.TvShowTitle]" />
-                    <param name="container" value="Container($PARAM[id])." />
-                    <param name="plot" value="$INFO[Container($PARAM[id]).ListItem.Plot]" />
-                    <param name="ratings" value="false" />
-                    <param name="plotheight" value="$PARAM[plotheight]" />
+                <control type="grouplist">
                     <top>5</top>
                     <left>100</left>
                     <right>580</right>
-                </include>
-            </control>
-            <control type="group" id="$PARAM[group2-id]">
-                <nested />
-                <visible>String.IsEmpty(Container($PARAM[id]).ListItem.TvShowTitle)</visible>
-                <include content="View_Info_Grouplist">
-                    <param name="title" value="$INFO[Container($PARAM[id]).ListItem.Title]" />
-                    <param name="container" value="Container($PARAM[id])." />
-                    <param name="plot" value="$INFO[Container($PARAM[id]).ListItem.Plot]" />
-                    <param name="ratings" value="false" />
-                    <param name="plotheight" value="$PARAM[plotheight]" />
-                    <top>5</top>
-                    <left>100</left>
-                    <right>580</right>
-                </include>
+                    <orientation>vertical</orientation>
+                    <usecontrolcoords>true</usecontrolcoords>
+                    <itemgap>0</itemgap>
+                    <include content="Object_Info_Title">
+                        <param name="label" value="$INFO[Container($PARAM[id]).ListItem.TvShowTitle]" />
+                        <visible>!String.IsEmpty(Container($PARAM[id]).ListItem.TvShowTitle)</visible>
+                    </include>
+                    <include content="Object_Info_Title">
+                        <param name="label" value="$INFO[Container($PARAM[id]).ListItem.Title]" />
+                        <visible>String.IsEmpty(Container($PARAM[id]).ListItem.TvShowTitle)</visible>
+                    </include>
+                    <include content="Object_Info_Line">
+                        <param name="container" value="Container($PARAM[id])." />
+                    </include>
+                    <include content="Object_Info_Title">
+                        <param name="font" value="font_small_bold" />
+                        <param name="titleheight" value="10" />
+                        <param name="label" value="$INFO[Container($PARAM[id]).ListItem.Title]" />
+                        <top>30</top>
+                        <visible>String.IsEqual(Container($PARAM[id]).ListItem.DBType,episode)</visible>
+                    </include>
+                    <include content="Object_Info_Plot">
+                        <param name="maxheight" value="$PARAM[plotmaxheight]" />
+                        <param name="height" value="$PARAM[plotheight]" />
+                        <param name="label" value="$INFO[Container($PARAM[id]).ListItem.Plot]$INFO[Container($PARAM[id]).ListItem.Property(Album_Description)]$INFO[Container($PARAM[id]).ListItem.Property(Artist_Description)]$INFO[Container($PARAM[id]).ListItem.AddonDescription]" />
+                    </include>
+                    <nested />
+                </control>
             </control>
         </definition>
     </include>
