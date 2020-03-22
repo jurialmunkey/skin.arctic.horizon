@@ -150,6 +150,13 @@
                         <label2>$INFO[Skin.String(widgetPath)]</label2>
                         <onclick>RunScript(script.skinshortcuts,type=widgets&amp;showNone=True&amp;skinWidgetName=widgetName&amp;skinWidgetTarget=widgetTarget&amp;skinWidgetPath=widgetPath)</onclick>
                     </control>
+                    <!-- <control type="radiobutton" id="19114" description="Ratings on Mirage / Global">
+                        <visible>Integer.IsEqual(Window.Property(CurrentFocus),9001)</visible>
+                        <include>Defs_Settings_Button</include>
+                        <label>Fullscreen widget ratings</label>
+                        <selected>!Skin.HasSetting(DisableFullscreenWidgetRatings)</selected>
+                        <onclick>Skin.ToggleSetting(DisableFullscreenWidgetRatings)</onclick>
+                    </control> -->
                     <control type="button" id="19106" description="Set Fallback Image">
                         <visible>Integer.IsEqual(Window.Property(CurrentFocus),9001)</visible>
                         <include>Defs_Settings_Button</include>
