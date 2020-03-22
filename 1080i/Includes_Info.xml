@@ -329,7 +329,10 @@
             <param name="label" value="$LOCALIZE[208]" />
             <param name="icon" value="special://skin/extras/icons/play3.png" />
             <param name="visible" value="Control.IsEnabled(8) + !ListItem.IsFolder + !ListItem.IsCollection" />
-            <onclick>RunScript(plugin.video.themoviedb.helper,close_dialog=1190,playmedia=$INFO[ListItem.FileNameAndPath])</onclick>
+            <onclick condition="!String.IsEmpty(ListItem.FileNameAndPath)">RunScript(plugin.video.themoviedb.helper,close_dialog=1190,playmedia=$INFO[ListItem.FileNameAndPath])</onclick>
+            <onclick condition="String.IsEmpty(ListItem.FileNameAndPath)">SendClick(8)</onclick>
+            <onclick condition="String.IsEmpty(ListItem.FileNameAndPath)">RunScript(plugin.video.themoviedb.helper,close_dialog=1190)</onclick>
+
             <onup>9601</onup>
         </include>
         <include content="$PARAM[buttoninclude]">
