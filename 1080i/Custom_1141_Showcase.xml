@@ -75,6 +75,9 @@
                         <param name="label" value="$INFO[Container(1297).ListItem.Plot]" />
                         <top>10</top>
                     </include>
+                    <control type="group">
+                        <height>20</height>
+                    </control>
                     <control type="grouplist">
                         <left>-20</left>
                         <right>-26</right>
@@ -156,8 +159,8 @@
                         <param name="container" value="Container(3002)." />
                     </include>
                     <include content="Object_Info_Plot">
-                        <param name="maxheight" value="80" />
-                        <param name="height" value="80" />
+                        <param name="maxheight" value="120" />
+                        <param name="height" value="120" />
                         <param name="label" value="$INFO[Container(3002).ListItem.Plot]" />
                     </include>
                     <!-- <control type="group">
