@@ -607,7 +607,7 @@
     <include name="Viewtype_Landscape">
         <param name="icon" default="$VAR[Image_Landscape]" />
         <definition>
-            <include content="Viewtype_Poster" condition="Skin.HasSetting(EnableTextPanel)">
+            <include content="Viewtype_Poster" condition="!Skin.HasSetting(DisableTextPanel)">
                 <param name="control-type" value="$PARAM[control-type]" />
                 <param name="orientation" value="$PARAM[orientation]" />
                 <param name="itemlayout" value="Viewtype_Landscape_Itemlayout" />
@@ -621,7 +621,7 @@
                 <param name="textpanel" value="true" />
                 <nested />
             </include>
-            <include content="Viewtype_Poster" condition="!Skin.HasSetting(EnableTextPanel)">
+            <include content="Viewtype_Poster" condition="Skin.HasSetting(DisableTextPanel)">
                 <param name="control-type" value="$PARAM[control-type]" />
                 <param name="orientation" value="$PARAM[orientation]" />
                 <param name="itemlayout" value="Viewtype_Landscape_Itemlayout" />
@@ -874,7 +874,7 @@
         <param name="textbox-visible" default="true" />
         <param name="movement" default="5" />
         <definition>
-            <include content="Viewtype_Poster" condition="Skin.HasSetting(EnableTextPanel)">
+            <include content="Viewtype_Poster" condition="!Skin.HasSetting(DisableTextPanel)">
                 <param name="height" value="$PARAM[height]" />
                 <param name="control-type" value="$PARAM[control-type]" />
                 <param name="orientation" value="$PARAM[orientation]" />
@@ -892,7 +892,7 @@
                 <param name="textpanel" value="true" />
                 <nested />
             </include>
-            <include content="Viewtype_Poster" condition="!Skin.HasSetting(EnableTextPanel)">
+            <include content="Viewtype_Poster" condition="Skin.HasSetting(DisableTextPanel)">
                 <param name="height" value="$PARAM[height]" />
                 <param name="control-type" value="$PARAM[control-type]" />
                 <param name="orientation" value="$PARAM[orientation]" />

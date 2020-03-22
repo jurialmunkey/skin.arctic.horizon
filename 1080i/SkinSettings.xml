@@ -425,8 +425,8 @@
                         <visible>Integer.IsEqual(Window.Property(CurrentFocus),9004)</visible>
                         <label>$LOCALIZE[31229]</label>
                         <include>Defs_Settings_Button</include>
-                        <selected>Skin.HasSetting(EnableTextPanel)</selected>
-                        <onclick>Skin.ToggleSetting(EnableTextPanel)</onclick>
+                        <selected>!Skin.HasSetting(DisableTextPanel)</selected>
+                        <onclick>Skin.ToggleSetting(DisableTextPanel)</onclick>
                     </control>
 
                     <control type="radiobutton" id="19402" description="Disable watched indicators">
