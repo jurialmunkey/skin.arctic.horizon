@@ -12,6 +12,10 @@
             <scrolltime tween="quadratic">400</scrolltime>
             <ondown>3002</ondown>
             <preloaditems>2</preloaditems>
+            <animation effect="zoom" start="100" end="110" center="auto" condition="true">Conditional</animation>
+            <animation effect="slide" start="0" end="-30,-30" condition="true">Conditional</animation>
+            <animation effect="zoom" start="100" end="120" center="auto" time="10000" tween="sine" easing="inout" pulse="true" condition="System.IdleTime(8)">Conditional</animation>
+            <animation effect="slide" start="0,0" end="60,60" time="6000" tween="sine" easing="inout" pulse="true" condition="System.IdleTime(8)">Conditional</animation>
             <onfocus>SetProperty(TMDbHelper.WidgetContainer,1297,Home)</onfocus>
             <itemlayout width="1920" height="1080">
                 <control type="image">
@@ -126,7 +130,7 @@
                         <control type="button" id="3104">
                             <visible allowhiddenfocus="true">false</visible>
                             <onfocus>Control.Move(1297,1)</onfocus>
-                            <onfocus>SetFocus(3103)</onfocus>
+                            <onfocus>SetFocus(3102)</onfocus>
                         </control>
                     </control>
                 </control>
