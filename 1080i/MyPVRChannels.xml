@@ -17,37 +17,42 @@
                 <control type="group">
                     <visible>Control.IsVisible(50)</visible>
                     <include>View_Pad</include>
-                    <include content="View_PVR_ChannelGroups">
-                        <onup>SetFocus(50,9999,absolute)</onup>
-                        <ondown>SetFocus(50,0,absolute)</ondown>
-                    </include>
-                    <control type="label">
-                        <top>item_list_height_half</top>
-                        <height>item_list_height_half</height>
-                        <width>521</width>
-                        <align>left</align>
-                        <aligny>top</aligny>
-                        <font>font_statusbar</font>
-                        <label>$INFO[System.Date]</label>
-                        <textcolor>main_fg_30</textcolor>
-                    </control>
                     <control type="group">
-                        <right>-4</right>
-                        <top>item_list_height</top>
-                        <include content="View_50_List_Control">
-                            <param name="top" value="0" />
-                            <param name="height" value="720" />
-                            <param name="left" value="0" />
-                            <param name="right" value="0" />
-                            <param name="id" value="50" />
-                            <param name="altid" value="9000" />
-                            <param name="visible" value="true" />
-                            <param name="itemlayout" value="View_PVR_ItemLayout" />
-                            <param name="itemheight" value="item_list_height" />
-                            <param name="controllayout" value="View_PVR_Channels" />
-                            <param name="controltype" value="list" />
+                        <include condition="Skin.HasSetting(PVRGuide.Info)">View_PVR_Guide_Top</include>
+                        <include content="View_PVR_ChannelGroups">
+                            <onup>SetFocus(50,9999,absolute)</onup>
+                            <ondown>SetFocus(50,0,absolute)</ondown>
                         </include>
+                        <control type="label">
+                            <top>item_list_height_half</top>
+                            <height>item_list_height_half</height>
+                            <width>521</width>
+                            <align>left</align>
+                            <aligny>top</aligny>
+                            <font>font_statusbar</font>
+                            <label>$INFO[System.Date]</label>
+                            <textcolor>main_fg_30</textcolor>
+                        </control>
+                        <control type="group">
+                            <right>-4</right>
+                            <top>item_list_height</top>
+                            <include content="View_50_List_Control">
+                                <param name="top" value="0" />
+                                <param name="height" value="100%" />
+                                <param name="left" value="0" />
+                                <param name="right" value="0" />
+                                <param name="id" value="50" />
+                                <param name="altid" value="9000" />
+                                <param name="visible" value="true" />
+                                <param name="itemlayout" value="View_PVR_ItemLayout" />
+                                <param name="itemheight" value="item_list_height" />
+                                <param name="controllayout" value="View_PVR_Channels" />
+                                <param name="controltype" value="list" />
+                                <bottom>0</bottom>
+                            </include>
+                        </control>
                     </control>
+                    <include condition="Skin.HasSetting(PVRGuide.Info)">View_PVR_Guide_Info</include>
                 </control>
                 <include>Topbar_Left</include>
             </control>
