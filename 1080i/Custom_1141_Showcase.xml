@@ -3,6 +3,7 @@
     <defaultcontrol always="true">3101</defaultcontrol>
     <onload>SetProperty(Header_Left_Text,Showcase)</onload>
     <onunload>ClearProperty(TMDbHelper.WidgetContainer,Home)</onunload>
+    <onload>AlarmClock(refocusit,SetFocus(3101),00:01,silent)</onload>
     <controls>
         <control type="wraplist" id="1297">
             <ondown>3101</ondown>
@@ -22,7 +23,7 @@
                     <texture background="true">$VAR[Image_Fanart]</texture>
                 </control>
             </focusedlayout>
-            <content target="videos" sortby="random">$INFO[Skin.String(widgetPath)]</content>
+            <content target="videos" sortby="random">$VAR[Defs_ScreensaverWidget]</content>
             <include content="Defs_AutoScroll">
                 <param name="condition" value="System.IdleTime(3) + [Control.HasFocus(1297) | Control.HasFocus(3101) | Control.HasFocus(3102)]" />
             </include>
@@ -49,6 +50,7 @@
             <control type="group">
                 <control type="grouplist">
                     <visible allowhiddenfocus="true">!Control.HasFocus(3002)</visible>
+                    <animation effect="fade" start="100" end="0" delay="0" time="400" tween="cubic" easing="inout">Hidden</animation>
                     <left>view_pad</left>
                     <top>65</top>
                     <bottom>520</bottom>
@@ -81,7 +83,7 @@
                         <orientation>horizontal</orientation>
                         <usecontrolcoords>true</usecontrolcoords>
                         <itemgap>-10</itemgap>
-                        <control type="button" id="3104">
+                        <control type="button" id="3199">
                             <visible allowhiddenfocus="true">false</visible>
                             <onfocus>Control.Move(1297,-1)</onfocus>
                             <onfocus>SetFocus(3101)</onfocus>
@@ -110,15 +112,28 @@
                             <onclick>Action(Info)</onclick>
                             <onfocus>SetProperty(TMDbHelper.WidgetContainer,1297,Home)</onfocus>
                         </include>
-                        <control type="button" id="3103">
+                        <!-- <include content="Object_Info_Button" description="Close">
+                            <param name="id" value="3103" />
+                            <param name="groupid" value="3203" />
+                            <param name="label" value="$LOCALIZE[15067]" />
+                            <param name="icon" value="special://skin/extras/icons/disabled.png" />
+                            <param name="ondown" value="3002" />
+                            <param name="visible" value="true" />
+                            <param name="onup" value="Control.Move(1297,1)" />
+                            <onclick>Action(Close)</onclick>
+                            <onfocus>SetProperty(TMDbHelper.WidgetContainer,1297,Home)</onfocus>
+                        </include> -->
+                        <control type="button" id="3104">
                             <visible allowhiddenfocus="true">false</visible>
                             <onfocus>Control.Move(1297,1)</onfocus>
-                            <onfocus>SetFocus(3102)</onfocus>
+                            <onfocus>SetFocus(3103)</onfocus>
                         </control>
                     </control>
                 </control>
                 <control type="grouplist">
                     <visible>Control.HasFocus(3002)</visible>
+                    <animation effect="fade" start="0" end="100" delay="0" time="400" tween="cubic" easing="inout">Visible</animation>
+
                     <left>view_pad</left>
                     <top>65</top>
                     <bottom>520</bottom>
@@ -133,14 +148,13 @@
                     <include content="Object_Info_Line">
                         <param name="container" value="Container(3002)." />
                     </include>
-                    <!-- <include content="Object_Info_Ratings">
+                    <include content="Object_Info_Ratings">
                         <param name="container" value="Container(3002)." />
-                    </include> -->
+                    </include>
                     <include content="Object_Info_Plot">
-                        <param name="maxheight" value="160" />
-                        <param name="height" value="160" />
+                        <param name="maxheight" value="80" />
+                        <param name="height" value="80" />
                         <param name="label" value="$INFO[Container(3002).ListItem.Plot]" />
-                        <top>10</top>
                     </include>
                     <!-- <control type="group">
                         <height>14</height>

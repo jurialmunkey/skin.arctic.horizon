@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <window>
     <defaultcontrol always="true">1297</defaultcontrol>
-    <onload>SetProperty(TMDbHelper.WidgetContainer,1297,Home)</onload>
-    <onunload>ClearProperty(TMDbHelper.WidgetContainer,Home)</onunload>
+    <onload condition="Skin.HasSetting(DisableShowcaseScreensaver)">SetProperty(TMDbHelper.WidgetContainer,1297,Home)</onload>
+    <onunload condition="Skin.HasSetting(DisableShowcaseScreensaver)">ClearProperty(TMDbHelper.WidgetContainer,Home)</onunload>
+    <onload condition="!Skin.HasSetting(DisableShowcaseScreensaver)">Action(Close)</onload>
+    <onunload condition="!Skin.HasSetting(DisableShowcaseScreensaver)">ActivateWindow(1141)</onunload>
     <controls>
         <control type="image">
             <texture colordiffuse="Background">common/bg.jpg</texture>
         </control>
 
         <control type="list" id="1297">
-            <content sortby="random">$INFO[Skin.String(screensaver.arctic.mirage.path)]</content>
+            <content sortby="random">$VAR[Defs_ScreensaverWidget]</content>
             <autoscroll time="20000">true</autoscroll>
             <orientation>horizontal</orientation>
             <itemlayout />

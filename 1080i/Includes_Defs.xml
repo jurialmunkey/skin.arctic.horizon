@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
+    <variable name="Defs_ScreensaverWidget">
+        <value condition="!String.IsEmpty(Skin.String(screensaver.arctic.mirage.path))">$INFO[Skin.String(screensaver.arctic.mirage.path)]</value>
+        <value>$INFO[Skin.String(widgetPath)]</value>
+    </variable>
+
     <include name="Defs_Pad">
         <param name="pad" default="5" />
         <definition>
