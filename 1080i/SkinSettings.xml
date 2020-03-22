@@ -421,6 +421,14 @@
                         <onclick>Skin.ToggleSetting(UseTrackNamingTemplate)</onclick>
                     </control>
 
+                    <control type="radiobutton" id="19435">
+                        <visible>Integer.IsEqual(Window.Property(CurrentFocus),9004)</visible>
+                        <label>$LOCALIZE[31229]</label>
+                        <include>Defs_Settings_Button</include>
+                        <selected>Skin.HasSetting(EnableTextPanel)</selected>
+                        <onclick>Skin.ToggleSetting(EnableTextPanel)</onclick>
+                    </control>
+
                     <control type="radiobutton" id="19402" description="Disable watched indicators">
                         <visible>Integer.IsEqual(Window.Property(CurrentFocus),9004)</visible>
                         <include>Defs_Settings_Button</include>

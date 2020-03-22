@@ -1128,6 +1128,11 @@ msgctxt "#31228"
 msgid "Continue Watching in"
 msgstr ""
 
+#: /1080i/SkinSettings.xml
+msgctxt "#31229"
+msgid "Panels behind item text"
+msgstr ""
+
 #: /shortcuts/overrides.xml
 msgctxt "#31230"
 msgid "Top Rated Episodes"

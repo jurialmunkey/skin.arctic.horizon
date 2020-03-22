@@ -76,7 +76,6 @@
                     <param name="icon" value="$INFO[ListItem.Icon]" />
                     <param name="iconheight" value="item_icon_height" />
                     <param name="diffuse" value="diffuse/landscape-std.png" />
-                    <param name="forced" value="false" />
                     <param name="labelinclude" value="View_Bookmarks_Label" />
                     <param name="visible" value="true" />
                     <orientation>horizontal</orientation>

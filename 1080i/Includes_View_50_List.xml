@@ -193,7 +193,6 @@
         <param name="controltype" default="panel" />
         <param name="viewtype" default="$LOCALIZE[535]" />
         <param name="viewtypename" default="list" />
-        <param name="forced" default="false" />
         <param name="flipsides" default="false" />
         <definition>
             <control type="$PARAM[controltype]" id="$PARAM[id]">

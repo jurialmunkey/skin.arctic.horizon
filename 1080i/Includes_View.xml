@@ -325,15 +325,13 @@
                 <param name="label" value="$LOCALIZE[31069]" />
                 <param name="isFocused" value="Control.HasFocus($PARAM[topid])" />
             </include>
-            <include content="Viewtype_Square">
+            <include content="Viewtype_Tags">
                 <param name="id" value="$PARAM[topid]" />
                 <param name="height" value="275" />
-                <param name="itemlayout" value="View_Settings_Itemlayout" />
                 <param name="itemlayout-width" value="item_landscape_width" />
                 <param name="itemlayout-height" value="item_settings_height" />
                 <param name="offset" value="0" />
                 <param name="iconheight" value="item_settings_height" />
-                <param name="forced" value="false" />
                 <param name="visible" value="true" />
                 <param name="textbox-visible" value="true" />
                 <param name="orientation" value="horizontal" />
@@ -359,7 +357,7 @@
                 <param name="label" value="$LOCALIZE[5]" />
                 <param name="isFocused" value="Control.HasFocus($PARAM[bottomid])" />
             </include>
-            <include content="Viewtype_Square">
+            <include content="Viewtype_Tags">
                 <param name="id" value="$PARAM[bottomid]" />
                 <param name="height" value="480" />
                 <param name="itemlayout-width" value="item_landscape_width" />
