@@ -49,9 +49,10 @@
     </variable>
 
     <variable name="Label_NowPlaying_Sublabel">
-        <value condition="!String.IsEmpty(MusicPlayer.Artist)">$INFO[System.Time,Time ,]$INFO[MusicPlayer.Artist,  •  ,]$INFO[Player.Time,  •  ,]$INFO[Player.Duration, / ,]</value>
-        <value condition="!String.IsEmpty(VideoPlayer.EndTime)">$INFO[System.Time,Time ,]$INFO[VideoPlayer.EndTime,  •  Ends ,]</value>
-        <value>$INFO[System.Time,Time ,]$INFO[Player.FinishTime,  •  Ends ,]</value>
+        <value condition="!String.IsEmpty(MusicPlayer.Artist)">$INFO[System.Time,$LOCALIZE[555] ,]$INFO[MusicPlayer.Artist,  •  ,]$INFO[Player.Time,  •  ,]$INFO[Player.Duration, / ,]</value>
+        <value condition="!String.IsEmpty(VideoPlayer.EndTime) + !String.IsEqual(VideoPlayer.EndTime,System.Time)">$INFO[System.Time,$LOCALIZE[555] ,]$INFO[VideoPlayer.EndTime,  •  $LOCALIZE[31207] ,]</value>
+        <value condition="!String.IsEmpty(Player.FinishTime) + !String.IsEqual(Player.FinishTime,System.Time)">$INFO[System.Time,$LOCALIZE[555] ,]$INFO[Player.FinishTime,  •  $LOCALIZE[31207] ,]</value>
+        <value>$INFO[System.Time,$LOCALIZE[555] ,]</value>
     </variable>
 
     <variable name="Label_Showcase_Title">
