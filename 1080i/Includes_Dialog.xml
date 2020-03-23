@@ -263,7 +263,7 @@
                 <centertop>50%</centertop>
                 <height>72</height>
                 <control type="label" id="$PARAM[main_id]">
-                    <right>-4</right>
+                    <right>0</right>
                     <centertop>33%</centertop>
                     <height>26</height>
                     <label>$PARAM[label]</label>
