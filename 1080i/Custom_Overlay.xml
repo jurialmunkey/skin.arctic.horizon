@@ -1001,7 +1001,7 @@
                     $INFO[Window(Home).Property(TMDbHelper.ListItem.Label),[COLOR=FFFF00FF]  SM.LABEL  [/COLOR],]$INFO[Window(Home).Property(TMDbHelper.ListItem.Title),[COLOR=FFFF00FF]  SM.TITLE  [/COLOR],]
                     $INFO[ListItem.Rating,[COLOR=FFFF00FF]  RATING  [/COLOR],]$INFO[ListItem.UserRating,[COLOR=FFFF00FF]  USER RATING  [/COLOR],]
                      $INFO[ListItem.Duration,[COLOR=FFFF00FF]  DURATION  [/COLOR],]
-                     $INFO[ListItem.FileNameAndPath,[COLOR=FFFF00FF]  FILEPATH  [/COLOR],]
+                     $INFO[Window(Home).Property(TMDBHelper.ListItem.Studio.1.TMDB_ID),[COLOR=FFFF00FF]  INFO  [/COLOR],]
                     $INFO[Window(Home).Property(TMDbHelper.IsUpdating),[COLOR=FFFF00FF]  SM.ISUPDATING  [/COLOR],]
                     $INFO[ListItem.VideoCodec,[COLOR=FFFF00FF]CODEC  [/COLOR],]$INFO[ListItem.VideoAspect,[COLOR=FFFF00FF]  ASPECT  [/COLOR],]$INFO[ListItem.VideoResolution,[COLOR=FFFF00FF]  RES  [/COLOR],]$INFO[ListItem.AudioCodec,[COLOR=FFFF00FF]  CODEC  [/COLOR],]$INFO[ListItem.AudioChannels,[COLOR=FFFF00FF]  CHANNELS  [/COLOR],]
                     $INFO[ListItem.Property(NumItems.TMDB.Cast),[COLOR=FFFF00FF]CASTIN  [/COLOR],]$INFO[ListItem.Property(NumItems.TMDB.Crew),[COLOR=FFFF00FF]  CREWIN  [/COLOR],]$INFO[ListItem.Property(NumItems.TMDB.Total),[COLOR=FFFF00FF]  TOTAL  [/COLOR],]

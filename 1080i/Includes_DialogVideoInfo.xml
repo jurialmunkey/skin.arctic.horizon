@@ -77,6 +77,7 @@
                     <include condition="!ListItem.IsCollection">DialogVideoInfo_Widget_Year</include>
                     <include condition="!ListItem.IsCollection">DialogVideoInfo_Widget_Genre</include>
                     <include condition="!ListItem.IsCollection">DialogVideoInfo_Widget_CastStarsIn</include>
+                    <!-- <include condition="!ListItem.IsCollection">DialogVideoInfo_Widget_Keywords</include> -->
                     <include condition="!ListItem.IsCollection">DialogVideoInfo_Widget_Posters</include>
                     <include condition="!ListItem.IsCollection">DialogVideoInfo_Widget_ImageGallery</include>
                     <!-- <include condition="!ListItem.IsCollection">DialogVideoInfo_Widget_Details</include> -->
@@ -416,8 +417,8 @@
             <param name="includecondition" value="!Skin.HasSetting(DisableInfoListStudio)" />
             <param name="id" value="5005" />
             <param name="groupid" value="5105" />
-            <param name="visible" value="!String.IsEmpty(ListItem.Studio)" />
-            <param name="label" value="$INFO[ListItem.Studio,$LOCALIZE[31053] ,]" />
+            <param name="visible" value="!String.IsEmpty(Window(Home).Property(TMDBHelper.ListItem.Studio.1.TMDB_ID))" />
+            <param name="label" value="$INFO[Window(Home).Property(TMDBHelper.ListItem.Studio.1.Name),From ,]" />
             <param name="hideisupdating" value="true" />
             <movement>3</movement>
             <include>Defs_InfoList_OnClick</include>
@@ -461,7 +462,7 @@
             <param name="id" value="5008" />
             <param name="groupid" value="5108" />
             <param name="visible" value="!String.IsEmpty(ListItem.Year)" />
-            <param name="label" value="$INFO[ListItem.Year,$LOCALIZE[31053] ,]" />
+            <param name="label" value="$INFO[ListItem.Year,From ,]" />
             <param name="hideisupdating" value="true" />
             <movement>3</movement>
             <include>Defs_InfoList_OnClick</include>
@@ -521,6 +522,24 @@
             <movement>1</movement>
             <content limit="25" target="videos" sortby="file">$VAR[Info_Youtube]</content>
             
+        </include>
+    </include>
+
+    <include name="DialogVideoInfo_Widget_Keywords">
+        <include content="Info_Widget_Poster">
+            <param name="includecondition" value="!Skin.HasSetting(DisableInfoListKeywords)" />
+            <param name="id" value="5012" />
+            <param name="groupid" value="5112" />
+            <param name="label" value="Keywords" />
+            <param name="control-type" value="panel" />
+            <param name="viewtype-include" value="Viewtype_Keywords" />
+            <param name="visible" value="String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,season) | String.IsEqual(ListItem.DBType,episode)" />
+            <param name="hideisupdating" value="true" />
+            <onclick condition="!Window.IsVisible(MyVideoNav.xml)">RunScript(plugin.video.themoviedb.helper,close_dialog=1190,call_path=$INFO[ListItem.FolderPath])</onclick>
+            <onclick condition="Window.IsVisible(MyVideoNav.xml)">RunScript(plugin.video.themoviedb.helper,close_dialog=1190,call_update=$INFO[ListItem.FolderPath])</onclick>
+            <include>Defs_InfoList_OnBack</include>
+            <width>1220</width>
+            <content>$VAR[Info_Keywords]</content>
         </include>
     </include>
 
