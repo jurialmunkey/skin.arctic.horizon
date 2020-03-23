@@ -102,5 +102,8 @@
         </include>
         
         <include>Topbar_Right</include>
+        <include>Object_NowPlaying</include>
+        <include>Viewtype_Options</include>
+        <include>Object_PlotOverlay</include>
     </controls>
 </window>
