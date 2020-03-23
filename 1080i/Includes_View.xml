@@ -325,7 +325,7 @@
                 <param name="label" value="$LOCALIZE[31069]" />
                 <param name="isFocused" value="Control.HasFocus($PARAM[topid])" />
             </include>
-            <include content="Viewtype_Tags">
+            <include content="Viewtype_Keywords">
                 <param name="id" value="$PARAM[topid]" />
                 <param name="height" value="275" />
                 <param name="itemlayout-width" value="item_landscape_width" />
@@ -357,7 +357,7 @@
                 <param name="label" value="$LOCALIZE[5]" />
                 <param name="isFocused" value="Control.HasFocus($PARAM[bottomid])" />
             </include>
-            <include content="Viewtype_Tags">
+            <include content="Viewtype_Keywords">
                 <param name="id" value="$PARAM[bottomid]" />
                 <param name="height" value="480" />
                 <param name="itemlayout-width" value="item_landscape_width" />

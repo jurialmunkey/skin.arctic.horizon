@@ -4,7 +4,7 @@
         <control type="group">
             <visible>Control.IsVisible(55)</visible>
             <include>Animation_Down</include>
-            <include content="Viewtype_Tags">
+            <include content="Viewtype_Keywords">
                 <param name="id" value="55" />
                 <param name="altid" value="550" />
                 <param name="control-type" value="panel" />
