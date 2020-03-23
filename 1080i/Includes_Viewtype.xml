@@ -654,7 +654,7 @@
                     </control>
                     <control type="image">
                         <bordersize>7</bordersize>
-                        <texture border="10" colordiffuse="$VAR[ColorSelectBox2]">common/box-gradient.png</texture>
+                        <texture border="10" colordiffuse="$VAR[ColorSelectBox2]">common/box-gradient-vertical.png</texture>
                     </control>
                 </include>
                 <control type="group">
@@ -714,6 +714,31 @@
                     <include content="Object_PosterBack" condition="!$PARAM[textpanel]">
                         <param name="pad" value="-5" />
                     </include>
+                    <include condition="$PARAM[selectbox] + $PARAM[textpanel]" content="View_Selectbox">
+                        <param name="focusbounce" value="true" />
+                        <visible>Control.HasFocus($PARAM[id]) | Control.HasFocus($PARAM[altid])</visible>
+                        <bottom>-$PARAM[textbox-height]</bottom>
+                        <control type="image">
+                            <bordersize>7</bordersize>
+                            <texture border="10" colordiffuse="$VAR[ColorSelectBox]">common/box.png</texture>
+                        </control>
+                        <control type="image">
+                            <bordersize>7</bordersize>
+                            <texture border="10" colordiffuse="$VAR[ColorSelectBox2]">common/box-gradient-vertical.png</texture>
+                        </control>
+                    </include>
+                    <include condition="$PARAM[selectbox] + !$PARAM[textpanel]" content="View_Selectbox">
+                        <param name="focusbounce" value="true" />
+                        <visible>Control.HasFocus($PARAM[id]) | Control.HasFocus($PARAM[altid])</visible>
+                        <control type="image">
+                            <bordersize>7</bordersize>
+                            <texture border="10" colordiffuse="$VAR[ColorSelectBox]">common/box.png</texture>
+                        </control>
+                        <control type="image">
+                            <bordersize>7</bordersize>
+                            <texture border="10" colordiffuse="$VAR[ColorSelectBox2]">common/box-gradient-vertical.png</texture>
+                        </control>
+                    </include>
                     <include content="Object_Artwork">
                         <param name="id" value="$PARAM[id]" />
                         <param name="altid" value="$PARAM[altid]" />
@@ -737,24 +762,6 @@
                     <include content="Viewtype_Landscape_Bottom" condition="!$PARAM[textbox-visible]">
                         <param name="height" value="$PARAM[textbox-height]" />
                     </include>
-                    <control type="image">
-                        <height>$PARAM[textbox-height]</height>
-                        <bottom>15</bottom>
-                        <left>15</left>
-                        <right>15</right>
-                        <visible>Control.HasFocus($PARAM[id]) + $PARAM[selectbox]</visible>
-                        <texture border="10" colordiffuse="$VAR[ColorSelectBox]">common/white.png</texture>
-                        <visible>$PARAM[textbox-visible]</visible>
-                    </control>
-                    <control type="image">
-                        <height>$PARAM[textbox-height]</height>
-                        <bottom>15</bottom>
-                        <left>15</left>
-                        <right>15</right>
-                        <visible>Control.HasFocus($PARAM[id]) + $PARAM[selectbox]</visible>
-                        <texture border="10" colordiffuse="$VAR[ColorSelectBox2]">common/selectbox-gradient-label.png</texture>
-                        <visible>$PARAM[textbox-visible]</visible>
-                    </control>
                 </include>
 
                 <!-- Textlabels for Panel -->

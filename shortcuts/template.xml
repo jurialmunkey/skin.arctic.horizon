@@ -106,7 +106,7 @@
             <property name="isSettings" tag="property" attribute="name|list" value="Settings">true</property>
             <property name="isSettings">false</property>
 
-            <property name="widgetInclude" tag="property" attribute="name|list" value="Submenu">Viewtype_Tags</property>
+            <property name="widgetInclude" tag="property" attribute="name|list" value="Submenu">Viewtype_Keywords</property>
             <property name="widgetInclude" tag="property" attribute="name|widgetAspect" value="Banner">Viewtype_BigBanner</property>
             <property name="widgetInclude" tag="property" attribute="name|widgetAspect" value="Square">Viewtype_Square</property>
             <property name="widgetInclude" tag="property" attribute="name|widgetAspect" value="Small Square">Viewtype_Square</property>
