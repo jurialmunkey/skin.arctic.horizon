@@ -545,11 +545,27 @@
     <include name="View_PVR_Guide_Top"><top>320</top></include>
 
     <include name="View_PVR_Guide_Info">
+        <!-- <control type="group">
+            <height>320</height>
+            <width>480</width>
+            <right>0</right>
+            <top>0</top>
+            <visible>Player.HasVideo</visible>
+            <include content="Object_PosterBack">
+                <param name="pad" value="-20" />
+            </include>
+            <control type="image">
+                <texture colordiffuse="black" border="10">common/box.png</texture>
+            </control>
+            <control type="videowindow">
+            </control>
+        </control> -->
         <control type="grouplist">
             <orientation>vertical</orientation>
             <usecontrolcoords>true</usecontrolcoords>
             <itemgap>0</itemgap>
             <height>275</height>
+            <right>520</right>
             <include content="Object_Info_Title">
                 <param name="label" value="$VAR[Label_PVRGuide_Title]" />
             </include>
