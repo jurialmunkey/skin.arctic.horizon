@@ -417,7 +417,7 @@
     <include name="Home_Vertical_Info">
         <param name="plotheight" default="200" />
         <definition>
-            <control type="group" id="$PARAM[group1-id]">
+            <control type="group" id="$PARAM[groupid]">
                 <nested />
                 <control type="grouplist">
                     <top>5</top>
@@ -449,7 +449,6 @@
                         <param name="height" value="$PARAM[plotheight]" />
                         <param name="label" value="$INFO[Container($PARAM[id]).ListItem.Plot]$INFO[Container($PARAM[id]).ListItem.Property(Album_Description)]$INFO[Container($PARAM[id]).ListItem.Property(Artist_Description)]$INFO[Container($PARAM[id]).ListItem.AddonDescription]" />
                     </include>
-                    <nested />
                 </control>
             </control>
         </definition>
