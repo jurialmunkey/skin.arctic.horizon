@@ -1,33 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window type="window" id="1138">
-    <defaultcontrol always="true">3000</defaultcontrol>
+    <defaultcontrol always="true">4100</defaultcontrol>
     <onload>SetProperty(Header_Left_Text,$LOCALIZE[137])</onload>
     <onload condition="String.IsEmpty(Skin.String(SearchTerm))">Back</onload>
     <controls>
         <include>Global_Background</include>
-        <include>Topbar_Right</include>
-        <include>Topbar_Left</include>
-        
         <control type="group">
-            <visible allowhiddenfocus="true">!$EXP[Exp_ShowPlotOverlay]</visible>
-            <include>Animation_FadeInOut</include>
-            <include>View_Pad</include>
-            <control type="grouplist" id="3000">
-                <left>-100</left>
-                <top>-20</top>
-                <right>-100</right>
-                <scrolltime tween="quadratic">400</scrolltime>
-                <height>915</height>
-                <orientation>vertical</orientation>
-                <itemgap>-52</itemgap>
-                <usecontrolcoords>true</usecontrolcoords>
-                <control type="group" id="3999"><height>0</height></control>
-
-                <include>skinshortcuts-template-search</include>
-
+            <visible allowhiddenfocus="true">!$EXP[Exp_ShowPlotOverlay] + !$EXP[Exp_InfoVisible]</visible>
+            <include>Animation_Common</include>
+            <control type="group">
+                <include content="View_Pad">
+                    <param name="left" value="0" />
+                    <param name="right" value="0" />
+                </include>
+                <include content="DialogVideoInfo_WidgetGroupList">
+                    <include>skinshortcuts-template-search</include>
+                </include>
             </control>
+            <include>Topbar_Left</include>
         </control>
-
+        <include>Topbar_Right</include>
         <include>Object_PlotOverlay</include>
     </controls>
 </window>

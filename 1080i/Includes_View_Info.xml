@@ -55,10 +55,6 @@
 
     <include name="View_Hub_Buttons">
         <control type="grouplist" id="$PARAM[grouplistid]">
-            <!-- <onleft>301</onleft>
-            <onleft>ClearProperty(SubMenu.ID,Home)</onleft>
-            <onleft>ClearProperty(SubMenu.widgetPath,Home)</onleft>
-            <onleft>ClearProperty(SubMenu.widgetName,Home)</onleft> -->
             <include>Defs_ButtonList</include>
             <include>skinshortcuts-template-hubmenu</include>
         </control>

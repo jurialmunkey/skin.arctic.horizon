@@ -15,20 +15,20 @@
     <!-- For Power Menu -->
     <groupoverride group="powermenu" condition="Window.IsActive(DialogButtonMenu.xml)">Close</groupoverride>
 
-    <override action="Skin.SetString(SearchTerm)">
-        <action>Skin.Reset(SearchTerm)</action>
-        <action>Skin.SetString(SearchTerm)</action>
-        <action>ActivateWindow(1138)</action>
-    </override>
-
-    <override action="globaloverride" group="mainmenu">
+    <override action="ActivateWindow(1110)">
         <action>SetProperty(Hub.Label,$INFO[Container(301).ListItem.Label],Home)</action>
         <action>SetProperty(Hub.submenuVisibility,$INFO[Container(301).ListItem.Property(submenuVisibility)],Home)</action>
         <action>SetProperty(Hub.widgetPath,$INFO[Container(301).ListItem.Property(widgetPath)],Home)</action>
         <action>SetProperty(Hub.widgetTarget,$INFO[Container(301).ListItem.Property(widgetTarget)],Home)</action>
         <action>SetProperty(Hub.widgetName,$INFO[Container(301).ListItem.Property(widgetName)],Home)</action>
         <action>SetProperty(Hub.widgetAspect,$INFO[Container(301).ListItem.Property(widgetAspect)],Home)</action>
-        <action>::ACTION::</action>
+        <action>ActivateWindow(1110)</action>
+    </override>
+
+    <override action="Skin.SetString(SearchTerm)">
+        <action>Skin.Reset(SearchTerm)</action>
+        <action>Skin.SetString(SearchTerm)</action>
+        <action>ActivateWindow(1138)</action>
     </override>
 
     <!-- Property defaults for widgets -->

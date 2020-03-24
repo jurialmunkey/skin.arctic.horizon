@@ -224,7 +224,7 @@
             <nested />
             <top>55</top>
             <left>100</left>
-            <right>800</right>
+            <right>100</right>
             <height>425</height>
         </control>
     </include>
@@ -251,7 +251,7 @@
             <itemgap>infowidgets_group_itemgap</itemgap>
             <top>-20</top>
             <left>-20</left>
-            <right>-800</right>
+            <right>-100</right>
             <usecontrolcoords>true</usecontrolcoords>
             <control type="group" id="5999"><height>0</height></control>
             <nested />
@@ -601,7 +601,7 @@
             <control type="group" id="$PARAM[id]">
                 <nested />
                 <top>infowidgets_item_top</top>
-                <right>700</right>
+                <right>0</right>
                 <height>item_widget_details_height</height>
                 <control type="grouplist">
                     <top>10</top>
