@@ -301,7 +301,7 @@
                     <control type="radiobutton" id="19244" description="Busy Loader">
                         <visible>Integer.IsEqual(Window.Property(CurrentFocus),9002)</visible>
                         <include>Defs_Settings_Button</include>
-                        <label>$LOCALIZE[31239]</label>
+                        <label>$LOCALIZE[31239] $LOCALIZE[31240]</label>
                         <selected>!Skin.HasSetting(DisableBusyBackground)</selected>
                         <onclick>Skin.ToggleSetting(DisableBusyBackground)</onclick>
                     </control>

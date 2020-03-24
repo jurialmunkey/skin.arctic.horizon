@@ -1182,6 +1182,11 @@ msgctxt "#31239"
 msgid "Background busy animation"
 msgstr ""
 
+#: /1080i/SkinSettings.xml
+msgctxt "#31240"
+msgid "(disable to improve performance)"
+msgstr ""
+
 #: /shortcuts/overrides.xml
 msgctxt "#31242"
 msgid "Recently Played Albums"
