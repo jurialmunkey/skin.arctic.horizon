@@ -298,14 +298,12 @@
                         <onclick condition="System.HasAddon(script.colorbox)">Skin.ToggleSetting(DisableBlur)</onclick>
                     </control>
 
-                    
-                    <control type="radiobutton" id="19208" description="Use poster for blur">
+                    <control type="radiobutton" id="19244" description="Busy Loader">
                         <visible>Integer.IsEqual(Window.Property(CurrentFocus),9002)</visible>
                         <include>Defs_Settings_Button</include>
-                        <label>$LOCALIZE[31133]</label>
-                        <selected>!Skin.HasSetting(EnableFanartBlur)</selected>
-                        <onclick>Skin.ToggleSetting(EnableFanartBlur)</onclick>
-                        <enable>![!System.HasAddon(script.colorbox) | Skin.HasSetting(DisableBlur)] + System.HasAddon(script.colorbox)</enable>
+                        <label>$LOCALIZE[31239]</label>
+                        <selected>!Skin.HasSetting(DisableBusyBackground)</selected>
+                        <onclick>Skin.ToggleSetting(DisableBusyBackground)</onclick>
                     </control>
 
                     <control type="radiobutton" id="19277" description="Shadowlines">
@@ -314,6 +312,15 @@
                         <label>Divider shadows</label>
                         <selected>Skin.HasSetting(ShadowLines)</selected>
                         <onclick>Skin.ToggleSetting(ShadowLines)</onclick>
+                    </control>
+
+                    <control type="radiobutton" id="19208" description="Use poster for blur">
+                        <visible>Integer.IsEqual(Window.Property(CurrentFocus),9002)</visible>
+                        <include>Defs_Settings_Button</include>
+                        <label>$LOCALIZE[31133]</label>
+                        <selected>!Skin.HasSetting(EnableFanartBlur)</selected>
+                        <onclick>Skin.ToggleSetting(EnableFanartBlur)</onclick>
+                        <enable>![!System.HasAddon(script.colorbox) | Skin.HasSetting(DisableBlur)] + System.HasAddon(script.colorbox)</enable>
                     </control>
 
                     <!-- ============= -->

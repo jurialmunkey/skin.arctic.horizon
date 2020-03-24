@@ -1177,6 +1177,11 @@ msgctxt "#31238"
 msgid "Recently Added Albums"
 msgstr ""
 
+#: /1080i/SkinSettings.xml
+msgctxt "#31239"
+msgid "Background busy animation"
+msgstr ""
+
 #: /shortcuts/overrides.xml
 msgctxt "#31242"
 msgid "Recently Played Albums"

@@ -95,6 +95,24 @@
         </include>
     </include>
 
+    <include name="Global_Background_BusyLoader">
+        <control type="group">
+            <visible>Window.IsVisible(DialogBusy.xml)</visible>
+            <visible>!$EXP[Exp_InfoVisible]</visible>
+            <animation effect="fade" start="0" end="100" time="5000" tween="cubic" easing="inout" reversible="true">Visible</animation>
+            <animation effect="fade" start="100" end="0" time="1000" tween="cubic" easing="inout" reversible="true">Hidden</animation>
+            <animation effect="fade" start="100" end="0" time="1000" tween="cubic" easing="inout" reversible="false" condition="!Window.IsVisible(DialogBusy.xml)">Conditional</animation>
+            <animation effect="fade" start="100" end="10" condition="true">Conditional</animation>
+            <control type="multiimage">
+                <timeperimage>50</timeperimage>
+                <aspectratio align="center" aligny="center">stretch</aspectratio>
+                <fadetime>10</fadetime>
+                <imagepath>$VAR[Global_BusyLoader]</imagepath>
+                <randomize>false</randomize>
+            </control>
+        </control>
+    </include>
+
     <include name="Global_Background_Artwork">
         <control type="group">
             <control type="image">
@@ -115,21 +133,7 @@
                 <visible>$EXP[Exp_GlobalBackground]</visible>
                 <animation effect="fade" start="100" end="0" time="2000" tween="cubic" easing="inout" condition="Window.IsVisible(DialogBusy.xml) + [!System.HasAddon(script.colorbox) | Skin.HasSetting(DisableBlur)]">Conditional</animation>
             </control>
-            <control type="group">
-                <visible>Window.IsVisible(DialogBusy.xml)</visible>
-                <visible>!$EXP[Exp_InfoVisible]</visible>
-                <animation effect="fade" start="0" end="100" time="5000" tween="cubic" easing="inout" reversible="true">Visible</animation>
-                <animation effect="fade" start="100" end="0" time="1000" tween="cubic" easing="inout" reversible="true">Hidden</animation>
-                <animation effect="fade" start="100" end="0" time="1000" tween="cubic" easing="inout" reversible="false" condition="!Window.IsVisible(DialogBusy.xml)">Conditional</animation>
-                <animation effect="fade" start="100" end="10" condition="true">Conditional</animation>
-                <control type="multiimage">
-                    <timeperimage>50</timeperimage>
-                    <aspectratio align="center" aligny="center">stretch</aspectratio>
-                    <fadetime>10</fadetime>
-                    <imagepath>$VAR[Global_BusyLoader]</imagepath>
-                    <randomize>false</randomize>
-                </control>
-            </control>
+            <include condition="!Skin.HasSetting(DisableBusyBackground)">Global_Background_BusyLoader</include>
             <nested />
             <control type="image">
                 <texture colordiffuse="$VAR[ColorHighlight4]" background="true">common/vignette-white.png</texture>
