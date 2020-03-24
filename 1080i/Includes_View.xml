@@ -1,33 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
 
-    <include name="View_Bookmarks_Label">
-        <control type="label">
-            <left>15</left>
-            <right>15</right>
-            <font>font_statusbar</font>
-            <selectedcolor>panel_fg_100</selectedcolor>
-            <textcolor>panel_fg_100</textcolor>
-            <top>$PARAM[iconheight]</top>
-            <bottom>25</bottom>
-            <aligny>center</aligny>
-            <align>left</align>
-            <label>$INFO[ListItem.Label]</label>
-        </control>
-        <control type="label">
-            <left>15</left>
-            <right>15</right>
-            <font>font_statusbar</font>
-            <selectedcolor>panel_fg_100</selectedcolor>
-            <textcolor>panel_fg_100</textcolor>
-            <top>$PARAM[iconheight]</top>
-            <bottom>25</bottom>
-            <aligny>center</aligny>
-            <align>right</align>
-            <label>$INFO[ListItem.Label2]</label>
-        </control>
-    </include>
-
     <include name="View_Settings_Itemlayout">
         <param name="icon" default="$INFO[ListItem.Icon]" />
         <param name="labelinclude" default="View_51_Wall_Label" />

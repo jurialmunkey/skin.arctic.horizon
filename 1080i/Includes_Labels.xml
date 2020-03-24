@@ -109,6 +109,7 @@
         <value condition="!String.IsEmpty(ListItem.Duration)">$INFO[ListItem.Duration]</value>
         <value condition="!String.IsEmpty(ListItem.AddonVersion)">$INFO[ListItem.AddonVersion]</value>
         <value condition="!String.IsEmpty(ListItem.PictureResolution)">$INFO[ListItem.PictureResolution]</value>
+        <value condition="!String.IsEmpty(ListItem.Label2)">$INFO[ListItem.Label2]</value>
     </variable>
 
     <variable name="Label_SmallLandscapeWidget_Sublabel2">
