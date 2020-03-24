@@ -52,8 +52,6 @@
             </control>
         </control>
 
-        <!-- <include condition="Window.IsVisible(VideoFullScreen.xml) + VideoPlayer.Content(LiveTV)">OSD_LiveTV_Seekbar</include> -->
-
         <include condition="Window.IsVisible(VideoFullScreen.xml)">OSD_Video_Seekbar</include>
         
         <include condition="Window.IsVisible(VideoFullScreen.xml)" content="OSD_Music_Info">

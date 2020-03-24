@@ -249,7 +249,7 @@
             </control>
             <control type="group">
                 <left>340</left>
-                <visible>!Control.HasFocus(9000)</visible>
+                <visible>!Control.HasFocus(9400)</visible>
                 <control type="group">
                     <left>0</left>
                     <left>320</left>
@@ -289,7 +289,7 @@
             </control>
             <control type="group">
                 <left>340</left>
-                <visible>Control.HasFocus(9000)</visible>
+                <visible>Control.HasFocus(9400)</visible>
                 <control type="group">
                     <left>0</left>
                     <left>320</left>
@@ -542,24 +542,27 @@
         </definition>
     </include>
 
-    <include name="View_PVR_Guide_Top"><top>240</top></include>
+    <include name="View_PVR_Guide_Top"><top>320</top></include>
 
     <include name="View_PVR_Guide_Info">
         <control type="grouplist">
             <orientation>vertical</orientation>
             <usecontrolcoords>true</usecontrolcoords>
             <itemgap>0</itemgap>
+            <height>275</height>
             <include content="Object_Info_Title">
                 <param name="label" value="$VAR[Label_PVRGuide_Title]" />
             </include>
-            <include content="Object_Info_Line_Label">
-                <param name="label" value="$VAR[Label_PVRGuide_SubTitle]" />
-                <param name="textcolor" value="$VAR[ColorHighlight]" />
-                <param name="divider" value="false" />
+            <include>Object_Info_Line</include>
+            <include content="Object_Info_Title">
+                <param name="font" value="font_small_bold" />
+                <param name="titleheight" value="10" />
+                <param name="label" value="$INFO[ListItem.Genre]" />
+                <top>30</top>
             </include>
             <include content="Object_Info_Plot">
-                <param name="maxheight" value="80" />
-                <top>15</top>
+                <param name="maxheight" value="120" />
+                <param name="height" value="auto" />
             </include>
         </control>
     </include>
@@ -575,8 +578,8 @@
     <include name="View_PVR_Channels">
         <onup>11</onup>
         <ondown>11</ondown>
-        <onleft>9000</onleft>
-        <onright>9000</onright>
+        <onleft>9400</onleft>
+        <onright>9400</onright>
         <orientation>vertical</orientation>
     </include>
 </includes>

@@ -42,12 +42,14 @@
                                 <param name="left" value="0" />
                                 <param name="right" value="0" />
                                 <param name="id" value="50" />
-                                <param name="altid" value="9000" />
+                                <param name="altid" value="9400" />
                                 <param name="visible" value="true" />
                                 <param name="itemlayout" value="View_PVR_ItemLayout" />
                                 <param name="itemheight" value="item_list_height" />
                                 <param name="controllayout" value="View_PVR_Channels" />
-                                <param name="controltype" value="list" />
+                                <param name="controltype" value="fixedlist" />
+                                <focusposition>2</focusposition>
+                                <movement>2</movement>
                                 <bottom>0</bottom>
                             </include>
                         </control>
@@ -62,7 +64,7 @@
         <include>Viewtype_Options</include>
         <include>Object_PlotOverlay</include>
 
-        <control type="button" id="9000">
+        <control type="button" id="9400">
             <onleft condition="Control.IsVisible(50)">50</onleft>
             <onup condition="Control.IsVisible(50)">Control.Move(50,-1)</onup>
             <ondown condition="Control.IsVisible(50)">Control.Move(50,1)</ondown>
@@ -73,7 +75,7 @@
             <onright>50</onright>
             <onclick condition="Control.IsVisible(51)">SetFocus(51)</onclick>
             <onclick>Action(Select)</onclick>
-            <onclick>SetFocus(9000)</onclick>
+            <onclick>SetFocus(9400)</onclick>
             <include>Defs_Hidden_Button</include>
         </control>
 

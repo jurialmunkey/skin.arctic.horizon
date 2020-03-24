@@ -988,9 +988,24 @@
             <param name="visible" value="$PARAM[visible]" />
         </include>
         <include content="Object_Info_Line_Label">
-            <param name="label" value="$INFO[$PARAM[container]ListItem.StartDate]" />
+            <param name="label" value="$INFO[$PARAM[container]ListItem.EpisodeName]" />
             <param name="textcolor" value="$PARAM[textcolor]" />
-            <param name="visible" value="!String.IsEmpty($PARAM[container]ListItem.StartDate) + $PARAM[visible]" />
+            <param name="visible" value="!String.IsEmpty($PARAM[container]ListItem.EpisodeName) + !String.IsEqual($PARAM[container]ListItem.EpisodeName,$PARAM[container]ListItem.Title) + $PARAM[visible]" />
+        </include>
+        <include content="Object_Info_Line_Label">
+            <param name="label" value="$INFO[$PARAM[container]ListItem.EPGEventTitle]" />
+            <param name="textcolor" value="$PARAM[textcolor]" />
+            <param name="visible" value="!String.IsEmpty($PARAM[container]ListItem.EPGEventTitle) + !String.IsEqual($PARAM[container]ListItem.EPGEventTitle,$PARAM[container]ListItem.Title) + $PARAM[visible]" />
+        </include>
+        <include content="Object_Info_Line_Label">
+            <param name="label" value="$INFO[$PARAM[container]ListItem.Year]" />
+            <param name="textcolor" value="$PARAM[textcolor]" />
+            <param name="visible" value="!String.IsEmpty($PARAM[container]ListItem.Year) + $PARAM[visible]" />
+        </include>
+        <include content="Object_Info_Line_Label">
+            <param name="label" value="$INFO[$PARAM[container]ListItem.MPAA]" />
+            <param name="textcolor" value="$PARAM[textcolor]" />
+            <param name="visible" value="!String.IsEmpty($PARAM[container]ListItem.MPAA) + $PARAM[visible]" />
         </include>
         <include content="Object_Info_Line_Label">
             <param name="label" value="$INFO[$PARAM[container]ListItem.StartTime]$INFO[$PARAM[container]ListItem.EndTime, - ,]" />
