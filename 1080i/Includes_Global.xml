@@ -33,6 +33,7 @@
     <include name="Global_Videowindow_Hidden">
         <control type="videowindow">
             <visible>Player.HasVideo</visible>
+            <visible>String.IsEmpty(Window(Home).Property(HasTrailer))</visible>
             <include>Dimensions_Fullscreen</include>
         </control>
     </include>
@@ -87,6 +88,7 @@
         <include content="Global_Background_Artwork">
             <control type="group">
                 <visible>!$EXP[Exp_GlobalBackground]</visible>
+                <visible>String.IsEmpty(Window(Home).Property(HasTrailer))</visible>
                 <include condition="Skin.HasSetting(global.showvideo)">Global_Videowindow</include>
                 <include condition="Skin.HasSetting(global.showvisualisation)">Global_Visualisation</include>
             </control>

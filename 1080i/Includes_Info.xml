@@ -361,6 +361,7 @@
             <param name="label" value="Trailer" />
             <param name="icon" value="special://skin/extras/icons/video.png" />
             <param name="visible" value="!String.IsEmpty(ListItem.Trailer)" />
+            <onclick>SetProperty(HasTrailer,$INFO[ListItem.Trailer],Home)</onclick>
             <onclick>PlayMedia($INFO[ListItem.Trailer],False,1)</onclick>
             <onclick>SetFocus(9608)</onclick>
             <onup>9601</onup>

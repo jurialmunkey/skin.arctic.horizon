@@ -35,16 +35,23 @@
         <control type="button" id="9608">
             <include>Defs_Hidden_Button</include>
             <onleft>300</onleft>
+            <onleft>ClearProperty(HasTrailer,Home)</onleft>
             <onleft condition="Player.HasVideo">Stop</onleft>
             <onright>300</onright>
+            <onright>ClearProperty(HasTrailer,Home)</onright>
             <onright condition="Player.HasVideo">Stop</onright>
             <onup>300</onup>
+            <onup>ClearProperty(HasTrailer,Home)</onup>
             <onup condition="Player.HasVideo">Stop</onup>
             <ondown>300</ondown>
+            <ondown>ClearProperty(HasTrailer,Home)</ondown>
             <ondown condition="Player.HasVideo">Stop</ondown>
             <onback>300</onback>
+            <onback>ClearProperty(HasTrailer,Home)</onback>
             <onback condition="Player.HasVideo">Stop</onback>
-            <onclick>Fullscreen</onclick>
+            <onclick>300</onclick>
+            <onclick condition="Player.HasVideo">Fullscreen</onclick>
+            <onclick>ClearProperty(HasTrailer,Home)</onclick>
         </control>
         <control type="group">
             <control type="group">
