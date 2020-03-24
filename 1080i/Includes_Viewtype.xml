@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
-    <include name="ViewIDs"><views>50,500,51,52,53,54,55,56</views></include>
+    <include name="ViewIDs"><views>50,55,500,51,52,53,54,56</views></include>
     <include name="Viewtype_Info_Right"><right>700</right></include>
     <include name="Viewtypes">
         <include content="Viewtype_Main">
@@ -10,7 +10,7 @@
                 <control type="group">
                     <include>View_Pad</include>
                     <control type="group" description="Top Half">
-                        <visible>!Integer.IsEqual(Container.NumItems,0)</visible>
+                        <visible>!Integer.IsEqual(Container.NumAllItems,0)</visible>
                         <include content="View_Info_Grouplist">
                             <param name="plotheight" value="80" />
                             <param name="container" value="Container." />
@@ -75,25 +75,25 @@
                         </include>
                     </control>
                     <control type="group" description="Bottom Half">
-                        <animation effect="fade" end="0" start="100" condition="Integer.IsEqual(Container.NumItems,0)">Conditional</animation>
+                        <animation effect="fade" end="0" start="100" condition="Integer.IsEqual(Container.NumAllItems,0)">Conditional</animation>
                         <include content="Viewtype_BackPanel">
                             <include>Animation_Down</include>
-                            <visible>!Integer.IsEqual(Container.NumItems,0)</visible>
+                            <visible>!Integer.IsEqual(Container.NumAllItems,0)</visible>
                             <visible>[Control.IsVisible(50) | Control.IsVisible(500) | Control.IsVisible(55)]</visible>
                             <height>720</height>
                         </include>
                         <include content="Viewtype_BackPanel">
                             <include>Animation_Down</include>
-                            <visible>!Integer.IsEqual(Container.NumItems,0)</visible>
+                            <visible>!Integer.IsEqual(Container.NumAllItems,0)</visible>
                             <visible>![Control.IsVisible(50) | Control.IsVisible(500) | Control.IsVisible(55)]</visible>
                             <height>480</height>
                         </include>
-                        <include>View_50_FileList</include>
+                        <include>View_55_FileList</include>
                         <include>View_51_Addons</include>
                         <include>View_52_Posters</include>
                         <include>View_53_Seasons</include>
                         <include>View_54_Episodes</include>
-                        <include>View_55_Tags</include>
+                        <include>View_50_Tags</include>
                         <include>View_56_Hubs</include>
                         <include>View_500_SongList</include>
                     </control>
@@ -1031,6 +1031,7 @@
                 <param name="icon" value="$VAR[Image_Banner]" />
                 <param name="diffuse" value="diffuse/landscape-std.png" />
                 <param name="offset" value="0" />
+                <param name="viewtype-label" value="$PARAM[viewtype-label]" />
                 <nested />
             </include>
         </definition>

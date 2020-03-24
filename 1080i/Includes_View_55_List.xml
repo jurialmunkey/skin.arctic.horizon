@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
 
-    <include name="View_50_FileList">
+    <include name="View_55_FileList">
         <control type="group">
-            <visible>Control.IsVisible(50)</visible>
+            <visible>Control.IsVisible(55)</visible>
             <include>Animation_Down</include>
             <control type="group">
                 <right>-20</right>
@@ -14,7 +14,7 @@
                     <visible>!String.Contains(Container.FolderPath,info=user_discover)</visible>
                     <include content="Viewtype_Landscape_Itemlayout">
                         <param name="selectbox" value="false" />
-                        <param name="id" value="50" />
+                        <param name="id" value="55" />
                         <param name="icon" value="$VAR[Image_Fanart]" />
                         <param name="diffuse" value="diffuse/landscape-big.png" />
                         <param name="textbox-height" value="0" />
@@ -25,7 +25,7 @@
                     <visible>String.Contains(Container.FolderPath,info=user_discover)</visible>
                     <include content="Viewtype_Landscape_Itemlayout">
                         <param name="selectbox" value="false" />
-                        <param name="id" value="50" />
+                        <param name="id" value="55" />
                         <param name="icon" value="noop" />
                         <param name="diffuse" value="diffuse/landscape-big.png" />
                         <param name="textbox-height" value="0" />
@@ -43,12 +43,12 @@
                             <param name="pad" value="20" />
                         </include>
                         <randomize>false</randomize>
-                        <visible>Container(5052).IsUpdating</visible>
+                        <visible>Container(5500).IsUpdating</visible>
                     </control>
                     <control type="group">
                         <centerleft>50%</centerleft>
                         <width>240</width>
-                        <visible>Container(5052).IsUpdating</visible>
+                        <visible>Container(5500).IsUpdating</visible>
                         <include content="Defs_BusySpinner">
                             <param name="label" value="$LOCALIZE[31428]..." />
                         </include>
@@ -63,38 +63,41 @@
                 <include>Object_PosterBack</include>
             </control>
             <include content="Viewtype_FileList">
-                <param name="id" value="50" />
+                <param name="id" value="55" />
                 <param name="itemlayout-width" value="734" />
+                <param name="viewtype-label" value="$LOCALIZE[535]" />
                 <width>734</width>
                 <left>0</left>
                 <bottom>0</bottom>
                 <height>560</height>
                 <onleft>64</onleft>
-                <onright>5052</onright>
+                <onright condition="String.Contains(Container.FolderPath,info=user_discover)">5500</onright>
                 <pagecontrol>64</pagecontrol>
                 <animation effect="slide" end="0,-80" condition="Integer.IsLess(Container.NumAllItems,7)">Conditional</animation>
                 <animation effect="slide" end="0,-80" condition="Integer.IsLess(Container.NumAllItems,5)">Conditional</animation>
                 <animation effect="slide" end="0,-80" condition="Integer.IsLess(Container.NumAllItems,3)">Conditional</animation>
-                <visible>Container.Content(files) | [String.IsEqual(Container.PluginName,plugin.video.themoviedb.helper) + [String.Contains(Container.FolderPath,info=details)]] | Window.IsVisible(MyPVRRecordings.xml) | Window.IsVisible(videoplaylist)</visible>
+                <visible>!$EXP[Exp_View500List]</visible>
+                <visible>![String.StartsWith(Container.FolderPath,videodb://) | String.StartsWith(Container.FolderPath,musicdb://) | String.StartsWith(Container.FolderPath,plugin://) | String.StartsWith(Container.FolderPath,sources://)]</visible>
+                <!-- <visible>Container.Content(files) | [String.IsEqual(Container.PluginName,plugin.video.themoviedb.helper) + [String.Contains(Container.FolderPath,info=details)]] | Window.IsVisible(MyPVRRecordings.xml) | Window.IsVisible(videoplaylist)</visible> -->
             </include>
             <include content="Home_Hub_Widget_Label">
-                <param name="id" value="50" />
+                <param name="id" value="55" />
                 <param name="label" value="$VAR[Label_Header_Center]" />
                 <param name="altlabel" value="$INFO[Control.GetLabel(3),, ]$INFO[Control.GetLabel(4)]" />
                 <top>120</top>
             </include>
-            <control type="wraplist" id="5052">
+            <control type="wraplist" id="5500">
                 <right>0</right>
                 <bottom>0</bottom>
                 <height>560</height>
                 <width>986</width>
-                <onback>50</onback>
-                <onleft>50</onleft>
+                <onback>55</onback>
+                <onleft>55</onleft>
                 <onright>Down</onright>
                 <orientation>vertical</orientation>
                 <visible>String.Contains(Container.FolderPath,info=user_discover)</visible>
-                <animation effect="fade" start="100" end="0" time="300" condition="Container(5052).IsUpdating">Conditional</animation>
-                <include content="Defs_AutoScroll"><param name="condition" value="!Control.HasFocus(5052)" /></include>
+                <animation effect="fade" start="100" end="0" time="300" condition="Container(5500).IsUpdating">Conditional</animation>
+                <include content="Defs_AutoScroll"><param name="condition" value="!Control.HasFocus(5500)" /></include>
                 <itemlayout width="986" height="560">
                     <control type="image">
                         <aspectratio scalediffuse="false">scale</aspectratio>
@@ -107,7 +110,7 @@
                         <texture background="true" diffuse="diffuse/landscape-big.png">$VAR[Image_Landscape]</texture>
                     </control>
                 </focusedlayout>
-                <content target="videos" limit="10">$INFO[Container(50).ListItemAbsolute(0).FolderPath]</content>
+                <content target="videos" limit="10">$INFO[Container(55).ListItemAbsolute(0).FolderPath]</content>
             </control>
             <control type="image">
                 <right>-20</right>
@@ -116,8 +119,8 @@
                 <width>1026</width>
                 <bordersize>45</bordersize>
                 <aspectratio align="left">keep</aspectratio>
-                <texture background="true">$INFO[Container(5052).ListItem.Art(clearlogo)]</texture>
-                <animation effect="fade" start="100" end="0" time="300" condition="Container(5052).IsUpdating">Conditional</animation>
+                <texture background="true">$INFO[Container(5500).ListItem.Art(clearlogo)]</texture>
+                <animation effect="fade" start="100" end="0" time="300" condition="Container(5500).IsUpdating">Conditional</animation>
                 <visible>String.Contains(Container.FolderPath,info=user_discover)</visible>
             </control>
             <control type="group">
@@ -125,7 +128,7 @@
                 <bottom>-15</bottom>
                 <height>590</height>
                 <width>1016</width>
-                <visible>Control.HasFocus(5052)</visible>
+                <visible>Control.HasFocus(5500)</visible>
                 <visible>String.Contains(Container.FolderPath,info=user_discover)</visible>
                 <include>View_Selectbox</include>
             </control>
@@ -147,6 +150,7 @@
             <include content="Viewtype_FileList">
                 <param name="id" value="500" />
                 <param name="itemlayout-width" value="1160" />
+                <param name="viewtype-label" value="$LOCALIZE[535]" />
                 <width>1160</width>
                 <height>560</height>
                 <onleft>64</onleft>
@@ -157,8 +161,7 @@
                 <animation effect="slide" end="0,-80" condition="Integer.IsLess(Container.NumAllItems,7)">Conditional</animation>
                 <animation effect="slide" end="0,-80" condition="Integer.IsLess(Container.NumAllItems,5)">Conditional</animation>
                 <animation effect="slide" end="0,-80" condition="Integer.IsLess(Container.NumAllItems,3)">Conditional</animation>
-                <visible>Container.Content(songs) | [Container.Content() + !String.IsEmpty(Container.PluginName)] | [Container.Content(addons) + !String.IsEmpty(Container.PluginName)] | Window.IsVisible(MyPVRSearch.xml) | Window.IsVisible(MyPVRTimers.xml) | Window.IsVisible(musicplaylist)</visible>
-                <visible>!Window.IsVisible(MyPVRRecordings.xml)</visible>
+                <visible>$EXP[Exp_View500List]</visible>
             </include>
             <control type="group">
                 <right>-20</right>

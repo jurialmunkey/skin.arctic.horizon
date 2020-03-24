@@ -6,6 +6,7 @@
             <param name="itemlayout-width" value="280" />
             <param name="offset" value="0" />
             <param name="control-type" value="fixedlist" />
+            <param name="viewtype-label" value="$LOCALIZE[33054]" />
             <movement>3</movement>
             <preloaditems>2</preloaditems>
             <height>120</height>
@@ -18,6 +19,7 @@
             <bottom>400</bottom>
             <animation effect="fade" start="0" end="100" time="400" tween="cubic" easing="inout" reversible="false" delay="200" condition="Container.Content(seasons)">Conditional</animation>
             <visible>Container.Content(seasons)</visible>
+            <visible>![String.IsEqual(Container.PluginName,plugin.video.themoviedb.helper) + [String.Contains(Container.FolderPath,info=details)]]</visible>
         </include>
         <control type="image">
             <width>24</width>

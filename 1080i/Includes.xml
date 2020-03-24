@@ -6,12 +6,12 @@
 
     <include file="Includes_Home.xml" />
 
-    <include file="Includes_View_50_List.xml" />
+    <include file="Includes_View_50_Tags.xml" />
     <include file="Includes_View_51_Addons.xml" />
     <include file="Includes_View_52_Posters.xml" />
     <include file="Includes_View_53_Seasons.xml" />
     <include file="Includes_View_54_Episodes.xml" />
-    <include file="Includes_View_55_Tags.xml" />
+    <include file="Includes_View_55_List.xml" />
     <include file="Includes_View_56_Hubs.xml" />
     <include file="Includes_View_PVR.xml" />
     <include file="Includes_View_Info.xml" />

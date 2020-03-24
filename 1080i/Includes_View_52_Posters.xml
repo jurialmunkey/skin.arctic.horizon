@@ -8,6 +8,7 @@
                 <param name="id" value="52" />
                 <param name="castlabel" value="Container.Content(actors)" />
                 <param name="label2" value="ListItem.Property(role)" />
+                <param name="viewtype-label" value="$LOCALIZE[31232]" />
                 <bottom>-20</bottom>
                 <left>-80</left>
                 <right>-80</right>
@@ -15,6 +16,7 @@
                 <include>Viewtype_Movement</include>
                 <visible>Container.Content(actors) | Container.Content(tvshows) | Container.Content(movies)</visible>
                 <visible>!Window.IsVisible(MyPlaylist.xml)</visible>
+                <visible>![String.IsEqual(Container.PluginName,plugin.video.themoviedb.helper) + [String.Contains(Container.FolderPath,info=details)]]</visible>
             </include>
             <include content="Home_Hub_Widget_Label">
                 <param name="id" value="52" />

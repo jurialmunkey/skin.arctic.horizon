@@ -2383,7 +2383,7 @@
     <include name="Object_Scrollbars">
 
         <include content="Object_Scrollbar_Horz">
-            <param name="visible" value="Control.IsVisible(51) | Control.IsVisible(52) | Control.IsVisible(53) | Control.IsVisible(54) | Control.IsVisible(55) | Control.IsVisible(56)" />
+            <param name="visible" value="Control.IsVisible(51) | Control.IsVisible(52) | Control.IsVisible(53) | Control.IsVisible(54) | Control.IsVisible(50) | Control.IsVisible(56)" />
         </include>
 
         <control type="scrollbar" id="64">
@@ -2393,10 +2393,11 @@
             <width>8</width>
             <centerleft>item_list_height_half</centerleft>
             <onright>50</onright>
+            <onleft>SetFocus(9000)</onleft>
             <centerbottom>40</centerbottom>
             <showonepage>false</showonepage>
             <orientation>vertical</orientation>
-            <visible>Control.IsVisible(50) | Control.IsVisible(500)</visible>
+            <visible>Control.IsVisible(55) | Control.IsVisible(500)</visible>
             <texturesliderbackground colordiffuse="main_fg_12" border="4">scrollbar/scrollv.png</texturesliderbackground>
             <texturesliderbar colordiffuse="main_fg_30" border="4">scrollbar/scrollv.png</texturesliderbar>
             <texturesliderbarfocus colordiffuse="main_fg_100" border="4">scrollbar/scrollv.png</texturesliderbarfocus>
@@ -2455,7 +2456,7 @@
     <include name="Object_Scrollbar_Horz">
         <control type="scrollbar" id="60">
             <onback>50</onback>
-            <ondown>SetFocus(9200)</ondown>
+            <ondown condition="Control.IsVisible(52) | Control.IsVisible(53) | Control.IsVisible(54)">SetFocus(9200)</ondown>
             <height>8</height>
             <left>view_pad</left>
             <right>view_pad</right>
@@ -2489,7 +2490,7 @@
             <centerbottom>30</centerbottom>
             <onup>50</onup>
             <onback>50</onback>
-            <ondown>SetFocus(9200)</ondown>
+            <ondown condition="Control.IsVisible(52) | Control.IsVisible(53) | Control.IsVisible(54)">SetFocus(9200)</ondown>
             <onright>SetFocus(50)</onright>
             <onright>Action(nextletter)</onright>
             <onright condition="!Container.HasNext | String.IsEqual(ListItem.SortLetter,Z)">Action(jumpsms2)</onright>

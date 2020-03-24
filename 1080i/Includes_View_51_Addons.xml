@@ -7,6 +7,7 @@
             <include content="Viewtype_Square">
                 <param name="id" value="51" />
                 <param name="altid" value="510" />
+                <param name="viewtype-label" value="$LOCALIZE[31237]" />
                 <left>-80</left>
                 <right>-80</right>
                 <bottom>-20</bottom>

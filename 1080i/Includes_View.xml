@@ -85,7 +85,7 @@
                 <nested />
                 <top>$PARAM[widget-type]_label_top</top>
                 <height>$PARAM[widget-type]_item_top</height>
-                <visible>Integer.IsGreater(Container($PARAM[id]).NumItems,0) | Container($PARAM[id]).IsUpdating</visible>
+                <visible>Integer.IsGreater(Container($PARAM[id]).NumAllItems,0) | Container($PARAM[id]).IsUpdating</visible>
                 <control type="group">
                     <top>$PARAM[widget-type]_item_top</top>
                     <height>item_cast_height</height>
@@ -111,7 +111,7 @@
                         <textcolor>main_fg_100</textcolor>
                         <font>font_tiny_bold</font>
                         <height>24</height>
-                        <visible>Integer.IsGreater(Container($PARAM[id]).NumItems,0) | Container($PARAM[id]).IsUpdating</visible>
+                        <visible>Integer.IsGreater(Container($PARAM[id]).NumAllItems,0) | Container($PARAM[id]).IsUpdating</visible>
                         <visible>Control.HasFocus($PARAM[id]) | Control.HasFocus($PARAM[altid])</visible>
                     </control>
                     <control type="label">
@@ -123,7 +123,7 @@
                         <textcolor>main_fg_30</textcolor>
                         <font>font_tiny_bold</font>
                         <height>24</height>
-                        <visible>Integer.IsGreater(Container($PARAM[id]).NumItems,0) | Container($PARAM[id]).IsUpdating</visible>
+                        <visible>Integer.IsGreater(Container($PARAM[id]).NumAllItems,0) | Container($PARAM[id]).IsUpdating</visible>
                         <visible>![Control.HasFocus($PARAM[id]) | Control.HasFocus($PARAM[altid])]</visible>
                     </control>
                     <control type="label">
@@ -136,7 +136,7 @@
                         <height>24</height>
                         <visible>Control.HasFocus($PARAM[id]) | Control.HasFocus($PARAM[altid])</visible>
                         <visible>!String.IsEmpty(Container($PARAM[id]).ListItem.Label)</visible>
-                        <visible>Integer.IsGreater(Container($PARAM[id]).NumItems,0) + !Container($PARAM[id]).IsUpdating</visible>
+                        <visible>Integer.IsGreater(Container($PARAM[id]).NumAllItems,0) + !Container($PARAM[id]).IsUpdating</visible>
                         <visible>$PARAM[showtitle]</visible>
                     </control>
                     <control type="label">
@@ -149,7 +149,7 @@
                         <font>font_tiny</font>
                         <height>24</height>
                         <visible>Control.HasFocus($PARAM[id]) | Control.HasFocus($PARAM[altid])</visible>
-                        <visible>Integer.IsGreater(Container($PARAM[id]).NumItems,0) + !Container($PARAM[id]).IsUpdating</visible>
+                        <visible>Integer.IsGreater(Container($PARAM[id]).NumAllItems,0) + !Container($PARAM[id]).IsUpdating</visible>
                         <visible>!String.StartsWith(ListItem.FolderPath,pvr://)</visible>
                         <visible>!String.IsEqual(Container($PARAM[id]).ListItem.DBType,episode)</visible>
                         <visible>$PARAM[showtitle]</visible>
@@ -165,7 +165,7 @@
                         <font>font_tiny</font>
                         <height>24</height>
                         <visible>Control.HasFocus($PARAM[id]) | Control.HasFocus($PARAM[altid])</visible>
-                        <visible>Integer.IsGreater(Container($PARAM[id]).NumItems,0) + !Container($PARAM[id]).IsUpdating</visible>
+                        <visible>Integer.IsGreater(Container($PARAM[id]).NumAllItems,0) + !Container($PARAM[id]).IsUpdating</visible>
                         <visible>!String.StartsWith(ListItem.FolderPath,pvr://)</visible>
                         <visible>String.IsEqual(Container($PARAM[id]).ListItem.DBType,episode)</visible>
                         <visible>$PARAM[showtitle]</visible>
@@ -180,7 +180,7 @@
                         <font>font_tiny</font>
                         <height>24</height>
                         <visible>Control.HasFocus($PARAM[id]) | Control.HasFocus($PARAM[altid])</visible>
-                        <visible>Integer.IsGreater(Container($PARAM[id]).NumItems,0) + !Container($PARAM[id]).IsUpdating</visible>
+                        <visible>Integer.IsGreater(Container($PARAM[id]).NumAllItems,0) + !Container($PARAM[id]).IsUpdating</visible>
                         <visible>String.StartsWith(ListItem.FolderPath,pvr://)</visible>
                         <visible>!$PARAM[uselabel2]</visible>
                     </control>
@@ -193,7 +193,7 @@
                         <font>font_tiny</font>
                         <height>24</height>
                         <visible>Control.HasFocus($PARAM[id]) | Control.HasFocus($PARAM[altid])</visible>
-                        <visible>Integer.IsGreater(Container($PARAM[id]).NumItems,0) + !Container($PARAM[id]).IsUpdating</visible>
+                        <visible>Integer.IsGreater(Container($PARAM[id]).NumAllItems,0) + !Container($PARAM[id]).IsUpdating</visible>
                         <visible>$PARAM[uselabel2]</visible>
                     </control>
                 </control>
@@ -419,8 +419,8 @@
         <control type="group">
             <visible>!Skin.HasSetting(DisableWatchedOverlay)</visible>
             <control type="image">
-                <top>15</top>
-                <right>15</right>
+                <top>14</top>
+                <right>14</right>
                 <width>48</width>
                 <height>48</height>
                 <texture colordiffuse="ff000000" border="10">$VAR[Image_Overlay_Corner]</texture>

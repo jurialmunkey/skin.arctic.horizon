@@ -1143,13 +1143,33 @@ msgctxt "#31231"
 msgid "Lovefilm"
 msgstr ""
 
+#: /1080i/Includes_View_52_Posters.xml
+msgctxt "#31232"
+msgid "Posters"
+msgstr ""
+
 #: /shortcuts/overrides.xml
 msgctxt "#31233"
 msgid "Random TV Shows"
 msgstr ""
 
+#: /1080i/Includes_View_54_Episodes.xml
+msgctxt "#31234"
+msgid "Landscape"
+msgstr ""
+
+#: /1080i/Includes_View_56_Hubs.xml
+msgctxt "#31235"
+msgid "Hub"
+msgstr ""
+
 msgctxt "#31236"
 msgid "Now playing..."
+msgstr ""
+
+#: /1080i/Includes_View_51_Addons.xml
+msgctxt "#31237"
+msgid "Square"
 msgstr ""
 
 #: /shortcuts/overrides.xml

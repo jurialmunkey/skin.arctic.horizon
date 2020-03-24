@@ -6,6 +6,7 @@
             <param name="itemlayout-width" value="280" />
             <param name="offset" value="0" />
             <param name="control-type" value="fixedlist" />
+            <param name="viewtype-label" value="$LOCALIZE[31235]" />
             <movement>3</movement>
             <preloaditems>2</preloaditems>
             <height>120</height>

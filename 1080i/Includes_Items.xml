@@ -593,6 +593,12 @@
 
     <include name="Items_View">
         <content>
+            <item>
+                <label>$INFO[Control.GetLabel(2)]</label>
+                <icon>special://skin/extras/icons/viewmode.png</icon>
+                <onclick>SendClick(2)</onclick>
+                <visible>Control.IsEnabled(2) + Integer.IsGreater(Container.ViewCount,1)</visible>
+            </item>
             <!-- Sort -->
             <item>
                 <label>$INFO[Control.GetLabel(3)]</label>
