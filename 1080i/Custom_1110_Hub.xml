@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window type="window" id="1110">
-    <defaultcontrol always="false">300</defaultcontrol>
+    <defaultcontrol always="false">302</defaultcontrol>
     <onload>SetProperty(TMDbHelper.WidgetContainer,5610,Home)</onload>
     <onunload>ClearProperty(TMDbHelper.WidgetContainer,Home)</onunload>
     <controls>
@@ -9,9 +9,9 @@
             <left>-1000</left>
             <width>1</width>
             <height>1</height>
-            <onleft>300</onleft>
-            <onright>300</onright>
-            <onfocus>SetFocus(300)</onfocus>
+            <onleft>302</onleft>
+            <onright>302</onright>
+            <onfocus>SetFocus(302)</onfocus>
             <itemlayout />
             <focusedlayout />
             <content>
@@ -21,17 +21,8 @@
                 </item>
             </content>
         </control>
-        <control type="list" id="302">
-            <top>-1000</top>
-            <left>-1000</left>
-            <width>1000</width>
-            <height>1</height>
-            <orientation>horizontal</orientation>
-            <ondown>5610</ondown>
-            <itemlayout width="1"/>
-            <focusedlayout width="1"/>
-            <include>Items_SubMenu</include>
-        </control>
+        <include condition="!Skin.HasSetting(DisableAutoWidthHub)">View_Hub_HiddenList</include>
+
         <include content="Viewtype_Main">
             <control type="group">
                 <include>Animation_Common</include>
@@ -67,7 +58,7 @@
                                 <param name="divider" value="false" />
                             </include>
                         </control>
-                        <include content="View_Hub_Buttons">
+                        <include content="View_Hub_Buttons" condition="!Skin.HasSetting(DisableAutoWidthHub)">
                             <param name="grouplistid" value="300" />
                         </include>
                     </control>
@@ -81,6 +72,21 @@
                         <include content="Home_Hub_Widget_Label">
                             <param name="id" value="5610" />
                             <param name="label" value="$VAR[Label_Hub_WidgetName]" />
+                        </include>
+                        <include content="Viewtype_Buttons" condition="Skin.HasSetting(DisableAutoWidthHub)">
+                            <param name="id" value="302" />
+                            <param name="itemlayout-width" value="item_square_width" />
+                            <param name="offset" value="80" />
+                            <param name="control-type" value="fixedlist" />
+                            <param name="hasicon" value="true" />
+                            <movement>5</movement>
+                            <preloaditems>2</preloaditems>
+                            <height>120</height>
+                            <left>-100</left>
+                            <right>-100</right>
+                            <bottom>400</bottom>
+                            <ondown>5610</ondown>
+                            <include>Items_SubMenu</include>
                         </include>
                         <include>skinshortcuts-template-spotlight-mainmenu</include>
                         <include>skinshortcuts-template-spotlight-submenu</include>

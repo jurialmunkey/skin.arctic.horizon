@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
 
+    <include name="View_Hub_HiddenList">
+        <control type="list" id="302">
+            <top>-1000</top>
+            <left>-1000</left>
+            <width>1000</width>
+            <height>1</height>
+            <orientation>horizontal</orientation>
+            <ondown>5610</ondown>
+            <itemlayout width="1"/>
+            <focusedlayout width="1"/>
+            <include>Items_SubMenu</include>
+        </control>
+    </include>
+
     <include name="View_Settings_Itemlayout">
         <param name="icon" default="$INFO[ListItem.Icon]" />
         <param name="labelinclude" default="View_51_Wall_Label" />

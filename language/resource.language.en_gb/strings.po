@@ -1187,6 +1187,11 @@ msgctxt "#31240"
 msgid "(disable to improve performance)"
 msgstr ""
 
+#: /1080i/SkinSettings.xml
+msgctxt "#31241"
+msgid "Autowidth hub buttons (disable to fix hub scrolling issues)"
+msgstr ""
+
 #: /shortcuts/overrides.xml
 msgctxt "#31242"
 msgid "Recently Played Albums"

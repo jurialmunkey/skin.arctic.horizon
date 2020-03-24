@@ -1215,6 +1215,7 @@
                         <right>-$PARAM[offset]</right>
                         <include content="Viewtype_Buttons_Itemlayout">
                             <param name="icon" value="$PARAM[icon]" />
+                            <param name="hasicon" value="$PARAM[hasicon]" />
                         </include>
                     </control>
                 </itemlayout>
@@ -1226,6 +1227,7 @@
                             <visible>!Control.HasFocus($PARAM[id])</visible>
                             <include content="Viewtype_Buttons_Itemlayout">
                                 <param name="icon" value="$PARAM[icon]" />
+                                <param name="hasicon" value="$PARAM[hasicon]" />
                             </include>
                         </control>
                         <control type="group">
@@ -1236,6 +1238,7 @@
                                 <param name="colordiffuse-texture" value="Selected" />
                                 <param name="texture" value="common/button-view-fo.png" />
                                 <param name="textcolor" value="panel_bg" />
+                                <param name="hasicon" value="$PARAM[hasicon]" />
                             </include>
                         </control>
                     </control>
@@ -1249,6 +1252,7 @@
         <param name="texture" default="common/button-view-nf.png" />
         <param name="icon" default="special://skin/extras/icons/folder.png" />
         <param name="textcolor" default="main_fg_70" />
+        <param name="hasicon" default="false" />
         <definition>
             <control type="image">
                 <left>0</left>
@@ -1260,25 +1264,25 @@
                 <width>110</width>
                 <texture border="0,50,50,50" colordiffuse="$PARAM[colordiffuse-texture]" flipx="true">$PARAM[texture]</texture>
             </control>
-            <!-- <control type="group">
-                <visible>!String.IsEqual(ListItem.DBType,genre) + !String.EndsWith(Container.FolderPath,Genres)</visible>
+            <control type="group">
+                <visible>$PARAM[hasicon]</visible>
                 <control type="image">
                     <left>24</left>
                     <centertop>50%</centertop>
                     <width>60</width>
                     <height>60</height>
-                    <texture colordiffuse="$PARAM[colordiffuse-icon]">$PARAM[icon]</texture>
-                    <visible>String.IsEmpty(ListItem.Property(icon))</visible>
+                    <texture colordiffuse="$PARAM[colordiffuse-icon]" fallback="$PARAM[icon]">$INFO[ListItem.Icon]</texture>
                 </control>
-                <control type="image">
-                    <left>24</left>
-                    <centertop>50%</centertop>
-                    <width>60</width>
-                    <height>60</height>
-                    <texture colordiffuse="$PARAM[colordiffuse-icon]">$INFO[ListItem.Property(icon)]</texture>
-                    <visible>!String.IsEmpty(ListItem.Property(icon))</visible>
+                <control type="label">
+                    <left>88</left>
+                    <align>left</align>
+                    <right>30</right>
+                    <font>font_info_buttons</font>
+                    <label>$INFO[ListItem.Label]</label>
+                    <textcolor>$PARAM[textcolor]</textcolor>
+                    <scroll>false</scroll>
                 </control>
-            </control> -->
+            </control>
             <control type="label">
                 <left>40</left>
                 <align>center</align>
@@ -1286,6 +1290,8 @@
                 <font>font_info_buttons</font>
                 <label>$INFO[ListItem.Label]</label>
                 <textcolor>$PARAM[textcolor]</textcolor>
+                <scroll>false</scroll>
+                <visible>!$PARAM[hasicon]</visible>
             </control>
         </definition>
     </include>

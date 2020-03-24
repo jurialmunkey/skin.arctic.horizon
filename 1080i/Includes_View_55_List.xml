@@ -15,7 +15,7 @@
                     <include content="Viewtype_Landscape_Itemlayout">
                         <param name="selectbox" value="false" />
                         <param name="id" value="55" />
-                        <param name="icon" value="$VAR[Image_Fanart]" />
+                        <param name="icon" value="$VAR[Image_Landscape]" />
                         <param name="diffuse" value="diffuse/landscape-big.png" />
                         <param name="textbox-height" value="0" />
                         <param name="textbox-visible" value="false" />
