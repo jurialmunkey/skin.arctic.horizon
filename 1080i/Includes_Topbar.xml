@@ -43,7 +43,7 @@
                 <control type="grouplist">
                     <visible>!Window.IsVisible(DialogNotification.xml)</visible>
                     <visible>!Window.IsVisible(DialogExtendedProgressBar.xml)</visible>
-                    <visible>!Window.IsVisible(DialogVolumeBar.xml)</visible>
+                    <visible>!Window.IsVisible(DialogVolumeBar.xml) | Player.Muted</visible>
                     <visible>!Player.HasMedia | Window.IsVisible(fullscreenvideo)</visible>
                     <right>view_pad</right>
                     <align>right</align>
@@ -80,6 +80,12 @@
                         <font>font_small</font>
                         <textcolor>$PARAM[fgcolor]_100</textcolor>
                         <label>$INFO[System.Time]</label>
+                    </control>
+                    <control type="group" description="Mute bug spacer">
+                        <centertop>50%</centertop>
+                        <height>56</height>
+                        <width>72</width>
+                        <visible>Player.Muted</visible>
                     </control>
                 </control>
             </control>

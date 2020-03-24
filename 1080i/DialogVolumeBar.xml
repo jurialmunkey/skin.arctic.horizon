@@ -4,6 +4,7 @@
     <zorder>10</zorder>
     <controls>
         <control type="group">
+            <visible>!Player.Muted</visible>
             <include content="Dialog_Notification_Group">
                 <param name="progress" value="Control.GetLabel(933)" />
                 <param name="progress-id" value="933" />
@@ -14,6 +15,20 @@
                 <param name="label" value="Volume$INFO[Control.GetLabel(933), ,%]" />
                 <param name="label2" value="$INFO[Player.Volume]" />
             </include>
+        </control>
+        <control type="group">
+            <visible>Player.Muted</visible>
+            <top>view_pad</top>
+            <right>view_pad</right>
+            <height>view_header</height>
+            <control type="image">
+                <right>0</right>
+                <centertop>50%</centertop>
+                <height>56</height>
+                <width>72</width>
+                <aspectratio align="right">keep</aspectratio>
+                <texture colordiffuse="main_fg_100">buttons/mute.png</texture>
+            </control>
         </control>
 
         
