@@ -137,7 +137,12 @@
             </control>
             <control type="image">
                 <texture background="true">common/vignette-full.png</texture>
-                <visible>[!System.HasAddon(script.colorbox) | Skin.HasSetting(DisableBlur)]</visible>
+                <visible>[!System.HasAddon(script.colorbox) | Skin.HasSetting(DisableBlur)] | [Player.HasVideo + Skin.HasSetting(global.showvideo) + String.IsEmpty(Window(Home).Property(HasTrailer))]</visible>
+            </control>
+            <control type="image">
+                <texture colordiffuse="Background">common/bg.jpg</texture>
+                <animation effect="fade" end="50" condition="True">Conditional</animation>
+                <visible>System.HasAddon(script.colorbox) + !Skin.HasSetting(DisableBlur) + Player.HasVideo + Skin.HasSetting(global.showvideo) + String.IsEmpty(Window(Home).Property(HasTrailer))</visible>
             </control>
         </control>
     </include>
