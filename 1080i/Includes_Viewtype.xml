@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
-    <include name="ViewIDs"><views>50,55,500,51,52,53,54,56</views></include>
+    <include name="ViewIDs"><views>50,51,55,500,52,53,54,56</views></include>
     <include name="Viewtype_Info_Right"><right>700</right></include>
     <include name="Viewtypes">
         <include content="Viewtype_Main">
