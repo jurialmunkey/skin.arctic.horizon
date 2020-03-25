@@ -475,7 +475,7 @@
         <param name="gradient" default="true" />
         <definition>
             <control type="group">
-                <visible>Control.HasFocus($PARAM[id])</visible>
+                <visible>Control.HasFocus($PARAM[id]) | Control.HasFocus($PARAM[altid])</visible>
                 <animation type="Focus" condition="!Skin.HasSetting(BounceAnimations) + Container($PARAM[id]).OnNext" reversible="false">
                     <effect type="slide" start="0,-50" end="0,0" time="300" tween="back" easing="out" />
                 </animation>

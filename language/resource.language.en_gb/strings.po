@@ -1202,6 +1202,11 @@ msgctxt "#31243"
 msgid "Top 100 Albums"
 msgstr ""
 
+#: /1080i/SkinSettings.xml
+msgctxt "#31244"
+msgid "PVR Channels"
+msgstr ""
+
 #: /1080i/script-skinshortcuts.xml
 msgctxt "#31248"
 msgid "Edit Shortcuts"

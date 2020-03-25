@@ -139,6 +139,29 @@
         <control type="group">
             <visible>Control.IsVisible(500)</visible>
             <include>Animation_Down</include>
+            <control type="button" id="5090">
+                <include>Defs_Hidden_Button</include>
+                <onup>Control.Move(500,-1)</onup>
+                <ondown>Control.Move(500,1)</ondown>
+                <onleft condition="String.IsEmpty(Window.Property(5090Action))">500</onleft>
+                <onleft condition="String.IsEqual(Window.Property(5090Action),Queue)">CLearProperty(5090Action)</onleft>
+                <onleft condition="String.IsEqual(Window.Property(5090Action),Delete)">CLearProperty(5090Action)</onleft>
+                <onleft condition="String.IsEqual(Window.Property(5090Action),MoveItemUp)">SetProperty(5090Action,Delete)</onleft>
+                <onleft condition="String.IsEqual(Window.Property(5090Action),MoveItemDown)">SetProperty(5090Action,MoveItemUp)</onleft>
+                
+                <onright condition="String.IsEmpty(Window.Property(5090Action)) + Window.IsVisible(musicplaylist)">SetProperty(5090Action,Delete)</onright>
+                <onright condition="String.IsEmpty(Window.Property(5090Action)) + Window.IsVisible(MyMusicNav.xml)">SetProperty(5090Action,Queue)</onright>
+                <onright condition="String.IsEqual(Window.Property(5090Action),Delete)">SetProperty(5090Action,MoveItemUp)</onright>
+                <onright condition="String.IsEqual(Window.Property(5090Action),MoveItemUp)">SetProperty(5090Action,MoveItemDown)</onright>
+
+                <onclick>SetFocus(500)</onclick>
+                <onclick condition="String.IsEmpty(Window.Property(5090Action))">Action(Select)</onclick>
+                <onclick condition="String.IsEqual(Window.Property(5090Action),Queue)">Action(Queue)</onclick>
+                <onclick condition="String.IsEqual(Window.Property(5090Action),MoveItemUp)">Action(MoveItemUp)</onclick>
+                <onclick condition="String.IsEqual(Window.Property(5090Action),MoveItemDown)">Action(MoveItemDown)</onclick>
+                <onclick condition="String.IsEqual(Window.Property(5090Action),Delete)">Action(Delete)</onclick>
+                <onclick>SetFocus(5090)</onclick>
+            </control>
             <control type="group">
                 <left>-20</left>
                 <bottom>-20</bottom>
@@ -150,16 +173,17 @@
                 <param name="id" value="500" />
                 <param name="itemlayout-width" value="1160" />
                 <param name="viewtype-label" value="$LOCALIZE[535]" />
+                <param name="altid" value="5090" />
                 <width>1160</width>
                 <height>560</height>
                 <onleft>64</onleft>
-                <onright>304</onright>
+                <onright>5090</onright>
                 <left>0</left>
                 <bottom>0</bottom>
                 <pagecontrol>64</pagecontrol>
-                <animation effect="slide" end="0,-80" condition="Integer.IsLess(Container.NumAllItems,7)">Conditional</animation>
-                <animation effect="slide" end="0,-80" condition="Integer.IsLess(Container.NumAllItems,5)">Conditional</animation>
-                <animation effect="slide" end="0,-80" condition="Integer.IsLess(Container.NumAllItems,3)">Conditional</animation>
+                <animation effect="slide" end="0,-80" condition="Integer.IsLess(Container.NumAllItems,7) + !String.IsEmpty(Container.NumAllITems)">Conditional</animation>
+                <animation effect="slide" end="0,-80" condition="Integer.IsLess(Container.NumAllItems,5) + !String.IsEmpty(Container.NumAllITems)">Conditional</animation>
+                <animation effect="slide" end="0,-80" condition="Integer.IsLess(Container.NumAllItems,3) + !String.IsEmpty(Container.NumAllITems)">Conditional</animation>
                 <visible>$EXP[Exp_View500List]</visible>
             </include>
             <control type="group">
@@ -178,6 +202,7 @@
             </control>
             <include content="Home_Hub_Widget_Label">
                 <param name="id" value="500" />
+                <param name="altid" value="5090" />
                 <param name="label" value="$VAR[Label_Header_Center]" />
                 <param name="altlabel" value="$INFO[Control.GetLabel(3),, ]$INFO[Control.GetLabel(4)]" />
                 <top>120</top>

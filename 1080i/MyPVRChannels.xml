@@ -18,7 +18,7 @@
                     <visible>Control.IsVisible(50)</visible>
                     <include>View_Pad</include>
                     <control type="group">
-                        <include condition="Skin.HasSetting(PVRGuide.Info)">View_PVR_Guide_Top</include>
+                        <include condition="Skin.HasSetting(PVRChannels.Info)">View_PVR_Guide_Top</include>
                         <include content="View_PVR_ChannelGroups">
                             <onup>SetFocus(50,9999,absolute)</onup>
                             <ondown>SetFocus(50,0,absolute)</ondown>
@@ -36,7 +36,7 @@
                         <control type="group">
                             <right>-4</right>
                             <top>item_list_height</top>
-                            <include content="View_50_List_Control">
+                            <include content="View_50_List_Control" condition="Skin.HasSetting(PVRChannels.Info)">
                                 <param name="top" value="0" />
                                 <param name="height" value="100%" />
                                 <param name="left" value="0" />
@@ -52,9 +52,25 @@
                                 <movement>2</movement>
                                 <bottom>0</bottom>
                             </include>
+                            <include content="View_50_List_Control" condition="!Skin.HasSetting(PVRChannels.Info)">
+                                <param name="top" value="0" />
+                                <param name="height" value="100%" />
+                                <param name="left" value="0" />
+                                <param name="right" value="0" />
+                                <param name="id" value="50" />
+                                <param name="altid" value="9400" />
+                                <param name="visible" value="true" />
+                                <param name="itemlayout" value="View_PVR_ItemLayout" />
+                                <param name="itemheight" value="item_list_height" />
+                                <param name="controllayout" value="View_PVR_Channels" />
+                                <param name="controltype" value="fixedlist" />
+                                <focusposition>4</focusposition>
+                                <movement>4</movement>
+                                <bottom>0</bottom>
+                            </include>
                         </control>
                     </control>
-                    <include condition="Skin.HasSetting(PVRGuide.Info)">View_PVR_Guide_Info</include>
+                    <include condition="Skin.HasSetting(PVRChannels.Info)">View_PVR_Guide_Info</include>
                 </control>
                 <include>Topbar_Left</include>
             </control>

@@ -665,6 +665,28 @@
                     <!-- Live TV / PVR -->
                     <!-- ============= -->
 
+                    <control type="label" id="19682" description="LABEL">
+                        <visible>Integer.IsEqual(Window.Property(CurrentFocus),9006)</visible>
+                        <include>Dialog_Standard_HintLabel</include>
+                        <label>$LOCALIZE[31146]</label>
+                    </control>
+
+                    <control type="radiobutton" id="19603" description="Channel Numbers">
+                        <visible>Integer.IsEqual(Window.Property(CurrentFocus),9006)</visible>
+                        <include>Defs_Settings_Button</include>
+                        <label>$LOCALIZE[31206]</label>
+                        <selected>Skin.HasSetting(PVRGuide.ChannelNumber)</selected>
+                        <onclick>Skin.ToggleSetting(PVRGuide.ChannelNumber)</onclick>
+                    </control>
+
+                    <control type="radiobutton" id="19611" description="Colordiffuse to icons">
+                        <visible>Integer.IsEqual(Window.Property(CurrentFocus),9006)</visible>
+                        <include>Defs_Settings_Button</include>
+                        <label>$LOCALIZE[31094]</label>
+                        <selected>Skin.HasSetting(PVRGuide.ColorDiffuse)</selected>
+                        <onclick>Skin.ToggleSetting(PVRGuide.ColorDiffuse)</onclick>
+                    </control>
+
                     <control type="label" id="19681" description="LABEL">
                         <visible>Integer.IsEqual(Window.Property(CurrentFocus),9006)</visible>
                         <include>Dialog_Standard_HintLabel</include>
@@ -679,27 +701,21 @@
                         <onclick>Skin.ToggleSetting(PVRGuide.Info)</onclick>
                     </control>
 
-                    <control type="radiobutton" id="19603" description="Channel Numbers">
-                        <visible>Integer.IsEqual(Window.Property(CurrentFocus),9006)</visible>
-                        <include>Defs_Settings_Button</include>
-                        <label>$LOCALIZE[31206]</label>
-                        <selected>Skin.HasSetting(PVRGuide.ChannelNumber)</selected>
-                        <onclick>Skin.ToggleSetting(PVRGuide.ChannelNumber)</onclick>
-                    </control>
-
-                    <control type="label" id="19682" description="LABEL">
+                    <control type="label" id="19683" description="LABEL">
                         <visible>Integer.IsEqual(Window.Property(CurrentFocus),9006)</visible>
                         <include>Dialog_Standard_HintLabel</include>
-                        <label>$LOCALIZE[31146]</label>
+                        <label>$LOCALIZE[31244]</label>
                     </control>
 
-                    <control type="radiobutton" id="19611" description="Colordiffuse to icons">
+                    <control type="radiobutton" id="19662" description="Info">
                         <visible>Integer.IsEqual(Window.Property(CurrentFocus),9006)</visible>
                         <include>Defs_Settings_Button</include>
-                        <label>$LOCALIZE[31094]</label>
-                        <selected>Skin.HasSetting(PVRGuide.ColorDiffuse)</selected>
-                        <onclick>Skin.ToggleSetting(PVRGuide.ColorDiffuse)</onclick>
+                        <label>$LOCALIZE[22081]</label>
+                        <selected>Skin.HasSetting(PVRChannels.Info)</selected>
+                        <onclick>Skin.ToggleSetting(PVRChannels.Info)</onclick>
                     </control>
+
+
 
 
                     <!-- ============= -->
