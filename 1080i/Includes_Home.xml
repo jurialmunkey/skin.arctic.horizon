@@ -210,7 +210,7 @@
         </control>
     </include>
     <include name="Home_Widget_Fullscreen">
-        <param name="content" default="$INFO[Skin.String(widgetPath)]" />
+        <param name="content" default="$VAR[Defs_ScreensaverWidget]" />
         <param name="sortby" default="random" />
         <param name="target" default="videos" />
         <param name="id" default="3001" />

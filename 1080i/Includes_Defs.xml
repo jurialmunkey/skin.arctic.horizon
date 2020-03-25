@@ -2,7 +2,6 @@
 <includes>
     <variable name="Defs_ScreensaverWidget">
         <value condition="!String.IsEmpty(Skin.String(screensaver.arctic.mirage.path))">$INFO[Skin.String(screensaver.arctic.mirage.path)]</value>
-        <value condition="!String.IsEmpty(Skin.String(widgetPath))">$INFO[Skin.String(widgetPath)]</value>
         <value>special://skin/extras/playlists/RandomMovies.xsp</value>
     </variable>
 

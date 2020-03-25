@@ -244,8 +244,8 @@
         <property name="widgetTarget" tag="property" attribute="name|widgetTarget" />
         <property name="widgetName" tag="property" attribute="name|widgetName" />
         <property name="widgetPath" tag="property" attribute="name|widgetPath" />
-        <property name="widgetTarget">$INFO[Skin.String(widgetTarget)]</property>
-        <property name="widgetPath">$INFO[Skin.String(widgetPath)]</property>
+        <property name="widgetTarget">$INFO[Skin.String(screensaver.arctic.mirage.target)]</property>
+        <property name="widgetPath">$INFO[Skin.String(screensaver.arctic.mirage.path)]</property>
         <property name="widgetInclude" tag="property" attribute="name|widgetAspect" value="Landscape">Viewtype_Landscape</property>
         <property name="widgetInclude" tag="property" attribute="name|widgetAspect" value="Square">Viewtype_Square</property>
         <property name="widgetInclude" tag="property" attribute="name|widgetAspect" value="Banner">Viewtype_BigBanner</property>
