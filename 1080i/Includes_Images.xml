@@ -86,7 +86,6 @@
         <value condition="String.Contains(ListItem.FileNameAndPath,hdtv) | String.Contains(ListItem.FileNameAndPath,pdtv) | String.Contains(ListItem.FileNameAndPath,dsr)">flags/$VAR[Defs_ColorMode_Dir]/other/hdtv.png</value>
         <value condition="String.Contains(ListItem.FileNameAndPath,sdtv)">flags/$VAR[Defs_ColorMode_Dir]/other/sdtv.png</value>
         <value condition="String.Contains(ListItem.FileNameAndPath,web-dl) | String.Contains(ListItem.FileNameAndPath,webdl) | String.Contains(ListItem.FileNameAndPath,WEBRip)">flags/$VAR[Defs_ColorMode_Dir]/other/web-dl.png</value>
-        <value>$INFO[Skin.String(FallbackSourceFlag)]</value>
     </variable>
 
     <variable name="Image_AudioCodec">
@@ -97,20 +96,19 @@
 
 
     <variable name="Image_VideoPlayer_RipSource">
-        <value condition="String.Contains(Player.FileNameAndPath,2160p) | String.Contains(Player.FileNameAndPath,UHD) | String.Contains(Player.FileNameAndPath,UltraHD) | String.Contains(Player.FileNameAndPath,Ultra-HD) | String.Contains(Player.FileNameAndPath,4K)">flags/color/other/4K.png</value>
-        <value condition="String.Contains(Player.FileNameAndPath,blu-ray) | String.Contains(Player.FileNameAndPath,bluray) | String.Contains(Player.FileNameAndPath,bdrip) | String.Contains(Player.FileNameAndPath,bd25) | String.Contains(Player.FileNameAndPath,bd50)">flags/color/other/bluray.png</value>
-        <value condition="String.Contains(Player.FileNameAndPath,hddvd) | String.Contains(Player.FileNameAndPath,hd-dvd)">flags/color/other/hddvd.png</value>
-        <value condition="String.Contains(Player.FileNameAndPath,dvd)">flags/color/other/dvd.png</value>
-        <value condition="String.Contains(Player.FileNameAndPath,hdtv) | String.Contains(Player.FileNameAndPath,pdtv) | String.Contains(Player.FileNameAndPath,dsr)">flags/color/other/hdtv.png</value>
-        <value condition="String.Contains(Player.FileNameAndPath,sdtv)">flags/color/other/sdtv.png</value>
-        <value condition="String.Contains(Player.FileNameAndPath,web-dl) | String.Contains(Player.FileNameAndPath,webdl) | String.Contains(Player.FileNameAndPath,WEBRip)">flags/color/other/web-dl.png</value>
-        <value>$INFO[Skin.String(FallbackSourceFlag)]</value>
+        <value condition="String.Contains(Player.FileNameAndPath,2160p) | String.Contains(Player.FileNameAndPath,UHD) | String.Contains(Player.FileNameAndPath,UltraHD) | String.Contains(Player.FileNameAndPath,Ultra-HD) | String.Contains(Player.FileNameAndPath,4K)">flags/$VAR[Defs_ColorMode_Dir]/other/4K.png</value>
+        <value condition="String.Contains(Player.FileNameAndPath,blu-ray) | String.Contains(Player.FileNameAndPath,bluray) | String.Contains(Player.FileNameAndPath,bdrip) | String.Contains(Player.FileNameAndPath,bd25) | String.Contains(Player.FileNameAndPath,bd50)">flags/$VAR[Defs_ColorMode_Dir]/other/bluray.png</value>
+        <value condition="String.Contains(Player.FileNameAndPath,hddvd) | String.Contains(Player.FileNameAndPath,hd-dvd)">flags/$VAR[Defs_ColorMode_Dir]/other/hddvd.png</value>
+        <value condition="String.Contains(Player.FileNameAndPath,dvd)">flags/$VAR[Defs_ColorMode_Dir]/other/dvd.png</value>
+        <value condition="String.Contains(Player.FileNameAndPath,hdtv) | String.Contains(Player.FileNameAndPath,pdtv) | String.Contains(Player.FileNameAndPath,dsr)">flags/$VAR[Defs_ColorMode_Dir]/other/hdtv.png</value>
+        <value condition="String.Contains(Player.FileNameAndPath,sdtv)">flags/$VAR[Defs_ColorMode_Dir]/other/sdtv.png</value>
+        <value condition="String.Contains(Player.FileNameAndPath,web-dl) | String.Contains(Player.FileNameAndPath,webdl) | String.Contains(Player.FileNameAndPath,WEBRip)">flags/$VAR[Defs_ColorMode_Dir]/other/web-dl.png</value>
     </variable>
 
     <variable name="Image_VideoPlayer_AudioCodec">
-        <value condition="String.Contains(Player.FileNameAndPath,atmos)">flags/color/audio/atmos.png</value>
-        <value condition="String.Contains(Player.FileNameAndPath,dtsx) | String.Contains(Player.FileNameAndPath,dts-x) | String.Contains(Player.FileNameAndPath,dts:x)">flags/color/audio/dtsx.png</value>
-        <value>$INFO[VideoPlayer.AudioCodec,flags/color/audio/,.png]</value>
+        <value condition="String.Contains(Player.FileNameAndPath,atmos)">flags/$VAR[Defs_ColorMode_Dir]/audio/atmos.png</value>
+        <value condition="String.Contains(Player.FileNameAndPath,dtsx) | String.Contains(Player.FileNameAndPath,dts-x) | String.Contains(Player.FileNameAndPath,dts:x)">flags/$VAR[Defs_ColorMode_Dir]/audio/dtsx.png</value>
+        <value>flags/$VAR[Defs_ColorMode_Dir]/audio/$INFO[VideoPlayer.AudioCodec,,.png]</value>
     </variable>
 
     <variable name="Image_OSD_Artwork">

@@ -26,7 +26,7 @@
 
     <variable name="Defs_ColorMode_ColorDiffuse">
         <value condition="!Skin.HasSetting(EnableMonochromeFlags)">ffffffff</value>
-        <value>main_fg_30</value>
+        <value>main_fg_100</value>
     </variable>
 
     <variable name="Defs_ColorMode_Dir">
