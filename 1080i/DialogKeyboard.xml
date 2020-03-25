@@ -459,11 +459,11 @@
                 <height>89</height>
                 <bottom>-129</bottom>
                 <control type="image">
-                    <top>-18</top>
-                    <bottom>-18</bottom>
-                    <left>-18</left>
-                    <right>-18</right>
-                    <texture border="16" colordiffuse="dialog_bg_100">common/rounded-shadow8.png</texture>
+                    <include content="Defs_Pad">
+                        <param name="pad" value="-34" />
+                    </include>
+                    <include condition="!Skin.HasSetting(DisableShadows)">Defs_Shadow_24</include>
+                    <texture border="16" colordiffuse="dialog_bg_100">common/dialog.png</texture>
                     <visible>Integer.IsGreater(Container(8000).NumItems,0)</visible>
                 </control>
                 <control type="panel" id="8000">

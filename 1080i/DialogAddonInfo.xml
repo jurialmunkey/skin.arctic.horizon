@@ -40,7 +40,7 @@
                         <usecontrolcoords>true</usecontrolcoords>
                         <itemgap>0</itemgap>
                         <include content="Object_Info_Title">
-                            <param name="label" value="$INFO[ListItem.Label]" />
+                            <param name="label" value="$INFO[ListItem.AddonName]" />
                         </include>
                         <include content="Object_Info_Line_Label">
                             <param name="label" value="$VAR[Label_SubTitle]" />
