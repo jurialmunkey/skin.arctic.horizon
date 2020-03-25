@@ -2,7 +2,7 @@
 <includes>
 
     <variable name="Global_BusyLoader">
-        <value>special://skin/extras/loader/waves/</value>
+        <value>loader/</value>
     </variable>    
 
     <include name="Global_Overlay">
