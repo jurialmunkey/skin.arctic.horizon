@@ -995,12 +995,12 @@
         <include content="Object_Info_Line_Label">
             <param name="label" value="$INFO[$PARAM[container]ListItem.EpisodeName]" />
             <param name="textcolor" value="$PARAM[textcolor]" />
-            <param name="visible" value="!String.IsEmpty($PARAM[container]ListItem.EpisodeName) + !String.IsEqual($PARAM[container]ListItem.EpisodeName,$PARAM[container]ListItem.Title) + $PARAM[visible]" />
+            <param name="visible" value="!String.IsEmpty($PARAM[container]ListItem.EpisodeName) + !String.IsEqual($PARAM[container]ListItem.EpisodeName,$PARAM[container]ListItem.Title) + !String.IsEqual($PARAM[container]ListItem.EpisodeName,$PARAM[container]ListItem.Plot) + $PARAM[visible]" />
         </include>
         <include content="Object_Info_Line_Label">
             <param name="label" value="$INFO[$PARAM[container]ListItem.EPGEventTitle]" />
             <param name="textcolor" value="$PARAM[textcolor]" />
-            <param name="visible" value="!String.IsEmpty($PARAM[container]ListItem.EPGEventTitle) + !String.IsEqual($PARAM[container]ListItem.EPGEventTitle,$PARAM[container]ListItem.Title) + $PARAM[visible]" />
+            <param name="visible" value="!String.IsEmpty($PARAM[container]ListItem.EPGEventTitle) + !String.IsEqual($PARAM[container]ListItem.EPGEventTitle,$PARAM[container]ListItem.Title) + !String.IsEqual($PARAM[container]ListItem.EPGEventTitle,$PARAM[container]ListItem.Plot) + $PARAM[visible]" />
         </include>
         <include content="Object_Info_Line_Label">
             <param name="label" value="$INFO[$PARAM[container]ListItem.Year]" />
