@@ -696,12 +696,12 @@
                 <left>$PARAM[left_pad]</left>
                 <control type="image">
                     <include>Dialog_Standard_List_Left_Icon</include>
-                    <visible>!String.Contains(ListItem.Icon,special://skin/) + !String.StartsWith(ListItem.Icon,Default)</visible>
+                    <visible>!String.StartsWith(ListItem.Icon,special://skin/) + !String.StartsWith(ListItem.Icon,Default)</visible>
                 </control>
                 <control type="image">
                     <colordiffuse>$PARAM[color_70]</colordiffuse>
                     <include>Dialog_Standard_List_Left_Icon</include>
-                    <visible>String.Contains(ListItem.Icon,special://skin/) | String.StartsWith(ListItem.Icon,Default)</visible>
+                    <visible>String.StartsWith(ListItem.Icon,special://skin/) | String.StartsWith(ListItem.Icon,Default)</visible>
                 </control>
                 <control type="group">
                     <left>item_biglist_height</left>
@@ -905,12 +905,12 @@
                 <bottom>0</bottom>
                 <height>dialog_right_iconwidth</height>
                 <control type="image">
-                    <visible>String.Contains(Container($PARAM[id]).$PARAM[image],special://skin/) | String.StartsWith(Container($PARAM[id]).$PARAM[image],Default)</visible>
+                    <visible>String.StartsWith(Container($PARAM[id]).$PARAM[image],special://skin/) | String.StartsWith(Container($PARAM[id]).$PARAM[image],Default)</visible>
                     <texture colordiffuse="dialog_fg_70">$INFO[Container($PARAM[id]).$PARAM[image]]</texture>
                     <aspectratio align="center" aligny="bottom">keep</aspectratio>
                 </control>
                 <control type="image">
-                    <visible>!String.Contains(Container($PARAM[id]).$PARAM[image],special://skin/) + !String.StartsWith(Container($PARAM[id]).$PARAM[image],Default)</visible>
+                    <visible>!String.StartsWith(Container($PARAM[id]).$PARAM[image],special://skin/) + !String.StartsWith(Container($PARAM[id]).$PARAM[image],Default)</visible>
                     <texture>$INFO[Container($PARAM[id]).$PARAM[image]]</texture>
                     <aspectratio align="center" aligny="bottom">keep</aspectratio>
                 </control>

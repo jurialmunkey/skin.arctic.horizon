@@ -50,7 +50,7 @@
                         <width>item_list_height</width>
                         <height>item_list_height</height>
                         <texture colordiffuse="dialog_fg_30">$INFO[ListItem.Icon]</texture>
-                        <visible>String.Contains(ListItem.Icon,special://skin/extras/icons)</visible>
+                        <visible>String.StartsWith(ListItem.Icon,special://skin/extras/icons)</visible>
                         <visible>!String.IsEqual(Window.Property(groupname),powermenu)</visible>
                     </control>
                     <control type="image">
@@ -58,7 +58,7 @@
                         <width>item_list_height</width>
                         <height>item_list_height</height>
                         <texture>$INFO[ListItem.Icon]</texture>
-                        <visible>!String.Contains(ListItem.Icon,special://skin/extras/icons)</visible>
+                        <visible>!String.StartsWith(ListItem.Icon,special://skin/extras/icons)</visible>
                         <visible>!String.IsEqual(Window.Property(groupname),powermenu)</visible>
                     </control>
                 </itemlayout>

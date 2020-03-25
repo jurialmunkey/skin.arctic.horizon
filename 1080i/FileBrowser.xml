@@ -42,14 +42,14 @@
                             <bordersize>15</bordersize>
                             <aspectratio scalediffuse="false">keep</aspectratio>
                             <texture fallback="DefaultAddonNone.png" background="true">$INFO[Listitem.Icon]</texture>
-                            <visible>!String.Contains(ListItem.Path,special://skin/extras/icons) + !String.StartsWith(ListItem.Icon,Default)</visible>
+                            <visible>!String.StartsWith(ListItem.Path,special://skin/extras/icons) + !String.StartsWith(ListItem.Icon,Default)</visible>
                         </control>
                         <control type="image">
                             <colordiffuse>dialog_fg_70</colordiffuse>
                             <bordersize>15</bordersize>
                             <aspectratio scalediffuse="false">keep</aspectratio>
                             <texture fallback="DefaultAddonNone.png" background="true">$INFO[Listitem.Icon]</texture>
-                            <visible>String.Contains(ListItem.Path,special://skin/extras/icons) | String.StartsWith(ListItem.Icon,Default)</visible>
+                            <visible>String.StartsWith(ListItem.Path,special://skin/extras/icons) | String.StartsWith(ListItem.Icon,Default)</visible>
                         </control>
                     </itemlayout>
                     <focusedlayout height="156" width="156" condition="[[String.StartsWith(ListItem.FolderPath,special://skin/extras/icons/) + !String.IsEqual(ListItem.Label,icons)]  | [String.StartsWith(Container(450).ListItem(1).FolderPath,special://skin/extras/icons/) + ListItem.IsParentFolder]]">

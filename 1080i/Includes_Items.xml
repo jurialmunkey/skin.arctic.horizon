@@ -731,7 +731,7 @@
                 <icon>special://skin/extras/icons/download.png</icon>
                 <label>$LOCALIZE[21452]</label>
                 <onclick>ActivateWindow(addonbrowser,addons://more/video/,return)</onclick>
-                <visible>Container.Content(addons) + !String.Contains(Container.FolderPath,addons://)</visible>
+                <visible>Container.Content(addons) + !String.StartsWith(Container.FolderPath,addons://)</visible>
                 <visible>!Skin.HasSetting(KioskMode)</visible>
             </item>
         </content>

@@ -102,16 +102,6 @@
                                     <top>20</top>
                                     <bottom>20</bottom>
                                 </include>
-                                <!-- <control type="button" id="3600">
-                                    <description>Weather Jump</description>
-                                    <include>Defs_Hidden_Button</include>
-                                    <onup>301</onup>
-                                    <ondown>301</ondown>
-                                    <onleft>301</onleft>
-                                    <onright>301</onright>
-                                    <onback>301</onback>
-                                    <onclick>ActivateWindow(Weather)</onclick>
-                                </control> -->
                             </control>
                             <control type="group">
                                 <visible>Integer.IsEqual(Container(3700).NumItems,0)</visible>
@@ -136,30 +126,6 @@
                 <include>Topbar_Left</include>
             </control>
 
-            <!-- <control type="group">
-                <animation effect="fade" start="0" end="100" condition="Control.HasFocus(302)" reversible="false">Conditional</animation>
-                <animation effect="fade" start="100" end="0" condition="!Control.HasFocus(302)" reversible="false">Conditional</animation>
-                <include>Global_Overlay</include>
-            
-                <control type="group">
-                    <left>-1368</left>
-                    <top>40</top>
-                    <animation effect="slide" end="0,-40" condition="Integer.IsLess(Container(302).NumItems,8)">Conditional</animation>
-                    <animation effect="slide" end="0,-40" condition="Integer.IsLess(Container(302).NumItems,7)">Conditional</animation>
-                    <animation effect="slide" end="0,-40" condition="Integer.IsLess(Container(302).NumItems,6)">Conditional</animation>
-                    <animation effect="slide" end="0,-40" condition="Integer.IsLess(Container(302).NumItems,5)">Conditional</animation>
-                    <animation effect="slide" end="0,-40" condition="Integer.IsLess(Container(302).NumItems,4)">Conditional</animation>
-                    <animation effect="slide" end="0,-40" condition="Integer.IsLess(Container(302).NumItems,3)">Conditional</animation>
-                    <animation effect="slide" end="0,-40" condition="Integer.IsLess(Container(302).NumItems,2)">Conditional</animation>
-                    <include content="Dialog_PowerMenu">
-                        <param name="id" value="302" />
-                        <param name="header" value="Submenu" />
-                        <param name="items" value="Home_Submenu_Content" />
-                        <param name="visible" value="true" />
-                        <param name="icon-visible" value="true" />
-                    </include>
-                </control>
-            </control> -->
         </include>
 
         <!-- Clock -->

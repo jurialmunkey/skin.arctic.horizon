@@ -149,7 +149,7 @@
     </variable>
 
     <variable name="Label_List_Left">
-        <value condition="[Container.Content(episodes) | String.IsEqual(ListItem.DBType,episode)] + String.Contains(ListItem.Episode,S)">$INFO[ListItem.Season]$INFO[ListItem.Episode]</value>
+        <value condition="[Container.Content(episodes) | String.IsEqual(ListItem.DBType,episode)] + String.StartsWith(ListItem.Episode,S)">$INFO[ListItem.Season]$INFO[ListItem.Episode]</value>
         <value condition="[Container.Content(episodes) | String.IsEqual(ListItem.DBType,episode)] + Integer.IsLess(ListItem.Episode,10) + Integer.IsLess(ListItem.Season,10)">$INFO[ListItem.Season,0,]$INFO[ListItem.Episode,x0,]</value>
         <value condition="[Container.Content(episodes) | String.IsEqual(ListItem.DBType,episode)] + Integer.IsLess(ListItem.Episode,10) + !Integer.IsLess(ListItem.Season,10)">$INFO[ListItem.Season]$INFO[ListItem.Episode,x0,]</value>
         <value condition="[Container.Content(episodes) | String.IsEqual(ListItem.DBType,episode)] + !Integer.IsLess(ListItem.Episode,10) + Integer.IsLess(ListItem.Season,10)">$INFO[ListItem.Season,0,]$INFO[ListItem.Episode,x,]</value>
@@ -185,9 +185,9 @@
         <value condition="Window.IsVisible(MyPlaylist.xml)">$LOCALIZE[559]</value>
         <value condition="String.Contains(Container.FolderPath,/movies/) | Container.Content(movies)">$LOCALIZE[342]</value>
         <value condition="String.Contains(Container.FolderPath,/tvshows/) | String.Contains(Container.FolderPath,videodb://inprogresstvshows/) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)">$LOCALIZE[20343]</value>
-        <value condition="String.Contains(Container.FolderPath,sources://video)">$LOCALIZE[31159]</value>
-        <value condition="String.Contains(Container.FolderPath,sources://music)">$LOCALIZE[31160]</value>
-        <value condition="String.Contains(Container.FolderPath,plugin://)">$INFO[Container.FolderName]</value>
+        <value condition="String.StartsWith(Container.FolderPath,sources://video)">$LOCALIZE[31159]</value>
+        <value condition="String.StartsWith(Container.FolderPath,sources://music)">$LOCALIZE[31160]</value>
+        <value condition="String.StartsWith(Container.FolderPath,plugin://)">$INFO[Container.FolderName]</value>
         <value condition="Container.Content(addons)">$LOCALIZE[24001]</value>
         <value condition="String.Contains(Container.FolderPath,/addons/)">$INFO[Container.FolderName]</value>
         <value condition="Window.IsVisible(MyGames.xml)">$LOCALIZE[10821]</value>
