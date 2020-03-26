@@ -135,47 +135,50 @@
     </include>
 
     <include name="Home_Widget_Fullscreen_Info">
-        <control type="image">
-            <texture background="true" colordiffuse="cdffffff">common/vignette-home.png</texture>
-        </control>
-        <control type="grouplist">
-            <left>view_pad</left>
-            <top>65</top>
-            <bottom>view_pad</bottom>
-            <width>1100</width>
-            <align>bottom</align>
-            <orientation>vertical</orientation>
-            <usecontrolcoords>true</usecontrolcoords>
-            <itemgap>0</itemgap>
-            <include content="Object_Info_Title">
-                <param name="label" value="$INFO[Container($PARAM[id]).ListItem.Title]" />
-            </include>
-            <include content="Object_Info_Line">
-                <param name="container" value="Container($PARAM[id])." />
-            </include>
-            <include content="Object_Info_Ratings" condition="!Skin.HasSetting(DisableFullscreenWidgetRatings)">
-                <param name="container" value="Container($PARAM[id])." />
-            </include>
-            <include content="Object_Info_Plot" condition="!Skin.HasSetting(DisableFullscreenWidgetRatings)">
-                <param name="maxheight" value="80" />
-                <param name="height" value="auto" />
-                <param name="label" value="$INFO[Container($PARAM[id]).ListItem.Plot]" />
-            </include>
-            <include content="Object_Info_Plot" condition="Skin.HasSetting(DisableFullscreenWidgetRatings)">
-                <param name="maxheight" value="80" />
-                <param name="height" value="auto" />
-                <param name="label" value="$INFO[Container($PARAM[id]).ListItem.Plot]" />
-                <top>10</top>
-            </include>
-        </control>
-        <control type="image">
-            <right>view_pad</right>
-            <bottom>view_pad</bottom>
-            <aspectratio align="right" aligny="bottom">keep</aspectratio>
-            <height>80</height>
-            <fadetime>200</fadetime>
-            <animation effect="slide" end="-160" time="400" tween="quadratic" condition="Control.HasFocus(301) | Control.HasFocus(302) | [Control.HasFocus(3992) + String.IsEmpty(Window.Property(WidgetFocus))]">Conditional</animation>
-            <texture background="true">$VAR[Image_Home_ClearLogo]</texture>
+        <control type="group">
+            <visible>!Integer.IsEqual(Container($PARAM[id]).NumItems,0)</visible>
+            <control type="image">
+                <texture background="true" colordiffuse="cdffffff">common/vignette-home.png</texture>
+            </control>
+            <control type="grouplist">
+                <left>view_pad</left>
+                <top>65</top>
+                <bottom>view_pad</bottom>
+                <width>1100</width>
+                <align>bottom</align>
+                <orientation>vertical</orientation>
+                <usecontrolcoords>true</usecontrolcoords>
+                <itemgap>0</itemgap>
+                <include content="Object_Info_Title">
+                    <param name="label" value="$INFO[Container($PARAM[id]).ListItem.Title]" />
+                </include>
+                <include content="Object_Info_Line">
+                    <param name="container" value="Container($PARAM[id])." />
+                </include>
+                <include content="Object_Info_Ratings" condition="!Skin.HasSetting(DisableFullscreenWidgetRatings)">
+                    <param name="container" value="Container($PARAM[id])." />
+                </include>
+                <include content="Object_Info_Plot" condition="!Skin.HasSetting(DisableFullscreenWidgetRatings)">
+                    <param name="maxheight" value="80" />
+                    <param name="height" value="auto" />
+                    <param name="label" value="$INFO[Container($PARAM[id]).ListItem.Plot]" />
+                </include>
+                <include content="Object_Info_Plot" condition="Skin.HasSetting(DisableFullscreenWidgetRatings)">
+                    <param name="maxheight" value="80" />
+                    <param name="height" value="auto" />
+                    <param name="label" value="$INFO[Container($PARAM[id]).ListItem.Plot]" />
+                    <top>10</top>
+                </include>
+            </control>
+            <control type="image">
+                <right>view_pad</right>
+                <bottom>view_pad</bottom>
+                <aspectratio align="right" aligny="bottom">keep</aspectratio>
+                <height>80</height>
+                <fadetime>200</fadetime>
+                <animation effect="slide" end="-160" time="400" tween="quadratic" condition="Control.HasFocus(301) | Control.HasFocus(302) | [Control.HasFocus(3992) + String.IsEmpty(Window.Property(WidgetFocus))]">Conditional</animation>
+                <texture background="true">$VAR[Image_Home_ClearLogo]</texture>
+            </control>
         </control>
     </include>
     <include name="Home_Widget_Fullscreen">
