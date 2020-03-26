@@ -104,7 +104,7 @@
                             <param name="visible" value="true" />
                             <param name="onup" value="Control.Move(1297,1)" />
                             <onclick>SetFocus(1297)</onclick>
-                            <onclick>Action(Info)</onclick>
+                            <onclick>Action(Play)</onclick>
                             <onfocus>SetProperty(TMDbHelper.WidgetContainer,1297,Home)</onfocus>
                         </include>
                         <include content="Object_Info_Button" description="Play">
