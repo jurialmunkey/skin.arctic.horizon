@@ -6,8 +6,6 @@
         <include>Global_Background</include>
         <include>Topbar_Right</include>
         <include>Topbar_Left</include>
-        <include content="View_Settings">
-            <include>View_Pad</include>
-        </include>
+        <include>View_Settings</include>
     </controls>
 </window>

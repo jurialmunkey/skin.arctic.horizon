@@ -49,9 +49,11 @@
                             <height>1</height>
                             <left>-2000</left>
                             <include>Home_Movement_UpDown</include>
+                            <onup>AlarmClock(refocusit,SetFocus(3992),00:00,silent)</onup>
+                            <ondown>AlarmClock(refocusit,SetFocus(3992),00:00,silent)</ondown>
                             <onleft>ClearProperty(WidgetMovement)</onleft>
                             <onleft>SetFocus($INFO[Window(Home).Property(CurrentWidget)],9999,absolute)</onleft>
-                            <include>skinshortcuts-template-onright</include>
+                            <include>skinshortcuts-template-onmovement</include>
                             <onright>ClearProperty(WidgetMovement)</onright>
                             <onclick>ClearProperty(WidgetMovement)</onclick>
                             <onclick condition="!String.IsEmpty(Window.Property(WidgetFocus))">SetFocus(3000)</onclick>
@@ -172,6 +174,7 @@
             <aspectratio align="right" aligny="bottom">keep</aspectratio>
             <height>80</height>
             <fadetime>200</fadetime>
+            <animation effect="slide" end="-160" time="400" tween="quadratic" condition="Control.HasFocus(301) | Control.HasFocus(302) | [Control.HasFocus(3992) + String.IsEmpty(Window.Property(WidgetFocus))]">Conditional</animation>
             <texture background="true">$VAR[Image_Home_ClearLogo]</texture>
         </control>
     </include>
@@ -389,6 +392,7 @@
                     <top>5</top>
                     <left>100</left>
                     <right>580</right>
+                    <bottom>60</bottom>
                     <orientation>vertical</orientation>
                     <usecontrolcoords>true</usecontrolcoords>
                     <itemgap>0</itemgap>
@@ -407,6 +411,10 @@
                     <include content="Object_Info_Line">
                         <param name="container" value="Container($PARAM[id])." />
                     </include>
+                    <include content="Object_Info_Ratings">
+                        <param name="container" value="Container($PARAM[id])." />
+                        <visible>String.IsEqual(Container($PARAM[id]).ListItem.DBType,movie) | String.IsEqual(Container($PARAM[id]).ListItem.DBType,episode) | String.IsEqual(Container($PARAM[id]).ListItem.DBType,tvshow) | String.IsEqual(Container($PARAM[id]).ListItem.DBType,season) | String.IsEqual(Container($PARAM[id]).ListItem.DBType,set)</visible>
+                    </include>
                     <include content="Object_Info_Title">
                         <param name="font" value="font_small_bold" />
                         <param name="titleheight" value="10" />
@@ -415,8 +423,8 @@
                         <visible>String.IsEqual(Container($PARAM[id]).ListItem.DBType,episode)</visible>
                     </include>
                     <include content="Object_Info_Plot">
-                        <param name="maxheight" value="$PARAM[plotmaxheight]" />
-                        <param name="height" value="$PARAM[plotheight]" />
+                        <param name="maxheight" value="200" />
+                        <param name="height" value="auto" />
                         <param name="label" value="$INFO[Container($PARAM[id]).ListItem.Plot]$INFO[Container($PARAM[id]).ListItem.Property(Album_Description)]$INFO[Container($PARAM[id]).ListItem.Property(Artist_Description)]$INFO[Container($PARAM[id]).ListItem.AddonDescription]" />
                     </include>
                 </control>

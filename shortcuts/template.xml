@@ -197,7 +197,6 @@
                     <onback>SetFocus($PYTHON[int(mainmenuid)]3101)</onback>
                     <onback>301</onback>
                     <include>Items_Settings_Main</include>
-                    
                 </include>
                 <include content="Info_Widget_Poster" condition="$SKINSHORTCUTS[isSettings]">
                     <param name="groupid" value="$PYTHON[41000 + int(mainmenuid) * 100 + int(id)]" />
@@ -537,7 +536,7 @@
         </items>
     </submenu>
 
-    <other include="onright">
+    <other include="onmovement">
         <property name="id" tag="property" attribute="name|id" value="$NUMBER[1]">1</property>
         <property name="id" tag="property" attribute="name|id" value="$NUMBER[2]">2</property>
         <property name="id" tag="property" attribute="name|id" value="$NUMBER[3]">3</property>
@@ -593,6 +592,11 @@
             <onright condition="String.IsEqual(Container(301).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility]) + !Integer.IsEqual(Container(3700).NumItems,0) + String.IsEmpty(Window(Home).Property(CurrentWidget))">SetFocus($PYTHON[50000 + int(id) * 100])</onright>
             <onright condition="String.IsEqual(Container(301).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility]) + !Integer.IsEqual(Container(3700).NumItems,0) + !String.IsEmpty(Window(Home).Property(CurrentWidget))">SetFocus($INFO[Window(Home).Property(CurrentWidget)],0,absolute)</onright>
             <onright condition="Integer.IsEqual(Container(3700).NumItems,0)">SetFocus(3001)</onright>
+
+            <onfocus condition="String.IsEqual(Container(301).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility]) + Integer.IsEqual(Container(3700).NumItems,1)">SetProperty(TMDbHelper.WidgetContainer,$PYTHON[30001 + int(id) * 100],Home)</onfocus>
+            <onfocus condition="String.IsEqual(Container(301).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility]) + Integer.IsEqual(Container(3700).NumItems,0)">SetProperty(TMDbHelper.WidgetContainer,3001,Home)</onfocus>
+            
         </controls>
     </other>
+
 </template>

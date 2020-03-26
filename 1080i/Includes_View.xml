@@ -15,52 +15,6 @@
         </control>
     </include>
 
-    <include name="View_Settings_Itemlayout">
-        <param name="icon" default="$INFO[ListItem.Icon]" />
-        <param name="labelinclude" default="View_51_Wall_Label" />
-        <param name="aspectratio" default="scale" />
-        <param name="colordiffuse" default="panel_fg_70" />
-        <definition>
-            <control type="group">
-                <right>10</right>
-                <bottom>10</bottom>
-                <include content="Object_PosterBack">
-                    <param name="pad" value="5" />
-                </include>
-                <control type="image">
-                    <top>20</top>
-                    <centerleft>50%</centerleft>
-                    <width>128</width>
-                    <height>128</height>
-                    <texture colordiffuse="$PARAM[colordiffuse]">$INFO[ListItem.Icon]</texture>
-                </control>
-                <control type="label">
-                    <left>15</left>
-                    <right>15</right>
-                    <font>font_tiny_bold</font>
-                    <textcolor>$PARAM[colordiffuse]</textcolor>
-                    <height>30</height>
-                    <bottom>40</bottom>
-                    <aligny>center</aligny>
-                    <align>center</align>
-                    <label>$VAR[Label_IconWall]</label>
-                </control>
-                <control type="group">
-                    <visible>Control.HasFocus($PARAM[id])</visible>
-                    <include condition="$PARAM[selectbox]">View_Selectbox</include>
-                </control>
-            </control>
-            
-        </definition>
-    </include>
-
-    <include name="View_Cast">
-        <top>52</top>
-        <left>0</left>
-        <right>-10</right>
-        <preloaditems>2</preloaditems>
-    </include>
-
     <include name="View_Cast_Toplabel">
         <param name="altid" default="999999" />
         <param name="showtitle" default="true" />
@@ -305,86 +259,44 @@
         <orientation>horizontal</orientation>
     </include>
 
-    <include name="View_Settings_Top">
-        <control type="group" id="$PARAM[groupid]">
-            <nested />
-            <include content="Object_MiniLabel" description="Management Label">
-                <param name="label" value="$LOCALIZE[31069]" />
-                <param name="isFocused" value="Control.HasFocus($PARAM[topid])" />
-            </include>
-            <include content="Viewtype_Keywords">
-                <param name="id" value="$PARAM[topid]" />
-                <param name="height" value="275" />
-                <param name="itemlayout-width" value="item_landscape_width" />
-                <param name="itemlayout-height" value="item_settings_height" />
-                <param name="offset" value="0" />
-                <param name="iconheight" value="item_settings_height" />
-                <param name="visible" value="true" />
-                <param name="textbox-visible" value="true" />
-                <param name="orientation" value="horizontal" />
-                <onback condition="Window.IsVisible(Home)">301</onback>
-                <onleft condition="Window.IsVisible(Home)">301</onleft>
-                <onright condition="Window.IsVisible(Home)">noop</onright>
-                <ondown condition="Container($PARAM[topid]).Column(0)">SetFocus($PARAM[bottomid],0)</ondown>
-                <ondown condition="Container($PARAM[topid]).Column(1)">SetFocus($PARAM[bottomid],1)</ondown>
-                <ondown condition="Container($PARAM[topid]).Column(2)">SetFocus($PARAM[bottomid],2)</ondown>
-                <ondown condition="Container($PARAM[topid]).Column(3)">SetFocus($PARAM[bottomid],3)</ondown>
-                <left>-80</left>
-                <right>-80</right>
-                <top>30</top>
-                <include>Items_Settings_System</include>
-            </include>
-        </control>
-    </include>
-
-    <include name="View_Settings_Bottom">
-        <control type="group" id="$PARAM[groupid]">
-            <nested />
-            <include content="Object_MiniLabel" description="Management Label">
-                <param name="label" value="$LOCALIZE[5]" />
-                <param name="isFocused" value="Control.HasFocus($PARAM[bottomid])" />
-            </include>
-            <include content="Viewtype_Keywords">
-                <param name="id" value="$PARAM[bottomid]" />
-                <param name="height" value="480" />
-                <param name="itemlayout-width" value="item_landscape_width" />
-                <param name="itemlayout-height" value="item_settings_height" />
-                <param name="control-type" value="panel" />
-                <param name="orientation" value="vertical" />
-                <param name="textbox-visible" value="true" />
-                <onback condition="Window.IsVisible(Home)">301</onback>
-                <onleft condition="Window.IsVisible(Home)">301</onleft>
-                <onright condition="Window.IsVisible(Home)">noop</onright>
-                <onup condition="Container($PARAM[bottomid]).Column(0)">SetFocus($PARAM[topid],0)</onup>
-                <onup condition="Container($PARAM[bottomid]).Column(1)">SetFocus($PARAM[topid],1)</onup>
-                <onup condition="Container($PARAM[bottomid]).Column(2)">SetFocus($PARAM[topid],2)</onup>
-                <onup condition="Container($PARAM[bottomid]).Column(3)">SetFocus($PARAM[topid],3)</onup>
-                <ondown>noop</ondown>
-                <left>-80</left>
-                <right>-80</right>
-                <top>30</top>
-                <include>Items_Settings_Main</include>
-            </include>
-        </control>
-    </include>
-
     <include name="View_Settings">
         <param name="hideonwindowopen" default="!Window.IsVisible(Settings.xml)" />
         <param name="topid" default="5000" />
         <param name="bottomid" default="5100" />
         <definition>
             <control type="group">
-                <animation effect="fade" start="100" end="0" time="300" condition="$PARAM[hideonwindowopen]">WindowOpen</animation>
-                <nested />
-                <include content="View_Settings_Top">
-                    <param name="topid" value="$PARAM[topid]" />
-                    <param name="bottomid" value="$PARAM[bottomid]" />
-                </include>
-                <include content="View_Settings_Bottom">
-                    <param name="topid" value="$PARAM[topid]" />
-                    <param name="bottomid" value="$PARAM[bottomid]" />
-                    <top>310</top>
-                </include>
+                <include>View_Pad</include>
+                <control type="group">
+                    <top>-20</top>
+                    <left>-100</left>
+                    <right>-100</right>
+                    <control type="grouplist" id="5300">
+                        <top>widgets_group_top</top>
+                        <height>widgets_group_height</height>
+                        <orientation>vertical</orientation>
+                        <itemgap>widgets_group_itemgap</itemgap>
+                        <usecontrolcoords>true</usecontrolcoords>
+                        <scrolltime tween="quadratic">400</scrolltime>
+                        <control type="group" id="5200"><height>widgets_bumper_top</height></control>
+                        <animation effect="fade" start="100" end="0" time="300" condition="$PARAM[hideonwindowopen]">WindowOpen</animation>
+                        <include content="Info_Widget_Poster">
+                            <param name="groupid" value="5101" />
+                            <param name="id" value="5100" />
+                            <param name="label" value="Management" />
+                            <param name="viewtype-include" value="Viewtype_Settings" />
+                            <param name="widget-type" value="widgets_settings_bottom" />
+                            <include>Items_Settings_System</include>
+                        </include>
+                        <include content="Info_Widget_Poster">
+                            <param name="groupid" value="5001" />
+                            <param name="id" value="5000" />
+                            <param name="label" value="Settings"/>
+                            <param name="viewtype-include" value="Viewtype_Settings" />
+                            <param name="widget-type" value="widgets_settings_top" />
+                            <include>Items_Settings_Main</include>
+                        </include>
+                    </control>
+                </control>
             </control>
         </definition>
     </include>
