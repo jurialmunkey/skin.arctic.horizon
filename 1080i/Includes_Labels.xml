@@ -33,6 +33,14 @@
         <value>$INFO[ListItem.Label]</value>
     </variable>
 
+    <variable name="Label_Info_Title_560">
+        <value condition="String.IsEqual(Container(560).ListItem.DBType,season) | String.IsEqual(Container(560).ListItem.DBType,episode) | String.StartsWith(Container(560).ListItem.Label,Season)">$INFO[Container(560).ListItem.TvShowTitle]</value>
+        <value condition="String.IsEqual(Container(560).ListItem.DBType,album) | String.IsEqual(Container(560).ListItem.DBType,song)">$INFO[Container(560).ListItem.Album]</value>
+        <value condition="[String.IsEmpty(Container(560).ListItem.DBType) | String.IsEqual(Container(560).ListItem.DBType,country) | String.IsEqual(Container(560).ListItem.DBType,director) | String.IsEqual(Container(560).ListItem.DBType,genre) | String.IsEqual(Container(560).ListItem.DBType,year) | String.IsEqual(Container(560).ListItem.DBType,studio) | String.IsEqual(Container(560).ListItem.DBType,tag)] + ![Container.Content(addons) + String.IsEmpty(Container.PluginName)]">$INFO[System.Time]</value>
+        <value condition="!String.IsEmpty(Container(560).ListItem.Title)">$INFO[Container(560).ListItem.Title]</value>
+        <value>$INFO[Container(560).ListItem.Label]</value>
+    </variable>
+
     <variable name="Label_Landscape_Title">
         <value condition="String.IsEqual(ListItem.DBType,album) | String.IsEqual(ListItem.DBType,song)">$INFO[ListItem.Album]</value>
         <value condition="String.IsEqual(ListItem.DBType,episode)">$INFO[ListItem.Label]</value>
@@ -85,12 +93,10 @@
     </variable>
 
     <variable name="Label_Studio">
-        <value condition="Control.HasFocus(531) + !String.IsEmpty(Container(531).ListItem.Studio)">$INFO[Container(531).ListItem.Studio]</value>
         <value condition="!String.IsEmpty(ListItem.Studio)">$INFO[ListItem.Studio]</value>
     </variable>
 
     <variable name="Label_Country">
-        <value condition="Control.HasFocus(531) + !String.IsEmpty(Container(531).ListItem.Country)">$INFO[Container(531).ListItem.Country]</value>
         <value condition="!String.IsEmpty(ListItem.Country)">$INFO[ListItem.Country]</value>
     </variable>
 
@@ -314,11 +320,6 @@
         <value condition="!String.IsEmpty(ListItem.Duration)">$INFO[ListItem.Duration(mins),, $LOCALIZE[31020]]</value>
     </variable>
 
-    <variable name="Label_531_Duration">
-        <value condition="!String.IsEmpty(Container(531).ListItem.Duration) + Integer.IsGreater(Container(531).ListItem.Duration(h),0)">$INFO[Container(531).ListItem.Duration(h),, $LOCALIZE[31036] ]$INFO[Container(531).ListItem.Duration(mm),, $LOCALIZE[31020]]</value>
-        <value condition="!String.IsEmpty(Container(531).ListItem.Duration)">$INFO[Container(531).ListItem.Duration(mins),, $LOCALIZE[31020]]</value>
-    </variable>
-
     <variable name="Label_AddonInfo_Enable">
         <value condition="String.IsEqual(Control.GetLabel(7),$LOCALIZE[24021])">$LOCALIZE[449]</value>
         <value>$LOCALIZE[24023]</value>
@@ -429,8 +430,16 @@
         <value>$INFO[ListItem.Tagline,[B],[/B][CR]]$INFO[ListItem.Artist,[B],[/B][CR]]$VAR[Label_Plot]</value>
     </variable>
 
+    <variable name="Label_Plot_560">
+        <value condition="!String.IsEmpty(Container(560).ListItem.Property(Artist_Description))">$INFO[Container(560).ListItem.Property(Artist_Description)]</value>
+        <value condition="!String.IsEmpty(Container(560).ListItem.Property(Album_Description))">$INFO[Container(560).ListItem.Property(Album_Description)]</value>
+        <value condition="!String.IsEmpty(Container(560).ListItem.AddonDescription)">$INFO[Container(560).ListItem.AddonDescription]</value>
+        <value condition="!String.IsEmpty(Container(560).ListItem.PlotOutline) + Skin.HasSetting(PlotOutline)">$INFO[Container(560).ListItem.PlotOutline]</value>
+        <value condition="!String.IsEmpty(Container(560).ListItem.Plot)">$INFO[Container(560).ListItem.Plot]</value>
+        <value condition="!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Plot))">$INFO[Window(Home).Property(TMDbHelper.ListItem.Plot)]</value>
+    </variable>
+
     <variable name="Label_Plot">
-        <value condition="Control.HasFocus(531) + !String.IsEmpty(Container(531).ListItem.Plot)">$INFO[Container(531).ListItem.Plot]</value>
         <value condition="!String.IsEmpty(ListItem.Property(Artist_Description))">$INFO[ListItem.Property(Artist_Description)]</value>
         <value condition="!String.IsEmpty(ListItem.Property(Album_Description))">$INFO[ListItem.Property(Album_Description)]</value>
         <value condition="!String.IsEmpty(ListItem.AddonDescription)">$INFO[ListItem.AddonDescription]</value>

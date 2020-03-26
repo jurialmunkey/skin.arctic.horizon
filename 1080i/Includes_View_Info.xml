@@ -32,15 +32,6 @@
                     <visible>String.IsEqual($PARAM[container]ListItem.DBType,episode)</visible>
                     <visible>$PARAM[visible-details]</visible>
                 </include>
-                <!-- <include content="Object_Info_Title">
-                    <param name="font" value="font_small_bold" />
-                    <param name="titleheight" value="10" />
-                    <param name="label" value="$INFO[$PARAM[container]ListItem.Genre]" />
-                    <top>30</top>
-                    <visible>!String.IsEmpty($PARAM[container]ListItem.Genre)</visible>
-                    <visible>!String.IsEqual($PARAM[container]ListItem.DBType,episode)</visible>
-                    <visible>$PARAM[visible-details]</visible>
-                </include> -->
                 <include content="Object_Info_Plot">
                     <param name="maxheight" value="$PARAM[plotmaxheight]" />
                     <param name="height" value="$PARAM[plotheight]" />

@@ -268,6 +268,11 @@
         <value>$INFO[Skin.String(widgetTarget)]</value>
     </variable>
 
+    <variable name="Defs_560_Target">
+        <value condition="Window.IsVisible(MyMusicNav.xml)">music</value>
+        <value>videos</value>
+    </variable>
+
     <include name="Defs_InfoList_OnBack">
         <onback>SetFocus(5001)</onback>
         <onback>SetFocus(5000)</onback>

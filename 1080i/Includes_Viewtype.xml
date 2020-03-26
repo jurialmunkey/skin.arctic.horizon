@@ -39,19 +39,17 @@
                             <texture background="true">$VAR[Image_ClearArt]</texture>
                             <aspectratio align="right" aligny="bottom" scalediffuse="false">keep</aspectratio>
                             <bordersize>15</bordersize>
-                            <visible>Control.IsVisible(51) | Control.IsVisible(52) | Control.IsVisible(53) | Control.IsVisible(54) | Control.IsVisible(56)</visible>
-                            <visible>!String.IsEmpty(ListItem.Art(clearart)) | !String.IsEmpty(ListItem.Art(tvshow.clearart)) | !String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.clearart)) | !String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.tvshow.clearart))</visible>
+                            <visible>Control.IsVisible(52) | Control.IsVisible(53) | Control.IsVisible(54) | [Control.IsVisible(56) + [!Container.Content(years) | !Window.IsVisible(MyMusicNav.xml)]]</visible>
                         </control>
                         <control type="image">
                             <right>-15</right>
                             <bottom>465</bottom>
                             <height>350</height>
                             <width>700</width>
-                            <texture background="true">$VAR[Image_ClearArt]</texture>
+                            <texture background="true">$VAR[Image_DiscArt]</texture>
                             <aspectratio align="right" aligny="bottom" scalediffuse="false">keep</aspectratio>
                             <bordersize>15</bordersize>
-                            <visible>Control.IsVisible(51)</visible>
-                            <visible>String.IsEmpty(ListItem.Art(clearart)) + String.IsEmpty(ListItem.Art(tvshow.clearart)) + String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.clearart)) + String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.tvshow.clearart))</visible>
+                            <visible>Control.IsVisible(51) | [Control.IsVisible(56) + Container.Content(years) + Window.IsVisible(MyMusicNav.xml)]</visible>
                         </control>
                         <control type="image">
                             <right>-15</right>
@@ -61,8 +59,7 @@
                             <texture background="true">$VAR[Image_ClearLogo]</texture>
                             <aspectratio align="right" aligny="top" scalediffuse="false">keep</aspectratio>
                             <bordersize>15</bordersize>
-                            <visible>Control.IsVisible(50) | Control.IsVisible(500)</visible>
-                            <visible>!String.IsEmpty(ListItem.Art(tvshow.clearlogo)) | !String.IsEmpty(ListItem.Art(artist.clearlogo)) | !String.IsEmpty(ListItem.Art(clearlogo))</visible>
+                            <visible>Control.IsVisible(55) | Control.IsVisible(500)</visible>
                         </control>
                         <include content="View_Info_Buttons">
                             <param name="grouplistid" value="300" />
@@ -1045,6 +1042,8 @@
             <centertop>51%</centertop>
             <right>$PARAM[right]</right>
             <visible>![Control.HasFocus(5090) + [$PARAM[selected]]]</visible>
+            <visible>Control.ISVisible(500)</visible>
+            <visible>String.ISEqual(ListITem.DBtype,song)</visible>
         </control>
         <control type="image">
             <width>32</width>
@@ -1053,6 +1052,8 @@
             <centertop>51%</centertop>
             <right>$PARAM[right]</right>
             <visible>Control.HasFocus(5090) + [$PARAM[selected]]</visible>
+            <visible>Control.ISVisible(500)</visible>
+            <visible>String.ISEqual(ListITem.DBtype,song)</visible>
         </control>
     </include>
     <include name="Viewtype_FileList_Itemlayout">

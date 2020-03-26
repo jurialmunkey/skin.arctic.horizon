@@ -14,13 +14,19 @@
     </variable>
 
     <variable name="Image_ClearArt">
+        <value condition="Control.IsVisible(56) + !String.IsEmpty(Container(560).ListItem.Art(clearart))">$INFO[Container(560).ListItem.Art(clearart)]</value>
+        <value condition="Control.IsVisible(56) + !String.IsEmpty(Container(560).ListItem.Art(tvshow.clearart))">$INFO[Container(560).ListItem.Art(tvshow.clearart)]</value>
+        <value condition="Control.IsVisible(56) + !String.IsEmpty(Container(560).ListItem.Art(artist.clearart))">$INFO[Container(560).ListItem.Art(artist.clearart)]</value>
         <value condition="!String.IsEmpty(ListItem.Art(clearart))">$INFO[ListItem.Art(clearart)]</value>
         <value condition="!String.IsEmpty(ListItem.Art(tvshow.clearart))">$INFO[ListItem.Art(tvshow.clearart)]</value>
+        <value condition="!String.IsEmpty(ListItem.Art(artist.clearart))">$INFO[ListItem.Art(artist.clearart)]</value>
         <value condition="!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.clearart))">$INFO[Window(Home).Property(TMDbHelper.ListItem.clearart)]</value>
         <value condition="!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.tvshow.clearart))">$INFO[Window(Home).Property(TMDbHelper.ListItem.tvshow.clearart)]</value>
-        <value condition="!String.IsEmpty(ListItem.Art(clearlogo))">$INFO[ListItem.Art(clearlogo)]</value>
-        <value condition="!String.IsEmpty(ListItem.Art(tvshow.clearlogo))">$INFO[ListItem.Art(tvshow.clearlogo)]</value>
-        <value condition="!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.clearlogo))">$INFO[Window(Home).Property(TMDbHelper.ListItem.clearlogo)]</value>
+    </variable>
+
+    <variable name="Image_DiscArt">
+        <value condition="Control.IsVisible(56) + !String.IsEmpty(Container(560).ListItem.Art(discart))">$INFO[Container(560).ListItem.Art(discart)]</value>
+        <value condition="Control.IsVisible(56) + !String.IsEmpty(Container(560).ListItem.Art(tvshow.discart))">$INFO[Container(560).ListItem.Art(tvshow.discart)]</value>
         <value condition="!String.IsEmpty(ListItem.Art(discart))">$INFO[ListItem.Art(discart)]</value>
         <value condition="!String.IsEmpty(ListItem.Art(tvshow.discart))">$INFO[ListItem.Art(tvshow.discart)]</value>
         <value condition="!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.discart))">$INFO[Window(Home).Property(TMDbHelper.ListItem.discart)]</value>
