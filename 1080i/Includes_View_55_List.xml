@@ -43,12 +43,12 @@
                             <param name="pad" value="20" />
                         </include>
                         <randomize>false</randomize>
-                        <visible>Container(5500).IsUpdating</visible>
+                        <visible>Container(550).IsUpdating</visible>
                     </control>
                     <control type="group">
                         <centerleft>50%</centerleft>
                         <width>240</width>
-                        <visible>Container(5500).IsUpdating</visible>
+                        <visible>Container(550).IsUpdating</visible>
                         <include content="Defs_BusySpinner">
                             <param name="label" value="$LOCALIZE[31428]..." />
                         </include>
@@ -71,7 +71,7 @@
                 <bottom>0</bottom>
                 <height>560</height>
                 <onleft>64</onleft>
-                <onright condition="String.Contains(Container.FolderPath,info=user_discover)">5500</onright>
+                <onright condition="String.Contains(Container.FolderPath,info=user_discover)">550</onright>
                 <pagecontrol>64</pagecontrol>
                 <animation effect="slide" end="0,-80" condition="Integer.IsLess(Container.NumAllItems,7)">Conditional</animation>
                 <animation effect="slide" end="0,-80" condition="Integer.IsLess(Container.NumAllItems,5)">Conditional</animation>
@@ -85,7 +85,7 @@
                 <param name="altlabel" value="$INFO[Control.GetLabel(3),, ]$INFO[Control.GetLabel(4)]" />
                 <top>120</top>
             </include>
-            <control type="wraplist" id="5500">
+            <control type="wraplist" id="550">
                 <right>0</right>
                 <bottom>0</bottom>
                 <height>560</height>
@@ -95,8 +95,8 @@
                 <onright>Down</onright>
                 <orientation>vertical</orientation>
                 <visible>String.Contains(Container.FolderPath,info=user_discover)</visible>
-                <animation effect="fade" start="100" end="0" time="300" condition="Container(5500).IsUpdating">Conditional</animation>
-                <include content="Defs_AutoScroll"><param name="condition" value="!Control.HasFocus(5500)" /></include>
+                <animation effect="fade" start="100" end="0" time="300" condition="Container(550).IsUpdating">Conditional</animation>
+                <include content="Defs_AutoScroll"><param name="condition" value="!Control.HasFocus(550)" /></include>
                 <itemlayout width="986" height="560">
                     <control type="image">
                         <aspectratio scalediffuse="false">scale</aspectratio>
@@ -118,8 +118,8 @@
                 <width>1026</width>
                 <bordersize>45</bordersize>
                 <aspectratio align="left">keep</aspectratio>
-                <texture background="true">$INFO[Container(5500).ListItem.Art(clearlogo)]</texture>
-                <animation effect="fade" start="100" end="0" time="300" condition="Container(5500).IsUpdating">Conditional</animation>
+                <texture background="true">$INFO[Container(550).ListItem.Art(clearlogo)]</texture>
+                <animation effect="fade" start="100" end="0" time="300" condition="Container(550).IsUpdating">Conditional</animation>
                 <visible>String.Contains(Container.FolderPath,info=user_discover)</visible>
             </control>
             <control type="group">
@@ -127,7 +127,7 @@
                 <bottom>-15</bottom>
                 <height>590</height>
                 <width>1016</width>
-                <visible>Control.HasFocus(5500)</visible>
+                <visible>Control.HasFocus(550)</visible>
                 <visible>String.Contains(Container.FolderPath,info=user_discover)</visible>
                 <include>View_Selectbox</include>
             </control>

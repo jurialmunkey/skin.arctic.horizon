@@ -2476,7 +2476,6 @@
     <include name="Object_Scrollbar_Horz">
         <control type="scrollbar" id="60">
             <onback>50</onback>
-            <ondown condition="Control.IsVisible(52) | Control.IsVisible(53) | Control.IsVisible(54)">SetFocus(9200)</ondown>
             <height>8</height>
             <left>view_pad</left>
             <right>view_pad</right>
@@ -2484,9 +2483,9 @@
             <centerbottom>40</centerbottom>
             <showonepage>false</showonepage>
             <orientation>horizontal</orientation>
-            <onup condition="![Control.IsVisible(560) | Control.IsVisible(503)]">50</onup>
+            <onup condition="![Control.IsVisible(560) | Control.IsVisible(530)]">50</onup>
             <onup condition="Control.IsVisible(560)">560</onup>
-            <onup condition="Control.IsVisible(503)">503</onup>
+            <onup condition="Control.IsVisible(530)">530</onup>
             <visible>$PARAM[visible]</visible>
             <texturesliderbackground colordiffuse="main_fg_12" border="4">scrollbar/scrollv.png</texturesliderbackground>
             <texturesliderbar colordiffuse="main_fg_30" border="4">scrollbar/scrollv.png</texturesliderbar>
@@ -2510,7 +2509,6 @@
             <centerbottom>30</centerbottom>
             <onup>50</onup>
             <onback>50</onback>
-            <ondown condition="Control.IsVisible(52) | Control.IsVisible(53) | Control.IsVisible(54)">SetFocus(9200)</ondown>
             <onright>SetFocus(50)</onright>
             <onright>Action(nextletter)</onright>
             <onright condition="!Container.HasNext | String.IsEqual(ListItem.SortLetter,Z)">Action(jumpsms2)</onright>

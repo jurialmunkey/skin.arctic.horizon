@@ -159,21 +159,6 @@
                         <label2>$INFO[Skin.String(screensaver.arctic.mirage.path)]</label2>
                         <onclick>RunScript(script.skinshortcuts,type=widgets&amp;showNone=True&amp;skinWidgetName=screensaver.arctic.mirage.name&amp;skinWidgetTarget=screensaver.arctic.mirage.target&amp;skinWidgetPath=screensaver.arctic.mirage.path)</onclick>
                     </control>
-                    
-                    <control type="button" id="19106" description="Set Fallback Image">
-                        <visible>Integer.IsEqual(Window.Property(CurrentFocus),9001)</visible>
-                        <include>Defs_Settings_Button</include>
-                        <label>31150</label>
-                        <label2>$INFO[Skin.String(HomeBackgroundImage)]</label2>
-                        <onclick condition="!System.HasAddon(script.toolbox)">InstallAddon(script.toolbox)</onclick>
-                        <onclick>SetProperty(Dialog.1.Label,$LOCALIZE[16018])</onclick>
-                        <onclick>SetProperty(Dialog.1.BuiltIn,Skin.Reset(HomeBackgroundImage))</onclick>
-                        <onclick>SetProperty(Dialog.2.Label,$LOCALIZE[31271])</onclick>
-                        <onclick>SetProperty(Dialog.2.BuiltIn,Skin.SetImage(HomeBackgroundImage))</onclick>
-                        <onclick>SetProperty(Dialog.3.Label,$LOCALIZE[31272])</onclick>
-                        <onclick>SetProperty(Dialog.3.BuiltIn,Skin.SetPath(HomeBackgroundImage))</onclick>
-                        <onclick>RunScript(script.toolbox,info=selectdialog,header=$LOCALIZE[31150])</onclick>
-                    </control>
 
                     <control type="radiobutton" id="19123" description="Show more widget items">
                         <visible>Integer.IsEqual(Window.Property(CurrentFocus),9001)</visible>
@@ -323,15 +308,6 @@
                         <label>Divider shadows</label>
                         <selected>Skin.HasSetting(ShadowLines)</selected>
                         <onclick>Skin.ToggleSetting(ShadowLines)</onclick>
-                    </control>
-
-                    <control type="radiobutton" id="19208" description="Use poster for blur">
-                        <visible>Integer.IsEqual(Window.Property(CurrentFocus),9002)</visible>
-                        <include>Defs_Settings_Button</include>
-                        <label>$LOCALIZE[31133]</label>
-                        <selected>!Skin.HasSetting(EnableFanartBlur)</selected>
-                        <onclick>Skin.ToggleSetting(EnableFanartBlur)</onclick>
-                        <enable>![!System.HasAddon(script.colorbox) | Skin.HasSetting(DisableBlur)] + System.HasAddon(script.colorbox)</enable>
                     </control>
 
                     <!-- ============= -->

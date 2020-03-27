@@ -16,7 +16,7 @@
                             <param name="container" value="Container." />
                             <top>-15</top>
                             <height>285</height>
-                            <visible>!Control.HasFocus(503)</visible>
+                            <visible>!Control.HasFocus(530)</visible>
                             <visible>!Control.IsVisible(56)</visible>
                             <visible>![Control.IsVisible(50) | Control.IsVisible(500) | Control.IsVisible(55) | Control.IsVisible(520)]</visible>
                             <include>Viewtype_Info_Right</include>
@@ -122,22 +122,6 @@
                 <visible>Skin.HasSetting(ShadowLines)</visible>
             </control>
         </control>
-    </include>
-
-    <include name="Topbar_Left_Home">
-        <onleft>301</onleft>
-        <onup>301</onup>
-        <ondown>3999</ondown>
-        <onback>301</onback>
-        <visible>!Control.HasFocus(301)</visible>
-    </include>
-
-    <include name="Topbar_Left_Library">
-        
-        <ondown condition="Control.IsVisible(300)">300</ondown>
-        <ondown condition="!Control.IsVisible(300) + !Control.IsVisible(5610)">50</ondown>
-        <ondown condition="!Control.IsVisible(300) + Control.IsVisible(5610)">5610</ondown>
-        <onback>50</onback>
     </include>
 
     <include name="Viewtype_KodiLogo">
@@ -272,7 +256,6 @@
         <oninfo condition="Container.Content(actors) | Container.Content(directors)">RunScript(plugin.video.themoviedb.helper,add_query=$INFO[Container.ListItem.Label],type=person,call_auto=1190)</oninfo>
         <onfocus>ClearProperty(OSD_Menu,Home)</onfocus>
         <ondown>60</ondown>
-        <!-- <ondown>ActivateWindow(1142)</ondown> -->
         <pagecontrol>60</pagecontrol>
     </include>
 
