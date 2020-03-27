@@ -1191,7 +1191,9 @@
                     <visible>String.IsEmpty(Container.PluginName)</visible>
                     <visible>String.IsEqual(ListItem.DBType,song) + !Skin.HasSetting(UseTrackNamingTemplate)</visible>
                     <control type="label">
-                        <width>30</width>
+                        <left>-10</left>
+                        <width>50</width>
+                        <align>center</align>
                         <textcolor>$PARAM[fgcolor_100]</textcolor>
                         <selectedcolor>$PARAM[fgcolor_100]</selectedcolor>
                         <label>$INFO[ListItem.TrackNumber]</label>
