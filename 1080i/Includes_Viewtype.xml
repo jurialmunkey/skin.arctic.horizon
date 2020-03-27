@@ -40,6 +40,7 @@
                             <aspectratio align="right" aligny="bottom" scalediffuse="false">keep</aspectratio>
                             <bordersize>15</bordersize>
                             <visible>Control.IsVisible(52) | Control.IsVisible(53) | Control.IsVisible(54) | [Control.IsVisible(56) + [!Container.Content(years) | !Window.IsVisible(MyMusicNav.xml)]]</visible>
+                            <include>Animation_FadeInOut_Common</include>
                         </control>
                         <control type="image">
                             <right>-15</right>
