@@ -90,6 +90,16 @@
                         <height>item_widget_details_height</height>
                         <visible>Integer.IsEqual(Container($PYTHON[50000 + int(mainmenuid) * 100]).NumItems,1)</visible>
                         <visible>Control.IsVisible($PYTHON[30001 + int(mainmenuid) * 100])</visible>
+                        <control type="image">
+                            <right>100</right>
+                            <bottom>10</bottom>
+                            <height>320</height>
+                            <width>670</width>
+                            <texture background="true">$VAR[Image_ClearArt]</texture>
+                            <aspectratio align="right" aligny="bottom" scalediffuse="false">keep</aspectratio>
+                            <include>Animation_FadeInOut</include>
+                            <visible>![Control.HasFocus(301) | Control.HasFocus(302) | [Control.HasFocus(3992) + String.IsEmpty(Window.Property(WidgetFocus))]]</visible>
+                        </control>
                     </include>
                     <skinshortcuts insert="widgets">items</skinshortcuts>
                     <control type="group" id="$PYTHON[30098 + int(mainmenuid) * 100]"><height>widgets_bumper_bottom</height></control>
