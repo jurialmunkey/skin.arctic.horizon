@@ -386,6 +386,18 @@
             <control type="group">
                 <include>Defs_Pad</include>
                 
+                <include condition="$PARAM[selectbox]" content="View_Selectbox">
+                    <param name="focusbounce" value="true" />
+                    <visible>Control.HasFocus($PARAM[id]) | Control.HasFocus($PARAM[altid])</visible>
+                    <control type="image">
+                        <bordersize>7</bordersize>
+                        <texture border="10" colordiffuse="$VAR[ColorSelectBox]">common/box.png</texture>
+                    </control>
+                    <control type="image">
+                        <bordersize>7</bordersize>
+                        <texture border="10" colordiffuse="$VAR[ColorSelectBox2]">common/box-gradient-vertical.png</texture>
+                    </control>
+                </include>
                 <!-- Image -->
                 <include content="Object_Artwork">
                     <param name="id" value="$PARAM[id]" />

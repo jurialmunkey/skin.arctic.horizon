@@ -77,7 +77,7 @@
                 <animation effect="slide" end="0,-80" condition="Integer.IsLess(Container.NumAllItems,5)">Conditional</animation>
                 <animation effect="slide" end="0,-80" condition="Integer.IsLess(Container.NumAllItems,3)">Conditional</animation>
                 <visible>!$EXP[Exp_View500List]</visible>
-                <visible>![String.StartsWith(Container.FolderPath,videodb://) | String.StartsWith(Container.FolderPath,musicdb://) | String.StartsWith(Container.FolderPath,plugin://) | String.StartsWith(Container.FolderPath,sources://)] | Container.Content(files) | [String.IsEqual(Container.PluginName,plugin.video.themoviedb.helper) + [String.Contains(Container.FolderPath,info=details)]] | Window.IsVisible(MyPVRRecordings.xml) | Window.IsVisible(videoplaylist)</visible>
+                <visible>![String.StartsWith(Container.FolderPath,videodb://) | String.StartsWith(Container.FolderPath,musicdb://) | String.StartsWith(Container.FolderPath,plugin://) | String.StartsWith(Container.FolderPath,sources://) | String.StartsWith(Container.FolderPath,special://)] | Container.Content(files) | [String.IsEqual(Container.PluginName,plugin.video.themoviedb.helper) + [String.Contains(Container.FolderPath,info=details)]] | Window.IsVisible(MyPVRRecordings.xml) | Window.IsVisible(videoplaylist)</visible>
             </include>
             <include content="Home_Hub_Widget_Label">
                 <param name="id" value="55" />

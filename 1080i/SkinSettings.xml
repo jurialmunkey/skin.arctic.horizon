@@ -175,6 +175,15 @@
                         <onclick>RunScript(script.toolbox,info=selectdialog,header=$LOCALIZE[31150])</onclick>
                     </control>
 
+                    <control type="radiobutton" id="19123" description="Show more widget items">
+                        <visible>Integer.IsEqual(Window.Property(CurrentFocus),9001)</visible>
+                        <include>Defs_Settings_Button</include>
+                        <label>Enable the "Show More..." widget item</label>
+                        <selected>Skin.HasSetting(EnableShowMore)</selected>
+                        <onclick>Skin.ToggleSetting(EnableShowMore)</onclick>
+                    </control>
+
+
                     <control type="radiobutton" id="19109" description="Autoscroll Widgets">
                         <visible>Integer.IsEqual(Window.Property(CurrentFocus),9001)</visible>
                         <include>Defs_Settings_Button</include>

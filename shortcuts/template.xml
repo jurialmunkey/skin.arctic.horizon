@@ -132,6 +132,7 @@
             <property name="widgetSortby" tag="property" attribute="name|widgetSortby" />
             <property name="widgetSortorder" tag="property" attribute="name|widgetSortorder" />
             <property name="widgetLimit" tag="property" attribute="name|widgetLimit" />
+            <property name="widgetLimit">20</property>
 
             <property name="mainmenuid" tag="property" attribute="name|mainmenuid" />
 
@@ -234,6 +235,17 @@
                     <movement>$SKINSHORTCUTS[widgetMovement]</movement>
                     <content><include condition="$SKINSHORTCUTS[widgetSubmenu]">skinshortcuts-submenu</include></content>
                     <content target="$SKINSHORTCUTS[widgetTarget]" limit="$SKINSHORTCUTS[widgetLimit]" sortby="$SKINSHORTCUTS[widgetSortby]" sortorder="$SKINSHORTCUTS[widgetSortorder]">$SKINSHORTCUTS[widgetPath]</content>
+                    <content>
+                        <item>
+                            <label>Show More...</label>
+                            <label2>Browse more items in this list</label2>
+                            <icon>common/nextitem.png</icon>
+                            <onclick>ActivateWindow($SKINSHORTCUTS[widgetTarget],$SKINSHORTCUTS[widgetPath],return)</onclick>
+                            <visible>Skin.HasSetting(EnableShowMore)</visible>
+                            <visible>!$SKINSHORTCUTS[widgetSubmenu]</visible>
+                            <visible>!Integer.IsLess(Container($PYTHON[30000 + int(mainmenuid) * 100 + int(id)]).NumItems,$SKINSHORTCUTS[widgetLimit])</visible>
+                        </item>
+                    </content>
                 </include>
             </controls>
         </items>
