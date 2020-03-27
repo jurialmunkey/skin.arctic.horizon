@@ -92,6 +92,17 @@
                                 <effect type="slide" end="0,-20" time="60" tween="sine" />
                                 <effect type="slide" end="0,20" time="180" tween="sine" delay="80" />
                             </animation>
+                            <control type="image">
+                                <right>85</right>
+                                <bottom>400</bottom>
+                                <height>350</height>
+                                <width>700</width>
+                                <texture background="true">$VAR[Image_ClearArt]</texture>
+                                <aspectratio align="right" aligny="bottom" scalediffuse="false">keep</aspectratio>
+                                <bordersize>15</bordersize>
+                                <visible>!Control.HasFocus(3992)</visible>
+                                <include>Animation_FadeInOut_Common</include>
+                            </control>
                             <include>skinshortcuts-template-widgets</include>
                             <control type="group">
                                 <visible>String.IsEqual(Container(3700).ListItemAbsolute(0).Property(list),Weather) + Weather.IsFetched</visible>
@@ -394,7 +405,7 @@
                 <control type="grouplist">
                     <top>5</top>
                     <left>100</left>
-                    <right>580</right>
+                    <right>800</right>
                     <bottom>60</bottom>
                     <orientation>vertical</orientation>
                     <usecontrolcoords>true</usecontrolcoords>
