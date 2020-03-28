@@ -76,14 +76,6 @@
         <value condition="!Player.Paused">buttons/play.png</value>
     </variable>
 
-    <variable name="Image_VideoQuality">
-        <value condition="ListItem.IsCollection">flags/quality/sets.png</value>
-        <value condition="String.Contains(ListItem.FileNameAndPath,2160p) | String.Contains(ListItem.FileNameAndPath,UHD) | String.Contains(ListItem.FileNameAndPath,UltraHD) | String.Contains(ListItem.FileNameAndPath,Ultra-HD) | String.Contains(ListItem.FileNameAndPath,4K) | Integer.IsGreater(ListItem.VideoResolution,1080)">flags/quality/4k.png</value>
-        <value condition="Integer.IsGreater(ListItem.VideoResolution,719)">flags/quality/hd.png</value>
-        <value condition="!String.IsEmpty(ListItem.VideoResolution)">flags/quality/sd.png</value>
-        <value>flags/quality/web.png</value>
-    </variable>
-
     <variable name="Image_RipSource">
         <value condition="String.Contains(ListItem.FileNameAndPath,2160p) | String.Contains(ListItem.FileNameAndPath,UHD) | String.Contains(ListItem.FileNameAndPath,UltraHD) | String.Contains(ListItem.FileNameAndPath,Ultra-HD) | String.Contains(ListItem.FileNameAndPath,4K)">flags/$VAR[Defs_ColorMode_Dir]/other/4K.png</value>
         <value condition="String.Contains(ListItem.FileNameAndPath,blu-ray) | String.Contains(ListItem.FileNameAndPath,bluray) | String.Contains(ListItem.FileNameAndPath,bdrip) | String.Contains(ListItem.FileNameAndPath,bd25) | String.Contains(ListItem.FileNameAndPath,bd50)">flags/$VAR[Defs_ColorMode_Dir]/other/bluray.png</value>

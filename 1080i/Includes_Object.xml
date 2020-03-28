@@ -1034,6 +1034,69 @@
         </include>
     </include>
 
+    <include name="Object_Info_Line_Resolution">
+        <control type="image">
+            <top>10</top>
+            <width>37</width>
+            <height>24</height>
+            <aspectratio align="left">keep</aspectratio>
+            <texture colordiffuse="$PARAM[textcolor]">flags/quality/sets.png</texture>
+            <visible>$PARAM[visible]</visible>
+            <visible>$PARAM[container]ListItem.IsCollection</visible>
+        </control>
+        <control type="image">
+            <top>10</top>
+            <width>37</width>
+            <height>24</height>
+            <aspectratio align="left">keep</aspectratio>
+            <texture colordiffuse="$PARAM[textcolor]">flags/quality/4k.png</texture>
+            <visible>$PARAM[visible]</visible>
+            <visible>Integer.IsGreater($PARAM[container]ListItem.VideoResolution,1080)</visible>
+            <visible>!$PARAM[container]ListItem.IsCollection</visible>
+        </control>
+        <control type="image">
+            <top>10</top>
+            <width>37</width>
+            <height>24</height>
+            <aspectratio align="left">keep</aspectratio>
+            <texture colordiffuse="$PARAM[textcolor]">flags/quality/hd.png</texture>
+            <visible>$PARAM[visible]</visible>
+            <visible>!Integer.IsGreater($PARAM[container]ListItem.VideoResolution,1080)</visible>
+            <visible>Integer.IsGreater($PARAM[container]ListItem.VideoResolution,719)</visible>
+            <visible>!$PARAM[container]ListItem.IsCollection</visible>
+        </control>
+        <control type="image">
+            <top>10</top>
+            <width>37</width>
+            <height>24</height>
+            <aspectratio align="left">keep</aspectratio>
+            <texture colordiffuse="$PARAM[textcolor]">flags/quality/sd.png</texture>
+            <visible>$PARAM[visible]</visible>
+            <visible>!Integer.IsGreater($PARAM[container]ListItem.VideoResolution,719)</visible>
+            <visible>!String.IsEmpty($PARAM[container]ListItem.VideoResolution)</visible>
+            <visible>!$PARAM[container]ListItem.IsCollection</visible>
+        </control>
+        <control type="image">
+            <top>10</top>
+            <width>37</width>
+            <height>24</height>
+            <aspectratio align="left">keep</aspectratio>
+            <texture colordiffuse="$PARAM[textcolor]">flags/quality/web.png</texture>
+            <visible>$PARAM[visible]</visible>
+            <visible>String.IsEmpty($PARAM[container]ListItem.VideoResolution)</visible>
+            <visible>!$PARAM[container]ListItem.IsCollection</visible>
+        </control>
+        <control type="label">
+            <width>auto</width>
+            <label>  |  </label>
+            <height>40</height>
+            <aligny>top</aligny>
+            <textcolor>$VAR[ColorHighlight]</textcolor>
+            <font>font_small</font>
+            <visible>$PARAM[visible]</visible>
+        </control>
+    </include>
+
     <include name="Object_Info_Line">
         <param name="nextaired" default="true" />
         <param name="textcolor" default="main_fg_100" />
@@ -1046,6 +1109,12 @@
                 <itemgap>0</itemgap>
                 <left>0</left>
                 <right>0</right>
+                <include content="Object_Info_Line_Resolution">
+                    <param name="textcolor" value="$PARAM[textcolor]" />
+                    <param name="container" value="$PARAM[container]" />
+                    <param name="visible" value="String.IsEqual($PARAM[container]ListItem.DBType,movie) | String.IsEqual($PARAM[container]ListItem.DBType,episode) | String.IsEqual($PARAM[container]ListItem.DBType,video) | String.IsEqual($PARAM[container]ListItem.DBType,set) | $PARAM[container]ListItem.IsCollection" />
+                </include>
+                
                 <include content="Object_Info_Line_Fallback">
                     <param name="textcolor" value="$PARAM[textcolor]" />
                     <param name="container" value="$PARAM[container]" />
