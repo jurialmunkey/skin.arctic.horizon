@@ -7,6 +7,7 @@
 
     <include name="Global_Overlay">
         <control type="image">
+            <nested />
             <include>Animation_FadeIn</include>
             <include condition="!Window.IsVisible(DialogButtonMenu.xml)">Animation_FadeOut</include>
             <include>Dimensions_Fullscreen</include>

@@ -1212,6 +1212,11 @@ msgctxt "#31245"
 msgid "Display the \"Show More...\" widget item"
 msgstr ""
 
+#: /shortcuts/overrides.xml
+msgctxt "#31246"
+msgid "Submenu Popup"
+msgstr ""
+
 #: /1080i/script-skinshortcuts.xml
 msgctxt "#31248"
 msgid "Edit Shortcuts"

@@ -64,6 +64,7 @@
         <param name="icon-visible" default="false" />
         <definition>
             <control type="group">
+                <nested />
                 <include>Animation_FadeIn_SlideUp</include>
                 <visible>$PARAM[visible]</visible>
                 <control type="group">
@@ -142,11 +143,30 @@
                         <aspectratio align="right">keep</aspectratio>
                         <texture colordiffuse="$VAR[ColorHighlight]">$VAR[Image_SkinLogo]</texture>
                     </control>
+                </control>
+            </control>
+            <control type="group">
+                <nested />
+                <control type="group">
+                    <animation effect="slide" end="0,item_list_height_half" condition="Integer.IsLess(Container($PARAM[id]).NumItems,8)">Conditional</animation>
+                    <animation effect="slide" end="0,item_list_height_half" condition="Integer.IsLess(Container($PARAM[id]).NumItems,7)">Conditional</animation>
+                    <animation effect="slide" end="0,item_list_height_half" condition="Integer.IsLess(Container($PARAM[id]).NumItems,6)">Conditional</animation>
+                    <animation effect="slide" end="0,item_list_height_half" condition="Integer.IsLess(Container($PARAM[id]).NumItems,5)">Conditional</animation>
+                    <animation effect="slide" end="0,item_list_height_half" condition="Integer.IsLess(Container($PARAM[id]).NumItems,4)">Conditional</animation>
+                    <animation effect="slide" end="0,item_list_height_half" condition="Integer.IsLess(Container($PARAM[id]).NumItems,3)">Conditional</animation>
+                    <animation effect="slide" end="0,item_list_height_half" condition="Integer.IsLess(Container($PARAM[id]).NumItems,2)">Conditional</animation>
+                    <include>Defs_Powermenu_Group</include>
                     <control type="list" id="$PARAM[id]">
-                        <onleft>Back</onleft>
-                        <onright>Back</onright>
+                        <onleft>$PARAM[onleft]</onleft>
+                        <onright>$PARAM[onright]</onright>
+                        <onback>$PARAM[onback]</onback>
                         <top>48</top>
-                        <include>Defs_Options_Grouplist</include>
+                        <left>8</left>
+                        <bottom>-48</bottom>
+                        <width>450</width>
+                        <itemgap>0</itemgap>
+                        <visible allowhiddenfocus="true">$PARAM[visible]</visible>
+                        <include>Animation_FadeIn_SlideUp</include>
                         <itemlayout width="450" height="item_list_height">
                             <control type="label">
                                 <font>font_tiny</font>

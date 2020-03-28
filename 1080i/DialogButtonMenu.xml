@@ -8,6 +8,8 @@
             <param name="header" value="$LOCALIZE[31072]" />
             <param name="items" value="Items_PowerMenu" />
             <param name="visible" value="true" />
+            <param name="onleft" value="Back" />
+            <param name="onright" value="Back" />
         </include>
     </controls>
 </window>

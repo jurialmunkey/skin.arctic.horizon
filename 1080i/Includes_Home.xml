@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
 
-    <include name="Home_Submenu_Content"><content><include>skinshortcuts-submenu</include></content></include>
-
     <include name="Home_Movement_Widgets_UpDown">
         <onup>SetProperty(WidgetFocus,1)</onup>
         <ondown>SetProperty(WidgetFocus,1)</ondown>

@@ -225,6 +225,7 @@
             <shortcut label="$LOCALIZE[10821]" type="32021" icon="special://skin/extras/icons/games.png">ActivateWindow(Games)</shortcut>
             <shortcut label="$LOCALIZE[137]" type="$LOCALIZE[31018]" icon="special://skin/extras/icons/search.png">Skin.SetString(SearchTerm)</shortcut>
             <shortcut label="$LOCALIZE[33060]" type="$LOCALIZE[31018]" icon="special://skin/extras/icons/power.png">ActivateWindow(shutdownmenu)</shortcut>
+            <shortcut label="$LOCALIZE[31246]" type="32021" icon="special://skin/extras/icons/playlist.png">SetFocus(302,0,absolute)</shortcut>
             <shortcut label="$LOCALIZE[31429]" type="32021" icon="special://skin/extras/icons/compass.png">ActivateWindow(1110)</shortcut>
             <shortcut label="Next Aired - Library" type="32021" icon="special://skin/extras/icons/antenna.png">ActivateWindow(1111)</shortcut>
             <shortcut label="Next Aired - Trakt" type="32021" icon="special://skin/extras/icons/announce.png">ActivateWindow(1112)</shortcut>
