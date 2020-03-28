@@ -327,19 +327,19 @@
                     <include condition="$PARAM[focusbutton]">Home_Menu_FocusButton</include>
                     <control type="group">
                         <visible>!Control.HasFocus(301) + !Control.HasFocus(302) + ![Control.HasFocus(3992) + String.IsEmpty(Window.Property(WidgetFocus))]</visible>
-                        <control type="image">
+                        <!-- <control type="image">
                             <right>0</right>
                             <centertop>50%</centertop>
                             <height>16</height>
                             <width>16</width>
                             <texture colordiffuse="dialog_fg_100">common/arrow-menu.png</texture>
-                        </control>
+                        </control> -->
                         <control type="image">
                             <right>40</right>
                             <width>item_list_height</width>
                             <height>item_list_height</height>
                             <bordersize>8</bordersize>
-                            <texture background="true" colordiffuse="dialog_fg_100">$INFO[ListItem.Icon]</texture>
+                            <texture background="true" colordiffuse="dialog_fg_70">$INFO[ListItem.Icon]</texture>
                         </control>
                     </control>
                     <control type="group">
