@@ -613,11 +613,6 @@
         <include condition="!Window.Previous(home)" content="View_Settings">
             <include>View_Pad</include>
         </include>
-        <include content="Object_Settings_Info">
-            <param name="visible" value="Control.HasFocus(300) | !Window.IsVisible(SettingsCategory.xml)" />
-            <param name="id" value="5800" />
-            <param name="label" value="$VAR[Label_Settings_Information]" />
-        </include>
     </include>
 
     <include name="Defs_Settings_Changer">
