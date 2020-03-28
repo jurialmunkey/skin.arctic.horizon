@@ -2,6 +2,7 @@
 <includes>
     <include name="ViewIDs"><views>50,51,55,500,52,53,54,56</views></include>
     <include name="Viewtype_Info_Right"><right>700</right></include>
+    <include name="Viewtype_Info_Right_FixedHome"><right>560</right></include>
     <include name="Viewtypes">
         <include content="Viewtype_Main">
             <control type="group">
@@ -639,6 +640,7 @@
 
     <include name="Viewtype_Keywords_Itemlayout">
         <param name="selectbox" default="false" />
+        <param name="bordersize" default="35" />
         <param name="label-include" default="Viewtype_Landscape_Label" />
         <definition>
             <include>Object_PosterBack</include>
@@ -657,14 +659,15 @@
                     </control>
                 </include>
                 <control type="group">
-                    <height>75%</height>
+                    <height>72%</height>
                     <include content="Object_Artwork">
                         <param name="id" value="$PARAM[id]" />
                         <param name="altid" value="$PARAM[altid]" />
                         <param name="selectbox" value="$PARAM[selectbox]" />
-                        <param name="diffuse" value="$PARAM[diffuse]" />
-                        <param name="icon" value="$PARAM[icon]" />
-                        <param name="aspectratio" value="$PARAM[aspectratio]" />
+                        <param name="diffuse" value="diffuse/landscape-std.png" />
+                        <param name="icon" value="$VAR[Image_ClearLogo]" />
+                        <param name="aspectratio" value="keep" />
+                        <param name="bordersize" value="$PARAM[bordersize]" />
                     </include>
                 </control>
                 <control type="label">

@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
+    <include name="Home_FixedMenu_Right">
+        <right>160</right>
+    </include>
 
     <include name="Home_Movement_Widgets_UpDown">
         <onup>SetProperty(WidgetFocus,1)</onup>
@@ -411,7 +414,8 @@
                     <top>5</top>
                     <left>100</left>
                     <bottom>60</bottom>
-                    <include>Viewtype_Info_Right</include>
+                    <include condition="Skin.HasSetting(LockMainMenu)">Viewtype_Info_Right_FixedHome</include>
+                    <include condition="!Skin.HasSetting(LockMainMenu)">Viewtype_Info_Right</include>
                     <orientation>vertical</orientation>
                     <usecontrolcoords>true</usecontrolcoords>
                     <itemgap>0</itemgap>

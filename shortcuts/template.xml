@@ -68,6 +68,7 @@
                 <control type="grouplist" id="$PYTHON[50000 + int(mainmenuid) * 100]">
                     <top>widgets_group_top</top>
                     <height>widgets_group_height</height>
+                    <include condition="Skin.HasSetting(LockMainMenu)">Home_FixedMenu_Right</include>
                     <orientation>vertical</orientation>
                     <itemgap>widgets_group_itemgap</itemgap>
                     <usecontrolcoords>true</usecontrolcoords>
@@ -122,6 +123,7 @@
             <property name="widgetInclude" tag="property" attribute="name|widgetAspect" value="Small Square">Viewtype_Square</property>
             <property name="widgetInclude" tag="property" attribute="name|widgetAspect" value="Landscape">Viewtype_Landscape</property>
             <property name="widgetInclude" tag="property" attribute="name|widgetAspect" value="Small Landscape">Viewtype_Landscape</property>
+            <property name="widgetInclude" tag="property" attribute="name|widgetAspect" value="Icon">Viewtype_Keywords</property>
             <property name="widgetInclude">Viewtype_Poster</property>
             <property name="widgetMovement" tag="property" attribute="name|widgetAspect" value="Banner">Defs_Movement_Banner</property>
             <property name="widgetMovement" tag="property" attribute="name|widgetAspect" value="Square">Defs_Movement_Square</property>

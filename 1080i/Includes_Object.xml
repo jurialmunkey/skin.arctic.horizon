@@ -1348,6 +1348,7 @@
                     <param name="icon" value="$PARAM[icon]" />
                     <param name="diffuse" value="$PARAM[diffuse]" />
                     <param name="aspectratio" value="$PARAM[aspectratio]" />
+                    <param name="bordersize" value="$PARAM[bordersize]" />
                     <param name="visible" value="![String.StartsWith($PARAM[listitem].Icon,Default) | String.StartsWith(ListItem.Icon,special://skin/extras/icons/)] + !String.StartsWith(ListItem.FolderPath,pvr://) + ![String.IsEqual($PARAM[listitem].DBType,country) | String.IsEqual($PARAM[listitem].Property(dbtype),country)] + ![String.IsEqual($PARAM[listitem].DBType,studio) | String.IsEqual($PARAM[listitem].Property(dbtype),studio)] + ![String.IsEqual($PARAM[listitem].DBType,genre) | String.IsEqual($PARAM[listitem].Property(dbtype),genre)]" />
                 </include>
             </control>
