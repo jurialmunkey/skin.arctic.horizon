@@ -1,5 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
+    <include name="Defs_Movement_Banner">
+        <movement>0</movement>
+    </include>
+
+    <include name="Defs_Movement_Square_Locked">
+        <movement>4</movement>
+    </include>
+    <include name="Defs_Movement_Square_Normal">
+        <movement>5</movement>
+    </include>
+    <include name="Defs_Movement_Square">
+        <include condition="Skin.HasSetting(LockMainMenu)">Defs_Movement_Square_Locked</include>
+        <include condition="!Skin.HasSetting(LockMainMenu)">Defs_Movement_Square_Normal</include>
+    </include>
+
+    <include name="Defs_Movement_Landscape_Locked">
+        <movement>2</movement>
+    </include>
+    <include name="Defs_Movement_Landscape_Normal">
+        <movement>3</movement>
+    </include>
+    <include name="Defs_Movement_Landscape">
+        <include condition="Skin.HasSetting(LockMainMenu)">Defs_Movement_Landscape_Locked</include>
+        <include condition="!Skin.HasSetting(LockMainMenu)">Defs_Movement_Landscape_Normal</include>
+    </include>
+
+    <include name="Defs_Movement_Poster_Locked">
+        <movement>5</movement>
+    </include>
+    <include name="Defs_Movement_Poster_Normal">
+        <movement>6</movement>
+    </include>
+    <include name="Defs_Movement_Poster">
+        <include condition="Skin.HasSetting(LockMainMenu)">Defs_Movement_Poster_Locked</include>
+        <include condition="!Skin.HasSetting(LockMainMenu)">Defs_Movement_Poster_Normal</include>
+    </include>
+
     <variable name="Defs_ScreensaverWidget">
         <value condition="!String.IsEmpty(Skin.String(screensaver.arctic.mirage.path))">$INFO[Skin.String(screensaver.arctic.mirage.path)]</value>
         <value>special://skin/extras/playlists/RandomMovies.xsp</value>

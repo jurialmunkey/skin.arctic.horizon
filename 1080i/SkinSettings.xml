@@ -160,14 +160,6 @@
                         <onclick>RunScript(script.skinshortcuts,type=widgets&amp;showNone=True&amp;skinWidgetName=screensaver.arctic.mirage.name&amp;skinWidgetTarget=screensaver.arctic.mirage.target&amp;skinWidgetPath=screensaver.arctic.mirage.path)</onclick>
                     </control>
 
-                    <control type="radiobutton" id="19123" description="Show more widget items">
-                        <visible>Integer.IsEqual(Window.Property(CurrentFocus),9001)</visible>
-                        <include>Defs_Settings_Button</include>
-                        <label>Enable the "Show More..." widget item</label>
-                        <selected>Skin.HasSetting(EnableShowMore)</selected>
-                        <onclick>Skin.ToggleSetting(EnableShowMore)</onclick>
-                    </control>
-
 
                     <control type="radiobutton" id="19109" description="Autoscroll Widgets">
                         <visible>Integer.IsEqual(Window.Property(CurrentFocus),9001)</visible>
@@ -185,11 +177,28 @@
                         <onclick>Skin.ToggleSetting(DisableAutoWidthHub)</onclick>
                     </control>
 
+                    <control type="radiobutton" id="19123" description="Show more widget items">
+                        <visible>Integer.IsEqual(Window.Property(CurrentFocus),9001)</visible>
+                        <include>Defs_Settings_Button</include>
+                        <label>$LOCALIZE[31245]</label>
+                        <selected>Skin.HasSetting(EnableShowMore)</selected>
+                        <onclick>Skin.ToggleSetting(EnableShowMore)</onclick>
+                    </control>
+                    
                     <control type="label" id="19182" description="LABEL">
                         <visible>Integer.IsEqual(Window.Property(CurrentFocus),9001)</visible>
                         <include>Dialog_Standard_HintLabel</include>
-                        <label>Logos and Icons</label>
+                        <label>Menu and Logo</label>
                     </control>
+
+                    <control type="radiobutton" id="19127" description="Lock main menu">
+                        <visible>Integer.IsEqual(Window.Property(CurrentFocus),9001)</visible>
+                        <include>Defs_Settings_Button</include>
+                        <label>Lock main menu position</label>
+                        <selected>Skin.HasSetting(LockMainMenu)</selected>
+                        <onclick>Skin.ToggleSetting(LockMainMenu)</onclick>
+                    </control>
+
 
                     <control type="radiobutton" id="19107" description="Profile Pic">
                         <visible>Integer.IsEqual(Window.Property(CurrentFocus),9001)</visible>

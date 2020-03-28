@@ -898,11 +898,28 @@
         <param name="textbox-visible" default="true" />
         <param name="movement" default="5" />
         <definition>
-            <include content="Viewtype_Keywords">
+            <include content="Viewtype_Keywords" condition="!Skin.HasSetting(LockMainMenu) | !Window.IsVisible(Home)">
                 <param name="height" value="$PARAM[height]" />
                 <param name="control-type" value="panel" />
                 <param name="orientation" value="$PARAM[orientation]" />
                 <param name="itemlayout-width" value="$PARAM[itemlayout-width]" />
+                <param name="itemlayout-height" value="$PARAM[itemlayout-height]" />
+                <param name="iconheight" value="item_settings_height" />
+                <param name="label-include" value="$PARAM[label-include]" />
+                <param name="movement" value="$PARAM[movement]" />
+                <param name="id" value="$PARAM[id]" />
+                <param name="icon" value="$VAR[Image_Poster]" />
+                <param name="diffuse" value="diffuse/square-std.png" />
+                <param name="textbox-height" value="$PARAM[textbox-height]" />
+                <param name="textbox-visible" value="$PARAM[textbox-visible]" />
+                <param name="aspectratio" value="$PARAM[aspectratio]" />
+                <nested />
+            </include>
+            <include content="Viewtype_Keywords" condition="Skin.HasSetting(LockMainMenu) + Window.IsVisible(Home)">
+                <param name="height" value="$PARAM[height]" />
+                <param name="control-type" value="panel" />
+                <param name="orientation" value="$PARAM[orientation]" />
+                <param name="itemlayout-width" value="410" />
                 <param name="itemlayout-height" value="$PARAM[itemlayout-height]" />
                 <param name="iconheight" value="item_settings_height" />
                 <param name="label-include" value="$PARAM[label-include]" />

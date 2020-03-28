@@ -176,7 +176,7 @@
                 <aspectratio align="right" aligny="bottom">keep</aspectratio>
                 <height>80</height>
                 <fadetime>200</fadetime>
-                <animation effect="slide" end="-160" time="400" tween="quadratic" condition="Control.HasFocus(301) | Control.HasFocus(302) | [Control.HasFocus(3992) + String.IsEmpty(Window.Property(WidgetFocus))]">Conditional</animation>
+                <animation effect="slide" end="-160" time="400" tween="quadratic" condition="Control.HasFocus(301) | Control.HasFocus(302) | [Control.HasFocus(3992) + String.IsEmpty(Window.Property(WidgetFocus))] | Skin.HasSetting(LockMainMenu)">Conditional</animation>
                 <texture background="true">$VAR[Image_Home_ClearLogo]</texture>
             </control>
         </control>
@@ -327,10 +327,28 @@
                 </itemlayout>
                 <focusedlayout height="item_list_height" width="160">
                     <include condition="$PARAM[focusbutton]">Home_Menu_FocusButton</include>
-                    <control type="image">
-                        <texture colordiffuse="$VAR[ColorHighlight]">common/white.png</texture>
+                    <control type="group">
+                        <visible>!Control.HasFocus(301) + !Control.HasFocus(302) + ![Control.HasFocus(3992) + String.IsEmpty(Window.Property(WidgetFocus))]</visible>
+                        <control type="image">
+                            <right>0</right>
+                            <centertop>50%</centertop>
+                            <height>16</height>
+                            <width>16</width>
+                            <texture colordiffuse="dialog_fg_100">common/arrow-menu.png</texture>
+                        </control>
+                        <control type="image">
+                            <right>40</right>
+                            <width>item_list_height</width>
+                            <height>item_list_height</height>
+                            <bordersize>8</bordersize>
+                            <texture background="true" colordiffuse="dialog_fg_100">$INFO[ListItem.Icon]</texture>
+                        </control>
                     </control>
                     <control type="group">
+                        <visible>Control.HasFocus(301) | Control.HasFocus(302) | [Control.HasFocus(3992) + String.IsEmpty(Window.Property(WidgetFocus))]</visible>
+                        <control type="image">
+                            <texture colordiffuse="$VAR[ColorHighlight]">common/white.png</texture>
+                        </control>
                         <control type="image">
                             <texture colordiffuse="$VAR[ColorHighlight3]">common/white-gradient.png</texture>
                         </control>

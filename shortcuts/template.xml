@@ -98,7 +98,7 @@
                             <texture background="true">$VAR[Image_ClearArt]</texture>
                             <aspectratio align="right" aligny="bottom" scalediffuse="false">keep</aspectratio>
                             <include>Animation_FadeInOut</include>
-                            <visible>![Control.HasFocus(301) | Control.HasFocus(302) | [Control.HasFocus(3992) + String.IsEmpty(Window.Property(WidgetFocus))]]</visible>
+                            <visible>![Control.HasFocus(301) | Control.HasFocus(302) | [Control.HasFocus(3992) + String.IsEmpty(Window.Property(WidgetFocus))]] + !Skin.HasSetting(LockMainMenu)</visible>
                         </control>
                     </include>
                     <skinshortcuts insert="widgets">items</skinshortcuts>
@@ -123,13 +123,12 @@
             <property name="widgetInclude" tag="property" attribute="name|widgetAspect" value="Landscape">Viewtype_Landscape</property>
             <property name="widgetInclude" tag="property" attribute="name|widgetAspect" value="Small Landscape">Viewtype_Landscape</property>
             <property name="widgetInclude">Viewtype_Poster</property>
-            <property name="widgetMovement" tag="property" attribute="name|list" value="Submenu">5</property>
-            <property name="widgetMovement" tag="property" attribute="name|widgetAspect" value="Banner">0</property>
-            <property name="widgetMovement" tag="property" attribute="name|widgetAspect" value="Square">5</property>
-            <property name="widgetMovement" tag="property" attribute="name|widgetAspect" value="Small Square">5</property>
-            <property name="widgetMovement" tag="property" attribute="name|widgetAspect" value="Landscape">3</property>
-            <property name="widgetMovement" tag="property" attribute="name|widgetAspect" value="Small Landscape">3</property>
-            <property name="widgetMovement">6</property>
+            <property name="widgetMovement" tag="property" attribute="name|widgetAspect" value="Banner">Defs_Movement_Banner</property>
+            <property name="widgetMovement" tag="property" attribute="name|widgetAspect" value="Square">Defs_Movement_Square</property>
+            <property name="widgetMovement" tag="property" attribute="name|widgetAspect" value="Small Square">Defs_Movement_Square</property>
+            <property name="widgetMovement" tag="property" attribute="name|widgetAspect" value="Landscape">Defs_Movement_Landscape</property>
+            <property name="widgetMovement" tag="property" attribute="name|widgetAspect" value="Small Landscape">Defs_Movement_Landscape</property>
+            <property name="widgetMovement">Defs_Movement_Poster</property>
             <property name="widgetAspect" tag="property" attribute="name|widgetAspect" />
             <property name="widgetAspect">Poster</property>
             <property name="widgetTarget" tag="property" attribute="name|widgetTarget" />
@@ -242,7 +241,7 @@
                     <include content="Defs_AutoScroll">
                         <param name="condition" value="[!ControlGroup($PYTHON[50000 + int(mainmenuid) * 100]).HasFocus() + System.IdleTime(1) + !Skin.HasSetting(DisableAutoScrollWidgets) + Integer.IsEqual(Container($PYTHON[50000 + int(mainmenuid) * 100]).NumItems,1)] | [$PYTHON['true' if widgetAspect in 'Banner' else 'false'] + !Control.HasFocus($PYTHON[30000 + int(mainmenuid) * 100 + int(id)]) + !Skin.HasSetting(DisableAutoScrollWidgets)]" />
                     </include>
-                    <movement>$SKINSHORTCUTS[widgetMovement]</movement>
+                    <include>$SKINSHORTCUTS[widgetMovement]</include>
                     <content><include condition="$SKINSHORTCUTS[widgetSubmenu]">skinshortcuts-submenu</include></content>
                     <content target="$SKINSHORTCUTS[widgetTarget]" limit="$SKINSHORTCUTS[widgetLimit]" sortby="$SKINSHORTCUTS[widgetSortby]" sortorder="$SKINSHORTCUTS[widgetSortorder]">$SKINSHORTCUTS[widgetPath]</content>
                     <content>
@@ -486,6 +485,7 @@
             <property name="widgetInclude" tag="property" attribute="name|widgetAspect" value="Landscape">Viewtype_Landscape</property>
             <property name="widgetInclude" tag="property" attribute="name|widgetAspect" value="Small Landscape">Viewtype_Landscape</property>
             <property name="widgetInclude">Viewtype_Poster</property>
+            
 
             <property name="widgetMovement" tag="property" attribute="name|widgetAspect" value="Banner">0</property>
             <property name="widgetMovement" tag="property" attribute="name|widgetAspect" value="Square">5</property>
