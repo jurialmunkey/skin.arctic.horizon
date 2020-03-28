@@ -62,10 +62,11 @@
 
     <include name="Dialog_PowerMenu">
         <param name="icon-visible" default="false" />
+        <param name="animation" default="true" />
         <definition>
             <control type="group">
                 <nested />
-                <include>Animation_FadeIn_SlideUp</include>
+                <include condition="$PARAM[animation]">Animation_FadeIn_SlideUp</include>
                 <visible>$PARAM[visible]</visible>
                 <control type="group">
                     <visible>Integer.IsGreater(Container($PARAM[id]).NumItems,7)</visible>
@@ -166,7 +167,7 @@
                         <width>450</width>
                         <itemgap>0</itemgap>
                         <visible allowhiddenfocus="true">$PARAM[visible]</visible>
-                        <include>Animation_FadeIn_SlideUp</include>
+                        <include condition="$PARAM[animation]">Animation_FadeIn_SlideUp</include>
                         <itemlayout width="450" height="item_list_height">
                             <control type="label">
                                 <font>font_tiny</font>

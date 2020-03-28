@@ -1136,8 +1136,9 @@
         <param name="maxheight" default="80" />
         <param name="height" default="80" />
         <param name="label" default="$VAR[Label_Plot]" />
+        <param name="control-type" default="textbox" />
         <definition>
-            <control type="textbox">
+            <control type="$PARAM[control-type]">
                 <nested />
                 <top>35</top>
                 <label>$PARAM[label]</label>
@@ -1145,6 +1146,8 @@
                 <aligny>top</aligny>
                 <textcolor>main_fg_70</textcolor>
                 <font>font_plotbox</font>
+                <scroll>true</scroll>
+                <scrollout>false</scrollout>
                 <autoscroll delay="6000" time="3000" repeat="10000">Skin.HasSetting(EnablePlotAutoScroll)</autoscroll>
             </control>
         </definition>

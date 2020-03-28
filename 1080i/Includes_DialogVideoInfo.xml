@@ -623,14 +623,14 @@
                         <param name="align" value="left" />
                     </include>
                     <include content="DialogVideoInfo_Widget_Details_Label">
-                        <param name="label" value="Budget" />
-                        <param name="infolabel" value="$INFO[Window(Home).Property(TMDbHelper.ListItem.Budget)]" />
-                        <param name="visible" value="!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Budget))" />
+                        <param name="label" value="Genre" />
+                        <param name="infolabel" value="$INFO[ListItem.Genre]" />
+                        <param name="visible" value="!String.IsEmpty(ListItem.Genre)" />
                         <param name="align" value="left" />
                     </include>
                     <include content="DialogVideoInfo_Widget_Details_Label">
-                        <param name="label" value="Revenue" />
-                        <param name="infolabel" value="$INFO[Window(Home).Property(TMDbHelper.ListItem.Revenue)]" />
+                        <param name="label" value="Revenue / Budget" />
+                        <param name="infolabel" value="$INFO[Window(Home).Property(TMDbHelper.ListItem.Revenue)]$INFO[Window(Home).Property(TMDbHelper.ListItem.Budget), from ,]" />
                         <param name="visible" value="!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Revenue))" />
                         <param name="align" value="left" />
                     </include>
