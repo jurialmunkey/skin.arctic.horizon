@@ -2483,15 +2483,16 @@
             <centerbottom>40</centerbottom>
             <showonepage>false</showonepage>
             <orientation>horizontal</orientation>
-            <onup condition="![Control.IsVisible(560) | Control.IsVisible(530)]">50</onup>
+            <onup condition="![Control.IsVisible(560) | Control.IsVisible(530) | Control.IsVisible(5610)]">50</onup>
             <onup condition="Control.IsVisible(560)">560</onup>
             <onup condition="Control.IsVisible(530)">530</onup>
+            <onup condition="Control.IsVisible(5610)">5610</onup>
             <visible>$PARAM[visible]</visible>
             <texturesliderbackground colordiffuse="main_fg_12" border="4">scrollbar/scrollv.png</texturesliderbackground>
             <texturesliderbar colordiffuse="main_fg_30" border="4">scrollbar/scrollv.png</texturesliderbar>
             <texturesliderbarfocus colordiffuse="main_fg_100" border="4">scrollbar/scrollv.png</texturesliderbarfocus>
             <animation effect="fade" start="100" end="0" time="400" condition="!Control.HasFocus(60)">Conditional</animation>
-            <visible>!$EXP[Exp_AlphabetTypes] | Control.IsVisible(56) | Control.IsVisible(53)</visible>
+            <visible>!$EXP[Exp_AlphabetTypes] | Control.IsVisible(56) | Control.IsVisible(53) | Control.IsVisible(5610)</visible>
             <include>Animation_FadeIn</include>
             <include>Animation_FadeOut</include>
         </control>

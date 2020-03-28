@@ -27,6 +27,9 @@
             <control type="group">
                 <include>Animation_Common</include>
                 <visible allowhiddenfocus="true">!Window.IsVisible(1142) + !$EXP[Exp_ShowPlotOverlay] + !$EXP[Exp_InfoVisible]</visible>
+                <include content="Object_Scrollbar_Horz">
+                    <param name="visible" value="true" />
+                </include>
                 <control type="group">
                     <include>View_Pad</include>
 
@@ -88,8 +91,8 @@
                             <ondown>5610</ondown>
                             <include>Items_SubMenu</include>
                         </include>
-                        <include>skinshortcuts-template-spotlight-mainmenu</include>
                         <include>skinshortcuts-template-spotlight-submenu</include>
+                        <include>skinshortcuts-template-spotlight-mainmenu</include>
                     </control>
                 </control>
                 <include>Topbar_Left</include>
