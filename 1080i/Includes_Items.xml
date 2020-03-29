@@ -132,30 +132,44 @@
             <item>
                 <icon>$INFO[ListItem.Art(fanart)]</icon>
                 <visible>!String.IsEmpty(ListItem.Art(fanart))</visible>
+                <label>Fanart 1</label>
+                <label2>Artwork</label2>
             </item>
             <item>
                 <icon>$INFO[ListItem.Art(fanart1)]</icon>
                 <visible>!String.IsEmpty(ListItem.Art(fanart1))</visible>
+                <label>Fanart 2</label>
+                <label2>Artwork</label2>
             </item>
             <item>
                 <icon>$INFO[ListItem.Art(fanart2)]</icon>
                 <visible>!String.IsEmpty(ListItem.Art(fanart2))</visible>
+                <label>Fanart 3</label>
+                <label2>Artwork</label2>
             </item>
             <item>
                 <icon>$INFO[ListItem.Art(fanart3)]</icon>
                 <visible>!String.IsEmpty(ListItem.Art(fanart3))</visible>
+                <label>Fanart 4</label>
+                <label2>Artwork</label2>
             </item>
             <item>
                 <icon>$INFO[ListItem.Art(fanart4)]</icon>
                 <visible>!String.IsEmpty(ListItem.Art(fanart4))</visible>
+                <label>Fanart 5</label>
+                <label2>Artwork</label2>
             </item>
             <item>
                 <icon>$INFO[ListItem.Art(fanart5)]</icon>
                 <visible>!String.IsEmpty(ListItem.Art(fanart5))</visible>
+                <label>Fanart 6</label>
+                <label2>Artwork</label2>
             </item>
             <item>
                 <visible>!String.IsEmpty(ListItem.Art(discart))</visible>
                 <icon>$INFO[ListItem.Art(discart)]</icon>
+                <label>Discart</label>
+                <label2>Artwork</label2>
                 <property name="discart">$INFO[ListItem.Art(discart)]</property>
                 <property name="clearlogo">$INFO[ListItem.Art(clearlogo)]</property>
                 <property name="tagline">$INFO[ListItem.Tagline]</property>

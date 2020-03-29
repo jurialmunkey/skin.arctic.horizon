@@ -886,7 +886,7 @@
         <definition>
             <include content="Viewtype_Poster">
                 <param name="height" value="$PARAM[height]" />
-                <param name="control-type" value="panel" />
+                <param name="control-type" value="$PARAM[control-type]" />
                 <param name="orientation" value="$PARAM[orientation]" />
                 <param name="itemlayout-width" value="$PARAM[itemlayout-width]" />
                 <param name="itemlayout-height" value="$PARAM[itemlayout-height]" />
