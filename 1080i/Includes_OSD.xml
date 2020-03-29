@@ -572,6 +572,7 @@
         <onfocus condition="Skin.String(OSD_Timeout,$LOCALIZE[31124])">AlarmClock(osd_timeout,SetFocus(99220),00:20,silent)</onfocus>
         <onfocus condition="Skin.String(OSD_Timeout,$LOCALIZE[31125])">AlarmClock(osd_timeout,SetFocus(99220),00:30,silent)</onfocus>
         <onfocus condition="Skin.String(OSD_Timeout,$LOCALIZE[31126])">AlarmClock(osd_timeout,SetFocus(99220),01:00,silent)</onfocus>
+        <onunfocus>AlarmClock(osd_timeout,noop,00:00,silent)</onunfocus>
     </include>
 
     <include name="OSD_Controls">
