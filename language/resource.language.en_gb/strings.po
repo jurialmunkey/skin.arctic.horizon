@@ -1217,6 +1217,11 @@ msgctxt "#31246"
 msgid "Submenu Popup"
 msgstr ""
 
+#: /shortcuts/overrides.xml
+msgctxt "#31247"
+msgid "Showcase Hub"
+msgstr ""
+
 #: /1080i/script-skinshortcuts.xml
 msgctxt "#31248"
 msgid "Edit Shortcuts"

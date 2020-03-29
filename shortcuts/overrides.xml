@@ -25,6 +25,16 @@
         <action>ActivateWindow(1110)</action>
     </override>
 
+    <override action="ActivateWindow(1150)">
+        <action>SetProperty(Hub.Label,$INFO[Container(301).ListItem.Label],Home)</action>
+        <action>SetProperty(Hub.submenuVisibility,$INFO[Container(301).ListItem.Property(submenuVisibility)],Home)</action>
+        <action>SetProperty(Hub.widgetPath,$INFO[Container(301).ListItem.Property(widgetPath)],Home)</action>
+        <action>SetProperty(Hub.widgetTarget,$INFO[Container(301).ListItem.Property(widgetTarget)],Home)</action>
+        <action>SetProperty(Hub.widgetName,$INFO[Container(301).ListItem.Property(widgetName)],Home)</action>
+        <action>SetProperty(Hub.widgetAspect,$INFO[Container(301).ListItem.Property(widgetAspect)],Home)</action>
+        <action>ActivateWindow(1150)</action>
+    </override>
+
     <override action="Skin.SetString(SearchTerm)">
         <action>Skin.Reset(SearchTerm)</action>
         <action>Skin.SetString(SearchTerm)</action>
@@ -228,6 +238,7 @@
             <shortcut label="$LOCALIZE[33060]" type="$LOCALIZE[31018]" icon="special://skin/extras/icons/power.png">ActivateWindow(shutdownmenu)</shortcut>
             <shortcut label="$LOCALIZE[31246]" type="32021" icon="special://skin/extras/icons/playlist.png">SetFocus(302,0,absolute)</shortcut>
             <shortcut label="$LOCALIZE[31429]" type="32021" icon="special://skin/extras/icons/compass.png">ActivateWindow(1110)</shortcut>
+            <shortcut label="$LOCALIZE[31247]" type="32021" icon="special://skin/extras/icons/globe.png">ActivateWindow(1150)</shortcut>
             <shortcut label="Next Aired - Library" type="32021" icon="special://skin/extras/icons/antenna.png">ActivateWindow(1111)</shortcut>
             <shortcut label="Next Aired - Trakt" type="32021" icon="special://skin/extras/icons/announce.png">ActivateWindow(1112)</shortcut>
             <shortcut label="$LOCALIZE[31017]" type="32010" icon="special://skin/extras/icons/shipping.png">||BROWSE||script.skin.helper.service/?action=smartshortcuts</shortcut>

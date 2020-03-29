@@ -262,6 +262,40 @@
         </items>
     </submenu>
 
+    <other include="showcase-background" container="302">
+        <property name="widgetTarget" tag="property" attribute="name|widgetTarget" />
+        <property name="widgetName" tag="property" attribute="name|widgetName" />
+        <property name="widgetPath" tag="property" attribute="name|widgetPath" />
+        <property name="widgetTarget">$INFO[Skin.String(screensaver.arctic.mirage.target)]</property>
+        <property name="widgetPath">$INFO[Skin.String(screensaver.arctic.mirage.path)]</property>
+        <controls>
+            <control type="wraplist" id="1297">
+                <ondown>3101</ondown>
+                <onup>3101</onup>
+                <orientation>horizontal</orientation>
+                <scrolltime tween="quadratic">400</scrolltime>
+                <ondown>302</ondown>
+                <preloaditems>2</preloaditems>
+                <include>Animation_FadeInOut_Common</include>
+                <onfocus>SetProperty(TMDbHelper.WidgetContainer,1297,Home)</onfocus>
+                <itemlayout width="1920" height="1080">
+                    <control type="image">
+                        <texture background="true">$VAR[Image_Fanart]</texture>
+                    </control>
+                </itemlayout>
+                <focusedlayout width="1920" height="1080">
+                    <control type="image">
+                        <texture background="true">$VAR[Image_Fanart]</texture>
+                    </control>
+                </focusedlayout>
+                <content target="$SKINSHORTCUTS[widgetTarget]" sortby="random">$SKINSHORTCUTS[widgetPath]</content>
+                <include content="Defs_AutoScroll">
+                    <param name="condition" value="[System.IdleTime(3) + [Control.HasFocus(1297) | Control.HasFocus(3101) | Control.HasFocus(3102)]] | ![Control.HasFocus(1297) | Control.HasFocus(3101) | Control.HasFocus(3102)]" />
+                </include>
+            </control>
+        </controls>
+    </other>
+
     <other include="spotlight-mainmenu" container="302">
         <property name="widgetTarget" tag="property" attribute="name|widgetTarget" />
         <property name="widgetName" tag="property" attribute="name|widgetName" />
@@ -286,7 +320,6 @@
                 <skinshortcuts>visibility</skinshortcuts>
                 <visible>String.IsEmpty(Container(302).ListItem.Property(widgetPath))</visible>
             </include>
-            
         </controls>
     </other>
       

@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window type="window" id="1150">
+    <defaultcontrol always="true">302</defaultcontrol>
+    <onload>SetProperty(Header_Left_Text,$INFO[Window(Home).Property(Hub.Label)])</onload>
+    <onunload>ClearProperty(TMDbHelper.WidgetContainer,Home)</onunload>
+    <controls>
+        <include>Global_Background</include>
+        <control type="list" id="301">
+            <top>-1000</top>
+            <left>-1000</left>
+            <width>1</width>
+            <height>1</height>
+            <onleft>302</onleft>
+            <onright>302</onright>
+            <onfocus>SetFocus(302)</onfocus>
+            <itemlayout />
+            <focusedlayout />
+            <content>
+                <item>
+                    <label>$INFO[Window(Home).Property(Hub.Label)]</label>
+                    <property name="submenuVisibility">$INFO[Window(Home).Property(Hub.submenuVisibility)]</property>
+                </item>
+            </content>
+        </control>
+        <include>skinshortcuts-template-showcase-background</include>
+        <control type="image">
+            <bottom>480</bottom>
+            <texture background="true" colordiffuse="cdffffff">common/vignette-home.png</texture>
+            <include>Animation_FadeInOut_Common</include>
+        </control>
+        <control type="image">
+            <bottom>0</bottom>
+            <height>480</height>
+            <texture colordiffuse="cdffffff">common/vignette-home-bottom.png</texture>
+            <include>Animation_FadeInOut_Common</include>
+        </control>
+        <control type="group">
+            <visible>$EXP[Exp_CommonAnimation] | [Control.HasFocus(5610) | Control.HasFocus(60)]</visible>
+            <include>Animation_FadeInOut</include>
+            <include>Global_Background</include>
+        </control>
+        
+        <control type="group">
+
+            <animation effect="slide" tween="quadratic" time="400" start="0" end="0,570" condition="![Control.HasFocus(5610) | Control.HasFocus(60)]">Conditional</animation>
+            <animation effect="slide" tween="quadratic" time="400" start="0" end="0,-250" condition="Control.HasFocus(302)">Conditional</animation>
+            <visible allowhiddenfocus="true">!$EXP[Exp_CommonAnimation]</visible>
+            <include>Animation_Common</include>
+            <include>Animation_FadeInOut_Common</include>
+            <control type="group">
+                <control type="grouplist">
+                    <visible allowhiddenfocus="true">![Control.HasFocus(5610) | Control.HasFocus(60)]</visible>
+                    <animation type="Hidden">
+                        <effect type="fade" start="100" end="0" delay="0" time="300" tween="cubic" easing="inout" />
+                    </animation>
+                    <animation type="Visible">
+                        <effect type="fade" start="0" end="100" delay="200" time="400" tween="cubic" easing="inout" />
+                    </animation>
+                    <left>view_pad</left>
+                    <top>0</top>
+                    <bottom>730</bottom>
+                    <width>1100</width>
+                    <align>bottom</align>
+                    <orientation>vertical</orientation>
+                    <usecontrolcoords>true</usecontrolcoords>
+                    <itemgap>0</itemgap>
+                    <include content="Object_Info_Title">
+                        <param name="label" value="$INFO[Container(1297).ListItem.Title]" />
+                    </include>
+                    <include content="Object_Info_Line">
+                        <param name="container" value="Container(1297)." />
+                    </include>
+                    <include content="Object_Info_Plot">
+                        <param name="maxheight" value="80" />
+                        <param name="height" value="80" />
+                        <param name="label" value="$INFO[Container(1297).ListItem.Plot]" />
+                        <top>10</top>
+                    </include>
+                    <control type="group">
+                        <height>20</height>
+                    </control>
+                    <control type="grouplist">
+                        <left>-20</left>
+                        <right>-26</right>
+                        <align>left</align>
+                        <height>110</height>
+                        <onleft>Control.Move(1297,-1)</onleft>
+                        <onleft>noop</onleft>
+                        <onright>Control.Move(1297,1)</onright>
+                        <onright>noop</onright>
+                        <orientation>horizontal</orientation>
+                        <usecontrolcoords>true</usecontrolcoords>
+                        <itemgap>-10</itemgap>
+                        <control type="button" id="3199">
+                            <visible allowhiddenfocus="true">false</visible>
+                            <onfocus>Control.Move(1297,-1)</onfocus>
+                            <onfocus>SetFocus(3101)</onfocus>
+                        </control>
+                        <include content="Object_Info_Button" description="Play">
+                            <param name="id" value="3101" />
+                            <param name="groupid" value="3201" />
+                            <param name="label" value="Play" />
+                            <param name="icon" value="special://skin/extras/icons/play3.png" />
+                            <param name="ondown" value="302" />
+                            <param name="visible" value="true" />
+                            <param name="onup" value="Control.Move(1297,1)" />
+                            <onclick>SetFocus(1297)</onclick>
+                            <onclick>Action(Select)</onclick>
+                            <onclick>Action(Close)</onclick>
+                            <onfocus>SetProperty(TMDbHelper.WidgetContainer,1297,Home)</onfocus>
+                        </include>
+                        <include content="Object_Info_Button" description="Play">
+                            <param name="id" value="3102" />
+                            <param name="groupid" value="3202" />
+                            <param name="label" value="More Information" />
+                            <param name="icon" value="special://skin/extras/icons/info2.png" />
+                            <param name="ondown" value="302" />
+                            <param name="visible" value="true" />
+                            <param name="onup" value="Control.Move(1297,1)" />
+                            <onclick>SetFocus(1297)</onclick>
+                            <onclick>Action(Info)</onclick>
+                            <onfocus>SetProperty(TMDbHelper.WidgetContainer,1297,Home)</onfocus>
+                        </include>
+                        <control type="button" id="3104">
+                            <visible allowhiddenfocus="true">false</visible>
+                            <onfocus>Control.Move(1297,1)</onfocus>
+                            <onfocus>SetFocus(3102)</onfocus>
+                        </control>
+                    </control>
+                </control>
+                <control type="grouplist">
+                    <visible>[Control.HasFocus(5610) | Control.HasFocus(60)]</visible>
+                    <animation type="Visible">
+                        <effect type="fade" start="0" end="100" delay="300" time="400" tween="cubic" easing="inout" />
+                    </animation>
+                    <animation type="Hidden">
+                        <effect type="fade" start="100" end="0" delay="0" time="300" tween="cubic" easing="inout" />
+                    </animation>
+
+                    <left>view_pad</left>
+                    <top>65</top>
+                    <bottom>480</bottom>
+                    <width>1100</width>
+                    <align>bottom</align>
+                    <orientation>vertical</orientation>
+                    <usecontrolcoords>true</usecontrolcoords>
+                    <itemgap>0</itemgap>
+                    <include content="Object_Info_Title">
+                        <param name="label" value="$INFO[Container(5610).ListItem.Title]" />
+                    </include>
+                    <include content="Object_Info_Line">
+                        <param name="container" value="Container(5610)." />
+                    </include>
+                    <include content="Object_Info_Ratings">
+                        <param name="container" value="Container(5610)." />
+                    </include>
+                    <include content="Object_Info_Plot">
+                        <param name="maxheight" value="160" />
+                        <param name="height" value="160" />
+                        <param name="label" value="$INFO[Container(5610).ListItem.Plot]" />
+                    </include>
+                    <control type="group">
+                        <height>55</height>
+                    </control>
+                </control>
+                <control type="image">
+                    <right>view_pad</right>
+                    <bottom>760</bottom>
+                    <aspectratio align="right" aligny="bottom">keep</aspectratio>
+                    <height>80</height>
+                    <fadetime>200</fadetime>
+                    <texture background="true">$VAR[Image_Home_ClearLogo]</texture>
+                    <animation type="Hidden">
+                        <effect type="fade" start="100" end="0" delay="0" time="300" tween="cubic" easing="inout" />
+                    </animation>
+                    <animation type="Visible">
+                        <effect type="fade" start="0" end="100" delay="200" time="400" tween="cubic" easing="inout" />
+                    </animation>
+                    <visible>![Control.HAsFocus(5610) | Control.HasFocus(60)]</visible>
+                </control>
+            </control>
+            <control type="group">
+                <include>View_Pad</include>
+                <control type="image">
+                    <right>-15</right>
+                    <bottom>385</bottom>
+                    <height>350</height>
+                    <width>700</width>
+                    <texture background="true">$VAR[Image_ClearArt]</texture>
+                    <aspectratio align="right" aligny="bottom" scalediffuse="false">keep</aspectratio>
+                    <bordersize>15</bordersize>
+                    <animation type="Hidden">
+                        <effect type="fade" start="100" end="0" delay="0" time="300" tween="cubic" easing="inout" />
+                    </animation>
+                    <animation type="Visible">
+                        <effect type="fade" start="0" end="100" delay="200" time="400" tween="cubic" easing="inout" />
+                    </animation>
+                    <visible>[Control.HAsFocus(5610) | Control.HasFocus(60)]</visible>
+                </control>
+                <include content="Viewtype_BackPanel">
+                    <include>Animation_FadeInOut</include>
+                    <visible>[Control.HAsFocus(5610) | Control.HasFocus(60)]</visible>
+                    <height>480</height>
+                </include>
+                <control type="group">
+                    <left>-15</left>
+                    <bottom>285</bottom>
+                    <height>120</height>
+                    <animation effect="fade" start="0" end="100" time="300">VisibleChange</animation>
+                    <visible>Container(5610).IsUpdating</visible>
+                    <include content="Defs_BusySpinner">
+                        <param name="label" value="$LOCALIZE[31428]..." />
+                        <param name="textcolor" value="main_fg_70" />
+                    </include>
+                </control>
+                <control type="group">
+                    <bottom>250</bottom>
+                    <top>-250</top>
+                    <visible allowhiddenfocus="true">![Control.HasFocus(5610) | Control.HasFocus(60)]</visible>
+                    <animation effect="fade" start="100" end="0" delay="0" time="400" tween="cubic" easing="inout">Hidden</animation>
+                    <animation effect="fade" start="0" end="100" delay="200" time="400" tween="cubic" easing="inout">Visible</animation>
+                    <animation effect="fade" start="100" end="0" time="300" reversible="false" condition="Container(302).IsUpdating">Conditional</animation>
+                    <animation effect="fade" start="0" end="100" delay="300" time="300" reversible="false" condition="!Container(302).IsUpdating">Conditional</animation>
+                    <include content="Viewtype_Keywords">
+                        <param name="id" value="302" />
+                        <param name="controltype" value="fixedlist" />
+                        <param name="movement" value="5" />
+                        <bottom>-20</bottom>
+                        <left>-80</left>
+                        <right>-80</right>
+                        <onup>3101</onup>
+                        <onfocus>SetProperty(TMDbHelper.WidgetContainer,1297,Home)</onfocus>
+                        <ondown>SetProperty(TMDbHelper.WidgetContainer,5610,Home)</ondown>
+                        <ondown>5610</ondown>
+                        <include>Items_SubMenu</include>
+                    </include>
+                    <include content="Home_Hub_Widget_Label">
+                        <param name="id" value="302" />
+                        <param name="label" value="Submenu" />
+                    </include>
+                </control>
+                <control type="group">
+                    <animation effect="fade" start="100" end="0" time="300" reversible="false" condition="Container(5610).IsUpdating">Conditional</animation>
+                    <animation effect="fade" start="0" end="100" delay="300" time="300" reversible="false" condition="!Container(5610).IsUpdating">Conditional</animation>
+                    <include content="Home_Hub_Widget_Label">
+                        <param name="id" value="5610" />
+                        <param name="label" value="$VAR[Label_Hub_WidgetName]" />
+                    </include>
+                    <include>skinshortcuts-template-spotlight-submenu</include>
+                    <include>skinshortcuts-template-spotlight-mainmenu</include>
+                </control>
+            </control>
+        </control>
+
+        <include content="Object_Scrollbar_Horz">
+            <param name="visible" value="true" />
+        </include>
+        <control type="group">
+            <visible allowhiddenfocus="true">!$EXP[Exp_CommonAnimation]</visible>
+            <include>Animation_Common</include>
+            <include>Topbar_Left</include>
+        </control>
+        <include>Topbar_Right</include>
+
+        <control type="image" id="1298">
+            <fadetime>800</fadetime>
+            <width>1</width>
+            <height>1</height>
+            <top>-1000</top>
+            <left>-1000</left>
+            <texture />
+        </control>
+    </controls>
+</window>
