@@ -80,7 +80,8 @@
     </variable>
 
     <variable name="Label_PVRGuide_Title">
-        <value condition="!String.IsEmpty(ListItem.Title)">$INFO[ListItem.Title]</value>
+        <value condition="Control.HasFocus(9400) + !String.IsEmpty(ListItem.NextTitle)">$INFO[ListItem.NextTitle]</value>
+        <value condition="!Control.HasFocus(9400) + !String.IsEmpty(ListItem.Title)">$INFO[ListItem.Title]</value>
         <value condition="!String.IsEmpty(ListItem.ChannelName)">$INFO[ListItem.ChannelName]</value>
     </variable>
 

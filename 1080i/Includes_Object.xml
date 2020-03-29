@@ -988,34 +988,34 @@
             <param name="visible" value="$PARAM[visible]" />
         </include>
         <include content="Object_Info_Line_Label">
-            <param name="label" value="$INFO[$PARAM[container]ListItem.Season,S,]$INFO[$PARAM[container]ListItem.Episode,E,]" />
+            <param name="label" value="$INFO[$PARAM[container]ListItem.$PARAM[next]Season,S,]$INFO[$PARAM[container]ListItem.$PARAM[next]Episode,E,]" />
             <param name="textcolor" value="$PARAM[textcolor]" />
-            <param name="visible" value="[!String.IsEmpty($PARAM[container]ListItem.Episode) | !String.IsEmpty($PARAM[container]ListItem.Season)] + $PARAM[visible]" />
+            <param name="visible" value="[!String.IsEmpty($PARAM[container]ListItem.$PARAM[next]Episode) | !String.IsEmpty($PARAM[container]ListItem.$PARAM[next]Season)] + $PARAM[visible]" />
         </include>
         <include content="Object_Info_Line_Label">
-            <param name="label" value="$INFO[$PARAM[container]ListItem.EpisodeName]" />
+            <param name="label" value="$INFO[$PARAM[container]ListItem.$PARAM[next]EpisodeName]" />
             <param name="textcolor" value="$PARAM[textcolor]" />
-            <param name="visible" value="!String.IsEmpty($PARAM[container]ListItem.EpisodeName) + !String.IsEqual($PARAM[container]ListItem.EpisodeName,$PARAM[container]ListItem.Title) + !String.IsEqual($PARAM[container]ListItem.EpisodeName,$PARAM[container]ListItem.Plot) + $PARAM[visible]" />
+            <param name="visible" value="!String.IsEmpty($PARAM[container]ListItem.$PARAM[next]EpisodeName) + !String.IsEqual($PARAM[container]ListItem.$PARAM[next]EpisodeName,$PARAM[container]ListItem.$PARAM[next]Title) + !String.IsEqual($PARAM[container]ListItem.$PARAM[next]EpisodeName,$PARAM[container]ListItem.$PARAM[next]Plot) + $PARAM[visible]" />
         </include>
         <include content="Object_Info_Line_Label">
-            <param name="label" value="$INFO[$PARAM[container]ListItem.EPGEventTitle]" />
+            <param name="label" value="$INFO[$PARAM[container]ListItem.$PARAM[next]EPGEventTitle]" />
             <param name="textcolor" value="$PARAM[textcolor]" />
-            <param name="visible" value="!String.IsEmpty($PARAM[container]ListItem.EPGEventTitle) + !String.IsEqual($PARAM[container]ListItem.EPGEventTitle,$PARAM[container]ListItem.Title) + !String.IsEqual($PARAM[container]ListItem.EPGEventTitle,$PARAM[container]ListItem.Plot) + $PARAM[visible]" />
+            <param name="visible" value="!String.IsEmpty($PARAM[container]ListItem.$PARAM[next]EPGEventTitle) + !String.IsEqual($PARAM[container]ListItem.$PARAM[next]EPGEventTitle,$PARAM[container]ListItem.$PARAM[next]Title) + !String.IsEqual($PARAM[container]ListItem.$PARAM[next]EPGEventTitle,$PARAM[container]ListItem.$PARAM[next]Plot) + $PARAM[visible]" />
         </include>
         <include content="Object_Info_Line_Label">
-            <param name="label" value="$INFO[$PARAM[container]ListItem.Year]" />
+            <param name="label" value="$INFO[$PARAM[container]ListItem.$PARAM[next]Year]" />
             <param name="textcolor" value="$PARAM[textcolor]" />
-            <param name="visible" value="!String.IsEmpty($PARAM[container]ListItem.Year) + $PARAM[visible]" />
+            <param name="visible" value="!String.IsEmpty($PARAM[container]ListItem.$PARAM[next]Year) + $PARAM[visible]" />
         </include>
         <include content="Object_Info_Line_Label">
-            <param name="label" value="$INFO[$PARAM[container]ListItem.MPAA]" />
+            <param name="label" value="$INFO[$PARAM[container]ListItem.$PARAM[next]MPAA]" />
             <param name="textcolor" value="$PARAM[textcolor]" />
-            <param name="visible" value="!String.IsEmpty($PARAM[container]ListItem.MPAA) + $PARAM[visible]" />
+            <param name="visible" value="!String.IsEmpty($PARAM[container]ListItem.$PARAM[next]MPAA) + $PARAM[visible]" />
         </include>
         <include content="Object_Info_Line_Label">
-            <param name="label" value="$INFO[$PARAM[container]ListItem.StartTime]$INFO[$PARAM[container]ListItem.EndTime, - ,]" />
+            <param name="label" value="$INFO[$PARAM[container]ListItem.$PARAM[next]StartTime]$INFO[$PARAM[container]ListItem.$PARAM[next]EndTime, - ,]" />
             <param name="textcolor" value="$PARAM[textcolor]" />
-            <param name="visible" value="!String.IsEmpty($PARAM[container]ListItem.StartTime) + $PARAM[visible]" />
+            <param name="visible" value="!String.IsEmpty($PARAM[container]ListItem.$PARAM[next]StartTime) + $PARAM[visible]" />
         </include>
     </include>
 
@@ -1158,7 +1158,14 @@
                 <include content="Object_Info_Line_PVR">
                     <param name="textcolor" value="$PARAM[textcolor]" />
                     <param name="container" value="$PARAM[container]" />
-                    <param name="visible" value="[String.StartsWith($PARAM[container]ListItem.FolderPath,pvr://) | Window.IsVisible(DialogPVRInfo.xml)]" />
+                    <param name="next" value="" />
+                    <param name="visible" value="[String.StartsWith($PARAM[container]ListItem.FolderPath,pvr://) | Window.IsVisible(DialogPVRInfo.xml)] + !Control.HasFocus(9400)" />
+                </include>
+                <include content="Object_Info_Line_PVR">
+                    <param name="textcolor" value="$PARAM[textcolor]" />
+                    <param name="container" value="$PARAM[container]" />
+                    <param name="next" value="Next" />
+                    <param name="visible" value="[String.StartsWith($PARAM[container]ListItem.FolderPath,pvr://) | Window.IsVisible(DialogPVRInfo.xml)] + Control.HasFocus(9400)" />
                 </include>
                 <nested />
             </control>

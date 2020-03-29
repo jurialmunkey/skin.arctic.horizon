@@ -575,10 +575,25 @@
                 <param name="titleheight" value="10" />
                 <param name="label" value="$INFO[ListItem.Genre]" />
                 <top>30</top>
+                <visible>!Control.HasFocus(9400)</visible>
+            </include>
+            <include content="Object_Info_Title">
+                <param name="font" value="font_small_bold" />
+                <param name="titleheight" value="10" />
+                <param name="label" value="$INFO[ListItem.NextGenre]" />
+                <top>30</top>
+                <visible>Control.HasFocus(9400)</visible>
             </include>
             <include content="Object_Info_Plot">
                 <param name="maxheight" value="120" />
                 <param name="height" value="auto" />
+                <visible>!Control.HasFocus(9400)</visible>
+            </include>
+            <include content="Object_Info_Plot">
+                <param name="maxheight" value="120" />
+                <param name="height" value="auto" />
+                <param name="label" value="$INFO[ListItem.NextPlot]" />
+                <visible>Control.HasFocus(9400)</visible>
             </include>
         </control>
     </include>
