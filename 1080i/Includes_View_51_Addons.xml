@@ -14,7 +14,7 @@
                 <pagecontrol>60</pagecontrol>
                 <onfocus>ClearProperty(TMDbHelper.WidgetContainer,Home)</onfocus>
                 <include>Viewtype_Movement</include>
-                <visible>[Container.Content(addons) + String.IsEmpty(Container.PluginName)] | Container.Content(albums) | Container.Content(images)</visible>
+                <visible>[Container.Content(addons) + String.IsEmpty(Container.PluginName)] | Container.Content(albums) | Container.Content(images) | [Container.Content(musicvideos) + Window.IsVisible(MyMusicNav.xml)]</visible>
                 <visible>!Window.IsVisible(MyPlaylist.xml)</visible>
             </include>
             <include content="Home_Hub_Widget_Label">
