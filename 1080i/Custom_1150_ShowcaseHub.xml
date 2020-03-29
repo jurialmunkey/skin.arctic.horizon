@@ -65,15 +65,15 @@
                     <usecontrolcoords>true</usecontrolcoords>
                     <itemgap>0</itemgap>
                     <include content="Object_Info_Title">
-                        <param name="label" value="$INFO[Container(1297).ListItem.Title]" />
+                        <param name="label" value="$INFO[Container(3001).ListItem.Title]" />
                     </include>
                     <include content="Object_Info_Line">
-                        <param name="container" value="Container(1297)." />
+                        <param name="container" value="Container(3001)." />
                     </include>
                     <include content="Object_Info_Plot">
                         <param name="maxheight" value="80" />
                         <param name="height" value="80" />
-                        <param name="label" value="$INFO[Container(1297).ListItem.Plot]" />
+                        <param name="label" value="$INFO[Container(3001).ListItem.Plot]" />
                         <top>10</top>
                     </include>
                     <control type="group">
@@ -84,16 +84,16 @@
                         <right>-26</right>
                         <align>left</align>
                         <height>110</height>
-                        <onleft>Control.Move(1297,-1)</onleft>
+                        <onleft>Control.Move(3001,-1)</onleft>
                         <onleft>noop</onleft>
-                        <onright>Control.Move(1297,1)</onright>
+                        <onright>Control.Move(3001,1)</onright>
                         <onright>noop</onright>
                         <orientation>horizontal</orientation>
                         <usecontrolcoords>true</usecontrolcoords>
                         <itemgap>-10</itemgap>
                         <control type="button" id="3199">
                             <visible allowhiddenfocus="true">false</visible>
-                            <onfocus>Control.Move(1297,-1)</onfocus>
+                            <onfocus>Control.Move(3001,-1)</onfocus>
                             <onfocus>SetFocus(3101)</onfocus>
                         </control>
                         <include content="Object_Info_Button" description="Play">
@@ -103,11 +103,11 @@
                             <param name="icon" value="special://skin/extras/icons/play3.png" />
                             <param name="ondown" value="302" />
                             <param name="visible" value="true" />
-                            <param name="onup" value="Control.Move(1297,1)" />
-                            <onclick>SetFocus(1297)</onclick>
+                            <param name="onup" value="Control.Move(3001,1)" />
+                            <onclick>SetFocus(3001)</onclick>
                             <onclick>Action(Select)</onclick>
                             <onclick>Action(Close)</onclick>
-                            <onfocus>SetProperty(TMDbHelper.WidgetContainer,1297,Home)</onfocus>
+                            <onfocus>SetProperty(TMDbHelper.WidgetContainer,3001,Home)</onfocus>
                         </include>
                         <include content="Object_Info_Button" description="Play">
                             <param name="id" value="3102" />
@@ -116,14 +116,14 @@
                             <param name="icon" value="special://skin/extras/icons/info2.png" />
                             <param name="ondown" value="302" />
                             <param name="visible" value="true" />
-                            <param name="onup" value="Control.Move(1297,1)" />
-                            <onclick>SetFocus(1297)</onclick>
+                            <param name="onup" value="Control.Move(3001,1)" />
+                            <onclick>SetFocus(3001)</onclick>
                             <onclick>Action(Info)</onclick>
-                            <onfocus>SetProperty(TMDbHelper.WidgetContainer,1297,Home)</onfocus>
+                            <onfocus>SetProperty(TMDbHelper.WidgetContainer,3001,Home)</onfocus>
                         </include>
                         <control type="button" id="3104">
                             <visible allowhiddenfocus="true">false</visible>
-                            <onfocus>Control.Move(1297,1)</onfocus>
+                            <onfocus>Control.Move(3001,1)</onfocus>
                             <onfocus>SetFocus(3102)</onfocus>
                         </control>
                     </control>
@@ -229,7 +229,7 @@
                         <left>-80</left>
                         <right>-80</right>
                         <onup>3101</onup>
-                        <onfocus>SetProperty(TMDbHelper.WidgetContainer,1297,Home)</onfocus>
+                        <onfocus>SetProperty(TMDbHelper.WidgetContainer,3001,Home)</onfocus>
                         <ondown>SetProperty(TMDbHelper.WidgetContainer,5610,Home)</ondown>
                         <ondown>5610</ondown>
                         <include>Items_SubMenu</include>
@@ -261,14 +261,5 @@
             <include>Topbar_Left</include>
         </control>
         <include>Topbar_Right</include>
-
-        <control type="image" id="1298">
-            <fadetime>800</fadetime>
-            <width>1</width>
-            <height>1</height>
-            <top>-1000</top>
-            <left>-1000</left>
-            <texture />
-        </control>
     </controls>
 </window>
