@@ -7,6 +7,7 @@
     </variable>
 
     <variable name="Image_ClearArt_Widget">
+        <value condition="Skin.HasSetting(DisableClearArt)">common/null.png</value>
         <value condition="!String.IsEmpty(ListItem.Art(clearart))">$INFO[ListItem.Art(clearart)]</value>
         <value condition="!String.IsEmpty(ListItem.Art(tvshow.clearart))">$INFO[ListItem.Art(tvshow.clearart)]</value>
         <value condition="!String.IsEmpty(ListItem.Art(clearlogo))">$INFO[ListItem.Art(clearlogo)]</value>
@@ -14,6 +15,7 @@
     </variable>
 
     <variable name="Image_ClearArt">
+        <value condition="Skin.HasSetting(DisableClearArt)">common/null.png</value>
         <value condition="Control.IsVisible(56) + !String.IsEmpty(Container(560).ListItem.Art(clearart))">$INFO[Container(560).ListItem.Art(clearart)]</value>
         <value condition="Control.IsVisible(56) + !String.IsEmpty(Container(560).ListItem.Art(tvshow.clearart))">$INFO[Container(560).ListItem.Art(tvshow.clearart)]</value>
         <value condition="Control.IsVisible(56) + !String.IsEmpty(Container(560).ListItem.Art(artist.clearart))">$INFO[Container(560).ListItem.Art(artist.clearart)]</value>

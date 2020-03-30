@@ -1227,6 +1227,16 @@ msgctxt "#31248"
 msgid "Edit Shortcuts"
 msgstr ""
 
+#: /1080i/SkinSettings.xml
+msgctxt "#31249"
+msgid "Clearart"
+msgstr ""
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31250"
+msgid "Integrate season/episode view (disable to use season posters)"
+msgstr ""
+
 #: /shortcuts/overrides.xml
 msgctxt "#31257"
 msgid "Movie Genres"
