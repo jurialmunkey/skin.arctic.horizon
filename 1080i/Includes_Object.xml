@@ -1051,7 +1051,7 @@
             <aspectratio align="left">keep</aspectratio>
             <texture colordiffuse="$PARAM[textcolor]">flags/quality/4k.png</texture>
             <visible>$PARAM[visible]</visible>
-            <visible>Integer.IsGreater($PARAM[container]ListItem.VideoResolution,1080)</visible>
+            <visible>Integer.IsGreater($PARAM[container]ListItem.VideoResolution,1080) | String.IsEqual($PARAM[container]ListItem.VideoResolution,4K)</visible>
             <visible>!$PARAM[container]ListItem.IsCollection</visible>
         </control>
         <control type="image">
@@ -1063,6 +1063,7 @@
             <visible>$PARAM[visible]</visible>
             <visible>!Integer.IsGreater($PARAM[container]ListItem.VideoResolution,1080)</visible>
             <visible>Integer.IsGreater($PARAM[container]ListItem.VideoResolution,719)</visible>
+            <visible>!String.IsEqual($PARAM[container]ListItem.VideoResolution,4K)</visible>
             <visible>!$PARAM[container]ListItem.IsCollection</visible>
         </control>
         <control type="image">
@@ -1075,6 +1076,7 @@
             <visible>!Integer.IsGreater($PARAM[container]ListItem.VideoResolution,719)</visible>
             <visible>!String.IsEmpty($PARAM[container]ListItem.VideoResolution)</visible>
             <visible>!$PARAM[container]ListItem.IsCollection</visible>
+            <visible>!String.IsEqual($PARAM[container]ListItem.VideoResolution,4K)</visible>
         </control>
         <control type="image">
             <top>10</top>
