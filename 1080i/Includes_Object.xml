@@ -914,6 +914,21 @@
         </include>
     </include>
 
+    <include name="Object_Info_Line_Sets">
+        <include content="Object_Info_Line_Label">
+            <param name="label" value="$INFO[Window(Home).Property(TMDBHelper.ListItem.Set.Years)]" />
+            <param name="textcolor" value="$PARAM[textcolor]" />
+            <param name="divider" value="false" />
+            <param name="fallback" value="19055" />
+            <param name="visible" value="$PARAM[visible]" />
+        </include>
+        <include content="Object_Info_Line_Label">
+            <param name="label" value="$INFO[Window(Home).Property(TMDBHelper.ListItem.Set.NumItems),, Movies]" />
+            <param name="textcolor" value="$PARAM[textcolor]" />
+            <param name="visible" value="!String.IsEmpty(Window(Home).Property(TMDBHelper.ListItem.Set.NumItems)) + $PARAM[visible]" />
+        </include>
+    </include>
+
     <include name="Object_Info_Line_Artists">
         <include content="Object_Info_Line_Label">
             <param name="label" value="$INFO[$PARAM[container]ListItem.Property(Artist_Genre)]" />
@@ -1120,7 +1135,12 @@
                 <include content="Object_Info_Line_Fallback">
                     <param name="textcolor" value="$PARAM[textcolor]" />
                     <param name="container" value="$PARAM[container]" />
-                    <param name="visible" value="!String.IsEqual($PARAM[container]ListItem.DBType,movie) + !String.IsEqual($PARAM[container]ListItem.DBType,tvshow) + !String.IsEqual($PARAM[container]ListItem.DBType,season) + !String.IsEqual($PARAM[container]ListItem.DBType,episode) + !String.IsEqual($PARAM[container]ListItem.DBType,actor) + !String.IsEqual($PARAM[container]ListItem.DBType,artist) + !String.IsEqual($PARAM[container]ListItem.DBType,album) + !String.IsEqual($PARAM[container]ListItem.DBType,song) + ![Container.Content(addons) + String.IsEmpty(Container.PluginName)] + ![String.StartsWith($PARAM[container]ListItem.FolderPath,pvr://) | Window.IsVisible(DialogPVRInfo.xml)]" />
+                    <param name="visible" value="!String.IsEqual($PARAM[container]ListItem.DBType,movie) + !String.IsEqual($PARAM[container]ListItem.DBType,tvshow) + !String.IsEqual($PARAM[container]ListItem.DBType,set) + !$PARAM[container]ListItem.IsCollection + !String.IsEqual($PARAM[container]ListItem.DBType,season) + !String.IsEqual($PARAM[container]ListItem.DBType,episode) + !String.IsEqual($PARAM[container]ListItem.DBType,actor) + !String.IsEqual($PARAM[container]ListItem.DBType,artist) + !String.IsEqual($PARAM[container]ListItem.DBType,album) + !String.IsEqual($PARAM[container]ListItem.DBType,song) + ![Container.Content(addons) + String.IsEmpty(Container.PluginName)] + ![String.StartsWith($PARAM[container]ListItem.FolderPath,pvr://) | Window.IsVisible(DialogPVRInfo.xml)]" />
+                </include>
+                <include content="Object_Info_Line_Sets">
+                    <param name="textcolor" value="$PARAM[textcolor]" />
+                    <param name="container" value="$PARAM[container]" />
+                    <param name="visible" value="[String.IsEqual($PARAM[container]ListItem.DBType,set) | $PARAM[container]ListItem.IsCollection]" />
                 </include>
                 <include content="Object_Info_Line_Movies">
                     <param name="textcolor" value="$PARAM[textcolor]" />
