@@ -923,7 +923,7 @@
             <param name="visible" value="$PARAM[visible]" />
         </include>
         <include content="Object_Info_Line_Label">
-            <param name="label" value="$INFO[Window(Home).Property(TMDBHelper.ListItem.Set.NumItems),, Movies]" />
+            <param name="label" value="$INFO[Window(Home).Property(TMDBHelper.ListItem.Set.NumItems),, $LOCALIZE[342]]" />
             <param name="textcolor" value="$PARAM[textcolor]" />
             <param name="visible" value="!String.IsEmpty(Window(Home).Property(TMDBHelper.ListItem.Set.NumItems)) + $PARAM[visible]" />
         </include>

@@ -316,6 +316,7 @@
                 <bottom>-20</bottom>
                 <onup>302</onup>
                 <ondown>60</ondown>
+                <onback>302</onback>
                 <pagecontrol>60</pagecontrol>
                 <content target="$SKINSHORTCUTS[widgetTarget]">$SKINSHORTCUTS[widgetPath]</content>
                 <skinshortcuts>visibility</skinshortcuts>
@@ -344,6 +345,7 @@
                 <bottom>-20</bottom>
                 <onup>302</onup>
                 <ondown>60</ondown>
+                <onback>302</onback>
                 <pagecontrol>60</pagecontrol>
                 <content target="$SKINSHORTCUTS[widgetTarget]">$SKINSHORTCUTS[widgetPath]</content>
                 <visible>String.IsEqual(Container(301).ListItem.Property(submenuVisibility),num-$SKINSHORTCUTS[submenuVisibility]) | String.IsEqual(Container(301).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility])</visible>
