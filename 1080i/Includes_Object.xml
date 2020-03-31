@@ -1968,6 +1968,17 @@
                     <texture colordiffuse="$PARAM[colordiffuse]_100">flags/star10.png</texture>
                     <visible>$PARAM[numericstarrating]</visible>
                     <visible>!String.IsEmpty($PARAM[container]ListItem.Rating)</visible>
+                    <visible>Skin.HasSetting(EnableMonochromeFlags)</visible>
+                </control>
+                <control type="image">
+                    <top>-17</top>
+                    <left>-14</left>
+                    <width>64</width>
+                    <height>64</height>
+                    <texture colordiffuse="ffeebb00">flags/star10.png</texture>
+                    <visible>$PARAM[numericstarrating]</visible>
+                    <visible>!String.IsEmpty($PARAM[container]ListItem.Rating)</visible>
+                    <visible>!Skin.HasSetting(EnableMonochromeFlags)</visible>
                 </control>
                 <control type="label">
                     <left>-11</left>
@@ -2009,7 +2020,7 @@
                     <texture colordiffuse="$PARAM[colordiffuse]_100">flags/$PARAM[directory]/ratings/oscar.png</texture>
                     <visible>String.Contains(Window(Home).Property(TMDbHelper.ListItem.Awards),Oscar) + String.Contains(Window(Home).Property(TMDbHelper.ListItem.Awards),Won)</visible>
                     <visible>$PARAM[oscars]</visible>
-                    <visible>!Skin.HasSetting(Ratings.DisableOscars)</visible>
+                    <visible>!Skin.HasSetting(DisableOscarRating)</visible>
                 </control>
                 <control type="label">
                     <textcolor>$PARAM[colordiffuse]_70</textcolor>
@@ -2021,7 +2032,7 @@
                     <label>$VAR[Label_Oscars,,   ]</label>
                     <visible>String.Contains(Window(Home).Property(TMDbHelper.ListItem.Awards),Oscar) + String.Contains(Window(Home).Property(TMDbHelper.ListItem.Awards),Won)</visible>
                     <visible>$PARAM[oscars]</visible>
-                    <visible>!Skin.HasSetting(Ratings.DisableOscars)</visible>
+                    <visible>!Skin.HasSetting(DisableOscarRating)</visible>
                 </control>
                 <control type="image">
                     <top>0</top>
@@ -2030,7 +2041,7 @@
                     <texture colordiffuse="$PARAM[colordiffuse]_100">flags/$PARAM[directory]/ratings/metacritic.png</texture>
                     <visible>!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.MetaCritic_Rating))</visible>
                     <visible>$PARAM[metacritic]</visible>
-                    <visible>!Skin.HasSetting(Ratings.DisableMetacritic)</visible>
+                    <visible>!Skin.HasSetting(DisableMetacriticRating)</visible>
                 </control>
                 <control type="label">
                     <textcolor>$PARAM[colordiffuse]_70</textcolor>
@@ -2042,7 +2053,7 @@
                     <label>$INFO[Window(Home).Property(TMDbHelper.ListItem.MetaCritic_Rating), ,%   ]</label>
                     <visible>!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.MetaCritic_Rating))</visible>
                     <visible>$PARAM[metacritic]</visible>
-                    <visible>!Skin.HasSetting(Ratings.DisableMetacritic)</visible>
+                    <visible>!Skin.HasSetting(DisableMetacriticRating)</visible>
                 </control>
                 <control type="image">
                     <top>0</top>
@@ -2051,7 +2062,7 @@
                     <texture colordiffuse="$PARAM[colordiffuse]_100">flags/$PARAM[directory]/ratings/trakt.png</texture>
                     <visible>!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Trakt_Rating))</visible>
                     <visible>$PARAM[trakt]</visible>
-                    <visible>!Skin.HasSetting(Ratings.DisableTrakt)</visible>
+                    <visible>!Skin.HasSetting(DisableTraktRating)</visible>
                 </control>
                 <control type="label">
                     <textcolor>$PARAM[colordiffuse]_70</textcolor>
@@ -2063,7 +2074,7 @@
                     <label>$INFO[Window(Home).Property(TMDbHelper.ListItem.Trakt_Rating), ,    ]</label>
                     <visible>!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Trakt_Rating))</visible>
                     <visible>$PARAM[trakt]</visible>
-                    <visible>!Skin.HasSetting(Ratings.DisableTrakt)</visible>
+                    <visible>!Skin.HasSetting(DisableTraktRating)</visible>
                 </control>
                 <control type="image">
                     <top>0</top>
@@ -2072,7 +2083,7 @@
                     <texture colordiffuse="$PARAM[colordiffuse]_100">flags/$PARAM[directory]/ratings/tmdb.png</texture>
                     <visible>!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.TMDb_Rating))</visible>
                     <visible>$PARAM[tmdb]</visible>
-                    <visible>!Skin.HasSetting(Ratings.DisableTMDB)</visible>
+                    <visible>!Skin.HasSetting(DisableTMDBRating)</visible>
                 </control>
                 <control type="label">
                     <textcolor>$PARAM[colordiffuse]_70</textcolor>
@@ -2084,7 +2095,7 @@
                     <label>$INFO[Window(Home).Property(TMDbHelper.ListItem.TMDb_Rating), ,   ]</label>
                     <visible>!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.TMDb_Rating))</visible>
                     <visible>$PARAM[tmdb]</visible>
-                    <visible>!Skin.HasSetting(Ratings.DisableTMDB)</visible>
+                    <visible>!Skin.HasSetting(DisableTMDBRating)</visible>
                 </control>
 
                 <control type="image">
@@ -2094,7 +2105,7 @@
                     <texture colordiffuse="$PARAM[colordiffuse]_100">flags/$PARAM[directory]/ratings/tvdb.png</texture>
                     <visible>!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Rating.TVDB))</visible>
                     <visible>$PARAM[tvdb]</visible>
-                    <visible>!Skin.HasSetting(Ratings.DisableTVDB)</visible>
+                    <visible>!Skin.HasSetting(DisableTVDBRating)</visible>
                 </control>
                 <control type="label">
                     <textcolor>$PARAM[colordiffuse]_70</textcolor>
@@ -2106,7 +2117,7 @@
                     <label>$INFO[Window(Home).Property(TMDbHelper.ListItem.Rating.TVDB), ,   ]</label>
                     <visible>!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Rating.TVDB))</visible>
                     <visible>$PARAM[tvdb]</visible>
-                    <visible>!Skin.HasSetting(Ratings.DisableTVDB)</visible>
+                    <visible>!Skin.HasSetting(DisableTVDBRating)</visible>
                 </control>
 
 
@@ -2118,7 +2129,7 @@
                     <visible>!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.RottenTomatoes_UserMeter))</visible>
                     <visible>Integer.IsGreater(Window(home).Property(TMDbHelper.ListItem.RottenTomatoes_UserMeter),59)</visible>
                     <visible>$PARAM[usermeter]</visible>
-                    <visible>!Skin.HasSetting(Ratings.DisableRTUserMeter)</visible>
+                    <visible>!Skin.HasSetting(DisableRottenTomatoesUserRating)</visible>
                 </control>
                 <control type="image">
                     <top>0</top>
@@ -2128,7 +2139,7 @@
                     <visible>!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.RottenTomatoes_UserMeter))</visible>
                     <visible>!Integer.IsGreater(Window(home).Property(TMDbHelper.ListItem.RottenTomatoes_UserMeter),59)</visible>
                     <visible>$PARAM[usermeter]</visible>
-                    <visible>!Skin.HasSetting(Ratings.DisableRTUserMeter)</visible>
+                    <visible>!Skin.HasSetting(DisableRottenTomatoesUserRating)</visible>
                 </control>
                 <control type="label">
                     <textcolor>$PARAM[colordiffuse]_70</textcolor>
@@ -2140,7 +2151,7 @@
                     <label>$INFO[Window(Home).Property(TMDbHelper.ListItem.RottenTomatoes_UserMeter), ,%   ]</label>
                     <visible>!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.RottenTomatoes_UserMeter))</visible>
                     <visible>$PARAM[usermeter]</visible>
-                    <visible>!Skin.HasSetting(Ratings.DisableRTUserMeter)</visible>
+                    <visible>!Skin.HasSetting(DisableRottenTomatoesUserRating)</visible>
                 </control>
                 <control type="image">
                     <width>32</width>
@@ -2149,7 +2160,7 @@
                     <visible>!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.RottenTomatoes_Rating))</visible>
                     <visible>Integer.IsGreater(Window(home).Property(TMDbHelper.ListItem.RottenTomatoes_Rating),0) + !Integer.IsGreater(Window(home).Property(TMDbHelper.ListItem.RottenTomatoes_Rating),59)</visible>
                     <visible>$PARAM[rottentomatoes]</visible>
-                    <visible>!Skin.HasSetting(Ratings.DisableRottenTomatoes)</visible>
+                    <visible>!Skin.HasSetting(DisableRottenTomatoesCriticRating)</visible>
                 </control>
                 <control type="image">
                     <width>32</width>
@@ -2158,7 +2169,7 @@
                     <visible>!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.RottenTomatoes_Rating))</visible>
                     <visible>Integer.IsGreater(Window(home).Property(TMDbHelper.ListItem.RottenTomatoes_Rating),59) + !Integer.IsGreater(Window(home).Property(TMDbHelper.ListItem.RottenTomatoes_Rating),74)</visible>
                     <visible>$PARAM[rottentomatoes]</visible>
-                    <visible>!Skin.HasSetting(Ratings.DisableRottenTomatoes)</visible>
+                    <visible>!Skin.HasSetting(DisableRottenTomatoesCriticRating)</visible>
                 </control>
                 <control type="image" description="remove the rtfresh texture line for certified logo">
                     <width>32</width>
@@ -2168,7 +2179,7 @@
                     <visible>!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.RottenTomatoes_Rating))</visible>
                     <visible>Integer.IsGreater(Window(home).Property(TMDbHelper.ListItem.RottenTomatoes_Rating),74)</visible>
                     <visible>$PARAM[rottentomatoes]</visible>
-                    <visible>!Skin.HasSetting(Ratings.DisableRottenTomatoes)</visible>
+                    <visible>!Skin.HasSetting(DisableRottenTomatoesCriticRating)</visible>
                 </control>
                 <control type="label">
                     <textcolor>$PARAM[colordiffuse]_70</textcolor>
@@ -2180,7 +2191,7 @@
                     <label>$INFO[Window(Home).Property(TMDbHelper.ListItem.RottenTomatoes_Rating), ,%   ]</label>
                     <visible>!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.RottenTomatoes_Rating))</visible>
                     <visible>$PARAM[rottentomatoes]</visible>
-                    <visible>!Skin.HasSetting(Ratings.DisableRottenTomatoes)</visible>
+                    <visible>!Skin.HasSetting(DisableRottenTomatoesCriticRating)</visible>
                 </control>
                 <control type="image">
                     <top>1</top>
@@ -2189,7 +2200,7 @@
                     <texture colordiffuse="$PARAM[colordiffuse]_100">flags/$PARAM[directory]/ratings/imdb.png</texture>
                     <visible>!String.IsEmpty(Window(home).Property(TMDbHelper.ListItem.IMDb_Rating))</visible>
                     <visible>$PARAM[imdb]</visible>
-                    <visible>!Skin.HasSetting(Ratings.DisableIMDB)</visible>
+                    <visible>!Skin.HasSetting(DisableIMDBRating)</visible>
                 </control>
                 <control type="label">
                     <textcolor>$PARAM[colordiffuse]_70</textcolor>
@@ -2201,7 +2212,7 @@
                     <label>$INFO[Window(home).Property(TMDbHelper.ListItem.IMDb_Rating), ,]$INFO[Window(home).Property(TMDbHelper.ListItem.IMDb_Votes), (, $LOCALIZE[205])]</label>
                     <visible>!String.IsEmpty(Window(home).Property(TMDbHelper.ListItem.IMDb_Rating))</visible>
                     <visible>$PARAM[imdb]</visible>
-                    <visible>!Skin.HasSetting(Ratings.DisableIMDB)</visible>
+                    <visible>!Skin.HasSetting(DisableIMDBRating)</visible>
                     <visible>$PARAM[imdbvotes]</visible>
                 </control>
                 <control type="label">
@@ -2214,7 +2225,7 @@
                     <label>$INFO[Window(home).Property(TMDbHelper.ListItem.IMDb_Rating), ,]</label>
                     <visible>!String.IsEmpty(Window(home).Property(TMDbHelper.ListItem.IMDb_Rating))</visible>
                     <visible>$PARAM[imdb]</visible>
-                    <visible>!Skin.HasSetting(Ratings.DisableIMDB)</visible>
+                    <visible>!Skin.HasSetting(DisableIMDBRating)</visible>
                     <visible>!$PARAM[imdbvotes]</visible>
                 </control>
                 <control type="label">
@@ -2227,9 +2238,9 @@
                     <label>$INFO[Window(Home).Property(TMDbHelper.ListItem.IMDB.Top250),#,]</label>
                     <visible>Integer.IsGreater(Window(home).Property(TMDbHelper.ListItem.IMDB.Top250),0)</visible>
                     <visible>$PARAM[imdb]</visible>
-                    <visible>!Skin.HasSetting(Ratings.DisableIMDB)</visible>
+                    <visible>!Skin.HasSetting(DisableIMDBRating)</visible>
                     <visible>$PARAM[top250]</visible>
-                    <visible>!Skin.HasSetting(Ratings.DisableIMDBTop250)</visible>
+                    <visible>!Skin.HasSetting(DisableIMDBRatingTop250)</visible>
                 </control>
             </control>
         </definition>
@@ -2263,7 +2274,7 @@
                     <texture colordiffuse="$PARAM[colordiffuse]_100">flags/$PARAM[directory]/ratings/oscar.png</texture>
                     <visible>String.Contains(Window(Home).Property(TMDbHelper.Player.Awards),Oscar) + String.Contains(Window(Home).Property(TMDbHelper.Player.Awards),Won)</visible>
                     <visible>$PARAM[oscars]</visible>
-                    <visible>!Skin.HasSetting(Ratings.DisableOscars)</visible>
+                    <visible>!Skin.HasSetting(DisableOscarRating)</visible>
                 </control>
                 <control type="label">
                     <textcolor>$PARAM[colordiffuse]_70</textcolor>
@@ -2275,7 +2286,7 @@
                     <label>$VAR[Label_OSD_Oscars,,   ]</label>
                     <visible>String.Contains(Window(Home).Property(TMDbHelper.Player.Awards),Oscar) + String.Contains(Window(Home).Property(TMDbHelper.Player.Awards),Won)</visible>
                     <visible>$PARAM[oscars]</visible>
-                    <visible>!Skin.HasSetting(Ratings.DisableOscars)</visible>
+                    <visible>!Skin.HasSetting(DisableOscarRating)</visible>
                 </control>
                 <control type="image">
                     <top>0</top>
@@ -2284,7 +2295,7 @@
                     <texture colordiffuse="$PARAM[colordiffuse]_100">flags/$PARAM[directory]/ratings/metacritic.png</texture>
                     <visible>!String.IsEmpty(Window(Home).Property(TMDbHelper.Player.MetaCritic.Rating))</visible>
                     <visible>$PARAM[metacritic]</visible>
-                    <visible>!Skin.HasSetting(Ratings.DisableMetacritic)</visible>
+                    <visible>!Skin.HasSetting(DisableMetacriticRating)</visible>
                 </control>
                 <control type="label">
                     <textcolor>$PARAM[colordiffuse]_70</textcolor>
@@ -2296,7 +2307,7 @@
                     <label>$INFO[Window(Home).Property(TMDbHelper.Player.MetaCritic.Rating), ,%   ]</label>
                     <visible>!String.IsEmpty(Window(Home).Property(TMDbHelper.Player.MetaCritic.Rating))</visible>
                     <visible>$PARAM[metacritic]</visible>
-                    <visible>!Skin.HasSetting(Ratings.DisableMetacritic)</visible>
+                    <visible>!Skin.HasSetting(DisableMetacriticRating)</visible>
                 </control>
 
                 <control type="image">
@@ -2306,7 +2317,7 @@
                     <texture colordiffuse="$PARAM[colordiffuse]_100">flags/$PARAM[directory]/ratings/tvdb.png</texture>
                     <visible>!String.IsEmpty(Window(Home).Property(TMDbHelper.Player.Rating.TVDB))</visible>
                     <visible>$PARAM[tvdb]</visible>
-                    <visible>!Skin.HasSetting(Ratings.DisableTVDB)</visible>
+                    <visible>!Skin.HasSetting(DisableTVDBRating)</visible>
                 </control>
                 <control type="label">
                     <textcolor>$PARAM[colordiffuse]_70</textcolor>
@@ -2318,7 +2329,7 @@
                     <label>$INFO[Window(Home).Property(TMDbHelper.Player.Rating.TVDB), ,   ]</label>
                     <visible>!String.IsEmpty(Window(Home).Property(TMDbHelper.Player.Rating.TVDB))</visible>
                     <visible>$PARAM[tvdb]</visible>
-                    <visible>!Skin.HasSetting(Ratings.DisableTVDB)</visible>
+                    <visible>!Skin.HasSetting(DisableTVDBRating)</visible>
                 </control>
 
 
@@ -2330,7 +2341,7 @@
                     <visible>!String.IsEmpty(Window(Home).Property(TMDbHelper.Player.RottenTomatoes.UserMeter))</visible>
                     <visible>Integer.IsGreater(Window(home).Property(TMDbHelper.Player.RottenTomatoes.Us​erMeter),59)</visible>
                     <visible>$PARAM[usermeter]</visible>
-                    <visible>!Skin.HasSetting(Ratings.RottenTomatoes)</visible>
+                    <visible>!Skin.HasSetting(DisableRottenTomatoesUserRating)</visible>
                 </control>
                 <control type="image">
                     <top>0</top>
@@ -2340,7 +2351,7 @@
                     <visible>!String.IsEmpty(Window(Home).Property(TMDbHelper.Player.RottenTomatoes.UserMeter))</visible>
                     <visible>!Integer.IsGreater(Window(home).Property(TMDbHelper.Player.RottenTomatoes.Us​erMeter),59)</visible>
                     <visible>$PARAM[usermeter]</visible>
-                    <visible>!Skin.HasSetting(Ratings.RottenTomatoes)</visible>
+                    <visible>!Skin.HasSetting(DisableRottenTomatoesUserRating)</visible>
                 </control>
                 <control type="label">
                     <textcolor>$PARAM[colordiffuse]_70</textcolor>
@@ -2352,7 +2363,7 @@
                     <label>$INFO[Window(Home).Property(TMDbHelper.Player.RottenTomatoes.UserMeter), ,%   ]</label>
                     <visible>!String.IsEmpty(Window(Home).Property(TMDbHelper.Player.RottenTomatoes.UserMeter))</visible>
                     <visible>$PARAM[usermeter]</visible>
-                    <visible>!Skin.HasSetting(Ratings.RottenTomatoes)</visible>
+                    <visible>!Skin.HasSetting(DisableRottenTomatoesCriticRating)</visible>
                 </control>
                 <control type="image">
                     <width>32</width>
@@ -2361,7 +2372,7 @@
                     <visible>!String.IsEmpty(Window(Home).Property(TMDbHelper.Player.RottenTomatoes.Rating))</visible>
                     <visible>Integer.IsGreater(Window(home).Property(TMDbHelper.Player.RottenTomatoes.Rating),0) + !Integer.IsGreater(Window(home).Property(TMDbHelper.Player.RottenTomatoes.Rating),59)</visible>
                     <visible>$PARAM[rottentomatoes]</visible>
-                    <visible>!Skin.HasSetting(Ratings.RottenTomatoes)</visible>
+                    <visible>!Skin.HasSetting(DisableRottenTomatoesCriticRating)</visible>
                 </control>
                 <control type="image">
                     <width>32</width>
@@ -2370,7 +2381,7 @@
                     <visible>!String.IsEmpty(Window(Home).Property(TMDbHelper.Player.RottenTomatoes.Rating))</visible>
                     <visible>Integer.IsGreater(Window(home).Property(TMDbHelper.Player.RottenTomatoes.Rating),59) + !Integer.IsGreater(Window(home).Property(TMDbHelper.Player.RottenTomatoes.Rating),74)</visible>
                     <visible>$PARAM[rottentomatoes]</visible>
-                    <visible>!Skin.HasSetting(Ratings.RottenTomatoes)</visible>
+                    <visible>!Skin.HasSetting(DisableRottenTomatoesCriticRating)</visible>
                 </control>
                 <control type="image" description="remove the rtfresh texture line for certified logo">
                     <width>32</width>
@@ -2380,7 +2391,7 @@
                     <visible>!String.IsEmpty(Window(Home).Property(TMDbHelper.Player.RottenTomatoes.Rating))</visible>
                     <visible>Integer.IsGreater(Window(home).Property(TMDbHelper.Player.RottenTomatoes.Rating),74)</visible>
                     <visible>$PARAM[rottentomatoes]</visible>
-                    <visible>!Skin.HasSetting(Ratings.RottenTomatoes)</visible>
+                    <visible>!Skin.HasSetting(DisableRottenTomatoesCriticRating)</visible>
                 </control>
                 <control type="label">
                     <textcolor>$PARAM[colordiffuse]_70</textcolor>
@@ -2392,7 +2403,7 @@
                     <label>$INFO[Window(Home).Property(TMDbHelper.Player.RottenTomatoes.Rating), ,%   ]</label>
                     <visible>!String.IsEmpty(Window(Home).Property(TMDbHelper.Player.RottenTomatoes.Rating))</visible>
                     <visible>$PARAM[rottentomatoes]</visible>
-                    <visible>!Skin.HasSetting(Ratings.RottenTomatoes)</visible>
+                    <visible>!Skin.HasSetting(DisableRottenTomatoesCriticRating)</visible>
                 </control>
                 <control type="image">
                     <top>1</top>
@@ -2401,7 +2412,7 @@
                     <texture colordiffuse="$PARAM[colordiffuse]_100">flags/$PARAM[directory]/ratings/imdb.png</texture>
                     <visible>!String.IsEmpty(Player.RatingAndVotes) | !String.IsEmpty(Window(home).Property(TMDbHelper.Player.Rating.IMDB)) | [Window.IsVisible(DialogVideoInfo.xml) + !String.IsEmpty(Player.Rating)]</visible>
                     <visible>$PARAM[imdb]</visible>
-                    <visible>!Skin.HasSetting(Ratings.DisableIMDB)</visible>
+                    <visible>!Skin.HasSetting(DisableIMDBRating)</visible>
                 </control>
                 <control type="label">
                     <textcolor>$PARAM[colordiffuse]_70</textcolor>
@@ -2414,7 +2425,7 @@
                     <visible>!Window.IsVisible(DialogVideoInfo.xml)</visible>
                     <visible>!String.IsEmpty(Window(home).Property(TMDbHelper.Player.Rating.IMDB))</visible>
                     <visible>$PARAM[imdb]</visible>
-                    <visible>!Skin.HasSetting(Ratings.DisableIMDB)</visible>
+                    <visible>!Skin.HasSetting(DisableIMDBRating)</visible>
                     <visible>$PARAM[imdbvotes]</visible>
                 </control>
                 <control type="label">
@@ -2429,7 +2440,7 @@
                     <visible>String.IsEmpty(Window(home).Property(TMDbHelper.Player.Rating.IMDB)) + !String.IsEmpty(Player.RatingAndVotes)</visible>
                     <visible>$PARAM[imdbvotes]</visible>
                     <visible>$PARAM[imdb]</visible>
-                    <visible>!Skin.HasSetting(Ratings.DisableIMDB)</visible>
+                    <visible>!Skin.HasSetting(DisableIMDBRating)</visible>
                 </control>
                 <control type="label">
                     <textcolor>$PARAM[colordiffuse]_70</textcolor>
@@ -2442,7 +2453,7 @@
                     <visible>!Window.IsVisible(DialogVideoInfo.xml)</visible>
                     <visible>!String.IsEmpty(Window(home).Property(TMDbHelper.Player.Rating.IMDB))</visible>
                     <visible>$PARAM[imdb]</visible>
-                    <visible>!Skin.HasSetting(Ratings.DisableIMDB)</visible>
+                    <visible>!Skin.HasSetting(DisableIMDBRating)</visible>
                     <visible>!$PARAM[imdbvotes]</visible>
                 </control>
                 <control type="label">
@@ -2456,7 +2467,7 @@
                     <visible>!Window.IsVisible(DialogVideoInfo.xml)</visible>
                     <visible>String.IsEmpty(Window(home).Property(TMDbHelper.Player.Rating.IMDB)) + !String.IsEmpty(Player.Rating)</visible>
                     <visible>$PARAM[imdb]</visible>
-                    <visible>!Skin.HasSetting(Ratings.DisableIMDB)</visible>
+                    <visible>!Skin.HasSetting(DisableIMDBRating)</visible>
                     <visible>!$PARAM[imdbvotes]</visible>
                 </control>
                 <control type="label">
@@ -2470,7 +2481,7 @@
                     <visible>Window.IsVisible(DialogVideoInfo.xml)</visible>
                     <visible>!String.IsEmpty(Window(home).Property(TMDbHelper.Player.Rating.IMDB))</visible>
                     <visible>$PARAM[imdb]</visible>
-                    <visible>!Skin.HasSetting(Ratings.DisableIMDB)</visible>
+                    <visible>!Skin.HasSetting(DisableIMDBRating)</visible>
                 </control>
                 <control type="label">
                     <textcolor>$PARAM[colordiffuse]_70</textcolor>
@@ -2483,7 +2494,7 @@
                     <visible>Window.IsVisible(DialogVideoInfo.xml)</visible>
                     <visible>String.IsEmpty(Window(home).Property(TMDbHelper.Player.Rating.IMDB)) + !String.IsEmpty(Player.Rating)</visible>
                     <visible>$PARAM[imdb]</visible>
-                    <visible>!Skin.HasSetting(Ratings.DisableIMDB)</visible>
+                    <visible>!Skin.HasSetting(DisableIMDBRating)</visible>
                 </control>
                 <control type="label">
                     <textcolor>$PARAM[colordiffuse]_70</textcolor>
@@ -2495,7 +2506,7 @@
                     <label>$INFO[Window(Home).Property(TMDbHelper.Player.IMDB.Top250),#,]</label>
                     <visible>Integer.IsGreater(Window(home).Property(TMDbHelper.Player.IMDB.Top250),0)</visible>
                     <visible>$PARAM[imdb]</visible>
-                    <visible>!Skin.HasSetting(Ratings.DisableIMDB)</visible>
+                    <visible>!Skin.HasSetting(DisableIMDBRating)</visible>
                     <visible>$PARAM[top250]</visible>
                 </control>
             </control>

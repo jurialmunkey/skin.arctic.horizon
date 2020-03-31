@@ -156,15 +156,15 @@
                 <include content="Object_Info_Line">
                     <param name="container" value="Container($PARAM[id])." />
                 </include>
-                <include content="Object_Info_Ratings" condition="!Skin.HasSetting(DisableFullscreenWidgetRatings)">
+                <include content="Object_Info_Ratings" condition="!Skin.HasSetting(DisableAllRatings)">
                     <param name="container" value="Container($PARAM[id])." />
                 </include>
-                <include content="Object_Info_Plot" condition="!Skin.HasSetting(DisableFullscreenWidgetRatings)">
+                <include content="Object_Info_Plot" condition="!Skin.HasSetting(DisableAllRatings)">
                     <param name="maxheight" value="80" />
                     <param name="height" value="auto" />
                     <param name="label" value="$INFO[Container($PARAM[id]).ListItem.Plot]" />
                 </include>
-                <include content="Object_Info_Plot" condition="Skin.HasSetting(DisableFullscreenWidgetRatings)">
+                <include content="Object_Info_Plot" condition="Skin.HasSetting(DisableAllRatings)">
                     <param name="maxheight" value="80" />
                     <param name="height" value="auto" />
                     <param name="label" value="$INFO[Container($PARAM[id]).ListItem.Plot]" />

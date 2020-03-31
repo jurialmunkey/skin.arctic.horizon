@@ -13,7 +13,6 @@
                     <control type="group" description="Top Half">
                         <visible>!Integer.IsEqual(Container.NumAllItems,0)</visible>
                         <include content="View_Info_Grouplist">
-                            <param name="plotheight" value="auto" />
                             <param name="container" value="Container." />
                             <top>-15</top>
                             <height>285</height>
@@ -23,7 +22,6 @@
                             <include>Viewtype_Info_Right</include>
                         </include>
                         <include content="View_Info_Grouplist">
-                            <param name="plotheight" value="auto" />
                             <param name="container" value="Container." />
                             <param name="visible-details" value="false" />
                             <top>-15</top>

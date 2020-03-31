@@ -19,7 +19,7 @@
                 <include content="Object_Info_Line">
                     <param name="container" value="$PARAM[container]" />
                 </include>
-                <include content="Object_Info_Ratings" condition="$PARAM[ratings]">
+                <include content="Object_Info_Ratings" condition="$PARAM[ratings] + !Skin.HasSetting(DisableAllRatings)">
                     <param name="container" value="$PARAM[container]" />
                     <visible>$PARAM[visible-details]</visible>
                     <visible>String.IsEqual($PARAM[container]ListItem.DBType,movie) | String.IsEqual($PARAM[container]ListItem.DBType,episode) | String.IsEqual($PARAM[container]ListItem.DBType,tvshow) | String.IsEqual($PARAM[container]ListItem.DBType,season) | String.IsEqual($PARAM[container]ListItem.DBType,set)</visible>
@@ -32,31 +32,13 @@
                     <visible>String.IsEqual($PARAM[container]ListItem.DBType,episode)</visible>
                     <visible>$PARAM[visible-details]</visible>
                 </include>
-                <!-- <include content="Object_Info_Title">
-                    <param name="font" value="font_small_bold" />
-                    <param name="titleheight" value="10" />
-                    <param name="label" value="$INFO[$PARAM[container]ListItem.Genre]" />
-                    <top>30</top>
-                    <visible>!String.IsEqual($PARAM[container]ListItem.DBType,episode)</visible>
-                    <visible>!String.IsEmpty($PARAM[container]ListItem.Genre)</visible>
-                    <visible>$PARAM[visible-details]</visible>
-                </include> -->
                 <include content="Object_Info_Plot">
                     <param name="maxheight" value="$PARAM[plotmaxheight]" />
                     <param name="height" value="$PARAM[plotheight]" />
                     <param name="label" value="$PARAM[plot]" />
                     <param name="control-type" value="textbox" />
-                    <!-- <visible>!String.IsEqual($PARAM[container]ListItem.DBType,episode) + String.IsEmpty($PARAM[container]ListItem.Genre)</visible> -->
                     <visible>$PARAM[visible-details]</visible>
                 </include>
-                <!-- <include content="Object_Info_Plot">
-                    <param name="maxheight" value="40" />
-                    <param name="height" value="40" />
-                    <param name="label" value="$PARAM[plot]" />
-                    <param name="control-type" value="fadelabel" />
-                    <visible>[!String.IsEqual($PARAM[container]ListItem.DBType,episode) + !String.IsEmpty($PARAM[container]ListItem.Genre)] | String.IsEqual($PARAM[container]ListItem.DBType,episode)</visible>
-                    <visible>$PARAM[visible-details]</visible>
-                </include> -->
                 <nested />
             </control>
             

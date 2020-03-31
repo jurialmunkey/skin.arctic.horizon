@@ -46,7 +46,7 @@
                             <param name="label" value="$VAR[Label_MainTitle]" />
                         </include>
                         <include>Object_Info_Line</include>
-                        <include content="Object_Info_Ratings">
+                        <include content="Object_Info_Ratings" condition="!Skin.HasSetting(DisableAllRatings)">
                             <visible>!String.IsEmpty(Window(Home).Property(TMDBHelper.ListItem.tmdb_rating)) | !String.IsEmpty(Window(Home).Property(TMDBHelper.ListItem.trakt_rating))</visible>
                         </include>
                         <include content="Object_Info_Title">

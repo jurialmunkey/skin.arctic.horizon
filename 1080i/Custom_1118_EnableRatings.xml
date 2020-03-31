@@ -7,7 +7,7 @@
         <control type="group">
             <include content="Dialog_Standard_Group">
                 <param name="width" value="1180" />
-                <param name="height" value="832" />
+                <param name="height" value="950" />
             </include>
 
             <control type="label">
@@ -16,78 +16,111 @@
                 <include>Dialog_Standard_Header</include>
             </control>
 
+            <include content="Defs_Settings_Gradient">
+                <param name="id" value="9000" />
+                <top>dialog_top</top>
+                <height>item_list_height</height>
+                <width>780</width>
+                <visible>ControlGroup(9000).HasFocus()</visible>
+            </include>
+
             <control type="grouplist" id="9000">
                 <onright>61</onright>
                 <description>Control Area</description>
                 <width>780</width>
                 <top>dialog_top</top>
-                <height>702</height>
+                <height>800</height>
                 <itemgap>0</itemgap>
                 <pagecontrol>61</pagecontrol>
                 <orientation>vertical</orientation>
                 <usecontrolcoords>true</usecontrolcoords>
                 <control type="radiobutton" id="9001">
-                    <label>Oscars</label>
+                    <label>$LOCALIZE[31019]</label>
                     <radioposx>730</radioposx>
                     <include>Dialog_Standard_Button</include>
-                    <onclick>Skin.ToggleSetting(Ratings.Oscars)</onclick>
-                    <selected>!Skin.HasSetting(Ratings.DisableOscars)</selected>
+                    <onclick>Skin.ToggleSetting(DisableAllRatings)</onclick>
+                    <selected>Skin.HasSetting(DisableAllRatings)</selected>
                 </control>
                 <control type="radiobutton" id="9002">
-                    <label>Metacritic</label>
+                    <label>$LOCALIZE[31000]</label>
                     <radioposx>730</radioposx>
                     <include>Dialog_Standard_Button</include>
-                    <onclick>Skin.ToggleSetting(Ratings.DisableMetacritic)</onclick>
-                    <selected>!Skin.HasSetting(Ratings.DisableMetacritic)</selected>
+                    <enable>!Skin.HasSetting(DisableStarRating) + !Skin.HasSetting(DisableAllRatings)</enable>
+                    <onclick>Skin.ToggleSetting(NumericStarRating)</onclick>
+                    <selected>Skin.HasSetting(NumericStarRating)</selected>
                 </control>
                 <control type="radiobutton" id="9003">
-                    <label>RottenTomatoes</label>
-                    <radioposx>730</radioposx>
-                    <include>Dialog_Standard_Button</include>
-                    <onclick>Skin.ToggleSetting(Ratings.RottenTomatoes)</onclick>
-                    <selected>!Skin.HasSetting(Ratings.RottenTomatoes)</selected>
-                </control>
-                <control type="radiobutton" id="9004">
-                    <label>TheMovieDb</label>
-                    <radioposx>730</radioposx>
-                    <include>Dialog_Standard_Button</include>
-                    <onclick>Skin.ToggleSetting(Ratings.DisableTMDB)</onclick>
-                    <selected>Skin.HasSetting(Ratings.DisableTMDB)</selected>
-                </control>
-                <control type="radiobutton" id="9005">
-                    <label>TVDb</label>
-                    <radioposx>730</radioposx>
-                    <include>Dialog_Standard_Button</include>
-                    <onclick>Skin.ToggleSetting(Ratings.DisableTVDB)</onclick>
-                    <selected>!Skin.HasSetting(Ratings.DisableTVDB)</selected>
-                </control>
-                <control type="radiobutton" id="9006">
-                    <label>IMDb</label>
-                    <radioposx>730</radioposx>
-                    <include>Dialog_Standard_Button</include>
-                    <onclick>Skin.ToggleSetting(Ratings.DisableIMDB)</onclick>
-                    <selected>!Skin.HasSetting(Ratings.DisableIMDB)</selected>
-                </control>
-                <control type="radiobutton" id="9007">
-                    <label>IMDb $LOCALIZE[13409]</label>
-                    <radioposx>730</radioposx>
-                    <include>Dialog_Standard_Button</include>
-                    <onclick>Skin.ToggleSetting(Ratings.DisableIMDBTop250)</onclick>
-                    <selected>!Skin.HasSetting(Ratings.DisableIMDBTop250)</selected>
-                </control>
-                <control type="radiobutton" id="9008">
-                    <label>$LOCALIZE[31310]</label>
-                    <radioposx>730</radioposx>
-                    <include>Dialog_Standard_Button</include>
-                    <onclick>Skin.ToggleSetting(Ratings.User)</onclick>
-                    <selected>!Skin.HasSetting(Ratings.User)</selected>
-                </control>
-                <control type="radiobutton" id="9099">
                     <label>$LOCALIZE[33067]</label>
                     <radioposx>730</radioposx>
                     <include>Dialog_Standard_Button</include>
+                    <enable>!Skin.HasSetting(DisableAllRatings)</enable>
                     <onclick>Skin.ToggleSetting(DisableStarRating)</onclick>
                     <selected>!Skin.HasSetting(DisableStarRating)</selected>
+                </control>
+                
+                <control type="radiobutton" id="9004">
+                    <label>$LOCALIZE[31003]</label>
+                    <radioposx>730</radioposx>
+                    <enable>!Skin.HasSetting(DisableAllRatings)</enable>
+                    <include>Dialog_Standard_Button</include>
+                    <onclick>Skin.ToggleSetting(DisableOscarRating)</onclick>
+                    <selected>!Skin.HasSetting(DisableOscarRating)</selected>
+                </control>
+                <control type="radiobutton" id="9005">
+                    <label>$LOCALIZE[31004]</label>
+                    <radioposx>730</radioposx>
+                    <enable>!Skin.HasSetting(DisableAllRatings)</enable>
+                    <include>Dialog_Standard_Button</include>
+                    <onclick>Skin.ToggleSetting(DisableMetacriticRating)</onclick>
+                    <selected>!Skin.HasSetting(DisableMetacriticRating)</selected>
+                </control>
+                <!-- <control type="radiobutton" id="9006">
+                    <label>Star Rating</label>
+                    <radioposx>730</radioposx>
+                    <enable>!Skin.HasSetting(DisableAllRatings)</enable>
+                    <include>Dialog_Standard_Button</include>
+                    <onclick>Skin.ToggleSetting(DisableTVDBRating)</onclick>
+                    <selected>!Skin.HasSetting(DisableTVDBRating)</selected>
+                </control> -->
+                <control type="radiobutton" id="9007">
+                    <label>$LOCALIZE[31005]</label>
+                    <radioposx>730</radioposx>
+                    <enable>!Skin.HasSetting(DisableAllRatings)</enable>
+                    <include>Dialog_Standard_Button</include>
+                    <onclick>Skin.ToggleSetting(DisableRottenTomatoesUserRating)</onclick>
+                    <selected>!Skin.HasSetting(DisableRottenTomatoesUserRating)</selected>
+                </control>
+                <control type="radiobutton" id="9008">
+                    <label>$LOCALIZE[31009]</label>
+                    <radioposx>730</radioposx>
+                    <enable>!Skin.HasSetting(DisableAllRatings)</enable>
+                    <include>Dialog_Standard_Button</include>
+                    <onclick>Skin.ToggleSetting(DisableRottenTomatoesCriticRating)</onclick>
+                    <selected>!Skin.HasSetting(DisableRottenTomatoesCriticRating)</selected>
+                </control>
+                <control type="radiobutton" id="9009">
+                    <label>$LOCALIZE[368]</label>
+                    <radioposx>730</radioposx>
+                    <enable>!Skin.HasSetting(DisableAllRatings)</enable>
+                    <include>Dialog_Standard_Button</include>
+                    <onclick>Skin.ToggleSetting(DisableIMDBRating)</onclick>
+                    <selected>!Skin.HasSetting(DisableIMDBRating)</selected>
+                </control>
+                <control type="radiobutton" id="9010">
+                    <label>$LOCALIZE[31010]</label>
+                    <radioposx>730</radioposx>
+                    <enable>!Skin.HasSetting(DisableAllRatings)</enable>
+                    <include>Dialog_Standard_Button</include>
+                    <onclick>Skin.ToggleSetting(DisableTraktRating)</onclick>
+                    <selected>!Skin.HasSetting(DisableTraktRating)</selected>
+                </control>
+                <control type="radiobutton" id="9011">
+                    <label>$LOCALIZE[31016]</label>
+                    <radioposx>730</radioposx>
+                    <enable>!Skin.HasSetting(DisableAllRatings)</enable>
+                    <include>Dialog_Standard_Button</include>
+                    <onclick>Skin.ToggleSetting(DisableTMDBRating)</onclick>
+                    <selected>!Skin.HasSetting(DisableTMDBRating)</selected>
                 </control>
             </control>
 

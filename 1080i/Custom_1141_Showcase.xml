@@ -156,7 +156,7 @@
                     <include content="Object_Info_Line">
                         <param name="container" value="Container(3002)." />
                     </include>
-                    <include content="Object_Info_Ratings">
+                    <include content="Object_Info_Ratings" condition="!Skin.HasSetting(DisableAllRatings)">
                         <param name="container" value="Container(3002)." />
                     </include>
                     <include content="Object_Info_Plot">
