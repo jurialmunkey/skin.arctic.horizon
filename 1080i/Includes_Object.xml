@@ -2756,174 +2756,172 @@
         <param name="visible" default="true" />
         <definition>
             <control type="group">
-                <animation effect="slide" start="0" end="-1920" reversible="false" condition="Control.HasFocus(9604)" time="400" tween="quadratic">Conditional</animation>
-                <animation effect="slide" end="0" start="-1920" reversible="false" condition="!Control.HasFocus(9604)" time="400" tween="quadratic">Conditional</animation>
-                <control type="group">
-                    <include content="DialogVideoInfo_Left">
-                        <include>Animation_Left_Delay</include>
-                        <include>Defs_InfoDialog_Visible</include>
-                        <visible>$EXP[Exp_ShowPlotOverlay]</visible>
-                        <visible>[String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,episode) | String.IsEqual(ListItem.DBType,set) | String.IsEqual(ListItem.DBType,actor) | String.IsEqual(ListItem.DBType,season)]</visible>
-                    </include>
-                    <include content="DialogVideoInfo_Left">
-                        <param name="poster" value="false" />
-                        <include>Animation_Left_Delay</include>
-                        <include>Defs_InfoDialog_Visible</include>
-                        <visible>$EXP[Exp_ShowPlotOverlay]</visible>
-                        <visible>![String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,episode) | String.IsEqual(ListItem.DBType,set) | String.IsEqual(ListItem.DBType,actor) | String.IsEqual(ListItem.DBType,season)]</visible>
-                        <control type="group">
-                            <top>view_top</top>
-                            <left>view_pad</left>
-                            <bottom>view_pad</bottom>
-                            <control type="image">
-                                <bottom>40</bottom>
-                                <left>-15</left>
-                                <texture background="true">$VAR[Image_ClearLogo]</texture>
-                                <aspectratio aligny="bottom">keep</aspectratio>
-                                <height>150</height>
-                                <width>view_poster_width</width>
-                            </control>
-                            <include content="View_50_Poster">
-                                <param name="visible" value="true" />
-                                <param name="diffuse" value="diffuse/poster-big.png" />
-                                <param name="height" value="view_poster_width" />
-                            </include>
-                        </control>
-                    </include>
+                <include content="DialogVideoInfo_Left">
+                    <include>Animation_Left_Delay</include>
+                    <include>Defs_InfoDialog_Visible</include>
+                    <visible>$EXP[Exp_ShowPlotOverlay]</visible>
+                    <visible>[String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,episode) | String.IsEqual(ListItem.DBType,set) | String.IsEqual(ListItem.DBType,actor) | String.IsEqual(ListItem.DBType,season)]</visible>
+                </include>
+                <include content="DialogVideoInfo_Left">
+                    <param name="poster" value="false" />
+                    <include>Animation_Left_Delay</include>
+                    <include>Defs_InfoDialog_Visible</include>
+                    <visible>$EXP[Exp_ShowPlotOverlay]</visible>
+                    <visible>![String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,episode) | String.IsEqual(ListItem.DBType,set) | String.IsEqual(ListItem.DBType,actor) | String.IsEqual(ListItem.DBType,season)]</visible>
                     <control type="group">
-                        <visible>$PARAM[visible]</visible>
-                        <left>view_pad</left>
-                        <right>view_pad</right>
                         <top>view_top</top>
+                        <left>view_pad</left>
                         <bottom>view_pad</bottom>
-                        <visible>$EXP[Exp_ShowPlotOverlay]</visible>
-                        <include>Animation_Right_Delay</include>
-                        <control type="group">
-                            <left>view_info_left</left>
-                            <control type="grouplist" id="9601">
-                                <left>-20</left>
-                                <right>-20</right>
-                                <top>-20</top>
-                                <bottom>-20</bottom>
-                                <orientation>horizontal</orientation>
-                                <itemgap>20</itemgap>
-                                <usecontrolcoords>true</usecontrolcoords>
-                                <control type="group" id="9603">
-                                    <height>840</height>
-                                    <width>1100</width>
+                        <control type="image">
+                            <bottom>40</bottom>
+                            <left>-15</left>
+                            <texture background="true">$VAR[Image_ClearLogo]</texture>
+                            <aspectratio aligny="bottom">keep</aspectratio>
+                            <height>150</height>
+                            <width>view_poster_width</width>
+                        </control>
+                        <include content="View_50_Poster">
+                            <param name="visible" value="true" />
+                            <param name="diffuse" value="diffuse/poster-big.png" />
+                            <param name="height" value="view_poster_width" />
+                        </include>
+                    </control>
+                </include>
+                <control type="group">
+                    <visible>$PARAM[visible]</visible>
+                    <left>view_pad</left>
+                    <right>view_pad</right>
+                    <top>view_top</top>
+                    <bottom>view_pad</bottom>
+                    <visible>$EXP[Exp_ShowPlotOverlay]</visible>
+                    <include>Animation_Right_Delay</include>
+                    <control type="group">
+                        <left>view_info_left</left>
+                        <control type="grouplist" id="9601">
+                            <left>-20</left>
+                            <right>-20</right>
+                            <top>-20</top>
+                            <bottom>-20</bottom>
+                            <orientation>horizontal</orientation>
+                            <itemgap>20</itemgap>
+                            <usecontrolcoords>true</usecontrolcoords>
+                            <control type="group" id="9603">
+                                <height>840</height>
+                                <width>1100</width>
+                                <control type="group">
+                                    <left>20</left>
+                                    <right>20</right>
+                                    <top>20</top>
+                                    <bottom>20</bottom>
+                                    <control type="scrollbar" id="9602">
+                                        <onback condition="Control.IsVisible(3000)">3000</onback>
+                                        <onback condition="!Control.IsVisible(3000) + Control.IsVisible(300)">300</onback>
+                                        <onback condition="!Control.IsVisible(3000) + !Control.IsVisible(300)">50</onback>
+                                        <ondown condition="Control.IsVisible(3000)">3000</ondown>
+                                        <ondown condition="!Control.IsVisible(3000) + Control.IsVisible(300)">300</ondown>
+                                        <ondown condition="!Control.IsVisible(3000) + !Control.IsVisible(300)">50</ondown>
+                                        <!-- <ondown>ActivateWindow(1143)</ondown> -->
+                                        <onup condition="Control.IsVisible(3000)">3000</onup>
+                                        <onup condition="!Control.IsVisible(3000) + Control.IsVisible(300)">300</onup>
+                                        <onup condition="!Control.IsVisible(3000) + !Control.IsVisible(300)">50</onup>
+                                        <onleft condition="Control.IsVisible(3000)">3000</onleft>
+                                        <onleft condition="!Control.IsVisible(3000) + Control.IsVisible(300)">300</onleft>
+                                        <onleft condition="!Control.IsVisible(3000) + !Control.IsVisible(300)">50</onleft>
+                                        <onright condition="Control.IsVisible(9604)">SetFocus(9604,0,absolute)</onright>
+                                        <onright condition="!Control.IsVisible(9604) + Control.IsVisible(3000)">3000</onright>
+                                        <onright condition="!Control.IsVisible(9604) + !Control.IsVisible(3000) + Control.IsVisible(300)">300</onright>
+                                        <onright condition="!Control.IsVisible(9604) + !Control.IsVisible(3000) + !Control.IsVisible(300)">50</onright>
+                                        <!-- <onright>SetFocus(9604,0,absolute)</onright> -->
+                                        <top>100</top>
+                                        <left>-1000</left>
+                                        <bottom>200</bottom>
+                                        <showonepage>true</showonepage>
+                                        <width>8</width>
+                                        <orientation>vertical</orientation>
+                                        <animation effect="fade" condition="true" time="0" start="100" end="0">Conditional</animation>
+                                    </control>
                                     <control type="group">
-                                        <left>20</left>
-                                        <right>20</right>
+                                        <top>-60</top>
+                                        <visible>Container(9609).HasPrevious</visible>
+                                        <include>Animation_FadeIn</include>
+                                        <include>Animation_FadeOut</include>
+                                        <include>Object_DoubleArrow_Up</include>
+                                    </control>
+
+                                    <control type="group">
                                         <top>20</top>
-                                        <bottom>20</bottom>
-                                        <control type="scrollbar" id="9602">
-                                            <onback condition="Control.IsVisible(3000)">3000</onback>
-                                            <onback condition="!Control.IsVisible(3000) + Control.IsVisible(300)">300</onback>
-                                            <onback condition="!Control.IsVisible(3000) + !Control.IsVisible(300)">50</onback>
-                                            <ondown condition="Control.IsVisible(3000)">3000</ondown>
-                                            <ondown condition="!Control.IsVisible(3000) + Control.IsVisible(300)">300</ondown>
-                                            <ondown condition="!Control.IsVisible(3000) + !Control.IsVisible(300)">50</ondown>
-                                            <!-- <ondown>ActivateWindow(1143)</ondown> -->
-                                            <onup condition="Control.IsVisible(3000)">3000</onup>
-                                            <onup condition="!Control.IsVisible(3000) + Control.IsVisible(300)">300</onup>
-                                            <onup condition="!Control.IsVisible(3000) + !Control.IsVisible(300)">50</onup>
-                                            <onleft condition="Control.IsVisible(3000)">3000</onleft>
-                                            <onleft condition="!Control.IsVisible(3000) + Control.IsVisible(300)">300</onleft>
-                                            <onleft condition="!Control.IsVisible(3000) + !Control.IsVisible(300)">50</onleft>
-                                            <onright condition="Control.IsVisible(9604)">SetFocus(9604,0,absolute)</onright>
-                                            <onright condition="!Control.IsVisible(9604) + Control.IsVisible(3000)">3000</onright>
-                                            <onright condition="!Control.IsVisible(9604) + !Control.IsVisible(3000) + Control.IsVisible(300)">300</onright>
-                                            <onright condition="!Control.IsVisible(9604) + !Control.IsVisible(3000) + !Control.IsVisible(300)">50</onright>
-                                            <!-- <onright>SetFocus(9604,0,absolute)</onright> -->
-                                            <top>100</top>
-                                            <left>-1000</left>
-                                            <bottom>200</bottom>
-                                            <showonepage>true</showonepage>
-                                            <width>8</width>
-                                            <orientation>vertical</orientation>
-                                            <animation effect="fade" condition="true" time="0" start="100" end="0">Conditional</animation>
-                                        </control>
-                                        <control type="group">
-                                            <top>-60</top>
-                                            <visible>Container(9609).HasPrevious</visible>
-                                            <include>Animation_FadeIn</include>
-                                            <include>Animation_FadeOut</include>
-                                            <include>Object_DoubleArrow_Up</include>
-                                        </control>
+                                        <bottom>30</bottom>
+                                        <visible>Container(9609).HasNext</visible>
+                                        <include>Animation_FadeIn</include>
+                                        <include>Animation_FadeOut</include>
+                                        <include>Object_DoubleArrow_Down</include>
+                                    </control>
 
-                                        <control type="group">
-                                            <top>20</top>
-                                            <bottom>30</bottom>
-                                            <visible>Container(9609).HasNext</visible>
-                                            <include>Animation_FadeIn</include>
-                                            <include>Animation_FadeOut</include>
-                                            <include>Object_DoubleArrow_Down</include>
-                                        </control>
+                                    <control type="label">
+                                        <top>20</top>
+                                        <description>header label</description>
+                                        <left>0</left>
+                                        <right>0</right>
+                                        <height>45</height>
+                                        <font>font_overlay_title</font>
+                                        <textcolor>main_fg_100</textcolor>
+                                        <label>$VAR[Label_OverlayTitle]</label>
+                                    </control>
 
-                                        <control type="label">
-                                            <top>20</top>
-                                            <description>header label</description>
-                                            <left>0</left>
-                                            <right>0</right>
-                                            <height>45</height>
-                                            <font>font_overlay_title</font>
-                                            <textcolor>main_fg_100</textcolor>
-                                            <label>$VAR[Label_OverlayTitle]</label>
-                                        </control>
-
-                                        <control type="textbox" id="9609">
-                                            <description>textarea</description>
-                                            <left>0</left>
-                                            <right>0</right>
-                                            <top>150</top>
-                                            <bottom>70</bottom>
-                                            <align>left</align>
-                                            <textcolor>main_fg_70</textcolor>
-                                            <font>font_overlay_plotbox</font>
-                                            <label fallback="19055">$VAR[Label_OverlayPlot]$VAR[Label_OverlayCritics]</label>
-                                            <pagecontrol>9602</pagecontrol>
-                                            <autoscroll delay="8000" time="4000" repeat="12000">false</autoscroll>
-                                        </control>
+                                    <control type="textbox" id="9609">
+                                        <description>textarea</description>
+                                        <left>0</left>
+                                        <right>0</right>
+                                        <top>150</top>
+                                        <bottom>70</bottom>
+                                        <align>left</align>
+                                        <textcolor>main_fg_70</textcolor>
+                                        <font>font_overlay_plotbox</font>
+                                        <label fallback="19055">$VAR[Label_OverlayPlot]$VAR[Label_OverlayCritics]</label>
+                                        <pagecontrol>9602</pagecontrol>
+                                        <autoscroll delay="8000" time="4000" repeat="12000">false</autoscroll>
                                     </control>
                                 </control>
                             </control>
                         </control>
                     </control>
                 </control>
-                <control type="group">
-                    <left>1920</left>
-                    <width>1920</width>
-                    <height>1080</height>
-                    <control type="image">
-                        <texture colordiffuse="black">common/white.png</texture>
-                    </control>
-                    <control type="list" id="9604">
-                        <orientation>horizontal</orientation>
-                        <preloaditems>2</preloaditems>
-                        <onup>9602</onup>
-                        <ondown>9602</ondown>
-                        <onright>noop</onright>
-                        <onleft>9602</onleft>
-                        <onback>9602</onback>
-                        <scrolltime tween="quadratic">400</scrolltime>
-                        <visible>String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,tvshow) | String.Contains(ListItem.FolderPath,type=person)</visible>
-                        <itemlayout width="1920" height="1080">
-                            <control type="image">
-                                <aspectratio>keep</aspectratio>
-                                <texture background="true">$INFO[ListItem.Icon]</texture>
-                            </control>
-                        </itemlayout>
-                        <focusedlayout width="1920" height="1080">
-                            <control type="image">
-                                <aspectratio>keep</aspectratio>
-                                <texture background="true">$INFO[ListItem.Icon]</texture>
-                            </control>
-                        </focusedlayout>
-                        <include>Items_Info_Gallery</include>
-                        <content target="images">$VAR[Info_Fanart]</content>
-                        <content target="images">$VAR[Info_Posters]</content>
-                        <content target="images">$VAR[Info_PersonImages]</content>
-                    </control>
+            </control>
+            <control type="group">
+                <animation effect="slide" start="0" end="-1920" reversible="false" condition="Control.HasFocus(9604)" time="400" tween="quadratic">Conditional</animation>
+                <animation effect="slide" end="0" start="-1920" reversible="false" condition="!Control.HasFocus(9604)" time="400" tween="quadratic">Conditional</animation>
+                <left>1920</left>
+                <width>1920</width>
+                <height>1080</height>
+                <control type="image">
+                    <texture colordiffuse="black">common/white.png</texture>
+                </control>
+                <control type="list" id="9604">
+                    <orientation>horizontal</orientation>
+                    <preloaditems>2</preloaditems>
+                    <onup>9602</onup>
+                    <ondown>9602</ondown>
+                    <onright>noop</onright>
+                    <onleft>9602</onleft>
+                    <onback>9602</onback>
+                    <scrolltime tween="quadratic">400</scrolltime>
+                    <visible>String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,tvshow) | String.Contains(ListItem.FolderPath,type=person)</visible>
+                    <itemlayout width="1920" height="1080">
+                        <control type="image">
+                            <aspectratio>keep</aspectratio>
+                            <texture background="true">$INFO[ListItem.Icon]</texture>
+                        </control>
+                    </itemlayout>
+                    <focusedlayout width="1920" height="1080">
+                        <control type="image">
+                            <aspectratio>keep</aspectratio>
+                            <texture background="true">$INFO[ListItem.Icon]</texture>
+                        </control>
+                    </focusedlayout>
+                    <include>Items_Info_Gallery</include>
+                    <content target="images">$VAR[Info_Fanart]</content>
+                    <content target="images">$VAR[Info_Posters]</content>
+                    <content target="images">$VAR[Info_PersonImages]</content>
                 </control>
             </control>
         </definition>

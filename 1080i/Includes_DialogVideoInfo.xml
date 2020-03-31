@@ -303,7 +303,6 @@
                 <onleft>Left</onleft>
                 <onright>SetFocus(50)</onright>
                 <onright>Right</onright>
-                <visible>!Skin.HasSetting(DisableExtendedInfo)</visible>
             </control>
         </control>
         <include content="Viewtype_Poster">
@@ -319,13 +318,12 @@
             <animation effect="fade" start="100" end="0" condition="!Integer.IsGreater(Container(50).NumItems,0) | Container(50).IsUpdating">Conditional</animation>
             <nested />
             <movement>3</movement>
-            <onfocus condition="!Skin.HasSetting(DisableExtendedInfo)">SetFocus(5000)</onfocus>
+            <onfocus>SetFocus(5000)</onfocus>
             <onback condition="Skin.HasSetting(DisableExtendedInfo)">SetFocus(5999)</onback>
             <onback>SetFocus(5000)</onback>
             <onback>300</onback>
         </include>
         <include content="Info_Widget_Poster">
-            <param name="includecondition" value="!Skin.HasSetting(DisableInfoListCrew)" />
             <param name="id" value="5001" />
             <param name="groupid" value="5101" />
             <param name="label" value="$VAR[Label_Info_Title,Cast of ,]" />
@@ -333,22 +331,6 @@
             <param name="label2" value="ListItem.Property(character)" />
             <param name="hideisupdating" value="true" />
             <param name="visible" value="Integer.IsEqual(Container(50).NumItems,0)" />
-            <movement>3</movement>
-            <include>Defs_InfoList_OnClick</include>
-            <include>Defs_InfoList_OnBack</include>
-            <content limit="25" target="videos">$VAR[Info_CastMembers]</content>
-        </include>
-    </include>
-
-    <include name="DialogVideoInfo_Widget_OnlineCast">
-        <include content="Info_Widget_Poster">
-            <param name="includecondition" value="!Skin.HasSetting(DisableInfoListCrew)" />
-            <param name="id" value="5000" />
-            <param name="groupid" value="5100" />
-            <param name="label" value="$VAR[Label_Info_Title,Cast of ,]" />
-            <param name="castlabel" value="true" />
-            <param name="label2" value="ListItem.Property(character)" />
-            <param name="hideisupdating" value="true" />
             <movement>3</movement>
             <include>Defs_InfoList_OnClick</include>
             <include>Defs_InfoList_OnBack</include>
