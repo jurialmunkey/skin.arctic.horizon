@@ -343,6 +343,13 @@
         <value>videos</value>
     </variable>
 
+    <include name="Defs_InfoButtonList">
+        <left>80</left>
+        <right>80</right>
+        <bottom>-50</bottom>
+        <height>130</height>
+    </include>
+
     <include name="Defs_ButtonList">
         <left>-20</left>
         <right>-26</right>

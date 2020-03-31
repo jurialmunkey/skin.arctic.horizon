@@ -52,9 +52,10 @@
                             <param name="height" value="auto" />
                         </include>
                     </control>
-                    <include content="Info_Button_Grouplist">
-                        <param name="includebuttons" value="Info_Buttons_Addon" />
-                    </include>
+                </include>
+                <include content="Info_Button_Grouplist">
+                    <param name="includebuttons" value="Info_Buttons_Addon" />
+                    <include>Defs_InfoButtonList</include>
                 </include>
                 <include content="Info_Widget_Poster">
                     <param name="includecondition" value="true" />
