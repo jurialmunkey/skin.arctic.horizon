@@ -80,7 +80,7 @@
                 <param name="label" value="$LOCALIZE[5]" />
                 <param name="icon" value="special://skin/extras/icons/settings.png" />
                 <param name="ondown" value="50" />
-                <param name="visible" value="!String.IsEmpty(ListItem.Property(Addon.ID)) + String.IsEqual(ListItem.Label2,Enabled) + !String.IsEqual(Container.FolderPath,addons://repos/) + Window.IsVisible(AddonBrowser.xml)" />
+                <param name="visible" value="!String.IsEmpty(ListItem.Property(Addon.ID)) + String.IsEqual(ListItem.Label2,$LOCALIZE[449]) + !String.IsEqual(Container.FolderPath,addons://repos/) + Window.IsVisible(AddonBrowser.xml)" />
                 <onclick>Addon.OpenSettings($INFO[ListItem.Property(Addon.ID)])</onclick>
             </include>
             <include content="Object_Info_Button" description="Install">
@@ -89,7 +89,7 @@
                 <param name="label" value="$LOCALIZE[24038]" />
                 <param name="icon" value="special://skin/extras/icons/download.png" />
                 <param name="ondown" value="50" />
-                <param name="visible" value="!String.IsEmpty(ListItem.Property(Addon.ID)) + !String.IsEqual(ListItem.Label2,Enabled) + !String.IsEqual(Container.FolderPath,addons://repos/) + Window.IsVisible(AddonBrowser.xml)" />
+                <param name="visible" value="!String.IsEmpty(ListItem.Property(Addon.ID)) + !String.IsEqual(ListItem.Label2,$LOCALIZE[449]) + !String.IsEqual(ListItem.Label2,$LOCALIZE[24023]) + !String.IsEqual(Container.FolderPath,addons://repos/) + Window.IsVisible(AddonBrowser.xml)" />
                 <onclick>InstallAddon($INFO[ListItem.Property(Addon.ID)])</onclick>
             </include>
             <!-- <include content="Object_Info_Button" description="Play">
