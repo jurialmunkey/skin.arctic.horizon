@@ -64,10 +64,15 @@
                 <include content="DialogVideoInfo_WidgetGroupList">
                     <include content="DialogVideoInfo_MainInfo">
                         <include content="View_Info_Grouplist">
-                            <height>285</height>
+                            <height>400</height>
                         </include>
-                        <include>Info_Button_Grouplist</include>
                     </include>
+					<include content="Info_Button_Grouplist">
+						<left>80</left>
+						<top>-45</top>
+						<bottom>0</bottom>
+						<height>80</height>
+					</include>
                     <include content="DialogVideoInfo_Widget_Details">
                         <param name="id" value="7100" />
                         <param name="uid" value="2003" />
