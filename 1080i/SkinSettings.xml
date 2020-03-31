@@ -736,12 +736,12 @@
                         <onclick>RunScript(script.skinshortcuts,type=manage&amp;group=powermenu)</onclick>
                     </control>
 
-                    <!-- <control type="button" id="19704" description="Info lists">
+                    <control type="button" id="19704" description="Info lists">
                         <visible>Integer.IsEqual(Window.Property(CurrentFocus),9007)</visible>
                         <include>Defs_Settings_Button</include>
                         <label>$LOCALIZE[31015]</label>
                         <onclick>ActivateWindow(1119)</onclick>
-                    </control> -->
+                    </control>
 
                     <control type="button" id="19706" description="Search lists">
                         <visible>Integer.IsEqual(Window.Property(CurrentFocus),9007)</visible>

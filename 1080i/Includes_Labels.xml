@@ -338,27 +338,6 @@
         <value condition="Window.IsActive(playersettings)">[CAPITALIZE]$LOCALIZE[14200][/CAPITALIZE]</value>
     </variable>
 
-    <variable name="Label_Settings_Information">
-        <value condition="Window.IsActive(skinsettings) + !Control.HasFocus(300) + Integer.IsEqual(Window.Property(CurrentFocus),9001)">$LOCALIZE[31070]</value>
-        <value condition="Window.IsActive(skinsettings) + !Control.HasFocus(300) + Integer.IsEqual(Window.Property(CurrentFocus),9002)">$LOCALIZE[31071]</value>
-        <value condition="Window.IsActive(skinsettings) + !Control.HasFocus(300) + Integer.IsEqual(Window.Property(CurrentFocus),9003)">$LOCALIZE[31073]</value>
-        <value condition="Window.IsActive(skinsettings) + !Control.HasFocus(300) + Integer.IsEqual(Window.Property(CurrentFocus),9004)">$LOCALIZE[31074]</value>
-        <value condition="Window.IsActive(skinsettings) + !Control.HasFocus(300) + Integer.IsEqual(Window.Property(CurrentFocus),9005)">$LOCALIZE[31075]</value>
-        <value condition="Window.IsActive(skinsettings) + !Control.HasFocus(300) + Integer.IsEqual(Window.Property(CurrentFocus),9006)">$LOCALIZE[31076]</value>
-        <value condition="Window.IsActive(skinsettings) + !Control.HasFocus(300) + Integer.IsEqual(Window.Property(CurrentFocus),9007)">$LOCALIZE[31077]</value>
-        <value condition="Window.IsActive(skinsettings) + !Control.HasFocus(300) + Integer.IsEqual(Window.Property(CurrentFocus),9008)">$LOCALIZE[31078]</value>
-        <value condition="Window.IsActive(skinsettings) + !Control.HasFocus(300) + Integer.IsEqual(Window.Property(CurrentFocus),9009)">$LOCALIZE[31080]</value>
-        <value condition="Window.IsActive(skinsettings)">$LOCALIZE[31081]</value>
-        <value condition="Window.IsActive(systeminfo)">$LOCALIZE[31082]</value>
-        <value condition="Window.IsActive(systemsettings)">$LOCALIZE[31083]</value>
-        <value condition="Window.IsActive(pvrsettings)">$LOCALIZE[31084]</value>
-        <value condition="Window.IsActive(profiles)">$LOCALIZE[31085]</value>
-        <value condition="Window.IsActive(servicesettings)">$LOCALIZE[31086]</value>
-        <value condition="Window.IsActive(interfacesettings)">$LOCALIZE[31089]</value>
-        <value condition="Window.IsActive(mediasettings)">$LOCALIZE[31090]</value>
-        <value condition="Window.IsActive(playersettings)">$LOCALIZE[31091]</value>
-    </variable>
-
     <variable name="Label_MainTitle">
         <value condition="Window.IsVisible(MyPlaylist.xml) + String.IsEqual(ListItem.DBType,song)">$INFO[ListItem.Album]</value>
         <value condition="Container.Content(artists) + !String.IsEmpty(ListItem.Artist)">$INFO[ListItem.Artist]</value>

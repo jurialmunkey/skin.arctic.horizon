@@ -569,6 +569,7 @@
 
     <include name="DialogVideoInfo_Widget_ImageGallery">
         <include content="Info_Widget_Poster">
+            <param name="includecondition" value="!Skin.HasSetting(DisableInfoListFanart)" />
             <param name="id" value="6000" />
             <param name="groupid" value="6100" />
             <param name="label" value="Gallery" />

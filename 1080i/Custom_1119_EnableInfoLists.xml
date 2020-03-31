@@ -7,7 +7,7 @@
         <control type="group">
             <include content="Dialog_Standard_Group">
                 <param name="width" value="1180" />
-                <param name="height" value="910" />
+                <param name="height" value="950" />
             </include>
 
             <control type="label">
@@ -16,12 +16,20 @@
                 <include>Dialog_Standard_Header</include>
             </control>
 
+            <include content="Defs_Settings_Gradient">
+                <param name="id" value="9000" />
+                <top>dialog_top</top>
+                <height>item_list_height</height>
+                <width>780</width>
+                <visible>ControlGroup(9000).HasFocus()</visible>
+            </include>
+
             <control type="grouplist" id="9000">
                 <onright>61</onright>
                 <description>Control Area</description>
                 <width>780</width>
                 <top>dialog_top</top>
-                <height>780</height>
+                <height>800</height>
                 <itemgap>0</itemgap>
                 <pagecontrol>61</pagecontrol>
                 <orientation>vertical</orientation>
@@ -34,18 +42,18 @@
                     <selected>!Skin.HasSetting(DisableExtendedInfo)</selected>
                 </control>
                 <control type="radiobutton" id="9002">
+                    <label>$LOCALIZE[31251]</label>
+                    <radioposx>730</radioposx>
+                    <include>Dialog_Standard_Button</include>
+                    <onclick>Skin.ToggleSetting(DisableInfoListCrew)</onclick>
+                    <selected>!Skin.HasSetting(DisableInfoListCrew)</selected>
+                </control>
+                <control type="radiobutton" id="9003">
                     <label>$LOCALIZE[31006]</label>
                     <radioposx>730</radioposx>
                     <include>Dialog_Standard_Button</include>
                     <onclick>Skin.ToggleSetting(DisableInfoListSets)</onclick>
                     <selected>!Skin.HasSetting(DisableInfoListSets)</selected>
-                </control>
-                <control type="radiobutton" id="9003">
-                    <label>$LOCALIZE[31135]</label>
-                    <radioposx>730</radioposx>
-                    <include>Dialog_Standard_Button</include>
-                    <onclick>Skin.ToggleSetting(DisableInfoListSimilar)</onclick>
-                    <selected>!Skin.HasSetting(DisableInfoListSimilar)</selected>
                 </control>
                 <control type="radiobutton" id="9004">
                     <label>$LOCALIZE[20339]</label>
@@ -62,40 +70,55 @@
                     <selected>!Skin.HasSetting(DisableInfoListStudio)</selected>
                 </control>
                 <control type="radiobutton" id="9006">
-                    <label>$LOCALIZE[31136]</label>
+                    <label>$LOCALIZE[31252]</label>
                     <radioposx>730</radioposx>
                     <include>Dialog_Standard_Button</include>
-                    <onclick>Skin.ToggleSetting(DisableInfoListNextUp)</onclick>
-                    <selected>!Skin.HasSetting(DisableInfoListNextUp)</selected>
+                    <onclick>Skin.ToggleSetting(DisableInfoListRecommended)</onclick>
+                    <selected>!Skin.HasSetting(DisableInfoListRecommended)</selected>
                 </control>
                 <control type="radiobutton" id="9007">
-                    <label>$LOCALIZE[33054]</label>
+                    <label>$LOCALIZE[31135]</label>
                     <radioposx>730</radioposx>
                     <include>Dialog_Standard_Button</include>
-                    <onclick>Skin.ToggleSetting(DisableInfoListSeasons)</onclick>
-                    <selected>!Skin.HasSetting(DisableInfoListSeasons)</selected>
+                    <onclick>Skin.ToggleSetting(DisableInfoListSimilar)</onclick>
+                    <selected>!Skin.HasSetting(DisableInfoListSimilar)</selected>
                 </control>
                 <control type="radiobutton" id="9008">
-                    <label>$LOCALIZE[31137]</label>
+                    <label>$LOCALIZE[345]</label>
+                    <radioposx>730</radioposx>
+                    <include>Dialog_Standard_Button</include>
+                    <onclick>Skin.ToggleSetting(DisableInfoListYear)</onclick>
+                    <selected>!Skin.HasSetting(DisableInfoListYear)</selected>
+                </control>
+                <control type="radiobutton" id="9009">
+                    <label>$LOCALIZE[515]</label>
+                    <radioposx>730</radioposx>
+                    <include>Dialog_Standard_Button</include>
+                    <onclick>Skin.ToggleSetting(DisableInfoListGenre)</onclick>
+                    <selected>!Skin.HasSetting(DisableInfoListGenre)</selected>
+                </control>
+                <control type="radiobutton" id="9010">
+                    <label>$LOCALIZE[31253]</label>
                     <radioposx>730</radioposx>
                     <include>Dialog_Standard_Button</include>
                     <onclick>Skin.ToggleSetting(DisableInfoListCastFeature)</onclick>
                     <selected>!Skin.HasSetting(DisableInfoListCastFeature)</selected>
                 </control>
-                <control type="radiobutton" id="9009">
-                    <label>$LOCALIZE[31138]</label>
+                <control type="radiobutton" id="9011">
+                    <label>$LOCALIZE[31232]</label>
                     <radioposx>730</radioposx>
                     <include>Dialog_Standard_Button</include>
-                    <onclick>Skin.ToggleSetting(DisableInfoListExtras)</onclick>
-                    <selected>!Skin.HasSetting(DisableInfoListExtras)</selected>
+                    <onclick>Skin.ToggleSetting(DisableInfoListCastPosters)</onclick>
+                    <selected>!Skin.HasSetting(DisableInfoListCastPosters)</selected>
                 </control>
-                <control type="radiobutton" id="9010">
-                    <label>YouTube</label>
+                <control type="radiobutton" id="9012">
+                    <label>$LOCALIZE[20445]</label>
                     <radioposx>730</radioposx>
                     <include>Dialog_Standard_Button</include>
-                    <onclick>Skin.ToggleSetting(DisableInfoListYouTube)</onclick>
-                    <selected>!Skin.HasSetting(DisableInfoListYouTube)</selected>
+                    <onclick>Skin.ToggleSetting(DisableInfoListCastFanart)</onclick>
+                    <selected>!Skin.HasSetting(DisableInfoListCastFanart)</selected>
                 </control>
+                
             </control>
 
             <include content="Dialog_Scrollbar">
