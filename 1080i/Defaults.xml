@@ -206,7 +206,7 @@
 
     <expression name="Exp_View50Tags">[[Container.Content(playlists) | [Container.Content() + String.IsEmpty(Container.PluginName)] | [[Container.Content(tags) | Container.Content(countries) | Container.Content(genres) | Container.Content(studios) | Container.Content(years) | Container.Content(directors)] + !String.IsEmpty(Container.PluginName)]] + !Window.IsVisible(MyPlaylist.xml) + !Window.IsVisible(MyPVRTimers.xml) + !Window.IsVisible(MyPVRRecordings.xml) + !Window.IsVisible(MyPVRSearch.xml)]</expression>
 
-    <expression name="Exp_View500List">[Container.Content(songs) | [Container.Content() + !String.IsEmpty(Container.PluginName)] | [Container.Content(addons) + !String.IsEmpty(Container.PluginName)] | Window.IsVisible(MyPVRSearch.xml) | Window.IsVisible(MyPVRRecordings.xml) | Window.IsVisible(MyPVRTimers.xml) | Window.IsVisible(musicplaylist)]</expression>
+    <expression name="Exp_View500List">[Container.Content(songs) | [[Container.Content() |  Container.Content(addons)] + !String.IsEmpty(Container.PluginName)] | Window.IsVisible(MyPVRSearch.xml) | Window.IsVisible(MyPVRRecordings.xml) | Window.IsVisible(MyPVRTimers.xml) | Window.IsVisible(musicplaylist)]</expression>
 
     <expression name="Exp_View56Hubs">[[Container.Content(tags) | Container.Content(countries) | Container.Content(genres) | Container.Content(studios) | Container.Content(years) | Container.Content(directors)] + String.IsEmpty(Container.PluginName)]</expression>
 

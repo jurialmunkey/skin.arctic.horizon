@@ -992,6 +992,11 @@
             <param name="textcolor" value="$PARAM[textcolor]" />
             <param name="visible" value="!String.IsEmpty($PARAM[container]ListItem.AddonCreator) + $PARAM[visible]" />
         </include>
+        <include content="Object_Info_Line_Label">
+            <param name="label" value="$INFO[$PARAM[container]ListItem.Label2]" />
+            <param name="textcolor" value="$PARAM[textcolor]" />
+            <param name="visible" value="!String.IsEmpty($PARAM[container]ListItem.Label2) + $PARAM[visible]" />
+        </include>
     </include>
 
     <include name="Object_Info_Line_PVR">
