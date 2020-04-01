@@ -120,9 +120,19 @@ msgctxt "#31021"
 msgid "Colors"
 msgstr ""
 
+#: /1080i/SkinSettings.xml
+msgctxt "#31022"
+msgid "Autoscroll widgets"
+msgstr ""
+
 #: /1080i/Includes_Items.xml
 msgctxt "#31023"
 msgid "Fullscreen"
+msgstr ""
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31024"
+msgid "Use showcase hub for fullscreen widget"
 msgstr ""
 
 #: /1080i/SkinSettings.xml

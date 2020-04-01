@@ -4,7 +4,7 @@
     <onload>Skin.SetBool(TMDbHelper.Service)</onload>
     <defaultcontrol always="false">308</defaultcontrol>
     <onload condition="Window.Previous(VideoFullScreen.xml) | Window.Previous(MusicVisualisation.xml)">SetFocus(301)</onload>
-    <onload condition="Control.HasFocus(301) | Control.HasFocus(302)">SetFocus(3992)</onload>
+    <onload condition="Control.HasFocus(301) | Control.HasFocus(303)">SetFocus(3992)</onload>
     <onload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=301&amp;levels=1&amp;group=mainmenu|powermenu|searchmenu)</onload>
     <onload condition="String.IsEmpty(Window(Home).Property(SkinSplashStarted))">AlarmClock(SkinSplashStarted,SetProperty(SkinSplashStarted,1,home),00:01,silent,false)</onload>
     <onunload>ClearProperty(TMDbHelper.WidgetContainer,Home)</onunload>
@@ -29,66 +29,8 @@
 
         <include>Home_Multi</include>
         <include>Object_NowPlaying</include>
-
-        <include content="Global_Overlay">
-            <left>160</left>
-            <visible>Control.HasFocus(302)</visible>
-        </include>
-
-        <include content="Dialog_PowerMenu">
-            <param name="id" value="302" />
-            <param name="header" value="$INFO[Container(301).ListItem.Label]" />
-            <param name="items" value="Items_SubMenu" />
-            <param name="visible" value="Control.HasFocus(302)" />
-            <param name="onleft" value="SetFocus(3992)" />
-            <param name="onright" value="SetFocus(3992)" />
-            <param name="onback" value="SetFocus(3992)" />
-            <param name="icon-visible" value="true" />
-            <top>200</top>
-            <left>-450</left>
-            <width>450</width>
-            <animation effect="slide" start="0" end="650" condition="Control.HasFocus(302)">Conditional</animation>
-            <animation type="WindowClose">
-                <effect type="slide" start="0" end="-160" time="400" tween="quadratic" />
-                <effect type="fade" start="100" end="0" tween="cubic" easing="out" delay="0" time="400" />
-            </animation>
-            <animation effect="slide" end="0,-40" condition="Integer.IsLess(Container(302).NumItems,8)">Conditional</animation>
-            <animation effect="slide" end="0,-40" condition="Integer.IsLess(Container(302).NumItems,7)">Conditional</animation>
-            <animation effect="slide" end="0,-40" condition="Integer.IsLess(Container(302).NumItems,6)">Conditional</animation>
-            <animation effect="slide" end="0,-40" condition="Integer.IsLess(Container(302).NumItems,5)">Conditional</animation>
-            <animation effect="slide" end="0,-40" condition="Integer.IsLess(Container(302).NumItems,4)">Conditional</animation>
-            <animation effect="slide" end="0,-40" condition="Integer.IsLess(Container(302).NumItems,3)">Conditional</animation>
-            <animation effect="slide" end="0,-40" condition="Integer.IsLess(Container(302).NumItems,2)">Conditional</animation>
-
-            <animation effect="slide" end="0,80" condition="Integer.IsGreater(Container(301).Position,0) + !Integer.IsGreater(Container(302).NumItems,7)">Conditional</animation>
-            <animation effect="slide" end="0,80" condition="Integer.IsGreater(Container(301).Position,1) + !Integer.IsGreater(Container(302).NumItems,6)">Conditional</animation>
-            <animation effect="slide" end="0,80" condition="Integer.IsGreater(Container(301).Position,2) + !Integer.IsGreater(Container(302).NumItems,5)">Conditional</animation>
-            <animation effect="slide" end="0,80" condition="Integer.IsGreater(Container(301).Position,3) + !Integer.IsGreater(Container(302).NumItems,4)">Conditional</animation>
-            <animation effect="slide" end="0,80" condition="Integer.IsGreater(Container(301).Position,4) + !Integer.IsGreater(Container(302).NumItems,3)">Conditional</animation>
-            <animation effect="slide" end="0,80" condition="Integer.IsGreater(Container(301).Position,5) + !Integer.IsGreater(Container(302).NumItems,2)">Conditional</animation>
-            <animation effect="slide" end="0,80" condition="Integer.IsGreater(Container(301).Position,6) + !Integer.IsGreater(Container(302).NumItems,1)">Conditional</animation>
-        </include>
-
-        <control type="image">
-            <left>184</left>
-            <top>312</top>
-            <height>16</height>
-            <width>16</width>
-            <include>Animation_FadeIn_SlideUp</include>
-            <visible>Control.HasFocus(302)</visible>
-            <animation type="WindowClose">
-                <effect type="slide" start="0" end="-160" time="400" tween="quadratic" />
-                <effect type="fade" start="100" end="0" tween="cubic" easing="out" delay="0" time="400" />
-            </animation>
-            <texture colordiffuse="dialog_bg_100">common/arrow-menu.png</texture>
-            <animation effect="slide" end="0,80" condition="Integer.IsGreater(Container(301).Position,0)">Conditional</animation>
-            <animation effect="slide" end="0,80" condition="Integer.IsGreater(Container(301).Position,1)">Conditional</animation>
-            <animation effect="slide" end="0,80" condition="Integer.IsGreater(Container(301).Position,2)">Conditional</animation>
-            <animation effect="slide" end="0,80" condition="Integer.IsGreater(Container(301).Position,3)">Conditional</animation>
-            <animation effect="slide" end="0,80" condition="Integer.IsGreater(Container(301).Position,4)">Conditional</animation>
-            <animation effect="slide" end="0,80" condition="Integer.IsGreater(Container(301).Position,5)">Conditional</animation>
-            <animation effect="slide" end="0,80" condition="Integer.IsGreater(Container(301).Position,6)">Conditional</animation>
-        </control>
+        <include>Home_Submenu</include>
+        
         
         <control type="group">
             <visible>String.IsEmpty(Skin.String(StartupPlaylist))</visible>

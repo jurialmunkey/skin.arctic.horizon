@@ -316,7 +316,8 @@
                 <bottom>-20</bottom>
                 <onup>302</onup>
                 <ondown>60</ondown>
-                <onback>302</onback>
+                <onback condition="!Window.IsVisible(Home)">302</onback>
+                <onback condition="Window.IsVisible(Home)">3101</onback>
                 <pagecontrol>60</pagecontrol>
                 <content target="$SKINSHORTCUTS[widgetTarget]">$SKINSHORTCUTS[widgetPath]</content>
                 <skinshortcuts>visibility</skinshortcuts>
@@ -345,7 +346,8 @@
                 <bottom>-20</bottom>
                 <onup>302</onup>
                 <ondown>60</ondown>
-                <onback>302</onback>
+                <onback condition="!Window.IsVisible(Home)">302</onback>
+                <onback condition="Window.IsVisible(Home)">3101</onback>
                 <pagecontrol>60</pagecontrol>
                 <content target="$SKINSHORTCUTS[widgetTarget]">$SKINSHORTCUTS[widgetPath]</content>
                 <visible>String.IsEqual(Container(301).ListItem.Property(submenuVisibility),num-$SKINSHORTCUTS[submenuVisibility]) | String.IsEqual(Container(301).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility])</visible>
@@ -652,7 +654,10 @@
         <controls>
             <onright condition="String.IsEqual(Container(301).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility]) + !Integer.IsEqual(Container(3700).NumItems,0) + String.IsEmpty(Window(Home).Property(CurrentWidget))">SetFocus($PYTHON[50000 + int(id) * 100])</onright>
             <onright condition="String.IsEqual(Container(301).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility]) + !Integer.IsEqual(Container(3700).NumItems,0) + !String.IsEmpty(Window(Home).Property(CurrentWidget))">SetFocus($INFO[Window(Home).Property(CurrentWidget)],0,absolute)</onright>
-            <onright condition="Integer.IsEqual(Container(3700).NumItems,0)">SetFocus(3001)</onright>
+            
+            <onright condition="Integer.IsEqual(Container(3700).NumItems,0) + !Skin.HasSetting(FullscreenWidgetShowcase)">SetFocus(3001)</onright>
+            <onright condition="Integer.IsEqual(Container(3700).NumItems,0) + Skin.HasSetting(FullscreenWidgetShowcase) + Integer.IsGreater(Container(302).NumItems,0)">SetFocus(3101)</onright>
+            <onright condition="Integer.IsEqual(Container(3700).NumItems,0) + Skin.HasSetting(FullscreenWidgetShowcase) + !Integer.IsGreater(Container(302).NumItems,0)">SetFocus(3101)</onright>
 
             <onfocus condition="String.IsEqual(Container(301).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility]) + Integer.IsEqual(Container(3700).NumItems,1)">SetProperty(TMDbHelper.WidgetContainer,$PYTHON[30001 + int(id) * 100],Home)</onfocus>
             <onfocus condition="String.IsEqual(Container(301).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility]) + Integer.IsEqual(Container(3700).NumItems,0)">SetProperty(TMDbHelper.WidgetContainer,3001,Home)</onfocus>
