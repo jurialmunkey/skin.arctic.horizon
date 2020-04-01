@@ -446,6 +446,15 @@
                 <shortcut widget="GroupedDeletedRecordings" label="$LOCALIZE[31384]" icon="DefaultAddonPVRClient.png" widgetTarget="pvr">pvr://recordings/tv/deleted?view=grouped</shortcut>
                 <shortcut widget="Timers" label="$LOCALIZE[19040]" icon="DefaultAddonPVRClient.png" widgetTarget="pvr">pvr://timers/tv/timers</shortcut>
             </node>
+            <node label="$LOCALIZE[19021]">
+                <shortcut widget="RadioLastPlayedChannels" label="$LOCALIZE[31381]" icon="DefaultAddonPVRClient.png" widgetTarget="pvr">pvr://channels/radio/*?view=lastplayed</shortcut>
+                <shortcut widget="RadioAllChannels" label="$LOCALIZE[19287]" icon="DefaultAddonPVRClient.png" widgetTarget="pvr">pvr://channels/radio/*</shortcut>
+                <shortcut widget="RadioActiveRecordings" label="$LOCALIZE[31382]" icon="DefaultAddonPVRClient.png" widgetTarget="pvr">pvr://recordings/radio/active?view=flat</shortcut>
+                <shortcut widget="RadioGroupedActiveRecordings" label="$LOCALIZE[31383]" icon="DefaultAddonPVRClient.png" widgetTarget="pvr">pvr://recordings/radio/active?view=grouped</shortcut>
+                <shortcut widget="RadioDeletedRecordings" label="$LOCALIZE[19184]" icon="DefaultAddonPVRClient.png" widgetTarget="pvr">pvr://recordings/radio/deleted?view=flat</shortcut>
+                <shortcut widget="RadioGroupedDeletedRecordings" label="$LOCALIZE[31384]" icon="DefaultAddonPVRClient.png" widgetTarget="pvr">pvr://recordings/radio/deleted?view=grouped</shortcut>
+                <shortcut widget="RadioTimers" label="$LOCALIZE[19040]" icon="DefaultAddonPVRClient.png" widgetTarget="pvr">pvr://timers/radio/timers</shortcut>
+            </node>
             <node label="$LOCALIZE[29921]">
                 <content>widgets</content>
                 <shortcut widget="Submenu" label="Submenu" icon="DefaultPlaylist.png">Submenu</shortcut>
