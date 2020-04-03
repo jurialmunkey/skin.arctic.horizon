@@ -460,14 +460,21 @@
         </control>
     </include>
 
-    <include name="Defs_Hidden_Button">
-        <top>-100</top>
+    <include name="Defs_Offscreen">
+        <top>-1000</top>
+        <left>-1000</left>
         <width>1</width>
         <height>1</height>
-        <visible allowhiddenfocus="true">False</visible>
+    </include>
+    <include name="Defs_Offscreen_Button">
+        <include>Defs_Offscreen</include>
         <texturefocus />
         <texturenofocus />
         <font />
+    </include>
+    <include name="Defs_Hidden_Button">
+        <include>Defs_Offscreen_Button</include>
+        <visible allowhiddenfocus="true">False</visible>
     </include>
 
     <include name="Defs_Hidden_List">

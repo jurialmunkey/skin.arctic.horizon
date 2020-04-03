@@ -222,6 +222,6 @@
 
     <expression name="Exp_ShowPlotOverlay">[ControlGroup(9601).HasFocus() | Control.HasFocus(9603) | Control.HasFocus(9604)]</expression>
 
-    <expression name="Exp_GlobalBackground">[!Player.HasMedia | [Player.HasVideo + !Skin.HasSetting(global.showvideo)] | [!Skin.HasSetting(global.showvisualisation) + Player.HasAudio] | [Player.HasAudio + !String.IsEmpty(Window(Home).Property(PlayingBackgroundMedia))]]</expression>
+    <expression name="Exp_GlobalBackground">[!Player.HasMedia | [Player.HasVideo + !Skin.HasSetting(global.showvideo)] | [Player.HasAudio + !Skin.HasSetting(global.showvisualisation)] | [Player.HasAudio + !String.IsEmpty(Window(Home).Property(PlayingBackgroundMedia))]]</expression>
 
 </includes>

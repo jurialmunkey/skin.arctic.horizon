@@ -21,7 +21,6 @@
             <texture colordiffuse="black">common/white.png</texture>
         </control>
         <control type="videowindow">
-            <visible>Player.HasVideo</visible>
             <include>Dimensions_Fullscreen</include>
         </control>
         <control type="image" description="Background">
@@ -33,53 +32,27 @@
 
     <include name="Global_Videowindow_Hidden">
         <control type="videowindow">
-            <visible>Player.HasVideo</visible>
-            <visible>String.IsEmpty(Window(Home).Property(HasTrailer))</visible>
             <include>Dimensions_Fullscreen</include>
         </control>
     </include>
-    
-    <include name="Global_Visualisation">
-        <control type="group">
-            <visible>String.IsEmpty(Window(10025).Property(PlayingBackgroundMedia)) + Player.HasAudio</visible>
-            
-            <control type="visualisation">
-                <visible>Skin.HasSetting(OSDVisualisation.ShowFanart) | [!Skin.HasSetting(musicvis.fanartfallback) + [Skin.HasSetting(ArtistSlideShow.Disabled)]]</visible>
-                <description>visualisation</description>
-                <include>Dimensions_Fullscreen</include>
-                <include>Animation_FadeIn</include>
-                <include>Animation_FadeOut</include>
-            </control>
-            
-            <control type="multiimage">
-                <aspectratio>scale</aspectratio>
-                <include>Dimensions_Fullscreen</include>
-                <include>Defs_TimePerImage</include>
-                <randomize>true</randomize>
-                <fadetime>600</fadetime>
-                <loop>true</loop>
-                <imagepath background="true">$VAR[Image_ArtistFanartVis]</imagepath>
-                <animation effect="fade" start="100" end="65" time="0" condition="Skin.HasSetting(OSDVisualisation.ShowFanart)">Conditional</animation>
-                <animation effect="zoom" start="110" end="130" center="auto" time="10000" tween="sine" easing="inout" pulse="true" condition="Skin.HasSetting(ArtistSlideshow.Animate)">Conditional</animation>
-                <animation effect="slide" start="-30,-30" end="30,30" time="6000" tween="sine" easing="inout" pulse="true" condition="Skin.HasSetting(ArtistSlideshow.Animate)">Conditional</animation>
-                <include>Animation_FadeIn</include>
-                <include>Animation_FadeOut</include>
-            </control>
 
+    <include name="Global_Background_BlurControl">
+        <control type="image" id="7975">
+            <include>Defs_Offscreen</include>
+            <texture background="true">$VAR[Global_Background_ImageBlur_Var]</texture>
         </control>
     </include>
 
     <include name="Global_Background">
-        <control type="image" id="7975">
-            <left>-2160</left>
-            <width>1</width>
-            <height>1</height>
-            <texture background="true">$VAR[Global_Background_ImageBlur_Var]</texture>
-            <visible>System.HasAddon(script.colorbox)</visible>
-            <visible>!Skin.HasSetting(DisableBlur)</visible>
-        </control>
-        <include condition="!Skin.HasSetting(global.showvideo)">Global_Videowindow_Hidden</include>
+        <include condition="System.HasAddon(script.colorbox) + !Skin.HasSetting(DisableBlur)">Global_Background_BlurControl</include>
         <include>Global_Background_Main</include>
+    </include>
+
+    <include name="Global_VideoWindow_Fade">
+        <control type="image">
+            <texture colordiffuse="Background">common/bg.jpg</texture>
+            <animation effect="fade" end="$PARAM[fade]" condition="True">Conditional</animation>
+        </control>
     </include>
 
     <include name="Global_Background_Main">
@@ -88,7 +61,13 @@
                 <visible>!$EXP[Exp_GlobalBackground]</visible>
                 <visible>String.IsEmpty(Window(Home).Property(HasTrailer))</visible>
                 <include condition="Skin.HasSetting(global.showvideo)">Global_Videowindow</include>
-                <include condition="Skin.HasSetting(global.showvisualisation)">Global_Visualisation</include>
+                <include condition="!Skin.HasSetting(global.showvideo)">Global_Videowindow_Hidden</include>
+                <include content="Global_VideoWindow_Fade" condition="Skin.HasSetting(global.showvideo) + System.HasAddon(script.colorbox) + !Skin.HasSetting(DisableBlur)">
+                    <param name="fade" value="70" />
+                </include>
+                <include content="Global_VideoWindow_Fade" condition="Skin.HasSetting(global.showvideo) + [!System.HasAddon(script.colorbox) | Skin.HasSetting(DisableBlur)]">
+                    <param name="fade" value="40" />
+                </include>
             </control>
         </include>
     </include>
@@ -111,6 +90,15 @@
         </control>
     </include>
 
+    <include name="Global_Background_Overlay">
+        <control type="image">
+            <texture colordiffuse="$VAR[ColorHighlight4]" background="true">common/vignette-white.png</texture>
+        </control>
+        <control type="image">
+            <texture background="true">common/vignette-full.png</texture>
+        </control>
+    </include>
+
     <include name="Global_Background_Artwork">
         <control type="group">
             <control type="image">
@@ -123,34 +111,21 @@
                 <width>1920</width>
                 <height>1080</height>
                 <aspectratio>scale</aspectratio>
-                <include condition="[System.HasAddon(script.colorbox) + !Skin.HasSetting(DisableBlur)]">Defs_Global_Fade_Blur</include>
+                <include condition="System.HasAddon(script.colorbox) + !Skin.HasSetting(DisableBlur)">Defs_Global_Fade_Blur</include>
                 <fadetime>600</fadetime>
                 <imagepath background="true">$VAR[Global_Background_Image]</imagepath>
-                <animation effect="fade" end="50" condition="[System.HasAddon(script.colorbox) + !Skin.HasSetting(DisableBlur)]">Conditional</animation>
-                <animation effect="fade" end="40" condition="[!System.HasAddon(script.colorbox) | Skin.HasSetting(DisableBlur)]">Conditional</animation>
+                <animation effect="fade" end="50" condition="System.HasAddon(script.colorbox) + !Skin.HasSetting(DisableBlur)">Conditional</animation>
+                <animation effect="fade" end="40" condition="!System.HasAddon(script.colorbox) | Skin.HasSetting(DisableBlur)">Conditional</animation>
                 <visible>$EXP[Exp_GlobalBackground]</visible>
                 <animation effect="fade" start="100" end="0" time="2000" tween="cubic" easing="inout" condition="Window.IsVisible(DialogBusy.xml) + [!System.HasAddon(script.colorbox) | Skin.HasSetting(DisableBlur)]">Conditional</animation>
             </control>
             <include condition="!Skin.HasSetting(DisableBusyBackground)">Global_Background_BusyLoader</include>
             <nested />
-            <control type="image">
-                <texture colordiffuse="$VAR[ColorHighlight4]" background="true">common/vignette-white.png</texture>
-                <visible>[!System.HasAddon(script.colorbox) | Skin.HasSetting(DisableBlur)]</visible>
-            </control>
-            <control type="image">
-                <texture background="true">common/vignette-full.png</texture>
-                <visible>[!System.HasAddon(script.colorbox) | Skin.HasSetting(DisableBlur)] | [Player.HasVideo + Skin.HasSetting(global.showvideo) + String.IsEmpty(Window(Home).Property(HasTrailer))]</visible>
-            </control>
-            <control type="image">
-                <texture colordiffuse="Background">common/bg.jpg</texture>
-                <animation effect="fade" end="50" condition="True">Conditional</animation>
-                <visible>System.HasAddon(script.colorbox) + !Skin.HasSetting(DisableBlur) + Player.HasVideo + Skin.HasSetting(global.showvideo) + String.IsEmpty(Window(Home).Property(HasTrailer))</visible>
-            </control>
+            <include condition="!System.HasAddon(script.colorbox) | Skin.HasSetting(DisableBlur)">Global_Background_Overlay</include>
         </control>
     </include>
 
     <variable name="Global_Background_Image_NoFanart">
-        <value condition="Window.IsVisible(Home) + !String.IsEmpty(Container(301).ListItem.Property(backgroundPlaylist))">$INFO[Container(3800).ListItem.Art(fanart)]</value>
         <value condition="Window.IsVisible(Home) + !String.IsEmpty(Container(301).ListItem.Property(Background))">$INFO[Container(301).ListItem.Property(Background)]</value>
         <value condition="!String.IsEmpty(Skin.String(fanart.fallback))">$INFO[Skin.String(fanart.fallback)]</value>
         <value>special://skin/extras/backgrounds/mountains3.jpg</value>

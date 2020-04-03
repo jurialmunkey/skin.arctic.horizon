@@ -28,7 +28,6 @@
     <include file="Includes_Items.xml" />
     <include file="Includes_Images.xml" />
     <include file="Includes_Labels.xml" />
-    <include file="Includes_NextAired.xml" />
     <include file="Includes_Object.xml" />
     <include file="Includes_OSD.xml" />
     <include file="Includes_Topbar.xml" />

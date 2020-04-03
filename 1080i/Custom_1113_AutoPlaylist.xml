@@ -4,20 +4,17 @@
     <defaultcontrol always="true">9000</defaultcontrol>
     <controls>
         <control type="button" id="9000">
-            <left>-100</left>
-            <width>10</width>
+            <include>Defs_Offscreen_Button</include>
             <onfocus>AlarmClock(tryagain,SetFocus(9002),00:01,silent)</onfocus>
             <onfocus condition="!String.IsEmpty(Skin.String(StartupPlaylist)) + !Player.HasMedia">PlayMedia($ESCINFO[Skin.String(StartupPlaylist)],1)</onfocus>
         </control>
         <control type="button" id="9001">
-            <left>-100</left>
-            <width>10</width>
+            <include>Defs_Offscreen_Button</include>
             <onfocus condition="!Player.HasMedia">ReplaceWindow($INFO[System.StartupWindow])</onfocus>
             <onfocus condition="Player.HasMedia">AlarmClock(tryagain,SetFocus(9002),00:01,silent)</onfocus>
         </control>
         <control type="button" id="9002">
-            <left>-100</left>
-            <width>10</width>
+            <include>Defs_Offscreen_Button</include>
             <onfocus>SetFocus(9001)</onfocus>
         </control>
         <control type="image" description="Background">
