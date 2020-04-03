@@ -125,7 +125,6 @@
 
     <include name="Viewtype_KodiLogo">
         <param name="textcolor" default="dialog_fg_100" />
-        <param name="logohastext" default="true" />
         <definition>
             <control type="group">
                 <centertop>100</centertop>
@@ -153,17 +152,6 @@
                         <texture diffuse="diffuse/circle.png">$INFO[System.ProfileThumb]</texture>
                     </control>
                 </control>
-                <control type="label">
-                    <top>3</top>
-                    <left>140</left>
-                    <align>left</align>
-                    <aligny>center</aligny>
-                    <textcolor>$PARAM[textcolor]</textcolor>
-                    <font>font_kodi</font>
-                    <label>KODI</label>
-                    <animation effect="fade" end="90" condition="true">Conditional</animation>
-                    <visible>$PARAM[logohastext]</visible>
-                </control>
             </control>
         </definition>
     </include>
@@ -178,9 +166,7 @@
                     <aspectratio align="left">scale</aspectratio>
                     <texture colordiffuse="$PARAM[colordiffuse]">common/bg.jpg</texture>
                 </control>
-                <include content="Viewtype_KodiLogo">
-                    <param name="logohastext" value="$PARAM[logohastext]" />
-                </include>
+                <include>Viewtype_KodiLogo</include>
                 <nested />
             </control>
         </definition>

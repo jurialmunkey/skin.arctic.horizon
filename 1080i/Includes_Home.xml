@@ -532,7 +532,6 @@
 
     <include name="Home_Menu_Header">
         <param name="labelvisible" default="true" />
-        <param name="icononly" default="false" />
         <param name="width" default="450" />
         <definition>
             <control type="group">
@@ -561,47 +560,9 @@
                     <height>item_list_height</height>
                     <bordersize>8</bordersize>
                     <texture background="true" colordiffuse="dialog_fg_70">$PARAM[icon]</texture>
-                    <visible>$PARAM[icononly]</visible>
-                </control>
-                <control type="image">
-                    <right>20</right>
-                    <bottom>-4</bottom>
-                    <width>item_list_height</width>
-                    <height>item_list_height</height>
-                    <bordersize>8</bordersize>
-                    <texture background="true" colordiffuse="dialog_fg_70">$PARAM[icon]</texture>
-                    <visible>!$PARAM[icononly]</visible>
-                    <visible>$PARAM[labelvisible]</visible>
-                    <include>Animation_KodiLogo</include>
-                </control>
-                <control type="label">
-                    <bottom>0</bottom>
-                    <left>140</left>
-                    <right>120</right>
-                    <right>view_pad</right>
-                    <align>right</align>
-                    <aligny>center</aligny>
-                    <textcolor>dialog_fg_70</textcolor>
-                    <font>font_mainmenu</font>
-                    <label>$PARAM[label]</label>
-                    <visible>!$PARAM[icononly]</visible>
-                    <visible>$PARAM[labelvisible]</visible>
-                    <include>Animation_KodiLogo</include>
                 </control>
             </control>
         </definition>
-    </include>
-
-    <include name="Home_Menu_FocusButton">
-        <control type="button">
-            <include>Defs_Hidden_Button</include>
-            <onfocus>SetProperty(Hub.Label,$INFO[Container($PARAM[mainmenu-id]).ListItem.Label],Home)</onfocus>
-            <onfocus>SetProperty(Hub.submenuVisibility,$INFO[Container($PARAM[mainmenu-id]).ListItem.Property(submenuVisibility)],Home)</onfocus>
-            <onfocus>SetProperty(Hub.widgetPath,$INFO[Container($PARAM[mainmenu-id]).ListItem.Property(widgetPath)],Home)</onfocus>
-            <onfocus>SetProperty(Hub.widgetTarget,$INFO[Container($PARAM[mainmenu-id]).ListItem.Property(widgetTarget)],Home)</onfocus>
-            <onfocus>SetProperty(Hub.widgetName,$INFO[Container($PARAM[mainmenu-id]).ListItem.Property(widgetName)],Home)</onfocus>
-            <onfocus>SetProperty(Hub.widgetAspect,$INFO[Container($PARAM[mainmenu-id]).ListItem.Property(widgetAspect)],Home)</onfocus>
-        </control>
     </include>
 
     <include name="Home_Menu">
@@ -624,16 +585,8 @@
                     </control>
                 </itemlayout>
                 <focusedlayout height="item_list_height" width="160">
-                    <include condition="$PARAM[focusbutton]">Home_Menu_FocusButton</include>
                     <control type="group">
                         <visible>!Control.HasFocus(301) + !Control.HasFocus(303) + ![Control.HasFocus(3992) + String.IsEmpty(Window.Property(WidgetFocus))]</visible>
-                        <!-- <control type="image">
-                            <right>0</right>
-                            <centertop>50%</centertop>
-                            <height>16</height>
-                            <width>16</width>
-                            <texture colordiffuse="dialog_fg_100">common/arrow-menu.png</texture>
-                        </control> -->
                         <control type="image">
                             <right>40</right>
                             <width>item_list_height</width>
@@ -666,8 +619,6 @@
 
     <include name="Home_Menu_Vertical">
         <param name="mainmenu-id" default="301" />
-        <param name="focusbutton" default="false" />
-        <param name="submenu" default="true" />
         <definition>
             <include content="Viewtype_Panel">
                 <param name="width" value="160" />
@@ -676,17 +627,12 @@
                 <control type="group">
                     <top>view_top</top>
                     <include content="Home_Menu_Header">
-                        <param name="labelvisible" value="false" />
                         <param name="width" value="160" />
                         <param name="icon" value="special://skin/extras/icons/home.png" />
-                        <param name="icononly" value="true" />
-                        <animation effect="fade" start="0" end="100" time="1" reversible="false" delay="400">Visible</animation>
                     </include>
                     <include content="Home_Menu">
                         <param name="id" value="$PARAM[mainmenu-id]" />
                         <param name="font" value="font_mainmenu" />
-                        <param name="icononly" value="true" />
-                        <param name="focusbutton" value="$PARAM[focusbutton]" />
                         <onfocus>ClearProperty(TMDbHelper.WidgetContainer,Home)</onfocus>
                         <onback>3000</onback>
                         <onleft>SetFocus(302)</onleft>
@@ -694,7 +640,6 @@
                         <onfocus>ClearProperty(WidgetFocus)</onfocus>
                         <onfocus condition="String.IsEmpty(Window.Property(301Click))">SetFocus(3992)</onfocus>
                         <onfocus>ClearProperty(301Click)</onfocus>
-                        <animation effect="fade" start="0" end="100" time="1" reversible="false" delay="400">Visible</animation>
                         <content><include>skinshortcuts-mainmenu</include></content>
                     </include>
                 </control>

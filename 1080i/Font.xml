@@ -224,13 +224,6 @@
         </font>
 
         <font>
-            <name>font_kodi</name>
-            <filename>Questrial-Regular.ttf</filename>
-            <size>30</size>
-            <style>bold</style>
-        </font>
-
-        <font>
             <name>font_submenu</name>
             <filename>RobotoCondensed-Bold.ttf</filename>
             <size>28</size>
