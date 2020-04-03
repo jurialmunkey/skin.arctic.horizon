@@ -123,6 +123,7 @@
         </control>
     </include>
 
+
     <include name="Viewtype_KodiLogo">
         <param name="textcolor" default="dialog_fg_100" />
         <definition>
@@ -130,15 +131,15 @@
                 <centertop>100</centertop>
                 <height>128</height>
                 <nested />
-                <control type="image">
+                <include content="Defs_Control" condition="!Skin.HasSetting(ProfilePicture)">
+                    <param name="type" value="image" />
                     <left>16</left>
                     <width>128</width>
                     <bordersize>20</bordersize>
-                    <visible>!Skin.HasSetting(ProfilePicture)</visible>
                     <texture colordiffuse="$VAR[ColorHighlight]">$VAR[Image_SkinLogo]</texture>
-                </control>
-                <control type="group">
-                    <visible>Skin.HasSetting(ProfilePicture)</visible>
+                </include>
+                <include content="Defs_Control" condition="Skin.HasSetting(ProfilePicture)">
+                    <param name="type" value="group" />
                     <control type="image">
                         <left>16</left>
                         <width>128</width>
@@ -151,7 +152,7 @@
                         <bordersize>38</bordersize>
                         <texture diffuse="diffuse/circle.png">$INFO[System.ProfileThumb]</texture>
                     </control>
-                </control>
+                </include>
             </control>
         </definition>
     </include>

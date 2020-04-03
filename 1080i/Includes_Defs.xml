@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
+    <include name="Defs_Control">
+        <control type="$PARAM[type]">
+            <nested />
+        </control>
+    </include>
+
     <include name="Defs_Movement_Banner">
         <movement>0</movement>
     </include>
