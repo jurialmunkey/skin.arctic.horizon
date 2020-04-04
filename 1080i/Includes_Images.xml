@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
 
+    <variable name="Image_DefaultIcon">
+        <value condition="String.IsEqual(ListItem.DBType,country) | String.IsEqual(ListItem.Property(dbtype),country)">$INFO[ListItem.Label,resource://resource.images.moviecountryicons.maps/,.png]</value>
+        <value condition="String.IsEqual(ListItem.DBType,studio) | String.IsEqual(ListItem.Property(dbtype),studio)">$INFO[ListItem.Label,resource://resource.images.studios.white/,.png]</value>
+        <value condition="String.IsEqual(ListItem.DBType,genre) | String.IsEqual(ListItem.Property(dbtype),genre)">$VAR[Image_GenreIcons_Path]$INFO[ListItem.Label,,.png]</value>
+        <value>$INFO[ListItem.Icon]</value>
+    </variable>
+
     <variable name="Image_SkinLogo">
         <value condition="!String.IsEmpty(Skin.String(SkinLogo))">$INFO[Skin.String(SkinLogo)]</value>
         <value>special://skin/extras/icons/kodi.png</value>

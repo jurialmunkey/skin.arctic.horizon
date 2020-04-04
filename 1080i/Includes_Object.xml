@@ -1288,98 +1288,30 @@
     </include>
 
     <include name="Object_Artwork">
-        <param name="listitem" default="ListItem" />
         <definition>
-            <control type="group">
-                <include content="Object_Poster" description="Submenu Skin Icons">
-                    <param name="icon" value="$INFO[$PARAM[listitem].Icon]" />
-                    <param name="diffuse" value="$PARAM[diffuse]" />
-                    <param name="visible" value="String.StartsWith($PARAM[listitem].Icon,special://skin/extras/icons/) + ![String.IsEqual($PARAM[listitem].DBType,genre) | String.IsEqual($PARAM[listitem].Property(dbtype),genre)] + ![String.IsEqual($PARAM[listitem].DBType,studio) | String.IsEqual($PARAM[listitem].Property(dbtype),studio)] + ![String.IsEqual($PARAM[listitem].DBType,country) | String.IsEqual($PARAM[listitem].Property(dbtype),country)] + !String.IsEmpty($PARAM[listitem].Property(mainmenuid))" />
-                    <param name="bordersize" value="22" />
-                    <param name="aspectratio" value="keep" />
-                    <animation effect="fade" start="100" end="75" condition="![Control.HasFocus($PARAM[id]) | Control.HasFocus($PARAM[altid])] | !$PARAM[selectbox]">Conditional</animation>
-                </include>
-                <include content="Object_Poster" description="Skin Icons">
-                    <param name="icon" value="$INFO[$PARAM[listitem].Icon]" />
-                    <param name="diffuse" value="$PARAM[diffuse]" />
-                    <param name="visible" value="String.StartsWith($PARAM[listitem].Icon,special://skin/extras/icons/) + ![String.IsEqual($PARAM[listitem].DBType,genre) | String.IsEqual($PARAM[listitem].Property(dbtype),genre)] + ![String.IsEqual($PARAM[listitem].DBType,studio) | String.IsEqual($PARAM[listitem].Property(dbtype),studio)] + ![String.IsEqual($PARAM[listitem].DBType,country) | String.IsEqual($PARAM[listitem].Property(dbtype),country)] + String.IsEmpty($PARAM[listitem].Property(mainmenuid))" />
-                    <param name="bordersize" value="30" />
-                    <param name="aspectratio" value="keep" />
-                    <animation effect="fade" start="100" end="75" condition="![Control.HasFocus($PARAM[id]) | Control.HasFocus($PARAM[altid])] | !$PARAM[selectbox]">Conditional</animation>
-                </include>
-                <include content="Object_Poster">
-                    <param name="icon" value="DefaultArtist.png" />
-                    <param name="diffuse" value="$PARAM[diffuse]" />
-                    <param name="fallback" value="DefaultArtist.png" />
-                    <param name="background" value="false" />
-                    <param name="visible" value="[String.IsEqual($PARAM[listitem].DBType,director) | String.IsEqual($PARAM[listitem].Property(dbtype),director) | Container.Content(directors)]" />
-                    <param name="aspectratio" value="keep" />
-                    <param name="bordersize" value="10" />
-                    <animation effect="fade" start="100" end="75" condition="![Control.HasFocus($PARAM[id]) | Control.HasFocus($PARAM[altid])] | !$PARAM[selectbox]">Conditional</animation>
-                </include>
-                <include content="Object_Poster">
-                    <param name="icon" value="DefaultYear.png" />
-                    <param name="diffuse" value="$PARAM[diffuse]" />
-                    <param name="fallback" value="DefaultYear.png" />
-                    <param name="background" value="false" />
-                    <param name="visible" value="[String.IsEqual($PARAM[listitem].DBType,year) | String.IsEqual($PARAM[listitem].Property(dbtype),year) | Container.Content(years)]" />
-                    <param name="aspectratio" value="keep" />
-                    <param name="bordersize" value="10" />
-                    <animation effect="fade" start="100" end="75" condition="![Control.HasFocus($PARAM[id]) | Control.HasFocus($PARAM[altid])] | !$PARAM[selectbox]">Conditional</animation>
-                </include>
-                <include content="Object_Poster">
-                    <param name="icon" value="$INFO[$PARAM[listitem].Icon]" />
-                    <param name="diffuse" value="$PARAM[diffuse]" />
-                    <param name="visible" value="String.StartsWith($PARAM[listitem].Icon,Default) + ![String.IsEqual($PARAM[listitem].DBType,genre) | String.IsEqual($PARAM[listitem].Property(dbtype),genre) | Container.Content(genres)] + ![String.IsEqual($PARAM[listitem].DBType,studio) | String.IsEqual($PARAM[listitem].Property(dbtype),studio)] + ![String.IsEqual($PARAM[listitem].DBType,country) | String.IsEqual($PARAM[listitem].Property(dbtype),country)] + ![String.IsEqual($PARAM[listitem].DBType,tag) | String.IsEqual($PARAM[listitem].Property(dbtype),tags)] + ![String.IsEqual($PARAM[listitem].DBType,director) | String.IsEqual($PARAM[listitem].Property(dbtype),director)] + ![Container.Content(years) | String.IsEqual($PARAM[listitem].DBType,year) | String.IsEqual($PARAM[listitem].Property(dbtype),year)]" />
-                    <param name="bordersize" value="25" />
-                    <param name="aspectratio" value="keep" />
-                    <animation effect="fade" start="100" end="75" condition="![Control.HasFocus($PARAM[id]) | Control.HasFocus($PARAM[altid])] | !$PARAM[selectbox]">Conditional</animation>
-                </include>
-                <include content="Object_Poster">
-                    <param name="icon" value="$VAR[Image_GenreIcons_Path]$INFO[$PARAM[listitem].Label,,.png]" />
-                    <param name="diffuse" value="$PARAM[diffuse]" />
-                    <param name="fallback" value="DefaultGenres.png" />
-                    <param name="background" value="false" />
-                    <param name="visible" value="[String.IsEqual($PARAM[listitem].DBType,genre) | String.IsEqual($PARAM[listitem].Property(dbtype),genre) | Container.Content(genres)]" />
-                    <param name="aspectratio" value="keep" />
-                    <param name="bordersize" value="35" />
-                    <animation effect="fade" start="100" end="70" condition="true">Conditional</animation>
-                </include>
-                <include content="Object_Poster">
-                    <param name="icon" value="$INFO[$PARAM[listitem].Label,resource://resource.images.studios.white/,.png]" />
-                    <param name="diffuse" value="$PARAM[diffuse]" />
-                    <param name="fallback" value="DefaultStudios.png" />
-                    <param name="visible" value="[String.IsEqual($PARAM[listitem].DBType,studio) | String.IsEqual($PARAM[listitem].Property(dbtype),studio)]" />
-                    <param name="bordersize" value="25" />
-                    <param name="aspectratio" value="keep" />
-                    <param name="background" value="false" />
-                    <animation effect="fade" start="100" end="75" condition="![Control.HasFocus($PARAM[id]) | Control.HasFocus($PARAM[altid])] | !$PARAM[selectbox]">Conditional</animation>
-                </include>
-                <include content="Object_Poster">
-                    <param name="icon" value="$INFO[$PARAM[listitem].Label,resource://resource.images.moviecountryicons.maps/,.png]" />
-                    <param name="diffuse" value="$PARAM[diffuse]" />
-                    <param name="fallback" value="DefaultCountry.png" />
-                    <param name="background" value="false" />
-                    <param name="visible" value="[String.IsEqual($PARAM[listitem].DBType,country) | String.IsEqual($PARAM[listitem].Property(dbtype),country)]" />
-                    <param name="bordersize" value="25" />
-                    <param name="aspectratio" value="keep" />
-                    <animation effect="fade" start="100" end="70" condition="true">Conditional</animation>
-                </include>
-                <include content="Object_Poster">
-                    <param name="icon" value="$INFO[$PARAM[listitem].Icon]" />
-                    <param name="diffuse" value="$PARAM[diffuse]" />
-                    <param name="visible" value="![String.StartsWith($PARAM[listitem].Icon,Default) | String.StartsWith(ListItem.Icon,special://skin/extras/icons/)] + String.StartsWith($PARAM[listitem].FolderPath,pvr://)" />
-                    <param name="bordersize" value="60" />
-                    <param name="aspectratio" value="keep" />
-                </include>
-                <include content="Object_Poster">
-                    <param name="icon" value="$PARAM[icon]" />
-                    <param name="diffuse" value="$PARAM[diffuse]" />
-                    <param name="aspectratio" value="$PARAM[aspectratio]" />
-                    <param name="bordersize" value="$PARAM[bordersize]" />
-                    <param name="visible" value="![String.StartsWith($PARAM[listitem].Icon,Default) | String.StartsWith(ListItem.Icon,special://skin/extras/icons/)] + !String.StartsWith(ListItem.FolderPath,pvr://) + ![String.IsEqual($PARAM[listitem].DBType,country) | String.IsEqual($PARAM[listitem].Property(dbtype),country)] + ![String.IsEqual($PARAM[listitem].DBType,studio) | String.IsEqual($PARAM[listitem].Property(dbtype),studio)] + ![String.IsEqual($PARAM[listitem].DBType,genre) | String.IsEqual($PARAM[listitem].Property(dbtype),genre)]" />
-                </include>
-            </control>
+            <include content="Object_Poster">
+                <param name="icon" value="$VAR[Image_DefaultIcon]" />
+                <param name="colordiffuse" value="main_fg_100" />
+                <param name="diffuse" value="$PARAM[diffuse]" />
+                <param name="aspectratio" value="keep" />
+                <param name="bordersize" value="25" />
+                <param name="visible" value="String.StartsWith(ListItem.Icon,Default) | String.StartsWith(ListItem.Icon,special://skin/extras/icons/)" />
+            </include>
+            <include content="Object_Poster">
+                <param name="icon" value="$VAR[Image_DefaultIcon]" />
+                <param name="colordiffuse" value="main_fg_90" />
+                <param name="diffuse" value="$PARAM[diffuse]" />
+                <param name="aspectratio" value="keep" />
+                <param name="bordersize" value="40" />
+                <param name="visible" value="!String.StartsWith(ListItem.Icon,Default) + !String.StartsWith(ListItem.Icon,special://skin/extras/icons/) + [String.StartsWith(ListItem.FolderPath,pvr://) | String.IsEqual(ListItem.DBType,country) | String.IsEqual(ListItem.Property(dbtype),country) | String.IsEqual(ListItem.DBType,studio) | String.IsEqual(ListItem.Property(dbtype),studio) | String.IsEqual(ListItem.DBType,genre) | String.IsEqual(ListItem.Property(dbtype),genre)]" />
+            </include>
+            <include content="Object_Poster">
+                <param name="icon" value="$PARAM[icon]" />
+                <param name="diffuse" value="$PARAM[diffuse]" />
+                <param name="aspectratio" value="$PARAM[aspectratio]" />
+                <param name="bordersize" value="$PARAM[bordersize]" />
+                <param name="visible" value="!String.StartsWith(ListItem.Icon,Default) + !String.StartsWith(ListItem.Icon,special://skin/extras/icons/) + !String.StartsWith(ListItem.FolderPath,pvr://) + !String.IsEqual(ListItem.DBType,country) + !String.IsEqual(ListItem.Property(dbtype),country) + !String.IsEqual(ListItem.DBType,studio) + !String.IsEqual(ListItem.Property(dbtype),studio) + !String.IsEqual(ListItem.DBType,genre) + !String.IsEqual(ListItem.Property(dbtype),genre)" />
+            </include>
         </definition>
     </include>
 
