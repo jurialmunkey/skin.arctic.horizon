@@ -4,6 +4,22 @@
     <include name="Viewtype_Info_Right"><right>700</right></include>
     <include name="Viewtype_Info_Right_FixedHome"><right>560</right></include>
     <include name="Viewtypes">
+        <control type="list" id="56560">
+            <include>Defs_Offscreen</include>
+            <orientation>horizontal</orientation>
+            <itemlayout />
+            <focusedlayout />
+            <content>
+                <include content="Object_56560_Item">
+                    <param name="id" value="530" />
+                    <visible>Control.IsVisible(53)</visible>
+                </include>
+                <include content="Object_56560_Item">
+                    <param name="id" value="560" />
+                    <visible>Control.IsVisible(56)</visible>
+                </include>
+            </content>
+        </control>
         <include content="Viewtype_Main">
             <control type="group">
                 <visible allowhiddenfocus="true">!$EXP[Exp_CommonAnimation]</visible>
@@ -24,6 +40,8 @@
                         <include content="View_Info_Grouplist">
                             <param name="container" value="Container." />
                             <param name="visible-details" value="false" />
+                            <param name="infoline-label" value="$VAR[Label_Home_InfoLine]" />
+                            <param name="infoline-image" value="$VAR[Image_Home_VideoQuality]" />
                             <top>-15</top>
                             <height>285</height>
                             <visible>[Control.IsVisible(50) | Control.IsVisible(500) | Control.IsVisible(55) | Control.IsVisible(520)]</visible>

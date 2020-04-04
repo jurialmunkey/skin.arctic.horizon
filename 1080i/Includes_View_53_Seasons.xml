@@ -44,6 +44,8 @@
             <param name="container" value="Container(530)." />
             <param name="plot" value="$INFO[Container(530).ListItem.Plot]" />
             <param name="plotheight" value="auto" />
+            <param name="infoline-label" value="$VAR[Label_Home_InfoLine]" />
+            <param name="infoline-image" value="$VAR[Image_Home_VideoQuality]" />
             <top>-15</top>
             <height>285</height>
             <visible>Control.HasFocus(530)</visible>
@@ -184,6 +186,10 @@
                 <onback>53</onback>
                 <onup>53</onup>
                 <ondown>60</ondown>
+                <!-- <onleft>Control.Move(53,-1)</onleft>
+                <onleft>AlarmClock(ReFocus,SetFocus(530,9999,absolute),00:00,silent)</onleft>
+                <onright>Control.Move(53,1)</onright>
+                <onright>AlarmClock(ReFocus,SetFocus(530,0,absolute),00:00,silent)</onright> -->
                 <pagecontrol>60</pagecontrol>
                 <onunfocus>ClearProperty(TMDbHelper.WidgetContainer,Home)</onunfocus>
                 <onclick condition="!Container($PARAM[id]).ListItem.IsFolder">PlayMedia($INFO[Container($PARAM[id]).ListItem.FileNameAndPath])</onclick>

@@ -43,6 +43,8 @@
             <param name="container" value="Container(560)." />
             <param name="plot" value="$VAR[Label_Plot_560]" />
             <param name="plotheight" value="auto" />
+            <param name="infoline-label" value="$VAR[Label_Home_InfoLine]" />
+            <param name="infoline-image" value="$VAR[Image_Home_VideoQuality]" />
             <top>-15</top>
             <height>285</height>
             <visible>Control.IsVisible(56)</visible>

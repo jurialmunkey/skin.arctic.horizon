@@ -2,7 +2,7 @@
 <includes>
 
     <variable name="Label_Home_InfoLine">
-        <value condition="Control.HasFocus(301) | Control.HasFocus(303) | Control.HasFocus(3992) | Control.HasFocus(3101) | Control.HasFocus(3102) | Control.Hasfocus(3001) | Control.HasFocus(302)">$VAR[Label_56560_InfoLine]</value>
+        <value condition="Control.IsVisible(56560)">$VAR[Label_56560_InfoLine]</value>
         <value>$VAR[Label_InfoLine]</value>
     </variable>
 
