@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
 
+    <variable name="Image_5610_VideoQuality">
+        <value condition="Container(5610).ListItem.IsCollection">flags/quality/sets.png</value>
+        <value condition="Integer.IsGreater(Container(5610).ListItem.VideoResolution,1080) | String.IsEqual(Container(5610).ListItem.VideoResolution,4K)">flags/quality/4k.png</value>
+        <value condition="Integer.IsGreater(Container(5610).ListItem.VideoResolution,719)">flags/quality/hd.png</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem.VideoResolution)">flags/quality/sd.png</value>
+        <value condition="String.IsEqual(Container(5610).ListItem.DBType,movie) | String.IsEqual(Container(5610).ListItem.DBType,episode) | String.IsEqual(Container(5610).ListItem.DBType,video)">flags/quality/web.png</value>
+        <value>flags/quality/info.png</value>
+    </variable>
+
     <variable name="Image_VideoQuality">
         <value condition="ListItem.IsCollection">flags/quality/sets.png</value>
         <value condition="Integer.IsGreater(ListItem.VideoResolution,1080) | String.IsEqual(ListItem.VideoResolution,4K)">flags/quality/4k.png</value>
@@ -74,8 +83,8 @@
     </variable>
 
     <variable name="Image_Home_Clearlogo">
-        <value condition="!String.IsEmpty(Container(5600).ListItem.Art(tvshow.clearlogo))">$INFO[Container(5600).ListItem.Art(tvshow.clearlogo)]</value>
-        <value condition="!String.IsEmpty(Container(5600).ListItem.Art(clearlogo))">$INFO[Container(5600).ListItem.Art(clearlogo)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem.Art(tvshow.clearlogo))">$INFO[Container(5610).ListItem.Art(tvshow.clearlogo)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem.Art(clearlogo))">$INFO[Container(5610).ListItem.Art(clearlogo)]</value>
     </variable>
 
     <variable name="Image_AddonInfo_Enable">

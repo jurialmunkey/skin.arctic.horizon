@@ -162,6 +162,7 @@
                     <param name="groupid" value="5101" />
                     <param name="label" value="Movies as Cast Member" />
                     <param name="labelinclude" value="View_Cast_Character_Label" />
+                    <param name="castlabel" value="true" />
                     <include>Defs_InfoList_OnClick</include>
                     <include>Defs_InfoList_OnBack</include>
                     <movement>3</movement>
@@ -173,6 +174,7 @@
                     <param name="groupid" value="5102" />
                     <param name="label" value="TvShows as Cast Member" />
                     <param name="labelinclude" value="View_Cast_Character_Label" />
+                    <param name="castlabel" value="true" />
                     <include>Defs_InfoList_OnClick</include>
                     <include>Defs_InfoList_OnBack</include>
                     <movement>3</movement>
@@ -184,6 +186,7 @@
                     <param name="groupid" value="5103" />
                     <param name="label" value="Movies as Crew Member" />
                     <param name="labelinclude" value="View_Cast_Job_Label" />
+                    <param name="castlabel" value="true" />
                     <include>Defs_InfoList_OnClick</include>
                     <include>Defs_InfoList_OnBack</include>
                     <movement>3</movement>
@@ -195,6 +198,7 @@
                     <param name="groupid" value="5105" />
                     <param name="label" value="TvShows as Crew Member" />
                     <param name="labelinclude" value="View_Cast_Job_Label" />
+                    <param name="castlabel" value="true" />
                     <include>Defs_InfoList_OnClick</include>
                     <include>Defs_InfoList_OnBack</include>
                     <movement>3</movement>

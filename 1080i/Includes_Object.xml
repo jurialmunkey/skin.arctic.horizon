@@ -736,9 +736,9 @@
     </include>
 
     <include name="Object_Info_Line">
-        <param name="nextaired" default="true" />
+        <param name="label" default="$VAR[Label_InfoLine]" />
+        <param name="image" default="$VAR[Image_VideoQuality]" />
         <param name="textcolor" default="main_fg_100" />
-        <param name="container" default="" />
         <definition>
             <control type="grouplist">
                 <height>42</height>
@@ -752,11 +752,11 @@
                     <width>37</width>
                     <height>24</height>
                     <aspectratio align="left">keep</aspectratio>
-                    <texture colordiffuse="$PARAM[textcolor]">$VAR[Image_VideoQuality]</texture>
+                    <texture colordiffuse="$PARAM[textcolor]">$PARAM[image]</texture>
                 </control>
                 <control type="label">
                     <width>auto</width>
-                    <label>$VAR[Label_InfoLine]</label>
+                    <label>$PARAM[label]</label>
                     <height>40</height>
                     <aligny>top</aligny>
                     <textcolor>$VAR[ColorHighlight]</textcolor>

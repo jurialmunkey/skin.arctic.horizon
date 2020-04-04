@@ -249,7 +249,8 @@
                             <param name="label" value="$INFO[Container(3001).ListItem.Title]" />
                         </include>
                         <include content="Object_Info_Line">
-                            <param name="container" value="Container(3001)." />
+                            <param name="label" value="$VAR[Label_5610_InfoLine]" />
+                            <param name="image" value="$VAR[Image_5610_VideoQuality]" />
                         </include>
                         <include content="Object_Info_Plot">
                             <param name="maxheight" value="80" />
