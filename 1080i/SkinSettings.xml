@@ -383,6 +383,16 @@
                         <onclick>Skin.ToggleSetting(EnableMonochromeFlags)</onclick>
                     </control>
 
+                    <control type="button" id="19306" description="Reset">
+                        <visible>Integer.IsEqual(Window.Property(CurrentFocus),9003)</visible>
+                        <include>Defs_Settings_Button</include>
+                        <label>$LOCALIZE[10041]</label>
+                        <onclick>Skin.Reset(EnableMonochromeFlags)</onclick>
+                        <onclick>Skin.Reset(overlaycolor.name)</onclick>
+                        <onclick>Skin.Reset(focuscolor.name)</onclick>
+                        <onclick>Skin.Reset(gradientcolor.name)</onclick>
+                    </control>
+
                     
 
                     <!-- <control type="label" id="19385" description="LABEL">
