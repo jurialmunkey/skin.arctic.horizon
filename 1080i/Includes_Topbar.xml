@@ -27,7 +27,7 @@
                         <aligny>center</aligny>
                         <font>font_topbar</font>
                         <textcolor>$PARAM[fgcolor]_100</textcolor>
-                        <label>$PARAM[label]</label>
+                        <label>[CAPITALIZE]$PARAM[label][/CAPITALIZE]</label>
                     </control>
                 </control>
             </control>
