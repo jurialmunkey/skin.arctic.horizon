@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window type="window" id="1110">
-    <defaultcontrol always="false">302</defaultcontrol>
+    <defaultcontrol always="false">305</defaultcontrol>
     <onload>SetProperty(TMDbHelper.WidgetContainer,5610,Home)</onload>
     <onunload>ClearProperty(TMDbHelper.WidgetContainer,Home)</onunload>
     <controls>
+        <control type="button" id="305">
+            <include>Defs_Hidden_Button</include>
+            <onfocus>SetFocus(302)</onfocus>
+        </control>
         <control type="list" id="56560">
             <include>Defs_Offscreen</include>
             <orientation>horizontal</orientation>
