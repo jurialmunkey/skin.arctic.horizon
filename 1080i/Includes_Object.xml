@@ -1289,10 +1289,8 @@
 
     <include name="Object_Artwork">
         <param name="listitem" default="ListItem" />
-        <param name="textonly" default="false" />
         <definition>
             <control type="group">
-                <visible>!$PARAM[textonly]</visible>
                 <include content="Object_Poster" description="Submenu Skin Icons">
                     <param name="icon" value="$INFO[$PARAM[listitem].Icon]" />
                     <param name="diffuse" value="$PARAM[diffuse]" />

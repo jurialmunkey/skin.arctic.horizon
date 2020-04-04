@@ -98,17 +98,16 @@
     <include name="View_Cast_Label">
         <param name="label2" default="ListItem.Label2" />
         <param name="bordersize" default="15" />
-        <param name="visible" default="true" />
         <definition>
             <control type="group">
                 <nested />
-                <visible>$PARAM[visible]</visible>
                 <height>$PARAM[iconheight]</height>
+                <visible>$PARAM[visible]</visible>
                 <control type="image">
                     <height>200</height>
                     <bottom>0</bottom>
                     <bordersize>$PARAM[bordersize]</bordersize>
-                    <texture colordiffuse="bf000000" diffuse="$PARAM[diffuse]">common/dim-actor.png</texture>
+                    <texture colordiffuse="bf000000" border="10">common/dim-actor.png</texture>
                 </control>
                 <control type="label">
                     <left>25</left>
@@ -120,7 +119,7 @@
                     <aligny>center</aligny>
                     <align>left</align>
                     <label>$INFO[ListItem.Label]</label>
-                    <visible>!String.IsEmpty($PARAM[label2]) + !String.IsEqual(ListItem.Label,$PARAM[label2])</visible>
+                    <visible>!String.IsEmpty($PARAM[label2])</visible>
                 </control>
                 <control type="label">
                     <left>25</left>
@@ -132,7 +131,7 @@
                     <aligny>center</aligny>
                     <align>left</align>
                     <info>$PARAM[label2]</info>
-                    <visible>!String.IsEmpty($PARAM[label2]) + !String.IsEqual(ListItem.Label,$PARAM[label2])</visible>
+                    <visible>!String.IsEmpty($PARAM[label2])</visible>
                 </control>
                 <control type="label">
                     <left>25</left>
@@ -144,18 +143,6 @@
                     <aligny>center</aligny>
                     <align>left</align>
                     <label>$INFO[ListItem.Label]</label>
-                    <visible>String.IsEmpty($PARAM[label2]) | String.IsEqual(ListItem.Label,$PARAM[label2])</visible>
-                </control>
-                <control type="label">
-                    <left>25</left>
-                    <right>25</right>
-                    <font>font_statusbar</font>
-                    <textcolor>panel_fg_70</textcolor>
-                    <bottom>20</bottom>
-                    <height>30</height>
-                    <aligny>center</aligny>
-                    <align>right</align>
-                    <label>$INFO[ListItem.Duration]</label>
                     <visible>String.IsEmpty($PARAM[label2])</visible>
                 </control>
             </control>
@@ -269,7 +256,6 @@
 
     <include name="View_WatchedOverlay">
         <control type="group">
-            <visible>!Skin.HasSetting(DisableWatchedOverlay)</visible>
             <control type="image">
                 <top>14</top>
                 <right>14</right>

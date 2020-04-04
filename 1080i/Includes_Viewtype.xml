@@ -324,7 +324,6 @@
                             <param name="textbox-height" value="$PARAM[textbox-height]" />
                             <param name="textbox-visible" value="$PARAM[textbox-visible]" />
                             <param name="aspectratio" value="$PARAM[aspectratio]" />
-                            <param name="textonly" value="$PARAM[textonly]" />
                             <param name="textpanel" value="$PARAM[textpanel]" />
                         </include>
                     </control>
@@ -346,7 +345,6 @@
                             <param name="textbox-height" value="$PARAM[textbox-height]" />
                             <param name="textbox-visible" value="$PARAM[textbox-visible]" />
                             <param name="aspectratio" value="$PARAM[aspectratio]" />
-                            <param name="textonly" value="$PARAM[textonly]" />
                             <param name="textpanel" value="$PARAM[textpanel]" />
                         </include>
                     </control>
@@ -382,16 +380,16 @@
                     <param name="selectbox" value="$PARAM[selectbox]" />
                     <param name="diffuse" value="$PARAM[diffuse]" />
                     <param name="icon" value="$PARAM[icon]" />
-                    <param name="textonly" value="$PARAM[textonly]" />
                 </include>
 
                 <include content="View_Cast_Label">
                     <param name="label2" value="$PARAM[label2]" />
                     <param name="visible" value="$PARAM[castlabel]" />
+                    <param name="diffuse" value="$PARAM[diffuse]" />
                 </include>
                 
                 <!-- Watched Overlay and Selectbox -->
-                <include>View_WatchedOverlay</include>
+                <include condition="!Skin.HasSetting(DisableWatchedOverlay)">View_WatchedOverlay</include>
                 <include condition="$PARAM[selectbox]" content="View_Selectbox">
                     <param name="focusbounce" value="$PARAM[focusbounce]" />
                     <visible>Control.HasFocus($PARAM[id]) | Control.HasFocus($PARAM[altid])</visible>
@@ -442,7 +440,7 @@
                 </control>
 
                 <!-- Watched Overlay and Selectbox -->
-                <include>View_WatchedOverlay</include>
+                <include condition="!Skin.HasSetting(DisableWatchedOverlay)">View_WatchedOverlay</include>
                 <include condition="$PARAM[selectbox]" content="View_Selectbox">
                     <param name="focusbounce" value="$PARAM[focusbounce]" />
                     <visible>Control.HasFocus($PARAM[id]) | Control.HasFocus($PARAM[altid])</visible>
@@ -579,7 +577,7 @@
                 </control>
 
                 <!-- Watched Overlay and Selectbox -->
-                <include>View_WatchedOverlay</include>
+                <include condition="!Skin.HasSetting(DisableWatchedOverlay)">View_WatchedOverlay</include>
                 <include condition="$PARAM[selectbox]" content="View_Selectbox">
                     <param name="focusbounce" value="$PARAM[focusbounce]" />
                     <visible>Control.HasFocus($PARAM[id]) | Control.HasFocus($PARAM[altid])</visible>
@@ -734,7 +732,7 @@
                         <param name="icon" value="$PARAM[icon]" />
                         <param name="aspectratio" value="$PARAM[aspectratio]" />
                     </include>
-                    <include condition="!$PARAM[textpanel]">View_WatchedOverlay</include>
+                    <include condition="!$PARAM[textpanel] + !Skin.HasSetting(DisableWatchedOverlay)">View_WatchedOverlay</include>
                     <include condition="$PARAM[selectbox] + !$PARAM[textpanel]" content="View_Selectbox">
                         <param name="focusbounce" value="true" />
                         <visible>Control.HasFocus($PARAM[id]) | Control.HasFocus($PARAM[altid])</visible>
@@ -742,7 +740,7 @@
                 </control>
                 
                 <!-- Watched Overlay and Selectbox -->
-                <include condition="$PARAM[textpanel]">View_WatchedOverlay</include>
+                <include condition="$PARAM[textpanel] + !Skin.HasSetting(DisableWatchedOverlay)">View_WatchedOverlay</include>
                 <include condition="$PARAM[selectbox] + $PARAM[textpanel]" content="View_Selectbox">
                     <param name="focusbounce" value="true" />
                     <visible>Control.HasFocus($PARAM[id]) | Control.HasFocus($PARAM[altid])</visible>
@@ -838,7 +836,6 @@
         <param name="itemlayout-height" default="180" />
         <param name="textbox-height" default="50" />
         <param name="movement" default="5" />
-        <param name="textonly" default="true" />
         <param name="label-include" default="Viewtype_Square_Label" />
         <param name="orientation" default="horizontal" />
         <param name="control-type" default="panel" />
@@ -857,7 +854,6 @@
                 <param name="diffuse" value="diffuse/square-std.png" />
                 <param name="textbox-height" value="$PARAM[textbox-height]" />
                 <param name="aspectratio" value="$PARAM[aspectratio]" />
-                <param name="textonly" value="$PARAM[textonly]" />
                 <nested />
             </include>
         </definition>
