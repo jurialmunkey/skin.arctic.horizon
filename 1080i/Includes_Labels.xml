@@ -12,7 +12,7 @@
     </variable>
 
     <variable name="Label_56560_InfoLine">
-        <value condition="[String.IsEqual(Container(56560).ListItem.Property(DBType),set) | Container(56560).ListItem.Property(IsCollection)] + !String.IsEmpty(Window(Home).Property(TMDBHelper.Container.ListItem.Set.Years))">$INFO[Window(Home).Property(TMDBHelper.Container.ListItem.Set.Years),  |  [COLOR=main_fg_100],[/COLOR]]$INFO[Window(Home).Property(TMDBHelper.Container.ListItem.Set.NumItems),  |  [COLOR=main_fg_100], $LOCALIZE[342][/COLOR]]</value>
+        <value condition="[String.IsEqual(Container(56560).ListItem.Property(DBType),set) | Container(56560).ListItem.Property(IsCollection)] + !String.IsEmpty(Window(Home).Property(TMDBHelper.ListItem.Set.Years))">$INFO[Window(Home).Property(TMDBHelper.ListItem.Set.Years),  |  [COLOR=main_fg_100],[/COLOR]]$INFO[Window(Home).Property(TMDBHelper.ListItem.Set.NumItems),  |  [COLOR=main_fg_100], $LOCALIZE[342][/COLOR]]</value>
 
         <value condition="String.IsEqual(Container(56560).ListItem.Property(DBType),movie)">$INFO[Container(56560).ListItem.Property(Year),  |  [COLOR=main_fg_100],[/COLOR]]$INFO[Container(56560).ListItem.Property(MPAA),  |  [COLOR=main_fg_100],[/COLOR]]$VAR[Label_56560_Duration,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[Container(56560).ListItem.Property(EndTime),  |  [COLOR=main_fg_100]$LOCALIZE[31207] ,[/COLOR]]</value>
 
@@ -20,7 +20,7 @@
 
         <value condition="String.IsEqual(Container(56560).ListItem.Property(DBType),episode)">$INFO[Container(56560).ListItem.Property(Season),  |  [COLOR=main_fg_100]$LOCALIZE[20373] ,[/COLOR]]$INFO[Container(56560).ListItem.Property(Episode),  |  [COLOR=main_fg_100]$LOCALIZE[20359] ,[/COLOR]]$INFO[Container(56560).ListItem.Property(MPAA),  |  [COLOR=main_fg_100],[/COLOR]]$INFO[Container(56560).ListItem.Premiered,  |  [COLOR=main_fg_100],[/COLOR]]$VAR[Label_56560_Duration,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[Container(56560).ListItem.Property(EndTime),  |  [COLOR=main_fg_100]$LOCALIZE[31207] ,[/COLOR]]</value>
 
-        <value condition="String.IsEqual(Container(56560).ListItem.Property(DBType),actor) + [!String.IsEmpty(Window(Home).Property(TMDBHelper.Container.ListItem.Birthday)) | !String.IsEmpty(Window(Home).Property(TMDBHelper.Container.ListItem.Born)) | !String.IsEmpty(Window(Home).Property(TMDBHelper.Container.ListItem.Age))]">$INFO[Window(Home).Property(TMDBHelper.Container.ListItem.Birthday),  |  [COLOR=main_fg_100],[/COLOR]]$INFO[Window(Home).Property(TMDBHelper.Container.ListItem.Born),  |  [COLOR=main_fg_100],[/COLOR]]$INFO[Window(Home).Property(TMDBHelper.Container.ListItem.Age),, $LOCALIZE[31356]),  |  [COLOR=main_fg_100],[/COLOR]]</value>
+        <value condition="String.IsEqual(Container(56560).ListItem.Property(DBType),actor) + [!String.IsEmpty(Window(Home).Property(TMDBHelper.ListItem.Birthday)) | !String.IsEmpty(Window(Home).Property(TMDBHelper.ListItem.Born)) | !String.IsEmpty(Window(Home).Property(TMDBHelper.ListItem.Age))]">$INFO[Window(Home).Property(TMDBHelper.ListItem.Birthday),  |  [COLOR=main_fg_100],[/COLOR]]$INFO[Window(Home).Property(TMDBHelper.ListItem.Born),  |  [COLOR=main_fg_100],[/COLOR]]$INFO[Window(Home).Property(TMDBHelper.ListItem.Age),  |  [COLOR=main_fg_100], $LOCALIZE[31356][/COLOR]]</value>
 
         <value condition="String.IsEqual(Container(56560).ListItem.Property(DBType),artist) + [!String.IsEmpty(Container(56560).ListItem.Property(Artist_Genre)) | !String.IsEmpty(Container(56560).ListItem.Property(Artist_YearsActive)) | !String.IsEmpty(Container(56560).ListItem.Property(Artist_Born))]">$INFO[Container(56560).ListItem.Property(Artist_Genre),  |  [COLOR=main_fg_100],[/COLOR]]$INFO[Container(56560).ListItem.Property(Artist_YearsActive),  |  [COLOR=main_fg_100],[/COLOR]]$INFO[Container(56560).ListItem.Property(Artist_Born),  |  [COLOR=main_fg_100],[/COLOR]]</value>
 
@@ -42,7 +42,7 @@
 
         <value condition="String.IsEqual(ListItem.DBType,episode)">$INFO[ListItem.Season,  |  [COLOR=main_fg_100]$LOCALIZE[20373] ,[/COLOR]]$INFO[ListItem.Episode,  |  [COLOR=main_fg_100]$LOCALIZE[20359] ,[/COLOR]]$INFO[ListItem.MPAA,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.Premiered,  |  [COLOR=main_fg_100],[/COLOR]]$VAR[Label_Duration,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.EndTime,  |  [COLOR=main_fg_100]$LOCALIZE[31207] ,[/COLOR]]</value>
 
-        <value condition="String.IsEqual(ListItem.DBType,actor) + [!String.IsEmpty(Window(Home).Property(TMDBHelper.ListItem.Birthday)) | !String.IsEmpty(Window(Home).Property(TMDBHelper.ListItem.Born)) | !String.IsEmpty(Window(Home).Property(TMDBHelper.ListItem.Age))]">$INFO[Window(Home).Property(TMDBHelper.ListItem.Birthday),  |  [COLOR=main_fg_100],[/COLOR]]$INFO[Window(Home).Property(TMDBHelper.ListItem.Born),  |  [COLOR=main_fg_100],[/COLOR]]$INFO[Window(Home).Property(TMDBHelper.ListItem.Age),, $LOCALIZE[31356]),  |  [COLOR=main_fg_100],[/COLOR]]</value>
+        <value condition="String.IsEqual(ListItem.DBType,actor) + [!String.IsEmpty(Window(Home).Property(TMDBHelper.ListItem.Birthday)) | !String.IsEmpty(Window(Home).Property(TMDBHelper.ListItem.Born)) | !String.IsEmpty(Window(Home).Property(TMDBHelper.ListItem.Age))]">$INFO[Window(Home).Property(TMDBHelper.ListItem.Birthday),  |  [COLOR=main_fg_100],[/COLOR]]$INFO[Window(Home).Property(TMDBHelper.ListItem.Born),  |  [COLOR=main_fg_100],[/COLOR]]$INFO[Window(Home).Property(TMDBHelper.ListItem.Age),  |  [COLOR=main_fg_100], $LOCALIZE[31356][/COLOR]]</value>
 
         <value condition="String.IsEqual(ListItem.DBType,artist) + [!String.IsEmpty(ListItem.Property(Artist_Genre)) | !String.IsEmpty(ListItem.Property(Artist_YearsActive)) | !String.IsEmpty(ListItem.Property(Artist_Born))]">$INFO[ListItem.Property(Artist_Genre),  |  [COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.Property(Artist_YearsActive),  |  [COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.Property(Artist_Born),  |  [COLOR=main_fg_100],[/COLOR]]</value>
 
@@ -285,6 +285,7 @@
 
     <variable name="Label_Header_Center">
         <value condition="!String.IsEmpty(Container.PluginCategory)">$INFO[Container.PluginCategory,[CAPITALIZE],[/CAPITALIZE]]</value>
+        <value condition="!String.IsEmpty(Container.FolderName)">$INFO[Container.FolderName,[CAPITALIZE],[/CAPITALIZE]]</value>
         <value condition="!String.IsEmpty(Container.Content)">$INFO[Container.Content,[CAPITALIZE],[/CAPITALIZE]]</value>
         <value condition="!String.IsEmpty(System.CurrentWindow)">$INFO[System.CurrentWindow]</value>
         <value condition="Window.IsVisible(DialogBusy.xml)">$LOCALIZE[31428]...</value>
