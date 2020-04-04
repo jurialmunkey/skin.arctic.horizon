@@ -135,6 +135,7 @@
     <property property="widgetLimit" label="25 ">$NUMBER[25]</property>
     <property property="widgetLimit" label="50 ">$NUMBER[50]</property>
     <property property="widgetLimit" label="100 ">$NUMBER[100]</property>
+    <property property="widgetLimit" label="$LOCALIZE[21428] ">$NUMBER[99999]</property>
     <propertySettings property="widgetLimit" buttonID="9905" title="Widget Item Limit" />
 
     <!-- Search Item Default Properties -->
