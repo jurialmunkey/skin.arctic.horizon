@@ -28,12 +28,12 @@
                 <control type="group">
                     <top>$PARAM[widget-type]_item_top</top>
                     <height>item_cast_height</height>
-                    <include content="Defs_BusySpinner">
+                    <include content="Defs_BusySpinner" condition="$PARAM[spinner-visible]">
                         <param name="label" value="$LOCALIZE[31428]..." />
                         <param name="textcolor" value="main_fg_70" />
                     </include>
                     <visible>Container($PARAM[id]).IsUpdating</visible>
-                    <visible>$PARAM[spinner-visible]</visible>
+                    <visible>Integer.IsEqual(Container($PARAM[id]).NumAllItems,0)</visible>
                 </control>
                 <control type="grouplist" description="Focused List">
                     <right>100</right>
