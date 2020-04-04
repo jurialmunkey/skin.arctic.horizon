@@ -3,6 +3,6 @@
 <window type="dialog" id="1115">
 
     <onload condition="!Window.IsActive(visualisation)">FullScreen</onload>
-    <visible>Player.HasAudio + [System.IdleTime(2) | Integer.IsGreater(MusicPlayer.Time,0)] + Skin.HasSetting(AutoMusicVis)</visible>
+    <visible>Skin.HasSetting(AutoMusicVis) + Player.HasAudio + [System.IdleTime(2) | Integer.IsGreater(MusicPlayer.Time,0)]</visible>
     <controls></controls>
 </window>

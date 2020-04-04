@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Foundation -->
 <window id="2006">
+    <onload>RunScript(script.artistslideshow)</onload>
     <controls>
         <control type="visualisation" id="2">
             <visible>Skin.HasSetting(OSDVisualisation.ShowFanart) | [!Skin.HasSetting(musicvis.fanartfallback) + Skin.HasSetting(ArtistSlideShow.Disabled)]</visible>
