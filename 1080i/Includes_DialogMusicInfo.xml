@@ -41,11 +41,7 @@
                             <param name="label" value="$INFO[ListItem.Label]" />
                             <visible>String.IsEqual(ListItem.DBType,artist)</visible>
                         </include>
-                        <include content="Object_Info_Line_Label">
-                            <param name="label" value="$VAR[Label_SubTitle]" />
-                            <param name="textcolor" value="$VAR[ColorHighlight]" />
-                            <param name="divider" value="false" />
-                        </include>
+                        <include>Object_Info_Line</include>
                         <include content="Object_Info_Plot">
                             <param name="maxheight" value="120" />
                             <param name="height" value="auto" />
