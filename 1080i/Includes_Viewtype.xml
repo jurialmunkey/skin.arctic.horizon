@@ -376,7 +376,7 @@
             <include>Object_PosterBack</include>
             <control type="group">
                 <include>Defs_Pad</include>
-                
+
                 <include condition="$PARAM[selectbox]" content="View_Selectbox">
                     <param name="focusbounce" value="true" />
                     <visible>Control.HasFocus($PARAM[id]) | Control.HasFocus($PARAM[altid])</visible>
@@ -403,7 +403,7 @@
                     <param name="visible" value="$PARAM[castlabel]" />
                     <param name="diffuse" value="$PARAM[diffuse]" />
                 </include>
-                
+
                 <!-- Watched Overlay and Selectbox -->
                 <include condition="!Skin.HasSetting(DisableWatchedOverlay)">View_WatchedOverlay</include>
                 <include condition="$PARAM[selectbox]" content="View_Selectbox">
@@ -754,7 +754,7 @@
                         <visible>Control.HasFocus($PARAM[id]) | Control.HasFocus($PARAM[altid])</visible>
                     </include>
                 </control>
-                
+
                 <!-- Watched Overlay and Selectbox -->
                 <include condition="$PARAM[textpanel] + !Skin.HasSetting(DisableWatchedOverlay)">View_WatchedOverlay</include>
                 <include condition="$PARAM[selectbox] + $PARAM[textpanel]" content="View_Selectbox">
@@ -1119,7 +1119,7 @@
                         <param name="selected" value="String.IsEqual(Window.Property(5090Action),Queue)" />
                     </include>
                 </include>
-                
+
                 <control type="group">
                     <include>Defs_Pad</include>
                     <!-- Textlabel -->
@@ -1170,7 +1170,7 @@
                         <width>32</width>
                         <height>32</height>
                         <texture colordiffuse="$PARAM[fgcolor_90]">$VAR[Image_Overlay_List]</texture>
-                    </control>                
+                    </control>
                     <control type="label">
                         <animation effect="slide" end="-40" condition="!String.IsEqual(ListItem.DBType,episode)">Conditional</animation>
                         <animation effect="slide" end="-30" condition="String.IsEqual(ListItem.DBType,episode) + !Integer.IsGreater(ListItem.Season,999)">Conditional</animation>

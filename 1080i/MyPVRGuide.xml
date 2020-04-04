@@ -3,12 +3,12 @@
     <menucontrol>300</menucontrol>
     <background>0</background>
     <defaultcontrol always="true">10</defaultcontrol>
-    
+
     <views>10</views>
-    
+
     <controls>
         <include>Global_Background</include>
-        
+
         <control type="group" id="50">
             <visible allowhiddenfocus="true">!Window.IsVisible(1142) + !$EXP[Exp_ShowPlotOverlay] + !$EXP[Exp_InfoVisible]</visible>
             <include>Animation_Common</include>

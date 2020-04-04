@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
-    
+
     <!-- <constant name="widgets_group_top">-180</constant>
     <constant name="widgets_group_height">1080</constant>
     <constant name="widgets_group_itemgap">-710</constant>
@@ -27,7 +27,7 @@
     <constant name="widgets_settings_bottom_item_height">260</constant>
     <constant name="widgets_settings_bottom_label_top">50</constant>
     <constant name="widgets_settings_bottom_item_top">50</constant>
-    
+
     <!-- Info Dialog Widgets -->
     <constant name="infowidgets_group_height">860</constant>
     <constant name="infowidgets_group_itemgap">-50</constant>
@@ -43,8 +43,8 @@
     <constant name="view_list_height">800</constant>
     <constant name="view_list_center">600</constant>
     <constant name="view_list_width">1760</constant>
-    
-    
+
+
     <constant name="view_poster_height">830</constant>
     <constant name="view_poster_width">570</constant>
     <constant name="view_info_left">700</constant>

@@ -118,14 +118,14 @@
                     <onclick>Skin.ToggleSetting(DisableInfoListFanart)</onclick>
                     <selected>!Skin.HasSetting(DisableInfoListFanart)</selected>
                 </control>
-                
+
             </control>
 
             <include content="Dialog_Scrollbar">
                 <param name="onleft" value="9000" />
             </include>
-            
-           
+
+
             <control type="group">
                 <include>Dialog_Standard_Right_Group</include>
                 <control type="grouplist" id="8000">

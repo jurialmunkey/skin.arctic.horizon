@@ -9,7 +9,7 @@
             <include>Animation_FadeIn</include>
             <include>Animation_FadeOut</include>
         </control>
-        
+
         <control type="multiimage">
             <aspectratio>scale</aspectratio>
             <include>Dimensions_Fullscreen</include>

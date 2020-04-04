@@ -43,7 +43,7 @@
             <nested />
         </control>
     </include>
-    
+
     <include name="Object_PosterBack">
         <param name="colordiffuse" default="AltPosterBack" />
         <param name="pad" default="0" />
@@ -523,7 +523,7 @@
             <height>32</height>
             <visible>!String.IsEmpty($PARAM[container]ListItem.Property(SubtitleLanguage.1))</visible>
         </control>
-        
+
         <control type="image">
             <top>5</top>
             <height>24</height>
@@ -543,9 +543,9 @@
             <height>32</height>
             <visible>!String.IsEmpty($PARAM[container]ListItem.Country)</visible>
         </control>
-        
 
-        
+
+
     </include>
 
     <include name="Object_Info_Languages">
@@ -1499,7 +1499,7 @@
                 <align>$PARAM[align]</align>
                 <itemgap>8</itemgap>
                 <usecontrolcoords>true</usecontrolcoords>
-                
+
 
                 <control type="image">
                     <top>-17</top>

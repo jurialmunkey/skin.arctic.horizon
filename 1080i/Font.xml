@@ -144,7 +144,7 @@
             <size>80</size>
             <style>bold</style>
         </font>
-        <!-- Big weather temp -->        
+        <!-- Big weather temp -->
         <font>
             <name>font_weather_currenttemp</name>
             <filename>RobotoCondensed-Bold.ttf</filename>

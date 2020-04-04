@@ -136,7 +136,7 @@
     </include>
 
     <include name="View_500_SongList">
-        
+
         <control type="group">
             <visible>Control.IsVisible(500)</visible>
             <include>Animation_Down</include>
@@ -149,7 +149,7 @@
                 <onleft condition="String.IsEqual(Window.Property(5090Action),Delete)">CLearProperty(5090Action)</onleft>
                 <onleft condition="String.IsEqual(Window.Property(5090Action),MoveItemUp)">SetProperty(5090Action,Delete)</onleft>
                 <onleft condition="String.IsEqual(Window.Property(5090Action),MoveItemDown)">SetProperty(5090Action,MoveItemUp)</onleft>
-                
+
                 <onright condition="String.IsEmpty(Window.Property(5090Action)) + Window.IsVisible(musicplaylist)">SetProperty(5090Action,Delete)</onright>
                 <onright condition="String.IsEmpty(Window.Property(5090Action)) + Window.IsVisible(MyMusicNav.xml)">SetProperty(5090Action,Queue)</onright>
                 <onright condition="String.IsEqual(Window.Property(5090Action),Delete)">SetProperty(5090Action,MoveItemUp)</onright>

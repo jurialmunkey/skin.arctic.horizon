@@ -2,7 +2,7 @@
     <defaultcontrol always="true">300</defaultcontrol>
     <include>Defs_Settings_OnLoad</include>
     <onunload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=301&amp;levels=1&amp;group=mainmenu|powermenu|searchmenu)</onunload>
-    <onunload condition="System.HasAddon(script.colorbox)">SetProperty(NINE_manual_set,"var=main,set=$INFO[Skin.String(colorbox_main)]|var=comp,set=$INFO[Skin.String(colorbox_comp)]|var=quality,set=$INFO[Skin.String(colorbox_quality)]|var=blursize,set=$INFO[Skin.String(colorbox_blursize)]|var=bitsize,set=$INFO[Skin.String(colorbox_bitsize)]|var=pixelsize,set=$INFO[Skin.String(colorbox_pixelsize)]|var=black,set=$INFO[Skin.String(colorbox_black)]|var=white,set=$INFO[Skin.String(colorbox_white)]|var=blend,set=$INFO[Skin.String(colorbox_blend)]|var=desat,set=$INFO[Skin.String(colorbox_desat)]",home)</onunload> 
+    <onunload condition="System.HasAddon(script.colorbox)">SetProperty(NINE_manual_set,"var=main,set=$INFO[Skin.String(colorbox_main)]|var=comp,set=$INFO[Skin.String(colorbox_comp)]|var=quality,set=$INFO[Skin.String(colorbox_quality)]|var=blursize,set=$INFO[Skin.String(colorbox_blursize)]|var=bitsize,set=$INFO[Skin.String(colorbox_bitsize)]|var=pixelsize,set=$INFO[Skin.String(colorbox_pixelsize)]|var=black,set=$INFO[Skin.String(colorbox_black)]|var=white,set=$INFO[Skin.String(colorbox_white)]|var=blend,set=$INFO[Skin.String(colorbox_blend)]|var=desat,set=$INFO[Skin.String(colorbox_desat)]",home)</onunload>
     <onload condition="String.IsEmpty(Window.Property(CurrentFocus))">SetProperty(CurrentFocus,$NUMBER[9001])</onload>
     <controls>
 
@@ -10,7 +10,7 @@
         <include>Defs_Settings_Background</include>
         <control type="group">
             <include>Dialog_Settings_Group</include>
-    
+
             <include content="Defs_Settings_Changer">
                 <onright>9000</onright>
             </include>
@@ -192,7 +192,7 @@
                         <selected>Skin.HasSetting(EnableShowMore)</selected>
                         <onclick>Skin.ToggleSetting(EnableShowMore)</onclick>
                     </control>
-                    
+
                     <control type="label" id="19182" description="LABEL">
                         <visible>Integer.IsEqual(Window.Property(CurrentFocus),9001)</visible>
                         <include>Dialog_Standard_HintLabel</include>
@@ -227,7 +227,7 @@
 
 
 
-                    
+
 
                     <!-- ========== -->
                     <!-- Background -->
@@ -393,7 +393,7 @@
                         <onclick>Skin.Reset(gradientcolor.name)</onclick>
                     </control>
 
-                    
+
 
                     <!-- <control type="label" id="19385" description="LABEL">
                         <visible>Integer.IsEqual(Window.Property(CurrentFocus),9003)</visible>
@@ -417,8 +417,8 @@
                         <onclick condition="String.IsEmpty(Skin.String(StartupPlaylist))">Skin.SetFile(StartupPlaylist,.mp4|.avi|.mkv|.xvid|.wmv|.mov|.xsp|.mp3|.wma|.flac|.m3u)</onclick>
                         <onclick condition="!String.IsEmpty(Skin.String(StartupPlaylist))">Skin.Reset(StartupPlaylist)</onclick>
                     </control> -->
-                    
-                    
+
+
                     <!-- ======= -->
                     <!-- Library -->
                     <!-- ======= -->
@@ -504,11 +504,11 @@
                         <onclick>Skin.ToggleSetting(LibrarySeasonPosters)</onclick>
                     </control>
 
-                    
 
 
-                    
-                    
+
+
+
 
                     <!-- ================= -->
                     <!-- Video / Music OSD -->
@@ -642,7 +642,7 @@
                         <onclick>Skin.ToggleSetting(ArtistSlideshow.Animate)</onclick>
                         <enable>Skin.HasSetting(musicvis.fanartfallback) | !Skin.HasSetting(ArtistSlideShow.Disabled)</enable>
                     </control>
-                    
+
                     <control type="radiobutton" id="19515" description="Musicvideo auto info">
                         <visible>Integer.IsEqual(Window.Property(CurrentFocus),9005)</visible>
                         <include>Defs_Settings_Button</include>
@@ -658,7 +658,7 @@
                         <selected>Skin.HasSetting(AutoMusicVis)</selected>
                         <onclick>Skin.ToggleSetting(AutoMusicVis)</onclick>
                     </control>
-                    
+
                     <!-- ============= -->
                     <!-- Live TV / PVR -->
                     <!-- ============= -->
@@ -766,7 +766,7 @@
                         <label>$LOCALIZE[31116]</label>
                         <onclick>ActivateWindow(1118)</onclick>
                     </control>
-                    
+
                     <!-- ============ -->
                     <!-- Dependencies -->
                     <!-- ============ -->
@@ -786,7 +786,7 @@
                         <include>Defs_Settings_Button</include>
                     </control>
 
-                    
+
                     <!-- <control type="radiobutton" id="19801">
                         <visible>Integer.IsEqual(Window.Property(CurrentFocus),9008)</visible>
                         <label>script.skin.helper.service</label>
@@ -805,7 +805,7 @@
                         <selected>System.HasAddon(script.skin.helper.widgets)</selected>
                         <include>Defs_Settings_Button</include>
                     </control> -->
-                    
+
                     <!-- <control type="radiobutton" id="19805">
                         <visible>Integer.IsEqual(Window.Property(CurrentFocus),9008)</visible>
                         <label>script.module.metadatautils</label>
@@ -1013,7 +1013,7 @@
                         <label>$LOCALIZE[31034]</label>
                         <onclick>Addon.OpenSettings(script.skin.helper.skinbackup)</onclick>
                         <onclick condition="!System.HasAddon(script.skin.helper.skinbackup)">InstallAddon(script.skin.helper.skinbackup)</onclick>
-                        
+
                     </control>
                     <control type="button" id="19904" description="Reset">
                         <visible>Integer.IsEqual(Window.Property(CurrentFocus),9009)</visible>
@@ -1036,7 +1036,7 @@
                 </include>
             </control>
 
-            
+
 
         </control>
 

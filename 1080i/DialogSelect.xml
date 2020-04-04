@@ -6,6 +6,6 @@
         <include condition="![Window.IsActive(gamestretchmode) | Window.IsActive(gamevideofilter) | Window.IsActive(gamevideorotation)]">Dialog_Select_Standard</include>
         <include condition="Window.IsActive(gamestretchmode) | Window.IsActive(gamevideofilter) | Window.IsActive(gamevideorotation)">Dialog_Select_Game</include>
 
-        
+
     </controls>
 </window>

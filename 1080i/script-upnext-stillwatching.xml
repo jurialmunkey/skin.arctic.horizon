@@ -88,7 +88,7 @@
                                 <param name="visible" value="!String.IsEmpty(Window.Property(rating))" />
                             </include>
                         </control>
-                            
+
                     </control>
                     <control type="grouplist" id="20">
                         <left>20</left>

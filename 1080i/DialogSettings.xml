@@ -44,8 +44,8 @@
             <include content="Dialog_Scrollbar">
                 <param name="onleft" value="5" />
             </include>
-            
-           
+
+
             <control type="group">
                 <include>Dialog_Standard_Right_Group</include>
                 <control type="grouplist" id="8000">

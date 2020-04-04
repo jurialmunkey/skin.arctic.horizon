@@ -113,7 +113,7 @@
                 </control>
             </control>
         </control>
-        <include>DialogVideoInfo_ImageViewer</include>        
+        <include>DialogVideoInfo_ImageViewer</include>
         <include>Object_PlotOverlay</include>
     </include>
 
@@ -121,7 +121,7 @@
         <include content="DialogVideoInfo_Left">
             <include>Animation_Left_Delay</include>
         </include>
-        
+
         <include content="DialogVideoInfo_MainGroup">
             <include content="DialogVideoInfo_WidgetGroupList">
                 <include>Animation_Right_Delay</include>
@@ -381,7 +381,7 @@
             <onclick>SetFocus(300)</onclick>
             <onclick>RunScript(plugin.video.themoviedb.helper,add_query=$INFO[Container(5077).ListItem.Label],type=person,call_auto=1190)</onclick>
             <include>Defs_InfoList_OnBack</include>
-            
+
             <content limit="25" target="videos">plugin://plugin.video.themoviedb.helper/?info=cast&amp;type=movie&amp;tmdb_id=$INFO[Container(5002).ListItem.Property(tmdb_id)]</content>
         </include>
     </include>
@@ -410,7 +410,7 @@
             <movement>3</movement>
             <include>Defs_InfoList_OnClick</include>
             <include>Defs_InfoList_OnBack</include>
-            
+
             <content limit="25" target="videos">$VAR[Info_FromStudio]</content>
         </include>
     </include>
@@ -451,7 +451,7 @@
             <movement>3</movement>
             <include>Defs_InfoList_OnClick</include>
             <include>Defs_InfoList_OnBack</include>
-            
+
             <content limit="25" target="videos">$VAR[Info_FromYear]</content>
         </include>
     </include>
@@ -466,7 +466,7 @@
             <movement>3</movement>
             <include>Defs_InfoList_OnClick</include>
             <include>Defs_InfoList_OnBack</include>
-            
+
             <content limit="25" target="videos">$VAR[Info_FromGenre]</content>
         </include>
     </include>
@@ -481,7 +481,7 @@
             <movement>3</movement>
             <include>Defs_InfoList_OnClick</include>
             <include>Defs_InfoList_OnBack</include>
-            
+
             <content limit="25" target="videos">$VAR[Info_CastFeature]</content>
         </include>
     </include>
@@ -502,7 +502,7 @@
             <include>Defs_InfoList_OnBack</include>
             <movement>1</movement>
             <content limit="25" target="videos" sortby="file">$VAR[Info_Youtube]</content>
-            
+
         </include>
     </include>
 
@@ -670,7 +670,7 @@
                         <param name="visible" value="!String.IsEmpty(Container.PluginName) + String.IsEmpty(ListItem.FileName)" />
                         <param name="align" value="left" />
                     </include>
-                    
+
                 </control>
                 <control type="group">
                     <bottom>20</bottom>

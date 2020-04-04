@@ -210,7 +210,7 @@
                 <label>22006</label>
                 <onclick>subtitledelay</onclick>
             </item>
-            
+
         </content>
     </include>
 
@@ -489,7 +489,7 @@
                 <onclick>SendClick(2)</onclick>
                 <visible>Control.IsEnabled(2)</visible>
             </item>
-            
+
             <!-- Settings -->
             <item>
                 <label>$INFO[Control.GetLabel(9004)]</label>
@@ -648,7 +648,7 @@
                 <onclick>SendClick(14)</onclick>
                 <visible>Control.IsEnabled(14)</visible>
             </item>
-            
+
             <!-- Hide Foreign -->
             <item>
                 <label>$INFO[Control.GetLabel(7)]</label>
@@ -700,7 +700,7 @@
                 <visible>Control.IsEnabled(9)</visible>
                 <visible>!Skin.HasSetting(KioskMode)</visible>
             </item>
-            
+
             <!-- Playlist -->
             <item>
                 <icon>special://skin/extras/icons/playlist.png</icon>
@@ -712,7 +712,7 @@
                 <onclick condition="!String.IsEqual(Playlist.Length(music),0) + !String.IsEqual(Playlist.Length(video),0)">SetProperty(Dialog.2.Label,$LOCALIZE[31396])</onclick>
                 <onclick condition="!String.IsEqual(Playlist.Length(music),0) + !String.IsEqual(Playlist.Length(video),0)">SetProperty(Dialog.2.BuiltIn,ActivateWindow(videoplaylist))</onclick>
                 <onclick condition="!String.IsEqual(Playlist.Length(music),0) + !String.IsEqual(Playlist.Length(video),0)">RunScript(script.toolbox,info=selectdialog,header=$LOCALIZE[524])</onclick>
-                <visible>!String.IsEqual(Playlist.Length(music),0) | !String.IsEqual(Playlist.Length(video),0)</visible> 
+                <visible>!String.IsEqual(Playlist.Length(music),0) | !String.IsEqual(Playlist.Length(video),0)</visible>
             </item>
 
             <!-- Search -->

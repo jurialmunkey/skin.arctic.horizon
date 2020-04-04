@@ -57,7 +57,7 @@
                     <onclick>Skin.ToggleSetting(DisableStarRating)</onclick>
                     <selected>!Skin.HasSetting(DisableStarRating)</selected>
                 </control>
-                
+
                 <control type="radiobutton" id="9004">
                     <label>$LOCALIZE[31003]</label>
                     <radioposx>730</radioposx>
@@ -127,8 +127,8 @@
             <include content="Dialog_Scrollbar">
                 <param name="onleft" value="9000" />
             </include>
-            
-           
+
+
             <control type="group">
                 <include>Dialog_Standard_Right_Group</include>
                 <control type="grouplist" id="8000">

@@ -9,7 +9,7 @@
         <include>Defs_Settings_Background</include>
         <control type="group">
             <include>Dialog_Settings_Group</include>
-    
+
             <include content="Defs_Settings_Changer">
                 <onright>50</onright>
             </include>
@@ -154,7 +154,7 @@
                         <include>Defs_Settings_Button</include>
                         <visible>!Control.IsVisible(30)</visible>
                     </include>
-                    
+
 
                     <control type="label" id="2">
                         <description>Label 2</description>

@@ -347,7 +347,7 @@
         <height>30</height>
         <align>right</align>
         <textcolor>main_fg_70</textcolor>
-        <font>font_statusbar</font>                
+        <font>font_statusbar</font>
         <aligny>center</aligny>
     </include>
 
@@ -608,7 +608,7 @@
                 <align>left</align>
                 <label>$PARAM[header_label]</label>
             </control>
-            
+
             <control type="textbox" id="$PARAM[textbox_id]">
                 <description>Line 1</description>
                 <left>15</left>
@@ -1050,7 +1050,7 @@
                                 <height>260</height>
                                 <left>20</left>
                                 <right>20</right>
-                                <top>20</top>  
+                                <top>20</top>
                                 <videofilter>$INFO[ListItem.Property(game.videofilter)]</videofilter>
                                 <stretchmode>$INFO[ListItem.Property(game.stretchmode)]</stretchmode>
                                 <rotation>$INFO[ListItem.Property(game.videorotation)]</rotation>
@@ -1086,7 +1086,7 @@
                                 <height>260</height>
                                 <left>20</left>
                                 <right>20</right>
-                                <top>20</top>  
+                                <top>20</top>
                                 <videofilter>$INFO[ListItem.Property(game.videofilter)]</videofilter>
                                 <stretchmode>$INFO[ListItem.Property(game.stretchmode)]</stretchmode>
                                 <rotation>$INFO[ListItem.Property(game.videorotation)]</rotation>

@@ -376,7 +376,7 @@
         <param name="gradient" default="true" />
         <definition>
             <control type="group">
-                
+
                 <animation type="Focus" condition="$PARAM[focusbounce]">
                     <effect type="zoom" start="96.5" end="100" time="150" tween="sine" easing="inout" center="auto"/>
                     <effect type="fade" start="20" end="100" time="150" tween="back" easing="out"/>

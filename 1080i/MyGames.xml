@@ -3,7 +3,7 @@
 <window id="2">
     <defaultcontrol always="true">500</defaultcontrol>
     <menucontrol>300</menucontrol>
-    <views>500,510</views>    
+    <views>500,510</views>
     <controls>
         <include>Global_Background</include>
         <include>Topbar_Right</include>

@@ -7,7 +7,7 @@
     <controls>
 
         <include>Viewtypes</include>
-        
+
         <!-- Hidden Buttons -->
         <include>Defs_Options_StandardButtons</include>
         <control type="button" id="8">

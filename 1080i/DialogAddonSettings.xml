@@ -68,7 +68,7 @@
             <include content="Dialog_Scrollbar">
                 <param name="onleft" value="5" />
             </include>
-           
+
             <control type="group">
                 <include>Dialog_Standard_Right_Group</include>
                 <!-- <include content="Dialog_Standard_Right_Buttons_Gradient">

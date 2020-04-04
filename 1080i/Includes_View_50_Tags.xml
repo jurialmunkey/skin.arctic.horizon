@@ -25,7 +25,7 @@
                 <param name="altlabel" value="$INFO[Control.GetLabel(3),, ]$INFO[Control.GetLabel(4)]" />
                 <top>120</top>
             </include>
-           
+
         </control>
     </include>
 </includes>

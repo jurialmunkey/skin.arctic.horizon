@@ -5,7 +5,7 @@
         <include>Global_Overlay</include>
 
         <control type="group">
-            
+
             <include content="Dialog_Standard_Group">
                 <param name="width" value="1620" />
                 <param name="height" value="950" />
@@ -171,7 +171,7 @@
                     <usealttexture>!String.IsEqual(Container(211).ListItem.Property(skinshortcuts-disabled),True)</usealttexture>
                     <include>Dialog_Standard_Button</include>
                 </control>
-                
+
                 <control type="button" id="401" description="Choose Shortcut">
                     <visible>!String.IsEqual(Container(211).ListItem.Property(skinshortcuts-disabled),True)</visible>
                     <include>Dialog_Standard_Button</include>

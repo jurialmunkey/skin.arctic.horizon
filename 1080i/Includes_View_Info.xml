@@ -42,7 +42,7 @@
                 </include>
                 <nested />
             </control>
-            
+
         </definition>
     </include>
 
@@ -98,7 +98,7 @@
                 <onclick>SetFocus(50)</onclick>
                 <onclick>Action(Info)</onclick>
             </include>
-            
+
             <include content="Object_Info_Button" description="Trailer">
                 <param name="id" value="3105" />
                 <param name="groupid" value="3005" />
@@ -108,7 +108,7 @@
                 <param name="visible" value="!String.IsEmpty(ListItem.Trailer)" />
                 <onclick>PlayMedia($INFO[ListItem.Trailer])</onclick>
             </include>
-            
+
             <include content="Object_Info_Button" description="Similar">
                 <param name="id" value="3103" />
                 <param name="groupid" value="3003" />
@@ -121,7 +121,7 @@
                 <!-- <onclick>Container.Update($VAR[Info_Recommended])</onclick> -->
                 <!-- <onclick>ActivateWindow(1142)</onclick> -->
             </include>
-            
+
             <include content="Object_Info_Button" description="Overview">
                 <param name="id" value="3106" />
                 <param name="groupid" value="3006" />
@@ -141,7 +141,7 @@
                 <onclick>SetFocus(9000)</onclick>
             </include>
 
-            
+
             <nested />
         </control>
     </include>

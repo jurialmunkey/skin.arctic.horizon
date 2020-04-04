@@ -35,7 +35,7 @@
                     <texturenofocus colordiffuse="dialog_fg_12" border="5">common/box.png</texturenofocus>
                     <include>Dialog_Standard_Right_Buttons</include>
                 </control>
-                
+
             </control>
 
             <control type="group">
@@ -110,7 +110,7 @@
                     <include>Dialog_Standard_Right_Buttons</include>
                 </control>
             </control> -->
-            
+
         </control>
     </controls>
 

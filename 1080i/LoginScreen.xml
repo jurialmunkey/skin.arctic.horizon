@@ -12,7 +12,7 @@
                 <include>Dimensions_Fullscreen</include>
                 <texture>special://skin/extras/backgrounds/mountains.jpg</texture>
             </control>
-            
+
             <control type="list" id="52">
                 <visible>!Window.IsVisible(ProfileSettings.xml)</visible>
                 <left>635</left>

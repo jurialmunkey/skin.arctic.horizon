@@ -76,9 +76,9 @@
                 <include>Dialog_Separator_Right</include>
             </control>
 
-            
 
-      
+
+
 
             <!-- Controller Image -->
             <control type="group">
@@ -106,9 +106,9 @@
                 <textcolor>dialog_fg_70</textcolor>
             </control>
 
-            
 
-            
+
+
             <control type="grouplist" id="8000">
                 <left>40</left>
                 <right>40</right>
@@ -124,47 +124,47 @@
                 <control type="button" id="18">
                     <height>70</height>
                     <label>$LOCALIZE[186]</label>
-                    
+
                     <width>275</width>
                     <include>Dialog_Standard_OkCancel</include>
                 </control>
                 <control type="button" id="19">
                     <height>70</height>
                     <label>$LOCALIZE[13007]</label>
-                    
+
                     <width>275</width>
                     <include>Dialog_Standard_OkCancel</include>
                 </control>
                 <control type="button" id="20">
                     <height>70</height>
                     <label>$LOCALIZE[21452]</label>
-                    
+
                     <width>275</width>
                     <include>Dialog_Standard_OkCancel</include>
                 </control>
                 <control type="button" id="22">
                     <height>70</height>
                     <label>$LOCALIZE[35021]</label>
-                    
+
                     <width>275</width>
                     <include>Dialog_Standard_OkCancel</include>
                 </control>
                 <control type="button" id="17">
                     <height>70</height>
                     <label>$LOCALIZE[10043]</label>
-                    
+
                     <width>275</width>
                     <include>Dialog_Standard_OkCancel</include>
                 </control>
                 <control type="button" id="21">
                     <height>70</height>
                     <label>$LOCALIZE[35019]</label>
-                    
+
                     <width>275</width>
                     <include>Dialog_Standard_OkCancel</include>
                 </control>
             </control>
-     
+
         </control>
 
     </controls>

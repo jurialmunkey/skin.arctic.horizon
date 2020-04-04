@@ -193,7 +193,7 @@
             <filename>lyrics/Exo2-BlackItalic.ttf</filename>
             <linespacing>0.85</linespacing>
             <size>62</size>
-        </font> 
+        </font>
         <font>
             <name>lyr14</name>
             <style>uppercase</style>
@@ -1375,7 +1375,7 @@
 			<control type="label">
 				<visible>String.EndsWith(Container(110).Currentitem,13) | String.EndsWith(Container(110).Currentitem,28) | String.EndsWith(Container(110).Currentitem,43) | String.EndsWith(Container(110).Currentitem,58) | String.EndsWith(Container(110).Currentitem,73) | String.EndsWith(Container(110).Currentitem,88) | String.EndsWith(Container(110).Currentitem,03)</visible>
 				<animation type="Visible" reversible="false">
-					<effect type="zoom" center="auto" start="25" end="100" time="300"/>				
+					<effect type="zoom" center="auto" start="25" end="100" time="300"/>
 					<effect type="rotate" center="auto" start="360" end="0" time="300" tween="sine" easing="out"/>
 				</animation>
 				<width>auto</width>
@@ -1390,7 +1390,7 @@
 			<control type="label">
 				<visible>String.EndsWith(Container(110).Currentitem,13) | String.EndsWith(Container(110).Currentitem,28) | String.EndsWith(Container(110).Currentitem,43) | String.EndsWith(Container(110).Currentitem,58) | String.EndsWith(Container(110).Currentitem,73) | String.EndsWith(Container(110).Currentitem,88) | String.EndsWith(Container(110).Currentitem,03)</visible>
 				<animation type="Visible" reversible="false">
-					<effect type="zoom" center="auto" start="25" end="100" time="500"/>		
+					<effect type="zoom" center="auto" start="25" end="100" time="500"/>
 					<effect type="rotate" center="auto" start="450" end="0" time="500" tween="sine" easing="out"/>
 				</animation>
 				<width>auto</width>
@@ -1405,7 +1405,7 @@
 			<control type="label">
 				<visible>String.EndsWith(Container(110).Currentitem,13) | String.EndsWith(Container(110).Currentitem,28) | String.EndsWith(Container(110).Currentitem,43) | String.EndsWith(Container(110).Currentitem,58) | String.EndsWith(Container(110).Currentitem,73) | String.EndsWith(Container(110).Currentitem,88) | String.EndsWith(Container(110).Currentitem,03)</visible>
 				<animation type="Visible" reversible="false">
-					<effect type="zoom" center="auto" start="25" end="100" time="600"/>			
+					<effect type="zoom" center="auto" start="25" end="100" time="600"/>
 					<effect type="rotate" center="auto" start="540" end="0" time="700" tween="sine" easing="out"/>
 				</animation>
 				<width>auto</width>

@@ -20,7 +20,7 @@
         <control type="group">
             <include>Animation_FadeIn</include>
             <include>Animation_FadeOut</include>
-            
+
 
             <control type="group">
                 <left>-18</left>

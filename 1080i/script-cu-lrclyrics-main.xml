@@ -444,7 +444,7 @@
                         <label>[COLOR=ff00e676]$INFO[Container(110).ListItem.Property(part1)] [/COLOR][COLOR=fffffaf0]$INFO[Container(110).ListItem.Property(part2)] [/COLOR][COLOR=fffb8c00]$INFO[Container(110).ListItem.Property(part3)][/COLOR][CR][COLOR=ffb39ddb]$INFO[Container(110).ListItem.Property(part4)][/COLOR]</label>
                     </control>
                 </control>
-            </control>  
+            </control>
             <control type="group">
                 <visible>!String.IsEmpty(Container(110).ListItem.Property(part4)) + [Integer.IsGreater(Container(110).ListItem.Property(duration),1449) | String.IsEmpty(Window(Home).Property(culrc.islrc))]</visible>
                 <!--Line 1-->

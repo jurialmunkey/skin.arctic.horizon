@@ -7,7 +7,7 @@
         <control type="button" id="6"><include>Defs_Visible_Button</include></control>
         <control type="button" id="8"><include>Defs_Visible_Button</include></control>
         <control type="button" id="10"><include>Defs_Visible_Button</include></control>
-        
+
         <include content="DialogVideoInfo_Left">
             <param name="poster" value="false" />
             <include>Animation_Left_Delay</include>
@@ -79,10 +79,10 @@
                         <bottom>24</bottom>
                     </include>
                 </include>
-                
+
             </include>
         </include>
-       
+
         <include>Object_PlotOverlay</include>
 
     </controls>

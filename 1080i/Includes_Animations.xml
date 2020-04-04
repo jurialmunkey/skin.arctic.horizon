@@ -76,7 +76,7 @@
         </animation>
     </include>
 
-    <include name="Animation_Common">        
+    <include name="Animation_Common">
         <animation type="Visible" reversible="false">
             <effect type="fade" start="0" end="100" time="400" delay="400" tween="sine" easing="in" />
             <effect type="zoom" start="85" end="100" time="400" delay="400" center="auto" tween="sine" easing="out" />

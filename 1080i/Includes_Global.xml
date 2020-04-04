@@ -3,7 +3,7 @@
 
     <variable name="Global_BusyLoader">
         <value>loader/</value>
-    </variable>    
+    </variable>
 
     <include name="Global_Overlay">
         <control type="image">

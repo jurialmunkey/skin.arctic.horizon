@@ -21,7 +21,7 @@
                 <bordersize>24</bordersize>
                 <texture border="16" colordiffuse="dialog_bg_100">common/dialog.png</texture>
             </control>
-            
+
             <control type="label" id="10">
                 <description>Heading</description>
                 <top>20</top>

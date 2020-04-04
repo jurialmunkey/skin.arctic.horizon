@@ -113,7 +113,7 @@
     <variable name="Defs_ThemeSwitcher_StartTime">
         <value>06:00</value>
     </variable>
-    
+
     <include name="Defs_PauseAtEnd_Value">
         <pauseatend>$PARAM[time]</pauseatend>
     </include>
@@ -194,107 +194,113 @@
         </control>
     </include>
 
+    <include name="Defs_Progress_Colorfader">
+        <animation effect="fade" start="100" end="0" condition="Integer.IsEqual($PARAM[info],0)">Conditional</animation>
+        <animation effect="fade" start="100" end="1" condition="Integer.IsEqual($PARAM[info],1)">Conditional</animation>
+        <animation effect="fade" start="100" end="2" condition="Integer.IsEqual($PARAM[info],2)">Conditional</animation>
+        <animation effect="fade" start="100" end="3" condition="Integer.IsEqual($PARAM[info],3)">Conditional</animation>
+        <animation effect="fade" start="100" end="4" condition="Integer.IsEqual($PARAM[info],4)">Conditional</animation>
+        <animation effect="fade" start="100" end="5" condition="Integer.IsEqual($PARAM[info],5)">Conditional</animation>
+        <animation effect="fade" start="100" end="6" condition="Integer.IsEqual($PARAM[info],6)">Conditional</animation>
+        <animation effect="fade" start="100" end="7" condition="Integer.IsEqual($PARAM[info],7)">Conditional</animation>
+        <animation effect="fade" start="100" end="8" condition="Integer.IsEqual($PARAM[info],8)">Conditional</animation>
+        <animation effect="fade" start="100" end="9" condition="Integer.IsEqual($PARAM[info],9)">Conditional</animation>
+        <animation effect="fade" start="100" end="10" condition="Integer.IsEqual($PARAM[info],10)">Conditional</animation>
+        <animation effect="fade" start="100" end="11" condition="Integer.IsEqual($PARAM[info],11)">Conditional</animation>
+        <animation effect="fade" start="100" end="12" condition="Integer.IsEqual($PARAM[info],12)">Conditional</animation>
+        <animation effect="fade" start="100" end="13" condition="Integer.IsEqual($PARAM[info],13)">Conditional</animation>
+        <animation effect="fade" start="100" end="14" condition="Integer.IsEqual($PARAM[info],14)">Conditional</animation>
+        <animation effect="fade" start="100" end="15" condition="Integer.IsEqual($PARAM[info],15)">Conditional</animation>
+        <animation effect="fade" start="100" end="16" condition="Integer.IsEqual($PARAM[info],16)">Conditional</animation>
+        <animation effect="fade" start="100" end="17" condition="Integer.IsEqual($PARAM[info],17)">Conditional</animation>
+        <animation effect="fade" start="100" end="18" condition="Integer.IsEqual($PARAM[info],18)">Conditional</animation>
+        <animation effect="fade" start="100" end="19" condition="Integer.IsEqual($PARAM[info],19)">Conditional</animation>
+        <animation effect="fade" start="100" end="20" condition="Integer.IsEqual($PARAM[info],20)">Conditional</animation>
+        <animation effect="fade" start="100" end="21" condition="Integer.IsEqual($PARAM[info],21)">Conditional</animation>
+        <animation effect="fade" start="100" end="22" condition="Integer.IsEqual($PARAM[info],22)">Conditional</animation>
+        <animation effect="fade" start="100" end="23" condition="Integer.IsEqual($PARAM[info],23)">Conditional</animation>
+        <animation effect="fade" start="100" end="24" condition="Integer.IsEqual($PARAM[info],24)">Conditional</animation>
+        <animation effect="fade" start="100" end="25" condition="Integer.IsEqual($PARAM[info],25)">Conditional</animation>
+        <animation effect="fade" start="100" end="26" condition="Integer.IsEqual($PARAM[info],26)">Conditional</animation>
+        <animation effect="fade" start="100" end="27" condition="Integer.IsEqual($PARAM[info],27)">Conditional</animation>
+        <animation effect="fade" start="100" end="28" condition="Integer.IsEqual($PARAM[info],28)">Conditional</animation>
+        <animation effect="fade" start="100" end="29" condition="Integer.IsEqual($PARAM[info],29)">Conditional</animation>
+        <animation effect="fade" start="100" end="30" condition="Integer.IsEqual($PARAM[info],30)">Conditional</animation>
+        <animation effect="fade" start="100" end="31" condition="Integer.IsEqual($PARAM[info],31)">Conditional</animation>
+        <animation effect="fade" start="100" end="32" condition="Integer.IsEqual($PARAM[info],32)">Conditional</animation>
+        <animation effect="fade" start="100" end="33" condition="Integer.IsEqual($PARAM[info],33)">Conditional</animation>
+        <animation effect="fade" start="100" end="34" condition="Integer.IsEqual($PARAM[info],34)">Conditional</animation>
+        <animation effect="fade" start="100" end="35" condition="Integer.IsEqual($PARAM[info],35)">Conditional</animation>
+        <animation effect="fade" start="100" end="36" condition="Integer.IsEqual($PARAM[info],36)">Conditional</animation>
+        <animation effect="fade" start="100" end="37" condition="Integer.IsEqual($PARAM[info],37)">Conditional</animation>
+        <animation effect="fade" start="100" end="38" condition="Integer.IsEqual($PARAM[info],38)">Conditional</animation>
+        <animation effect="fade" start="100" end="39" condition="Integer.IsEqual($PARAM[info],39)">Conditional</animation>
+        <animation effect="fade" start="100" end="40" condition="Integer.IsEqual($PARAM[info],40)">Conditional</animation>
+        <animation effect="fade" start="100" end="41" condition="Integer.IsEqual($PARAM[info],41)">Conditional</animation>
+        <animation effect="fade" start="100" end="42" condition="Integer.IsEqual($PARAM[info],42)">Conditional</animation>
+        <animation effect="fade" start="100" end="43" condition="Integer.IsEqual($PARAM[info],43)">Conditional</animation>
+        <animation effect="fade" start="100" end="44" condition="Integer.IsEqual($PARAM[info],44)">Conditional</animation>
+        <animation effect="fade" start="100" end="45" condition="Integer.IsEqual($PARAM[info],45)">Conditional</animation>
+        <animation effect="fade" start="100" end="46" condition="Integer.IsEqual($PARAM[info],46)">Conditional</animation>
+        <animation effect="fade" start="100" end="47" condition="Integer.IsEqual($PARAM[info],47)">Conditional</animation>
+        <animation effect="fade" start="100" end="48" condition="Integer.IsEqual($PARAM[info],48)">Conditional</animation>
+        <animation effect="fade" start="100" end="49" condition="Integer.IsEqual($PARAM[info],49)">Conditional</animation>
+        <animation effect="fade" start="100" end="50" condition="Integer.IsEqual($PARAM[info],50)">Conditional</animation>
+        <animation effect="fade" start="100" end="51" condition="Integer.IsEqual($PARAM[info],51)">Conditional</animation>
+        <animation effect="fade" start="100" end="52" condition="Integer.IsEqual($PARAM[info],52)">Conditional</animation>
+        <animation effect="fade" start="100" end="53" condition="Integer.IsEqual($PARAM[info],53)">Conditional</animation>
+        <animation effect="fade" start="100" end="54" condition="Integer.IsEqual($PARAM[info],54)">Conditional</animation>
+        <animation effect="fade" start="100" end="55" condition="Integer.IsEqual($PARAM[info],55)">Conditional</animation>
+        <animation effect="fade" start="100" end="56" condition="Integer.IsEqual($PARAM[info],56)">Conditional</animation>
+        <animation effect="fade" start="100" end="57" condition="Integer.IsEqual($PARAM[info],57)">Conditional</animation>
+        <animation effect="fade" start="100" end="58" condition="Integer.IsEqual($PARAM[info],58)">Conditional</animation>
+        <animation effect="fade" start="100" end="59" condition="Integer.IsEqual($PARAM[info],59)">Conditional</animation>
+        <animation effect="fade" start="100" end="60" condition="Integer.IsEqual($PARAM[info],60)">Conditional</animation>
+        <animation effect="fade" start="100" end="61" condition="Integer.IsEqual($PARAM[info],61)">Conditional</animation>
+        <animation effect="fade" start="100" end="62" condition="Integer.IsEqual($PARAM[info],62)">Conditional</animation>
+        <animation effect="fade" start="100" end="63" condition="Integer.IsEqual($PARAM[info],63)">Conditional</animation>
+        <animation effect="fade" start="100" end="64" condition="Integer.IsEqual($PARAM[info],64)">Conditional</animation>
+        <animation effect="fade" start="100" end="65" condition="Integer.IsEqual($PARAM[info],65)">Conditional</animation>
+        <animation effect="fade" start="100" end="66" condition="Integer.IsEqual($PARAM[info],66)">Conditional</animation>
+        <animation effect="fade" start="100" end="67" condition="Integer.IsEqual($PARAM[info],67)">Conditional</animation>
+        <animation effect="fade" start="100" end="68" condition="Integer.IsEqual($PARAM[info],68)">Conditional</animation>
+        <animation effect="fade" start="100" end="69" condition="Integer.IsEqual($PARAM[info],69)">Conditional</animation>
+        <animation effect="fade" start="100" end="70" condition="Integer.IsEqual($PARAM[info],70)">Conditional</animation>
+        <animation effect="fade" start="100" end="71" condition="Integer.IsEqual($PARAM[info],71)">Conditional</animation>
+        <animation effect="fade" start="100" end="72" condition="Integer.IsEqual($PARAM[info],72)">Conditional</animation>
+        <animation effect="fade" start="100" end="73" condition="Integer.IsEqual($PARAM[info],73)">Conditional</animation>
+        <animation effect="fade" start="100" end="74" condition="Integer.IsEqual($PARAM[info],74)">Conditional</animation>
+        <animation effect="fade" start="100" end="75" condition="Integer.IsEqual($PARAM[info],75)">Conditional</animation>
+        <animation effect="fade" start="100" end="76" condition="Integer.IsEqual($PARAM[info],76)">Conditional</animation>
+        <animation effect="fade" start="100" end="77" condition="Integer.IsEqual($PARAM[info],77)">Conditional</animation>
+        <animation effect="fade" start="100" end="78" condition="Integer.IsEqual($PARAM[info],78)">Conditional</animation>
+        <animation effect="fade" start="100" end="79" condition="Integer.IsEqual($PARAM[info],79)">Conditional</animation>
+        <animation effect="fade" start="100" end="80" condition="Integer.IsEqual($PARAM[info],80)">Conditional</animation>
+        <animation effect="fade" start="100" end="81" condition="Integer.IsEqual($PARAM[info],81)">Conditional</animation>
+        <animation effect="fade" start="100" end="82" condition="Integer.IsEqual($PARAM[info],82)">Conditional</animation>
+        <animation effect="fade" start="100" end="83" condition="Integer.IsEqual($PARAM[info],83)">Conditional</animation>
+        <animation effect="fade" start="100" end="84" condition="Integer.IsEqual($PARAM[info],84)">Conditional</animation>
+        <animation effect="fade" start="100" end="85" condition="Integer.IsEqual($PARAM[info],85)">Conditional</animation>
+        <animation effect="fade" start="100" end="86" condition="Integer.IsEqual($PARAM[info],86)">Conditional</animation>
+        <animation effect="fade" start="100" end="87" condition="Integer.IsEqual($PARAM[info],87)">Conditional</animation>
+        <animation effect="fade" start="100" end="88" condition="Integer.IsEqual($PARAM[info],88)">Conditional</animation>
+        <animation effect="fade" start="100" end="89" condition="Integer.IsEqual($PARAM[info],89)">Conditional</animation>
+        <animation effect="fade" start="100" end="90" condition="Integer.IsEqual($PARAM[info],90)">Conditional</animation>
+        <animation effect="fade" start="100" end="91" condition="Integer.IsEqual($PARAM[info],91)">Conditional</animation>
+        <animation effect="fade" start="100" end="92" condition="Integer.IsEqual($PARAM[info],92)">Conditional</animation>
+        <animation effect="fade" start="100" end="93" condition="Integer.IsEqual($PARAM[info],93)">Conditional</animation>
+        <animation effect="fade" start="100" end="94" condition="Integer.IsEqual($PARAM[info],94)">Conditional</animation>
+        <animation effect="fade" start="100" end="95" condition="Integer.IsEqual($PARAM[info],95)">Conditional</animation>
+        <animation effect="fade" start="100" end="96" condition="Integer.IsEqual($PARAM[info],96)">Conditional</animation>
+        <animation effect="fade" start="100" end="97" condition="Integer.IsEqual($PARAM[info],97)">Conditional</animation>
+        <animation effect="fade" start="100" end="98" condition="Integer.IsEqual($PARAM[info],98)">Conditional</animation>
+        <animation effect="fade" start="100" end="99" condition="Integer.IsEqual($PARAM[info],99)">Conditional</animation>
+    </include>
+
     <include name="Defs_Progress_Colorfade">
-        <animation effect="fade" start="100" end="0" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),0)">Conditional</animation>
-        <animation effect="fade" start="100" end="1" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),1)">Conditional</animation>
-        <animation effect="fade" start="100" end="2" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),2)">Conditional</animation>
-        <animation effect="fade" start="100" end="3" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),3)">Conditional</animation>
-        <animation effect="fade" start="100" end="4" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),4)">Conditional</animation>
-        <animation effect="fade" start="100" end="5" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),5)">Conditional</animation>
-        <animation effect="fade" start="100" end="6" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),6)">Conditional</animation>
-        <animation effect="fade" start="100" end="7" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),7)">Conditional</animation>
-        <animation effect="fade" start="100" end="8" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),8)">Conditional</animation>
-        <animation effect="fade" start="100" end="9" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),9)">Conditional</animation>
-        <animation effect="fade" start="100" end="10" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),10)">Conditional</animation>
-        <animation effect="fade" start="100" end="11" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),11)">Conditional</animation>
-        <animation effect="fade" start="100" end="12" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),12)">Conditional</animation>
-        <animation effect="fade" start="100" end="13" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),13)">Conditional</animation>
-        <animation effect="fade" start="100" end="14" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),14)">Conditional</animation>
-        <animation effect="fade" start="100" end="15" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),15)">Conditional</animation>
-        <animation effect="fade" start="100" end="16" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),16)">Conditional</animation>
-        <animation effect="fade" start="100" end="17" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),17)">Conditional</animation>
-        <animation effect="fade" start="100" end="18" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),18)">Conditional</animation>
-        <animation effect="fade" start="100" end="19" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),19)">Conditional</animation>
-        <animation effect="fade" start="100" end="20" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),20)">Conditional</animation>
-        <animation effect="fade" start="100" end="21" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),21)">Conditional</animation>
-        <animation effect="fade" start="100" end="22" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),22)">Conditional</animation>
-        <animation effect="fade" start="100" end="23" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),23)">Conditional</animation>
-        <animation effect="fade" start="100" end="24" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),24)">Conditional</animation>
-        <animation effect="fade" start="100" end="25" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),25)">Conditional</animation>
-        <animation effect="fade" start="100" end="26" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),26)">Conditional</animation>
-        <animation effect="fade" start="100" end="27" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),27)">Conditional</animation>
-        <animation effect="fade" start="100" end="28" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),28)">Conditional</animation>
-        <animation effect="fade" start="100" end="29" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),29)">Conditional</animation>
-        <animation effect="fade" start="100" end="30" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),30)">Conditional</animation>
-        <animation effect="fade" start="100" end="31" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),31)">Conditional</animation>
-        <animation effect="fade" start="100" end="32" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),32)">Conditional</animation>
-        <animation effect="fade" start="100" end="33" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),33)">Conditional</animation>
-        <animation effect="fade" start="100" end="34" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),34)">Conditional</animation>
-        <animation effect="fade" start="100" end="35" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),35)">Conditional</animation>
-        <animation effect="fade" start="100" end="36" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),36)">Conditional</animation>
-        <animation effect="fade" start="100" end="37" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),37)">Conditional</animation>
-        <animation effect="fade" start="100" end="38" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),38)">Conditional</animation>
-        <animation effect="fade" start="100" end="39" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),39)">Conditional</animation>
-        <animation effect="fade" start="100" end="40" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),40)">Conditional</animation>
-        <animation effect="fade" start="100" end="41" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),41)">Conditional</animation>
-        <animation effect="fade" start="100" end="42" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),42)">Conditional</animation>
-        <animation effect="fade" start="100" end="43" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),43)">Conditional</animation>
-        <animation effect="fade" start="100" end="44" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),44)">Conditional</animation>
-        <animation effect="fade" start="100" end="45" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),45)">Conditional</animation>
-        <animation effect="fade" start="100" end="46" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),46)">Conditional</animation>
-        <animation effect="fade" start="100" end="47" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),47)">Conditional</animation>
-        <animation effect="fade" start="100" end="48" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),48)">Conditional</animation>
-        <animation effect="fade" start="100" end="49" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),49)">Conditional</animation>
-        <animation effect="fade" start="100" end="50" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),50)">Conditional</animation>
-        <animation effect="fade" start="100" end="51" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),51)">Conditional</animation>
-        <animation effect="fade" start="100" end="52" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),52)">Conditional</animation>
-        <animation effect="fade" start="100" end="53" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),53)">Conditional</animation>
-        <animation effect="fade" start="100" end="54" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),54)">Conditional</animation>
-        <animation effect="fade" start="100" end="55" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),55)">Conditional</animation>
-        <animation effect="fade" start="100" end="56" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),56)">Conditional</animation>
-        <animation effect="fade" start="100" end="57" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),57)">Conditional</animation>
-        <animation effect="fade" start="100" end="58" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),58)">Conditional</animation>
-        <animation effect="fade" start="100" end="59" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),59)">Conditional</animation>
-        <animation effect="fade" start="100" end="60" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),60)">Conditional</animation>
-        <animation effect="fade" start="100" end="61" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),61)">Conditional</animation>
-        <animation effect="fade" start="100" end="62" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),62)">Conditional</animation>
-        <animation effect="fade" start="100" end="63" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),63)">Conditional</animation>
-        <animation effect="fade" start="100" end="64" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),64)">Conditional</animation>
-        <animation effect="fade" start="100" end="65" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),65)">Conditional</animation>
-        <animation effect="fade" start="100" end="66" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),66)">Conditional</animation>
-        <animation effect="fade" start="100" end="67" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),67)">Conditional</animation>
-        <animation effect="fade" start="100" end="68" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),68)">Conditional</animation>
-        <animation effect="fade" start="100" end="69" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),69)">Conditional</animation>
-        <animation effect="fade" start="100" end="70" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),70)">Conditional</animation>
-        <animation effect="fade" start="100" end="71" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),71)">Conditional</animation>
-        <animation effect="fade" start="100" end="72" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),72)">Conditional</animation>
-        <animation effect="fade" start="100" end="73" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),73)">Conditional</animation>
-        <animation effect="fade" start="100" end="74" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),74)">Conditional</animation>
-        <animation effect="fade" start="100" end="75" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),75)">Conditional</animation>
-        <animation effect="fade" start="100" end="76" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),76)">Conditional</animation>
-        <animation effect="fade" start="100" end="77" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),77)">Conditional</animation>
-        <animation effect="fade" start="100" end="78" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),78)">Conditional</animation>
-        <animation effect="fade" start="100" end="79" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),79)">Conditional</animation>
-        <animation effect="fade" start="100" end="80" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),80)">Conditional</animation>
-        <animation effect="fade" start="100" end="81" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),81)">Conditional</animation>
-        <animation effect="fade" start="100" end="82" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),82)">Conditional</animation>
-        <animation effect="fade" start="100" end="83" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),83)">Conditional</animation>
-        <animation effect="fade" start="100" end="84" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),84)">Conditional</animation>
-        <animation effect="fade" start="100" end="85" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),85)">Conditional</animation>
-        <animation effect="fade" start="100" end="86" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),86)">Conditional</animation>
-        <animation effect="fade" start="100" end="87" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),87)">Conditional</animation>
-        <animation effect="fade" start="100" end="88" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),88)">Conditional</animation>
-        <animation effect="fade" start="100" end="89" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),89)">Conditional</animation>
-        <animation effect="fade" start="100" end="90" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),90)">Conditional</animation>
-        <animation effect="fade" start="100" end="91" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),91)">Conditional</animation>
-        <animation effect="fade" start="100" end="92" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),92)">Conditional</animation>
-        <animation effect="fade" start="100" end="93" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),93)">Conditional</animation>
-        <animation effect="fade" start="100" end="94" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),94)">Conditional</animation>
-        <animation effect="fade" start="100" end="95" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),95)">Conditional</animation>
-        <animation effect="fade" start="100" end="96" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),96)">Conditional</animation>
-        <animation effect="fade" start="100" end="97" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),97)">Conditional</animation>
-        <animation effect="fade" start="100" end="98" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),98)">Conditional</animation>
-        <animation effect="fade" start="100" end="99" condition="Integer.IsEqual(Control.GetLabel($PARAM[id]),99)">Conditional</animation>
+        <include content="Defs_Progress_Colorfader">
+            <param name="info" value="Control.GetLabel($PARAM[id])" />
+        </include>
     </include>
 
     <include name="Defs_UpdateColorbox_Onclick">

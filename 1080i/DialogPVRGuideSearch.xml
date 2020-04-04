@@ -52,7 +52,7 @@
                     <label>$LOCALIZE[33063]</label>
                     <include>Dialog_Standard_HintLabel</include>
                 </control>
-                
+
 
                 <!-- Left Side -->
                 <control type="grouplist" description="Playlist Options" id="8001">
@@ -155,7 +155,7 @@
                     </control>
                 </control>
 
-                
+
 
                 <control type="group">
                     <top>item_list_height</top>

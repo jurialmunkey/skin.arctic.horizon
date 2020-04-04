@@ -8,7 +8,7 @@
         <include>Global_Background</include>
         <include>Topbar_Left</include>
         <include>Topbar_Right</include>
-        
+
         <include content="Weather">
             <top>view_top</top>
             <left>view_pad</left>

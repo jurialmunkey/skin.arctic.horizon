@@ -46,7 +46,7 @@
             <include>Animation_FadeInOut</include>
             <include>Global_Background</include>
         </control>
-        
+
         <control type="group">
             <animation effect="slide" tween="quadratic" time="400" start="0" end="0,320" condition="!Control.HasFocus(3002)">Conditional</animation>
             <visible allowhiddenfocus="true">!$EXP[Exp_CommonAnimation]</visible>

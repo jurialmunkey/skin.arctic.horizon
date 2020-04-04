@@ -8,16 +8,16 @@
 
         <include>Global_Background</include>
         <include>Defs_Settings_Background</include>
-        
-        
+
+
         <control type="group">
             <include>Dialog_Settings_Group</include>
-    
+
             <include content="Defs_Settings_Changer">
                 <onright>3</onright>
             </include>
 
-            
+
 
             <control type="group">
                 <left>item_list_height</left>
@@ -66,7 +66,7 @@
                     <include>Defs_Settings_OnLeft</include>
                 </control>
 
-                
+
                 <control type="button" id="20">
                     <width>dialog_side_grouplist</width>
                     <bottom>item_list_height_half</bottom>
@@ -98,7 +98,7 @@
                     <visible>Control.HasFocus(20)</visible>
                 </control>
 
-                
+
                 <control type="grouplist" id="5">
                     <description>control area</description>
                     <left>dialog_side_grouplist</left>
@@ -125,7 +125,7 @@
         </control>
 
         <include>Object_Settings_Info</include>
-     
+
         <control type="button" id="7">
             <description>Default Button</description>
             <include>Defs_Settings_Button</include>

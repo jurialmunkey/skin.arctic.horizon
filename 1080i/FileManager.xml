@@ -7,7 +7,7 @@
         <include>Global_Background</include>
         <include>Topbar_Right</include>
         <include>Topbar_Left</include>
-            
+
         <control type="group">
             <include>View_Pad</include>
             <control type="grouplist">
@@ -24,7 +24,7 @@
                 <include content="Viewtype_BackPanel">
                     <height>720</height>
                 </include>
-            
+
                 <control type="group">
                     <description>Left panel</description>
                     <left>0</left>
@@ -146,7 +146,7 @@
                                 <textcolor>main_fg_100</textcolor>
                                 <font>font_tiny</font>
                                 <info>ListItem.Label2</info>
-                                
+
                             </control>
 
                             <control type="image">
@@ -276,7 +276,7 @@
                                 <textcolor>main_fg_100</textcolor>
                                 <font>font_tiny</font>
                                 <info>ListItem.Label2</info>
-                                
+
                             </control>
 
                             <control type="image">

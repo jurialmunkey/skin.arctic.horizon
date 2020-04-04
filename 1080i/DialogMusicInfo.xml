@@ -3,8 +3,8 @@
 <window id="2001">
     <defaultcontrol always="true">300</defaultcontrol>
     <controls>
-        
-        
+
+
         <!-- Main Group -->
         <include>DialogMusicInfo</include>
         <control type="group">
@@ -25,7 +25,7 @@
         <control type="button" id="10">
             <include>Defs_Hidden_Button</include>
         </control>
-    
+
     </controls>
 
 </window>

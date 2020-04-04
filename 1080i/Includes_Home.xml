@@ -187,7 +187,7 @@
                             </control>
                         </control>
                     </control>
-                    
+
                 </control>
                 <include>Topbar_Left</include>
             </control>
@@ -217,7 +217,7 @@
                 <include>Animation_FadeInOut</include>
                 <include>Global_Background</include>
             </control>
-            
+
             <control type="group">
 
                 <animation effect="slide" start="0" end="0,320" condition="Integer.IsEqual(Container(302).NumItems,0)">Conditional</animation>
@@ -506,7 +506,7 @@
                     <param name="condition" value="!Control.HasFocus(3001) + System.IdleTime(1) + !Skin.HasSetting(DisableAutoScrollWidgets)" />
                 </include>
             </control>
-            
+
             <include content="Home_Widget_Fullscreen_Info">
                 <param name="id" value="$PARAM[id]" />
             </include>

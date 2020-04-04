@@ -28,9 +28,9 @@
 
     <include name="View_51_Addons_OnFocus">
         <onfocus condition="!String.IsEmpty(Window.Property(movedown))">Down</onfocus>
-        
+
         <onfocus condition="!String.IsEmpty(Window.Property(moveup))">Up</onfocus>
-        
+
         <onfocus condition="!String.IsEmpty(Window.Property(moveright))">Right</onfocus>
         <onfocus condition="!String.IsEmpty(Window.Property(moveright)) + Container($PARAM[id]).HasNext">Right</onfocus>
         <onfocus condition="!String.IsEmpty(Window.Property(moveright)) + Container($PARAM[id]).HasNext">Right</onfocus>
@@ -44,7 +44,7 @@
         <onfocus condition="!String.IsEmpty(Window.Property(moveright)) + Container($PARAM[id]).HasNext">Left</onfocus>
 
         <onfocus condition="!String.IsEmpty(Window.Property(moveleft))">Left</onfocus>
-        
+
         <onfocus condition="!String.IsEmpty(Window.Property(oninfo))">ClearProperty(oninfo)</onfocus>
         <onfocus condition="!String.IsEmpty(Window.Property(oninfo))">Action(Info)</onfocus>
         <onfocus condition="!String.IsEmpty(Window.Property(onclick))">ClearProperty(onclick)</onfocus>

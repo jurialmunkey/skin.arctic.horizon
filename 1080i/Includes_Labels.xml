@@ -13,9 +13,9 @@
 
     <variable name="Label_56560_InfoLine">
         <value condition="[String.IsEqual(Container(56560).ListItem.Property(DBType),set) | Container(56560).ListItem.Property(IsCollection)] + !String.IsEmpty(Window(Home).Property(TMDBHelper.Container.ListItem.Set.Years))">$INFO[Window(Home).Property(TMDBHelper.Container.ListItem.Set.Years),  |  [COLOR=main_fg_100],[/COLOR]]$INFO[Window(Home).Property(TMDBHelper.Container.ListItem.Set.NumItems),  |  [COLOR=main_fg_100], $LOCALIZE[342][/COLOR]]</value>
-        
+
         <value condition="String.IsEqual(Container(56560).ListItem.Property(DBType),movie)">$INFO[Container(56560).ListItem.Property(Year),  |  [COLOR=main_fg_100],[/COLOR]]$INFO[Container(56560).ListItem.Property(MPAA),  |  [COLOR=main_fg_100],[/COLOR]]$VAR[Label_56560_Duration,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[Container(56560).ListItem.Property(EndTime),  |  [COLOR=main_fg_100]$LOCALIZE[31207] ,[/COLOR]]</value>
-        
+
         <value condition="String.IsEqual(Container(56560).ListItem.Property(DBType),tvshow) | String.IsEqual(Container(56560).ListItem.Property(DBType),season)">$INFO[Container(56560).ListItem.Property(Year),  |  [COLOR=main_fg_100],[/COLOR]]$INFO[Container(56560).ListItem.Property(MPAA),  |  [COLOR=main_fg_100],[/COLOR]]$INFO[Container(56560).ListItem.Property(WatchedEpisodes),  |  [COLOR=main_fg_100]$LOCALIZE[16102] , $LOCALIZE[20163] [/COLOR]]$INFO[Container(56560).ListItem.Property(TotalEpisodes),[COLOR=main_fg_100],[/COLOR]]$VAR[Label_Info_NextAired_Status,  |  [COLOR=main_fg_100],[/COLOR]]$VAR[Label_Info_NextAired_Date,  |  [COLOR=main_fg_100],[/COLOR]]</value>
 
         <value condition="String.IsEqual(Container(56560).ListItem.Property(DBType),episode)">$INFO[Container(56560).ListItem.Property(Season),  |  [COLOR=main_fg_100]$LOCALIZE[20373] ,[/COLOR]]$INFO[Container(56560).ListItem.Property(Episode),  |  [COLOR=main_fg_100]$LOCALIZE[20359] ,[/COLOR]]$INFO[Container(56560).ListItem.Property(MPAA),  |  [COLOR=main_fg_100],[/COLOR]]$INFO[Container(56560).ListItem.Premiered,  |  [COLOR=main_fg_100],[/COLOR]]$VAR[Label_56560_Duration,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[Container(56560).ListItem.Property(EndTime),  |  [COLOR=main_fg_100]$LOCALIZE[31207] ,[/COLOR]]</value>
@@ -35,9 +35,9 @@
 
     <variable name="Label_InfoLine">
         <value condition="[String.IsEqual(ListItem.DBType,set) | ListItem.IsCollection] + !String.IsEmpty(Window(Home).Property(TMDBHelper.ListItem.Set.Years))">$INFO[Window(Home).Property(TMDBHelper.ListItem.Set.Years),  |  [COLOR=main_fg_100],[/COLOR]]$INFO[Window(Home).Property(TMDBHelper.ListItem.Set.NumItems),  |  [COLOR=main_fg_100], $LOCALIZE[342][/COLOR]]</value>
-        
+
         <value condition="String.IsEqual(ListItem.DBType,movie)">$INFO[ListItem.Year,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.MPAA,  |  [COLOR=main_fg_100],[/COLOR]]$VAR[Label_Duration,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.EndTime,  |  [COLOR=main_fg_100]$LOCALIZE[31207] ,[/COLOR]]</value>
-        
+
         <value condition="String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,season)">$INFO[ListItem.Year,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.MPAA,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.Property(WatchedEpisodes),  |  [COLOR=main_fg_100]$LOCALIZE[16102] , $LOCALIZE[20163] [/COLOR]]$INFO[ListItem.Property(TotalEpisodes),[COLOR=main_fg_100],[/COLOR]]$VAR[Label_Info_NextAired_Status,  |  [COLOR=main_fg_100],[/COLOR]]$VAR[Label_Info_NextAired_Date,  |  [COLOR=main_fg_100],[/COLOR]]</value>
 
         <value condition="String.IsEqual(ListItem.DBType,episode)">$INFO[ListItem.Season,  |  [COLOR=main_fg_100]$LOCALIZE[20373] ,[/COLOR]]$INFO[ListItem.Episode,  |  [COLOR=main_fg_100]$LOCALIZE[20359] ,[/COLOR]]$INFO[ListItem.MPAA,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.Premiered,  |  [COLOR=main_fg_100],[/COLOR]]$VAR[Label_Duration,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.EndTime,  |  [COLOR=main_fg_100]$LOCALIZE[31207] ,[/COLOR]]</value>
@@ -58,9 +58,9 @@
     </variable>
     <variable name="Label_InfoLine">
         <value condition="[String.IsEqual(ListItem.DBType,set) | ListItem.IsCollection] + !String.IsEmpty(Window(Home).Property(TMDBHelper.ListItem.Set.Years))">$INFO[Window(Home).Property(TMDBHelper.ListItem.Set.Years),  |  [COLOR=main_fg_100],[/COLOR]]$INFO[Window(Home).Property(TMDBHelper.ListItem.Set.NumItems),  |  [COLOR=main_fg_100], $LOCALIZE[342][/COLOR]]</value>
-        
+
         <value condition="String.IsEqual(ListItem.DBType,movie)">$INFO[ListItem.Year,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.MPAA,  |  [COLOR=main_fg_100],[/COLOR]]$VAR[Label_Duration,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.EndTime,  |  [COLOR=main_fg_100]$LOCALIZE[31207] ,[/COLOR]]</value>
-        
+
         <value condition="String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,season)">$INFO[ListItem.Year,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.MPAA,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.Property(WatchedEpisodes),  |  [COLOR=main_fg_100]$LOCALIZE[16102] , $LOCALIZE[20163] [/COLOR]]$INFO[ListItem.Property(TotalEpisodes),[COLOR=main_fg_100],[/COLOR]]$VAR[Label_Info_NextAired_Status,  |  [COLOR=main_fg_100],[/COLOR]]$VAR[Label_Info_NextAired_Date,  |  [COLOR=main_fg_100],[/COLOR]]</value>
 
         <value condition="String.IsEqual(ListItem.DBType,episode)">$INFO[ListItem.Season,  |  [COLOR=main_fg_100]$LOCALIZE[20373] ,[/COLOR]]$INFO[ListItem.Episode,  |  [COLOR=main_fg_100]$LOCALIZE[20359] ,[/COLOR]]$INFO[ListItem.MPAA,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.Premiered,  |  [COLOR=main_fg_100],[/COLOR]]$VAR[Label_Duration,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.EndTime,  |  [COLOR=main_fg_100]$LOCALIZE[31207] ,[/COLOR]]</value>
@@ -237,7 +237,7 @@
         <value condition="!String.IsEmpty(Skin.String(CornerIcon))">$INFO[Skin.String(CornerIcon)]</value>
         <value>Search</value>
     </variable>
-    
+
     <variable name="Label_AudioChannels">
         <value condition="String.IsEqual(ListItem.AudioChannels,8)">7.1</value>
         <value condition="String.IsEqual(ListItem.AudioChannels,7)">6.1</value>
@@ -332,7 +332,7 @@
         <value condition="PVR.IsPlayingTV + !String.IsEmpty(PVR.EpgEventDuration)">$INFO[PVR.EpgEventDuration]</value>
         <value>$INFO[Player.Duration]</value>
     </variable>
-    
+
     <variable name="Label_OSD_FinishTime">
         <value condition="VideoPlayer.Content(livetv)">$INFO[VideoPlayer.EndTime]</value>
         <value condition="!String.IsEmpty(Player.FinishTime) + Window.IsVisible(fullscreenvideo)">$INFO[Player.FinishTime]</value>
@@ -408,7 +408,7 @@
     </variable>
 
 
-    
+
 
     <variable name="Label_Premiered">
         <value condition="!String.IsEmpty(ListItem.Premiered) + !String.IsEqual(ListItem.DBType,movie) + !String.IsEqual(ListItem.DBType,set) + !String.IsEqual(ListItem.DBType,tvshow) + !String.IsEqual(ListItem.DBType,season)">$INFO[ListItem.Premiered]</value>
@@ -455,7 +455,7 @@
         <value condition="[String.StartsWith(Container.FolderPath,plugin://plugin.program.advanced.launcher/) | String.StartsWith(Container.FolderPath,plugin://plugin.program.advanced.emulator.launcher/) | String.StartsWith(Container.FolderPath,plugin://plugin.program.advanced.MAME.launcher/)]">$INFO[ListItem.Property(platform),[COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.Studio,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.Year,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.Property(nplayers),  |  [COLOR=main_fg_100], $LOCALIZE[31308][/COLOR]]$INFO[ListItem.Property(ESRB),  |  [COLOR=main_fg_100],[/COLOR]]</value>
 
         <value condition="!String.IsEmpty(ListItem.Property(Artist_Genre)) + Container.Content(artists)">$INFO[Window(Home).Property(TMDbHelper.ListItem.AlbumCount),[COLOR=main_fg_100], $LOCALIZE[132][/COLOR]  |  ]$INFO[ListItem.Property(Artist_Genre),[COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.Property(Artist_YearsActive),  |  [COLOR=main_fg_100],[/COLOR]]</value>
-        
+
         <value condition="!String.IsEmpty(ListItem.Artist) + [Container.Content(musicvideos) | Container.Content(albums) | Container.Content(songs) | [Window.IsVisible(MyPlaylist.xml) + String.IsEqual(ListItem.DBType,song)]]">$INFO[ListItem.Artist,[COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.Year,  |  [COLOR=main_fg_100],[/COLOR]]</value>
 
         <value condition="[Window.IsVisible(DialogAddonInfo.xml) | Container.Content(addons)] + !String.IsEmpty(ListItem.AddonVersion)">$INFO[ListItem.AddonType,[COLOR=main_fg_100],[/COLOR]  |  ]$INFO[ListItem.AddonVersion,[COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.AddonCreator,  |  [COLOR=main_fg_100],[/COLOR]]</value>

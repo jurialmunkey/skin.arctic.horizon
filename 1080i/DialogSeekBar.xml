@@ -10,7 +10,7 @@
     <onload condition="!String.IsEmpty(Window(Home).Property(OSDExtendedInfo)) + Player.Paused + !Skin.HasSetting(DontPauseOSD)">Play</onload>
     <onload condition="!String.IsEmpty(Window(Home).Property(OSDExtendedInfo))">ClearProperty(OSDExtendedInfo,Home)</onload>
     <controls>
-        
+
         <control type="group">
             <visible>!Integer.IsEqual(Player.CacheLevel,100)</visible>
             <visible>!Player.Seeking + !Player.DisplayAfterSeek</visible>
@@ -53,7 +53,7 @@
         </control>
 
         <include condition="Window.IsVisible(VideoFullScreen.xml)">OSD_Video_Seekbar</include>
-        
+
         <include condition="Window.IsVisible(VideoFullScreen.xml)" content="OSD_Music_Info">
             <param name="player" value="VideoPlayer" />
             <param name="rating" value="VideoPlayer.Rating" />

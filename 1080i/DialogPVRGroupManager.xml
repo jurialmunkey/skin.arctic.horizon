@@ -44,7 +44,7 @@
                         </include>
                     </control>
                 </control>
-                
+
             </control>
 
             <control type="group">
@@ -146,6 +146,6 @@
 
         </control>
 
-        
+
     </controls>
 </window>
