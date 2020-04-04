@@ -135,6 +135,11 @@ msgctxt "#31024"
 msgid "Use showcase hub for fullscreen widget"
 msgstr ""
 
+#: /1080i/Includes_Labels.xml
+msgctxt "#31025"
+msgid "Items"
+msgstr ""
+
 #: /1080i/SkinSettings.xml
 msgctxt "#31027"
 msgid "Customise power menu"

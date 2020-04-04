@@ -1,5 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
+
+    <variable name="Label_InfoLine">
+        <value condition="[String.IsEqual(ListItem.DBType,set) | ListItem.IsCollection] + !String.IsEmpty(Window(Home).Property(TMDBHelper.ListItem.Set.Years))">$INFO[Window(Home).Property(TMDBHelper.ListItem.Set.Years),  |  [COLOR=main_fg_100],[/COLOR]]$INFO[Window(Home).Property(TMDBHelper.ListItem.Set.NumItems),  |  [COLOR=main_fg_100], $LOCALIZE[342][/COLOR]]</value>
+        
+        <value condition="String.IsEqual(ListItem.DBType,movie)">$INFO[ListItem.Year,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.MPAA,  |  [COLOR=main_fg_100],[/COLOR]]$VAR[Label_Duration,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.EndTime,  |  [COLOR=main_fg_100]$LOCALIZE[31207] ,[/COLOR]]</value>
+        
+        <value condition="String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,season)">$INFO[ListItem.Year,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.MPAA,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.Property(WatchedEpisodes),  |  [COLOR=main_fg_100]$LOCALIZE[16102] , $LOCALIZE[20163] [/COLOR]]$INFO[ListItem.Property(TotalEpisodes),[COLOR=main_fg_100],[/COLOR]]$VAR[Label_Info_NextAired_Status,  |  [COLOR=main_fg_100],[/COLOR]]$VAR[Label_Info_NextAired_Date,  |  [COLOR=main_fg_100],[/COLOR]]</value>
+
+        <value condition="String.IsEqual(ListItem.DBType,episode)">$INFO[ListItem.Season,  |  [COLOR=main_fg_100]$LOCALIZE[20373] ,[/COLOR]]$INFO[ListItem.Episode,  |  [COLOR=main_fg_100]$LOCALIZE[20359] ,[/COLOR]]$INFO[ListItem.MPAA,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.Premiered,  |  [COLOR=main_fg_100],[/COLOR]]$VAR[Label_Duration,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.EndTime,  |  [COLOR=main_fg_100]$LOCALIZE[31207] ,[/COLOR]]</value>
+
+        <value condition="String.IsEqual(ListItem.DBType,actor)">$INFO[Window(Home).Property(TMDBHelper.ListItem.Birthday),  |  [COLOR=main_fg_100],[/COLOR]]$INFO[Window(Home).Property(TMDBHelper.ListItem.Born),  |  [COLOR=main_fg_100],[/COLOR]]$INFO[Window(Home).Property(TMDBHelper.ListItem..Age),, $LOCALIZE[31356]),  |  [COLOR=main_fg_100],[/COLOR]]</value>
+
+        <value condition="String.IsEqual(ListItem.DBType,artist)">$INFO[ListItem.Property(Artist_Genre),  |  [COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.Property(Artist_YearsActive),  |  [COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.Property(Artist_Born),  |  [COLOR=main_fg_100],[/COLOR]]</value>
+
+        <value condition="String.IsEqual(ListItem.DBType,album)">$INFO[ListItem.AlbumArtist,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.Year,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.Property(Album_Label),  |  [COLOR=main_fg_100],[/COLOR]]</value>
+
+        <value condition="Container.Content(addons) + String.IsEmpty(Container.PluginName)">$INFO[ListItem.AddonVersion,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.AddonType,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.AddonCreator,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.Label2,  |  [COLOR=main_fg_100],[/COLOR]]</value>
+
+        <value condition="[String.StartsWith(ListItem.FolderPath,pvr://) | Window.IsVisible(DialogPVRInfo.xml)] + !Control.HasFocus(9400)">$INFO[ListItem.ChannelName,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.Season,  |  [COLOR=main_fg_100]S,[/COLOR]]$INFO[ListItem.Episode,[COLOR=main_fg_100]E,[/COLOR]]$VAR[Label_PVR_EpisodeName,  |  [COLOR=main_fg_100],[/COLOR]]$VAR[Label_PVR_EPGEventTitle,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.Year,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.MPAA,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.StartTime,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.EndTime,[COLOR=main_fg_100] - ,[/COLOR]]</value>
+
+        <value condition="[String.StartsWith(ListItem.FolderPath,pvr://) | Window.IsVisible(DialogPVRInfo.xml)] + Control.HasFocus(9400)">$INFO[ListItem.ChannelName,  |  [COLOR=main_fg_100],[/COLOR]]$VAR[Label_PVR_EpisodeName,  |  [COLOR=main_fg_100],[/COLOR]]$VAR[Label_PVR_EPGEventTitle,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.NextStartTime,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.NextEndTime,[COLOR=main_fg_100] - ,[/COLOR]]</value>
+
+        <value>$INFO[System.Date,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[Container.NumItems,  |  [COLOR=main_fg_100], $LOCALIZE[31025][/COLOR]]</value>
+    </variable>
+
+    <variable name="Label_PVR_EpisodeName">
+        <value condition="!String.IsEmpty(ListItem.EpisodeName) + !String.IsEqual(ListItem.EpisodeName,ListItem.Title) + !String.IsEqual(ListItem.EpisodeName,ListItem.Plot) + !Control.HasFocus(9400)">$INFO[ListItem.EpisodeName]</value>
+        <value condition="!String.IsEmpty(ListItem.NextEpisodeName) + !String.IsEqual(ListItem.NextEpisodeName,ListItem.NextTitle) + !String.IsEqual(ListItem.NextEpisodeName,ListItem.NextPlot) + Control.HasFocus(9400)">$INFO[ListItem.NextEpisodeName]</value>
+    </variable>
+
+    <variable name="Label_PVR_EPGEventTitle">
+        <value condition="!String.IsEmpty(ListItem.EPGEventTitle) + !String.IsEqual(ListItem.EPGEventTitle,ListItem.Title) + !String.IsEqual(ListItem.EPGEventTitle,ListItem.Plot) + !Control.HasFocus(9400)">$INFO[ListItem.EPGEventTitle]</value>
+        <value condition="!String.IsEmpty(ListItem.NextEPGEventTitle) + !String.IsEqual(ListItem.NextEPGEventTitle,ListItem.NextTitle) + !String.IsEqual(ListItem.NextEPGEventTitle,ListItem.NextPlot) + Control.HasFocus(9400)">$INFO[ListItem.NextEPGEventTitle]</value>
+    </variable>
+
+    <variable name="Label_OSD_InfoLine">
+        <value condition="[!String.IsEmpty(VideoPlayer.EpgEventTitle) | !String.IsEmpty(VideoPlayer.EpisodeName)] + VideoPlayer.Content(livetv)">$INFO[VideoPlayer.Season,[COLOR=panel_fg_100]S,[/COLOR]]$INFO[VideoPlayer.Episode,[COLOR=panel_fg_100]E,[/COLOR]  |  ]$INFO[VideoPlayer.EpisodeName,[COLOR=panel_fg_100],[/COLOR]  |  ]$INFO[VideoPlayer.EpgEventTitle,[COLOR=panel_fg_100],[/COLOR]  |  ]$INFO[VideoPlayer.Year,[COLOR=panel_fg_100],[/COLOR]  |  ]$INFO[VideoPlayer.MPAA,[COLOR=panel_fg_100],[/COLOR]  |  ]$INFO[VideoPlayer.Genre,[COLOR=panel_fg_100],[/COLOR]]</value>
+        <value condition="!String.IsEmpty(VideoPlayer.Season) + !String.IsEmpty(VideoPlayer.Episode)">$INFO[VideoPlayer.TvShowTitle,[COLOR=panel_fg_100],[/COLOR]]$INFO[VideoPlayer.Season,  |  [COLOR=panel_fg_100]S,[/COLOR]]$INFO[VideoPlayer.Episode,[COLOR=panel_fg_100]E,[/COLOR]]$INFO[VideoPlayer.Premiered,  |  [COLOR=panel_fg_100],[/COLOR]]$INFO[VideoPlayer.MPAA,  |  [COLOR=panel_fg_100],[/COLOR]]$INFO[VideoPlayer.Genre,  |  [COLOR=panel_fg_100],[/COLOR]]</value>
+        <value>$INFO[VideoPlayer.TvShowTitle,[COLOR=panel_fg_100],[/COLOR]  |  ]$INFO[VideoPlayer.Year,[COLOR=panel_fg_100],[/COLOR]  |  ]$INFO[VideoPlayer.MPAA,[COLOR=panel_fg_100],[/COLOR]  |  ]$INFO[VideoPlayer.Genre,[COLOR=panel_fg_100],[/COLOR]]</value>
+    </variable>
+
     <variable name="Label_Hub_InfoTitle">
         <value condition="[String.IsEqual(Container(5610).ListItem.DBType,tvshow) | String.IsEqual(Container(5610).ListItem.DBType,season) | String.IsEqual(Container(5610).ListItem.DBType,episode)] + !String.IsEmpty(Container(5610).ListItem.TvShowTitle)">$INFO[Container(5610).ListItem.TvShowTitle]</value>
         <value>$INFO[Container(5610).ListItem.Title]</value>
@@ -236,12 +277,6 @@
 
     <variable name="Label_OSD_Title">
         <value>$INFO[Player.Title]</value>
-    </variable>
-
-    <variable name="Label_OSD_InfoLine">
-        <value condition="[!String.IsEmpty(VideoPlayer.EpgEventTitle) | !String.IsEmpty(VideoPlayer.EpisodeName)] + VideoPlayer.Content(livetv)">$INFO[VideoPlayer.Season,[COLOR=panel_fg_100]S,[/COLOR]]$INFO[VideoPlayer.Episode,[COLOR=panel_fg_100]E,[/COLOR]  |  ]$INFO[VideoPlayer.EpisodeName,[COLOR=panel_fg_100],[/COLOR]  |  ]$INFO[VideoPlayer.EpgEventTitle,[COLOR=panel_fg_100],[/COLOR]  |  ]$INFO[VideoPlayer.Year,[COLOR=panel_fg_100],[/COLOR]  |  ]$INFO[VideoPlayer.MPAA,[COLOR=panel_fg_100],[/COLOR]  |  ]$INFO[VideoPlayer.Genre,[COLOR=panel_fg_100],[/COLOR]]</value>
-        <value condition="!String.IsEmpty(VideoPlayer.Season) + !String.IsEmpty(VideoPlayer.Episode)">$INFO[VideoPlayer.TvShowTitle,[COLOR=panel_fg_100],[/COLOR]]$INFO[VideoPlayer.Season,  |  [COLOR=panel_fg_100]S,[/COLOR]]$INFO[VideoPlayer.Episode,[COLOR=panel_fg_100]E,[/COLOR]]$INFO[VideoPlayer.Premiered,  |  [COLOR=panel_fg_100],[/COLOR]]$INFO[VideoPlayer.MPAA,  |  [COLOR=panel_fg_100],[/COLOR]]$INFO[VideoPlayer.Genre,  |  [COLOR=panel_fg_100],[/COLOR]]</value>
-        <value>$INFO[VideoPlayer.TvShowTitle,[COLOR=panel_fg_100],[/COLOR]  |  ]$INFO[VideoPlayer.Year,[COLOR=panel_fg_100],[/COLOR]  |  ]$INFO[VideoPlayer.MPAA,[COLOR=panel_fg_100],[/COLOR]  |  ]$INFO[VideoPlayer.Genre,[COLOR=panel_fg_100],[/COLOR]]</value>
     </variable>
 
     <variable name="Label_Info_NextAired_Status">
