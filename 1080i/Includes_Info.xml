@@ -126,34 +126,26 @@
     </variable>
 
     <include name="Info_Widget_Poster">
-        <param name="includecondition" default="true" />
         <param name="id" default="5001" />
         <param name="groupid" default="7001" />
-        <param name="minnumitems" default="0" />
         <param name="label" default="$INFO[ListItem.Title]" />
-        <param name="labelinclude" default="Defs_Null" />
         <param name="visible" default="true" />
         <param name="label-visible" default="true" />
         <param name="control-type" default="fixedlist" />
         <param name="castlabel" default="false" />
-        <param name="landscape" default="false" />
-        <param name="hideisupdating" default="false" />
         <param name="viewtype-include" default="Viewtype_Poster" />
         <param name="widget-type" default="infowidgets" />
-        <param name="issubmenu" default="false" />
         <definition>
-            <include content="View_Cast_Toplabel" condition="$PARAM[includecondition]">
+            <include content="View_Cast_Toplabel">
                 <param name="groupid" value="$PARAM[groupid]" />
                 <param name="id" value="$PARAM[id]" />
                 <param name="label" value="$PARAM[label]" />
-                <param name="spinner-visible" value="!Integer.IsGreater(Container($PARAM[id]).NumItems,$PARAM[minnumitems])  | [Container($PARAM[id]).IsUpdating + $PARAM[hideisupdating]]" />
                 <param name="widget-type" value="$PARAM[widget-type]" />
                 <visible>$PARAM[visible]</visible>
                 <visible>$PARAM[label-visible]</visible>
-                <visible>[Integer.IsGreater(Container($PARAM[id]).NumItems,$PARAM[minnumitems]) | Container($PARAM[id]).IsUpdating] | $PARAM[issubmenu]</visible>
                 <left>85</left>
             </include>
-            <include content="$PARAM[viewtype-include]" condition="$PARAM[includecondition]">
+            <include content="$PARAM[viewtype-include]">
                 <param name="id" value="$PARAM[id]" />
                 <param name="height" value="$PARAM[widget-type]_item_height" />
                 <param name="castlabel" value="$PARAM[castlabel]" />
@@ -165,8 +157,7 @@
                 <left>20</left>
                 <right>20</right>
                 <visible>$PARAM[visible]</visible>
-                <visible>[Integer.IsGreater(Container($PARAM[id]).NumItems,$PARAM[minnumitems]) | Container($PARAM[id]).IsUpdating] | $PARAM[issubmenu]</visible>
-                <animation effect="fade" start="100" end="0" condition="!Integer.IsGreater(Container($PARAM[id]).NumItems,$PARAM[minnumitems])  | [Container($PARAM[id]).IsUpdating + $PARAM[hideisupdating]]">Conditional</animation>
+                <visible>Integer.IsGreater(Container($PARAM[id]).NumAllItems,0) | Container($PARAM[id]).IsUpdating</visible>
                 <movement>6</movement>
             </include>
         </definition>

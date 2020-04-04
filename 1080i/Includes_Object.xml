@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
+    <include name="Object_Control">
+        <control type="$PARAM[type]">
+            <nested />
+        </control>
+    </include>
+    
     <include name="Object_PosterBack">
         <param name="colordiffuse" default="AltPosterBack" />
         <param name="pad" default="0" />
@@ -16,30 +22,20 @@
         </definition>
     </include>
 
-    <include name="Object_MiniLabel">
+    <include name="Object_FocusLabel">
         <param name="textcolor" default="main_fg" />
-        <param name="isFocused" default="true" />
+        <param name="isfocused" default="true" />
         <definition>
             <control type="label">
-                <top>-3</top>
-                <left>0</left>
-                <aligny>center</aligny>
-                <font>font_tiny_bold</font>
-                <height>24</height>
                 <textcolor>$PARAM[textcolor]_100</textcolor>
                 <label>$PARAM[label]</label>
-                <visible>$PARAM[isFocused]</visible>
+                <visible>$PARAM[isfocused]</visible>
                 <nested />
             </control>
             <control type="label">
-                <top>-3</top>
-                <left>0</left>
-                <aligny>center</aligny>
-                <font>font_tiny_bold</font>
-                <height>24</height>
                 <textcolor>$PARAM[textcolor]_30</textcolor>
                 <label>$PARAM[label]</label>
-                <visible>!$PARAM[isFocused]</visible>
+                <visible>!$PARAM[isfocused]</visible>
                 <nested />
             </control>
         </definition>

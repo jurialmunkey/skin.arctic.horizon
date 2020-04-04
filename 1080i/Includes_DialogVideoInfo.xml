@@ -158,7 +158,6 @@
                 </include>
                 <!-- List 01 -->
                 <include content="Info_Widget_Poster">
-                    <param name="includecondition" value="true" />
                     <param name="id" value="5001" />
                     <param name="groupid" value="5101" />
                     <param name="label" value="Movies as Cast Member" />
@@ -170,7 +169,6 @@
                 </include>
                 <!-- List 02 -->
                 <include content="Info_Widget_Poster">
-                    <param name="includecondition" value="true" />
                     <param name="id" value="5002" />
                     <param name="groupid" value="5102" />
                     <param name="label" value="TvShows as Cast Member" />
@@ -182,7 +180,6 @@
                 </include>
                 <!-- List 03 -->
                 <include content="Info_Widget_Poster">
-                    <param name="includecondition" value="true" />
                     <param name="id" value="5003" />
                     <param name="groupid" value="5103" />
                     <param name="label" value="Movies as Crew Member" />
@@ -194,7 +191,6 @@
                 </include>
                 <!-- List 05 -->
                 <include content="Info_Widget_Poster">
-                    <param name="includecondition" value="true" />
                     <param name="id" value="5005" />
                     <param name="groupid" value="5105" />
                     <param name="label" value="TvShows as Crew Member" />
@@ -206,7 +202,6 @@
                 </include>
                 <!-- List 06 -->
                 <include content="Info_Widget_Poster">
-                    <param name="includecondition" value="true" />
                     <param name="id" value="5006" />
                     <param name="groupid" value="5106" />
                     <param name="label" value="Images" />
@@ -339,8 +334,7 @@
     </include>
 
     <include name="DialogVideoInfo_Widget_Crew">
-        <include content="Info_Widget_Poster">
-            <param name="includecondition" value="!Skin.HasSetting(DisableInfoListCrew)" />
+        <include content="Info_Widget_Poster" condition="!Skin.HasSetting(DisableInfoListCrew)" >
             <param name="id" value="5050" />
             <param name="groupid" value="5150" />
             <param name="label" value="$VAR[Label_Info_Title,Crew of ,]" />
@@ -356,7 +350,6 @@
 
     <include name="DialogVideoInfo_Widget_Collection">
         <include content="Info_Widget_Poster">
-            <param name="includecondition" value="true" />
             <param name="id" value="5002" />
             <param name="groupid" value="5102" />
             <param name="label" value="$VAR[Label_SetName,$LOCALIZE[31057] ,]" />
@@ -389,8 +382,7 @@
     </include>
 
     <include name="DialogVideoInfo_Widget_Director">
-        <include content="Info_Widget_Poster">
-            <param name="includecondition" value="!Skin.HasSetting(DisableInfoListDirector)" />
+        <include content="Info_Widget_Poster" condition="!Skin.HasSetting(DisableInfoListDirector)" >
             <param name="id" value="5004" />
             <param name="groupid" value="5104" />
             <param name="visible" value="!String.IsEmpty(ListItem.Director)" />
@@ -404,8 +396,7 @@
     </include>
 
     <include name="DialogVideoInfo_Widget_Studio">
-        <include content="Info_Widget_Poster">
-            <param name="includecondition" value="!Skin.HasSetting(DisableInfoListStudio)" />
+        <include content="Info_Widget_Poster" condition="!Skin.HasSetting(DisableInfoListStudio)" >
             <param name="id" value="5005" />
             <param name="groupid" value="5105" />
             <param name="visible" value="!String.IsEmpty(Window(Home).Property(TMDBHelper.ListItem.Studio.1.TMDB_ID))" />
@@ -420,8 +411,7 @@
     </include>
 
     <include name="DialogVideoInfo_Widget_Recommended">
-        <include content="Info_Widget_Poster">
-            <param name="includecondition" value="!Skin.HasSetting(DisableInfoListRecommended)" />
+        <include content="Info_Widget_Poster" condition="!Skin.HasSetting(DisableInfoListRecommended)" >
             <param name="id" value="5006" />
             <param name="groupid" value="5106" />
             <param name="label" value="Recommended" />
@@ -434,8 +424,7 @@
     </include>
 
     <include name="DialogVideoInfo_Widget_Similar">
-        <include content="Info_Widget_Poster">
-            <param name="includecondition" value="!Skin.HasSetting(DisableInfoListSimilar)" />
+        <include content="Info_Widget_Poster" condition="!Skin.HasSetting(DisableInfoListSimilar)" >
             <param name="id" value="5007" />
             <param name="groupid" value="5107" />
             <param name="label" value="$VAR[Label_Info_Title,$LOCALIZE[31051] ,]" />
@@ -448,8 +437,7 @@
     </include>
 
     <include name="DialogVideoInfo_Widget_Year">
-        <include content="Info_Widget_Poster">
-            <param name="includecondition" value="!Skin.HasSetting(DisableInfoListYear)" />
+        <include content="Info_Widget_Poster" condition="!Skin.HasSetting(DisableInfoListYear)" >
             <param name="id" value="5008" />
             <param name="groupid" value="5108" />
             <param name="visible" value="!String.IsEmpty(ListItem.Year)" />
@@ -464,8 +452,7 @@
     </include>
 
     <include name="DialogVideoInfo_Widget_Genre">
-        <include content="Info_Widget_Poster">
-            <param name="includecondition" value="!Skin.HasSetting(DisableInfoListGenre)" />
+        <include content="Info_Widget_Poster" condition="!Skin.HasSetting(DisableInfoListGenre)" >
             <param name="id" value="5009" />
             <param name="groupid" value="5109" />
             <param name="visible" value="!String.IsEmpty(ListItem.Genre)" />
@@ -480,8 +467,7 @@
     </include>
 
     <include name="DialogVideoInfo_Widget_CastStarsIn">
-        <include content="Info_Widget_Poster">
-            <param name="includecondition" value="!Skin.HasSetting(DisableInfoListCastFeature)" />
+        <include content="Info_Widget_Poster" condition="!Skin.HasSetting(DisableInfoListCastFeature)" >
             <param name="id" value="5010" />
             <param name="groupid" value="5110" />
             <param name="visible" value="String.IsEqual(ListItem.DBType,movie) + Integer.IsGreater(Container(50).NumItems,0)" />
@@ -496,8 +482,7 @@
     </include>
 
     <include name="DialogVideoInfo_Widget_Youtube">
-        <include content="Info_Widget_Poster">
-            <param name="includecondition" value="System.HasAddon(plugin.video.youtube) + !Skin.HasSetting(DisableInfoListYouTube)" />
+        <include content="Info_Widget_Poster" condition="System.HasAddon(plugin.video.youtube) + !Skin.HasSetting(DisableInfoListYouTube)" >
             <param name="id" value="5011" />
             <param name="groupid" value="5111" />
             <param name="label" value="$LOCALIZE[31141]" />
@@ -517,8 +502,7 @@
     </include>
 
     <include name="DialogVideoInfo_Widget_Keywords">
-        <include content="Info_Widget_Poster">
-            <param name="includecondition" value="!Skin.HasSetting(DisableInfoListKeywords)" />
+        <include content="Info_Widget_Poster" condition="!Skin.HasSetting(DisableInfoListKeywords)" >
             <param name="id" value="5012" />
             <param name="groupid" value="5112" />
             <param name="label" value="Keywords" />
@@ -535,8 +519,7 @@
     </include>
 
     <include name="DialogVideoInfo_Widget_Posters">
-        <include content="Info_Widget_Poster">
-            <param name="includecondition" value="!Skin.HasSetting(DisableInfoListPosters)" />
+        <include content="Info_Widget_Poster" condition="!Skin.HasSetting(DisableInfoListPosters)" >
             <param name="id" value="5099" />
             <param name="groupid" value="5199" />
             <param name="label" value="Posters" />
@@ -550,8 +533,7 @@
     </include>
 
     <include name="DialogVideoInfo_Widget_ImageGallery">
-        <include content="Info_Widget_Poster">
-            <param name="includecondition" value="!Skin.HasSetting(DisableInfoListFanart)" />
+        <include content="Info_Widget_Poster" condition="!Skin.HasSetting(DisableInfoListFanart)" >
             <param name="id" value="6000" />
             <param name="groupid" value="6100" />
             <param name="label" value="Gallery" />

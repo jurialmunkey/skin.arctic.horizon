@@ -91,7 +91,8 @@
                         <height>item_widget_details_height</height>
                         <visible>Integer.IsEqual(Container($PYTHON[50000 + int(mainmenuid) * 100]).NumItems,1)</visible>
                         <visible>Control.IsVisible($PYTHON[30001 + int(mainmenuid) * 100])</visible>
-                        <control type="image">
+                        <include content="Object_Control" condition="!Skin.HasSetting(LockMainMenu)">
+                            <param name="type" value="image" />
                             <right>100</right>
                             <bottom>10</bottom>
                             <height>320</height>
@@ -99,8 +100,8 @@
                             <texture background="true">$VAR[Image_ClearArt]</texture>
                             <aspectratio align="right" aligny="bottom" scalediffuse="false">keep</aspectratio>
                             <include>Animation_FadeInOut</include>
-                            <visible>![Control.HasFocus(301) | Control.HasFocus(302) | [Control.HasFocus(3992) + String.IsEmpty(Window.Property(WidgetFocus))]] + !Skin.HasSetting(LockMainMenu)</visible>
-                        </control>
+                            <visible>![Control.HasFocus(301) | Control.HasFocus(302) | [Control.HasFocus(3992) + String.IsEmpty(Window.Property(WidgetFocus))]]</visible>
+                        </include>
                     </include>
                     <skinshortcuts insert="widgets">items</skinshortcuts>
                     <control type="group" id="$PYTHON[30098 + int(mainmenuid) * 100]"><height>widgets_bumper_bottom</height></control>
@@ -202,8 +203,6 @@
                     <param name="groupid" value="$PYTHON[40000 + int(mainmenuid) * 100 + int(id)]" />
                     <param name="id" value="$PYTHON[30000 + int(mainmenuid) * 100 + int(id)]" />
                     <param name="label" value="$SKINSHORTCUTS[widgetName]" />
-                    <param name="spinner-visible" value="!Integer.IsGreater(Container($PYTHON[30000 + int(mainmenuid) * 100 + int(id)]).NumItems,0)" />
-                    <param name="visible" value="[Integer.IsGreater(Container($PYTHON[30000 + int(mainmenuid) * 100 + int(id)]).NumItems,0) | Container($PYTHON[30000 + int(mainmenuid) * 100 + int(id)]).IsUpdating]" />
                     <param name="viewtype-include" value="Viewtype_Settings" />
                     <param name="widget-type" value="widgets_settings_top" />
                     <onback>SetFocus($PYTHON[int(mainmenuid)]3101)</onback>
@@ -214,8 +213,6 @@
                     <param name="groupid" value="$PYTHON[41000 + int(mainmenuid) * 100 + int(id)]" />
                     <param name="id" value="$PYTHON[31000 + int(mainmenuid) * 100 + int(id)]" />
                     <param name="label" value="Management" />
-                    <param name="spinner-visible" value="!Integer.IsGreater(Container($PYTHON[31000 + int(mainmenuid) * 100 + int(id)]).NumItems,0)" />
-                    <param name="visible" value="[Integer.IsGreater(Container($PYTHON[31000 + int(mainmenuid) * 100 + int(id)]).NumItems,0) | Container($PYTHON[31000 + int(mainmenuid) * 100 + int(id)]).IsUpdating]" />
                     <param name="viewtype-include" value="Viewtype_Settings" />
                     <param name="widget-type" value="widgets_settings_bottom" />
                     <onback>SetFocus($PYTHON[int(mainmenuid)]3101)</onback>
@@ -232,8 +229,6 @@
                     <param name="groupid" value="$PYTHON[40000 + int(mainmenuid) * 100 + int(id)]" />
                     <param name="id" value="$PYTHON[30000 + int(mainmenuid) * 100 + int(id)]" />
                     <param name="label" value="$SKINSHORTCUTS[widgetName]" />
-                    <param name="spinner-visible" value="!Integer.IsGreater(Container($PYTHON[30000 + int(mainmenuid) * 100 + int(id)]).NumItems,0)" />
-                    <param name="visible" value="true" />
                     <param name="viewtype-include" value="$SKINSHORTCUTS[widgetInclude]" />
                     <param name="widget-type" value="widgets" />
                     <param name="issubmenu" value="$SKINSHORTCUTS[widgetSubmenu]" />
