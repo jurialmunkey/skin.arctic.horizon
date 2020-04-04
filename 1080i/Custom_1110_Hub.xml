@@ -4,6 +4,17 @@
     <onload>SetProperty(TMDbHelper.WidgetContainer,5610,Home)</onload>
     <onunload>ClearProperty(TMDbHelper.WidgetContainer,Home)</onunload>
     <controls>
+        <control type="list" id="56560">
+            <include>Defs_Offscreen</include>
+            <orientation>horizontal</orientation>
+            <itemlayout />
+            <focusedlayout />
+            <content>
+                <include content="Object_56560_Item">
+                    <param name="id" value="5610" />
+                </include>
+            </content>
+        </control>
         <control type="list" id="301">
             <top>-1000</top>
             <left>-1000</left>
@@ -40,6 +51,8 @@
                             <param name="title" value="$VAR[Label_Hub_InfoTitle]" />
                             <param name="plot" value="$INFO[Container(5610).ListItem.Plot]" />
                             <param name="plotheight" value="auto" />
+                            <param name="infoline-label" value="$VAR[Label_56560_InfoLine]" />
+                            <param name="infoline-image" value="$VAR[Image_56560_VideoQuality]" />
                             <top>-15</top>
                             <height>285</height>
                             <include>Viewtype_Info_Right</include>

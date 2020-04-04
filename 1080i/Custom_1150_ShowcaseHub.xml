@@ -5,11 +5,19 @@
     <onunload>ClearProperty(TMDbHelper.WidgetContainer,Home)</onunload>
     <controls>
         <include>Global_Background</include>
+        <control type="list" id="56560">
+            <include>Defs_Offscreen</include>
+            <orientation>horizontal</orientation>
+            <itemlayout />
+            <focusedlayout />
+            <content>
+                <include content="Object_56560_Item">
+                    <param name="id" value="3001" />
+                </include>
+            </content>
+        </control>
         <control type="list" id="301">
-            <top>-1000</top>
-            <left>-1000</left>
-            <width>1</width>
-            <height>1</height>
+            <include>Defs_Offscreen</include>
             <onleft>302</onleft>
             <onright>302</onright>
             <onfocus>SetFocus(302)</onfocus>

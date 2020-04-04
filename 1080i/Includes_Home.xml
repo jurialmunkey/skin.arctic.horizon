@@ -249,8 +249,8 @@
                             <param name="label" value="$INFO[Container(3001).ListItem.Title]" />
                         </include>
                         <include content="Object_Info_Line">
-                            <param name="label" value="$VAR[Label_3001_InfoLine]" />
-                            <param name="image" value="$VAR[Image_3001_VideoQuality]" />
+                            <param name="label" value="$VAR[Label_56560_InfoLine]" />
+                            <param name="image" value="$VAR[Image_56560_VideoQuality]" />
                         </include>
                         <include content="Object_Info_Plot">
                             <param name="maxheight" value="80" />
@@ -452,7 +452,8 @@
                     <param name="label" value="$INFO[Container($PARAM[id]).ListItem.Title]" />
                 </include>
                 <include content="Object_Info_Line">
-                    <param name="container" value="Container($PARAM[id])." />
+                    <param name="label" value="$VAR[Label_Home_InfoLine]" />
+                    <param name="image" value="$VAR[Image_Home_VideoQuality]" />
                 </include>
                 <include content="Object_Info_Ratings" condition="!Skin.HasSetting(DisableAllRatings)">
                     <param name="container" value="Container($PARAM[id])." />
@@ -675,7 +676,8 @@
                         <visible>String.IsEmpty(Container($PARAM[id]).ListItem.TvShowTitle) + String.IsEmpty(Container($PARAM[id]).ListItem.Title)</visible>
                     </include>
                     <include content="Object_Info_Line">
-                        <param name="container" value="Container($PARAM[id])." />
+                        <param name="label" value="$VAR[Label_Home_InfoLine]" />
+                        <param name="image" value="$VAR[Image_Home_VideoQuality]" />
                     </include>
                     <include content="Object_Info_Ratings">
                         <param name="container" value="Container($PARAM[id])." />

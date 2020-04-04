@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
 
-    <variable name="Image_3001_VideoQuality">
-        <value condition="Container(3001).ListItem.IsCollection">flags/quality/sets.png</value>
-        <value condition="Integer.IsGreater(Container(3001).ListItem.VideoResolution,1080) | String.IsEqual(Container(3001).ListItem.VideoResolution,4K)">flags/quality/4k.png</value>
-        <value condition="Integer.IsGreater(Container(3001).ListItem.VideoResolution,719)">flags/quality/hd.png</value>
-        <value condition="!String.IsEmpty(Container(3001).ListItem.VideoResolution)">flags/quality/sd.png</value>
-        <value condition="String.IsEqual(Container(3001).ListItem.DBType,movie) | String.IsEqual(Container(3001).ListItem.DBType,episode) | String.IsEqual(Container(3001).ListItem.DBType,video)">flags/quality/web.png</value>
+    <variable name="Image_Home_VideoQuality">
+        <value condition="Control.HasFocus(301) | Control.HasFocus(303) | Control.HasFocus(3992) | Control.HasFocus(3101) | Control.HasFocus(3102) | Control.Hasfocus(3001) | Control.HasFocus(302)">$VAR[Image_56560_VideoQuality]</value>
+        <value>$VAR[Image_VideoQuality]</value>
+    </variable>
+
+    <variable name="Image_56560_VideoQuality">
+        <value condition="Container(56560).ListItem.Property(IsCollection)">flags/quality/sets.png</value>
+        <value condition="Integer.IsGreater(Container(56560).ListItem.Property(VideoResolution),1080) | String.IsEqual(Container(56560).ListItem.Property(VideoResolution),4K)">flags/quality/4k.png</value>
+        <value condition="Integer.IsGreater(Container(56560).ListItem.Property(VideoResolution),719)">flags/quality/hd.png</value>
+        <value condition="!String.IsEmpty(Container(56560).ListItem.Property(VideoResolution))">flags/quality/sd.png</value>
+        <value condition="String.IsEqual(Container(56560).ListItem.Property(DBType),movie) | String.IsEqual(Container(56560).ListItem.Property(DBType),episode) | String.IsEqual(Container(56560).ListItem.Property(DBType),video)">flags/quality/web.png</value>
         <value>flags/quality/info.png</value>
     </variable>
 

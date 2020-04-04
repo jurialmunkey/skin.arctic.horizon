@@ -1,5 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
+    <include name="Object_56560_Item">
+        <item>
+            <property name="Label2">$INFO[Container($PARAM[id]).ListItem.Label2]</property>
+            <property name="DBType">$INFO[Container($PARAM[id]).ListItem.DBType]</property>
+            <property name="FolderPath">$INFO[Container($PARAM[id]).ListItem.FolderPath]</property>
+            <property name="MPAA">$INFO[Container($PARAM[id]).ListItem.MPAA]</property>
+            <property name="Year">$INFO[Container($PARAM[id]).ListItem.Year]</property>
+            <property name="EndTime">$INFO[Container($PARAM[id]).ListItem.EndTime]</property>
+            <property name="Season">$INFO[Container($PARAM[id]).ListItem.Season]</property>
+            <property name="Episode">$INFO[Container($PARAM[id]).ListItem.Episode]</property>
+            <property name="ChannelName">$INFO[Container($PARAM[id]).ListItem.ChannelName]</property>
+            <property name="StartTime">$INFO[Container($PARAM[id]).ListItem.StartTime]</property>
+            <property name="NextStartTime">$INFO[Container($PARAM[id]).ListItem.NextStartTime]</property>
+            <property name="NextEndTime">$INFO[Container($PARAM[id]).ListItem.NextEndTime]</property>
+            <property name="EpisodeName">$INFO[Container($PARAM[id]).ListItem.EpisodeName]</property>
+            <property name="EPGEventTitle">$INFO[Container($PARAM[id]).ListItem.EPGEventTitle]</property>
+            <property name="Title">$INFO[Container($PARAM[id]).ListItem.Title]</property>
+            <property name="Plot">$INFO[Container($PARAM[id]).ListItem.Plot]</property>
+            <property name="TvShowTitle">$INFO[Container($PARAM[id]).ListItem.TvShowTitle]</property>
+            <property name="AddonVersion">$INFO[Container($PARAM[id]).ListItem.Property(AddonVersion)]</property>
+            <property name="AddonType">$INFO[Container($PARAM[id]).ListItem.Property(AddonType)]</property>
+            <property name="AddonCreator">$INFO[Container($PARAM[id]).ListItem.Property(AddonCreator)]</property>
+            <property name="AlbumArtist">$INFO[Container($PARAM[id]).ListItem.AlbumArtist]</property>
+            <property name="Album_Label">$INFO[Container($PARAM[id]).ListItem.Property(Album_Label)]</property>
+            <property name="Artist_Genre">$INFO[Container($PARAM[id]).ListItem.Property(Artist_Genre)]</property>
+            <property name="Artist_YearsActive">$INFO[Container($PARAM[id]).ListItem.Property(Artist_YearsActive)]</property>
+            <property name="Artist_Born">$INFO[Container($PARAM[id]).ListItem.Property(Artist_Born)]</property>
+            <property name="WatchedEpisodes">$INFO[Container($PARAM[id]).ListItem.Property(WatchedEpisodes)]</property>
+            <property name="TotalEpisodes">$INFO[Container($PARAM[id]).ListItem.Property(TotalEpisodes)]</property>
+            <property name="VideoResolution">$INFO[Container($PARAM[id]).ListItem.VideoResolution]</property>
+            <property name="IsCollection">$INFO[Container($PARAM[id]).ListItem.IsCollection]</property>
+            <property name="Duration_H">$INFO[Container($PARAM[id]).ListItem.Duration(h)]</property>
+            <property name="Duration_M">$INFO[Container($PARAM[id]).ListItem.Duration(mm)]</property>
+            <property name="Duration_Mins">$INFO[Container($PARAM[id]).ListItem.Duration(mins)]</property>
+            <nested />
+        </item>
+    </include>
+
     <include name="Object_Control">
         <control type="$PARAM[type]">
             <nested />

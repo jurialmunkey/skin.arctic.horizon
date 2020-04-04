@@ -17,7 +17,8 @@
                     <param name="label" value="$PARAM[title]" />
                 </include>
                 <include content="Object_Info_Line">
-                    <param name="container" value="$PARAM[container]" />
+                    <param name="label" value="$PARAM[infoline-label]" />
+                    <param name="image" value="$PARAM[infoline-image]" />
                 </include>
                 <include content="Object_Info_Ratings" condition="$PARAM[ratings] + !Skin.HasSetting(DisableAllRatings)">
                     <param name="container" value="$PARAM[container]" />

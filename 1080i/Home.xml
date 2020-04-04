@@ -13,6 +13,20 @@
             <include>Defs_Hidden_List</include>
             <content><include>skinshortcuts-submenu-1</include></content>
         </control>
+        <control type="list" id="56560">
+            <include>Defs_Offscreen</include>
+            <orientation>horizontal</orientation>
+            <itemlayout />
+            <focusedlayout />
+            <content>
+                <include content="Object_56560_Item">
+                    <param name="id" value="3001" />
+                    <visible>Integer.IsEqual(Container(3700).NumItems,0)</visible>
+                </include>
+                <include>skinshortcuts-template-infoline</include>
+            </content>
+            <visible>Control.HasFocus(301) | Control.HasFocus(303) | Control.HasFocus(3992) | Control.HasFocus(3101) | Control.HasFocus(3102) | Control.Hasfocus(3001) | Control.HasFocus(302)</visible>
+        </control>
 
         <include>Home_Multi</include>
         <include>Object_NowPlaying</include>
