@@ -189,6 +189,7 @@
                     </control>
 
                 </control>
+                <include>skinshortcuts-template-homefader</include>
                 <include>Topbar_Left</include>
             </control>
 
