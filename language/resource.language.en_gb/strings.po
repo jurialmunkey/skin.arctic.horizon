@@ -117,7 +117,7 @@ msgstr ""
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31021"
-msgid "Colors"
+msgid "Colours"
 msgstr ""
 
 #: /1080i/SkinSettings.xml
@@ -223,6 +223,16 @@ msgstr ""
 #: /1080i/SkinSettings.xml
 msgctxt "#31042"
 msgid "Invert home menu colours"
+msgstr ""
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31043"
+msgid "Use basic slideshow for Arctic Mirage screensaver"
+msgstr ""
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31044"
+msgid "Display clock in top right"
 msgstr ""
 
 #: /1080i/DialogVideoInfo.xml

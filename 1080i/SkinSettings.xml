@@ -728,19 +728,6 @@
                     <!-- Miscellaneous -->
                     <!-- ============= -->
 
-                    <control type="label" id="19781" description="LABEL">
-                        <visible>Integer.IsEqual(Window.Property(CurrentFocus),9007)</visible>
-                        <include>Dialog_Standard_HintLabel</include>
-                        <label>Arctic Mirage Screensaver</label>
-                    </control>
-                    <control type="radiobutton" id="19701" description="Mirage">
-                        <visible>Integer.IsEqual(Window.Property(CurrentFocus),9007)</visible>
-                        <include>Defs_Settings_Button</include>
-                        <label>Use basic slideshow for Arctic Mirage screensaver</label>
-                        <selected>Skin.HasSetting(DisableShowcaseScreensaver)</selected>
-                        <onclick>Skin.ToggleSetting(DisableShowcaseScreensaver)</onclick>
-                    </control>
-
                     <control type="label" id="19782" description="LABEL">
                         <visible>Integer.IsEqual(Window.Property(CurrentFocus),9007)</visible>
                         <include>Dialog_Standard_HintLabel</include>
@@ -774,6 +761,30 @@
                         <label>$LOCALIZE[31116]</label>
                         <onclick>ActivateWindow(1118)</onclick>
                     </control>
+
+                    <control type="label" id="19781" description="LABEL">
+                        <visible>Integer.IsEqual(Window.Property(CurrentFocus),9007)</visible>
+                        <include>Dialog_Standard_HintLabel</include>
+                        <label>$LOCALIZE[29921]</label>
+                    </control>
+                    <control type="radiobutton" id="19711" description="Clock Weather">
+                        <visible>Integer.IsEqual(Window.Property(CurrentFocus),9007)</visible>
+                        <include>Defs_Settings_Button</include>
+                        <label>$LOCALIZE[31044]</label>
+                        <selected>!Skin.HasSetting(DisableClock)</selected>
+                        <onclick>Skin.ToggleSetting(DisableClock)</onclick>
+                        <onclick>ReloadSkin()</onclick>
+                        <onclick>AlarmClock(ReFocus1,SetFocus(9007),00:00,silent)</onclick>
+                        <onclick>AlarmClock(ReFocus2,SetFocus(19711),00:00,silent)</onclick>
+                    </control>
+                    <control type="radiobutton" id="19701" description="Mirage">
+                        <visible>Integer.IsEqual(Window.Property(CurrentFocus),9007)</visible>
+                        <include>Defs_Settings_Button</include>
+                        <label>$LOCALIZE[31043]</label>
+                        <selected>Skin.HasSetting(DisableShowcaseScreensaver)</selected>
+                        <onclick>Skin.ToggleSetting(DisableShowcaseScreensaver)</onclick>
+                    </control>
+
 
                     <!-- ============ -->
                     <!-- Dependencies -->

@@ -7,7 +7,7 @@
         <!-- Top Info -->
         <control type="group">
             <animation effect="fade" condition="Window.IsVisible(Home.xml)" time="1" delay="350" start="0" end="100">WindowOpen</animation>
-            <include content="Topbar_Right">
+            <include condition="!Skin.HasSetting(DisableClock)" content="Topbar_Right">
                 <param name="info_hide" value="false" />
             </include>
         </control>

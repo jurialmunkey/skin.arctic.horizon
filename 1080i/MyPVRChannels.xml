@@ -75,7 +75,7 @@
                 <include>Topbar_Left</include>
             </control>
         </include>
-        <include>Topbar_Right</include>
+        <include condition="!Skin.HasSetting(DisableClock)">Topbar_Right</include>
         <include>Object_NowPlaying</include>
         <include>Viewtype_Options</include>
         <include>Object_PlotOverlay</include>

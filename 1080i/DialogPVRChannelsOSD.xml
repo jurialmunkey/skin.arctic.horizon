@@ -11,7 +11,7 @@
             <include content="Topbar_Left">
                 <param name="fgcolor" value="panel_fg" />
             </include>
-            <include content="Topbar_Right">
+            <include condition="!Skin.HasSetting(DisableClock)" content="Topbar_Right">
                 <param name="fgcolor" value="panel_fg" />
             </include>
             <control type="group">
