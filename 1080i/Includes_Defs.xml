@@ -1,6 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
 
+    <variable name="Defs_HomeMenu_Background">
+        <value condition="Skin.HasSetting(InvertHomeMenuColors)">dialog_fg_100</value>
+        <value>dialog_bg_100</value>
+    </variable>
+    <variable name="Defs_HomeMenu_Icon">
+        <value condition="Skin.HasSetting(InvertHomeMenuColors)">dialog_bg_70</value>
+        <value>dialog_fg_70</value>
+    </variable>
+    <variable name="Defs_HomeMenu_Line_FG">
+        <value condition="Skin.HasSetting(InvertHomeMenuColors)">dialog_bg_30</value>
+        <value>dialog_fg_30</value>
+    </variable>
+    <variable name="Defs_HomeMenu_Line_BG">
+        <value condition="Skin.HasSetting(InvertHomeMenuColors)">dialog_fg_30</value>
+        <value>dialog_bg_30</value>
+    </variable>
+
     <include name="Defs_Movement_Banner">
         <movement>0</movement>
     </include>

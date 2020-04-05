@@ -227,35 +227,6 @@
         </control>
     </include>
 
-    <include name="Viewtype_SideMenu">
-        <include content="Viewtype_Panel">
-            <param name="width" value="450" />
-            <param name="background" value="false" />
-            <control type="group">
-                <top>view_top</top>
-                <left>-450</left>
-                <width>450</width>
-                <animation effect="fade" start="100" end="0" condition="Window.IsVisible(DialogSettings.xml)">Conditional</animation>
-                <animation effect="slide" end="450" start="0" reversible="false" condition="Control.HasFocus(9000)">Conditional</animation>
-                <animation effect="slide" end="0" start="450" delay="400" time="1" reversible="false" condition="!Control.HasFocus(9000)">Conditional</animation>
-                <include content="Home_Menu_Header">
-                    <param name="label" value="Options" />
-                    <param name="icon" value="special://skin/extras/icons/playlist.png" />
-                    <param name="labelvisible" value="true" />
-                    <param name="icononly" value="false" />
-                </include>
-                <include content="Home_Menu">
-                    <param name="id" value="9000" />
-                    <param name="font" value="font_submenu" />
-                    <onright>50</onright>
-                    <onback>50</onback>
-                    <onleft>50</onleft>
-                    <include>Items_View</include>
-                </include>
-            </control>
-        </include>
-    </include>
-
     <include name="Viewtype_SlideID_Fade">
         <animation effect="fade" start="0" end="100" time="400" tween="cubic" easing="inout" reversible="false" delay="200" condition="![Control.IsVisible(50) | Control.IsVisible(500) | Control.IsVisible(55)]">Conditional</animation>
         <animation effect="fade" start="100" end="0" time="0" reversible="false" delay="0" condition="Control.IsVisible(50) | Control.IsVisible(500) | Control.IsVisible(55)">Conditional</animation>

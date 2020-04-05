@@ -141,6 +141,11 @@ msgid "Items"
 msgstr ""
 
 #: /1080i/SkinSettings.xml
+msgctxt "#31026"
+msgid "Skin logo"
+msgstr ""
+
+#: /1080i/SkinSettings.xml
 msgctxt "#31027"
 msgid "Customise power menu"
 msgstr ""
@@ -148,6 +153,11 @@ msgstr ""
 #: /1080i/SkinSettings.xml
 msgctxt "#31028"
 msgid "Reset skin settings to defaults (WARNING: This will reset your home menu to skin defaults)"
+msgstr ""
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31029"
+msgid "Show profile picture on main menu"
 msgstr ""
 
 #: /1080i/SkinSettings.xml
@@ -175,6 +185,11 @@ msgctxt "#31034"
 msgid "Change backup and restore path"
 msgstr ""
 
+#: /1080i/SkinSettings.xml
+msgctxt "#31035"
+msgid "Lock main menu position"
+msgstr ""
+
 #: /1080i/Includes_Labels.xml
 msgctxt "#31036"
 msgid "hr"
@@ -193,6 +208,21 @@ msgstr ""
 #: /1080i/script-skinshortcuts.xml
 msgctxt "#31039"
 msgid "Background widget"
+msgstr ""
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31040"
+msgid "Menu and Logo"
+msgstr ""
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31041"
+msgid "Media flags"
+msgstr ""
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31042"
+msgid "Invert home menu colours"
 msgstr ""
 
 #: /1080i/DialogVideoInfo.xml

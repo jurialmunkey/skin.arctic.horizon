@@ -196,13 +196,13 @@
                     <control type="label" id="19182" description="LABEL">
                         <visible>Integer.IsEqual(Window.Property(CurrentFocus),9001)</visible>
                         <include>Dialog_Standard_HintLabel</include>
-                        <label>Menu and Logo</label>
+                        <label>$LOCALIZE[31040]</label>
                     </control>
 
                     <control type="radiobutton" id="19127" description="Lock main menu">
                         <visible>Integer.IsEqual(Window.Property(CurrentFocus),9001)</visible>
                         <include>Defs_Settings_Button</include>
-                        <label>Lock main menu position</label>
+                        <label>$LOCALIZE[31035]</label>
                         <selected>Skin.HasSetting(LockMainMenu)</selected>
                         <onclick>Skin.ToggleSetting(LockMainMenu)</onclick>
                     </control>
@@ -211,15 +211,15 @@
                     <control type="radiobutton" id="19107" description="Profile Pic">
                         <visible>Integer.IsEqual(Window.Property(CurrentFocus),9001)</visible>
                         <include>Defs_Settings_Button</include>
-                        <label>Show profile picture on main menu</label>
+                        <label>$LOCALIZE[31029]</label>
                         <selected>Skin.HasSetting(ProfilePicture)</selected>
                         <onclick>Skin.ToggleSetting(ProfilePicture)</onclick>
                     </control>
 
-                    <control type="button" id="19108" description="Profile Pic">
+                    <control type="button" id="19108" description="Skin Logo">
                         <visible>Integer.IsEqual(Window.Property(CurrentFocus),9001)</visible>
                         <include>Defs_Settings_Button</include>
-                        <label>Skin logo</label>
+                        <label>$LOCALIZE[31026]</label>
                         <label2>$INFO[Skin.String(SkinLogo)]</label2>
                         <onclick>Skin.SetImage(SkinLogo,special://skin/extras/icons/)</onclick>
                     </control>
@@ -376,11 +376,19 @@
                     <control type="radiobutton" id="19305" description="Color Mode">
                         <visible>Integer.IsEqual(Window.Property(CurrentFocus),9003)</visible>
                         <include>Defs_Settings_Button</include>
-                        <label>Media flags</label>
+                        <label>$LOCALIZE[31041]</label>
                         <label2>$VAR[Label_Settings_ColorMode]</label2>
                         <include>Defs_RadioButton_NoTexture</include>
                         <selected>!Skin.HasSetting(EnableMonochromeFlags)</selected>
                         <onclick>Skin.ToggleSetting(EnableMonochromeFlags)</onclick>
+                    </control>
+
+                    <control type="radiobutton" id="19307" description="Invert Main Menu Colors">
+                        <visible>Integer.IsEqual(Window.Property(CurrentFocus),9003)</visible>
+                        <include>Defs_Settings_Button</include>
+                        <label>$LOCALIZE[31042]</label>
+                        <selected>Skin.HasSetting(InvertHomeMenuColors)</selected>
+                        <onclick>Skin.ToggleSetting(InvertHomeMenuColors)</onclick>
                     </control>
 
                     <control type="button" id="19306" description="Reset">

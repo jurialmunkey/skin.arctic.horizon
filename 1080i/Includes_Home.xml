@@ -546,14 +546,14 @@
                     <height>1</height>
                     <left>41</left>
                     <right>41</right>
-                    <texture colordiffuse="dialog_fg_30">common/white.png</texture>
+                    <texture colordiffuse="$VAR[Defs_HomeMenu_Line_BG]">common/white.png</texture>
                 </control>
                 <control type="image">
                     <top>79</top>
                     <height>1</height>
                     <left>41</left>
                     <right>41</right>
-                    <texture colordiffuse="dialog_bg_30">common/white.png</texture>
+                    <texture colordiffuse="$VAR[Defs_HomeMenu_Line_FG]">common/white.png</texture>
                 </control>
                 <control type="image">
                     <left>40</left>
@@ -561,7 +561,7 @@
                     <width>item_list_height</width>
                     <height>item_list_height</height>
                     <bordersize>8</bordersize>
-                    <texture background="true" colordiffuse="dialog_fg_70">$PARAM[icon]</texture>
+                    <texture background="true" colordiffuse="$VAR[Defs_HomeMenu_Icon]">$PARAM[icon]</texture>
                 </control>
             </control>
         </definition>
@@ -582,7 +582,7 @@
                             <width>item_list_height</width>
                             <height>item_list_height</height>
                             <bordersize>8</bordersize>
-                            <texture background="true" colordiffuse="dialog_fg_70">$INFO[ListItem.Icon]</texture>
+                            <texture background="true" colordiffuse="$VAR[Defs_HomeMenu_Icon]">$INFO[ListItem.Icon]</texture>
                         </control>
                     </control>
                 </itemlayout>
@@ -594,7 +594,7 @@
                             <width>item_list_height</width>
                             <height>item_list_height</height>
                             <bordersize>8</bordersize>
-                            <texture background="true" colordiffuse="dialog_fg_70">$INFO[ListItem.Icon]</texture>
+                            <texture background="true" colordiffuse="$VAR[Defs_HomeMenu_Icon]">$INFO[ListItem.Icon]</texture>
                         </control>
                     </control>
                     <control type="group">
@@ -626,6 +626,7 @@
                 <param name="width" value="160" />
                 <param name="background" value="false" />
                 <param name="logohastext" value="false" />
+                <param name="colordiffuse" value="$VAR[Defs_HomeMenu_Background]" />
                 <control type="group">
                     <top>view_top</top>
                     <include content="Home_Menu_Header">
