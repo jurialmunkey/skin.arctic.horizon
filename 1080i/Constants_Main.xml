@@ -11,14 +11,14 @@
     <constant name="widgets_bumper_bottom">430</constant> -->
 
     <!-- Home Widgets -->
-    <constant name="widgets_group_top">0</constant>
-    <constant name="widgets_group_height">860</constant>
-    <constant name="widgets_group_itemgap">-50</constant>
-    <constant name="widgets_item_height">380</constant>
-    <constant name="widgets_label_top">50</constant>
-    <constant name="widgets_item_top">50</constant>
-    <constant name="widgets_bumper_top">0</constant>
-    <constant name="widgets_bumper_bottom">50</constant>
+    <constant name="widgets_group_top">-180</constant>
+    <constant name="widgets_group_height">1080</constant>
+    <constant name="widgets_group_itemgap">-410</constant>
+    <constant name="widgets_item_height">420</constant>
+    <constant name="widgets_label_top">370</constant>
+    <constant name="widgets_item_top">230</constant>
+    <constant name="widgets_bumper_top">220</constant>
+    <constant name="widgets_bumper_bottom">410</constant>
 
     <constant name="widgets_settings_top_item_height">500</constant>
     <constant name="widgets_settings_top_label_top">50</constant>
