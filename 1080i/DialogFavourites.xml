@@ -7,7 +7,7 @@
     <controls>
 
         <include>Global_Background</include>
-        <include>Topbar_Right</include>
+        <include condition="!Skin.HasSetting(DisableClock)">Topbar_Right</include>
         <include>Topbar_Left</include>
 
         <control type="group">

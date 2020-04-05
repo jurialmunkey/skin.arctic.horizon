@@ -6,7 +6,7 @@
     <views>500,510</views>
     <controls>
         <include>Global_Background</include>
-        <include>Topbar_Right</include>
+        <include condition="!Skin.HasSetting(DisableClock)">Topbar_Right</include>
         <control type="group">
             <visible allowhiddenfocus="true">!$EXP[Exp_ShowPlotOverlay]</visible>
             <include>Animation_FadeInOut</include>

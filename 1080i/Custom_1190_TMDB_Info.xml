@@ -17,6 +17,6 @@
             <visible>!$EXP[Exp_InfoVisible]</visible>
             <include>Dialog_Busy</include>
         </control>
-        <include>Topbar_Right</include>
+        <include condition="!Skin.HasSetting(DisableClock)">Topbar_Right</include>
     </controls>
 </window>

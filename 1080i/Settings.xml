@@ -4,7 +4,7 @@
     <defaultcontrol always="false">5000</defaultcontrol>
     <controls>
         <include>Global_Background</include>
-        <include>Topbar_Right</include>
+        <include condition="!Skin.HasSetting(DisableClock)">Topbar_Right</include>
         <include>Topbar_Left</include>
         <include>View_Settings</include>
     </controls>

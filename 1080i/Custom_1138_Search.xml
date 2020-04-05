@@ -19,7 +19,7 @@
             </control>
             <include>Topbar_Left</include>
         </control>
-        <include>Topbar_Right</include>
+        <include condition="!Skin.HasSetting(DisableClock)">Topbar_Right</include>
         <include>Object_PlotOverlay</include>
     </controls>
 </window>

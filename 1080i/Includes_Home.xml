@@ -195,7 +195,7 @@
         </include>
 
         <!-- Clock -->
-        <include>Topbar_Right</include>
+        <include condition="!Skin.HasSetting(DisableClock)">Topbar_Right</include>
     </include>
 
     <include name="Home_Hub_Showcase">

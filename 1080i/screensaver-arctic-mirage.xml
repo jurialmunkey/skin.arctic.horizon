@@ -55,7 +55,7 @@
                 <param name="label" value="$INFO[Skin.String(screensaver.arctic.mirage.name)]" />
             </include>
         </control>
-        <include>Topbar_Right</include>
+        <include condition="!Skin.HasSetting(DisableClock)">Topbar_Right</include>
 
         <control type="image" id="1298">
             <fadetime>800</fadetime>

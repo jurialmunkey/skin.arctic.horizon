@@ -56,7 +56,7 @@
                 <include condition="String.IsEmpty(Window(Home).Property(OSDViewMode))">Animation_FadeIn</include>
                 <visible>Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(DialogPVRInfo.xml)</visible>
                 <include>Global_Background</include>
-                <include>Topbar_Right</include>
+                <include condition="!Skin.HasSetting(DisableClock)">Topbar_Right</include>
             </control>
 
             <control type="slider">
