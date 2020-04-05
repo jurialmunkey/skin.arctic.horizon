@@ -44,6 +44,8 @@
                     <orientation>vertical</orientation>
                     <focusposition>3</focusposition>
                     <movement>0</movement>
+                    <onleft>PreviousChannelGroup</onleft>
+                    <onright>NextChannelGroup</onright>
                     <itemlayout width="740" height="120">
                         <control type="group">
                             <width>120</width>
