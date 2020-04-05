@@ -674,7 +674,7 @@ msgid "Recently Played Episodes"
 msgstr ""
 
 msgctxt "#31199"
-msgid "Kiosk mode"
+msgid "Kiosk mode (removes access to management options in information dialog)"
 msgstr ""
 
 #: /shortcuts/overrides.xml

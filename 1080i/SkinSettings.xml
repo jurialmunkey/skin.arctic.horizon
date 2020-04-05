@@ -779,6 +779,14 @@
                         <onclick>AlarmClock(ReFocus2,SetFocus(19711),00:00,silent)</onclick>
                     </control>
 
+                    <control type="radiobutton" id="19712" description="Kiosk Mode">
+                        <visible>Integer.IsEqual(Window.Property(CurrentFocus),9007)</visible>
+                        <include>Defs_Settings_Button</include>
+                        <label>$LOCALIZE[31199]</label>
+                        <selected>Skin.HasSetting(KioskMode)</selected>
+                        <onclick>Skin.ToggleSetting(KioskMode)</onclick>
+                    </control>
+
                     <control type="radiobutton" id="19701" description="Mirage">
                         <visible>Integer.IsEqual(Window.Property(CurrentFocus),9007)</visible>
                         <include>Defs_Settings_Button</include>
