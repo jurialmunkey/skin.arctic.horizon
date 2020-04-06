@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
+    <variable name="Label_PVROSD_Title">
+        <value condition="!String.IsEmpty(ListItem.Title)">$INFO[ListItem.Title]</value>
+        <value condition="!String.IsEmpty(ListItem.Label)">$INFO[ListItem.Label]</value>
+        <value>$INFO[ListItem.ChannelName]</value>
+    </variable>
 
     <variable name="Label_Home_InfoLine">
         <value condition="Control.IsVisible(56560)">$VAR[Label_56560_InfoLine]</value>

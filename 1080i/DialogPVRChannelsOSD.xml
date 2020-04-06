@@ -23,7 +23,7 @@
                     <align>left</align>
                     <aligny>top</aligny>
                     <font>font_tiny_bold</font>
-                    <label>$INFO[VideoPlayer.ChannelGroup ]</label>
+                    <label>$INFO[VideoPlayer.ChannelGroup]</label>
                     <textcolor>panel_fg_70</textcolor>
                 </control>
                 <control type="label">

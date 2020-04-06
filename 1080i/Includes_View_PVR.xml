@@ -130,7 +130,6 @@
 
     <include name="View_PVR_OSD_ItemLayout_Item">
         <param name="mainitem" default="true" />
-        <param name="listitem" default="ListItem." />
         <definition>
             <control type="group">
                 <top>4</top>
@@ -159,7 +158,18 @@
             </control>
             <control type="label">
                 <left>30</left>
-                <width>100</width>
+                <right>30</right>
+                <centertop>35%</centertop>
+                <height>40</height>
+                <aligny>center</aligny>
+                <textcolor>$PARAM[fgcolor]</textcolor>
+                <selectedcolor>$PARAM[fgcolor]</selectedcolor>
+                <font>font_small_bold</font>
+                <label>$VAR[Label_PVROSD_Title]</label>
+            </control>
+            <control type="label">
+                <left>30</left>
+                <right>30</right>
                 <align>left</align>
                 <centertop>70%</centertop>
                 <height>40</height>
@@ -167,12 +177,11 @@
                 <textcolor>$PARAM[fgcolor]</textcolor>
                 <selectedcolor>$PARAM[fgcolor]</selectedcolor>
                 <font>font_statusbar</font>
-                <label>$INFO[$PARAM[listitem]StartTime]</label>
-                <visible>!String.IsEmpty($PARAM[listitem]StartTime)</visible>
+                <label>$INFO[ListItem.ChannelName]</label>
             </control>
             <control type="label">
+                <left>30</left>
                 <right>30</right>
-                <width>100</width>
                 <align>right</align>
                 <centertop>70%</centertop>
                 <height>40</height>
@@ -180,47 +189,8 @@
                 <textcolor>$PARAM[fgcolor]</textcolor>
                 <selectedcolor>$PARAM[fgcolor]</selectedcolor>
                 <font>font_statusbar</font>
-                <label>$INFO[$PARAM[listitem]EndTime]</label>
-                <visible>!String.IsEmpty($PARAM[listitem]EndTime)</visible>
-            </control>
-            <control type="label">
-                <animation effect="slide" end="0,18" condition="String.IsEmpty($PARAM[listitem]StartTime)">Conditional</animation>
-                <left>30</left>
-                <right>30</right>
-                <centertop>35%</centertop>
-                <height>40</height>
-                <aligny>center</aligny>
-                <textcolor>$PARAM[fgcolor]</textcolor>
-                <selectedcolor>$PARAM[fgcolor]</selectedcolor>
-                <font>font_small_bold</font>
-                <label>$INFO[$PARAM[listitem]Title]</label>
-                <visible>!String.IsEmpty($PARAM[listitem]Title)</visible>
-            </control>
-            <control type="label">
-                <animation effect="slide" end="0,18" condition="String.IsEmpty($PARAM[listitem]StartTime)">Conditional</animation>
-                <left>30</left>
-                <right>30</right>
-                <centertop>35%</centertop>
-                <height>40</height>
-                <aligny>center</aligny>
-                <textcolor>$PARAM[fgcolor]</textcolor>
-                <selectedcolor>$PARAM[fgcolor]</selectedcolor>
-                <font>font_small_bold</font>
-                <label>$INFO[$PARAM[listitem]Label]</label>
-                <visible>String.IsEmpty($PARAM[listitem]Title) + !String.IsEmpty($PARAM[listitem]Label)</visible>
-            </control>
-            <control type="label">
-                <animation effect="slide" end="0,18" condition="String.IsEmpty($PARAM[listitem]StartTime)">Conditional</animation>
-                <left>30</left>
-                <right>30</right>
-                <centertop>35%</centertop>
-                <height>40</height>
-                <aligny>center</aligny>
-                <textcolor>$PARAM[fgcolor]</textcolor>
-                <selectedcolor>$PARAM[fgcolor]</selectedcolor>
-                <font>font_small_bold</font>
-                <label>$INFO[ListItem.ChannelName]</label>
-                <visible>String.IsEmpty($PARAM[listitem]Title) + String.IsEmpty($PARAM[listitem]Label)</visible>
+                <label>$INFO[ListItem.StartTime]$INFO[ListItem.EndTime, - ,]</label>
+                <visible>!String.IsEmpty(ListItem.StartTime)</visible>
             </control>
         </definition>
     </include>
