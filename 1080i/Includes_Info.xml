@@ -133,6 +133,7 @@
         <param name="label-visible" default="true" />
         <param name="control-type" default="fixedlist" />
         <param name="castlabel" default="false" />
+        <param name="issubmenu" default="false" />
         <param name="viewtype-include" default="Viewtype_Poster" />
         <param name="widget-type" default="infowidgets" />
         <definition>
@@ -141,6 +142,7 @@
                 <param name="id" value="$PARAM[id]" />
                 <param name="label" value="$PARAM[label]" />
                 <param name="widget-type" value="$PARAM[widget-type]" />
+                <param name="issubmenu" default="$PARAM[issubmenu]" />
                 <visible>$PARAM[visible]</visible>
                 <visible>$PARAM[label-visible]</visible>
                 <left>85</left>
@@ -157,7 +159,7 @@
                 <left>20</left>
                 <right>20</right>
                 <visible>$PARAM[visible]</visible>
-                <visible>Integer.IsGreater(Container($PARAM[id]).NumAllItems,0) | Container($PARAM[id]).IsUpdating</visible>
+                <visible>Integer.IsGreater(Container($PARAM[id]).NumAllItems,0) | Container($PARAM[id]).IsUpdating | $PARAM[issubmenu]</visible>
                 <movement>6</movement>
             </include>
         </definition>

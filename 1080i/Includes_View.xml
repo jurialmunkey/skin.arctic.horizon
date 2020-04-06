@@ -19,12 +19,13 @@
         <param name="altid" default="999999" />
         <param name="spinner-visible" default="true" />
         <param name="widget-type" default="infowidgets" />
+        <param name="issubmenu" default="false" />
         <definition>
             <control type="group" id="$PARAM[groupid]">
                 <nested />
                 <top>$PARAM[widget-type]_label_top</top>
                 <height>$PARAM[widget-type]_item_top</height>
-                <visible>Integer.IsGreater(Container($PARAM[id]).NumAllItems,0) | Container($PARAM[id]).IsUpdating</visible>
+                <visible>Integer.IsGreater(Container($PARAM[id]).NumAllItems,0) | Container($PARAM[id]).IsUpdating | $PARAM[issubmenu]</visible>
                 <control type="group">
                     <top>$PARAM[widget-type]_item_top</top>
                     <height>item_cast_height</height>
