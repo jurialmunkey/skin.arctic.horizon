@@ -142,7 +142,7 @@
                 <param name="id" value="$PARAM[id]" />
                 <param name="label" value="$PARAM[label]" />
                 <param name="widget-type" value="$PARAM[widget-type]" />
-                <param name="issubmenu" default="$PARAM[issubmenu]" />
+                <param name="issubmenu" value="$PARAM[issubmenu]" />
                 <visible>$PARAM[visible]</visible>
                 <visible>$PARAM[label-visible]</visible>
                 <left>85</left>
