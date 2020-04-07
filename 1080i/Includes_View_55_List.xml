@@ -11,7 +11,7 @@
                 <height>600</height>
                 <width>1026</width>
                 <control type="group">
-                    <visible>!String.Contains(Container.FolderPath,info=user_discover)</visible>
+                    <visible>!String.IsEqual(Container.Property(Param.Info),user_discover)</visible>
                     <include content="Viewtype_Landscape_Itemlayout">
                         <param name="selectbox" value="false" />
                         <param name="id" value="55" />
@@ -22,7 +22,7 @@
                     </include>
                 </control>
                 <control type="group">
-                    <visible>String.Contains(Container.FolderPath,info=user_discover)</visible>
+                    <visible>String.IsEqual(Container.Property(Param.Info),user_discover)</visible>
                     <include content="Viewtype_Landscape_Itemlayout">
                         <param name="selectbox" value="false" />
                         <param name="id" value="55" />
@@ -72,13 +72,13 @@
                 <bottom>0</bottom>
                 <height>560</height>
                 <onleft>64</onleft>
-                <onright condition="String.Contains(Container.FolderPath,info=user_discover)">550</onright>
+                <onright condition="String.IsEqual(Container.Property(Param.Info),user_discover)">550</onright>
                 <pagecontrol>64</pagecontrol>
                 <animation effect="slide" end="0,-80" condition="Integer.IsLess(Container.NumAllItems,7)">Conditional</animation>
                 <animation effect="slide" end="0,-80" condition="Integer.IsLess(Container.NumAllItems,5)">Conditional</animation>
                 <animation effect="slide" end="0,-80" condition="Integer.IsLess(Container.NumAllItems,3)">Conditional</animation>
                 <visible>!$EXP[Exp_View500List]</visible>
-                <visible>!$EXP[Exp_IsLibrary] | Container.Content(files) | [String.IsEqual(Container.PluginName,plugin.video.themoviedb.helper) + [String.Contains(Container.FolderPath,info=details)]] | Window.IsVisible(videoplaylist)</visible>
+                <visible>!$EXP[Exp_IsLibrary] | Container.Content(files) | [String.IsEqual(Container.PluginName,plugin.video.themoviedb.helper) + [String.IsEqual(Container.Property(Param.Info),details)]] | Window.IsVisible(videoplaylist)</visible>
             </include>
             <include content="Home_Hub_Widget_Label">
                 <param name="id" value="55" />
@@ -95,7 +95,7 @@
                 <onleft>55</onleft>
                 <onright>Down</onright>
                 <orientation>vertical</orientation>
-                <visible>String.Contains(Container.FolderPath,info=user_discover)</visible>
+                <visible>String.IsEqual(Container.Property(Param.Info),user_discover)</visible>
                 <animation effect="fade" start="100" end="0" time="300" condition="Container(550).IsUpdating">Conditional</animation>
                 <include content="Defs_AutoScroll"><param name="condition" value="!Control.HasFocus(550)" /></include>
                 <itemlayout width="986" height="560">
@@ -121,7 +121,7 @@
                 <aspectratio align="left">keep</aspectratio>
                 <texture background="true">$INFO[Container(550).ListItem.Art(clearlogo)]</texture>
                 <animation effect="fade" start="100" end="0" time="300" condition="Container(550).IsUpdating">Conditional</animation>
-                <visible>String.Contains(Container.FolderPath,info=user_discover)</visible>
+                <visible>String.IsEqual(Container.Property(Param.Info),user_discover)</visible>
             </control>
             <control type="group">
                 <right>-15</right>
@@ -129,7 +129,7 @@
                 <height>590</height>
                 <width>1016</width>
                 <visible>Control.HasFocus(550)</visible>
-                <visible>String.Contains(Container.FolderPath,info=user_discover)</visible>
+                <visible>String.IsEqual(Container.Property(Param.Info),user_discover)</visible>
                 <include>View_Selectbox</include>
             </control>
         </control>

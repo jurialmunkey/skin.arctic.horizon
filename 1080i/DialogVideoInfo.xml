@@ -12,9 +12,9 @@
     <controls>
 
         <!-- Main Group -->
-        <include condition="!String.IsEqual(ListItem.DBType,musicvideo) + !String.Contains(ListItem.FolderPath,type=person)">DialogVideoInfo</include>
+        <include condition="!String.IsEqual(ListItem.DBType,musicvideo) + !String.IsEqual(ListItem.Property(item.type),person)">DialogVideoInfo</include>
         <include condition="String.IsEqual(ListItem.DBType,musicvideo)">DialogMusicInfo</include>
-        <include condition="!String.IsEqual(ListItem.DBType,musicvideo) + String.Contains(ListItem.FolderPath,type=person)">DialogPersonInfo</include>
+        <include condition="!String.IsEqual(ListItem.DBType,musicvideo) + String.IsEqual(ListItem.Property(item.type),person)">DialogPersonInfo</include>
 
 
         <control type="group">
