@@ -113,11 +113,12 @@
     </variable>
 
     <variable name="Label_Info_Title">
-        <value condition="String.IsEqual(ListItem.DBType,season) | String.IsEqual(ListItem.DBType,episode) | String.StartsWith(ListItem.Label,Season)">$INFO[ListItem.TvShowTitle]</value>
+        <value condition="[Container.Content() | Container.Content(playlists)] + String.IsEmpty(ListItem.DBType)">$INFO[System.Time]</value>
+        <value condition="[String.IsEqual(ListItem.DBType,season) | String.IsEqual(ListItem.DBType,episode) | String.StartsWith(ListItem.Label,Season)] + !String.IsEmpty(ListItem.TvShowTitle)">$INFO[ListItem.TvShowTitle]</value>
         <value condition="String.IsEqual(ListItem.DBType,album) | String.IsEqual(ListItem.DBType,song)">$INFO[ListItem.Album]</value>
-        <value condition="[String.IsEmpty(ListItem.DBType) | String.IsEqual(ListItem.DBType,country) | String.IsEqual(ListItem.DBType,director) | String.IsEqual(ListItem.DBType,genre) | String.IsEqual(ListItem.DBType,year) | String.IsEqual(ListItem.DBType,studio) | String.IsEqual(ListItem.DBType,tag)] + ![Container.Content(addons) + String.IsEmpty(Container.PluginName)] + !String.StartsWith(ListItem.FolderPath,pvr://)">$INFO[System.Time]</value>
         <value condition="!String.IsEmpty(ListItem.Title)">$INFO[ListItem.Title]</value>
-        <value>$INFO[ListItem.Label]</value>
+        <value condition="!String.IsEmpty(ListItem.Label)">$INFO[ListItem.Label]</value>
+        <value>$INFO[System.Time]</value>
     </variable>
 
     <variable name="Label_Info_Title_560">
