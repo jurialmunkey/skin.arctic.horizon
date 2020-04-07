@@ -2157,7 +2157,7 @@
                     <onleft>9602</onleft>
                     <onback>9602</onback>
                     <scrolltime tween="quadratic">400</scrolltime>
-                    <visible>String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,tvshow) | String.Contains(ListItem.FolderPath,type=person)</visible>
+                    <visible>String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,tvshow)</visible>
                     <itemlayout width="1920" height="1080">
                         <control type="image">
                             <aspectratio>keep</aspectratio>
