@@ -29,8 +29,11 @@
             <visible>Integer.IsEqual(Container(3700).NumItems,0) | Integer.IsEqual(Container(3700).NumItems,1)</visible>
         </control>
 
+
+
         <include>Home_Multi</include>
         <include>Object_NowPlaying</include>
         <include>Home_Submenu</include>
+
     </controls>
 </window>

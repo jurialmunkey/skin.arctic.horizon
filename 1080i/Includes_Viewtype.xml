@@ -7,6 +7,7 @@
         <control type="list" id="56560">
             <include>Defs_Offscreen</include>
             <orientation>horizontal</orientation>
+            <visible>Control.IsVisible(53) | Control.Isvisible(56)</visible>
             <itemlayout />
             <focusedlayout />
             <content>
