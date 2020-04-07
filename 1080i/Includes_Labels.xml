@@ -347,52 +347,6 @@
         <value>$LOCALIZE[31014]: $LOCALIZE[16039]</value>
     </variable>
 
-    <variable name="Label_Oscars">
-        <value condition="String.Contains(Window(Home).Property(TMDbHelper.ListItem.Awards),20 Oscar)">x20</value>
-        <value condition="String.Contains(Window(Home).Property(TMDbHelper.ListItem.Awards),19 Oscar)">x19</value>
-        <value condition="String.Contains(Window(Home).Property(TMDbHelper.ListItem.Awards),18 Oscar)">x18</value>
-        <value condition="String.Contains(Window(Home).Property(TMDbHelper.ListItem.Awards),17 Oscar)">x17</value>
-        <value condition="String.Contains(Window(Home).Property(TMDbHelper.ListItem.Awards),16 Oscar)">x16</value>
-        <value condition="String.Contains(Window(Home).Property(TMDbHelper.ListItem.Awards),15 Oscar)">x15</value>
-        <value condition="String.Contains(Window(Home).Property(TMDbHelper.ListItem.Awards),14 Oscar)">x14</value>
-        <value condition="String.Contains(Window(Home).Property(TMDbHelper.ListItem.Awards),13 Oscar)">x13</value>
-        <value condition="String.Contains(Window(Home).Property(TMDbHelper.ListItem.Awards),12 Oscar)">x12</value>
-        <value condition="String.Contains(Window(Home).Property(TMDbHelper.ListItem.Awards),11 Oscar)">x11</value>
-        <value condition="String.Contains(Window(Home).Property(TMDbHelper.ListItem.Awards),10 Oscar)">x10</value>
-        <value condition="String.Contains(Window(Home).Property(TMDbHelper.ListItem.Awards),9 Oscar)">x9</value>
-        <value condition="String.Contains(Window(Home).Property(TMDbHelper.ListItem.Awards),8 Oscar)">x8</value>
-        <value condition="String.Contains(Window(Home).Property(TMDbHelper.ListItem.Awards),7 Oscar)">x7</value>
-        <value condition="String.Contains(Window(Home).Property(TMDbHelper.ListItem.Awards),6 Oscar)">x6</value>
-        <value condition="String.Contains(Window(Home).Property(TMDbHelper.ListItem.Awards),5 Oscar)">x5</value>
-        <value condition="String.Contains(Window(Home).Property(TMDbHelper.ListItem.Awards),4 Oscar)">x4</value>
-        <value condition="String.Contains(Window(Home).Property(TMDbHelper.ListItem.Awards),3 Oscar)">x3</value>
-        <value condition="String.Contains(Window(Home).Property(TMDbHelper.ListItem.Awards),2 Oscar)">x2</value>
-        <value condition="String.Contains(Window(Home).Property(TMDbHelper.ListItem.Awards),1 Oscar)">x1</value>
-    </variable>
-
-    <variable name="Label_OSD_Oscars">
-        <value condition="String.Contains(Window(Home).Property(TMDbHelper.Player.Awards),20 Oscar)">x20</value>
-        <value condition="String.Contains(Window(Home).Property(TMDbHelper.Player.Awards),19 Oscar)">x19</value>
-        <value condition="String.Contains(Window(Home).Property(TMDbHelper.Player.Awards),18 Oscar)">x18</value>
-        <value condition="String.Contains(Window(Home).Property(TMDbHelper.Player.Awards),17 Oscar)">x17</value>
-        <value condition="String.Contains(Window(Home).Property(TMDbHelper.Player.Awards),16 Oscar)">x16</value>
-        <value condition="String.Contains(Window(Home).Property(TMDbHelper.Player.Awards),15 Oscar)">x15</value>
-        <value condition="String.Contains(Window(Home).Property(TMDbHelper.Player.Awards),14 Oscar)">x14</value>
-        <value condition="String.Contains(Window(Home).Property(TMDbHelper.Player.Awards),13 Oscar)">x13</value>
-        <value condition="String.Contains(Window(Home).Property(TMDbHelper.Player.Awards),12 Oscar)">x12</value>
-        <value condition="String.Contains(Window(Home).Property(TMDbHelper.Player.Awards),11 Oscar)">x11</value>
-        <value condition="String.Contains(Window(Home).Property(TMDbHelper.Player.Awards),10 Oscar)">x10</value>
-        <value condition="String.Contains(Window(Home).Property(TMDbHelper.Player.Awards),9 Oscar)">x9</value>
-        <value condition="String.Contains(Window(Home).Property(TMDbHelper.Player.Awards),8 Oscar)">x8</value>
-        <value condition="String.Contains(Window(Home).Property(TMDbHelper.Player.Awards),7 Oscar)">x7</value>
-        <value condition="String.Contains(Window(Home).Property(TMDbHelper.Player.Awards),6 Oscar)">x6</value>
-        <value condition="String.Contains(Window(Home).Property(TMDbHelper.Player.Awards),5 Oscar)">x5</value>
-        <value condition="String.Contains(Window(Home).Property(TMDbHelper.Player.Awards),4 Oscar)">x4</value>
-        <value condition="String.Contains(Window(Home).Property(TMDbHelper.Player.Awards),3 Oscar)">x3</value>
-        <value condition="String.Contains(Window(Home).Property(TMDbHelper.Player.Awards),2 Oscar)">x2</value>
-        <value condition="String.Contains(Window(Home).Property(TMDbHelper.Player.Awards),1 Oscar)">x1</value>
-    </variable>
-
     <variable name="Label_Filtered">
         <value condition="Container.Filtered">$LOCALIZE[16041]</value>
         <value>$LOCALIZE[351]</value>
