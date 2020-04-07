@@ -121,12 +121,19 @@
         <value>$INFO[System.Time]</value>
     </variable>
 
+    <variable name="Label_Info_Title_530">
+        <value condition="[String.IsEqual(Container(530).ListItem.DBType,season) | String.IsEqual(Container(530).ListItem.DBType,episode) | String.StartsWith(Container(530).ListItem.Label,Season)] + !String.IsEmpty(Container(530).ListItem.TvShowTitle)">$INFO[Container(530).ListItem.TvShowTitle]</value>
+        <value condition="String.IsEqual(Container(530).ListItem.DBType,album) | String.IsEqual(Container(530).ListItem.DBType,song)">$INFO[Container(530).ListItem.Album]</value>
+        <value condition="!String.IsEmpty(Container(530).ListItem.Title)">$INFO[Container(530).ListItem.Title]</value>
+        <value condition="!String.IsEmpty(Container(530).ListItem.Label)">$INFO[Container(530).ListItem.Label]</value>
+        <value>$INFO[System.Time]</value>
+    </variable>
     <variable name="Label_Info_Title_560">
-        <value condition="String.IsEqual(Container(560).ListItem.DBType,season) | String.IsEqual(Container(560).ListItem.DBType,episode) | String.StartsWith(Container(560).ListItem.Label,Season)">$INFO[Container(560).ListItem.TvShowTitle]</value>
+        <value condition="[String.IsEqual(Container(560).ListItem.DBType,season) | String.IsEqual(Container(560).ListItem.DBType,episode) | String.StartsWith(Container(560).ListItem.Label,Season)] + !String.IsEmpty(Container(560).ListItem.TvShowTitle)">$INFO[Container(560).ListItem.TvShowTitle]</value>
         <value condition="String.IsEqual(Container(560).ListItem.DBType,album) | String.IsEqual(Container(560).ListItem.DBType,song)">$INFO[Container(560).ListItem.Album]</value>
-        <value condition="[String.IsEmpty(Container(560).ListItem.DBType) | String.IsEqual(Container(560).ListItem.DBType,country) | String.IsEqual(Container(560).ListItem.DBType,director) | String.IsEqual(Container(560).ListItem.DBType,genre) | String.IsEqual(Container(560).ListItem.DBType,year) | String.IsEqual(Container(560).ListItem.DBType,studio) | String.IsEqual(Container(560).ListItem.DBType,tag)] + ![Container.Content(addons) + String.IsEmpty(Container.PluginName)]">$INFO[System.Time]</value>
         <value condition="!String.IsEmpty(Container(560).ListItem.Title)">$INFO[Container(560).ListItem.Title]</value>
-        <value>$INFO[Container(560).ListItem.Label]</value>
+        <value condition="!String.IsEmpty(Container(560).ListItem.Label)">$INFO[Container(560).ListItem.Label]</value>
+        <value>$INFO[System.Time]</value>
     </variable>
 
     <variable name="Label_Landscape_Title">

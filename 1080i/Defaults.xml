@@ -224,4 +224,6 @@
 
     <expression name="Exp_GlobalBackground">[!Player.HasMedia | [Player.HasVideo + !Skin.HasSetting(global.showvideo)] | [Player.HasAudio + !Skin.HasSetting(global.showvisualisation)] | [Player.HasAudio + !String.IsEmpty(Window(Home).Property(PlayingBackgroundMedia))]]</expression>
 
+    <expression name="Exp_IsLibrary">[String.StartsWith(Container.FolderPath,videodb://) | String.StartsWith(Container.FolderPath,musicdb://) | String.StartsWith(Container.FolderPath,plugin://) | String.StartsWith(Container.FolderPath,addons://) | String.StartsWith(Container.FolderPath,sources://) | String.StartsWith(Container.FolderPath,special://)]</expression>
+
 </includes>

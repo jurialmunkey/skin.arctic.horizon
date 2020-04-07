@@ -2440,7 +2440,6 @@
                     <include>Items_Info_Gallery</include>
                     <content target="images">$VAR[Info_Fanart]</content>
                     <content target="images">$VAR[Info_Posters]</content>
-                    <content target="images">$VAR[Info_PersonImages]</content>
                 </control>
             </control>
         </definition>
