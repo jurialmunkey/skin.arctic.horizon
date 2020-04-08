@@ -27,7 +27,7 @@
                 <height>$PARAM[widget-type]_item_top</height>
                 <visible>Integer.IsGreater(Container($PARAM[id]).NumAllItems,0) | Container($PARAM[id]).IsUpdating | $PARAM[issubmenu]</visible>
                 <control type="group">
-                    <top>$PARAM[widget-type]_item_top</top>
+                    <top>50</top>
                     <height>item_cast_height</height>
                     <include content="Defs_BusySpinner" condition="$PARAM[spinner-visible]">
                         <param name="label" value="$LOCALIZE[31428]..." />
