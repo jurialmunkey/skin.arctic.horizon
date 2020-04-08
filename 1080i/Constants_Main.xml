@@ -21,12 +21,12 @@
     <constant name="widgets_bumper_bottom">410</constant>
 
     <constant name="widgets_settings_top_item_height">500</constant>
-    <constant name="widgets_settings_top_label_top">50</constant>
-    <constant name="widgets_settings_top_item_top">50</constant>
+    <constant name="widgets_settings_top_label_top">370</constant>
+    <constant name="widgets_settings_top_item_top">230</constant>
 
-    <constant name="widgets_settings_bottom_item_height">260</constant>
-    <constant name="widgets_settings_bottom_label_top">50</constant>
-    <constant name="widgets_settings_bottom_item_top">50</constant>
+    <constant name="widgets_settings_bottom_item_height">300</constant>
+    <constant name="widgets_settings_bottom_label_top">370</constant>
+    <constant name="widgets_settings_bottom_item_top">230</constant>
 
     <!-- Info Dialog Widgets -->
     <constant name="infowidgets_group_height">860</constant>
