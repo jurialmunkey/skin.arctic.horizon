@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
+    <variable name="Label_PVROSD_Title">
+        <value condition="!String.IsEmpty(ListItem.Title)">$INFO[ListItem.Title]</value>
+        <value condition="!String.IsEmpty(ListItem.Label)">$INFO[ListItem.Label]</value>
+        <value>$INFO[ListItem.ChannelName]</value>
+    </variable>
 
     <variable name="Label_Home_InfoLine">
         <value condition="Control.IsVisible(56560)">$VAR[Label_56560_InfoLine]</value>
@@ -16,7 +21,9 @@
 
         <value condition="String.IsEqual(Container(56560).ListItem.Property(DBType),movie)">$INFO[Container(56560).ListItem.Property(Year),  |  [COLOR=main_fg_100],[/COLOR]]$INFO[Container(56560).ListItem.Property(MPAA),  |  [COLOR=main_fg_100],[/COLOR]]$VAR[Label_56560_Duration,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[Container(56560).ListItem.Property(EndTime),  |  [COLOR=main_fg_100]$LOCALIZE[31207] ,[/COLOR]]</value>
 
-        <value condition="String.IsEqual(Container(56560).ListItem.Property(DBType),tvshow) | String.IsEqual(Container(56560).ListItem.Property(DBType),season)">$INFO[Container(56560).ListItem.Property(Year),  |  [COLOR=main_fg_100],[/COLOR]]$INFO[Container(56560).ListItem.Property(MPAA),  |  [COLOR=main_fg_100],[/COLOR]]$INFO[Container(56560).ListItem.Property(WatchedEpisodes),  |  [COLOR=main_fg_100]$LOCALIZE[16102] , $LOCALIZE[20163] [/COLOR]]$INFO[Container(56560).ListItem.Property(TotalEpisodes),[COLOR=main_fg_100],[/COLOR]]$VAR[Label_Info_NextAired_Status,  |  [COLOR=main_fg_100],[/COLOR]]$VAR[Label_Info_NextAired_Date,  |  [COLOR=main_fg_100],[/COLOR]]</value>
+        <value condition="String.IsEqual(Container(56560).ListItem.Property(DBType),tvshow)">$INFO[Container(56560).ListItem.Property(Year),  |  [COLOR=main_fg_100],[/COLOR]]$INFO[Container(56560).ListItem.Property(MPAA),  |  [COLOR=main_fg_100],[/COLOR]]$INFO[Container(56560).ListItem.Property(WatchedEpisodes),  |  [COLOR=main_fg_100]$LOCALIZE[16102] , $LOCALIZE[20163] [/COLOR]]$INFO[Container(56560).ListItem.Property(TotalEpisodes),[COLOR=main_fg_100],[/COLOR]]$VAR[Label_Info_NextAired_Status,  |  [COLOR=main_fg_100],[/COLOR]]$VAR[Label_Info_NextAired_Date,  |  [COLOR=main_fg_100],[/COLOR]]</value>
+
+        <value condition="String.IsEqual(Container(56560).ListItem.Property(DBType),season)">$INFO[Container(56560).ListItem.Property(Season),  |  [COLOR=main_fg_100]$LOCALIZE[20373] ,[/COLOR]]$INFO[Container(56560).ListItem.Property(Year),  |  [COLOR=main_fg_100],[/COLOR]]$INFO[Container(56560).ListItem.Property(MPAA),  |  [COLOR=main_fg_100],[/COLOR]]$INFO[Container(56560).ListItem.Property(WatchedEpisodes),  |  [COLOR=main_fg_100]$LOCALIZE[16102] , $LOCALIZE[20163] [/COLOR]]$INFO[Container(56560).ListItem.Property(TotalEpisodes),[COLOR=main_fg_100],[/COLOR]]$VAR[Label_Info_NextAired_Status,  |  [COLOR=main_fg_100],[/COLOR]]$VAR[Label_Info_NextAired_Date,  |  [COLOR=main_fg_100],[/COLOR]]</value>
 
         <value condition="String.IsEqual(Container(56560).ListItem.Property(DBType),episode)">$INFO[Container(56560).ListItem.Property(Season),  |  [COLOR=main_fg_100]$LOCALIZE[20373] ,[/COLOR]]$INFO[Container(56560).ListItem.Property(Episode),  |  [COLOR=main_fg_100]$LOCALIZE[20359] ,[/COLOR]]$INFO[Container(56560).ListItem.Property(MPAA),  |  [COLOR=main_fg_100],[/COLOR]]$INFO[Container(56560).ListItem.Premiered,  |  [COLOR=main_fg_100],[/COLOR]]$VAR[Label_56560_Duration,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[Container(56560).ListItem.Property(EndTime),  |  [COLOR=main_fg_100]$LOCALIZE[31207] ,[/COLOR]]</value>
 
@@ -38,7 +45,9 @@
 
         <value condition="String.IsEqual(ListItem.DBType,movie)">$INFO[ListItem.Year,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.MPAA,  |  [COLOR=main_fg_100],[/COLOR]]$VAR[Label_Duration,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.EndTime,  |  [COLOR=main_fg_100]$LOCALIZE[31207] ,[/COLOR]]</value>
 
-        <value condition="String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,season)">$INFO[ListItem.Year,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.MPAA,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.Property(WatchedEpisodes),  |  [COLOR=main_fg_100]$LOCALIZE[16102] , $LOCALIZE[20163] [/COLOR]]$INFO[ListItem.Property(TotalEpisodes),[COLOR=main_fg_100],[/COLOR]]$VAR[Label_Info_NextAired_Status,  |  [COLOR=main_fg_100],[/COLOR]]$VAR[Label_Info_NextAired_Date,  |  [COLOR=main_fg_100],[/COLOR]]</value>
+        <value condition="String.IsEqual(ListItem.DBType,tvshow)">$INFO[ListItem.Year,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.MPAA,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.Property(WatchedEpisodes),  |  [COLOR=main_fg_100]$LOCALIZE[16102] , $LOCALIZE[20163] [/COLOR]]$INFO[ListItem.Property(TotalEpisodes),[COLOR=main_fg_100],[/COLOR]]$VAR[Label_Info_NextAired_Status,  |  [COLOR=main_fg_100],[/COLOR]]$VAR[Label_Info_NextAired_Date,  |  [COLOR=main_fg_100],[/COLOR]]</value>
+
+        <value condition="String.IsEqual(ListItem.DBType,season)">$INFO[ListItem.Season,  |  [COLOR=main_fg_100]$LOCALIZE[20373] ,[/COLOR]]$INFO[ListItem.Year,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.MPAA,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.Property(WatchedEpisodes),  |  [COLOR=main_fg_100]$LOCALIZE[16102] , $LOCALIZE[20163] [/COLOR]]$INFO[ListItem.Property(TotalEpisodes),[COLOR=main_fg_100],[/COLOR]]$VAR[Label_Info_NextAired_Status,  |  [COLOR=main_fg_100],[/COLOR]]$VAR[Label_Info_NextAired_Date,  |  [COLOR=main_fg_100],[/COLOR]]</value>
 
         <value condition="String.IsEqual(ListItem.DBType,episode)">$INFO[ListItem.Season,  |  [COLOR=main_fg_100]$LOCALIZE[20373] ,[/COLOR]]$INFO[ListItem.Episode,  |  [COLOR=main_fg_100]$LOCALIZE[20359] ,[/COLOR]]$INFO[ListItem.MPAA,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.Premiered,  |  [COLOR=main_fg_100],[/COLOR]]$VAR[Label_Duration,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.EndTime,  |  [COLOR=main_fg_100]$LOCALIZE[31207] ,[/COLOR]]</value>
 
@@ -50,32 +59,9 @@
 
         <value condition="Container.Content(addons) + String.IsEmpty(Container.PluginName)">$INFO[ListItem.AddonVersion,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.AddonType,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.AddonCreator,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.Label2,  |  [COLOR=main_fg_100],[/COLOR]]</value>
 
-        <value condition="[String.StartsWith(ListItem.FolderPath,pvr://) | Window.IsVisible(DialogPVRInfo.xml)] + !Control.HasFocus(9400)">$INFO[ListItem.ChannelName,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.Season,  |  [COLOR=main_fg_100]S,[/COLOR]]$INFO[ListItem.Episode,[COLOR=main_fg_100]E,[/COLOR]]$VAR[Label_PVR_EpisodeName,  |  [COLOR=main_fg_100],[/COLOR]]$VAR[Label_PVR_EPGEventTitle,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.Year,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.MPAA,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.StartTime,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.EndTime,[COLOR=main_fg_100] - ,[/COLOR]]</value>
+        <value condition="[String.StartsWith(ListItem.FolderPath,pvr://) | Window.IsVisible(DialogPVRInfo.xml)] + !Control.HasFocus(9400) + [!String.IsEmpty(ListItem.ChannelName) | !String.IsEmpty(ListITem.StartTime)]">$INFO[ListItem.ChannelName,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.Season,  |  [COLOR=main_fg_100]S,[/COLOR]]$INFO[ListItem.Episode,[COLOR=main_fg_100]E,[/COLOR]]$VAR[Label_PVR_EpisodeName,  |  [COLOR=main_fg_100],[/COLOR]]$VAR[Label_PVR_EPGEventTitle,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.Year,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.MPAA,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.StartTime,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.EndTime,[COLOR=main_fg_100] - ,[/COLOR]]</value>
 
-        <value condition="[String.StartsWith(ListItem.FolderPath,pvr://) | Window.IsVisible(DialogPVRInfo.xml)] + Control.HasFocus(9400)">$INFO[ListItem.ChannelName,  |  [COLOR=main_fg_100],[/COLOR]]$VAR[Label_PVR_EpisodeName,  |  [COLOR=main_fg_100],[/COLOR]]$VAR[Label_PVR_EPGEventTitle,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.NextStartTime,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.NextEndTime,[COLOR=main_fg_100] - ,[/COLOR]]</value>
-
-        <value>$INFO[System.Date,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[Container.NumItems,  |  [COLOR=main_fg_100], $LOCALIZE[31025][/COLOR]]</value>
-    </variable>
-    <variable name="Label_InfoLine">
-        <value condition="[String.IsEqual(ListItem.DBType,set) | ListItem.IsCollection] + !String.IsEmpty(Window(Home).Property(TMDBHelper.ListItem.Set.Years))">$INFO[Window(Home).Property(TMDBHelper.ListItem.Set.Years),  |  [COLOR=main_fg_100],[/COLOR]]$INFO[Window(Home).Property(TMDBHelper.ListItem.Set.NumItems),  |  [COLOR=main_fg_100], $LOCALIZE[342][/COLOR]]</value>
-
-        <value condition="String.IsEqual(ListItem.DBType,movie)">$INFO[ListItem.Year,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.MPAA,  |  [COLOR=main_fg_100],[/COLOR]]$VAR[Label_Duration,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.EndTime,  |  [COLOR=main_fg_100]$LOCALIZE[31207] ,[/COLOR]]</value>
-
-        <value condition="String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,season)">$INFO[ListItem.Year,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.MPAA,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.Property(WatchedEpisodes),  |  [COLOR=main_fg_100]$LOCALIZE[16102] , $LOCALIZE[20163] [/COLOR]]$INFO[ListItem.Property(TotalEpisodes),[COLOR=main_fg_100],[/COLOR]]$VAR[Label_Info_NextAired_Status,  |  [COLOR=main_fg_100],[/COLOR]]$VAR[Label_Info_NextAired_Date,  |  [COLOR=main_fg_100],[/COLOR]]</value>
-
-        <value condition="String.IsEqual(ListItem.DBType,episode)">$INFO[ListItem.Season,  |  [COLOR=main_fg_100]$LOCALIZE[20373] ,[/COLOR]]$INFO[ListItem.Episode,  |  [COLOR=main_fg_100]$LOCALIZE[20359] ,[/COLOR]]$INFO[ListItem.MPAA,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.Premiered,  |  [COLOR=main_fg_100],[/COLOR]]$VAR[Label_Duration,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.EndTime,  |  [COLOR=main_fg_100]$LOCALIZE[31207] ,[/COLOR]]</value>
-
-        <value condition="String.IsEqual(ListItem.DBType,actor) + [!String.IsEmpty(Window(Home).Property(TMDBHelper.ListItem.Birthday)) | !String.IsEmpty(Window(Home).Property(TMDBHelper.ListItem.Born)) | !String.IsEmpty(Window(Home).Property(TMDBHelper.ListItem.Age))]">$INFO[Window(Home).Property(TMDBHelper.ListItem.Birthday),  |  [COLOR=main_fg_100],[/COLOR]]$INFO[Window(Home).Property(TMDBHelper.ListItem.Born),  |  [COLOR=main_fg_100],[/COLOR]]$INFO[Window(Home).Property(TMDBHelper.ListItem.Age),, $LOCALIZE[31356]),  |  [COLOR=main_fg_100],[/COLOR]]</value>
-
-        <value condition="String.IsEqual(ListItem.DBType,artist) + [!String.IsEmpty(ListItem.Property(Artist_Genre)) | !String.IsEmpty(ListItem.Property(Artist_YearsActive)) | !String.IsEmpty(ListItem.Property(Artist_Born))]">$INFO[ListItem.Property(Artist_Genre),  |  [COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.Property(Artist_YearsActive),  |  [COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.Property(Artist_Born),  |  [COLOR=main_fg_100],[/COLOR]]</value>
-
-        <value condition="[String.IsEqual(ListItem.DBType,album) | String.IsEqual(ListItem.DBType,song)] + [!String.IsEmpty(ListItem.AlbumArtist) | !String.IsEmpty(ListItem.Year) | !String.IsEmpty(ListItem.Property(Album_Label))]">$INFO[ListItem.AlbumArtist,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.Year,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.Property(Album_Label),  |  [COLOR=main_fg_100],[/COLOR]]</value>
-
-        <value condition="Container.Content(addons) + String.IsEmpty(Container.PluginName)">$INFO[ListItem.AddonVersion,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.AddonType,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.AddonCreator,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.Label2,  |  [COLOR=main_fg_100],[/COLOR]]</value>
-
-        <value condition="[String.StartsWith(ListItem.FolderPath,pvr://) | Window.IsVisible(DialogPVRInfo.xml)] + !Control.HasFocus(9400)">$INFO[ListItem.ChannelName,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.Season,  |  [COLOR=main_fg_100]S,[/COLOR]]$INFO[ListItem.Episode,[COLOR=main_fg_100]E,[/COLOR]]$VAR[Label_PVR_EpisodeName,  |  [COLOR=main_fg_100],[/COLOR]]$VAR[Label_PVR_EPGEventTitle,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.Year,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.MPAA,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.StartTime,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.EndTime,[COLOR=main_fg_100] - ,[/COLOR]]</value>
-
-        <value condition="[String.StartsWith(ListItem.FolderPath,pvr://) | Window.IsVisible(DialogPVRInfo.xml)] + Control.HasFocus(9400)">$INFO[ListItem.ChannelName,  |  [COLOR=main_fg_100],[/COLOR]]$VAR[Label_PVR_EpisodeName,  |  [COLOR=main_fg_100],[/COLOR]]$VAR[Label_PVR_EPGEventTitle,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.NextStartTime,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.NextEndTime,[COLOR=main_fg_100] - ,[/COLOR]]</value>
+        <value condition="[String.StartsWith(ListItem.FolderPath,pvr://) | Window.IsVisible(DialogPVRInfo.xml)] + Control.HasFocus(9400) + [!String.IsEmpty(ListItem.ChannelName) | !String.IsEmpty(ListITem.StartTime)]">$INFO[ListItem.ChannelName,  |  [COLOR=main_fg_100],[/COLOR]]$VAR[Label_PVR_EpisodeName,  |  [COLOR=main_fg_100],[/COLOR]]$VAR[Label_PVR_EPGEventTitle,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.NextStartTime,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.NextEndTime,[COLOR=main_fg_100] - ,[/COLOR]]</value>
 
         <value>$INFO[System.Date,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[Container.NumItems,  |  [COLOR=main_fg_100], $LOCALIZE[31025][/COLOR]]</value>
     </variable>
@@ -131,19 +117,27 @@
     </variable>
 
     <variable name="Label_Info_Title">
-        <value condition="String.IsEqual(ListItem.DBType,season) | String.IsEqual(ListItem.DBType,episode) | String.StartsWith(ListItem.Label,Season)">$INFO[ListItem.TvShowTitle]</value>
+        <value condition="[Container.Content() | Container.Content(playlists)] + String.IsEmpty(ListItem.DBType)">$INFO[System.Time]</value>
+        <value condition="[String.IsEqual(ListItem.DBType,season) | String.IsEqual(ListItem.DBType,episode) | String.StartsWith(ListItem.Label,Season)] + !String.IsEmpty(ListItem.TvShowTitle)">$INFO[ListItem.TvShowTitle]</value>
         <value condition="String.IsEqual(ListItem.DBType,album) | String.IsEqual(ListItem.DBType,song)">$INFO[ListItem.Album]</value>
-        <value condition="[String.IsEmpty(ListItem.DBType) | String.IsEqual(ListItem.DBType,country) | String.IsEqual(ListItem.DBType,director) | String.IsEqual(ListItem.DBType,genre) | String.IsEqual(ListItem.DBType,year) | String.IsEqual(ListItem.DBType,studio) | String.IsEqual(ListItem.DBType,tag)] + ![Container.Content(addons) + String.IsEmpty(Container.PluginName)] + !String.StartsWith(ListItem.FolderPath,pvr://)">$INFO[System.Time]</value>
         <value condition="!String.IsEmpty(ListItem.Title)">$INFO[ListItem.Title]</value>
-        <value>$INFO[ListItem.Label]</value>
+        <value condition="!String.IsEmpty(ListItem.Label)">$INFO[ListItem.Label]</value>
+        <value>$INFO[System.Time]</value>
     </variable>
 
+    <variable name="Label_Info_Title_530">
+        <value condition="[String.IsEqual(Container(530).ListItem.DBType,season) | String.IsEqual(Container(530).ListItem.DBType,episode) | String.StartsWith(Container(530).ListItem.Label,Season)] + !String.IsEmpty(Container(530).ListItem.TvShowTitle)">$INFO[Container(530).ListItem.TvShowTitle]</value>
+        <value condition="String.IsEqual(Container(530).ListItem.DBType,album) | String.IsEqual(Container(530).ListItem.DBType,song)">$INFO[Container(530).ListItem.Album]</value>
+        <value condition="!String.IsEmpty(Container(530).ListItem.Title)">$INFO[Container(530).ListItem.Title]</value>
+        <value condition="!String.IsEmpty(Container(530).ListItem.Label)">$INFO[Container(530).ListItem.Label]</value>
+        <value>$INFO[System.Time]</value>
+    </variable>
     <variable name="Label_Info_Title_560">
-        <value condition="String.IsEqual(Container(560).ListItem.DBType,season) | String.IsEqual(Container(560).ListItem.DBType,episode) | String.StartsWith(Container(560).ListItem.Label,Season)">$INFO[Container(560).ListItem.TvShowTitle]</value>
+        <value condition="[String.IsEqual(Container(560).ListItem.DBType,season) | String.IsEqual(Container(560).ListItem.DBType,episode) | String.StartsWith(Container(560).ListItem.Label,Season)] + !String.IsEmpty(Container(560).ListItem.TvShowTitle)">$INFO[Container(560).ListItem.TvShowTitle]</value>
         <value condition="String.IsEqual(Container(560).ListItem.DBType,album) | String.IsEqual(Container(560).ListItem.DBType,song)">$INFO[Container(560).ListItem.Album]</value>
-        <value condition="[String.IsEmpty(Container(560).ListItem.DBType) | String.IsEqual(Container(560).ListItem.DBType,country) | String.IsEqual(Container(560).ListItem.DBType,director) | String.IsEqual(Container(560).ListItem.DBType,genre) | String.IsEqual(Container(560).ListItem.DBType,year) | String.IsEqual(Container(560).ListItem.DBType,studio) | String.IsEqual(Container(560).ListItem.DBType,tag)] + ![Container.Content(addons) + String.IsEmpty(Container.PluginName)]">$INFO[System.Time]</value>
         <value condition="!String.IsEmpty(Container(560).ListItem.Title)">$INFO[Container(560).ListItem.Title]</value>
-        <value>$INFO[Container(560).ListItem.Label]</value>
+        <value condition="!String.IsEmpty(Container(560).ListItem.Label)">$INFO[Container(560).ListItem.Label]</value>
+        <value>$INFO[System.Time]</value>
     </variable>
 
     <variable name="Label_Landscape_Title">
@@ -309,12 +303,12 @@
         <value condition="Window.IsVisible(MyPics.xml)">$LOCALIZE[1]</value>
         <value condition="Window.IsVisible(MyPrograms.xml)">$LOCALIZE[0]</value>
         <value condition="Window.IsVisible(AddonBrowser.xml)">$LOCALIZE[24001]</value>
-        <value condition="Window.IsVisible(MyPVRGuide.xml)">[CAPITALIZE]$LOCALIZE[10702][/CAPITALIZE]</value>
-        <value condition="Window.IsVisible(MyPVRChannels.xml)">[CAPITALIZE]$LOCALIZE[10700][/CAPITALIZE]</value>
-        <value condition="Window.IsVisible(MyPVRRecordings.xml)">[CAPITALIZE]$LOCALIZE[10701][/CAPITALIZE]</value>
-        <value condition="Window.IsVisible(MyPVRTimers.xml)">[CAPITALIZE]$LOCALIZE[10703][/CAPITALIZE]</value>
-        <value condition="Window.IsVisible(MyPVRSearch.xml)">[CAPITALIZE]$LOCALIZE[10704][/CAPITALIZE]</value>
-        <value condition="Window.IsVisible(FileManager.xml)">[CAPITALIZE]$LOCALIZE[7][/CAPITALIZE]</value>
+        <value condition="Window.IsVisible(MyPVRGuide.xml)">$LOCALIZE[10702]</value>
+        <value condition="Window.IsVisible(MyPVRChannels.xml)">$LOCALIZE[10700]</value>
+        <value condition="Window.IsVisible(MyPVRRecordings.xml)">$LOCALIZE[10701]</value>
+        <value condition="Window.IsVisible(MyPVRTimers.xml)">$LOCALIZE[10703]</value>
+        <value condition="Window.IsVisible(MyPVRSearch.xml)">$LOCALIZE[10704]</value>
+        <value condition="Window.IsVisible(FileManager.xml)">$LOCALIZE[7]</value>
         <!-- <value condition="Window.IsVisible(Home.xml)">$LOCALIZE[10000]</value> -->
         <value condition="Window.IsVisible(Home.xml)">$INFO[Container(301).ListItem.Label]</value>
         <value condition="Window.IsVisible(DialogPVRInfo.xml)">$LOCALIZE[19180]</value>
@@ -355,52 +349,6 @@
     <variable name="Label_ExtraFanart">
         <value condition="Skin.HasSetting(ArtworkHelper.EnableExtraFanart)">$LOCALIZE[31014]: $LOCALIZE[16041]</value>
         <value>$LOCALIZE[31014]: $LOCALIZE[16039]</value>
-    </variable>
-
-    <variable name="Label_Oscars">
-        <value condition="String.Contains(Window(Home).Property(TMDbHelper.ListItem.Awards),20 Oscar)">x20</value>
-        <value condition="String.Contains(Window(Home).Property(TMDbHelper.ListItem.Awards),19 Oscar)">x19</value>
-        <value condition="String.Contains(Window(Home).Property(TMDbHelper.ListItem.Awards),18 Oscar)">x18</value>
-        <value condition="String.Contains(Window(Home).Property(TMDbHelper.ListItem.Awards),17 Oscar)">x17</value>
-        <value condition="String.Contains(Window(Home).Property(TMDbHelper.ListItem.Awards),16 Oscar)">x16</value>
-        <value condition="String.Contains(Window(Home).Property(TMDbHelper.ListItem.Awards),15 Oscar)">x15</value>
-        <value condition="String.Contains(Window(Home).Property(TMDbHelper.ListItem.Awards),14 Oscar)">x14</value>
-        <value condition="String.Contains(Window(Home).Property(TMDbHelper.ListItem.Awards),13 Oscar)">x13</value>
-        <value condition="String.Contains(Window(Home).Property(TMDbHelper.ListItem.Awards),12 Oscar)">x12</value>
-        <value condition="String.Contains(Window(Home).Property(TMDbHelper.ListItem.Awards),11 Oscar)">x11</value>
-        <value condition="String.Contains(Window(Home).Property(TMDbHelper.ListItem.Awards),10 Oscar)">x10</value>
-        <value condition="String.Contains(Window(Home).Property(TMDbHelper.ListItem.Awards),9 Oscar)">x9</value>
-        <value condition="String.Contains(Window(Home).Property(TMDbHelper.ListItem.Awards),8 Oscar)">x8</value>
-        <value condition="String.Contains(Window(Home).Property(TMDbHelper.ListItem.Awards),7 Oscar)">x7</value>
-        <value condition="String.Contains(Window(Home).Property(TMDbHelper.ListItem.Awards),6 Oscar)">x6</value>
-        <value condition="String.Contains(Window(Home).Property(TMDbHelper.ListItem.Awards),5 Oscar)">x5</value>
-        <value condition="String.Contains(Window(Home).Property(TMDbHelper.ListItem.Awards),4 Oscar)">x4</value>
-        <value condition="String.Contains(Window(Home).Property(TMDbHelper.ListItem.Awards),3 Oscar)">x3</value>
-        <value condition="String.Contains(Window(Home).Property(TMDbHelper.ListItem.Awards),2 Oscar)">x2</value>
-        <value condition="String.Contains(Window(Home).Property(TMDbHelper.ListItem.Awards),1 Oscar)">x1</value>
-    </variable>
-
-    <variable name="Label_OSD_Oscars">
-        <value condition="String.Contains(Window(Home).Property(TMDbHelper.Player.Awards),20 Oscar)">x20</value>
-        <value condition="String.Contains(Window(Home).Property(TMDbHelper.Player.Awards),19 Oscar)">x19</value>
-        <value condition="String.Contains(Window(Home).Property(TMDbHelper.Player.Awards),18 Oscar)">x18</value>
-        <value condition="String.Contains(Window(Home).Property(TMDbHelper.Player.Awards),17 Oscar)">x17</value>
-        <value condition="String.Contains(Window(Home).Property(TMDbHelper.Player.Awards),16 Oscar)">x16</value>
-        <value condition="String.Contains(Window(Home).Property(TMDbHelper.Player.Awards),15 Oscar)">x15</value>
-        <value condition="String.Contains(Window(Home).Property(TMDbHelper.Player.Awards),14 Oscar)">x14</value>
-        <value condition="String.Contains(Window(Home).Property(TMDbHelper.Player.Awards),13 Oscar)">x13</value>
-        <value condition="String.Contains(Window(Home).Property(TMDbHelper.Player.Awards),12 Oscar)">x12</value>
-        <value condition="String.Contains(Window(Home).Property(TMDbHelper.Player.Awards),11 Oscar)">x11</value>
-        <value condition="String.Contains(Window(Home).Property(TMDbHelper.Player.Awards),10 Oscar)">x10</value>
-        <value condition="String.Contains(Window(Home).Property(TMDbHelper.Player.Awards),9 Oscar)">x9</value>
-        <value condition="String.Contains(Window(Home).Property(TMDbHelper.Player.Awards),8 Oscar)">x8</value>
-        <value condition="String.Contains(Window(Home).Property(TMDbHelper.Player.Awards),7 Oscar)">x7</value>
-        <value condition="String.Contains(Window(Home).Property(TMDbHelper.Player.Awards),6 Oscar)">x6</value>
-        <value condition="String.Contains(Window(Home).Property(TMDbHelper.Player.Awards),5 Oscar)">x5</value>
-        <value condition="String.Contains(Window(Home).Property(TMDbHelper.Player.Awards),4 Oscar)">x4</value>
-        <value condition="String.Contains(Window(Home).Property(TMDbHelper.Player.Awards),3 Oscar)">x3</value>
-        <value condition="String.Contains(Window(Home).Property(TMDbHelper.Player.Awards),2 Oscar)">x2</value>
-        <value condition="String.Contains(Window(Home).Property(TMDbHelper.Player.Awards),1 Oscar)">x1</value>
     </variable>
 
     <variable name="Label_Filtered">

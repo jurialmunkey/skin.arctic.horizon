@@ -118,6 +118,8 @@
                             <onleft>SetFocus($INFO[Window(Home).Property(CurrentWidget)],9999,absolute)</onleft>
                             <include>skinshortcuts-template-onmovement</include>
                             <onright>ClearProperty(WidgetMovement)</onright>
+                            <oninfo>ClearProperty(WidgetFocus)</oninfo>
+                            <oninfo>SetFocus(303,0,absolute)</oninfo>
                             <onclick>ClearProperty(WidgetMovement)</onclick>
                             <onclick condition="!String.IsEmpty(Window.Property(WidgetFocus))">SetFocus(3000)</onclick>
                             <onclick condition="String.IsEmpty(Window.Property(WidgetFocus))">SetProperty(301Click,1)</onclick>
@@ -639,7 +641,6 @@
                         <param name="font" value="font_mainmenu" />
                         <onfocus>ClearProperty(TMDbHelper.WidgetContainer,Home)</onfocus>
                         <onback>3000</onback>
-                        <onleft>SetFocus(302)</onleft>
                         <onfocus>ClearProperty(WidgetMovement)</onfocus>
                         <onfocus>ClearProperty(WidgetFocus)</onfocus>
                         <onfocus condition="String.IsEmpty(Window.Property(301Click))">SetFocus(3992)</onfocus>

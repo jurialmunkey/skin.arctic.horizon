@@ -19,7 +19,8 @@
             <bottom>400</bottom>
             <animation effect="fade" start="0" end="100" time="400" tween="cubic" easing="inout" reversible="false" delay="200" condition="Container.Content(seasons)">Conditional</animation>
             <visible>Container.Content(seasons) + !Skin.HasSetting(LibrarySeasonPosters)</visible>
-            <visible>![String.IsEqual(Container.PluginName,plugin.video.themoviedb.helper) + [String.Contains(Container.FolderPath,info=details)]]</visible>
+            <visible>![String.IsEqual(Container.PluginName,plugin.video.themoviedb.helper) + [String.IsEqual(Container.Property(Param.Info),details)]]</visible>
+            <visible>$EXP[Exp_IsLibrary]</visible>
         </include>
         <control type="image">
             <width>24</width>
@@ -40,7 +41,7 @@
             <visible>Control.Isvisible(53)</visible>
         </control>
         <include content="View_Info_Grouplist">
-            <param name="title" value="$INFO[Container(530).ListItem.TVShowTitle]" />
+            <param name="title" value="$VAR[Label_Info_Title_530]" />
             <param name="container" value="Container(530)." />
             <param name="plot" value="$INFO[Container(530).ListItem.Plot]" />
             <param name="plotheight" value="auto" />

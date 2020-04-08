@@ -16,7 +16,8 @@
                 <include>Viewtype_Movement</include>
                 <visible>Container.Content(actors) | Container.Content(tvshows) | Container.Content(movies) | [Container.Content(seasons) + Skin.HasSetting(LibrarySeasonPosters)]</visible>
                 <visible>!Window.IsVisible(MyPlaylist.xml)</visible>
-                <visible>![String.IsEqual(Container.PluginName,plugin.video.themoviedb.helper) + [String.Contains(Container.FolderPath,info=details)]]</visible>
+                <visible>![String.IsEqual(Container.PluginName,plugin.video.themoviedb.helper) + [String.IsEqual(Container.Property(Param.Info),details)]]</visible>
+                <visible>$EXP[Exp_IsLibrary]</visible>
             </include>
             <include content="Home_Hub_Widget_Label">
                 <param name="id" value="52" />

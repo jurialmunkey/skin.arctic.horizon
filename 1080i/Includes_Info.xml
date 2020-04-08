@@ -39,11 +39,6 @@
         <value condition="[String.IsEqual(ListItem.DBType,movie)] + !Skin.HasSetting(DisableExtendedInfo) + System.HasAddon(plugin.video.themoviedb.helper)">plugin://plugin.video.themoviedb.helper/?info=movie_keywords&amp;$VAR[Info_Param_Type]&amp;$VAR[Info_Param_IMDB_or_QUERY]</value>
     </variable>
 
-
-    <variable name="Info_PersonImages">
-        <value condition="String.Contains(ListItem.FolderPath,type=person)">plugin://plugin.video.themoviedb.helper?info=images&amp;type=person&amp;tmdb_id=$INFO[ListItem.Property(tmdb_id)]</value>
-    </variable>
-
     <variable name="Info_Sets">
         <value condition="String.IsEqual(ListItem.DBType,movie) + !Skin.HasSetting(DisableExtendedInfo) + System.HasAddon(plugin.video.themoviedb.helper) + !String.IsEmpty(ListItem.Set)">plugin://plugin.video.themoviedb.helper/?info=collection&amp;type=movie&amp;query=$INFO[ListItem.Set]</value>
         <value condition="ListItem.IsCollection + !Skin.HasSetting(DisableExtendedInfo) + System.HasAddon(plugin.video.themoviedb.helper) + !String.IsEmpty(ListItem.Title)">plugin://plugin.video.themoviedb.helper/?info=collection&amp;type=movie&amp;query=$INFO[ListItem.Title]</value>
@@ -133,6 +128,7 @@
         <param name="label-visible" default="true" />
         <param name="control-type" default="fixedlist" />
         <param name="castlabel" default="false" />
+        <param name="issubmenu" default="false" />
         <param name="viewtype-include" default="Viewtype_Poster" />
         <param name="widget-type" default="infowidgets" />
         <definition>
@@ -141,6 +137,7 @@
                 <param name="id" value="$PARAM[id]" />
                 <param name="label" value="$PARAM[label]" />
                 <param name="widget-type" value="$PARAM[widget-type]" />
+                <param name="issubmenu" value="$PARAM[issubmenu]" />
                 <visible>$PARAM[visible]</visible>
                 <visible>$PARAM[label-visible]</visible>
                 <left>85</left>
@@ -157,7 +154,7 @@
                 <left>20</left>
                 <right>20</right>
                 <visible>$PARAM[visible]</visible>
-                <visible>Integer.IsGreater(Container($PARAM[id]).NumAllItems,0) | Container($PARAM[id]).IsUpdating</visible>
+                <visible>Integer.IsGreater(Container($PARAM[id]).NumAllItems,0) | Container($PARAM[id]).IsUpdating | $PARAM[issubmenu]</visible>
                 <movement>6</movement>
             </include>
         </definition>
