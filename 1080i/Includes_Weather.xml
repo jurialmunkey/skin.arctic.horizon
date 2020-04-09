@@ -153,19 +153,19 @@
             <control type="image">
                 <aspectratio align="center" aligny="center">keep</aspectratio>
                 <texture>$INFO[Window(weather).Property(Current.ConditionIcon)]</texture>
-                <visible>[String.IsEmpty(Skin.String(weather.icons.path)) | String.Contains(Skin.String(weather.icons.path),Default)]</visible>
+                <visible>[String.IsEmpty(Skin.String(weather.icons.path)) | String.IsEqual(Skin.String(weather.icons.path),resource://resource.images.weathericons.default/)]</visible>
             </control>
             <control type="image">
                 <aspectratio align="center" aligny="center">keep</aspectratio>
                 <texture colordiffuse="main_fg_90">$INFO[Skin.String(weather.icons.path),,/]$INFO[Window(weather).Property(Current.FanartCode),,.png]</texture>
-                <visible>![String.IsEmpty(Skin.String(weather.icons.path)) | String.Contains(Skin.String(weather.icons.path),Default)] + !String.Contains(Skin.String(weather.icons.path),animated)</visible>
+                <visible>![String.IsEmpty(Skin.String(weather.icons.path)) | String.IsEqual(Skin.String(weather.icons.path),resource://resource.images.weathericons.default/)] + ![String.IsEqual(Skin.String(weather.icons.path),resource://resource.images.weathericons.animated/) | String.IsEqual(Skin.String(weather.icons.path),resource://resource.images.weathericons.cloud.animated/) | String.IsEqual(Skin.String(weather.icons.path),resource://resource.images.weathericons.hd.animated/)]</visible>
             </control>
             <control type="multiimage">
                 <timeperimage>50</timeperimage>
                 <aspectratio align="center" aligny="center">keep</aspectratio>
                 <fadetime>10</fadetime>
                 <imagepath>$INFO[Skin.String(weather.icons.path),,/]$INFO[Window(weather).Property(Current.FanartCode)]</imagepath>
-                <visible>![String.IsEmpty(Skin.String(weather.icons.path)) | String.Contains(Skin.String(weather.icons.path),Default)] + String.Contains(Skin.String(weather.icons.path),animated)</visible>
+                <visible>![String.IsEmpty(Skin.String(weather.icons.path)) | String.IsEqual(Skin.String(weather.icons.path),resource://resource.images.weathericons.default/)] + [String.IsEqual(Skin.String(weather.icons.path),resource://resource.images.weathericons.animated/) | String.IsEqual(Skin.String(weather.icons.path),resource://resource.images.weathericons.cloud.animated/) | String.IsEqual(Skin.String(weather.icons.path),resource://resource.images.weathericons.hd.animated/)]</visible>
             </control>
         </control>
     </include>
@@ -181,7 +181,7 @@
                 <width>160</width>
                 <aspectratio align="center" aligny="center">keep</aspectratio>
                 <texture>$INFO[Window(weather).Property($PARAM[day].OutlookIcon)]</texture>
-                <visible>[String.IsEmpty(Skin.String(weather.icons.path)) | String.Contains(Skin.String(weather.icons.path),Default)]</visible>
+                <visible>[String.IsEmpty(Skin.String(weather.icons.path)) | String.IsEqual(Skin.String(weather.icons.path),resource://resource.images.weathericons.default/)]</visible>
             </control>
             <control type="image">
                 <centerleft>50%</centerleft>
@@ -190,7 +190,7 @@
                 <width>160</width>
                 <aspectratio align="center" aligny="center">keep</aspectratio>
                 <texture colordiffuse="main_fg_90">$INFO[Skin.String(weather.icons.path),,/]$INFO[Window(weather).Property($PARAM[day].FanartCode),,.png]</texture>
-                <visible>![String.IsEmpty(Skin.String(weather.icons.path)) | String.Contains(Skin.String(weather.icons.path),Default)] + !String.Contains(Skin.String(weather.icons.path),animated)</visible>
+                <visible>![String.IsEmpty(Skin.String(weather.icons.path)) | String.IsEqual(Skin.String(weather.icons.path),resource://resource.images.weathericons.default/)] + ![String.IsEqual(Skin.String(weather.icons.path),resource://resource.images.weathericons.animated/) | String.IsEqual(Skin.String(weather.icons.path),resource://resource.images.weathericons.cloud.animated/) | String.IsEqual(Skin.String(weather.icons.path),resource://resource.images.weathericons.hd.animated/)]</visible>
             </control>
             <control type="multiimage">
                 <centerleft>50%</centerleft>
@@ -201,7 +201,7 @@
                 <aspectratio align="center" aligny="center">keep</aspectratio>
                 <fadetime>10</fadetime>
                 <imagepath>$INFO[Skin.String(weather.icons.path),,/]$INFO[Window(weather).Property($PARAM[day].FanartCode)]</imagepath>
-                <visible>![String.IsEmpty(Skin.String(weather.icons.path)) | String.Contains(Skin.String(weather.icons.path),Default)] + String.Contains(Skin.String(weather.icons.path),animated)</visible>
+                <visible>![String.IsEmpty(Skin.String(weather.icons.path)) | String.IsEqual(Skin.String(weather.icons.path),resource://resource.images.weathericons.default/)] + [String.IsEqual(Skin.String(weather.icons.path),resource://resource.images.weathericons.animated/) | String.IsEqual(Skin.String(weather.icons.path),resource://resource.images.weathericons.cloud.animated/) | String.IsEqual(Skin.String(weather.icons.path),resource://resource.images.weathericons.hd.animated/)]</visible>
             </control>
             <control type="label">
                 <bottom>0</bottom>

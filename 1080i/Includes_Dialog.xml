@@ -717,12 +717,12 @@
                 <left>$PARAM[left_pad]</left>
                 <control type="image">
                     <include>Dialog_Standard_List_Left_Icon</include>
-                    <visible>!String.StartsWith(ListItem.Icon,special://skin/) + !String.StartsWith(ListItem.Icon,Default)</visible>
+                    <visible>!String.StartsWith(ListItem.Icon,special://skin/) + !String.IsEqual(ListItem.Icon,ListItem.ActualIcon)</visible>
                 </control>
                 <control type="image">
                     <colordiffuse>$PARAM[color_70]</colordiffuse>
                     <include>Dialog_Standard_List_Left_Icon</include>
-                    <visible>String.StartsWith(ListItem.Icon,special://skin/) | String.StartsWith(ListItem.Icon,Default)</visible>
+                    <visible>String.StartsWith(ListItem.Icon,special://skin/) | String.IsEqual(ListItem.Icon,ListItem.ActualIcon)</visible>
                 </control>
                 <control type="group">
                     <left>item_biglist_height</left>
@@ -864,7 +864,7 @@
         <param name="itemlayout_condition" default="true" />
         <param name="onright" default="61" />
         <param name="onleft" default="noop" />
-        <param name="width" default="936" />
+        <param name="width" default="960" />
         <param name="list_type" default="panel" />
         <param name="onup" default="3" />
         <param name="ondown" default="3" />
@@ -944,7 +944,7 @@
 
         <control type="group">
             <include content="Dialog_Standard_Group">
-                <param name="width" value="1336" />
+                <param name="width" value="1360" />
                 <param name="height" value="950" />
             </include>
             <control type="label" id="1">

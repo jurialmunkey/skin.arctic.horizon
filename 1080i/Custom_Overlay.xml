@@ -1001,6 +1001,8 @@
                     $INFO[ListItem.Title,[COLOR=FFFF00FF]  TITLE  [/COLOR],]
                     $INFO[Window(Home).Property(TMDbHelper.ListItem.Label),[COLOR=FFFF00FF]  SM.LABEL  [/COLOR],]
                     $INFO[Window(Home).Property(TMDbHelper.ListItem.Title),[COLOR=FFFF00FF]  SM.TITLE  [/COLOR],]
+                    $INFO[ListItem.Icon,[COLOR=FFFF00FF]  ICON  [/COLOR],]
+                    $INFO[ListItem.ActualIcon,[COLOR=FFFF00FF]  ACON  [/COLOR],]
                     $INFO[Window(Home).Property(TMDbHelper.ListItem.Oscar_Wins),[COLOR=FFFF00FF]  OSCARS_W  [/COLOR],]$INFO[Window(Home).Property(TMDbHelper.ListItem.Oscar_Nominations),[COLOR=FFFF00FF]  OSCARS_N  [/COLOR],]$INFO[Window(Home).Property(TMDbHelper.ListItem.Award_Wins),[COLOR=FFFF00FF]  AWARDS_W  [/COLOR],]$INFO[Window(Home).Property(TMDbHelper.ListItem.Award_Nominations),[COLOR=FFFF00FF]  AWARDS_N  [/COLOR],]$INFO[ListItem.Rating,[COLOR=FFFF00FF]  RATING  [/COLOR],]$INFO[ListItem.UserRating,[COLOR=FFFF00FF]  USER RATING  [/COLOR],]
                      $INFO[ListItem.Duration,[COLOR=FFFF00FF]  DURATION  [/COLOR],]
                      $INFO[Window(Home).Property(TMDBHelper.ListItem.Studio.1.TMDB_ID),[COLOR=FFFF00FF]  INFO  [/COLOR],]

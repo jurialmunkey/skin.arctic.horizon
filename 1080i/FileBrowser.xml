@@ -10,8 +10,8 @@
 
         <control type="group">
             <include content="Dialog_Standard_Group">
-                <param name="width" value="1336" />
-                <param name="height" value="990" />
+                <param name="width" value="1360" />
+                <param name="height" value="970" />
             </include>
             <control type="label" id="411">
                 <include>Dialog_Standard_Header</include>
@@ -36,23 +36,24 @@
                     <param name="list_style" value="Dialog_Standard_List_Itemlayout_Complex" />
                     <param name="left_pad" value="0" />
                     <param name="checkmark" value="false" />
+                    <param name="width" value="960" />
                     <param name="itemlayout_condition" value="![[String.StartsWith(ListItem.FolderPath,special://skin/extras/icons/) + !String.IsEqual(ListItem.Label,icons)]  | [String.StartsWith(Container(450).ListItem(1).FolderPath,special://skin/extras/icons/) + ListItem.IsParentFolder]]" />
-                    <itemlayout height="156" width="156" condition="[[String.StartsWith(ListItem.FolderPath,special://skin/extras/icons/) + !String.IsEqual(ListItem.Label,icons)]  | [String.StartsWith(Container(450).ListItem(1).FolderPath,special://skin/extras/icons/) + ListItem.IsParentFolder]]">
+                    <itemlayout height="item_biglist_height" width="item_biglist_height" condition="[[String.StartsWith(ListItem.FolderPath,special://skin/extras/icons/) + !String.IsEqual(ListItem.Label,icons)]  | [String.StartsWith(Container(450).ListItem(1).FolderPath,special://skin/extras/icons/) + ListItem.IsParentFolder]]">
                         <control type="image">
                             <bordersize>15</bordersize>
                             <aspectratio scalediffuse="false">keep</aspectratio>
                             <texture fallback="DefaultAddonNone.png" background="true">$INFO[Listitem.Icon]</texture>
-                            <visible>!String.StartsWith(ListItem.Path,special://skin/extras/icons) + !String.StartsWith(ListItem.Icon,Default)</visible>
+                            <visible>!String.StartsWith(ListItem.Path,special://skin/extras/icons) + !String.IsEqual(ListItem.Icon,ListItem.ActualIcon)</visible>
                         </control>
                         <control type="image">
                             <colordiffuse>dialog_fg_70</colordiffuse>
                             <bordersize>15</bordersize>
                             <aspectratio scalediffuse="false">keep</aspectratio>
                             <texture fallback="DefaultAddonNone.png" background="true">$INFO[Listitem.Icon]</texture>
-                            <visible>String.StartsWith(ListItem.Path,special://skin/extras/icons) | String.StartsWith(ListItem.Icon,Default)</visible>
+                            <visible>String.StartsWith(ListItem.Path,special://skin/extras/icons) | String.IsEqual(ListItem.Icon,ListItem.ActualIcon)</visible>
                         </control>
                     </itemlayout>
-                    <focusedlayout height="156" width="156" condition="[[String.StartsWith(ListItem.FolderPath,special://skin/extras/icons/) + !String.IsEqual(ListItem.Label,icons)]  | [String.StartsWith(Container(450).ListItem(1).FolderPath,special://skin/extras/icons/) + ListItem.IsParentFolder]]">
+                    <focusedlayout height="item_biglist_height" width="item_biglist_height" condition="[[String.StartsWith(ListItem.FolderPath,special://skin/extras/icons/) + !String.IsEqual(ListItem.Label,icons)]  | [String.StartsWith(Container(450).ListItem(1).FolderPath,special://skin/extras/icons/) + ListItem.IsParentFolder]]">
                         <control type="image">
                             <texture colordiffuse="$VAR[ColorHighlight]" border="10">common/box.png</texture>
                         </control>
