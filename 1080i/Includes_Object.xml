@@ -2069,13 +2069,6 @@
                                         <onback condition="Control.IsVisible(3000)">3000</onback>
                                         <onback condition="!Control.IsVisible(3000) + Control.IsVisible(300)">300</onback>
                                         <onback condition="!Control.IsVisible(3000) + !Control.IsVisible(300)">50</onback>
-                                        <ondown condition="Control.IsVisible(3000)">3000</ondown>
-                                        <ondown condition="!Control.IsVisible(3000) + Control.IsVisible(300)">300</ondown>
-                                        <ondown condition="!Control.IsVisible(3000) + !Control.IsVisible(300)">50</ondown>
-                                        <!-- <ondown>ActivateWindow(1143)</ondown> -->
-                                        <onup condition="Control.IsVisible(3000)">3000</onup>
-                                        <onup condition="!Control.IsVisible(3000) + Control.IsVisible(300)">300</onup>
-                                        <onup condition="!Control.IsVisible(3000) + !Control.IsVisible(300)">50</onup>
                                         <onleft condition="Control.IsVisible(3000)">3000</onleft>
                                         <onleft condition="!Control.IsVisible(3000) + Control.IsVisible(300)">300</onleft>
                                         <onleft condition="!Control.IsVisible(3000) + !Control.IsVisible(300)">50</onleft>
@@ -2083,7 +2076,6 @@
                                         <onright condition="!Control.IsVisible(9604) + Control.IsVisible(3000)">3000</onright>
                                         <onright condition="!Control.IsVisible(9604) + !Control.IsVisible(3000) + Control.IsVisible(300)">300</onright>
                                         <onright condition="!Control.IsVisible(9604) + !Control.IsVisible(3000) + !Control.IsVisible(300)">50</onright>
-                                        <!-- <onright>SetFocus(9604,0,absolute)</onright> -->
                                         <top>100</top>
                                         <left>-1000</left>
                                         <bottom>200</bottom>
