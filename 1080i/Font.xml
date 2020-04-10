@@ -57,6 +57,11 @@
             <size>16</size>
         </font>
         <font>
+            <name>font_osd_lang</name>
+            <filename>RobotoCondensed-Regular.ttf</filename>
+            <size>10</size>
+        </font>
+        <font>
             <name>font_statusbar_bold</name>
             <filename>RobotoCondensed-Bold.ttf</filename>
             <size>24</size>

@@ -686,6 +686,27 @@
             <visible>Window.IsVisible(videoosd)</visible>
             <visible>!VideoPlayer.Content(musicvideos)</visible>
         </control> -->
+        <control type="button" id="10018">
+            <centertop>50%</centertop>
+            <description>Audio</description>
+            <width>48</width>
+            <height>48</height>
+            <label>$INFO[VideoPlayer.AudioLanguage,[UPPERCASE],[/UPPERCASE]]</label>
+            <textcolor>panel_fg_70</textcolor>
+            <focusedcolor>Highlight</focusedcolor>
+            <shadowcolor>Shadow</shadowcolor>
+            <font>font_osd_lang</font>
+            <align>right</align>
+            <aligny>top</aligny>
+            <textoffsetx>0</textoffsetx>
+            <texturefocus colordiffuse="$VAR[ColorHighlight]">osd/audio-settings.png</texturefocus>
+            <texturenofocus colordiffuse="panel_fg_70">osd/audio-settings.png</texturenofocus>
+            <onclick>AudioNextLanguage</onclick>
+            <include>OSD_Button_OnFocus</include>
+            <visible>Window.IsVisible(videoosd)</visible>
+            <visible>!VideoPlayer.Content(musicvideos)</visible>
+            <visible>!String.IsEmpty(VideoPlayer.AudioLanguage)</visible>
+        </control>
         <control type="button" id="18">
             <centertop>50%</centertop>
             <description>Subs</description>
