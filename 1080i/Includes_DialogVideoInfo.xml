@@ -236,7 +236,6 @@
             <include content="View_Pad">
                 <param name="left" value="view_info_left" />
             </include>
-            <include>Object_Info_Arrows</include>
             <visible allowhiddenfocus="true">!$EXP[Exp_ShowPlotOverlay]</visible>
             <include>Animation_FadeInOut</include>
         </control>
@@ -247,15 +246,15 @@
             <scrolltime tween="quadratic">400</scrolltime>
             <onup>300</onup>
             <ondown>6000</ondown>
-            <height>infowidgets_group_height</height>
             <orientation>vertical</orientation>
-            <itemgap>infowidgets_group_itemgap</itemgap>
+            <usecontrolcoords>true</usecontrolcoords>
+            <control type="group" id="5999"><height>$PARAM[bumperheight]</height></control>
+            <nested />
             <top>-20</top>
             <left>-20</left>
             <right>-100</right>
-            <usecontrolcoords>true</usecontrolcoords>
-            <control type="group" id="5999"><height>0</height></control>
-            <nested />
+            <itemgap>infowidgets_group_itemgap</itemgap>
+            <height>infowidgets_group_height</height>
         </control>
     </include>
 

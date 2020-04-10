@@ -1935,36 +1935,6 @@
         </control>
     </include>
 
-    <include name="Object_Info_Arrows">
-        <param name="id" default="9000" />
-        <param name="artworkid" default="6000" />
-        <definition>
-            <!-- <control type="group">
-                <top>-35</top>
-                <include>Animation_FadeIn_Delay</include>
-                <include>Animation_FadeOut</include>
-                <visible>!Control.HasFocus(8101)</visible>
-                <visible>!Control.HasFocus($PARAM[artworkid])</visible>
-                <visible>Container($PARAM[id]).HasPrevious</visible>
-                <include content="Object_DoubleArrow_Up">
-                    <param name="colordiffuse" value="main_fg_30" />
-                </include>
-            </control>
-            <control type="group">
-                <bottom>24</bottom>
-                <include>Animation_FadeIn_Delay</include>
-                <include>Animation_FadeOut</include>
-                <visible>!Control.HasFocus(8101)</visible>
-                <visible>!ControlGroup(300).HasFocus() | !Skin.HasSetting(EnableLanguages)</visible>
-                <visible>!Control.HasFocus($PARAM[artworkid])</visible>
-                <visible>Container($PARAM[id]).HasNext</visible>
-                <include content="Object_DoubleArrow_Down">
-                    <param name="colordiffuse" value="main_fg_30" />
-                </include>
-            </control> -->
-        </definition>
-    </include>
-
     <include name="Object_DoubleArrow_Up">
         <param name="colordiffuse" default="main_fg_100" />
         <definition>

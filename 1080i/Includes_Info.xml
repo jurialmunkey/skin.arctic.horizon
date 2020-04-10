@@ -138,6 +138,7 @@
                 <param name="label" value="$PARAM[label]" />
                 <param name="widget-type" value="$PARAM[widget-type]" />
                 <param name="issubmenu" value="$PARAM[issubmenu]" />
+                <param name="showonupdate" value="$PARAM[showonupdate]" />
                 <visible>$PARAM[visible]</visible>
                 <visible>$PARAM[label-visible]</visible>
                 <left>85</left>

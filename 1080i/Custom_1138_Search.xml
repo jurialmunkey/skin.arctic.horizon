@@ -13,9 +13,23 @@
                     <param name="left" value="0" />
                     <param name="right" value="0" />
                 </include>
-                <include content="DialogVideoInfo_WidgetGroupList">
-                    <include>skinshortcuts-template-search</include>
-                </include>
+                <control type="group">
+                    <top>-20</top>
+                    <include content="DialogVideoInfo_WidgetGroupList">
+                        <param name="bumperheight" value="widgets_bumper_top" />
+                        <top>widgets_group_top</top>
+                        <height>widgets_group_height</height>
+                        <itemgap>widgets_group_itemgap</itemgap>
+                        <include>skinshortcuts-template-search</include>
+                    </include>
+                </control>
+            </control>
+            <control type="image">
+                <height>200</height>
+                <texture>common/dim-top.png</texture>
+                <animation effect="fade" start="0" end="100" time="500" tween="cubic" easing="inout">Visible</animation>
+                <animation effect="fade" start="100" end="0" time="500" tween="cubic" easing="inout">Hidden</animation>
+                <visible>Container(4100).HasPrevious</visible>
             </control>
             <include>Topbar_Left</include>
         </control>

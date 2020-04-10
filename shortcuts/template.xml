@@ -68,9 +68,9 @@
                 <control type="grouplist" id="$PYTHON[50000 + int(mainmenuid) * 100]">
                     <top>widgets_group_top</top>
                     <height>widgets_group_height</height>
+                    <itemgap>widgets_group_itemgap</itemgap>
                     <include condition="Skin.HasSetting(LockMainMenu)">Home_FixedMenu_Right</include>
                     <orientation>vertical</orientation>
-                    <itemgap>widgets_group_itemgap</itemgap>
                     <usecontrolcoords>true</usecontrolcoords>
                     <scrolltime tween="quadratic">400</scrolltime>
                     <onleft>SetProperty(CurrentWidget,$INFO[System.CurrentControlID])</onleft>
@@ -585,7 +585,7 @@
                     <param name="groupid" value="$PYTHON[int(id) + 40100]" />
                     <param name="label" value="$SKINSHORTCUTS[widgetLabel]$INFO[Container($PYTHON[int(id) + 30100]).NumItems, (,)]" />
                     <param name="viewtype-include" value="$SKINSHORTCUTS[widgetInclude]" />
-                    <param name="widget-type" value="infowidgets" />
+                    <param name="widget-type" value="widgets" />
                     <movement>$SKINSHORTCUTS[widgetMovement]</movement>
                     <content target="$SKINSHORTCUTS[widgetTarget]" limit="$SKINSHORTCUTS[widgetLimit]" >$SKINSHORTCUTS[widgetPath]$INFO[Skin.String(SearchTerm)]$SKINSHORTCUTS[widgetPath2]</content>
                 </include>

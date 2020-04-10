@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window type="window" id="1139">
+    <defaultcontrol always="true">4100</defaultcontrol>
+    <onload>SetProperty(Header_Left_Text,Trending Lists)</onload>
+    <onload>SetProperty(1139_SortBy,random,Home)</onload>
+    <onload>SetProperty(1139_FolderPath,plugin://plugin.video.themoviedb.helper/?fanarttv=True&amp;info=trakt_trendinglists&amp;nextpage=True&amp;type=both,Home)</onload>
+    <!-- <onload>SetProperty(1139_FolderPath,plugin://plugin.video.themoviedb.helper/?fanarttv=True&amp;info=genres&amp;nextpage=True&amp;type=movie&amp;widget=True,Home)</onload> -->
+    <!-- <onload>SetProperty(1139_SortBy,label,Home)</onload> -->
+    <controls>
+        <control type="list" id="5001">
+            <top>-1000</top>
+            <left>-1000</left>
+            <height>10</height>
+            <width>100</width>
+            <orientation>horizontal</orientation>
+            <itemlayout width="10"></itemlayout>
+            <focusedlayout width="10"></focusedlayout>
+            <content sortby="$INFO[Window(Home).Property(1139_SortBy)]">$INFO[Window(Home).Property(1139_FolderPath)]</content>
+        </control>
+        <include>Global_Background</include>
+        <include condition="!Skin.HasSetting(DisableBusyBackground)" content="Global_Background_BusyLoader_1190">
+            <visible>Container(5001).IsUpdating</visible>
+        </include>
+        <control type="group">
+            <visible allowhiddenfocus="true">!$EXP[Exp_ShowPlotOverlay] + !$EXP[Exp_InfoVisible]</visible>
+            <include>Animation_Common</include>
+            <control type="group">
+                <include content="View_Pad">
+                    <param name="left" value="0" />
+                    <param name="right" value="0" />
+                </include>
+                <control type="group">
+                    <top>-20</top>
+                    <control type="grouplist" id="4100">
+                        <scrolltime tween="quadratic">400</scrolltime>
+                        <orientation>vertical</orientation>
+                        <usecontrolcoords>true</usecontrolcoords>
+                        <left>-20</left>
+                        <right>-100</right>
+                        <top>widgets_group_top</top>
+                        <height>widgets_group_height</height>
+                        <itemgap>widgets_group_itemgap</itemgap>
+                        <onup>SetProperty(Direction,onup)</onup>
+                        <onup>SetFocus(9000)</onup>
+                        <ondown>SetProperty(Direction,ondown)</ondown>
+                        <ondown>SetFocus(9000)</ondown>
+                        <control type="group" id="5999"><height>widgets_bumper_top</height></control>
+
+                        <include content="View_Random_Showcase_List">
+                            <param name="id" value="00" />
+                        </include>
+                        <include content="View_Random_Showcase_List">
+                            <param name="id" value="01" />
+                        </include>
+                        <include content="View_Random_Showcase_List">
+                            <param name="id" value="02" />
+                        </include>
+                        <include content="View_Random_Showcase_List">
+                            <param name="id" value="03" />
+                        </include>
+                        <include content="View_Random_Showcase_List">
+                            <param name="id" value="04" />
+                        </include>
+                        <include content="View_Random_Showcase_List">
+                            <param name="id" value="05" />
+                        </include>
+                        <include content="View_Random_Showcase_List">
+                            <param name="id" value="06" />
+                        </include>
+                        <include content="View_Random_Showcase_List">
+                            <param name="id" value="07" />
+                        </include>
+                        <include content="View_Random_Showcase_List">
+                            <param name="id" value="08" />
+                        </include>
+                        <include content="View_Random_Showcase_List">
+                            <param name="id" value="09" />
+                        </include>
+                    </control>
+                </control>
+            </control>
+            <control type="image">
+                <height>200</height>
+                <texture>common/dim-top.png</texture>
+                <animation effect="fade" start="0" end="100" time="500" tween="cubic" easing="inout">Visible</animation>
+                <animation effect="fade" start="100" end="0" time="500" tween="cubic" easing="inout">Hidden</animation>
+                <visible>Container(4100).HasPrevious</visible>
+            </control>
+            <control type="group">
+                <visible>!Container(5001).IsUpdating</visible>
+                <include>Topbar_Left</include>
+            </control>
+            <control type="group">
+                <visible>Container(5001).IsUpdating</visible>
+                <visible>!Window.IsVisible(DialogBusy.xml)</visible>
+                <include>Dialog_Busy</include>
+            </control>
+        </control>
+        <include condition="!Skin.HasSetting(DisableClock)">Topbar_Right</include>
+        <control type="group">
+            <visible>Control.HasFocus(9000)</visible>
+            <include>Animation_FadeInOut</include>
+            <include>Global_Overlay</include>
+        </control>
+        <control type="group">
+            <visible>Control.HasFocus(9000)</visible>
+            <include>Animation_FadeIn_SlideUp</include>
+            <include content="Dialog_PowerMenu">
+                <param name="id" value="9000" />
+                <param name="header" value="Options" />
+                <param name="items" value="Items_Random" />
+                <param name="visible" value="Control.HasFocus(9000)" />
+                <param name="icon-visible" value="true" />
+                <param name="onleft" value="4100" />
+                <param name="onright" value="4100" />
+                <param name="onback" value="4100" />
+                <param name="ondown" value="4100" />
+                <param name="onup" value="4100" />
+                <param name="listanimation" value="false" />
+            </include>
+        </control>
+        <include>Object_PlotOverlay</include>
+    </controls>
+</window>

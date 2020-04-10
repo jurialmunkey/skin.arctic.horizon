@@ -235,6 +235,16 @@ msgctxt "#31044"
 msgid "Display clock in top right"
 msgstr ""
 
+#: /shortcuts/overrides.xml
+msgctxt "#31045"
+msgid "Trending Lists"
+msgstr ""
+
+#: /shortcuts/overrides.xml
+msgctxt "#31046"
+msgid "Next Aired"
+msgstr ""
+
 #: /1080i/DialogVideoInfo.xml
 msgctxt "#31051"
 msgid "Similar to"

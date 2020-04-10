@@ -15,11 +15,28 @@
         </control>
     </include>
 
+    <include name="View_Random_Showcase_List">
+        <include content="Info_Widget_Poster">
+            <param name="id" value="30$PARAM[id]" />
+            <param name="groupid" value="31$PARAM[id]" />
+            <param name="label" value="$INFO[Container(5001).ListItem($PARAM[id]).Label]" />
+            <param name="viewtype-include" value="Viewtype_Poster" />
+            <param name="widget-type" value="widgets" />
+            <param name="issubmenu" value="true" />
+            <param name="showonupdate" value="true" />
+            <param name="visible" value="!String.IsEmpty(Container(5001).ListItem($PARAM[id]).FolderPath)" />
+            <animation effect="fade" start="100" end="0" condition="Container(30$PARAM[id]).IsUpdating">Conditional</animation>
+            <content target="videos">$INFO[Container(5001).ListItem($PARAM[id]).FolderPath]</content>
+            <nested />
+        </include>
+    </include>
+
     <include name="View_Cast_Toplabel">
         <param name="altid" default="999999" />
         <param name="spinner-visible" default="true" />
         <param name="widget-type" default="infowidgets" />
         <param name="issubmenu" default="false" />
+        <param name="showonupdate" default="false" />
         <definition>
             <control type="group" id="$PARAM[groupid]">
                 <nested />
@@ -34,7 +51,7 @@
                         <param name="textcolor" value="main_fg_70" />
                     </include>
                     <visible>Container($PARAM[id]).IsUpdating</visible>
-                    <visible>Integer.IsEqual(Container($PARAM[id]).NumAllItems,0)</visible>
+                    <visible>Integer.IsEqual(Container($PARAM[id]).NumAllItems,0) | $PARAM[showonupdate]</visible>
                 </control>
                 <control type="grouplist" description="Focused List">
                     <right>100</right>

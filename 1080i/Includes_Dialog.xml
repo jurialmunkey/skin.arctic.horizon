@@ -161,6 +161,8 @@
                         <onleft>$PARAM[onleft]</onleft>
                         <onright>$PARAM[onright]</onright>
                         <onback>$PARAM[onback]</onback>
+                        <ondown>$PARAM[ondown]</ondown>
+                        <onup>$PARAM[onup]</onup>
                         <top>48</top>
                         <left>8</left>
                         <bottom>-48</bottom>

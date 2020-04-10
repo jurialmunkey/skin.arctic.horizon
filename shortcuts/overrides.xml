@@ -248,8 +248,9 @@
             <shortcut label="$LOCALIZE[31246]" type="32021" icon="special://skin/extras/icons/playlist.png">SetFocus(303,0,absolute)</shortcut>
             <shortcut label="$LOCALIZE[31429]" type="32021" icon="special://skin/extras/icons/compass.png">ActivateWindow(1110)</shortcut>
             <shortcut label="$LOCALIZE[31247]" type="32021" icon="special://skin/extras/icons/globe.png">ActivateWindow(1150)</shortcut>
-            <shortcut label="Next Aired - Library" type="32021" icon="special://skin/extras/icons/antenna.png">ActivateWindow(1111)</shortcut>
-            <shortcut label="Next Aired - Trakt" type="32021" icon="special://skin/extras/icons/announce.png">ActivateWindow(1112)</shortcut>
+            <shortcut label="$LOCALIZE[31045]" type="32021" icon="special://skin/extras/icons/chart.png">ActivateWindow(1139)</shortcut>
+            <shortcut label="$LOCALIZE[31046] - $LOCALIZE[14022]" type="32021" icon="special://skin/extras/icons/antenna.png">ActivateWindow(1111)</shortcut>
+            <shortcut label="$LOCALIZE[31046] - $LOCALIZE[31010]" type="32021" icon="special://skin/extras/icons/announce.png">ActivateWindow(1112)</shortcut>
             <shortcut label="$LOCALIZE[31017]" type="32010" icon="special://skin/extras/icons/shipping.png">||BROWSE||script.skin.helper.service/?action=smartshortcuts</shortcut>
         </node>
         <node label="32030">

@@ -74,6 +74,7 @@
 
     <include name="Global_Background_BusyLoader_1190">
         <control type="group">
+            <nested />
             <visible>!$EXP[Exp_InfoVisible]</visible>
             <animation effect="fade" start="0" end="100" time="5000" tween="cubic" easing="inout" reversible="false">Visible</animation>
             <animation effect="fade" start="0" end="100" time="5000" tween="cubic" easing="inout" reversible="false">WindowOpen</animation>
