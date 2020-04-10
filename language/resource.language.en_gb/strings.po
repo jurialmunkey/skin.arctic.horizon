@@ -245,6 +245,16 @@ msgctxt "#31046"
 msgid "Next Aired"
 msgstr ""
 
+#: /shortcuts/overrides.xml
+msgctxt "#31047"
+msgid "Next Aired (Trakt)"
+msgstr ""
+
+#: /shortcuts/overrides.xml
+msgctxt "#31048"
+msgid "Next Aired (Library)"
+msgstr ""
+
 #: /1080i/DialogVideoInfo.xml
 msgctxt "#31051"
 msgid "Similar to"

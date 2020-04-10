@@ -249,8 +249,8 @@
             <shortcut label="$LOCALIZE[31429]" type="32021" icon="special://skin/extras/icons/compass.png">ActivateWindow(1110)</shortcut>
             <shortcut label="$LOCALIZE[31247]" type="32021" icon="special://skin/extras/icons/globe.png">ActivateWindow(1150)</shortcut>
             <shortcut label="$LOCALIZE[31045]" type="32021" icon="special://skin/extras/icons/chart.png">ActivateWindow(1139)</shortcut>
-            <shortcut label="$LOCALIZE[31046] - $LOCALIZE[14022]" type="32021" icon="special://skin/extras/icons/antenna.png">ActivateWindow(1111)</shortcut>
-            <shortcut label="$LOCALIZE[31046] - $LOCALIZE[31010]" type="32021" icon="special://skin/extras/icons/announce.png">ActivateWindow(1112)</shortcut>
+            <shortcut label="$LOCALIZE[31048]" type="32021" icon="special://skin/extras/icons/antenna.png">ActivateWindow(1111)</shortcut>
+            <shortcut label="$LOCALIZE[31047]" type="32021" icon="special://skin/extras/icons/announce.png">ActivateWindow(1112)</shortcut>
             <shortcut label="$LOCALIZE[31017]" type="32010" icon="special://skin/extras/icons/shipping.png">||BROWSE||script.skin.helper.service/?action=smartshortcuts</shortcut>
         </node>
         <node label="32030">
