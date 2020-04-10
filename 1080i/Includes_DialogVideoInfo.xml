@@ -259,21 +259,6 @@
         </control>
     </include>
 
-    <include name="DialogVideoInfo_CustomGroupList">
-        <control type="grouplist" id="4100">
-            <scrolltime tween="quadratic">400</scrolltime>
-            <onup>300</onup>
-            <ondown>6000</ondown>
-            <orientation>vertical</orientation>
-            <itemgap>-52</itemgap>
-            <usecontrolcoords>true</usecontrolcoords>
-            <control type="group" id="5999"><height>0</height></control>
-            <nested />
-            <top>458</top>
-            <height>457</height>
-        </control>
-    </include>
-
     <include name="DialogVideoInfo_Widget_Cast">
         <include content="View_Cast_Toplabel">
             <param name="groupid" value="5100" />

@@ -228,11 +228,6 @@
         </control>
     </include>
 
-    <include name="Viewtype_SlideID_Fade">
-        <animation effect="fade" start="0" end="100" time="400" tween="cubic" easing="inout" reversible="false" delay="200" condition="![Control.IsVisible(50) | Control.IsVisible(500) | Control.IsVisible(55)]">Conditional</animation>
-        <animation effect="fade" start="100" end="0" time="0" reversible="false" delay="0" condition="Control.IsVisible(50) | Control.IsVisible(500) | Control.IsVisible(55)">Conditional</animation>
-    </include>
-
     <include name="Viewtype_Movement">
         <onup condition="Control.IsVisible(300)">300</onup>
         <onup condition="!Control.IsVisible(300)">304</onup>

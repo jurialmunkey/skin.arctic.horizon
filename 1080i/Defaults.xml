@@ -202,6 +202,8 @@
         <autoscroll delay="6000" time="3000" repeat="10000"/>
     </default>
 
+    <expression name="Exp_DefaultIcon">[String.StartsWith(ListItem.Icon,Default) | String.StartsWith(ListItem.Icon,special://skin/extras/icons/)]</expression>
+
     <expression name="Exp_AlphabetTypes">[[String.IsEqual(Container.SortMethod,$LOCALIZE[551]) | String.IsEqual(Container.SortMethod,$LOCALIZE[556]) | String.IsEqual(Container.SortMethod,$LOCALIZE[561]) | String.IsEqual(Container.SortMethod,$LOCALIZE[557]) | String.IsEqual(Container.SortMethod,$LOCALIZE[558])] + Integer.IsGreater(Container.NumPages,4)]</expression>
 
     <expression name="Exp_View50Tags">[[Container.Content(playlists) | [Container.Content() + String.IsEmpty(Container.PluginName)] | [[Container.Content(tags) | Container.Content(countries) | Container.Content(genres) | Container.Content(studios) | Container.Content(years) | Container.Content(directors)] + !String.IsEmpty(Container.PluginName)]] + !Window.IsVisible(MyPlaylist.xml) + !Window.IsVisible(MyPVRTimers.xml) + !Window.IsVisible(MyPVRRecordings.xml) + !Window.IsVisible(MyPVRSearch.xml)]</expression>

@@ -864,7 +864,7 @@
 
     <include name="Object_DefaultIcon">
         <param name="icon" default="$INFO[ListItem.Icon]" />
-        <param name="visible" default="[String.IsEqual(ListItem.Icon,ListItem.ActualIcon) | [Window.IsMedia + String.IsEmpty(Container.FolderPath)]]" />
+        <param name="visible" default="$EXP[Exp_DefaultIcon]" />
         <param name="fallback" default="$INFO[ListItem.Icon]" />
         <definition>
             <control type="image">
@@ -881,7 +881,7 @@
     <include name="Object_Poster">
         <param name="icon" default="$VAR[Image_Poster]" />
         <param name="aspectratio" default="scale" />
-        <param name="visible" default="![String.IsEqual(ListItem.Icon,ListItem.ActualIcon) | [Window.IsMedia + String.IsEmpty(Container.FolderPath)]]" />
+        <param name="visible" default="!$EXP[Exp_DefaultIcon]" />
         <param name="bordersize" default="15" />
         <param name="fadetime" default="0" />
         <param name="background" default="true" />
@@ -905,7 +905,7 @@
                 <param name="diffuse" value="$PARAM[diffuse]" />
                 <param name="aspectratio" value="keep" />
                 <param name="bordersize" value="25" />
-                <param name="visible" value="[String.IsEqual(ListItem.Icon,ListItem.ActualIcon) | [Window.IsMedia + String.IsEmpty(Container.FolderPath)]] | String.StartsWith(ListItem.Icon,special://skin/extras/icons/)" />
+                <param name="visible" value="$EXP[Exp_DefaultIcon]"/>
             </include>
             <include content="Object_Poster">
                 <param name="icon" value="$VAR[Image_DefaultIcon]" />
@@ -913,14 +913,14 @@
                 <param name="diffuse" value="$PARAM[diffuse]" />
                 <param name="aspectratio" value="keep" />
                 <param name="bordersize" value="40" />
-                <param name="visible" value="![String.IsEqual(ListItem.Icon,ListItem.ActualIcon) | [Window.IsMedia + String.IsEmpty(Container.FolderPath)]] + !String.StartsWith(ListItem.Icon,special://skin/extras/icons/) + [String.StartsWith(ListItem.FolderPath,pvr://) | String.IsEqual(ListItem.DBType,country) | String.IsEqual(ListItem.Property(dbtype),country) | String.IsEqual(ListItem.DBType,studio) | String.IsEqual(ListItem.Property(dbtype),studio) | String.IsEqual(ListItem.DBType,genre) | String.IsEqual(ListItem.Property(dbtype),genre)]" />
+                <param name="visible" value="!$EXP[Exp_DefaultIcon] + [!String.IsEmpty(ListItem.ChannelNumberLabel) | !String.IsEmpty(ListITem.ChannelName) | !String.IsEmpty(ListITem.ChannelNumber) | String.IsEqual(ListItem.DBType,country) | String.IsEqual(ListItem.Property(dbtype),country) | String.IsEqual(ListItem.DBType,studio) | String.IsEqual(ListItem.Property(dbtype),studio) | String.IsEqual(ListItem.DBType,genre) | String.IsEqual(ListItem.Property(dbtype),genre)]" />
             </include>
             <include content="Object_Poster">
                 <param name="icon" value="$PARAM[icon]" />
                 <param name="diffuse" value="$PARAM[diffuse]" />
                 <param name="aspectratio" value="$PARAM[aspectratio]" />
                 <param name="bordersize" value="$PARAM[bordersize]" />
-                <param name="visible" value="![String.IsEqual(ListItem.Icon,ListItem.ActualIcon) | [Window.IsMedia + String.IsEmpty(Container.FolderPath)]] + !String.StartsWith(ListItem.Icon,special://skin/extras/icons/) + !String.StartsWith(ListItem.FolderPath,pvr://) + !String.IsEqual(ListItem.DBType,country) + !String.IsEqual(ListItem.Property(dbtype),country) + !String.IsEqual(ListItem.DBType,studio) + !String.IsEqual(ListItem.Property(dbtype),studio) + !String.IsEqual(ListItem.DBType,genre) + !String.IsEqual(ListItem.Property(dbtype),genre)" />
+                <param name="visible" value="!$EXP[Exp_DefaultIcon] + [String.IsEmpty(ListItem.ChannelNumberLabel) + String.IsEmpty(ListITem.ChannelName) + String.IsEmpty(ListITem.ChannelNumber) + !String.IsEqual(ListItem.DBType,country) + !String.IsEqual(ListItem.Property(dbtype),country) + !String.IsEqual(ListItem.DBType,studio) + !String.IsEqual(ListItem.Property(dbtype),studio) + !String.IsEqual(ListItem.DBType,genre) + !String.IsEqual(ListItem.Property(dbtype),genre)]" />
             </include>
         </definition>
     </include>

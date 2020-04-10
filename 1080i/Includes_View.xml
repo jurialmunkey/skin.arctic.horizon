@@ -281,7 +281,7 @@
                 <align>center</align>
                 <textcolor>ffededed</textcolor>
                 <label>$INFO[ListItem.Property(UnWatchedEpisodes)]</label>
-                <include>View_UnwatchedEpisodes_Visible</include>
+                <visible>Integer.IsGreater(ListItem.Property(UnWatchedEpisodes),0) + [String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,season)]</visible>
             </control>
         </control>
     </include>
@@ -313,14 +313,9 @@
                 <align>center</align>
                 <textcolor>panel_bg</textcolor>
                 <label>$INFO[ListItem.Property(UnWatchedEpisodes)]</label>
-                <include>View_UnwatchedEpisodes_Visible</include>
+                <visible>Integer.IsGreater(ListItem.Property(UnWatchedEpisodes),0) + [String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,season)]</visible>
             </control>
         </control>
-    </include>
-
-    <include name="View_UnwatchedEpisodes_Visible">
-        <visible>Integer.IsGreater(ListItem.Property(UnWatchedEpisodes),0) + [String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,season)]</visible>
-        <visible>!ListItem.IsCollection</visible>
     </include>
 
     <include name="View_List_Selectbox">

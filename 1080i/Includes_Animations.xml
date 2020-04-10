@@ -6,11 +6,6 @@
         <animation effect="slide" start="-160" end="0" time="400" tween="quadratic" condition="Control.HasFocus(301) | Control.HasFocus(303) | [Control.HasFocus(3992) + String.IsEmpty(Window.Property(WidgetFocus))] | Skin.HasSetting(LockMainMenu)">WindowOpen</animation>
     </include>
 
-    <include name="Animation_KodiLogo">
-        <animation effect="fade" start="0" end="100" delay="200" time="500" tween="cubic" easing="inout">Visible</animation>
-        <animation effect="fade" start="100" end="0" time="500" tween="cubic" easing="inout">Hidden</animation>
-    </include>
-
     <include name="Animation_Settings">
         <animation type="WindowOpen" reversible="false" condition="!Window.Previous(SettingsCategory.xml) + !Window.Previous(SkinSettings.xml) + !Window.Previous(SettingsProfile.xml) + !Window.Previous(SettingsSystemInfo.xml)">
             <effect type="fade" start="0" end="100" time="400" delay="150"/>
