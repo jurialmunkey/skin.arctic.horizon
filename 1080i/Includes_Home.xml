@@ -44,6 +44,8 @@
             <param name="onleft" value="SetFocus(3992)" />
             <param name="onright" value="SetFocus(3992)" />
             <param name="onback" value="SetFocus(3992)" />
+            <param name="onup" value="303" />
+            <param name="ondown" value="303" />
             <param name="icon-visible" value="true" />
             <top>200</top>
             <left>-450</left>

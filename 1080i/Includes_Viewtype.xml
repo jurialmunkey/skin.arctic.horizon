@@ -223,6 +223,8 @@
                 <param name="onleft" value="50" />
                 <param name="onright" value="50" />
                 <param name="onback" value="50" />
+                <param name="onup" value="9000" />
+                <param name="ondown" value="9000" />
                 <param name="listanimation" value="false" />
             </include>
         </control>

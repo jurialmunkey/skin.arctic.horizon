@@ -10,6 +10,8 @@
             <param name="visible" value="true" />
             <param name="onleft" value="Back" />
             <param name="onright" value="Back" />
+            <param name="onup" value="3110" />
+            <param name="ondown" value="3110" />
         </include>
     </controls>
 </window>
