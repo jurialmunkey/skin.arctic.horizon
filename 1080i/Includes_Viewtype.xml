@@ -12,11 +12,11 @@
             <focusedlayout />
             <content>
                 <include content="Object_56560_Item">
-                    <param name="id" value="530" />
+                    <param name="listitem" value="Container(530).ListItem" />
                     <visible>Control.IsVisible(53)</visible>
                 </include>
                 <include content="Object_56560_Item">
-                    <param name="id" value="560" />
+                    <param name="listitem" value="Container(560).ListItem" />
                     <visible>Control.IsVisible(56)</visible>
                 </include>
             </content>

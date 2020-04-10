@@ -11,6 +11,18 @@
     <onload condition="!String.IsEmpty(Window(Home).Property(OSDExtendedInfo))">ClearProperty(OSDExtendedInfo,Home)</onload>
     <controls>
 
+        <control type="list" id="56560">
+            <include>Defs_Offscreen</include>
+            <orientation>horizontal</orientation>
+            <itemlayout />
+            <focusedlayout />
+            <content>
+                <include content="Object_56560_Item">
+                    <param name="listitem" value="VideoPlayer" />
+                </include>
+            </content>
+        </control>
+
         <control type="group">
             <visible>!Integer.IsEqual(Player.CacheLevel,100)</visible>
             <visible>!Player.Seeking + !Player.DisplayAfterSeek</visible>

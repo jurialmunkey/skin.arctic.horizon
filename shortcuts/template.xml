@@ -713,7 +713,7 @@
         <property name="submenuVisibility" tag="property" attribute="name|submenuVisibility"/>
         <controls>
             <include content="Object_56560_Item">
-                <param name="id" value="$PYTHON[30001 + int(id) * 100]" />
+                <param name="listitem" value="Container($PYTHON[30001 + int(id) * 100]).ListItem" />
                 <visible>String.IsEqual(Container(301).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility])</visible>
             </include>
         </controls>

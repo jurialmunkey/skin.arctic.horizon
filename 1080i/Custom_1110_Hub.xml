@@ -15,7 +15,7 @@
             <focusedlayout />
             <content>
                 <include content="Object_56560_Item">
-                    <param name="id" value="5610" />
+                    <param name="listitem" value="Container(5610).ListItem" />
                 </include>
             </content>
         </control>

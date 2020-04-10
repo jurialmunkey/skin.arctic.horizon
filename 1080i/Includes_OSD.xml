@@ -219,14 +219,11 @@
                             <itemgap>0</itemgap>
                             <left>0</left>
                             <right>0</right>
-                            <control type="label">
-                                <label>$VAR[Label_OSD_InfoLine]</label>
-                                <height>40</height>
-                                <aligny>top</aligny>
-                                <right>550</right>
-                                <textcolor>$VAR[ColorHighlight]</textcolor>
-                                <font>font_small</font>
-                            </control>
+                            <include content="Object_Info_Line">
+                                <param name="label" value="$VAR[Label_56560_InfoLine]" />
+                                <param name="image" value="$VAR[Image_56560_VideoQuality]" />
+                                <param name="textcolor" value="panel_fg_100" />
+                            </include>
                             <control type="grouplist">
                                 <top>-12</top>
                                 <orientation>horizontal</orientation>
@@ -356,22 +353,17 @@
                             <textcolor>panel_fg_100</textcolor>
                             <label>$VAR[Label_OSD_Title]</label>
                         </control>
-                        <control type="grouplist">
+                        <control type="group">
                             <top>-25</top>
                             <height>58</height>
-                            <orientation>horizontal</orientation>
-                            <usecontrolcoords>true</usecontrolcoords>
                             <itemgap>0</itemgap>
                             <left>0</left>
                             <right>0</right>
-                            <visible>!String.IsEmpty(VideoPlayer.TvShowTitle) | !String.IsEmpty(VideoPlayer.Year) | !String.IsEmpty(VideoPlayer.MPAA) | !String.IsEmpty(VideoPlayer.Genre)</visible>
-                            <control type="label">
-                                <label>$VAR[Label_OSD_InfoLine]</label>
-                                <height>40</height>
-                                <aligny>top</aligny>
-                                <textcolor>$VAR[ColorHighlight]</textcolor>
-                                <font>font_small</font>
-                            </control>
+                            <include content="Object_Info_Line">
+                                <param name="label" value="$VAR[Label_56560_InfoLine]" />
+                                <param name="image" value="$VAR[Image_56560_VideoQuality]" />
+                                <param name="textcolor" value="panel_fg_100" />
+                            </include>
                         </control>
                     </control>
                 </control>

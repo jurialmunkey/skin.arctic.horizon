@@ -20,7 +20,7 @@
             <focusedlayout />
             <content>
                 <include content="Object_56560_Item">
-                    <param name="id" value="3001" />
+                    <param name="listitem" value="Container(3001).ListItem" />
                     <visible>Integer.IsEqual(Container(3700).NumItems,0)</visible>
                 </include>
                 <include>skinshortcuts-template-infoline</include>
