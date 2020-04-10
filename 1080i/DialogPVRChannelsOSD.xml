@@ -3,6 +3,7 @@
     <defaultcontrol always="true">11</defaultcontrol>
     <controls>
         <control type="group">
+            <visible>!$EXP[Exp_InfoVisible]</visible>
             <include>Animation_Left</include>
             <width>900</width>
             <control type="image">
