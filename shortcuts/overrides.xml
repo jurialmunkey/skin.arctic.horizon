@@ -7,7 +7,7 @@
     <widgetRename>True</widgetRename>
     <widget label="8">Weather</widget>
     <widget label="5">Settings</widget>
-    
+
     <!-- Warning to Remove Settings -->
     <warn heading="31176" message="31177">ActivateWindow(Settings)</warn>
 
@@ -122,7 +122,8 @@
     <property property="widgetSortby">album</property>
     <property property="widgetSortby">lastupdated</property>
     <property property="widgetSortby">lastused</property>
-    
+    <property property="widgetSortby">date</property>
+
     <propertySettings property="widgetSortby" buttonID="9903" title="Widget Sort Method" />
 
     <!-- Widget Direction -->
@@ -427,7 +428,7 @@
                 <shortcut widget="UnwatchedEpisodes" label="$LOCALIZE[31283]" icon="DefaultTVShows.png" widgetTarget="video">special://skin/extras/playlists/UnwatchedEpisodes.xsp</shortcut>
                 <shortcut widget="InProgressEpisodes" label="$LOCALIZE[31218]" icon="special://skin/extras/icons/timer.png" widgetTarget="video">special://skin/extras/playlists/InProgressEpisodes.xsp</shortcut>
                 <shortcut widget="TopRatedEpisodes" label="$LOCALIZE[31230]" icon="DefaultMusicTop100Albums.png" widgetTarget="video">special://skin/extras/playlists/TopRatedEpisodes.xsp</shortcut>
-                
+
             </node>
             <node label="$LOCALIZE[249]">
                 <shortcut widget="NewAlbums" label="$LOCALIZE[31238]" icon="DefaultMusicRecentlyAdded.png" widgetTarget="music">musicdb://recentlyaddedalbums/</shortcut>
@@ -510,8 +511,8 @@
         <node label="32020">
             <content>picturesources</content>
         </node>
-        
-        
+
+
     </widget-groupings>
 
 </overrides>
