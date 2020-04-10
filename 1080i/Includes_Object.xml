@@ -10,6 +10,7 @@
             <property name="EndTime">$INFO[Container($PARAM[id]).ListItem.EndTime]</property>
             <property name="Season">$INFO[Container($PARAM[id]).ListItem.Season]</property>
             <property name="Episode">$INFO[Container($PARAM[id]).ListItem.Episode]</property>
+            <property name="ChannelNumberLabel">$INFO[Container($PARAM[id]).ListItem.ChannelNumberLabel]</property>
             <property name="ChannelName">$INFO[Container($PARAM[id]).ListItem.ChannelName]</property>
             <property name="StartTime">$INFO[Container($PARAM[id]).ListItem.StartTime]</property>
             <property name="NextStartTime">$INFO[Container($PARAM[id]).ListItem.NextStartTime]</property>
