@@ -9,28 +9,24 @@
                 <right>-20</right>
                 <bottom>-20</bottom>
                 <height>600</height>
-                <width>1026</width>
+                <width>1036</width>
                 <control type="group">
                     <visible>!String.IsEqual(Container.Property(Param.Info),user_discover)</visible>
-                    <include content="Viewtype_Landscape_Itemlayout">
-                        <param name="selectbox" value="false" />
-                        <param name="id" value="55" />
-                        <param name="icon" value="$VAR[Image_Landscape]" />
-                        <param name="diffuse" value="diffuse/landscape-big.png" />
-                        <param name="textbox-height" value="0" />
-                        <param name="textbox-visible" value="false" />
-                    </include>
+                    <include>Object_PosterBack</include>
+                    <control type="group">
+                        <include>Defs_Pad</include>
+                        <include content="Object_Artwork">
+                            <param name="id" value="55" />
+                            <param name="selectbox" value="false" />
+                            <param name="icon" value="$VAR[Image_Landscape]" />
+                            <param name="diffuse" value="diffuse/landscape-big.png" />
+                            <param name="aspectratio" value="keep" />
+                        </include>
+                    </control>
                 </control>
                 <control type="group">
                     <visible>String.IsEqual(Container.Property(Param.Info),user_discover)</visible>
-                    <include content="Viewtype_Landscape_Itemlayout">
-                        <param name="selectbox" value="false" />
-                        <param name="id" value="55" />
-                        <param name="icon" value="noop" />
-                        <param name="diffuse" value="diffuse/landscape-big.png" />
-                        <param name="textbox-height" value="0" />
-                        <param name="textbox-visible" value="false" />
-                    </include>
+                    <include>Object_PosterBack</include>
                     <control type="multiimage">
                         <animation effect="fade" start="0" end="100" time="1000" tween="cubic" easing="inout" reversible="false">Visible</animation>
                         <animation effect="fade" end="0" start="100" time="1000" tween="cubic" easing="inout">Hidden</animation>
@@ -59,15 +55,15 @@
             <control type="group">
                 <left>-20</left>
                 <bottom>-20</bottom>
-                <right>1006</right>
+                <right>1016</right>
                 <height>600</height>
                 <include>Object_PosterBack</include>
             </control>
             <include content="Viewtype_FileList">
                 <param name="id" value="55" />
-                <param name="itemlayout-width" value="734" />
+                <param name="itemlayout-width" value="724" />
                 <param name="viewtype-label" value="$LOCALIZE[535]" />
-                <width>734</width>
+                <width>724</width>
                 <left>0</left>
                 <bottom>0</bottom>
                 <height>560</height>
@@ -78,7 +74,7 @@
                 <animation effect="slide" end="0,-80" condition="Integer.IsLess(Container.NumAllItems,5)">Conditional</animation>
                 <animation effect="slide" end="0,-80" condition="Integer.IsLess(Container.NumAllItems,3)">Conditional</animation>
                 <visible>!$EXP[Exp_View500List]</visible>
-                <visible>!$EXP[Exp_IsLibrary] | Container.Content(files) | [String.IsEqual(Container.PluginName,plugin.video.themoviedb.helper) + [String.IsEqual(Container.Property(Param.Info),details)]] | Window.IsVisible(videoplaylist)</visible>
+                <visible>!$EXP[Exp_IsLibrary] | Container.Content(files) | String.IsEqual(Container.Property(Param.Info),details) | Window.IsVisible(videoplaylist)</visible>
             </include>
             <include content="Home_Hub_Widget_Label">
                 <param name="id" value="55" />
@@ -90,7 +86,7 @@
                 <right>0</right>
                 <bottom>0</bottom>
                 <height>560</height>
-                <width>986</width>
+                <width>996</width>
                 <onback>55</onback>
                 <onleft>55</onleft>
                 <onright>Down</onright>
@@ -98,13 +94,13 @@
                 <visible>String.IsEqual(Container.Property(Param.Info),user_discover)</visible>
                 <animation effect="fade" start="100" end="0" time="300" condition="Container(550).IsUpdating">Conditional</animation>
                 <include content="Defs_AutoScroll"><param name="condition" value="!Control.HasFocus(550)" /></include>
-                <itemlayout width="986" height="560">
+                <itemlayout width="996" height="560">
                     <control type="image">
                         <aspectratio scalediffuse="false">scale</aspectratio>
                         <texture background="true" diffuse="diffuse/landscape-big.png">$VAR[Image_Landscape]</texture>
                     </control>
                 </itemlayout>
-                <focusedlayout width="986" height="560">
+                <focusedlayout width="996" height="560">
                     <control type="image">
                         <aspectratio scalediffuse="false">scale</aspectratio>
                         <texture background="true" diffuse="diffuse/landscape-big.png">$VAR[Image_Landscape]</texture>
@@ -192,14 +188,17 @@
                 <bottom>-20</bottom>
                 <height>600</height>
                 <width>600</width>
-                <include content="Viewtype_Landscape_Itemlayout">
-                    <param name="selectbox" value="false" />
-                    <param name="id" value="500" />
-                    <param name="icon" value="$VAR[Image_Poster]" />
-                    <param name="diffuse" value="diffuse/square-big.png" />
-                    <param name="textbox-height" value="0" />
-                    <param name="textbox-visible" value="false" />
-                </include>
+                <include>Object_PosterBack</include>
+                <control type="group">
+                    <include>Defs_Pad</include>
+                    <include content="Object_Artwork">
+                        <param name="id" value="500" />
+                        <param name="selectbox" value="false" />
+                        <param name="icon" value="$VAR[Image_Poster]" />
+                        <param name="diffuse" value="diffuse/square-big.png" />
+                        <param name="aspectratio" value="keep" />
+                    </include>
+                </control>
             </control>
             <include content="Home_Hub_Widget_Label">
                 <param name="id" value="500" />
