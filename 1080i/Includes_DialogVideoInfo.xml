@@ -74,6 +74,7 @@
                         <param name="id" value="7100" />
                         <param name="uid" value="2003" />
                         <visible>Control.HasFocus(3106) | Control.HasFocus(3105)</visible>
+                        <visible>!ListItem.IsCollection</visible>
                     </include>
                     <include>DialogVideoInfo_Widget_Cast</include>
                     <include condition="!ListItem.IsCollection">DialogVideoInfo_Widget_Crew</include>

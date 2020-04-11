@@ -4,6 +4,13 @@
     <include name="Viewtype_Info_Right"><right>700</right></include>
     <include name="Viewtype_Info_Right_FixedHome"><right>560</right></include>
     <include name="Viewtypes">
+        <control type="list" id="56561">
+            <include>Defs_Offscreen</include>
+            <visible>ListItem.IsCollection + !String.IsEmpty(ListITem.DBID)</visible>
+            <itemlayout />
+            <focusedlayout />
+            <content sortby="year" sortorder="ascending">videodb://movies/sets/$INFO[ListItem.DBID]/</content>
+        </control>
         <control type="list" id="56560">
             <include>Defs_Offscreen</include>
             <orientation>horizontal</orientation>

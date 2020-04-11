@@ -43,6 +43,7 @@
         <value condition="String.IsEqual(ListItem.DBType,movie) + !Skin.HasSetting(DisableExtendedInfo) + System.HasAddon(plugin.video.themoviedb.helper) + !String.IsEmpty(ListItem.Set)">plugin://plugin.video.themoviedb.helper/?info=collection&amp;type=movie&amp;query=$INFO[ListItem.Set]</value>
         <value condition="ListItem.IsCollection + !Skin.HasSetting(DisableExtendedInfo) + System.HasAddon(plugin.video.themoviedb.helper) + !String.IsEmpty(ListItem.Title)">plugin://plugin.video.themoviedb.helper/?info=collection&amp;type=movie&amp;query=$INFO[ListItem.Title]</value>
         <value condition="String.IsEqual(ListItem.DBType,movie)">$INFO[ListItem.SetID,videodb://movies/sets/,/]</value>
+        <value condition="ListItem.IsCollection">$INFO[ListItem.DBID,videodb://movies/sets/,/]</value>
     </variable>
 
     <variable name="Info_Seasons">
@@ -131,6 +132,7 @@
         <param name="issubmenu" default="false" />
         <param name="viewtype-include" default="Viewtype_Poster" />
         <param name="widget-type" default="infowidgets" />
+        <param name="showonupdate" default="true" />
         <definition>
             <include content="View_Cast_Toplabel">
                 <param name="groupid" value="$PARAM[groupid]" />
@@ -154,6 +156,7 @@
                 <top>$PARAM[widget-type]_item_top</top>
                 <left>20</left>
                 <right>20</right>
+                <animation effect="fade" start="100" end="0" condition="Container($PARAM[id]).IsUpdating + $PARAM[showonupdate]">Conditional</animation>
                 <visible>$PARAM[visible]</visible>
                 <visible>Integer.IsGreater(Container($PARAM[id]).NumAllItems,0) | Container($PARAM[id]).IsUpdating | $PARAM[issubmenu]</visible>
                 <movement>6</movement>
@@ -309,7 +312,7 @@
     </include>
 
     <include name="Info_Buttons_Video">
-        <include content="$PARAM[buttoninclude]">
+        <!-- <include content="$PARAM[buttoninclude]">
             <param name="id" value="3101" />
             <param name="groupid" value="3201" />
             <param name="label" value="Collection" />
@@ -317,7 +320,7 @@
             <param name="visible" value="ListItem.IsCollection" />
             <onclick>SetFocus(5003)</onclick>
             <onup>9601</onup>
-        </include>
+        </include> -->
         <include content="$PARAM[buttoninclude]">
             <param name="id" value="3308" />
             <param name="groupid" value="3008" />
@@ -336,11 +339,14 @@
             <param name="label" value="$LOCALIZE[1024]" />
             <param name="icon" value="special://skin/extras/icons/folder.png" />
             <param name="visible" value="[ListItem.IsFolder | ListItem.IsCollection]" />
+            <onclick>Dialog.Close(1140)</onclick>
             <onclick condition="Window.IsVisible(MyVideoNav.xml) + String.IsEmpty(ListItem.DBID)">RunScript(plugin.video.themoviedb.helper,close_dialog=1190,call_update=$INFO[ListItem.FolderPath])</onclick>
             <onclick condition="Window.IsVisible(MyVideoNav.xml) + !String.IsEmpty(ListItem.DBID) + String.IsEqual(ListItem.DBType,tvshow)">RunScript(plugin.video.themoviedb.helper,close_dialog=1190,call_update=$INFO[ListItem.DBID,videodb://tvshows/titles/,/])</onclick>
+            <onclick condition="Window.IsVisible(MyVideoNav.xml) + !String.IsEmpty(ListItem.DBID) + ListItem.IsCollection">RunScript(plugin.video.themoviedb.helper,close_dialog=1190,call_update=$INFO[ListItem.DBID,videodb://movies/sets/,/])</onclick>
 
             <onclick condition="!Window.IsVisible(MyVideoNav.xml) + String.IsEmpty(ListItem.DBID)">RunScript(plugin.video.themoviedb.helper,close_dialog=1190,call_path=$INFO[ListItem.FolderPath])</onclick>
             <onclick condition="!Window.IsVisible(MyVideoNav.xml) + !String.IsEmpty(ListItem.DBID) + String.IsEqual(ListItem.DBType,tvshow)">RunScript(plugin.video.themoviedb.helper,close_dialog=1190,call_path=$INFO[ListItem.DBID,videodb://tvshows/titles/,/])</onclick>
+            <onclick condition="Window.IsVisible(MyVideoNav.xml) + !String.IsEmpty(ListItem.DBID) + ListItem.IsCollection">RunScript(plugin.video.themoviedb.helper,close_dialog=1190,call_path=$INFO[ListItem.DBID,videodb://movies/sets/,/])</onclick>
             <onup>9601</onup>
         </include>
 

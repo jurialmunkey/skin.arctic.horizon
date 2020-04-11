@@ -43,6 +43,10 @@
     </variable>
 
     <variable name="Label_InfoLine">
+        <value condition="Window.IsVisible(1140)">$INFO[Container(5002).ListItemAbsolute(0).Year,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.Year,[COLOR=main_fg_100] - ,[/COLOR]]$INFO[Container(5002).NumItems,  |  [COLOR=main_fg_100], $LOCALIZE[342][/COLOR]]</value>
+
+        <value condition="[String.IsEqual(ListItem.DBType,set) | ListItem.IsCollection] + !String.IsEmpty(ListItem.DBID) + Window.IsMedia">$INFO[Container(56561).ListItemAbsolute(0).Year,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.Year,[COLOR=main_fg_100] - ,[/COLOR]]$INFO[Container(56561).NumItems,  |  [COLOR=main_fg_100], $LOCALIZE[342][/COLOR]]</value>
+
         <value condition="[String.IsEqual(ListItem.DBType,set) | ListItem.IsCollection] + !String.IsEmpty(Window(Home).Property(TMDBHelper.ListItem.Set.Years))">$INFO[Window(Home).Property(TMDBHelper.ListItem.Set.Years),  |  [COLOR=main_fg_100],[/COLOR]]$INFO[Window(Home).Property(TMDBHelper.ListItem.Set.NumItems),  |  [COLOR=main_fg_100], $LOCALIZE[342][/COLOR]]</value>
 
         <value condition="String.IsEqual(ListItem.DBType,movie)">$INFO[ListItem.Year,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.MPAA,  |  [COLOR=main_fg_100],[/COLOR]]$VAR[Label_Duration,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.EndTime,  |  [COLOR=main_fg_100]$LOCALIZE[31207] ,[/COLOR]]</value>
@@ -469,6 +473,7 @@
     </variable>
 
     <variable name="Label_Plot">
+        <value condition="Window.IsVisible(1140) + Control.HasFocus(5002) + !String.IsEmpty(Container(5002).ListItem.Plot)">$INFO[Container(5002).ListItem.Plot]</value>
         <value condition="!String.IsEmpty(ListItem.Property(Artist_Description))">$INFO[ListItem.Property(Artist_Description)]</value>
         <value condition="!String.IsEmpty(ListItem.Property(Album_Description))">$INFO[ListItem.Property(Album_Description)]</value>
         <value condition="!String.IsEmpty(ListItem.AddonDescription)">$INFO[ListItem.AddonDescription]</value>
