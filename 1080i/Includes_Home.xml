@@ -205,22 +205,27 @@
 
     <include name="Home_Hub_Showcase">
         <control type="group">
-            <include>skinshortcuts-template-showcase-background</include>
-            <control type="image">
-                <bottom>480</bottom>
-                <texture background="true" colordiffuse="cdffffff">common/vignette-home.png</texture>
-                <include>Animation_FadeInOut_Common</include>
-            </control>
-            <control type="image">
-                <bottom>0</bottom>
-                <height>480</height>
-                <texture colordiffuse="cdffffff">common/vignette-home-bottom.png</texture>
-                <include>Animation_FadeInOut_Common</include>
+            <control type="group">
+                <visible>$EXP[Exp_GlobalBackground] | !String.IsEmpty(Window(Home).Property(HasTrailer)) | ![Control.HasFocus(5610) | Control.HasFocus(60)]</visible>
+                <include>Animation_FadeInOut</include>
+                <include>skinshortcuts-template-showcase-background</include>
+                <control type="image">
+                    <bottom>480</bottom>
+                    <texture background="true" colordiffuse="cdffffff">common/vignette-home.png</texture>
+                    <include>Animation_FadeInOut_Common</include>
+                </control>
+                <control type="image">
+                    <bottom>0</bottom>
+                    <height>480</height>
+                    <texture colordiffuse="cdffffff">common/vignette-home-bottom.png</texture>
+                    <include>Animation_FadeInOut_Common</include>
+                </control>
             </control>
             <control type="group">
                 <visible>$EXP[Exp_CommonAnimation] | [Control.HasFocus(5610) | Control.HasFocus(60)]</visible>
+                <visible>$EXP[Exp_GlobalBackground] | !String.IsEmpty(Window(Home).Property(HasTrailer))</visible>
                 <include>Animation_FadeInOut</include>
-                <include>Global_Background</include>
+                <include>Global_Background_Artwork</include>
             </control>
 
             <control type="group">
