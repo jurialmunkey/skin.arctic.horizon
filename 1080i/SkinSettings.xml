@@ -403,47 +403,12 @@
 
 
 
-                    <!-- <control type="label" id="19385" description="LABEL">
-                        <visible>Integer.IsEqual(Window.Property(CurrentFocus),9003)</visible>
-                        <include>Dialog_Standard_HintLabel</include>
-                        <label>Other</label>
-                    </control>
 
-                    <control type="radiobutton" id="19323" description="Kiosk Mode">
-                        <visible>Integer.IsEqual(Window.Property(CurrentFocus),9003)</visible>
-                        <include>Defs_Settings_Button</include>
-                        <label>$LOCALIZE[31199]</label>
-                        <selected>Skin.HasSetting(KioskMode)</selected>
-                        <onclick>Skin.ToggleSetting(KioskMode)</onclick>
-                    </control>
-
-                    <control type="button" id="19429" description="Startup Video">
-                        <visible>Integer.IsEqual(Window.Property(CurrentFocus),9003)</visible>
-                        <include>Defs_Settings_Button</include>
-                        <label>31168</label>
-                        <label2>$INFO[Skin.String(StartupPlaylist)]</label2>
-                        <onclick condition="String.IsEmpty(Skin.String(StartupPlaylist))">Skin.SetFile(StartupPlaylist,.mp4|.avi|.mkv|.xvid|.wmv|.mov|.xsp|.mp3|.wma|.flac|.m3u)</onclick>
-                        <onclick condition="!String.IsEmpty(Skin.String(StartupPlaylist))">Skin.Reset(StartupPlaylist)</onclick>
-                    </control> -->
 
 
                     <!-- ======= -->
                     <!-- Library -->
                     <!-- ======= -->
-                    <!-- <control type="label" id="19483" description="LABEL">
-                        <visible>Integer.IsEqual(Window.Property(CurrentFocus),9004)</visible>
-                        <include>Dialog_Standard_HintLabel</include>
-                        <label>$LOCALIZE[31146]</label>
-                    </control>
-
-                    <control type="radiobutton" id="19421" description="Star Rating as Numeric">
-                        <visible>Integer.IsEqual(Window.Property(CurrentFocus),9004)</visible>
-                        <include>Defs_Settings_Button</include>
-                        <label>$LOCALIZE[31192]</label>
-                        <selected>Skin.HasSetting(NumericStarRating)</selected>
-                        <onclick>Skin.ToggleSetting(NumericStarRating)</onclick>
-                    </control> -->
-
                     <control type="label" id="19481" description="LABEL">
                         <visible>Integer.IsEqual(Window.Property(CurrentFocus),9004)</visible>
                         <include>Dialog_Standard_HintLabel</include>
@@ -801,6 +766,15 @@
                         <label>$LOCALIZE[31043]</label>
                         <selected>Skin.HasSetting(DisableShowcaseScreensaver)</selected>
                         <onclick>Skin.ToggleSetting(DisableShowcaseScreensaver)</onclick>
+                    </control>
+
+                    <control type="button" id="19429" description="Startup Video">
+                        <visible>Integer.IsEqual(Window.Property(CurrentFocus),9007)</visible>
+                        <include>Defs_Settings_Button</include>
+                        <label>31168</label>
+                        <label2>$INFO[Skin.String(StartupPlaylist)]</label2>
+                        <onclick condition="String.IsEmpty(Skin.String(StartupPlaylist))">Skin.SetFile(StartupPlaylist,.mp4|.avi|.mkv|.xvid|.wmv|.mov|.xsp|.mp3|.wma|.flac|.m3u)</onclick>
+                        <onclick condition="!String.IsEmpty(Skin.String(StartupPlaylist))">Skin.Reset(StartupPlaylist)</onclick>
                     </control>
 
 
