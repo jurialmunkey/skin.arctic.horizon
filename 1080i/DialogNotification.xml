@@ -4,7 +4,6 @@
     <controls>
         <control type="group">
             <visible>!Window.IsVisible(Startup.xml)</visible>
-            <visible>!Window.IsVisible(DialogBusy.xml)</visible>
             <visible>!Window.IsVisible(DialogVolumeBar.xml)</visible>
             <control type="group">
                 <include content="Dialog_Notification_Group" condition="![Window.IsVisible(SkinSettings.xml) | Window.IsVisible(SettingsCategory.xml) | Window.IsVisible(SettingsProfile.xml) | Window.IsVisible(SettingsSystemInfo.xml)]">
