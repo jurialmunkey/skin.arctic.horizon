@@ -280,6 +280,11 @@ msgctxt "#31053"
 msgid "Choose hub widget"
 msgstr ""
 
+#: /1080i/SkinSettings.xml
+msgctxt "#31054"
+msgid "Hide channel name if icon is available"
+msgstr ""
+
 #: /1080i/DialogVideoInfo.xml
 msgctxt "#31055"
 msgid "Cast Members Also Feature In"

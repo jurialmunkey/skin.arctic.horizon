@@ -190,6 +190,10 @@
         <value condition="!String.IsEmpty(ListItem.Genre)">$INFO[ListItem.StartTime,[COLOR main_fg_100],[/COLOR]]$INFO[ListItem.EndTime,[COLOR main_fg_100]  -  ,[/COLOR]]$INFO[ListItem.Genre,  |  [COLOR main_fg_100],[/COLOR]]</value>
     </variable>
 
+    <variable name="Label_PVRGuide_ChannelName">
+        <value condition="!Skin.HasSetting(PVRGuide.HideChannelName) | String.IsEmpty(ListItem.Icon)">$INFO[ListItem.ChannelName]</value>
+    </variable>
+
     <variable name="Label_PVRGuide_ChannelNumber">
         <value condition="Skin.HasSetting(PVRGuide.ChannelNumber)">$INFO[ListItem.ChannelNumberLabel]</value>
     </variable>

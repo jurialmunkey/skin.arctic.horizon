@@ -685,6 +685,14 @@
                         <onclick>Skin.ToggleSetting(PVRGuide.ChannelNumber)</onclick>
                     </control>
 
+                    <control type="radiobutton" id="19605" description="Channel Names">
+                        <visible>Integer.IsEqual(Window.Property(CurrentFocus),9006)</visible>
+                        <include>Defs_Settings_Button</include>
+                        <label>$LOCALIZE[31054]</label>
+                        <selected>Skin.HasSetting(PVRGuide.HideChannelName)</selected>
+                        <onclick>Skin.ToggleSetting(PVRGuide.HideChannelName)</onclick>
+                    </control>
+
                     <control type="radiobutton" id="19611" description="Colordiffuse to icons">
                         <visible>Integer.IsEqual(Window.Property(CurrentFocus),9006)</visible>
                         <include>Defs_Settings_Button</include>

@@ -339,7 +339,7 @@
                         <font>$PARAM[font]</font>
                         <textcolor>$PARAM[textcolor]</textcolor>
                         <selectedcolor>$PARAM[textcolor]</selectedcolor>
-                        <label>$VAR[Label_PVRGuide_ChannelNumber,,. ]$INFO[ListItem.ChannelName]</label>
+                        <label>$VAR[Label_PVRGuide_ChannelNumber,,. ]$VAR[Label_PVRGuide_ChannelName]</label>
                     </control>
                 </control>
                 <include content="Object_PVR_Icon">
