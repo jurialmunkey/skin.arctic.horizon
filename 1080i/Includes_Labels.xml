@@ -245,11 +245,6 @@
         <value condition="String.IsEqual(ListItem.AudioChannels,1)">1.0</value>
     </variable>
 
-    <variable name="Label_SkinShortcuts_SubmenuWidget">
-        <value condition="String.EndsWith(Window.Property(groupname),.1) | String.IsEqual(Window.Property(groupname),searchmenu)">$LOCALIZE[31011]</value>
-        <value>$LOCALIZE[31038] - $LOCALIZE[31011]</value>
-    </variable>
-
     <variable name="Label_WidgetName">
         <value condition="!String.IsEmpty(Container(302).ListItem.Property(widgetPath))">$INFO[Container(302).ListItem.Property(widgetName)]</value>
         <value condition="!String.IsEmpty(Container(301).ListItem.Property(widgetPath))">$INFO[Container(301).ListItem.Property(widgetName)]</value>

@@ -301,6 +301,8 @@
         <property name="widgetInclude" tag="property" attribute="name|widgetAspect" value="Square">Viewtype_Square</property>
         <property name="widgetInclude" tag="property" attribute="name|widgetAspect" value="Banner">Viewtype_BigBanner</property>
         <property name="widgetInclude">Viewtype_Poster</property>
+        <property name="widgetSortby" tag="property" attribute="name|widgetSortby" />
+        <property name="widgetSortorder" tag="property" attribute="name|widgetSortorder" />
         <controls>
             <include content="$SKINSHORTCUTS[widgetInclude]">
                 <param name="id" value="5610" />
@@ -313,7 +315,7 @@
                 <onback condition="!Window.IsVisible(Home)">302</onback>
                 <onback condition="Window.IsVisible(Home)">3101</onback>
                 <pagecontrol>60</pagecontrol>
-                <content target="$SKINSHORTCUTS[widgetTarget]">$SKINSHORTCUTS[widgetPath]</content>
+                <content target="$SKINSHORTCUTS[widgetTarget]" sortby="$SKINSHORTCUTS[widgetSortby]" sortorder="$SKINSHORTCUTS[widgetSortorder]">$SKINSHORTCUTS[widgetPath]</content>
                 <skinshortcuts>visibility</skinshortcuts>
                 <visible>String.IsEmpty(Container(302).ListItem.Property(widgetPath))</visible>
             </include>
@@ -331,6 +333,8 @@
         <property name="widgetInclude" tag="property" attribute="name|widgetAspect" value="Square">Viewtype_Square</property>
         <property name="widgetInclude" tag="property" attribute="name|widgetAspect" value="Banner">Viewtype_BigBanner</property>
         <property name="widgetInclude">Viewtype_Poster</property>
+        <property name="widgetSortby" tag="property" attribute="name|widgetSortby" />
+        <property name="widgetSortorder" tag="property" attribute="name|widgetSortorder" />
         <controls>
             <include content="$SKINSHORTCUTS[widgetInclude]">
                 <param name="id" value="5610" />
@@ -343,7 +347,7 @@
                 <onback condition="!Window.IsVisible(Home)">302</onback>
                 <onback condition="Window.IsVisible(Home)">3101</onback>
                 <pagecontrol>60</pagecontrol>
-                <content target="$SKINSHORTCUTS[widgetTarget]">$SKINSHORTCUTS[widgetPath]</content>
+                <content target="$SKINSHORTCUTS[widgetTarget]" sortby="$SKINSHORTCUTS[widgetSortby]" sortorder="$SKINSHORTCUTS[widgetSortorder]">$SKINSHORTCUTS[widgetPath]</content>
                 <visible>String.IsEqual(Container(301).ListItem.Property(submenuVisibility),num-$SKINSHORTCUTS[submenuVisibility]) | String.IsEqual(Container(301).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility])</visible>
                 <visible>String.IsEqual(Container(302).ListItem.Property(id),$SKINSHORTCUTS[id])</visible>
                 <visible>!String.IsEmpty(Container(302).ListItem.Property(widgetPath))</visible>

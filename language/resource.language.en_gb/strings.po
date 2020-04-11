@@ -255,6 +255,16 @@ msgctxt "#31048"
 msgid "Next Aired (Library)"
 msgstr ""
 
+#: /1080i/script-skinshortcuts.xml
+msgctxt "#31049"
+msgid "Customise"
+msgstr ""
+
+#: /1080i/script-skinshortcuts.xml
+msgctxt "#31050"
+msgid "Widget"
+msgstr ""
+
 #: /1080i/DialogVideoInfo.xml
 msgctxt "#31051"
 msgid "Similar to"
@@ -263,6 +273,11 @@ msgstr ""
 #: /1080i/DialogVideoInfo.xml
 msgctxt "#31052"
 msgid "By Director"
+msgstr ""
+
+#: /1080i/script-skinshortcuts.xml
+msgctxt "#31053"
+msgid "Choose hub widget"
 msgstr ""
 
 #: /1080i/DialogVideoInfo.xml
