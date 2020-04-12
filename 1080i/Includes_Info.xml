@@ -200,6 +200,15 @@
             <param name="visible" value="Control.IsVisible(10) + Window.IsActive(PVRGuideInfo)" />
             <onclick>SendClick(10)</onclick>
         </include>
+        <!-- Add Timer -->
+        <include content="Object_Info_Button">
+            <param name="id" value="8109" />
+            <param name="groupid" value="8009" />
+            <param name="label" value="Add Timer" />
+            <param name="icon" value="special://skin/extras/icons/timer.png" />
+            <param name="visible" value="Control.IsVisible(9) + Window.IsActive(PVRGuideInfo)" />
+            <onclick>SendClick(9)</onclick>
+        </include>
         <!-- Similar -->
         <include content="Object_Info_Button">
             <param name="id" value="8104" />
