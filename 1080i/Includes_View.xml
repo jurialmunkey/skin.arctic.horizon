@@ -9,6 +9,7 @@
             <height>1</height>
             <orientation>horizontal</orientation>
             <ondown>5610</ondown>
+            <onfocus>ClearProperty(FocusWidget)</onfocus>
             <itemlayout width="1"/>
             <focusedlayout width="1"/>
             <include>Items_SubMenu</include>

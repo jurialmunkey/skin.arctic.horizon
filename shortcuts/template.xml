@@ -313,6 +313,7 @@
                 <bottom>-20</bottom>
                 <onup>302</onup>
                 <ondown>60</ondown>
+                <onfocus>SetProperty(FocusWidget,1)</onfocus>
                 <onback condition="!Window.IsVisible(Home)">302</onback>
                 <onback condition="Window.IsVisible(Home)">3101</onback>
                 <pagecontrol>60</pagecontrol>
@@ -345,6 +346,7 @@
                 <bottom>-20</bottom>
                 <onup>302</onup>
                 <ondown>60</ondown>
+                <onfocus>SetProperty(FocusWidget,1)</onfocus>
                 <onback condition="!Window.IsVisible(Home)">302</onback>
                 <onback condition="Window.IsVisible(Home)">3101</onback>
                 <pagecontrol>60</pagecontrol>
@@ -357,6 +359,8 @@
     </submenuOther>
 
     <submenu include="hubmenu">
+        <property name="submenuVisibility" tag="property" attribute="name|submenuVisibility" />
+        <property name="submenuVisibility">noMenu</property>
         <controls>
             <skinshortcuts insert="hubmenu">items</skinshortcuts>
         </controls>
@@ -416,8 +420,7 @@
             <property name="label" tag="label" />
             <property name="icon" tag="thumb" />
             <property name="icon" tag="icon" />
-            <property name="submenuVisibility" tag="property" attribute="name|group" />
-            <property name="submenuVisibility">noMenu</property>
+
             <property name="widgetPath" tag="property" attribute="name|widgetPath" />
             <property name="widgetName" tag="property" attribute="name|widgetName" />
             <property name="onclick" tag="onclick" />
