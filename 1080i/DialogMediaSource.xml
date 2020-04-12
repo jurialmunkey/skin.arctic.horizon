@@ -10,7 +10,7 @@
 
         <control type="group">
             <include content="Dialog_Standard_Group">
-                <param name="width" value="1336" />
+                <param name="width" value="1360" />
                 <param name="height" value="940" />
             </include>
             <control type="label" id="2">
