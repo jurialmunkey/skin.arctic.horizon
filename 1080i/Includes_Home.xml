@@ -660,7 +660,7 @@
     </include>
 
     <include name="Home_Vertical_Info">
-        <param name="plotheight" default="200" />
+        <param name="plotheight" default="160" />
         <definition>
             <control type="group" id="$PARAM[groupid]">
                 <nested />
@@ -701,7 +701,7 @@
                         <visible>String.IsEqual(Container($PARAM[id]).ListItem.DBType,episode)</visible>
                     </include>
                     <include content="Object_Info_Plot">
-                        <param name="maxheight" value="200" />
+                        <param name="maxheight" value="$PARAM[plotheight]" />
                         <param name="height" value="auto" />
                         <param name="label" value="$INFO[Container($PARAM[id]).ListItem.Plot]$INFO[Container($PARAM[id]).ListItem.Property(Album_Description)]$INFO[Container($PARAM[id]).ListItem.Property(Artist_Description)]$INFO[Container($PARAM[id]).ListItem.AddonDescription]" />
                     </include>

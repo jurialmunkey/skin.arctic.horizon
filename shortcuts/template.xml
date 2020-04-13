@@ -83,7 +83,7 @@
                     <control type="group" id="$PYTHON[30099 + int(mainmenuid) * 100]"><height>widgets_bumper_top</height></control>
                     <include content="Home_Vertical_Info">
                         <param name="font" value="font_title" />
-                        <param name="plotheight" value="200" />
+                        <param name="plotheight" value="160" />
                         <param name="titleheight" value="60" />
                         <param name="id" value="$PYTHON[30001 + int(mainmenuid) * 100]" />
                         <param name="groupid" value="$PYTHON[30097 + int(mainmenuid) * 100]" />
