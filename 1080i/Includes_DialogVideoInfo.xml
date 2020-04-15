@@ -593,18 +593,15 @@
                     </include>
                     <include content="DialogVideoInfo_Widget_Details_Label">
                         <param name="label" value="Last Aired" />
-                        <param name="infolabel" value="$INFO[Window(Home).Property(TMDbHelper.ListItem.Last_Aired.Season),,x]$INFO[Window(Home).Property(TMDbHelper.ListItem.Last_Aired.Episode),,. ]$INFO[Window(Home).Property(TMDbHelper.ListItem.Last_Aired.Name)][CR]$INFO[Window(Home).Property(TMDbHelper.ListItem.Last_Aired.Day),,$COMMA ]$INFO[Window(Home).Property(TMDbHelper.ListItem.Last_Aired)]" />
+                        <param name="infolabel" value="$INFO[Window(Home).Property(TMDbHelper.ListItem.Last_Aired.Season),,x]$INFO[Window(Home).Property(TMDbHelper.ListItem.Last_Aired.Episode),,. ]$INFO[Window(Home).Property(TMDbHelper.ListItem.Last_Aired.Day),,$COMMA ]$INFO[Window(Home).Property(TMDbHelper.ListItem.Last_Aired)]" />
                         <param name="visible" value="!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Last_Aired))" />
                         <param name="align" value="left" />
-                        <param name="height" value="110" />
-                        <param name="top" value="9" />
                     </include>
                     <include content="DialogVideoInfo_Widget_Details_Label">
                         <param name="label" value="Next Aired" />
-                        <param name="infolabel" value="$INFO[Window(Home).Property(TMDbHelper.ListItem.Next_Aired.Season),,x]$INFO[Window(Home).Property(TMDbHelper.ListItem.Next_Aired.Episode),,. ]$INFO[Window(Home).Property(TMDbHelper.ListItem.Next_Aired.Name)][CR]$INFO[Window(Home).Property(TMDbHelper.ListItem.Next_Aired.Day),,$COMMA ]$INFO[Window(Home).Property(TMDbHelper.ListItem.Next_Aired)]" />
+                        <param name="infolabel" value="$INFO[Window(Home).Property(TMDbHelper.ListItem.Next_Aired.Season),,x]$INFO[Window(Home).Property(TMDbHelper.ListItem.Next_Aired.Episode),,. ]$INFO[Window(Home).Property(TMDbHelper.ListItem.Next_Aired.Day),,$COMMA ]$INFO[Window(Home).Property(TMDbHelper.ListItem.Next_Aired)]" />
                         <param name="visible" value="!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Next_Aired))" />
                         <param name="align" value="left" />
-                        <param name="height" value="110" />
                     </include>
                 </control>
                 <control type="grouplist">
