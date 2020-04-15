@@ -364,9 +364,11 @@
             <param name="groupid" value="3011" />
             <param name="label" value="Trailer" />
             <param name="icon" value="special://skin/extras/icons/video.png" />
-            <param name="visible" value="!String.IsEmpty(ListItem.Trailer)" />
-            <onclick>SetProperty(HasTrailer,$INFO[ListItem.Trailer],Home)</onclick>
-            <onclick>PlayMedia($INFO[ListItem.Trailer],False,1)</onclick>
+            <param name="visible" value="!String.IsEmpty(ListItem.Trailer) | !String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Trailer))" />
+            <onclick condition="!String.IsEmpty(ListItem.Trailer)">SetProperty(HasTrailer,$INFO[ListItem.Trailer],Home)</onclick>
+            <onclick condition="!String.IsEmpty(ListItem.Trailer)">PlayMedia($INFO[ListItem.Trailer],False,1)</onclick>
+            <onclick condition="String.IsEmpty(ListItem.Trailer)">SetProperty(HasTrailer,$INFO[Window(Home).Property(TMDbHelper.ListItem.Trailer)],Home)</onclick>
+            <onclick condition="String.IsEmpty(ListItem.Trailer)">PlayMedia($INFO[Window(Home).Property(TMDbHelper.ListItem.Trailer)],False,1)</onclick>
             <onclick>SetFocus(9608)</onclick>
             <onup>9601</onup>
         </include>

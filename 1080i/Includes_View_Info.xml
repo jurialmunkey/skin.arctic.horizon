@@ -105,8 +105,9 @@
                 <param name="label" value="$LOCALIZE[20410]" />
                 <param name="icon" value="special://skin/extras/icons/video.png" />
                 <param name="ondown" value="50" />
-                <param name="visible" value="!String.IsEmpty(ListItem.Trailer)" />
-                <onclick>PlayMedia($INFO[ListItem.Trailer])</onclick>
+                <param name="visible" value="!String.IsEmpty(ListItem.Trailer) | !String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Trailer))" />
+                <onclick condition="!String.IsEmpty(ListItem.Trailer)">PlayMedia($INFO[ListItem.Trailer])</onclick>
+                <onclick condition="String.IsEmpty(ListItem.Trailer)">PlayMedia($INFO[Window(Home).Property(TMDbHelper.ListItem.Trailer)])</onclick>
             </include>
 
             <include content="Object_Info_Button" description="Similar">
