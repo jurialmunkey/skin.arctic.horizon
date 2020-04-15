@@ -694,8 +694,8 @@
                 <label>$VAR[Label_ExtraFanart]</label>
                 <icon>special://skin/extras/icons/filebox.png</icon>
                 <onclick>Skin.ToggleSetting(ArtworkHelper.EnableExtraFanart)</onclick>
-                <visible>Control.IsEnabled(6005)</visible>
                 <visible>!Skin.HasSetting(KioskMode)</visible>
+                <visible>System.HasAddon(script.artwork.helper)</visible>
             </item>
 
             <!-- Settings -->
