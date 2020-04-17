@@ -117,10 +117,10 @@
                 <param name="icon" value="special://skin/extras/icons/fire2.png" />
                 <param name="ondown" value="50" />
                 <param name="visible" value="String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,season) | String.IsEqual(ListItem.DBType,episode)" />
+                <onclick>RunScript(plugin.video.themoviedb.helper,split_value=$INFO[ListItem.Genre],property=ListItem.Genre)</onclick>
+                <onclick>RunScript(plugin.video.themoviedb.helper,split_value=$INFO[ListItem.Director],property=ListItem.Director)</onclick>
+                <onclick>RunScript(plugin.video.themoviedb.helper,split_value=$INFO[ListItem.Studio],property=ListItem.Studio)</onclick>
                 <onclick>SetFocus(9200)</onclick>
-                <!-- <onclick>SetFocus(50)</onclick> -->
-                <!-- <onclick>Container.Update($VAR[Info_Recommended])</onclick> -->
-                <!-- <onclick>ActivateWindow(1142)</onclick> -->
             </include>
 
             <include content="Object_Info_Button" description="Overview">

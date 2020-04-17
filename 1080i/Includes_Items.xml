@@ -32,61 +32,64 @@
     <include name="Items_Similar">
         <content>
             <item>
-                <label>Similar</label>
+                <label>$LOCALIZE[31135]</label>
                 <onclick>SetFocus(50)</onclick>
                 <onclick>Container.Update($VAR[Info_Similar]&amp;plugincategory=$INFO[ListItem.Title,Similar to ,])</onclick>
+                <visible>!Skin.HasSetting(DisableExtendedInfo)</visible>
             </item>
             <item>
-                <label>Recommended</label>
+                <label>$LOCALIZE[31252]</label>
                 <onclick>SetFocus(50)</onclick>
                 <onclick>Container.Update($VAR[Info_Recommended]&amp;plugincategory=$INFO[ListItem.Title,Recommendations for ,])</onclick>
+                <visible>!Skin.HasSetting(DisableExtendedInfo)</visible>
             </item>
             <item>
-                <label>By Director $INFO[Window(Home).Property(TMDBHelper.ListItem.Director.1.Name)]</label>
+                <label>$LOCALIZE[31052] $INFO[Window(Home).Property(ListItem.Director.0)]</label>
                 <onclick>SetFocus(50)</onclick>
-                <onclick>Container.Update(plugin://plugin.video.themoviedb.helper/?info=crew_in_movies&amp;type=person&amp;filter_key=job&amp;filter_value=Director&amp;query=$INFO[Window(Home).Property(TMDBHelper.ListItem.Director.1.Name)]&amp;plugincategory=$INFO[Window(Home).Property(TMDBHelper.ListItem.Director.1.Name),Directed by ,])</onclick>
-                <visible>!String.IsEmpty(Window(Home).Property(TMDBHelper.ListItem.Director.1.Name))</visible>
+                <onclick>Container.Update($VAR[Info_FromDirector]&amp;plugincategory=$INFO[Window(Home).Property(ListItem.Director.0),Directed by ,])</onclick>
+                <visible>!String.IsEmpty(Window(Home).Property(ListItem.Director.0))</visible>
                 <visible>String.IsEqual(ListItem.DBType,movie)</visible>
             </item>
             <item>
-                <label>From Studio $INFO[Window(Home).Property(TMDBHelper.ListItem.Studio.1.Name)]</label>
+                <label>$LOCALIZE[31069] $INFO[Window(Home).Property(ListItem.Studio.0)]</label>
                 <onclick>SetFocus(50)</onclick>
-                <onclick>Container.Update(plugin://plugin.video.themoviedb.helper?info=discover&amp;type=movie&amp;with_companies=$INFO[Window(Home).Property(TMDBHelper.ListItem.Studio.1.Name)]&amp;plugincategory=$INFO[Window(Home).Property(TMDBHelper.ListItem.Studio.1.Name)])</onclick>
-                <visible>!String.IsEmpty(Window(Home).Property(TMDBHelper.ListItem.Studio.1.Name))</visible>
-                <visible>String.IsEqual(ListItem.DBType,movie)</visible>
+                <onclick>Container.Update($VAR[Info_FromStudio]&amp;plugincategory=$INFO[Window(Home).Property(ListItem.Studio.0)])</onclick>
+                <visible>!String.IsEmpty(Window(Home).Property(ListItem.Studio.0))</visible>
             </item>
             <item>
-                <label>In Genre $INFO[Window(Home).Property(TMDBHelper.ListItem.Genre.1.Name)]</label>
+                <label>$LOCALIZE[31070] $INFO[Window(Home).Property(ListItem.Genre.0)]</label>
                 <onclick>SetFocus(50)</onclick>
-                <onclick>Container.Update(plugin://plugin.video.themoviedb.helper?info=discover&amp;$VAR[Info_Param_Type]&amp;with_genres=$INFO[Window(Home).Property(TMDBHelper.ListItem.Genre.1.Name)]&amp;plugincategory=$INFO[Window(Home).Property(TMDBHelper.ListItem.Genre.1.Name)])</onclick>
-                <visible>!String.IsEmpty(Window(Home).Property(TMDBHelper.ListItem.Genre.1.Name))</visible>
+                <onclick>Container.Update($VAR[Info_FromGenre]&amp;plugincategory=$INFO[Window(Home).Property(ListItem.Genre.0)])</onclick>
+                <visible>!String.IsEmpty(Window(Home).Property(ListItem.Genre.0))</visible>
             </item>
             <item>
-                <label>From Year $INFO[Container.ListItem.Year]</label>
+                <label>$LOCALIZE[31071] $INFO[ListItem.Year]</label>
                 <onclick>SetFocus(50)</onclick>
-                <onclick>Container.Update($VAR[Info_FromYear]&amp;plugincategory=$INFO[ListItem.Year,From ,])</onclick>
-                <visible>!String.IsEmpty(Container.ListItem.Year)</visible>
-                <visible>String.IsEqual(ListItem.DBType,movie)</visible>
+                <onclick>Container.Update($VAR[Info_FromYear]&amp;plugincategory=$INFO[ListItem.Year,$LOCALIZE[31073] ,])</onclick>
+                <!-- <visible>!String.IsEmpty(ListItem.Year)</visible> -->
             </item>
             <item>
-                <label>Starring Cast Members</label>
+                <label>$LOCALIZE[31074]</label>
                 <onclick>SetFocus(50)</onclick>
                 <onclick>Container.Update(plugin://plugin.video.themoviedb.helper/?info=discover&amp;type=movie&amp;with_cast=$INFO[Window(Home).Property(TMDBHelper.ListItem.Cast.1.Name)]$INFO[Window(Home).Property(TMDBHelper.ListItem.Cast.2.Name), / ,]$INFO[Window(Home).Property(TMDBHelper.ListItem.Cast.3.Name), / ,]&amp;with_separator=OR&amp;plugincategory=$INFO[Window(Home).Property(TMDBHelper.ListItem.Cast.1.Name),Starring ,]$INFO[Window(Home).Property(TMDBHelper.ListItem.Cast.2.Name), / ,]$INFO[Window(Home).Property(TMDBHelper.ListItem.Cast.3.Name), / ,])</onclick>
                 <visible>!String.IsEmpty(Window(Home).Property(TMDBHelper.ListItem.Cast.1.Name))</visible>
                 <visible>String.IsEqual(ListItem.DBType,movie)</visible>
+                <visible>!Skin.HasSetting(DisableExtendedInfo)</visible>
             </item>
             <item>
-                <label>Keywords</label>
+                <label>$LOCALIZE[21861]</label>
                 <onclick>SetFocus(50)</onclick>
-                <onclick>Container.Update(plugin://plugin.video.themoviedb.helper/?info=movie_keywords&amp;tmdb_id=$INFO[ListItem.Property(tmdb_id)]&amp;type=movie&amp;plugincategory=$INFO[ListItem.Title,Keywords for ,])</onclick>
+                <onclick>Container.Update(plugin://plugin.video.themoviedb.helper/?info=movie_keywords&amp;tmdb_id=$INFO[ListItem.Property(tmdb_id)]&amp;type=movie&amp;plugincategory=$INFO[ListItem.Title,$LOCALIZE[31075] ,])</onclick>
                 <visible>!String.IsEmpty(Container.ListItem.Property(tmdb_id))</visible>
                 <visible>String.IsEqual(ListItem.DBType,movie)</visible>
+                <visible>!Skin.HasSetting(DisableExtendedInfo)</visible>
             </item>
             <item>
-                <label>In Lists</label>
+                <label>$LOCALIZE[31076]</label>
                 <onclick>SetFocus(50)</onclick>
-                <onclick>Container.Update(plugin://plugin.video.themoviedb.helper/?info=trakt_inlists&amp;imdb_id=$INFO[ListItem.IMDBNumber]&amp;type=movie&amp;plugincategory=$INFO[ListItem.Title,Lists containing ,])</onclick>
+                <onclick>Container.Update(plugin://plugin.video.themoviedb.helper/?info=trakt_inlists&amp;imdb_id=$INFO[ListItem.IMDBNumber]&amp;type=movie&amp;plugincategory=$INFO[ListItem.Title,$LOCALIZE[31077] ,])</onclick>
                 <visible>String.IsEqual(ListItem.DBType,movie)</visible>
+                <visible>!Skin.HasSetting(DisableExtendedInfo)</visible>
             </item>
         </content>
     </include>

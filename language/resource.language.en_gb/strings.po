@@ -355,9 +355,49 @@ msgctxt "#31068"
 msgid "Cloud cover"
 msgstr ""
 
+#: /1080i/Includes_Items.xml
+msgctxt "#31069"
+msgid "From Studio"
+msgstr ""
+
+#: /1080i/Includes_Items.xml
+msgctxt "#31070"
+msgid "In Genre"
+msgstr ""
+
+#: /1080i/Includes_Items.xml
+msgctxt "#31071"
+msgid "From Year"
+msgstr ""
+
 #: /1080i/DialogButtonMenu.xml
 msgctxt "#31072"
 msgid "Power Menu"
+msgstr ""
+
+#: /1080i/Includes_Items.xml
+msgctxt "#31073"
+msgid "From"
+msgstr ""
+
+#: /1080i/Includes_Items.xml
+msgctxt "#31074"
+msgid "Starring Cast Members"
+msgstr ""
+
+#: /1080i/Includes_Items.xml
+msgctxt "#31075"
+msgid "Keywords for"
+msgstr ""
+
+#: /1080i/Includes_Items.xml
+msgctxt "#31076"
+msgid "In Lists"
+msgstr ""
+
+#: /1080i/Includes_Items.xml
+msgctxt "#31077"
+msgid "Lists containing"
 msgstr ""
 
 #: /1080i/SkinSettings.xml
