@@ -169,7 +169,7 @@
                     <control type="image">
                         <left>16</left>
                         <width>128</width>
-                        <bordersize>35</bordersize>
+                        <bordersize>36</bordersize>
                         <texture colordiffuse="dialog_fg_70">diffuse/circle.png</texture>
                     </control>
                     <control type="image">

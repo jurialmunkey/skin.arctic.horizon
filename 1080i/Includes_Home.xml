@@ -543,7 +543,7 @@
     </include>
 
     <include name="Home_Menu_Header">
-        <param name="labelvisible" default="true" />
+        <param name="iconvisible" default="true" />
         <param name="width" default="450" />
         <definition>
             <control type="group">
@@ -565,14 +565,15 @@
                     <right>41</right>
                     <texture colordiffuse="$VAR[Defs_HomeMenu_Line_FG]">common/white.png</texture>
                 </control>
-                <control type="image">
+                <include content="Object_Control" condition="$PARAM[iconvisible]">
+                    <param name="type" value="image" />
                     <left>40</left>
                     <bottom>-4</bottom>
                     <width>item_list_height</width>
                     <height>item_list_height</height>
                     <bordersize>8</bordersize>
                     <texture background="true" colordiffuse="$VAR[Defs_HomeMenu_Icon]">$PARAM[icon]</texture>
-                </control>
+                </include>
             </control>
         </definition>
     </include>
@@ -580,9 +581,10 @@
     <include name="Home_Menu">
         <param name="focusbutton" default="false" />
         <param name="icononly" default="false" />
+        <param name="top" default="view_pad" />
         <definition>
             <control type="list" id="$PARAM[id]">
-                <top>view_pad</top>
+                <top>$PARAM[top]</top>
                 <bottom>view_pad</bottom>
                 <orientation>vertical</orientation>
                 <itemlayout height="item_list_height" width="160">
@@ -637,15 +639,18 @@
                 <param name="background" value="false" />
                 <param name="logohastext" value="false" />
                 <param name="colordiffuse" value="$VAR[Defs_HomeMenu_Background]" />
-                <control type="group">
-                    <top>view_top</top>
+                <include content="Object_Control" condition="Skin.HasSetting(DisableHomeIcon)">
+                    <param name="type" value="group" />
+                    <top>120</top>
                     <include content="Home_Menu_Header">
                         <param name="width" value="160" />
                         <param name="icon" value="special://skin/extras/icons/home.png" />
+                        <param name="iconvisible" value="False" />
                     </include>
                     <include content="Home_Menu">
                         <param name="id" value="$PARAM[mainmenu-id]" />
                         <param name="font" value="font_mainmenu" />
+                        <param name="top" value="view_pad" />
                         <onfocus>ClearProperty(TMDbHelper.WidgetContainer,Home)</onfocus>
                         <onback>3000</onback>
                         <onfocus>ClearProperty(WidgetMovement)</onfocus>
@@ -654,7 +659,28 @@
                         <onfocus>ClearProperty(301Click)</onfocus>
                         <content><include>skinshortcuts-mainmenu</include></content>
                     </include>
-                </control>
+                </include>
+                <include content="Object_Control" condition="!Skin.HasSetting(DisableHomeIcon)">
+                    <param name="type" value="group" />
+                    <top>view_top</top>
+                    <include content="Home_Menu_Header">
+                        <param name="width" value="160" />
+                        <param name="icon" value="special://skin/extras/icons/home.png" />
+                        <param name="iconvisible" value="True" />
+                    </include>
+                    <include content="Home_Menu">
+                        <param name="id" value="$PARAM[mainmenu-id]" />
+                        <param name="font" value="font_mainmenu" />
+                        <param name="top" value="view_pad" />
+                        <onfocus>ClearProperty(TMDbHelper.WidgetContainer,Home)</onfocus>
+                        <onback>3000</onback>
+                        <onfocus>ClearProperty(WidgetMovement)</onfocus>
+                        <onfocus>ClearProperty(WidgetFocus)</onfocus>
+                        <onfocus condition="String.IsEmpty(Window.Property(301Click))">SetFocus(3992)</onfocus>
+                        <onfocus>ClearProperty(301Click)</onfocus>
+                        <content><include>skinshortcuts-mainmenu</include></content>
+                    </include>
+                </include>
             </include>
         </definition>
     </include>

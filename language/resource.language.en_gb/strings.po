@@ -290,6 +290,11 @@ msgctxt "#31055"
 msgid "Cast Members Also Feature In"
 msgstr ""
 
+#: /1080i/SkinSettings.xml
+msgctxt "#31056"
+msgid "Show home icon on main menu"
+msgstr ""
+
 #: /1080i/DialogVideoInfo.xml
 msgctxt "#31057"
 msgid "Films in the"
