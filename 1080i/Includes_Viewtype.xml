@@ -358,11 +358,11 @@
                     <visible>Control.HasFocus($PARAM[id]) | Control.HasFocus($PARAM[altid])</visible>
                     <control type="image">
                         <bordersize>7</bordersize>
-                        <texture border="10" colordiffuse="$VAR[ColorSelectBox]">common/box.png</texture>
+                        <texture border="10" colordiffuse="$VAR[ColorHighlight]">common/box.png</texture>
                     </control>
                     <control type="image">
                         <bordersize>7</bordersize>
-                        <texture border="10" colordiffuse="$VAR[ColorSelectBox2]">common/box-gradient-vertical.png</texture>
+                        <texture border="10" colordiffuse="$VAR[ColorGradient]">common/box-gradient-vertical.png</texture>
                     </control>
                 </include>
                 <!-- Image -->
@@ -489,11 +489,11 @@
                     <visible>Control.HasFocus($PARAM[id]) | Control.HasFocus($PARAM[altid])</visible>
                     <control type="image">
                         <bordersize>7</bordersize>
-                        <texture border="10" colordiffuse="$VAR[ColorSelectBox]">common/box.png</texture>
+                        <texture border="10" colordiffuse="$VAR[ColorHighlight]">common/box.png</texture>
                     </control>
                     <control type="image">
                         <bordersize>7</bordersize>
-                        <texture border="10" colordiffuse="$VAR[ColorSelectBox2]">common/box-gradient-vertical.png</texture>
+                        <texture border="10" colordiffuse="$VAR[ColorGradient]">common/box-gradient-vertical.png</texture>
                     </control>
                 </include>
                 <control type="group">
@@ -560,11 +560,11 @@
                         <bottom>-$PARAM[textbox-height]</bottom>
                         <control type="image">
                             <bordersize>7</bordersize>
-                            <texture border="10" colordiffuse="$VAR[ColorSelectBox]">common/box.png</texture>
+                            <texture border="10" colordiffuse="$VAR[ColorHighlight]">common/box.png</texture>
                         </control>
                         <control type="image">
                             <bordersize>7</bordersize>
-                            <texture border="10" colordiffuse="$VAR[ColorSelectBox2]">common/box-gradient-vertical.png</texture>
+                            <texture border="10" colordiffuse="$VAR[ColorGradient]">common/box-gradient-vertical.png</texture>
                         </control>
                     </include>
                     <include condition="$PARAM[selectbox] + !$PARAM[textpanel]" content="View_Selectbox">
@@ -572,11 +572,11 @@
                         <visible>Control.HasFocus($PARAM[id]) | Control.HasFocus($PARAM[altid])</visible>
                         <control type="image">
                             <bordersize>7</bordersize>
-                            <texture border="10" colordiffuse="$VAR[ColorSelectBox]">common/box.png</texture>
+                            <texture border="10" colordiffuse="$VAR[ColorHighlight]">common/box.png</texture>
                         </control>
                         <control type="image">
                             <bordersize>7</bordersize>
-                            <texture border="10" colordiffuse="$VAR[ColorSelectBox2]">common/box-gradient-vertical.png</texture>
+                            <texture border="10" colordiffuse="$VAR[ColorGradient]">common/box-gradient-vertical.png</texture>
                         </control>
                     </include>
                     <include content="Object_Artwork">

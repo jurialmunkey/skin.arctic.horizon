@@ -110,8 +110,8 @@
             <nested />
             <texturebg colordiffuse="00ffffff" border="4">diffuse/progress-bg.png</texturebg>
             <lefttexture colordiffuse="00ffffff" border="4">diffuse/progress-left.png</lefttexture>
-            <midtexture colordiffuse="$VAR[ColorHighlight3]" border="4" diffuse="progress/diffuse.png">diffuse/progress-end.png</midtexture>
-            <righttexture colordiffuse="$VAR[ColorHighlight3]" border="4" diffuse="progress/diffuse-end.png">diffuse/progress-right.png</righttexture>
+            <midtexture colordiffuse="$VAR[ColorGradient]" border="4" diffuse="progress/diffuse.png">diffuse/progress-end.png</midtexture>
+            <righttexture colordiffuse="$VAR[ColorGradient]" border="4" diffuse="progress/diffuse-end.png">diffuse/progress-right.png</righttexture>
             <include content="Defs_Progress_Colorfade">
                 <param name="id" value="$PARAM[id]" />
             </include>
@@ -206,7 +206,7 @@
                 <texture colordiffuse="$VAR[ColorHighlight]">common/white.png</texture>
             </control>
             <control type="image">
-                <texture colordiffuse="$VAR[ColorHighlight3]">common/white-gradient.png</texture>
+                <texture colordiffuse="$VAR[ColorGradient]">common/white-gradient.png</texture>
             </control>
         </control>
     </include>
@@ -611,8 +611,8 @@
         <textureradiofocus colordiffuse="dialog_fg_70">buttons/radio-on.png</textureradiofocus>
         <textureradionofocus colordiffuse="dialog_fg_30">buttons/radio-off.png</textureradionofocus>
         <focusedcolor>Selected</focusedcolor>
-        <alttexturefocus colordiffuse="$VAR[ColorHighlight3]">common/white-gradient.png</alttexturefocus>
-        <texturefocus colordiffuse="$VAR[ColorHighlight3]">common/white-gradient.png</texturefocus>
+        <alttexturefocus colordiffuse="$VAR[ColorGradient]">common/white-gradient.png</alttexturefocus>
+        <texturefocus colordiffuse="$VAR[ColorGradient]">common/white-gradient.png</texturefocus>
     </include>
 
     <include name="Defs_SettingsTrick">
@@ -679,7 +679,7 @@
                         <texture colordiffuse="$VAR[ColorHighlight]">common/white.png</texture>
                     </control>
                     <control type="image">
-                        <texture colordiffuse="$VAR[ColorHighlight3]">common/white-gradient.png</texture>
+                        <texture colordiffuse="$VAR[ColorGradient]">common/white-gradient.png</texture>
                     </control>
                     <control type="group">
                         <width>item_list_height</width>
@@ -705,7 +705,7 @@
     <!-- Settings Buttons -->
     <variable name="Defs_Settings_ToggleButton_Color">
         <value condition="Control.HasFocus(300) | Control.HasFocus(20)">00ffffff</value>
-        <value>$VAR[ColorHighlight3]</value>
+        <value>$VAR[ColorGradient]</value>
     </variable>
     <variable name="Defs_Settings_ToggleButton_Text">
         <value condition="Control.HasFocus(300) | Control.HasFocus(20)">dialog_fg_70</value>
@@ -774,7 +774,7 @@
                         <aspectratio>keep</aspectratio>
                     </control>
                     <control type="image">
-                        <texture colordiffuse="$VAR[ColorHighlight3]">dialog/loading-spinner.png</texture>
+                        <texture colordiffuse="$VAR[ColorGradient]">dialog/loading-spinner.png</texture>
                         <aspectratio>keep</aspectratio>
                         <animation effect="fade" condition="true" start="0" end="75" pulse="true" time="1000">Conditional</animation>
                     </control>

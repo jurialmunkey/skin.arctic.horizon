@@ -61,8 +61,8 @@
                 <info>System.Progressbar</info>
                 <texturebg colordiffuse="00ffffff" border="4">diffuse/progress-bg.png</texturebg>
                 <lefttexture colordiffuse="00ffffff" border="4">diffuse/progress-left.png</lefttexture>
-                <midtexture colordiffuse="$VAR[ColorHighlight3]" border="4" diffuse="progress/diffuse.png">diffuse/progress-end.png</midtexture>
-                <righttexture colordiffuse="$VAR[ColorHighlight3]" border="4" diffuse="progress/diffuse-end.png">diffuse/progress-right.png</righttexture>
+                <midtexture colordiffuse="$VAR[ColorGradient]" border="4" diffuse="progress/diffuse.png">diffuse/progress-end.png</midtexture>
+                <righttexture colordiffuse="$VAR[ColorGradient]" border="4" diffuse="progress/diffuse-end.png">diffuse/progress-right.png</righttexture>
                 <include content="Defs_Progress_Colorfade">
                     <param name="id" value="20" />
                 </include>

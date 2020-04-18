@@ -52,7 +52,7 @@
                     <visible>$PARAM[selectbox]</visible>
                 </control>
                 <control type="image">
-                    <texture colordiffuse="$VAR[ColorHighlight3]" border="8">common/box-gradient.png</texture>
+                    <texture colordiffuse="$VAR[ColorGradient]" border="8">common/box-gradient.png</texture>
                     <visible>$PARAM[selectbox]</visible>
                 </control>
                 <control type="image">
@@ -325,7 +325,7 @@
                         <visible>$PARAM[selectbox]</visible>
                     </control>
                     <control type="image">
-                        <texture colordiffuse="$VAR[ColorHighlight3]" border="8">common/box-gradient.png</texture>
+                        <texture colordiffuse="$VAR[ColorGradient]" border="8">common/box-gradient.png</texture>
                         <visible>$PARAM[selectbox]</visible>
                     </control>
                     <control type="image">
@@ -432,7 +432,7 @@
                 <left>0</left>
                 <width>517</width>
                 <top>4</top>
-                <texture colordiffuse="$VAR[ColorHighlight3]" border="10">common/box-gradient.png</texture>
+                <texture colordiffuse="$VAR[ColorGradient]" border="10">common/box-gradient.png</texture>
                 <visible>$PARAM[selectbox]</visible>
                 <visible>$PARAM[visible]</visible>
             </control>

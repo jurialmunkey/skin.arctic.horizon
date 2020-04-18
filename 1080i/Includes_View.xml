@@ -312,7 +312,7 @@
                 <right>15</right>
                 <width>48</width>
                 <height>48</height>
-                <texture colordiffuse="$VAR[ColorSelectBox]" border="10">$VAR[Image_Overlay_Corner]</texture>
+                <texture colordiffuse="$VAR[ColorHighlight]" border="10">$VAR[Image_Overlay_Corner]</texture>
             </control>
             <control type="image">
                 <top>16</top>
@@ -351,10 +351,10 @@
                     <height>50%</height>
                     <visible>!Container($PARAM[id]).Position(0) + ![Container($PARAM[id]).Position(1) + Integer.IsLess(Container($PARAM[id]).NumAllItems,7)] + ![Container($PARAM[id]).Position(2) + Integer.IsLess(Container($PARAM[id]).NumAllItems,5)] + ![Container($PARAM[id]).Position(3) + Integer.IsLess(Container($PARAM[id]).NumAllItems,3)]</visible>
                     <control type="image">
-                        <texture colordiffuse="$VAR[ColorHighlight2]" border="10">common/white.png</texture>
+                        <texture colordiffuse="$VAR[ColorHighlight]" border="10">common/white.png</texture>
                     </control>
                     <control type="image">
-                        <texture colordiffuse="$VAR[ColorHighlight3]" border="10">common/white-gradient.png</texture>
+                        <texture colordiffuse="$VAR[ColorGradient]" border="10">common/white-gradient.png</texture>
                     </control>
                 </control>
                 <control type="group">
@@ -362,18 +362,18 @@
                     <height>50%</height>
                     <visible>!Container($PARAM[id]).Position(6)</visible>
                     <control type="image">
-                        <texture colordiffuse="$VAR[ColorHighlight2]" border="10">common/white.png</texture>
+                        <texture colordiffuse="$VAR[ColorHighlight]" border="10">common/white.png</texture>
                     </control>
                     <control type="image">
-                        <texture colordiffuse="$VAR[ColorHighlight3]" border="10">common/white-gradient.png</texture>
+                        <texture colordiffuse="$VAR[ColorGradient]" border="10">common/white-gradient.png</texture>
                     </control>
                 </control>
                 <control type="group">
                     <control type="image">
-                        <texture colordiffuse="$VAR[ColorHighlight2]" border="10">common/box.png</texture>
+                        <texture colordiffuse="$VAR[ColorHighlight]" border="10">common/box.png</texture>
                     </control>
                     <control type="image">
-                        <texture colordiffuse="$VAR[ColorHighlight3]" border="10">common/box-gradient.png</texture>
+                        <texture colordiffuse="$VAR[ColorGradient]" border="10">common/box-gradient.png</texture>
                     </control>
                 </control>
                 <nested />
@@ -384,7 +384,7 @@
     <include name="View_Selectbox">
         <param name="overlay" default="true" />
         <param name="pad" default="-12" />
-        <param name="colordiffuse" default="$VAR[ColorSelectBox]" />
+        <param name="colordiffuse" default="$VAR[ColorHighlight]" />
         <param name="focusbounce" default="true" />
         <param name="focusbounce-conditional" default="false" />
         <param name="gradient" default="true" />
@@ -406,7 +406,7 @@
                     </control>
                     <control type="image">
                         <bordersize>20</bordersize>
-                        <texture colordiffuse="$VAR[ColorSelectBox2]" border="20">common/selectbox-gradient.png</texture>
+                        <texture colordiffuse="$VAR[ColorGradient]" border="20">common/selectbox-gradient.png</texture>
                         <visible>$PARAM[gradient]</visible>
                     </control>
                 </control>

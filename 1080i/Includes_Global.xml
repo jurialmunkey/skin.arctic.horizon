@@ -37,10 +37,18 @@
     </include>
 
     <include name="Global_Background_BlurControl">
-        <control type="image" id="7975">
+        <include content="Object_Control" condition="System.HasAddon(script.colorbox) + !Skin.HasSetting(DisableBlur)">
+            <param name="type" value="image" />
+            <param name="id" value="7975" />
             <include>Defs_Offscreen</include>
             <texture background="true">$VAR[Global_Background_ImageBlur_Var]</texture>
-        </control>
+        </include>
+        <include content="Object_Control" condition="System.HasAddon(script.colorbox) + Skin.HasSetting(EnableColorMatch)">
+            <param name="type" value="image" />
+            <param name="id" value="7977" />
+            <include>Defs_Offscreen</include>
+            <texture background="true">$VAR[Global_Background_ColorMatch_Var]</texture>
+        </include>
     </include>
 
     <include name="Global_Background">
@@ -110,7 +118,7 @@
 
     <include name="Global_Background_Overlay">
         <control type="image">
-            <texture colordiffuse="$VAR[ColorHighlight4]" background="true">common/vignette-white.png</texture>
+            <texture colordiffuse="$VAR[ColorOverlay]" background="true">common/vignette-white.png</texture>
         </control>
         <control type="image">
             <texture background="true">common/vignette-full.png</texture>
@@ -155,6 +163,21 @@
         <value>$VAR[Global_Background_Image_Var]</value>
     </variable>
 
+
+    <variable name="Global_Background_ColorMatch_Var">
+        <!-- Season View Episodes List -->
+        <value condition="Control.HasFocus(530) + !String.IsEmpty(Container(530).ListItem.Art(season.poster))">$INFO[Container(530).ListItem.Art(season.poster)]</value>
+
+        <!-- General Artwork -->
+        <value condition="!String.IsEmpty(Container.ListItem.Art(season.poster))">$INFO[Container.ListItem.Art(season.poster)]</value>
+        <value condition="!String.IsEmpty(Container.ListItem.Art(tvshow.poster))">$INFO[Container.ListItem.Art(tvshow.poster)]</value>
+        <value condition="!String.IsEmpty(Container.ListItem.Art(poster))">$INFO[Container.ListItem.Art(poster)]</value>
+        <value condition="!String.IsEmpty(Container.ListItem.Art(thumb)) + !String.IsEqual(Container.ListItem.Art(thumb),Container.ListItem.ActualIcon)">$INFO[Container.ListItem.Art(thumb)]</value>
+
+        <!-- Pictures -->
+        <value condition="Window.IsVisible(MyPics.xml) + !String.IsEmpty(ListItem.FileNameAndPath)">$INFO[ListItem.FileNameAndPath]</value>
+        <value>common/null.png</value>
+    </variable>
     <variable name="Global_Background_ImageBlur_Var">
         <!-- Parent Folder -->
         <value condition="Skin.HasSetting(NoFanart) | ListItem.IsParentFolder">$VAR[Global_Background_Image_NoFanart]</value>
@@ -166,7 +189,7 @@
         <value condition="!String.IsEmpty(Container.ListItem.Art(season.poster))">$INFO[Container.ListItem.Art(season.poster)]</value>
         <value condition="!String.IsEmpty(Container.ListItem.Art(tvshow.poster))">$INFO[Container.ListItem.Art(tvshow.poster)]</value>
         <value condition="!String.IsEmpty(Container.ListItem.Art(poster))">$INFO[Container.ListItem.Art(poster)]</value>
-        <value condition="!String.IsEmpty(Container.ListItem.Art(thumb)) + !String.StartsWith(Container.ListItem.Art(thumb),special://skin/extras/icons/) + !String.StartsWith(Container.ListItem.Art(thumb),Container.ListItem.ActualIcon)">$INFO[Container.ListItem.Art(thumb)]</value>
+        <value condition="!String.IsEmpty(Container.ListItem.Art(thumb)) + !String.IsEqual(Container.ListItem.Art(thumb),Container.ListItem.ActualIcon)">$INFO[Container.ListItem.Art(thumb)]</value>
 
         <!-- Pictures -->
         <value condition="Window.IsVisible(MyPics.xml) + !String.IsEmpty(ListItem.FileNameAndPath)">$INFO[ListItem.FileNameAndPath]</value>

@@ -79,7 +79,7 @@
                             <control type="image">
                                 <top>4</top>
                                 <right>4</right>
-                                <texture colordiffuse="$VAR[ColorHighlight3]" border="10">common/box-gradient.png</texture>
+                                <texture colordiffuse="$VAR[ColorGradient]" border="10">common/box-gradient.png</texture>
                             </control>
                             <include content="Object_PVR_Icon">
                                 <param name="font" value="font_statusbar_bold" />
@@ -95,7 +95,7 @@
                             <control type="image">
                                 <top>4</top>
                                 <right>4</right>
-                                <texture colordiffuse="$VAR[ColorHighlight3]" border="10">common/box-gradient.png</texture>
+                                <texture colordiffuse="$VAR[ColorGradient]" border="10">common/box-gradient.png</texture>
                             </control>
                             <include content="View_PVR_OSD_ItemLayout_Item">
                                 <param name="fgcolor" value="Selected" />

@@ -493,8 +493,8 @@
                 <info>Player.Progress</info>
                 <texturebg colordiffuse="00ffffff" border="4">diffuse/progress-bg.png</texturebg>
                 <lefttexture colordiffuse="00ffffff" border="4">diffuse/progress-left.png</lefttexture>
-                <midtexture colordiffuse="$VAR[ColorHighlight3]" border="4" diffuse="progress/diffuse.png">diffuse/progress-end.png</midtexture>
-                <righttexture colordiffuse="$VAR[ColorHighlight3]" border="4" diffuse="progress/diffuse-end.png">diffuse/progress-right.png</righttexture>
+                <midtexture colordiffuse="$VAR[ColorGradient]" border="4" diffuse="progress/diffuse.png">diffuse/progress-end.png</midtexture>
+                <righttexture colordiffuse="$VAR[ColorGradient]" border="4" diffuse="progress/diffuse-end.png">diffuse/progress-right.png</righttexture>
                 <include content="Defs_Progress_Colorfade">
                     <param name="id" value="499" />
                 </include>
@@ -516,8 +516,8 @@
                 <info>PVR.EpgEventProgress</info>
                 <texturebg colordiffuse="00ffffff" border="4">diffuse/progress-bg.png</texturebg>
                 <lefttexture colordiffuse="00ffffff" border="4">diffuse/progress-left.png</lefttexture>
-                <midtexture colordiffuse="$VAR[ColorHighlight3]" border="4" diffuse="progress/diffuse.png">diffuse/progress-end.png</midtexture>
-                <righttexture colordiffuse="$VAR[ColorHighlight3]" border="4" diffuse="progress/diffuse-end.png">diffuse/progress-right.png</righttexture>
+                <midtexture colordiffuse="$VAR[ColorGradient]" border="4" diffuse="progress/diffuse.png">diffuse/progress-end.png</midtexture>
+                <righttexture colordiffuse="$VAR[ColorGradient]" border="4" diffuse="progress/diffuse-end.png">diffuse/progress-right.png</righttexture>
                 <include content="Defs_Progress_Colorfade">
                     <param name="id" value="498" />
                 </include>
@@ -977,7 +977,7 @@
                                 <texture colordiffuse="$VAR[ColorHighlight]">common/white.png</texture>
                             </control>
                             <control type="image">
-                                <texture colordiffuse="$VAR[ColorHighlight3]">common/white-gradient.png</texture>
+                                <texture colordiffuse="$VAR[ColorGradient]">common/white-gradient.png</texture>
                             </control>
                             <control type="label">
                                 <font>font_tiny</font>

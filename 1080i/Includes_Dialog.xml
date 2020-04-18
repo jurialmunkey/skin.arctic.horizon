@@ -31,7 +31,7 @@
                         <aspectratio>keep</aspectratio>
                     </control>
                     <control type="image">
-                        <texture colordiffuse="$VAR[ColorHighlight3]">dialog/loading-spinner.png</texture>
+                        <texture colordiffuse="$VAR[ColorGradient]">dialog/loading-spinner.png</texture>
                         <aspectratio>keep</aspectratio>
                         <animation effect="fade" condition="true" start="0" end="75" pulse="true" time="1000">Conditional</animation>
                     </control>
@@ -191,7 +191,7 @@
                                 <texture colordiffuse="$VAR[ColorHighlight]">common/white.png</texture>
                             </control>
                             <control type="image">
-                                <texture colordiffuse="$VAR[ColorHighlight3]">common/white-gradient.png</texture>
+                                <texture colordiffuse="$VAR[ColorGradient]">common/white-gradient.png</texture>
                             </control>
                             <control type="label">
                                 <font>font_tiny</font>
@@ -264,7 +264,7 @@
                     <aspectratio align="center" aligny="center">keep</aspectratio>
                 </control>
                 <control type="image">
-                    <texture colordiffuse="$VAR[ColorHighlight3]">$INFO[$PARAM[progress],progress/circle/p,.png]</texture>
+                    <texture colordiffuse="$VAR[ColorGradient]">$INFO[$PARAM[progress],progress/circle/p,.png]</texture>
                     <animation effect="fade" end="66" condition="true">Conditional</animation>
                     <aspectratio align="center" aligny="center">keep</aspectratio>
                     <include content="Defs_Progress_Colorfade">
@@ -416,10 +416,10 @@
             <nested />
             <height>item_list_height</height>
             <control type="image">
-                <texture colordiffuse="$VAR[ColorHighlight2]" border="8" flipy="true">common/box.png</texture>
+                <texture colordiffuse="$VAR[ColorHighlight]" border="8" flipy="true">common/box.png</texture>
             </control>
             <control type="image">
-                <texture colordiffuse="$VAR[ColorHighlight3]" border="8" flipy="true">common/box-gradient.png</texture>
+                <texture colordiffuse="$VAR[ColorGradient]" border="8" flipy="true">common/box-gradient.png</texture>
             </control>
         </control>
     </include>
@@ -899,7 +899,7 @@
                     <control type="image">
                         <top>$PARAM[selectpad]</top>
                         <bottom>$PARAM[selectpad]</bottom>
-                        <texture colordiffuse="$VAR[ColorHighlight3]">common/white-gradient.png</texture>
+                        <texture colordiffuse="$VAR[ColorGradient]">common/white-gradient.png</texture>
                         <animation effect="fade" start="100" end="50" condition="!Control.HasFocus($PARAM[id])">Conditional</animation>
                     </control>
                     <include content="Dialog_Standard_List_Itemlayout">
