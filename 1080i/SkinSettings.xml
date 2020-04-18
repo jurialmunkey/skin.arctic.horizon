@@ -219,8 +219,8 @@
                         <visible>Integer.IsEqual(Window.Property(CurrentFocus),9001)</visible>
                         <include>Defs_Settings_Button</include>
                         <label>$LOCALIZE[31056]</label>
-                        <selected>!Skin.HasSetting(DisableHomeIcon)</selected>
-                        <onclick>Skin.ToggleSetting(DisableHomeIcon)</onclick>
+                        <selected>Skin.HasSetting(EnableHomeIcon)</selected>
+                        <onclick>Skin.ToggleSetting(EnableHomeIcon)</onclick>
                     </control>
 
                     <control type="button" id="19108" description="Skin Logo">

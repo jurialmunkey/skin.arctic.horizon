@@ -639,7 +639,7 @@
                 <param name="background" value="false" />
                 <param name="logohastext" value="false" />
                 <param name="colordiffuse" value="$VAR[Defs_HomeMenu_Background]" />
-                <include content="Object_Control" condition="Skin.HasSetting(DisableHomeIcon)">
+                <include content="Object_Control" condition="!Skin.HasSetting(EnableHomeIcon)">
                     <param name="type" value="group" />
                     <top>120</top>
                     <include content="Home_Menu_Header">
@@ -660,7 +660,7 @@
                         <content><include>skinshortcuts-mainmenu</include></content>
                     </include>
                 </include>
-                <include content="Object_Control" condition="!Skin.HasSetting(DisableHomeIcon)">
+                <include content="Object_Control" condition="Skin.HasSetting(EnableHomeIcon)">
                     <param name="type" value="group" />
                     <top>view_top</top>
                     <include content="Home_Menu_Header">

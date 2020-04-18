@@ -104,6 +104,8 @@
                             <param name="label" value="$ADDON[service.upnext 30010]" />
                             <param name="icon" value="special://skin/extras/icons/eye2.png" />
                             <param name="visible" value="true" />
+                            <param name="onup" value="" />
+                            <param name="ondown" value="" />
                         </include>
                         <include content="Object_Info_Button">
                             <param name="id" value="4013" />
@@ -111,6 +113,8 @@
                             <param name="label" value="$ADDON[service.upnext 30034]" />
                             <param name="icon" value="special://skin/extras/icons/disabled.png" />
                             <param name="visible" value="true" />
+                            <param name="onup" value="" />
+                            <param name="ondown" value="" />
                             <onclick>SetFocus(3013)</onclick>
                             <onclick>Action(Select)</onclick>
                         </include>
