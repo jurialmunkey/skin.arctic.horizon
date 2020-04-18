@@ -13,6 +13,11 @@
             <include>Defs_Hidden_List</include>
             <content><include>skinshortcuts-submenu-1</include></content>
         </control>
+        <control type="list" id="3701">
+            <description>Hidden container for grouplist ids</description>
+            <include>Defs_Hidden_List</include>
+            <content><include>skinshortcuts-template-widgetgrouplists</include></content>
+        </control>
         <control type="list" id="56560">
             <include>Defs_Offscreen</include>
             <orientation>horizontal</orientation>

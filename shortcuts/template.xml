@@ -76,8 +76,211 @@
                     <onleft>SetProperty(CurrentWidget,$INFO[System.CurrentControlID])</onleft>
                     <onleft>301</onleft>
                     <include>Home_Movement_Widgets_UpDown</include>
-                    <onup>SetFocus($PYTHON[49900 + int(mainmenuid) * 100])</onup>
-                    <ondown>SetFocus($PYTHON[50100 + int(mainmenuid) * 100])</ondown>
+                    <!-- <onup>SetFocus($PYTHON[49900 + int(mainmenuid) * 100])</onup>
+                    <ondown>SetFocus($PYTHON[50100 + int(mainmenuid) * 100])</ondown> -->
+                    <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) - 49])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 50]).Property(grouplistid)])</onup>
+                    <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) - 48])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 49]).Property(grouplistid)])</onup>
+                    <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) - 47])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 48]).Property(grouplistid)])</onup>
+                    <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) - 46])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 47]).Property(grouplistid)])</onup>
+                    <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) - 45])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 46]).Property(grouplistid)])</onup>
+                    <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) - 44])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 45]).Property(grouplistid)])</onup>
+                    <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) - 43])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 44]).Property(grouplistid)])</onup>
+                    <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) - 42])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 43]).Property(grouplistid)])</onup>
+                    <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) - 41])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 42]).Property(grouplistid)])</onup>
+                    <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) - 40])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 41]).Property(grouplistid)])</onup>
+                    <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) - 39])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 40]).Property(grouplistid)])</onup>
+                    <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) - 38])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 39]).Property(grouplistid)])</onup>
+                    <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) - 37])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 38]).Property(grouplistid)])</onup>
+                    <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) - 36])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 37]).Property(grouplistid)])</onup>
+                    <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) - 35])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 36]).Property(grouplistid)])</onup>
+                    <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) - 34])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 35]).Property(grouplistid)])</onup>
+                    <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) - 33])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 34]).Property(grouplistid)])</onup>
+                    <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) - 32])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 33]).Property(grouplistid)])</onup>
+                    <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) - 31])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 32]).Property(grouplistid)])</onup>
+                    <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) - 30])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 31]).Property(grouplistid)])</onup>
+                    <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) - 29])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 30]).Property(grouplistid)])</onup>
+                    <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) - 28])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 29]).Property(grouplistid)])</onup>
+                    <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) - 27])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 28]).Property(grouplistid)])</onup>
+                    <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) - 26])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 27]).Property(grouplistid)])</onup>
+                    <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) - 25])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 26]).Property(grouplistid)])</onup>
+                    <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) - 24])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 25]).Property(grouplistid)])</onup>
+                    <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) - 23])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 24]).Property(grouplistid)])</onup>
+                    <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) - 22])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 23]).Property(grouplistid)])</onup>
+                    <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) - 21])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 22]).Property(grouplistid)])</onup>
+                    <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) - 20])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 21]).Property(grouplistid)])</onup>
+                    <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) - 19])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 20]).Property(grouplistid)])</onup>
+                    <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) - 18])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 19]).Property(grouplistid)])</onup>
+                    <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) - 17])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 18]).Property(grouplistid)])</onup>
+                    <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) - 16])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 17]).Property(grouplistid)])</onup>
+                    <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) - 15])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 16]).Property(grouplistid)])</onup>
+                    <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) - 14])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 15]).Property(grouplistid)])</onup>
+                    <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) - 13])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 14]).Property(grouplistid)])</onup>
+                    <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) - 12])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 13]).Property(grouplistid)])</onup>
+                    <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) - 11])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 12]).Property(grouplistid)])</onup>
+                    <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) - 10])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 11]).Property(grouplistid)])</onup>
+                    <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) - 9])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 10]).Property(grouplistid)])</onup>
+                    <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) - 8])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 9]).Property(grouplistid)])</onup>
+                    <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) - 7])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 8]).Property(grouplistid)])</onup>
+                    <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) - 6])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 7]).Property(grouplistid)])</onup>
+                    <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) - 5])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 6]).Property(grouplistid)])</onup>
+                    <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) - 4])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 5]).Property(grouplistid)])</onup>
+                    <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) - 3])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 4]).Property(grouplistid)])</onup>
+                    <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) - 2])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 3]).Property(grouplistid)])</onup>
+                    <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) - 1])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 2]).Property(grouplistid)])</onup>
+                    <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) - 0])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 1]).Property(grouplistid)])</onup>
+                    <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) + 1])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 0]).Property(grouplistid)])</onup>
+                    <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) + 2])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 1]).Property(grouplistid)])</onup>
+                    <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) + 3])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 2]).Property(grouplistid)])</onup>
+                    <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) + 4])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 3]).Property(grouplistid)])</onup>
+                    <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) + 5])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 4]).Property(grouplistid)])</onup>
+                    <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) + 6])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 5]).Property(grouplistid)])</onup>
+                    <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) + 7])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 6]).Property(grouplistid)])</onup>
+                    <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) + 8])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 7]).Property(grouplistid)])</onup>
+                    <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) + 9])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 8]).Property(grouplistid)])</onup>
+                    <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) + 10])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 9]).Property(grouplistid)])</onup>
+                    <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) + 11])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 10]).Property(grouplistid)])</onup>
+                    <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) + 12])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 11]).Property(grouplistid)])</onup>
+                    <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) + 13])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 12]).Property(grouplistid)])</onup>
+                    <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) + 14])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 13]).Property(grouplistid)])</onup>
+                    <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) + 15])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 14]).Property(grouplistid)])</onup>
+                    <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) + 16])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 15]).Property(grouplistid)])</onup>
+                    <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) + 17])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 16]).Property(grouplistid)])</onup>
+                    <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) + 18])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 17]).Property(grouplistid)])</onup>
+                    <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) + 19])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 18]).Property(grouplistid)])</onup>
+                    <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) + 20])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 19]).Property(grouplistid)])</onup>
+                    <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) + 21])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 20]).Property(grouplistid)])</onup>
+                    <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) + 22])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 21]).Property(grouplistid)])</onup>
+                    <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) + 23])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 22]).Property(grouplistid)])</onup>
+                    <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) + 24])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 23]).Property(grouplistid)])</onup>
+                    <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) + 25])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 24]).Property(grouplistid)])</onup>
+                    <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) + 26])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 25]).Property(grouplistid)])</onup>
+                    <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) + 27])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 26]).Property(grouplistid)])</onup>
+                    <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) + 28])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 27]).Property(grouplistid)])</onup>
+                    <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) + 29])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 28]).Property(grouplistid)])</onup>
+                    <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) + 30])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 29]).Property(grouplistid)])</onup>
+                    <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) + 31])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 30]).Property(grouplistid)])</onup>
+                    <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) + 32])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 31]).Property(grouplistid)])</onup>
+                    <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) + 33])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 32]).Property(grouplistid)])</onup>
+                    <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) + 34])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 33]).Property(grouplistid)])</onup>
+                    <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) + 35])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 34]).Property(grouplistid)])</onup>
+                    <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) + 36])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 35]).Property(grouplistid)])</onup>
+                    <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) + 37])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 36]).Property(grouplistid)])</onup>
+                    <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) + 38])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 37]).Property(grouplistid)])</onup>
+                    <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) + 39])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 38]).Property(grouplistid)])</onup>
+                    <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) + 40])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 39]).Property(grouplistid)])</onup>
+                    <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) + 41])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 40]).Property(grouplistid)])</onup>
+                    <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) + 42])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 41]).Property(grouplistid)])</onup>
+                    <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) + 43])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 42]).Property(grouplistid)])</onup>
+                    <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) + 44])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 43]).Property(grouplistid)])</onup>
+                    <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) + 45])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 44]).Property(grouplistid)])</onup>
+                    <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) + 46])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 45]).Property(grouplistid)])</onup>
+                    <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) + 47])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 46]).Property(grouplistid)])</onup>
+                    <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) + 48])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 47]).Property(grouplistid)])</onup>
+                    <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) + 49])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 48]).Property(grouplistid)])</onup>
+                    <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) + 50])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 49]).Property(grouplistid)])</onup>
+
+                    <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) - 49])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 50]).Property(grouplistid)])</ondown>
+                    <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) - 48])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 49]).Property(grouplistid)])</ondown>
+                    <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) - 47])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 48]).Property(grouplistid)])</ondown>
+                    <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) - 46])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 47]).Property(grouplistid)])</ondown>
+                    <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) - 45])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 46]).Property(grouplistid)])</ondown>
+                    <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) - 44])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 45]).Property(grouplistid)])</ondown>
+                    <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) - 43])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 44]).Property(grouplistid)])</ondown>
+                    <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) - 42])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 43]).Property(grouplistid)])</ondown>
+                    <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) - 41])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 42]).Property(grouplistid)])</ondown>
+                    <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) - 40])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 41]).Property(grouplistid)])</ondown>
+                    <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) - 39])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 40]).Property(grouplistid)])</ondown>
+                    <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) - 38])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 39]).Property(grouplistid)])</ondown>
+                    <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) - 37])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 38]).Property(grouplistid)])</ondown>
+                    <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) - 36])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 37]).Property(grouplistid)])</ondown>
+                    <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) - 35])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 36]).Property(grouplistid)])</ondown>
+                    <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) - 34])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 35]).Property(grouplistid)])</ondown>
+                    <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) - 33])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 34]).Property(grouplistid)])</ondown>
+                    <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) - 32])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 33]).Property(grouplistid)])</ondown>
+                    <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) - 31])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 32]).Property(grouplistid)])</ondown>
+                    <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) - 30])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 31]).Property(grouplistid)])</ondown>
+                    <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) - 29])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 30]).Property(grouplistid)])</ondown>
+                    <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) - 28])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 29]).Property(grouplistid)])</ondown>
+                    <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) - 27])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 28]).Property(grouplistid)])</ondown>
+                    <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) - 26])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 27]).Property(grouplistid)])</ondown>
+                    <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) - 25])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 26]).Property(grouplistid)])</ondown>
+                    <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) - 24])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 25]).Property(grouplistid)])</ondown>
+                    <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) - 23])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 24]).Property(grouplistid)])</ondown>
+                    <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) - 22])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 23]).Property(grouplistid)])</ondown>
+                    <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) - 21])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 22]).Property(grouplistid)])</ondown>
+                    <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) - 20])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 21]).Property(grouplistid)])</ondown>
+                    <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) - 19])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 20]).Property(grouplistid)])</ondown>
+                    <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) - 18])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 19]).Property(grouplistid)])</ondown>
+                    <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) - 17])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 18]).Property(grouplistid)])</ondown>
+                    <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) - 16])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 17]).Property(grouplistid)])</ondown>
+                    <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) - 15])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 16]).Property(grouplistid)])</ondown>
+                    <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) - 14])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 15]).Property(grouplistid)])</ondown>
+                    <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) - 13])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 14]).Property(grouplistid)])</ondown>
+                    <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) - 12])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 13]).Property(grouplistid)])</ondown>
+                    <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) - 11])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 12]).Property(grouplistid)])</ondown>
+                    <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) - 10])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 11]).Property(grouplistid)])</ondown>
+                    <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) - 9])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 10]).Property(grouplistid)])</ondown>
+                    <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) - 8])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 9]).Property(grouplistid)])</ondown>
+                    <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) - 7])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 8]).Property(grouplistid)])</ondown>
+                    <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) - 6])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 7]).Property(grouplistid)])</ondown>
+                    <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) - 5])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 6]).Property(grouplistid)])</ondown>
+                    <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) - 4])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 5]).Property(grouplistid)])</ondown>
+                    <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) - 3])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 4]).Property(grouplistid)])</ondown>
+                    <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) - 2])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 3]).Property(grouplistid)])</ondown>
+                    <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) - 1])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 2]).Property(grouplistid)])</ondown>
+                    <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) - 0])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 1]).Property(grouplistid)])</ondown>
+                    <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) + 1])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 0]).Property(grouplistid)])</ondown>
+                    <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) + 2])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 1]).Property(grouplistid)])</ondown>
+                    <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) + 3])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 2]).Property(grouplistid)])</ondown>
+                    <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) + 4])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 3]).Property(grouplistid)])</ondown>
+                    <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) + 5])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 4]).Property(grouplistid)])</ondown>
+                    <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) + 6])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 5]).Property(grouplistid)])</ondown>
+                    <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) + 7])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 6]).Property(grouplistid)])</ondown>
+                    <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) + 8])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 7]).Property(grouplistid)])</ondown>
+                    <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) + 9])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 8]).Property(grouplistid)])</ondown>
+                    <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) + 10])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 9]).Property(grouplistid)])</ondown>
+                    <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) + 11])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 10]).Property(grouplistid)])</ondown>
+                    <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) + 12])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 11]).Property(grouplistid)])</ondown>
+                    <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) + 13])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 12]).Property(grouplistid)])</ondown>
+                    <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) + 14])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 13]).Property(grouplistid)])</ondown>
+                    <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) + 15])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 14]).Property(grouplistid)])</ondown>
+                    <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) + 16])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 15]).Property(grouplistid)])</ondown>
+                    <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) + 17])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 16]).Property(grouplistid)])</ondown>
+                    <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) + 18])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 17]).Property(grouplistid)])</ondown>
+                    <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) + 19])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 18]).Property(grouplistid)])</ondown>
+                    <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) + 20])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 19]).Property(grouplistid)])</ondown>
+                    <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) + 21])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 20]).Property(grouplistid)])</ondown>
+                    <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) + 22])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 21]).Property(grouplistid)])</ondown>
+                    <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) + 23])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 22]).Property(grouplistid)])</ondown>
+                    <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) + 24])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 23]).Property(grouplistid)])</ondown>
+                    <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) + 25])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 24]).Property(grouplistid)])</ondown>
+                    <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) + 26])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 25]).Property(grouplistid)])</ondown>
+                    <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) + 27])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 26]).Property(grouplistid)])</ondown>
+                    <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) + 28])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 27]).Property(grouplistid)])</ondown>
+                    <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) + 29])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 28]).Property(grouplistid)])</ondown>
+                    <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) + 30])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 29]).Property(grouplistid)])</ondown>
+                    <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) + 31])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 30]).Property(grouplistid)])</ondown>
+                    <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) + 32])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 31]).Property(grouplistid)])</ondown>
+                    <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) + 33])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 32]).Property(grouplistid)])</ondown>
+                    <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) + 34])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 33]).Property(grouplistid)])</ondown>
+                    <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) + 35])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 34]).Property(grouplistid)])</ondown>
+                    <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) + 36])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 35]).Property(grouplistid)])</ondown>
+                    <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) + 37])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 36]).Property(grouplistid)])</ondown>
+                    <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) + 38])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 37]).Property(grouplistid)])</ondown>
+                    <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) + 39])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 38]).Property(grouplistid)])</ondown>
+                    <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) + 40])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 39]).Property(grouplistid)])</ondown>
+                    <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) + 41])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 40]).Property(grouplistid)])</ondown>
+                    <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) + 42])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 41]).Property(grouplistid)])</ondown>
+                    <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) + 43])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 42]).Property(grouplistid)])</ondown>
+                    <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) + 44])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 43]).Property(grouplistid)])</ondown>
+                    <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) + 45])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 44]).Property(grouplistid)])</ondown>
+                    <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) + 46])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 45]).Property(grouplistid)])</ondown>
+                    <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) + 47])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 46]).Property(grouplistid)])</ondown>
+                    <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) + 48])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 47]).Property(grouplistid)])</ondown>
+                    <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) + 49])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 48]).Property(grouplistid)])</ondown>
+                    <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) + 50])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 49]).Property(grouplistid)])</ondown>
+
+
                     <onright>SetProperty(CurrentWidget,$INFO[System.CurrentControlID])</onright>
                     <onright>301</onright>
                     <control type="group" id="$PYTHON[30099 + int(mainmenuid) * 100]"><height>widgets_bumper_top</height></control>
@@ -791,4 +994,65 @@
         </controls>
     </other>
 
+    <other include="widgetgrouplists">
+        <property name="id" tag="property" attribute="name|id" />
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[1]">1</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[2]">2</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[3]">3</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[4]">4</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[5]">5</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[6]">6</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[7]">7</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[8]">8</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[9]">9</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[10]">10</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[11]">11</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[12]">12</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[13]">13</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[14]">14</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[15]">15</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[16]">16</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[17]">17</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[18]">18</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[19]">19</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[20]">20</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[21]">21</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[22]">22</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[23]">23</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[24]">24</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[25]">25</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[26]">26</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[27]">27</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[28]">28</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[29]">29</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[30]">30</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[31]">31</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[32]">32</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[33]">33</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[34]">34</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[35]">35</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[36]">36</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[37]">37</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[38]">38</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[39]">39</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[40]">40</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[41]">41</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[42]">42</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[43]">43</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[44]">44</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[45]">45</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[46]">46</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[47]">47</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[48]">48</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[49]">49</property>
+        <property name="mainmenuid">50</property>
+        <property name="visibility" tag="visible"/>
+        <controls>
+            <item>
+                <label>num-$SKINSHORTCUTS[id]</label>
+                <property name="grouplistid">$NUMBER[$PYTHON[50000 + int(mainmenuid) * 100]]</property>
+                <property name="visibility">$SKINSHORTCUTS[visibility]</property>
+            </item>
+        </controls>
+    </other>
 </template>
