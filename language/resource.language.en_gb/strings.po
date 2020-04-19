@@ -400,6 +400,11 @@ msgctxt "#31077"
 msgid "Lists containing"
 msgstr ""
 
+#: /1080i/Includes_Home.xml
+msgctxt "#31078"
+msgid "More Information"
+msgstr ""
+
 #: /1080i/SkinSettings.xml
 msgctxt "#31079"
 msgid "Pause when opening info dialog"

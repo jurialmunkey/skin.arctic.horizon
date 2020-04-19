@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
+
+    <variable name="Label_Showcase_PlayBrowse">
+        <value condition="Container(3001).ListItem.IsFolder">$LOCALIZE[1024]</value>
+        <value>$LOCALIZE[208]</value>
+    </variable>
+
     <variable name="Label_PVROSD_Title">
         <value condition="!String.IsEmpty(ListItem.Title)">$INFO[ListItem.Title]</value>
         <value condition="!String.IsEmpty(ListItem.Label)">$INFO[ListItem.Label]</value>
@@ -122,9 +128,18 @@
         <value>Overlay</value>
     </variable>
 
+    <variable name="Label_3001_Info_Title">
+        <value condition="[String.IsEqual(Container(3001).ListItem.DBType,season) | String.IsEqual(Container(3001).ListItem.DBType,episode)] + !String.IsEmpty(Container(3001).ListItem.TvShowTitle)">$INFO[Container(3001).ListItem.TvShowTitle]</value>
+        <value condition="String.IsEqual(Container(3001).ListItem.DBType,album) | String.IsEqual(Container(3001).ListItem.DBType,song)">$INFO[Container(3001).ListItem.Album]</value>
+        <value condition="!String.IsEmpty(Container(3001).ListItem.Title)">$INFO[Container(3001).ListItem.Title]</value>
+        <value condition="!String.IsEmpty(Container(3001).ListItem.Label)">$INFO[Container(3001).ListItem.Label]</value>
+        <value>$INFO[System.Time]</value>
+    </variable>
+
+
     <variable name="Label_Info_Title">
         <value condition="[Container.Content() | Container.Content(playlists)] + String.IsEmpty(ListItem.DBType)">$INFO[System.Time]</value>
-        <value condition="[String.IsEqual(ListItem.DBType,season) | String.IsEqual(ListItem.DBType,episode) | String.StartsWith(ListItem.Label,Season)] + !String.IsEmpty(ListItem.TvShowTitle)">$INFO[ListItem.TvShowTitle]</value>
+        <value condition="[String.IsEqual(ListItem.DBType,season) | String.IsEqual(ListItem.DBType,episode)] + !String.IsEmpty(ListItem.TvShowTitle)">$INFO[ListItem.TvShowTitle]</value>
         <value condition="String.IsEqual(ListItem.DBType,album) | String.IsEqual(ListItem.DBType,song)">$INFO[ListItem.Album]</value>
         <value condition="!String.IsEmpty(ListItem.Title)">$INFO[ListItem.Title]</value>
         <value condition="!String.IsEmpty(ListItem.Label)">$INFO[ListItem.Label]</value>
@@ -461,6 +476,15 @@
         <value condition="!String.IsEmpty(ListItem.Plot)">$INFO[ListItem.Tagline,[B],[/B][CR]]$INFO[ListItem.Artist,[B],[/B][CR]]$INFO[ListItem.Plot]</value>
         <value condition="!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Plot))">$INFO[Window(Home).Property(TMDbHelper.ListItem.Tagline),[B],[/B][CR]]$INFO[Window(Home).Property(TMDbHelper.ListItem.Artist),[B],[/B][CR]]$INFO[Window(Home).Property(TMDbHelper.ListItem.Plot)]</value>
         <value>$INFO[ListItem.Tagline,[B],[/B][CR]]$INFO[ListItem.Artist,[B],[/B][CR]]$VAR[Label_Plot]</value>
+    </variable>
+
+    <variable name="Label_Plot_3001">
+        <value condition="!String.IsEmpty(Container(3001).ListItem.Property(Artist_Description))">$INFO[Container(3001).ListItem.Property(Artist_Description)]</value>
+        <value condition="!String.IsEmpty(Container(3001).ListItem.Property(Album_Description))">$INFO[Container(3001).ListItem.Property(Album_Description)]</value>
+        <value condition="!String.IsEmpty(Container(3001).ListItem.AddonDescription)">$INFO[Container(3001).ListItem.AddonDescription]</value>
+        <value condition="!String.IsEmpty(Container(3001).ListItem.PlotOutline) + Skin.HasSetting(PlotOutline)">$INFO[Container(3001).ListItem.PlotOutline]</value>
+        <value condition="!String.IsEmpty(Container(3001).ListItem.Plot)">$INFO[Container(3001).ListItem.Plot]</value>
+        <value condition="!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Plot))">$INFO[Window(Home).Property(TMDbHelper.ListItem.Plot)]</value>
     </variable>
 
     <variable name="Label_Plot_560">

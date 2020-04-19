@@ -256,7 +256,7 @@
                         <usecontrolcoords>true</usecontrolcoords>
                         <itemgap>0</itemgap>
                         <include content="Object_Info_Title">
-                            <param name="label" value="$INFO[Container(3001).ListItem.Title]" />
+                            <param name="label" value="$VAR[Label_3001_Info_Title]" />
                         </include>
                         <include content="Object_Info_Line">
                             <param name="label" value="$VAR[Label_56560_InfoLine]" />
@@ -264,8 +264,8 @@
                         </include>
                         <include content="Object_Info_Plot">
                             <param name="maxheight" value="80" />
-                            <param name="height" value="80" />
-                            <param name="label" value="$INFO[Container(3001).ListItem.Plot]" />
+                            <param name="height" value="auto" />
+                            <param name="label" value="$VAR[Label_Plot_3001]" />
                             <top>10</top>
                         </include>
                         <control type="group">
@@ -289,20 +289,19 @@
                             <include content="Object_Info_Button" description="Play">
                                 <param name="id" value="3101" />
                                 <param name="groupid" value="3201" />
-                                <param name="label" value="Play" />
-                                <param name="icon" value="special://skin/extras/icons/play3.png" />
+                                <param name="label" value="$VAR[Label_Showcase_PlayBrowse]" />
+                                <param name="icon" value="$VAR[Image_Showcase_PlayBrowse_Icon]" />
                                 <param name="ondown" value="302" />
                                 <param name="visible" value="true" />
                                 <param name="onup" value="Control.Move(3001,-1)" />
                                 <onclick>SetFocus(3001)</onclick>
                                 <onclick>Action(Select)</onclick>
-                                <onclick>Action(Close)</onclick>
                                 <onfocus>SetProperty(TMDbHelper.WidgetContainer,3001,Home)</onfocus>
                             </include>
-                            <include content="Object_Info_Button" description="Play">
+                            <include content="Object_Info_Button" description="Info">
                                 <param name="id" value="3102" />
                                 <param name="groupid" value="3202" />
-                                <param name="label" value="More Information" />
+                                <param name="label" value="$LOCALIZE[31078]" />
                                 <param name="icon" value="special://skin/extras/icons/info2.png" />
                                 <param name="ondown" value="302" />
                                 <param name="visible" value="true" />

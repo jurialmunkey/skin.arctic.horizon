@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
 
+    <variable name="Image_Showcase_PlayBrowse_Icon">
+        <value condition="Container(3001).ListItem.IsFolder">special://skin/extras/icons/folder.png</value>
+        <value>special://skin/extras/icons/play3.png</value>
+    </variable>
+
     <variable name="Image_Home_VideoQuality">
         <value condition="Control.IsVisible(56560)">$VAR[Image_56560_VideoQuality]</value>
         <value>$VAR[Image_VideoQuality]</value>
