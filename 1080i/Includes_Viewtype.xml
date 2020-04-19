@@ -36,6 +36,8 @@
                     <include>View_Pad</include>
                     <control type="group" description="Top Half">
                         <visible>!Integer.IsEqual(Container.NumAllItems,0)</visible>
+                        <animation effect="fade" reversible="false" start="0" end="100" delay="400" time="400" tween="sine" easing="out" condition="!Control.HasFocus(5200)">Conditional</animation>
+                        <animation effect="fade" reversible="false" end="0" start="100" condition="Control.HasFocus(5200)">Conditional</animation>
                         <include content="View_Info_Grouplist">
                             <param name="container" value="Container." />
                             <top>-15</top>
@@ -109,6 +111,8 @@
                             <visible>!Integer.IsEqual(Container.NumAllItems,0)</visible>
                             <visible>![Control.IsVisible(50) | Control.IsVisible(500) | Control.IsVisible(55)]</visible>
                             <height>480</height>
+                            <animation effect="fade" reversible="false" start="0" end="100" delay="400" time="400" tween="sine" easing="out" condition="!Control.HasFocus(5200)">Conditional</animation>
+                            <animation effect="fade" reversible="false" end="0" start="100" condition="Control.HasFocus(5200)">Conditional</animation>
                         </include>
                         <include>View_55_FileList</include>
                         <include>View_51_Addons</include>

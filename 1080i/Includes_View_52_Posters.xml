@@ -4,6 +4,12 @@
         <control type="group">
             <visible>Control.IsVisible(52)</visible>
             <include>Animation_Down</include>
+            <animation type="Conditional" reversible="false" condition="!Control.HasFocus(5200)">
+                <effect type="fade" start="0" end="100" delay="400" time="1" />
+            </animation>
+            <animation type="Conditional" reversible="false" condition="Control.HasFocus(5200)">
+                <effect type="fade" end="0" start="100" />
+            </animation>
             <include content="Viewtype_Poster">
                 <param name="id" value="52" />
                 <param name="castlabel" value="Container.Content(actors)" />
@@ -13,7 +19,8 @@
                 <left>-80</left>
                 <right>-80</right>
                 <onfocus>ClearProperty(TMDbHelper.WidgetContainer,Home)</onfocus>
-                <include>Viewtype_Movement</include>
+                <!-- <include>Viewtype_Movement</include> -->
+                <ondown>5200</ondown>
                 <visible>Container.Content(actors) | Container.Content(tvshows) | Container.Content(movies) | [Container.Content(seasons) + Skin.HasSetting(LibrarySeasonPosters)]</visible>
                 <visible>!Window.IsVisible(MyPlaylist.xml)</visible>
                 <visible>!String.IsEqual(Container.Property(Param.Info),details)</visible>
@@ -22,6 +29,360 @@
                 <param name="id" value="52" />
                 <param name="label" value="$VAR[Label_Header_Center]" />
                 <param name="altlabel" value="$INFO[Control.GetLabel(3),, ]$INFO[Control.GetLabel(4)]" />
+            </include>
+        </control>
+
+        <control type="grouplist">
+            <visible>Control.HasFocus(5200)</visible>
+            <animation type="Visible" reversible="false">
+                <effect type="slide" start="0,480" end="0" time="400" tween="cubic" easing="out" />
+            </animation>
+            <animation type="Hidden" reversible="false">
+                <effect type="fade" end="0" start="100" delay="400" time="1" tween="sine" easing="out"/>
+                <effect type="slide" end="0,480" start="0" time="400" tween="cubic" easing="out" />
+            </animation>
+            <top>-740</top>
+            <bottom>-700</bottom>
+            <left>-534</left>
+            <right>-534</right>
+            <orientation>vertical</orientation>
+            <itemgap>0</itemgap>
+            <animation effect="slide" tween="quadratic" time="400" reversible="false" end="-257.15" condition="!String.IsEqual(Window.Property(5200_OnMove),right)">Conditional</animation>
+            <animation effect="slide" tween="quadratic" time="400" reversible="false" end="257.15" condition="!String.IsEqual(Window.Property(5200_OnMove),left)">Conditional</animation>
+
+            <animation effect="slide" tween="quadratic" time="400" reversible="false" end="0,-360" condition="!String.IsEqual(Window.Property(5200_OnMove),down)">Conditional</animation>
+            <animation effect="slide" tween="quadratic" time="400" reversible="false" end="0,360" condition="!String.IsEqual(Window.Property(5200_OnMove),up)">Conditional</animation>
+            <control type="grouplist">
+                <animation effect="fade" reversible="false" start="0" end="100" time="400" tween="sine" easing="out" condition="Control.HasFocus(5200)">Conditional</animation>
+                <animation effect="fade" reversible="false" end="0" start="100" time="400" tween="sine" easing="out" condition="!Control.HasFocus(5200)">Conditional</animation>
+                <height>360</height>
+                <usecontrolcoords>true</usecontrolcoords>
+                <orientation>horizontal</orientation>
+                <itemgap>0</itemgap>
+                <include content="View_52_Posters_WallItem">
+                    <param name="pos" value="-16" />
+                </include>
+                <include content="View_52_Posters_WallItem">
+                    <param name="pos" value="-15" />
+                </include>
+                <include content="View_52_Posters_WallItem">
+                    <param name="pos" value="-14" />
+                </include>
+                <include content="View_52_Posters_WallItem">
+                    <param name="pos" value="-13" />
+                </include>
+                <include content="View_52_Posters_WallItem">
+                    <param name="pos" value="-12" />
+                </include>
+                <include content="View_52_Posters_WallItem">
+                    <param name="pos" value="-11" />
+                </include>
+                <include content="View_52_Posters_WallItem">
+                    <param name="pos" value="-10" />
+                </include>
+                <include content="View_52_Posters_WallItem">
+                    <param name="pos" value="-9" />
+                </include>
+                <include content="View_52_Posters_WallItem">
+                    <param name="pos" value="-8" />
+                </include>
+                <include content="View_52_Posters_WallItem">
+                    <param name="pos" value="-7" />
+                </include>
+                <include content="View_52_Posters_WallItem">
+                    <param name="pos" value="-6" />
+                </include>
+            </control>
+            <control type="grouplist">
+                <animation effect="fade" reversible="false" start="0" end="100" time="400" tween="sine" easing="out" condition="Control.HasFocus(5200)">Conditional</animation>
+                <animation effect="fade" reversible="false" end="0" start="100" time="400" tween="sine" easing="out" condition="!Control.HasFocus(5200)">Conditional</animation>
+                <height>360</height>
+                <usecontrolcoords>true</usecontrolcoords>
+                <orientation>horizontal</orientation>
+                <itemgap>0</itemgap>
+                <include content="View_52_Posters_WallItem">
+                    <param name="pos" value="-9" />
+                </include>
+                <include content="View_52_Posters_WallItem">
+                    <param name="pos" value="-8" />
+                </include>
+                <include content="View_52_Posters_WallItem">
+                    <param name="pos" value="-7" />
+                </include>
+                <include content="View_52_Posters_WallItem">
+                    <param name="pos" value="-6" />
+                </include>
+                <include content="View_52_Posters_WallItem">
+                    <param name="pos" value="-5" />
+                </include>
+                <include content="View_52_Posters_WallItem">
+                    <param name="pos" value="-4" />
+                </include>
+                <include content="View_52_Posters_WallItem">
+                    <param name="pos" value="-3" />
+                </include>
+                <include content="View_52_Posters_WallItem">
+                    <param name="pos" value="-2" />
+                </include>
+                <include content="View_52_Posters_WallItem">
+                    <param name="pos" value="-1" />
+                </include>
+                <include content="View_52_Posters_WallItem">
+                    <param name="pos" value="0" />
+                </include>
+                <include content="View_52_Posters_WallItem">
+                    <param name="pos" value="1" />
+                </include>
+            </control>
+            <control type="grouplist">
+                <height>360</height>
+                <usecontrolcoords>true</usecontrolcoords>
+                <orientation>horizontal</orientation>
+                <itemgap>0</itemgap>
+                <include content="View_52_Posters_WallItem">
+                    <param name="pos" value="-2" />
+                </include>
+                <include content="View_52_Posters_WallItem">
+                    <param name="pos" value="-1" />
+                </include>
+                <include content="View_52_Posters_WallItem">
+                    <param name="selectbox" value="true" />
+                    <param name="pos" value="0" />
+                </include>
+                <include content="View_52_Posters_WallItem">
+                    <param name="pos" value="1" />
+                </include>
+                <include content="View_52_Posters_WallItem">
+                    <param name="pos" value="2" />
+                </include>
+                <include content="View_52_Posters_WallItem">
+                    <param name="pos" value="3" />
+                </include>
+                <include content="View_52_Posters_WallItem">
+                    <param name="pos" value="4" />
+                </include>
+                <include content="View_52_Posters_WallItem">
+                    <param name="pos" value="5" />
+                </include>
+                <include content="View_52_Posters_WallItem">
+                    <param name="pos" value="6" />
+                </include>
+                <include content="View_52_Posters_WallItem">
+                    <param name="pos" value="7" />
+                </include>
+                <include content="View_52_Posters_WallItem">
+                    <param name="pos" value="8" />
+                </include>
+            </control>
+            <control type="grouplist">
+                <animation effect="fade" reversible="false" start="0" end="100" time="400" tween="sine" easing="out" condition="Control.HasFocus(5200)">Conditional</animation>
+                <animation effect="fade" reversible="false" end="0" start="100" time="400" tween="sine" easing="out" condition="!Control.HasFocus(5200)">Conditional</animation>
+                <height>360</height>
+                <usecontrolcoords>true</usecontrolcoords>
+                <orientation>horizontal</orientation>
+                <itemgap>0</itemgap>
+                <include content="View_52_Posters_WallItem">
+                    <param name="pos" value="5" />
+                </include>
+                <include content="View_52_Posters_WallItem">
+                    <param name="pos" value="6" />
+                </include>
+                <include content="View_52_Posters_WallItem">
+                    <param name="pos" value="7" />
+                </include>
+                <include content="View_52_Posters_WallItem">
+                    <param name="pos" value="8" />
+                </include>
+                <include content="View_52_Posters_WallItem">
+                    <param name="pos" value="9" />
+                </include>
+                <include content="View_52_Posters_WallItem">
+                    <param name="pos" value="10" />
+                </include>
+                <include content="View_52_Posters_WallItem">
+                    <param name="pos" value="11" />
+                </include>
+                <include content="View_52_Posters_WallItem">
+                    <param name="pos" value="12" />
+                </include>
+                <include content="View_52_Posters_WallItem">
+                    <param name="pos" value="13" />
+                </include>
+                <include content="View_52_Posters_WallItem">
+                    <param name="pos" value="14" />
+                </include>
+                <include content="View_52_Posters_WallItem">
+                    <param name="pos" value="15" />
+                </include>
+            </control>
+            <control type="grouplist">
+                <animation effect="fade" reversible="false" start="0" end="100" time="400" tween="sine" easing="out" condition="Control.HasFocus(5200)">Conditional</animation>
+                <animation effect="fade" reversible="false" end="0" start="100" time="400" tween="sine" easing="out" condition="!Control.HasFocus(5200)">Conditional</animation>
+                <height>360</height>
+                <usecontrolcoords>true</usecontrolcoords>
+                <orientation>horizontal</orientation>
+                <itemgap>0</itemgap>
+                <include content="View_52_Posters_WallItem">
+                    <param name="pos" value="12" />
+                </include>
+                <include content="View_52_Posters_WallItem">
+                    <param name="pos" value="13" />
+                </include>
+                <include content="View_52_Posters_WallItem">
+                    <param name="pos" value="14" />
+                </include>
+                <include content="View_52_Posters_WallItem">
+                    <param name="pos" value="15" />
+                </include>
+                <include content="View_52_Posters_WallItem">
+                    <param name="pos" value="16" />
+                </include>
+                <include content="View_52_Posters_WallItem">
+                    <param name="pos" value="17" />
+                </include>
+                <include content="View_52_Posters_WallItem">
+                    <param name="pos" value="18" />
+                </include>
+                <include content="View_52_Posters_WallItem">
+                    <param name="pos" value="19" />
+                </include>
+                <include content="View_52_Posters_WallItem">
+                    <param name="pos" value="20" />
+                </include>
+                <include content="View_52_Posters_WallItem">
+                    <param name="pos" value="21" />
+                </include>
+                <include content="View_52_Posters_WallItem">
+                    <param name="pos" value="22" />
+                </include>
+            </control>
+            <control type="grouplist">
+                <animation effect="fade" reversible="false" start="0" end="100" time="400" tween="sine" easing="out" condition="Control.HasFocus(5200)">Conditional</animation>
+                <animation effect="fade" reversible="false" end="0" start="100" time="400" tween="sine" easing="out" condition="!Control.HasFocus(5200)">Conditional</animation>
+                <height>360</height>
+                <usecontrolcoords>true</usecontrolcoords>
+                <orientation>horizontal</orientation>
+                <itemgap>0</itemgap>
+                <include content="View_52_Posters_WallItem">
+                    <param name="pos" value="19" />
+                </include>
+                <include content="View_52_Posters_WallItem">
+                    <param name="pos" value="20" />
+                </include>
+                <include content="View_52_Posters_WallItem">
+                    <param name="pos" value="21" />
+                </include>
+                <include content="View_52_Posters_WallItem">
+                    <param name="pos" value="22" />
+                </include>
+                <include content="View_52_Posters_WallItem">
+                    <param name="pos" value="23" />
+                </include>
+                <include content="View_52_Posters_WallItem">
+                    <param name="pos" value="24" />
+                </include>
+                <include content="View_52_Posters_WallItem">
+                    <param name="pos" value="25" />
+                </include>
+                <include content="View_52_Posters_WallItem">
+                    <param name="pos" value="26" />
+                </include>
+                <include content="View_52_Posters_WallItem">
+                    <param name="pos" value="27" />
+                </include>
+                <include content="View_52_Posters_WallItem">
+                    <param name="pos" value="28" />
+                </include>
+                <include content="View_52_Posters_WallItem">
+                    <param name="pos" value="29" />
+                </include>
+            </control>
+        </control>
+
+        <control type="button" id="5200">
+            <include>Defs_Hidden_Button</include>
+            <onback>52</onback>
+            <oninfo>SetFocus(52)</oninfo>
+            <oninfo>AlarmClock(nfo,Action(Info),00:01,silent)</oninfo>
+            <onclick>SetFocus(52)</onclick>
+            <!-- <onclick>AlarmClock(clk,Action(Select),00:01,silent)</onclick> -->
+            <onleft>SetProperty(5200_OnMove,left)</onleft>
+            <onleft>AlarmClock(clr,ClearProperty(5200_OnMove),00:00,silent)</onleft>
+            <onleft>Control.Move(52,-1)</onleft>
+            <onright>SetProperty(5200_OnMove,right)</onright>
+            <onright>AlarmClock(clr,ClearProperty(5200_OnMove),00:00,silent)</onright>
+            <onright>Control.Move(52,1)</onright>
+            <ondown>SetProperty(5200_OnMove,down)</ondown>
+            <ondown>AlarmClock(clr,ClearProperty(5200_OnMove),00:00,silent)</ondown>
+            <ondown>Control.Move(52,7)</ondown>
+            <onup>SetProperty(5200_OnMove,up)</onup>
+            <onup>AlarmClock(clr,ClearProperty(5200_OnMove),00:00,silent)</onup>
+            <onup>Control.Move(52,-7)</onup>
+        </control>
+
+        <control type="group">
+            <animation effect="fade" start="0" end="100" time="500" tween="cubic" easing="inout">Visible</animation>
+            <animation effect="fade" start="100" end="0" time="500" tween="cubic" easing="inout">Hidden</animation>
+            <visible>Control.HasFocus(5200)</visible>
+            <control type="image">
+                <top>-200</top>
+                <left>-80</left>
+                <right>-80</right>
+                <height>200</height>
+                <texture>common/dim-top.png</texture>
+            </control>
+            <control type="image">
+                <bottom>-100</bottom>
+                <left>-80</left>
+                <right>-80</right>
+                <height>200</height>
+                <texture flipy="true">common/dim-top.png</texture>
+            </control>
+        </control>
+    </include>
+
+    <include name="View_52_Posters_WallItem">
+        <param name="selectbox" default="false" />
+        <definition>
+            <control type="group">
+                <width>item_poster_width</width>
+                <height>360</height>
+                <include content="View_52_Posters_WallItem_Layout">
+                    <param name="selectbox" value="$PARAM[selectbox]" />
+                    <param name="id" value="52" />
+                    <param name="altid" value="5200" />
+                    <param name="icon" value="$INFO[Container(52).ListItem($PARAM[pos]).Icon]" />
+                    <param name="diffuse" value="diffuse/poster-std.png" />
+                </include>
+            </control>
+        </definition>
+    </include>
+
+    <include name="View_52_Posters_WallItem_Layout">
+        <include>Object_PosterBack</include>
+        <control type="group">
+            <include>Defs_Pad</include>
+
+            <include condition="$PARAM[selectbox]" content="View_Selectbox">
+                <param name="focusbounce" value="!String.IsEmpty(Window.Property(5200_OnMove))" />
+                <visible>Control.HasFocus($PARAM[id]) | Control.HasFocus($PARAM[altid])</visible>
+                <control type="image">
+                    <bordersize>7</bordersize>
+                    <texture border="10" colordiffuse="$VAR[ColorHighlight]">common/box.png</texture>
+                </control>
+                <control type="image">
+                    <bordersize>7</bordersize>
+                    <texture border="10" colordiffuse="$VAR[ColorGradient]">common/box-gradient-vertical.png</texture>
+                </control>
+            </include>
+            <include content="Object_Poster">
+                <param name="icon" value="$PARAM[icon]" />
+                <param name="diffuse" value="$PARAM[diffuse]" />
+            </include>
+            <include condition="$PARAM[selectbox] + !Skin.HasSetting(DisableWatchedOverlay)">View_WatchedOverlay</include>
+            <include condition="$PARAM[selectbox]" content="View_Selectbox">
+                <param name="focusbounce" value="!String.IsEmpty(Window.Property(5200_OnMove))" />
+                <visible>Control.HasFocus($PARAM[id]) | Control.HasFocus($PARAM[altid])</visible>
             </include>
         </control>
     </include>
