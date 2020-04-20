@@ -217,28 +217,16 @@
     </include>
 
     <include name="Viewtype_Options">
-        <control type="group">
-            <visible>Control.HasFocus(9000)</visible>
-            <include>Animation_FadeInOut</include>
-            <include>Global_Overlay</include>
-        </control>
-        <control type="group">
-            <visible>Control.HasFocus(9000)</visible>
-            <include>Animation_FadeIn_SlideUp</include>
-            <include content="Dialog_PowerMenu">
-                <param name="id" value="9000" />
-                <param name="header" value="Options" />
-                <param name="items" value="Items_View" />
-                <param name="visible" value="Control.HasFocus(9000)" />
-                <param name="icon-visible" value="true" />
-                <param name="onleft" value="50" />
-                <param name="onright" value="50" />
-                <param name="onback" value="50" />
-                <param name="onup" value="9000" />
-                <param name="ondown" value="9000" />
-                <param name="listanimation" value="false" />
-            </include>
-        </control>
+        <include content="Dialog_Menu">
+            <param name="id" value="9000" />
+            <param name="header" value="Options" />
+            <param name="content" value="Items_View" />
+            <param name="visible" value="Control.HasFocus(9000)" />
+            <param name="include-icon" value="true" />
+            <param name="onleft" value="50" />
+            <param name="onright" value="50" />
+            <param name="onback" value="50" />
+        </include>
     </include>
 
     <include name="Viewtype_Movement">

@@ -2,16 +2,13 @@
 <window type="buttonMenu" id="111">
     <defaultcontrol always="true">3110</defaultcontrol>
     <controls>
-        <include>Global_Overlay</include>
-        <include content="Dialog_PowerMenu">
+        <include content="Dialog_Menu">
             <param name="id" value="3110" />
             <param name="header" value="$LOCALIZE[31072]" />
-            <param name="items" value="Items_PowerMenu" />
-            <param name="visible" value="true" />
+            <param name="content" value="Items_PowerMenu" />
+            <param name="visible" value="Control.HasFocus(3110)" />
             <param name="onleft" value="Back" />
             <param name="onright" value="Back" />
-            <param name="onup" value="3110" />
-            <param name="ondown" value="3110" />
         </include>
     </controls>
 </window>

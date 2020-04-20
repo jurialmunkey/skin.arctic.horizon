@@ -633,21 +633,21 @@
     <include name="Items_View">
         <content>
             <item>
-                <label>$INFO[Control.GetLabel(2)]</label>
+                <label>$INFO[Container.Viewmode]</label>
                 <icon>special://skin/extras/icons/viewmode.png</icon>
                 <onclick>SendClick(2)</onclick>
-                <visible>Control.IsEnabled(2) + Integer.IsGreater(Container.ViewCount,1)</visible>
+                <visible>Control.IsEnabled(2) + !Integer.IsEqual(Container.ViewCount,1)</visible>
             </item>
             <!-- Sort -->
             <item>
-                <label>$INFO[Control.GetLabel(3)]</label>
+                <label>$LOCALIZE[31213]: $INFO[Container.SortMethod]</label>
                 <icon>special://skin/extras/icons/sort2.png</icon>
                 <onclick>SendClick(3)</onclick>
                 <visible>Control.IsEnabled(3)</visible>
             </item>
             <!-- Ascend Descend -->
             <item>
-                <label>$INFO[Control.GetLabel(4)]</label>
+                <label>$INFO[Container.SortOrder]</label>
                 <icon>special://skin/extras/icons/sort.png</icon>
                 <onclick>SendClick(4)</onclick>
                 <visible>Control.IsEnabled(4)</visible>

@@ -10,15 +10,14 @@
     <controls>
         <include>Viewtypes</include>
 
-        <control type="group">
-            <visible>Control.HasFocus(9200)</visible>
-            <include>Animation_FadeInOut</include>
-            <include>Global_Overlay</include>
-        </control>
         <include content="Dialog_Menu">
             <param name="id" value="9200" />
+            <param name="onback" value="300" />
+            <param name="onleft" value="300" />
+            <param name="onright" value="300" />
             <param name="content" value="Items_Similar" />
-            <param name="label" value="$INFO[Container.ListItem.Title]" />
+            <param name="header" value="$INFO[Container.ListItem.Title]" />
+            <param name="visible" value="Control.HasFocus(9200)" />
         </include>
 
         <!-- Hidden Buttons -->
