@@ -1,5 +1,88 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
+    <include name="Dialog_Menu">
+        <definition>
+            <control type="group">
+                <nested />
+                <height>640</height>
+                <width>450</width>
+                <include>Animation_FadeIn_SlideUp</include>
+                <visible>$PARAM[visible]</visible>
+                <include>Dialog_Menu_BG</include>
+                <control type="group">
+                    <top>10</top>
+                    <height>90</height>
+                    <control type="label">
+                        <textoffsetx>30</textoffsetx>
+                        <textcolor>dialog_fg_70</textcolor>
+                        <font>font_small_bold</font>
+                        <label>$PARAM[label]</label>
+                        <align>left</align>
+                    </control>
+                    <control type="image">
+                        <top>14</top>
+                        <right>14</right>
+                        <width>64</width>
+                        <height>64</height>
+                        <texture colordiffuse="$VAR[ColorHighlight]">$VAR[Image_SkinLogo]</texture>
+                    </control>
+                </control>
+                <control type="panel" id="$PARAM[id]">
+                    <top>90</top>
+                    <orientation>horizontal</orientation>
+                    <itemlayout width="450" height="item_list_height">
+                        <control type="label">
+                            <font>font_tiny</font>
+                            <align>left</align>
+                            <left>30</left>
+                            <right>30</right>
+                            <aligny>center</aligny>
+                            <textcolor>dialog_fg_70</textcolor>
+                            <label>[CAPITALIZE]$INFO[ListItem.Label][/CAPITALIZE]</label>
+                        </control>
+                        <control type="image">
+                            <bordersize>10</bordersize>
+                            <aspectratio align="right">keep</aspectratio>
+                            <texture colordiffuse="dialog_fg_70">$INFO[ListItem.Icon]</texture>
+                            <visible>$PARAM[icon-visible]</visible>
+                        </control>
+                    </itemlayout>
+                    <focusedlayout width="450" height="item_list_height">
+                        <control type="image">
+                            <texture colordiffuse="$VAR[ColorHighlight]">common/white.png</texture>
+                        </control>
+                        <control type="image">
+                            <texture colordiffuse="$VAR[ColorGradient]">common/white-gradient.png</texture>
+                        </control>
+                        <control type="label">
+                            <font>font_tiny</font>
+                            <align>left</align>
+                            <left>30</left>
+                            <right>30</right>
+                            <aligny>center</aligny>
+                            <textcolor>Selected</textcolor>
+                            <label>[CAPITALIZE]$INFO[ListItem.Label][/CAPITALIZE]</label>
+                        </control>
+                        <control type="image">
+                            <bordersize>10</bordersize>
+                            <aspectratio align="right">keep</aspectratio>
+                            <texture colordiffuse="Selected">$INFO[ListItem.Icon]</texture>
+                            <visible>$PARAM[icon-visible]</visible>
+                        </control>
+                    </focusedlayout>
+                    <include>$PARAM[content]</include>
+                </control>
+            </control>
+        </definition>
+    </include>
+    <include name="Dialog_Menu_BG">
+        <control type="image">
+            <include content="Defs_Pad"><param name="pad" value="-24" /></include>
+            <bordertexture border="32">common/shadow-dialog-24.png</bordertexture>
+            <bordersize>24</bordersize>
+            <texture border="16" colordiffuse="dialog_bg_100">common/dialog.png</texture>
+        </control>
+    </include>
 
     <include name="Dialog_Busy">
         <param name="header" default="Busy" />

@@ -30,8 +30,6 @@
                 </include>
                 <include>skinshortcuts-template-infoline</include>
             </content>
-            <visible>Control.HasFocus(301) | Control.HasFocus(303) | Control.HasFocus(3992) | Control.HasFocus(3101) | Control.HasFocus(3102) | Control.Hasfocus(3001) | Control.HasFocus(302)</visible>
-            <visible>Integer.IsEqual(Container(3700).NumItems,0) | Integer.IsEqual(Container(3700).NumItems,1)</visible>
         </control>
 
 

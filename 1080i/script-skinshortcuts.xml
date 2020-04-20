@@ -8,7 +8,7 @@
 
             <include content="Dialog_Standard_Group">
                 <param name="width" value="1840" />
-                <param name="height" value="990" />
+                <param name="height" value="1000" />
                 <param name="centertop" value="50%" />
             </include>
 

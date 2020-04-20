@@ -15,12 +15,10 @@
             <include>Animation_FadeInOut</include>
             <include>Global_Overlay</include>
         </control>
-        <include content="OSD_Menu_List">
+        <include content="Dialog_Menu">
             <param name="id" value="9200" />
-            <param name="osd_id" value="300" />
             <param name="content" value="Items_Similar" />
             <param name="label" value="$INFO[Container.ListItem.Title]" />
-            <param name="height" value="602" />
         </include>
 
         <!-- Hidden Buttons -->
