@@ -161,14 +161,6 @@
         <value>$INFO[System.Time]</value>
     </variable>
 
-    <variable name="Label_Landscape_Title">
-        <value condition="String.IsEqual(ListItem.DBType,album) | String.IsEqual(ListItem.DBType,song)">$INFO[ListItem.Album]</value>
-        <value condition="String.IsEqual(ListItem.DBType,episode)">$INFO[ListItem.Label]</value>
-        <value condition="!String.IsEmpty(ListItem.Title)">$INFO[ListItem.Title]</value>
-        <value condition="!String.IsEmpty(ListItem.Label)">$INFO[ListItem.Label]</value>
-        <value condition="Window.IsVisible(DialogAddonInfo.xml)">$LOCALIZE[31209]</value>
-    </variable>
-
     <variable name="Label_NowPlaying_Mainlabel">
         <!-- <value condition="!String.IsEmpty(VideoPlayer.TvShowTitle) + !String.IsEmpty(VideoPlayer.Season) + !String.IsEmpty(VideoPlayer.Episode) + !String.IsEqual(VideoPlayer.TvShowTitle,Player.Title)">$INFO[VideoPlayer.TvShowTitle,,  •  ]$INFO[VideoPlayer.Season,S,]$INFO[VideoPlayer.Episode,E,  •  ]$INFO[Player.Title]</value> -->
         <value condition="!String.IsEmpty(VideoPlayer.TvShowTitle) + !String.IsEqual(VideoPlayer.TvShowTitle,Player.Title)">$INFO[VideoPlayer.TvShowTitle,,  •  ]$INFO[Player.Title]</value>
@@ -228,19 +220,6 @@
     <variable name="Label_Info_PlayButton">
         <value condition="String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,season)">$LOCALIZE[1024]</value>
         <value>$LOCALIZE[208]</value>
-    </variable>
-
-    <variable name="Label_SmallLandscapeWidget_Sublabel">
-        <value condition="!String.IsEmpty(ListItem.ChannelName)">$INFO[ListItem.ChannelName]</value>
-        <value condition="!String.IsEmpty(ListItem.Property(NextDay))">$INFO[ListItem.Property(NextDay)]$INFO[ListItem.Property(ShortTime), @ ,]</value>
-        <value condition="!String.IsEmpty(ListItem.TvShowTitle) + !String.IsEqual(ListItem.Label,ListItem.TvShowTitle)">$INFO[ListItem.TvShowTitle]</value>
-        <value condition="!String.IsEmpty(ListItem.Studio) + [String.IsEqual(ListItem.DBType,video) | [String.IsEmpty(ListItem.DBType) + String.IsEmpty(ListItem.Genre)]]">$INFO[ListItem.Studio]$VAR[Label_Duration, - ,]</value>
-        <value condition="!String.IsEmpty(ListItem.Artist) + !String.IsEqual(ListItem.Label,ListItem.Artist)">$INFO[ListItem.Artist]</value>
-        <value condition="!String.IsEmpty(ListItem.Genre)">$INFO[ListItem.Genre]</value>
-        <value condition="!String.IsEmpty(ListItem.Duration)">$INFO[ListItem.Duration]</value>
-        <value condition="!String.IsEmpty(ListItem.AddonVersion)">$INFO[ListItem.AddonVersion]</value>
-        <value condition="!String.IsEmpty(ListItem.PictureResolution)">$INFO[ListItem.PictureResolution]</value>
-        <value condition="!String.IsEmpty(ListItem.Label2)">$INFO[ListItem.Label2]</value>
     </variable>
 
     <variable name="Label_SmallLandscapeWidget_Sublabel2">

@@ -159,7 +159,8 @@
 
     <variable name="Global_Background_Image">
         <value condition="Skin.HasSetting(NoFanart)">$VAR[Global_Background_Image_NoFanart]</value>
-        <value condition="[System.HasAddon(script.colorbox) + !Skin.HasSetting(DisableBlur)]">$INFO[Window(home).Property(ImageFilterFIVE)]</value>
+        <value>$INFO[Window(Home).Property(TMDbHelper.ListItem.BlurImage)]</value>
+        <!-- <value condition="[System.HasAddon(script.colorbox) + !Skin.HasSetting(DisableBlur)]">$INFO[Window(home).Property(ImageFilterFIVE)]</value> -->
         <value>$VAR[Global_Background_Image_Var]</value>
     </variable>
 

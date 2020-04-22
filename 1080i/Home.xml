@@ -7,6 +7,8 @@
     <onload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=301&amp;levels=1&amp;group=mainmenu|powermenu|searchmenu)</onload>
     <onload condition="String.IsEmpty(Window(Home).Property(SkinSplashStarted))">ActivateWindow(1117)</onload>
     <onunload>ClearProperty(TMDbHelper.WidgetContainer,Home)</onunload>
+
+    <onload>runscript(plugin.video.themoviedb.helper,make_variables=1080i)</onload>
     <controls>
         <control type="list" id="3700">
             <description>Hidden container for widget count</description>

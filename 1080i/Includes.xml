@@ -37,6 +37,7 @@
     <include file="Includes_View.xml" />
 
     <include file="script-skinshortcuts-includes.xml"/>
+    <include file="script-tmdbhelper-includes.xml" />
 
     <include file="Constants_Main.xml" />
 

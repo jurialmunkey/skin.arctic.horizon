@@ -1,0 +1,47 @@
+[
+    {
+        "name"          : "Label_SmallLandscapeWidget_Sublabel",
+        "containers"    : [54],
+        "listitems"     : {"start": -10, "end": 17},
+        "values"        : [
+                            {"!String.IsEmpty({listitem}.ChannelName)": "$INFO[{listitem}.ChannelName]"},
+                            {"!String.IsEmpty({listitem}.Property(NextDay))": "$INFO[{listitem}.Property(NextDay)]$INFO[{listitem}.Property(ShortTime), @ ,]"},
+                            {"!String.IsEmpty({listitem}.TvShowTitle) + !String.IsEqual({listitem}.Label,{listitem}.TvShowTitle)": "$INFO[{listitem}.TvShowTitle]"},
+                            {"!String.IsEmpty({listitem}.Studio) + [String.IsEqual({listitem}.DBType,video) | [String.IsEmpty({listitem}.DBType) + String.IsEmpty({listitem}.Genre)]]": "$INFO[{listitem}.Studio]$INFO[{listitem}.Duration, - ,]"},
+                            {"!String.IsEmpty({listitem}.Artist) + !String.IsEqual({listitem}.Artist,$INFO[{listitem}.Label])": "$INFO[{listitem}.Artist]"},
+                            {"!String.IsEmpty({listitem}.Genre)": "$INFO[{listitem}.Genre]"},
+                            {"!String.IsEmpty({listitem}.Duration)": "$INFO[{listitem}.Duration]"},
+                            {"!String.IsEmpty({listitem}.AddonVersion)": "$INFO[{listitem}.AddonVersion]"},
+                            {"!String.IsEmpty({listitem}.PictureResolution)": "$INFO[{listitem}.PictureResolution]"},
+                            {"!String.IsEmpty({listitem}.Label2)": "$INFO[{listitem}.Label2]"}
+                          ]
+    },
+    {
+        "name"          : "Image_Landscape",
+        "containers"    : [54],
+        "listitems"     : {"start": -10, "end": 17},
+        "values"        : [
+                            {"Container.Content(images)": "$INFO[{listitem}.Icon]"},
+                            {"!String.IsEmpty({listitem}.Art(thumb)) + [String.IsEqual({listitem}.DBType,episode) | String.IsEqual({listitem}.DBType,video)] + String.IsEmpty({listitem}.Property(airday)) + !String.IsEqual({listitem}.Art(thumb),OverlaySpoiler.png) + !String.IsEqual({listitem}.Art(thumb),{listitem}.Art(poster)) + !String.IsEqual({listitem}.Art(thumb),{listitem}.Art(tvshow.poster)) + !String.IsEqual({listitem}.Art(thumb),{listitem}.ActualIcon)": "$INFO[{listitem}.Art(thumb)]"},
+                            {"!String.IsEmpty({listitem}.Art(landscape)) + !Skin.HasSetting(DisableLandscapeArt)": "$INFO[{listitem}.Art(landscape)]"},
+                            {"!String.IsEmpty({listitem}.Art(tvshow.landscape)) + !Skin.HasSetting(DisableLandscapeArt)": "$INFO[{listitem}.Art(tvshow.landscape)]"},
+                            {"!String.IsEmpty({listitem}.Property(fanart))": "$INFO[{listitem}.Property(fanart)]"},
+                            {"!String.IsEmpty({listitem}.Art(fanart))": "$INFO[{listitem}.Art(fanart)]"},
+                            {"!String.IsEmpty({listitem}.Thumb)": "$INFO[{listitem}.Thumb]"},
+                            {"!String.IsEmpty({listitem}.Art(thumb))": "$INFO[{listitem}.Art(thumb)]"},
+                            {"True": "$INFO[{listitem}.Icon]"}
+                          ]
+    },
+    {
+        "name"          : "Label_Landscape_Title",
+        "containers"    : [54],
+        "listitems"     : {"start": -10, "end": 17},
+        "values"        : [
+                            {"String.IsEqual({listitem}.DBType,album) | String.IsEqual({listitem}.DBType,song)": "$INFO[{listitem}.Album]"},
+                            {"String.IsEqual({listitem}.DBType,episode)": "$INFO[{listitem}.Label]"},
+                            {"!String.IsEmpty({listitem}.Title)": "$INFO[{listitem}.Title]"},
+                            {"!String.IsEmpty({listitem}.Label)": "$INFO[{listitem}.Label]"},
+                            {"Window.IsVisible(DialogAddonInfo.xml)": "$LOCALIZE[31209]"}
+                          ]
+    }
+]
