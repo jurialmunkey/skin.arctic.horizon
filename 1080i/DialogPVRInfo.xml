@@ -27,6 +27,7 @@
                     <param name="diffuse" value="diffuse/poster-big.png" />
                     <param name="icon" value="$INFO[Window(Home).Property(TMDbHelper.ListItem.Poster)]" />
                     <param name="visible" value="!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Poster))" />
+                    <param name="allowfallback" value="false" />
                 </include>
                 <include content="View_50_Poster">
                     <param name="diffuse" value="diffuse/poster-big.png" />
