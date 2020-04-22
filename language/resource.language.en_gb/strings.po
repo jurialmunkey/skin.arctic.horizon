@@ -310,46 +310,6 @@ msgctxt "#31059"
 msgid "Context Menu"
 msgstr ""
 
-#: /1080i/Custom_1116_ColorBoxAdvancedSettings.xml
-msgctxt "#31060"
-msgid "Blur settings"
-msgstr ""
-
-#: /1080i/Custom_1116_ColorBoxAdvancedSettings.xml
-msgctxt "#31061"
-msgid "Effect"
-msgstr ""
-
-#: /1080i/Custom_1116_ColorBoxAdvancedSettings.xml
-msgctxt "#31062"
-msgid "Blur Size"
-msgstr ""
-
-#: /1080i/Custom_1116_ColorBoxAdvancedSettings.xml
-msgctxt "#31063"
-msgid "Pixel Size"
-msgstr ""
-
-#: /1080i/Custom_1116_ColorBoxAdvancedSettings.xml
-msgctxt "#31064"
-msgid "Bits"
-msgstr ""
-
-#: /1080i/Custom_1116_ColorBoxAdvancedSettings.xml
-msgctxt "#31065"
-msgid "Preview Image"
-msgstr ""
-
-#: /1080i/Custom_1116_ColorBoxAdvancedSettings.xml
-msgctxt "#31066"
-msgid "Important"
-msgstr ""
-
-#: /1080i/Custom_1116_ColorBoxAdvancedSettings.xml
-msgctxt "#31067"
-msgid "Quality changes resolution of the generated image$COMMA which may also alter the intensity of the effect. Better quality images take longer to process.[CR]Blend layers the effect over the original image$COMMA with 100% showing the effect and 0% showing the original."
-msgstr ""
-
 #: /1080i/Includes_Weather.xml
 msgctxt "#31068"
 msgid "Cloud cover"

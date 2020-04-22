@@ -37,13 +37,13 @@
     </include>
 
     <include name="Global_Background_BlurControl">
-        <include content="Object_Control" condition="System.HasAddon(script.colorbox) + !Skin.HasSetting(DisableBlur)">
+        <include content="Object_Control" condition="!Skin.HasSetting(DisableBlur)">
             <param name="type" value="image" />
             <param name="id" value="7975" />
             <include>Defs_Offscreen</include>
             <texture background="true">$VAR[Global_Background_ImageBlur_Var]</texture>
         </include>
-        <include content="Object_Control" condition="System.HasAddon(script.colorbox) + Skin.HasSetting(EnableColorMatch)">
+        <include content="Object_Control" condition="Skin.HasSetting(EnableColorMatch)">
             <param name="type" value="image" />
             <param name="id" value="7977" />
             <include>Defs_Offscreen</include>
@@ -52,7 +52,7 @@
     </include>
 
     <include name="Global_Background">
-        <include condition="System.HasAddon(script.colorbox) + !Skin.HasSetting(DisableBlur)">Global_Background_BlurControl</include>
+        <include condition="!Skin.HasSetting(DisableBlur)">Global_Background_BlurControl</include>
         <include>Global_Background_Main</include>
     </include>
 
@@ -70,10 +70,10 @@
                 <visible>String.IsEmpty(Window(Home).Property(HasTrailer))</visible>
                 <include condition="Skin.HasSetting(global.showvideo)">Global_Videowindow</include>
                 <include condition="!Skin.HasSetting(global.showvideo)">Global_Videowindow_Hidden</include>
-                <include content="Global_VideoWindow_Fade" condition="Skin.HasSetting(global.showvideo) + System.HasAddon(script.colorbox) + !Skin.HasSetting(DisableBlur)">
+                <include content="Global_VideoWindow_Fade" condition="Skin.HasSetting(global.showvideo) + !Skin.HasSetting(DisableBlur)">
                     <param name="fade" value="70" />
                 </include>
-                <include content="Global_VideoWindow_Fade" condition="Skin.HasSetting(global.showvideo) + [!System.HasAddon(script.colorbox) | Skin.HasSetting(DisableBlur)]">
+                <include content="Global_VideoWindow_Fade" condition="Skin.HasSetting(global.showvideo) + [Skin.HasSetting(DisableBlur)]">
                     <param name="fade" value="40" />
                 </include>
             </control>
@@ -137,17 +137,17 @@
                 <width>1920</width>
                 <height>1080</height>
                 <aspectratio>scale</aspectratio>
-                <include condition="System.HasAddon(script.colorbox) + !Skin.HasSetting(DisableBlur)">Defs_Global_Fade_Blur</include>
+                <include condition="!Skin.HasSetting(DisableBlur)">Defs_Global_Fade_Blur</include>
                 <fadetime>600</fadetime>
                 <imagepath background="true">$VAR[Global_Background_Image]</imagepath>
-                <animation effect="fade" end="50" condition="System.HasAddon(script.colorbox) + !Skin.HasSetting(DisableBlur)">Conditional</animation>
-                <animation effect="fade" end="40" condition="!System.HasAddon(script.colorbox) | Skin.HasSetting(DisableBlur)">Conditional</animation>
+                <animation effect="fade" end="50" condition="!Skin.HasSetting(DisableBlur)">Conditional</animation>
+                <animation effect="fade" end="40" condition="Skin.HasSetting(DisableBlur)">Conditional</animation>
                 <visible>$EXP[Exp_GlobalBackground]</visible>
-                <animation effect="fade" start="100" end="0" time="2000" tween="cubic" easing="inout" condition="Window.IsVisible(DialogBusy.xml) + [!System.HasAddon(script.colorbox) | Skin.HasSetting(DisableBlur)]">Conditional</animation>
+                <animation effect="fade" start="100" end="0" time="2000" tween="cubic" easing="inout" condition="Window.IsVisible(DialogBusy.xml) + Skin.HasSetting(DisableBlur)">Conditional</animation>
             </control>
             <include condition="!Skin.HasSetting(DisableBusyBackground)">Global_Background_BusyLoader</include>
             <nested />
-            <include condition="!System.HasAddon(script.colorbox) | Skin.HasSetting(DisableBlur)">Global_Background_Overlay</include>
+            <include condition="Skin.HasSetting(DisableBlur)">Global_Background_Overlay</include>
         </control>
     </include>
 
@@ -160,7 +160,6 @@
     <variable name="Global_Background_Image">
         <value condition="Skin.HasSetting(NoFanart)">$VAR[Global_Background_Image_NoFanart]</value>
         <value>$INFO[Window(Home).Property(TMDbHelper.ListItem.BlurImage)]</value>
-        <!-- <value condition="[System.HasAddon(script.colorbox) + !Skin.HasSetting(DisableBlur)]">$INFO[Window(home).Property(ImageFilterFIVE)]</value> -->
         <value>$VAR[Global_Background_Image_Var]</value>
     </variable>
 

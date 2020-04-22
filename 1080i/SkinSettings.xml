@@ -2,7 +2,6 @@
     <defaultcontrol always="true">300</defaultcontrol>
     <include>Defs_Settings_OnLoad</include>
     <onunload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=301&amp;levels=1&amp;group=mainmenu|powermenu|searchmenu)</onunload>
-    <onunload condition="System.HasAddon(script.colorbox)">SetProperty(NINE_manual_set,"var=main,set=$INFO[Skin.String(colorbox_main)]|var=comp,set=$INFO[Skin.String(colorbox_comp)]|var=quality,set=$INFO[Skin.String(colorbox_quality)]|var=blursize,set=$INFO[Skin.String(colorbox_blursize)]|var=bitsize,set=$INFO[Skin.String(colorbox_bitsize)]|var=pixelsize,set=$INFO[Skin.String(colorbox_pixelsize)]|var=black,set=$INFO[Skin.String(colorbox_black)]|var=white,set=$INFO[Skin.String(colorbox_white)]|var=blend,set=$INFO[Skin.String(colorbox_blend)]|var=desat,set=$INFO[Skin.String(colorbox_desat)]",home)</onunload>
     <onload condition="String.IsEmpty(Window.Property(CurrentFocus))">SetProperty(CurrentFocus,$NUMBER[9001])</onload>
     <controls>
 
@@ -303,11 +302,7 @@
                         <label>Background style</label>
                         <label2>$VAR[Label_Setting_BackgroundStyle]</label2>
                         <include>Defs_RadioButton_NoTexture</include>
-                        <onclick condition="!System.HasAddon(script.colorbox)">InstallAddon(script.colorbox)</onclick>
-                        <onclick condition="System.HasAddon(script.colorbox) + [!System.HasAddon(script.colorbox) | Skin.HasSetting(DisableBlur)]">SetProperty(FIVE_daemon_set,blur,home)</onclick>
-                        <onclick condition="System.HasAddon(script.colorbox) + [!System.HasAddon(script.colorbox) | Skin.HasSetting(DisableBlur)]">RunScript(script.colorbox,daemon=True)</onclick>
-                        <onclick condition="System.HasAddon(script.colorbox) + [!System.HasAddon(script.colorbox) | Skin.HasSetting(DisableBlur)]">AlarmClock(nms1,SetProperty(NINE_manual_set,"var=quality,set=$INFO[Skin.String(colorbox_quality)]|var=blursize,set=$INFO[Skin.String(colorbox_blursize)]|var=bitsize,set=$INFO[Skin.String(colorbox_bitsize)]|var=pixelsize,set=$INFO[Skin.String(colorbox_pixelsize)]|var=black,set=$INFO[Skin.String(colorbox_black)]|var=white,set=$INFO[Skin.String(colorbox_white)]",home),00:05,true)</onclick>
-                        <onclick condition="System.HasAddon(script.colorbox)">Skin.ToggleSetting(DisableBlur)</onclick>
+                        <onclick>Skin.ToggleSetting(DisableBlur)</onclick>
                     </control>
 
                     <control type="radiobutton" id="19244" description="Busy Loader">
@@ -359,7 +354,7 @@
                         <include>Defs_Settings_Button</include>
                         <label>Overlay colour</label>
                         <label2>$INFO[Skin.String(overlaycolor.name)]</label2>
-                        <visible>[!System.HasAddon(script.colorbox) | Skin.HasSetting(DisableBlur)]</visible>
+                        <visible>Skin.HasSetting(DisableBlur)</visible>
                         <onclick condition="!System.HasAddon(script.skin.helper.colorpicker)">InstallAddon(script.skin.helper.colorpicker)</onclick>
                         <onclick>RunScript(script.skin.helper.colorpicker,skinstring=overlaycolor.name)</onclick>
                     </control>
@@ -832,15 +827,6 @@
                         <onclick>Addon.OpenSettings(script.toolbox)</onclick>
                         <onclick condition="!System.HasAddon(script.toolbox)">InstallAddon(script.toolbox)</onclick>
                         <selected>System.HasAddon(script.toolbox)</selected>
-                        <include>Defs_Settings_Button</include>
-                    </control>
-                    <control type="radiobutton" id="19808">
-                        <visible>Integer.IsEqual(Window.Property(CurrentFocus),9008)</visible>
-                        <label>script.colorbox</label>
-                        <label2>$INFO[System.AddonVersion(script.colorbox)]        </label2>
-                        <onclick>Addon.OpenSettings(script.colorbox)</onclick>
-                        <onclick condition="!System.HasAddon(script.colorbox)">InstallAddon(script.colorbox)</onclick>
-                        <selected>System.HasAddon(script.colorbox)</selected>
                         <include>Defs_Settings_Button</include>
                     </control>
                     <!-- <control type="radiobutton" id="19809">

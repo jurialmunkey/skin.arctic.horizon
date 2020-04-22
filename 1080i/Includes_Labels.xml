@@ -124,7 +124,7 @@
     </variable>
 
     <variable name="Label_Setting_BackgroundStyle">
-        <value condition="![!System.HasAddon(script.colorbox) | Skin.HasSetting(DisableBlur)]">Blur</value>
+        <value condition="!Skin.HasSetting(DisableBlur)">Blur</value>
         <value>Overlay</value>
     </variable>
 
