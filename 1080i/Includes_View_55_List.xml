@@ -268,6 +268,7 @@
         <param name="left" default="-15" />
         <param name="fadetime" default="0" />
         <param name="top" default="-15" />
+        <param name="allowfallback" default="true" />
         <definition>
             <control type="group">
                 <top>$PARAM[top]</top>
@@ -280,17 +281,19 @@
                     <include content="Object_PosterBack">
                         <param name="pad" value="-5" />
                     </include>
-                    <include content="Object_DefaultIcon">
-                        <param name="icon" value="$PARAM[defaulticon]" />
-                        <param name="visible" value="$PARAM[defaulticonvisible]" />
-                    </include>
-                    <include content="Object_Poster">
+                    <include content="Object_Artwork" condition="$PARAM[allowfallback]">
                         <param name="icon" value="$PARAM[icon]" />
                         <param name="aspectratio" value="$PARAM[aspectratio]" />
                         <param name="diffuse" value="$PARAM[diffuse]" />
                         <param name="fadetime" value="$PARAM[fadetime]" />
-                        <param name="visible" value="$PARAM[iconvisible]" />
                         <param name="bordersize" value="$PARAM[bordersize]" />
+                    </include>
+                    <include content="Object_Poster" condition="!$PARAM[allowfallback]">
+                        <param name="icon" value="$PARAM[icon]" />
+                        <param name="diffuse" value="$PARAM[diffuse]" />
+                        <param name="aspectratio" value="$PARAM[aspectratio]" />
+                        <param name="bordersize" value="$PARAM[bordersize]" />
+                        <param name="visible" value="true" />
                     </include>
                 </control>
             </control>
