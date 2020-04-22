@@ -966,17 +966,22 @@
 
             </control>
 
-            <control type="textbox">
-                <left>15</left>
-                <posy>180</posy>
-                <height>110</height>
-                <right>500</right>
-                <textcolor>FFFF00FF</textcolor>
-                <font>font_tiny</font>
-                <shadowcolor>ff000000</shadowcolor>
-                <align>left</align>
-                <label>$INFO[Window(Home).Property(TMDBHelper.ListItem.tvshow.tvdb_id)]$INFO[Window(Home).Property(TMDBHelper.ListItem.tvdb_id)]</label>
-
+            <control type="group">
+                <left>0</left>
+                <bottom>60</bottom>
+                <height>290</height>
+                <!-- <control type="image">
+                    <texture colordiffuse="bb000000">common/white.png</texture>
+                </control> -->
+                <control type="textbox">
+                    <left>30</left>
+                    <top>30</top>
+                    <textcolor>FFFF00FF</textcolor>
+                    <font>font_small_mono</font>
+                    <shadowcolor>ff000000</shadowcolor>
+                    <align>left</align>
+                    <label>[COLOR=FFFFFF00]II  [/COLOR]$INFO[ListItem.Icon][CR][COLOR=FFFFFF00]AI  [/COLOR]$INFO[ListItem.ActualIcon][CR][COLOR=FFFFFF00]IT  [/COLOR]$INFO[ListItem.Art(thumb)][CR][COLOR=FFFFFF00]IP  [/COLOR]$INFO[ListItem.Art(poster)][CR][COLOR=FFFFFF00]IF  [/COLOR]$INFO[ListItem.Art(fanart)][CR][COLOR=FFFFFF00]TP  [/COLOR]$INFO[ListItem.Art(tvshow.poster)][CR][COLOR=FFFFFF00]TF  [/COLOR]$INFO[ListItem.Art(tvshow.fanart)]</label>
+                </control>
             </control>
 
             <!-- Path label -->

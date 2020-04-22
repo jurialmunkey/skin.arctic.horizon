@@ -906,7 +906,7 @@
                 <param name="diffuse" value="$PARAM[diffuse]" />
                 <param name="aspectratio" value="keep" />
                 <param name="bordersize" value="25" />
-                <param name="visible" value="$EXP[Exp_DefaultIcon]"/>
+                <param name="visible" value="$EXP[Exp_DefaultIcon] + !$EXP[Exp_SpecialIcon]"/>
             </include>
             <include content="Object_Poster">
                 <param name="icon" value="$VAR[Image_DefaultIcon]" />
@@ -914,14 +914,14 @@
                 <param name="diffuse" value="$PARAM[diffuse]" />
                 <param name="aspectratio" value="keep" />
                 <param name="bordersize" value="40" />
-                <param name="visible" value="!$EXP[Exp_DefaultIcon] + [!String.IsEmpty(ListItem.ChannelNumberLabel) | !String.IsEmpty(ListITem.ChannelName) | !String.IsEmpty(ListITem.ChannelNumber) | String.IsEqual(ListItem.DBType,country) | String.IsEqual(ListItem.Property(dbtype),country) | String.IsEqual(ListItem.DBType,studio) | String.IsEqual(ListItem.Property(dbtype),studio) | String.IsEqual(ListItem.DBType,genre) | String.IsEqual(ListItem.Property(dbtype),genre)]" />
+                <param name="visible" value="$EXP[Exp_SpecialIcon]" />
             </include>
             <include content="Object_Poster">
                 <param name="icon" value="$PARAM[icon]" />
                 <param name="diffuse" value="$PARAM[diffuse]" />
                 <param name="aspectratio" value="$PARAM[aspectratio]" />
                 <param name="bordersize" value="$PARAM[bordersize]" />
-                <param name="visible" value="!$EXP[Exp_DefaultIcon] + [String.IsEmpty(ListItem.ChannelNumberLabel) + String.IsEmpty(ListITem.ChannelName) + String.IsEmpty(ListITem.ChannelNumber) + !String.IsEqual(ListItem.DBType,country) + !String.IsEqual(ListItem.Property(dbtype),country) + !String.IsEqual(ListItem.DBType,studio) + !String.IsEqual(ListItem.Property(dbtype),studio) + !String.IsEqual(ListItem.DBType,genre) + !String.IsEqual(ListItem.Property(dbtype),genre)]" />
+                <param name="visible" value="!$EXP[Exp_DefaultIcon] + !$EXP[Exp_SpecialIcon]" />
             </include>
         </definition>
     </include>

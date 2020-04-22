@@ -280,11 +280,7 @@
                     <include content="Object_PosterBack">
                         <param name="pad" value="-5" />
                     </include>
-                    <include content="Object_DefaultIcon">
-                        <param name="icon" value="$PARAM[defaulticon]" />
-                        <param name="visible" value="$PARAM[defaulticonvisible]" />
-                    </include>
-                    <include content="Object_Poster">
+                    <include content="Object_Artwork">
                         <param name="icon" value="$PARAM[icon]" />
                         <param name="aspectratio" value="$PARAM[aspectratio]" />
                         <param name="diffuse" value="$PARAM[diffuse]" />
