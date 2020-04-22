@@ -215,6 +215,7 @@
     </variable>
 
     <variable name="Image_Overlay">
+        <value condition="[String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,season)] + !Integer.IsEqual(ListItem.Property(UnWatchedEpisodes),0)">common/null.png</value>
         <value condition="ListItem.IsResumable">$VAR[Image_Overlay_IsResumable]</value>
 
         <value condition="String.IsEqual(ListItem.Overlay,OverlayWatched.png)">indicator/checkmark.png</value>
@@ -232,6 +233,7 @@
         <value condition="Window.IsVisible(AddonBrowser.xml)">$VAR[Image_Overlay_Addons]</value>
     </variable>
     <variable name="Image_Overlay_Focus">
+        <value condition="[String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,season)] + !Integer.IsEqual(ListItem.Property(UnWatchedEpisodes),0)">common/null.png</value>
         <value condition="ListItem.IsResumable">$VAR[Image_Overlay_IsResumable]</value>
 
         <value condition="String.IsEqual(ListItem.Overlay,OverlayWatched.png)">indicator/checkmark-fo.png</value>

@@ -288,7 +288,6 @@
                 <width>24</width>
                 <height>24</height>
                 <texture colordiffuse="ffffffff">$VAR[Image_Overlay]</texture>
-                <visible>Integer.IsEqual(ListItem.Property(UnWatchedEpisodes),0) | ![String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,season)]</visible>
             </control>
             <control type="label">
                 <top>15</top>
@@ -320,7 +319,6 @@
                 <width>24</width>
                 <height>24</height>
                 <texture colordiffuse="panel_bg">$VAR[Image_Overlay_Focus]</texture>
-                <visible>!Integer.IsGreater(ListItem.Property(UnWatchedEpisodes),0) | ![Container.Content(tvshows) | Container.Content(seasons) | Window.IsVisible(Home)]</visible>
             </control>
             <control type="label">
                 <top>15</top>
