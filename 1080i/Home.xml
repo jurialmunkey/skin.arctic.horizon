@@ -8,6 +8,11 @@
     <onload condition="String.IsEmpty(Window(Home).Property(SkinSplashStarted))">ActivateWindow(1117)</onload>
     <onunload>ClearProperty(TMDbHelper.WidgetContainer,Home)</onunload>
 
+    <onload>SetProperty(TMDbHelper.Blur.Fallback,special://skin/extras/backgrounds/mountains3.jpg,Home)</onload>
+    <onload>SetProperty(TMDbHelper.Blur.SourceImage,poster,Home)</onload>
+    <onload condition="Skin.HasSetting(DisableBlur)">Skin.Reset(TMDbHelper.EnableBlur)</onload>
+    <onload condition="!Skin.HasSetting(DisableBlur)">Skin.SetBool(TMDbHelper.EnableBlur)</onload>
+
     <onload>runscript(plugin.video.themoviedb.helper,make_variables=1080i)</onload>
     <controls>
         <control type="list" id="3700">

@@ -36,23 +36,7 @@
         </control>
     </include>
 
-    <include name="Global_Background_BlurControl">
-        <include content="Object_Control" condition="!Skin.HasSetting(DisableBlur)">
-            <param name="type" value="image" />
-            <param name="id" value="7975" />
-            <include>Defs_Offscreen</include>
-            <texture background="true">$VAR[Global_Background_ImageBlur_Var]</texture>
-        </include>
-        <include content="Object_Control" condition="Skin.HasSetting(EnableColorMatch)">
-            <param name="type" value="image" />
-            <param name="id" value="7977" />
-            <include>Defs_Offscreen</include>
-            <texture background="true">$VAR[Global_Background_ColorMatch_Var]</texture>
-        </include>
-    </include>
-
     <include name="Global_Background">
-        <include condition="!Skin.HasSetting(DisableBlur)">Global_Background_BlurControl</include>
         <include>Global_Background_Main</include>
     </include>
 
