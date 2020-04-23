@@ -5,7 +5,7 @@
         <value condition="!String.IsEmpty(Container(54).ListItem(-10).Property(NextDay))">$INFO[Container(54).ListItem(-10).Property(NextDay)]$INFO[Container(54).ListItem(-10).Property(ShortTime), @ ,]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(-10).TvShowTitle) + !String.IsEqual(Container(54).ListItem(-10).Label,Container(54).ListItem(-10).TvShowTitle)">$INFO[Container(54).ListItem(-10).TvShowTitle]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(-10).Studio) + [String.IsEqual(Container(54).ListItem(-10).DBType,video) | [String.IsEmpty(Container(54).ListItem(-10).DBType) + String.IsEmpty(Container(54).ListItem(-10).Genre)]]">$INFO[Container(54).ListItem(-10).Studio]$INFO[Container(54).ListItem(-10).Duration, - ,]</value>
-        <value condition="!String.IsEmpty(Container(54).ListItem(-10).Artist) + !String.IsEqual(Container(54).ListItem(-10).Artist,$INFO[Container(54).ListItem(-10).Label])">$INFO[Container(54).ListItem(-10).Artist]</value>
+        <value condition="!String.IsEmpty(Container(54).ListItem(-10).Artist) + String.IsEmpty(Container(54).ListItem(-10).Genre)">$INFO[Container(54).ListItem(-10).Artist]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(-10).Genre)">$INFO[Container(54).ListItem(-10).Genre]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(-10).Duration)">$INFO[Container(54).ListItem(-10).Duration]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(-10).AddonVersion)">$INFO[Container(54).ListItem(-10).AddonVersion]</value>
@@ -17,7 +17,7 @@
         <value condition="!String.IsEmpty(Container(54).ListItem(-9).Property(NextDay))">$INFO[Container(54).ListItem(-9).Property(NextDay)]$INFO[Container(54).ListItem(-9).Property(ShortTime), @ ,]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(-9).TvShowTitle) + !String.IsEqual(Container(54).ListItem(-9).Label,Container(54).ListItem(-9).TvShowTitle)">$INFO[Container(54).ListItem(-9).TvShowTitle]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(-9).Studio) + [String.IsEqual(Container(54).ListItem(-9).DBType,video) | [String.IsEmpty(Container(54).ListItem(-9).DBType) + String.IsEmpty(Container(54).ListItem(-9).Genre)]]">$INFO[Container(54).ListItem(-9).Studio]$INFO[Container(54).ListItem(-9).Duration, - ,]</value>
-        <value condition="!String.IsEmpty(Container(54).ListItem(-9).Artist) + !String.IsEqual(Container(54).ListItem(-9).Artist,$INFO[Container(54).ListItem(-9).Label])">$INFO[Container(54).ListItem(-9).Artist]</value>
+        <value condition="!String.IsEmpty(Container(54).ListItem(-9).Artist) + String.IsEmpty(Container(54).ListItem(-9).Genre)">$INFO[Container(54).ListItem(-9).Artist]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(-9).Genre)">$INFO[Container(54).ListItem(-9).Genre]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(-9).Duration)">$INFO[Container(54).ListItem(-9).Duration]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(-9).AddonVersion)">$INFO[Container(54).ListItem(-9).AddonVersion]</value>
@@ -29,7 +29,7 @@
         <value condition="!String.IsEmpty(Container(54).ListItem(-8).Property(NextDay))">$INFO[Container(54).ListItem(-8).Property(NextDay)]$INFO[Container(54).ListItem(-8).Property(ShortTime), @ ,]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(-8).TvShowTitle) + !String.IsEqual(Container(54).ListItem(-8).Label,Container(54).ListItem(-8).TvShowTitle)">$INFO[Container(54).ListItem(-8).TvShowTitle]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(-8).Studio) + [String.IsEqual(Container(54).ListItem(-8).DBType,video) | [String.IsEmpty(Container(54).ListItem(-8).DBType) + String.IsEmpty(Container(54).ListItem(-8).Genre)]]">$INFO[Container(54).ListItem(-8).Studio]$INFO[Container(54).ListItem(-8).Duration, - ,]</value>
-        <value condition="!String.IsEmpty(Container(54).ListItem(-8).Artist) + !String.IsEqual(Container(54).ListItem(-8).Artist,$INFO[Container(54).ListItem(-8).Label])">$INFO[Container(54).ListItem(-8).Artist]</value>
+        <value condition="!String.IsEmpty(Container(54).ListItem(-8).Artist) + String.IsEmpty(Container(54).ListItem(-8).Genre)">$INFO[Container(54).ListItem(-8).Artist]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(-8).Genre)">$INFO[Container(54).ListItem(-8).Genre]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(-8).Duration)">$INFO[Container(54).ListItem(-8).Duration]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(-8).AddonVersion)">$INFO[Container(54).ListItem(-8).AddonVersion]</value>
@@ -41,7 +41,7 @@
         <value condition="!String.IsEmpty(Container(54).ListItem(-7).Property(NextDay))">$INFO[Container(54).ListItem(-7).Property(NextDay)]$INFO[Container(54).ListItem(-7).Property(ShortTime), @ ,]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(-7).TvShowTitle) + !String.IsEqual(Container(54).ListItem(-7).Label,Container(54).ListItem(-7).TvShowTitle)">$INFO[Container(54).ListItem(-7).TvShowTitle]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(-7).Studio) + [String.IsEqual(Container(54).ListItem(-7).DBType,video) | [String.IsEmpty(Container(54).ListItem(-7).DBType) + String.IsEmpty(Container(54).ListItem(-7).Genre)]]">$INFO[Container(54).ListItem(-7).Studio]$INFO[Container(54).ListItem(-7).Duration, - ,]</value>
-        <value condition="!String.IsEmpty(Container(54).ListItem(-7).Artist) + !String.IsEqual(Container(54).ListItem(-7).Artist,$INFO[Container(54).ListItem(-7).Label])">$INFO[Container(54).ListItem(-7).Artist]</value>
+        <value condition="!String.IsEmpty(Container(54).ListItem(-7).Artist) + String.IsEmpty(Container(54).ListItem(-7).Genre)">$INFO[Container(54).ListItem(-7).Artist]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(-7).Genre)">$INFO[Container(54).ListItem(-7).Genre]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(-7).Duration)">$INFO[Container(54).ListItem(-7).Duration]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(-7).AddonVersion)">$INFO[Container(54).ListItem(-7).AddonVersion]</value>
@@ -53,7 +53,7 @@
         <value condition="!String.IsEmpty(Container(54).ListItem(-6).Property(NextDay))">$INFO[Container(54).ListItem(-6).Property(NextDay)]$INFO[Container(54).ListItem(-6).Property(ShortTime), @ ,]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(-6).TvShowTitle) + !String.IsEqual(Container(54).ListItem(-6).Label,Container(54).ListItem(-6).TvShowTitle)">$INFO[Container(54).ListItem(-6).TvShowTitle]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(-6).Studio) + [String.IsEqual(Container(54).ListItem(-6).DBType,video) | [String.IsEmpty(Container(54).ListItem(-6).DBType) + String.IsEmpty(Container(54).ListItem(-6).Genre)]]">$INFO[Container(54).ListItem(-6).Studio]$INFO[Container(54).ListItem(-6).Duration, - ,]</value>
-        <value condition="!String.IsEmpty(Container(54).ListItem(-6).Artist) + !String.IsEqual(Container(54).ListItem(-6).Artist,$INFO[Container(54).ListItem(-6).Label])">$INFO[Container(54).ListItem(-6).Artist]</value>
+        <value condition="!String.IsEmpty(Container(54).ListItem(-6).Artist) + String.IsEmpty(Container(54).ListItem(-6).Genre)">$INFO[Container(54).ListItem(-6).Artist]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(-6).Genre)">$INFO[Container(54).ListItem(-6).Genre]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(-6).Duration)">$INFO[Container(54).ListItem(-6).Duration]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(-6).AddonVersion)">$INFO[Container(54).ListItem(-6).AddonVersion]</value>
@@ -65,7 +65,7 @@
         <value condition="!String.IsEmpty(Container(54).ListItem(-5).Property(NextDay))">$INFO[Container(54).ListItem(-5).Property(NextDay)]$INFO[Container(54).ListItem(-5).Property(ShortTime), @ ,]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(-5).TvShowTitle) + !String.IsEqual(Container(54).ListItem(-5).Label,Container(54).ListItem(-5).TvShowTitle)">$INFO[Container(54).ListItem(-5).TvShowTitle]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(-5).Studio) + [String.IsEqual(Container(54).ListItem(-5).DBType,video) | [String.IsEmpty(Container(54).ListItem(-5).DBType) + String.IsEmpty(Container(54).ListItem(-5).Genre)]]">$INFO[Container(54).ListItem(-5).Studio]$INFO[Container(54).ListItem(-5).Duration, - ,]</value>
-        <value condition="!String.IsEmpty(Container(54).ListItem(-5).Artist) + !String.IsEqual(Container(54).ListItem(-5).Artist,$INFO[Container(54).ListItem(-5).Label])">$INFO[Container(54).ListItem(-5).Artist]</value>
+        <value condition="!String.IsEmpty(Container(54).ListItem(-5).Artist) + String.IsEmpty(Container(54).ListItem(-5).Genre)">$INFO[Container(54).ListItem(-5).Artist]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(-5).Genre)">$INFO[Container(54).ListItem(-5).Genre]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(-5).Duration)">$INFO[Container(54).ListItem(-5).Duration]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(-5).AddonVersion)">$INFO[Container(54).ListItem(-5).AddonVersion]</value>
@@ -77,7 +77,7 @@
         <value condition="!String.IsEmpty(Container(54).ListItem(-4).Property(NextDay))">$INFO[Container(54).ListItem(-4).Property(NextDay)]$INFO[Container(54).ListItem(-4).Property(ShortTime), @ ,]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(-4).TvShowTitle) + !String.IsEqual(Container(54).ListItem(-4).Label,Container(54).ListItem(-4).TvShowTitle)">$INFO[Container(54).ListItem(-4).TvShowTitle]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(-4).Studio) + [String.IsEqual(Container(54).ListItem(-4).DBType,video) | [String.IsEmpty(Container(54).ListItem(-4).DBType) + String.IsEmpty(Container(54).ListItem(-4).Genre)]]">$INFO[Container(54).ListItem(-4).Studio]$INFO[Container(54).ListItem(-4).Duration, - ,]</value>
-        <value condition="!String.IsEmpty(Container(54).ListItem(-4).Artist) + !String.IsEqual(Container(54).ListItem(-4).Artist,$INFO[Container(54).ListItem(-4).Label])">$INFO[Container(54).ListItem(-4).Artist]</value>
+        <value condition="!String.IsEmpty(Container(54).ListItem(-4).Artist) + String.IsEmpty(Container(54).ListItem(-4).Genre)">$INFO[Container(54).ListItem(-4).Artist]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(-4).Genre)">$INFO[Container(54).ListItem(-4).Genre]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(-4).Duration)">$INFO[Container(54).ListItem(-4).Duration]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(-4).AddonVersion)">$INFO[Container(54).ListItem(-4).AddonVersion]</value>
@@ -89,7 +89,7 @@
         <value condition="!String.IsEmpty(Container(54).ListItem(-3).Property(NextDay))">$INFO[Container(54).ListItem(-3).Property(NextDay)]$INFO[Container(54).ListItem(-3).Property(ShortTime), @ ,]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(-3).TvShowTitle) + !String.IsEqual(Container(54).ListItem(-3).Label,Container(54).ListItem(-3).TvShowTitle)">$INFO[Container(54).ListItem(-3).TvShowTitle]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(-3).Studio) + [String.IsEqual(Container(54).ListItem(-3).DBType,video) | [String.IsEmpty(Container(54).ListItem(-3).DBType) + String.IsEmpty(Container(54).ListItem(-3).Genre)]]">$INFO[Container(54).ListItem(-3).Studio]$INFO[Container(54).ListItem(-3).Duration, - ,]</value>
-        <value condition="!String.IsEmpty(Container(54).ListItem(-3).Artist) + !String.IsEqual(Container(54).ListItem(-3).Artist,$INFO[Container(54).ListItem(-3).Label])">$INFO[Container(54).ListItem(-3).Artist]</value>
+        <value condition="!String.IsEmpty(Container(54).ListItem(-3).Artist) + String.IsEmpty(Container(54).ListItem(-3).Genre)">$INFO[Container(54).ListItem(-3).Artist]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(-3).Genre)">$INFO[Container(54).ListItem(-3).Genre]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(-3).Duration)">$INFO[Container(54).ListItem(-3).Duration]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(-3).AddonVersion)">$INFO[Container(54).ListItem(-3).AddonVersion]</value>
@@ -101,7 +101,7 @@
         <value condition="!String.IsEmpty(Container(54).ListItem(-2).Property(NextDay))">$INFO[Container(54).ListItem(-2).Property(NextDay)]$INFO[Container(54).ListItem(-2).Property(ShortTime), @ ,]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(-2).TvShowTitle) + !String.IsEqual(Container(54).ListItem(-2).Label,Container(54).ListItem(-2).TvShowTitle)">$INFO[Container(54).ListItem(-2).TvShowTitle]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(-2).Studio) + [String.IsEqual(Container(54).ListItem(-2).DBType,video) | [String.IsEmpty(Container(54).ListItem(-2).DBType) + String.IsEmpty(Container(54).ListItem(-2).Genre)]]">$INFO[Container(54).ListItem(-2).Studio]$INFO[Container(54).ListItem(-2).Duration, - ,]</value>
-        <value condition="!String.IsEmpty(Container(54).ListItem(-2).Artist) + !String.IsEqual(Container(54).ListItem(-2).Artist,$INFO[Container(54).ListItem(-2).Label])">$INFO[Container(54).ListItem(-2).Artist]</value>
+        <value condition="!String.IsEmpty(Container(54).ListItem(-2).Artist) + String.IsEmpty(Container(54).ListItem(-2).Genre)">$INFO[Container(54).ListItem(-2).Artist]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(-2).Genre)">$INFO[Container(54).ListItem(-2).Genre]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(-2).Duration)">$INFO[Container(54).ListItem(-2).Duration]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(-2).AddonVersion)">$INFO[Container(54).ListItem(-2).AddonVersion]</value>
@@ -113,7 +113,7 @@
         <value condition="!String.IsEmpty(Container(54).ListItem(-1).Property(NextDay))">$INFO[Container(54).ListItem(-1).Property(NextDay)]$INFO[Container(54).ListItem(-1).Property(ShortTime), @ ,]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(-1).TvShowTitle) + !String.IsEqual(Container(54).ListItem(-1).Label,Container(54).ListItem(-1).TvShowTitle)">$INFO[Container(54).ListItem(-1).TvShowTitle]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(-1).Studio) + [String.IsEqual(Container(54).ListItem(-1).DBType,video) | [String.IsEmpty(Container(54).ListItem(-1).DBType) + String.IsEmpty(Container(54).ListItem(-1).Genre)]]">$INFO[Container(54).ListItem(-1).Studio]$INFO[Container(54).ListItem(-1).Duration, - ,]</value>
-        <value condition="!String.IsEmpty(Container(54).ListItem(-1).Artist) + !String.IsEqual(Container(54).ListItem(-1).Artist,$INFO[Container(54).ListItem(-1).Label])">$INFO[Container(54).ListItem(-1).Artist]</value>
+        <value condition="!String.IsEmpty(Container(54).ListItem(-1).Artist) + String.IsEmpty(Container(54).ListItem(-1).Genre)">$INFO[Container(54).ListItem(-1).Artist]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(-1).Genre)">$INFO[Container(54).ListItem(-1).Genre]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(-1).Duration)">$INFO[Container(54).ListItem(-1).Duration]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(-1).AddonVersion)">$INFO[Container(54).ListItem(-1).AddonVersion]</value>
@@ -125,7 +125,7 @@
         <value condition="!String.IsEmpty(Container(54).ListItem.Property(NextDay))">$INFO[Container(54).ListItem.Property(NextDay)]$INFO[Container(54).ListItem.Property(ShortTime), @ ,]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem.TvShowTitle) + !String.IsEqual(Container(54).ListItem.Label,Container(54).ListItem.TvShowTitle)">$INFO[Container(54).ListItem.TvShowTitle]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem.Studio) + [String.IsEqual(Container(54).ListItem.DBType,video) | [String.IsEmpty(Container(54).ListItem.DBType) + String.IsEmpty(Container(54).ListItem.Genre)]]">$INFO[Container(54).ListItem.Studio]$INFO[Container(54).ListItem.Duration, - ,]</value>
-        <value condition="!String.IsEmpty(Container(54).ListItem.Artist) + !String.IsEqual(Container(54).ListItem.Artist,$INFO[Container(54).ListItem.Label])">$INFO[Container(54).ListItem.Artist]</value>
+        <value condition="!String.IsEmpty(Container(54).ListItem.Artist) + String.IsEmpty(Container(54).ListItem.Genre)">$INFO[Container(54).ListItem.Artist]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem.Genre)">$INFO[Container(54).ListItem.Genre]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem.Duration)">$INFO[Container(54).ListItem.Duration]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem.AddonVersion)">$INFO[Container(54).ListItem.AddonVersion]</value>
@@ -137,7 +137,7 @@
         <value condition="!String.IsEmpty(Container(54).ListItem(1).Property(NextDay))">$INFO[Container(54).ListItem(1).Property(NextDay)]$INFO[Container(54).ListItem(1).Property(ShortTime), @ ,]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(1).TvShowTitle) + !String.IsEqual(Container(54).ListItem(1).Label,Container(54).ListItem(1).TvShowTitle)">$INFO[Container(54).ListItem(1).TvShowTitle]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(1).Studio) + [String.IsEqual(Container(54).ListItem(1).DBType,video) | [String.IsEmpty(Container(54).ListItem(1).DBType) + String.IsEmpty(Container(54).ListItem(1).Genre)]]">$INFO[Container(54).ListItem(1).Studio]$INFO[Container(54).ListItem(1).Duration, - ,]</value>
-        <value condition="!String.IsEmpty(Container(54).ListItem(1).Artist) + !String.IsEqual(Container(54).ListItem(1).Artist,$INFO[Container(54).ListItem(1).Label])">$INFO[Container(54).ListItem(1).Artist]</value>
+        <value condition="!String.IsEmpty(Container(54).ListItem(1).Artist) + String.IsEmpty(Container(54).ListItem(1).Genre)">$INFO[Container(54).ListItem(1).Artist]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(1).Genre)">$INFO[Container(54).ListItem(1).Genre]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(1).Duration)">$INFO[Container(54).ListItem(1).Duration]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(1).AddonVersion)">$INFO[Container(54).ListItem(1).AddonVersion]</value>
@@ -149,7 +149,7 @@
         <value condition="!String.IsEmpty(Container(54).ListItem(2).Property(NextDay))">$INFO[Container(54).ListItem(2).Property(NextDay)]$INFO[Container(54).ListItem(2).Property(ShortTime), @ ,]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(2).TvShowTitle) + !String.IsEqual(Container(54).ListItem(2).Label,Container(54).ListItem(2).TvShowTitle)">$INFO[Container(54).ListItem(2).TvShowTitle]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(2).Studio) + [String.IsEqual(Container(54).ListItem(2).DBType,video) | [String.IsEmpty(Container(54).ListItem(2).DBType) + String.IsEmpty(Container(54).ListItem(2).Genre)]]">$INFO[Container(54).ListItem(2).Studio]$INFO[Container(54).ListItem(2).Duration, - ,]</value>
-        <value condition="!String.IsEmpty(Container(54).ListItem(2).Artist) + !String.IsEqual(Container(54).ListItem(2).Artist,$INFO[Container(54).ListItem(2).Label])">$INFO[Container(54).ListItem(2).Artist]</value>
+        <value condition="!String.IsEmpty(Container(54).ListItem(2).Artist) + String.IsEmpty(Container(54).ListItem(2).Genre)">$INFO[Container(54).ListItem(2).Artist]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(2).Genre)">$INFO[Container(54).ListItem(2).Genre]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(2).Duration)">$INFO[Container(54).ListItem(2).Duration]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(2).AddonVersion)">$INFO[Container(54).ListItem(2).AddonVersion]</value>
@@ -161,7 +161,7 @@
         <value condition="!String.IsEmpty(Container(54).ListItem(3).Property(NextDay))">$INFO[Container(54).ListItem(3).Property(NextDay)]$INFO[Container(54).ListItem(3).Property(ShortTime), @ ,]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(3).TvShowTitle) + !String.IsEqual(Container(54).ListItem(3).Label,Container(54).ListItem(3).TvShowTitle)">$INFO[Container(54).ListItem(3).TvShowTitle]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(3).Studio) + [String.IsEqual(Container(54).ListItem(3).DBType,video) | [String.IsEmpty(Container(54).ListItem(3).DBType) + String.IsEmpty(Container(54).ListItem(3).Genre)]]">$INFO[Container(54).ListItem(3).Studio]$INFO[Container(54).ListItem(3).Duration, - ,]</value>
-        <value condition="!String.IsEmpty(Container(54).ListItem(3).Artist) + !String.IsEqual(Container(54).ListItem(3).Artist,$INFO[Container(54).ListItem(3).Label])">$INFO[Container(54).ListItem(3).Artist]</value>
+        <value condition="!String.IsEmpty(Container(54).ListItem(3).Artist) + String.IsEmpty(Container(54).ListItem(3).Genre)">$INFO[Container(54).ListItem(3).Artist]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(3).Genre)">$INFO[Container(54).ListItem(3).Genre]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(3).Duration)">$INFO[Container(54).ListItem(3).Duration]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(3).AddonVersion)">$INFO[Container(54).ListItem(3).AddonVersion]</value>
@@ -173,7 +173,7 @@
         <value condition="!String.IsEmpty(Container(54).ListItem(4).Property(NextDay))">$INFO[Container(54).ListItem(4).Property(NextDay)]$INFO[Container(54).ListItem(4).Property(ShortTime), @ ,]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(4).TvShowTitle) + !String.IsEqual(Container(54).ListItem(4).Label,Container(54).ListItem(4).TvShowTitle)">$INFO[Container(54).ListItem(4).TvShowTitle]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(4).Studio) + [String.IsEqual(Container(54).ListItem(4).DBType,video) | [String.IsEmpty(Container(54).ListItem(4).DBType) + String.IsEmpty(Container(54).ListItem(4).Genre)]]">$INFO[Container(54).ListItem(4).Studio]$INFO[Container(54).ListItem(4).Duration, - ,]</value>
-        <value condition="!String.IsEmpty(Container(54).ListItem(4).Artist) + !String.IsEqual(Container(54).ListItem(4).Artist,$INFO[Container(54).ListItem(4).Label])">$INFO[Container(54).ListItem(4).Artist]</value>
+        <value condition="!String.IsEmpty(Container(54).ListItem(4).Artist) + String.IsEmpty(Container(54).ListItem(4).Genre)">$INFO[Container(54).ListItem(4).Artist]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(4).Genre)">$INFO[Container(54).ListItem(4).Genre]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(4).Duration)">$INFO[Container(54).ListItem(4).Duration]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(4).AddonVersion)">$INFO[Container(54).ListItem(4).AddonVersion]</value>
@@ -185,7 +185,7 @@
         <value condition="!String.IsEmpty(Container(54).ListItem(5).Property(NextDay))">$INFO[Container(54).ListItem(5).Property(NextDay)]$INFO[Container(54).ListItem(5).Property(ShortTime), @ ,]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(5).TvShowTitle) + !String.IsEqual(Container(54).ListItem(5).Label,Container(54).ListItem(5).TvShowTitle)">$INFO[Container(54).ListItem(5).TvShowTitle]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(5).Studio) + [String.IsEqual(Container(54).ListItem(5).DBType,video) | [String.IsEmpty(Container(54).ListItem(5).DBType) + String.IsEmpty(Container(54).ListItem(5).Genre)]]">$INFO[Container(54).ListItem(5).Studio]$INFO[Container(54).ListItem(5).Duration, - ,]</value>
-        <value condition="!String.IsEmpty(Container(54).ListItem(5).Artist) + !String.IsEqual(Container(54).ListItem(5).Artist,$INFO[Container(54).ListItem(5).Label])">$INFO[Container(54).ListItem(5).Artist]</value>
+        <value condition="!String.IsEmpty(Container(54).ListItem(5).Artist) + String.IsEmpty(Container(54).ListItem(5).Genre)">$INFO[Container(54).ListItem(5).Artist]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(5).Genre)">$INFO[Container(54).ListItem(5).Genre]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(5).Duration)">$INFO[Container(54).ListItem(5).Duration]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(5).AddonVersion)">$INFO[Container(54).ListItem(5).AddonVersion]</value>
@@ -197,7 +197,7 @@
         <value condition="!String.IsEmpty(Container(54).ListItem(6).Property(NextDay))">$INFO[Container(54).ListItem(6).Property(NextDay)]$INFO[Container(54).ListItem(6).Property(ShortTime), @ ,]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(6).TvShowTitle) + !String.IsEqual(Container(54).ListItem(6).Label,Container(54).ListItem(6).TvShowTitle)">$INFO[Container(54).ListItem(6).TvShowTitle]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(6).Studio) + [String.IsEqual(Container(54).ListItem(6).DBType,video) | [String.IsEmpty(Container(54).ListItem(6).DBType) + String.IsEmpty(Container(54).ListItem(6).Genre)]]">$INFO[Container(54).ListItem(6).Studio]$INFO[Container(54).ListItem(6).Duration, - ,]</value>
-        <value condition="!String.IsEmpty(Container(54).ListItem(6).Artist) + !String.IsEqual(Container(54).ListItem(6).Artist,$INFO[Container(54).ListItem(6).Label])">$INFO[Container(54).ListItem(6).Artist]</value>
+        <value condition="!String.IsEmpty(Container(54).ListItem(6).Artist) + String.IsEmpty(Container(54).ListItem(6).Genre)">$INFO[Container(54).ListItem(6).Artist]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(6).Genre)">$INFO[Container(54).ListItem(6).Genre]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(6).Duration)">$INFO[Container(54).ListItem(6).Duration]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(6).AddonVersion)">$INFO[Container(54).ListItem(6).AddonVersion]</value>
@@ -209,7 +209,7 @@
         <value condition="!String.IsEmpty(Container(54).ListItem(7).Property(NextDay))">$INFO[Container(54).ListItem(7).Property(NextDay)]$INFO[Container(54).ListItem(7).Property(ShortTime), @ ,]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(7).TvShowTitle) + !String.IsEqual(Container(54).ListItem(7).Label,Container(54).ListItem(7).TvShowTitle)">$INFO[Container(54).ListItem(7).TvShowTitle]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(7).Studio) + [String.IsEqual(Container(54).ListItem(7).DBType,video) | [String.IsEmpty(Container(54).ListItem(7).DBType) + String.IsEmpty(Container(54).ListItem(7).Genre)]]">$INFO[Container(54).ListItem(7).Studio]$INFO[Container(54).ListItem(7).Duration, - ,]</value>
-        <value condition="!String.IsEmpty(Container(54).ListItem(7).Artist) + !String.IsEqual(Container(54).ListItem(7).Artist,$INFO[Container(54).ListItem(7).Label])">$INFO[Container(54).ListItem(7).Artist]</value>
+        <value condition="!String.IsEmpty(Container(54).ListItem(7).Artist) + String.IsEmpty(Container(54).ListItem(7).Genre)">$INFO[Container(54).ListItem(7).Artist]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(7).Genre)">$INFO[Container(54).ListItem(7).Genre]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(7).Duration)">$INFO[Container(54).ListItem(7).Duration]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(7).AddonVersion)">$INFO[Container(54).ListItem(7).AddonVersion]</value>
@@ -221,7 +221,7 @@
         <value condition="!String.IsEmpty(Container(54).ListItem(8).Property(NextDay))">$INFO[Container(54).ListItem(8).Property(NextDay)]$INFO[Container(54).ListItem(8).Property(ShortTime), @ ,]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(8).TvShowTitle) + !String.IsEqual(Container(54).ListItem(8).Label,Container(54).ListItem(8).TvShowTitle)">$INFO[Container(54).ListItem(8).TvShowTitle]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(8).Studio) + [String.IsEqual(Container(54).ListItem(8).DBType,video) | [String.IsEmpty(Container(54).ListItem(8).DBType) + String.IsEmpty(Container(54).ListItem(8).Genre)]]">$INFO[Container(54).ListItem(8).Studio]$INFO[Container(54).ListItem(8).Duration, - ,]</value>
-        <value condition="!String.IsEmpty(Container(54).ListItem(8).Artist) + !String.IsEqual(Container(54).ListItem(8).Artist,$INFO[Container(54).ListItem(8).Label])">$INFO[Container(54).ListItem(8).Artist]</value>
+        <value condition="!String.IsEmpty(Container(54).ListItem(8).Artist) + String.IsEmpty(Container(54).ListItem(8).Genre)">$INFO[Container(54).ListItem(8).Artist]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(8).Genre)">$INFO[Container(54).ListItem(8).Genre]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(8).Duration)">$INFO[Container(54).ListItem(8).Duration]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(8).AddonVersion)">$INFO[Container(54).ListItem(8).AddonVersion]</value>
@@ -233,7 +233,7 @@
         <value condition="!String.IsEmpty(Container(54).ListItem(9).Property(NextDay))">$INFO[Container(54).ListItem(9).Property(NextDay)]$INFO[Container(54).ListItem(9).Property(ShortTime), @ ,]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(9).TvShowTitle) + !String.IsEqual(Container(54).ListItem(9).Label,Container(54).ListItem(9).TvShowTitle)">$INFO[Container(54).ListItem(9).TvShowTitle]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(9).Studio) + [String.IsEqual(Container(54).ListItem(9).DBType,video) | [String.IsEmpty(Container(54).ListItem(9).DBType) + String.IsEmpty(Container(54).ListItem(9).Genre)]]">$INFO[Container(54).ListItem(9).Studio]$INFO[Container(54).ListItem(9).Duration, - ,]</value>
-        <value condition="!String.IsEmpty(Container(54).ListItem(9).Artist) + !String.IsEqual(Container(54).ListItem(9).Artist,$INFO[Container(54).ListItem(9).Label])">$INFO[Container(54).ListItem(9).Artist]</value>
+        <value condition="!String.IsEmpty(Container(54).ListItem(9).Artist) + String.IsEmpty(Container(54).ListItem(9).Genre)">$INFO[Container(54).ListItem(9).Artist]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(9).Genre)">$INFO[Container(54).ListItem(9).Genre]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(9).Duration)">$INFO[Container(54).ListItem(9).Duration]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(9).AddonVersion)">$INFO[Container(54).ListItem(9).AddonVersion]</value>
@@ -245,7 +245,7 @@
         <value condition="!String.IsEmpty(Container(54).ListItem(10).Property(NextDay))">$INFO[Container(54).ListItem(10).Property(NextDay)]$INFO[Container(54).ListItem(10).Property(ShortTime), @ ,]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(10).TvShowTitle) + !String.IsEqual(Container(54).ListItem(10).Label,Container(54).ListItem(10).TvShowTitle)">$INFO[Container(54).ListItem(10).TvShowTitle]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(10).Studio) + [String.IsEqual(Container(54).ListItem(10).DBType,video) | [String.IsEmpty(Container(54).ListItem(10).DBType) + String.IsEmpty(Container(54).ListItem(10).Genre)]]">$INFO[Container(54).ListItem(10).Studio]$INFO[Container(54).ListItem(10).Duration, - ,]</value>
-        <value condition="!String.IsEmpty(Container(54).ListItem(10).Artist) + !String.IsEqual(Container(54).ListItem(10).Artist,$INFO[Container(54).ListItem(10).Label])">$INFO[Container(54).ListItem(10).Artist]</value>
+        <value condition="!String.IsEmpty(Container(54).ListItem(10).Artist) + String.IsEmpty(Container(54).ListItem(10).Genre)">$INFO[Container(54).ListItem(10).Artist]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(10).Genre)">$INFO[Container(54).ListItem(10).Genre]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(10).Duration)">$INFO[Container(54).ListItem(10).Duration]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(10).AddonVersion)">$INFO[Container(54).ListItem(10).AddonVersion]</value>
@@ -257,7 +257,7 @@
         <value condition="!String.IsEmpty(Container(54).ListItem(11).Property(NextDay))">$INFO[Container(54).ListItem(11).Property(NextDay)]$INFO[Container(54).ListItem(11).Property(ShortTime), @ ,]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(11).TvShowTitle) + !String.IsEqual(Container(54).ListItem(11).Label,Container(54).ListItem(11).TvShowTitle)">$INFO[Container(54).ListItem(11).TvShowTitle]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(11).Studio) + [String.IsEqual(Container(54).ListItem(11).DBType,video) | [String.IsEmpty(Container(54).ListItem(11).DBType) + String.IsEmpty(Container(54).ListItem(11).Genre)]]">$INFO[Container(54).ListItem(11).Studio]$INFO[Container(54).ListItem(11).Duration, - ,]</value>
-        <value condition="!String.IsEmpty(Container(54).ListItem(11).Artist) + !String.IsEqual(Container(54).ListItem(11).Artist,$INFO[Container(54).ListItem(11).Label])">$INFO[Container(54).ListItem(11).Artist]</value>
+        <value condition="!String.IsEmpty(Container(54).ListItem(11).Artist) + String.IsEmpty(Container(54).ListItem(11).Genre)">$INFO[Container(54).ListItem(11).Artist]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(11).Genre)">$INFO[Container(54).ListItem(11).Genre]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(11).Duration)">$INFO[Container(54).ListItem(11).Duration]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(11).AddonVersion)">$INFO[Container(54).ListItem(11).AddonVersion]</value>
@@ -269,7 +269,7 @@
         <value condition="!String.IsEmpty(Container(54).ListItem(12).Property(NextDay))">$INFO[Container(54).ListItem(12).Property(NextDay)]$INFO[Container(54).ListItem(12).Property(ShortTime), @ ,]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(12).TvShowTitle) + !String.IsEqual(Container(54).ListItem(12).Label,Container(54).ListItem(12).TvShowTitle)">$INFO[Container(54).ListItem(12).TvShowTitle]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(12).Studio) + [String.IsEqual(Container(54).ListItem(12).DBType,video) | [String.IsEmpty(Container(54).ListItem(12).DBType) + String.IsEmpty(Container(54).ListItem(12).Genre)]]">$INFO[Container(54).ListItem(12).Studio]$INFO[Container(54).ListItem(12).Duration, - ,]</value>
-        <value condition="!String.IsEmpty(Container(54).ListItem(12).Artist) + !String.IsEqual(Container(54).ListItem(12).Artist,$INFO[Container(54).ListItem(12).Label])">$INFO[Container(54).ListItem(12).Artist]</value>
+        <value condition="!String.IsEmpty(Container(54).ListItem(12).Artist) + String.IsEmpty(Container(54).ListItem(12).Genre)">$INFO[Container(54).ListItem(12).Artist]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(12).Genre)">$INFO[Container(54).ListItem(12).Genre]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(12).Duration)">$INFO[Container(54).ListItem(12).Duration]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(12).AddonVersion)">$INFO[Container(54).ListItem(12).AddonVersion]</value>
@@ -281,7 +281,7 @@
         <value condition="!String.IsEmpty(Container(54).ListItem(13).Property(NextDay))">$INFO[Container(54).ListItem(13).Property(NextDay)]$INFO[Container(54).ListItem(13).Property(ShortTime), @ ,]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(13).TvShowTitle) + !String.IsEqual(Container(54).ListItem(13).Label,Container(54).ListItem(13).TvShowTitle)">$INFO[Container(54).ListItem(13).TvShowTitle]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(13).Studio) + [String.IsEqual(Container(54).ListItem(13).DBType,video) | [String.IsEmpty(Container(54).ListItem(13).DBType) + String.IsEmpty(Container(54).ListItem(13).Genre)]]">$INFO[Container(54).ListItem(13).Studio]$INFO[Container(54).ListItem(13).Duration, - ,]</value>
-        <value condition="!String.IsEmpty(Container(54).ListItem(13).Artist) + !String.IsEqual(Container(54).ListItem(13).Artist,$INFO[Container(54).ListItem(13).Label])">$INFO[Container(54).ListItem(13).Artist]</value>
+        <value condition="!String.IsEmpty(Container(54).ListItem(13).Artist) + String.IsEmpty(Container(54).ListItem(13).Genre)">$INFO[Container(54).ListItem(13).Artist]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(13).Genre)">$INFO[Container(54).ListItem(13).Genre]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(13).Duration)">$INFO[Container(54).ListItem(13).Duration]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(13).AddonVersion)">$INFO[Container(54).ListItem(13).AddonVersion]</value>
@@ -293,7 +293,7 @@
         <value condition="!String.IsEmpty(Container(54).ListItem(14).Property(NextDay))">$INFO[Container(54).ListItem(14).Property(NextDay)]$INFO[Container(54).ListItem(14).Property(ShortTime), @ ,]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(14).TvShowTitle) + !String.IsEqual(Container(54).ListItem(14).Label,Container(54).ListItem(14).TvShowTitle)">$INFO[Container(54).ListItem(14).TvShowTitle]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(14).Studio) + [String.IsEqual(Container(54).ListItem(14).DBType,video) | [String.IsEmpty(Container(54).ListItem(14).DBType) + String.IsEmpty(Container(54).ListItem(14).Genre)]]">$INFO[Container(54).ListItem(14).Studio]$INFO[Container(54).ListItem(14).Duration, - ,]</value>
-        <value condition="!String.IsEmpty(Container(54).ListItem(14).Artist) + !String.IsEqual(Container(54).ListItem(14).Artist,$INFO[Container(54).ListItem(14).Label])">$INFO[Container(54).ListItem(14).Artist]</value>
+        <value condition="!String.IsEmpty(Container(54).ListItem(14).Artist) + String.IsEmpty(Container(54).ListItem(14).Genre)">$INFO[Container(54).ListItem(14).Artist]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(14).Genre)">$INFO[Container(54).ListItem(14).Genre]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(14).Duration)">$INFO[Container(54).ListItem(14).Duration]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(14).AddonVersion)">$INFO[Container(54).ListItem(14).AddonVersion]</value>
@@ -305,7 +305,7 @@
         <value condition="!String.IsEmpty(Container(54).ListItem(15).Property(NextDay))">$INFO[Container(54).ListItem(15).Property(NextDay)]$INFO[Container(54).ListItem(15).Property(ShortTime), @ ,]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(15).TvShowTitle) + !String.IsEqual(Container(54).ListItem(15).Label,Container(54).ListItem(15).TvShowTitle)">$INFO[Container(54).ListItem(15).TvShowTitle]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(15).Studio) + [String.IsEqual(Container(54).ListItem(15).DBType,video) | [String.IsEmpty(Container(54).ListItem(15).DBType) + String.IsEmpty(Container(54).ListItem(15).Genre)]]">$INFO[Container(54).ListItem(15).Studio]$INFO[Container(54).ListItem(15).Duration, - ,]</value>
-        <value condition="!String.IsEmpty(Container(54).ListItem(15).Artist) + !String.IsEqual(Container(54).ListItem(15).Artist,$INFO[Container(54).ListItem(15).Label])">$INFO[Container(54).ListItem(15).Artist]</value>
+        <value condition="!String.IsEmpty(Container(54).ListItem(15).Artist) + String.IsEmpty(Container(54).ListItem(15).Genre)">$INFO[Container(54).ListItem(15).Artist]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(15).Genre)">$INFO[Container(54).ListItem(15).Genre]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(15).Duration)">$INFO[Container(54).ListItem(15).Duration]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(15).AddonVersion)">$INFO[Container(54).ListItem(15).AddonVersion]</value>
@@ -317,19 +317,31 @@
         <value condition="!String.IsEmpty(Container(54).ListItem(16).Property(NextDay))">$INFO[Container(54).ListItem(16).Property(NextDay)]$INFO[Container(54).ListItem(16).Property(ShortTime), @ ,]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(16).TvShowTitle) + !String.IsEqual(Container(54).ListItem(16).Label,Container(54).ListItem(16).TvShowTitle)">$INFO[Container(54).ListItem(16).TvShowTitle]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(16).Studio) + [String.IsEqual(Container(54).ListItem(16).DBType,video) | [String.IsEmpty(Container(54).ListItem(16).DBType) + String.IsEmpty(Container(54).ListItem(16).Genre)]]">$INFO[Container(54).ListItem(16).Studio]$INFO[Container(54).ListItem(16).Duration, - ,]</value>
-        <value condition="!String.IsEmpty(Container(54).ListItem(16).Artist) + !String.IsEqual(Container(54).ListItem(16).Artist,$INFO[Container(54).ListItem(16).Label])">$INFO[Container(54).ListItem(16).Artist]</value>
+        <value condition="!String.IsEmpty(Container(54).ListItem(16).Artist) + String.IsEmpty(Container(54).ListItem(16).Genre)">$INFO[Container(54).ListItem(16).Artist]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(16).Genre)">$INFO[Container(54).ListItem(16).Genre]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(16).Duration)">$INFO[Container(54).ListItem(16).Duration]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(16).AddonVersion)">$INFO[Container(54).ListItem(16).AddonVersion]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(16).PictureResolution)">$INFO[Container(54).ListItem(16).PictureResolution]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(16).Label2)">$INFO[Container(54).ListItem(16).Label2]</value>
     </variable>
+    <variable name="Label_SmallLandscapeWidget_Sublabel_C54_17">
+        <value condition="!String.IsEmpty(Container(54).ListItem(17).ChannelName)">$INFO[Container(54).ListItem(17).ChannelName]</value>
+        <value condition="!String.IsEmpty(Container(54).ListItem(17).Property(NextDay))">$INFO[Container(54).ListItem(17).Property(NextDay)]$INFO[Container(54).ListItem(17).Property(ShortTime), @ ,]</value>
+        <value condition="!String.IsEmpty(Container(54).ListItem(17).TvShowTitle) + !String.IsEqual(Container(54).ListItem(17).Label,Container(54).ListItem(17).TvShowTitle)">$INFO[Container(54).ListItem(17).TvShowTitle]</value>
+        <value condition="!String.IsEmpty(Container(54).ListItem(17).Studio) + [String.IsEqual(Container(54).ListItem(17).DBType,video) | [String.IsEmpty(Container(54).ListItem(17).DBType) + String.IsEmpty(Container(54).ListItem(17).Genre)]]">$INFO[Container(54).ListItem(17).Studio]$INFO[Container(54).ListItem(17).Duration, - ,]</value>
+        <value condition="!String.IsEmpty(Container(54).ListItem(17).Artist) + String.IsEmpty(Container(54).ListItem(17).Genre)">$INFO[Container(54).ListItem(17).Artist]</value>
+        <value condition="!String.IsEmpty(Container(54).ListItem(17).Genre)">$INFO[Container(54).ListItem(17).Genre]</value>
+        <value condition="!String.IsEmpty(Container(54).ListItem(17).Duration)">$INFO[Container(54).ListItem(17).Duration]</value>
+        <value condition="!String.IsEmpty(Container(54).ListItem(17).AddonVersion)">$INFO[Container(54).ListItem(17).AddonVersion]</value>
+        <value condition="!String.IsEmpty(Container(54).ListItem(17).PictureResolution)">$INFO[Container(54).ListItem(17).PictureResolution]</value>
+        <value condition="!String.IsEmpty(Container(54).ListItem(17).Label2)">$INFO[Container(54).ListItem(17).Label2]</value>
+    </variable>
     <variable name="Label_SmallLandscapeWidget_Sublabel_C54">
         <value condition="!String.IsEmpty(Container(54).ListItem.ChannelName)">$INFO[Container(54).ListItem.ChannelName]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem.Property(NextDay))">$INFO[Container(54).ListItem.Property(NextDay)]$INFO[Container(54).ListItem.Property(ShortTime), @ ,]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem.TvShowTitle) + !String.IsEqual(Container(54).ListItem.Label,Container(54).ListItem.TvShowTitle)">$INFO[Container(54).ListItem.TvShowTitle]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem.Studio) + [String.IsEqual(Container(54).ListItem.DBType,video) | [String.IsEmpty(Container(54).ListItem.DBType) + String.IsEmpty(Container(54).ListItem.Genre)]]">$INFO[Container(54).ListItem.Studio]$INFO[Container(54).ListItem.Duration, - ,]</value>
-        <value condition="!String.IsEmpty(Container(54).ListItem.Artist) + !String.IsEqual(Container(54).ListItem.Artist,$INFO[Container(54).ListItem.Label])">$INFO[Container(54).ListItem.Artist]</value>
+        <value condition="!String.IsEmpty(Container(54).ListItem.Artist) + String.IsEmpty(Container(54).ListItem.Genre)">$INFO[Container(54).ListItem.Artist]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem.Genre)">$INFO[Container(54).ListItem.Genre]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem.Duration)">$INFO[Container(54).ListItem.Duration]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem.AddonVersion)">$INFO[Container(54).ListItem.AddonVersion]</value>
@@ -341,7 +353,7 @@
         <value condition="!String.IsEmpty(ListItem(-10).Property(NextDay))">$INFO[ListItem(-10).Property(NextDay)]$INFO[ListItem(-10).Property(ShortTime), @ ,]</value>
         <value condition="!String.IsEmpty(ListItem(-10).TvShowTitle) + !String.IsEqual(ListItem(-10).Label,ListItem(-10).TvShowTitle)">$INFO[ListItem(-10).TvShowTitle]</value>
         <value condition="!String.IsEmpty(ListItem(-10).Studio) + [String.IsEqual(ListItem(-10).DBType,video) | [String.IsEmpty(ListItem(-10).DBType) + String.IsEmpty(ListItem(-10).Genre)]]">$INFO[ListItem(-10).Studio]$INFO[ListItem(-10).Duration, - ,]</value>
-        <value condition="!String.IsEmpty(ListItem(-10).Artist) + !String.IsEqual(ListItem(-10).Artist,$INFO[ListItem(-10).Label])">$INFO[ListItem(-10).Artist]</value>
+        <value condition="!String.IsEmpty(ListItem(-10).Artist) + String.IsEmpty(ListItem(-10).Genre)">$INFO[ListItem(-10).Artist]</value>
         <value condition="!String.IsEmpty(ListItem(-10).Genre)">$INFO[ListItem(-10).Genre]</value>
         <value condition="!String.IsEmpty(ListItem(-10).Duration)">$INFO[ListItem(-10).Duration]</value>
         <value condition="!String.IsEmpty(ListItem(-10).AddonVersion)">$INFO[ListItem(-10).AddonVersion]</value>
@@ -353,7 +365,7 @@
         <value condition="!String.IsEmpty(ListItem(-9).Property(NextDay))">$INFO[ListItem(-9).Property(NextDay)]$INFO[ListItem(-9).Property(ShortTime), @ ,]</value>
         <value condition="!String.IsEmpty(ListItem(-9).TvShowTitle) + !String.IsEqual(ListItem(-9).Label,ListItem(-9).TvShowTitle)">$INFO[ListItem(-9).TvShowTitle]</value>
         <value condition="!String.IsEmpty(ListItem(-9).Studio) + [String.IsEqual(ListItem(-9).DBType,video) | [String.IsEmpty(ListItem(-9).DBType) + String.IsEmpty(ListItem(-9).Genre)]]">$INFO[ListItem(-9).Studio]$INFO[ListItem(-9).Duration, - ,]</value>
-        <value condition="!String.IsEmpty(ListItem(-9).Artist) + !String.IsEqual(ListItem(-9).Artist,$INFO[ListItem(-9).Label])">$INFO[ListItem(-9).Artist]</value>
+        <value condition="!String.IsEmpty(ListItem(-9).Artist) + String.IsEmpty(ListItem(-9).Genre)">$INFO[ListItem(-9).Artist]</value>
         <value condition="!String.IsEmpty(ListItem(-9).Genre)">$INFO[ListItem(-9).Genre]</value>
         <value condition="!String.IsEmpty(ListItem(-9).Duration)">$INFO[ListItem(-9).Duration]</value>
         <value condition="!String.IsEmpty(ListItem(-9).AddonVersion)">$INFO[ListItem(-9).AddonVersion]</value>
@@ -365,7 +377,7 @@
         <value condition="!String.IsEmpty(ListItem(-8).Property(NextDay))">$INFO[ListItem(-8).Property(NextDay)]$INFO[ListItem(-8).Property(ShortTime), @ ,]</value>
         <value condition="!String.IsEmpty(ListItem(-8).TvShowTitle) + !String.IsEqual(ListItem(-8).Label,ListItem(-8).TvShowTitle)">$INFO[ListItem(-8).TvShowTitle]</value>
         <value condition="!String.IsEmpty(ListItem(-8).Studio) + [String.IsEqual(ListItem(-8).DBType,video) | [String.IsEmpty(ListItem(-8).DBType) + String.IsEmpty(ListItem(-8).Genre)]]">$INFO[ListItem(-8).Studio]$INFO[ListItem(-8).Duration, - ,]</value>
-        <value condition="!String.IsEmpty(ListItem(-8).Artist) + !String.IsEqual(ListItem(-8).Artist,$INFO[ListItem(-8).Label])">$INFO[ListItem(-8).Artist]</value>
+        <value condition="!String.IsEmpty(ListItem(-8).Artist) + String.IsEmpty(ListItem(-8).Genre)">$INFO[ListItem(-8).Artist]</value>
         <value condition="!String.IsEmpty(ListItem(-8).Genre)">$INFO[ListItem(-8).Genre]</value>
         <value condition="!String.IsEmpty(ListItem(-8).Duration)">$INFO[ListItem(-8).Duration]</value>
         <value condition="!String.IsEmpty(ListItem(-8).AddonVersion)">$INFO[ListItem(-8).AddonVersion]</value>
@@ -377,7 +389,7 @@
         <value condition="!String.IsEmpty(ListItem(-7).Property(NextDay))">$INFO[ListItem(-7).Property(NextDay)]$INFO[ListItem(-7).Property(ShortTime), @ ,]</value>
         <value condition="!String.IsEmpty(ListItem(-7).TvShowTitle) + !String.IsEqual(ListItem(-7).Label,ListItem(-7).TvShowTitle)">$INFO[ListItem(-7).TvShowTitle]</value>
         <value condition="!String.IsEmpty(ListItem(-7).Studio) + [String.IsEqual(ListItem(-7).DBType,video) | [String.IsEmpty(ListItem(-7).DBType) + String.IsEmpty(ListItem(-7).Genre)]]">$INFO[ListItem(-7).Studio]$INFO[ListItem(-7).Duration, - ,]</value>
-        <value condition="!String.IsEmpty(ListItem(-7).Artist) + !String.IsEqual(ListItem(-7).Artist,$INFO[ListItem(-7).Label])">$INFO[ListItem(-7).Artist]</value>
+        <value condition="!String.IsEmpty(ListItem(-7).Artist) + String.IsEmpty(ListItem(-7).Genre)">$INFO[ListItem(-7).Artist]</value>
         <value condition="!String.IsEmpty(ListItem(-7).Genre)">$INFO[ListItem(-7).Genre]</value>
         <value condition="!String.IsEmpty(ListItem(-7).Duration)">$INFO[ListItem(-7).Duration]</value>
         <value condition="!String.IsEmpty(ListItem(-7).AddonVersion)">$INFO[ListItem(-7).AddonVersion]</value>
@@ -389,7 +401,7 @@
         <value condition="!String.IsEmpty(ListItem(-6).Property(NextDay))">$INFO[ListItem(-6).Property(NextDay)]$INFO[ListItem(-6).Property(ShortTime), @ ,]</value>
         <value condition="!String.IsEmpty(ListItem(-6).TvShowTitle) + !String.IsEqual(ListItem(-6).Label,ListItem(-6).TvShowTitle)">$INFO[ListItem(-6).TvShowTitle]</value>
         <value condition="!String.IsEmpty(ListItem(-6).Studio) + [String.IsEqual(ListItem(-6).DBType,video) | [String.IsEmpty(ListItem(-6).DBType) + String.IsEmpty(ListItem(-6).Genre)]]">$INFO[ListItem(-6).Studio]$INFO[ListItem(-6).Duration, - ,]</value>
-        <value condition="!String.IsEmpty(ListItem(-6).Artist) + !String.IsEqual(ListItem(-6).Artist,$INFO[ListItem(-6).Label])">$INFO[ListItem(-6).Artist]</value>
+        <value condition="!String.IsEmpty(ListItem(-6).Artist) + String.IsEmpty(ListItem(-6).Genre)">$INFO[ListItem(-6).Artist]</value>
         <value condition="!String.IsEmpty(ListItem(-6).Genre)">$INFO[ListItem(-6).Genre]</value>
         <value condition="!String.IsEmpty(ListItem(-6).Duration)">$INFO[ListItem(-6).Duration]</value>
         <value condition="!String.IsEmpty(ListItem(-6).AddonVersion)">$INFO[ListItem(-6).AddonVersion]</value>
@@ -401,7 +413,7 @@
         <value condition="!String.IsEmpty(ListItem(-5).Property(NextDay))">$INFO[ListItem(-5).Property(NextDay)]$INFO[ListItem(-5).Property(ShortTime), @ ,]</value>
         <value condition="!String.IsEmpty(ListItem(-5).TvShowTitle) + !String.IsEqual(ListItem(-5).Label,ListItem(-5).TvShowTitle)">$INFO[ListItem(-5).TvShowTitle]</value>
         <value condition="!String.IsEmpty(ListItem(-5).Studio) + [String.IsEqual(ListItem(-5).DBType,video) | [String.IsEmpty(ListItem(-5).DBType) + String.IsEmpty(ListItem(-5).Genre)]]">$INFO[ListItem(-5).Studio]$INFO[ListItem(-5).Duration, - ,]</value>
-        <value condition="!String.IsEmpty(ListItem(-5).Artist) + !String.IsEqual(ListItem(-5).Artist,$INFO[ListItem(-5).Label])">$INFO[ListItem(-5).Artist]</value>
+        <value condition="!String.IsEmpty(ListItem(-5).Artist) + String.IsEmpty(ListItem(-5).Genre)">$INFO[ListItem(-5).Artist]</value>
         <value condition="!String.IsEmpty(ListItem(-5).Genre)">$INFO[ListItem(-5).Genre]</value>
         <value condition="!String.IsEmpty(ListItem(-5).Duration)">$INFO[ListItem(-5).Duration]</value>
         <value condition="!String.IsEmpty(ListItem(-5).AddonVersion)">$INFO[ListItem(-5).AddonVersion]</value>
@@ -413,7 +425,7 @@
         <value condition="!String.IsEmpty(ListItem(-4).Property(NextDay))">$INFO[ListItem(-4).Property(NextDay)]$INFO[ListItem(-4).Property(ShortTime), @ ,]</value>
         <value condition="!String.IsEmpty(ListItem(-4).TvShowTitle) + !String.IsEqual(ListItem(-4).Label,ListItem(-4).TvShowTitle)">$INFO[ListItem(-4).TvShowTitle]</value>
         <value condition="!String.IsEmpty(ListItem(-4).Studio) + [String.IsEqual(ListItem(-4).DBType,video) | [String.IsEmpty(ListItem(-4).DBType) + String.IsEmpty(ListItem(-4).Genre)]]">$INFO[ListItem(-4).Studio]$INFO[ListItem(-4).Duration, - ,]</value>
-        <value condition="!String.IsEmpty(ListItem(-4).Artist) + !String.IsEqual(ListItem(-4).Artist,$INFO[ListItem(-4).Label])">$INFO[ListItem(-4).Artist]</value>
+        <value condition="!String.IsEmpty(ListItem(-4).Artist) + String.IsEmpty(ListItem(-4).Genre)">$INFO[ListItem(-4).Artist]</value>
         <value condition="!String.IsEmpty(ListItem(-4).Genre)">$INFO[ListItem(-4).Genre]</value>
         <value condition="!String.IsEmpty(ListItem(-4).Duration)">$INFO[ListItem(-4).Duration]</value>
         <value condition="!String.IsEmpty(ListItem(-4).AddonVersion)">$INFO[ListItem(-4).AddonVersion]</value>
@@ -425,7 +437,7 @@
         <value condition="!String.IsEmpty(ListItem(-3).Property(NextDay))">$INFO[ListItem(-3).Property(NextDay)]$INFO[ListItem(-3).Property(ShortTime), @ ,]</value>
         <value condition="!String.IsEmpty(ListItem(-3).TvShowTitle) + !String.IsEqual(ListItem(-3).Label,ListItem(-3).TvShowTitle)">$INFO[ListItem(-3).TvShowTitle]</value>
         <value condition="!String.IsEmpty(ListItem(-3).Studio) + [String.IsEqual(ListItem(-3).DBType,video) | [String.IsEmpty(ListItem(-3).DBType) + String.IsEmpty(ListItem(-3).Genre)]]">$INFO[ListItem(-3).Studio]$INFO[ListItem(-3).Duration, - ,]</value>
-        <value condition="!String.IsEmpty(ListItem(-3).Artist) + !String.IsEqual(ListItem(-3).Artist,$INFO[ListItem(-3).Label])">$INFO[ListItem(-3).Artist]</value>
+        <value condition="!String.IsEmpty(ListItem(-3).Artist) + String.IsEmpty(ListItem(-3).Genre)">$INFO[ListItem(-3).Artist]</value>
         <value condition="!String.IsEmpty(ListItem(-3).Genre)">$INFO[ListItem(-3).Genre]</value>
         <value condition="!String.IsEmpty(ListItem(-3).Duration)">$INFO[ListItem(-3).Duration]</value>
         <value condition="!String.IsEmpty(ListItem(-3).AddonVersion)">$INFO[ListItem(-3).AddonVersion]</value>
@@ -437,7 +449,7 @@
         <value condition="!String.IsEmpty(ListItem(-2).Property(NextDay))">$INFO[ListItem(-2).Property(NextDay)]$INFO[ListItem(-2).Property(ShortTime), @ ,]</value>
         <value condition="!String.IsEmpty(ListItem(-2).TvShowTitle) + !String.IsEqual(ListItem(-2).Label,ListItem(-2).TvShowTitle)">$INFO[ListItem(-2).TvShowTitle]</value>
         <value condition="!String.IsEmpty(ListItem(-2).Studio) + [String.IsEqual(ListItem(-2).DBType,video) | [String.IsEmpty(ListItem(-2).DBType) + String.IsEmpty(ListItem(-2).Genre)]]">$INFO[ListItem(-2).Studio]$INFO[ListItem(-2).Duration, - ,]</value>
-        <value condition="!String.IsEmpty(ListItem(-2).Artist) + !String.IsEqual(ListItem(-2).Artist,$INFO[ListItem(-2).Label])">$INFO[ListItem(-2).Artist]</value>
+        <value condition="!String.IsEmpty(ListItem(-2).Artist) + String.IsEmpty(ListItem(-2).Genre)">$INFO[ListItem(-2).Artist]</value>
         <value condition="!String.IsEmpty(ListItem(-2).Genre)">$INFO[ListItem(-2).Genre]</value>
         <value condition="!String.IsEmpty(ListItem(-2).Duration)">$INFO[ListItem(-2).Duration]</value>
         <value condition="!String.IsEmpty(ListItem(-2).AddonVersion)">$INFO[ListItem(-2).AddonVersion]</value>
@@ -449,7 +461,7 @@
         <value condition="!String.IsEmpty(ListItem(-1).Property(NextDay))">$INFO[ListItem(-1).Property(NextDay)]$INFO[ListItem(-1).Property(ShortTime), @ ,]</value>
         <value condition="!String.IsEmpty(ListItem(-1).TvShowTitle) + !String.IsEqual(ListItem(-1).Label,ListItem(-1).TvShowTitle)">$INFO[ListItem(-1).TvShowTitle]</value>
         <value condition="!String.IsEmpty(ListItem(-1).Studio) + [String.IsEqual(ListItem(-1).DBType,video) | [String.IsEmpty(ListItem(-1).DBType) + String.IsEmpty(ListItem(-1).Genre)]]">$INFO[ListItem(-1).Studio]$INFO[ListItem(-1).Duration, - ,]</value>
-        <value condition="!String.IsEmpty(ListItem(-1).Artist) + !String.IsEqual(ListItem(-1).Artist,$INFO[ListItem(-1).Label])">$INFO[ListItem(-1).Artist]</value>
+        <value condition="!String.IsEmpty(ListItem(-1).Artist) + String.IsEmpty(ListItem(-1).Genre)">$INFO[ListItem(-1).Artist]</value>
         <value condition="!String.IsEmpty(ListItem(-1).Genre)">$INFO[ListItem(-1).Genre]</value>
         <value condition="!String.IsEmpty(ListItem(-1).Duration)">$INFO[ListItem(-1).Duration]</value>
         <value condition="!String.IsEmpty(ListItem(-1).AddonVersion)">$INFO[ListItem(-1).AddonVersion]</value>
@@ -461,7 +473,7 @@
         <value condition="!String.IsEmpty(ListItem.Property(NextDay))">$INFO[ListItem.Property(NextDay)]$INFO[ListItem.Property(ShortTime), @ ,]</value>
         <value condition="!String.IsEmpty(ListItem.TvShowTitle) + !String.IsEqual(ListItem.Label,ListItem.TvShowTitle)">$INFO[ListItem.TvShowTitle]</value>
         <value condition="!String.IsEmpty(ListItem.Studio) + [String.IsEqual(ListItem.DBType,video) | [String.IsEmpty(ListItem.DBType) + String.IsEmpty(ListItem.Genre)]]">$INFO[ListItem.Studio]$INFO[ListItem.Duration, - ,]</value>
-        <value condition="!String.IsEmpty(ListItem.Artist) + !String.IsEqual(ListItem.Artist,$INFO[ListItem.Label])">$INFO[ListItem.Artist]</value>
+        <value condition="!String.IsEmpty(ListItem.Artist) + String.IsEmpty(ListItem.Genre)">$INFO[ListItem.Artist]</value>
         <value condition="!String.IsEmpty(ListItem.Genre)">$INFO[ListItem.Genre]</value>
         <value condition="!String.IsEmpty(ListItem.Duration)">$INFO[ListItem.Duration]</value>
         <value condition="!String.IsEmpty(ListItem.AddonVersion)">$INFO[ListItem.AddonVersion]</value>
@@ -473,7 +485,7 @@
         <value condition="!String.IsEmpty(ListItem(1).Property(NextDay))">$INFO[ListItem(1).Property(NextDay)]$INFO[ListItem(1).Property(ShortTime), @ ,]</value>
         <value condition="!String.IsEmpty(ListItem(1).TvShowTitle) + !String.IsEqual(ListItem(1).Label,ListItem(1).TvShowTitle)">$INFO[ListItem(1).TvShowTitle]</value>
         <value condition="!String.IsEmpty(ListItem(1).Studio) + [String.IsEqual(ListItem(1).DBType,video) | [String.IsEmpty(ListItem(1).DBType) + String.IsEmpty(ListItem(1).Genre)]]">$INFO[ListItem(1).Studio]$INFO[ListItem(1).Duration, - ,]</value>
-        <value condition="!String.IsEmpty(ListItem(1).Artist) + !String.IsEqual(ListItem(1).Artist,$INFO[ListItem(1).Label])">$INFO[ListItem(1).Artist]</value>
+        <value condition="!String.IsEmpty(ListItem(1).Artist) + String.IsEmpty(ListItem(1).Genre)">$INFO[ListItem(1).Artist]</value>
         <value condition="!String.IsEmpty(ListItem(1).Genre)">$INFO[ListItem(1).Genre]</value>
         <value condition="!String.IsEmpty(ListItem(1).Duration)">$INFO[ListItem(1).Duration]</value>
         <value condition="!String.IsEmpty(ListItem(1).AddonVersion)">$INFO[ListItem(1).AddonVersion]</value>
@@ -485,7 +497,7 @@
         <value condition="!String.IsEmpty(ListItem(2).Property(NextDay))">$INFO[ListItem(2).Property(NextDay)]$INFO[ListItem(2).Property(ShortTime), @ ,]</value>
         <value condition="!String.IsEmpty(ListItem(2).TvShowTitle) + !String.IsEqual(ListItem(2).Label,ListItem(2).TvShowTitle)">$INFO[ListItem(2).TvShowTitle]</value>
         <value condition="!String.IsEmpty(ListItem(2).Studio) + [String.IsEqual(ListItem(2).DBType,video) | [String.IsEmpty(ListItem(2).DBType) + String.IsEmpty(ListItem(2).Genre)]]">$INFO[ListItem(2).Studio]$INFO[ListItem(2).Duration, - ,]</value>
-        <value condition="!String.IsEmpty(ListItem(2).Artist) + !String.IsEqual(ListItem(2).Artist,$INFO[ListItem(2).Label])">$INFO[ListItem(2).Artist]</value>
+        <value condition="!String.IsEmpty(ListItem(2).Artist) + String.IsEmpty(ListItem(2).Genre)">$INFO[ListItem(2).Artist]</value>
         <value condition="!String.IsEmpty(ListItem(2).Genre)">$INFO[ListItem(2).Genre]</value>
         <value condition="!String.IsEmpty(ListItem(2).Duration)">$INFO[ListItem(2).Duration]</value>
         <value condition="!String.IsEmpty(ListItem(2).AddonVersion)">$INFO[ListItem(2).AddonVersion]</value>
@@ -497,7 +509,7 @@
         <value condition="!String.IsEmpty(ListItem(3).Property(NextDay))">$INFO[ListItem(3).Property(NextDay)]$INFO[ListItem(3).Property(ShortTime), @ ,]</value>
         <value condition="!String.IsEmpty(ListItem(3).TvShowTitle) + !String.IsEqual(ListItem(3).Label,ListItem(3).TvShowTitle)">$INFO[ListItem(3).TvShowTitle]</value>
         <value condition="!String.IsEmpty(ListItem(3).Studio) + [String.IsEqual(ListItem(3).DBType,video) | [String.IsEmpty(ListItem(3).DBType) + String.IsEmpty(ListItem(3).Genre)]]">$INFO[ListItem(3).Studio]$INFO[ListItem(3).Duration, - ,]</value>
-        <value condition="!String.IsEmpty(ListItem(3).Artist) + !String.IsEqual(ListItem(3).Artist,$INFO[ListItem(3).Label])">$INFO[ListItem(3).Artist]</value>
+        <value condition="!String.IsEmpty(ListItem(3).Artist) + String.IsEmpty(ListItem(3).Genre)">$INFO[ListItem(3).Artist]</value>
         <value condition="!String.IsEmpty(ListItem(3).Genre)">$INFO[ListItem(3).Genre]</value>
         <value condition="!String.IsEmpty(ListItem(3).Duration)">$INFO[ListItem(3).Duration]</value>
         <value condition="!String.IsEmpty(ListItem(3).AddonVersion)">$INFO[ListItem(3).AddonVersion]</value>
@@ -509,7 +521,7 @@
         <value condition="!String.IsEmpty(ListItem(4).Property(NextDay))">$INFO[ListItem(4).Property(NextDay)]$INFO[ListItem(4).Property(ShortTime), @ ,]</value>
         <value condition="!String.IsEmpty(ListItem(4).TvShowTitle) + !String.IsEqual(ListItem(4).Label,ListItem(4).TvShowTitle)">$INFO[ListItem(4).TvShowTitle]</value>
         <value condition="!String.IsEmpty(ListItem(4).Studio) + [String.IsEqual(ListItem(4).DBType,video) | [String.IsEmpty(ListItem(4).DBType) + String.IsEmpty(ListItem(4).Genre)]]">$INFO[ListItem(4).Studio]$INFO[ListItem(4).Duration, - ,]</value>
-        <value condition="!String.IsEmpty(ListItem(4).Artist) + !String.IsEqual(ListItem(4).Artist,$INFO[ListItem(4).Label])">$INFO[ListItem(4).Artist]</value>
+        <value condition="!String.IsEmpty(ListItem(4).Artist) + String.IsEmpty(ListItem(4).Genre)">$INFO[ListItem(4).Artist]</value>
         <value condition="!String.IsEmpty(ListItem(4).Genre)">$INFO[ListItem(4).Genre]</value>
         <value condition="!String.IsEmpty(ListItem(4).Duration)">$INFO[ListItem(4).Duration]</value>
         <value condition="!String.IsEmpty(ListItem(4).AddonVersion)">$INFO[ListItem(4).AddonVersion]</value>
@@ -521,7 +533,7 @@
         <value condition="!String.IsEmpty(ListItem(5).Property(NextDay))">$INFO[ListItem(5).Property(NextDay)]$INFO[ListItem(5).Property(ShortTime), @ ,]</value>
         <value condition="!String.IsEmpty(ListItem(5).TvShowTitle) + !String.IsEqual(ListItem(5).Label,ListItem(5).TvShowTitle)">$INFO[ListItem(5).TvShowTitle]</value>
         <value condition="!String.IsEmpty(ListItem(5).Studio) + [String.IsEqual(ListItem(5).DBType,video) | [String.IsEmpty(ListItem(5).DBType) + String.IsEmpty(ListItem(5).Genre)]]">$INFO[ListItem(5).Studio]$INFO[ListItem(5).Duration, - ,]</value>
-        <value condition="!String.IsEmpty(ListItem(5).Artist) + !String.IsEqual(ListItem(5).Artist,$INFO[ListItem(5).Label])">$INFO[ListItem(5).Artist]</value>
+        <value condition="!String.IsEmpty(ListItem(5).Artist) + String.IsEmpty(ListItem(5).Genre)">$INFO[ListItem(5).Artist]</value>
         <value condition="!String.IsEmpty(ListItem(5).Genre)">$INFO[ListItem(5).Genre]</value>
         <value condition="!String.IsEmpty(ListItem(5).Duration)">$INFO[ListItem(5).Duration]</value>
         <value condition="!String.IsEmpty(ListItem(5).AddonVersion)">$INFO[ListItem(5).AddonVersion]</value>
@@ -533,7 +545,7 @@
         <value condition="!String.IsEmpty(ListItem(6).Property(NextDay))">$INFO[ListItem(6).Property(NextDay)]$INFO[ListItem(6).Property(ShortTime), @ ,]</value>
         <value condition="!String.IsEmpty(ListItem(6).TvShowTitle) + !String.IsEqual(ListItem(6).Label,ListItem(6).TvShowTitle)">$INFO[ListItem(6).TvShowTitle]</value>
         <value condition="!String.IsEmpty(ListItem(6).Studio) + [String.IsEqual(ListItem(6).DBType,video) | [String.IsEmpty(ListItem(6).DBType) + String.IsEmpty(ListItem(6).Genre)]]">$INFO[ListItem(6).Studio]$INFO[ListItem(6).Duration, - ,]</value>
-        <value condition="!String.IsEmpty(ListItem(6).Artist) + !String.IsEqual(ListItem(6).Artist,$INFO[ListItem(6).Label])">$INFO[ListItem(6).Artist]</value>
+        <value condition="!String.IsEmpty(ListItem(6).Artist) + String.IsEmpty(ListItem(6).Genre)">$INFO[ListItem(6).Artist]</value>
         <value condition="!String.IsEmpty(ListItem(6).Genre)">$INFO[ListItem(6).Genre]</value>
         <value condition="!String.IsEmpty(ListItem(6).Duration)">$INFO[ListItem(6).Duration]</value>
         <value condition="!String.IsEmpty(ListItem(6).AddonVersion)">$INFO[ListItem(6).AddonVersion]</value>
@@ -545,7 +557,7 @@
         <value condition="!String.IsEmpty(ListItem(7).Property(NextDay))">$INFO[ListItem(7).Property(NextDay)]$INFO[ListItem(7).Property(ShortTime), @ ,]</value>
         <value condition="!String.IsEmpty(ListItem(7).TvShowTitle) + !String.IsEqual(ListItem(7).Label,ListItem(7).TvShowTitle)">$INFO[ListItem(7).TvShowTitle]</value>
         <value condition="!String.IsEmpty(ListItem(7).Studio) + [String.IsEqual(ListItem(7).DBType,video) | [String.IsEmpty(ListItem(7).DBType) + String.IsEmpty(ListItem(7).Genre)]]">$INFO[ListItem(7).Studio]$INFO[ListItem(7).Duration, - ,]</value>
-        <value condition="!String.IsEmpty(ListItem(7).Artist) + !String.IsEqual(ListItem(7).Artist,$INFO[ListItem(7).Label])">$INFO[ListItem(7).Artist]</value>
+        <value condition="!String.IsEmpty(ListItem(7).Artist) + String.IsEmpty(ListItem(7).Genre)">$INFO[ListItem(7).Artist]</value>
         <value condition="!String.IsEmpty(ListItem(7).Genre)">$INFO[ListItem(7).Genre]</value>
         <value condition="!String.IsEmpty(ListItem(7).Duration)">$INFO[ListItem(7).Duration]</value>
         <value condition="!String.IsEmpty(ListItem(7).AddonVersion)">$INFO[ListItem(7).AddonVersion]</value>
@@ -557,7 +569,7 @@
         <value condition="!String.IsEmpty(ListItem(8).Property(NextDay))">$INFO[ListItem(8).Property(NextDay)]$INFO[ListItem(8).Property(ShortTime), @ ,]</value>
         <value condition="!String.IsEmpty(ListItem(8).TvShowTitle) + !String.IsEqual(ListItem(8).Label,ListItem(8).TvShowTitle)">$INFO[ListItem(8).TvShowTitle]</value>
         <value condition="!String.IsEmpty(ListItem(8).Studio) + [String.IsEqual(ListItem(8).DBType,video) | [String.IsEmpty(ListItem(8).DBType) + String.IsEmpty(ListItem(8).Genre)]]">$INFO[ListItem(8).Studio]$INFO[ListItem(8).Duration, - ,]</value>
-        <value condition="!String.IsEmpty(ListItem(8).Artist) + !String.IsEqual(ListItem(8).Artist,$INFO[ListItem(8).Label])">$INFO[ListItem(8).Artist]</value>
+        <value condition="!String.IsEmpty(ListItem(8).Artist) + String.IsEmpty(ListItem(8).Genre)">$INFO[ListItem(8).Artist]</value>
         <value condition="!String.IsEmpty(ListItem(8).Genre)">$INFO[ListItem(8).Genre]</value>
         <value condition="!String.IsEmpty(ListItem(8).Duration)">$INFO[ListItem(8).Duration]</value>
         <value condition="!String.IsEmpty(ListItem(8).AddonVersion)">$INFO[ListItem(8).AddonVersion]</value>
@@ -569,7 +581,7 @@
         <value condition="!String.IsEmpty(ListItem(9).Property(NextDay))">$INFO[ListItem(9).Property(NextDay)]$INFO[ListItem(9).Property(ShortTime), @ ,]</value>
         <value condition="!String.IsEmpty(ListItem(9).TvShowTitle) + !String.IsEqual(ListItem(9).Label,ListItem(9).TvShowTitle)">$INFO[ListItem(9).TvShowTitle]</value>
         <value condition="!String.IsEmpty(ListItem(9).Studio) + [String.IsEqual(ListItem(9).DBType,video) | [String.IsEmpty(ListItem(9).DBType) + String.IsEmpty(ListItem(9).Genre)]]">$INFO[ListItem(9).Studio]$INFO[ListItem(9).Duration, - ,]</value>
-        <value condition="!String.IsEmpty(ListItem(9).Artist) + !String.IsEqual(ListItem(9).Artist,$INFO[ListItem(9).Label])">$INFO[ListItem(9).Artist]</value>
+        <value condition="!String.IsEmpty(ListItem(9).Artist) + String.IsEmpty(ListItem(9).Genre)">$INFO[ListItem(9).Artist]</value>
         <value condition="!String.IsEmpty(ListItem(9).Genre)">$INFO[ListItem(9).Genre]</value>
         <value condition="!String.IsEmpty(ListItem(9).Duration)">$INFO[ListItem(9).Duration]</value>
         <value condition="!String.IsEmpty(ListItem(9).AddonVersion)">$INFO[ListItem(9).AddonVersion]</value>
@@ -581,7 +593,7 @@
         <value condition="!String.IsEmpty(ListItem(10).Property(NextDay))">$INFO[ListItem(10).Property(NextDay)]$INFO[ListItem(10).Property(ShortTime), @ ,]</value>
         <value condition="!String.IsEmpty(ListItem(10).TvShowTitle) + !String.IsEqual(ListItem(10).Label,ListItem(10).TvShowTitle)">$INFO[ListItem(10).TvShowTitle]</value>
         <value condition="!String.IsEmpty(ListItem(10).Studio) + [String.IsEqual(ListItem(10).DBType,video) | [String.IsEmpty(ListItem(10).DBType) + String.IsEmpty(ListItem(10).Genre)]]">$INFO[ListItem(10).Studio]$INFO[ListItem(10).Duration, - ,]</value>
-        <value condition="!String.IsEmpty(ListItem(10).Artist) + !String.IsEqual(ListItem(10).Artist,$INFO[ListItem(10).Label])">$INFO[ListItem(10).Artist]</value>
+        <value condition="!String.IsEmpty(ListItem(10).Artist) + String.IsEmpty(ListItem(10).Genre)">$INFO[ListItem(10).Artist]</value>
         <value condition="!String.IsEmpty(ListItem(10).Genre)">$INFO[ListItem(10).Genre]</value>
         <value condition="!String.IsEmpty(ListItem(10).Duration)">$INFO[ListItem(10).Duration]</value>
         <value condition="!String.IsEmpty(ListItem(10).AddonVersion)">$INFO[ListItem(10).AddonVersion]</value>
@@ -593,7 +605,7 @@
         <value condition="!String.IsEmpty(ListItem(11).Property(NextDay))">$INFO[ListItem(11).Property(NextDay)]$INFO[ListItem(11).Property(ShortTime), @ ,]</value>
         <value condition="!String.IsEmpty(ListItem(11).TvShowTitle) + !String.IsEqual(ListItem(11).Label,ListItem(11).TvShowTitle)">$INFO[ListItem(11).TvShowTitle]</value>
         <value condition="!String.IsEmpty(ListItem(11).Studio) + [String.IsEqual(ListItem(11).DBType,video) | [String.IsEmpty(ListItem(11).DBType) + String.IsEmpty(ListItem(11).Genre)]]">$INFO[ListItem(11).Studio]$INFO[ListItem(11).Duration, - ,]</value>
-        <value condition="!String.IsEmpty(ListItem(11).Artist) + !String.IsEqual(ListItem(11).Artist,$INFO[ListItem(11).Label])">$INFO[ListItem(11).Artist]</value>
+        <value condition="!String.IsEmpty(ListItem(11).Artist) + String.IsEmpty(ListItem(11).Genre)">$INFO[ListItem(11).Artist]</value>
         <value condition="!String.IsEmpty(ListItem(11).Genre)">$INFO[ListItem(11).Genre]</value>
         <value condition="!String.IsEmpty(ListItem(11).Duration)">$INFO[ListItem(11).Duration]</value>
         <value condition="!String.IsEmpty(ListItem(11).AddonVersion)">$INFO[ListItem(11).AddonVersion]</value>
@@ -605,7 +617,7 @@
         <value condition="!String.IsEmpty(ListItem(12).Property(NextDay))">$INFO[ListItem(12).Property(NextDay)]$INFO[ListItem(12).Property(ShortTime), @ ,]</value>
         <value condition="!String.IsEmpty(ListItem(12).TvShowTitle) + !String.IsEqual(ListItem(12).Label,ListItem(12).TvShowTitle)">$INFO[ListItem(12).TvShowTitle]</value>
         <value condition="!String.IsEmpty(ListItem(12).Studio) + [String.IsEqual(ListItem(12).DBType,video) | [String.IsEmpty(ListItem(12).DBType) + String.IsEmpty(ListItem(12).Genre)]]">$INFO[ListItem(12).Studio]$INFO[ListItem(12).Duration, - ,]</value>
-        <value condition="!String.IsEmpty(ListItem(12).Artist) + !String.IsEqual(ListItem(12).Artist,$INFO[ListItem(12).Label])">$INFO[ListItem(12).Artist]</value>
+        <value condition="!String.IsEmpty(ListItem(12).Artist) + String.IsEmpty(ListItem(12).Genre)">$INFO[ListItem(12).Artist]</value>
         <value condition="!String.IsEmpty(ListItem(12).Genre)">$INFO[ListItem(12).Genre]</value>
         <value condition="!String.IsEmpty(ListItem(12).Duration)">$INFO[ListItem(12).Duration]</value>
         <value condition="!String.IsEmpty(ListItem(12).AddonVersion)">$INFO[ListItem(12).AddonVersion]</value>
@@ -617,7 +629,7 @@
         <value condition="!String.IsEmpty(ListItem(13).Property(NextDay))">$INFO[ListItem(13).Property(NextDay)]$INFO[ListItem(13).Property(ShortTime), @ ,]</value>
         <value condition="!String.IsEmpty(ListItem(13).TvShowTitle) + !String.IsEqual(ListItem(13).Label,ListItem(13).TvShowTitle)">$INFO[ListItem(13).TvShowTitle]</value>
         <value condition="!String.IsEmpty(ListItem(13).Studio) + [String.IsEqual(ListItem(13).DBType,video) | [String.IsEmpty(ListItem(13).DBType) + String.IsEmpty(ListItem(13).Genre)]]">$INFO[ListItem(13).Studio]$INFO[ListItem(13).Duration, - ,]</value>
-        <value condition="!String.IsEmpty(ListItem(13).Artist) + !String.IsEqual(ListItem(13).Artist,$INFO[ListItem(13).Label])">$INFO[ListItem(13).Artist]</value>
+        <value condition="!String.IsEmpty(ListItem(13).Artist) + String.IsEmpty(ListItem(13).Genre)">$INFO[ListItem(13).Artist]</value>
         <value condition="!String.IsEmpty(ListItem(13).Genre)">$INFO[ListItem(13).Genre]</value>
         <value condition="!String.IsEmpty(ListItem(13).Duration)">$INFO[ListItem(13).Duration]</value>
         <value condition="!String.IsEmpty(ListItem(13).AddonVersion)">$INFO[ListItem(13).AddonVersion]</value>
@@ -629,7 +641,7 @@
         <value condition="!String.IsEmpty(ListItem(14).Property(NextDay))">$INFO[ListItem(14).Property(NextDay)]$INFO[ListItem(14).Property(ShortTime), @ ,]</value>
         <value condition="!String.IsEmpty(ListItem(14).TvShowTitle) + !String.IsEqual(ListItem(14).Label,ListItem(14).TvShowTitle)">$INFO[ListItem(14).TvShowTitle]</value>
         <value condition="!String.IsEmpty(ListItem(14).Studio) + [String.IsEqual(ListItem(14).DBType,video) | [String.IsEmpty(ListItem(14).DBType) + String.IsEmpty(ListItem(14).Genre)]]">$INFO[ListItem(14).Studio]$INFO[ListItem(14).Duration, - ,]</value>
-        <value condition="!String.IsEmpty(ListItem(14).Artist) + !String.IsEqual(ListItem(14).Artist,$INFO[ListItem(14).Label])">$INFO[ListItem(14).Artist]</value>
+        <value condition="!String.IsEmpty(ListItem(14).Artist) + String.IsEmpty(ListItem(14).Genre)">$INFO[ListItem(14).Artist]</value>
         <value condition="!String.IsEmpty(ListItem(14).Genre)">$INFO[ListItem(14).Genre]</value>
         <value condition="!String.IsEmpty(ListItem(14).Duration)">$INFO[ListItem(14).Duration]</value>
         <value condition="!String.IsEmpty(ListItem(14).AddonVersion)">$INFO[ListItem(14).AddonVersion]</value>
@@ -641,7 +653,7 @@
         <value condition="!String.IsEmpty(ListItem(15).Property(NextDay))">$INFO[ListItem(15).Property(NextDay)]$INFO[ListItem(15).Property(ShortTime), @ ,]</value>
         <value condition="!String.IsEmpty(ListItem(15).TvShowTitle) + !String.IsEqual(ListItem(15).Label,ListItem(15).TvShowTitle)">$INFO[ListItem(15).TvShowTitle]</value>
         <value condition="!String.IsEmpty(ListItem(15).Studio) + [String.IsEqual(ListItem(15).DBType,video) | [String.IsEmpty(ListItem(15).DBType) + String.IsEmpty(ListItem(15).Genre)]]">$INFO[ListItem(15).Studio]$INFO[ListItem(15).Duration, - ,]</value>
-        <value condition="!String.IsEmpty(ListItem(15).Artist) + !String.IsEqual(ListItem(15).Artist,$INFO[ListItem(15).Label])">$INFO[ListItem(15).Artist]</value>
+        <value condition="!String.IsEmpty(ListItem(15).Artist) + String.IsEmpty(ListItem(15).Genre)">$INFO[ListItem(15).Artist]</value>
         <value condition="!String.IsEmpty(ListItem(15).Genre)">$INFO[ListItem(15).Genre]</value>
         <value condition="!String.IsEmpty(ListItem(15).Duration)">$INFO[ListItem(15).Duration]</value>
         <value condition="!String.IsEmpty(ListItem(15).AddonVersion)">$INFO[ListItem(15).AddonVersion]</value>
@@ -653,19 +665,31 @@
         <value condition="!String.IsEmpty(ListItem(16).Property(NextDay))">$INFO[ListItem(16).Property(NextDay)]$INFO[ListItem(16).Property(ShortTime), @ ,]</value>
         <value condition="!String.IsEmpty(ListItem(16).TvShowTitle) + !String.IsEqual(ListItem(16).Label,ListItem(16).TvShowTitle)">$INFO[ListItem(16).TvShowTitle]</value>
         <value condition="!String.IsEmpty(ListItem(16).Studio) + [String.IsEqual(ListItem(16).DBType,video) | [String.IsEmpty(ListItem(16).DBType) + String.IsEmpty(ListItem(16).Genre)]]">$INFO[ListItem(16).Studio]$INFO[ListItem(16).Duration, - ,]</value>
-        <value condition="!String.IsEmpty(ListItem(16).Artist) + !String.IsEqual(ListItem(16).Artist,$INFO[ListItem(16).Label])">$INFO[ListItem(16).Artist]</value>
+        <value condition="!String.IsEmpty(ListItem(16).Artist) + String.IsEmpty(ListItem(16).Genre)">$INFO[ListItem(16).Artist]</value>
         <value condition="!String.IsEmpty(ListItem(16).Genre)">$INFO[ListItem(16).Genre]</value>
         <value condition="!String.IsEmpty(ListItem(16).Duration)">$INFO[ListItem(16).Duration]</value>
         <value condition="!String.IsEmpty(ListItem(16).AddonVersion)">$INFO[ListItem(16).AddonVersion]</value>
         <value condition="!String.IsEmpty(ListItem(16).PictureResolution)">$INFO[ListItem(16).PictureResolution]</value>
         <value condition="!String.IsEmpty(ListItem(16).Label2)">$INFO[ListItem(16).Label2]</value>
     </variable>
+    <variable name="Label_SmallLandscapeWidget_Sublabel_17">
+        <value condition="!String.IsEmpty(ListItem(17).ChannelName)">$INFO[ListItem(17).ChannelName]</value>
+        <value condition="!String.IsEmpty(ListItem(17).Property(NextDay))">$INFO[ListItem(17).Property(NextDay)]$INFO[ListItem(17).Property(ShortTime), @ ,]</value>
+        <value condition="!String.IsEmpty(ListItem(17).TvShowTitle) + !String.IsEqual(ListItem(17).Label,ListItem(17).TvShowTitle)">$INFO[ListItem(17).TvShowTitle]</value>
+        <value condition="!String.IsEmpty(ListItem(17).Studio) + [String.IsEqual(ListItem(17).DBType,video) | [String.IsEmpty(ListItem(17).DBType) + String.IsEmpty(ListItem(17).Genre)]]">$INFO[ListItem(17).Studio]$INFO[ListItem(17).Duration, - ,]</value>
+        <value condition="!String.IsEmpty(ListItem(17).Artist) + String.IsEmpty(ListItem(17).Genre)">$INFO[ListItem(17).Artist]</value>
+        <value condition="!String.IsEmpty(ListItem(17).Genre)">$INFO[ListItem(17).Genre]</value>
+        <value condition="!String.IsEmpty(ListItem(17).Duration)">$INFO[ListItem(17).Duration]</value>
+        <value condition="!String.IsEmpty(ListItem(17).AddonVersion)">$INFO[ListItem(17).AddonVersion]</value>
+        <value condition="!String.IsEmpty(ListItem(17).PictureResolution)">$INFO[ListItem(17).PictureResolution]</value>
+        <value condition="!String.IsEmpty(ListItem(17).Label2)">$INFO[ListItem(17).Label2]</value>
+    </variable>
     <variable name="Label_SmallLandscapeWidget_Sublabel">
         <value condition="!String.IsEmpty(ListItem.ChannelName)">$INFO[ListItem.ChannelName]</value>
         <value condition="!String.IsEmpty(ListItem.Property(NextDay))">$INFO[ListItem.Property(NextDay)]$INFO[ListItem.Property(ShortTime), @ ,]</value>
         <value condition="!String.IsEmpty(ListItem.TvShowTitle) + !String.IsEqual(ListItem.Label,ListItem.TvShowTitle)">$INFO[ListItem.TvShowTitle]</value>
         <value condition="!String.IsEmpty(ListItem.Studio) + [String.IsEqual(ListItem.DBType,video) | [String.IsEmpty(ListItem.DBType) + String.IsEmpty(ListItem.Genre)]]">$INFO[ListItem.Studio]$INFO[ListItem.Duration, - ,]</value>
-        <value condition="!String.IsEmpty(ListItem.Artist) + !String.IsEqual(ListItem.Artist,$INFO[ListItem.Label])">$INFO[ListItem.Artist]</value>
+        <value condition="!String.IsEmpty(ListItem.Artist) + String.IsEmpty(ListItem.Genre)">$INFO[ListItem.Artist]</value>
         <value condition="!String.IsEmpty(ListItem.Genre)">$INFO[ListItem.Genre]</value>
         <value condition="!String.IsEmpty(ListItem.Duration)">$INFO[ListItem.Duration]</value>
         <value condition="!String.IsEmpty(ListItem.AddonVersion)">$INFO[ListItem.AddonVersion]</value>
@@ -968,6 +992,17 @@
         <value condition="!String.IsEmpty(Container(54).ListItem(16).Thumb)">$INFO[Container(54).ListItem(16).Thumb]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem(16).Art(thumb))">$INFO[Container(54).ListItem(16).Art(thumb)]</value>
         <value condition="True">$INFO[Container(54).ListItem(16).Icon]</value>
+    </variable>
+    <variable name="Image_Landscape_C54_17">
+        <value condition="Container.Content(images)">$INFO[Container(54).ListItem(17).Icon]</value>
+        <value condition="!String.IsEmpty(Container(54).ListItem(17).Art(thumb)) + [String.IsEqual(Container(54).ListItem(17).DBType,episode) | String.IsEqual(Container(54).ListItem(17).DBType,video)] + String.IsEmpty(Container(54).ListItem(17).Property(airday)) + !String.IsEqual(Container(54).ListItem(17).Art(thumb),OverlaySpoiler.png) + !String.IsEqual(Container(54).ListItem(17).Art(thumb),Container(54).ListItem(17).Art(poster)) + !String.IsEqual(Container(54).ListItem(17).Art(thumb),Container(54).ListItem(17).Art(tvshow.poster)) + !String.IsEqual(Container(54).ListItem(17).Art(thumb),Container(54).ListItem(17).ActualIcon)">$INFO[Container(54).ListItem(17).Art(thumb)]</value>
+        <value condition="!String.IsEmpty(Container(54).ListItem(17).Art(landscape)) + !Skin.HasSetting(DisableLandscapeArt)">$INFO[Container(54).ListItem(17).Art(landscape)]</value>
+        <value condition="!String.IsEmpty(Container(54).ListItem(17).Art(tvshow.landscape)) + !Skin.HasSetting(DisableLandscapeArt)">$INFO[Container(54).ListItem(17).Art(tvshow.landscape)]</value>
+        <value condition="!String.IsEmpty(Container(54).ListItem(17).Property(fanart))">$INFO[Container(54).ListItem(17).Property(fanart)]</value>
+        <value condition="!String.IsEmpty(Container(54).ListItem(17).Art(fanart))">$INFO[Container(54).ListItem(17).Art(fanart)]</value>
+        <value condition="!String.IsEmpty(Container(54).ListItem(17).Thumb)">$INFO[Container(54).ListItem(17).Thumb]</value>
+        <value condition="!String.IsEmpty(Container(54).ListItem(17).Art(thumb))">$INFO[Container(54).ListItem(17).Art(thumb)]</value>
+        <value condition="True">$INFO[Container(54).ListItem(17).Icon]</value>
     </variable>
     <variable name="Image_Landscape_C54">
         <value condition="Container.Content(images)">$INFO[Container(54).ListItem.Icon]</value>
@@ -1277,6 +1312,17 @@
         <value condition="!String.IsEmpty(ListItem(16).Art(thumb))">$INFO[ListItem(16).Art(thumb)]</value>
         <value condition="True">$INFO[ListItem(16).Icon]</value>
     </variable>
+    <variable name="Image_Landscape_17">
+        <value condition="Container.Content(images)">$INFO[ListItem(17).Icon]</value>
+        <value condition="!String.IsEmpty(ListItem(17).Art(thumb)) + [String.IsEqual(ListItem(17).DBType,episode) | String.IsEqual(ListItem(17).DBType,video)] + String.IsEmpty(ListItem(17).Property(airday)) + !String.IsEqual(ListItem(17).Art(thumb),OverlaySpoiler.png) + !String.IsEqual(ListItem(17).Art(thumb),ListItem(17).Art(poster)) + !String.IsEqual(ListItem(17).Art(thumb),ListItem(17).Art(tvshow.poster)) + !String.IsEqual(ListItem(17).Art(thumb),ListItem(17).ActualIcon)">$INFO[ListItem(17).Art(thumb)]</value>
+        <value condition="!String.IsEmpty(ListItem(17).Art(landscape)) + !Skin.HasSetting(DisableLandscapeArt)">$INFO[ListItem(17).Art(landscape)]</value>
+        <value condition="!String.IsEmpty(ListItem(17).Art(tvshow.landscape)) + !Skin.HasSetting(DisableLandscapeArt)">$INFO[ListItem(17).Art(tvshow.landscape)]</value>
+        <value condition="!String.IsEmpty(ListItem(17).Property(fanart))">$INFO[ListItem(17).Property(fanart)]</value>
+        <value condition="!String.IsEmpty(ListItem(17).Art(fanart))">$INFO[ListItem(17).Art(fanart)]</value>
+        <value condition="!String.IsEmpty(ListItem(17).Thumb)">$INFO[ListItem(17).Thumb]</value>
+        <value condition="!String.IsEmpty(ListItem(17).Art(thumb))">$INFO[ListItem(17).Art(thumb)]</value>
+        <value condition="True">$INFO[ListItem(17).Icon]</value>
+    </variable>
     <variable name="Image_Landscape">
         <value condition="Container.Content(images)">$INFO[ListItem.Icon]</value>
         <value condition="!String.IsEmpty(ListItem.Art(thumb)) + [String.IsEqual(ListItem.DBType,episode) | String.IsEqual(ListItem.DBType,video)] + String.IsEmpty(ListItem.Property(airday)) + !String.IsEqual(ListItem.Art(thumb),OverlaySpoiler.png) + !String.IsEqual(ListItem.Art(thumb),ListItem.Art(poster)) + !String.IsEqual(ListItem.Art(thumb),ListItem.Art(tvshow.poster)) + !String.IsEqual(ListItem.Art(thumb),ListItem.ActualIcon)">$INFO[ListItem.Art(thumb)]</value>
@@ -1477,6 +1523,13 @@
         <value condition="!String.IsEmpty(Container(54).ListItem(16).Label)">$INFO[Container(54).ListItem(16).Label]</value>
         <value condition="Window.IsVisible(DialogAddonInfo.xml)">$LOCALIZE[31209]</value>
     </variable>
+    <variable name="Label_Landscape_Title_C54_17">
+        <value condition="String.IsEqual(Container(54).ListItem(17).DBType,album) | String.IsEqual(Container(54).ListItem(17).DBType,song)">$INFO[Container(54).ListItem(17).Album]</value>
+        <value condition="String.IsEqual(Container(54).ListItem(17).DBType,episode)">$INFO[Container(54).ListItem(17).Label]</value>
+        <value condition="!String.IsEmpty(Container(54).ListItem(17).Title)">$INFO[Container(54).ListItem(17).Title]</value>
+        <value condition="!String.IsEmpty(Container(54).ListItem(17).Label)">$INFO[Container(54).ListItem(17).Label]</value>
+        <value condition="Window.IsVisible(DialogAddonInfo.xml)">$LOCALIZE[31209]</value>
+    </variable>
     <variable name="Label_Landscape_Title_C54">
         <value condition="String.IsEqual(Container(54).ListItem.DBType,album) | String.IsEqual(Container(54).ListItem.DBType,song)">$INFO[Container(54).ListItem.Album]</value>
         <value condition="String.IsEqual(Container(54).ListItem.DBType,episode)">$INFO[Container(54).ListItem.Label]</value>
@@ -1671,6 +1724,13 @@
         <value condition="String.IsEqual(ListItem(16).DBType,episode)">$INFO[ListItem(16).Label]</value>
         <value condition="!String.IsEmpty(ListItem(16).Title)">$INFO[ListItem(16).Title]</value>
         <value condition="!String.IsEmpty(ListItem(16).Label)">$INFO[ListItem(16).Label]</value>
+        <value condition="Window.IsVisible(DialogAddonInfo.xml)">$LOCALIZE[31209]</value>
+    </variable>
+    <variable name="Label_Landscape_Title_17">
+        <value condition="String.IsEqual(ListItem(17).DBType,album) | String.IsEqual(ListItem(17).DBType,song)">$INFO[ListItem(17).Album]</value>
+        <value condition="String.IsEqual(ListItem(17).DBType,episode)">$INFO[ListItem(17).Label]</value>
+        <value condition="!String.IsEmpty(ListItem(17).Title)">$INFO[ListItem(17).Title]</value>
+        <value condition="!String.IsEmpty(ListItem(17).Label)">$INFO[ListItem(17).Label]</value>
         <value condition="Window.IsVisible(DialogAddonInfo.xml)">$LOCALIZE[31209]</value>
     </variable>
     <variable name="Label_Landscape_Title">

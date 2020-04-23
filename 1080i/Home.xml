@@ -12,6 +12,8 @@
     <onload>SetProperty(TMDbHelper.Blur.SourceImage,poster,Home)</onload>
     <onload condition="Skin.HasSetting(DisableBlur)">Skin.Reset(TMDbHelper.EnableBlur)</onload>
     <onload condition="!Skin.HasSetting(DisableBlur)">Skin.SetBool(TMDbHelper.EnableBlur)</onload>
+    <onload>SetBool(TMDbHelper.DisableExtendedProperties)</onload>
+    <onload>SetBool(TMDbHelper.DisablePersonStats)</onload>
 
     <onload>runscript(plugin.video.themoviedb.helper,make_variables=1080i)</onload>
     <controls>

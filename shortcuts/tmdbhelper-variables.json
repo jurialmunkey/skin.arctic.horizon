@@ -8,7 +8,7 @@
                             {"!String.IsEmpty({listitem}.Property(NextDay))": "$INFO[{listitem}.Property(NextDay)]$INFO[{listitem}.Property(ShortTime), @ ,]"},
                             {"!String.IsEmpty({listitem}.TvShowTitle) + !String.IsEqual({listitem}.Label,{listitem}.TvShowTitle)": "$INFO[{listitem}.TvShowTitle]"},
                             {"!String.IsEmpty({listitem}.Studio) + [String.IsEqual({listitem}.DBType,video) | [String.IsEmpty({listitem}.DBType) + String.IsEmpty({listitem}.Genre)]]": "$INFO[{listitem}.Studio]$INFO[{listitem}.Duration, - ,]"},
-                            {"!String.IsEmpty({listitem}.Artist) + !String.IsEqual({listitem}.Artist,$INFO[{listitem}.Label])": "$INFO[{listitem}.Artist]"},
+                            {"!String.IsEmpty({listitem}.Artist) + String.IsEmpty({listitem}.Genre)": "$INFO[{listitem}.Artist]"},
                             {"!String.IsEmpty({listitem}.Genre)": "$INFO[{listitem}.Genre]"},
                             {"!String.IsEmpty({listitem}.Duration)": "$INFO[{listitem}.Duration]"},
                             {"!String.IsEmpty({listitem}.AddonVersion)": "$INFO[{listitem}.AddonVersion]"},
