@@ -239,6 +239,27 @@
         </definition>
     </include>
 
+    <include name="Object_Wall_SortLetter">
+        <control type="group">
+            <animation type="Conditional" reversible="false" condition="!String.IsEqual(Window.Property($PARAM[wall-id]_OnMove),down) + !String.IsEqual(Window.Property($PARAM[wall-id]_OnMove),up)">
+                <effect type="fade" start="100" end="0" time="300" delay="1000"/>
+            </animation>
+            <visible>Control.HAsFocus($PARAM[wall-id])</visible>
+            <centerleft>50%</centerleft>
+            <centertop>340</centertop>
+            <width>120</width>
+            <height>120</height>
+            <include>Dialog_Menu_BG</include>
+            <control type="label">
+                <font>font_title_large</font>
+                <label>$INFO[Container($PARAM[id]).ListItem.SortLetter]</label>
+                <align>center</align>
+                <aligny>center</aligny>
+                <textcolor>dialog_fg_100</textcolor>
+            </control>
+        </control>
+    </include>
+
     <include name="Object_NowPlaying">
         <control type="progress" id="933">
             <texturebg></texturebg>

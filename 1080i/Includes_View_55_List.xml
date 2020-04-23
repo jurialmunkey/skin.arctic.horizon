@@ -64,6 +64,7 @@
                 <param name="itemlayout-width" value="724" />
                 <param name="viewtype-label" value="$LOCALIZE[535]" />
                 <width>724</width>
+                <movement>3</movement>
                 <left>0</left>
                 <bottom>0</bottom>
                 <height>560</height>
@@ -171,6 +172,7 @@
                 <param name="itemlayout-width" value="1160" />
                 <param name="viewtype-label" value="$LOCALIZE[535]" />
                 <param name="altid" value="5090" />
+                <movement>3</movement>
                 <width>1160</width>
                 <height>560</height>
                 <onleft>64</onleft>

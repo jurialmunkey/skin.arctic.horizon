@@ -208,6 +208,12 @@
 
     <include name="Home_Hub_Showcase">
         <control type="group">
+            <animation type="Conditional" reversible="false" condition="!Control.HasFocus(565610) + !Control.HasFocus(565611)">
+                <effect type="fade" start="0" end="100" delay="400" time="1" />
+            </animation>
+            <animation type="Conditional" reversible="false" condition="Control.HasFocus(565610) | Control.HasFocus(565611)">
+                <effect type="fade" end="0" start="100" />
+            </animation>
             <control type="group">
                 <visible>$EXP[Exp_GlobalBackground] | !String.IsEmpty(Window(Home).Property(HasTrailer)) | ![Control.HasFocus(5610) | Control.HasFocus(60)]</visible>
                 <include>Animation_FadeInOut</include>
@@ -442,6 +448,17 @@
                     </control>
                 </control>
             </control>
+        </control>
+        <control type="group">
+            <include>View_Pad</include>
+            <include content="View_52_Posters_Wall">
+                <param name="id" value="5610" />
+                <param name="wall-id" value="565610" />
+            </include>
+            <include content="View_54_Episodes_Wall">
+                <param name="id" value="5610" />
+                <param name="wall-id" value="565611" />
+            </include>
         </control>
     </include>
 

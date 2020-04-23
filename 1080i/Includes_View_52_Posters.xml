@@ -477,6 +477,62 @@
                 <texture flipy="true">common/dim-top.png</texture>
             </control>
         </control>
+
+        <include content="Object_Wall_SortLetter">
+            <param name="id" value="$PARAM[id]" />
+            <param name="wall-id" value="$PARAM[wall-id]" />
+        </include>
+
+        <include content="View_52_Posters_WallInfo">
+            <param name="id" value="$PARAM[id]" />
+            <param name="wall-id" value="$PARAM[wall-id]" />
+            <param name="left" value="0" />
+        </include>
+    </include>
+
+    <include name="View_52_Posters_WallInfo">
+        <control type="group">
+            <visible>Control.Hasfocus($PARAM[wall-id])</visible>
+            <visible>System.IdleTime(3)</visible>
+            <left>$PARAM[left]</left>
+            <animation type="Visible" reversible="false">
+                <effect type="fade" start="0" end="100" time="300" tween="sine" easing="out"/>
+                <effect type="slide" start="320" end="0" time="400" tween="cubic" easing="out" />
+            </animation>
+            <bottom>120</bottom>
+            <control type="image">
+                <include content="Defs_Pad"><param name="pad" value="-24" /></include>
+                <bordertexture border="32">common/shadow-dialog-24.png</bordertexture>
+                <bordersize>24</bordersize>
+                <texture border="16" colordiffuse="Background">common/dialog.png</texture>
+            </control>
+            <control type="image">
+                <aspectratio>scale</aspectratio>
+                <texture background="true" colordiffuse="41ffffff">$INFO[Window(Home).Property(TMDbHelper.ListItem.BlurImage)]</texture>
+                <fadetime>1000</fadetime>
+            </control>
+            <control type="group">
+                <left>-15</left>
+                <top>-15</top>
+                <bottom>-15</bottom>
+                <width>500</width>
+                <include content="Object_Artwork">
+                </include>
+            </control>
+            <control type="group">
+                <left>515</left>
+                <top>25</top>
+                <right>40</right>
+                <include content="View_Info_Grouplist">
+                    <param name="container" value="Container." />
+                    <param name="plotmaxheight" default="500" />
+                </include>
+            </control>
+            <include content="View_Selectbox">
+                <param name="pad" value="-28" />
+                <param name="overlay" value="false" />
+            </include>
+        </control>
     </include>
 
     <include name="View_52_Posters_WallItem">

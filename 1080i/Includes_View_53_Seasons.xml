@@ -1,59 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
     <include name="View_53_Seasons">
-        <include content="Viewtype_Buttons">
-            <param name="id" value="53" />
-            <param name="itemlayout-width" value="280" />
-            <param name="offset" value="0" />
-            <param name="control-type" value="fixedlist" />
-            <param name="viewtype-label" value="$LOCALIZE[33054]" />
-            <movement>3</movement>
-            <preloaditems>2</preloaditems>
-            <height>120</height>
-            <width>1120</width>
-            <onup>SetFocus(9602)</onup>
-            <ondown>530</ondown>
-            <ondown>SetProperty(TMDbHelper.WidgetContainer,530,Home)</ondown>
-            <onfocus>ClearProperty(TMDbHelper.WidgetContainer,Home)</onfocus>
-            <left>-20</left>
-            <bottom>400</bottom>
-            <animation effect="fade" start="0" end="100" time="400" tween="cubic" easing="inout" reversible="false" delay="200" condition="Container.Content(seasons)">Conditional</animation>
-            <visible>Container.Content(seasons)</visible>
-            <visible>!Skin.HasSetting(LibrarySeasonPosters)</visible>
-            <visible>!String.IsEqual(Container.Property(Param.Info),details)</visible>
-        </include>
-        <control type="image">
-            <width>24</width>
-            <height>24</height>
-            <bottom>457</bottom>
-            <left>-56</left>
-            <texture colordiffuse="main_fg_30">buttons/spin-left.png</texture>
-            <visible>Container(53).HasPrevious</visible>
-            <visible>Control.Isvisible(53)</visible>
+        <control type="group">
+            <animation type="Conditional" reversible="false" condition="!Control.HasFocus(5353)">
+                <effect type="fade" start="0" end="100" delay="400" time="1" />
+            </animation>
+            <animation type="Conditional" reversible="false" condition="Control.HasFocus(5353)">
+                <effect type="fade" end="0" start="100" />
+            </animation>
+            <include content="Viewtype_Buttons">
+                <param name="id" value="53" />
+                <param name="itemlayout-width" value="280" />
+                <param name="offset" value="0" />
+                <param name="control-type" value="fixedlist" />
+                <param name="viewtype-label" value="$LOCALIZE[33054]" />
+                <movement>3</movement>
+                <preloaditems>2</preloaditems>
+                <height>120</height>
+                <width>1120</width>
+                <onup>SetFocus(9602)</onup>
+                <ondown>530</ondown>
+                <ondown>SetProperty(TMDbHelper.WidgetContainer,530,Home)</ondown>
+                <onfocus>ClearProperty(TMDbHelper.WidgetContainer,Home)</onfocus>
+                <left>-20</left>
+                <bottom>400</bottom>
+                <animation effect="fade" start="0" end="100" time="400" tween="cubic" easing="inout" reversible="false" delay="200" condition="Container.Content(seasons)">Conditional</animation>
+                <visible>Container.Content(seasons)</visible>
+                <visible>!Skin.HasSetting(LibrarySeasonPosters)</visible>
+                <visible>!String.IsEqual(Container.Property(Param.Info),details)</visible>
+            </include>
+            <control type="image">
+                <width>24</width>
+                <height>24</height>
+                <bottom>457</bottom>
+                <left>-56</left>
+                <texture colordiffuse="main_fg_30">buttons/spin-left.png</texture>
+                <visible>Container(53).HasPrevious</visible>
+                <visible>Control.Isvisible(53)</visible>
+            </control>
+            <control type="image">
+                <width>24</width>
+                <height>24</height>
+                <bottom>457</bottom>
+                <left>1122</left>
+                <texture colordiffuse="main_fg_30" flipx="true">buttons/spin-left.png</texture>
+                <visible>Container(53).HasNext</visible>
+                <visible>Control.Isvisible(53)</visible>
+            </control>
+            <include content="View_Info_Grouplist">
+                <param name="title" value="$VAR[Label_Info_Title_530]" />
+                <param name="container" value="Container(530)." />
+                <param name="plot" value="$INFO[Container(530).ListItem.Plot]" />
+                <param name="plotheight" value="auto" />
+                <param name="infoline-label" value="$VAR[Label_Home_InfoLine]" />
+                <param name="infoline-image" value="$VAR[Image_Home_VideoQuality]" />
+                <top>-15</top>
+                <height>285</height>
+                <visible>Control.HasFocus(530)</visible>
+                <visible>Control.IsVisible(53)</visible>
+                <include>Viewtype_Info_Right</include>
+            </include>
+            <include>View_53_Episodes</include>
         </control>
-        <control type="image">
-            <width>24</width>
-            <height>24</height>
-            <bottom>457</bottom>
-            <left>1122</left>
-            <texture colordiffuse="main_fg_30" flipx="true">buttons/spin-left.png</texture>
-            <visible>Container(53).HasNext</visible>
-            <visible>Control.Isvisible(53)</visible>
-        </control>
-        <include content="View_Info_Grouplist">
-            <param name="title" value="$VAR[Label_Info_Title_530]" />
-            <param name="container" value="Container(530)." />
-            <param name="plot" value="$INFO[Container(530).ListItem.Plot]" />
-            <param name="plotheight" value="auto" />
-            <param name="infoline-label" value="$VAR[Label_Home_InfoLine]" />
-            <param name="infoline-image" value="$VAR[Image_Home_VideoQuality]" />
-            <top>-15</top>
-            <height>285</height>
-            <visible>Control.HasFocus(530)</visible>
-            <visible>Control.IsVisible(53)</visible>
-            <include>Viewtype_Info_Right</include>
+        <include content="View_54_Episodes_Wall">
+            <param name="id" value="530" />
+            <param name="wall-id" value="5353" />
         </include>
-        <include>View_53_Episodes</include>
     </include>
 
     <include name="View_53_Episodes">
@@ -186,7 +198,7 @@
                 <bottom>-20</bottom>
                 <onback>53</onback>
                 <onup>53</onup>
-                <ondown>60</ondown>
+                <ondown>5353</ondown>
                 <pagecontrol>60</pagecontrol>
                 <onunfocus>ClearProperty(TMDbHelper.WidgetContainer,Home)</onunfocus>
                 <onclick condition="!Container($PARAM[id]).ListItem.IsFolder">PlayMedia($INFO[Container($PARAM[id]).ListItem.FileNameAndPath])</onclick>
