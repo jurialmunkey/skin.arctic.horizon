@@ -17,7 +17,7 @@
                 <left>-80</left>
                 <right>-80</right>
                 <bottom>-20</bottom>
-                <!-- <include>Viewtype_Movement</include> -->
+                <include>Viewtype_Movement</include>
                 <ondown>5454</ondown>
                 <pagecontrol>60</pagecontrol>
                 <onfocus>ClearProperty(TMDbHelper.WidgetContainer,Home)</onfocus>
@@ -31,8 +31,15 @@
                 <param name="altlabel" value="$INFO[Control.GetLabel(3),, ]$INFO[Control.GetLabel(4)]" />
             </include>
         </control>
+        <include content="View_54_Episodes_Wall">
+            <param name="id" value="54" />
+            <param name="wall-id" value="5454" />
+        </include>
+    </include>
+
+    <include name="View_54_Episodes_Wall">
         <control type="grouplist">
-            <visible>Control.HasFocus(5454)</visible>
+            <visible>Control.HasFocus($PARAM[wall-id])</visible>
             <animation type="Visible" reversible="false">
                 <effect type="slide" start="0,480" end="0" time="400" tween="cubic" easing="out" />
             </animation>
@@ -46,72 +53,104 @@
             <right>-920</right>
             <orientation>vertical</orientation>
             <itemgap>0</itemgap>
-            <animation effect="slide" tween="quadratic" time="400" reversible="false" end="-450" condition="!String.IsEqual(Window.Property(5454_OnMove),right)">Conditional</animation>
-            <animation effect="slide" tween="quadratic" time="400" reversible="false" end="450" condition="!String.IsEqual(Window.Property(5454_OnMove),left)">Conditional</animation>
+            <animation effect="slide" tween="quadratic" time="400" reversible="false" end="-450" condition="!String.IsEqual(Window.Property($PARAM[wall-id]_OnMove),right)">Conditional</animation>
+            <animation effect="slide" tween="quadratic" time="400" reversible="false" end="450" condition="!String.IsEqual(Window.Property($PARAM[wall-id]_OnMove),left)">Conditional</animation>
 
-            <animation effect="slide" tween="quadratic" time="400" reversible="false" end="0,-360" condition="!String.IsEqual(Window.Property(5454_OnMove),down)">Conditional</animation>
-            <animation effect="slide" tween="quadratic" time="400" reversible="false" end="0,360" condition="!String.IsEqual(Window.Property(5454_OnMove),up)">Conditional</animation>
+            <animation effect="slide" tween="quadratic" time="400" reversible="false" end="0,-360" condition="!String.IsEqual(Window.Property($PARAM[wall-id]_OnMove),down)">Conditional</animation>
+            <animation effect="slide" tween="quadratic" time="400" reversible="false" end="0,360" condition="!String.IsEqual(Window.Property($PARAM[wall-id]_OnMove),up)">Conditional</animation>
             <control type="grouplist">
-                <animation effect="fade" reversible="false" start="0" end="100" time="400" tween="sine" easing="out" condition="Control.HasFocus(5454)">Conditional</animation>
-                <animation effect="fade" reversible="false" end="0" start="100" time="400" tween="sine" easing="out" condition="!Control.HasFocus(5454)">Conditional</animation>
+                <animation effect="fade" reversible="false" start="0" end="100" time="400" tween="sine" easing="out" condition="Control.HasFocus($PARAM[wall-id])">Conditional</animation>
+                <animation effect="fade" reversible="false" end="0" start="100" time="400" tween="sine" easing="out" condition="!Control.HasFocus($PARAM[wall-id])">Conditional</animation>
                 <height>360</height>
                 <usecontrolcoords>true</usecontrolcoords>
                 <orientation>horizontal</orientation>
                 <itemgap>0</itemgap>
                 <include content="View_54_Episodes_WallItem">
+                    <param name="id" value="$PARAM[id]" />
+                    <param name="wall-id" value="$PARAM[wall-id]" />
                     <param name="pos" value="-10" />
                 </include>
                 <include content="View_54_Episodes_WallItem">
+                    <param name="id" value="$PARAM[id]" />
+                    <param name="wall-id" value="$PARAM[wall-id]" />
                     <param name="pos" value="-9" />
                 </include>
                 <include content="View_54_Episodes_WallItem">
+                    <param name="id" value="$PARAM[id]" />
+                    <param name="wall-id" value="$PARAM[wall-id]" />
                     <param name="pos" value="-8" />
                 </include>
                 <include content="View_54_Episodes_WallItem">
+                    <param name="id" value="$PARAM[id]" />
+                    <param name="wall-id" value="$PARAM[wall-id]" />
                     <param name="pos" value="-7" />
                 </include>
                 <include content="View_54_Episodes_WallItem">
+                    <param name="id" value="$PARAM[id]" />
+                    <param name="wall-id" value="$PARAM[wall-id]" />
                     <param name="pos" value="-6" />
                 </include>
                 <include content="View_54_Episodes_WallItem">
+                    <param name="id" value="$PARAM[id]" />
+                    <param name="wall-id" value="$PARAM[wall-id]" />
                     <param name="pos" value="-5" />
                 </include>
                 <include content="View_54_Episodes_WallItem">
+                    <param name="id" value="$PARAM[id]" />
+                    <param name="wall-id" value="$PARAM[wall-id]" />
                     <param name="pos" value="-4" />
                 </include>
                 <include content="View_54_Episodes_WallItem">
+                    <param name="id" value="$PARAM[id]" />
+                    <param name="wall-id" value="$PARAM[wall-id]" />
                     <param name="pos" value="-3" />
                 </include>
             </control>
             <control type="grouplist">
-                <animation effect="fade" reversible="false" start="0" end="100" time="400" tween="sine" easing="out" condition="Control.HasFocus(5454)">Conditional</animation>
-                <animation effect="fade" reversible="false" end="0" start="100" time="400" tween="sine" easing="out" condition="!Control.HasFocus(5454)">Conditional</animation>
+                <animation effect="fade" reversible="false" start="0" end="100" time="400" tween="sine" easing="out" condition="Control.HasFocus($PARAM[wall-id])">Conditional</animation>
+                <animation effect="fade" reversible="false" end="0" start="100" time="400" tween="sine" easing="out" condition="!Control.HasFocus($PARAM[wall-id])">Conditional</animation>
                 <height>360</height>
                 <usecontrolcoords>true</usecontrolcoords>
                 <orientation>horizontal</orientation>
                 <itemgap>0</itemgap>
                 <include content="View_54_Episodes_WallItem">
+                    <param name="id" value="$PARAM[id]" />
+                    <param name="wall-id" value="$PARAM[wall-id]" />
                     <param name="pos" value="-6" />
                 </include>
                 <include content="View_54_Episodes_WallItem">
+                    <param name="id" value="$PARAM[id]" />
+                    <param name="wall-id" value="$PARAM[wall-id]" />
                     <param name="pos" value="-5" />
                 </include>
                 <include content="View_54_Episodes_WallItem">
+                    <param name="id" value="$PARAM[id]" />
+                    <param name="wall-id" value="$PARAM[wall-id]" />
                     <param name="pos" value="-4" />
                 </include>
                 <include content="View_54_Episodes_WallItem">
+                    <param name="id" value="$PARAM[id]" />
+                    <param name="wall-id" value="$PARAM[wall-id]" />
                     <param name="pos" value="-3" />
                 </include>
                 <include content="View_54_Episodes_WallItem">
+                    <param name="id" value="$PARAM[id]" />
+                    <param name="wall-id" value="$PARAM[wall-id]" />
                     <param name="pos" value="-2" />
                 </include>
                 <include content="View_54_Episodes_WallItem">
+                    <param name="id" value="$PARAM[id]" />
+                    <param name="wall-id" value="$PARAM[wall-id]" />
                     <param name="pos" value="-1" />
                 </include>
                 <include content="View_54_Episodes_WallItem">
+                    <param name="id" value="$PARAM[id]" />
+                    <param name="wall-id" value="$PARAM[wall-id]" />
                     <param name="pos" value="0" />
                 </include>
                 <include content="View_54_Episodes_WallItem">
+                    <param name="id" value="$PARAM[id]" />
+                    <param name="wall-id" value="$PARAM[wall-id]" />
                     <param name="pos" value="1" />
                 </include>
             </control>
@@ -121,154 +160,218 @@
                 <orientation>horizontal</orientation>
                 <itemgap>0</itemgap>
                 <include content="View_54_Episodes_WallItem">
+                    <param name="id" value="$PARAM[id]" />
+                    <param name="wall-id" value="$PARAM[wall-id]" />
                     <param name="pos" value="-2" />
                 </include>
                 <include content="View_54_Episodes_WallItem">
+                    <param name="id" value="$PARAM[id]" />
+                    <param name="wall-id" value="$PARAM[wall-id]" />
                     <param name="pos" value="-1" />
                 </include>
                 <include content="View_54_Episodes_WallItem">
+                    <param name="id" value="$PARAM[id]" />
+                    <param name="wall-id" value="$PARAM[wall-id]" />
                     <param name="selectbox" value="true" />
                     <param name="pos" value="0" />
                 </include>
                 <include content="View_54_Episodes_WallItem">
+                    <param name="id" value="$PARAM[id]" />
+                    <param name="wall-id" value="$PARAM[wall-id]" />
                     <param name="pos" value="1" />
                 </include>
                 <include content="View_54_Episodes_WallItem">
+                    <param name="id" value="$PARAM[id]" />
+                    <param name="wall-id" value="$PARAM[wall-id]" />
                     <param name="pos" value="2" />
                 </include>
                 <include content="View_54_Episodes_WallItem">
+                    <param name="id" value="$PARAM[id]" />
+                    <param name="wall-id" value="$PARAM[wall-id]" />
                     <param name="pos" value="3" />
                 </include>
                 <include content="View_54_Episodes_WallItem">
+                    <param name="id" value="$PARAM[id]" />
+                    <param name="wall-id" value="$PARAM[wall-id]" />
                     <param name="pos" value="4" />
                 </include>
                 <include content="View_54_Episodes_WallItem">
+                    <param name="id" value="$PARAM[id]" />
+                    <param name="wall-id" value="$PARAM[wall-id]" />
                     <param name="pos" value="5" />
                 </include>
             </control>
             <control type="grouplist">
-                <animation effect="fade" reversible="false" start="0" end="100" time="400" tween="sine" easing="out" condition="Control.HasFocus(5454)">Conditional</animation>
-                <animation effect="fade" reversible="false" end="0" start="100" time="400" tween="sine" easing="out" condition="!Control.HasFocus(5454)">Conditional</animation>
+                <animation effect="fade" reversible="false" start="0" end="100" time="400" tween="sine" easing="out" condition="Control.HasFocus($PARAM[wall-id])">Conditional</animation>
+                <animation effect="fade" reversible="false" end="0" start="100" time="400" tween="sine" easing="out" condition="!Control.HasFocus($PARAM[wall-id])">Conditional</animation>
                 <height>360</height>
                 <usecontrolcoords>true</usecontrolcoords>
                 <orientation>horizontal</orientation>
                 <itemgap>0</itemgap>
                 <include content="View_54_Episodes_WallItem">
+                    <param name="id" value="$PARAM[id]" />
+                    <param name="wall-id" value="$PARAM[wall-id]" />
                     <param name="pos" value="2" />
                 </include>
                 <include content="View_54_Episodes_WallItem">
+                    <param name="id" value="$PARAM[id]" />
+                    <param name="wall-id" value="$PARAM[wall-id]" />
                     <param name="pos" value="3" />
                 </include>
                 <include content="View_54_Episodes_WallItem">
+                    <param name="id" value="$PARAM[id]" />
+                    <param name="wall-id" value="$PARAM[wall-id]" />
                     <param name="pos" value="4" />
                 </include>
                 <include content="View_54_Episodes_WallItem">
+                    <param name="id" value="$PARAM[id]" />
+                    <param name="wall-id" value="$PARAM[wall-id]" />
                     <param name="pos" value="5" />
                 </include>
                 <include content="View_54_Episodes_WallItem">
+                    <param name="id" value="$PARAM[id]" />
+                    <param name="wall-id" value="$PARAM[wall-id]" />
                     <param name="pos" value="6" />
                 </include>
                 <include content="View_54_Episodes_WallItem">
+                    <param name="id" value="$PARAM[id]" />
+                    <param name="wall-id" value="$PARAM[wall-id]" />
                     <param name="pos" value="7" />
                 </include>
                 <include content="View_54_Episodes_WallItem">
+                    <param name="id" value="$PARAM[id]" />
+                    <param name="wall-id" value="$PARAM[wall-id]" />
                     <param name="pos" value="8" />
                 </include>
                 <include content="View_54_Episodes_WallItem">
+                    <param name="id" value="$PARAM[id]" />
+                    <param name="wall-id" value="$PARAM[wall-id]" />
                     <param name="pos" value="9" />
                 </include>
             </control>
             <control type="grouplist">
-                <animation effect="fade" reversible="false" start="0" end="100" time="400" tween="sine" easing="out" condition="Control.HasFocus(5454)">Conditional</animation>
-                <animation effect="fade" reversible="false" end="0" start="100" time="400" tween="sine" easing="out" condition="!Control.HasFocus(5454)">Conditional</animation>
+                <animation effect="fade" reversible="false" start="0" end="100" time="400" tween="sine" easing="out" condition="Control.HasFocus($PARAM[wall-id])">Conditional</animation>
+                <animation effect="fade" reversible="false" end="0" start="100" time="400" tween="sine" easing="out" condition="!Control.HasFocus($PARAM[wall-id])">Conditional</animation>
                 <height>360</height>
                 <usecontrolcoords>true</usecontrolcoords>
                 <orientation>horizontal</orientation>
                 <itemgap>0</itemgap>
                 <include content="View_54_Episodes_WallItem">
+                    <param name="id" value="$PARAM[id]" />
+                    <param name="wall-id" value="$PARAM[wall-id]" />
                     <param name="pos" value="6" />
                 </include>
                 <include content="View_54_Episodes_WallItem">
+                    <param name="id" value="$PARAM[id]" />
+                    <param name="wall-id" value="$PARAM[wall-id]" />
                     <param name="pos" value="7" />
                 </include>
                 <include content="View_54_Episodes_WallItem">
+                    <param name="id" value="$PARAM[id]" />
+                    <param name="wall-id" value="$PARAM[wall-id]" />
                     <param name="pos" value="8" />
                 </include>
                 <include content="View_54_Episodes_WallItem">
+                    <param name="id" value="$PARAM[id]" />
+                    <param name="wall-id" value="$PARAM[wall-id]" />
                     <param name="pos" value="9" />
                 </include>
                 <include content="View_54_Episodes_WallItem">
+                    <param name="id" value="$PARAM[id]" />
+                    <param name="wall-id" value="$PARAM[wall-id]" />
                     <param name="pos" value="10" />
                 </include>
                 <include content="View_54_Episodes_WallItem">
+                    <param name="id" value="$PARAM[id]" />
+                    <param name="wall-id" value="$PARAM[wall-id]" />
                     <param name="pos" value="11" />
                 </include>
                 <include content="View_54_Episodes_WallItem">
+                    <param name="id" value="$PARAM[id]" />
+                    <param name="wall-id" value="$PARAM[wall-id]" />
                     <param name="pos" value="12" />
                 </include>
                 <include content="View_54_Episodes_WallItem">
+                    <param name="id" value="$PARAM[id]" />
+                    <param name="wall-id" value="$PARAM[wall-id]" />
                     <param name="pos" value="13" />
                 </include>
             </control>
             <control type="grouplist">
-                <animation effect="fade" reversible="false" start="0" end="100" time="400" tween="sine" easing="out" condition="Control.HasFocus(5454)">Conditional</animation>
-                <animation effect="fade" reversible="false" end="0" start="100" time="400" tween="sine" easing="out" condition="!Control.HasFocus(5454)">Conditional</animation>
+                <animation effect="fade" reversible="false" start="0" end="100" time="400" tween="sine" easing="out" condition="Control.HasFocus($PARAM[wall-id])">Conditional</animation>
+                <animation effect="fade" reversible="false" end="0" start="100" time="400" tween="sine" easing="out" condition="!Control.HasFocus($PARAM[wall-id])">Conditional</animation>
                 <height>360</height>
                 <usecontrolcoords>true</usecontrolcoords>
                 <orientation>horizontal</orientation>
                 <itemgap>0</itemgap>
                 <include content="View_54_Episodes_WallItem">
+                    <param name="id" value="$PARAM[id]" />
+                    <param name="wall-id" value="$PARAM[wall-id]" />
                     <param name="pos" value="10" />
                 </include>
                 <include content="View_54_Episodes_WallItem">
+                    <param name="id" value="$PARAM[id]" />
+                    <param name="wall-id" value="$PARAM[wall-id]" />
                     <param name="pos" value="11" />
                 </include>
                 <include content="View_54_Episodes_WallItem">
+                    <param name="id" value="$PARAM[id]" />
+                    <param name="wall-id" value="$PARAM[wall-id]" />
                     <param name="pos" value="12" />
                 </include>
                 <include content="View_54_Episodes_WallItem">
+                    <param name="id" value="$PARAM[id]" />
+                    <param name="wall-id" value="$PARAM[wall-id]" />
                     <param name="pos" value="13" />
                 </include>
                 <include content="View_54_Episodes_WallItem">
+                    <param name="id" value="$PARAM[id]" />
+                    <param name="wall-id" value="$PARAM[wall-id]" />
                     <param name="pos" value="14" />
                 </include>
                 <include content="View_54_Episodes_WallItem">
+                    <param name="id" value="$PARAM[id]" />
+                    <param name="wall-id" value="$PARAM[wall-id]" />
                     <param name="pos" value="15" />
                 </include>
                 <include content="View_54_Episodes_WallItem">
+                    <param name="id" value="$PARAM[id]" />
+                    <param name="wall-id" value="$PARAM[wall-id]" />
                     <param name="pos" value="16" />
                 </include>
                 <include content="View_54_Episodes_WallItem">
+                    <param name="id" value="$PARAM[id]" />
+                    <param name="wall-id" value="$PARAM[wall-id]" />
                     <param name="pos" value="17" />
                 </include>
             </control>
         </control>
 
-        <control type="button" id="5454">
+        <control type="button" id="$PARAM[wall-id]">
             <include>Defs_Hidden_Button</include>
-            <onback>54</onback>
-            <oninfo>SetFocus(54)</oninfo>
+            <onback>$PARAM[id]</onback>
+            <oninfo>SetFocus($PARAM[id])</oninfo>
             <oninfo>AlarmClock(nfo,Action(Info),00:01,silent)</oninfo>
-            <onclick>SetFocus(54)</onclick>
+            <onclick>SetFocus($PARAM[id])</onclick>
             <!-- <onclick>AlarmClock(clk,Action(Select),00:01,silent)</onclick> -->
-            <onleft>SetProperty(5454_OnMove,left)</onleft>
-            <onleft>AlarmClock(clr,ClearProperty(5454_OnMove),00:00,silent)</onleft>
-            <onleft>Control.Move(54,-1)</onleft>
-            <onright>SetProperty(5454_OnMove,right)</onright>
-            <onright>AlarmClock(clr,ClearProperty(5454_OnMove),00:00,silent)</onright>
-            <onright>Control.Move(54,1)</onright>
-            <ondown>SetProperty(5454_OnMove,down)</ondown>
-            <ondown>AlarmClock(clr,ClearProperty(5454_OnMove),00:00,silent)</ondown>
-            <ondown>Control.Move(54,4)</ondown>
-            <onup>SetProperty(5454_OnMove,up)</onup>
-            <onup>AlarmClock(clr,ClearProperty(5454_OnMove),00:00,silent)</onup>
-            <onup>Control.Move(54,-4)</onup>
+            <onleft>SetProperty($PARAM[wall-id]_OnMove,left)</onleft>
+            <onleft>AlarmClock(clr,ClearProperty($PARAM[wall-id]_OnMove),00:00,silent)</onleft>
+            <onleft>Control.Move($PARAM[id],-1)</onleft>
+            <onright>SetProperty($PARAM[wall-id]_OnMove,right)</onright>
+            <onright>AlarmClock(clr,ClearProperty($PARAM[wall-id]_OnMove),00:00,silent)</onright>
+            <onright>Control.Move($PARAM[id],1)</onright>
+            <ondown>SetProperty($PARAM[wall-id]_OnMove,down)</ondown>
+            <ondown>AlarmClock(clr,ClearProperty($PARAM[wall-id]_OnMove),00:00,silent)</ondown>
+            <ondown>Control.Move($PARAM[id],4)</ondown>
+            <onup>SetProperty($PARAM[wall-id]_OnMove,up)</onup>
+            <onup>AlarmClock(clr,ClearProperty($PARAM[wall-id]_OnMove),00:00,silent)</onup>
+            <onup>Control.Move($PARAM[id],-4)</onup>
         </control>
 
         <control type="group">
             <animation effect="fade" start="0" end="100" time="500" tween="cubic" easing="inout">Visible</animation>
             <animation effect="fade" start="100" end="0" time="500" tween="cubic" easing="inout">Hidden</animation>
-            <visible>Control.HasFocus(5454)</visible>
+            <visible>Control.HasFocus($PARAM[wall-id])</visible>
             <control type="image">
                 <top>-200</top>
                 <left>-80</left>
@@ -294,9 +397,9 @@
                 <height>360</height>
                 <include content="View_54_Episodes_WallItem_Layout">
                     <param name="selectbox" value="$PARAM[selectbox]" />
-                    <param name="id" value="54" />
-                    <param name="altid" value="5454" />
-                    <param name="icon" value="$VAR[Image_Landscape_C54_$PARAM[pos]]" />
+                    <param name="id" value="$PARAM[id]" />
+                    <param name="wall-id" value="$PARAM[wall-id]" />
+                    <param name="icon" value="$VAR[Image_Landscape_C$PARAM[id]_$PARAM[pos]]" />
                     <param name="diffuse" value="diffuse/poster-std.png" />
                     <param name="textpanel" value="true" />
                     <param name="textbox-height" value="89" />
@@ -342,7 +445,7 @@
                 </include>
                 <include content="Object_Poster">
                     <param name="id" value="$PARAM[id]" />
-                    <param name="altid" value="$PARAM[altid]" />
+                    <param name="altid" value="$PARAM[wall-id]" />
                     <param name="selectbox" value="$PARAM[selectbox]" />
                     <param name="diffuse" value="$PARAM[diffuse]" />
                     <param name="icon" value="$PARAM[icon]" />
@@ -370,16 +473,22 @@
                     <param name="pos" value="$PARAM[pos]" />
                     <param name="textcolor_100" value="panel_fg_30" />
                     <param name="textcolor_70" value="panel_fg_30" />
+                    <param name="id" value="$PARAM[id]" />
+                    <param name="wall-id" value="$PARAM[wall-id]" />
                 </include>
                 <include content="View_54_Episodes_WallItem_Label" description="Focused" condition="Skin.HasSetting(EnableMonochromeHighlight) + $PARAM[textpanel] + $PARAM[selectbox]">
                     <param name="pos" value="$PARAM[pos]" />
                     <param name="textcolor_100" value="panel_bg" />
                     <param name="textcolor_70" value="panel_bg" />
+                    <param name="id" value="$PARAM[id]" />
+                    <param name="wall-id" value="$PARAM[wall-id]" />
                 </include>
                 <include content="View_54_Episodes_WallItem_Label" description="Focused" condition="!Skin.HasSetting(EnableMonochromeHighlight) + $PARAM[textpanel] + $PARAM[selectbox]">
                     <param name="pos" value="$PARAM[pos]" />
                     <param name="textcolor_100" value="panel_fg_100" />
                     <param name="textcolor_70" value="panel_fg_70" />
+                    <param name="id" value="$PARAM[id]" />
+                    <param name="wall-id" value="$PARAM[wall-id]" />
                 </include>
             </control>
 
@@ -394,6 +503,8 @@
                     <param name="textcolor_70" value="main_fg_30" />
                     <param name="align" value="left" />
                     <param name="pad" value="15" />
+                    <param name="id" value="$PARAM[id]" />
+                    <param name="wall-id" value="$PARAM[wall-id]" />
                 </include>
                 <include content="View_54_Episodes_WallItem_Label" description="Focused" condition="!$PARAM[textpanel] + $PARAM[selectbox]">
                     <param name="pos" value="$PARAM[pos]" />
@@ -401,6 +512,8 @@
                     <param name="textcolor_70" value="main_fg_70" />
                     <param name="align" value="left" />
                     <param name="pad" value="15" />
+                    <param name="id" value="$PARAM[id]" />
+                    <param name="wall-id" value="$PARAM[wall-id]" />
                 </include>
             </control>
         </control>
@@ -422,7 +535,7 @@
                 <top>0</top>
                 <aligny>center</aligny>
                 <align>$PARAM[align]</align>
-                <label>$VAR[Label_Landscape_Title_C54_$PARAM[pos]]</label>
+                <label>$VAR[Label_Landscape_Title_C$PARAM[id]_$PARAM[pos]]</label>
             </control>
 
             <!-- Label 2 -->
@@ -436,7 +549,7 @@
                 <top>30</top>
                 <aligny>center</aligny>
                 <align>$PARAM[align]</align>
-                <label fallback="19055">$VAR[Label_SmallLandscapeWidget_Sublabel_C54_$PARAM[pos]]</label>
+                <label fallback="19055">$VAR[Label_SmallLandscapeWidget_Sublabel_C$PARAM[id]_$PARAM[pos]]</label>
             </control>
         </definition>
     </include>

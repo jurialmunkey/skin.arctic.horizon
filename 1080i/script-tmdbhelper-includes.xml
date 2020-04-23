@@ -348,6 +348,354 @@
         <value condition="!String.IsEmpty(Container(54).ListItem.PictureResolution)">$INFO[Container(54).ListItem.PictureResolution]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem.Label2)">$INFO[Container(54).ListItem.Label2]</value>
     </variable>
+    <variable name="Label_SmallLandscapeWidget_Sublabel_C5610_-10">
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-10).ChannelName)">$INFO[Container(5610).ListItem(-10).ChannelName]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-10).Property(NextDay))">$INFO[Container(5610).ListItem(-10).Property(NextDay)]$INFO[Container(5610).ListItem(-10).Property(ShortTime), @ ,]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-10).TvShowTitle) + !String.IsEqual(Container(5610).ListItem(-10).Label,Container(5610).ListItem(-10).TvShowTitle)">$INFO[Container(5610).ListItem(-10).TvShowTitle]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-10).Studio) + [String.IsEqual(Container(5610).ListItem(-10).DBType,video) | [String.IsEmpty(Container(5610).ListItem(-10).DBType) + String.IsEmpty(Container(5610).ListItem(-10).Genre)]]">$INFO[Container(5610).ListItem(-10).Studio]$INFO[Container(5610).ListItem(-10).Duration, - ,]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-10).Artist) + String.IsEmpty(Container(5610).ListItem(-10).Genre)">$INFO[Container(5610).ListItem(-10).Artist]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-10).Genre)">$INFO[Container(5610).ListItem(-10).Genre]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-10).Duration)">$INFO[Container(5610).ListItem(-10).Duration]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-10).AddonVersion)">$INFO[Container(5610).ListItem(-10).AddonVersion]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-10).PictureResolution)">$INFO[Container(5610).ListItem(-10).PictureResolution]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-10).Label2)">$INFO[Container(5610).ListItem(-10).Label2]</value>
+    </variable>
+    <variable name="Label_SmallLandscapeWidget_Sublabel_C5610_-9">
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-9).ChannelName)">$INFO[Container(5610).ListItem(-9).ChannelName]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-9).Property(NextDay))">$INFO[Container(5610).ListItem(-9).Property(NextDay)]$INFO[Container(5610).ListItem(-9).Property(ShortTime), @ ,]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-9).TvShowTitle) + !String.IsEqual(Container(5610).ListItem(-9).Label,Container(5610).ListItem(-9).TvShowTitle)">$INFO[Container(5610).ListItem(-9).TvShowTitle]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-9).Studio) + [String.IsEqual(Container(5610).ListItem(-9).DBType,video) | [String.IsEmpty(Container(5610).ListItem(-9).DBType) + String.IsEmpty(Container(5610).ListItem(-9).Genre)]]">$INFO[Container(5610).ListItem(-9).Studio]$INFO[Container(5610).ListItem(-9).Duration, - ,]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-9).Artist) + String.IsEmpty(Container(5610).ListItem(-9).Genre)">$INFO[Container(5610).ListItem(-9).Artist]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-9).Genre)">$INFO[Container(5610).ListItem(-9).Genre]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-9).Duration)">$INFO[Container(5610).ListItem(-9).Duration]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-9).AddonVersion)">$INFO[Container(5610).ListItem(-9).AddonVersion]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-9).PictureResolution)">$INFO[Container(5610).ListItem(-9).PictureResolution]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-9).Label2)">$INFO[Container(5610).ListItem(-9).Label2]</value>
+    </variable>
+    <variable name="Label_SmallLandscapeWidget_Sublabel_C5610_-8">
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-8).ChannelName)">$INFO[Container(5610).ListItem(-8).ChannelName]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-8).Property(NextDay))">$INFO[Container(5610).ListItem(-8).Property(NextDay)]$INFO[Container(5610).ListItem(-8).Property(ShortTime), @ ,]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-8).TvShowTitle) + !String.IsEqual(Container(5610).ListItem(-8).Label,Container(5610).ListItem(-8).TvShowTitle)">$INFO[Container(5610).ListItem(-8).TvShowTitle]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-8).Studio) + [String.IsEqual(Container(5610).ListItem(-8).DBType,video) | [String.IsEmpty(Container(5610).ListItem(-8).DBType) + String.IsEmpty(Container(5610).ListItem(-8).Genre)]]">$INFO[Container(5610).ListItem(-8).Studio]$INFO[Container(5610).ListItem(-8).Duration, - ,]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-8).Artist) + String.IsEmpty(Container(5610).ListItem(-8).Genre)">$INFO[Container(5610).ListItem(-8).Artist]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-8).Genre)">$INFO[Container(5610).ListItem(-8).Genre]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-8).Duration)">$INFO[Container(5610).ListItem(-8).Duration]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-8).AddonVersion)">$INFO[Container(5610).ListItem(-8).AddonVersion]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-8).PictureResolution)">$INFO[Container(5610).ListItem(-8).PictureResolution]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-8).Label2)">$INFO[Container(5610).ListItem(-8).Label2]</value>
+    </variable>
+    <variable name="Label_SmallLandscapeWidget_Sublabel_C5610_-7">
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-7).ChannelName)">$INFO[Container(5610).ListItem(-7).ChannelName]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-7).Property(NextDay))">$INFO[Container(5610).ListItem(-7).Property(NextDay)]$INFO[Container(5610).ListItem(-7).Property(ShortTime), @ ,]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-7).TvShowTitle) + !String.IsEqual(Container(5610).ListItem(-7).Label,Container(5610).ListItem(-7).TvShowTitle)">$INFO[Container(5610).ListItem(-7).TvShowTitle]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-7).Studio) + [String.IsEqual(Container(5610).ListItem(-7).DBType,video) | [String.IsEmpty(Container(5610).ListItem(-7).DBType) + String.IsEmpty(Container(5610).ListItem(-7).Genre)]]">$INFO[Container(5610).ListItem(-7).Studio]$INFO[Container(5610).ListItem(-7).Duration, - ,]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-7).Artist) + String.IsEmpty(Container(5610).ListItem(-7).Genre)">$INFO[Container(5610).ListItem(-7).Artist]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-7).Genre)">$INFO[Container(5610).ListItem(-7).Genre]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-7).Duration)">$INFO[Container(5610).ListItem(-7).Duration]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-7).AddonVersion)">$INFO[Container(5610).ListItem(-7).AddonVersion]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-7).PictureResolution)">$INFO[Container(5610).ListItem(-7).PictureResolution]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-7).Label2)">$INFO[Container(5610).ListItem(-7).Label2]</value>
+    </variable>
+    <variable name="Label_SmallLandscapeWidget_Sublabel_C5610_-6">
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-6).ChannelName)">$INFO[Container(5610).ListItem(-6).ChannelName]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-6).Property(NextDay))">$INFO[Container(5610).ListItem(-6).Property(NextDay)]$INFO[Container(5610).ListItem(-6).Property(ShortTime), @ ,]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-6).TvShowTitle) + !String.IsEqual(Container(5610).ListItem(-6).Label,Container(5610).ListItem(-6).TvShowTitle)">$INFO[Container(5610).ListItem(-6).TvShowTitle]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-6).Studio) + [String.IsEqual(Container(5610).ListItem(-6).DBType,video) | [String.IsEmpty(Container(5610).ListItem(-6).DBType) + String.IsEmpty(Container(5610).ListItem(-6).Genre)]]">$INFO[Container(5610).ListItem(-6).Studio]$INFO[Container(5610).ListItem(-6).Duration, - ,]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-6).Artist) + String.IsEmpty(Container(5610).ListItem(-6).Genre)">$INFO[Container(5610).ListItem(-6).Artist]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-6).Genre)">$INFO[Container(5610).ListItem(-6).Genre]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-6).Duration)">$INFO[Container(5610).ListItem(-6).Duration]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-6).AddonVersion)">$INFO[Container(5610).ListItem(-6).AddonVersion]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-6).PictureResolution)">$INFO[Container(5610).ListItem(-6).PictureResolution]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-6).Label2)">$INFO[Container(5610).ListItem(-6).Label2]</value>
+    </variable>
+    <variable name="Label_SmallLandscapeWidget_Sublabel_C5610_-5">
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-5).ChannelName)">$INFO[Container(5610).ListItem(-5).ChannelName]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-5).Property(NextDay))">$INFO[Container(5610).ListItem(-5).Property(NextDay)]$INFO[Container(5610).ListItem(-5).Property(ShortTime), @ ,]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-5).TvShowTitle) + !String.IsEqual(Container(5610).ListItem(-5).Label,Container(5610).ListItem(-5).TvShowTitle)">$INFO[Container(5610).ListItem(-5).TvShowTitle]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-5).Studio) + [String.IsEqual(Container(5610).ListItem(-5).DBType,video) | [String.IsEmpty(Container(5610).ListItem(-5).DBType) + String.IsEmpty(Container(5610).ListItem(-5).Genre)]]">$INFO[Container(5610).ListItem(-5).Studio]$INFO[Container(5610).ListItem(-5).Duration, - ,]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-5).Artist) + String.IsEmpty(Container(5610).ListItem(-5).Genre)">$INFO[Container(5610).ListItem(-5).Artist]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-5).Genre)">$INFO[Container(5610).ListItem(-5).Genre]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-5).Duration)">$INFO[Container(5610).ListItem(-5).Duration]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-5).AddonVersion)">$INFO[Container(5610).ListItem(-5).AddonVersion]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-5).PictureResolution)">$INFO[Container(5610).ListItem(-5).PictureResolution]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-5).Label2)">$INFO[Container(5610).ListItem(-5).Label2]</value>
+    </variable>
+    <variable name="Label_SmallLandscapeWidget_Sublabel_C5610_-4">
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-4).ChannelName)">$INFO[Container(5610).ListItem(-4).ChannelName]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-4).Property(NextDay))">$INFO[Container(5610).ListItem(-4).Property(NextDay)]$INFO[Container(5610).ListItem(-4).Property(ShortTime), @ ,]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-4).TvShowTitle) + !String.IsEqual(Container(5610).ListItem(-4).Label,Container(5610).ListItem(-4).TvShowTitle)">$INFO[Container(5610).ListItem(-4).TvShowTitle]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-4).Studio) + [String.IsEqual(Container(5610).ListItem(-4).DBType,video) | [String.IsEmpty(Container(5610).ListItem(-4).DBType) + String.IsEmpty(Container(5610).ListItem(-4).Genre)]]">$INFO[Container(5610).ListItem(-4).Studio]$INFO[Container(5610).ListItem(-4).Duration, - ,]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-4).Artist) + String.IsEmpty(Container(5610).ListItem(-4).Genre)">$INFO[Container(5610).ListItem(-4).Artist]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-4).Genre)">$INFO[Container(5610).ListItem(-4).Genre]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-4).Duration)">$INFO[Container(5610).ListItem(-4).Duration]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-4).AddonVersion)">$INFO[Container(5610).ListItem(-4).AddonVersion]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-4).PictureResolution)">$INFO[Container(5610).ListItem(-4).PictureResolution]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-4).Label2)">$INFO[Container(5610).ListItem(-4).Label2]</value>
+    </variable>
+    <variable name="Label_SmallLandscapeWidget_Sublabel_C5610_-3">
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-3).ChannelName)">$INFO[Container(5610).ListItem(-3).ChannelName]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-3).Property(NextDay))">$INFO[Container(5610).ListItem(-3).Property(NextDay)]$INFO[Container(5610).ListItem(-3).Property(ShortTime), @ ,]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-3).TvShowTitle) + !String.IsEqual(Container(5610).ListItem(-3).Label,Container(5610).ListItem(-3).TvShowTitle)">$INFO[Container(5610).ListItem(-3).TvShowTitle]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-3).Studio) + [String.IsEqual(Container(5610).ListItem(-3).DBType,video) | [String.IsEmpty(Container(5610).ListItem(-3).DBType) + String.IsEmpty(Container(5610).ListItem(-3).Genre)]]">$INFO[Container(5610).ListItem(-3).Studio]$INFO[Container(5610).ListItem(-3).Duration, - ,]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-3).Artist) + String.IsEmpty(Container(5610).ListItem(-3).Genre)">$INFO[Container(5610).ListItem(-3).Artist]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-3).Genre)">$INFO[Container(5610).ListItem(-3).Genre]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-3).Duration)">$INFO[Container(5610).ListItem(-3).Duration]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-3).AddonVersion)">$INFO[Container(5610).ListItem(-3).AddonVersion]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-3).PictureResolution)">$INFO[Container(5610).ListItem(-3).PictureResolution]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-3).Label2)">$INFO[Container(5610).ListItem(-3).Label2]</value>
+    </variable>
+    <variable name="Label_SmallLandscapeWidget_Sublabel_C5610_-2">
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-2).ChannelName)">$INFO[Container(5610).ListItem(-2).ChannelName]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-2).Property(NextDay))">$INFO[Container(5610).ListItem(-2).Property(NextDay)]$INFO[Container(5610).ListItem(-2).Property(ShortTime), @ ,]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-2).TvShowTitle) + !String.IsEqual(Container(5610).ListItem(-2).Label,Container(5610).ListItem(-2).TvShowTitle)">$INFO[Container(5610).ListItem(-2).TvShowTitle]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-2).Studio) + [String.IsEqual(Container(5610).ListItem(-2).DBType,video) | [String.IsEmpty(Container(5610).ListItem(-2).DBType) + String.IsEmpty(Container(5610).ListItem(-2).Genre)]]">$INFO[Container(5610).ListItem(-2).Studio]$INFO[Container(5610).ListItem(-2).Duration, - ,]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-2).Artist) + String.IsEmpty(Container(5610).ListItem(-2).Genre)">$INFO[Container(5610).ListItem(-2).Artist]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-2).Genre)">$INFO[Container(5610).ListItem(-2).Genre]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-2).Duration)">$INFO[Container(5610).ListItem(-2).Duration]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-2).AddonVersion)">$INFO[Container(5610).ListItem(-2).AddonVersion]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-2).PictureResolution)">$INFO[Container(5610).ListItem(-2).PictureResolution]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-2).Label2)">$INFO[Container(5610).ListItem(-2).Label2]</value>
+    </variable>
+    <variable name="Label_SmallLandscapeWidget_Sublabel_C5610_-1">
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-1).ChannelName)">$INFO[Container(5610).ListItem(-1).ChannelName]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-1).Property(NextDay))">$INFO[Container(5610).ListItem(-1).Property(NextDay)]$INFO[Container(5610).ListItem(-1).Property(ShortTime), @ ,]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-1).TvShowTitle) + !String.IsEqual(Container(5610).ListItem(-1).Label,Container(5610).ListItem(-1).TvShowTitle)">$INFO[Container(5610).ListItem(-1).TvShowTitle]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-1).Studio) + [String.IsEqual(Container(5610).ListItem(-1).DBType,video) | [String.IsEmpty(Container(5610).ListItem(-1).DBType) + String.IsEmpty(Container(5610).ListItem(-1).Genre)]]">$INFO[Container(5610).ListItem(-1).Studio]$INFO[Container(5610).ListItem(-1).Duration, - ,]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-1).Artist) + String.IsEmpty(Container(5610).ListItem(-1).Genre)">$INFO[Container(5610).ListItem(-1).Artist]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-1).Genre)">$INFO[Container(5610).ListItem(-1).Genre]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-1).Duration)">$INFO[Container(5610).ListItem(-1).Duration]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-1).AddonVersion)">$INFO[Container(5610).ListItem(-1).AddonVersion]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-1).PictureResolution)">$INFO[Container(5610).ListItem(-1).PictureResolution]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-1).Label2)">$INFO[Container(5610).ListItem(-1).Label2]</value>
+    </variable>
+    <variable name="Label_SmallLandscapeWidget_Sublabel_C5610_0">
+        <value condition="!String.IsEmpty(Container(5610).ListItem.ChannelName)">$INFO[Container(5610).ListItem.ChannelName]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem.Property(NextDay))">$INFO[Container(5610).ListItem.Property(NextDay)]$INFO[Container(5610).ListItem.Property(ShortTime), @ ,]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem.TvShowTitle) + !String.IsEqual(Container(5610).ListItem.Label,Container(5610).ListItem.TvShowTitle)">$INFO[Container(5610).ListItem.TvShowTitle]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem.Studio) + [String.IsEqual(Container(5610).ListItem.DBType,video) | [String.IsEmpty(Container(5610).ListItem.DBType) + String.IsEmpty(Container(5610).ListItem.Genre)]]">$INFO[Container(5610).ListItem.Studio]$INFO[Container(5610).ListItem.Duration, - ,]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem.Artist) + String.IsEmpty(Container(5610).ListItem.Genre)">$INFO[Container(5610).ListItem.Artist]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem.Genre)">$INFO[Container(5610).ListItem.Genre]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem.Duration)">$INFO[Container(5610).ListItem.Duration]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem.AddonVersion)">$INFO[Container(5610).ListItem.AddonVersion]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem.PictureResolution)">$INFO[Container(5610).ListItem.PictureResolution]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem.Label2)">$INFO[Container(5610).ListItem.Label2]</value>
+    </variable>
+    <variable name="Label_SmallLandscapeWidget_Sublabel_C5610_1">
+        <value condition="!String.IsEmpty(Container(5610).ListItem(1).ChannelName)">$INFO[Container(5610).ListItem(1).ChannelName]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(1).Property(NextDay))">$INFO[Container(5610).ListItem(1).Property(NextDay)]$INFO[Container(5610).ListItem(1).Property(ShortTime), @ ,]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(1).TvShowTitle) + !String.IsEqual(Container(5610).ListItem(1).Label,Container(5610).ListItem(1).TvShowTitle)">$INFO[Container(5610).ListItem(1).TvShowTitle]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(1).Studio) + [String.IsEqual(Container(5610).ListItem(1).DBType,video) | [String.IsEmpty(Container(5610).ListItem(1).DBType) + String.IsEmpty(Container(5610).ListItem(1).Genre)]]">$INFO[Container(5610).ListItem(1).Studio]$INFO[Container(5610).ListItem(1).Duration, - ,]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(1).Artist) + String.IsEmpty(Container(5610).ListItem(1).Genre)">$INFO[Container(5610).ListItem(1).Artist]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(1).Genre)">$INFO[Container(5610).ListItem(1).Genre]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(1).Duration)">$INFO[Container(5610).ListItem(1).Duration]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(1).AddonVersion)">$INFO[Container(5610).ListItem(1).AddonVersion]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(1).PictureResolution)">$INFO[Container(5610).ListItem(1).PictureResolution]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(1).Label2)">$INFO[Container(5610).ListItem(1).Label2]</value>
+    </variable>
+    <variable name="Label_SmallLandscapeWidget_Sublabel_C5610_2">
+        <value condition="!String.IsEmpty(Container(5610).ListItem(2).ChannelName)">$INFO[Container(5610).ListItem(2).ChannelName]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(2).Property(NextDay))">$INFO[Container(5610).ListItem(2).Property(NextDay)]$INFO[Container(5610).ListItem(2).Property(ShortTime), @ ,]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(2).TvShowTitle) + !String.IsEqual(Container(5610).ListItem(2).Label,Container(5610).ListItem(2).TvShowTitle)">$INFO[Container(5610).ListItem(2).TvShowTitle]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(2).Studio) + [String.IsEqual(Container(5610).ListItem(2).DBType,video) | [String.IsEmpty(Container(5610).ListItem(2).DBType) + String.IsEmpty(Container(5610).ListItem(2).Genre)]]">$INFO[Container(5610).ListItem(2).Studio]$INFO[Container(5610).ListItem(2).Duration, - ,]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(2).Artist) + String.IsEmpty(Container(5610).ListItem(2).Genre)">$INFO[Container(5610).ListItem(2).Artist]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(2).Genre)">$INFO[Container(5610).ListItem(2).Genre]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(2).Duration)">$INFO[Container(5610).ListItem(2).Duration]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(2).AddonVersion)">$INFO[Container(5610).ListItem(2).AddonVersion]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(2).PictureResolution)">$INFO[Container(5610).ListItem(2).PictureResolution]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(2).Label2)">$INFO[Container(5610).ListItem(2).Label2]</value>
+    </variable>
+    <variable name="Label_SmallLandscapeWidget_Sublabel_C5610_3">
+        <value condition="!String.IsEmpty(Container(5610).ListItem(3).ChannelName)">$INFO[Container(5610).ListItem(3).ChannelName]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(3).Property(NextDay))">$INFO[Container(5610).ListItem(3).Property(NextDay)]$INFO[Container(5610).ListItem(3).Property(ShortTime), @ ,]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(3).TvShowTitle) + !String.IsEqual(Container(5610).ListItem(3).Label,Container(5610).ListItem(3).TvShowTitle)">$INFO[Container(5610).ListItem(3).TvShowTitle]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(3).Studio) + [String.IsEqual(Container(5610).ListItem(3).DBType,video) | [String.IsEmpty(Container(5610).ListItem(3).DBType) + String.IsEmpty(Container(5610).ListItem(3).Genre)]]">$INFO[Container(5610).ListItem(3).Studio]$INFO[Container(5610).ListItem(3).Duration, - ,]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(3).Artist) + String.IsEmpty(Container(5610).ListItem(3).Genre)">$INFO[Container(5610).ListItem(3).Artist]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(3).Genre)">$INFO[Container(5610).ListItem(3).Genre]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(3).Duration)">$INFO[Container(5610).ListItem(3).Duration]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(3).AddonVersion)">$INFO[Container(5610).ListItem(3).AddonVersion]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(3).PictureResolution)">$INFO[Container(5610).ListItem(3).PictureResolution]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(3).Label2)">$INFO[Container(5610).ListItem(3).Label2]</value>
+    </variable>
+    <variable name="Label_SmallLandscapeWidget_Sublabel_C5610_4">
+        <value condition="!String.IsEmpty(Container(5610).ListItem(4).ChannelName)">$INFO[Container(5610).ListItem(4).ChannelName]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(4).Property(NextDay))">$INFO[Container(5610).ListItem(4).Property(NextDay)]$INFO[Container(5610).ListItem(4).Property(ShortTime), @ ,]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(4).TvShowTitle) + !String.IsEqual(Container(5610).ListItem(4).Label,Container(5610).ListItem(4).TvShowTitle)">$INFO[Container(5610).ListItem(4).TvShowTitle]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(4).Studio) + [String.IsEqual(Container(5610).ListItem(4).DBType,video) | [String.IsEmpty(Container(5610).ListItem(4).DBType) + String.IsEmpty(Container(5610).ListItem(4).Genre)]]">$INFO[Container(5610).ListItem(4).Studio]$INFO[Container(5610).ListItem(4).Duration, - ,]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(4).Artist) + String.IsEmpty(Container(5610).ListItem(4).Genre)">$INFO[Container(5610).ListItem(4).Artist]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(4).Genre)">$INFO[Container(5610).ListItem(4).Genre]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(4).Duration)">$INFO[Container(5610).ListItem(4).Duration]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(4).AddonVersion)">$INFO[Container(5610).ListItem(4).AddonVersion]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(4).PictureResolution)">$INFO[Container(5610).ListItem(4).PictureResolution]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(4).Label2)">$INFO[Container(5610).ListItem(4).Label2]</value>
+    </variable>
+    <variable name="Label_SmallLandscapeWidget_Sublabel_C5610_5">
+        <value condition="!String.IsEmpty(Container(5610).ListItem(5).ChannelName)">$INFO[Container(5610).ListItem(5).ChannelName]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(5).Property(NextDay))">$INFO[Container(5610).ListItem(5).Property(NextDay)]$INFO[Container(5610).ListItem(5).Property(ShortTime), @ ,]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(5).TvShowTitle) + !String.IsEqual(Container(5610).ListItem(5).Label,Container(5610).ListItem(5).TvShowTitle)">$INFO[Container(5610).ListItem(5).TvShowTitle]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(5).Studio) + [String.IsEqual(Container(5610).ListItem(5).DBType,video) | [String.IsEmpty(Container(5610).ListItem(5).DBType) + String.IsEmpty(Container(5610).ListItem(5).Genre)]]">$INFO[Container(5610).ListItem(5).Studio]$INFO[Container(5610).ListItem(5).Duration, - ,]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(5).Artist) + String.IsEmpty(Container(5610).ListItem(5).Genre)">$INFO[Container(5610).ListItem(5).Artist]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(5).Genre)">$INFO[Container(5610).ListItem(5).Genre]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(5).Duration)">$INFO[Container(5610).ListItem(5).Duration]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(5).AddonVersion)">$INFO[Container(5610).ListItem(5).AddonVersion]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(5).PictureResolution)">$INFO[Container(5610).ListItem(5).PictureResolution]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(5).Label2)">$INFO[Container(5610).ListItem(5).Label2]</value>
+    </variable>
+    <variable name="Label_SmallLandscapeWidget_Sublabel_C5610_6">
+        <value condition="!String.IsEmpty(Container(5610).ListItem(6).ChannelName)">$INFO[Container(5610).ListItem(6).ChannelName]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(6).Property(NextDay))">$INFO[Container(5610).ListItem(6).Property(NextDay)]$INFO[Container(5610).ListItem(6).Property(ShortTime), @ ,]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(6).TvShowTitle) + !String.IsEqual(Container(5610).ListItem(6).Label,Container(5610).ListItem(6).TvShowTitle)">$INFO[Container(5610).ListItem(6).TvShowTitle]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(6).Studio) + [String.IsEqual(Container(5610).ListItem(6).DBType,video) | [String.IsEmpty(Container(5610).ListItem(6).DBType) + String.IsEmpty(Container(5610).ListItem(6).Genre)]]">$INFO[Container(5610).ListItem(6).Studio]$INFO[Container(5610).ListItem(6).Duration, - ,]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(6).Artist) + String.IsEmpty(Container(5610).ListItem(6).Genre)">$INFO[Container(5610).ListItem(6).Artist]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(6).Genre)">$INFO[Container(5610).ListItem(6).Genre]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(6).Duration)">$INFO[Container(5610).ListItem(6).Duration]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(6).AddonVersion)">$INFO[Container(5610).ListItem(6).AddonVersion]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(6).PictureResolution)">$INFO[Container(5610).ListItem(6).PictureResolution]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(6).Label2)">$INFO[Container(5610).ListItem(6).Label2]</value>
+    </variable>
+    <variable name="Label_SmallLandscapeWidget_Sublabel_C5610_7">
+        <value condition="!String.IsEmpty(Container(5610).ListItem(7).ChannelName)">$INFO[Container(5610).ListItem(7).ChannelName]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(7).Property(NextDay))">$INFO[Container(5610).ListItem(7).Property(NextDay)]$INFO[Container(5610).ListItem(7).Property(ShortTime), @ ,]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(7).TvShowTitle) + !String.IsEqual(Container(5610).ListItem(7).Label,Container(5610).ListItem(7).TvShowTitle)">$INFO[Container(5610).ListItem(7).TvShowTitle]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(7).Studio) + [String.IsEqual(Container(5610).ListItem(7).DBType,video) | [String.IsEmpty(Container(5610).ListItem(7).DBType) + String.IsEmpty(Container(5610).ListItem(7).Genre)]]">$INFO[Container(5610).ListItem(7).Studio]$INFO[Container(5610).ListItem(7).Duration, - ,]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(7).Artist) + String.IsEmpty(Container(5610).ListItem(7).Genre)">$INFO[Container(5610).ListItem(7).Artist]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(7).Genre)">$INFO[Container(5610).ListItem(7).Genre]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(7).Duration)">$INFO[Container(5610).ListItem(7).Duration]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(7).AddonVersion)">$INFO[Container(5610).ListItem(7).AddonVersion]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(7).PictureResolution)">$INFO[Container(5610).ListItem(7).PictureResolution]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(7).Label2)">$INFO[Container(5610).ListItem(7).Label2]</value>
+    </variable>
+    <variable name="Label_SmallLandscapeWidget_Sublabel_C5610_8">
+        <value condition="!String.IsEmpty(Container(5610).ListItem(8).ChannelName)">$INFO[Container(5610).ListItem(8).ChannelName]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(8).Property(NextDay))">$INFO[Container(5610).ListItem(8).Property(NextDay)]$INFO[Container(5610).ListItem(8).Property(ShortTime), @ ,]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(8).TvShowTitle) + !String.IsEqual(Container(5610).ListItem(8).Label,Container(5610).ListItem(8).TvShowTitle)">$INFO[Container(5610).ListItem(8).TvShowTitle]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(8).Studio) + [String.IsEqual(Container(5610).ListItem(8).DBType,video) | [String.IsEmpty(Container(5610).ListItem(8).DBType) + String.IsEmpty(Container(5610).ListItem(8).Genre)]]">$INFO[Container(5610).ListItem(8).Studio]$INFO[Container(5610).ListItem(8).Duration, - ,]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(8).Artist) + String.IsEmpty(Container(5610).ListItem(8).Genre)">$INFO[Container(5610).ListItem(8).Artist]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(8).Genre)">$INFO[Container(5610).ListItem(8).Genre]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(8).Duration)">$INFO[Container(5610).ListItem(8).Duration]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(8).AddonVersion)">$INFO[Container(5610).ListItem(8).AddonVersion]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(8).PictureResolution)">$INFO[Container(5610).ListItem(8).PictureResolution]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(8).Label2)">$INFO[Container(5610).ListItem(8).Label2]</value>
+    </variable>
+    <variable name="Label_SmallLandscapeWidget_Sublabel_C5610_9">
+        <value condition="!String.IsEmpty(Container(5610).ListItem(9).ChannelName)">$INFO[Container(5610).ListItem(9).ChannelName]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(9).Property(NextDay))">$INFO[Container(5610).ListItem(9).Property(NextDay)]$INFO[Container(5610).ListItem(9).Property(ShortTime), @ ,]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(9).TvShowTitle) + !String.IsEqual(Container(5610).ListItem(9).Label,Container(5610).ListItem(9).TvShowTitle)">$INFO[Container(5610).ListItem(9).TvShowTitle]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(9).Studio) + [String.IsEqual(Container(5610).ListItem(9).DBType,video) | [String.IsEmpty(Container(5610).ListItem(9).DBType) + String.IsEmpty(Container(5610).ListItem(9).Genre)]]">$INFO[Container(5610).ListItem(9).Studio]$INFO[Container(5610).ListItem(9).Duration, - ,]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(9).Artist) + String.IsEmpty(Container(5610).ListItem(9).Genre)">$INFO[Container(5610).ListItem(9).Artist]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(9).Genre)">$INFO[Container(5610).ListItem(9).Genre]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(9).Duration)">$INFO[Container(5610).ListItem(9).Duration]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(9).AddonVersion)">$INFO[Container(5610).ListItem(9).AddonVersion]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(9).PictureResolution)">$INFO[Container(5610).ListItem(9).PictureResolution]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(9).Label2)">$INFO[Container(5610).ListItem(9).Label2]</value>
+    </variable>
+    <variable name="Label_SmallLandscapeWidget_Sublabel_C5610_10">
+        <value condition="!String.IsEmpty(Container(5610).ListItem(10).ChannelName)">$INFO[Container(5610).ListItem(10).ChannelName]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(10).Property(NextDay))">$INFO[Container(5610).ListItem(10).Property(NextDay)]$INFO[Container(5610).ListItem(10).Property(ShortTime), @ ,]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(10).TvShowTitle) + !String.IsEqual(Container(5610).ListItem(10).Label,Container(5610).ListItem(10).TvShowTitle)">$INFO[Container(5610).ListItem(10).TvShowTitle]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(10).Studio) + [String.IsEqual(Container(5610).ListItem(10).DBType,video) | [String.IsEmpty(Container(5610).ListItem(10).DBType) + String.IsEmpty(Container(5610).ListItem(10).Genre)]]">$INFO[Container(5610).ListItem(10).Studio]$INFO[Container(5610).ListItem(10).Duration, - ,]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(10).Artist) + String.IsEmpty(Container(5610).ListItem(10).Genre)">$INFO[Container(5610).ListItem(10).Artist]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(10).Genre)">$INFO[Container(5610).ListItem(10).Genre]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(10).Duration)">$INFO[Container(5610).ListItem(10).Duration]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(10).AddonVersion)">$INFO[Container(5610).ListItem(10).AddonVersion]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(10).PictureResolution)">$INFO[Container(5610).ListItem(10).PictureResolution]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(10).Label2)">$INFO[Container(5610).ListItem(10).Label2]</value>
+    </variable>
+    <variable name="Label_SmallLandscapeWidget_Sublabel_C5610_11">
+        <value condition="!String.IsEmpty(Container(5610).ListItem(11).ChannelName)">$INFO[Container(5610).ListItem(11).ChannelName]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(11).Property(NextDay))">$INFO[Container(5610).ListItem(11).Property(NextDay)]$INFO[Container(5610).ListItem(11).Property(ShortTime), @ ,]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(11).TvShowTitle) + !String.IsEqual(Container(5610).ListItem(11).Label,Container(5610).ListItem(11).TvShowTitle)">$INFO[Container(5610).ListItem(11).TvShowTitle]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(11).Studio) + [String.IsEqual(Container(5610).ListItem(11).DBType,video) | [String.IsEmpty(Container(5610).ListItem(11).DBType) + String.IsEmpty(Container(5610).ListItem(11).Genre)]]">$INFO[Container(5610).ListItem(11).Studio]$INFO[Container(5610).ListItem(11).Duration, - ,]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(11).Artist) + String.IsEmpty(Container(5610).ListItem(11).Genre)">$INFO[Container(5610).ListItem(11).Artist]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(11).Genre)">$INFO[Container(5610).ListItem(11).Genre]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(11).Duration)">$INFO[Container(5610).ListItem(11).Duration]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(11).AddonVersion)">$INFO[Container(5610).ListItem(11).AddonVersion]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(11).PictureResolution)">$INFO[Container(5610).ListItem(11).PictureResolution]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(11).Label2)">$INFO[Container(5610).ListItem(11).Label2]</value>
+    </variable>
+    <variable name="Label_SmallLandscapeWidget_Sublabel_C5610_12">
+        <value condition="!String.IsEmpty(Container(5610).ListItem(12).ChannelName)">$INFO[Container(5610).ListItem(12).ChannelName]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(12).Property(NextDay))">$INFO[Container(5610).ListItem(12).Property(NextDay)]$INFO[Container(5610).ListItem(12).Property(ShortTime), @ ,]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(12).TvShowTitle) + !String.IsEqual(Container(5610).ListItem(12).Label,Container(5610).ListItem(12).TvShowTitle)">$INFO[Container(5610).ListItem(12).TvShowTitle]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(12).Studio) + [String.IsEqual(Container(5610).ListItem(12).DBType,video) | [String.IsEmpty(Container(5610).ListItem(12).DBType) + String.IsEmpty(Container(5610).ListItem(12).Genre)]]">$INFO[Container(5610).ListItem(12).Studio]$INFO[Container(5610).ListItem(12).Duration, - ,]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(12).Artist) + String.IsEmpty(Container(5610).ListItem(12).Genre)">$INFO[Container(5610).ListItem(12).Artist]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(12).Genre)">$INFO[Container(5610).ListItem(12).Genre]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(12).Duration)">$INFO[Container(5610).ListItem(12).Duration]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(12).AddonVersion)">$INFO[Container(5610).ListItem(12).AddonVersion]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(12).PictureResolution)">$INFO[Container(5610).ListItem(12).PictureResolution]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(12).Label2)">$INFO[Container(5610).ListItem(12).Label2]</value>
+    </variable>
+    <variable name="Label_SmallLandscapeWidget_Sublabel_C5610_13">
+        <value condition="!String.IsEmpty(Container(5610).ListItem(13).ChannelName)">$INFO[Container(5610).ListItem(13).ChannelName]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(13).Property(NextDay))">$INFO[Container(5610).ListItem(13).Property(NextDay)]$INFO[Container(5610).ListItem(13).Property(ShortTime), @ ,]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(13).TvShowTitle) + !String.IsEqual(Container(5610).ListItem(13).Label,Container(5610).ListItem(13).TvShowTitle)">$INFO[Container(5610).ListItem(13).TvShowTitle]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(13).Studio) + [String.IsEqual(Container(5610).ListItem(13).DBType,video) | [String.IsEmpty(Container(5610).ListItem(13).DBType) + String.IsEmpty(Container(5610).ListItem(13).Genre)]]">$INFO[Container(5610).ListItem(13).Studio]$INFO[Container(5610).ListItem(13).Duration, - ,]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(13).Artist) + String.IsEmpty(Container(5610).ListItem(13).Genre)">$INFO[Container(5610).ListItem(13).Artist]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(13).Genre)">$INFO[Container(5610).ListItem(13).Genre]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(13).Duration)">$INFO[Container(5610).ListItem(13).Duration]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(13).AddonVersion)">$INFO[Container(5610).ListItem(13).AddonVersion]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(13).PictureResolution)">$INFO[Container(5610).ListItem(13).PictureResolution]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(13).Label2)">$INFO[Container(5610).ListItem(13).Label2]</value>
+    </variable>
+    <variable name="Label_SmallLandscapeWidget_Sublabel_C5610_14">
+        <value condition="!String.IsEmpty(Container(5610).ListItem(14).ChannelName)">$INFO[Container(5610).ListItem(14).ChannelName]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(14).Property(NextDay))">$INFO[Container(5610).ListItem(14).Property(NextDay)]$INFO[Container(5610).ListItem(14).Property(ShortTime), @ ,]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(14).TvShowTitle) + !String.IsEqual(Container(5610).ListItem(14).Label,Container(5610).ListItem(14).TvShowTitle)">$INFO[Container(5610).ListItem(14).TvShowTitle]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(14).Studio) + [String.IsEqual(Container(5610).ListItem(14).DBType,video) | [String.IsEmpty(Container(5610).ListItem(14).DBType) + String.IsEmpty(Container(5610).ListItem(14).Genre)]]">$INFO[Container(5610).ListItem(14).Studio]$INFO[Container(5610).ListItem(14).Duration, - ,]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(14).Artist) + String.IsEmpty(Container(5610).ListItem(14).Genre)">$INFO[Container(5610).ListItem(14).Artist]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(14).Genre)">$INFO[Container(5610).ListItem(14).Genre]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(14).Duration)">$INFO[Container(5610).ListItem(14).Duration]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(14).AddonVersion)">$INFO[Container(5610).ListItem(14).AddonVersion]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(14).PictureResolution)">$INFO[Container(5610).ListItem(14).PictureResolution]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(14).Label2)">$INFO[Container(5610).ListItem(14).Label2]</value>
+    </variable>
+    <variable name="Label_SmallLandscapeWidget_Sublabel_C5610_15">
+        <value condition="!String.IsEmpty(Container(5610).ListItem(15).ChannelName)">$INFO[Container(5610).ListItem(15).ChannelName]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(15).Property(NextDay))">$INFO[Container(5610).ListItem(15).Property(NextDay)]$INFO[Container(5610).ListItem(15).Property(ShortTime), @ ,]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(15).TvShowTitle) + !String.IsEqual(Container(5610).ListItem(15).Label,Container(5610).ListItem(15).TvShowTitle)">$INFO[Container(5610).ListItem(15).TvShowTitle]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(15).Studio) + [String.IsEqual(Container(5610).ListItem(15).DBType,video) | [String.IsEmpty(Container(5610).ListItem(15).DBType) + String.IsEmpty(Container(5610).ListItem(15).Genre)]]">$INFO[Container(5610).ListItem(15).Studio]$INFO[Container(5610).ListItem(15).Duration, - ,]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(15).Artist) + String.IsEmpty(Container(5610).ListItem(15).Genre)">$INFO[Container(5610).ListItem(15).Artist]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(15).Genre)">$INFO[Container(5610).ListItem(15).Genre]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(15).Duration)">$INFO[Container(5610).ListItem(15).Duration]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(15).AddonVersion)">$INFO[Container(5610).ListItem(15).AddonVersion]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(15).PictureResolution)">$INFO[Container(5610).ListItem(15).PictureResolution]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(15).Label2)">$INFO[Container(5610).ListItem(15).Label2]</value>
+    </variable>
+    <variable name="Label_SmallLandscapeWidget_Sublabel_C5610_16">
+        <value condition="!String.IsEmpty(Container(5610).ListItem(16).ChannelName)">$INFO[Container(5610).ListItem(16).ChannelName]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(16).Property(NextDay))">$INFO[Container(5610).ListItem(16).Property(NextDay)]$INFO[Container(5610).ListItem(16).Property(ShortTime), @ ,]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(16).TvShowTitle) + !String.IsEqual(Container(5610).ListItem(16).Label,Container(5610).ListItem(16).TvShowTitle)">$INFO[Container(5610).ListItem(16).TvShowTitle]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(16).Studio) + [String.IsEqual(Container(5610).ListItem(16).DBType,video) | [String.IsEmpty(Container(5610).ListItem(16).DBType) + String.IsEmpty(Container(5610).ListItem(16).Genre)]]">$INFO[Container(5610).ListItem(16).Studio]$INFO[Container(5610).ListItem(16).Duration, - ,]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(16).Artist) + String.IsEmpty(Container(5610).ListItem(16).Genre)">$INFO[Container(5610).ListItem(16).Artist]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(16).Genre)">$INFO[Container(5610).ListItem(16).Genre]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(16).Duration)">$INFO[Container(5610).ListItem(16).Duration]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(16).AddonVersion)">$INFO[Container(5610).ListItem(16).AddonVersion]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(16).PictureResolution)">$INFO[Container(5610).ListItem(16).PictureResolution]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(16).Label2)">$INFO[Container(5610).ListItem(16).Label2]</value>
+    </variable>
+    <variable name="Label_SmallLandscapeWidget_Sublabel_C5610_17">
+        <value condition="!String.IsEmpty(Container(5610).ListItem(17).ChannelName)">$INFO[Container(5610).ListItem(17).ChannelName]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(17).Property(NextDay))">$INFO[Container(5610).ListItem(17).Property(NextDay)]$INFO[Container(5610).ListItem(17).Property(ShortTime), @ ,]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(17).TvShowTitle) + !String.IsEqual(Container(5610).ListItem(17).Label,Container(5610).ListItem(17).TvShowTitle)">$INFO[Container(5610).ListItem(17).TvShowTitle]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(17).Studio) + [String.IsEqual(Container(5610).ListItem(17).DBType,video) | [String.IsEmpty(Container(5610).ListItem(17).DBType) + String.IsEmpty(Container(5610).ListItem(17).Genre)]]">$INFO[Container(5610).ListItem(17).Studio]$INFO[Container(5610).ListItem(17).Duration, - ,]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(17).Artist) + String.IsEmpty(Container(5610).ListItem(17).Genre)">$INFO[Container(5610).ListItem(17).Artist]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(17).Genre)">$INFO[Container(5610).ListItem(17).Genre]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(17).Duration)">$INFO[Container(5610).ListItem(17).Duration]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(17).AddonVersion)">$INFO[Container(5610).ListItem(17).AddonVersion]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(17).PictureResolution)">$INFO[Container(5610).ListItem(17).PictureResolution]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(17).Label2)">$INFO[Container(5610).ListItem(17).Label2]</value>
+    </variable>
+    <variable name="Label_SmallLandscapeWidget_Sublabel_C5610">
+        <value condition="!String.IsEmpty(Container(5610).ListItem.ChannelName)">$INFO[Container(5610).ListItem.ChannelName]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem.Property(NextDay))">$INFO[Container(5610).ListItem.Property(NextDay)]$INFO[Container(5610).ListItem.Property(ShortTime), @ ,]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem.TvShowTitle) + !String.IsEqual(Container(5610).ListItem.Label,Container(5610).ListItem.TvShowTitle)">$INFO[Container(5610).ListItem.TvShowTitle]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem.Studio) + [String.IsEqual(Container(5610).ListItem.DBType,video) | [String.IsEmpty(Container(5610).ListItem.DBType) + String.IsEmpty(Container(5610).ListItem.Genre)]]">$INFO[Container(5610).ListItem.Studio]$INFO[Container(5610).ListItem.Duration, - ,]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem.Artist) + String.IsEmpty(Container(5610).ListItem.Genre)">$INFO[Container(5610).ListItem.Artist]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem.Genre)">$INFO[Container(5610).ListItem.Genre]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem.Duration)">$INFO[Container(5610).ListItem.Duration]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem.AddonVersion)">$INFO[Container(5610).ListItem.AddonVersion]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem.PictureResolution)">$INFO[Container(5610).ListItem.PictureResolution]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem.Label2)">$INFO[Container(5610).ListItem.Label2]</value>
+    </variable>
     <variable name="Label_SmallLandscapeWidget_Sublabel_-10">
         <value condition="!String.IsEmpty(ListItem(-10).ChannelName)">$INFO[ListItem(-10).ChannelName]</value>
         <value condition="!String.IsEmpty(ListItem(-10).Property(NextDay))">$INFO[ListItem(-10).Property(NextDay)]$INFO[ListItem(-10).Property(ShortTime), @ ,]</value>
@@ -1015,6 +1363,325 @@
         <value condition="!String.IsEmpty(Container(54).ListItem.Art(thumb))">$INFO[Container(54).ListItem.Art(thumb)]</value>
         <value condition="True">$INFO[Container(54).ListItem.Icon]</value>
     </variable>
+    <variable name="Image_Landscape_C5610_-10">
+        <value condition="Container.Content(images)">$INFO[Container(5610).ListItem(-10).Icon]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-10).Art(thumb)) + [String.IsEqual(Container(5610).ListItem(-10).DBType,episode) | String.IsEqual(Container(5610).ListItem(-10).DBType,video)] + String.IsEmpty(Container(5610).ListItem(-10).Property(airday)) + !String.IsEqual(Container(5610).ListItem(-10).Art(thumb),OverlaySpoiler.png) + !String.IsEqual(Container(5610).ListItem(-10).Art(thumb),Container(5610).ListItem(-10).Art(poster)) + !String.IsEqual(Container(5610).ListItem(-10).Art(thumb),Container(5610).ListItem(-10).Art(tvshow.poster)) + !String.IsEqual(Container(5610).ListItem(-10).Art(thumb),Container(5610).ListItem(-10).ActualIcon)">$INFO[Container(5610).ListItem(-10).Art(thumb)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-10).Art(landscape)) + !Skin.HasSetting(DisableLandscapeArt)">$INFO[Container(5610).ListItem(-10).Art(landscape)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-10).Art(tvshow.landscape)) + !Skin.HasSetting(DisableLandscapeArt)">$INFO[Container(5610).ListItem(-10).Art(tvshow.landscape)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-10).Property(fanart))">$INFO[Container(5610).ListItem(-10).Property(fanart)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-10).Art(fanart))">$INFO[Container(5610).ListItem(-10).Art(fanart)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-10).Thumb)">$INFO[Container(5610).ListItem(-10).Thumb]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-10).Art(thumb))">$INFO[Container(5610).ListItem(-10).Art(thumb)]</value>
+        <value condition="True">$INFO[Container(5610).ListItem(-10).Icon]</value>
+    </variable>
+    <variable name="Image_Landscape_C5610_-9">
+        <value condition="Container.Content(images)">$INFO[Container(5610).ListItem(-9).Icon]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-9).Art(thumb)) + [String.IsEqual(Container(5610).ListItem(-9).DBType,episode) | String.IsEqual(Container(5610).ListItem(-9).DBType,video)] + String.IsEmpty(Container(5610).ListItem(-9).Property(airday)) + !String.IsEqual(Container(5610).ListItem(-9).Art(thumb),OverlaySpoiler.png) + !String.IsEqual(Container(5610).ListItem(-9).Art(thumb),Container(5610).ListItem(-9).Art(poster)) + !String.IsEqual(Container(5610).ListItem(-9).Art(thumb),Container(5610).ListItem(-9).Art(tvshow.poster)) + !String.IsEqual(Container(5610).ListItem(-9).Art(thumb),Container(5610).ListItem(-9).ActualIcon)">$INFO[Container(5610).ListItem(-9).Art(thumb)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-9).Art(landscape)) + !Skin.HasSetting(DisableLandscapeArt)">$INFO[Container(5610).ListItem(-9).Art(landscape)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-9).Art(tvshow.landscape)) + !Skin.HasSetting(DisableLandscapeArt)">$INFO[Container(5610).ListItem(-9).Art(tvshow.landscape)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-9).Property(fanart))">$INFO[Container(5610).ListItem(-9).Property(fanart)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-9).Art(fanart))">$INFO[Container(5610).ListItem(-9).Art(fanart)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-9).Thumb)">$INFO[Container(5610).ListItem(-9).Thumb]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-9).Art(thumb))">$INFO[Container(5610).ListItem(-9).Art(thumb)]</value>
+        <value condition="True">$INFO[Container(5610).ListItem(-9).Icon]</value>
+    </variable>
+    <variable name="Image_Landscape_C5610_-8">
+        <value condition="Container.Content(images)">$INFO[Container(5610).ListItem(-8).Icon]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-8).Art(thumb)) + [String.IsEqual(Container(5610).ListItem(-8).DBType,episode) | String.IsEqual(Container(5610).ListItem(-8).DBType,video)] + String.IsEmpty(Container(5610).ListItem(-8).Property(airday)) + !String.IsEqual(Container(5610).ListItem(-8).Art(thumb),OverlaySpoiler.png) + !String.IsEqual(Container(5610).ListItem(-8).Art(thumb),Container(5610).ListItem(-8).Art(poster)) + !String.IsEqual(Container(5610).ListItem(-8).Art(thumb),Container(5610).ListItem(-8).Art(tvshow.poster)) + !String.IsEqual(Container(5610).ListItem(-8).Art(thumb),Container(5610).ListItem(-8).ActualIcon)">$INFO[Container(5610).ListItem(-8).Art(thumb)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-8).Art(landscape)) + !Skin.HasSetting(DisableLandscapeArt)">$INFO[Container(5610).ListItem(-8).Art(landscape)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-8).Art(tvshow.landscape)) + !Skin.HasSetting(DisableLandscapeArt)">$INFO[Container(5610).ListItem(-8).Art(tvshow.landscape)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-8).Property(fanart))">$INFO[Container(5610).ListItem(-8).Property(fanart)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-8).Art(fanart))">$INFO[Container(5610).ListItem(-8).Art(fanart)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-8).Thumb)">$INFO[Container(5610).ListItem(-8).Thumb]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-8).Art(thumb))">$INFO[Container(5610).ListItem(-8).Art(thumb)]</value>
+        <value condition="True">$INFO[Container(5610).ListItem(-8).Icon]</value>
+    </variable>
+    <variable name="Image_Landscape_C5610_-7">
+        <value condition="Container.Content(images)">$INFO[Container(5610).ListItem(-7).Icon]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-7).Art(thumb)) + [String.IsEqual(Container(5610).ListItem(-7).DBType,episode) | String.IsEqual(Container(5610).ListItem(-7).DBType,video)] + String.IsEmpty(Container(5610).ListItem(-7).Property(airday)) + !String.IsEqual(Container(5610).ListItem(-7).Art(thumb),OverlaySpoiler.png) + !String.IsEqual(Container(5610).ListItem(-7).Art(thumb),Container(5610).ListItem(-7).Art(poster)) + !String.IsEqual(Container(5610).ListItem(-7).Art(thumb),Container(5610).ListItem(-7).Art(tvshow.poster)) + !String.IsEqual(Container(5610).ListItem(-7).Art(thumb),Container(5610).ListItem(-7).ActualIcon)">$INFO[Container(5610).ListItem(-7).Art(thumb)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-7).Art(landscape)) + !Skin.HasSetting(DisableLandscapeArt)">$INFO[Container(5610).ListItem(-7).Art(landscape)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-7).Art(tvshow.landscape)) + !Skin.HasSetting(DisableLandscapeArt)">$INFO[Container(5610).ListItem(-7).Art(tvshow.landscape)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-7).Property(fanart))">$INFO[Container(5610).ListItem(-7).Property(fanart)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-7).Art(fanart))">$INFO[Container(5610).ListItem(-7).Art(fanart)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-7).Thumb)">$INFO[Container(5610).ListItem(-7).Thumb]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-7).Art(thumb))">$INFO[Container(5610).ListItem(-7).Art(thumb)]</value>
+        <value condition="True">$INFO[Container(5610).ListItem(-7).Icon]</value>
+    </variable>
+    <variable name="Image_Landscape_C5610_-6">
+        <value condition="Container.Content(images)">$INFO[Container(5610).ListItem(-6).Icon]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-6).Art(thumb)) + [String.IsEqual(Container(5610).ListItem(-6).DBType,episode) | String.IsEqual(Container(5610).ListItem(-6).DBType,video)] + String.IsEmpty(Container(5610).ListItem(-6).Property(airday)) + !String.IsEqual(Container(5610).ListItem(-6).Art(thumb),OverlaySpoiler.png) + !String.IsEqual(Container(5610).ListItem(-6).Art(thumb),Container(5610).ListItem(-6).Art(poster)) + !String.IsEqual(Container(5610).ListItem(-6).Art(thumb),Container(5610).ListItem(-6).Art(tvshow.poster)) + !String.IsEqual(Container(5610).ListItem(-6).Art(thumb),Container(5610).ListItem(-6).ActualIcon)">$INFO[Container(5610).ListItem(-6).Art(thumb)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-6).Art(landscape)) + !Skin.HasSetting(DisableLandscapeArt)">$INFO[Container(5610).ListItem(-6).Art(landscape)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-6).Art(tvshow.landscape)) + !Skin.HasSetting(DisableLandscapeArt)">$INFO[Container(5610).ListItem(-6).Art(tvshow.landscape)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-6).Property(fanart))">$INFO[Container(5610).ListItem(-6).Property(fanart)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-6).Art(fanart))">$INFO[Container(5610).ListItem(-6).Art(fanart)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-6).Thumb)">$INFO[Container(5610).ListItem(-6).Thumb]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-6).Art(thumb))">$INFO[Container(5610).ListItem(-6).Art(thumb)]</value>
+        <value condition="True">$INFO[Container(5610).ListItem(-6).Icon]</value>
+    </variable>
+    <variable name="Image_Landscape_C5610_-5">
+        <value condition="Container.Content(images)">$INFO[Container(5610).ListItem(-5).Icon]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-5).Art(thumb)) + [String.IsEqual(Container(5610).ListItem(-5).DBType,episode) | String.IsEqual(Container(5610).ListItem(-5).DBType,video)] + String.IsEmpty(Container(5610).ListItem(-5).Property(airday)) + !String.IsEqual(Container(5610).ListItem(-5).Art(thumb),OverlaySpoiler.png) + !String.IsEqual(Container(5610).ListItem(-5).Art(thumb),Container(5610).ListItem(-5).Art(poster)) + !String.IsEqual(Container(5610).ListItem(-5).Art(thumb),Container(5610).ListItem(-5).Art(tvshow.poster)) + !String.IsEqual(Container(5610).ListItem(-5).Art(thumb),Container(5610).ListItem(-5).ActualIcon)">$INFO[Container(5610).ListItem(-5).Art(thumb)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-5).Art(landscape)) + !Skin.HasSetting(DisableLandscapeArt)">$INFO[Container(5610).ListItem(-5).Art(landscape)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-5).Art(tvshow.landscape)) + !Skin.HasSetting(DisableLandscapeArt)">$INFO[Container(5610).ListItem(-5).Art(tvshow.landscape)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-5).Property(fanart))">$INFO[Container(5610).ListItem(-5).Property(fanart)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-5).Art(fanart))">$INFO[Container(5610).ListItem(-5).Art(fanart)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-5).Thumb)">$INFO[Container(5610).ListItem(-5).Thumb]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-5).Art(thumb))">$INFO[Container(5610).ListItem(-5).Art(thumb)]</value>
+        <value condition="True">$INFO[Container(5610).ListItem(-5).Icon]</value>
+    </variable>
+    <variable name="Image_Landscape_C5610_-4">
+        <value condition="Container.Content(images)">$INFO[Container(5610).ListItem(-4).Icon]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-4).Art(thumb)) + [String.IsEqual(Container(5610).ListItem(-4).DBType,episode) | String.IsEqual(Container(5610).ListItem(-4).DBType,video)] + String.IsEmpty(Container(5610).ListItem(-4).Property(airday)) + !String.IsEqual(Container(5610).ListItem(-4).Art(thumb),OverlaySpoiler.png) + !String.IsEqual(Container(5610).ListItem(-4).Art(thumb),Container(5610).ListItem(-4).Art(poster)) + !String.IsEqual(Container(5610).ListItem(-4).Art(thumb),Container(5610).ListItem(-4).Art(tvshow.poster)) + !String.IsEqual(Container(5610).ListItem(-4).Art(thumb),Container(5610).ListItem(-4).ActualIcon)">$INFO[Container(5610).ListItem(-4).Art(thumb)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-4).Art(landscape)) + !Skin.HasSetting(DisableLandscapeArt)">$INFO[Container(5610).ListItem(-4).Art(landscape)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-4).Art(tvshow.landscape)) + !Skin.HasSetting(DisableLandscapeArt)">$INFO[Container(5610).ListItem(-4).Art(tvshow.landscape)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-4).Property(fanart))">$INFO[Container(5610).ListItem(-4).Property(fanart)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-4).Art(fanart))">$INFO[Container(5610).ListItem(-4).Art(fanart)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-4).Thumb)">$INFO[Container(5610).ListItem(-4).Thumb]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-4).Art(thumb))">$INFO[Container(5610).ListItem(-4).Art(thumb)]</value>
+        <value condition="True">$INFO[Container(5610).ListItem(-4).Icon]</value>
+    </variable>
+    <variable name="Image_Landscape_C5610_-3">
+        <value condition="Container.Content(images)">$INFO[Container(5610).ListItem(-3).Icon]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-3).Art(thumb)) + [String.IsEqual(Container(5610).ListItem(-3).DBType,episode) | String.IsEqual(Container(5610).ListItem(-3).DBType,video)] + String.IsEmpty(Container(5610).ListItem(-3).Property(airday)) + !String.IsEqual(Container(5610).ListItem(-3).Art(thumb),OverlaySpoiler.png) + !String.IsEqual(Container(5610).ListItem(-3).Art(thumb),Container(5610).ListItem(-3).Art(poster)) + !String.IsEqual(Container(5610).ListItem(-3).Art(thumb),Container(5610).ListItem(-3).Art(tvshow.poster)) + !String.IsEqual(Container(5610).ListItem(-3).Art(thumb),Container(5610).ListItem(-3).ActualIcon)">$INFO[Container(5610).ListItem(-3).Art(thumb)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-3).Art(landscape)) + !Skin.HasSetting(DisableLandscapeArt)">$INFO[Container(5610).ListItem(-3).Art(landscape)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-3).Art(tvshow.landscape)) + !Skin.HasSetting(DisableLandscapeArt)">$INFO[Container(5610).ListItem(-3).Art(tvshow.landscape)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-3).Property(fanart))">$INFO[Container(5610).ListItem(-3).Property(fanart)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-3).Art(fanart))">$INFO[Container(5610).ListItem(-3).Art(fanart)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-3).Thumb)">$INFO[Container(5610).ListItem(-3).Thumb]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-3).Art(thumb))">$INFO[Container(5610).ListItem(-3).Art(thumb)]</value>
+        <value condition="True">$INFO[Container(5610).ListItem(-3).Icon]</value>
+    </variable>
+    <variable name="Image_Landscape_C5610_-2">
+        <value condition="Container.Content(images)">$INFO[Container(5610).ListItem(-2).Icon]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-2).Art(thumb)) + [String.IsEqual(Container(5610).ListItem(-2).DBType,episode) | String.IsEqual(Container(5610).ListItem(-2).DBType,video)] + String.IsEmpty(Container(5610).ListItem(-2).Property(airday)) + !String.IsEqual(Container(5610).ListItem(-2).Art(thumb),OverlaySpoiler.png) + !String.IsEqual(Container(5610).ListItem(-2).Art(thumb),Container(5610).ListItem(-2).Art(poster)) + !String.IsEqual(Container(5610).ListItem(-2).Art(thumb),Container(5610).ListItem(-2).Art(tvshow.poster)) + !String.IsEqual(Container(5610).ListItem(-2).Art(thumb),Container(5610).ListItem(-2).ActualIcon)">$INFO[Container(5610).ListItem(-2).Art(thumb)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-2).Art(landscape)) + !Skin.HasSetting(DisableLandscapeArt)">$INFO[Container(5610).ListItem(-2).Art(landscape)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-2).Art(tvshow.landscape)) + !Skin.HasSetting(DisableLandscapeArt)">$INFO[Container(5610).ListItem(-2).Art(tvshow.landscape)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-2).Property(fanart))">$INFO[Container(5610).ListItem(-2).Property(fanart)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-2).Art(fanart))">$INFO[Container(5610).ListItem(-2).Art(fanart)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-2).Thumb)">$INFO[Container(5610).ListItem(-2).Thumb]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-2).Art(thumb))">$INFO[Container(5610).ListItem(-2).Art(thumb)]</value>
+        <value condition="True">$INFO[Container(5610).ListItem(-2).Icon]</value>
+    </variable>
+    <variable name="Image_Landscape_C5610_-1">
+        <value condition="Container.Content(images)">$INFO[Container(5610).ListItem(-1).Icon]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-1).Art(thumb)) + [String.IsEqual(Container(5610).ListItem(-1).DBType,episode) | String.IsEqual(Container(5610).ListItem(-1).DBType,video)] + String.IsEmpty(Container(5610).ListItem(-1).Property(airday)) + !String.IsEqual(Container(5610).ListItem(-1).Art(thumb),OverlaySpoiler.png) + !String.IsEqual(Container(5610).ListItem(-1).Art(thumb),Container(5610).ListItem(-1).Art(poster)) + !String.IsEqual(Container(5610).ListItem(-1).Art(thumb),Container(5610).ListItem(-1).Art(tvshow.poster)) + !String.IsEqual(Container(5610).ListItem(-1).Art(thumb),Container(5610).ListItem(-1).ActualIcon)">$INFO[Container(5610).ListItem(-1).Art(thumb)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-1).Art(landscape)) + !Skin.HasSetting(DisableLandscapeArt)">$INFO[Container(5610).ListItem(-1).Art(landscape)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-1).Art(tvshow.landscape)) + !Skin.HasSetting(DisableLandscapeArt)">$INFO[Container(5610).ListItem(-1).Art(tvshow.landscape)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-1).Property(fanart))">$INFO[Container(5610).ListItem(-1).Property(fanart)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-1).Art(fanart))">$INFO[Container(5610).ListItem(-1).Art(fanart)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-1).Thumb)">$INFO[Container(5610).ListItem(-1).Thumb]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-1).Art(thumb))">$INFO[Container(5610).ListItem(-1).Art(thumb)]</value>
+        <value condition="True">$INFO[Container(5610).ListItem(-1).Icon]</value>
+    </variable>
+    <variable name="Image_Landscape_C5610_0">
+        <value condition="Container.Content(images)">$INFO[Container(5610).ListItem.Icon]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem.Art(thumb)) + [String.IsEqual(Container(5610).ListItem.DBType,episode) | String.IsEqual(Container(5610).ListItem.DBType,video)] + String.IsEmpty(Container(5610).ListItem.Property(airday)) + !String.IsEqual(Container(5610).ListItem.Art(thumb),OverlaySpoiler.png) + !String.IsEqual(Container(5610).ListItem.Art(thumb),Container(5610).ListItem.Art(poster)) + !String.IsEqual(Container(5610).ListItem.Art(thumb),Container(5610).ListItem.Art(tvshow.poster)) + !String.IsEqual(Container(5610).ListItem.Art(thumb),Container(5610).ListItem.ActualIcon)">$INFO[Container(5610).ListItem.Art(thumb)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem.Art(landscape)) + !Skin.HasSetting(DisableLandscapeArt)">$INFO[Container(5610).ListItem.Art(landscape)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem.Art(tvshow.landscape)) + !Skin.HasSetting(DisableLandscapeArt)">$INFO[Container(5610).ListItem.Art(tvshow.landscape)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem.Property(fanart))">$INFO[Container(5610).ListItem.Property(fanart)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem.Art(fanart))">$INFO[Container(5610).ListItem.Art(fanart)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem.Thumb)">$INFO[Container(5610).ListItem.Thumb]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem.Art(thumb))">$INFO[Container(5610).ListItem.Art(thumb)]</value>
+        <value condition="True">$INFO[Container(5610).ListItem.Icon]</value>
+    </variable>
+    <variable name="Image_Landscape_C5610_1">
+        <value condition="Container.Content(images)">$INFO[Container(5610).ListItem(1).Icon]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(1).Art(thumb)) + [String.IsEqual(Container(5610).ListItem(1).DBType,episode) | String.IsEqual(Container(5610).ListItem(1).DBType,video)] + String.IsEmpty(Container(5610).ListItem(1).Property(airday)) + !String.IsEqual(Container(5610).ListItem(1).Art(thumb),OverlaySpoiler.png) + !String.IsEqual(Container(5610).ListItem(1).Art(thumb),Container(5610).ListItem(1).Art(poster)) + !String.IsEqual(Container(5610).ListItem(1).Art(thumb),Container(5610).ListItem(1).Art(tvshow.poster)) + !String.IsEqual(Container(5610).ListItem(1).Art(thumb),Container(5610).ListItem(1).ActualIcon)">$INFO[Container(5610).ListItem(1).Art(thumb)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(1).Art(landscape)) + !Skin.HasSetting(DisableLandscapeArt)">$INFO[Container(5610).ListItem(1).Art(landscape)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(1).Art(tvshow.landscape)) + !Skin.HasSetting(DisableLandscapeArt)">$INFO[Container(5610).ListItem(1).Art(tvshow.landscape)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(1).Property(fanart))">$INFO[Container(5610).ListItem(1).Property(fanart)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(1).Art(fanart))">$INFO[Container(5610).ListItem(1).Art(fanart)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(1).Thumb)">$INFO[Container(5610).ListItem(1).Thumb]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(1).Art(thumb))">$INFO[Container(5610).ListItem(1).Art(thumb)]</value>
+        <value condition="True">$INFO[Container(5610).ListItem(1).Icon]</value>
+    </variable>
+    <variable name="Image_Landscape_C5610_2">
+        <value condition="Container.Content(images)">$INFO[Container(5610).ListItem(2).Icon]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(2).Art(thumb)) + [String.IsEqual(Container(5610).ListItem(2).DBType,episode) | String.IsEqual(Container(5610).ListItem(2).DBType,video)] + String.IsEmpty(Container(5610).ListItem(2).Property(airday)) + !String.IsEqual(Container(5610).ListItem(2).Art(thumb),OverlaySpoiler.png) + !String.IsEqual(Container(5610).ListItem(2).Art(thumb),Container(5610).ListItem(2).Art(poster)) + !String.IsEqual(Container(5610).ListItem(2).Art(thumb),Container(5610).ListItem(2).Art(tvshow.poster)) + !String.IsEqual(Container(5610).ListItem(2).Art(thumb),Container(5610).ListItem(2).ActualIcon)">$INFO[Container(5610).ListItem(2).Art(thumb)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(2).Art(landscape)) + !Skin.HasSetting(DisableLandscapeArt)">$INFO[Container(5610).ListItem(2).Art(landscape)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(2).Art(tvshow.landscape)) + !Skin.HasSetting(DisableLandscapeArt)">$INFO[Container(5610).ListItem(2).Art(tvshow.landscape)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(2).Property(fanart))">$INFO[Container(5610).ListItem(2).Property(fanart)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(2).Art(fanart))">$INFO[Container(5610).ListItem(2).Art(fanart)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(2).Thumb)">$INFO[Container(5610).ListItem(2).Thumb]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(2).Art(thumb))">$INFO[Container(5610).ListItem(2).Art(thumb)]</value>
+        <value condition="True">$INFO[Container(5610).ListItem(2).Icon]</value>
+    </variable>
+    <variable name="Image_Landscape_C5610_3">
+        <value condition="Container.Content(images)">$INFO[Container(5610).ListItem(3).Icon]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(3).Art(thumb)) + [String.IsEqual(Container(5610).ListItem(3).DBType,episode) | String.IsEqual(Container(5610).ListItem(3).DBType,video)] + String.IsEmpty(Container(5610).ListItem(3).Property(airday)) + !String.IsEqual(Container(5610).ListItem(3).Art(thumb),OverlaySpoiler.png) + !String.IsEqual(Container(5610).ListItem(3).Art(thumb),Container(5610).ListItem(3).Art(poster)) + !String.IsEqual(Container(5610).ListItem(3).Art(thumb),Container(5610).ListItem(3).Art(tvshow.poster)) + !String.IsEqual(Container(5610).ListItem(3).Art(thumb),Container(5610).ListItem(3).ActualIcon)">$INFO[Container(5610).ListItem(3).Art(thumb)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(3).Art(landscape)) + !Skin.HasSetting(DisableLandscapeArt)">$INFO[Container(5610).ListItem(3).Art(landscape)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(3).Art(tvshow.landscape)) + !Skin.HasSetting(DisableLandscapeArt)">$INFO[Container(5610).ListItem(3).Art(tvshow.landscape)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(3).Property(fanart))">$INFO[Container(5610).ListItem(3).Property(fanart)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(3).Art(fanart))">$INFO[Container(5610).ListItem(3).Art(fanart)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(3).Thumb)">$INFO[Container(5610).ListItem(3).Thumb]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(3).Art(thumb))">$INFO[Container(5610).ListItem(3).Art(thumb)]</value>
+        <value condition="True">$INFO[Container(5610).ListItem(3).Icon]</value>
+    </variable>
+    <variable name="Image_Landscape_C5610_4">
+        <value condition="Container.Content(images)">$INFO[Container(5610).ListItem(4).Icon]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(4).Art(thumb)) + [String.IsEqual(Container(5610).ListItem(4).DBType,episode) | String.IsEqual(Container(5610).ListItem(4).DBType,video)] + String.IsEmpty(Container(5610).ListItem(4).Property(airday)) + !String.IsEqual(Container(5610).ListItem(4).Art(thumb),OverlaySpoiler.png) + !String.IsEqual(Container(5610).ListItem(4).Art(thumb),Container(5610).ListItem(4).Art(poster)) + !String.IsEqual(Container(5610).ListItem(4).Art(thumb),Container(5610).ListItem(4).Art(tvshow.poster)) + !String.IsEqual(Container(5610).ListItem(4).Art(thumb),Container(5610).ListItem(4).ActualIcon)">$INFO[Container(5610).ListItem(4).Art(thumb)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(4).Art(landscape)) + !Skin.HasSetting(DisableLandscapeArt)">$INFO[Container(5610).ListItem(4).Art(landscape)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(4).Art(tvshow.landscape)) + !Skin.HasSetting(DisableLandscapeArt)">$INFO[Container(5610).ListItem(4).Art(tvshow.landscape)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(4).Property(fanart))">$INFO[Container(5610).ListItem(4).Property(fanart)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(4).Art(fanart))">$INFO[Container(5610).ListItem(4).Art(fanart)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(4).Thumb)">$INFO[Container(5610).ListItem(4).Thumb]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(4).Art(thumb))">$INFO[Container(5610).ListItem(4).Art(thumb)]</value>
+        <value condition="True">$INFO[Container(5610).ListItem(4).Icon]</value>
+    </variable>
+    <variable name="Image_Landscape_C5610_5">
+        <value condition="Container.Content(images)">$INFO[Container(5610).ListItem(5).Icon]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(5).Art(thumb)) + [String.IsEqual(Container(5610).ListItem(5).DBType,episode) | String.IsEqual(Container(5610).ListItem(5).DBType,video)] + String.IsEmpty(Container(5610).ListItem(5).Property(airday)) + !String.IsEqual(Container(5610).ListItem(5).Art(thumb),OverlaySpoiler.png) + !String.IsEqual(Container(5610).ListItem(5).Art(thumb),Container(5610).ListItem(5).Art(poster)) + !String.IsEqual(Container(5610).ListItem(5).Art(thumb),Container(5610).ListItem(5).Art(tvshow.poster)) + !String.IsEqual(Container(5610).ListItem(5).Art(thumb),Container(5610).ListItem(5).ActualIcon)">$INFO[Container(5610).ListItem(5).Art(thumb)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(5).Art(landscape)) + !Skin.HasSetting(DisableLandscapeArt)">$INFO[Container(5610).ListItem(5).Art(landscape)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(5).Art(tvshow.landscape)) + !Skin.HasSetting(DisableLandscapeArt)">$INFO[Container(5610).ListItem(5).Art(tvshow.landscape)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(5).Property(fanart))">$INFO[Container(5610).ListItem(5).Property(fanart)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(5).Art(fanart))">$INFO[Container(5610).ListItem(5).Art(fanart)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(5).Thumb)">$INFO[Container(5610).ListItem(5).Thumb]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(5).Art(thumb))">$INFO[Container(5610).ListItem(5).Art(thumb)]</value>
+        <value condition="True">$INFO[Container(5610).ListItem(5).Icon]</value>
+    </variable>
+    <variable name="Image_Landscape_C5610_6">
+        <value condition="Container.Content(images)">$INFO[Container(5610).ListItem(6).Icon]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(6).Art(thumb)) + [String.IsEqual(Container(5610).ListItem(6).DBType,episode) | String.IsEqual(Container(5610).ListItem(6).DBType,video)] + String.IsEmpty(Container(5610).ListItem(6).Property(airday)) + !String.IsEqual(Container(5610).ListItem(6).Art(thumb),OverlaySpoiler.png) + !String.IsEqual(Container(5610).ListItem(6).Art(thumb),Container(5610).ListItem(6).Art(poster)) + !String.IsEqual(Container(5610).ListItem(6).Art(thumb),Container(5610).ListItem(6).Art(tvshow.poster)) + !String.IsEqual(Container(5610).ListItem(6).Art(thumb),Container(5610).ListItem(6).ActualIcon)">$INFO[Container(5610).ListItem(6).Art(thumb)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(6).Art(landscape)) + !Skin.HasSetting(DisableLandscapeArt)">$INFO[Container(5610).ListItem(6).Art(landscape)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(6).Art(tvshow.landscape)) + !Skin.HasSetting(DisableLandscapeArt)">$INFO[Container(5610).ListItem(6).Art(tvshow.landscape)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(6).Property(fanart))">$INFO[Container(5610).ListItem(6).Property(fanart)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(6).Art(fanart))">$INFO[Container(5610).ListItem(6).Art(fanart)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(6).Thumb)">$INFO[Container(5610).ListItem(6).Thumb]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(6).Art(thumb))">$INFO[Container(5610).ListItem(6).Art(thumb)]</value>
+        <value condition="True">$INFO[Container(5610).ListItem(6).Icon]</value>
+    </variable>
+    <variable name="Image_Landscape_C5610_7">
+        <value condition="Container.Content(images)">$INFO[Container(5610).ListItem(7).Icon]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(7).Art(thumb)) + [String.IsEqual(Container(5610).ListItem(7).DBType,episode) | String.IsEqual(Container(5610).ListItem(7).DBType,video)] + String.IsEmpty(Container(5610).ListItem(7).Property(airday)) + !String.IsEqual(Container(5610).ListItem(7).Art(thumb),OverlaySpoiler.png) + !String.IsEqual(Container(5610).ListItem(7).Art(thumb),Container(5610).ListItem(7).Art(poster)) + !String.IsEqual(Container(5610).ListItem(7).Art(thumb),Container(5610).ListItem(7).Art(tvshow.poster)) + !String.IsEqual(Container(5610).ListItem(7).Art(thumb),Container(5610).ListItem(7).ActualIcon)">$INFO[Container(5610).ListItem(7).Art(thumb)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(7).Art(landscape)) + !Skin.HasSetting(DisableLandscapeArt)">$INFO[Container(5610).ListItem(7).Art(landscape)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(7).Art(tvshow.landscape)) + !Skin.HasSetting(DisableLandscapeArt)">$INFO[Container(5610).ListItem(7).Art(tvshow.landscape)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(7).Property(fanart))">$INFO[Container(5610).ListItem(7).Property(fanart)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(7).Art(fanart))">$INFO[Container(5610).ListItem(7).Art(fanart)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(7).Thumb)">$INFO[Container(5610).ListItem(7).Thumb]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(7).Art(thumb))">$INFO[Container(5610).ListItem(7).Art(thumb)]</value>
+        <value condition="True">$INFO[Container(5610).ListItem(7).Icon]</value>
+    </variable>
+    <variable name="Image_Landscape_C5610_8">
+        <value condition="Container.Content(images)">$INFO[Container(5610).ListItem(8).Icon]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(8).Art(thumb)) + [String.IsEqual(Container(5610).ListItem(8).DBType,episode) | String.IsEqual(Container(5610).ListItem(8).DBType,video)] + String.IsEmpty(Container(5610).ListItem(8).Property(airday)) + !String.IsEqual(Container(5610).ListItem(8).Art(thumb),OverlaySpoiler.png) + !String.IsEqual(Container(5610).ListItem(8).Art(thumb),Container(5610).ListItem(8).Art(poster)) + !String.IsEqual(Container(5610).ListItem(8).Art(thumb),Container(5610).ListItem(8).Art(tvshow.poster)) + !String.IsEqual(Container(5610).ListItem(8).Art(thumb),Container(5610).ListItem(8).ActualIcon)">$INFO[Container(5610).ListItem(8).Art(thumb)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(8).Art(landscape)) + !Skin.HasSetting(DisableLandscapeArt)">$INFO[Container(5610).ListItem(8).Art(landscape)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(8).Art(tvshow.landscape)) + !Skin.HasSetting(DisableLandscapeArt)">$INFO[Container(5610).ListItem(8).Art(tvshow.landscape)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(8).Property(fanart))">$INFO[Container(5610).ListItem(8).Property(fanart)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(8).Art(fanart))">$INFO[Container(5610).ListItem(8).Art(fanart)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(8).Thumb)">$INFO[Container(5610).ListItem(8).Thumb]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(8).Art(thumb))">$INFO[Container(5610).ListItem(8).Art(thumb)]</value>
+        <value condition="True">$INFO[Container(5610).ListItem(8).Icon]</value>
+    </variable>
+    <variable name="Image_Landscape_C5610_9">
+        <value condition="Container.Content(images)">$INFO[Container(5610).ListItem(9).Icon]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(9).Art(thumb)) + [String.IsEqual(Container(5610).ListItem(9).DBType,episode) | String.IsEqual(Container(5610).ListItem(9).DBType,video)] + String.IsEmpty(Container(5610).ListItem(9).Property(airday)) + !String.IsEqual(Container(5610).ListItem(9).Art(thumb),OverlaySpoiler.png) + !String.IsEqual(Container(5610).ListItem(9).Art(thumb),Container(5610).ListItem(9).Art(poster)) + !String.IsEqual(Container(5610).ListItem(9).Art(thumb),Container(5610).ListItem(9).Art(tvshow.poster)) + !String.IsEqual(Container(5610).ListItem(9).Art(thumb),Container(5610).ListItem(9).ActualIcon)">$INFO[Container(5610).ListItem(9).Art(thumb)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(9).Art(landscape)) + !Skin.HasSetting(DisableLandscapeArt)">$INFO[Container(5610).ListItem(9).Art(landscape)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(9).Art(tvshow.landscape)) + !Skin.HasSetting(DisableLandscapeArt)">$INFO[Container(5610).ListItem(9).Art(tvshow.landscape)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(9).Property(fanart))">$INFO[Container(5610).ListItem(9).Property(fanart)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(9).Art(fanart))">$INFO[Container(5610).ListItem(9).Art(fanart)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(9).Thumb)">$INFO[Container(5610).ListItem(9).Thumb]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(9).Art(thumb))">$INFO[Container(5610).ListItem(9).Art(thumb)]</value>
+        <value condition="True">$INFO[Container(5610).ListItem(9).Icon]</value>
+    </variable>
+    <variable name="Image_Landscape_C5610_10">
+        <value condition="Container.Content(images)">$INFO[Container(5610).ListItem(10).Icon]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(10).Art(thumb)) + [String.IsEqual(Container(5610).ListItem(10).DBType,episode) | String.IsEqual(Container(5610).ListItem(10).DBType,video)] + String.IsEmpty(Container(5610).ListItem(10).Property(airday)) + !String.IsEqual(Container(5610).ListItem(10).Art(thumb),OverlaySpoiler.png) + !String.IsEqual(Container(5610).ListItem(10).Art(thumb),Container(5610).ListItem(10).Art(poster)) + !String.IsEqual(Container(5610).ListItem(10).Art(thumb),Container(5610).ListItem(10).Art(tvshow.poster)) + !String.IsEqual(Container(5610).ListItem(10).Art(thumb),Container(5610).ListItem(10).ActualIcon)">$INFO[Container(5610).ListItem(10).Art(thumb)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(10).Art(landscape)) + !Skin.HasSetting(DisableLandscapeArt)">$INFO[Container(5610).ListItem(10).Art(landscape)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(10).Art(tvshow.landscape)) + !Skin.HasSetting(DisableLandscapeArt)">$INFO[Container(5610).ListItem(10).Art(tvshow.landscape)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(10).Property(fanart))">$INFO[Container(5610).ListItem(10).Property(fanart)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(10).Art(fanart))">$INFO[Container(5610).ListItem(10).Art(fanart)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(10).Thumb)">$INFO[Container(5610).ListItem(10).Thumb]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(10).Art(thumb))">$INFO[Container(5610).ListItem(10).Art(thumb)]</value>
+        <value condition="True">$INFO[Container(5610).ListItem(10).Icon]</value>
+    </variable>
+    <variable name="Image_Landscape_C5610_11">
+        <value condition="Container.Content(images)">$INFO[Container(5610).ListItem(11).Icon]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(11).Art(thumb)) + [String.IsEqual(Container(5610).ListItem(11).DBType,episode) | String.IsEqual(Container(5610).ListItem(11).DBType,video)] + String.IsEmpty(Container(5610).ListItem(11).Property(airday)) + !String.IsEqual(Container(5610).ListItem(11).Art(thumb),OverlaySpoiler.png) + !String.IsEqual(Container(5610).ListItem(11).Art(thumb),Container(5610).ListItem(11).Art(poster)) + !String.IsEqual(Container(5610).ListItem(11).Art(thumb),Container(5610).ListItem(11).Art(tvshow.poster)) + !String.IsEqual(Container(5610).ListItem(11).Art(thumb),Container(5610).ListItem(11).ActualIcon)">$INFO[Container(5610).ListItem(11).Art(thumb)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(11).Art(landscape)) + !Skin.HasSetting(DisableLandscapeArt)">$INFO[Container(5610).ListItem(11).Art(landscape)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(11).Art(tvshow.landscape)) + !Skin.HasSetting(DisableLandscapeArt)">$INFO[Container(5610).ListItem(11).Art(tvshow.landscape)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(11).Property(fanart))">$INFO[Container(5610).ListItem(11).Property(fanart)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(11).Art(fanart))">$INFO[Container(5610).ListItem(11).Art(fanart)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(11).Thumb)">$INFO[Container(5610).ListItem(11).Thumb]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(11).Art(thumb))">$INFO[Container(5610).ListItem(11).Art(thumb)]</value>
+        <value condition="True">$INFO[Container(5610).ListItem(11).Icon]</value>
+    </variable>
+    <variable name="Image_Landscape_C5610_12">
+        <value condition="Container.Content(images)">$INFO[Container(5610).ListItem(12).Icon]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(12).Art(thumb)) + [String.IsEqual(Container(5610).ListItem(12).DBType,episode) | String.IsEqual(Container(5610).ListItem(12).DBType,video)] + String.IsEmpty(Container(5610).ListItem(12).Property(airday)) + !String.IsEqual(Container(5610).ListItem(12).Art(thumb),OverlaySpoiler.png) + !String.IsEqual(Container(5610).ListItem(12).Art(thumb),Container(5610).ListItem(12).Art(poster)) + !String.IsEqual(Container(5610).ListItem(12).Art(thumb),Container(5610).ListItem(12).Art(tvshow.poster)) + !String.IsEqual(Container(5610).ListItem(12).Art(thumb),Container(5610).ListItem(12).ActualIcon)">$INFO[Container(5610).ListItem(12).Art(thumb)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(12).Art(landscape)) + !Skin.HasSetting(DisableLandscapeArt)">$INFO[Container(5610).ListItem(12).Art(landscape)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(12).Art(tvshow.landscape)) + !Skin.HasSetting(DisableLandscapeArt)">$INFO[Container(5610).ListItem(12).Art(tvshow.landscape)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(12).Property(fanart))">$INFO[Container(5610).ListItem(12).Property(fanart)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(12).Art(fanart))">$INFO[Container(5610).ListItem(12).Art(fanart)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(12).Thumb)">$INFO[Container(5610).ListItem(12).Thumb]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(12).Art(thumb))">$INFO[Container(5610).ListItem(12).Art(thumb)]</value>
+        <value condition="True">$INFO[Container(5610).ListItem(12).Icon]</value>
+    </variable>
+    <variable name="Image_Landscape_C5610_13">
+        <value condition="Container.Content(images)">$INFO[Container(5610).ListItem(13).Icon]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(13).Art(thumb)) + [String.IsEqual(Container(5610).ListItem(13).DBType,episode) | String.IsEqual(Container(5610).ListItem(13).DBType,video)] + String.IsEmpty(Container(5610).ListItem(13).Property(airday)) + !String.IsEqual(Container(5610).ListItem(13).Art(thumb),OverlaySpoiler.png) + !String.IsEqual(Container(5610).ListItem(13).Art(thumb),Container(5610).ListItem(13).Art(poster)) + !String.IsEqual(Container(5610).ListItem(13).Art(thumb),Container(5610).ListItem(13).Art(tvshow.poster)) + !String.IsEqual(Container(5610).ListItem(13).Art(thumb),Container(5610).ListItem(13).ActualIcon)">$INFO[Container(5610).ListItem(13).Art(thumb)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(13).Art(landscape)) + !Skin.HasSetting(DisableLandscapeArt)">$INFO[Container(5610).ListItem(13).Art(landscape)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(13).Art(tvshow.landscape)) + !Skin.HasSetting(DisableLandscapeArt)">$INFO[Container(5610).ListItem(13).Art(tvshow.landscape)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(13).Property(fanart))">$INFO[Container(5610).ListItem(13).Property(fanart)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(13).Art(fanart))">$INFO[Container(5610).ListItem(13).Art(fanart)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(13).Thumb)">$INFO[Container(5610).ListItem(13).Thumb]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(13).Art(thumb))">$INFO[Container(5610).ListItem(13).Art(thumb)]</value>
+        <value condition="True">$INFO[Container(5610).ListItem(13).Icon]</value>
+    </variable>
+    <variable name="Image_Landscape_C5610_14">
+        <value condition="Container.Content(images)">$INFO[Container(5610).ListItem(14).Icon]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(14).Art(thumb)) + [String.IsEqual(Container(5610).ListItem(14).DBType,episode) | String.IsEqual(Container(5610).ListItem(14).DBType,video)] + String.IsEmpty(Container(5610).ListItem(14).Property(airday)) + !String.IsEqual(Container(5610).ListItem(14).Art(thumb),OverlaySpoiler.png) + !String.IsEqual(Container(5610).ListItem(14).Art(thumb),Container(5610).ListItem(14).Art(poster)) + !String.IsEqual(Container(5610).ListItem(14).Art(thumb),Container(5610).ListItem(14).Art(tvshow.poster)) + !String.IsEqual(Container(5610).ListItem(14).Art(thumb),Container(5610).ListItem(14).ActualIcon)">$INFO[Container(5610).ListItem(14).Art(thumb)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(14).Art(landscape)) + !Skin.HasSetting(DisableLandscapeArt)">$INFO[Container(5610).ListItem(14).Art(landscape)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(14).Art(tvshow.landscape)) + !Skin.HasSetting(DisableLandscapeArt)">$INFO[Container(5610).ListItem(14).Art(tvshow.landscape)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(14).Property(fanart))">$INFO[Container(5610).ListItem(14).Property(fanart)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(14).Art(fanart))">$INFO[Container(5610).ListItem(14).Art(fanart)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(14).Thumb)">$INFO[Container(5610).ListItem(14).Thumb]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(14).Art(thumb))">$INFO[Container(5610).ListItem(14).Art(thumb)]</value>
+        <value condition="True">$INFO[Container(5610).ListItem(14).Icon]</value>
+    </variable>
+    <variable name="Image_Landscape_C5610_15">
+        <value condition="Container.Content(images)">$INFO[Container(5610).ListItem(15).Icon]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(15).Art(thumb)) + [String.IsEqual(Container(5610).ListItem(15).DBType,episode) | String.IsEqual(Container(5610).ListItem(15).DBType,video)] + String.IsEmpty(Container(5610).ListItem(15).Property(airday)) + !String.IsEqual(Container(5610).ListItem(15).Art(thumb),OverlaySpoiler.png) + !String.IsEqual(Container(5610).ListItem(15).Art(thumb),Container(5610).ListItem(15).Art(poster)) + !String.IsEqual(Container(5610).ListItem(15).Art(thumb),Container(5610).ListItem(15).Art(tvshow.poster)) + !String.IsEqual(Container(5610).ListItem(15).Art(thumb),Container(5610).ListItem(15).ActualIcon)">$INFO[Container(5610).ListItem(15).Art(thumb)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(15).Art(landscape)) + !Skin.HasSetting(DisableLandscapeArt)">$INFO[Container(5610).ListItem(15).Art(landscape)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(15).Art(tvshow.landscape)) + !Skin.HasSetting(DisableLandscapeArt)">$INFO[Container(5610).ListItem(15).Art(tvshow.landscape)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(15).Property(fanart))">$INFO[Container(5610).ListItem(15).Property(fanart)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(15).Art(fanart))">$INFO[Container(5610).ListItem(15).Art(fanart)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(15).Thumb)">$INFO[Container(5610).ListItem(15).Thumb]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(15).Art(thumb))">$INFO[Container(5610).ListItem(15).Art(thumb)]</value>
+        <value condition="True">$INFO[Container(5610).ListItem(15).Icon]</value>
+    </variable>
+    <variable name="Image_Landscape_C5610_16">
+        <value condition="Container.Content(images)">$INFO[Container(5610).ListItem(16).Icon]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(16).Art(thumb)) + [String.IsEqual(Container(5610).ListItem(16).DBType,episode) | String.IsEqual(Container(5610).ListItem(16).DBType,video)] + String.IsEmpty(Container(5610).ListItem(16).Property(airday)) + !String.IsEqual(Container(5610).ListItem(16).Art(thumb),OverlaySpoiler.png) + !String.IsEqual(Container(5610).ListItem(16).Art(thumb),Container(5610).ListItem(16).Art(poster)) + !String.IsEqual(Container(5610).ListItem(16).Art(thumb),Container(5610).ListItem(16).Art(tvshow.poster)) + !String.IsEqual(Container(5610).ListItem(16).Art(thumb),Container(5610).ListItem(16).ActualIcon)">$INFO[Container(5610).ListItem(16).Art(thumb)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(16).Art(landscape)) + !Skin.HasSetting(DisableLandscapeArt)">$INFO[Container(5610).ListItem(16).Art(landscape)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(16).Art(tvshow.landscape)) + !Skin.HasSetting(DisableLandscapeArt)">$INFO[Container(5610).ListItem(16).Art(tvshow.landscape)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(16).Property(fanart))">$INFO[Container(5610).ListItem(16).Property(fanart)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(16).Art(fanart))">$INFO[Container(5610).ListItem(16).Art(fanart)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(16).Thumb)">$INFO[Container(5610).ListItem(16).Thumb]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(16).Art(thumb))">$INFO[Container(5610).ListItem(16).Art(thumb)]</value>
+        <value condition="True">$INFO[Container(5610).ListItem(16).Icon]</value>
+    </variable>
+    <variable name="Image_Landscape_C5610_17">
+        <value condition="Container.Content(images)">$INFO[Container(5610).ListItem(17).Icon]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(17).Art(thumb)) + [String.IsEqual(Container(5610).ListItem(17).DBType,episode) | String.IsEqual(Container(5610).ListItem(17).DBType,video)] + String.IsEmpty(Container(5610).ListItem(17).Property(airday)) + !String.IsEqual(Container(5610).ListItem(17).Art(thumb),OverlaySpoiler.png) + !String.IsEqual(Container(5610).ListItem(17).Art(thumb),Container(5610).ListItem(17).Art(poster)) + !String.IsEqual(Container(5610).ListItem(17).Art(thumb),Container(5610).ListItem(17).Art(tvshow.poster)) + !String.IsEqual(Container(5610).ListItem(17).Art(thumb),Container(5610).ListItem(17).ActualIcon)">$INFO[Container(5610).ListItem(17).Art(thumb)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(17).Art(landscape)) + !Skin.HasSetting(DisableLandscapeArt)">$INFO[Container(5610).ListItem(17).Art(landscape)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(17).Art(tvshow.landscape)) + !Skin.HasSetting(DisableLandscapeArt)">$INFO[Container(5610).ListItem(17).Art(tvshow.landscape)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(17).Property(fanart))">$INFO[Container(5610).ListItem(17).Property(fanart)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(17).Art(fanart))">$INFO[Container(5610).ListItem(17).Art(fanart)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(17).Thumb)">$INFO[Container(5610).ListItem(17).Thumb]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(17).Art(thumb))">$INFO[Container(5610).ListItem(17).Art(thumb)]</value>
+        <value condition="True">$INFO[Container(5610).ListItem(17).Icon]</value>
+    </variable>
+    <variable name="Image_Landscape_C5610">
+        <value condition="Container.Content(images)">$INFO[Container(5610).ListItem.Icon]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem.Art(thumb)) + [String.IsEqual(Container(5610).ListItem.DBType,episode) | String.IsEqual(Container(5610).ListItem.DBType,video)] + String.IsEmpty(Container(5610).ListItem.Property(airday)) + !String.IsEqual(Container(5610).ListItem.Art(thumb),OverlaySpoiler.png) + !String.IsEqual(Container(5610).ListItem.Art(thumb),Container(5610).ListItem.Art(poster)) + !String.IsEqual(Container(5610).ListItem.Art(thumb),Container(5610).ListItem.Art(tvshow.poster)) + !String.IsEqual(Container(5610).ListItem.Art(thumb),Container(5610).ListItem.ActualIcon)">$INFO[Container(5610).ListItem.Art(thumb)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem.Art(landscape)) + !Skin.HasSetting(DisableLandscapeArt)">$INFO[Container(5610).ListItem.Art(landscape)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem.Art(tvshow.landscape)) + !Skin.HasSetting(DisableLandscapeArt)">$INFO[Container(5610).ListItem.Art(tvshow.landscape)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem.Property(fanart))">$INFO[Container(5610).ListItem.Property(fanart)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem.Art(fanart))">$INFO[Container(5610).ListItem.Art(fanart)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem.Thumb)">$INFO[Container(5610).ListItem.Thumb]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem.Art(thumb))">$INFO[Container(5610).ListItem.Art(thumb)]</value>
+        <value condition="True">$INFO[Container(5610).ListItem.Icon]</value>
+    </variable>
     <variable name="Image_Landscape_-10">
         <value condition="Container.Content(images)">$INFO[ListItem(-10).Icon]</value>
         <value condition="!String.IsEmpty(ListItem(-10).Art(thumb)) + [String.IsEqual(ListItem(-10).DBType,episode) | String.IsEqual(ListItem(-10).DBType,video)] + String.IsEmpty(ListItem(-10).Property(airday)) + !String.IsEqual(ListItem(-10).Art(thumb),OverlaySpoiler.png) + !String.IsEqual(ListItem(-10).Art(thumb),ListItem(-10).Art(poster)) + !String.IsEqual(ListItem(-10).Art(thumb),ListItem(-10).Art(tvshow.poster)) + !String.IsEqual(ListItem(-10).Art(thumb),ListItem(-10).ActualIcon)">$INFO[ListItem(-10).Art(thumb)]</value>
@@ -1535,6 +2202,209 @@
         <value condition="String.IsEqual(Container(54).ListItem.DBType,episode)">$INFO[Container(54).ListItem.Label]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem.Title)">$INFO[Container(54).ListItem.Title]</value>
         <value condition="!String.IsEmpty(Container(54).ListItem.Label)">$INFO[Container(54).ListItem.Label]</value>
+        <value condition="Window.IsVisible(DialogAddonInfo.xml)">$LOCALIZE[31209]</value>
+    </variable>
+    <variable name="Label_Landscape_Title_C5610_-10">
+        <value condition="String.IsEqual(Container(5610).ListItem(-10).DBType,album) | String.IsEqual(Container(5610).ListItem(-10).DBType,song)">$INFO[Container(5610).ListItem(-10).Album]</value>
+        <value condition="String.IsEqual(Container(5610).ListItem(-10).DBType,episode)">$INFO[Container(5610).ListItem(-10).Label]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-10).Title)">$INFO[Container(5610).ListItem(-10).Title]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-10).Label)">$INFO[Container(5610).ListItem(-10).Label]</value>
+        <value condition="Window.IsVisible(DialogAddonInfo.xml)">$LOCALIZE[31209]</value>
+    </variable>
+    <variable name="Label_Landscape_Title_C5610_-9">
+        <value condition="String.IsEqual(Container(5610).ListItem(-9).DBType,album) | String.IsEqual(Container(5610).ListItem(-9).DBType,song)">$INFO[Container(5610).ListItem(-9).Album]</value>
+        <value condition="String.IsEqual(Container(5610).ListItem(-9).DBType,episode)">$INFO[Container(5610).ListItem(-9).Label]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-9).Title)">$INFO[Container(5610).ListItem(-9).Title]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-9).Label)">$INFO[Container(5610).ListItem(-9).Label]</value>
+        <value condition="Window.IsVisible(DialogAddonInfo.xml)">$LOCALIZE[31209]</value>
+    </variable>
+    <variable name="Label_Landscape_Title_C5610_-8">
+        <value condition="String.IsEqual(Container(5610).ListItem(-8).DBType,album) | String.IsEqual(Container(5610).ListItem(-8).DBType,song)">$INFO[Container(5610).ListItem(-8).Album]</value>
+        <value condition="String.IsEqual(Container(5610).ListItem(-8).DBType,episode)">$INFO[Container(5610).ListItem(-8).Label]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-8).Title)">$INFO[Container(5610).ListItem(-8).Title]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-8).Label)">$INFO[Container(5610).ListItem(-8).Label]</value>
+        <value condition="Window.IsVisible(DialogAddonInfo.xml)">$LOCALIZE[31209]</value>
+    </variable>
+    <variable name="Label_Landscape_Title_C5610_-7">
+        <value condition="String.IsEqual(Container(5610).ListItem(-7).DBType,album) | String.IsEqual(Container(5610).ListItem(-7).DBType,song)">$INFO[Container(5610).ListItem(-7).Album]</value>
+        <value condition="String.IsEqual(Container(5610).ListItem(-7).DBType,episode)">$INFO[Container(5610).ListItem(-7).Label]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-7).Title)">$INFO[Container(5610).ListItem(-7).Title]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-7).Label)">$INFO[Container(5610).ListItem(-7).Label]</value>
+        <value condition="Window.IsVisible(DialogAddonInfo.xml)">$LOCALIZE[31209]</value>
+    </variable>
+    <variable name="Label_Landscape_Title_C5610_-6">
+        <value condition="String.IsEqual(Container(5610).ListItem(-6).DBType,album) | String.IsEqual(Container(5610).ListItem(-6).DBType,song)">$INFO[Container(5610).ListItem(-6).Album]</value>
+        <value condition="String.IsEqual(Container(5610).ListItem(-6).DBType,episode)">$INFO[Container(5610).ListItem(-6).Label]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-6).Title)">$INFO[Container(5610).ListItem(-6).Title]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-6).Label)">$INFO[Container(5610).ListItem(-6).Label]</value>
+        <value condition="Window.IsVisible(DialogAddonInfo.xml)">$LOCALIZE[31209]</value>
+    </variable>
+    <variable name="Label_Landscape_Title_C5610_-5">
+        <value condition="String.IsEqual(Container(5610).ListItem(-5).DBType,album) | String.IsEqual(Container(5610).ListItem(-5).DBType,song)">$INFO[Container(5610).ListItem(-5).Album]</value>
+        <value condition="String.IsEqual(Container(5610).ListItem(-5).DBType,episode)">$INFO[Container(5610).ListItem(-5).Label]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-5).Title)">$INFO[Container(5610).ListItem(-5).Title]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-5).Label)">$INFO[Container(5610).ListItem(-5).Label]</value>
+        <value condition="Window.IsVisible(DialogAddonInfo.xml)">$LOCALIZE[31209]</value>
+    </variable>
+    <variable name="Label_Landscape_Title_C5610_-4">
+        <value condition="String.IsEqual(Container(5610).ListItem(-4).DBType,album) | String.IsEqual(Container(5610).ListItem(-4).DBType,song)">$INFO[Container(5610).ListItem(-4).Album]</value>
+        <value condition="String.IsEqual(Container(5610).ListItem(-4).DBType,episode)">$INFO[Container(5610).ListItem(-4).Label]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-4).Title)">$INFO[Container(5610).ListItem(-4).Title]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-4).Label)">$INFO[Container(5610).ListItem(-4).Label]</value>
+        <value condition="Window.IsVisible(DialogAddonInfo.xml)">$LOCALIZE[31209]</value>
+    </variable>
+    <variable name="Label_Landscape_Title_C5610_-3">
+        <value condition="String.IsEqual(Container(5610).ListItem(-3).DBType,album) | String.IsEqual(Container(5610).ListItem(-3).DBType,song)">$INFO[Container(5610).ListItem(-3).Album]</value>
+        <value condition="String.IsEqual(Container(5610).ListItem(-3).DBType,episode)">$INFO[Container(5610).ListItem(-3).Label]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-3).Title)">$INFO[Container(5610).ListItem(-3).Title]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-3).Label)">$INFO[Container(5610).ListItem(-3).Label]</value>
+        <value condition="Window.IsVisible(DialogAddonInfo.xml)">$LOCALIZE[31209]</value>
+    </variable>
+    <variable name="Label_Landscape_Title_C5610_-2">
+        <value condition="String.IsEqual(Container(5610).ListItem(-2).DBType,album) | String.IsEqual(Container(5610).ListItem(-2).DBType,song)">$INFO[Container(5610).ListItem(-2).Album]</value>
+        <value condition="String.IsEqual(Container(5610).ListItem(-2).DBType,episode)">$INFO[Container(5610).ListItem(-2).Label]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-2).Title)">$INFO[Container(5610).ListItem(-2).Title]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-2).Label)">$INFO[Container(5610).ListItem(-2).Label]</value>
+        <value condition="Window.IsVisible(DialogAddonInfo.xml)">$LOCALIZE[31209]</value>
+    </variable>
+    <variable name="Label_Landscape_Title_C5610_-1">
+        <value condition="String.IsEqual(Container(5610).ListItem(-1).DBType,album) | String.IsEqual(Container(5610).ListItem(-1).DBType,song)">$INFO[Container(5610).ListItem(-1).Album]</value>
+        <value condition="String.IsEqual(Container(5610).ListItem(-1).DBType,episode)">$INFO[Container(5610).ListItem(-1).Label]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-1).Title)">$INFO[Container(5610).ListItem(-1).Title]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(-1).Label)">$INFO[Container(5610).ListItem(-1).Label]</value>
+        <value condition="Window.IsVisible(DialogAddonInfo.xml)">$LOCALIZE[31209]</value>
+    </variable>
+    <variable name="Label_Landscape_Title_C5610_0">
+        <value condition="String.IsEqual(Container(5610).ListItem.DBType,album) | String.IsEqual(Container(5610).ListItem.DBType,song)">$INFO[Container(5610).ListItem.Album]</value>
+        <value condition="String.IsEqual(Container(5610).ListItem.DBType,episode)">$INFO[Container(5610).ListItem.Label]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem.Title)">$INFO[Container(5610).ListItem.Title]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem.Label)">$INFO[Container(5610).ListItem.Label]</value>
+        <value condition="Window.IsVisible(DialogAddonInfo.xml)">$LOCALIZE[31209]</value>
+    </variable>
+    <variable name="Label_Landscape_Title_C5610_1">
+        <value condition="String.IsEqual(Container(5610).ListItem(1).DBType,album) | String.IsEqual(Container(5610).ListItem(1).DBType,song)">$INFO[Container(5610).ListItem(1).Album]</value>
+        <value condition="String.IsEqual(Container(5610).ListItem(1).DBType,episode)">$INFO[Container(5610).ListItem(1).Label]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(1).Title)">$INFO[Container(5610).ListItem(1).Title]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(1).Label)">$INFO[Container(5610).ListItem(1).Label]</value>
+        <value condition="Window.IsVisible(DialogAddonInfo.xml)">$LOCALIZE[31209]</value>
+    </variable>
+    <variable name="Label_Landscape_Title_C5610_2">
+        <value condition="String.IsEqual(Container(5610).ListItem(2).DBType,album) | String.IsEqual(Container(5610).ListItem(2).DBType,song)">$INFO[Container(5610).ListItem(2).Album]</value>
+        <value condition="String.IsEqual(Container(5610).ListItem(2).DBType,episode)">$INFO[Container(5610).ListItem(2).Label]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(2).Title)">$INFO[Container(5610).ListItem(2).Title]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(2).Label)">$INFO[Container(5610).ListItem(2).Label]</value>
+        <value condition="Window.IsVisible(DialogAddonInfo.xml)">$LOCALIZE[31209]</value>
+    </variable>
+    <variable name="Label_Landscape_Title_C5610_3">
+        <value condition="String.IsEqual(Container(5610).ListItem(3).DBType,album) | String.IsEqual(Container(5610).ListItem(3).DBType,song)">$INFO[Container(5610).ListItem(3).Album]</value>
+        <value condition="String.IsEqual(Container(5610).ListItem(3).DBType,episode)">$INFO[Container(5610).ListItem(3).Label]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(3).Title)">$INFO[Container(5610).ListItem(3).Title]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(3).Label)">$INFO[Container(5610).ListItem(3).Label]</value>
+        <value condition="Window.IsVisible(DialogAddonInfo.xml)">$LOCALIZE[31209]</value>
+    </variable>
+    <variable name="Label_Landscape_Title_C5610_4">
+        <value condition="String.IsEqual(Container(5610).ListItem(4).DBType,album) | String.IsEqual(Container(5610).ListItem(4).DBType,song)">$INFO[Container(5610).ListItem(4).Album]</value>
+        <value condition="String.IsEqual(Container(5610).ListItem(4).DBType,episode)">$INFO[Container(5610).ListItem(4).Label]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(4).Title)">$INFO[Container(5610).ListItem(4).Title]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(4).Label)">$INFO[Container(5610).ListItem(4).Label]</value>
+        <value condition="Window.IsVisible(DialogAddonInfo.xml)">$LOCALIZE[31209]</value>
+    </variable>
+    <variable name="Label_Landscape_Title_C5610_5">
+        <value condition="String.IsEqual(Container(5610).ListItem(5).DBType,album) | String.IsEqual(Container(5610).ListItem(5).DBType,song)">$INFO[Container(5610).ListItem(5).Album]</value>
+        <value condition="String.IsEqual(Container(5610).ListItem(5).DBType,episode)">$INFO[Container(5610).ListItem(5).Label]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(5).Title)">$INFO[Container(5610).ListItem(5).Title]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(5).Label)">$INFO[Container(5610).ListItem(5).Label]</value>
+        <value condition="Window.IsVisible(DialogAddonInfo.xml)">$LOCALIZE[31209]</value>
+    </variable>
+    <variable name="Label_Landscape_Title_C5610_6">
+        <value condition="String.IsEqual(Container(5610).ListItem(6).DBType,album) | String.IsEqual(Container(5610).ListItem(6).DBType,song)">$INFO[Container(5610).ListItem(6).Album]</value>
+        <value condition="String.IsEqual(Container(5610).ListItem(6).DBType,episode)">$INFO[Container(5610).ListItem(6).Label]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(6).Title)">$INFO[Container(5610).ListItem(6).Title]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(6).Label)">$INFO[Container(5610).ListItem(6).Label]</value>
+        <value condition="Window.IsVisible(DialogAddonInfo.xml)">$LOCALIZE[31209]</value>
+    </variable>
+    <variable name="Label_Landscape_Title_C5610_7">
+        <value condition="String.IsEqual(Container(5610).ListItem(7).DBType,album) | String.IsEqual(Container(5610).ListItem(7).DBType,song)">$INFO[Container(5610).ListItem(7).Album]</value>
+        <value condition="String.IsEqual(Container(5610).ListItem(7).DBType,episode)">$INFO[Container(5610).ListItem(7).Label]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(7).Title)">$INFO[Container(5610).ListItem(7).Title]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(7).Label)">$INFO[Container(5610).ListItem(7).Label]</value>
+        <value condition="Window.IsVisible(DialogAddonInfo.xml)">$LOCALIZE[31209]</value>
+    </variable>
+    <variable name="Label_Landscape_Title_C5610_8">
+        <value condition="String.IsEqual(Container(5610).ListItem(8).DBType,album) | String.IsEqual(Container(5610).ListItem(8).DBType,song)">$INFO[Container(5610).ListItem(8).Album]</value>
+        <value condition="String.IsEqual(Container(5610).ListItem(8).DBType,episode)">$INFO[Container(5610).ListItem(8).Label]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(8).Title)">$INFO[Container(5610).ListItem(8).Title]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(8).Label)">$INFO[Container(5610).ListItem(8).Label]</value>
+        <value condition="Window.IsVisible(DialogAddonInfo.xml)">$LOCALIZE[31209]</value>
+    </variable>
+    <variable name="Label_Landscape_Title_C5610_9">
+        <value condition="String.IsEqual(Container(5610).ListItem(9).DBType,album) | String.IsEqual(Container(5610).ListItem(9).DBType,song)">$INFO[Container(5610).ListItem(9).Album]</value>
+        <value condition="String.IsEqual(Container(5610).ListItem(9).DBType,episode)">$INFO[Container(5610).ListItem(9).Label]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(9).Title)">$INFO[Container(5610).ListItem(9).Title]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(9).Label)">$INFO[Container(5610).ListItem(9).Label]</value>
+        <value condition="Window.IsVisible(DialogAddonInfo.xml)">$LOCALIZE[31209]</value>
+    </variable>
+    <variable name="Label_Landscape_Title_C5610_10">
+        <value condition="String.IsEqual(Container(5610).ListItem(10).DBType,album) | String.IsEqual(Container(5610).ListItem(10).DBType,song)">$INFO[Container(5610).ListItem(10).Album]</value>
+        <value condition="String.IsEqual(Container(5610).ListItem(10).DBType,episode)">$INFO[Container(5610).ListItem(10).Label]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(10).Title)">$INFO[Container(5610).ListItem(10).Title]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(10).Label)">$INFO[Container(5610).ListItem(10).Label]</value>
+        <value condition="Window.IsVisible(DialogAddonInfo.xml)">$LOCALIZE[31209]</value>
+    </variable>
+    <variable name="Label_Landscape_Title_C5610_11">
+        <value condition="String.IsEqual(Container(5610).ListItem(11).DBType,album) | String.IsEqual(Container(5610).ListItem(11).DBType,song)">$INFO[Container(5610).ListItem(11).Album]</value>
+        <value condition="String.IsEqual(Container(5610).ListItem(11).DBType,episode)">$INFO[Container(5610).ListItem(11).Label]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(11).Title)">$INFO[Container(5610).ListItem(11).Title]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(11).Label)">$INFO[Container(5610).ListItem(11).Label]</value>
+        <value condition="Window.IsVisible(DialogAddonInfo.xml)">$LOCALIZE[31209]</value>
+    </variable>
+    <variable name="Label_Landscape_Title_C5610_12">
+        <value condition="String.IsEqual(Container(5610).ListItem(12).DBType,album) | String.IsEqual(Container(5610).ListItem(12).DBType,song)">$INFO[Container(5610).ListItem(12).Album]</value>
+        <value condition="String.IsEqual(Container(5610).ListItem(12).DBType,episode)">$INFO[Container(5610).ListItem(12).Label]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(12).Title)">$INFO[Container(5610).ListItem(12).Title]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(12).Label)">$INFO[Container(5610).ListItem(12).Label]</value>
+        <value condition="Window.IsVisible(DialogAddonInfo.xml)">$LOCALIZE[31209]</value>
+    </variable>
+    <variable name="Label_Landscape_Title_C5610_13">
+        <value condition="String.IsEqual(Container(5610).ListItem(13).DBType,album) | String.IsEqual(Container(5610).ListItem(13).DBType,song)">$INFO[Container(5610).ListItem(13).Album]</value>
+        <value condition="String.IsEqual(Container(5610).ListItem(13).DBType,episode)">$INFO[Container(5610).ListItem(13).Label]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(13).Title)">$INFO[Container(5610).ListItem(13).Title]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(13).Label)">$INFO[Container(5610).ListItem(13).Label]</value>
+        <value condition="Window.IsVisible(DialogAddonInfo.xml)">$LOCALIZE[31209]</value>
+    </variable>
+    <variable name="Label_Landscape_Title_C5610_14">
+        <value condition="String.IsEqual(Container(5610).ListItem(14).DBType,album) | String.IsEqual(Container(5610).ListItem(14).DBType,song)">$INFO[Container(5610).ListItem(14).Album]</value>
+        <value condition="String.IsEqual(Container(5610).ListItem(14).DBType,episode)">$INFO[Container(5610).ListItem(14).Label]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(14).Title)">$INFO[Container(5610).ListItem(14).Title]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(14).Label)">$INFO[Container(5610).ListItem(14).Label]</value>
+        <value condition="Window.IsVisible(DialogAddonInfo.xml)">$LOCALIZE[31209]</value>
+    </variable>
+    <variable name="Label_Landscape_Title_C5610_15">
+        <value condition="String.IsEqual(Container(5610).ListItem(15).DBType,album) | String.IsEqual(Container(5610).ListItem(15).DBType,song)">$INFO[Container(5610).ListItem(15).Album]</value>
+        <value condition="String.IsEqual(Container(5610).ListItem(15).DBType,episode)">$INFO[Container(5610).ListItem(15).Label]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(15).Title)">$INFO[Container(5610).ListItem(15).Title]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(15).Label)">$INFO[Container(5610).ListItem(15).Label]</value>
+        <value condition="Window.IsVisible(DialogAddonInfo.xml)">$LOCALIZE[31209]</value>
+    </variable>
+    <variable name="Label_Landscape_Title_C5610_16">
+        <value condition="String.IsEqual(Container(5610).ListItem(16).DBType,album) | String.IsEqual(Container(5610).ListItem(16).DBType,song)">$INFO[Container(5610).ListItem(16).Album]</value>
+        <value condition="String.IsEqual(Container(5610).ListItem(16).DBType,episode)">$INFO[Container(5610).ListItem(16).Label]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(16).Title)">$INFO[Container(5610).ListItem(16).Title]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(16).Label)">$INFO[Container(5610).ListItem(16).Label]</value>
+        <value condition="Window.IsVisible(DialogAddonInfo.xml)">$LOCALIZE[31209]</value>
+    </variable>
+    <variable name="Label_Landscape_Title_C5610_17">
+        <value condition="String.IsEqual(Container(5610).ListItem(17).DBType,album) | String.IsEqual(Container(5610).ListItem(17).DBType,song)">$INFO[Container(5610).ListItem(17).Album]</value>
+        <value condition="String.IsEqual(Container(5610).ListItem(17).DBType,episode)">$INFO[Container(5610).ListItem(17).Label]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(17).Title)">$INFO[Container(5610).ListItem(17).Title]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem(17).Label)">$INFO[Container(5610).ListItem(17).Label]</value>
+        <value condition="Window.IsVisible(DialogAddonInfo.xml)">$LOCALIZE[31209]</value>
+    </variable>
+    <variable name="Label_Landscape_Title_C5610">
+        <value condition="String.IsEqual(Container(5610).ListItem.DBType,album) | String.IsEqual(Container(5610).ListItem.DBType,song)">$INFO[Container(5610).ListItem.Album]</value>
+        <value condition="String.IsEqual(Container(5610).ListItem.DBType,episode)">$INFO[Container(5610).ListItem.Label]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem.Title)">$INFO[Container(5610).ListItem.Title]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem.Label)">$INFO[Container(5610).ListItem.Label]</value>
         <value condition="Window.IsVisible(DialogAddonInfo.xml)">$LOCALIZE[31209]</value>
     </variable>
     <variable name="Label_Landscape_Title_-10">

@@ -231,11 +231,8 @@
 
     <include name="Viewtype_Movement">
         <onup condition="Control.IsVisible(300)">300</onup>
-        <onup condition="!Control.IsVisible(300)">304</onup>
         <oninfo condition="ListItem.IsCollection">ActivateWindow(1140)</oninfo>
         <oninfo condition="Container.Content(actors) | Container.Content(directors)">RunScript(plugin.video.themoviedb.helper,add_query=$INFO[Container.ListItem.Label],type=person,call_auto=1190)</oninfo>
-        <onfocus>ClearProperty(OSD_Menu,Home)</onfocus>
-        <ondown>60</ondown>
         <pagecontrol>60</pagecontrol>
     </include>
 

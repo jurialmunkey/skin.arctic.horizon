@@ -505,6 +505,8 @@
         <property name="widgetInclude" tag="property" attribute="name|widgetAspect" value="Square">Viewtype_Square</property>
         <property name="widgetInclude" tag="property" attribute="name|widgetAspect" value="Banner">Viewtype_BigBanner</property>
         <property name="widgetInclude">Viewtype_Poster</property>
+        <property name="widgetWallID" tag="property" attribute="name|widgetAspect" value="Landscape">565611</property>
+        <property name="widgetWallID">565610</property>
         <property name="widgetSortby" tag="property" attribute="name|widgetSortby" />
         <property name="widgetSortorder" tag="property" attribute="name|widgetSortorder" />
         <controls>
@@ -515,7 +517,7 @@
                 <right>-80</right>
                 <bottom>-20</bottom>
                 <onup>302</onup>
-                <ondown>60</ondown>
+                <ondown>$SKINSHORTCUTS[widgetWallID]</ondown>
                 <onfocus>SetProperty(FocusWidget,1)</onfocus>
                 <onback condition="!Window.IsVisible(Home)">302</onback>
                 <onback condition="Window.IsVisible(Home)">3101</onback>
@@ -538,6 +540,8 @@
         <property name="widgetInclude" tag="property" attribute="name|widgetAspect" value="Square">Viewtype_Square</property>
         <property name="widgetInclude" tag="property" attribute="name|widgetAspect" value="Banner">Viewtype_BigBanner</property>
         <property name="widgetInclude">Viewtype_Poster</property>
+        <property name="widgetWallID" tag="property" attribute="name|widgetAspect" value="Landscape">565611</property>
+        <property name="widgetWallID">565610</property>
         <property name="widgetSortby" tag="property" attribute="name|widgetSortby" />
         <property name="widgetSortorder" tag="property" attribute="name|widgetSortorder" />
         <controls>
@@ -548,7 +552,7 @@
                 <right>-80</right>
                 <bottom>-20</bottom>
                 <onup>302</onup>
-                <ondown>60</ondown>
+                <ondown>$SKINSHORTCUTS[widgetWallID]</ondown>
                 <onfocus>SetProperty(FocusWidget,1)</onfocus>
                 <onback condition="!Window.IsVisible(Home)">302</onback>
                 <onback condition="Window.IsVisible(Home)">3101</onback>

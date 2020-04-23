@@ -883,7 +883,7 @@
     <include name="Object_Poster">
         <param name="icon" default="$VAR[Image_Poster]" />
         <param name="aspectratio" default="scale" />
-        <param name="visible" default="!$EXP[Exp_DefaultIcon]" />
+        <param name="visible" default="true" />
         <param name="bordersize" default="15" />
         <param name="fadetime" default="0" />
         <param name="background" default="true" />

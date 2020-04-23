@@ -1,7 +1,7 @@
 [
     {
         "name"          : "Label_SmallLandscapeWidget_Sublabel",
-        "containers"    : [54],
+        "containers"    : [54,5610],
         "listitems"     : {"start": -10, "end": 17},
         "values"        : [
                             {"!String.IsEmpty({listitem}.ChannelName)": "$INFO[{listitem}.ChannelName]"},
@@ -18,7 +18,7 @@
     },
     {
         "name"          : "Image_Landscape",
-        "containers"    : [54],
+        "containers"    : [54,5610],
         "listitems"     : {"start": -10, "end": 17},
         "values"        : [
                             {"Container.Content(images)": "$INFO[{listitem}.Icon]"},
@@ -34,7 +34,7 @@
     },
     {
         "name"          : "Label_Landscape_Title",
-        "containers"    : [54],
+        "containers"    : [54,5610],
         "listitems"     : {"start": -10, "end": 17},
         "values"        : [
                             {"String.IsEqual({listitem}.DBType,album) | String.IsEqual({listitem}.DBType,song)": "$INFO[{listitem}.Album]"},

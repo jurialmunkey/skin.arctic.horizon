@@ -51,71 +51,89 @@
                 <control type="group">
                     <include>View_Pad</include>
 
-                    <!-- Top Half -->
-                    <control type="group" description="Top Half">
-                        <include content="View_Info_Grouplist">
-                            <param name="container" value="Container(5610)." />
-                            <param name="title" value="$VAR[Label_Hub_InfoTitle]" />
-                            <param name="plot" value="$INFO[Container(5610).ListItem.Plot]" />
-                            <param name="plotheight" value="auto" />
-                            <param name="infoline-label" value="$VAR[Label_56560_InfoLine]" />
-                            <param name="infoline-image" value="$VAR[Image_56560_VideoQuality]" />
-                            <top>-15</top>
-                            <height>285</height>
-                            <include>Viewtype_Info_Right</include>
-                            <visible>!String.IsEmpty(Container(5610).ListItem.Title)</visible>
-                        </include>
-                        <control type="grouplist">
-                            <top>-15</top>
-                            <height>285</height>
-                            <orientation>vertical</orientation>
-                            <usecontrolcoords>true</usecontrolcoords>
-                            <itemgap>0</itemgap>
-                            <visible>String.IsEmpty(Container(5610).ListItem.Title)</visible>
-                            <include content="Object_Info_Title">
-                                <param name="label" value="$INFO[System.Time]" />
+                    <control type="group">
+                        <animation type="Conditional" reversible="false" condition="!Control.HasFocus(565610) + !Control.HasFocus(565611)">
+                            <effect type="fade" start="0" end="100" delay="400" time="1" />
+                        </animation>
+                        <animation type="Conditional" reversible="false" condition="Control.HasFocus(565610) | Control.HasFocus(565611)">
+                            <effect type="fade" end="0" start="100" />
+                        </animation>
+                        <!-- Top Half -->
+                        <control type="group" description="Top Half">
+                            <include content="View_Info_Grouplist">
+                                <param name="container" value="Container(5610)." />
+                                <param name="title" value="$VAR[Label_Hub_InfoTitle]" />
+                                <param name="plot" value="$INFO[Container(5610).ListItem.Plot]" />
+                                <param name="plotheight" value="auto" />
+                                <param name="infoline-label" value="$VAR[Label_56560_InfoLine]" />
+                                <param name="infoline-image" value="$VAR[Image_56560_VideoQuality]" />
+                                <top>-15</top>
+                                <height>285</height>
+                                <include>Viewtype_Info_Right</include>
+                                <visible>!String.IsEmpty(Container(5610).ListItem.Title)</visible>
                             </include>
-                            <include content="Object_Info_Line_Label">
-                                <param name="label" value="$INFO[System.Date]" />
-                                <param name="textcolor" value="main_fg_100" />
-                                <param name="divider" value="false" />
+                            <control type="grouplist">
+                                <top>-15</top>
+                                <height>285</height>
+                                <orientation>vertical</orientation>
+                                <usecontrolcoords>true</usecontrolcoords>
+                                <itemgap>0</itemgap>
+                                <visible>String.IsEmpty(Container(5610).ListItem.Title)</visible>
+                                <include content="Object_Info_Title">
+                                    <param name="label" value="$INFO[System.Time]" />
+                                </include>
+                                <include content="Object_Info_Line_Label">
+                                    <param name="label" value="$INFO[System.Date]" />
+                                    <param name="textcolor" value="main_fg_100" />
+                                    <param name="divider" value="false" />
+                                </include>
+                            </control>
+                            <include content="View_Hub_Buttons" condition="!Skin.HasSetting(DisableAutoWidthHub)">
+                                <param name="grouplistid" value="300" />
                             </include>
                         </control>
-                        <include content="View_Hub_Buttons" condition="!Skin.HasSetting(DisableAutoWidthHub)">
-                            <param name="grouplistid" value="300" />
-                        </include>
+
+                        <!-- Bottom Half -->
+                        <control type="group" description="Bottom Half">
+                            <include>Animation_Down</include>
+                            <include content="Viewtype_BackPanel">
+                                <height>480</height>
+                            </include>
+                            <include content="Home_Hub_Widget_Label">
+                                <param name="id" value="5610" />
+                                <param name="label" value="$VAR[Label_Hub_WidgetName]" />
+                            </include>
+                            <include content="Viewtype_Buttons" condition="Skin.HasSetting(DisableAutoWidthHub)">
+                                <param name="id" value="302" />
+                                <param name="itemlayout-width" value="item_square_width" />
+                                <param name="offset" value="80" />
+                                <param name="control-type" value="fixedlist" />
+                                <param name="hasicon" value="true" />
+                                <movement>5</movement>
+                                <preloaditems>2</preloaditems>
+                                <height>120</height>
+                                <left>-100</left>
+                                <right>-100</right>
+                                <bottom>400</bottom>
+                                <ondown>5610</ondown>
+                                <onfocus>ClearProperty(FocusWidget)</onfocus>
+                                <include>Items_SubMenu</include>
+                            </include>
+                            <include>skinshortcuts-template-spotlight-submenu</include>
+                            <include>skinshortcuts-template-spotlight-mainmenu</include>
+                        </control>
                     </control>
 
-                    <!-- Bottom Half -->
-                    <control type="group" description="Bottom Half">
-                        <include>Animation_Down</include>
-                        <include content="Viewtype_BackPanel">
-                            <height>480</height>
-                        </include>
-                        <include content="Home_Hub_Widget_Label">
-                            <param name="id" value="5610" />
-                            <param name="label" value="$VAR[Label_Hub_WidgetName]" />
-                        </include>
-                        <include content="Viewtype_Buttons" condition="Skin.HasSetting(DisableAutoWidthHub)">
-                            <param name="id" value="302" />
-                            <param name="itemlayout-width" value="item_square_width" />
-                            <param name="offset" value="80" />
-                            <param name="control-type" value="fixedlist" />
-                            <param name="hasicon" value="true" />
-                            <movement>5</movement>
-                            <preloaditems>2</preloaditems>
-                            <height>120</height>
-                            <left>-100</left>
-                            <right>-100</right>
-                            <bottom>400</bottom>
-                            <ondown>5610</ondown>
-                            <onfocus>ClearProperty(FocusWidget)</onfocus>
-                            <include>Items_SubMenu</include>
-                        </include>
-                        <include>skinshortcuts-template-spotlight-submenu</include>
-                        <include>skinshortcuts-template-spotlight-mainmenu</include>
-                    </control>
+                    <include content="View_52_Posters_Wall">
+                        <param name="id" value="5610" />
+                        <param name="wall-id" value="565610" />
+                    </include>
+                    <include content="View_54_Episodes_Wall">
+                        <param name="id" value="5610" />
+                        <param name="wall-id" value="565611" />
+                    </include>
                 </control>
+
                 <include>Topbar_Left</include>
             </control>
         </include>
