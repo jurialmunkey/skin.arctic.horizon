@@ -7,6 +7,7 @@
             <property name="FolderPath">$INFO[$PARAM[listitem].FolderPath]</property>
             <property name="MPAA">$INFO[$PARAM[listitem].MPAA]</property>
             <property name="Year">$INFO[$PARAM[listitem].Year]</property>
+            <property name="Premiered">$INFO[$PARAM[listitem].Premiered]</property>
             <property name="EndTime">$INFO[$PARAM[listitem].EndTime]</property>
             <property name="Season">$INFO[$PARAM[listitem].Season]</property>
             <property name="Episode">$INFO[$PARAM[listitem].Episode]</property>
