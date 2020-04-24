@@ -506,6 +506,7 @@
         <property name="widgetInclude" tag="property" attribute="name|widgetAspect" value="Banner">Viewtype_BigBanner</property>
         <property name="widgetInclude">Viewtype_Poster</property>
         <property name="widgetWallID" tag="property" attribute="name|widgetAspect" value="Landscape">565611</property>
+        <property name="widgetWallID" tag="property" attribute="name|widgetAspect" value="Square">565612</property>
         <property name="widgetWallID">565610</property>
         <property name="widgetSortby" tag="property" attribute="name|widgetSortby" />
         <property name="widgetSortorder" tag="property" attribute="name|widgetSortorder" />
@@ -517,8 +518,11 @@
                 <right>-80</right>
                 <bottom>-20</bottom>
                 <onup>302</onup>
-                <ondown>$SKINSHORTCUTS[widgetWallID]</ondown>
-                <onfocus>SetProperty(FocusWidget,1)</onfocus>
+                <ondown condition="!Window.IsVisible(Home)">$SKINSHORTCUTS[widgetWallID]</ondown>
+                <ondown condition="Window.IsVisible(Home)">SetProperty(WidgetFocus,1)</ondown>
+                <ondown condition="Window.IsVisible(Home)">3992</ondown>
+                <ondown condition="Window.IsVisible(Home)">SetProperty(WidgetMovement,OnDown)</ondown>
+                <ondown condition="Window.IsVisible(Home)">Control.Move(301,1)</ondown>
                 <onback condition="!Window.IsVisible(Home)">302</onback>
                 <onback condition="Window.IsVisible(Home)">3101</onback>
                 <pagecontrol>60</pagecontrol>
@@ -541,6 +545,7 @@
         <property name="widgetInclude" tag="property" attribute="name|widgetAspect" value="Banner">Viewtype_BigBanner</property>
         <property name="widgetInclude">Viewtype_Poster</property>
         <property name="widgetWallID" tag="property" attribute="name|widgetAspect" value="Landscape">565611</property>
+        <property name="widgetWallID" tag="property" attribute="name|widgetAspect" value="Square">565612</property>
         <property name="widgetWallID">565610</property>
         <property name="widgetSortby" tag="property" attribute="name|widgetSortby" />
         <property name="widgetSortorder" tag="property" attribute="name|widgetSortorder" />
@@ -552,8 +557,11 @@
                 <right>-80</right>
                 <bottom>-20</bottom>
                 <onup>302</onup>
-                <ondown>$SKINSHORTCUTS[widgetWallID]</ondown>
-                <onfocus>SetProperty(FocusWidget,1)</onfocus>
+                <ondown condition="!Window.IsVisible(Home)">$SKINSHORTCUTS[widgetWallID]</ondown>
+                <ondown condition="Window.IsVisible(Home)">SetProperty(WidgetFocus,1)</ondown>
+                <ondown condition="Window.IsVisible(Home)">3992</ondown>
+                <ondown condition="Window.IsVisible(Home)">SetProperty(WidgetMovement,OnDown)</ondown>
+                <ondown condition="Window.IsVisible(Home)">Control.Move(301,1)</ondown>
                 <onback condition="!Window.IsVisible(Home)">302</onback>
                 <onback condition="Window.IsVisible(Home)">3101</onback>
                 <pagecontrol>60</pagecontrol>

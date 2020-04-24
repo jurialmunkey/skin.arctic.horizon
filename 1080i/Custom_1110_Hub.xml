@@ -52,10 +52,10 @@
                     <include>View_Pad</include>
 
                     <control type="group">
-                        <animation type="Conditional" reversible="false" condition="!Control.HasFocus(565610) + !Control.HasFocus(565611)">
+                        <animation type="Conditional" reversible="false" condition="!Control.HasFocus(565610) + !Control.HasFocus(565611) + !Control.HasFocus(565612)">
                             <effect type="fade" start="0" end="100" delay="400" time="1" />
                         </animation>
-                        <animation type="Conditional" reversible="false" condition="Control.HasFocus(565610) | Control.HasFocus(565611)">
+                        <animation type="Conditional" reversible="false" condition="Control.HasFocus(565610) | Control.HasFocus(565611) | Control.HasFocus(565612)">
                             <effect type="fade" end="0" start="100" />
                         </animation>
                         <!-- Top Half -->
@@ -63,7 +63,7 @@
                             <include content="View_Info_Grouplist">
                                 <param name="container" value="Container(5610)." />
                                 <param name="title" value="$VAR[Label_Hub_InfoTitle]" />
-                                <param name="plot" value="$INFO[Container(5610).ListItem.Plot]" />
+                                <param name="plot" value="$VAR[Label_Plot_C5610]" />
                                 <param name="plotheight" value="auto" />
                                 <param name="infoline-label" value="$VAR[Label_56560_InfoLine]" />
                                 <param name="infoline-image" value="$VAR[Image_56560_VideoQuality]" />
@@ -131,6 +131,10 @@
                     <include content="View_54_Episodes_Wall">
                         <param name="id" value="5610" />
                         <param name="wall-id" value="565611" />
+                    </include>
+                    <include content="View_51_Addons_Wall">
+                        <param name="id" value="5610" />
+                        <param name="wall-id" value="565612" />
                     </include>
                 </control>
 

@@ -48,7 +48,7 @@
             <include content="View_Info_Grouplist">
                 <param name="title" value="$VAR[Label_Info_Title_560]" />
                 <param name="container" value="Container(560)." />
-                <param name="plot" value="$VAR[Label_Plot_560]" />
+                <param name="plot" value="$VAR[Label_Plot_C560]" />
                 <param name="plotheight" value="auto" />
                 <param name="infoline-label" value="$VAR[Label_Home_InfoLine]" />
                 <param name="infoline-image" value="$VAR[Image_Home_VideoQuality]" />

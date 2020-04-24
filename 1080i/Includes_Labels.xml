@@ -457,35 +457,6 @@
         <value>$INFO[ListItem.Tagline,[B],[/B][CR]]$INFO[ListItem.Artist,[B],[/B][CR]]$VAR[Label_Plot]</value>
     </variable>
 
-    <variable name="Label_Plot_3001">
-        <value condition="!String.IsEmpty(Container(3001).ListItem.Property(Artist_Description))">$INFO[Container(3001).ListItem.Property(Artist_Description)]</value>
-        <value condition="!String.IsEmpty(Container(3001).ListItem.Property(Album_Description))">$INFO[Container(3001).ListItem.Property(Album_Description)]</value>
-        <value condition="!String.IsEmpty(Container(3001).ListItem.AddonDescription)">$INFO[Container(3001).ListItem.AddonDescription]</value>
-        <value condition="!String.IsEmpty(Container(3001).ListItem.PlotOutline) + Skin.HasSetting(PlotOutline)">$INFO[Container(3001).ListItem.PlotOutline]</value>
-        <value condition="!String.IsEmpty(Container(3001).ListItem.Plot)">$INFO[Container(3001).ListItem.Plot]</value>
-        <value condition="!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Plot))">$INFO[Window(Home).Property(TMDbHelper.ListItem.Plot)]</value>
-    </variable>
-
-    <variable name="Label_Plot_560">
-        <value condition="!String.IsEmpty(Container(560).ListItem.Property(Artist_Description))">$INFO[Container(560).ListItem.Property(Artist_Description)]</value>
-        <value condition="!String.IsEmpty(Container(560).ListItem.Property(Album_Description))">$INFO[Container(560).ListItem.Property(Album_Description)]</value>
-        <value condition="!String.IsEmpty(Container(560).ListItem.AddonDescription)">$INFO[Container(560).ListItem.AddonDescription]</value>
-        <value condition="!String.IsEmpty(Container(560).ListItem.PlotOutline) + Skin.HasSetting(PlotOutline)">$INFO[Container(560).ListItem.PlotOutline]</value>
-        <value condition="!String.IsEmpty(Container(560).ListItem.Plot)">$INFO[Container(560).ListItem.Plot]</value>
-        <value condition="!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Plot))">$INFO[Window(Home).Property(TMDbHelper.ListItem.Plot)]</value>
-    </variable>
-
-    <variable name="Label_Plot">
-        <value condition="Window.IsVisible(1140) + Control.HasFocus(5002) + !String.IsEmpty(Container(5002).ListItem.Plot)">$INFO[Container(5002).ListItem.Plot]</value>
-        <value condition="!String.IsEmpty(ListItem.Property(Artist_Description))">$INFO[ListItem.Property(Artist_Description)]</value>
-        <value condition="!String.IsEmpty(ListItem.Property(Album_Description))">$INFO[ListItem.Property(Album_Description)]</value>
-        <value condition="!String.IsEmpty(ListItem.AddonDescription)">$INFO[ListItem.AddonDescription]</value>
-        <value condition="!String.IsEmpty(ListItem.PlotOutline) + Skin.HasSetting(PlotOutline)">$INFO[ListItem.PlotOutline]</value>
-        <value condition="!String.IsEmpty(ListItem.Plot)">$INFO[ListItem.Plot]</value>
-        <value condition="!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Plot))">$INFO[Window(Home).Property(TMDbHelper.ListItem.Plot)]</value>
-        <value condition="!String.IsEmpty(Container(19001).ListItem.Plot) + !Container(19001).IsUpdating">$INFO[Container(19001).ListItem.Plot]</value>
-    </variable>
-
     <variable name="Label_PlayerStatus">
         <value condition="Player.Forwarding32x">FF 32x</value>
         <value condition="Player.Forwarding16x">FF 16x</value>

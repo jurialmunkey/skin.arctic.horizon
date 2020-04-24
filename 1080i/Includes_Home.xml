@@ -274,7 +274,7 @@
                         <include content="Object_Info_Plot">
                             <param name="maxheight" value="80" />
                             <param name="height" value="auto" />
-                            <param name="label" value="$VAR[Label_Plot_3001]" />
+                            <param name="label" value="$VAR[Label_Plot_C3001]" />
                             <top>10</top>
                         </include>
                         <control type="group">
@@ -451,11 +451,11 @@
         </control>
         <control type="group">
             <include>View_Pad</include>
-            <include content="View_52_Posters_Wall">
+            <include content="View_52_Posters_Wall" condition="Window.IsVisible(1150)">
                 <param name="id" value="5610" />
                 <param name="wall-id" value="565610" />
             </include>
-            <include content="View_54_Episodes_Wall">
+            <include content="View_54_Episodes_Wall" condition="Window.IsVisible(1150)">
                 <param name="id" value="5610" />
                 <param name="wall-id" value="565611" />
             </include>

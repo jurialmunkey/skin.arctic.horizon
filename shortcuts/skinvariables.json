@@ -43,5 +43,19 @@
                             {"!String.IsEmpty({listitem}.Label)": "$INFO[{listitem}.Label]"},
                             {"Window.IsVisible(DialogAddonInfo.xml)": "$LOCALIZE[31209]"}
                           ]
+    },
+    {
+        "name"          : "Label_Plot",
+        "containers"    : [530,560,3001,5610],
+        "values"        : [
+                            {"Window.IsVisible(1140) + Control.HasFocus(5002) + !String.IsEmpty(Container(5002).ListItem.Plot)": "$INFO[Container(5002).ListItem.Plot]"},
+                            {"!String.IsEmpty({listitem}.Property(Artist_Description))": "$INFO[{listitem}.Property(Artist_Description)]"},
+                            {"!String.IsEmpty({listitem}.Property(Album_Description))": "$INFO[{listitem}.Property(Album_Description)]"},
+                            {"!String.IsEmpty({listitem}.AddonDescription)": "$INFO[{listitem}.AddonDescription]"},
+                            {"!String.IsEmpty({listitem}.PlotOutline) + Skin.HasSetting(PlotOutline)": "$INFO[{listitem}.PlotOutline]"},
+                            {"!String.IsEmpty({listitem}.Plot)": "$INFO[{listitem}.Plot]"},
+                            {"!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Plot))": "$INFO[Window(Home).Property(TMDbHelper.ListItem.Plot)]"}
+                          ]
     }
+
 ]
