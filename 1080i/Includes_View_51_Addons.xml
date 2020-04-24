@@ -4,12 +4,6 @@
         <control type="group">
             <visible>Control.IsVisible(51)</visible>
             <include>Animation_Down</include>
-            <animation type="Conditional" reversible="false" condition="!Control.HasFocus(5151)">
-                <effect type="fade" start="0" end="100" delay="400" time="1" />
-            </animation>
-            <animation type="Conditional" reversible="false" condition="Control.HasFocus(5151)">
-                <effect type="fade" end="0" start="100" />
-            </animation>
             <include content="Viewtype_Square">
                 <param name="id" value="51" />
                 <param name="altid" value="510" />
@@ -31,10 +25,6 @@
                 <param name="altlabel" value="$INFO[Control.GetLabel(3),, ]$INFO[Control.GetLabel(4)]" />
             </include>
         </control>
-        <include content="View_51_Addons_Wall">
-            <param name="id" value="51" />
-            <param name="wall-id" value="5151" />
-        </include>
     </include>
 
     <include name="View_51_Addons_Wall">

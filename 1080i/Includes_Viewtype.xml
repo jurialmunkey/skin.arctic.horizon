@@ -34,10 +34,10 @@
                 <include>Animation_Common</include>
                 <control type="group">
                     <include>View_Pad</include>
+                    <animation effect="fade" reversible="false" start="0" end="100" delay="399" time="1" condition="![Control.HasFocus(5151) | Control.HasFocus(5252) | Control.HasFocus(5353) | Control.HasFocus(5454) | Control.HasFocus(5656)]">Conditional</animation>
+                    <animation effect="fade" reversible="false" end="0" start="100" condition="[Control.HasFocus(5151) | Control.HasFocus(5252) | Control.HasFocus(5353) | Control.HasFocus(5454) | Control.HasFocus(5656)]">Conditional</animation>
                     <control type="group" description="Top Half">
                         <visible>!Integer.IsEqual(Container.NumAllItems,0)</visible>
-                        <animation effect="fade" reversible="false" start="0" end="100" delay="400" time="400" tween="sine" easing="out" condition="![Control.HasFocus(5151) | Control.HasFocus(5252) | Control.HasFocus(5353) | Control.HasFocus(5454) | Control.HasFocus(5656)]">Conditional</animation>
-                        <animation effect="fade" reversible="false" end="0" start="100" condition="[Control.HasFocus(5151) | Control.HasFocus(5252) | Control.HasFocus(5353) | Control.HasFocus(5454) | Control.HasFocus(5656)]">Conditional</animation>
                         <include content="View_Info_Grouplist">
                             <param name="container" value="Container." />
                             <top>-15</top>
@@ -111,8 +111,6 @@
                             <visible>!Integer.IsEqual(Container.NumAllItems,0)</visible>
                             <visible>![Control.IsVisible(50) | Control.IsVisible(500) | Control.IsVisible(55)]</visible>
                             <height>480</height>
-                            <animation effect="fade" reversible="false" start="0" end="100" delay="400" time="400" tween="sine" easing="out" condition="![Control.HasFocus(5151) | Control.HasFocus(5252) | Control.HasFocus(5353) | Control.HasFocus(5454) | Control.HasFocus(5656)]">Conditional</animation>
-                            <animation effect="fade" reversible="false" end="0" start="100" condition="[Control.HasFocus(5151) | Control.HasFocus(5252) | Control.HasFocus(5353) | Control.HasFocus(5454) | Control.HasFocus(5656)]">Conditional</animation>
                         </include>
                         <include>View_55_FileList</include>
                         <include>View_51_Addons</include>
@@ -123,6 +121,29 @@
                         <include>View_56_Hubs</include>
                         <include>View_500_SongList</include>
                     </control>
+                </control>
+                <control type="group">
+                    <include>View_Pad</include>
+                    <include content="View_51_Addons_Wall">
+                        <param name="id" value="51" />
+                        <param name="wall-id" value="5151" />
+                    </include>
+                    <include content="View_52_Posters_Wall">
+                        <param name="id" value="52" />
+                        <param name="wall-id" value="5252" />
+                    </include>
+                    <include content="View_54_Episodes_Wall">
+                        <param name="id" value="530" />
+                        <param name="wall-id" value="5353" />
+                    </include>
+                    <include content="View_54_Episodes_Wall">
+                        <param name="id" value="54" />
+                        <param name="wall-id" value="5454" />
+                    </include>
+                    <include content="View_54_Episodes_Wall">
+                        <param name="id" value="560" />
+                        <param name="wall-id" value="5656" />
+                    </include>
                 </control>
                 <include>Topbar_Left</include>
             </control>

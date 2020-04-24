@@ -5,12 +5,6 @@
         <control type="group">
             <visible>Control.IsVisible(54)</visible>
             <include>Animation_Down</include>
-            <animation type="Conditional" reversible="false" condition="!Control.HasFocus(5454)">
-                <effect type="fade" start="0" end="100" delay="400" time="1" />
-            </animation>
-            <animation type="Conditional" reversible="false" condition="Control.HasFocus(5454)">
-                <effect type="fade" end="0" start="100" />
-            </animation>
             <include content="Viewtype_Landscape">
                 <param name="id" value="54" />
                 <param name="viewtype-label" value="$LOCALIZE[31234]" />
@@ -31,10 +25,6 @@
                 <param name="altlabel" value="$INFO[Control.GetLabel(3),, ]$INFO[Control.GetLabel(4)]" />
             </include>
         </control>
-        <include content="View_54_Episodes_Wall">
-            <param name="id" value="54" />
-            <param name="wall-id" value="5454" />
-        </include>
     </include>
 
     <include name="View_54_Episodes_Wall">

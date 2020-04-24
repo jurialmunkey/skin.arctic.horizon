@@ -202,7 +202,7 @@
         <autoscroll delay="6000" time="3000" repeat="10000"/>
     </default>
 
-    <expression name="Exp_DefaultIcon">[String.IsEmpty(ListItem.Art(poster)) + String.IsEmpty(ListItem.Art(tvshow.poster)) + String.IsEmpty(ListItem.Art(fanart)) + [String.IsEqual(ListItem.Icon,ListItem.ActualIcon) | [Window.IsMedia + String.IsEmpty(Container.FolderPath)]]]</expression>
+    <expression name="Exp_DefaultIcon">[String.IsEmpty(ListItem.Art(poster)) + String.IsEmpty(ListItem.Art(tvshow.poster)) + String.IsEmpty(ListItem.Art(fanart)) + [String.IsEqual(ListItem.Icon,ListItem.ActualIcon) | [Window.IsVisible(AddonBrowser.xml) + String.IsEmpty(ListItem.AddonName)] | [Window.IsMedia + String.IsEmpty(Container.FolderPath)]]]</expression>
 
     <expression name="Exp_PVRItemIcon">[[!String.IsEmpty(ListItem.ChannelNumberLabel) | !String.IsEmpty(ListITem.ChannelName) | !String.IsEmpty(ListITem.ChannelNumber)] + [String.IsEmpty(ListItem.Art(poster)) + String.IsEmpty(ListItem.Art(tvshow.poster)) + String.IsEmpty(ListItem.Art(fanart))]]</expression>
 
