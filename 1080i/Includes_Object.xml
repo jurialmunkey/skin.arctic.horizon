@@ -921,29 +921,32 @@
     </include>
 
     <include name="Object_Artwork">
+        <param name="Exp_DefaultIcon" default="$EXP[Exp_DefaultIcon]" />
+        <param name="Exp_SpecialIcon" default="$EXP[Exp_SpecialIcon]" />
+        <param name="Image_DefaultIcon" default="$VAR[Image_DefaultIcon]" />
         <definition>
             <include content="Object_Poster">
-                <param name="icon" value="$VAR[Image_DefaultIcon]" />
+                <param name="icon" value="$PARAM[Image_DefaultIcon]" />
                 <param name="colordiffuse" value="main_fg_100" />
                 <param name="diffuse" value="$PARAM[diffuse]" />
                 <param name="aspectratio" value="keep" />
                 <param name="bordersize" value="25" />
-                <param name="visible" value="$EXP[Exp_DefaultIcon] + !$EXP[Exp_SpecialIcon]"/>
+                <param name="visible" value="$PARAM[Exp_DefaultIcon] + !$PARAM[Exp_SpecialIcon]"/>
             </include>
             <include content="Object_Poster">
-                <param name="icon" value="$VAR[Image_DefaultIcon]" />
+                <param name="icon" value="$PARAM[Image_DefaultIcon]" />
                 <param name="colordiffuse" value="main_fg_90" />
                 <param name="diffuse" value="$PARAM[diffuse]" />
                 <param name="aspectratio" value="keep" />
                 <param name="bordersize" value="40" />
-                <param name="visible" value="$EXP[Exp_SpecialIcon]" />
+                <param name="visible" value="$PARAM[Exp_SpecialIcon]" />
             </include>
             <include content="Object_Poster">
                 <param name="icon" value="$PARAM[icon]" />
                 <param name="diffuse" value="$PARAM[diffuse]" />
                 <param name="aspectratio" value="$PARAM[aspectratio]" />
                 <param name="bordersize" value="$PARAM[bordersize]" />
-                <param name="visible" value="!$EXP[Exp_DefaultIcon] + !$EXP[Exp_SpecialIcon]" />
+                <param name="visible" value="!$PARAM[Exp_DefaultIcon] + !$PARAM[Exp_SpecialIcon]" />
             </include>
         </definition>
     </include>

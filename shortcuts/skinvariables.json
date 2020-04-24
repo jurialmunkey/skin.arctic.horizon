@@ -56,6 +56,40 @@
                             {"!String.IsEmpty({listitem}.Plot)": "$INFO[{listitem}.Plot]"},
                             {"!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Plot))": "$INFO[Window(Home).Property(TMDbHelper.ListItem.Plot)]"}
                           ]
+    },
+    {
+        "name"          : "Exp_DefaultIcon",
+        "containers"    : [51,52,53,54,55,56,530,560,3001,5610],
+        "listitems"     : {"start": -16, "end": 29},
+        "expression"    : "[String.IsEmpty({listitem}.Art(poster)) + String.IsEmpty({listitem}.Art(tvshow.poster)) + String.IsEmpty({listitem}.Art(fanart)) + [String.IsEqual({listitem}.Icon,{listitem}.ActualIcon) | [Window.IsVisible(AddonBrowser.xml) + String.IsEmpty({listitem}.AddonName)] | [Window.IsMedia + String.IsEmpty(Container.FolderPath)]]]"
+    },
+    {
+        "name"          : "Exp_SpecialIcon",
+        "containers"    : [51,52,53,54,55,56,530,560,3001,5610],
+        "listitems"     : {"start": -16, "end": 29},
+        "expression"    : "[[String.IsEqual({listitem}.DBType,country) | String.IsEqual({listitem}.Property(dbtype),country) | String.IsEqual({listitem}.DBType,studio) | String.IsEqual({listitem}.Property(dbtype),studio) | String.IsEqual({listitem}.DBType,genre) | String.IsEqual({listitem}.Property(dbtype),genre)] | [[!String.IsEmpty({listitem}.ChannelNumberLabel) | !String.IsEmpty({listitem}.ChannelName) | !String.IsEmpty({listitem}.ChannelNumber)] + [String.IsEmpty({listitem}.Art(poster)) + String.IsEmpty({listitem}.Art(tvshow.poster)) + String.IsEmpty({listitem}.Art(fanart))]]]"
+    },
+    {
+        "name"          : "Image_DefaultIcon",
+        "containers"    : [51,52,53,54,55,56,530,560,3001,5610],
+        "listitems"     : {"start": -16, "end": 29},
+        "values"        : [
+                            {"String.IsEqual({listitem}.DBType,country) | String.IsEqual({listitem}.Property(dbtype),country)": "$INFO[{listitem}.Label,resource://resource.images.moviecountryicons.maps/,.png]"},
+                            {"String.IsEqual({listitem}.DBType,studio) | String.IsEqual({listitem}.Property(dbtype),studio)": "$INFO[{listitem}.Label,resource://resource.images.studios.white/,.png]"},
+                            {"String.IsEqual({listitem}.DBType,genre) | String.IsEqual({listitem}.Property(dbtype),genre)": "$VAR[Image_GenreIcons_Path]$INFO[{listitem}.Label,,.png]"},
+                            {"True": "$INFO[{listitem}.Icon]"}
+                          ]
+    },
+    {
+        "name"          : "Image_Poster",
+        "containers"    : [51,52,53,54,55,56,530,560,3001,5610],
+        "listitems"     : {"start": -16, "end": 29},
+        "values"        : [
+                            {"!String.IsEmpty({listitem}.Art(season.poster)) + !Window.IsVisible(Home)": "$INFO[{listitem}.Art(season.poster)]"},
+                            {"!String.IsEmpty({listitem}.Art(tvshow.poster)) + [String.IsEqual({listitem}.Property(Container.Info),library_nextaired) | String.IsEqual({listitem}.Property(Container.Info),trakt_calendar)]": "$INFO[{listitem}.Art(tvshow.poster)]"},
+                            {"!String.IsEmpty({listitem}.Art(poster))": "$INFO[{listitem}.Art(poster)]"},
+                            {"!String.IsEmpty({listitem}.Art(tvshow.poster))": "$INFO[{listitem}.Art(tvshow.poster)]"},
+                            {"True": "$INFO[{listitem}.Icon]"}
+                          ]
     }
-
 ]

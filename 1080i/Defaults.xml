@@ -202,12 +202,6 @@
         <autoscroll delay="6000" time="3000" repeat="10000"/>
     </default>
 
-    <expression name="Exp_DefaultIcon">[String.IsEmpty(ListItem.Art(poster)) + String.IsEmpty(ListItem.Art(tvshow.poster)) + String.IsEmpty(ListItem.Art(fanart)) + [String.IsEqual(ListItem.Icon,ListItem.ActualIcon) | [Window.IsVisible(AddonBrowser.xml) + String.IsEmpty(ListItem.AddonName)] | [Window.IsMedia + String.IsEmpty(Container.FolderPath)]]]</expression>
-
-    <expression name="Exp_PVRItemIcon">[[!String.IsEmpty(ListItem.ChannelNumberLabel) | !String.IsEmpty(ListITem.ChannelName) | !String.IsEmpty(ListITem.ChannelNumber)] + [String.IsEmpty(ListItem.Art(poster)) + String.IsEmpty(ListItem.Art(tvshow.poster)) + String.IsEmpty(ListItem.Art(fanart))]]</expression>
-
-    <expression name="Exp_SpecialIcon">[[String.IsEqual(ListItem.DBType,country) | String.IsEqual(ListItem.Property(dbtype),country) | String.IsEqual(ListItem.DBType,studio) | String.IsEqual(ListItem.Property(dbtype),studio) | String.IsEqual(ListItem.DBType,genre) | String.IsEqual(ListItem.Property(dbtype),genre)] | $EXP[Exp_PVRItemIcon]]</expression>
-
     <expression name="Exp_AlphabetTypes">[[String.IsEqual(Container.SortMethod,$LOCALIZE[551]) | String.IsEqual(Container.SortMethod,$LOCALIZE[556]) | String.IsEqual(Container.SortMethod,$LOCALIZE[561]) | String.IsEqual(Container.SortMethod,$LOCALIZE[557]) | String.IsEqual(Container.SortMethod,$LOCALIZE[558])] + Integer.IsGreater(Container.NumPages,4)]</expression>
 
     <expression name="Exp_View50Tags">[[Container.Content(playlists) | [Container.Content() + String.IsEmpty(Container.PluginName)] | [[Container.Content(tags) | Container.Content(countries) | Container.Content(genres) | Container.Content(studios) | Container.Content(years) | Container.Content(directors)] + !String.IsEmpty(Container.PluginName)]] + !Window.IsVisible(MyPlaylist.xml) + !Window.IsVisible(MyPVRTimers.xml) + !Window.IsVisible(MyPVRRecordings.xml) + !Window.IsVisible(MyPVRSearch.xml)]</expression>

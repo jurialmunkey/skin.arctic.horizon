@@ -15,7 +15,6 @@
     <!-- <onload>Skin.SetBool(TMDbHelper.DisableExtendedProperties)</onload>
     <onload>Skin.SetBool(TMDbHelper.DisablePersonStats)</onload> -->
 
-    <onload condition="System.HasAddon(script.skinvariables)">runscript(script.skinvariables,folder=1080i)</onload>
     <controls>
         <control type="list" id="3700">
             <description>Hidden container for widget count</description>
