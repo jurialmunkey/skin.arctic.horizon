@@ -48,7 +48,7 @@
                 <param name="onleft" value="SetFocus(3992)" />
                 <param name="onright" value="SetFocus(3992)" />
                 <param name="onback" value="SetFocus(3992)" />
-                <param name="icon-visible" value="true" />
+                <param name="include-icon" value="true" />
                 <top>230</top>
                 <left>-650</left>
                 <width>450</width>
