@@ -69,7 +69,8 @@
                     <onback>56</onback>
                     <pagecontrol>60</pagecontrol>
                     <!-- <ondown>SetFocus(60)</ondown> -->
-                    <ondown>5656</ondown>
+                    <ondown condition="!Skin.HasSetting(DisableWallScroll)">5656</ondown>
+                    <ondown condition="Skin.HasSetting(DisableWallScroll)">60</ondown>
                     <content target="$VAR[Defs_560_Target]">$INFO[Container(56).ListItem.FolderPath]</content>
                     <visible>![Window.IsVisible(MyMusicNav.xml) + Container.Content(years)]</visible>
                 </include>

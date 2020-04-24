@@ -14,7 +14,8 @@
                 <pagecontrol>60</pagecontrol>
                 <onfocus>ClearProperty(TMDbHelper.WidgetContainer,Home)</onfocus>
                 <include>Viewtype_Movement</include>
-                <ondown>5151</ondown>
+                <ondown condition="!Skin.HasSetting(DisableWallScroll)">5151</ondown>
+                <ondown condition="Skin.HasSetting(DisableWallScroll)">60</ondown>
                 <visible>[Container.Content(addons) + String.IsEmpty(Container.PluginName)] | Container.Content(albums) | Container.Content(images) | [Container.Content(musicvideos) + Window.IsVisible(MyMusicNav.xml)]</visible>
                 <visible>!Window.IsVisible(MyPlaylist.xml)</visible>
             </include>

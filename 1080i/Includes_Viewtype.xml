@@ -284,6 +284,7 @@
         </definition>
     </include>
 
+    <include name="Viewtype_NoMovement"><movement>0</movement></include>
     <!-- Posters -->
     <include name="Viewtype_Poster">
         <param name="control-type" default="fixedlist" />
@@ -308,8 +309,8 @@
                 <scrolltime tween="$PARAM[tween]">$PARAM[scrolltime]</scrolltime>
                 <height>$PARAM[height]</height>
                 <viewtype label="$PARAM[viewtype-label]">$PARAM[viewtype]</viewtype>
-                <movement>0</movement>
-                <!-- <movement>$PARAM[movement]</movement> -->
+                <include condition="!Skin.HasSetting(DisableWallScroll)">Viewtype_NoMovement</include>
+                <movement>$PARAM[movement]</movement>
                 <focusposition>$PARAM[focusposition]</focusposition>
                 <itemlayout width="$PARAM[itemlayout-width]" height="$PARAM[itemlayout-height]">
                     <control type="group">

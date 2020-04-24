@@ -310,6 +310,11 @@ msgctxt "#31059"
 msgid "Context Menu"
 msgstr ""
 
+#: /1080i/SkinSettings.xml
+msgctxt "#31060"
+msgid "Replace scrollbar with wall view"
+msgstr ""
+
 #: /1080i/Includes_Weather.xml
 msgctxt "#31068"
 msgid "Cloud cover"
