@@ -2,7 +2,10 @@
 <!-- Foundation -->
 <window id="136">
     <controls>
-        <include>Dialog_Busy</include>
+        <control type="group">
+            <animation effect="slide" end="160" condition="Window.IsVisible(Home) + String.IsEmpty(Window(Home).Property(WidgetFocus))">Conditional</animation>
+            <include>Dialog_Busy</include>
+        </control>
     </controls>
 
 </window>

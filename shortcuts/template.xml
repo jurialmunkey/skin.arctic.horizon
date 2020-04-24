@@ -409,6 +409,7 @@
                     <param name="widget-type" value="widgets_settings_top" />
                     <onback>SetFocus($PYTHON[int(mainmenuid)]3101)</onback>
                     <onback>301</onback>
+                    <onfocus>SetProperty(WidgetFocus,1)</onfocus>
                     <include>Items_Settings_Main</include>
                 </include>
                 <include content="Info_Widget_Poster" condition="$SKINSHORTCUTS[isSettings]">
@@ -419,6 +420,7 @@
                     <param name="widget-type" value="widgets_settings_bottom" />
                     <onback>SetFocus($PYTHON[int(mainmenuid)]3101)</onback>
                     <onback>301</onback>
+                    <onfocus>SetProperty(WidgetFocus,1)</onfocus>
                     <include>Items_Settings_System</include>
                 </include>
                 <include content="Home_Weather_Button" condition="!$SKINSHORTCUTS[isWidget] + !$SKINSHORTCUTS[isSettings]">
@@ -426,6 +428,7 @@
                     <onback>SetFocus($PYTHON[int(mainmenuid)]3101)</onback>
                     <onback>301</onback>
                     <onfocus>SetProperty(TMDbHelper.WidgetContainer,$NUMBER[$PYTHON[30000 + int(mainmenuid) * 100 + int(id)]],Home)</onfocus>
+                    <onfocus>SetProperty(WidgetFocus,1)</onfocus>
                 </include>
                 <include content="Info_Widget_Poster" condition="$SKINSHORTCUTS[isWidget]">
                     <param name="groupid" value="$PYTHON[40000 + int(mainmenuid) * 100 + int(id)]" />
@@ -438,6 +441,7 @@
                     <onback>SetFocus($PYTHON[int(mainmenuid)]3101)</onback>
                     <onback>301</onback>
                     <onfocus>SetProperty(TMDbHelper.WidgetContainer,$NUMBER[$PYTHON[30000 + int(mainmenuid) * 100 + int(id)]],Home)</onfocus>
+                    <onfocus>SetProperty(WidgetFocus,1)</onfocus>
                     <include content="Defs_AutoScroll">
                         <param name="condition" value="[!ControlGroup($PYTHON[50000 + int(mainmenuid) * 100]).HasFocus() + System.IdleTime(1) + !Skin.HasSetting(DisableAutoScrollWidgets) + Integer.IsEqual(Container($PYTHON[50000 + int(mainmenuid) * 100]).NumItems,1)] | [$PYTHON['true' if widgetAspect in 'Banner' else 'false'] + !Control.HasFocus($PYTHON[30000 + int(mainmenuid) * 100 + int(id)]) + !Skin.HasSetting(DisableAutoScrollWidgets)]" />
                     </include>
@@ -446,8 +450,8 @@
                     <content target="$SKINSHORTCUTS[widgetTarget]" limit="$SKINSHORTCUTS[widgetLimit]" sortby="$SKINSHORTCUTS[widgetSortby]" sortorder="$SKINSHORTCUTS[widgetSortorder]">$SKINSHORTCUTS[widgetPath]</content>
                     <content>
                         <item>
-                            <label>Show More...</label>
-                            <label2>Browse more items in this list</label2>
+                            <label>$LOCALIZE[31061]...</label>
+                            <label2>$LOCALIZE[31062]</label2>
                             <icon>common/nextitem.png</icon>
                             <onclick>ActivateWindow($SKINSHORTCUTS[widgetTarget],$SKINSHORTCUTS[widgetPath],return)</onclick>
                             <visible>Skin.HasSetting(EnableShowMore)</visible>

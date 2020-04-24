@@ -303,6 +303,7 @@
                                 <param name="ondown" value="302" />
                                 <param name="visible" value="true" />
                                 <param name="onup" value="Control.Move(3001,-1)" />
+                                <onfocus>SetProperty(WidgetFocus,1)</onfocus>
                                 <onclick>SetFocus(3001)</onclick>
                                 <onclick>Action(Select)</onclick>
                                 <onfocus>SetProperty(TMDbHelper.WidgetContainer,3001,Home)</onfocus>
@@ -315,6 +316,7 @@
                                 <param name="ondown" value="302" />
                                 <param name="visible" value="true" />
                                 <param name="onup" value="Control.Move(3001,-1)" />
+                                <onfocus>SetProperty(WidgetFocus,1)</onfocus>
                                 <onclick>SetFocus(3001)</onclick>
                                 <onclick>Action(Info)</onclick>
                                 <onfocus>SetProperty(TMDbHelper.WidgetContainer,3001,Home)</onfocus>
@@ -658,34 +660,13 @@
                 <param name="background" value="false" />
                 <param name="logohastext" value="false" />
                 <param name="colordiffuse" value="$VAR[Defs_HomeMenu_Background]" />
-                <include content="Object_Control" condition="!Skin.HasSetting(EnableHomeIcon)">
+                <include content="Object_Control">
                     <param name="type" value="group" />
                     <top>120</top>
                     <include content="Home_Menu_Header">
                         <param name="width" value="160" />
                         <param name="icon" value="special://skin/extras/icons/home.png" />
                         <param name="iconvisible" value="False" />
-                    </include>
-                    <include content="Home_Menu">
-                        <param name="id" value="$PARAM[mainmenu-id]" />
-                        <param name="font" value="font_mainmenu" />
-                        <param name="top" value="view_pad" />
-                        <onfocus>ClearProperty(TMDbHelper.WidgetContainer,Home)</onfocus>
-                        <onback>3000</onback>
-                        <onfocus>ClearProperty(WidgetMovement)</onfocus>
-                        <onfocus>ClearProperty(WidgetFocus)</onfocus>
-                        <onfocus condition="String.IsEmpty(Window.Property(301Click))">SetFocus(3992)</onfocus>
-                        <onfocus>ClearProperty(301Click)</onfocus>
-                        <content><include>skinshortcuts-mainmenu</include></content>
-                    </include>
-                </include>
-                <include content="Object_Control" condition="Skin.HasSetting(EnableHomeIcon)">
-                    <param name="type" value="group" />
-                    <top>view_top</top>
-                    <include content="Home_Menu_Header">
-                        <param name="width" value="160" />
-                        <param name="icon" value="special://skin/extras/icons/home.png" />
-                        <param name="iconvisible" value="True" />
                     </include>
                     <include content="Home_Menu">
                         <param name="id" value="$PARAM[mainmenu-id]" />

@@ -315,6 +315,16 @@ msgctxt "#31060"
 msgid "Replace scrollbar with wall view"
 msgstr ""
 
+#: /shortcuts/template.xml
+msgctxt "#31061"
+msgid "Show More"
+msgstr ""
+
+#: /shortcuts/template.xml
+msgctxt "#31062"
+msgid "Browse more items in this list"
+msgstr ""
+
 #: /1080i/Includes_Weather.xml
 msgctxt "#31068"
 msgid "Cloud cover"
