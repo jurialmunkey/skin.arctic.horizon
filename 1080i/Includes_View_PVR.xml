@@ -3,30 +3,37 @@
     <include name="View_PVR_ChannelGroups">
         <control type="list" id="11">
             <nested />
-            <height>item_list_height</height>
+            <height>item_list_height_half</height>
             <orientation>horizontal</orientation>
-            <itemlayout width="210" height="item_list_height">
+            <itemlayout width="210" height="item_list_height_half">
                 <control type="label">
                     <align>left</align>
-                    <aligny>top</aligny>
+                    <aligny>center</aligny>
                     <textcolor>main_fg_30</textcolor>
                     <font>font_tiny</font>
                     <label>$INFO[ListItem.Label]</label>
                 </control>
             </itemlayout>
-            <focusedlayout width="210" height="item_list_height">
+            <focusedlayout width="210" height="item_list_height_half">
                 <control type="label">
                     <align>left</align>
-                    <aligny>top</aligny>
+                    <aligny>center</aligny>
                     <textcolor>main_fg_100</textcolor>
                     <font>font_tiny_bold</font>
                     <label>$INFO[ListItem.Label]</label>
                     <visible>Control.HasFocus(11)</visible>
                 </control>
+                <control type="image">
+                    <bottom>0</bottom>
+                    <right>80</right>
+                    <height>2</height>
+                    <texture colordiffuse="main_fg_100">common/white.png</texture>
+                    <visible>Control.HasFocus(11)</visible>
+                </control>
                 <control type="label">
                     <align>left</align>
-                    <aligny>top</aligny>
-                    <textcolor>main_fg_30</textcolor>
+                    <aligny>center</aligny>
+                    <textcolor>main_fg_70</textcolor>
                     <font>font_tiny_bold</font>
                     <label>$INFO[ListItem.Label]</label>
                     <visible>!Control.HasFocus(11)</visible>
@@ -372,7 +379,7 @@
                     <aligny>top</aligny>
                     <font>font_statusbar</font>
                     <label>$INFO[ListItem.Label]</label>
-                    <textcolor>main_fg_30</textcolor>
+                    <textcolor>main_fg_70</textcolor>
                 </control>
             </rulerlayout>
             <channellayout height="item_list_height" width="340">
@@ -579,7 +586,7 @@
     <include name="View_PVR_Channels">
         <onup>11</onup>
         <ondown>11</ondown>
-        <onleft>9400</onleft>
+        <onleft>11</onleft>
         <onright>9400</onright>
         <orientation>vertical</orientation>
     </include>

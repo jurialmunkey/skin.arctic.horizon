@@ -31,7 +31,7 @@
                             <aligny>top</aligny>
                             <font>font_statusbar</font>
                             <label>$INFO[System.Date]</label>
-                            <textcolor>main_fg_30</textcolor>
+                            <textcolor>main_fg_70</textcolor>
                         </control>
                         <control type="group">
                             <right>-4</right>
@@ -88,7 +88,7 @@
             <onleft condition="Control.IsVisible(51)">51</onleft>
             <onup condition="Control.IsVisible(51)">Control.Move(51,-1)</onup>
             <ondown condition="Control.IsVisible(51)">Control.Move(51,1)</ondown>
-            <onright>50</onright>
+            <onright>11</onright>
             <onclick condition="Control.IsVisible(51)">SetFocus(51)</onclick>
             <onclick>Action(Select)</onclick>
             <onclick>SetFocus(9400)</onclick>
