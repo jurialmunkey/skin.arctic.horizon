@@ -133,6 +133,11 @@
         <value>special://skin/extras/icons/antenna.png</value>
     </variable>
 
+    <variable name="Image_GroupRecordings">
+        <value condition="String.Contains(Control.GetLabel(5),*)">special://skin/extras/icons/antenna-on.png</value>
+        <value>special://skin/extras/icons/antenna.png</value>
+    </variable>
+
     <variable name="Image_AddonImage">
         <value condition="!String.IsEmpty(Container.PluginName) + !String.EndsWith(ListItem.Icon,icon.png)">special://home/addons/$INFO[Container.PluginName]/icon.png</value>
         <value condition="String.EndsWith(ListItem.Icon,icon.png)">$INFO[ListItem.Icon]</value>

@@ -517,21 +517,6 @@
                     <effect type="slide" start="320" end="0" time="400" tween="cubic" easing="out" />
                 </animation>
                 <bottom>120</bottom>
-                <!-- <control type="group">
-                    <animation effect="fade" end="90" condition="true">Conditional</animation>
-                    <control type="image">
-                        <include content="Defs_Pad"><param name="pad" value="-24" /></include>
-                        <bordertexture border="32">common/shadow-dialog-24.png</bordertexture>
-                        <bordersize>24</bordersize>
-                        <texture border="16" colordiffuse="Background">common/dialog.png</texture>
-                    </control>
-                    <control type="image">
-                        <aspectratio>scale</aspectratio>
-                        <texture background="true" colordiffuse="41ffffff">$INFO[Window(Home).Property(TMDbHelper.ListItem.BlurImage)]</texture>
-                        <fadetime>1000</fadetime>
-                        <visible>!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.BlurImage))</visible>
-                    </control>
-                </control> -->
                 <control type="group">
                     <left>-15</left>
                     <top>-15</top>
@@ -540,7 +525,7 @@
                     <include content="Object_PosterBack">
                         <param name="pad" value="-5" />
                     </include>
-                    <include content="Object_Artwork" condition="![Window.IsVisible(1110) | Window.Isvisible(1150)]">
+                    <include content="Object_Artwork">
                         <param name="icon" value="$VAR[Image_Poster_C$PARAM[id]]" />
                         <param name="Exp_DefaultIcon" value="$EXP[Exp_DefaultIcon_C$PARAM[id]]" />
                         <param name="Exp_SpecialIcon" value="$EXP[Exp_SpecialIcon_C$PARAM[id]]" />
@@ -576,11 +561,6 @@
                     </control>
 
                 </control>
-                <!-- <include content="View_Selectbox">
-                    <param name="pad" value="-28" />
-                    <param name="overlay" value="false" />
-                </include> -->
-
             </control>
         </definition>
     </include>
@@ -619,7 +599,7 @@
                     <texture border="10" colordiffuse="$VAR[ColorGradient]">common/box-gradient-vertical.png</texture>
                 </control>
             </include>
-            <include content="Object_Poster">
+            <include content="Object_Artwork">
                 <param name="diffuse" value="$PARAM[diffuse]" />
                 <param name="icon" value="$VAR[Image_Poster_C$PARAM[id]_$PARAM[pos]]" />
                 <param name="Exp_DefaultIcon" value="$EXP[Exp_DefaultIcon_C$PARAM[id]_$PARAM[pos]]" />

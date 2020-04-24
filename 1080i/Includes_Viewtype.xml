@@ -469,6 +469,7 @@
                 <param name="diffuse" value="diffuse/landscape-std.png" />
                 <param name="height" value="$PARAM[height]" />
                 <param name="textpanel" value="true" />
+                <param name="viewtype-label" value="$LOCALIZE[31234]" />
                 <nested />
             </include>
             <include content="Viewtype_Poster" condition="Skin.HasSetting(DisableTextPanel)">
@@ -483,6 +484,7 @@
                 <param name="diffuse" value="diffuse/landscape-std-np.png" />
                 <param name="height" value="$PARAM[height]" />
                 <param name="textpanel" value="false" />
+                <param name="viewtype-label" value="$LOCALIZE[31234]" />
                 <nested />
             </include>
         </definition>

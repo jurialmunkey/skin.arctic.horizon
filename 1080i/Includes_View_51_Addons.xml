@@ -503,13 +503,14 @@
                         <texture border="10" colordiffuse="$VAR[ColorGradient]">common/box-gradient-vertical.png</texture>
                     </control>
                 </include>
-                <include content="Object_Poster">
-                    <param name="id" value="$PARAM[id]" />
-                    <param name="altid" value="$PARAM[wall-id]" />
-                    <param name="selectbox" value="$PARAM[selectbox]" />
+                <include content="Object_Artwork">
                     <param name="diffuse" value="$PARAM[diffuse]" />
-                    <param name="icon" value="$PARAM[icon]" />
                     <param name="aspectratio" value="$PARAM[aspectratio]" />
+                    <param name="icon" value="$PARAM[icon]" />
+                    <!-- <param name="icon" value="$VAR[Image_Poster_C$PARAM[id]_$PARAM[pos]]" /> -->
+                    <param name="Exp_DefaultIcon" value="$EXP[Exp_DefaultIcon_C$PARAM[id]_$PARAM[pos]]" />
+                    <param name="Exp_SpecialIcon" value="$EXP[Exp_SpecialIcon_C$PARAM[id]_$PARAM[pos]]" />
+                    <param name="Image_DefaultIcon" value="$VAR[Image_DefaultIcon_C$PARAM[id]_$PARAM[pos]]" />
                 </include>
                 <include condition="$PARAM[selectbox] + !$PARAM[textpanel]" content="View_Selectbox">
                     <param name="focusbounce" value="true" />

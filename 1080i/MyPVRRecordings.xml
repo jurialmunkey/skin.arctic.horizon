@@ -13,5 +13,9 @@
             <description>Groups</description>
             <include>Defs_Hidden_Button</include>
         </control>
+        <control type="radiobutton" id="5">
+            <description>GroupRecordings</description>
+            <include>Defs_Hidden_Button</include>
+        </control>
     </controls>
 </window>

@@ -701,12 +701,21 @@
                 <visible>System.HasAddon(script.artwork.helper)</visible>
             </item>
 
+            <item>
+                <label>$LOCALIZE[19270]</label>
+                <icon>$VAR[Image_GroupRecordings]</icon>
+                <onclick>SendClick(5)</onclick>
+                <visible>Control.IsEnabled(5)</visible>
+                <visible>Window.IsVisible(MyPVRRecordings.xml)</visible>
+            </item>
+
             <!-- Settings -->
             <item>
                 <label>Kodi $LOCALIZE[5]</label>
                 <icon>special://skin/extras/icons/settings.png</icon>
                 <onclick>SendClick(5)</onclick>
                 <visible>Control.IsEnabled(5)</visible>
+                <visible>!Window.IsVisible(MyPVRRecordings.xml)</visible>
                 <visible>!Skin.HasSetting(KioskMode)</visible>
             </item>
             <!-- Update -->
