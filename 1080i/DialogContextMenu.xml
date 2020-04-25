@@ -15,7 +15,7 @@
             <include>Animation_FadeIn_SlideUp</include>
             <include>Animation_FadeOut</include>
             <width>506</width>
-            <height>884</height>
+            <height>894</height>
             <animation effect="slide" end="0,item_list_height_half" condition="true">Conditional</animation>
             <animation effect="slide" end="0,item_list_height_half" condition="Integer.IsLess(Container(996).NumItems,10)">Conditional</animation>
             <animation effect="slide" end="0,item_list_height_half" condition="Integer.IsLess(Container(996).NumItems,9)">Conditional</animation>
@@ -31,13 +31,13 @@
                 <description>background image</description>
                 <bottom>0</bottom>
                 <width>506</width>
-                <height>954</height>
+                <height>964</height>
                 <bordertexture border="32">common/shadow-dialog-24.png</bordertexture>
                 <bordersize>24</bordersize>
                 <texture border="16" colordiffuse="dialog_bg_100">common/dialog.png</texture>
             </control>
             <control type="image">
-                <top>42</top>
+                <top>52</top>
                 <left>24</left>
                 <width>458</width>
                 <height>item_list_height</height>
@@ -53,7 +53,7 @@
                 <animation effect="slide" end="0,item_list_height" condition="Integer.IsGreater(Container(996).Position,8)">Conditional</animation>
             </control>
             <control type="label">
-                <top>-45</top>
+                <top>-35</top>
                 <width>458</width>
                 <height>item_list_height</height>
                 <left>24</left>
@@ -64,7 +64,7 @@
                 <textoffsetx>30</textoffsetx>
             </control>
             <control type="image">
-                <top>-37</top>
+                <top>-27</top>
                 <width>458</width>
                 <height>64</height>
                 <left>16</left>

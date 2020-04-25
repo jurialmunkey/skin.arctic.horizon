@@ -49,7 +49,7 @@
                 <param name="onright" value="SetFocus(3992)" />
                 <param name="onback" value="SetFocus(3992)" />
                 <param name="include-icon" value="true" />
-                <top>230</top>
+                <top>220</top>
                 <left>-650</left>
                 <width>450</width>
                 <animation effect="slide" start="0" end="850" condition="Control.HasFocus(303)">Conditional</animation>

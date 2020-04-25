@@ -12,7 +12,7 @@
                 <nested />
                 <centerleft>50%</centerleft>
                 <centertop>50%</centertop>
-                <height>660</height>
+                <height>670</height>
                 <width>450</width>
                 <include>Animation_FadeIn_SlideUp</include>
                 <visible>$PARAM[visible]</visible>
@@ -74,7 +74,7 @@
                     </control>
                 </control>
                 <control type="panel" id="$PARAM[id]">
-                    <top>90</top>
+                    <top>100</top>
                     <orientation>vertical</orientation>
                     <onleft>$PARAM[onleft]</onleft>
                     <onright>$PARAM[onright]</onright>
