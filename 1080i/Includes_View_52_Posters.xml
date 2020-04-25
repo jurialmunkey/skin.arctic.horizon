@@ -14,8 +14,9 @@
                 <right>-80</right>
                 <onfocus>ClearProperty(TMDbHelper.WidgetContainer,Home)</onfocus>
                 <include>Viewtype_Movement</include>
-                <ondown condition="!Skin.HasSetting(DisableWallScroll) + Integer.IsGreater(Container(52).NumItems,21)">5252</ondown>
-                <ondown condition="Skin.HasSetting(DisableWallScroll) | !Integer.IsGreater(Container(52).NumItems,21)">60</ondown>
+                <!-- <ondown condition="!Skin.HasSetting(DisableWallScroll) + Integer.IsGreater(Container(52).NumItems,21)">5252</ondown>
+                <ondown condition="Skin.HasSetting(DisableWallScroll) | !Integer.IsGreater(Container(52).NumItems,21)">60</ondown> -->
+                <ondown condition="!Skin.HasSetting(DisableWallScroll)">5252</ondown>
                 <visible>Container.Content(actors) | Container.Content(tvshows) | Container.Content(movies) | [Container.Content(seasons) + Skin.HasSetting(LibrarySeasonPosters)]</visible>
                 <visible>!Window.IsVisible(MyPlaylist.xml)</visible>
                 <visible>!String.IsEqual(Container.Property(Param.Info),details)</visible>
