@@ -479,6 +479,15 @@
                         <onclick>Skin.ToggleSetting(DisableWallScroll)</onclick>
                     </control>
 
+                    <control type="radiobutton" id="19439">
+                        <visible>Integer.IsEqual(Window.Property(CurrentFocus),9004)</visible>
+                        <label>$LOCALIZE[31063]</label>
+                        <include>Defs_Settings_Button</include>
+                        <selected>Skin.HasSetting(WallShowInfo)</selected>
+                        <onclick>Skin.ToggleSetting(WallShowInfo)</onclick>
+                        <enable>!Skin.HasSetting(DisableWallScroll)</enable>
+                    </control>
+
 
 
 

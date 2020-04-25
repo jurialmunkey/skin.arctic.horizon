@@ -301,8 +301,11 @@
                             <width>670</width>
                             <texture background="true">$VAR[Image_ClearArt]</texture>
                             <aspectratio align="right" aligny="bottom" scalediffuse="false">keep</aspectratio>
-                            <include>Animation_FadeInOut</include>
-                            <visible>![Control.HasFocus(301) | Control.HasFocus(302) | [Control.HasFocus(3992) + String.IsEmpty(Window.Property(WidgetFocus))]]</visible>
+                            <animation effect="fade" start="0" end="100" delay="400" time="400" tween="cubic" easing="inout" reversible="false" condition="Control.HasFocus($PYTHON[30001 + int(mainmenuid) * 100])">Conditional</animation>
+
+                            <animation effect="fade" start="100" end="0" delay="0" time="400" tween="cubic" easing="inout" reversible="false" condition="[Control.HasFocus(301) | Control.HasFocus(302) | [Control.HasFocus(3992) + String.IsEmpty(Window.Property(WidgetFocus))]]">Conditional</animation>
+
+                            <animation effect="fade" start="100" end="0" condition="![Control.HasFocus(301) | Control.HasFocus(302) | [Control.HasFocus(3992) + String.IsEmpty(Window.Property(WidgetFocus))]] + !Control.HasFocus($PYTHON[30001 + int(mainmenuid) * 100])">Conditional</animation>
                         </include>
                     </include>
                     <skinshortcuts insert="widgets">items</skinshortcuts>

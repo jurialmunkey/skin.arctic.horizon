@@ -386,10 +386,10 @@
                         <texture background="true">$VAR[Image_ClearArt]</texture>
                         <aspectratio align="right" aligny="bottom" scalediffuse="false">keep</aspectratio>
                         <bordersize>15</bordersize>
-                        <animation type="Hidden">
+                        <animation type="Hidden" reversible="false">
                             <effect type="fade" start="100" end="0" delay="0" time="300" tween="cubic" easing="inout" />
                         </animation>
-                        <animation type="Visible">
+                        <animation type="Visible" reversible="false">
                             <effect type="fade" start="0" end="100" delay="200" time="400" tween="cubic" easing="inout" />
                         </animation>
                         <visible>[Control.HAsFocus(5610) | Control.HasFocus(60)]</visible>

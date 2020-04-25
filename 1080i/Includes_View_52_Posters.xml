@@ -14,8 +14,8 @@
                 <right>-80</right>
                 <onfocus>ClearProperty(TMDbHelper.WidgetContainer,Home)</onfocus>
                 <include>Viewtype_Movement</include>
-                <ondown condition="!Skin.HasSetting(DisableWallScroll)">5252</ondown>
-                <ondown condition="Skin.HasSetting(DisableWallScroll)">60</ondown>
+                <ondown condition="!Skin.HasSetting(DisableWallScroll) + Integer.IsGreater(Container(52).NumItems,21)">5252</ondown>
+                <ondown condition="Skin.HasSetting(DisableWallScroll) | !Integer.IsGreater(Container(52).NumItems,21)">60</ondown>
                 <visible>Container.Content(actors) | Container.Content(tvshows) | Container.Content(movies) | [Container.Content(seasons) + Skin.HasSetting(LibrarySeasonPosters)]</visible>
                 <visible>!Window.IsVisible(MyPlaylist.xml)</visible>
                 <visible>!String.IsEqual(Container.Property(Param.Info),details)</visible>
@@ -481,12 +481,12 @@
     </include>
 
     <include name="View_52_Posters_WallInfo">
-        <include content="View_52_Posters_WallInfo_Item">
+        <include content="View_52_Posters_WallInfo_Item" condition="Skin.HasSetting(WallShowInfo)">
             <param name="id" value="$PARAM[id]" />
             <param name="wall-id" value="$PARAM[wall-id]" />
             <param name="visible" value="[String.IsEqual(Container($PARAM[id]).ListItem.DBType,movie) | String.IsEqual(Container($PARAM[id]).ListItem.DBType,tvshow) | String.IsEqual(Container($PARAM[id]).ListItem.DBType,episode) | String.IsEqual(Container($PARAM[id]).ListItem.DBType,season) | String.IsEqual(Container($PARAM[id]).ListItem.DBType,set) | Container($PARAM[id]).ListItem.IsCollection]" />
         </include>
-        <include content="View_52_Posters_WallInfo_Item">
+        <include content="View_52_Posters_WallInfo_Item" condition="Skin.HasSetting(WallShowInfo)">
             <param name="id" value="$PARAM[id]" />
             <param name="wall-id" value="$PARAM[wall-id]" />
             <param name="artwork-width" value="680" />
@@ -497,7 +497,7 @@
     <include name="View_52_Posters_WallInfo_Item">
         <param name="artwork-width" default="492" />
         <definition>
-            <control type="image">
+            <control type="group">
                 <bottom>-80</bottom>
                 <left>-80</left>
                 <right>-80</right>
@@ -506,7 +506,9 @@
                 <visible>Control.Hasfocus($PARAM[wall-id])</visible>
                 <visible>System.IdleTime(5)</visible>
                 <include>Animation_FadeInOut</include>
-                <texture colordiffuse="da000000">common/white.png</texture>
+                <control type="image">
+                    <texture colordiffuse="cd000000">common/white.png</texture>
+                </control>
             </control>
             <control type="group">
                 <visible>$PARAM[visible]</visible>
