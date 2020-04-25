@@ -86,6 +86,7 @@
     <property property="widgetAspect">Banner</property>
     <property property="widgetAspect">Icon</property>
     <propertySettings property="widgetAspect" buttonID="9901" title="Widget Aspect Ratio" />
+    <propertySettings property="widgetAspect" buttonID="9911" title="Widget Aspect Ratio" />
 
     <!-- Widget Target -->
     <property property="widgetTarget">videos</property>
@@ -125,11 +126,13 @@
     <property property="widgetSortby">date</property>
 
     <propertySettings property="widgetSortby" buttonID="9903" title="Widget Sort Method" />
+    <propertySettings property="widgetSortby" buttonID="9913" title="Widget Sort Method" />
 
     <!-- Widget Direction -->
     <property property="widgetSortorder">ascending</property>
     <property property="widgetSortorder">descending</property>
     <propertySettings property="widgetSortorder" buttonID="9904" title="Widget Sort Direction" />
+    <propertySettings property="widgetSortorder" buttonID="9914" title="Widget Sort Direction" />
 
     <!-- Widget Limit -->
     <property property="widgetLimit" label="10 ">$NUMBER[10]</property>
