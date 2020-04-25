@@ -23,13 +23,6 @@
                     <label>$INFO[ListItem.Label]</label>
                     <visible>Control.HasFocus(11)</visible>
                 </control>
-                <control type="image">
-                    <bottom>0</bottom>
-                    <right>80</right>
-                    <height>2</height>
-                    <texture colordiffuse="main_fg_100">common/white.png</texture>
-                    <visible>Control.HasFocus(11)</visible>
-                </control>
                 <control type="label">
                     <align>left</align>
                     <aligny>center</aligny>
@@ -586,6 +579,7 @@
     <include name="View_PVR_Channels">
         <onup>11</onup>
         <ondown>11</ondown>
+        <onleft>SetProperty(Refocus,Left)</onleft>
         <onleft>11</onleft>
         <onright>9400</onright>
         <orientation>vertical</orientation>

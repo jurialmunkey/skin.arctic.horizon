@@ -21,7 +21,10 @@
                         <include condition="Skin.HasSetting(PVRChannels.Info)">View_PVR_Guide_Top</include>
                         <include content="View_PVR_ChannelGroups">
                             <onup>SetFocus(50,9999,absolute)</onup>
-                            <ondown>SetFocus(50,0,absolute)</ondown>
+                            <ondown condition="String.IsEmpty(Window.Property(Refocus))">SetFocus(50,0,absolute)</ondown>
+                            <ondown condition="!String.IsEmpty(Window.Property(Refocus))">ClearProperty(Refocus)</ondown>
+                            <ondown condition="String.IsEqual(Window.Property(Refocus),Left)">SetFocus(50)</ondown>
+                            <ondown condition="String.IsEqual(Window.Property(Refocus),Right)">SetFocus(9400)</ondown>
                         </include>
                         <control type="label">
                             <top>item_list_height_half</top>
@@ -51,6 +54,7 @@
                                 <focusposition>2</focusposition>
                                 <movement>2</movement>
                                 <bottom>0</bottom>
+                                <onfocus>ClearProperty(Refocus)</onfocus>
                             </include>
                             <include content="View_50_List_Control" condition="!Skin.HasSetting(PVRChannels.Info)">
                                 <param name="top" value="0" />
@@ -67,6 +71,7 @@
                                 <focusposition>4</focusposition>
                                 <movement>4</movement>
                                 <bottom>0</bottom>
+                                <onfocus>ClearProperty(Refocus)</onfocus>
                             </include>
                         </control>
                     </control>
@@ -81,6 +86,7 @@
         <include>Object_PlotOverlay</include>
 
         <control type="button" id="9400">
+            <onfocus>ClearProperty(Refocus)</onfocus>
             <onleft condition="Control.IsVisible(50)">50</onleft>
             <onup condition="Control.IsVisible(50)">Control.Move(50,-1)</onup>
             <ondown condition="Control.IsVisible(50)">Control.Move(50,1)</ondown>
@@ -88,6 +94,7 @@
             <onleft condition="Control.IsVisible(51)">51</onleft>
             <onup condition="Control.IsVisible(51)">Control.Move(51,-1)</onup>
             <ondown condition="Control.IsVisible(51)">Control.Move(51,1)</ondown>
+            <onright>SetProperty(Refocus,Right)</onright>
             <onright>11</onright>
             <onclick condition="Control.IsVisible(51)">SetFocus(51)</onclick>
             <onclick>Action(Select)</onclick>
