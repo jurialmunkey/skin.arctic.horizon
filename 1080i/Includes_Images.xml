@@ -214,6 +214,9 @@
 
     <variable name="Image_Overlay">
         <value condition="[String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,season)] + !Integer.IsEqual(ListItem.Property(UnWatchedEpisodes),0)">common/null.png</value>
+
+        <value condition="ListItem.IsRecording">indicator/record.png</value>
+        <value condition="ListItem.HasTimer">indicator/timer.png</value>
         <value condition="ListItem.IsResumable">$VAR[Image_Overlay_IsResumable]</value>
 
         <value condition="String.IsEqual(ListItem.Overlay,OverlayWatched.png)">indicator/checkmark.png</value>
@@ -230,6 +233,8 @@
     </variable>
     <variable name="Image_Overlay_Focus">
         <value condition="[String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,season)] + !Integer.IsEqual(ListItem.Property(UnWatchedEpisodes),0)">common/null.png</value>
+        <value condition="ListItem.IsRecording">indicator/record.png</value>
+        <value condition="ListItem.HasTimer">indicator/timer.png</value>
         <value condition="ListItem.IsResumable">$VAR[Image_Overlay_IsResumable]</value>
 
         <value condition="String.IsEqual(ListItem.Overlay,OverlayWatched.png)">indicator/checkmark-fo.png</value>
@@ -247,6 +252,8 @@
 
     <variable name="Image_Overlay_Corner">
         <value condition="[String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,season)] + !Integer.IsEqual(ListItem.Property(UnWatchedEpisodes),0)">indicator/corner.png</value>
+        <value condition="ListItem.IsRecording">indicator/corner.png</value>
+        <value condition="ListItem.HasTimer">indicator/corner.png</value>
         <value condition="ListItem.IsResumable">indicator/corner.png</value>
 
         <value condition="String.IsEqual(ListItem.Overlay,OverlayWatched.png)">indicator/corner.png</value>
