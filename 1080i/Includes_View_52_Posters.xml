@@ -17,6 +17,7 @@
                 <!-- <ondown condition="!Skin.HasSetting(DisableWallScroll) + Integer.IsGreater(Container(52).NumItems,21)">5252</ondown>
                 <ondown condition="Skin.HasSetting(DisableWallScroll) | !Integer.IsGreater(Container(52).NumItems,21)">60</ondown> -->
                 <ondown condition="!Skin.HasSetting(DisableWallScroll)">5252</ondown>
+                <ondown condition="Skin.HasSetting(DisableWallScroll)">60</ondown>
                 <visible>Container.Content(actors) | Container.Content(tvshows) | Container.Content(movies) | [Container.Content(seasons) + Skin.HasSetting(LibrarySeasonPosters)]</visible>
                 <visible>!Window.IsVisible(MyPlaylist.xml)</visible>
                 <visible>!String.IsEqual(Container.Property(Param.Info),details)</visible>
