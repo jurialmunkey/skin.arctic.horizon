@@ -143,6 +143,13 @@
         <value condition="String.EndsWith(ListItem.Icon,icon.png)">$INFO[ListItem.Icon]</value>
     </variable>
 
+    <variable name="Image_Keywords">
+        <value condition="!String.IsEmpty(ListItem.Art(clearlogo))">$INFO[ListItem.Art(clearlogo)]</value>
+        <value condition="!String.IsEmpty(ListItem.Art(tvshow.clearlogo))">$INFO[ListItem.Art(tvshow.clearlogo)]</value>
+        <value condition="!String.IsEmpty(ListItem.Art(artist.clearlogo))">$INFO[ListItem.Art(artist.clearlogo)]</value>
+        <value>$INFO[ListITem.Icon]</value>
+    </variable>
+
     <variable name="Image_ClearLogo">
         <value condition="!String.IsEmpty(ListItem.Art(clearlogo))">$INFO[ListItem.Art(clearlogo)]</value>
         <value condition="!String.IsEmpty(ListItem.Art(tvshow.clearlogo))">$INFO[ListItem.Art(tvshow.clearlogo)]</value>

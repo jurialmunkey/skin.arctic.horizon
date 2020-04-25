@@ -517,7 +517,7 @@
                         <param name="altid" value="$PARAM[altid]" />
                         <param name="selectbox" value="$PARAM[selectbox]" />
                         <param name="diffuse" value="diffuse/landscape-std.png" />
-                        <param name="icon" value="$VAR[Image_ClearLogo]" />
+                        <param name="icon" value="$VAR[Image_Keywords]" />
                         <param name="aspectratio" value="keep" />
                         <param name="bordersize" value="$PARAM[bordersize]" />
                     </include>
