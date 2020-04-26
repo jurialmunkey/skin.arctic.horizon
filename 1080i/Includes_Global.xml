@@ -135,10 +135,14 @@
         </control>
     </include>
 
-    <variable name="Global_Background_Image_NoFanart">
-        <value condition="Window.IsVisible(Home) + !String.IsEmpty(Container(301).ListItem.Property(Background))">$INFO[Container(301).ListItem.Property(Background)]</value>
+    <variable name="Global_Background_Image_NoFanart_Fallback">
         <value condition="!String.IsEmpty(Skin.String(fanart.fallback))">$INFO[Skin.String(fanart.fallback)]</value>
         <value>special://skin/extras/backgrounds/mountains3.jpg</value>
+    </variable>
+
+    <variable name="Global_Background_Image_NoFanart">
+        <value condition="Window.IsVisible(Home) + !String.IsEmpty(Container(301).ListItem.Property(Background))">$INFO[Container(301).ListItem.Property(Background)]</value>
+        <value>$VAR[Global_Background_Image_NoFanart_Fallback]</value>
     </variable>
 
     <variable name="Global_Background_Image">

@@ -126,7 +126,8 @@
                             <oninfo>ClearProperty(WidgetFocus)</oninfo>
                             <oninfo>SetFocus(303,0,absolute)</oninfo>
                             <onclick>ClearProperty(WidgetMovement)</onclick>
-                            <onfocus>SetProperty(TMDbHelper.Blur.SourceImage,None,Home)</onfocus>
+                            <!-- <onfocus>SetProperty(TMDbHelper.Blur.SourceImage,fallback,Home)</onfocus> -->
+                            <onfocus>RunScript(plugin.video.themoviedb.helper,blur_image=$VAR[Global_Background_Image_NoFanart_Fallback])</onfocus>
                             <onclick condition="!String.IsEmpty(Window.Property(WidgetFocus))">SetFocus(3000)</onclick>
                             <onclick condition="String.IsEmpty(Window.Property(WidgetFocus))">SetProperty(301Click,1)</onclick>
                             <onclick condition="String.IsEmpty(Window.Property(WidgetFocus))">SetFocus(301)</onclick>
@@ -673,7 +674,8 @@
                         <param name="id" value="$PARAM[mainmenu-id]" />
                         <param name="font" value="font_mainmenu" />
                         <param name="top" value="view_pad" />
-                        <onfocus>SetProperty(TMDbHelper.Blur.SourceImage,None,Home)</onfocus>
+                        <!-- <onfocus>SetProperty(TMDbHelper.Blur.SourceImage,fallback,Home)</onfocus> -->
+                        <onfocus>RunScript(plugin.video.themoviedb.helper,blur_image=$VAR[Global_Background_Image_NoFanart_Fallback])</onfocus>
                         <onfocus>ClearProperty(TMDbHelper.WidgetContainer,Home)</onfocus>
                         <onback>3000</onback>
                         <onfocus>ClearProperty(WidgetMovement)</onfocus>
