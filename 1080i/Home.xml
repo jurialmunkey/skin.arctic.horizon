@@ -2,7 +2,6 @@
 <!-- Foundation -->
 <window id="0">
     <defaultcontrol always="false">3992</defaultcontrol>
-    <onload condition="Window.Previous(VideoFullScreen.xml) | Window.Previous(MusicVisualisation.xml)">SetFocus(301)</onload>
     <onload condition="Control.HasFocus(301) | Control.HasFocus(303)">SetFocus(3992)</onload>
     <onload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=301&amp;levels=1&amp;group=mainmenu|powermenu|searchmenu)</onload>
     <onload condition="String.IsEmpty(Window(Home).Property(SkinSplashStarted))">ActivateWindow(1117)</onload>
