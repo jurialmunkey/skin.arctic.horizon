@@ -12,6 +12,8 @@
                 <right>-80</right>
                 <bottom>-20</bottom>
                 <include>Viewtype_Movement</include>
+                <onfocus condition="![Container.Content(episodes) | Container.Content(videos)]">SetProperty(TMDbHelper.Blur.SourceImage,landscape,Home)</onfocus>
+                <onfocus condition="[Container.Content(episodes) | Container.Content(videos)]">SetProperty(TMDbHelper.Blur.SourceImage,thumb,Home)</onfocus>
                 <ondown condition="!Skin.HasSetting(DisableWallScroll)">5454</ondown>
                 <ondown condition="Skin.HasSetting(DisableWallScroll)">60</ondown>
                 <pagecontrol>60</pagecontrol>

@@ -337,6 +337,14 @@
             <property name="widgetMovement" tag="property" attribute="name|widgetAspect" value="Landscape">Defs_Movement_Landscape</property>
             <property name="widgetMovement" tag="property" attribute="name|widgetAspect" value="Small Landscape">Defs_Movement_Landscape</property>
             <property name="widgetMovement">Defs_Movement_Poster</property>
+
+            <property name="widgetSourceArt" tag="property" attribute="name|widgetAspect" value="Banner">Art(tvshow.banner)|Art(banner)|Art(fanart)</property>
+            <property name="widgetSourceArt" tag="property" attribute="name|widgetAspect" value="Square">thumb</property>
+            <property name="widgetSourceArt" tag="property" attribute="name|widgetAspect" value="Small Square">thumb</property>
+            <property name="widgetSourceArt" tag="property" attribute="name|widgetAspect" value="Landscape">landscape</property>
+            <property name="widgetSourceArt" tag="property" attribute="name|widgetAspect" value="Small Landscape">landscape</property>
+            <property name="widgetSourceArt">poster</property>
+
             <property name="widgetAspect" tag="property" attribute="name|widgetAspect" />
             <property name="widgetAspect">Poster</property>
             <property name="widgetTarget" tag="property" attribute="name|widgetTarget" />
@@ -410,6 +418,7 @@
                     <param name="label" value="$SKINSHORTCUTS[widgetName]" />
                     <param name="viewtype-include" value="Viewtype_Settings" />
                     <param name="widget-type" value="widgets_settings_top" />
+                    <onfocus>SetProperty(TMDbHelper.Blur.SourceImage,$SKINSHORTCUTS[widgetSourceArt],Home)</onfocus>
                     <onback>SetFocus($PYTHON[int(mainmenuid)]3101)</onback>
                     <onback>301</onback>
                     <onfocus>SetProperty(WidgetFocus,1)</onfocus>
@@ -421,6 +430,7 @@
                     <param name="label" value="Management" />
                     <param name="viewtype-include" value="Viewtype_Settings" />
                     <param name="widget-type" value="widgets_settings_bottom" />
+                    <onfocus>SetProperty(TMDbHelper.Blur.SourceImage,$SKINSHORTCUTS[widgetSourceArt],Home)</onfocus>
                     <onback>SetFocus($PYTHON[int(mainmenuid)]3101)</onback>
                     <onback>301</onback>
                     <onfocus>SetProperty(WidgetFocus,1)</onfocus>
@@ -431,6 +441,7 @@
                     <onback>SetFocus($PYTHON[int(mainmenuid)]3101)</onback>
                     <onback>301</onback>
                     <onfocus>SetProperty(TMDbHelper.WidgetContainer,$NUMBER[$PYTHON[30000 + int(mainmenuid) * 100 + int(id)]],Home)</onfocus>
+                    <onfocus>SetProperty(TMDbHelper.Blur.SourceImage,$SKINSHORTCUTS[widgetSourceArt],Home)</onfocus>
                     <onfocus>SetProperty(WidgetFocus,1)</onfocus>
                 </include>
                 <include content="Info_Widget_Poster" condition="$SKINSHORTCUTS[isWidget]">
@@ -444,6 +455,7 @@
                     <onback>SetFocus($PYTHON[int(mainmenuid)]3101)</onback>
                     <onback>301</onback>
                     <onfocus>SetProperty(TMDbHelper.WidgetContainer,$NUMBER[$PYTHON[30000 + int(mainmenuid) * 100 + int(id)]],Home)</onfocus>
+                    <onfocus>SetProperty(TMDbHelper.Blur.SourceImage,$SKINSHORTCUTS[widgetSourceArt],Home)</onfocus>
                     <onfocus>SetProperty(WidgetFocus,1)</onfocus>
                     <include content="Defs_AutoScroll">
                         <param name="condition" value="[!ControlGroup($PYTHON[50000 + int(mainmenuid) * 100]).HasFocus() + System.IdleTime(1) + !Skin.HasSetting(DisableAutoScrollWidgets) + Integer.IsEqual(Container($PYTHON[50000 + int(mainmenuid) * 100]).NumItems,1)] | [$PYTHON['true' if widgetAspect in 'Banner' else 'false'] + !Control.HasFocus($PYTHON[30000 + int(mainmenuid) * 100 + int(id)]) + !Skin.HasSetting(DisableAutoScrollWidgets)]" />
@@ -517,6 +529,12 @@
         <property name="widgetWallID">565610</property>
         <property name="widgetSortby" tag="property" attribute="name|widgetSortby" />
         <property name="widgetSortorder" tag="property" attribute="name|widgetSortorder" />
+        <property name="widgetSourceArt" tag="property" attribute="name|widgetAspect" value="Banner">Art(tvshow.banner)|Art(banner)|Art(fanart)</property>
+        <property name="widgetSourceArt" tag="property" attribute="name|widgetAspect" value="Square">thumb</property>
+        <property name="widgetSourceArt" tag="property" attribute="name|widgetAspect" value="Small Square">thumb</property>
+        <property name="widgetSourceArt" tag="property" attribute="name|widgetAspect" value="Landscape">landscape</property>
+        <property name="widgetSourceArt" tag="property" attribute="name|widgetAspect" value="Small Landscape">landscape</property>
+        <property name="widgetSourceArt">poster</property>
         <controls>
             <include content="$SKINSHORTCUTS[widgetInclude]">
                 <param name="id" value="5610" />
@@ -533,6 +551,7 @@
                 <ondown condition="Window.IsVisible(Home)">Control.Move(301,1)</ondown>
                 <onback condition="!Window.IsVisible(Home)">302</onback>
                 <onback condition="Window.IsVisible(Home)">3101</onback>
+                <onfocus>SetProperty(TMDbHelper.Blur.SourceImage,$SKINSHORTCUTS[widgetSourceArt],Home)</onfocus>
                 <pagecontrol>60</pagecontrol>
                 <content target="$SKINSHORTCUTS[widgetTarget]" sortby="$SKINSHORTCUTS[widgetSortby]" sortorder="$SKINSHORTCUTS[widgetSortorder]">$SKINSHORTCUTS[widgetPath]</content>
                 <skinshortcuts>visibility</skinshortcuts>
@@ -557,6 +576,12 @@
         <property name="widgetWallID">565610</property>
         <property name="widgetSortby" tag="property" attribute="name|widgetSortby" />
         <property name="widgetSortorder" tag="property" attribute="name|widgetSortorder" />
+        <property name="widgetSourceArt" tag="property" attribute="name|widgetAspect" value="Banner">Art(tvshow.banner)|Art(banner)|Art(fanart)</property>
+        <property name="widgetSourceArt" tag="property" attribute="name|widgetAspect" value="Square">thumb</property>
+        <property name="widgetSourceArt" tag="property" attribute="name|widgetAspect" value="Small Square">thumb</property>
+        <property name="widgetSourceArt" tag="property" attribute="name|widgetAspect" value="Landscape">landscape</property>
+        <property name="widgetSourceArt" tag="property" attribute="name|widgetAspect" value="Small Landscape">landscape</property>
+        <property name="widgetSourceArt">poster</property>
         <controls>
             <include content="$SKINSHORTCUTS[widgetInclude]">
                 <param name="id" value="5610" />
@@ -573,6 +598,7 @@
                 <ondown condition="Window.IsVisible(Home)">Control.Move(301,1)</ondown>
                 <onback condition="!Window.IsVisible(Home)">302</onback>
                 <onback condition="Window.IsVisible(Home)">3101</onback>
+                <onfocus>SetProperty(TMDbHelper.Blur.SourceImage,$SKINSHORTCUTS[widgetSourceArt],Home)</onfocus>
                 <pagecontrol>60</pagecontrol>
                 <content target="$SKINSHORTCUTS[widgetTarget]" sortby="$SKINSHORTCUTS[widgetSortby]" sortorder="$SKINSHORTCUTS[widgetSortorder]">$SKINSHORTCUTS[widgetPath]</content>
                 <visible>String.IsEqual(Container(301).ListItem.Property(submenuVisibility),num-$SKINSHORTCUTS[submenuVisibility]) | String.IsEqual(Container(301).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility])</visible>
@@ -761,6 +787,13 @@
             <property name="widgetMovement" tag="property" attribute="name|widgetAspect" value="Small Landscape">3</property>
             <property name="widgetMovement">6</property>
 
+            <property name="widgetSourceArt" tag="property" attribute="name|widgetAspect" value="Banner">Art(tvshow.banner)|Art(banner)|Art(fanart)</property>
+            <property name="widgetSourceArt" tag="property" attribute="name|widgetAspect" value="Square">thumb</property>
+            <property name="widgetSourceArt" tag="property" attribute="name|widgetAspect" value="Small Square">thumb</property>
+            <property name="widgetSourceArt" tag="property" attribute="name|widgetAspect" value="Landscape">landscape</property>
+            <property name="widgetSourceArt" tag="property" attribute="name|widgetAspect" value="Small Landscape">landscape</property>
+            <property name="widgetSourceArt">poster</property>
+
             <property name="id" tag="property" attribute="name|id" value="$NUMBER[1]">1</property>
             <property name="id" tag="property" attribute="name|id" value="$NUMBER[2]">2</property>
             <property name="id" tag="property" attribute="name|id" value="$NUMBER[3]">3</property>
@@ -819,6 +852,7 @@
                     <param name="viewtype-include" value="$SKINSHORTCUTS[widgetInclude]" />
                     <param name="widget-type" value="widgets" />
                     <movement>$SKINSHORTCUTS[widgetMovement]</movement>
+                    <onfocus>SetProperty(TMDbHelper.Blur.SourceImage,$SKINSHORTCUTS[widgetSourceArt],Home)</onfocus>
                     <content target="$SKINSHORTCUTS[widgetTarget]" limit="$SKINSHORTCUTS[widgetLimit]" >$SKINSHORTCUTS[widgetPath]$INFO[Skin.String(SearchTerm)]$SKINSHORTCUTS[widgetPath2]</content>
                 </include>
             </controls>

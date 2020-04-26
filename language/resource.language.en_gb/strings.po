@@ -330,6 +330,16 @@ msgctxt "#31063"
 msgid "Show info overlay on wall after delay"
 msgstr ""
 
+#: /1080i/Includes_Info.xml
+msgctxt "#31064"
+msgid "Manage"
+msgstr ""
+
+#: /1080i/Includes_Info.xml
+msgctxt "#31065"
+msgid "Watchlist"
+msgstr ""
+
 #: /1080i/Includes_Weather.xml
 msgctxt "#31068"
 msgid "Cloud cover"

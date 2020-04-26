@@ -301,6 +301,7 @@
         <param name="icon" default="$VAR[Image_Poster]" />
         <param name="diffuse" default="diffuse/poster-std.png" />
         <param name="offset" default="60" />
+        <param name="specialicon" default="true" />
         <definition>
             <control type="$PARAM[control-type]" id="$PARAM[id]">
                 <nested />
@@ -329,6 +330,7 @@
                             <param name="textbox-visible" value="$PARAM[textbox-visible]" />
                             <param name="aspectratio" value="$PARAM[aspectratio]" />
                             <param name="textpanel" value="$PARAM[textpanel]" />
+                            <param name="specialicon" value="$PARAM[specialicon]" />
                         </include>
                     </control>
                 </itemlayout>
@@ -350,6 +352,7 @@
                             <param name="textbox-visible" value="$PARAM[textbox-visible]" />
                             <param name="aspectratio" value="$PARAM[aspectratio]" />
                             <param name="textpanel" value="$PARAM[textpanel]" />
+                            <param name="specialicon" value="$PARAM[specialicon]" />
                         </include>
                     </control>
                 </focusedlayout>
@@ -470,6 +473,7 @@
                 <param name="height" value="$PARAM[height]" />
                 <param name="textpanel" value="true" />
                 <param name="viewtype-label" value="$LOCALIZE[31234]" />
+                <param name="specialicon" value="$PARAM[specialicon]" />
                 <nested />
             </include>
             <include content="Viewtype_Poster" condition="Skin.HasSetting(DisableTextPanel)">
@@ -485,6 +489,7 @@
                 <param name="height" value="$PARAM[height]" />
                 <param name="textpanel" value="false" />
                 <param name="viewtype-label" value="$LOCALIZE[31234]" />
+                <param name="specialicon" value="$PARAM[specialicon]" />
                 <nested />
             </include>
         </definition>
@@ -600,6 +605,7 @@
                         <param name="diffuse" value="$PARAM[diffuse]" />
                         <param name="icon" value="$PARAM[icon]" />
                         <param name="aspectratio" value="$PARAM[aspectratio]" />
+                        <param name="specialicon" value="$PARAM[specialicon]" />
                     </include>
                     <include condition="!$PARAM[textpanel] + !Skin.HasSetting(DisableWatchedOverlay)">View_WatchedOverlay</include>
                     <include condition="$PARAM[selectbox] + !$PARAM[textpanel]" content="View_Selectbox">

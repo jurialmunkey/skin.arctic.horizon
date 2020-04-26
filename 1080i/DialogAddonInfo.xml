@@ -63,6 +63,7 @@
                     <param name="label" value="Screenshots" />
                     <param name="viewtype-include" value="Viewtype_Landscape" />
                     <param name="visible" value="true" />
+                    <param name="specialicon" value="false" />
                     <include>Defs_InfoList_OnBack</include>
                     <movement>1</movement>
                 </include>

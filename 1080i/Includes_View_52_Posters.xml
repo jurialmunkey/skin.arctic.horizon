@@ -14,6 +14,7 @@
                 <right>-80</right>
                 <onfocus>ClearProperty(TMDbHelper.WidgetContainer,Home)</onfocus>
                 <include>Viewtype_Movement</include>
+                <onfocus>SetProperty(TMDbHelper.Blur.SourceImage,poster,Home)</onfocus>
                 <!-- <ondown condition="!Skin.HasSetting(DisableWallScroll) + Integer.IsGreater(Container(52).NumItems,21)">5252</ondown>
                 <ondown condition="Skin.HasSetting(DisableWallScroll) | !Integer.IsGreater(Container(52).NumItems,21)">60</ondown> -->
                 <ondown condition="!Skin.HasSetting(DisableWallScroll)">5252</ondown>

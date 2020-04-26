@@ -851,12 +851,6 @@
                 <left>$PARAM[left_pad]</left>
                 <control type="image">
                     <include>Dialog_Standard_List_Left_Icon</include>
-                    <visible>!$EXP[Exp_DefaultIcon]</visible>
-                </control>
-                <control type="image">
-                    <colordiffuse>$PARAM[color_70]</colordiffuse>
-                    <include>Dialog_Standard_List_Left_Icon</include>
-                    <visible>$EXP[Exp_DefaultIcon]</visible>
                 </control>
                 <control type="group">
                     <left>item_biglist_height</left>

@@ -348,7 +348,6 @@
                 <height>72</height>
                 <itemgap>20</itemgap>
                 <usecontrolcoords>true</usecontrolcoords>
-                <visible>!String.IsEmpty(ListItem.VideoCodec) + !String.IsEmpty(ListItem.AudioCodec)</visible>
                 <control type="image">
                     <fadetime>100</fadetime>
                     <centertop>50%</centertop>
@@ -924,29 +923,35 @@
         <param name="Exp_DefaultIcon" default="$EXP[Exp_DefaultIcon]" />
         <param name="Exp_SpecialIcon" default="$EXP[Exp_SpecialIcon]" />
         <param name="Image_DefaultIcon" default="$VAR[Image_DefaultIcon]" />
+        <param name="specialicon" default="true" />
         <definition>
-            <include content="Object_Poster">
+            <include content="Object_Poster" condition="$PARAM[specialicon]">
                 <param name="icon" value="$PARAM[Image_DefaultIcon]" />
                 <param name="colordiffuse" value="main_fg_100" />
-                <param name="diffuse" value="$PARAM[diffuse]" />
                 <param name="aspectratio" value="keep" />
                 <param name="bordersize" value="25" />
                 <param name="visible" value="$PARAM[Exp_DefaultIcon] + !$PARAM[Exp_SpecialIcon]"/>
             </include>
-            <include content="Object_Poster">
+            <include content="Object_Poster" condition="$PARAM[specialicon]">
                 <param name="icon" value="$PARAM[Image_DefaultIcon]" />
                 <param name="colordiffuse" value="main_fg_90" />
-                <param name="diffuse" value="$PARAM[diffuse]" />
                 <param name="aspectratio" value="keep" />
                 <param name="bordersize" value="40" />
                 <param name="visible" value="$PARAM[Exp_SpecialIcon]" />
             </include>
-            <include content="Object_Poster">
+            <include content="Object_Poster" condition="$PARAM[specialicon]">
                 <param name="icon" value="$PARAM[icon]" />
                 <param name="diffuse" value="$PARAM[diffuse]" />
                 <param name="aspectratio" value="$PARAM[aspectratio]" />
                 <param name="bordersize" value="$PARAM[bordersize]" />
                 <param name="visible" value="!$PARAM[Exp_DefaultIcon] + !$PARAM[Exp_SpecialIcon]" />
+            </include>
+            <include content="Object_Poster" condition="!$PARAM[specialicon]">
+                <param name="icon" value="$PARAM[icon]" />
+                <param name="diffuse" value="$PARAM[diffuse]" />
+                <param name="aspectratio" value="$PARAM[aspectratio]" />
+                <param name="bordersize" value="$PARAM[bordersize]" />
+                <param name="visible" value="true" />
             </include>
         </definition>
     </include>

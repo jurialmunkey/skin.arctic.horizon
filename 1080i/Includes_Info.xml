@@ -143,6 +143,7 @@
         <param name="viewtype-include" default="Viewtype_Poster" />
         <param name="widget-type" default="infowidgets" />
         <param name="showonupdate" default="true" />
+        <param name="specialicon" default="true" />
         <definition>
             <include content="View_Cast_Toplabel">
                 <param name="groupid" value="$PARAM[groupid]" />
@@ -162,6 +163,7 @@
                 <param name="label2" value="$PARAM[label2]" />
                 <param name="icon" value="$PARAM[icon]" />
                 <param name="control-type" value="$PARAM[control-type]" />
+                <param name="specialicon" value="$PARAM[specialicon]" />
                 <nested />
                 <top>$PARAM[widget-type]_item_top</top>
                 <left>20</left>
@@ -334,11 +336,12 @@
         <!-- <include content="$PARAM[buttoninclude]">
             <param name="id" value="3101" />
             <param name="groupid" value="3201" />
-            <param name="label" value="Collection" />
+            <param name="label" value="$LOCALIZE[31006]" />
             <param name="icon" value="special://skin/extras/icons/collection.png" />
             <param name="visible" value="ListItem.IsCollection" />
             <onclick>SetFocus(5003)</onclick>
             <onup>9601</onup>
+            <onfocus>ClearProperty(overview)</onfocus>
         </include> -->
         <include content="$PARAM[buttoninclude]">
             <param name="id" value="3308" />
@@ -349,7 +352,7 @@
             <onclick condition="!String.IsEmpty(ListItem.FileNameAndPath)">RunScript(plugin.video.themoviedb.helper,close_dialog=1190,playmedia=$INFO[ListItem.FileNameAndPath])</onclick>
             <onclick condition="String.IsEmpty(ListItem.FileNameAndPath)">SendClick(8)</onclick>
             <onclick condition="String.IsEmpty(ListItem.FileNameAndPath)">RunScript(plugin.video.themoviedb.helper,close_dialog=1190)</onclick>
-
+            <onfocus>ClearProperty(overview)</onfocus>
             <onup>9601</onup>
         </include>
         <include content="$PARAM[buttoninclude]">
@@ -367,12 +370,13 @@
             <onclick condition="!Window.IsVisible(MyVideoNav.xml) + !String.IsEmpty(ListItem.DBID) + String.IsEqual(ListItem.DBType,tvshow)">RunScript(plugin.video.themoviedb.helper,close_dialog=1190,call_path=$INFO[ListItem.DBID,videodb://tvshows/titles/,/])</onclick>
             <onclick condition="Window.IsVisible(MyVideoNav.xml) + !String.IsEmpty(ListItem.DBID) + ListItem.IsCollection">RunScript(plugin.video.themoviedb.helper,close_dialog=1190,call_path=$INFO[ListItem.DBID,videodb://movies/sets/,/])</onclick>
             <onup>9601</onup>
+            <onfocus>ClearProperty(overview)</onfocus>
         </include>
 
         <include content="$PARAM[buttoninclude]">
             <param name="id" value="3111" />
             <param name="groupid" value="3011" />
-            <param name="label" value="Trailer" />
+            <param name="label" value="$LOCALIZE[20410]" />
             <param name="icon" value="special://skin/extras/icons/video.png" />
             <param name="visible" value="!String.IsEmpty(ListItem.Trailer) | !String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Trailer))" />
             <onclick condition="!String.IsEmpty(ListItem.Trailer)">SetProperty(HasTrailer,$INFO[ListItem.Trailer],Home)</onclick>
@@ -381,43 +385,48 @@
             <onclick condition="String.IsEmpty(ListItem.Trailer)">PlayMedia($INFO[Window(Home).Property(TMDbHelper.ListItem.Trailer)],False,1)</onclick>
             <onclick>SetFocus(9608)</onclick>
             <onup>9601</onup>
+            <onfocus>ClearProperty(overview)</onfocus>
         </include>
 
         <include content="$PARAM[buttoninclude]">
             <param name="id" value="3103" />
             <param name="groupid" value="3203" />
-            <param name="label" value="Watchlist" />
+            <param name="label" value="$LOCALIZE[31065]" />
             <param name="icon" value="special://skin/extras/icons/watchlist.png" />
             <param name="visible" value="!String.IsEmpty(ListItem.Property(tmdb_id)) + [String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,tvshow)]" />
             <onclick>RunScript(plugin.video.themoviedb.helper,sync_trakt=watchlist,tmdb_id=$INFO[ListItem.Property(tmdb_id)],$VAR[Info_Param_Type],cache_refresh)</onclick>
             <onup>9601</onup>
+            <onfocus>ClearProperty(overview)</onfocus>
         </include>
 
         <include content="$PARAM[buttoninclude]">
             <param name="id" value="7" />
             <param name="groupid" value="3007" />
-            <param name="label" value="Rating" />
+            <param name="label" value="$LOCALIZE[563]" />
             <param name="icon" value="special://skin/extras/icons/userrating.png" />
             <param name="visible" value="Control.IsEnabled(7) + !ListItem.IsCollection" />
             <onup>9601</onup>
+            <onfocus>ClearProperty(overview)</onfocus>
         </include>
 
         <include content="$PARAM[buttoninclude]">
             <param name="id" value="3105" />
             <param name="groupid" value="3205" />
-            <param name="label" value="Overview" />
+            <param name="label" value="$LOCALIZE[31208]" />
             <param name="icon" value="special://skin/extras/icons/infobubble.png" />
             <onclick>SetFocus(9601)</onclick>
+            <onfocus>SetProperty(overview,1)</onfocus>
             <onup>9601</onup>
         </include>
 
         <include content="$PARAM[buttoninclude]">
             <param name="id" value="3106" />
             <param name="groupid" value="3206" />
-            <param name="label" value="Manage" />
+            <param name="label" value="$LOCALIZE[31064]" />
             <param name="icon" value="special://skin/extras/icons/settings.png" />
             <param name="visible" value="Control.IsEnabled(6) + !Skin.HasSetting(KioskMode)" />
             <onclick>SetFocus(3600)</onclick>
+            <onfocus>SetProperty(overview,1)</onfocus>
             <onup>9601</onup>
         </include>
     </include>

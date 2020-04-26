@@ -73,7 +73,7 @@
                     <include content="DialogVideoInfo_Widget_Details">
                         <param name="id" value="7100" />
                         <param name="uid" value="2003" />
-                        <visible>Control.HasFocus(3106) | Control.HasFocus(3105)</visible>
+                        <visible>!String.IsEmpty(Window.Property(overview))</visible>
                         <visible>!ListItem.IsCollection</visible>
                     </include>
                     <include>DialogVideoInfo_Widget_Cast</include>
@@ -269,7 +269,7 @@
             <visible>Control.IsVisible(50) | Control.IsVisible(5000)</visible>
         </include>
         <control type="group" id="5200">
-            <height>infowidgets_item_top</height>
+            <height>860</height>
             <visible>Integer.IsGreater(Container(50).NumItems,0) | Container(50).IsUpdating</visible>
             <control type="button" id="5000">
                 <texturefocus />
@@ -296,7 +296,7 @@
             <param name="height" value="infowidgets_item_height" />
             <param name="focusbounce" value="false" />
             <param name="castlabel" value="true" />
-            <top>infowidgets_item_top</top>
+            <top>-760</top>
             <left>20</left>
             <right>20</right>
             <visible>Integer.IsGreater(Container(50).NumItems,0) | Container(50).IsUpdating</visible>
