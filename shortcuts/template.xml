@@ -518,7 +518,7 @@
                 </focusedlayout>
                 <content target="$SKINSHORTCUTS[widgetTarget]" sortby="$SKINSHORTCUTS[widgetSortby]" sortorder="$SKINSHORTCUTS[widgetSortorder]">$SKINSHORTCUTS[widgetPath]</content>
                 <include content="Defs_AutoScroll">
-                    <param name="condition" value="[System.IdleTime(3) + [Control.HasFocus(3001) | Control.HasFocus(3101) | Control.HasFocus(3102)]] | ![Control.HasFocus(3001) | Control.HasFocus(3101) | Control.HasFocus(3102)]" />
+                    <param name="condition" value="[System.IdleTime(3) + [Control.HasFocus(3001) | Control.HasFocus(3101) | Control.HasFocus(3102)]] | ![Control.HasFocus(3001) | Control.HasFocus(3101) | Control.HasFocus(3102) | Control.HasFocus(5610)]" />
                 </include>
             </control>
         </controls>
