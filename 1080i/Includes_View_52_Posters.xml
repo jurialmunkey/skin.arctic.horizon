@@ -437,7 +437,7 @@
             <oninfo>SetFocus($PARAM[id])</oninfo>
             <oninfo>AlarmClock(nfo,Action(Info),00:01,silent)</oninfo>
             <onclick>SetFocus($PARAM[id])</onclick>
-            <onclick>AlarmClock(clk,Action(Select),00:01,silent)</onclick>
+            <!-- <onclick>AlarmClock(clk,Action(Select),00:01,silent)</onclick> -->
             <onleft>SetProperty($PARAM[wall-id]_OnMove,left)</onleft>
             <onleft>AlarmClock(clr,ClearProperty($PARAM[wall-id]_OnMove),00:00,silent)</onleft>
             <onleft>Control.Move($PARAM[id],-1)</onleft>
