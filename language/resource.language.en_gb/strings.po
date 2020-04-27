@@ -340,6 +340,16 @@ msgctxt "#31065"
 msgid "Watchlist"
 msgstr ""
 
+#: /1080i/script-skinshortcuts.xml
+msgctxt "#31066"
+msgid "Choose background widget"
+msgstr ""
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31067"
+msgid "Recommendations"
+msgstr ""
+
 #: /1080i/Includes_Weather.xml
 msgctxt "#31068"
 msgid "Cloud cover"

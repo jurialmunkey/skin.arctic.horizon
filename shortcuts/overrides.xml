@@ -124,15 +124,48 @@
     <property property="widgetSortby">lastupdated</property>
     <property property="widgetSortby">lastused</property>
     <property property="widgetSortby">date</property>
-
     <propertySettings property="widgetSortby" buttonID="9903" title="Widget Sort Method" />
     <propertySettings property="widgetSortby" buttonID="9913" title="Widget Sort Method" />
+
+    <property property="widgetSortby.showcaseBackground">name</property>
+    <property property="widgetSortby.showcaseBackground">random</property>
+    <property property="widgetSortby.showcaseBackground">dateadded</property>
+    <property property="widgetSortby.showcaseBackground">lastplayed</property>
+    <property property="widgetSortby.showcaseBackground">playcount</property>
+    <property property="widgetSortby.showcaseBackground">year</property>
+    <property property="widgetSortby.showcaseBackground">rating</property>
+    <property property="widgetSortby.showcaseBackground">userrating</property>
+    <property property="widgetSortby.showcaseBackground">votes</property>
+    <property property="widgetSortby.showcaseBackground">genre</property>
+    <property property="widgetSortby.showcaseBackground">country</property>
+    <property property="widgetSortby.showcaseBackground">studio</property>
+    <property property="widgetSortby.showcaseBackground">playlistorder</property>
+    <property property="widgetSortby.showcaseBackground">episodenumber</property>
+    <property property="widgetSortby.showcaseBackground">season</property>
+    <property property="widgetSortby.showcaseBackground">numberofepisodes</property>
+    <property property="widgetSortby.showcaseBackground">numberofwatchedepisodes</property>
+    <property property="widgetSortby.showcaseBackground">tvshowstatus</property>
+    <property property="widgetSortby.showcaseBackground">tvshowtitle</property>
+    <property property="widgetSortby.showcaseBackground">file</property>
+    <property property="widgetSortby.showcaseBackground">title</property>
+    <property property="widgetSortby.showcaseBackground">tracknumber</property>
+    <property property="widgetSortby.showcaseBackground">time</property>
+    <property property="widgetSortby.showcaseBackground">artist</property>
+    <property property="widgetSortby.showcaseBackground">album</property>
+    <property property="widgetSortby.showcaseBackground">lastupdated</property>
+    <property property="widgetSortby.showcaseBackground">lastused</property>
+    <property property="widgetSortby.showcaseBackground">date</property>
+    <propertySettings property="widgetSortby.showcaseBackground" buttonID="9923" title="Widget Sort Method" />
 
     <!-- Widget Direction -->
     <property property="widgetSortorder">ascending</property>
     <property property="widgetSortorder">descending</property>
     <propertySettings property="widgetSortorder" buttonID="9904" title="Widget Sort Direction" />
     <propertySettings property="widgetSortorder" buttonID="9914" title="Widget Sort Direction" />
+
+    <property property="widgetSortorder.showcaseBackground">ascending</property>
+    <property property="widgetSortorder.showcaseBackground">descending</property>
+    <propertySettings property="widgetSortorder.showcaseBackground" buttonID="9924" title="Widget Sort Direction" />
 
     <!-- Widget Limit -->
     <property property="widgetLimit" label="10 ">$NUMBER[10]</property>

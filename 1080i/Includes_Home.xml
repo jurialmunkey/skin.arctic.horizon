@@ -447,6 +447,27 @@
                             <param name="id" value="5610" />
                             <param name="label" value="$VAR[Label_Hub_WidgetName]" />
                         </include>
+                        <include content="Viewtype_Poster">
+                            <param name="id" value="5610" />
+                            <bottom>-20</bottom>
+                            <left>-80</left>
+                            <right>-80</right>
+                            <onup>302</onup>
+                            <ondown condition="!Window.IsVisible(Home) + !Skin.HasSetting(DisableWallScroll)">565610</ondown>
+                            <ondown condition="!Window.IsVisible(Home)Skin.HasSetting(DisableWallScroll)">60</ondown>
+                            <ondown condition="Window.IsVisible(Home)">SetProperty(WidgetFocus,1)</ondown>
+                            <ondown condition="Window.IsVisible(Home)">3992</ondown>
+                            <ondown condition="Window.IsVisible(Home)">SetProperty(WidgetMovement,OnDown)</ondown>
+                            <ondown condition="Window.IsVisible(Home)">Control.Move(301,1)</ondown>
+                            <onback condition="!Window.IsVisible(Home)">302</onback>
+                            <onback condition="Window.IsVisible(Home)">3101</onback>
+                            <onfocus>SetProperty(TMDbHelper.Blur.SourceImage,poster,Home)</onfocus>
+                            <pagecontrol>60</pagecontrol>
+                            <content>plugin://plugin.video.themoviedb.helper/?info=recommendations&amp;type=movie&amp;query=$INFO[Container(3001).ListItem.Title]</content>
+                            <visible>String.IsEmpty(Container(302).ListItem.Property(widgetPath))</visible>
+                            <visible>String.IsEmpty(Container(301).ListItem.Property(widgetPath))</visible>
+                            <visible>!Container(3001).IsUpdating</visible>
+                        </include>
                         <include>skinshortcuts-template-spotlight-submenu</include>
                         <include>skinshortcuts-template-spotlight-mainmenu</include>
                     </control>

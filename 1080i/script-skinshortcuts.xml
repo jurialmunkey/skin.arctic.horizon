@@ -365,78 +365,124 @@
 
         <control type="group">
             <visible>ControlGroup(9300).HasFocus()</visible>
-            <include content="Dialog_Standard_Group">
-                <param name="width" value="1020" />
-                <param name="height" value="590" />
-                <param name="centertop" value="535" />
-            </include>
-
-            <!-- Header Label -->
-            <control type="label">
-                <description>header label</description>
-                <include>Dialog_Standard_Header</include>
-                <label>Customize Hub Widget</label>
+            <centerleft>50%</centerleft>
+            <centertop>535</centertop>
+            <width>1020</width>
+            <height>910</height>
+            <include>Animation_FadeIn_Slide</include>
+            <animation effect="slide" start="0" end="0,160" condition="!String.IsEqual(Window.Property(groupname),mainmenu)">Conditional</animation>
+            <control type="image">
+                <include condition="!Skin.HasSetting(DisableShadows)">Defs_Shadow_24</include>
+                <texture border="16" colordiffuse="dialog_bg_100">common/dialog.png</texture>
+                <visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
             </control>
-
-            <!-- Shortcuts List -->
             <control type="group">
-                <top>dialog_top</top>
-                <bottom>dialog_pad</bottom>
+                <bottom>320</bottom>
+                <control type="image">
+                    <include condition="!Skin.HasSetting(DisableShadows)">Defs_Shadow_24</include>
+                    <texture border="16" colordiffuse="dialog_bg_100">common/dialog.png</texture>
+                    <visible>!String.IsEqual(Window.Property(groupname),mainmenu)</visible>
+                </control>
+            </control>
+            <control type="group">
+                <!-- Header Label -->
+                <control type="label">
+                    <description>header label</description>
+                    <include>Dialog_Standard_Header</include>
+                    <label>Customize Hub Widget</label>
+                </control>
+
+                <!-- Shortcuts List -->
                 <control type="group">
-                    <left>0</left>
-                    <right>0</right>
-                    <control type="label">
-                        <label>Options</label>
-                        <top>0</top>
-                        <include>Dialog_Standard_HintLabel</include>
-                    </control>
-                    <include content="Defs_Settings_Gradient">
-                        <param name="id" value="9300" />
-                        <top>item_list_height_half</top>
-                        <height>item_list_height</height>
-                        <visible>ControlGroup(9300).HasFocus()</visible>
-                    </include>
-                    <control type="grouplist" id="9300">
-                        <onleft>9100</onleft>
-                        <onright>9100</onright>
-                        <onback>9100</onback>
-                        <onup>9300</onup>
-                        <ondown>9300</ondown>
-                        <top>item_list_height_half</top>
-                        <orientation>vertical</orientation>
-                        <itemgap>0</itemgap>
-                        <usecontrolcoords>true</usecontrolcoords>
-                        <control type="button" id="312" description="Widget Submenu Path">
-                            <label>$LOCALIZE[31053]</label>
-                            <label2>$INFO[Container(211).ListItem.Property(widgetName)]</label2>
-                            <onback>9100</onback>
-                            <include>Dialog_Standard_Button</include>
+                    <top>dialog_top</top>
+                    <bottom>dialog_pad</bottom>
+                    <control type="group">
+                        <left>0</left>
+                        <right>0</right>
+                        <control type="label">
+                            <label>$LOCALIZE[31038]</label>
+                            <top>0</top>
+                            <include>Dialog_Standard_HintLabel</include>
                         </control>
-                        <control type="button" id="9911" description="Widget Style">
-                            <label>$LOCALIZE[31011]</label>
-                            <label2>$INFO[Container(211).ListItem.Property(widgetAspect)]</label2>
+                        <include content="Defs_Settings_Gradient">
+                            <param name="id" value="9300" />
+                            <top>item_list_height_half</top>
+                            <height>item_list_height</height>
+                            <visible>ControlGroup(9300).HasFocus()</visible>
+                        </include>
+                        <control type="grouplist" id="9300">
+                            <onleft>9100</onleft>
+                            <onright>9100</onright>
                             <onback>9100</onback>
-                            <include>Dialog_Standard_Button</include>
-                        </control>
+                            <onup>9300</onup>
+                            <ondown>9300</ondown>
+                            <top>item_list_height_half</top>
+                            <orientation>vertical</orientation>
+                            <itemgap>0</itemgap>
+                            <usecontrolcoords>true</usecontrolcoords>
+                            <control type="button" id="312" description="Widget Submenu Path">
+                                <label>$LOCALIZE[31053]</label>
+                                <label2>$INFO[Container(211).ListItem.Property(widgetName)]</label2>
+                                <onback>9100</onback>
+                                <include>Dialog_Standard_Button</include>
+                            </control>
+                            <control type="button" id="9911" description="Widget Style">
+                                <label>$LOCALIZE[31011]</label>
+                                <label2>$INFO[Container(211).ListItem.Property(widgetAspect)]</label2>
+                                <onback>9100</onback>
+                                <include>Dialog_Standard_Button</include>
+                            </control>
 
-                        <control type="button" id="9913" description="Sort by">
-                            <label>$LOCALIZE[581]</label>
-                            <label2>$INFO[Container(211).ListItem.Property(widgetSortby)]</label2>
-                            <onback>9100</onback>
-                            <include>Dialog_Standard_Button</include>
-                        </control>
+                            <control type="button" id="9913" description="Sort by">
+                                <label>$LOCALIZE[581]</label>
+                                <label2>$INFO[Container(211).ListItem.Property(widgetSortby)]</label2>
+                                <onback>9100</onback>
+                                <include>Dialog_Standard_Button</include>
+                            </control>
 
-                        <control type="button" id="9914" description="Sort direction">
-                            <label>$LOCALIZE[580]</label>
-                            <label2>$INFO[Container(211).ListItem.Property(widgetSortorder)]</label2>
-                            <onback>9100</onback>
-                            <include>Dialog_Standard_Button</include>
-                        </control>
+                            <control type="button" id="9914" description="Sort direction">
+                                <label>$LOCALIZE[580]</label>
+                                <label2>$INFO[Container(211).ListItem.Property(widgetSortorder)]</label2>
+                                <onback>9100</onback>
+                                <include>Dialog_Standard_Button</include>
+                            </control>
 
-                        <control type="button" id="9919" description="Close">
-                            <label>$LOCALIZE[15067]</label>
-                            <onclick>SetFocus(9100)</onclick>
-                            <include>Dialog_Standard_Button</include>
+                            <!-- Background Widget -->
+                            <control type="label" id="9929">
+                                <label>$LOCALIZE[31039]</label>
+                                <include>Dialog_Standard_HintLabel</include>
+                                <visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
+                            </control>
+                            <control type="button" id="9920" description="Widget Submenu Path">
+                                <label>$LOCALIZE[31066]</label>
+                                <label2>$INFO[Container(211).ListItem.Property(widgetName.showcaseBackground)]</label2>
+                                <onback>9100</onback>
+                                <onclick>SetProperty(widgetID,showcaseBackground)</onclick>
+                                <onclick>SendClick(312)</onclick>
+                                <include>Dialog_Standard_Button</include>
+                                <visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
+                            </control>
+                            <control type="button" id="9923" description="Sort by">
+                                <label>$LOCALIZE[581]</label>
+                                <label2>$INFO[Container(211).ListItem.Property(widgetSortby.showcaseBackground)]</label2>
+                                <onback>9100</onback>
+                                <include>Dialog_Standard_Button</include>
+                                <visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
+                            </control>
+
+                            <control type="button" id="9924" description="Sort direction">
+                                <label>$LOCALIZE[580]</label>
+                                <label2>$INFO[Container(211).ListItem.Property(widgetSortorder.showcaseBackground)]</label2>
+                                <onback>9100</onback>
+                                <include>Dialog_Standard_Button</include>
+                                <visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
+                            </control>
+
+                            <control type="button" id="9919" description="Close">
+                                <label>$LOCALIZE[15067]</label>
+                                <onclick>SetFocus(9100)</onclick>
+                                <include>Dialog_Standard_Button</include>
+                            </control>
                         </control>
                     </control>
                 </control>

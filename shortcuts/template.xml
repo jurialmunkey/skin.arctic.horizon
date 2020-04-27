@@ -480,11 +480,21 @@
     </submenu>
 
     <other include="showcase-background" container="302">
+        <property name="widgetTarget" tag="property" attribute="name|widgetTarget.showcaseBackground" />
         <property name="widgetTarget" tag="property" attribute="name|widgetTarget" />
-        <property name="widgetName" tag="property" attribute="name|widgetName" />
-        <property name="widgetPath" tag="property" attribute="name|widgetPath" />
         <property name="widgetTarget">$INFO[Skin.String(screensaver.arctic.mirage.target)]</property>
+
+        <property name="widgetPath" tag="property" attribute="name|widgetPath.showcaseBackground" />
+        <property name="widgetPath" tag="property" attribute="name|widgetPath" />
         <property name="widgetPath">$INFO[Skin.String(screensaver.arctic.mirage.path)]</property>
+
+        <property name="widgetSortby" tag="property" attribute="name|widgetSortby.showcaseBackground" />
+        <property name="widgetSortby" tag="property" attribute="name|widgetSortby" />
+        <property name="widgetSortby">random</property>
+
+        <property name="widgetSortorder" tag="property" attribute="name|widgetSortorder.showcaseBackground" />
+        <property name="widgetSortorder" tag="property" attribute="name|widgetSortorder" />
+
         <controls>
             <control type="wraplist" id="3001">
                 <ondown>3101</ondown>
@@ -506,7 +516,7 @@
                         <texture background="true">$VAR[Image_Fanart]</texture>
                     </control>
                 </focusedlayout>
-                <content target="$SKINSHORTCUTS[widgetTarget]" sortby="random">$SKINSHORTCUTS[widgetPath]</content>
+                <content target="$SKINSHORTCUTS[widgetTarget]" sortby="$SKINSHORTCUTS[widgetSortby]" sortorder="$SKINSHORTCUTS[widgetSortorder]">$SKINSHORTCUTS[widgetPath]</content>
                 <include content="Defs_AutoScroll">
                     <param name="condition" value="[System.IdleTime(3) + [Control.HasFocus(3001) | Control.HasFocus(3101) | Control.HasFocus(3102)]] | ![Control.HasFocus(3001) | Control.HasFocus(3101) | Control.HasFocus(3102)]" />
                 </include>
@@ -518,8 +528,6 @@
         <property name="widgetTarget" tag="property" attribute="name|widgetTarget" />
         <property name="widgetName" tag="property" attribute="name|widgetName" />
         <property name="widgetPath" tag="property" attribute="name|widgetPath" />
-        <property name="widgetTarget">$INFO[Skin.String(screensaver.arctic.mirage.target)]</property>
-        <property name="widgetPath">$INFO[Skin.String(screensaver.arctic.mirage.path)]</property>
         <property name="widgetInclude" tag="property" attribute="name|widgetAspect" value="Landscape">Viewtype_Landscape</property>
         <property name="widgetInclude" tag="property" attribute="name|widgetAspect" value="Square">Viewtype_Square</property>
         <property name="widgetInclude" tag="property" attribute="name|widgetAspect" value="Banner">Viewtype_BigBanner</property>
