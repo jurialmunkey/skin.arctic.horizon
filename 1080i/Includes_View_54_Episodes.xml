@@ -340,13 +340,18 @@
             </control>
         </control>
 
+        <control type="button" id="$PARAM[button-id]">
+            <include>Defs_Offscreen</include>
+            <onfocus>SetFocus($PARAM[id])</onfocus>
+            <onfocus>Action(Select)</onfocus>
+            <animation effect="fade" start="0" end="100" delay="500" time="1">Focus</animation>
+        </control>
         <control type="button" id="$PARAM[wall-id]">
             <include>Defs_Hidden_Button</include>
             <onback>$PARAM[id]</onback>
             <oninfo>SetFocus($PARAM[id])</oninfo>
             <oninfo>AlarmClock(nfo,Action(Info),00:01,silent)</oninfo>
-            <onclick>SetFocus($PARAM[id])</onclick>
-            <!-- <onclick>AlarmClock(clk,Action(Select),00:01,silent)</onclick> -->
+            <onclick>SetFocus($PARAM[button-id])</onclick>
             <onleft>SetProperty($PARAM[wall-id]_OnMove,left)</onleft>
             <onleft>AlarmClock(clr,ClearProperty($PARAM[wall-id]_OnMove),00:00,silent)</onleft>
             <onleft>Control.Move($PARAM[id],-1)</onleft>

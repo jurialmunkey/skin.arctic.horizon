@@ -127,22 +127,27 @@
                     <include content="View_51_Addons_Wall">
                         <param name="id" value="51" />
                         <param name="wall-id" value="5151" />
+                        <param name="button-id" value="15151" />
                     </include>
                     <include content="View_52_Posters_Wall">
                         <param name="id" value="52" />
                         <param name="wall-id" value="5252" />
+                        <param name="button-id" value="25252" />
                     </include>
                     <include content="View_54_Episodes_Wall">
                         <param name="id" value="530" />
                         <param name="wall-id" value="5353" />
+                        <param name="button-id" value="35353" />
                     </include>
                     <include content="View_54_Episodes_Wall">
                         <param name="id" value="54" />
                         <param name="wall-id" value="5454" />
+                        <param name="button-id" value="45454" />
                     </include>
                     <include content="View_54_Episodes_Wall">
                         <param name="id" value="560" />
                         <param name="wall-id" value="5656" />
+                        <param name="button-id" value="65656" />
                     </include>
                 </control>
                 <include>Topbar_Left</include>
