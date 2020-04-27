@@ -691,6 +691,15 @@
                         <onclick>Skin.ToggleSetting(PVRGuide.Info)</onclick>
                     </control>
 
+                    <control type="radiobutton" id="19607" description="Back goes to groups">
+                        <visible>Integer.IsEqual(Window.Property(CurrentFocus),9006)</visible>
+                        <include>Defs_Settings_Button</include>
+                        <label>$LOCALIZE[31080]</label>
+                        <selected>Skin.HasSetting(PVRGuide.BackGroups)</selected>
+                        <onclick>Skin.ToggleSetting(PVRGuide.BackGroups)</onclick>
+                    </control>
+
+
                     <control type="label" id="19683" description="LABEL">
                         <visible>Integer.IsEqual(Window.Property(CurrentFocus),9006)</visible>
                         <include>Dialog_Standard_HintLabel</include>

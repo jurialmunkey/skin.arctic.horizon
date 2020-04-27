@@ -356,6 +356,7 @@
         <control type="epggrid" id="10" description="EPG">
             <onup>11</onup>
             <ondown>11</ondown>
+            <onback condition="Skin.HasSetting(PVRGuide.BackGroups)">11</onback>
             <viewtype label="19069">list</viewtype>
             <include condition="!Skin.HasSetting(PVRGuide.Info)">View_PVR_Guide_ProgressLine_Full</include>
             <include condition="Skin.HasSetting(PVRGuide.Info)">View_PVR_Guide_ProgressLine_Half</include>

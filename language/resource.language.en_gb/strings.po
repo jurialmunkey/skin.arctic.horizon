@@ -411,6 +411,11 @@ msgid "Pause when opening info dialog"
 msgstr ""
 
 #: /1080i/SkinSettings.xml
+msgctxt "#31080"
+msgid "Pressing \"Back\" highlights group selector"
+msgstr ""
+
+#: /1080i/SkinSettings.xml
 msgctxt "#31087"
 msgid "Display colour overlay"
 msgstr ""
