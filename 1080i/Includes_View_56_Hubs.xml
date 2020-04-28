@@ -69,7 +69,6 @@
                     <onclick>SetFocus(56)</onclick>
                     <onback>56</onback>
                     <pagecontrol>60</pagecontrol>
-                    <!-- <ondown>SetFocus(60)</ondown> -->
                     <ondown condition="!Skin.HasSetting(DisableWallScroll)">5656</ondown>
                     <ondown condition="Skin.HasSetting(DisableWallScroll)">60</ondown>
                     <content target="$VAR[Defs_560_Target]">$INFO[Container(56).ListItem.FolderPath]</content>
@@ -95,6 +94,7 @@
                 <include content="Home_Hub_Widget_Label">
                     <param name="id" value="560" />
                     <param name="label" value="$INFO[Container(56).ListItem.Label]" />
+                    <param name="showonupdate" value="true" />
                     <visible>Container(56).ListItem.IsFolder</visible>
                 </include>
             </control>

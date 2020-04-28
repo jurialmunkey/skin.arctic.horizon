@@ -588,6 +588,7 @@
                     <param name="altlabel" value="$PARAM[altlabel]" />
                     <param name="showtitle" value="$PARAM[showtitle]" />
                     <param name="altid" value="$PARAM[altid]" />
+                    <param name="showonupdate" value="$PARAM[showonupdate]" />
                 </include>
             </control>
         </definition>

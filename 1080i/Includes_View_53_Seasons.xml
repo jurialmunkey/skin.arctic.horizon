@@ -158,22 +158,25 @@
                 <ondown>60</ondown>
                 <pagecontrol>60</pagecontrol>
                 <onunfocus>ClearProperty(TMDbHelper.WidgetContainer,Home)</onunfocus>
-                <onclick condition="!Container($PARAM[id]).ListItem.IsFolder">PlayMedia($INFO[Container($PARAM[id]).ListItem.FileNameAndPath])</onclick>
-                <onclick condition="Container($PARAM[id]).ListItem.IsFolder">Container.Update($INFO[Container($PARAM[id]).ListItem.FolderPath])</onclick>
+                <onclick condition="!Container(530).ListItem.IsFolder">PlayMedia($INFO[Container(530).ListItem.FileNameAndPath])</onclick>
+                <onclick condition="Container(530).ListItem.IsFolder">Container.Update($INFO[Container(530).ListItem.FolderPath])</onclick>
                 <onclick>SetFocus(53)</onclick>
                 <visible>Container(53).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container(53).CurrentItem,0)</visible>
+                <animation effect="fade" start="100" end="0" condition="Container(530).IsUpdating">Conditional</animation>
                 <content target="videos">$INFO[Container(53).FolderPath]</content>
             </include>
             <include content="Home_Hub_Widget_Label">
                 <param name="id" value="530" />
                 <param name="label" value="$INFO[Container(53).ListItem.Label]" />
                 <param name="altlabel" value="$LOCALIZE[31213]: $LOCALIZE[20359] $LOCALIZE[584]" />
+                <param name="showonupdate" value="true" />
                 <visible>![Container(53).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container(53).CurrentItem,0)]</visible>
             </include>
             <include content="Home_Hub_Widget_Label">
                 <param name="id" value="530" />
-                <param name="label" value="Seasons" />
+                <param name="label" value="$LOCALIZE[33054]" />
                 <param name="altlabel" value="$LOCALIZE[31213]: $LOCALIZE[20373] $LOCALIZE[584]" />
+                <param name="showonupdate" value="true" />
                 <visible>[Container(53).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container(53).CurrentItem,0)]</visible>
             </include>
         </control>
