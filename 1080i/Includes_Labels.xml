@@ -110,7 +110,8 @@
     <variable name="Label_Hub_WidgetName">
         <value condition="!String.IsEmpty(Container(302).ListItem.Property(widgetPath))">$INFO[Container(302).ListItem.Property(widgetName)]</value>
         <value condition="!String.IsEmpty(Container(301).ListItem.Property(widgetPath))">$INFO[Container(301).ListItem.Property(widgetName)]</value>
-        <value>$LOCALIZE[31067]</value>
+        <value condition="!Window.IsVisible(1110)">$LOCALIZE[31067]</value>
+        <value>$LOCALIZE[31105]</value>
     </variable>
 
     <variable name="Label_Settings_ColorHighlight">
