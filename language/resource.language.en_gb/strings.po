@@ -416,6 +416,11 @@ msgid "Pressing \"Back\" highlights group selector"
 msgstr ""
 
 #: /1080i/SkinSettings.xml
+msgctxt "#31081"
+msgid "Show sort letter when scrolling wall"
+msgstr ""
+
+#: /1080i/SkinSettings.xml
 msgctxt "#31087"
 msgid "Display colour overlay"
 msgstr ""

@@ -488,6 +488,14 @@
                         <enable>!Skin.HasSetting(DisableWallScroll)</enable>
                     </control>
 
+                    <control type="radiobutton" id="19437">
+                        <visible>Integer.IsEqual(Window.Property(CurrentFocus),9004)</visible>
+                        <label>$LOCALIZE[31081]</label>
+                        <include>Defs_Settings_Button</include>
+                        <selected>!Skin.HasSetting(DisableWallSortLetter)</selected>
+                        <onclick>Skin.ToggleSetting(DisableWallSortLetter)</onclick>
+                        <enable>!Skin.HasSetting(DisableWallScroll)</enable>
+                    </control>
 
 
 

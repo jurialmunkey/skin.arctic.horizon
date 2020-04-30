@@ -3335,6 +3335,13 @@
         <value condition="!String.IsEmpty(ListItem.Art(thumb))">$INFO[ListItem.Art(thumb)]</value>
         <value condition="True">$INFO[ListItem.Icon]</value>
     </variable>
+    <variable name="Image_Landscape_Parent">
+        <value condition="Control.HasFocus(54)">$VAR[Image_Landscape_C54]</value>
+        <value condition="Control.HasFocus(5610)">$VAR[Image_Landscape_C5610]</value>
+        <value condition="Control.HasFocus(560)">$VAR[Image_Landscape_C560]</value>
+        <value condition="Control.HasFocus(530)">$VAR[Image_Landscape_C530]</value>
+        <value condition="True">$VAR[Image_Landscape]</value>
+    </variable>
     <variable name="Label_Landscape_Title_C54_-10">
         <value condition="String.IsEqual(Container(54).ListItem(-10).DBType,album) | String.IsEqual(Container(54).ListItem(-10).DBType,song)">$INFO[Container(54).ListItem(-10).Album]</value>
         <value condition="String.IsEqual(Container(54).ListItem(-10).DBType,episode)">$INFO[Container(54).ListItem(-10).Label]</value>

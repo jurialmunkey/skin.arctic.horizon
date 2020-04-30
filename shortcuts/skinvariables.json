@@ -20,6 +20,7 @@
         "name"          : "Image_Landscape",
         "containers"    : [54,5610,560,530],
         "listitems"     : {"start": -10, "end": 17},
+        "parent"        : "Control.HasFocus({id})",
         "values"        : [
                             {"Container.Content(images)": "$INFO[{listitem}.Icon]"},
                             {"!String.IsEmpty({listitem}.Art(thumb)) + [String.IsEqual({listitem}.DBType,episode) | String.IsEqual({listitem}.DBType,video)] + String.IsEmpty({listitem}.Property(airday)) + !String.IsEqual({listitem}.Art(thumb),OverlaySpoiler.png) + !String.IsEqual({listitem}.Art(thumb),{listitem}.Art(poster)) + !String.IsEqual({listitem}.Art(thumb),{listitem}.Art(tvshow.poster)) + !String.IsEqual({listitem}.Art(thumb),{listitem}.ActualIcon)": "$INFO[{listitem}.Art(thumb)]"},
