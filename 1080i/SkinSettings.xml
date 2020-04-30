@@ -302,13 +302,15 @@
                         <label>Background style</label>
                         <label2>$VAR[Label_Setting_BackgroundStyle]</label2>
                         <include>Defs_RadioButton_NoTexture</include>
-                        <onclick>Skin.ToggleSetting(DisableBlur)</onclick>
+                        <onclick condition="!Skin.HasSetting(DisableBlur)">Skin.SetBool(DisableBlur)</onclick>
+                        <onclick condition="Skin.HasSetting(DisableBlur)">Skin.ToggleSetting(DisableOverlay)</onclick>
+                        <onclick condition="Skin.HasSetting(DisableOverlay)">Skin.Reset(DisableBlur)</onclick>
                     </control>
 
                     <control type="radiobutton" id="19244" description="Busy Loader">
                         <visible>Integer.IsEqual(Window.Property(CurrentFocus),9002)</visible>
                         <include>Defs_Settings_Button</include>
-                        <label>$LOCALIZE[31239] $LOCALIZE[31240]</label>
+                        <label>$LOCALIZE[31239]</label>
                         <selected>!Skin.HasSetting(DisableBusyBackground)</selected>
                         <onclick>Skin.ToggleSetting(DisableBusyBackground)</onclick>
                     </control>

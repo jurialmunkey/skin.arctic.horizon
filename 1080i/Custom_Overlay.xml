@@ -967,7 +967,7 @@
 
             </control>
 
-            <!-- <control type="group">
+            <control type="group">
                 <left>0</left>
                 <bottom>60</bottom>
                 <height>410</height>
@@ -980,7 +980,7 @@
                     <align>left</align>
                     <label>[COLOR=FFFFFF00]II  [/COLOR]$INFO[ListItem.Icon][CR][COLOR=FFFFFF00]AI  [/COLOR]$INFO[ListItem.ActualIcon][CR][COLOR=FFFFFF00]IT  [/COLOR]$INFO[ListItem.Art(thumb)][CR][COLOR=FFFFFF00]IP  [/COLOR]$INFO[ListItem.Art(poster)][CR][COLOR=FFFFFF00]IF  [/COLOR]$INFO[ListItem.Art(fanart)][CR][COLOR=FFFFFF00]TP  [/COLOR]$INFO[ListItem.Art(tvshow.poster)][CR][COLOR=FFFFFF00]TF  [/COLOR]$INFO[ListItem.Art(tvshow.fanart)][CR][COLOR=FFFFFF00]BI  [/COLOR]$INFO[Window(Home).Property(TMDbHelper.ListItem.BlurImage)][CR][COLOR=FFFFFF00]BS  [/COLOR]$INFO[Window(Home).Property(TMDbHelper.Blur.SourceImage)][CR][COLOR=FFFFFF00]BF  [/COLOR]$INFO[Window(Home).Property(TMDbHelper.Blur.Fallback)]</label>
                 </control>
-            </control> -->
+            </control>
 
             <!-- Path label -->
 

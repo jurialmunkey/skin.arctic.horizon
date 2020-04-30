@@ -58,6 +58,7 @@
 
     <!-- Overlay Color -->
     <variable name="ColorOverlay">
+        <value condition="Skin.HasSetting(DisableOverlay)">bf000000</value>
         <value condition="!String.IsEmpty(Skin.String(overlaycolor.name))">$INFO[Skin.String(overlaycolor.name)]</value>
         <value>Highlight</value>
     </variable>

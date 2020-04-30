@@ -2049,6 +2049,7 @@
                     <visible>$EXP[Exp_ShowPlotOverlay]</visible>
                     <include>Animation_Right_Delay</include>
                     <control type="group">
+                        <include condition="Skin.HasSetting(DisablePanelDivider)">Defs_View_Info_Left_NoPanel</include>
                         <left>view_info_left</left>
                         <control type="grouplist" id="9601">
                             <left>-20</left>

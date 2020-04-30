@@ -126,7 +126,8 @@
 
     <variable name="Label_Setting_BackgroundStyle">
         <value condition="!Skin.HasSetting(DisableBlur)">Blur</value>
-        <value>Overlay</value>
+        <value condition="!Skin.HasSetting(DisableOverlay)">Overlay</value>
+        <value>Vignette</value>
     </variable>
 
     <variable name="Label_3001_Info_Title">

@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
 
+    <include name="Defs_View_Info_Left_NoPanel"><left>view_info_left_nopanel</left></include>
+
     <variable name="Defs_HomeMenu_Background">
         <value condition="Skin.HasSetting(InvertHomeMenuColors)">dialog_fg_100</value>
         <value>dialog_bg_100</value>

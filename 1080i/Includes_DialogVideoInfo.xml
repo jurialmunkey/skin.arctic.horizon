@@ -8,6 +8,7 @@
                 <control type="image">
                     <aspectratio align="left">scale</aspectratio>
                     <texture colordiffuse="7fffffff">common/panel.png</texture>
+                    <visible>!Skin.HasSetting(DisablePanelDivider)</visible>
                 </control>
                 <include content="Topbar_Left">
                     <param name="fgcolor" value="main_fg" />
@@ -26,6 +27,7 @@
                     <width>24</width>
                     <right>0</right>
                     <texture flipx="false">common/shadow-line-vert-24.png</texture>
+                    <visible>!Skin.HasSetting(DisablePanelDivider)</visible>
                     <visible>Skin.HasSetting(ShadowLines)</visible>
                 </control>
             </control>
@@ -96,8 +98,11 @@
             <control type="group">
                 <visible>$EXP[Exp_TrailerWindow]</visible>
                 <include>Animation_Right_Delay</include>
-                <include content="View_Pad">
+                <include content="View_Pad" condition="!Skin.HasSetting(DisablePanelDivider)">
                     <param name="left" value="view_info_left" />
+                </include>
+                <include content="View_Pad" condition="Skin.HasSetting(DisablePanelDivider)">
+                    <param name="left" value="view_info_left_nopanel" />
                 </include>
                 <control type="group">
                     <left>view_pad</left>
@@ -234,8 +239,11 @@
     <include name="DialogVideoInfo_MainGroup">
         <control type="group">
             <nested />
-            <include content="View_Pad">
+            <include content="View_Pad" condition="!Skin.HasSetting(DisablePanelDivider)">
                 <param name="left" value="view_info_left" />
+            </include>
+            <include content="View_Pad" condition="Skin.HasSetting(DisablePanelDivider)">
+                <param name="left" value="view_info_left_nopanel" />
             </include>
             <visible allowhiddenfocus="true">!$EXP[Exp_ShowPlotOverlay]</visible>
             <include>Animation_FadeInOut</include>

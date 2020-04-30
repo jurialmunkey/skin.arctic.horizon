@@ -48,6 +48,7 @@
     <constant name="view_poster_height">830</constant>
     <constant name="view_poster_width">570</constant>
     <constant name="view_info_left">700</constant>
+    <constant name="view_info_left_nopanel">620</constant>
 
     <constant name="item_list_height">80</constant>
     <constant name="item_list_height_half">40</constant>
