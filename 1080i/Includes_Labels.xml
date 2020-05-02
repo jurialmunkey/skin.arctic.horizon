@@ -130,6 +130,12 @@
         <value>Vignette</value>
     </variable>
 
+    <variable name="Label_Setting_DividerStyle">
+        <value condition="Skin.HasSetting(DisablePanelDivider)">None</value>
+        <value condition="Skin.HasSetting(ShadowLines)">Shadow</value>
+        <value>Flat</value>
+    </variable>
+
     <variable name="Label_3001_Info_Title">
         <value condition="[String.IsEqual(Container(3001).ListItem.DBType,season) | String.IsEqual(Container(3001).ListItem.DBType,episode)] + !String.IsEmpty(Container(3001).ListItem.TvShowTitle)">$INFO[Container(3001).ListItem.TvShowTitle]</value>
         <value condition="String.IsEqual(Container(3001).ListItem.DBType,album) | String.IsEqual(Container(3001).ListItem.DBType,song)">$INFO[Container(3001).ListItem.Album]</value>

@@ -315,12 +315,15 @@
                         <onclick>Skin.ToggleSetting(DisableBusyBackground)</onclick>
                     </control>
 
-                    <control type="radiobutton" id="19277" description="Shadowlines">
+                    <control type="button" id="19277" description="Shadowlines">
                         <visible>Integer.IsEqual(Window.Property(CurrentFocus),9002)</visible>
                         <include>Defs_Settings_Button</include>
-                        <label>Divider shadows</label>
-                        <selected>Skin.HasSetting(ShadowLines)</selected>
-                        <onclick>Skin.ToggleSetting(ShadowLines)</onclick>
+                        <label>Divider style</label>
+                        <label2>$VAR[Label_Setting_DividerStyle]</label2>
+                        <onclick condition="Skin.HasSetting(DisablePanelDivider)">Skin.Reset(DisablePanelDivider)</onclick>
+                        <onclick condition="!Skin.HasSetting(DisablePanelDivider)">Skin.ToggleSetting(ShadowLines)</onclick>
+                        <onclick condition="Skin.HasSetting(ShadowLines)">Skin.SetBool(DisablePanelDivider)</onclick>
+                        <onclick condition="Skin.HasSetting(ShadowLines)">Skin.Reset(ShadowLines)</onclick>
                     </control>
 
                     <!-- ====== -->
