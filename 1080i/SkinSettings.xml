@@ -430,13 +430,13 @@
                         <onclick>Skin.ToggleSetting(DisableTextPanel)</onclick>
                     </control>
 
-                    <control type="radiobutton" id="19402" description="Disable watched indicators">
+                    <!-- <control type="radiobutton" id="19402" description="Disable watched indicators">
                         <visible>Integer.IsEqual(Window.Property(CurrentFocus),9004)</visible>
                         <include>Defs_Settings_Button</include>
                         <label>$LOCALIZE[31317]</label>
                         <selected>!Skin.HasSetting(DisableWatchedOverlay)</selected>
                         <onclick>Skin.ToggleSetting(DisableWatchedOverlay)</onclick>
-                    </control>
+                    </control> -->
 
                     <!-- <control type="label" id="19482" description="LABEL">
                         <visible>Integer.IsEqual(Window.Property(CurrentFocus),9004)</visible>
@@ -740,6 +740,13 @@
                         <label>$LOCALIZE[31165]</label>
                     </control>
 
+                    <control type="button" id="19709" description="Ratings">
+                        <visible>Integer.IsEqual(Window.Property(CurrentFocus),9007)</visible>
+                        <include>Defs_Settings_Button</include>
+                        <label>$LOCALIZE[31116]</label>
+                        <onclick>ActivateWindow(1118)</onclick>
+                    </control>
+
                     <control type="button" id="19703" description="Customise Shutdown Menu">
                         <visible>Integer.IsEqual(Window.Property(CurrentFocus),9007)</visible>
                         <include>Defs_Settings_Button</include>
@@ -761,11 +768,11 @@
                         <onclick>RunScript(script.skinshortcuts,type=manage&amp;group=searchmenu)</onclick>
                     </control>
 
-                    <control type="button" id="19709" description="Ratings">
+                    <control type="button" id="19715" description="Disable watched indicators">
                         <visible>Integer.IsEqual(Window.Property(CurrentFocus),9007)</visible>
                         <include>Defs_Settings_Button</include>
-                        <label>$LOCALIZE[31116]</label>
-                        <onclick>ActivateWindow(1118)</onclick>
+                        <label>$LOCALIZE[31082]</label>
+                        <onclick>ActivateWindow(1121)</onclick>
                     </control>
 
                     <control type="label" id="19781" description="LABEL">

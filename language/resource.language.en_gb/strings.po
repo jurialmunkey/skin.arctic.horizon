@@ -421,6 +421,16 @@ msgid "Show sort letter when scrolling wall"
 msgstr ""
 
 #: /1080i/SkinSettings.xml
+msgctxt "#31082"
+msgid "Customise watched indicators"
+msgstr ""
+
+#: /1080i/Custom_1121_EnableIndicators.xml
+msgctxt "#31083"
+msgid "Hide all indicators"
+msgstr ""
+
+#: /1080i/SkinSettings.xml
 msgctxt "#31087"
 msgid "Display colour overlay"
 msgstr ""
@@ -671,7 +681,7 @@ msgstr ""
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31165"
-msgid "Custom lists"
+msgid "Lists and indicators"
 msgstr ""
 
 #: /1080i/SkinSettings.xml

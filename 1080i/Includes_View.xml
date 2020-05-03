@@ -298,7 +298,7 @@
                 <align>center</align>
                 <textcolor>ffededed</textcolor>
                 <label>$INFO[ListItem.Property(UnWatchedEpisodes)]</label>
-                <visible>Integer.IsGreater(ListItem.Property(UnWatchedEpisodes),0) + [String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,season)]</visible>
+                <visible>Integer.IsGreater(ListItem.Property(UnWatchedEpisodes),0) + [String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,season)] + !Skin.HasSetting(DisableIndicator.Episodes)</visible>
             </control>
         </control>
     </include>
@@ -329,7 +329,7 @@
                 <align>center</align>
                 <textcolor>panel_bg</textcolor>
                 <label>$INFO[ListItem.Property(UnWatchedEpisodes)]</label>
-                <visible>Integer.IsGreater(ListItem.Property(UnWatchedEpisodes),0) + [String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,season)]</visible>
+                <visible>Integer.IsGreater(ListItem.Property(UnWatchedEpisodes),0) + [String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,season)] + !Skin.HasSetting(DisableIndicator.Episodes)</visible>
             </control>
         </control>
     </include>

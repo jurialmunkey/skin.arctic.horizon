@@ -693,6 +693,47 @@
         <textcolor>dialog_fg_70</textcolor>
     </include>
 
+    <include name="Dialog_Indicators_RadioButton">
+        <param name="colordiffuse" default="dialog_fg_70" />
+        <param name="onright" default="61" />
+        <param name="onleft" default="" />
+        <definition>
+            <control type="group" id="$PARAM[group-id]">
+                <height>item_list_height</height>
+                <control type="radiobutton" id="$PARAM[id]">
+                    <onup>$PARAM[onup]</onup>
+                    <ondown>$PARAM[ondown]</ondown>
+                    <onright>$PARAM[onright]</onright>
+                    <onleft>$PARAM[onleft]</onleft>
+                    <label>$PARAM[label]</label>
+                    <radioposx>730</radioposx>
+                    <textoffsetx>84</textoffsetx>
+                    <include>Dialog_Standard_Button</include>
+                    <enable>$PARAM[enable]</enable>
+                    <onclick>$PARAM[onclick]</onclick>
+                    <selected>$PARAM[selected]</selected>
+                </control>
+                <control type="image">
+                    <centertop>50%</centertop>
+                    <left>30</left>
+                    <height>32</height>
+                    <width>32</width>
+                    <texture colordiffuse="$PARAM[colordiffuse]">$PARAM[icon]</texture>
+                    <visible>!Control.HasFocus($PARAM[id])</visible>
+                    <animation effect="fade" start="100" end="12" condition="![$PARAM[enable]]">Conditional</animation>
+                </control>
+                <control type="image">
+                    <centertop>50%</centertop>
+                    <left>30</left>
+                    <height>32</height>
+                    <width>32</width>
+                    <texture>$PARAM[icon]</texture>
+                    <visible>Control.HasFocus($PARAM[id])</visible>
+                </control>
+            </control>
+        </definition>
+    </include>
+
     <!-- ============ -->
     <!-- Info Dialogs -->
     <!-- ============ -->

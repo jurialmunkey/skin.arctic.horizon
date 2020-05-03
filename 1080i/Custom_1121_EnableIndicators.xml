@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Foundation -->
+<window type="dialog" id="1121">
+    <defaultcontrol always="true">9000</defaultcontrol>
+    <controls>
+        <include>Global_Overlay</include>
+        <control type="group">
+            <include content="Dialog_Standard_Group">
+                <param name="width" value="1180" />
+                <param name="height" value="710" />
+                <param name="centertop" value="595" />
+            </include>
+
+            <control type="label">
+                <description>Header Label</description>
+                <label>$LOCALIZE[31082]</label>
+                <include>Dialog_Standard_Header</include>
+            </control>
+
+            <include content="Defs_Settings_Gradient">
+                <param name="id" value="9000" />
+                <top>dialog_top</top>
+                <height>item_list_height</height>
+                <width>780</width>
+                <visible>ControlGroup(9000).HasFocus()</visible>
+            </include>
+
+            <control type="grouplist" id="9000">
+                <onright>61</onright>
+                <description>Control Area</description>
+                <width>780</width>
+                <top>dialog_top</top>
+                <height>800</height>
+                <itemgap>0</itemgap>
+                <pagecontrol>61</pagecontrol>
+                <orientation>vertical</orientation>
+                <usecontrolcoords>true</usecontrolcoords>
+                <control type="radiobutton" id="9001">
+                    <label>$LOCALIZE[31083]</label>
+                    <radioposx>730</radioposx>
+                    <include>Dialog_Standard_Button</include>
+                    <onclick>Skin.ToggleSetting(DisableWatchedOverlay)</onclick>
+                    <selected>Skin.HasSetting(DisableWatchedOverlay)</selected>
+                </control>
+
+                <include content="Dialog_Indicators_RadioButton">
+                    <param name="onup" value="9001" />
+                    <param name="id" value="9002" />
+                    <param name="ondown" value="9003" />
+                    <param name="group-id" value="9102" />
+                    <param name="label" value="Recently added" />
+                    <param name="icon" value="indicator/new-fo.png" />
+                    <param name="enable" value="!Skin.HasSetting(DisableWatchedOverlay)" />
+                    <param name="onclick" value="Skin.ToggleSetting(DisableIndicator.New)" />
+                    <param name="selected" value="!Skin.HasSetting(DisableIndicator.New)" />
+                </include>
+                <include content="Dialog_Indicators_RadioButton">
+                    <param name="onup" value="9002" />
+                    <param name="id" value="9003" />
+                    <param name="ondown" value="9004" />
+                    <param name="group-id" value="9103" />
+                    <param name="label" value="Unwatched episodes" />
+                    <param name="icon" value="indicator/unwatched.png" />
+                    <param name="enable" value="!Skin.HasSetting(DisableWatchedOverlay)" />
+                    <param name="onclick" value="Skin.ToggleSetting(DisableIndicator.Episodes)" />
+                    <param name="selected" value="!Skin.HasSetting(DisableIndicator.Episodes)" />
+                </include>
+                <include content="Dialog_Indicators_RadioButton">
+                    <param name="onup" value="9003" />
+                    <param name="id" value="9004" />
+                    <param name="ondown" value="9005" />
+                    <param name="group-id" value="9104" />
+                    <param name="label" value="Watched" />
+                    <param name="icon" value="indicator/checkmark-fo.png" />
+                    <param name="enable" value="!Skin.HasSetting(DisableWatchedOverlay)" />
+                    <param name="onclick" value="Skin.ToggleSetting(DisableIndicator.Watched)" />
+                    <param name="selected" value="!Skin.HasSetting(DisableIndicator.Watched)" />
+                </include>
+                <include content="Dialog_Indicators_RadioButton">
+                    <param name="onup" value="9004" />
+                    <param name="id" value="9005" />
+                    <param name="ondown" value="9006" />
+                    <param name="group-id" value="9105" />
+                    <param name="label" value="In-progress" />
+                    <param name="icon" value="indicator/inprogress-75.png" />
+                    <param name="enable" value="!Skin.HasSetting(DisableWatchedOverlay)" />
+                    <param name="onclick" value="Skin.ToggleSetting(DisableIndicator.Progress)" />
+                    <param name="selected" value="!Skin.HasSetting(DisableIndicator.Progress)" />
+                </include>
+                <include content="Dialog_Indicators_RadioButton">
+                    <param name="onup" value="9005" />
+                    <param name="id" value="9006" />
+                    <param name="ondown" value="9007" />
+                    <param name="group-id" value="9106" />
+                    <param name="label" value="Library" />
+                    <param name="icon" value="indicator/library.png" />
+                    <param name="enable" value="!Skin.HasSetting(DisableWatchedOverlay)" />
+                    <param name="onclick" value="Skin.ToggleSetting(DisableIndicator.Library)" />
+                    <param name="selected" value="!Skin.HasSetting(DisableIndicator.Library)" />
+                </include>
+                <include content="Dialog_Indicators_RadioButton">
+                    <param name="onup" value="9006" />
+                    <param name="id" value="9007" />
+                    <param name="ondown" value="9001" />
+                    <param name="group-id" value="9107" />
+                    <param name="label" value="Movie set" />
+                    <param name="icon" value="indicator/movieset.png" />
+                    <param name="enable" value="!Skin.HasSetting(DisableWatchedOverlay)" />
+                    <param name="onclick" value="Skin.ToggleSetting(DisableIndicator.MovieSet)" />
+                    <param name="selected" value="!Skin.HasSetting(DisableIndicator.MovieSet)" />
+                </include>
+            </control>
+
+            <include content="Dialog_Scrollbar">
+                <param name="onleft" value="9000" />
+            </include>
+
+
+            <control type="group">
+                <include>Dialog_Standard_Right_Group</include>
+                <control type="grouplist" id="8000">
+                    <onleft>61</onleft>
+                    <orientation>vertical</orientation>
+                    <itemgap>0</itemgap>
+                    <control type="button" id="8001" description="Close">
+                        <label>$LOCALIZE[15067]</label>
+                        <onclick>Close</onclick>
+                        <include>Dialog_Standard_Right_Buttons</include>
+                    </control>
+                </control>
+            </control>
+        </control>
+    </controls>
+</window>

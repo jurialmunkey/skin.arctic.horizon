@@ -51,6 +51,7 @@
     <constant name="view_info_left_nopanel">620</constant>
 
     <constant name="item_list_height">80</constant>
+    <constant name="-item_list_height">-80</constant>
     <constant name="item_list_height_half">40</constant>
     <constant name="item_biglist_height">160</constant>
     <constant name="item_icon_height">350</constant>
