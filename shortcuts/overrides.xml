@@ -344,7 +344,6 @@
         <node label="32007">
             <node label="32009">
                 <shortcut label="10001" type="32021" icon="DefaultAddonProgram.png">ActivateWindow(Programs,Addons,return)</shortcut>
-                <shortcut label="20244" type="32021" icon="DefaultAddonProgram.png" condition="System.Platform.Android">ActivateWindow(programs,androidapp://sources/apps/,return)</shortcut>
                 <content>addon-program</content>
             </node>
             <node label="32010">
@@ -359,6 +358,7 @@
                 <shortcut label="1039" type="32020" icon="DefaultAddonPicture.png">ActivateWindow(Pictures,Addons,return)</shortcut>
                 <content>addon-image</content>
             </node>
+            <shortcut label="20244" type="32021" icon="DefaultAddonProgram.png" condition="System.Platform.Android">ActivateWindow(programs,androidapp://sources/apps/,return)</shortcut>
         </node>
         <node label="32006">
             <content>favourite</content>
