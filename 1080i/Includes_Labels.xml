@@ -294,6 +294,15 @@
 
     <variable name="Label_Header_Content">
         <value condition="!String.IsEmpty(Window.Property(Header_Left_Text))">$INFO[Window.Property(Header_Left_Text)]</value>
+        <value condition="Window.IsVisible(interfacesettings)">$LOCALIZE[5] [COLOR=$VAR[ColorHighlight]]|[/COLOR] $LOCALIZE[14206]</value>
+        <value condition="Window.IsVisible(skinsettings)">$LOCALIZE[5] [COLOR=$VAR[ColorHighlight]]|[/COLOR] $LOCALIZE[166]</value>
+        <value condition="Window.IsVisible(mediasettings)">$LOCALIZE[5] [COLOR=$VAR[ColorHighlight]]|[/COLOR] $LOCALIZE[14211]</value>
+        <value condition="Window.IsVisible(playersettings)">$LOCALIZE[5] [COLOR=$VAR[ColorHighlight]]|[/COLOR] $LOCALIZE[14200]</value>
+        <value condition="Window.IsVisible(systemsettings)">$LOCALIZE[5] [COLOR=$VAR[ColorHighlight]]|[/COLOR] $LOCALIZE[13000]</value>
+        <value condition="Window.IsVisible(servicesettings)">$LOCALIZE[5] [COLOR=$VAR[ColorHighlight]]|[/COLOR] $LOCALIZE[14036]</value>
+        <value condition="Window.IsVisible(pvrsettings)">$LOCALIZE[5] [COLOR=$VAR[ColorHighlight]]|[/COLOR] $LOCALIZE[31103]</value>
+        <value condition="Window.IsVisible(systeminfo)">$LOCALIZE[5] [COLOR=$VAR[ColorHighlight]]|[/COLOR] $LOCALIZE[10511]</value>
+        <value condition="Window.IsVisible(SettingsProfile.xml)">$LOCALIZE[5] [COLOR=$VAR[ColorHighlight]]|[/COLOR] $LOCALIZE[13200]</value>
         <value condition="Window.IsVisible(Settings.xml) | Window.IsVisible(SettingsCategory.xml) | Window.IsVisible(SkinSettings.xml) | Window.IsVisible(SettingsProfile.xml) | Window.IsVisible(SettingsSystemInfo.xml) | Window.IsVisible(eventlog)">$LOCALIZE[5]</value>
         <value condition="Window.IsVisible(MyWeather.xml)">$LOCALIZE[8]</value>
         <value condition="Window.IsVisible(MyPlaylist.xml)">$LOCALIZE[559]</value>
