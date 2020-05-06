@@ -1252,6 +1252,8 @@
                             <param name="viewtype-include" value="$PARAM[viewtype-include]" />
                             <param name="icon" value="$PARAM[icon]" />
                             <param name="showonupdate" value="false" />
+                            <onclick condition="!String.IsEmpty(ListItem.Property(tvshow.dbid)) + Window.IsVisible(1111)">ActivateWindow(videos,videodb://tvshows/titles/$INFO[ListItem.Property(tvshow.dbid)]/,return)</onclick>
+                            <onclick condition="String.IsEmpty(ListItem.Property(tvshow.dbid)) | !Window.IsVisible(1111)">ActivateWindow(videos,plugin://plugin.video.themoviedb.helper/?info=seasons&amp;type=tv&amp;nextpage=True&amp;tmdb_id=$INFO[ListItem.Property(tvshow.tmdb_id)],return)</onclick>
                             <movement>$PARAM[movement]</movement>
                             <content>plugin://plugin.video.themoviedb.helper/?info=$PARAM[info]&amp;startdate=-1&amp;days=1&amp;widget=True&amp;type=episode</content>
                         </include>
@@ -1262,6 +1264,8 @@
                             <param name="viewtype-include" value="$PARAM[viewtype-include]" />
                             <param name="icon" value="$PARAM[icon]" />
                             <param name="showonupdate" value="false" />
+                            <onclick condition="!String.IsEmpty(ListItem.Property(tvshow.dbid)) + Window.IsVisible(1111)">ActivateWindow(videos,videodb://tvshows/titles/$INFO[ListItem.Property(tvshow.dbid)]/,return)</onclick>
+                            <onclick condition="String.IsEmpty(ListItem.Property(tvshow.dbid)) | !Window.IsVisible(1111)">ActivateWindow(videos,plugin://plugin.video.themoviedb.helper/?info=seasons&amp;type=tv&amp;nextpage=True&amp;tmdb_id=$INFO[ListItem.Property(tvshow.tmdb_id)],return)</onclick>
                             <movement>$PARAM[movement]</movement>
                             <content>plugin://plugin.video.themoviedb.helper/?info=$PARAM[info]&amp;startdate=0&amp;days=1&amp;widget=True&amp;type=episode</content>
                         </include>
@@ -1272,6 +1276,8 @@
                             <param name="viewtype-include" value="$PARAM[viewtype-include]" />
                             <param name="icon" value="$PARAM[icon]" />
                             <param name="showonupdate" value="false" />
+                            <onclick condition="!String.IsEmpty(ListItem.Property(tvshow.dbid)) + Window.IsVisible(1111)">ActivateWindow(videos,videodb://tvshows/titles/$INFO[ListItem.Property(tvshow.dbid)]/,return)</onclick>
+                            <onclick condition="String.IsEmpty(ListItem.Property(tvshow.dbid)) | !Window.IsVisible(1111)">ActivateWindow(videos,plugin://plugin.video.themoviedb.helper/?info=seasons&amp;type=tv&amp;nextpage=True&amp;tmdb_id=$INFO[ListItem.Property(tvshow.tmdb_id)],return)</onclick>
                             <movement>$PARAM[movement]</movement>
                             <content>plugin://plugin.video.themoviedb.helper/?info=$PARAM[info]&amp;startdate=1&amp;days=1&amp;widget=True&amp;type=episode</content>
                         </include>
@@ -1282,6 +1288,8 @@
                             <param name="viewtype-include" value="$PARAM[viewtype-include]" />
                             <param name="icon" value="$PARAM[icon]" />
                             <param name="showonupdate" value="false" />
+                            <onclick condition="!String.IsEmpty(ListItem.Property(tvshow.dbid)) + Window.IsVisible(1111)">ActivateWindow(videos,videodb://tvshows/titles/$INFO[ListItem.Property(tvshow.dbid)]/,return)</onclick>
+                            <onclick condition="String.IsEmpty(ListItem.Property(tvshow.dbid)) | !Window.IsVisible(1111)">ActivateWindow(videos,plugin://plugin.video.themoviedb.helper/?info=seasons&amp;type=tv&amp;nextpage=True&amp;tmdb_id=$INFO[ListItem.Property(tvshow.tmdb_id)],return)</onclick>
                             <movement>$PARAM[movement]</movement>
                             <content>plugin://plugin.video.themoviedb.helper/?info=$PARAM[info]&amp;startdate=2&amp;days=1&amp;widget=True&amp;type=episode</content>
                         </include>
@@ -1292,6 +1300,8 @@
                             <param name="viewtype-include" value="$PARAM[viewtype-include]" />
                             <param name="icon" value="$PARAM[icon]" />
                             <param name="showonupdate" value="false" />
+                            <onclick condition="!String.IsEmpty(ListItem.Property(tvshow.dbid)) + Window.IsVisible(1111)">ActivateWindow(videos,videodb://tvshows/titles/$INFO[ListItem.Property(tvshow.dbid)]/,return)</onclick>
+                            <onclick condition="String.IsEmpty(ListItem.Property(tvshow.dbid)) | !Window.IsVisible(1111)">ActivateWindow(videos,plugin://plugin.video.themoviedb.helper/?info=seasons&amp;type=tv&amp;nextpage=True&amp;tmdb_id=$INFO[ListItem.Property(tvshow.tmdb_id)],return)</onclick>
                             <movement>$PARAM[movement]</movement>
                             <content>plugin://plugin.video.themoviedb.helper/?info=$PARAM[info]&amp;startdate=3&amp;days=1&amp;widget=True&amp;type=episode</content>
                         </include>
@@ -1302,6 +1312,8 @@
                             <param name="viewtype-include" value="$PARAM[viewtype-include]" />
                             <param name="icon" value="$PARAM[icon]" />
                             <param name="showonupdate" value="false" />
+                            <onclick condition="!String.IsEmpty(ListItem.Property(tvshow.dbid)) + Window.IsVisible(1111)">ActivateWindow(videos,videodb://tvshows/titles/$INFO[ListItem.Property(tvshow.dbid)]/,return)</onclick>
+                            <onclick condition="String.IsEmpty(ListItem.Property(tvshow.dbid)) | !Window.IsVisible(1111)">ActivateWindow(videos,plugin://plugin.video.themoviedb.helper/?info=seasons&amp;type=tv&amp;nextpage=True&amp;tmdb_id=$INFO[ListItem.Property(tvshow.tmdb_id)],return)</onclick>
                             <movement>$PARAM[movement]</movement>
                             <content>plugin://plugin.video.themoviedb.helper/?info=$PARAM[info]&amp;startdate=4&amp;days=1&amp;widget=True&amp;type=episode</content>
                         </include>
@@ -1312,6 +1324,8 @@
                             <param name="viewtype-include" value="$PARAM[viewtype-include]" />
                             <param name="icon" value="$PARAM[icon]" />
                             <param name="showonupdate" value="false" />
+                            <onclick condition="!String.IsEmpty(ListItem.Property(tvshow.dbid)) + Window.IsVisible(1111)">ActivateWindow(videos,videodb://tvshows/titles/$INFO[ListItem.Property(tvshow.dbid)]/,return)</onclick>
+                            <onclick condition="String.IsEmpty(ListItem.Property(tvshow.dbid)) | !Window.IsVisible(1111)">ActivateWindow(videos,plugin://plugin.video.themoviedb.helper/?info=seasons&amp;type=tv&amp;nextpage=True&amp;tmdb_id=$INFO[ListItem.Property(tvshow.tmdb_id)],return)</onclick>
                             <movement>$PARAM[movement]</movement>
                             <content>plugin://plugin.video.themoviedb.helper/?info=$PARAM[info]&amp;startdate=5&amp;days=1&amp;widget=True&amp;type=episode</content>
                         </include>
@@ -1322,6 +1336,8 @@
                             <param name="viewtype-include" value="$PARAM[viewtype-include]" />
                             <param name="icon" value="$PARAM[icon]" />
                             <param name="showonupdate" value="false" />
+                            <onclick condition="!String.IsEmpty(ListItem.Property(tvshow.dbid)) + Window.IsVisible(1111)">ActivateWindow(videos,videodb://tvshows/titles/$INFO[ListItem.Property(tvshow.dbid)]/,return)</onclick>
+                            <onclick condition="String.IsEmpty(ListItem.Property(tvshow.dbid)) | !Window.IsVisible(1111)">ActivateWindow(videos,plugin://plugin.video.themoviedb.helper/?info=seasons&amp;type=tv&amp;nextpage=True&amp;tmdb_id=$INFO[ListItem.Property(tvshow.tmdb_id)],return)</onclick>
                             <movement>$PARAM[movement]</movement>
                             <content>plugin://plugin.video.themoviedb.helper/?info=$PARAM[info]&amp;startdate=6&amp;days=1&amp;widget=True&amp;type=episode</content>
                         </include>
@@ -1332,6 +1348,8 @@
                             <param name="viewtype-include" value="$PARAM[viewtype-include]" />
                             <param name="icon" value="$PARAM[icon]" />
                             <param name="showonupdate" value="false" />
+                            <onclick condition="!String.IsEmpty(ListItem.Property(tvshow.dbid)) + Window.IsVisible(1111)">ActivateWindow(videos,videodb://tvshows/titles/$INFO[ListItem.Property(tvshow.dbid)]/,return)</onclick>
+                            <onclick condition="String.IsEmpty(ListItem.Property(tvshow.dbid)) | !Window.IsVisible(1111)">ActivateWindow(videos,plugin://plugin.video.themoviedb.helper/?info=seasons&amp;type=tv&amp;nextpage=True&amp;tmdb_id=$INFO[ListItem.Property(tvshow.tmdb_id)],return)</onclick>
                             <movement>$PARAM[movement]</movement>
                             <content>plugin://plugin.video.themoviedb.helper/?info=$PARAM[info]&amp;startdate=7&amp;days=1&amp;widget=True&amp;type=episode</content>
                         </include>

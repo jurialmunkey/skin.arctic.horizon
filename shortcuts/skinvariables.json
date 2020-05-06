@@ -63,7 +63,7 @@
         "name"          : "Exp_DefaultIcon",
         "containers"    : [51,52,53,54,55,56,530,560,3001,5610],
         "listitems"     : {"start": -16, "end": 29},
-        "expression"    : "[String.IsEmpty({listitem}.Art(poster)) + String.IsEmpty({listitem}.Art(tvshow.poster)) + String.IsEmpty({listitem}.Art(fanart)) + String.IsEmpty({listitem}.Art(clearlogo))  + String.IsEmpty({listitem}.Art(landscape)) + [String.IsEqual({listitem}.Icon,{listitem}.ActualIcon) | [Window.IsVisible(AddonBrowser.xml) + String.IsEmpty({listitem}.AddonName)] | [Window.IsMedia + String.IsEmpty(Container.FolderPath)]]]"
+        "expression"    : "[String.IsEmpty({listitem}.Art(poster)) + String.IsEmpty({listitem}.Art(tvshow.poster)) + String.IsEmpty({listitem}.Art(fanart)) + String.IsEmpty({listitem}.Art(tvshow.fanart)) + String.IsEmpty({listitem}.Art(clearlogo))  + String.IsEmpty({listitem}.Art(landscape)) + [String.IsEqual({listitem}.Icon,{listitem}.ActualIcon) | [Window.IsVisible(AddonBrowser.xml) + String.IsEmpty({listitem}.AddonName)] | [Window.IsMedia + String.IsEmpty(Container.FolderPath)]]]"
     },
     {
         "name"          : "Exp_SpecialIcon",
