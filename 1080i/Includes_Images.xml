@@ -277,8 +277,9 @@
 
     <variable name="Image_Fanart">
         <value condition="Container.Content(images)">$INFO[ListItem.Icon]</value>
-        <value condition="!String.IsEmpty(ListItem.Property(fanart))">$INFO[ListItem.Property(fanart)]</value>
+        <value condition="!String.IsEmpty(ListItem.Art(tvshow.fanart))">$INFO[ListItem.Art(tvshow.fanart)]</value>
         <value condition="!String.IsEmpty(ListItem.Art(fanart))">$INFO[ListItem.Art(fanart)]</value>
+        <value condition="!String.IsEmpty(ListItem.Property(fanart))">$INFO[ListItem.Property(fanart)]</value>
         <value>$INFO[ListItem.Icon]</value>
     </variable>
 </includes>
