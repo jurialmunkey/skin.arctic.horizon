@@ -1251,6 +1251,7 @@
                             <param name="label" value="Yesterday" />
                             <param name="viewtype-include" value="$PARAM[viewtype-include]" />
                             <param name="icon" value="$PARAM[icon]" />
+                            <param name="showonupdate" value="false" />
                             <movement>$PARAM[movement]</movement>
                             <content>plugin://plugin.video.themoviedb.helper/?info=$PARAM[info]&amp;startdate=-1&amp;days=1&amp;widget=True&amp;type=episode</content>
                         </include>
@@ -1260,6 +1261,7 @@
                             <param name="label" value="Today" />
                             <param name="viewtype-include" value="$PARAM[viewtype-include]" />
                             <param name="icon" value="$PARAM[icon]" />
+                            <param name="showonupdate" value="false" />
                             <movement>$PARAM[movement]</movement>
                             <content>plugin://plugin.video.themoviedb.helper/?info=$PARAM[info]&amp;startdate=0&amp;days=1&amp;widget=True&amp;type=episode</content>
                         </include>
@@ -1269,6 +1271,7 @@
                             <param name="label" value="Tomorrow" />
                             <param name="viewtype-include" value="$PARAM[viewtype-include]" />
                             <param name="icon" value="$PARAM[icon]" />
+                            <param name="showonupdate" value="false" />
                             <movement>$PARAM[movement]</movement>
                             <content>plugin://plugin.video.themoviedb.helper/?info=$PARAM[info]&amp;startdate=1&amp;days=1&amp;widget=True&amp;type=episode</content>
                         </include>
@@ -1278,6 +1281,7 @@
                             <param name="label" value="$INFO[Container(5003).ListItem.Property(widget)]" />
                             <param name="viewtype-include" value="$PARAM[viewtype-include]" />
                             <param name="icon" value="$PARAM[icon]" />
+                            <param name="showonupdate" value="false" />
                             <movement>$PARAM[movement]</movement>
                             <content>plugin://plugin.video.themoviedb.helper/?info=$PARAM[info]&amp;startdate=2&amp;days=1&amp;widget=True&amp;type=episode</content>
                         </include>
@@ -1287,6 +1291,7 @@
                             <param name="label" value="$INFO[Container(5004).ListItem.Property(widget)]" />
                             <param name="viewtype-include" value="$PARAM[viewtype-include]" />
                             <param name="icon" value="$PARAM[icon]" />
+                            <param name="showonupdate" value="false" />
                             <movement>$PARAM[movement]</movement>
                             <content>plugin://plugin.video.themoviedb.helper/?info=$PARAM[info]&amp;startdate=3&amp;days=1&amp;widget=True&amp;type=episode</content>
                         </include>
@@ -1296,6 +1301,7 @@
                             <param name="label" value="$INFO[Container(5005).ListItem.Property(widget)]" />
                             <param name="viewtype-include" value="$PARAM[viewtype-include]" />
                             <param name="icon" value="$PARAM[icon]" />
+                            <param name="showonupdate" value="false" />
                             <movement>$PARAM[movement]</movement>
                             <content>plugin://plugin.video.themoviedb.helper/?info=$PARAM[info]&amp;startdate=4&amp;days=1&amp;widget=True&amp;type=episode</content>
                         </include>
@@ -1305,6 +1311,7 @@
                             <param name="label" value="$INFO[Container(5006).ListItem.Property(widget)]" />
                             <param name="viewtype-include" value="$PARAM[viewtype-include]" />
                             <param name="icon" value="$PARAM[icon]" />
+                            <param name="showonupdate" value="false" />
                             <movement>$PARAM[movement]</movement>
                             <content>plugin://plugin.video.themoviedb.helper/?info=$PARAM[info]&amp;startdate=5&amp;days=1&amp;widget=True&amp;type=episode</content>
                         </include>
@@ -1314,6 +1321,7 @@
                             <param name="label" value="$INFO[Container(5007).ListItem.Property(widget)]" />
                             <param name="viewtype-include" value="$PARAM[viewtype-include]" />
                             <param name="icon" value="$PARAM[icon]" />
+                            <param name="showonupdate" value="false" />
                             <movement>$PARAM[movement]</movement>
                             <content>plugin://plugin.video.themoviedb.helper/?info=$PARAM[info]&amp;startdate=6&amp;days=1&amp;widget=True&amp;type=episode</content>
                         </include>
@@ -1323,6 +1331,7 @@
                             <param name="label" value="$INFO[Container(5008).ListItem.Property(widget)]" />
                             <param name="viewtype-include" value="$PARAM[viewtype-include]" />
                             <param name="icon" value="$PARAM[icon]" />
+                            <param name="showonupdate" value="false" />
                             <movement>$PARAM[movement]</movement>
                             <content>plugin://plugin.video.themoviedb.helper/?info=$PARAM[info]&amp;startdate=7&amp;days=1&amp;widget=True&amp;type=episode</content>
                         </include>
