@@ -7,9 +7,9 @@
         <control type="group">
 
             <include content="Dialog_Standard_Group">
-                <param name="width" value="1620" />
-                <param name="height" value="990" />
-                <param name="centertop" value="535" />
+                <param name="width" value="1600" />
+                <param name="height" value="1000" />
+                <param name="centertop" value="540" />
             </include>
 
             <!-- Header Label -->
@@ -366,9 +366,9 @@
         <control type="group">
             <visible>ControlGroup(9300).HasFocus()</visible>
             <centerleft>50%</centerleft>
-            <centertop>535</centertop>
+            <centertop>540</centertop>
             <width>1020</width>
-            <height>910</height>
+            <height>920</height>
             <include>Animation_FadeIn_Slide</include>
             <animation effect="slide" start="0" end="0,160" condition="!String.IsEqual(Window.Property(groupname),mainmenu)">Conditional</animation>
             <control type="image">

@@ -8,8 +8,8 @@
 
         <control type="group">
             <include content="Dialog_Standard_Group">
-                <param name="width" value="1800" />
-                <param name="height" value="900" />
+                <param name="width" value="view_list_width" />
+                <param name="height" value="880" />
             </include>
 
             <control type="label" id="2">
@@ -21,7 +21,7 @@
                 <param name="id" value="9000" />
                 <left>0</left>
                 <top>dialog_top</top>
-                <width>700</width>
+                <width>680</width>
                 <height>item_list_height</height>
                 <visible>ControlGroup(9000).HasFocus()</visible>
             </include>
@@ -30,7 +30,7 @@
             <control type="grouplist" description="Playlist Options" id="9000">
                 <left>0</left>
                 <top>dialog_top</top>
-                <width>700</width>
+                <width>680</width>
                 <bottom>dialog_pad</bottom>
                 <itemgap>0</itemgap>
                 <usecontrolcoords>true</usecontrolcoords>
@@ -89,7 +89,7 @@
             <!-- Right Side -->
             <control type="group">
                 <right>dialog_side_grouplist</right>
-                <width>700</width>
+                <width>680</width>
                 <control type="group">
                     <include content="Dialog_Standard_List">
                         <param name="id" value="10" />
@@ -97,14 +97,14 @@
                         <param name="checkmark" value="false" />
                         <param name="onleft" value="9000" />
                         <param name="onright" value="8000" />
-                        <param name="width" value="700" />
+                        <param name="width" value="680" />
                     </include>
                 </control>
             </control>
 
             <control type="group">
                 <right>dialog_side_grouplist</right>
-                <width>700</width>
+                <width>680</width>
                 <include content="Dialog_Separator">
                     <param name="left" value="0" />
                 </include>

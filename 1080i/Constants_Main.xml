@@ -61,11 +61,13 @@
     <constant name="item_poster_width">257.14</constant>
 
     <constant name="dialog_top">120</constant>
-    <constant name="dialog_pad">30</constant>
+    <constant name="dialog_pad">40</constant>
     <constant name="dialog_side_grouplist">400</constant>
-    <constant name="dialog_right_iconwidth">340</constant>
+    <constant name="dialog_right_iconwidth">320</constant>
     <constant name="dialog_settings_grouplist_height">640</constant>
     <constant name="dialog_skinsettings_grouplist_height">720</constant>
+    <constant name="dialog_standard_height">960</constant>
+    <constant name="dialog_standard_width">1360</constant>
 
     <constant name="item_row_height">435</constant>
     <constant name="item_cast_height">405</constant>

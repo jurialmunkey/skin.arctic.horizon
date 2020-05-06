@@ -10,8 +10,8 @@
         <control type="group">
             <visible>!Window.IsVisible(SliderDialog)</visible>
             <include content="Dialog_Standard_Group">
-                <param name="width" value="1420" />
-                <param name="height" value="950" />
+                <param name="width" value="dialog_standard_width" />
+                <param name="height" value="dialog_standard_height" />
             </include>
 
             <control type="label" id="2">

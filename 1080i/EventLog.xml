@@ -49,7 +49,7 @@
                     <align>left</align>
                     <textoffsetx>20</textoffsetx>
                     <include>Dialog_Standard_Right_Buttons</include>
-                    <radioposx>290</radioposx>
+                    <radioposx>270</radioposx>
                 </control>
             </control>
             <include>Dialog_Separator_Right</include>

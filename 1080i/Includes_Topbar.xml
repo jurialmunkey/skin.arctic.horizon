@@ -15,7 +15,6 @@
                 <height>view_header</height>
                 <align>left</align>
                 <visible>$PARAM[visible]</visible>
-                <include>Animation_FadeInOut</include>
                 <control type="grouplist">
                     <top>-22</top>
                     <bottom>-20</bottom>
@@ -23,7 +22,7 @@
                     <orientation>horizontal</orientation>
                     <usecontrolcoords>true</usecontrolcoords>
                     <visible>!Window.IsVisible(DialogBusy.xml)</visible>
-                    <control type="label">
+                    <control type="label" id="$PARAM[id]">
                         <aligny>center</aligny>
                         <font>font_topbar</font>
                         <textcolor>$PARAM[fgcolor]_100</textcolor>

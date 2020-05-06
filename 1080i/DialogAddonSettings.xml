@@ -10,8 +10,9 @@
 
         <control type="group">
             <include content="Dialog_Standard_Group">
-                <param name="width" value="1820" />
-                <param name="height" value="950" />
+                <param name="width" value="view_list_width" />
+                <param name="height" value="view_list_height" />
+                <param name="centertop" value="view_list_center" />
             </include>
 
             <control type="label" id="2">
@@ -70,6 +71,7 @@
             </include>
 
             <control type="group">
+                <top>dialog_top</top>
                 <include>Dialog_Standard_Right_Group</include>
                 <!-- <include content="Dialog_Standard_Right_Buttons_Gradient">
                     <visible>Control.HasFocus(28)</visible>

@@ -10,8 +10,8 @@
 
         <control type="group">
             <include content="Dialog_Standard_Group">
-                <param name="width" value="1360" />
-                <param name="height" value="970" />
+                <param name="width" value="dialog_standard_width" />
+                <param name="height" value="dialog_standard_height" />
             </include>
             <control type="label" id="411">
                 <include>Dialog_Standard_Header</include>
@@ -19,7 +19,7 @@
 
             <control type="label" id="412">
                 <bottom>0</bottom>
-                <height>56</height>
+                <height>45</height>
                 <textcolor>dialog_fg_30</textcolor>
                 <font>font_statusbar</font>
                 <haspath>true</haspath>
@@ -96,12 +96,9 @@
                     </control>
                 </control>
 
-                <control type="group">
-                    <bottom>20</bottom>
-                    <include content="Dialog_Scrollbar">
-                        <param name="onleft" value="450" />
-                    </include>
-                </control>
+                <include content="Dialog_Scrollbar">
+                    <param name="onleft" value="450" />
+                </include>
             </control>
         </control>
     </controls>

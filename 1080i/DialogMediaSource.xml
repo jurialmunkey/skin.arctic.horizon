@@ -10,8 +10,8 @@
 
         <control type="group">
             <include content="Dialog_Standard_Group">
-                <param name="width" value="1360" />
-                <param name="height" value="940" />
+                <param name="width" value="dialog_standard_width" />
+                <param name="height" value="dialog_standard_height" />
             </include>
             <control type="label" id="2">
                 <include>Dialog_Standard_Header</include>
@@ -87,29 +87,6 @@
                     </control>
                 </control>
             </control>
-
-            <!-- <control type="grouplist" id="9000">
-                <left>dialog_pad</left>
-                <right>dialog_pad</right>
-                <bottom>dialog_pad</bottom>
-                <height>item_list_height</height>
-                <align>center</align>
-                <onup>12</onup>
-                <orientation>horizontal</orientation>
-                <itemgap>dialog_pad</itemgap>
-                <control type="button" id="18">
-                    <label>186</label>
-                    <width>312</width>
-                    <texturenofocus colordiffuse="dialog_fg_12" border="5">common/box.png</texturenofocus>
-                    <include>Dialog_Standard_Right_Buttons</include>
-                </control>
-                <control type="button" id="19">
-                    <label>222</label>
-                    <width>312</width>
-                    <texturenofocus colordiffuse="dialog_fg_12" border="5">common/box.png</texturenofocus>
-                    <include>Dialog_Standard_Right_Buttons</include>
-                </control>
-            </control> -->
 
         </control>
     </controls>

@@ -6,8 +6,9 @@
 
         <control type="group">
             <include content="Dialog_Standard_Group">
-                <param name="width" value="1820" />
-                <param name="height" value="990" />
+                <param name="width" value="1840" />
+                <param name="height" value="1000" />
+                <param name="centertop" value="540" />
             </include>
 
             <control type="label" id="2">
@@ -113,7 +114,7 @@
                 <control type="radiobutton" id="25">
                     <description>Hide group</description>
                     <label>19289</label>
-                    <radioposx>285</radioposx>
+                    <radioposx>265</radioposx>
                     <align>left</align>
                     <include>Dialog_Standard_Right_Buttons</include>
                 </control>

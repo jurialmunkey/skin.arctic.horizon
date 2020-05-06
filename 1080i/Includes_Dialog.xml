@@ -493,7 +493,7 @@
         <param name="width" default="1080" />
         <param name="height" default="900" />
         <param name="animation" default="true" />
-        <param name="centertop" default="555" />
+        <param name="centertop" default="560" />
         <definition>
             <centerleft>50%</centerleft>
             <centertop>$PARAM[centertop]</centertop>
@@ -1119,8 +1119,8 @@
 
         <control type="group">
             <include content="Dialog_Standard_Group">
-                <param name="width" value="1360" />
-                <param name="height" value="950" />
+                <param name="width" value="dialog_standard_width" />
+                <param name="height" value="dialog_standard_height" />
             </include>
             <control type="label" id="1">
                 <include>Dialog_Standard_Header</include>

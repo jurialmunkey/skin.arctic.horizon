@@ -12,7 +12,8 @@
             <include>Animation_ZoomIn</include>
             <include content="Dialog_Standard_Group">
                 <param name="width" value="1120" />
-                <param name="height" value="437" />
+                <param name="height" value="440" />
+                <param name="centertop" value="540" />
             </include>
 
             <control type="label" id="2">
@@ -78,7 +79,7 @@
             </control>
 
             <control type="group">
-                <top>39</top>
+                <top>item_list_height_half</top>
                 <control type="grouplist" id="8000">
                     <onleft>9000</onleft>
                     <include>Dialog_Standard_Right_Group</include>
