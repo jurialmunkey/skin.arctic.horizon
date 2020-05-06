@@ -126,7 +126,6 @@
                             <oninfo>ClearProperty(WidgetFocus)</oninfo>
                             <oninfo>SetFocus(303,0,absolute)</oninfo>
                             <onclick>ClearProperty(WidgetMovement)</onclick>
-                            <!-- <onfocus>SetProperty(TMDbHelper.Blur.SourceImage,fallback,Home)</onfocus> -->
                             <onfocus>RunScript(plugin.video.themoviedb.helper,blur_image=$VAR[Global_Background_Image_NoFanart_Fallback])</onfocus>
                             <onclick condition="!String.IsEmpty(Window.Property(WidgetFocus))">SetFocus(3000)</onclick>
                             <onclick condition="String.IsEmpty(Window.Property(WidgetFocus))">SetProperty(301Click,1)</onclick>
@@ -461,7 +460,9 @@
                             <ondown condition="Window.IsVisible(Home)">Control.Move(301,1)</ondown>
                             <onback condition="!Window.IsVisible(Home)">302</onback>
                             <onback condition="Window.IsVisible(Home)">3101</onback>
-                            <onfocus>SetProperty(TMDbHelper.Blur.SourceImage,poster,Home)</onfocus>
+                            <onfocus condition="Skin.HasSetting(NoFanart)">SetProperty(TMDbHelper.Blur.SourceImage,Art(fallback),Home)</onfocus>
+                            .
+                            <onfocus condition="!Skin.HasSetting(NoFanart)">SetProperty(TMDbHelper.Blur.SourceImage,poster,Home)</onfocus>
                             <pagecontrol>60</pagecontrol>
                             <content>plugin://plugin.video.themoviedb.helper/?info=recommendations&amp;type=movie&amp;query=$INFO[Container(3001).ListItem.Title]</content>
                             <visible>String.IsEmpty(Container(302).ListItem.Property(widgetPath))</visible>
@@ -703,7 +704,6 @@
                         <param name="id" value="$PARAM[mainmenu-id]" />
                         <param name="font" value="font_mainmenu" />
                         <param name="top" value="view_pad" />
-                        <!-- <onfocus>SetProperty(TMDbHelper.Blur.SourceImage,fallback,Home)</onfocus> -->
                         <onfocus>RunScript(plugin.video.themoviedb.helper,blur_image=$VAR[Global_Background_Image_NoFanart_Fallback])</onfocus>
                         <onfocus>ClearProperty(TMDbHelper.WidgetContainer,Home)</onfocus>
                         <onback>3000</onback>

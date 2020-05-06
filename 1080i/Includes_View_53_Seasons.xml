@@ -15,9 +15,13 @@
                 <onup>SetFocus(9602)</onup>
                 <ondown>530</ondown>
                 <ondown>SetProperty(TMDbHelper.WidgetContainer,530,Home)</ondown>
-                <ondown>SetProperty(TMDbHelper.Blur.SourceImage,thumb,Home)</ondown>
+                <ondown condition="Skin.HasSetting(NoFanart)">RunScript(plugin.video.themoviedb.helper,blur_image=$VAR[Global_Background_Image_NoFanart_Fallback])</ondown>
+                <ondown condition="Skin.HasSetting(NoFanart)">SetProperty(TMDbHelper.Blur.SourceImage,Art(fallback),Home)</ondown>
+                <ondown condition="!Skin.HasSetting(NoFanart)">SetProperty(TMDbHelper.Blur.SourceImage,thumb,Home)</ondown>
                 <onfocus>ClearProperty(TMDbHelper.WidgetContainer,Home)</onfocus>
-                <onfocus>SetProperty(TMDbHelper.Blur.SourceImage,poster,Home)</onfocus>
+                <onfocus condition="Skin.HasSetting(NoFanart)">SetProperty(TMDbHelper.Blur.SourceImage,Art(fallback),Home)</onfocus>
+                <onfocus condition="!Skin.HasSetting(NoFanart)">SetProperty(TMDbHelper.Blur.SourceImage,poster,Home)</onfocus>
+                .
                 <left>-20</left>
                 <bottom>400</bottom>
                 <animation effect="fade" start="0" end="100" time="400" tween="cubic" easing="inout" reversible="false" delay="200" condition="Container.Content(seasons)">Conditional</animation>
