@@ -614,7 +614,7 @@
 
         <control type="radiobutton" id="8">
             <description>Default RadioButton</description>
-            <radioposx>960</radioposx>
+            <radioposx>900</radioposx>
             <textwidth>870</textwidth>
             <include>Dialog_Standard_Button</include>
         </control>
