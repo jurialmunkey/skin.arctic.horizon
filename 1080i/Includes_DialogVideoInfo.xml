@@ -539,6 +539,7 @@
             <param name="icon" value="$INFO[ListItem.Icon]" />
             <param name="visible" value="String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,season) | String.IsEqual(ListItem.DBType,episode)" />
             <param name="hideisupdating" value="true" />
+            <param name="specialicon" value="false" />
             <onclick>SetFocus(6200)</onclick>
             <include>Defs_InfoList_OnBack</include>
             <movement>1</movement>
