@@ -9,12 +9,12 @@
         <control type="group">
             <include>Dialog_Confirm</include>
             <control type="grouplist">
-                <top>310</top>
-                <height>78</height>
+                <bottom>dialog_pad</bottom>
+                <height>item_list_height</height>
                 <width>100%</width>
                 <align>center</align>
                 <orientation>horizontal</orientation>
-                <itemgap>30</itemgap>
+                <itemgap>dialog_pad</itemgap>
                 <control type="button" id="12">
                     <description>Extra button</description>
                     <width>320</width>
@@ -45,18 +45,18 @@
             </control>
             <control type="progress" id="20">
                 <description>Progressbar</description>
-                <left>15</left>
-                <right>15</right>
-                <bottom>440</bottom>
+                <left>30</left>
+                <right>30</right>
+                <bottom>160</bottom>
                 <height>16</height>
                 <info>System.Progressbar</info>
                 <texturebg colordiffuse="dialog_fg_30" border="4">diffuse/progress-bg.png</texturebg>
             </control>
             <control type="progress">
                 <description>Progressbar</description>
-                <left>15</left>
-                <right>15</right>
-                <bottom>440</bottom>
+                <left>30</left>
+                <right>30</right>
+                <bottom>160</bottom>
                 <height>16</height>
                 <info>System.Progressbar</info>
                 <texturebg colordiffuse="00ffffff" border="4">diffuse/progress-bg.png</texturebg>

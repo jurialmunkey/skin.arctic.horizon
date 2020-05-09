@@ -761,35 +761,26 @@
         <param name="textbox_label" default="" />
         <definition>
             <centerleft>50%</centerleft>
-            <top>360</top>
-            <width>1060</width>
+            <centertop>520</centertop>
+            <width>1120</width>
+            <height>480</height>
             <include>Animation_FadeIn_Slide</include>
             <control type="image">
-                <left>-46</left>
-                <right>-46</right>
-                <top>-46</top>
-                <height>488</height>
-                <bordertexture border="32">common/shadow-dialog-24.png</bordertexture>
-                <bordersize>24</bordersize>
+                <include condition="!Skin.HasSetting(DisableShadows)">Defs_Shadow_24</include>
                 <texture border="16" colordiffuse="dialog_bg_100">common/dialog.png</texture>
             </control>
 
             <control type="label" id="$PARAM[header_id]">
-                <description>Heading</description>
-                <left>15</left>
-                <right>15</right>
-                <height>55</height>
-                <font>font_medium_bold</font>
-                <align>left</align>
+                <include>Dialog_Standard_Header</include>
                 <label>$PARAM[header_label]</label>
             </control>
 
             <control type="textbox" id="$PARAM[textbox_id]">
                 <description>Line 1</description>
-                <left>15</left>
-                <right>15</right>
-                <top>108</top>
-                <height>300</height>
+                <left>30</left>
+                <right>30</right>
+                <top>dialog_top</top>
+                <bottom>200</bottom>
                 <label>$PARAM[textbox_label]</label>
             </control>
         </definition>
