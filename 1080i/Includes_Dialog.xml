@@ -12,7 +12,7 @@
                 <nested />
                 <centerleft>50%</centerleft>
                 <centertop>50%</centertop>
-                <height>670</height>
+                <height>680</height>
                 <width>450</width>
                 <include>Animation_FadeIn_SlideUp</include>
                 <visible>$PARAM[visible]</visible>
