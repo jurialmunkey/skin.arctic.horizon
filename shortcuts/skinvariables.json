@@ -23,7 +23,7 @@
         "parent"        : "Control.HasFocus({id})",
         "values"        : [
                             {"Container.Content(images)": "$INFO[{listitem}.Icon]"},
-                            {"!String.IsEmpty({listitem}.Art(thumb)) + [String.IsEqual({listitem}.DBType,episode) | String.IsEqual({listitem}.DBType,video)] + String.IsEmpty({listitem}.Property(airday)) + !String.IsEqual({listitem}.Art(thumb),OverlaySpoiler.png) + !String.IsEqual({listitem}.Art(thumb),{listitem}.Art(poster)) + !String.IsEqual({listitem}.Art(thumb),{listitem}.Art(tvshow.poster)) + !String.IsEqual({listitem}.Art(thumb),{listitem}.ActualIcon)": "$INFO[{listitem}.Art(thumb)]"},
+                            {"!String.IsEmpty({listitem}.Art(thumb)) + [String.IsEqual({listitem}.DBType,episode) | String.IsEqual({listitem}.DBType,video)] + String.IsEmpty({listitem}.Property(airday)) + !String.IsEqual({listitem}.Art(thumb),OverlaySpoiler.png) + !String.IsEqual({listitem}.Art(thumb),{listitem}.Art(poster)) + !String.IsEqual({listitem}.Art(thumb),{listitem}.Art(tvshow.poster))": "$INFO[{listitem}.Art(thumb)]"},
                             {"!String.IsEmpty({listitem}.Art(tvshow.landscape)) + !Skin.HasSetting(DisableLandscapeArt)": "$INFO[{listitem}.Art(tvshow.landscape)]"},
                             {"!String.IsEmpty({listitem}.Art(landscape)) + !Skin.HasSetting(DisableLandscapeArt)": "$INFO[{listitem}.Art(landscape)]"},
                             {"!String.IsEmpty({listitem}.Art(tvshow.fanart))": "$INFO[{listitem}.Art(tvshow.fanart)]"},
