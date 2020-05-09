@@ -84,10 +84,4 @@
         <icon>special://skin/extras/icons/addons.png</icon>
         <action>DefaultSearch-Addons</action>
     </shortcut>
-    <shortcut>
-        <label>Youtube</label>
-        <label2>$LOCALIZE[571]</label2>
-        <icon>special://skin/extras/icons/youtube.png</icon>
-        <action>DefaultSearch-Youtube</action>
-    </shortcut>
 </shortcuts>
