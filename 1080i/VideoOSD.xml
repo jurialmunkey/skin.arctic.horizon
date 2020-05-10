@@ -10,6 +10,7 @@
 
         <control type="button" id="99220">
             <include>Defs_Hidden_Button</include>
+            <onfocus>SetFocus(15)</onfocus>
             <onfocus condition="Window.IsVisible(videoosd)">Action(Close)</onfocus>
         </control>
 
