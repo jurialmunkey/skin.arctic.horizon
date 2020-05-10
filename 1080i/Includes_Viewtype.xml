@@ -28,7 +28,12 @@
                 </include>
             </content>
         </control>
+        <include content="Viewtype_Panel">
+            <param name="width" value="dialog_filter_width" />
+            <param name="colordiffuse" value="$VAR[Defs_HomeMenu_Background]" />
+        </include>
         <include content="Viewtype_Main">
+            <animation effect="slide" start="0" end="dialog_filter_width" condition="!String.IsEmpty(Window(Home).Property(advancedfilter))" time="400" tween="quadratic">Conditional</animation>
             <control type="group">
                 <visible allowhiddenfocus="true">!$EXP[Exp_CommonAnimation]</visible>
                 <include>Animation_Common</include>
@@ -38,6 +43,7 @@
                     <animation effect="fade" reversible="false" end="0" start="100" condition="[Control.HasFocus(5151) | Control.HasFocus(5252) | Control.HasFocus(5353) | Control.HasFocus(5454) | Control.HasFocus(5656)]">Conditional</animation>
                     <control type="group" description="Top Half">
                         <visible>!Integer.IsEqual(Container.NumAllItems,0)</visible>
+                        <!-- <visible>String.IsEmpty(Window(Home).Property(advancedfilter))</visible> -->
                         <include content="View_Info_Grouplist">
                             <param name="container" value="Container." />
                             <top>-15</top>

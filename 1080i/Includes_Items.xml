@@ -663,6 +663,8 @@
             <item>
                 <label>$LOCALIZE[587]: $VAR[Label_Filtered]</label>
                 <icon>$VAR[Image_Filtered]</icon>
+                <onclick>SetProperty(advancedfilter,1,home)</onclick>
+                <onclick>SetFocus(50)</onclick>
                 <onclick>Filter</onclick>
                 <visible>Container.CanFilterAdvanced</visible>
             </item>
