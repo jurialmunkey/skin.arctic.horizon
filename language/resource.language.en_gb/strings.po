@@ -430,6 +430,11 @@ msgctxt "#31083"
 msgid "Hide all indicators"
 msgstr ""
 
+#: /1080i/Includes_Object.xml
+msgctxt "#31084"
+msgid "Letter"
+msgstr ""
+
 #: /1080i/SkinSettings.xml
 msgctxt "#31087"
 msgid "Display colour overlay"

@@ -244,18 +244,15 @@
             <animation type="Conditional" reversible="false" condition="!String.IsEqual(Window.Property($PARAM[wall-id]_OnMove),down) + !String.IsEqual(Window.Property($PARAM[wall-id]_OnMove),up)">
                 <effect type="fade" start="100" end="0" time="300" delay="1000"/>
             </animation>
-            <visible>Control.HAsFocus($PARAM[wall-id])</visible>
-            <centerleft>50%</centerleft>
-            <centertop>340</centertop>
-            <width>120</width>
-            <height>120</height>
-            <include>Dialog_Menu_BG</include>
+            <visible>$EXP[Exp_AlphabetTypes_Only] + Control.HasFocus($PARAM[wall-id])</visible>
+            <height>40</height>
+            <bottom>0</bottom>
             <control type="label">
-                <font>font_title_large</font>
-                <label>$INFO[Container($PARAM[id]).ListItem.SortLetter]</label>
-                <align>center</align>
+                <label>[B]$INFO[ListItem.SortLetter,$LOCALIZE[31084]: ][/B]</label>
+                <align>left</align>
                 <aligny>center</aligny>
-                <textcolor>dialog_fg_100</textcolor>
+                <textcolor>main_fg_100</textcolor>
+                <font>font_title_small</font>
             </control>
         </control>
     </include>
@@ -1823,7 +1820,7 @@
         </control>
     </include>
 
-    <include name="Object_AlphabetLetter">
+    <include name="Object_AlphabetLetter_NF">
         <control type="label">
             <width>64</width>
             <height>52</height>
@@ -1832,8 +1829,10 @@
             <aligny>center</aligny>
             <textcolor>main_fg_30</textcolor>
             <font>font_tiny</font>
-            <visible>!String.IsEqual(ListItem.SortLetter,$PARAM[label])</visible>
+            <visible>$PARAM[visible]</visible>
         </control>
+    </include>
+    <include name="Object_AlphabetLetter_FO">
         <control type="label">
             <width>64</width>
             <height>52</height>
@@ -1841,32 +1840,31 @@
             <align>center</align>
             <aligny>center</aligny>
             <textcolor>main_fg_100</textcolor>
-            <font>font_tiny_bold</font>
-            <visible>String.IsEqual(ListItem.SortLetter,$PARAM[label])</visible>
+            <font>font_title_small</font>
+            <visible>$PARAM[visible]</visible>
         </control>
     </include>
 
+    <include name="Object_AlphabetLetter">
+        <include content="Object_AlphabetLetter_NF">
+            <param name="label" value="$PARAM[label]" />
+            <param name="visible" value="!String.IsEqual(ListItem.SortLetter,$PARAM[label])" />
+        </include>
+        <include content="Object_AlphabetLetter_FO">
+            <param name="label" value="$PARAM[label]" />
+            <param name="visible" value="String.IsEqual(ListItem.SortLetter,$PARAM[label])" />
+        </include>
+    </include>
+
     <include name="Object_AlphabetNumber">
-        <control type="label">
-            <width>64</width>
-            <height>52</height>
-            <label>#</label>
-            <align>center</align>
-            <aligny>center</aligny>
-            <textcolor>main_fg_30</textcolor>
-            <font>font_tiny</font>
-            <visible>!$EXP[Exp_SortLetterIsNumber]</visible>
-        </control>
-        <control type="label">
-            <width>64</width>
-            <height>52</height>
-            <label>[B]#[/B]</label>
-            <align>center</align>
-            <aligny>center</aligny>
-            <textcolor>main_fg_100</textcolor>
-            <font>font_tiny_bold</font>
-            <visible>$EXP[Exp_SortLetterIsNumber]</visible>
-        </control>
+        <include content="Object_AlphabetLetter_NF">
+            <param name="label" value="#" />
+            <param name="visible" value="!$EXP[Exp_SortLetterIsNumber]" />
+        </include>
+        <include content="Object_AlphabetLetter_FO">
+            <param name="label" value="#" />
+            <param name="visible" value="$EXP[Exp_SortLetterIsNumber]" />
+        </include>
     </include>
 
     <include name="Object_Scrollbar_Horz">

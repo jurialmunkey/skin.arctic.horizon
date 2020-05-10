@@ -390,7 +390,7 @@
             </control>
         </control>
 
-        <include content="Object_Wall_SortLetter" condition="!Skin.HasSetting(DisableWallSortLetter)">
+        <include content="Object_Wall_SortLetter">
             <param name="id" value="$PARAM[id]" />
             <param name="wall-id" value="$PARAM[wall-id]" />
         </include>
