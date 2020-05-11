@@ -245,13 +245,16 @@
                 <effect type="fade" start="100" end="0" time="300" delay="1000"/>
             </animation>
             <visible>$EXP[Exp_AlphabetTypes_Only] + Control.HasFocus($PARAM[wall-id])</visible>
-            <height>40</height>
-            <bottom>0</bottom>
+            <height>80</height>
+            <width>80</width>
+            <bottom>-20</bottom>
+            <left>-20</left>
+            <include>Dialog_Menu_BG</include>
             <control type="label">
-                <label>[B]$INFO[ListItem.SortLetter,$LOCALIZE[31084]: ][/B]</label>
-                <align>left</align>
+                <label>[B]$INFO[Container($PARAM[id]).ListItem.SortLetter][/B]</label>
+                <align>center</align>
                 <aligny>center</aligny>
-                <textcolor>main_fg_100</textcolor>
+                <textcolor>dialog_fg_100</textcolor>
                 <font>font_title_small</font>
             </control>
         </control>

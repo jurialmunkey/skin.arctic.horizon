@@ -26,7 +26,7 @@
                 <visible>!Window.IsVisible(MyPlaylist.xml)</visible>
                 <visible>!String.IsEqual(Container.Property(Param.Info),details)</visible>
             </include>
-            <include content="Home_Hub_Widget_Label2">
+            <include content="Home_Hub_Widget_Label">
                 <param name="id" value="54" />
                 <param name="label" value="$VAR[Label_Header_Center]" />
                 <param name="altlabel" value="$INFO[Control.GetLabel(3),, ]$INFO[Control.GetLabel(4)]" />
