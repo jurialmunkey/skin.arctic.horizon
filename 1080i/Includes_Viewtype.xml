@@ -30,7 +30,7 @@
         </control>
         <include content="Viewtype_Panel">
             <param name="width" value="dialog_filter_width" />
-            <param name="colordiffuse" value="$VAR[Defs_HomeMenu_Background]" />
+            <param name="colordiffuse" value="dialog_bg_100" />
         </include>
         <include content="Viewtype_Main">
             <animation effect="slide" start="0" end="dialog_filter_width" condition="!String.IsEmpty(Window(Home).Property(advancedfilter))" time="400" tween="quadratic">Conditional</animation>

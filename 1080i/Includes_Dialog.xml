@@ -837,7 +837,7 @@
                 <align>right</align>
                 <aligny>center</aligny>
                 <font>font_title_mini</font>
-                <textcolor>$VAR[Defs_HomeMenu_Icon]</textcolor>
+                <textcolor>dialog_fg_70</textcolor>
             </control>
         </control>
 
@@ -846,7 +846,7 @@
         <control type="button" id="7">
             <description>Default Button</description>
             <textoffsetx>60</textoffsetx>
-            <textcolor>$VAR[Defs_HomeMenu_Icon]</textcolor>
+            <textcolor>dialog_fg_70</textcolor>
             <include>Dialog_Standard_Button</include>
         </control>
 
@@ -855,7 +855,7 @@
             <radioposx>900</radioposx>
             <textwidth>870</textwidth>
             <textoffsetx>60</textoffsetx>
-            <textcolor>$VAR[Defs_HomeMenu_Icon]</textcolor>
+            <textcolor>dialog_fg_70</textcolor>
             <include>Dialog_Standard_Button</include>
         </control>
 
@@ -863,7 +863,7 @@
             <description>Default spincontrolex</description>
             <reverse>true</reverse>
             <textoffsetx>60</textoffsetx>
-            <textcolor>$VAR[Defs_HomeMenu_Icon]</textcolor>
+            <textcolor>dialog_fg_70</textcolor>
             <include>Dialog_Standard_Button</include>
         </control>
 
@@ -875,7 +875,7 @@
         <control type="edit" id="12">
             <description>Default Edit</description>
             <textoffsetx>60</textoffsetx>
-            <textcolor>$VAR[Defs_HomeMenu_Icon]</textcolor>
+            <textcolor>dialog_fg_70</textcolor>
             <include>Dialog_Standard_Button</include>
         </control>
 
@@ -883,12 +883,12 @@
             <description>Default Slider</description>
             <width>969</width>
             <textoffsetx>60</textoffsetx>
-            <textcolor>$VAR[Defs_HomeMenu_Icon]</textcolor>
+            <textcolor>dialog_fg_70</textcolor>
             <include>Dialog_Standard_Button</include>
         </control>
 
         <control type="label" id="14">
-            <textcolor>$VAR[Defs_HomeMenu_Icon]</textcolor>
+            <textcolor>dialog_fg_70</textcolor>
             <include>Dialog_Standard_HintLabel</include>
         </control>
     </include>
