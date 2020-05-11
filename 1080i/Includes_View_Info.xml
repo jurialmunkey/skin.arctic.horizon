@@ -75,26 +75,24 @@
                 <param name="visible" value="!String.IsEmpty(ListItem.Property(Addon.ID)) + !String.IsEqual(ListItem.Label2,$LOCALIZE[449]) + !String.IsEqual(ListItem.Label2,$LOCALIZE[24023]) + !String.IsEqual(Container.FolderPath,addons://repos/) + Window.IsVisible(AddonBrowser.xml) + !Skin.HasSetting(KioskMode)" />
                 <onclick>InstallAddon($INFO[ListItem.Property(Addon.ID)])</onclick>
             </include>
-            <!-- <include content="Object_Info_Button" description="Play">
-                <param name="id" value="3101" />
-                <param name="groupid" value="3001" />
+            <include content="Object_Info_Button" description="Play">
+                <param name="id" value="3181" />
+                <param name="groupid" value="3081" />
                 <param name="label" value="$LOCALIZE[208]" />
                 <param name="icon" value="special://skin/extras/icons/play3.png" />
                 <param name="ondown" value="50" />
-                <param name="visible" value="[!ListItem.IsFolder | !String.IsEmpty(ListItem.Property(tmdb_id))] + [String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,episode) | String.IsEqual(ListItem.DBType,video)]" />
+                <param name="visible" value="[String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,episode) | String.IsEqual(ListItem.DBType,video)] + Integer.IsEqual(Window(Home).Property(SelectAction),3)" />
                 <onclick>SetFocus(50)</onclick>
-                <onclick condition="!ListItem.IsFolder">Action(Play)</onclick>
-                <onclick condition="ListItem.IsFolder + !String.IsEmpty(ListItem.Property(tmdb_id)) + String.IsEqual(ListItem.DBType,movie)">RunPlugin(plugin://plugin.video.themoviedb.helper/?info=play&amp;tmdb_id=$INFO[ListItem.Property(tmdb_id)]&amp;type=movie)</onclick>
-                <onclick condition="ListItem.IsFolder + !String.IsEmpty(ListItem.Property(tmdb_id)) + String.IsEqual(ListItem.DBType,episode)">RunPlugin(plugin://plugin.video.themoviedb.helper/?info=play&amp;tmdb_id=$INFO[ListItem.Property(tmdb_id)]&amp;type=episode&amp;season=$INFO[ListItem.Season]&amp;episode=$INFO[ListItem.Episode])</onclick>
-            </include> -->
+                <onclick>Action(Play)</onclick>
+            </include>
 
-            <include content="Object_Info_Button" description="Play">
+            <include content="Object_Info_Button" description="Info">
                 <param name="id" value="3101" />
                 <param name="groupid" value="3001" />
                 <param name="label" value="Info" />
                 <param name="icon" value="special://skin/extras/icons/info2.png" />
                 <param name="ondown" value="50" />
-                <param name="visible" value="String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,episode) | String.IsEqual(ListItem.DBType,video) | String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,season) | ListItem.IsCollection | String.IsEqual(ListItem.DBType,album) | String.IsEqual(ListItem.DBType,artist) | String.IsEqual(ListItem.DBType,song)" />
+                <param name="visible" value="[[String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,episode) | String.IsEqual(ListItem.DBType,video)] + !Integer.IsEqual(Window(Home).Property(SelectAction),3)] | [String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,season) | ListItem.IsCollection | String.IsEqual(ListItem.DBType,album) | String.IsEqual(ListItem.DBType,artist) | String.IsEqual(ListItem.DBType,song)]" />
                 <onclick>SetFocus(50)</onclick>
                 <onclick>Action(Info)</onclick>
             </include>
