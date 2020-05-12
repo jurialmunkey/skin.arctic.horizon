@@ -173,14 +173,14 @@
                 <param name="id" value="530" />
                 <param name="label" value="$INFO[Container(53).ListItem.Label]" />
                 <param name="altlabel" value="$LOCALIZE[31213]: $LOCALIZE[20359] $LOCALIZE[584]" />
-                <param name="showonupdate" value="true" />
+                <param name="showonupdate" value="!String.IsEqual(Container(530).ListItemAbsolute(0).TvShowTitle,Container(53).ListItem.TvShowTitle)" />
                 <visible>![Container(53).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container(53).CurrentItem,0)]</visible>
             </include>
             <include content="Home_Hub_Widget_Label">
                 <param name="id" value="530" />
                 <param name="label" value="$LOCALIZE[33054]" />
                 <param name="altlabel" value="$LOCALIZE[31213]: $LOCALIZE[20373] $LOCALIZE[584]" />
-                <param name="showonupdate" value="true" />
+                <param name="showonupdate" value="!String.IsEqual(Container(530).ListItemAbsolute(0).TvShowTitle,Container(53).ListItem.TvShowTitle)" />
                 <visible>[Container(53).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container(53).CurrentItem,0)]</visible>
             </include>
         </control>
@@ -204,7 +204,7 @@
                 <onclick condition="!Container($PARAM[id]).ListItem.IsFolder">PlayMedia($INFO[Container($PARAM[id]).ListItem.FileNameAndPath])</onclick>
                 <onclick condition="Container($PARAM[id]).ListItem.IsFolder">Container.Update($INFO[Container($PARAM[id]).ListItem.FolderPath])</onclick>
                 <onclick>SetFocus(53)</onclick>
-                <animation effect="fade" start="100" end="0" condition="Container($PARAM[id]).IsUpdating">Conditional</animation>
+                <animation effect="fade" start="100" end="0" condition="Container($PARAM[id]).IsUpdating + [Integer.IsEqual(Container($PARAM[id]).NumAllItems,0) | !String.IsEqual(Container($PARAM[id]).ListItemAbsolute(0).TvShowTitle,Container(53).ListItem.TvShowTitle)]">Conditional</animation>
             </include>
         </definition>
     </include>
