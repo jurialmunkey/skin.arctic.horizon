@@ -110,6 +110,7 @@
     <variable name="Label_Hub_WidgetName">
         <value condition="!String.IsEmpty(Container(302).ListItem.Property(widgetPath))">$INFO[Container(302).ListItem.Property(widgetName)]</value>
         <value condition="!String.IsEmpty(Container(301).ListItem.Property(widgetPath))">$INFO[Container(301).ListItem.Property(widgetName)]</value>
+        <value condition="Window.IsVisible(1110) + !String.IsEmpty(Window(Home).Property(Hub.widgetName))">$INFO[Window(Home).Property(Hub.widgetName)]</value>
         <value condition="!Window.IsVisible(1110)">$LOCALIZE[31067]</value>
         <value>$LOCALIZE[31105]</value>
     </variable>
