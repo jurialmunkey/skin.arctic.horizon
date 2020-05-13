@@ -12,12 +12,15 @@
             <include>Animation_FadeInOut</include>
             <include>Global_Overlay</include>
         </control>
-        <include content="OSD_Menu_List">
+        <include content="Dialog_Menu">
             <param name="id" value="3600" />
-            <param name="osd_id" value="300" />
+            <param name="header" value="$LOCALIZE[33063]" />
             <param name="content" value="Items_Info_Manage" />
-            <param name="label" value="Manage" />
-            <param name="height" value="442" />
+            <param name="visible" value="Control.HasFocus(3600)" />
+            <param name="include-icon" value="true" />
+            <param name="onleft" value="300" />
+            <param name="onright" value="300" />
+            <param name="onback" value="300" />
         </include>
         <control type="button" id="6">
             <include>Defs_Hidden_Button</include>

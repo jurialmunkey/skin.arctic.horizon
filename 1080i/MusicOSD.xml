@@ -52,13 +52,15 @@
             <action>seek</action>
         </control>
 
-        <include content="OSD_Menu_List">
-            <param name="content" value="Items_OSD_MusicVis" />
-            <param name="height" value="680" />
+        <include content="Dialog_Menu">
             <param name="id" value="3112" />
-            <param name="label" value="$LOCALIZE[33063]" />
-            <param name="position" value="300,0" />
-            <param name="icon-visible" value="true" />
+            <param name="header" value="$LOCALIZE[33063]" />
+            <param name="content" value="Items_OSD_MusicVis" />
+            <param name="visible" value="Control.HasFocus(3112)" />
+            <param name="include-icon" value="true" />
+            <param name="onleft" value="9000" />
+            <param name="onright" value="9000" />
+            <param name="onback" value="9000" />
         </include>
 
     </controls>

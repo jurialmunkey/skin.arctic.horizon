@@ -84,14 +84,15 @@
             </include>
         </include>
 
-
-
-        <include content="OSD_Menu_List">
+        <include content="Dialog_Menu">
             <param name="id" value="3600" />
-            <param name="osd_id" value="300" />
+            <param name="header" value="$LOCALIZE[33063]" />
             <param name="content" value="Items_Info_Manage_Addons" />
-            <param name="label" value="Options" />
-            <param name="height" value="442" />
+            <param name="visible" value="Control.HasFocus(3600)" />
+            <param name="include-icon" value="true" />
+            <param name="onleft" value="300" />
+            <param name="onright" value="300" />
+            <param name="onback" value="300" />
         </include>
 
         <include>Object_PlotOverlay</include>

@@ -45,12 +45,17 @@
                 </control>
             </control>
 
-            <include content="OSD_Menu_List">
-                <param name="content" value="Items_OSD_Settings" />
-                <param name="height" value="608" />
+            <include content="Dialog_Menu">
                 <param name="id" value="3112" />
-                <param name="label" value="$LOCALIZE[33063]" />
-                <param name="position" value="330,116" />
+                <param name="header" value="$LOCALIZE[33063]" />
+                <param name="content" value="Items_OSD_Settings" />
+                <param name="visible" value="Control.HasFocus(3112)" />
+                <param name="include-icon" value="true" />
+                <param name="onleft" value="9000" />
+                <param name="onright" value="9000" />
+                <param name="onback" value="9000" />
+                <centertop>640</centertop>
+                <centerleft>1280</centerleft>
             </include>
 
             <control type="group">
