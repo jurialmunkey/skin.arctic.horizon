@@ -801,6 +801,7 @@
             <control type="grouplist" id="5">
                 <description>control area</description>
                 <top>view_top</top>
+                <bottom>view_pad</bottom>
                 <left>0</left>
                 <itemgap>0</itemgap>
                 <onup>5</onup>

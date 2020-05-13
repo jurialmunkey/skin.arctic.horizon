@@ -129,9 +129,11 @@
                             <onfocus>RunScript(plugin.video.themoviedb.helper,blur_image=$VAR[Global_Background_Image_NoFanart_Fallback])</onfocus>
                             <onclick condition="!String.IsEmpty(Window.Property(WidgetFocus))">SetFocus(3000)</onclick>
                             <onclick condition="String.IsEmpty(Window.Property(WidgetFocus))">SetProperty(301Click,1)</onclick>
+                            <onclick condition="String.IsEmpty(Window.Property(WidgetFocus))">SetProperty(301Focus,1)</onclick>
                             <onclick condition="String.IsEmpty(Window.Property(WidgetFocus))">SetFocus(301)</onclick>
                             <onclick condition="String.IsEmpty(Window.Property(WidgetFocus))">Action(Select)</onclick>
                             <onfocus>ClearProperty(301Click)</onfocus>
+                            <onfocus>ClearProperty(301Focus)</onfocus>
                             <onback>301</onback>
                             <onback>ClearProperty(WidgetMovement)</onback>
                             <visible allowhiddenfocus="true">Control.HasFocus(3992)</visible>

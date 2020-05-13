@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window type="buttonMenu" id="111">
     <defaultcontrol always="true">3110</defaultcontrol>
+    <onunload condition="Window.IsVisible(Home) + !String.IsEmpty(Window(Home).Property(301Focus))">SetFocus(3992)</onunload>
     <controls>
         <include content="Dialog_Menu">
             <param name="id" value="3110" />
