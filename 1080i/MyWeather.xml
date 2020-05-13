@@ -31,12 +31,16 @@
             <visible>Control.HasFocus(3000)</visible>
             <include>Animation_FadeInOut</include>
         </control>
-        <include content="OSD_Menu_List">
+
+        <include content="Dialog_Menu">
             <param name="id" value="3000" />
-            <param name="osd_id" value="50" />
+            <param name="header" value="$LOCALIZE[8]" />
             <param name="content" value="Items_Weather" />
-            <param name="label" value="Weather" />
-            <param name="height" value="524" />
+            <param name="visible" value="Control.HasFocus(3000)" />
+            <param name="include-icon" value="true" />
+            <param name="onleft" value="50" />
+            <param name="onright" value="50" />
+            <param name="onback" value="50" />
         </include>
 
         <!-- Refresh -->
