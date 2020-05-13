@@ -21,6 +21,16 @@
         <ondown>Control.Move(301,1)</ondown>
     </include>
 
+    <include name="Home_Movement_LeftRight">
+        <onleft>ClearProperty(WidgetMovement)</onleft>
+        <onleft condition="String.IsEmpty(Window(Home).Property(WidgetFocus))">SetFocus($INFO[Window(Home).Property(CurrentWidget)],9999,absolute)</onleft>
+        <onleft condition="!String.IsEmpty(Window(Home).Property(WidgetFocus))">ClearProperty(WidgetFocus)</onleft>
+        <include>skinshortcuts-template-onmovement</include>
+        <onright>ClearProperty(WidgetMovement)</onright>
+        <oninfo>ClearProperty(WidgetFocus)</oninfo>
+        <oninfo>SetFocus(303,0,absolute)</oninfo>
+    </include>
+
     <include name="Home_Weather_Button">
         <control type="button" id="$PARAM[id]">
             <description>Weather Jump</description>
@@ -116,15 +126,10 @@
                             <width>1</width>
                             <height>1</height>
                             <left>-2000</left>
+                            <include>Home_Movement_LeftRight</include>
                             <include>Home_Movement_UpDown</include>
                             <onup>AlarmClock(refocusit,SetFocus(3992),00:00,silent)</onup>
                             <ondown>AlarmClock(refocusit,SetFocus(3992),00:00,silent)</ondown>
-                            <onleft>ClearProperty(WidgetMovement)</onleft>
-                            <onleft>SetFocus($INFO[Window(Home).Property(CurrentWidget)],9999,absolute)</onleft>
-                            <include>skinshortcuts-template-onmovement</include>
-                            <onright>ClearProperty(WidgetMovement)</onright>
-                            <oninfo>ClearProperty(WidgetFocus)</oninfo>
-                            <oninfo>SetFocus(303,0,absolute)</oninfo>
                             <onclick>ClearProperty(WidgetMovement)</onclick>
                             <onfocus>RunScript(plugin.video.themoviedb.helper,blur_image=$VAR[Global_Background_Image_NoFanart_Fallback])</onfocus>
                             <onclick condition="!String.IsEmpty(Window.Property(WidgetFocus))">SetFocus(3000)</onclick>
@@ -713,6 +718,7 @@
                         <onfocus>ClearProperty(WidgetFocus)</onfocus>
                         <onfocus condition="String.IsEmpty(Window.Property(301Click))">SetFocus(3992)</onfocus>
                         <onfocus>ClearProperty(301Click)</onfocus>
+                        <include>Home_Movement_LeftRight</include>
                         <content><include>skinshortcuts-mainmenu</include></content>
                     </include>
                 </include>
