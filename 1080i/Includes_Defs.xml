@@ -642,6 +642,7 @@
         <include condition="!Window.Previous(home)" content="View_Settings">
             <include>View_Pad</include>
         </include>
+        <include>Object_NowPlaying</include>
     </include>
 
     <include name="Defs_Settings_Changer">
