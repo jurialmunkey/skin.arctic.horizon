@@ -1870,8 +1870,8 @@
             <onup condition="Control.IsVisible(530)">530</onup>
             <onup condition="Control.IsVisible(5610)">5610</onup>
             <ondown condition="Container.CanFilterAdvanced">SetProperty(advancedfilter,1,home)</ondown>
-            <ondown condition="Container.CanFilterAdvanced">SetFocus(50)</ondown>
-            <ondown condition="Container.CanFilterAdvanced">Filter</ondown>
+            <ondown>SetFocus(50)</ondown>
+            <ondown condition="Container.CanFilterAdvanced | Container.CanFilter">Filter</ondown>
             <visible>$PARAM[visible]</visible>
             <texturesliderbackground colordiffuse="main_fg_12" border="4">scrollbar/scrollv.png</texturesliderbackground>
             <texturesliderbar colordiffuse="main_fg_30" border="4">scrollbar/scrollv.png</texturesliderbar>
