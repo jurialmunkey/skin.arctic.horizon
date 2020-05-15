@@ -315,6 +315,7 @@
         <param name="diffuse" default="diffuse/poster-std.png" />
         <param name="offset" default="60" />
         <param name="specialicon" default="true" />
+        <param name="nomovement" default="true" />
         <definition>
             <control type="$PARAM[control-type]" id="$PARAM[id]">
                 <nested />
@@ -323,7 +324,7 @@
                 <scrolltime tween="$PARAM[tween]">$PARAM[scrolltime]</scrolltime>
                 <height>$PARAM[height]</height>
                 <viewtype label="$PARAM[viewtype-label]">$PARAM[viewtype]</viewtype>
-                <include condition="!Skin.HasSetting(DisableWallScroll)">Viewtype_NoMovement</include>
+                <include condition="!Skin.HasSetting(DisableWallScroll) + $PARAM[nomovement]">Viewtype_NoMovement</include>
                 <movement>$PARAM[movement]</movement>
                 <focusposition>$PARAM[focusposition]</focusposition>
                 <itemlayout width="$PARAM[itemlayout-width]" height="$PARAM[itemlayout-height]">
@@ -487,6 +488,7 @@
                 <param name="textpanel" value="true" />
                 <param name="viewtype-label" value="$LOCALIZE[31234]" />
                 <param name="specialicon" value="$PARAM[specialicon]" />
+                <param name="nomovement" value="$PARAM[nomovement]" />
                 <nested />
             </include>
             <include content="Viewtype_Poster" condition="Skin.HasSetting(DisableTextPanel)">
@@ -503,6 +505,7 @@
                 <param name="textpanel" value="false" />
                 <param name="viewtype-label" value="$LOCALIZE[31234]" />
                 <param name="specialicon" value="$PARAM[specialicon]" />
+                <param name="nomovement" value="$PARAM[nomovement]" />
                 <nested />
             </include>
         </definition>
@@ -839,6 +842,7 @@
                 <param name="textbox-visible" value="$PARAM[textbox-visible]" />
                 <param name="aspectratio" value="$PARAM[aspectratio]" />
                 <param name="textpanel" value="true" />
+                <param name="nomovement" value="$PARAM[nomovement]" />
                 <nested />
             </include>
             <include content="Viewtype_Poster" condition="Skin.HasSetting(DisableTextPanel)">
@@ -857,6 +861,7 @@
                 <param name="textbox-visible" value="$PARAM[textbox-visible]" />
                 <param name="aspectratio" value="$PARAM[aspectratio]" />
                 <param name="textpanel" value="false" />
+                <param name="nomovement" value="$PARAM[nomovement]" />
                 <nested />
             </include>
         </definition>

@@ -9,6 +9,7 @@
                 <param name="castlabel" value="Container.Content(actors)" />
                 <param name="label2" value="ListItem.Property(role)" />
                 <param name="viewtype-label" value="$LOCALIZE[31232]" />
+                <param name="nomovement" value="Skin.HasSetting(WallScroll.Posters)" />
                 <bottom>-20</bottom>
                 <left>-80</left>
                 <right>-80</right>
@@ -17,10 +18,8 @@
                 <onfocus condition="Skin.HasSetting(NoFanart)">SetProperty(TMDbHelper.Blur.SourceImage,Art(fallback),Home)</onfocus>
                 .
                 <onfocus condition="!Skin.HasSetting(NoFanart)">SetProperty(TMDbHelper.Blur.SourceImage,poster,Home)</onfocus>
-                <!-- <ondown condition="!Skin.HasSetting(DisableWallScroll) + Integer.IsGreater(Container(52).NumItems,21)">5252</ondown>
-                <ondown condition="Skin.HasSetting(DisableWallScroll) | !Integer.IsGreater(Container(52).NumItems,21)">60</ondown> -->
-                <ondown condition="!Skin.HasSetting(DisableWallScroll)">5252</ondown>
-                <ondown condition="Skin.HasSetting(DisableWallScroll)">60</ondown>
+                <ondown condition="!Skin.HasSetting(DisableWallScroll) + Skin.HasSetting(WallScroll.Posters)">5252</ondown>
+                <ondown condition="Skin.HasSetting(DisableWallScroll) | !Skin.HasSetting(WallScroll.Posters)">60</ondown>
                 <visible>Container.Content(actors) | Container.Content(tvshows) | Container.Content(movies) | [Container.Content(seasons) + Skin.HasSetting(LibrarySeasonPosters)]</visible>
                 <visible>!Window.IsVisible(MyPlaylist.xml)</visible>
                 <visible>!String.IsEqual(Container.Property(Param.Info),details)</visible>

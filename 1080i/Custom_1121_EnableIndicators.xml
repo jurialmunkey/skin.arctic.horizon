@@ -6,7 +6,7 @@
         <include>Global_Overlay</include>
         <control type="group">
             <include content="Dialog_Standard_Group">
-                <param name="width" value="1180" />
+                <param name="width" value="1200" />
                 <param name="height" value="710" />
                 <param name="centertop" value="595" />
             </include>
@@ -21,14 +21,14 @@
                 <param name="id" value="9000" />
                 <top>dialog_top</top>
                 <height>item_list_height</height>
-                <width>780</width>
+                <right>dialog_side_grouplist</right>
                 <visible>ControlGroup(9000).HasFocus()</visible>
             </include>
 
             <control type="grouplist" id="9000">
                 <onright>61</onright>
                 <description>Control Area</description>
-                <width>780</width>
+                <right>dialog_side_grouplist</right>
                 <top>dialog_top</top>
                 <height>800</height>
                 <itemgap>0</itemgap>

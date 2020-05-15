@@ -312,7 +312,7 @@ msgstr ""
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31060"
-msgid "Replace scrollbar with wall view"
+msgid "Customise wall view"
 msgstr ""
 
 #: /shortcuts/template.xml
@@ -327,7 +327,7 @@ msgstr ""
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31063"
-msgid "Show info overlay on wall after delay"
+msgid "Show info overlay after delay"
 msgstr ""
 
 #: /1080i/Includes_Info.xml
@@ -435,6 +435,16 @@ msgctxt "#31084"
 msgid "Letter"
 msgstr ""
 
+#: /1080i/Custom_1122_EnableWallViews.xml
+msgctxt "#31085"
+msgid "Customise wall views"
+msgstr ""
+
+#: /1080i/Custom_1122_EnableWallViews.xml
+msgctxt "#31086"
+msgid "Customise wall view for content types"
+msgstr ""
+
 #: /1080i/SkinSettings.xml
 msgctxt "#31087"
 msgid "Display colour overlay"
@@ -443,6 +453,16 @@ msgstr ""
 #: /1080i/SkinSettings.xml
 msgctxt "#31088"
 msgid "Display scrolling text effect"
+msgstr ""
+
+#: /1080i/Custom_1122_EnableWallViews.xml
+msgctxt "#31089"
+msgid "Enable wall view"
+msgstr ""
+
+#: /1080i/Includes_Items.xml
+msgctxt "#31090"
+msgid "Wall"
 msgstr ""
 
 #: /1080i/SkinSettings.xml

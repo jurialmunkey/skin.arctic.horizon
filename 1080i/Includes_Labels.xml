@@ -1,6 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
 
+    <variable name="Label_WallView_posters">
+        <value condition="Skin.HasSetting(WallScroll.posters)">$LOCALIZE[16041]</value>
+        <value>$LOCALIZE[351]</value>
+    </variable>
+    <variable name="Label_WallView_landscape">
+        <value condition="Skin.HasSetting(WallScroll.landscape)">$LOCALIZE[16041]</value>
+        <value>$LOCALIZE[351]</value>
+    </variable>
+    <variable name="Label_WallView_square">
+        <value condition="Skin.HasSetting(WallScroll.square)">$LOCALIZE[16041]</value>
+        <value>$LOCALIZE[351]</value>
+    </variable>
+    <variable name="Label_WallView_hubs">
+        <value condition="Skin.HasSetting(WallScroll.hubs)">$LOCALIZE[16041]</value>
+        <value>$LOCALIZE[351]</value>
+    </variable>
+
     <variable name="Label_Showcase_PlayBrowse">
         <value condition="Container(3001).ListItem.IsFolder">$LOCALIZE[1024]</value>
         <value>$LOCALIZE[208]</value>

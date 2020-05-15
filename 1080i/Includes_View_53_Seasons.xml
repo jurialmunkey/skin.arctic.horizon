@@ -154,6 +154,7 @@
             </include>
             <include content="Viewtype_Poster">
                 <param name="id" value="530" />
+                <param name="nomovement" value="Skin.HasSetting(WallScroll.Posters)" />
                 <bottom>-20</bottom>
                 <left>-80</left>
                 <right>-80</right>
@@ -191,14 +192,15 @@
         <definition>
             <include content="Viewtype_Landscape">
                 <param name="id" value="$PARAM[id]" />
+                <param name="nomovement" value="Skin.HasSetting(WallScroll.Landscape)" />
                 <nested />
                 <left>-80</left>
                 <right>-80</right>
                 <bottom>-20</bottom>
                 <onback>53</onback>
                 <onup>53</onup>
-                <ondown condition="!Skin.HasSetting(DisableWallScroll)">5353</ondown>
-                <ondown condition="Skin.HasSetting(DisableWallScroll)">60</ondown>
+                <ondown condition="!Skin.HasSetting(DisableWallScroll) + Skin.HasSetting(WallScroll.Landscape)">5353</ondown>
+                <ondown condition="Skin.HasSetting(DisableWallScroll) | !Skin.HasSetting(WallScroll.Landscape)">60</ondown>
                 <pagecontrol>60</pagecontrol>
                 <onunfocus>ClearProperty(TMDbHelper.WidgetContainer,Home)</onunfocus>
                 <onclick condition="!Container($PARAM[id]).ListItem.IsFolder">PlayMedia($INFO[Container($PARAM[id]).ListItem.FileNameAndPath])</onclick>
