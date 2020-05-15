@@ -763,7 +763,7 @@
             <centerleft>50%</centerleft>
             <centertop>520</centertop>
             <width>1120</width>
-            <height>480</height>
+            <height>490</height>
             <include>Animation_FadeIn_Slide</include>
             <control type="image">
                 <include condition="!Skin.HasSetting(DisableShadows)">Defs_Shadow_24</include>
@@ -780,7 +780,7 @@
                 <left>30</left>
                 <right>30</right>
                 <top>dialog_top</top>
-                <bottom>200</bottom>
+                <bottom>150</bottom>
                 <label>$PARAM[textbox_label]</label>
             </control>
         </definition>

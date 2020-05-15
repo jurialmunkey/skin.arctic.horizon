@@ -262,6 +262,7 @@
 
     <include name="Object_NowPlaying">
         <control type="progress" id="933">
+            <include>Defs_Offscreen</include>
             <texturebg></texturebg>
             <lefttexture></lefttexture>
             <midtexture></midtexture>
@@ -285,22 +286,6 @@
                 <param name="label" value="$VAR[Label_NowPlaying_Mainlabel]" />
                 <param name="label2" value="$VAR[Label_NowPlaying_Sublabel]" />
             </include>
-            <control type="group">
-                <bottom>0</bottom>
-                <left>0</left>
-                <height>view_pad</height>
-                <control type="label">
-                    <left>8</left>
-                    <centertop>50%</centertop>
-                    <height>26</height>
-                    <width>32</width>
-                    <align>center</align>
-                    <label>$INFO[Player.CacheLevel]</label>
-                    <font>font_statusbar</font>
-                    <textcolor>main_fg_100</textcolor>
-                    <visible>Player.Caching</visible>
-                </control>
-            </control>
         </control>
     </include>
 
