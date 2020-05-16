@@ -66,5 +66,17 @@
             <texture />
         </control>
 
+        <control type="list" id="56560">
+            <include>Defs_Offscreen</include>
+            <orientation>horizontal</orientation>
+            <itemlayout />
+            <focusedlayout />
+            <content>
+                <include content="Object_56560_Item">
+                    <param name="listitem" value="Container(1297).ListItem" />
+                </include>
+            </content>
+        </control>
+
     </controls>
 </window>

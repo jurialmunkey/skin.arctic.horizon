@@ -67,7 +67,8 @@
                         <param name="label" value="$INFO[Container(1297).ListItem.Title]" />
                     </include>
                     <include content="Object_Info_Line">
-                        <param name="container" value="Container(1297)." />
+                        <param name="label" value="$VAR[Label_Home_InfoLine]" />
+                        <param name="image" value="$VAR[Image_Home_VideoQuality]" />
                     </include>
                     <include content="Object_Info_Plot">
                         <param name="maxheight" value="80" />
@@ -242,6 +243,18 @@
             <top>-1000</top>
             <left>-1000</left>
             <texture />
+        </control>
+
+        <control type="list" id="56560">
+            <include>Defs_Offscreen</include>
+            <orientation>horizontal</orientation>
+            <itemlayout />
+            <focusedlayout />
+            <content>
+                <include content="Object_56560_Item">
+                    <param name="listitem" value="Container(1297).ListItem" />
+                </include>
+            </content>
         </control>
     </controls>
 </window>
