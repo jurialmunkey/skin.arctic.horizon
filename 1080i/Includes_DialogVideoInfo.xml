@@ -36,29 +36,45 @@
     <include name="DialogVideoInfo">
         <control type="button" id="9608">
             <include>Defs_Hidden_Button</include>
-            <onleft>300</onleft>
-            <onleft>ClearProperty(HasTrailer,Home)</onleft>
-            <onleft condition="Player.HasVideo">Stop</onleft>
-            <onright>300</onright>
-            <onright>ClearProperty(HasTrailer,Home)</onright>
-            <onright condition="Player.HasVideo">Stop</onright>
-            <onup>300</onup>
-            <onup>ClearProperty(HasTrailer,Home)</onup>
-            <onup condition="Player.HasVideo">Stop</onup>
-            <ondown>300</ondown>
-            <ondown>ClearProperty(HasTrailer,Home)</ondown>
-            <ondown condition="Player.HasVideo">Stop</ondown>
+            <onleft condition="!Skin.HasSetting(DisableTrailerWindow) | !Player.HasVideo">300</onleft>
+            <onleft condition="!Skin.HasSetting(DisableTrailerWindow) | !Player.HasVideo">ClearProperty(HasTrailer,Home)</onleft>
+            <onleft condition="!Skin.HasSetting(DisableTrailerWindow) + Player.HasVideo">Stop</onleft>
+            <onright condition="!Skin.HasSetting(DisableTrailerWindow) | !Player.HasVideo">300</onright>
+            <onright condition="!Skin.HasSetting(DisableTrailerWindow) | !Player.HasVideo">ClearProperty(HasTrailer,Home)</onright>
+            <onright condition="!Skin.HasSetting(DisableTrailerWindow) + Player.HasVideo">Stop</onright>
+            <onup condition="!Skin.HasSetting(DisableTrailerWindow) | !Player.HasVideo">300</onup>
+            <onup condition="!Skin.HasSetting(DisableTrailerWindow) | !Player.HasVideo">ClearProperty(HasTrailer,Home)</onup>
+            <onup condition="!Skin.HasSetting(DisableTrailerWindow) + Player.HasVideo">Stop</onup>
+            <ondown condition="!Skin.HasSetting(DisableTrailerWindow) | !Player.HasVideo">300</ondown>
+            <ondown condition="!Skin.HasSetting(DisableTrailerWindow) | !Player.HasVideo">ClearProperty(HasTrailer,Home)</ondown>
+            <ondown condition="!Skin.HasSetting(DisableTrailerWindow) + Player.HasVideo">Stop</ondown>
             <onback>300</onback>
             <onback>ClearProperty(HasTrailer,Home)</onback>
             <onback condition="Player.HasVideo">Stop</onback>
-            <onclick>300</onclick>
+            <oninfo>300</oninfo>
+            <oninfo>ClearProperty(HasTrailer,Home)</oninfo>
+            <oninfo condition="Player.HasVideo">Stop</oninfo>
             <onclick condition="Player.HasVideo">Fullscreen</onclick>
             <onclick>ClearProperty(HasTrailer,Home)</onclick>
+
+            <onleft condition="Skin.HasSetting(DisableTrailerWindow) + Player.HasVideo">Fullscreen</onleft>
+            <onleft condition="Skin.HasSetting(DisableTrailerWindow) + Player.HasVideo">StepBack</onleft>
+            <onleft condition="Skin.HasSetting(DisableTrailerWindow) + Player.HasVideo">ClearProperty(HasTrailer,Home)</onleft>
+            <onright condition="Skin.HasSetting(DisableTrailerWindow) + Player.HasVideo">Fullscreen</onright>
+            <onright condition="Skin.HasSetting(DisableTrailerWindow) + Player.HasVideo">StepForward</onright>
+            <onright condition="Skin.HasSetting(DisableTrailerWindow) + Player.HasVideo">ClearProperty(HasTrailer,Home)</onright>
+            <onup condition="Skin.HasSetting(DisableTrailerWindow) + Player.HasVideo">Fullscreen</onup>
+            <onup condition="Skin.HasSetting(DisableTrailerWindow) + Player.HasVideo">BigStepForward</onup>
+            <onup condition="Skin.HasSetting(DisableTrailerWindow) + Player.HasVideo">ClearProperty(HasTrailer,Home)</onup>
+            <ondown condition="Skin.HasSetting(DisableTrailerWindow) + Player.HasVideo">Fullscreen</ondown>
+            <ondown condition="Skin.HasSetting(DisableTrailerWindow) + Player.HasVideo">BigStepBack</ondown>
+            <ondown condition="Skin.HasSetting(DisableTrailerWindow) + Player.HasVideo">ClearProperty(HasTrailer,Home)</ondown>
         </control>
         <control type="group">
             <control type="group">
                 <include>Animation_Left_Delay</include>
                 <include>DialogVideoInfo_Left</include>
+                <visible>!$EXP[Exp_TrailerWindow] | !Skin.HasSetting(DisableTrailerWindow)</visible>
             </control>
             <include content="DialogVideoInfo_MainGroup">
                 <include>Animation_Right_Delay</include>
@@ -95,7 +111,8 @@
                     <!-- <include condition="!ListItem.IsCollection">DialogVideoInfo_Widget_Details</include> -->
                 </include>
             </include>
-            <control type="group">
+            <include content="Object_Control" condition="!Skin.HasSetting(DisableTrailerWindow)">
+                <param name="type" value="group" />
                 <visible>$EXP[Exp_TrailerWindow]</visible>
                 <include>Animation_Right_Delay</include>
                 <include content="View_Pad" condition="!Skin.HasSetting(DisablePanelDivider)">
@@ -117,10 +134,20 @@
                         <visible>Player.HasVideo</visible>
                     </control>
                 </control>
-            </control>
+            </include>
         </control>
         <include>DialogVideoInfo_ImageViewer</include>
         <include>Object_PlotOverlay</include>
+        <include content="Object_Control" condition="Skin.HasSetting(DisableTrailerWindow)">
+            <param name="type" value="group" />
+            <visible>$EXP[Exp_TrailerWindow]</visible>
+            <control type="image">
+                <texture background="true" colordiffuse="black" border="20">common/box.png</texture>
+            </control>
+            <control type="videowindow">
+                <visible>Player.HasVideo</visible>
+            </control>
+        </include>
     </include>
 
     <include name="DialogPersonInfo">

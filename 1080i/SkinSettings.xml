@@ -785,6 +785,14 @@
                         <onclick>Skin.ToggleSetting(DisableShowcaseScreensaver)</onclick>
                     </control>
 
+                    <control type="radiobutton" id="19718" description="Trailer">
+                        <visible>Integer.IsEqual(Window.Property(CurrentFocus),9007)</visible>
+                        <include>Defs_Settings_Button</include>
+                        <label>$LOCALIZE[31091]</label>
+                        <selected>Skin.HasSetting(DisableTrailerWindow)</selected>
+                        <onclick>Skin.ToggleSetting(DisableTrailerWindow)</onclick>
+                    </control>
+
                     <control type="button" id="19429" description="Startup Video">
                         <visible>Integer.IsEqual(Window.Property(CurrentFocus),9007)</visible>
                         <include>Defs_Settings_Button</include>
