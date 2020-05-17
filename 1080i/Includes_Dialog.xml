@@ -2,12 +2,14 @@
 <includes>
     <include name="Dialog_Menu">
         <param name="include-icon" default="false" />
+        <param name="global_overlay" default="true" />
         <definition>
-            <control type="group">
+            <include content="Object_Control" condition="global_overlay">
+                <param name="type" value="group" />
                 <visible>Control.HasFocus($PARAM[id])</visible>
                 <include>Animation_FadeInOut</include>
                 <include>Global_Overlay</include>
-            </control>
+            </include>
             <control type="group">
                 <nested />
                 <centerleft>50%</centerleft>

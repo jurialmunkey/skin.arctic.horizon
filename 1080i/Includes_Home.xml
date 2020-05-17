@@ -59,6 +59,7 @@
                 <param name="onright" value="SetFocus(3992)" />
                 <param name="onback" value="SetFocus(3992)" />
                 <param name="include-icon" value="true" />
+                <param name="global_overlay" value="false" />
                 <top>220</top>
                 <left>-650</left>
                 <width>450</width>

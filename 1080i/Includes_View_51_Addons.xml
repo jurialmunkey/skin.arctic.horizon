@@ -8,15 +8,15 @@
                 <param name="id" value="51" />
                 <param name="altid" value="510" />
                 <param name="viewtype-label" value="$LOCALIZE[31237]" />
-                <param name="nomovement" value="Skin.HasSetting(WallScroll.Square)" />
+                <param name="nomovement" value="[[Skin.HasSetting(WallScroll.square) + !Window.IsVisible(MyMusicNav.xml)] | [Skin.HasSetting(WallScroll.music.square) + Window.IsVisible(MyMusicNav.xml)]]" />
                 <left>-80</left>
                 <right>-80</right>
                 <bottom>-20</bottom>
                 <pagecontrol>60</pagecontrol>
                 <onfocus>ClearProperty(TMDbHelper.WidgetContainer,Home)</onfocus>
                 <include>Viewtype_Movement</include>
-                <ondown condition="!Skin.HasSetting(DisableWallScroll) + Skin.HasSetting(WallScroll.Square)">5151</ondown>
-                <ondown condition="Skin.HasSetting(DisableWallScroll) | !Skin.HasSetting(WallScroll.Square)">60</ondown>
+                <ondown condition="!Skin.HasSetting(DisableWallScroll) + [[Skin.HasSetting(WallScroll.square) + !Window.IsVisible(MyMusicNav.xml)] | [Skin.HasSetting(WallScroll.music.square) + Window.IsVisible(MyMusicNav.xml)]]">5151</ondown>
+                <ondown condition="Skin.HasSetting(DisableWallScroll) | ![[Skin.HasSetting(WallScroll.square) + !Window.IsVisible(MyMusicNav.xml)] | [Skin.HasSetting(WallScroll.music.square) + Window.IsVisible(MyMusicNav.xml)]]">60</ondown>
                 <visible>[Container.Content(addons) + String.IsEmpty(Container.PluginName)] | Container.Content(albums) | Container.Content(images) | [Container.Content(musicvideos) + Window.IsVisible(MyMusicNav.xml)]</visible>
                 <visible>!Window.IsVisible(MyPlaylist.xml)</visible>
             </include>

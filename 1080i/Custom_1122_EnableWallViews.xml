@@ -7,7 +7,7 @@
         <control type="group">
             <include content="Dialog_Standard_Group">
                 <param name="width" value="1200" />
-                <param name="height" value="640" />
+                <param name="height" value="800" />
             </include>
 
             <control type="label">
@@ -56,6 +56,7 @@
                     <enable>!Skin.HasSetting(DisableWallScroll)</enable>
                     <onclick>Skin.ToggleSetting(WallScroll.Posters)</onclick>
                     <selected>Skin.HasSetting(WallScroll.Posters)</selected>
+                    <onclick condition="!Skin.HasSetting(WallScroll.Posters)">SetFocus(5252)</onclick>
                 </control>
                 <control type="radiobutton" id="9004">
                     <label>Landscape</label>
@@ -66,6 +67,14 @@
                     <selected>Skin.HasSetting(WallScroll.Landscape)</selected>
                 </control>
                 <control type="radiobutton" id="9005">
+                    <label>Landscape (Music)</label>
+                    <radioposx>730</radioposx>
+                    <include>Dialog_Standard_Button</include>
+                    <enable>!Skin.HasSetting(DisableWallScroll)</enable>
+                    <onclick>Skin.ToggleSetting(WallScroll.music.Landscape)</onclick>
+                    <selected>Skin.HasSetting(WallScroll.music.Landscape)</selected>
+                </control>
+                <control type="radiobutton" id="9006">
                     <label>Square</label>
                     <radioposx>730</radioposx>
                     <include>Dialog_Standard_Button</include>
@@ -73,7 +82,15 @@
                     <onclick>Skin.ToggleSetting(WallScroll.Square)</onclick>
                     <selected>Skin.HasSetting(WallScroll.Square)</selected>
                 </control>
-                <control type="radiobutton" id="9006">
+                <control type="radiobutton" id="9007">
+                    <label>Square (Music)</label>
+                    <radioposx>730</radioposx>
+                    <include>Dialog_Standard_Button</include>
+                    <enable>!Skin.HasSetting(DisableWallScroll)</enable>
+                    <onclick>Skin.ToggleSetting(WallScroll.music.Square)</onclick>
+                    <selected>Skin.HasSetting(WallScroll.music.Square)</selected>
+                </control>
+                <control type="radiobutton" id="9008">
                     <label>Hubs</label>
                     <radioposx>730</radioposx>
                     <include>Dialog_Standard_Button</include>
