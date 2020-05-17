@@ -219,7 +219,7 @@
                         <right>-80</right>
                         <onfocus>SetProperty(TMDbHelper.WidgetContainer,3002,Home)</onfocus>
                         <onup>3101</onup>
-                        <content>plugin://plugin.video.themoviedb.helper/?info=recommendations&amp;type=movie&amp;query=$INFO[Container(1297).ListItem.Title]</content>
+                        <content>$VAR[Defs_Showcase_Recs]</content>
                     </include>
                     <include content="Home_Hub_Widget_Label">
                         <param name="id" value="3002" />
