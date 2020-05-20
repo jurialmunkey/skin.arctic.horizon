@@ -132,8 +132,8 @@
             </include>
 
             <include content="Object_Info_Button" description="Filter">
-                <param name="id" value="3106" />
-                <param name="groupid" value="3006" />
+                <param name="id" value="3116" />
+                <param name="groupid" value="3016" />
                 <param name="label" value="$LOCALIZE[587]" />
                 <param name="icon" value="$VAR[Image_Filtered]" />
                 <param name="ondown" value="50" />
