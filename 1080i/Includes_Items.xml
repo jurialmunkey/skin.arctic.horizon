@@ -703,60 +703,6 @@
                 <visible>System.HasAddon(script.artwork.helper)</visible>
             </item>
 
-            <!-- Wall View -->
-            <item>
-                <label>$LOCALIZE[31090]: $VAR[Label_WallView_square]</label>
-                <icon>special://skin/extras/icons/grid.png</icon>
-                <onclick>Skin.ToggleSetting(WallScroll.square)</onclick>
-                <onclick>ReloadSkin()</onclick>
-                <visible>Control.IsVisible(51)</visible>
-                <visible>!Skin.HasSetting(DisableWallScroll)</visible>
-                <visible>!Window.IsVisible(MyMusicNav.xml)</visible>
-            </item>
-            <item>
-                <label>$LOCALIZE[31090]: $VAR[Label_WallView_Music_square]</label>
-                <icon>special://skin/extras/icons/grid.png</icon>
-                <onclick>Skin.ToggleSetting(WallScroll.music.square)</onclick>
-                <onclick>ReloadSkin()</onclick>
-                <visible>Control.IsVisible(51)</visible>
-                <visible>!Skin.HasSetting(DisableWallScroll)</visible>
-                <visible>Window.IsVisible(MyMusicNav.xml)</visible>
-            </item>
-            <item>
-                <label>$LOCALIZE[31090]: $VAR[Label_WallView_posters]</label>
-                <icon>special://skin/extras/icons/grid.png</icon>
-                <onclick>Skin.ToggleSetting(WallScroll.posters)</onclick>
-                <onclick>ReloadSkin()</onclick>
-                <visible>Control.IsVisible(52)</visible>
-                <visible>!Skin.HasSetting(DisableWallScroll)</visible>
-            </item>
-            <item>
-                <label>$LOCALIZE[31090]: $VAR[Label_WallView_landscape]</label>
-                <icon>special://skin/extras/icons/grid.png</icon>
-                <onclick>Skin.ToggleSetting(WallScroll.landscape)</onclick>
-                <onclick>ReloadSkin()</onclick>
-                <visible>Control.IsVisible(53) | Control.IsVisible(54)</visible>
-                <visible>!Skin.HasSetting(DisableWallScroll)</visible>
-                <visible>!Window.IsVisible(MyMusicNav.xml)</visible>
-            </item>
-            <item>
-                <label>$LOCALIZE[31090]: $VAR[Label_WallView_Music_landscape]</label>
-                <icon>special://skin/extras/icons/grid.png</icon>
-                <onclick>Skin.ToggleSetting(WallScroll.music.landscape)</onclick>
-                <onclick>ReloadSkin()</onclick>
-                <visible>Control.IsVisible(53) | Control.IsVisible(54)</visible>
-                <visible>!Skin.HasSetting(DisableWallScroll)</visible>
-                <visible>Window.IsVisible(MyMusicNav.xml)</visible>
-            </item>
-            <item>
-                <label>$LOCALIZE[31090]: $VAR[Label_WallView_hubs]</label>
-                <icon>special://skin/extras/icons/grid.png</icon>
-                <onclick>Skin.ToggleSetting(WallScroll.hubs)</onclick>
-                <onclick>ReloadSkin()</onclick>
-                <visible>Control.IsVisible(56)</visible>
-                <visible>!Skin.HasSetting(DisableWallScroll)</visible>
-            </item>
-
             <item>
                 <label>$LOCALIZE[19270]</label>
                 <icon>$VAR[Image_GroupRecordings]</icon>

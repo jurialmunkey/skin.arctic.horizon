@@ -127,7 +127,20 @@
                 <param name="label" value="$LOCALIZE[31208]" />
                 <param name="icon" value="special://skin/extras/icons/infobubble.png" />
                 <param name="ondown" value="50" />
+                <param name="visible" value="Skin.HasSetting(DisableWallScroll)" />
                 <onclick>SetFocus(9601)</onclick>
+            </include>
+
+            <include content="Object_Info_Button" description="Filter">
+                <param name="id" value="3106" />
+                <param name="groupid" value="3006" />
+                <param name="label" value="$LOCALIZE[587]" />
+                <param name="icon" value="$VAR[Image_Filtered]" />
+                <param name="ondown" value="50" />
+                <param name="visible" value="!Skin.HasSetting(DisableWallScroll) + [Container.CanFilter | Container.CanFilterAdvanced]" />
+                <onclick condition="Container.CanFilterAdvanced">SetProperty(advancedfilter,1,home)</onclick>
+                <onclick>SetFocus(50)</onclick>
+                <onclick>Filter</onclick>
             </include>
 
             <include content="Object_Info_Button" description="Options">

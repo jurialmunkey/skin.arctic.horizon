@@ -327,7 +327,7 @@ msgstr ""
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31063"
-msgid "Show info overlay after delay"
+msgid "Display wall info overlay after delay"
 msgstr ""
 
 #: /1080i/Includes_Info.xml
@@ -457,7 +457,7 @@ msgstr ""
 
 #: /1080i/Custom_1122_EnableWallViews.xml
 msgctxt "#31089"
-msgid "Enable wall view"
+msgid "Replace scrollbar with wall view"
 msgstr ""
 
 #: /1080i/Includes_Items.xml

@@ -476,11 +476,21 @@
                         <onclick>Skin.ToggleSetting(LibrarySeasonPosters)</onclick>
                     </control>
 
-                    <control type="button" id="19438">
+                    <control type="radiobutton" id="19438">
                         <visible>Integer.IsEqual(Window.Property(CurrentFocus),9004)</visible>
-                        <label>$LOCALIZE[31060]</label>
+                        <label>$LOCALIZE[31089]</label>
                         <include>Defs_Settings_Button</include>
-                        <onclick>ActivateWindow(1122)</onclick>
+                        <onclick>Skin.ToggleSetting(DisableWallScroll)</onclick>
+                        <selected>!Skin.HasSetting(DisableWallScroll)</selected>
+                    </control>
+
+                    <control type="radiobutton" id="19439">
+                        <visible>Integer.IsEqual(Window.Property(CurrentFocus),9004)</visible>
+                        <label>$LOCALIZE[31063]</label>
+                        <include>Defs_Settings_Button</include>
+                        <enable>!Skin.HasSetting(DisableWallScroll)</enable>
+                        <onclick>Skin.ToggleSetting(WallShowInfo)</onclick>
+                        <selected>Skin.HasSetting(WallShowInfo)</selected>
                     </control>
 
 

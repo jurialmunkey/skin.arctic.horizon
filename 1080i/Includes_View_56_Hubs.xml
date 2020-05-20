@@ -61,7 +61,6 @@
                 <include content="Viewtype_Landscape">
                     <animation effect="fade" start="100" end="0" condition="Container(560).IsUpdating">Conditional</animation>
                     <param name="id" value="560" />
-                    <param name="nomovement" value="Skin.HasSetting(WallScroll.Hubs)" />
                     <visible>Container(56).ListItem.IsFolder + !Container(56).ListItem.IsParentFolder</visible>
                     <bottom>-20</bottom>
                     <left>-80</left>
@@ -72,8 +71,8 @@
                     <onclick>SetFocus(56)</onclick>
                     <onback>56</onback>
                     <pagecontrol>60</pagecontrol>
-                    <ondown condition="!Skin.HasSetting(DisableWallScroll) + Skin.HasSetting(WallScroll.Hubs)">5656</ondown>
-                    <ondown condition="Skin.HasSetting(DisableWallScroll) | !Skin.HasSetting(WallScroll.Hubs)">60</ondown>
+                    <ondown condition="!Skin.HasSetting(DisableWallScroll) + [Container(560).HasNext | Container(560).HasPrevious]">5656</ondown>
+                    <ondown condition="Skin.HasSetting(DisableWallScroll)">60</ondown>
                     <content target="$VAR[Defs_560_Target]">$INFO[Container(56).ListItem.FolderPath]</content>
                     <visible>![Window.IsVisible(MyMusicNav.xml) + Container.Content(years)]</visible>
                 </include>
