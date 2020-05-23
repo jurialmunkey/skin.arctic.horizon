@@ -468,13 +468,13 @@
                         <onclick>Skin.ToggleSetting(EnablePlotAutoScroll)</onclick>
                     </control>
 
-                    <control type="radiobutton" id="19433">
+                    <!-- <control type="radiobutton" id="19433">
                         <visible>Integer.IsEqual(Window.Property(CurrentFocus),9004)</visible>
                         <label>$LOCALIZE[31250]</label>
                         <include>Defs_Settings_Button</include>
                         <selected>!Skin.HasSetting(LibrarySeasonPosters)</selected>
                         <onclick>Skin.ToggleSetting(LibrarySeasonPosters)</onclick>
-                    </control>
+                    </control> -->
 
                     <control type="radiobutton" id="19438">
                         <visible>Integer.IsEqual(Window.Property(CurrentFocus),9004)</visible>
