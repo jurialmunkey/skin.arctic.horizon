@@ -10,13 +10,15 @@
                 <param name="orientation" value="horizontal" />
                 <param name="height" value="600" />
                 <param name="itemlayout-height" value="200" />
+                <param name="viewtype-label" value="$LOCALIZE[20459]" />
                 <left>-80</left>
                 <right>-80</right>
                 <bottom>-20</bottom>
                 <pagecontrol>60</pagecontrol>
+                <onup>SetFocus(9000)</onup>
                 <include>Viewtype_Movement</include>
                 <onfocus>ClearProperty(TMDbHelper.WidgetContainer,Home)</onfocus>
-                <visible>$EXP[Exp_View50Tags]</visible>
+                <visible>$EXP[Exp_View_50]</visible>
             </include>
 
             <include content="Home_Hub_Widget_Label">

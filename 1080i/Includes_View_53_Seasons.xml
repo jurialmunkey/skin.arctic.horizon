@@ -12,21 +12,21 @@
                 <preloaditems>2</preloaditems>
                 <height>120</height>
                 <width>1120</width>
-                <onup>SetFocus(9602)</onup>
+                <onup>SetFocus(9000)</onup>
                 <ondown>530</ondown>
                 <ondown>SetProperty(TMDbHelper.WidgetContainer,530,Home)</ondown>
                 <ondown condition="Skin.HasSetting(NoFanart)">RunScript(plugin.video.themoviedb.helper,blur_image=$VAR[Global_Background_Image_NoFanart_Fallback])</ondown>
                 <ondown condition="Skin.HasSetting(NoFanart)">SetProperty(TMDbHelper.Blur.SourceImage,Art(fallback),Home)</ondown>
                 <ondown condition="!Skin.HasSetting(NoFanart)">SetProperty(TMDbHelper.Blur.SourceImage,thumb,Home)</ondown>
-                <onfocus>ClearProperty(TMDbHelper.WidgetContainer,Home)</onfocus>
+                <onfocus condition="!$EXP[Exp_View56Hubs]">ClearProperty(TMDbHelper.WidgetContainer,Home)</onfocus>
+                <onfocus condition="$EXP[Exp_View56Hubs]">SetProperty(TMDbHelper.WidgetContainer,530,Home)</onfocus>
                 <onfocus condition="Skin.HasSetting(NoFanart)">SetProperty(TMDbHelper.Blur.SourceImage,Art(fallback),Home)</onfocus>
                 <onfocus condition="!Skin.HasSetting(NoFanart)">SetProperty(TMDbHelper.Blur.SourceImage,poster,Home)</onfocus>
                 .
                 <left>-20</left>
                 <bottom>400</bottom>
                 <animation effect="fade" start="0" end="100" time="400" tween="cubic" easing="inout" reversible="false" delay="200" condition="Container.Content(seasons)">Conditional</animation>
-                <visible>Container.Content(seasons)</visible>
-                <visible>!Skin.HasSetting(LibrarySeasonPosters)</visible>
+                <visible>$EXP[Exp_View_53]</visible>
                 <visible>!String.IsEqual(Container.Property(Param.Info),details)</visible>
             </include>
             <control type="image">
@@ -50,6 +50,20 @@
             <include content="View_Info_Grouplist">
                 <param name="title" value="$VAR[Label_Info_Title_530]" />
                 <param name="container" value="Container(530)." />
+                <param name="plot" value="$VAR[Label_Plot_C530]" />
+                <param name="plotheight" value="auto" />
+                <param name="infoline-label" value="$VAR[Label_Home_InfoLine]" />
+                <param name="infoline-image" value="$VAR[Image_Home_VideoQuality]" />
+                <top>-15</top>
+                <height>285</height>
+                <visible>Control.IsVisible(53)</visible>
+                <include>Viewtype_Info_Right</include>
+                <visible>Integer.IsGreater(Container(530).NumItems,0)</visible>
+                <visible>!Container.Content(seasons)</visible>
+            </include>
+            <include content="View_Info_Grouplist">
+                <param name="title" value="$VAR[Label_Info_Title_530]" />
+                <param name="container" value="Container(530)." />
                 <param name="plot" value="$INFO[Container(530).ListItem.Plot]" />
                 <param name="plotheight" value="auto" />
                 <param name="infoline-label" value="$VAR[Label_Home_InfoLine]" />
@@ -59,6 +73,7 @@
                 <visible>Control.HasFocus(530)</visible>
                 <visible>Control.IsVisible(53)</visible>
                 <include>Viewtype_Info_Right</include>
+                <visible>Container.Content(seasons)</visible>
             </include>
             <include>View_53_Episodes</include>
         </control>

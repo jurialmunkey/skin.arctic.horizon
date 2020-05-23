@@ -14,17 +14,13 @@
         <control type="list" id="56560">
             <include>Defs_Offscreen</include>
             <orientation>horizontal</orientation>
-            <visible>Control.IsVisible(53) | Control.Isvisible(56)</visible>
+            <visible>Control.IsVisible(53)</visible>
             <itemlayout />
             <focusedlayout />
             <content>
                 <include content="Object_56560_Item">
                     <param name="listitem" value="Container(530).ListItem" />
                     <visible>Control.IsVisible(53)</visible>
-                </include>
-                <include content="Object_56560_Item">
-                    <param name="listitem" value="Container(560).ListItem" />
-                    <visible>Control.IsVisible(56)</visible>
                 </include>
             </content>
         </control>
@@ -48,7 +44,7 @@
                             <top>-15</top>
                             <height>285</height>
                             <visible>!Control.HasFocus(530)</visible>
-                            <visible>!Control.IsVisible(56)</visible>
+                            <visible>!Control.IsVisible(53) | Container.Content(seasons)</visible>
                             <visible>![Control.IsVisible(50) | Control.IsVisible(500) | Control.IsVisible(55) | Control.IsVisible(520)]</visible>
                             <include>Viewtype_Info_Right</include>
                         </include>
@@ -60,7 +56,6 @@
                             <top>-15</top>
                             <height>285</height>
                             <visible>[Control.IsVisible(50) | Control.IsVisible(500) | Control.IsVisible(55) | Control.IsVisible(520)]</visible>
-                            <visible>!Control.IsVisible(56)</visible>
                             <include>Viewtype_Info_Right</include>
                         </include>
                         <control type="image">
@@ -71,7 +66,7 @@
                             <texture background="true">$VAR[Image_ClearArt]</texture>
                             <aspectratio align="right" aligny="bottom" scalediffuse="false">keep</aspectratio>
                             <bordersize>15</bordersize>
-                            <visible>Control.IsVisible(52) | Control.IsVisible(53) | Control.IsVisible(54) | [Control.IsVisible(56) + [!Container.Content(years) | !Window.IsVisible(MyMusicNav.xml)]]</visible>
+                            <visible>Control.IsVisible(52) | Control.IsVisible(53) | Control.IsVisible(54)]</visible>
                         </control>
                         <control type="image">
                             <right>-15</right>
@@ -81,7 +76,7 @@
                             <texture background="true">$VAR[Image_DiscArt]</texture>
                             <aspectratio align="right" aligny="bottom" scalediffuse="false">keep</aspectratio>
                             <bordersize>15</bordersize>
-                            <visible>Control.IsVisible(51) | [Control.IsVisible(56) + Container.Content(years) + Window.IsVisible(MyMusicNav.xml)]</visible>
+                            <visible>Control.IsVisible(51)</visible>
                         </control>
                         <control type="image">
                             <right>-15</right>
@@ -98,7 +93,6 @@
                             <visible>!Control.IsVisible(50)</visible>
                             <visible>!Control.IsVisible(53)</visible>
                             <visible>!Control.IsVisible(55)</visible>
-                            <visible>!Control.IsVisible(56)</visible>
                             <visible>!Control.IsVisible(500)</visible>
                             <visible>!Control.IsVisible(520)</visible>
                         </include>
@@ -148,11 +142,6 @@
                         <param name="id" value="54" />
                         <param name="wall-id" value="5454" />
                         <param name="button-id" value="45454" />
-                    </include>
-                    <include content="View_54_Episodes_Wall">
-                        <param name="id" value="560" />
-                        <param name="wall-id" value="5656" />
-                        <param name="button-id" value="65656" />
                     </include>
                 </control>
                 <include>Topbar_Left</include>
@@ -762,6 +751,7 @@
                 <param name="itemlayout" value="Viewtype_Keywords_Itemlayout" />
                 <param name="movement" value="$PARAM[movement]" />
                 <param name="id" value="$PARAM[id]" />
+                <param name="viewtype-label" value="$PARAM[viewtype-label]" />
                 <movement>5</movement>
                 <nested />
             </include>
@@ -838,6 +828,7 @@
                 <param name="textbox-visible" value="$PARAM[textbox-visible]" />
                 <param name="aspectratio" value="$PARAM[aspectratio]" />
                 <param name="textpanel" value="true" />
+                <param name="viewtype-label" value="$PARAM[viewtype-label]" />
                 <nested />
             </include>
             <include content="Viewtype_Poster" condition="Skin.HasSetting(DisableTextPanel)">
@@ -856,6 +847,7 @@
                 <param name="textbox-visible" value="$PARAM[textbox-visible]" />
                 <param name="aspectratio" value="$PARAM[aspectratio]" />
                 <param name="textpanel" value="false" />
+                <param name="viewtype-label" value="$PARAM[viewtype-label]" />
                 <nested />
             </include>
         </definition>

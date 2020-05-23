@@ -1784,7 +1784,7 @@
     <include name="Object_Scrollbars">
 
         <include content="Object_Scrollbar_Horz">
-            <param name="visible" value="Control.IsVisible(51) | Control.IsVisible(52) | Control.IsVisible(53) | Control.IsVisible(54) | Control.IsVisible(50) | Control.IsVisible(56)" />
+            <param name="visible" value="Control.IsVisible(51) | Control.IsVisible(52) | Control.IsVisible(53) | Control.IsVisible(54) | Control.IsVisible(50)" />
         </include>
 
         <control type="scrollbar" id="64">
@@ -1865,8 +1865,7 @@
             <centerbottom>40</centerbottom>
             <showonepage>false</showonepage>
             <orientation>horizontal</orientation>
-            <onup condition="![Control.IsVisible(560) | Control.IsVisible(530) | Control.IsVisible(5610)]">50</onup>
-            <onup condition="Control.IsVisible(560)">560</onup>
+            <onup condition="![Control.IsVisible(530) | Control.IsVisible(5610)]">50</onup>
             <onup condition="Control.IsVisible(530)">530</onup>
             <onup condition="Control.IsVisible(5610)">5610</onup>
             <ondown condition="Container.CanFilterAdvanced">SetProperty(advancedfilter,1,home)</ondown>
@@ -1877,14 +1876,14 @@
             <texturesliderbar colordiffuse="main_fg_30" border="4">scrollbar/scrollv.png</texturesliderbar>
             <texturesliderbarfocus colordiffuse="main_fg_100" border="4">scrollbar/scrollv.png</texturesliderbarfocus>
             <animation effect="fade" start="100" end="0" time="400" condition="!Control.HasFocus(60)">Conditional</animation>
-            <visible>!$EXP[Exp_AlphabetTypes] | Control.IsVisible(56) | Control.IsVisible(53) | Control.IsVisible(5610)</visible>
+            <visible>!$EXP[Exp_AlphabetTypes] | Control.IsVisible(53) | Control.IsVisible(5610)</visible>
             <include>Animation_FadeIn</include>
             <include>Animation_FadeOut</include>
         </control>
 
         <control type="button" id="60">
             <visible>$PARAM[visible]</visible>
-            <visible>$EXP[Exp_AlphabetTypes] + ![Control.IsVisible(56) | Control.IsVisible(53)]</visible>
+            <visible>$EXP[Exp_AlphabetTypes] + ![Control.IsVisible(53)]</visible>
             <font />
             <texturefocus />
             <texturenofocus />
@@ -1953,7 +1952,7 @@
             <include content="Object_AlphabetLetter"><param name="label" value="X" /></include>
             <include content="Object_AlphabetLetter"><param name="label" value="Y" /></include>
             <include content="Object_AlphabetLetter"><param name="label" value="Z" /></include>
-            <visible>$EXP[Exp_AlphabetTypes] + ![Control.IsVisible(56) | Control.IsVisible(53)]</visible>
+            <visible>$EXP[Exp_AlphabetTypes] + ![Control.IsVisible(53)]</visible>
         </control>
     </include>
 

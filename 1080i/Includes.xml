@@ -12,7 +12,6 @@
     <include file="Includes_View_53_Seasons.xml" />
     <include file="Includes_View_54_Episodes.xml" />
     <include file="Includes_View_55_List.xml" />
-    <include file="Includes_View_56_Hubs.xml" />
     <include file="Includes_View_PVR.xml" />
     <include file="Includes_View_Info.xml" />
     <include file="Includes_Viewtype.xml" />
@@ -38,6 +37,7 @@
 
     <include file="script-skinshortcuts-includes.xml"/>
     <include file="script-skinvariables-includes.xml" />
+    <include file="script-skinviewtypes-includes.xml" />
 
     <include file="Constants_Main.xml" />
 

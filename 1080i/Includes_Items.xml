@@ -630,14 +630,26 @@
         </content>
     </include>
 
+    <variable name="Items_ViewMode_Switch">
+        <value condition="!String.IsEmpty(Container.Content)">$INFO[Container.Content]</value>
+        <value condition="Window.IsVisible(MyPVRRecordings.xml)">pvr-recordings</value>
+        <value condition="Window.IsVisible(MyPVRTimers.xml)">pvr-timers</value>
+        <value condition="Window.IsVisible(MyPVRSearch.xml)">pvr-search</value>
+        <value>none</value>
+    </variable>
     <include name="Items_View">
         <content>
             <item>
+                <label>$LOCALIZE[31092]: $INFO[Container.Viewmode]</label>
+                <icon>special://skin/extras/icons/viewmode.png</icon>
+                <onclick>Runscript(script.skinvariables,action=buildviews,contentid=$VAR[Items_ViewMode_Switch],pluginname=$INFO[Container.PluginName])</onclick>
+            </item>
+            <!-- <item>
                 <label>$INFO[Container.Viewmode]</label>
                 <icon>special://skin/extras/icons/viewmode.png</icon>
                 <onclick>SendClick(2)</onclick>
                 <visible>Control.IsEnabled(2) + !Integer.IsEqual(Container.ViewCount,1)</visible>
-            </item>
+            </item> -->
             <!-- Sort -->
             <item>
                 <label>$LOCALIZE[31213]: $INFO[Container.SortMethod]</label>

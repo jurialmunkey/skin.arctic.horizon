@@ -16,8 +16,7 @@
                 <include>Viewtype_Movement</include>
                 <ondown condition="!Skin.HasSetting(DisableWallScroll) + [Container(51).HasNext | Container(51).HasPrevious]">5151</ondown>
                 <ondown condition="Skin.HasSetting(DisableWallScroll)">60</ondown>
-                <visible>[Container.Content(addons) + String.IsEmpty(Container.PluginName)] | Container.Content(albums) | Container.Content(images) | [Container.Content(musicvideos) + Window.IsVisible(MyMusicNav.xml)]</visible>
-                <visible>!Window.IsVisible(MyPlaylist.xml)</visible>
+                <visible>$EXP[Exp_View_51]</visible>
             </include>
             <include content="Home_Hub_Widget_Label">
                 <param name="id" value="51" />

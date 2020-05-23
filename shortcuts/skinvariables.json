@@ -1,7 +1,7 @@
 [
     {
         "name"          : "Label_SmallLandscapeWidget_Sublabel",
-        "containers"    : [54,5610,560,530],
+        "containers"    : [54,5610,530],
         "listitems"     : {"start": -10, "end": 17},
         "values"        : [
                             {"!String.IsEmpty({listitem}.ChannelName)": "$INFO[{listitem}.ChannelName]"},
@@ -18,7 +18,7 @@
     },
     {
         "name"          : "Image_Landscape",
-        "containers"    : [54,5610,560,530],
+        "containers"    : [54,5610,530],
         "listitems"     : {"start": -10, "end": 17},
         "parent"        : "Control.HasFocus({id})",
         "values"        : [
@@ -37,7 +37,7 @@
     },
     {
         "name"          : "Label_Landscape_Title",
-        "containers"    : [54,5610,560,530],
+        "containers"    : [54,5610,530],
         "listitems"     : {"start": -10, "end": 17},
         "values"        : [
                             {"String.IsEqual({listitem}.DBType,album) | String.IsEqual({listitem}.DBType,song)": "$INFO[{listitem}.Album]"},
@@ -49,7 +49,7 @@
     },
     {
         "name"          : "Label_Plot",
-        "containers"    : [530,560,3001,5610],
+        "containers"    : [530,3001,5610],
         "values"        : [
                             {"Window.IsVisible(1140) + Control.HasFocus(5002) + !String.IsEmpty(Container(5002).ListItem.Plot)": "$INFO[Container(5002).ListItem.Plot]"},
                             {"!String.IsEmpty({listitem}.Property(Artist_Description))": "$INFO[{listitem}.Property(Artist_Description)]"},
@@ -62,19 +62,19 @@
     },
     {
         "name"          : "Exp_DefaultIcon",
-        "containers"    : [51,52,53,54,55,56,530,560,3001,5610],
+        "containers"    : [51,52,53,54,55,530,3001,5610],
         "listitems"     : {"start": -16, "end": 29},
         "expression"    : "[String.IsEmpty({listitem}.Art(poster)) + String.IsEmpty({listitem}.Art(tvshow.poster)) + String.IsEmpty({listitem}.Art(fanart)) + String.IsEmpty({listitem}.Art(tvshow.fanart)) + String.IsEmpty({listitem}.Art(clearlogo))  + String.IsEmpty({listitem}.Art(landscape)) + [String.IsEqual({listitem}.Icon,{listitem}.ActualIcon) | [Window.IsVisible(AddonBrowser.xml) + String.IsEmpty({listitem}.AddonName)] | [Window.IsMedia + String.IsEmpty(Container.FolderPath)]]]"
     },
     {
         "name"          : "Exp_SpecialIcon",
-        "containers"    : [51,52,53,54,55,56,530,560,3001,5610],
+        "containers"    : [51,52,53,54,55,530,3001,5610],
         "listitems"     : {"start": -16, "end": 29},
         "expression"    : "[[String.IsEqual({listitem}.DBType,country) | String.IsEqual({listitem}.Property(dbtype),country) | String.IsEqual({listitem}.DBType,studio) | String.IsEqual({listitem}.Property(dbtype),studio) | String.IsEqual({listitem}.DBType,genre) | String.IsEqual({listitem}.Property(dbtype),genre)] | [[!String.IsEmpty({listitem}.ChannelNumberLabel) | !String.IsEmpty({listitem}.ChannelName) | !String.IsEmpty({listitem}.ChannelNumber)] + [String.IsEmpty({listitem}.Art(poster)) + String.IsEmpty({listitem}.Art(tvshow.poster)) + String.IsEmpty({listitem}.Art(fanart))]]]"
     },
     {
         "name"          : "Image_DefaultIcon",
-        "containers"    : [51,52,53,54,55,56,530,560,3001,5610],
+        "containers"    : [51,52,53,54,55,530,3001,5610],
         "listitems"     : {"start": -16, "end": 29},
         "values"        : [
                             {"String.IsEqual({listitem}.DBType,country) | String.IsEqual({listitem}.Property(dbtype),country)": "$INFO[{listitem}.Label,resource://resource.images.moviecountryicons.maps/,.png]"},
@@ -85,7 +85,7 @@
     },
     {
         "name"          : "Image_Poster",
-        "containers"    : [51,52,53,54,55,56,530,560,3001,5610],
+        "containers"    : [51,52,53,54,55,530,3001,5610],
         "listitems"     : {"start": -16, "end": 29},
         "values"        : [
                             {"!String.IsEmpty({listitem}.Art(season.poster)) + !Window.IsVisible(Home)": "$INFO[{listitem}.Art(season.poster)]"},

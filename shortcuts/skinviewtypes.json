@@ -1,0 +1,142 @@
+{
+    "prefix": "Exp_View",
+    "viewtypes": {
+        "50":  "Tags",
+        "51":  "Square",
+        "52":  "Poster",
+        "53":  "Seasons",
+        "54":  "Landscape",
+        "55":  "List",
+        "500": "List"
+    },
+    "rules": {
+        "addons": {
+            "rule": "Container.Content(addons)",
+            "viewtypes": ["51", "50", "500"],
+            "library": "51",
+            "plugins": "500"
+        },
+        "albums": {
+            "rule": "Container.Content(albums)",
+            "viewtypes": ["51", "500"],
+            "library": "51"
+        },
+        "images": {
+            "rule": "Container.Content(images)",
+            "viewtypes": ["51", "55", "54"],
+            "library": "51"
+        },
+        "musicvideos": {
+            "rule": "Container.Content(musicvideos)",
+            "viewtypes": ["51", "52", "54"],
+            "library": "51"
+        },
+        "actors": {
+            "rule": "Container.Content(actors)",
+            "viewtypes": ["52", "500"],
+            "library": "52"
+        },
+        "seasons": {
+            "rule": "Container.Content(seasons)",
+            "viewtypes": ["52", "53", "55"],
+            "library": "53"
+        },
+        "tags": {
+            "rule": "Container.Content(tags)",
+            "viewtypes": ["53", "50", "500"],
+            "library": "53",
+            "plugins": "50"
+        },
+        "countries": {
+            "rule": "Container.Content(countries)",
+            "viewtypes": ["53", "50"],
+            "library": "53",
+            "plugins": "50"
+        },
+        "genres": {
+            "rule": "Container.Content(genres)",
+            "viewtypes": ["53", "50"],
+            "library": "53",
+            "plugins": "50"
+        },
+        "studios": {
+            "rule": "Container.Content(studios)",
+            "viewtypes": ["53", "50"],
+            "library": "53",
+            "plugins": "50"
+        },
+        "years": {
+            "rule": "Container.Content(years)",
+            "viewtypes": ["53", "50"],
+            "library": "53",
+            "plugins": "50"
+        },
+        "directors": {
+            "rule": "Container.Content(directors)",
+            "viewtypes": ["53", "50", "500"],
+            "library": "53",
+            "plugins": "500"
+        },
+        "artists": {
+            "rule": "Container.Content(artists)",
+            "viewtypes": ["51", "54", "55", "500"],
+            "library": "54"
+        },
+        "videos": {
+            "rule": "Container.Content(videos)",
+            "viewtypes": ["54", "55"],
+            "library": "54"
+        },
+        "sets": {
+            "rule": "Container.Content(sets)",
+            "viewtypes": ["52", "54", "55"],
+            "library": "54"
+        },
+        "movies": {
+            "rule": "Container.Content(movies)",
+            "viewtypes": ["52", "54", "55"],
+            "library": "52"
+        },
+        "tvshows": {
+            "rule": "Container.Content(tvshows)",
+            "viewtypes": ["52", "54", "55"],
+            "library": "52"
+        },
+        "episodes": {
+            "rule": "Container.Content(episodes)",
+            "viewtypes": ["54", "55"],
+            "library": "54"
+        },
+        "songs": {
+            "rule": "Container.Content(songs)",
+            "viewtypes": ["500"],
+            "library": "500"
+        },
+        "files": {
+            "rule": "Container.Content(files)",
+            "viewtypes": ["55"],
+            "library": "55"
+        },
+        "pvr-timers": {
+            "rule": "Window.IsVisible(MyPVRTimers.xml)",
+            "viewtypes": ["500", "54", "51"],
+            "library": "500"
+        },
+        "pvr-search": {
+            "rule": "Window.IsVisible(MyPVRSearch.xml)",
+            "viewtypes": ["500", "54", "51"],
+            "library": "500"
+        },
+        "pvr-recordings": {
+            "rule": "Window.IsVisible(MyPVRRecordings.xml)",
+            "viewtypes": ["500", "54", "52", "51"],
+            "library": "500"
+        },
+        "none": {
+            "rule": "Container.Content() + !Window.IsVisible(MyPVRTimers.xml) + !Window.IsVisible(MyPVRSearch.xml) + !Window.IsVisible(MyPVRRecordings.xml)",
+            "viewtypes": ["50", "500"],
+            "library": "50",
+            "plugins": "500"
+        }
+    }
+}

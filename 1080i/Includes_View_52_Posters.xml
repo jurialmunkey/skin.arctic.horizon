@@ -19,7 +19,8 @@
                 <onfocus condition="!Skin.HasSetting(NoFanart)">SetProperty(TMDbHelper.Blur.SourceImage,poster,Home)</onfocus>
                 <ondown condition="!Skin.HasSetting(DisableWallScroll) + [Container(52).HasNext | Container(52).HasPrevious]">5252</ondown>
                 <ondown condition="Skin.HasSetting(DisableWallScroll)">60</ondown>
-                <visible>Container.Content(actors) | Container.Content(tvshows) | Container.Content(movies) | [Container.Content(seasons) + Skin.HasSetting(LibrarySeasonPosters)]</visible>
+                <visible>$EXP[Exp_View_52]</visible>
+
                 <visible>!Window.IsVisible(MyPlaylist.xml)</visible>
                 <visible>!String.IsEqual(Container.Property(Param.Info),details)</visible>
             </include>

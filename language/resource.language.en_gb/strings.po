@@ -470,6 +470,11 @@ msgctxt "#31091"
 msgid "Play trailer fullscreen in info dialog"
 msgstr ""
 
+#: /1080i/Includes_Items.xml
+msgctxt "#31092"
+msgid "View"
+msgstr ""
+
 #: /1080i/SkinSettings.xml
 msgctxt "#31094"
 msgid "Apply colordiffuse to icons"
