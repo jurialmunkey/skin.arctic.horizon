@@ -46,7 +46,6 @@
                             <visible>!Control.HasFocus(530)</visible>
                             <visible>!Control.IsVisible(53) | Container.Content(seasons)</visible>
                             <visible>!Control.IsVisible(50)</visible>
-                            <visible>!Control.IsVisible(53)</visible>
                             <visible>!Control.IsVisible(55)</visible>
                             <visible>!Control.IsVisible(500)</visible>
                             <include>Viewtype_Info_Right</include>
