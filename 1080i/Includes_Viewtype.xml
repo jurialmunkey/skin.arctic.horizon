@@ -45,7 +45,10 @@
                             <height>285</height>
                             <visible>!Control.HasFocus(530)</visible>
                             <visible>!Control.IsVisible(53) | Container.Content(seasons)</visible>
-                            <visible>![Control.IsVisible(50) | Control.IsVisible(500) | Control.IsVisible(55) | Control.IsVisible(520)]</visible>
+                            <visible>!Control.IsVisible(50)</visible>
+                            <visible>!Control.IsVisible(53)</visible>
+                            <visible>!Control.IsVisible(55)</visible>
+                            <visible>!Control.IsVisible(500)</visible>
                             <include>Viewtype_Info_Right</include>
                         </include>
                         <include content="View_Info_Grouplist">
@@ -55,7 +58,7 @@
                             <param name="infoline-image" value="$VAR[Image_Home_VideoQuality]" />
                             <top>-15</top>
                             <height>285</height>
-                            <visible>[Control.IsVisible(50) | Control.IsVisible(500) | Control.IsVisible(55) | Control.IsVisible(520)]</visible>
+                            <visible>Control.IsVisible(50) | Control.IsVisible(500) | Control.IsVisible(55)</visible>
                             <include>Viewtype_Info_Right</include>
                         </include>
                         <control type="image">
@@ -66,7 +69,7 @@
                             <texture background="true">$VAR[Image_ClearArt]</texture>
                             <aspectratio align="right" aligny="bottom" scalediffuse="false">keep</aspectratio>
                             <bordersize>15</bordersize>
-                            <visible>Control.IsVisible(52) | Control.IsVisible(53) | Control.IsVisible(54)]</visible>
+                            <visible>Control.IsVisible(52) | Control.IsVisible(53) | Control.IsVisible(54)</visible>
                         </control>
                         <control type="image">
                             <right>-15</right>
@@ -94,7 +97,6 @@
                             <visible>!Control.IsVisible(53)</visible>
                             <visible>!Control.IsVisible(55)</visible>
                             <visible>!Control.IsVisible(500)</visible>
-                            <visible>!Control.IsVisible(520)</visible>
                         </include>
                     </control>
                     <control type="group" description="Bottom Half">
