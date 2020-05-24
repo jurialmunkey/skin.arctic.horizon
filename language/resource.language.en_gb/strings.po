@@ -476,13 +476,18 @@ msgid "View"
 msgstr ""
 
 #: /1080i/SkinSettings.xml
+msgctxt "#31093"
+msgid "Customise viewtypes"
+msgstr ""
+
+#: /1080i/SkinSettings.xml
 msgctxt "#31094"
 msgid "Apply colordiffuse to icons"
 msgstr ""
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31096"
-msgid "Songs use track-naming template"
+msgid "Prefer track-naming template for songs"
 msgstr ""
 
 #: /1080i/Includes_Home.xml
@@ -744,7 +749,7 @@ msgstr ""
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31174"
-msgid "Landscape art"
+msgid "Prefer landscape art over fanart if available"
 msgstr ""
 
 msgctxt "#31176"
@@ -962,7 +967,7 @@ msgstr ""
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31229"
-msgid "Panels behind item text"
+msgid "Prefer panels behind item text"
 msgstr ""
 
 #: /shortcuts/overrides.xml
@@ -1056,7 +1061,7 @@ msgstr ""
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31249"
-msgid "Clearart"
+msgid "Display clearart"
 msgstr ""
 
 #: /1080i/SkinSettings.xml

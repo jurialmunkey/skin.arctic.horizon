@@ -408,10 +408,18 @@
                     <!-- ======= -->
                     <!-- Library -->
                     <!-- ======= -->
+
                     <control type="label" id="19481" description="LABEL">
                         <visible>Integer.IsEqual(Window.Property(CurrentFocus),9004)</visible>
                         <include>Dialog_Standard_HintLabel</include>
                         <label>$LOCALIZE[31152]</label>
+                    </control>
+
+                    <control type="button" id="19433">
+                        <visible>Integer.IsEqual(Window.Property(CurrentFocus),9004)</visible>
+                        <label>$LOCALIZE[31093]</label>
+                        <include>Defs_Settings_Button</include>
+                        <onclick>runscript(script.skinvariables,action=buildviews,configure)</onclick>
                     </control>
 
                     <control type="radiobutton" id="19409" description="Tracknaming template">
@@ -467,14 +475,6 @@
                         <selected>Skin.HasSetting(EnablePlotAutoScroll)</selected>
                         <onclick>Skin.ToggleSetting(EnablePlotAutoScroll)</onclick>
                     </control>
-
-                    <!-- <control type="radiobutton" id="19433">
-                        <visible>Integer.IsEqual(Window.Property(CurrentFocus),9004)</visible>
-                        <label>$LOCALIZE[31250]</label>
-                        <include>Defs_Settings_Button</include>
-                        <selected>!Skin.HasSetting(LibrarySeasonPosters)</selected>
-                        <onclick>Skin.ToggleSetting(LibrarySeasonPosters)</onclick>
-                    </control> -->
 
                     <control type="radiobutton" id="19438">
                         <visible>Integer.IsEqual(Window.Property(CurrentFocus),9004)</visible>
