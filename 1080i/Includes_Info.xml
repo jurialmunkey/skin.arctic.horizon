@@ -426,7 +426,7 @@
             <param name="groupid" value="3206" />
             <param name="label" value="$LOCALIZE[31064]" />
             <param name="icon" value="special://skin/extras/icons/settings.png" />
-            <param name="visible" value="Control.IsEnabled(6) + !Skin.HasSetting(KioskMode)" />
+            <param name="visible" value="String.IsEmpty(ListItem.Property(tmdb_id)) + Control.IsEnabled(6) + !Skin.HasSetting(KioskMode)" />
             <onclick>SetFocus(3600)</onclick>
             <onfocus>SetProperty(overview,1)</onfocus>
             <onup>9601</onup>

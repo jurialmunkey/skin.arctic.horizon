@@ -105,10 +105,8 @@
                     <include condition="!ListItem.IsCollection">DialogVideoInfo_Widget_Year</include>
                     <include condition="!ListItem.IsCollection">DialogVideoInfo_Widget_Genre</include>
                     <include condition="!ListItem.IsCollection">DialogVideoInfo_Widget_CastStarsIn</include>
-                    <!-- <include condition="!ListItem.IsCollection">DialogVideoInfo_Widget_Keywords</include> -->
                     <include condition="!ListItem.IsCollection">DialogVideoInfo_Widget_Posters</include>
                     <include condition="!ListItem.IsCollection">DialogVideoInfo_Widget_ImageGallery</include>
-                    <!-- <include condition="!ListItem.IsCollection">DialogVideoInfo_Widget_Details</include> -->
                 </include>
             </include>
             <include content="Object_Control" condition="!Skin.HasSetting(DisableTrailerWindow)">

@@ -117,6 +117,11 @@
             "viewtypes": ["55"],
             "library": "55"
         },
+        "playlists": {
+            "rule": "Container.Content(playlists)",
+            "viewtypes": ["50", "500"],
+            "library": "50"
+        },
         "pvr-timers": {
             "rule": "Window.IsVisible(MyPVRTimers.xml)",
             "viewtypes": ["500", "54", "51"],
