@@ -133,11 +133,12 @@
                             <ondown>AlarmClock(refocusit,SetFocus(3992),00:00,silent)</ondown>
                             <onclick>ClearProperty(WidgetMovement)</onclick>
                             <onfocus>RunScript(plugin.video.themoviedb.helper,blur_image=$VAR[Global_Background_Image_NoFanart_Fallback])</onfocus>
-                            <onclick condition="!String.IsEmpty(Window.Property(WidgetFocus))">SetFocus(3000)</onclick>
-                            <onclick condition="String.IsEmpty(Window.Property(WidgetFocus))">SetProperty(301Click,1)</onclick>
-                            <onclick condition="String.IsEmpty(Window.Property(WidgetFocus))">SetProperty(301Focus,1)</onclick>
-                            <onclick condition="String.IsEmpty(Window.Property(WidgetFocus))">SetFocus(301)</onclick>
-                            <onclick condition="String.IsEmpty(Window.Property(WidgetFocus))">Action(Select)</onclick>
+                            <onclick condition="!String.IsEmpty(Window.Property(WidgetFocus)) + [!Integer.IsEqual(Container(3700).NumItems,0) | String.IsEmpty(Container(301).ListItem.Property(background))]">SetFocus(3000)</onclick>
+                            <onclick condition="!String.IsEmpty(Window.Property(WidgetFocus)) + Integer.IsEqual(Container(3700).NumItems,0) + !String.IsEmpty(Container(301).ListItem.Property(background))">ClearProperty(WidgetFocus)</onclick>
+                            <onclick condition="String.IsEmpty(Window.Property(WidgetFocus)) | [Integer.IsEqual(Container(3700).NumItems,0) + !String.IsEmpty(Container(301).ListItem.Property(background))]">SetProperty(301Click,1)</onclick>
+                            <onclick condition="String.IsEmpty(Window.Property(WidgetFocus)) | [Integer.IsEqual(Container(3700).NumItems,0) + !String.IsEmpty(Container(301).ListItem.Property(background))]">SetProperty(301Focus,1)</onclick>
+                            <onclick condition="String.IsEmpty(Window.Property(WidgetFocus)) | [Integer.IsEqual(Container(3700).NumItems,0) + !String.IsEmpty(Container(301).ListItem.Property(background))]">SetFocus(301)</onclick>
+                            <onclick condition="String.IsEmpty(Window.Property(WidgetFocus)) | [Integer.IsEqual(Container(3700).NumItems,0) + !String.IsEmpty(Container(301).ListItem.Property(background))]">Action(Select)</onclick>
                             <onfocus>ClearProperty(301Click)</onfocus>
                             <onfocus>ClearProperty(301Focus)</onfocus>
                             <onback>301</onback>
@@ -186,12 +187,13 @@
                             </control>
                             <control type="group">
                                 <visible>Integer.IsEqual(Container(3700).NumItems,0)</visible>
+                                <visible>String.IsEmpty(Container(301).ListItem.Property(background))</visible>
                                 <left>20</left>
                                 <right>20</right>
                                 <top>-180</top>
                                 <bottom>-65</bottom>
                                 <include content="Animation_UpDown">
-                                    <param name="visible" value="Integer.IsEqual(Container(3700).NumItems,0)" />
+                                    <param name="visible" value="Integer.IsEqual(Container(3700).NumItems,0) + String.IsEmpty(Container(301).ListItem.Property(background))" />
                                 </include>
                                 <include content="Home_Widget_Fullscreen" condition="!Skin.HasSetting(FullscreenWidgetShowcase)">
                                     <onleft>301</onleft>
@@ -200,6 +202,44 @@
                                     <onfocus>SetProperty(TMDbHelper.WidgetContainer,3001,Home)</onfocus>
                                 </include>
                                 <include condition="Skin.HasSetting(FullscreenWidgetShowcase)">Home_Hub_Showcase</include>
+                            </control>
+                            <control type="group">
+                                <visible>Integer.IsEqual(Container(3700).NumItems,0)</visible>
+                                <visible>!String.IsEmpty(Container(301).ListItem.Property(background))</visible>
+                                <left>20</left>
+                                <right>20</right>
+                                <top>-180</top>
+                                <bottom>-65</bottom>
+                                <include content="Animation_UpDown">
+                                    <param name="visible" value="Integer.IsEqual(Container(3700).NumItems,0) + !String.IsEmpty(Container(301).ListItem.Property(background))" />
+                                </include>
+                                <control type="multiimage">
+                                    <include>Defs_TimePerImage</include>
+                                    <randomize>true</randomize>
+                                    <aspectratio>scale</aspectratio>
+                                    <fadetime>600</fadetime>
+                                    <imagepath background="true">$INFO[Container(301).ListItem.Property(background)]</imagepath>
+                                </control>
+                                <control type="image">
+                                    <texture background="true" colordiffuse="cdffffff">common/vignette-home.png</texture>
+                                </control>
+                                <control type="grouplist">
+                                    <left>view_pad</left>
+                                    <top>65</top>
+                                    <bottom>view_pad</bottom>
+                                    <width>1100</width>
+                                    <align>bottom</align>
+                                    <orientation>vertical</orientation>
+                                    <usecontrolcoords>true</usecontrolcoords>
+                                    <itemgap>0</itemgap>
+                                    <include content="Object_Info_Title">
+                                        <param name="label" value="$INFO[System.Time]" />
+                                    </include>
+                                    <include content="Object_Info_Line">
+                                        <param name="label" value="$INFO[System.Date,  |  [COLOR=main_fg_100],[/COLOR]]" />
+                                        <param name="image" value="flags/quality/info.png" />
+                                    </include>
+                                </control>
                             </control>
                         </control>
                     </control>
