@@ -357,6 +357,7 @@
             <onfocus>ClearProperty(overview)</onfocus>
             <onup>9601</onup>
         </include>
+
         <include content="$PARAM[buttoninclude]">
             <param name="id" value="3104" />
             <param name="groupid" value="3204" />

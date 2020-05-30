@@ -172,31 +172,31 @@
     <include name="Defs_AutoScroll">
         <param name="include" default="Defs_AutoScroll_Value" />
         <definition>
-            <include content="$PARAM[include]" condition="String.IsEqual(Skin.String(AutoScroll),$LOCALIZE[31117])">
+            <include content="$PARAM[include]" condition="String.IsEqual(Skin.String(AutoScrollTime),10s)">
                 <param name="time" value="10000" />
                 <param name="condition" value="$PARAM[condition]" />
             </include>
-            <include content="$PARAM[include]" condition="String.IsEqual(Skin.String(AutoScroll),$LOCALIZE[31122]) | String.IsEmpty(Skin.String(AutoScroll))">
+            <include content="$PARAM[include]" condition="String.IsEqual(Skin.String(AutoScrollTime),12s) | String.IsEmpty(Skin.String(AutoScrollTime))">
                 <param name="time" value="12000" />
                 <param name="condition" value="$PARAM[condition]" />
             </include>
-            <include content="$PARAM[include]" condition="String.IsEqual(Skin.String(AutoScroll),$LOCALIZE[31123])">
+            <include content="$PARAM[include]" condition="String.IsEqual(Skin.String(AutoScrollTime),15s)">
                 <param name="time" value="15000" />
                 <param name="condition" value="$PARAM[condition]" />
             </include>
-            <include content="$PARAM[include]" condition="String.IsEqual(Skin.String(AutoScroll),$LOCALIZE[31124])">
+            <include content="$PARAM[include]" condition="String.IsEqual(Skin.String(AutoScrollTime),20s)">
                 <param name="time" value="20000" />
                 <param name="condition" value="$PARAM[condition]" />
             </include>
-            <include content="$PARAM[include]" condition="String.IsEqual(Skin.String(AutoScroll),$LOCALIZE[31125])">
+            <include content="$PARAM[include]" condition="String.IsEqual(Skin.String(AutoScrollTime),30s)">
                 <param name="time" value="30000" />
                 <param name="condition" value="$PARAM[condition]" />
             </include>
-            <include content="$PARAM[include]" condition="String.IsEqual(Skin.String(AutoScroll),$LOCALIZE[31126])">
+            <include content="$PARAM[include]" condition="String.IsEqual(Skin.String(AutoScrollTime),60s)">
                 <param name="time" value="60000" />
                 <param name="condition" value="$PARAM[condition]" />
             </include>
-            <include content="$PARAM[include]" condition="String.IsEqual(Skin.String(AutoScroll),$LOCALIZE[31127])">
+            <include content="$PARAM[include]" condition="String.IsEqual(Skin.String(AutoScrollTime),10m)">
                 <param name="time" value="600000" />
                 <param name="condition" value="$PARAM[condition]" />
             </include>
