@@ -1327,6 +1327,46 @@
         </control>
     </include>
 
+    <include name="Dialog_Select_Viewtypes">
+        <include>Global_Overlay</include>
+
+        <control type="group">
+            <include content="Dialog_Standard_Group">
+                <param name="width" value="1760" />
+                <param name="height" value="800" />
+                <param name="centertop" value="600" />
+            </include>
+            <control type="label" id="1">
+                <include>Dialog_Standard_Header</include>
+            </control>
+
+            <include>Dialog_Standard_List</include>
+            <include content="Dialog_Standard_List">
+                <param name="id" value="6" />
+                <!-- <param name="itemheight" value="item_biglist_height" />
+                <param name="list_style" value="Dialog_Standard_List_Itemlayout_Complex" /> -->
+                <param name="onup" value="6" />
+                <param name="ondown" value="6" />
+                <param name="width" value="542" />
+            </include>
+
+            <control type="group">
+                <width>1138</width>
+                <include>Dialog_Standard_Right_Group</include>
+                <control type="image">
+                    <height>640</height>
+                    <texture>$INFO[Container(6).ListItem.Icon]</texture>
+                    <aspectratio align="center" aligny="center">scale</aspectratio>
+                </control>
+            </control>
+
+            <control type="group">
+                <right>818</right>
+                <include>Dialog_Scrollbar</include>
+            </control>
+        </control>
+    </include>
+
     <include name="Dialog_Scrollbar">
         <param name="onleft" default="6" />
         <param name="onright" default="8000" />

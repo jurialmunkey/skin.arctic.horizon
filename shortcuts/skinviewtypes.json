@@ -9,6 +9,15 @@
         "55":  "List",
         "500": "List"
     },
+    "icons": {
+        "50":  "special://skin/extras/viewtypes/tags.jpg",
+        "51":  "special://skin/extras/viewtypes/square.jpg",
+        "52":  "special://skin/extras/viewtypes/posters.jpg",
+        "53":  "special://skin/extras/viewtypes/seasons.jpg",
+        "54":  "special://skin/extras/viewtypes/landscape.jpg",
+        "55":  "special://skin/extras/viewtypes/list-landscape.jpg",
+        "500": "special://skin/extras/viewtypes/list-square.jpg"
+    },
     "rules": {
         "addons": {
             "rule": "Container.Content(addons)",
@@ -89,7 +98,7 @@
         },
         "sets": {
             "rule": "Container.Content(sets)",
-            "viewtypes": ["52", "54", "55"],
+            "viewtypes": ["52", "54", "55", "53"],
             "library": "54"
         },
         "movies": {
