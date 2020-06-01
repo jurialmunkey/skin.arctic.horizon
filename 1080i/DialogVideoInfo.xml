@@ -8,6 +8,8 @@
     <onunload>ClearProperty(FilePath,home)</onunload>
     <onunload>ClearProperty(OSD_Menu,Home)</onunload>
     <onunload>ClearProperty(HasTrailer,Home)</onunload>
+    <onunload condition="!String.IsEmpty(Window.Property(CloseBusyDialog))">Dialog.Close(busydialognocancel)</onunload>
+    <onunload condition="!String.IsEmpty(Window.Property(CloseBusyDialog))">ClearProperty(CloseBusyDialog)</onunload>
     <onload>SetProperty(TMDBHelper.Info.OriginalPath,$INFO[ListItem.FolderPath],Home)</onload>
     <controls>
 
