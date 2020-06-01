@@ -485,6 +485,11 @@ msgctxt "#31094"
 msgid "Apply colordiffuse to icons"
 msgstr ""
 
+#: /1080i/Includes_Viewtype.xml
+msgctxt "#31095"
+msgid "Banners"
+msgstr ""
+
 #: /1080i/SkinSettings.xml
 msgctxt "#31096"
 msgid "Prefer track-naming template for songs"
@@ -537,6 +542,11 @@ msgstr ""
 #: /1080i/script-skinshortcuts.xml
 msgctxt "#31107"
 msgid "Item limit"
+msgstr ""
+
+#: /1080i/Includes_View_56_Banners.xml
+msgctxt "#31108"
+msgid "Big Banner"
 msgstr ""
 
 msgctxt "#31109"

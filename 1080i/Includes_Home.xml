@@ -25,6 +25,7 @@
         <onleft>ClearProperty(WidgetMovement)</onleft>
         <onleft condition="String.IsEmpty(Window(Home).Property(WidgetFocus))">SetFocus($INFO[Window(Home).Property(CurrentWidget)],9999,absolute)</onleft>
         <onleft condition="!String.IsEmpty(Window(Home).Property(WidgetFocus))">ClearProperty(WidgetFocus)</onleft>
+        <onleft condition="Integer.IsEqual(Container(3700).NumItems,0) + String.IsEmpty(Container(301).ListItem.Property(background)) + String.IsEmpty(Window(Home).Property(WidgetFocus))">Control.Move(3001,-1)</onleft>
         <include>skinshortcuts-template-onmovement</include>
         <onright>ClearProperty(WidgetMovement)</onright>
         <oninfo>ClearProperty(WidgetFocus)</oninfo>

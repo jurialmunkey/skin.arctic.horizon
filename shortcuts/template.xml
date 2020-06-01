@@ -938,7 +938,7 @@
             <onright condition="String.IsEqual(Container(301).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility]) + !Integer.IsEqual(Container(3700).NumItems,0) + !String.IsEmpty(Window(Home).Property(CurrentWidget))">SetFocus($INFO[Window(Home).Property(CurrentWidget)],0,absolute)</onright>
 
             <onright condition="Integer.IsEqual(Container(3700).NumItems,0) + !Skin.HasSetting(FullscreenWidgetShowcase) + String.IsEmpty(Container(301).ListItem.Property(background))">SetFocus(3001)</onright>
-            <onright condition="Integer.IsEqual(Container(3700).NumItems,0) + Skin.HasSetting(FullscreenWidgetShowcase) + Integer.IsGreater(Container(302).NumItems,0) + String.IsEmpty(Container(301).ListItem.Property(background))">SetFocus(3101)</onright>
+            <onright condition="Integer.IsEqual(Container(3700).NumItems,0) + Skin.HasSetting(FullscreenWidgetShowcase) + String.IsEmpty(Container(301).ListItem.Property(background))">SetFocus(3101)</onright>
             <onright condition="Integer.IsEqual(Container(3700).NumItems,0) + !String.IsEmpty(Container(301).ListItem.Property(background))">SetFocus(3992)</onright>
             <onright condition="Integer.IsEqual(Container(3700).NumItems,0) + !String.IsEmpty(Container(301).ListItem.Property(background))">SetProperty(WidgetFocus,1)</onright>
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
-    <include name="ViewIDs"><views>50,51,55,500,52,53,54,56</views></include>
+    <include name="ViewIDs"><views>50,51,55,500,52,53,54,56,57</views></include>
     <include name="Viewtype_Info_Right"><right>700</right></include>
     <include name="Viewtype_Info_Right_FixedHome"><right>560</right></include>
     <include name="Viewtypes">
@@ -47,6 +47,7 @@
                             <visible>!Control.IsVisible(53) | Container.Content(seasons)</visible>
                             <visible>!Control.IsVisible(50)</visible>
                             <visible>!Control.IsVisible(55)</visible>
+                            <visible>!Control.IsVisible(56)</visible>
                             <visible>!Control.IsVisible(500)</visible>
                             <include>Viewtype_Info_Right</include>
                         </include>
@@ -57,7 +58,7 @@
                             <param name="infoline-image" value="$VAR[Image_Home_VideoQuality]" />
                             <top>-15</top>
                             <height>285</height>
-                            <visible>Control.IsVisible(50) | Control.IsVisible(500) | Control.IsVisible(55)</visible>
+                            <visible>Control.IsVisible(50) | Control.IsVisible(500) | Control.IsVisible(55) | Control.IsVisible(56)</visible>
                             <include>Viewtype_Info_Right</include>
                         </include>
                         <control type="image">
@@ -68,7 +69,7 @@
                             <texture background="true">$VAR[Image_ClearArt]</texture>
                             <aspectratio align="right" aligny="bottom" scalediffuse="false">keep</aspectratio>
                             <bordersize>15</bordersize>
-                            <visible>Control.IsVisible(52) | Control.IsVisible(53) | Control.IsVisible(54)</visible>
+                            <visible>Control.IsVisible(52) | Control.IsVisible(53) | Control.IsVisible(54) | Control.IsVisible(57)</visible>
                         </control>
                         <control type="image">
                             <right>-15</right>
@@ -88,13 +89,14 @@
                             <texture background="true">$VAR[Image_ClearLogo]</texture>
                             <aspectratio align="right" aligny="top" scalediffuse="false">keep</aspectratio>
                             <bordersize>15</bordersize>
-                            <visible>Control.IsVisible(55) | Control.IsVisible(500)</visible>
+                            <visible>Control.IsVisible(55) | Control.IsVisible(500) | Control.IsVisible(56)</visible>
                         </control>
                         <include content="View_Info_Buttons">
                             <param name="grouplistid" value="300" />
                             <visible>!Control.IsVisible(50)</visible>
                             <visible>!Control.IsVisible(53)</visible>
                             <visible>!Control.IsVisible(55)</visible>
+                            <visible>!Control.IsVisible(56)</visible>
                             <visible>!Control.IsVisible(500)</visible>
                         </include>
                     </control>
@@ -103,13 +105,13 @@
                         <include content="Viewtype_BackPanel">
                             <include>Animation_Down</include>
                             <visible>!Integer.IsEqual(Container.NumAllItems,0)</visible>
-                            <visible>[Control.IsVisible(50) | Control.IsVisible(500) | Control.IsVisible(55)]</visible>
+                            <visible>[Control.IsVisible(50) | Control.IsVisible(500) | Control.IsVisible(55) | Control.IsVisible(56)]</visible>
                             <height>720</height>
                         </include>
                         <include content="Viewtype_BackPanel">
                             <include>Animation_Down</include>
                             <visible>!Integer.IsEqual(Container.NumAllItems,0)</visible>
-                            <visible>![Control.IsVisible(50) | Control.IsVisible(500) | Control.IsVisible(55)]</visible>
+                            <visible>![Control.IsVisible(50) | Control.IsVisible(500) | Control.IsVisible(55) | Control.IsVisible(56)]</visible>
                             <height>480</height>
                         </include>
                         <include>View_55_FileList</include>
@@ -118,7 +120,8 @@
                         <include>View_53_Seasons</include>
                         <include>View_54_Episodes</include>
                         <include>View_50_Tags</include>
-                        <include>View_56_Hubs</include>
+                        <include>View_56_Banners</include>
+                        <include>View_57_BigBanner</include>
                         <include>View_500_SongList</include>
                     </control>
                 </control>
@@ -333,6 +336,8 @@
                             <param name="aspectratio" value="$PARAM[aspectratio]" />
                             <param name="textpanel" value="$PARAM[textpanel]" />
                             <param name="specialicon" value="$PARAM[specialicon]" />
+                            <param name="clearlogooverlay-visible" value="$PARAM[clearlogooverlay-visible]" />
+                            <param name="clearlogooverlay" value="$PARAM[clearlogooverlay]" />
                         </include>
                     </control>
                 </itemlayout>
@@ -355,6 +360,8 @@
                             <param name="aspectratio" value="$PARAM[aspectratio]" />
                             <param name="textpanel" value="$PARAM[textpanel]" />
                             <param name="specialicon" value="$PARAM[specialicon]" />
+                            <param name="clearlogooverlay-visible" value="$PARAM[clearlogooverlay-visible]" />
+                            <param name="clearlogooverlay" value="$PARAM[clearlogooverlay]" />
                         </include>
                     </control>
                 </focusedlayout>
@@ -365,6 +372,8 @@
         <param name="selectbox" default="false" />
         <param name="focusbounce" default="true" />
         <param name="castlabel" default="false" />
+        <param name="clearlogooverlay" default="false" />
+        <param name="clearlogooverlay-visible" default="String.IsEmpty(ListITem.Art(banner)) + String.IsEmpty(ListITem.Art(tvshow.banner))" />
         <definition>
             <include>Object_PosterBack</include>
             <control type="group">
@@ -389,6 +398,14 @@
                     <param name="selectbox" value="$PARAM[selectbox]" />
                     <param name="diffuse" value="$PARAM[diffuse]" />
                     <param name="icon" value="$PARAM[icon]" />
+                </include>
+
+                <include content="Object_Control" condition="$PARAM[clearlogooverlay]">
+                    <param name="type" value="image" />
+                    <texture background="true">$VAR[Image_ClearLogo]</texture>
+                    <aspectratio align="right">keep</aspectratio>
+                    <bordersize>30</bordersize>
+                    <visible>$PARAM[clearlogooverlay-visible]</visible>
                 </include>
 
                 <include content="View_Cast_Label">
@@ -421,6 +438,7 @@
                 <param name="diffuse" value="diffuse/banner-big.png" />
                 <param name="height" value="$PARAM[height]" />
                 <param name="offset" value="$PARAM[offset]" />
+                <param name="viewtype-label" value="$PARAM[viewtype-label]" />
                 <left>$PARAM[viewsides]</left>
                 <right>$PARAM[viewsides]</right>
                 <nested />
@@ -455,6 +473,31 @@
                     <visible>Control.HasFocus($PARAM[id]) | Control.HasFocus($PARAM[altid])</visible>
                 </include>
             </control>
+        </definition>
+    </include>
+
+    <!-- BAnner Wall -->
+    <include name="Viewtype_Banner">
+        <param name="icon" default="$VAR[Image_Banner]" />
+        <param name="control-type" default="panel" />
+        <param name="orientation" default="horizontal" />
+        <definition>
+            <include content="Viewtype_Poster">
+                <param name="control-type" value="$PARAM[control-type]" />
+                <param name="orientation" value="$PARAM[orientation]" />
+                <param name="itemlayout-width" value="900" />
+                <param name="itemlayout-height" value="200" />
+                <param name="movement" value="3" />
+                <param name="id" value="$PARAM[id]" />
+                <param name="icon" value="$PARAM[icon]" />
+                <param name="diffuse" value="diffuse/banner-std.png" />
+                <param name="height" value="$PARAM[height]" />
+                <param name="textpanel" value="true" />
+                <param name="viewtype-label" value="$LOCALIZE[31095]" />
+                <param name="specialicon" value="$PARAM[specialicon]" />
+                <param name="clearlogooverlay" value="true" />
+                <nested />
+            </include>
         </definition>
     </include>
 

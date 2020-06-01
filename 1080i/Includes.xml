@@ -12,6 +12,8 @@
     <include file="Includes_View_53_Seasons.xml" />
     <include file="Includes_View_54_Episodes.xml" />
     <include file="Includes_View_55_List.xml" />
+    <include file="Includes_View_56_Banners.xml" />
+    <include file="Includes_View_57_BigBanner.xml" />
     <include file="Includes_View_PVR.xml" />
     <include file="Includes_View_Info.xml" />
     <include file="Includes_Viewtype.xml" />

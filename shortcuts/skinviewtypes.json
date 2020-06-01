@@ -7,6 +7,8 @@
         "53":  "Seasons",
         "54":  "Landscape",
         "55":  "List",
+        "56":  "Banners",
+        "57":  "Big Banner",
         "500": "List"
     },
     "icons": {
@@ -16,6 +18,8 @@
         "53":  "special://skin/extras/viewtypes/seasons.jpg",
         "54":  "special://skin/extras/viewtypes/landscape.jpg",
         "55":  "special://skin/extras/viewtypes/list-landscape.jpg",
+        "56":  "special://skin/extras/viewtypes/banners.jpg",
+        "57":  "special://skin/extras/viewtypes/big-banner.jpg",
         "500": "special://skin/extras/viewtypes/list-square.jpg"
     },
     "rules": {
@@ -103,12 +107,12 @@
         },
         "movies": {
             "rule": "Container.Content(movies)",
-            "viewtypes": ["52", "54", "55"],
+            "viewtypes": ["52", "54", "55", "56", "57"],
             "library": "52"
         },
         "tvshows": {
             "rule": "Container.Content(tvshows)",
-            "viewtypes": ["52", "54", "55"],
+            "viewtypes": ["52", "54", "55", "56", "57"],
             "library": "52"
         },
         "episodes": {

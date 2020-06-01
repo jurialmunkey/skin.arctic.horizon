@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+
+    <include name="View_57_BigBanner">
+        <control type="group">
+            <visible>Control.IsVisible(57)</visible>
+            <include>Animation_Down</include>
+            <include content="Viewtype_BigBanner">
+                <param name="id" value="57" />
+                <param name="viewsides" value="-80" />
+                <param name="viewtype-label" value="$LOCALIZE[31108]" />
+                <left>-80</left>
+                <right>-80</right>
+                <bottom>-20</bottom>
+                <oninfo condition="ListItem.IsCollection">ActivateWindow(1140)</oninfo>
+                <oninfo condition="Container.Content(actors) | Container.Content(directors)">RunScript(plugin.video.themoviedb.helper,add_query=$INFO[Container.ListItem.Label],type=person,call_auto=1190,return)</oninfo>
+                <include>Viewtype_Movement</include>
+                <ondown>60</ondown>
+                <onfocus condition="!Skin.HasSetting(NoFanart)">SetProperty(TMDbHelper.Blur.SourceImage,Art(banner)|Art(tvshow.banner)|Art(fanart)|Art(tvshow.fanart),Home)</onfocus>
+                .
+                <onfocus condition="Skin.HasSetting(NoFanart)">SetProperty(TMDbHelper.Blur.SourceImage,Art(fallback),Home)</onfocus>
+
+                <pagecontrol>60</pagecontrol>
+                <onfocus>ClearProperty(TMDbHelper.WidgetContainer,Home)</onfocus>
+                <visible>$EXP[Exp_View_57]</visible>
+                <visible>!Window.IsVisible(MyPlaylist.xml)</visible>
+                <visible>!String.IsEqual(Container.Property(Param.Info),details)</visible>
+            </include>
+            <include content="Home_Hub_Widget_Label">
+                <param name="id" value="57" />
+                <param name="label" value="$VAR[Label_Header_Center]" />
+                <param name="altlabel" value="$INFO[Control.GetLabel(3),, ]$INFO[Control.GetLabel(4)]" />
+            </include>
+        </control>
+    </include>
+
+</includes>
+

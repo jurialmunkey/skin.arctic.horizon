@@ -17,6 +17,28 @@
                           ]
     },
     {
+        "name"          : "Image_Banner",
+        "containers"    : [56],
+        "listitems"     : {"start": -6, "end": 11},
+        "values"        : [
+                            {"!String.IsEmpty({listitemnowrap}.Art(banner))": "$INFO[{listitemnowrap}.Art(banner)]"},
+                            {"!String.IsEmpty({listitemnowrap}.Art(tvshow.banner))": "$INFO[{listitemnowrap}.Art(tvshow.banner)]"},
+                            {"!String.IsEmpty({listitemnowrap}.Art(fanart))": "$INFO[{listitemnowrap}.Art(fanart)]"},
+                            {"True": "$INFO[{listitemnowrap}.Icon]"}
+                          ]
+    },
+    {
+        "name"          : "Image_Banner_Absolute",
+        "containers"    : [56],
+        "listitems"     : {"start": -6, "end": 11},
+        "values"        : [
+                            {"!String.IsEmpty({listitemabsolute}.Art(banner))": "$INFO[{listitemabsolute}.Art(banner)]"},
+                            {"!String.IsEmpty({listitemabsolute}.Art(tvshow.banner))": "$INFO[{listitemabsolute}.Art(tvshow.banner)]"},
+                            {"!String.IsEmpty({listitemabsolute}.Art(fanart))": "$INFO[{listitemabsolute}.Art(fanart)]"},
+                            {"True": "$INFO[{listitemabsolute}.Icon]"}
+                          ]
+    },
+    {
         "name"          : "Image_Landscape",
         "containers"    : [54,5610,530],
         "listitems"     : {"start": -10, "end": 17},
