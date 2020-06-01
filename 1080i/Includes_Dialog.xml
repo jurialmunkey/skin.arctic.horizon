@@ -791,7 +791,8 @@
     <include name="Dialog_Settings_Filter">
         <control type="group">
             <width>dialog_filter_width</width>
-            <animation effect="fade" start="0" end="100" time="400" tween="cubic" easing="inout" reversible="false" delay="200">WindowOpen</animation>
+            <animation effect="slide" start="-dialog_filter_width" end="0" time="400" tween="quadratic">WindowOpen</animation>
+            <!-- <animation effect="fade" start="0" end="100" time="400" tween="cubic" easing="inout" reversible="false" delay="200">WindowOpen</animation> -->
             <include content="Defs_Settings_Gradient">
                 <param name="id" value="5" />
                 <top>view_top</top>

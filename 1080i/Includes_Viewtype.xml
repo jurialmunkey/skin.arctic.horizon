@@ -24,12 +24,8 @@
                 </include>
             </content>
         </control>
-        <include content="Viewtype_Panel">
-            <param name="width" value="dialog_filter_width" />
-            <param name="colordiffuse" value="dialog_bg_100" />
-        </include>
         <include content="Viewtype_Main">
-            <animation effect="slide" start="0" end="dialog_filter_width" condition="!String.IsEmpty(Window(Home).Property(advancedfilter))" time="400" tween="quadratic">Conditional</animation>
+            <animation effect="slide" start="0" end="dialog_filter_width" condition="!String.IsEmpty(Window(Home).Property(advancedfilter)) + Window.IsActive(DialogSettings.xml)" time="400" tween="quadratic">Conditional</animation>
             <control type="group">
                 <visible allowhiddenfocus="true">!$EXP[Exp_CommonAnimation]</visible>
                 <include>Animation_Common</include>
@@ -152,6 +148,16 @@
             </control>
             <include>Object_Scrollbars</include>
         </include>
+
+        <control type="group">
+            <left>-dialog_filter_width</left>
+            <animation effect="slide" start="0" end="dialog_filter_width" condition="!String.IsEmpty(Window(Home).Property(advancedfilter)) + Window.IsActive(DialogSettings.xml)" time="400" tween="quadratic">Conditional</animation>
+            <include content="Viewtype_Panel">
+                <param name="width" value="dialog_filter_width" />
+                <param name="colordiffuse" value="dialog_bg_100" />
+            </include>
+        </control>
+
         <include condition="!Skin.HasSetting(DisableClock)">Topbar_Right</include>
         <include>Object_NowPlaying</include>
         <include>Viewtype_Options</include>

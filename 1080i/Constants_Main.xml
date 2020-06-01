@@ -69,6 +69,7 @@
     <constant name="dialog_standard_height">960</constant>
     <constant name="dialog_standard_width">1360</constant>
     <constant name="dialog_filter_width">680</constant>
+    <constant name="-dialog_filter_width">-680</constant>
 
     <constant name="item_row_height">435</constant>
     <constant name="item_cast_height">405</constant>
