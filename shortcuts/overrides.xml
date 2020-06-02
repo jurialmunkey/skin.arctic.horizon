@@ -411,6 +411,7 @@
         <shortcut label="Director" type="571" icon="special://skin/extras/icons/person.png">DefaultSearch-Director</shortcut>
         <shortcut label="Albums" type="571" icon="special://skin/extras/icons/songs.png">DefaultSearch-Albums</shortcut>
         <shortcut label="Artists" type="571" icon="special://skin/extras/icons/songs.png">DefaultSearch-Artists</shortcut>
+        <shortcut label="Songs" type="571" icon="special://skin/extras/icons/songs.png">DefaultSearch-Songs</shortcut>
         <shortcut label="Music Videos" type="571" icon="special://skin/extras/icons/musicvideo.png">DefaultSearch-MusicVideos</shortcut>
         <shortcut label="Music Video Artists" type="571" icon="special://skin/extras/icons/musicvideo.png">DefaultSearch-MusicVideoArtists</shortcut>
         <shortcut label="Add-ons" type="571" icon="special://skin/extras/icons/addons.png">DefaultSearch-Addons</shortcut>
