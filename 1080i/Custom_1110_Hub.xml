@@ -124,17 +124,17 @@
                         </control>
                     </control>
 
-                    <include content="View_52_Posters_Wall">
+                    <include content="View_52_Posters_Wall" condition="!Skin.HasSetting(DisableWallScroll)">
                         <param name="id" value="5610" />
                         <param name="wall-id" value="565610" />
                         <param name="button-id" value="565620" />
                     </include>
-                    <include content="View_54_Episodes_Wall">
+                    <include content="View_54_Episodes_Wall" condition="!Skin.HasSetting(DisableWallScroll)">
                         <param name="id" value="5610" />
                         <param name="wall-id" value="565611" />
                         <param name="button-id" value="565621" />
                     </include>
-                    <include content="View_51_Addons_Wall">
+                    <include content="View_51_Addons_Wall" condition="!Skin.HasSetting(DisableWallScroll)">
                         <param name="id" value="5610" />
                         <param name="wall-id" value="565612" />
                         <param name="button-id" value="565622" />

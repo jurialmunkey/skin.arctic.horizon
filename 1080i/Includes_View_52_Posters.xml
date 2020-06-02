@@ -15,7 +15,7 @@
                 <onfocus>ClearProperty(TMDbHelper.WidgetContainer,Home)</onfocus>
                 <include>Viewtype_Movement</include>
                 <onfocus condition="Skin.HasSetting(NoFanart)">SetProperty(TMDbHelper.Blur.SourceImage,Art(fallback),Home)</onfocus>
-                .
+
                 <onfocus condition="!Skin.HasSetting(NoFanart)">SetProperty(TMDbHelper.Blur.SourceImage,poster,Home)</onfocus>
                 <ondown condition="!Skin.HasSetting(DisableWallScroll) + [Container(52).HasNext | Container(52).HasPrevious]">5252</ondown>
                 <ondown condition="Skin.HasSetting(DisableWallScroll)">60</ondown>

@@ -25,14 +25,13 @@
             </content>
         </control>
         <include content="Viewtype_Main">
-            <animation effect="slide" start="0" end="dialog_filter_width" condition="!String.IsEmpty(Window(Home).Property(advancedfilter)) + Window.IsActive(DialogSettings.xml)" time="400" tween="quadratic">Conditional</animation>
+            <animation effect="slide" start="0" end="dialog_filter_width" condition="Window.IsActive(DialogSettings.xml) + !String.IsEmpty(Window(Home).Property(advancedfilter))" time="400" tween="quadratic">Conditional</animation>
             <control type="group">
                 <visible allowhiddenfocus="true">!$EXP[Exp_CommonAnimation]</visible>
                 <include>Animation_Common</include>
                 <control type="group">
                     <include>View_Pad</include>
-                    <animation effect="fade" reversible="false" start="0" end="100" delay="399" time="1" condition="![Control.HasFocus(5151) | Control.HasFocus(5252) | Control.HasFocus(5353) | Control.HasFocus(5454) | Control.HasFocus(5656)]">Conditional</animation>
-                    <animation effect="fade" reversible="false" end="0" start="100" condition="[Control.HasFocus(5151) | Control.HasFocus(5252) | Control.HasFocus(5353) | Control.HasFocus(5454) | Control.HasFocus(5656)]">Conditional</animation>
+                    <include condition="!Skin.HasSetting(DisableWallScroll)">Animation_WallView_Fade</include>
                     <control type="group" description="Top Half">
                         <visible>!Integer.IsEqual(Container.NumAllItems,0)</visible>
                         <include content="View_Info_Grouplist">
@@ -123,22 +122,22 @@
                 </control>
                 <control type="group">
                     <include>View_Pad</include>
-                    <include content="View_51_Addons_Wall">
+                    <include content="View_51_Addons_Wall" condition="!Skin.HasSetting(DisableWallScroll)">
                         <param name="id" value="51" />
                         <param name="wall-id" value="5151" />
                         <param name="button-id" value="15151" />
                     </include>
-                    <include content="View_52_Posters_Wall">
+                    <include content="View_52_Posters_Wall" condition="!Skin.HasSetting(DisableWallScroll)">
                         <param name="id" value="52" />
                         <param name="wall-id" value="5252" />
                         <param name="button-id" value="25252" />
                     </include>
-                    <include content="View_54_Episodes_Wall">
+                    <include content="View_54_Episodes_Wall" condition="!Skin.HasSetting(DisableWallScroll)">
                         <param name="id" value="530" />
                         <param name="wall-id" value="5353" />
                         <param name="button-id" value="35353" />
                     </include>
-                    <include content="View_54_Episodes_Wall">
+                    <include content="View_54_Episodes_Wall" condition="!Skin.HasSetting(DisableWallScroll)">
                         <param name="id" value="54" />
                         <param name="wall-id" value="5454" />
                         <param name="button-id" value="45454" />

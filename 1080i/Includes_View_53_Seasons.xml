@@ -22,7 +22,7 @@
                 <onfocus condition="$EXP[Exp_View56Hubs]">SetProperty(TMDbHelper.WidgetContainer,530,Home)</onfocus>
                 <onfocus condition="Skin.HasSetting(NoFanart)">SetProperty(TMDbHelper.Blur.SourceImage,Art(fallback),Home)</onfocus>
                 <onfocus condition="!Skin.HasSetting(NoFanart)">SetProperty(TMDbHelper.Blur.SourceImage,poster,Home)</onfocus>
-                .
+
                 <left>-20</left>
                 <bottom>400</bottom>
                 <animation effect="fade" start="0" end="100" time="400" tween="cubic" easing="inout" reversible="false" delay="200" condition="Container.Content(seasons)">Conditional</animation>

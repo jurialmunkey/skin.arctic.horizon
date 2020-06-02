@@ -457,7 +457,7 @@ msgstr ""
 
 #: /1080i/Custom_1122_EnableWallViews.xml
 msgctxt "#31089"
-msgid "Replace scrollbar with wall view"
+msgid "Replace scrollbar with wall view if available"
 msgstr ""
 
 #: /1080i/Includes_Items.xml
