@@ -178,6 +178,7 @@
     <!-- Search Item Default Properties -->
     <propertydefault labelID="artists" group="searchmenu" property="widgetAspect">Square</propertydefault>
     <propertydefault labelID="albums" group="searchmenu" property="widgetAspect">Square</propertydefault>
+    <propertydefault labelID="songs" group="searchmenu" property="widgetAspect">Square</propertydefault>
     <propertydefault labelID="add-ons" group="searchmenu" property="widgetAspect">Square</propertydefault>
     <propertydefault labelID="spotifyartists" group="searchmenu" property="widgetAspect">Square</propertydefault>
     <propertydefault labelID="spotifyalbums" group="searchmenu" property="widgetAspect">Square</propertydefault>
