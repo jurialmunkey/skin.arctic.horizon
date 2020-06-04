@@ -177,7 +177,7 @@
                     </control>
                     <control type="button" id="300">
                         <orientation>horizontal</orientation>
-                        <onup>SetFocus(9602)</onup>
+                        <onup>SetFocus(9601)</onup>
                         <ondown>5001</ondown>
                         <onfocus>SetProperty(Header_Left_Text,Person)</onfocus>
                         <width>1</width>

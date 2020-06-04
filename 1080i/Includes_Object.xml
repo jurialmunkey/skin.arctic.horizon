@@ -996,7 +996,7 @@
         <param name="ondown" default="5000" />
         <param name="width" default="auto" />
         <param name="focused" default="false" />
-        <param name="onup" default="SetFocus(9602)" />
+        <param name="onup" default="SetFocus(9601)" />
         <definition>
             <control type="group" id="$PARAM[groupid]">
                 <left>0</left>
@@ -2042,33 +2042,32 @@
                     <control type="group">
                         <include condition="Skin.HasSetting(DisablePanelDivider)">Defs_View_Info_Left_NoPanel</include>
                         <left>view_info_left</left>
-                        <control type="grouplist" id="9601">
-                            <left>-20</left>
-                            <right>-20</right>
-                            <top>-20</top>
-                            <bottom>-20</bottom>
+                        <control type="grouplist">
+                            <include content="Defs_Pad">
+                                <param name="pad" value="-20" />
+                            </include>
                             <orientation>horizontal</orientation>
                             <itemgap>20</itemgap>
                             <usecontrolcoords>true</usecontrolcoords>
-                            <control type="group" id="9603">
+                            <control type="group">
                                 <height>840</height>
                                 <width>1100</width>
                                 <control type="group">
-                                    <left>20</left>
-                                    <right>20</right>
-                                    <top>20</top>
-                                    <bottom>20</bottom>
-                                    <control type="scrollbar" id="9602">
+                                    <include content="Defs_Pad">
+                                        <param name="pad" value="20" />
+                                    </include>
+
+                                    <control type="scrollbar" id="9601">
                                         <onback condition="Control.IsVisible(3000)">3000</onback>
                                         <onback condition="!Control.IsVisible(3000) + Control.IsVisible(300)">300</onback>
                                         <onback condition="!Control.IsVisible(3000) + !Control.IsVisible(300)">50</onback>
                                         <onleft condition="Control.IsVisible(3000)">3000</onleft>
                                         <onleft condition="!Control.IsVisible(3000) + Control.IsVisible(300)">300</onleft>
                                         <onleft condition="!Control.IsVisible(3000) + !Control.IsVisible(300)">50</onleft>
-                                        <onright condition="Control.IsVisible(9604)">SetFocus(9604,0,absolute)</onright>
-                                        <onright condition="!Control.IsVisible(9604) + Control.IsVisible(3000)">3000</onright>
-                                        <onright condition="!Control.IsVisible(9604) + !Control.IsVisible(3000) + Control.IsVisible(300)">300</onright>
-                                        <onright condition="!Control.IsVisible(9604) + !Control.IsVisible(3000) + !Control.IsVisible(300)">50</onright>
+                                        <onright condition="Control.IsVisible(9602)">SetFocus(9602,0,absolute)</onright>
+                                        <onright condition="!Control.IsVisible(9602) + Control.IsVisible(3000)">3000</onright>
+                                        <onright condition="!Control.IsVisible(9602) + !Control.IsVisible(3000) + Control.IsVisible(300)">300</onright>
+                                        <onright condition="!Control.IsVisible(9602) + !Control.IsVisible(3000) + !Control.IsVisible(300)">50</onright>
                                         <top>100</top>
                                         <left>-1000</left>
                                         <bottom>200</bottom>
@@ -2084,7 +2083,6 @@
                                         <include>Animation_FadeOut</include>
                                         <include>Object_DoubleArrow_Up</include>
                                     </control>
-
                                     <control type="group">
                                         <top>20</top>
                                         <bottom>30</bottom>
@@ -2093,7 +2091,6 @@
                                         <include>Animation_FadeOut</include>
                                         <include>Object_DoubleArrow_Down</include>
                                     </control>
-
                                     <control type="label">
                                         <top>20</top>
                                         <description>header label</description>
@@ -2104,7 +2101,6 @@
                                         <textcolor>main_fg_100</textcolor>
                                         <label>$VAR[Label_OverlayTitle]</label>
                                     </control>
-
                                     <control type="textbox" id="9609">
                                         <description>textarea</description>
                                         <left>0</left>
@@ -2115,7 +2111,7 @@
                                         <textcolor>main_fg_70</textcolor>
                                         <font>font_overlay_plotbox</font>
                                         <label fallback="19055">$VAR[Label_OverlayPlot]$VAR[Label_OverlayCritics]</label>
-                                        <pagecontrol>9602</pagecontrol>
+                                        <pagecontrol>9601</pagecontrol>
                                         <autoscroll delay="8000" time="4000" repeat="12000">false</autoscroll>
                                     </control>
                                 </control>
@@ -2125,24 +2121,25 @@
                 </control>
             </control>
             <control type="group">
-                <animation effect="slide" start="0" end="-1920" reversible="false" condition="Control.HasFocus(9604)" time="400" tween="quadratic">Conditional</animation>
-                <animation effect="slide" end="0" start="-1920" reversible="false" condition="!Control.HasFocus(9604)" time="400" tween="quadratic">Conditional</animation>
+                <visible>$EXP[Exp_ShowPlotOverlay]</visible>
+                <visible>String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,tvshow)</visible>
+                <animation effect="slide" start="0" end="-1920" reversible="false" condition="Control.HasFocus(9602)" time="400" tween="quadratic">Conditional</animation>
+                <animation effect="slide" end="0" start="-1920" reversible="false" condition="!Control.HasFocus(9602)" time="400" tween="quadratic">Conditional</animation>
                 <left>1920</left>
                 <width>1920</width>
                 <height>1080</height>
                 <control type="image">
                     <texture colordiffuse="black">common/white.png</texture>
                 </control>
-                <control type="list" id="9604">
+                <control type="list" id="9602">
                     <orientation>horizontal</orientation>
                     <preloaditems>2</preloaditems>
-                    <onup>9602</onup>
-                    <ondown>9602</ondown>
+                    <onup>9601</onup>
+                    <ondown>9601</ondown>
                     <onright>noop</onright>
-                    <onleft>9602</onleft>
-                    <onback>9602</onback>
+                    <onleft>9601</onleft>
+                    <onback>9601</onback>
                     <scrolltime tween="quadratic">400</scrolltime>
-                    <visible>String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,tvshow)</visible>
                     <itemlayout width="1920" height="1080">
                         <control type="image">
                             <aspectratio>keep</aspectratio>
