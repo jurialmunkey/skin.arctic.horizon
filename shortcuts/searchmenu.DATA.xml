@@ -67,6 +67,12 @@
         <action>DefaultSearch-Artists</action>
     </shortcut>
     <shortcut>
+        <label>Songs</label>
+        <label2>$LOCALIZE[571]</label2>
+        <icon>special://skin/extras/icons/songs.png</icon>
+        <action>DefaultSearch-Songs</action>
+    </shortcut>
+    <shortcut>
         <label>Music Videos</label>
         <label2>$LOCALIZE[571]</label2>
         <icon>special://skin/extras/icons/musicvideo.png</icon>
