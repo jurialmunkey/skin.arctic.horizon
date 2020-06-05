@@ -423,7 +423,7 @@
                         <animation type="Visible">
                             <effect type="fade" start="0" end="100" delay="200" time="400" tween="cubic" easing="inout" />
                         </animation>
-                        <visible>![Control.HAsFocus(5610) | Control.HasFocus(60)]</visible>
+                        <visible>![Control.HasFocus(5610) | Control.HasFocus(60)]</visible>
                     </control>
                 </control>
                 <control type="group">
@@ -455,6 +455,7 @@
                         <height>120</height>
                         <animation effect="fade" start="0" end="100" time="300">VisibleChange</animation>
                         <visible>Container(5610).IsUpdating</visible>
+                        <visible>Integer.IsEqual(Container(5610).NumAllItems,0)</visible>
                         <include content="Defs_BusySpinner">
                             <param name="label" value="$LOCALIZE[31428]..." />
                             <param name="textcolor" value="main_fg_70" />
@@ -489,8 +490,8 @@
                         </include>
                     </control>
                     <control type="group">
-                        <animation effect="fade" start="100" end="0" time="300" reversible="false" condition="Container(5610).IsUpdating">Conditional</animation>
-                        <animation effect="fade" start="0" end="100" delay="300" time="300" reversible="false" condition="!Container(5610).IsUpdating">Conditional</animation>
+                        <animation effect="fade" start="100" end="0" time="300" reversible="false" condition="Container(5610).IsUpdating + Integer.IsEqual(Container(5610).NumAllItems,0)">Conditional</animation>
+                        <animation effect="fade" start="0" end="100" delay="300" time="300" reversible="false" condition="!Container(5610).IsUpdating | !Integer.IsEqual(Container(5610).NumAllItems,0)">Conditional</animation>
                         <include content="Home_Hub_Widget_Label">
                             <param name="id" value="5610" />
                             <param name="label" value="$VAR[Label_Hub_WidgetName]" />
@@ -516,7 +517,7 @@
                             <content>$VAR[Defs_Showcase_Recs]</content>
                             <visible>String.IsEmpty(Container(302).ListItem.Property(widgetPath))</visible>
                             <visible>String.IsEmpty(Container(301).ListItem.Property(widgetPath))</visible>
-                            <visible>!Container(3001).IsUpdating</visible>
+                            <!-- <visible>!Container(3001).IsUpdating</visible> -->
                         </include>
                         <include>skinshortcuts-template-spotlight-submenu</include>
                         <include>skinshortcuts-template-spotlight-mainmenu</include>
