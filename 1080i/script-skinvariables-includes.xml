@@ -1393,112 +1393,112 @@
         <value condition="!String.IsEmpty(ListItem.Label2)">$INFO[ListItem.Label2]</value>
     </variable>
     <variable name="Image_Banner_C56_-6">
-        <value condition="!String.IsEmpty(Container(56).ListItemNoWrap(-6).Art(banner))">$INFO[Container(56).ListItemNoWrap(-6).Art(banner)]</value>
-        <value condition="!String.IsEmpty(Container(56).ListItemNoWrap(-6).Art(tvshow.banner))">$INFO[Container(56).ListItemNoWrap(-6).Art(tvshow.banner)]</value>
-        <value condition="!String.IsEmpty(Container(56).ListItemNoWrap(-6).Art(fanart))">$INFO[Container(56).ListItemNoWrap(-6).Art(fanart)]</value>
-        <value condition="True">$INFO[Container(56).ListItemNoWrap(-6).Icon]</value>
+        <value condition="!String.IsEmpty(Container(56).ListItem(-6).Art(banner))">$INFO[Container(56).ListItem(-6).Art(banner)]</value>
+        <value condition="!String.IsEmpty(Container(56).ListItem(-6).Art(tvshow.banner))">$INFO[Container(56).ListItem(-6).Art(tvshow.banner)]</value>
+        <value condition="!String.IsEmpty(Container(56).ListItem(-6).Art(fanart))">$INFO[Container(56).ListItem(-6).Art(fanart)]</value>
+        <value condition="True">$INFO[Container(56).ListItem(-6).Icon]</value>
     </variable>
     <variable name="Image_Banner_C56_-5">
-        <value condition="!String.IsEmpty(Container(56).ListItemNoWrap(-5).Art(banner))">$INFO[Container(56).ListItemNoWrap(-5).Art(banner)]</value>
-        <value condition="!String.IsEmpty(Container(56).ListItemNoWrap(-5).Art(tvshow.banner))">$INFO[Container(56).ListItemNoWrap(-5).Art(tvshow.banner)]</value>
-        <value condition="!String.IsEmpty(Container(56).ListItemNoWrap(-5).Art(fanart))">$INFO[Container(56).ListItemNoWrap(-5).Art(fanart)]</value>
-        <value condition="True">$INFO[Container(56).ListItemNoWrap(-5).Icon]</value>
+        <value condition="!String.IsEmpty(Container(56).ListItem(-5).Art(banner))">$INFO[Container(56).ListItem(-5).Art(banner)]</value>
+        <value condition="!String.IsEmpty(Container(56).ListItem(-5).Art(tvshow.banner))">$INFO[Container(56).ListItem(-5).Art(tvshow.banner)]</value>
+        <value condition="!String.IsEmpty(Container(56).ListItem(-5).Art(fanart))">$INFO[Container(56).ListItem(-5).Art(fanart)]</value>
+        <value condition="True">$INFO[Container(56).ListItem(-5).Icon]</value>
     </variable>
     <variable name="Image_Banner_C56_-4">
-        <value condition="!String.IsEmpty(Container(56).ListItemNoWrap(-4).Art(banner))">$INFO[Container(56).ListItemNoWrap(-4).Art(banner)]</value>
-        <value condition="!String.IsEmpty(Container(56).ListItemNoWrap(-4).Art(tvshow.banner))">$INFO[Container(56).ListItemNoWrap(-4).Art(tvshow.banner)]</value>
-        <value condition="!String.IsEmpty(Container(56).ListItemNoWrap(-4).Art(fanart))">$INFO[Container(56).ListItemNoWrap(-4).Art(fanart)]</value>
-        <value condition="True">$INFO[Container(56).ListItemNoWrap(-4).Icon]</value>
+        <value condition="!String.IsEmpty(Container(56).ListItem(-4).Art(banner))">$INFO[Container(56).ListItem(-4).Art(banner)]</value>
+        <value condition="!String.IsEmpty(Container(56).ListItem(-4).Art(tvshow.banner))">$INFO[Container(56).ListItem(-4).Art(tvshow.banner)]</value>
+        <value condition="!String.IsEmpty(Container(56).ListItem(-4).Art(fanart))">$INFO[Container(56).ListItem(-4).Art(fanart)]</value>
+        <value condition="True">$INFO[Container(56).ListItem(-4).Icon]</value>
     </variable>
     <variable name="Image_Banner_C56_-3">
-        <value condition="!String.IsEmpty(Container(56).ListItemNoWrap(-3).Art(banner))">$INFO[Container(56).ListItemNoWrap(-3).Art(banner)]</value>
-        <value condition="!String.IsEmpty(Container(56).ListItemNoWrap(-3).Art(tvshow.banner))">$INFO[Container(56).ListItemNoWrap(-3).Art(tvshow.banner)]</value>
-        <value condition="!String.IsEmpty(Container(56).ListItemNoWrap(-3).Art(fanart))">$INFO[Container(56).ListItemNoWrap(-3).Art(fanart)]</value>
-        <value condition="True">$INFO[Container(56).ListItemNoWrap(-3).Icon]</value>
+        <value condition="!String.IsEmpty(Container(56).ListItem(-3).Art(banner))">$INFO[Container(56).ListItem(-3).Art(banner)]</value>
+        <value condition="!String.IsEmpty(Container(56).ListItem(-3).Art(tvshow.banner))">$INFO[Container(56).ListItem(-3).Art(tvshow.banner)]</value>
+        <value condition="!String.IsEmpty(Container(56).ListItem(-3).Art(fanart))">$INFO[Container(56).ListItem(-3).Art(fanart)]</value>
+        <value condition="True">$INFO[Container(56).ListItem(-3).Icon]</value>
     </variable>
     <variable name="Image_Banner_C56_-2">
-        <value condition="!String.IsEmpty(Container(56).ListItemNoWrap(-2).Art(banner))">$INFO[Container(56).ListItemNoWrap(-2).Art(banner)]</value>
-        <value condition="!String.IsEmpty(Container(56).ListItemNoWrap(-2).Art(tvshow.banner))">$INFO[Container(56).ListItemNoWrap(-2).Art(tvshow.banner)]</value>
-        <value condition="!String.IsEmpty(Container(56).ListItemNoWrap(-2).Art(fanart))">$INFO[Container(56).ListItemNoWrap(-2).Art(fanart)]</value>
-        <value condition="True">$INFO[Container(56).ListItemNoWrap(-2).Icon]</value>
+        <value condition="!String.IsEmpty(Container(56).ListItem(-2).Art(banner))">$INFO[Container(56).ListItem(-2).Art(banner)]</value>
+        <value condition="!String.IsEmpty(Container(56).ListItem(-2).Art(tvshow.banner))">$INFO[Container(56).ListItem(-2).Art(tvshow.banner)]</value>
+        <value condition="!String.IsEmpty(Container(56).ListItem(-2).Art(fanart))">$INFO[Container(56).ListItem(-2).Art(fanart)]</value>
+        <value condition="True">$INFO[Container(56).ListItem(-2).Icon]</value>
     </variable>
     <variable name="Image_Banner_C56_-1">
-        <value condition="!String.IsEmpty(Container(56).ListItemNoWrap(-1).Art(banner))">$INFO[Container(56).ListItemNoWrap(-1).Art(banner)]</value>
-        <value condition="!String.IsEmpty(Container(56).ListItemNoWrap(-1).Art(tvshow.banner))">$INFO[Container(56).ListItemNoWrap(-1).Art(tvshow.banner)]</value>
-        <value condition="!String.IsEmpty(Container(56).ListItemNoWrap(-1).Art(fanart))">$INFO[Container(56).ListItemNoWrap(-1).Art(fanart)]</value>
-        <value condition="True">$INFO[Container(56).ListItemNoWrap(-1).Icon]</value>
+        <value condition="!String.IsEmpty(Container(56).ListItem(-1).Art(banner))">$INFO[Container(56).ListItem(-1).Art(banner)]</value>
+        <value condition="!String.IsEmpty(Container(56).ListItem(-1).Art(tvshow.banner))">$INFO[Container(56).ListItem(-1).Art(tvshow.banner)]</value>
+        <value condition="!String.IsEmpty(Container(56).ListItem(-1).Art(fanart))">$INFO[Container(56).ListItem(-1).Art(fanart)]</value>
+        <value condition="True">$INFO[Container(56).ListItem(-1).Icon]</value>
     </variable>
     <variable name="Image_Banner_C56_0">
-        <value condition="!String.IsEmpty(Container(56).ListItemNoWrap(0).Art(banner))">$INFO[Container(56).ListItemNoWrap(0).Art(banner)]</value>
-        <value condition="!String.IsEmpty(Container(56).ListItemNoWrap(0).Art(tvshow.banner))">$INFO[Container(56).ListItemNoWrap(0).Art(tvshow.banner)]</value>
-        <value condition="!String.IsEmpty(Container(56).ListItemNoWrap(0).Art(fanart))">$INFO[Container(56).ListItemNoWrap(0).Art(fanart)]</value>
-        <value condition="True">$INFO[Container(56).ListItemNoWrap(0).Icon]</value>
+        <value condition="!String.IsEmpty(Container(56).ListItem(0).Art(banner))">$INFO[Container(56).ListItem(0).Art(banner)]</value>
+        <value condition="!String.IsEmpty(Container(56).ListItem(0).Art(tvshow.banner))">$INFO[Container(56).ListItem(0).Art(tvshow.banner)]</value>
+        <value condition="!String.IsEmpty(Container(56).ListItem(0).Art(fanart))">$INFO[Container(56).ListItem(0).Art(fanart)]</value>
+        <value condition="True">$INFO[Container(56).ListItem(0).Icon]</value>
     </variable>
     <variable name="Image_Banner_C56_1">
-        <value condition="!String.IsEmpty(Container(56).ListItemNoWrap(1).Art(banner))">$INFO[Container(56).ListItemNoWrap(1).Art(banner)]</value>
-        <value condition="!String.IsEmpty(Container(56).ListItemNoWrap(1).Art(tvshow.banner))">$INFO[Container(56).ListItemNoWrap(1).Art(tvshow.banner)]</value>
-        <value condition="!String.IsEmpty(Container(56).ListItemNoWrap(1).Art(fanart))">$INFO[Container(56).ListItemNoWrap(1).Art(fanart)]</value>
-        <value condition="True">$INFO[Container(56).ListItemNoWrap(1).Icon]</value>
+        <value condition="!String.IsEmpty(Container(56).ListItem(1).Art(banner))">$INFO[Container(56).ListItem(1).Art(banner)]</value>
+        <value condition="!String.IsEmpty(Container(56).ListItem(1).Art(tvshow.banner))">$INFO[Container(56).ListItem(1).Art(tvshow.banner)]</value>
+        <value condition="!String.IsEmpty(Container(56).ListItem(1).Art(fanart))">$INFO[Container(56).ListItem(1).Art(fanart)]</value>
+        <value condition="True">$INFO[Container(56).ListItem(1).Icon]</value>
     </variable>
     <variable name="Image_Banner_C56_2">
-        <value condition="!String.IsEmpty(Container(56).ListItemNoWrap(2).Art(banner))">$INFO[Container(56).ListItemNoWrap(2).Art(banner)]</value>
-        <value condition="!String.IsEmpty(Container(56).ListItemNoWrap(2).Art(tvshow.banner))">$INFO[Container(56).ListItemNoWrap(2).Art(tvshow.banner)]</value>
-        <value condition="!String.IsEmpty(Container(56).ListItemNoWrap(2).Art(fanart))">$INFO[Container(56).ListItemNoWrap(2).Art(fanart)]</value>
-        <value condition="True">$INFO[Container(56).ListItemNoWrap(2).Icon]</value>
+        <value condition="!String.IsEmpty(Container(56).ListItem(2).Art(banner))">$INFO[Container(56).ListItem(2).Art(banner)]</value>
+        <value condition="!String.IsEmpty(Container(56).ListItem(2).Art(tvshow.banner))">$INFO[Container(56).ListItem(2).Art(tvshow.banner)]</value>
+        <value condition="!String.IsEmpty(Container(56).ListItem(2).Art(fanart))">$INFO[Container(56).ListItem(2).Art(fanart)]</value>
+        <value condition="True">$INFO[Container(56).ListItem(2).Icon]</value>
     </variable>
     <variable name="Image_Banner_C56_3">
-        <value condition="!String.IsEmpty(Container(56).ListItemNoWrap(3).Art(banner))">$INFO[Container(56).ListItemNoWrap(3).Art(banner)]</value>
-        <value condition="!String.IsEmpty(Container(56).ListItemNoWrap(3).Art(tvshow.banner))">$INFO[Container(56).ListItemNoWrap(3).Art(tvshow.banner)]</value>
-        <value condition="!String.IsEmpty(Container(56).ListItemNoWrap(3).Art(fanart))">$INFO[Container(56).ListItemNoWrap(3).Art(fanart)]</value>
-        <value condition="True">$INFO[Container(56).ListItemNoWrap(3).Icon]</value>
+        <value condition="!String.IsEmpty(Container(56).ListItem(3).Art(banner))">$INFO[Container(56).ListItem(3).Art(banner)]</value>
+        <value condition="!String.IsEmpty(Container(56).ListItem(3).Art(tvshow.banner))">$INFO[Container(56).ListItem(3).Art(tvshow.banner)]</value>
+        <value condition="!String.IsEmpty(Container(56).ListItem(3).Art(fanart))">$INFO[Container(56).ListItem(3).Art(fanart)]</value>
+        <value condition="True">$INFO[Container(56).ListItem(3).Icon]</value>
     </variable>
     <variable name="Image_Banner_C56_4">
-        <value condition="!String.IsEmpty(Container(56).ListItemNoWrap(4).Art(banner))">$INFO[Container(56).ListItemNoWrap(4).Art(banner)]</value>
-        <value condition="!String.IsEmpty(Container(56).ListItemNoWrap(4).Art(tvshow.banner))">$INFO[Container(56).ListItemNoWrap(4).Art(tvshow.banner)]</value>
-        <value condition="!String.IsEmpty(Container(56).ListItemNoWrap(4).Art(fanart))">$INFO[Container(56).ListItemNoWrap(4).Art(fanart)]</value>
-        <value condition="True">$INFO[Container(56).ListItemNoWrap(4).Icon]</value>
+        <value condition="!String.IsEmpty(Container(56).ListItem(4).Art(banner))">$INFO[Container(56).ListItem(4).Art(banner)]</value>
+        <value condition="!String.IsEmpty(Container(56).ListItem(4).Art(tvshow.banner))">$INFO[Container(56).ListItem(4).Art(tvshow.banner)]</value>
+        <value condition="!String.IsEmpty(Container(56).ListItem(4).Art(fanart))">$INFO[Container(56).ListItem(4).Art(fanart)]</value>
+        <value condition="True">$INFO[Container(56).ListItem(4).Icon]</value>
     </variable>
     <variable name="Image_Banner_C56_5">
-        <value condition="!String.IsEmpty(Container(56).ListItemNoWrap(5).Art(banner))">$INFO[Container(56).ListItemNoWrap(5).Art(banner)]</value>
-        <value condition="!String.IsEmpty(Container(56).ListItemNoWrap(5).Art(tvshow.banner))">$INFO[Container(56).ListItemNoWrap(5).Art(tvshow.banner)]</value>
-        <value condition="!String.IsEmpty(Container(56).ListItemNoWrap(5).Art(fanart))">$INFO[Container(56).ListItemNoWrap(5).Art(fanart)]</value>
-        <value condition="True">$INFO[Container(56).ListItemNoWrap(5).Icon]</value>
+        <value condition="!String.IsEmpty(Container(56).ListItem(5).Art(banner))">$INFO[Container(56).ListItem(5).Art(banner)]</value>
+        <value condition="!String.IsEmpty(Container(56).ListItem(5).Art(tvshow.banner))">$INFO[Container(56).ListItem(5).Art(tvshow.banner)]</value>
+        <value condition="!String.IsEmpty(Container(56).ListItem(5).Art(fanart))">$INFO[Container(56).ListItem(5).Art(fanart)]</value>
+        <value condition="True">$INFO[Container(56).ListItem(5).Icon]</value>
     </variable>
     <variable name="Image_Banner_C56_6">
-        <value condition="!String.IsEmpty(Container(56).ListItemNoWrap(6).Art(banner))">$INFO[Container(56).ListItemNoWrap(6).Art(banner)]</value>
-        <value condition="!String.IsEmpty(Container(56).ListItemNoWrap(6).Art(tvshow.banner))">$INFO[Container(56).ListItemNoWrap(6).Art(tvshow.banner)]</value>
-        <value condition="!String.IsEmpty(Container(56).ListItemNoWrap(6).Art(fanart))">$INFO[Container(56).ListItemNoWrap(6).Art(fanart)]</value>
-        <value condition="True">$INFO[Container(56).ListItemNoWrap(6).Icon]</value>
+        <value condition="!String.IsEmpty(Container(56).ListItem(6).Art(banner))">$INFO[Container(56).ListItem(6).Art(banner)]</value>
+        <value condition="!String.IsEmpty(Container(56).ListItem(6).Art(tvshow.banner))">$INFO[Container(56).ListItem(6).Art(tvshow.banner)]</value>
+        <value condition="!String.IsEmpty(Container(56).ListItem(6).Art(fanart))">$INFO[Container(56).ListItem(6).Art(fanart)]</value>
+        <value condition="True">$INFO[Container(56).ListItem(6).Icon]</value>
     </variable>
     <variable name="Image_Banner_C56_7">
-        <value condition="!String.IsEmpty(Container(56).ListItemNoWrap(7).Art(banner))">$INFO[Container(56).ListItemNoWrap(7).Art(banner)]</value>
-        <value condition="!String.IsEmpty(Container(56).ListItemNoWrap(7).Art(tvshow.banner))">$INFO[Container(56).ListItemNoWrap(7).Art(tvshow.banner)]</value>
-        <value condition="!String.IsEmpty(Container(56).ListItemNoWrap(7).Art(fanart))">$INFO[Container(56).ListItemNoWrap(7).Art(fanart)]</value>
-        <value condition="True">$INFO[Container(56).ListItemNoWrap(7).Icon]</value>
+        <value condition="!String.IsEmpty(Container(56).ListItem(7).Art(banner))">$INFO[Container(56).ListItem(7).Art(banner)]</value>
+        <value condition="!String.IsEmpty(Container(56).ListItem(7).Art(tvshow.banner))">$INFO[Container(56).ListItem(7).Art(tvshow.banner)]</value>
+        <value condition="!String.IsEmpty(Container(56).ListItem(7).Art(fanart))">$INFO[Container(56).ListItem(7).Art(fanart)]</value>
+        <value condition="True">$INFO[Container(56).ListItem(7).Icon]</value>
     </variable>
     <variable name="Image_Banner_C56_8">
-        <value condition="!String.IsEmpty(Container(56).ListItemNoWrap(8).Art(banner))">$INFO[Container(56).ListItemNoWrap(8).Art(banner)]</value>
-        <value condition="!String.IsEmpty(Container(56).ListItemNoWrap(8).Art(tvshow.banner))">$INFO[Container(56).ListItemNoWrap(8).Art(tvshow.banner)]</value>
-        <value condition="!String.IsEmpty(Container(56).ListItemNoWrap(8).Art(fanart))">$INFO[Container(56).ListItemNoWrap(8).Art(fanart)]</value>
-        <value condition="True">$INFO[Container(56).ListItemNoWrap(8).Icon]</value>
+        <value condition="!String.IsEmpty(Container(56).ListItem(8).Art(banner))">$INFO[Container(56).ListItem(8).Art(banner)]</value>
+        <value condition="!String.IsEmpty(Container(56).ListItem(8).Art(tvshow.banner))">$INFO[Container(56).ListItem(8).Art(tvshow.banner)]</value>
+        <value condition="!String.IsEmpty(Container(56).ListItem(8).Art(fanart))">$INFO[Container(56).ListItem(8).Art(fanart)]</value>
+        <value condition="True">$INFO[Container(56).ListItem(8).Icon]</value>
     </variable>
     <variable name="Image_Banner_C56_9">
-        <value condition="!String.IsEmpty(Container(56).ListItemNoWrap(9).Art(banner))">$INFO[Container(56).ListItemNoWrap(9).Art(banner)]</value>
-        <value condition="!String.IsEmpty(Container(56).ListItemNoWrap(9).Art(tvshow.banner))">$INFO[Container(56).ListItemNoWrap(9).Art(tvshow.banner)]</value>
-        <value condition="!String.IsEmpty(Container(56).ListItemNoWrap(9).Art(fanart))">$INFO[Container(56).ListItemNoWrap(9).Art(fanart)]</value>
-        <value condition="True">$INFO[Container(56).ListItemNoWrap(9).Icon]</value>
+        <value condition="!String.IsEmpty(Container(56).ListItem(9).Art(banner))">$INFO[Container(56).ListItem(9).Art(banner)]</value>
+        <value condition="!String.IsEmpty(Container(56).ListItem(9).Art(tvshow.banner))">$INFO[Container(56).ListItem(9).Art(tvshow.banner)]</value>
+        <value condition="!String.IsEmpty(Container(56).ListItem(9).Art(fanart))">$INFO[Container(56).ListItem(9).Art(fanart)]</value>
+        <value condition="True">$INFO[Container(56).ListItem(9).Icon]</value>
     </variable>
     <variable name="Image_Banner_C56_10">
-        <value condition="!String.IsEmpty(Container(56).ListItemNoWrap(10).Art(banner))">$INFO[Container(56).ListItemNoWrap(10).Art(banner)]</value>
-        <value condition="!String.IsEmpty(Container(56).ListItemNoWrap(10).Art(tvshow.banner))">$INFO[Container(56).ListItemNoWrap(10).Art(tvshow.banner)]</value>
-        <value condition="!String.IsEmpty(Container(56).ListItemNoWrap(10).Art(fanart))">$INFO[Container(56).ListItemNoWrap(10).Art(fanart)]</value>
-        <value condition="True">$INFO[Container(56).ListItemNoWrap(10).Icon]</value>
+        <value condition="!String.IsEmpty(Container(56).ListItem(10).Art(banner))">$INFO[Container(56).ListItem(10).Art(banner)]</value>
+        <value condition="!String.IsEmpty(Container(56).ListItem(10).Art(tvshow.banner))">$INFO[Container(56).ListItem(10).Art(tvshow.banner)]</value>
+        <value condition="!String.IsEmpty(Container(56).ListItem(10).Art(fanart))">$INFO[Container(56).ListItem(10).Art(fanart)]</value>
+        <value condition="True">$INFO[Container(56).ListItem(10).Icon]</value>
     </variable>
     <variable name="Image_Banner_C56_11">
-        <value condition="!String.IsEmpty(Container(56).ListItemNoWrap(11).Art(banner))">$INFO[Container(56).ListItemNoWrap(11).Art(banner)]</value>
-        <value condition="!String.IsEmpty(Container(56).ListItemNoWrap(11).Art(tvshow.banner))">$INFO[Container(56).ListItemNoWrap(11).Art(tvshow.banner)]</value>
-        <value condition="!String.IsEmpty(Container(56).ListItemNoWrap(11).Art(fanart))">$INFO[Container(56).ListItemNoWrap(11).Art(fanart)]</value>
-        <value condition="True">$INFO[Container(56).ListItemNoWrap(11).Icon]</value>
+        <value condition="!String.IsEmpty(Container(56).ListItem(11).Art(banner))">$INFO[Container(56).ListItem(11).Art(banner)]</value>
+        <value condition="!String.IsEmpty(Container(56).ListItem(11).Art(tvshow.banner))">$INFO[Container(56).ListItem(11).Art(tvshow.banner)]</value>
+        <value condition="!String.IsEmpty(Container(56).ListItem(11).Art(fanart))">$INFO[Container(56).ListItem(11).Art(fanart)]</value>
+        <value condition="True">$INFO[Container(56).ListItem(11).Icon]</value>
     </variable>
     <variable name="Image_Banner_C56">
         <value condition="!String.IsEmpty(Container(56).ListItem.Art(banner))">$INFO[Container(56).ListItem.Art(banner)]</value>
@@ -1507,114 +1507,342 @@
         <value condition="True">$INFO[Container(56).ListItem.Icon]</value>
     </variable>
     <variable name="Image_Banner_-6">
+        <value condition="!String.IsEmpty(ListItem(-6).Art(banner))">$INFO[ListItem(-6).Art(banner)]</value>
+        <value condition="!String.IsEmpty(ListItem(-6).Art(tvshow.banner))">$INFO[ListItem(-6).Art(tvshow.banner)]</value>
+        <value condition="!String.IsEmpty(ListItem(-6).Art(fanart))">$INFO[ListItem(-6).Art(fanart)]</value>
+        <value condition="True">$INFO[ListItem(-6).Icon]</value>
+    </variable>
+    <variable name="Image_Banner_-5">
+        <value condition="!String.IsEmpty(ListItem(-5).Art(banner))">$INFO[ListItem(-5).Art(banner)]</value>
+        <value condition="!String.IsEmpty(ListItem(-5).Art(tvshow.banner))">$INFO[ListItem(-5).Art(tvshow.banner)]</value>
+        <value condition="!String.IsEmpty(ListItem(-5).Art(fanart))">$INFO[ListItem(-5).Art(fanart)]</value>
+        <value condition="True">$INFO[ListItem(-5).Icon]</value>
+    </variable>
+    <variable name="Image_Banner_-4">
+        <value condition="!String.IsEmpty(ListItem(-4).Art(banner))">$INFO[ListItem(-4).Art(banner)]</value>
+        <value condition="!String.IsEmpty(ListItem(-4).Art(tvshow.banner))">$INFO[ListItem(-4).Art(tvshow.banner)]</value>
+        <value condition="!String.IsEmpty(ListItem(-4).Art(fanart))">$INFO[ListItem(-4).Art(fanart)]</value>
+        <value condition="True">$INFO[ListItem(-4).Icon]</value>
+    </variable>
+    <variable name="Image_Banner_-3">
+        <value condition="!String.IsEmpty(ListItem(-3).Art(banner))">$INFO[ListItem(-3).Art(banner)]</value>
+        <value condition="!String.IsEmpty(ListItem(-3).Art(tvshow.banner))">$INFO[ListItem(-3).Art(tvshow.banner)]</value>
+        <value condition="!String.IsEmpty(ListItem(-3).Art(fanart))">$INFO[ListItem(-3).Art(fanart)]</value>
+        <value condition="True">$INFO[ListItem(-3).Icon]</value>
+    </variable>
+    <variable name="Image_Banner_-2">
+        <value condition="!String.IsEmpty(ListItem(-2).Art(banner))">$INFO[ListItem(-2).Art(banner)]</value>
+        <value condition="!String.IsEmpty(ListItem(-2).Art(tvshow.banner))">$INFO[ListItem(-2).Art(tvshow.banner)]</value>
+        <value condition="!String.IsEmpty(ListItem(-2).Art(fanart))">$INFO[ListItem(-2).Art(fanart)]</value>
+        <value condition="True">$INFO[ListItem(-2).Icon]</value>
+    </variable>
+    <variable name="Image_Banner_-1">
+        <value condition="!String.IsEmpty(ListItem(-1).Art(banner))">$INFO[ListItem(-1).Art(banner)]</value>
+        <value condition="!String.IsEmpty(ListItem(-1).Art(tvshow.banner))">$INFO[ListItem(-1).Art(tvshow.banner)]</value>
+        <value condition="!String.IsEmpty(ListItem(-1).Art(fanart))">$INFO[ListItem(-1).Art(fanart)]</value>
+        <value condition="True">$INFO[ListItem(-1).Icon]</value>
+    </variable>
+    <variable name="Image_Banner_0">
+        <value condition="!String.IsEmpty(ListItem(0).Art(banner))">$INFO[ListItem(0).Art(banner)]</value>
+        <value condition="!String.IsEmpty(ListItem(0).Art(tvshow.banner))">$INFO[ListItem(0).Art(tvshow.banner)]</value>
+        <value condition="!String.IsEmpty(ListItem(0).Art(fanart))">$INFO[ListItem(0).Art(fanart)]</value>
+        <value condition="True">$INFO[ListItem(0).Icon]</value>
+    </variable>
+    <variable name="Image_Banner_1">
+        <value condition="!String.IsEmpty(ListItem(1).Art(banner))">$INFO[ListItem(1).Art(banner)]</value>
+        <value condition="!String.IsEmpty(ListItem(1).Art(tvshow.banner))">$INFO[ListItem(1).Art(tvshow.banner)]</value>
+        <value condition="!String.IsEmpty(ListItem(1).Art(fanart))">$INFO[ListItem(1).Art(fanart)]</value>
+        <value condition="True">$INFO[ListItem(1).Icon]</value>
+    </variable>
+    <variable name="Image_Banner_2">
+        <value condition="!String.IsEmpty(ListItem(2).Art(banner))">$INFO[ListItem(2).Art(banner)]</value>
+        <value condition="!String.IsEmpty(ListItem(2).Art(tvshow.banner))">$INFO[ListItem(2).Art(tvshow.banner)]</value>
+        <value condition="!String.IsEmpty(ListItem(2).Art(fanart))">$INFO[ListItem(2).Art(fanart)]</value>
+        <value condition="True">$INFO[ListItem(2).Icon]</value>
+    </variable>
+    <variable name="Image_Banner_3">
+        <value condition="!String.IsEmpty(ListItem(3).Art(banner))">$INFO[ListItem(3).Art(banner)]</value>
+        <value condition="!String.IsEmpty(ListItem(3).Art(tvshow.banner))">$INFO[ListItem(3).Art(tvshow.banner)]</value>
+        <value condition="!String.IsEmpty(ListItem(3).Art(fanart))">$INFO[ListItem(3).Art(fanart)]</value>
+        <value condition="True">$INFO[ListItem(3).Icon]</value>
+    </variable>
+    <variable name="Image_Banner_4">
+        <value condition="!String.IsEmpty(ListItem(4).Art(banner))">$INFO[ListItem(4).Art(banner)]</value>
+        <value condition="!String.IsEmpty(ListItem(4).Art(tvshow.banner))">$INFO[ListItem(4).Art(tvshow.banner)]</value>
+        <value condition="!String.IsEmpty(ListItem(4).Art(fanart))">$INFO[ListItem(4).Art(fanart)]</value>
+        <value condition="True">$INFO[ListItem(4).Icon]</value>
+    </variable>
+    <variable name="Image_Banner_5">
+        <value condition="!String.IsEmpty(ListItem(5).Art(banner))">$INFO[ListItem(5).Art(banner)]</value>
+        <value condition="!String.IsEmpty(ListItem(5).Art(tvshow.banner))">$INFO[ListItem(5).Art(tvshow.banner)]</value>
+        <value condition="!String.IsEmpty(ListItem(5).Art(fanart))">$INFO[ListItem(5).Art(fanart)]</value>
+        <value condition="True">$INFO[ListItem(5).Icon]</value>
+    </variable>
+    <variable name="Image_Banner_6">
+        <value condition="!String.IsEmpty(ListItem(6).Art(banner))">$INFO[ListItem(6).Art(banner)]</value>
+        <value condition="!String.IsEmpty(ListItem(6).Art(tvshow.banner))">$INFO[ListItem(6).Art(tvshow.banner)]</value>
+        <value condition="!String.IsEmpty(ListItem(6).Art(fanart))">$INFO[ListItem(6).Art(fanart)]</value>
+        <value condition="True">$INFO[ListItem(6).Icon]</value>
+    </variable>
+    <variable name="Image_Banner_7">
+        <value condition="!String.IsEmpty(ListItem(7).Art(banner))">$INFO[ListItem(7).Art(banner)]</value>
+        <value condition="!String.IsEmpty(ListItem(7).Art(tvshow.banner))">$INFO[ListItem(7).Art(tvshow.banner)]</value>
+        <value condition="!String.IsEmpty(ListItem(7).Art(fanart))">$INFO[ListItem(7).Art(fanart)]</value>
+        <value condition="True">$INFO[ListItem(7).Icon]</value>
+    </variable>
+    <variable name="Image_Banner_8">
+        <value condition="!String.IsEmpty(ListItem(8).Art(banner))">$INFO[ListItem(8).Art(banner)]</value>
+        <value condition="!String.IsEmpty(ListItem(8).Art(tvshow.banner))">$INFO[ListItem(8).Art(tvshow.banner)]</value>
+        <value condition="!String.IsEmpty(ListItem(8).Art(fanart))">$INFO[ListItem(8).Art(fanart)]</value>
+        <value condition="True">$INFO[ListItem(8).Icon]</value>
+    </variable>
+    <variable name="Image_Banner_9">
+        <value condition="!String.IsEmpty(ListItem(9).Art(banner))">$INFO[ListItem(9).Art(banner)]</value>
+        <value condition="!String.IsEmpty(ListItem(9).Art(tvshow.banner))">$INFO[ListItem(9).Art(tvshow.banner)]</value>
+        <value condition="!String.IsEmpty(ListItem(9).Art(fanart))">$INFO[ListItem(9).Art(fanart)]</value>
+        <value condition="True">$INFO[ListItem(9).Icon]</value>
+    </variable>
+    <variable name="Image_Banner_10">
+        <value condition="!String.IsEmpty(ListItem(10).Art(banner))">$INFO[ListItem(10).Art(banner)]</value>
+        <value condition="!String.IsEmpty(ListItem(10).Art(tvshow.banner))">$INFO[ListItem(10).Art(tvshow.banner)]</value>
+        <value condition="!String.IsEmpty(ListItem(10).Art(fanart))">$INFO[ListItem(10).Art(fanart)]</value>
+        <value condition="True">$INFO[ListItem(10).Icon]</value>
+    </variable>
+    <variable name="Image_Banner_11">
+        <value condition="!String.IsEmpty(ListItem(11).Art(banner))">$INFO[ListItem(11).Art(banner)]</value>
+        <value condition="!String.IsEmpty(ListItem(11).Art(tvshow.banner))">$INFO[ListItem(11).Art(tvshow.banner)]</value>
+        <value condition="!String.IsEmpty(ListItem(11).Art(fanart))">$INFO[ListItem(11).Art(fanart)]</value>
+        <value condition="True">$INFO[ListItem(11).Icon]</value>
+    </variable>
+    <variable name="Image_Banner">
+        <value condition="!String.IsEmpty(ListItem.Art(banner))">$INFO[ListItem.Art(banner)]</value>
+        <value condition="!String.IsEmpty(ListItem.Art(tvshow.banner))">$INFO[ListItem.Art(tvshow.banner)]</value>
+        <value condition="!String.IsEmpty(ListItem.Art(fanart))">$INFO[ListItem.Art(fanart)]</value>
+        <value condition="True">$INFO[ListItem.Icon]</value>
+    </variable>
+    <variable name="Image_Banner_NoWrap_C56_-6">
+        <value condition="!String.IsEmpty(Container(56).ListItemNoWrap(-6).Art(banner))">$INFO[Container(56).ListItemNoWrap(-6).Art(banner)]</value>
+        <value condition="!String.IsEmpty(Container(56).ListItemNoWrap(-6).Art(tvshow.banner))">$INFO[Container(56).ListItemNoWrap(-6).Art(tvshow.banner)]</value>
+        <value condition="!String.IsEmpty(Container(56).ListItemNoWrap(-6).Art(fanart))">$INFO[Container(56).ListItemNoWrap(-6).Art(fanart)]</value>
+        <value condition="True">$INFO[Container(56).ListItemNoWrap(-6).Icon]</value>
+    </variable>
+    <variable name="Image_Banner_NoWrap_C56_-5">
+        <value condition="!String.IsEmpty(Container(56).ListItemNoWrap(-5).Art(banner))">$INFO[Container(56).ListItemNoWrap(-5).Art(banner)]</value>
+        <value condition="!String.IsEmpty(Container(56).ListItemNoWrap(-5).Art(tvshow.banner))">$INFO[Container(56).ListItemNoWrap(-5).Art(tvshow.banner)]</value>
+        <value condition="!String.IsEmpty(Container(56).ListItemNoWrap(-5).Art(fanart))">$INFO[Container(56).ListItemNoWrap(-5).Art(fanart)]</value>
+        <value condition="True">$INFO[Container(56).ListItemNoWrap(-5).Icon]</value>
+    </variable>
+    <variable name="Image_Banner_NoWrap_C56_-4">
+        <value condition="!String.IsEmpty(Container(56).ListItemNoWrap(-4).Art(banner))">$INFO[Container(56).ListItemNoWrap(-4).Art(banner)]</value>
+        <value condition="!String.IsEmpty(Container(56).ListItemNoWrap(-4).Art(tvshow.banner))">$INFO[Container(56).ListItemNoWrap(-4).Art(tvshow.banner)]</value>
+        <value condition="!String.IsEmpty(Container(56).ListItemNoWrap(-4).Art(fanart))">$INFO[Container(56).ListItemNoWrap(-4).Art(fanart)]</value>
+        <value condition="True">$INFO[Container(56).ListItemNoWrap(-4).Icon]</value>
+    </variable>
+    <variable name="Image_Banner_NoWrap_C56_-3">
+        <value condition="!String.IsEmpty(Container(56).ListItemNoWrap(-3).Art(banner))">$INFO[Container(56).ListItemNoWrap(-3).Art(banner)]</value>
+        <value condition="!String.IsEmpty(Container(56).ListItemNoWrap(-3).Art(tvshow.banner))">$INFO[Container(56).ListItemNoWrap(-3).Art(tvshow.banner)]</value>
+        <value condition="!String.IsEmpty(Container(56).ListItemNoWrap(-3).Art(fanart))">$INFO[Container(56).ListItemNoWrap(-3).Art(fanart)]</value>
+        <value condition="True">$INFO[Container(56).ListItemNoWrap(-3).Icon]</value>
+    </variable>
+    <variable name="Image_Banner_NoWrap_C56_-2">
+        <value condition="!String.IsEmpty(Container(56).ListItemNoWrap(-2).Art(banner))">$INFO[Container(56).ListItemNoWrap(-2).Art(banner)]</value>
+        <value condition="!String.IsEmpty(Container(56).ListItemNoWrap(-2).Art(tvshow.banner))">$INFO[Container(56).ListItemNoWrap(-2).Art(tvshow.banner)]</value>
+        <value condition="!String.IsEmpty(Container(56).ListItemNoWrap(-2).Art(fanart))">$INFO[Container(56).ListItemNoWrap(-2).Art(fanart)]</value>
+        <value condition="True">$INFO[Container(56).ListItemNoWrap(-2).Icon]</value>
+    </variable>
+    <variable name="Image_Banner_NoWrap_C56_-1">
+        <value condition="!String.IsEmpty(Container(56).ListItemNoWrap(-1).Art(banner))">$INFO[Container(56).ListItemNoWrap(-1).Art(banner)]</value>
+        <value condition="!String.IsEmpty(Container(56).ListItemNoWrap(-1).Art(tvshow.banner))">$INFO[Container(56).ListItemNoWrap(-1).Art(tvshow.banner)]</value>
+        <value condition="!String.IsEmpty(Container(56).ListItemNoWrap(-1).Art(fanart))">$INFO[Container(56).ListItemNoWrap(-1).Art(fanart)]</value>
+        <value condition="True">$INFO[Container(56).ListItemNoWrap(-1).Icon]</value>
+    </variable>
+    <variable name="Image_Banner_NoWrap_C56_0">
+        <value condition="!String.IsEmpty(Container(56).ListItemNoWrap(0).Art(banner))">$INFO[Container(56).ListItemNoWrap(0).Art(banner)]</value>
+        <value condition="!String.IsEmpty(Container(56).ListItemNoWrap(0).Art(tvshow.banner))">$INFO[Container(56).ListItemNoWrap(0).Art(tvshow.banner)]</value>
+        <value condition="!String.IsEmpty(Container(56).ListItemNoWrap(0).Art(fanart))">$INFO[Container(56).ListItemNoWrap(0).Art(fanart)]</value>
+        <value condition="True">$INFO[Container(56).ListItemNoWrap(0).Icon]</value>
+    </variable>
+    <variable name="Image_Banner_NoWrap_C56_1">
+        <value condition="!String.IsEmpty(Container(56).ListItemNoWrap(1).Art(banner))">$INFO[Container(56).ListItemNoWrap(1).Art(banner)]</value>
+        <value condition="!String.IsEmpty(Container(56).ListItemNoWrap(1).Art(tvshow.banner))">$INFO[Container(56).ListItemNoWrap(1).Art(tvshow.banner)]</value>
+        <value condition="!String.IsEmpty(Container(56).ListItemNoWrap(1).Art(fanart))">$INFO[Container(56).ListItemNoWrap(1).Art(fanart)]</value>
+        <value condition="True">$INFO[Container(56).ListItemNoWrap(1).Icon]</value>
+    </variable>
+    <variable name="Image_Banner_NoWrap_C56_2">
+        <value condition="!String.IsEmpty(Container(56).ListItemNoWrap(2).Art(banner))">$INFO[Container(56).ListItemNoWrap(2).Art(banner)]</value>
+        <value condition="!String.IsEmpty(Container(56).ListItemNoWrap(2).Art(tvshow.banner))">$INFO[Container(56).ListItemNoWrap(2).Art(tvshow.banner)]</value>
+        <value condition="!String.IsEmpty(Container(56).ListItemNoWrap(2).Art(fanart))">$INFO[Container(56).ListItemNoWrap(2).Art(fanart)]</value>
+        <value condition="True">$INFO[Container(56).ListItemNoWrap(2).Icon]</value>
+    </variable>
+    <variable name="Image_Banner_NoWrap_C56_3">
+        <value condition="!String.IsEmpty(Container(56).ListItemNoWrap(3).Art(banner))">$INFO[Container(56).ListItemNoWrap(3).Art(banner)]</value>
+        <value condition="!String.IsEmpty(Container(56).ListItemNoWrap(3).Art(tvshow.banner))">$INFO[Container(56).ListItemNoWrap(3).Art(tvshow.banner)]</value>
+        <value condition="!String.IsEmpty(Container(56).ListItemNoWrap(3).Art(fanart))">$INFO[Container(56).ListItemNoWrap(3).Art(fanart)]</value>
+        <value condition="True">$INFO[Container(56).ListItemNoWrap(3).Icon]</value>
+    </variable>
+    <variable name="Image_Banner_NoWrap_C56_4">
+        <value condition="!String.IsEmpty(Container(56).ListItemNoWrap(4).Art(banner))">$INFO[Container(56).ListItemNoWrap(4).Art(banner)]</value>
+        <value condition="!String.IsEmpty(Container(56).ListItemNoWrap(4).Art(tvshow.banner))">$INFO[Container(56).ListItemNoWrap(4).Art(tvshow.banner)]</value>
+        <value condition="!String.IsEmpty(Container(56).ListItemNoWrap(4).Art(fanart))">$INFO[Container(56).ListItemNoWrap(4).Art(fanart)]</value>
+        <value condition="True">$INFO[Container(56).ListItemNoWrap(4).Icon]</value>
+    </variable>
+    <variable name="Image_Banner_NoWrap_C56_5">
+        <value condition="!String.IsEmpty(Container(56).ListItemNoWrap(5).Art(banner))">$INFO[Container(56).ListItemNoWrap(5).Art(banner)]</value>
+        <value condition="!String.IsEmpty(Container(56).ListItemNoWrap(5).Art(tvshow.banner))">$INFO[Container(56).ListItemNoWrap(5).Art(tvshow.banner)]</value>
+        <value condition="!String.IsEmpty(Container(56).ListItemNoWrap(5).Art(fanart))">$INFO[Container(56).ListItemNoWrap(5).Art(fanart)]</value>
+        <value condition="True">$INFO[Container(56).ListItemNoWrap(5).Icon]</value>
+    </variable>
+    <variable name="Image_Banner_NoWrap_C56_6">
+        <value condition="!String.IsEmpty(Container(56).ListItemNoWrap(6).Art(banner))">$INFO[Container(56).ListItemNoWrap(6).Art(banner)]</value>
+        <value condition="!String.IsEmpty(Container(56).ListItemNoWrap(6).Art(tvshow.banner))">$INFO[Container(56).ListItemNoWrap(6).Art(tvshow.banner)]</value>
+        <value condition="!String.IsEmpty(Container(56).ListItemNoWrap(6).Art(fanart))">$INFO[Container(56).ListItemNoWrap(6).Art(fanart)]</value>
+        <value condition="True">$INFO[Container(56).ListItemNoWrap(6).Icon]</value>
+    </variable>
+    <variable name="Image_Banner_NoWrap_C56_7">
+        <value condition="!String.IsEmpty(Container(56).ListItemNoWrap(7).Art(banner))">$INFO[Container(56).ListItemNoWrap(7).Art(banner)]</value>
+        <value condition="!String.IsEmpty(Container(56).ListItemNoWrap(7).Art(tvshow.banner))">$INFO[Container(56).ListItemNoWrap(7).Art(tvshow.banner)]</value>
+        <value condition="!String.IsEmpty(Container(56).ListItemNoWrap(7).Art(fanart))">$INFO[Container(56).ListItemNoWrap(7).Art(fanart)]</value>
+        <value condition="True">$INFO[Container(56).ListItemNoWrap(7).Icon]</value>
+    </variable>
+    <variable name="Image_Banner_NoWrap_C56_8">
+        <value condition="!String.IsEmpty(Container(56).ListItemNoWrap(8).Art(banner))">$INFO[Container(56).ListItemNoWrap(8).Art(banner)]</value>
+        <value condition="!String.IsEmpty(Container(56).ListItemNoWrap(8).Art(tvshow.banner))">$INFO[Container(56).ListItemNoWrap(8).Art(tvshow.banner)]</value>
+        <value condition="!String.IsEmpty(Container(56).ListItemNoWrap(8).Art(fanart))">$INFO[Container(56).ListItemNoWrap(8).Art(fanart)]</value>
+        <value condition="True">$INFO[Container(56).ListItemNoWrap(8).Icon]</value>
+    </variable>
+    <variable name="Image_Banner_NoWrap_C56_9">
+        <value condition="!String.IsEmpty(Container(56).ListItemNoWrap(9).Art(banner))">$INFO[Container(56).ListItemNoWrap(9).Art(banner)]</value>
+        <value condition="!String.IsEmpty(Container(56).ListItemNoWrap(9).Art(tvshow.banner))">$INFO[Container(56).ListItemNoWrap(9).Art(tvshow.banner)]</value>
+        <value condition="!String.IsEmpty(Container(56).ListItemNoWrap(9).Art(fanart))">$INFO[Container(56).ListItemNoWrap(9).Art(fanart)]</value>
+        <value condition="True">$INFO[Container(56).ListItemNoWrap(9).Icon]</value>
+    </variable>
+    <variable name="Image_Banner_NoWrap_C56_10">
+        <value condition="!String.IsEmpty(Container(56).ListItemNoWrap(10).Art(banner))">$INFO[Container(56).ListItemNoWrap(10).Art(banner)]</value>
+        <value condition="!String.IsEmpty(Container(56).ListItemNoWrap(10).Art(tvshow.banner))">$INFO[Container(56).ListItemNoWrap(10).Art(tvshow.banner)]</value>
+        <value condition="!String.IsEmpty(Container(56).ListItemNoWrap(10).Art(fanart))">$INFO[Container(56).ListItemNoWrap(10).Art(fanart)]</value>
+        <value condition="True">$INFO[Container(56).ListItemNoWrap(10).Icon]</value>
+    </variable>
+    <variable name="Image_Banner_NoWrap_C56_11">
+        <value condition="!String.IsEmpty(Container(56).ListItemNoWrap(11).Art(banner))">$INFO[Container(56).ListItemNoWrap(11).Art(banner)]</value>
+        <value condition="!String.IsEmpty(Container(56).ListItemNoWrap(11).Art(tvshow.banner))">$INFO[Container(56).ListItemNoWrap(11).Art(tvshow.banner)]</value>
+        <value condition="!String.IsEmpty(Container(56).ListItemNoWrap(11).Art(fanart))">$INFO[Container(56).ListItemNoWrap(11).Art(fanart)]</value>
+        <value condition="True">$INFO[Container(56).ListItemNoWrap(11).Icon]</value>
+    </variable>
+    <variable name="Image_Banner_NoWrap_C56">
+        <value condition="!String.IsEmpty(Container(56).ListItem.Art(banner))">$INFO[Container(56).ListItem.Art(banner)]</value>
+        <value condition="!String.IsEmpty(Container(56).ListItem.Art(tvshow.banner))">$INFO[Container(56).ListItem.Art(tvshow.banner)]</value>
+        <value condition="!String.IsEmpty(Container(56).ListItem.Art(fanart))">$INFO[Container(56).ListItem.Art(fanart)]</value>
+        <value condition="True">$INFO[Container(56).ListItem.Icon]</value>
+    </variable>
+    <variable name="Image_Banner_NoWrap_-6">
         <value condition="!String.IsEmpty(ListItemNoWrap(-6).Art(banner))">$INFO[ListItemNoWrap(-6).Art(banner)]</value>
         <value condition="!String.IsEmpty(ListItemNoWrap(-6).Art(tvshow.banner))">$INFO[ListItemNoWrap(-6).Art(tvshow.banner)]</value>
         <value condition="!String.IsEmpty(ListItemNoWrap(-6).Art(fanart))">$INFO[ListItemNoWrap(-6).Art(fanart)]</value>
         <value condition="True">$INFO[ListItemNoWrap(-6).Icon]</value>
     </variable>
-    <variable name="Image_Banner_-5">
+    <variable name="Image_Banner_NoWrap_-5">
         <value condition="!String.IsEmpty(ListItemNoWrap(-5).Art(banner))">$INFO[ListItemNoWrap(-5).Art(banner)]</value>
         <value condition="!String.IsEmpty(ListItemNoWrap(-5).Art(tvshow.banner))">$INFO[ListItemNoWrap(-5).Art(tvshow.banner)]</value>
         <value condition="!String.IsEmpty(ListItemNoWrap(-5).Art(fanart))">$INFO[ListItemNoWrap(-5).Art(fanart)]</value>
         <value condition="True">$INFO[ListItemNoWrap(-5).Icon]</value>
     </variable>
-    <variable name="Image_Banner_-4">
+    <variable name="Image_Banner_NoWrap_-4">
         <value condition="!String.IsEmpty(ListItemNoWrap(-4).Art(banner))">$INFO[ListItemNoWrap(-4).Art(banner)]</value>
         <value condition="!String.IsEmpty(ListItemNoWrap(-4).Art(tvshow.banner))">$INFO[ListItemNoWrap(-4).Art(tvshow.banner)]</value>
         <value condition="!String.IsEmpty(ListItemNoWrap(-4).Art(fanart))">$INFO[ListItemNoWrap(-4).Art(fanart)]</value>
         <value condition="True">$INFO[ListItemNoWrap(-4).Icon]</value>
     </variable>
-    <variable name="Image_Banner_-3">
+    <variable name="Image_Banner_NoWrap_-3">
         <value condition="!String.IsEmpty(ListItemNoWrap(-3).Art(banner))">$INFO[ListItemNoWrap(-3).Art(banner)]</value>
         <value condition="!String.IsEmpty(ListItemNoWrap(-3).Art(tvshow.banner))">$INFO[ListItemNoWrap(-3).Art(tvshow.banner)]</value>
         <value condition="!String.IsEmpty(ListItemNoWrap(-3).Art(fanart))">$INFO[ListItemNoWrap(-3).Art(fanart)]</value>
         <value condition="True">$INFO[ListItemNoWrap(-3).Icon]</value>
     </variable>
-    <variable name="Image_Banner_-2">
+    <variable name="Image_Banner_NoWrap_-2">
         <value condition="!String.IsEmpty(ListItemNoWrap(-2).Art(banner))">$INFO[ListItemNoWrap(-2).Art(banner)]</value>
         <value condition="!String.IsEmpty(ListItemNoWrap(-2).Art(tvshow.banner))">$INFO[ListItemNoWrap(-2).Art(tvshow.banner)]</value>
         <value condition="!String.IsEmpty(ListItemNoWrap(-2).Art(fanart))">$INFO[ListItemNoWrap(-2).Art(fanart)]</value>
         <value condition="True">$INFO[ListItemNoWrap(-2).Icon]</value>
     </variable>
-    <variable name="Image_Banner_-1">
+    <variable name="Image_Banner_NoWrap_-1">
         <value condition="!String.IsEmpty(ListItemNoWrap(-1).Art(banner))">$INFO[ListItemNoWrap(-1).Art(banner)]</value>
         <value condition="!String.IsEmpty(ListItemNoWrap(-1).Art(tvshow.banner))">$INFO[ListItemNoWrap(-1).Art(tvshow.banner)]</value>
         <value condition="!String.IsEmpty(ListItemNoWrap(-1).Art(fanart))">$INFO[ListItemNoWrap(-1).Art(fanart)]</value>
         <value condition="True">$INFO[ListItemNoWrap(-1).Icon]</value>
     </variable>
-    <variable name="Image_Banner_0">
+    <variable name="Image_Banner_NoWrap_0">
         <value condition="!String.IsEmpty(ListItemNoWrap(0).Art(banner))">$INFO[ListItemNoWrap(0).Art(banner)]</value>
         <value condition="!String.IsEmpty(ListItemNoWrap(0).Art(tvshow.banner))">$INFO[ListItemNoWrap(0).Art(tvshow.banner)]</value>
         <value condition="!String.IsEmpty(ListItemNoWrap(0).Art(fanart))">$INFO[ListItemNoWrap(0).Art(fanart)]</value>
         <value condition="True">$INFO[ListItemNoWrap(0).Icon]</value>
     </variable>
-    <variable name="Image_Banner_1">
+    <variable name="Image_Banner_NoWrap_1">
         <value condition="!String.IsEmpty(ListItemNoWrap(1).Art(banner))">$INFO[ListItemNoWrap(1).Art(banner)]</value>
         <value condition="!String.IsEmpty(ListItemNoWrap(1).Art(tvshow.banner))">$INFO[ListItemNoWrap(1).Art(tvshow.banner)]</value>
         <value condition="!String.IsEmpty(ListItemNoWrap(1).Art(fanart))">$INFO[ListItemNoWrap(1).Art(fanart)]</value>
         <value condition="True">$INFO[ListItemNoWrap(1).Icon]</value>
     </variable>
-    <variable name="Image_Banner_2">
+    <variable name="Image_Banner_NoWrap_2">
         <value condition="!String.IsEmpty(ListItemNoWrap(2).Art(banner))">$INFO[ListItemNoWrap(2).Art(banner)]</value>
         <value condition="!String.IsEmpty(ListItemNoWrap(2).Art(tvshow.banner))">$INFO[ListItemNoWrap(2).Art(tvshow.banner)]</value>
         <value condition="!String.IsEmpty(ListItemNoWrap(2).Art(fanart))">$INFO[ListItemNoWrap(2).Art(fanart)]</value>
         <value condition="True">$INFO[ListItemNoWrap(2).Icon]</value>
     </variable>
-    <variable name="Image_Banner_3">
+    <variable name="Image_Banner_NoWrap_3">
         <value condition="!String.IsEmpty(ListItemNoWrap(3).Art(banner))">$INFO[ListItemNoWrap(3).Art(banner)]</value>
         <value condition="!String.IsEmpty(ListItemNoWrap(3).Art(tvshow.banner))">$INFO[ListItemNoWrap(3).Art(tvshow.banner)]</value>
         <value condition="!String.IsEmpty(ListItemNoWrap(3).Art(fanart))">$INFO[ListItemNoWrap(3).Art(fanart)]</value>
         <value condition="True">$INFO[ListItemNoWrap(3).Icon]</value>
     </variable>
-    <variable name="Image_Banner_4">
+    <variable name="Image_Banner_NoWrap_4">
         <value condition="!String.IsEmpty(ListItemNoWrap(4).Art(banner))">$INFO[ListItemNoWrap(4).Art(banner)]</value>
         <value condition="!String.IsEmpty(ListItemNoWrap(4).Art(tvshow.banner))">$INFO[ListItemNoWrap(4).Art(tvshow.banner)]</value>
         <value condition="!String.IsEmpty(ListItemNoWrap(4).Art(fanart))">$INFO[ListItemNoWrap(4).Art(fanart)]</value>
         <value condition="True">$INFO[ListItemNoWrap(4).Icon]</value>
     </variable>
-    <variable name="Image_Banner_5">
+    <variable name="Image_Banner_NoWrap_5">
         <value condition="!String.IsEmpty(ListItemNoWrap(5).Art(banner))">$INFO[ListItemNoWrap(5).Art(banner)]</value>
         <value condition="!String.IsEmpty(ListItemNoWrap(5).Art(tvshow.banner))">$INFO[ListItemNoWrap(5).Art(tvshow.banner)]</value>
         <value condition="!String.IsEmpty(ListItemNoWrap(5).Art(fanart))">$INFO[ListItemNoWrap(5).Art(fanart)]</value>
         <value condition="True">$INFO[ListItemNoWrap(5).Icon]</value>
     </variable>
-    <variable name="Image_Banner_6">
+    <variable name="Image_Banner_NoWrap_6">
         <value condition="!String.IsEmpty(ListItemNoWrap(6).Art(banner))">$INFO[ListItemNoWrap(6).Art(banner)]</value>
         <value condition="!String.IsEmpty(ListItemNoWrap(6).Art(tvshow.banner))">$INFO[ListItemNoWrap(6).Art(tvshow.banner)]</value>
         <value condition="!String.IsEmpty(ListItemNoWrap(6).Art(fanart))">$INFO[ListItemNoWrap(6).Art(fanart)]</value>
         <value condition="True">$INFO[ListItemNoWrap(6).Icon]</value>
     </variable>
-    <variable name="Image_Banner_7">
+    <variable name="Image_Banner_NoWrap_7">
         <value condition="!String.IsEmpty(ListItemNoWrap(7).Art(banner))">$INFO[ListItemNoWrap(7).Art(banner)]</value>
         <value condition="!String.IsEmpty(ListItemNoWrap(7).Art(tvshow.banner))">$INFO[ListItemNoWrap(7).Art(tvshow.banner)]</value>
         <value condition="!String.IsEmpty(ListItemNoWrap(7).Art(fanart))">$INFO[ListItemNoWrap(7).Art(fanart)]</value>
         <value condition="True">$INFO[ListItemNoWrap(7).Icon]</value>
     </variable>
-    <variable name="Image_Banner_8">
+    <variable name="Image_Banner_NoWrap_8">
         <value condition="!String.IsEmpty(ListItemNoWrap(8).Art(banner))">$INFO[ListItemNoWrap(8).Art(banner)]</value>
         <value condition="!String.IsEmpty(ListItemNoWrap(8).Art(tvshow.banner))">$INFO[ListItemNoWrap(8).Art(tvshow.banner)]</value>
         <value condition="!String.IsEmpty(ListItemNoWrap(8).Art(fanart))">$INFO[ListItemNoWrap(8).Art(fanart)]</value>
         <value condition="True">$INFO[ListItemNoWrap(8).Icon]</value>
     </variable>
-    <variable name="Image_Banner_9">
+    <variable name="Image_Banner_NoWrap_9">
         <value condition="!String.IsEmpty(ListItemNoWrap(9).Art(banner))">$INFO[ListItemNoWrap(9).Art(banner)]</value>
         <value condition="!String.IsEmpty(ListItemNoWrap(9).Art(tvshow.banner))">$INFO[ListItemNoWrap(9).Art(tvshow.banner)]</value>
         <value condition="!String.IsEmpty(ListItemNoWrap(9).Art(fanart))">$INFO[ListItemNoWrap(9).Art(fanart)]</value>
         <value condition="True">$INFO[ListItemNoWrap(9).Icon]</value>
     </variable>
-    <variable name="Image_Banner_10">
+    <variable name="Image_Banner_NoWrap_10">
         <value condition="!String.IsEmpty(ListItemNoWrap(10).Art(banner))">$INFO[ListItemNoWrap(10).Art(banner)]</value>
         <value condition="!String.IsEmpty(ListItemNoWrap(10).Art(tvshow.banner))">$INFO[ListItemNoWrap(10).Art(tvshow.banner)]</value>
         <value condition="!String.IsEmpty(ListItemNoWrap(10).Art(fanart))">$INFO[ListItemNoWrap(10).Art(fanart)]</value>
         <value condition="True">$INFO[ListItemNoWrap(10).Icon]</value>
     </variable>
-    <variable name="Image_Banner_11">
+    <variable name="Image_Banner_NoWrap_11">
         <value condition="!String.IsEmpty(ListItemNoWrap(11).Art(banner))">$INFO[ListItemNoWrap(11).Art(banner)]</value>
         <value condition="!String.IsEmpty(ListItemNoWrap(11).Art(tvshow.banner))">$INFO[ListItemNoWrap(11).Art(tvshow.banner)]</value>
         <value condition="!String.IsEmpty(ListItemNoWrap(11).Art(fanart))">$INFO[ListItemNoWrap(11).Art(fanart)]</value>
         <value condition="True">$INFO[ListItemNoWrap(11).Icon]</value>
     </variable>
-    <variable name="Image_Banner">
+    <variable name="Image_Banner_NoWrap">
         <value condition="!String.IsEmpty(ListItem.Art(banner))">$INFO[ListItem.Art(banner)]</value>
         <value condition="!String.IsEmpty(ListItem.Art(tvshow.banner))">$INFO[ListItem.Art(tvshow.banner)]</value>
         <value condition="!String.IsEmpty(ListItem.Art(fanart))">$INFO[ListItem.Art(fanart)]</value>

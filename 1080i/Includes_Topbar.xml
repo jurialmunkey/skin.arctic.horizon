@@ -39,11 +39,12 @@
             <control type="group">
                 <top>view_pad</top>
                 <height>view_header</height>
+                <visible>!Window.IsVisible(DialogNotification.xml)</visible>
+                <visible>!Window.IsVisible(DialogExtendedProgressBar.xml)</visible>
+                <visible>!Window.IsVisible(DialogVolumeBar.xml) | Player.Muted</visible>
+                <visible>!Player.HasMedia | Window.IsVisible(fullscreenvideo)</visible>
                 <control type="grouplist">
-                    <visible>!Window.IsVisible(DialogNotification.xml)</visible>
-                    <visible>!Window.IsVisible(DialogExtendedProgressBar.xml)</visible>
-                    <visible>!Window.IsVisible(DialogVolumeBar.xml) | Player.Muted</visible>
-                    <visible>!Player.HasMedia | Window.IsVisible(fullscreenvideo)</visible>
+                    <visible>!Control.HasFocus(60) + !Control.HasFocus(64)</visible>
                     <right>view_pad</right>
                     <align>right</align>
                     <orientation>horizontal</orientation>
@@ -79,6 +80,39 @@
                         <font>font_small</font>
                         <textcolor>$PARAM[fgcolor]_100</textcolor>
                         <label>$INFO[System.Time]</label>
+                    </control>
+                    <control type="group" description="Mute bug spacer">
+                        <centertop>50%</centertop>
+                        <height>56</height>
+                        <width>72</width>
+                        <visible>Player.Muted</visible>
+                    </control>
+                </control>
+                <control type="grouplist">
+                    <visible>Control.HasFocus(60) | Control.HasFocus(64)</visible>
+                    <right>view_pad</right>
+                    <align>right</align>
+                    <orientation>horizontal</orientation>
+                    <itemgap>0</itemgap>
+                    <width>700</width>
+                    <usecontrolcoords>true</usecontrolcoords>
+                    <control type="label">
+                        <width>auto</width>
+                        <font>font_small</font>
+                        <textcolor>$PARAM[fgcolor]_100</textcolor>
+                        <label>$INFO[Container.NumItems,, $LOCALIZE[31025]]</label>
+                    </control>
+                    <control type="label">
+                        <width>auto</width>
+                        <font>font_small</font>
+                        <textcolor>$VAR[ColorHighlight]</textcolor>
+                        <label>  |  </label>
+                    </control>
+                    <control type="label">
+                        <width>auto</width>
+                        <font>font_small</font>
+                        <textcolor>$PARAM[fgcolor]_100</textcolor>
+                        <label>$INFO[Container.CurrentPage,$LOCALIZE[31391] , $LOCALIZE[20163] ]$INFO[Container.NumPages]</label>
                     </control>
                     <control type="group" description="Mute bug spacer">
                         <centertop>50%</centertop>

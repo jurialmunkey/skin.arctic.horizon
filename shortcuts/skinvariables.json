@@ -21,6 +21,17 @@
         "containers"    : [56],
         "listitems"     : {"start": -6, "end": 11},
         "values"        : [
+                            {"!String.IsEmpty({listitem}.Art(banner))": "$INFO[{listitem}.Art(banner)]"},
+                            {"!String.IsEmpty({listitem}.Art(tvshow.banner))": "$INFO[{listitem}.Art(tvshow.banner)]"},
+                            {"!String.IsEmpty({listitem}.Art(fanart))": "$INFO[{listitem}.Art(fanart)]"},
+                            {"True": "$INFO[{listitem}.Icon]"}
+                          ]
+    },
+    {
+        "name"          : "Image_Banner_NoWrap",
+        "containers"    : [56],
+        "listitems"     : {"start": -6, "end": 11},
+        "values"        : [
                             {"!String.IsEmpty({listitemnowrap}.Art(banner))": "$INFO[{listitemnowrap}.Art(banner)]"},
                             {"!String.IsEmpty({listitemnowrap}.Art(tvshow.banner))": "$INFO[{listitemnowrap}.Art(tvshow.banner)]"},
                             {"!String.IsEmpty({listitemnowrap}.Art(fanart))": "$INFO[{listitemnowrap}.Art(fanart)]"},

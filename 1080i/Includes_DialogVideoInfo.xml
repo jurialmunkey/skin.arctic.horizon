@@ -79,6 +79,29 @@
             <include content="DialogVideoInfo_MainGroup">
                 <include>Animation_Right_Delay</include>
                 <visible>!$EXP[Exp_TrailerWindow]</visible>
+                <control type="group">
+                    <top>-53</top>
+                    <bottom>-53</bottom>
+                    <right>-80</right>
+                    <control type="group">
+                        <visible>Container(4100).HasPrevious</visible>
+                        <visible>System.IdleTime(1)</visible>
+                        <include>Animation_FadeIn</include>
+                        <include>Animation_FadeOut</include>
+                        <include content="Object_DoubleArrow_Up">
+                            <param name="colordiffuse" value="main_fg_30" />
+                        </include>
+                    </control>
+                    <control type="group">
+                        <visible>Container(4100).HasNext</visible>
+                        <visible>System.IdleTime(1)</visible>
+                        <include>Animation_FadeIn</include>
+                        <include>Animation_FadeOut</include>
+                        <include content="Object_DoubleArrow_Down">
+                            <param name="colordiffuse" value="main_fg_30" />
+                        </include>
+                    </control>
+                </control>
                 <include content="DialogVideoInfo_WidgetGroupList">
                     <include content="DialogVideoInfo_MainInfo">
                         <include content="View_Info_Grouplist">
@@ -108,6 +131,7 @@
                     <include condition="!ListItem.IsCollection">DialogVideoInfo_Widget_Posters</include>
                     <include condition="!ListItem.IsCollection">DialogVideoInfo_Widget_ImageGallery</include>
                 </include>
+
             </include>
             <include content="Object_Control" condition="!Skin.HasSetting(DisableTrailerWindow)">
                 <param name="type" value="group" />

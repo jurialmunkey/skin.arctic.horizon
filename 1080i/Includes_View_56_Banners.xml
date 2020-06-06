@@ -29,7 +29,7 @@
             <include content="Home_Hub_Widget_Label">
                 <param name="id" value="56" />
                 <param name="label" value="$VAR[Label_Header_Center]" />
-                <param name="altlabel" value="$INFO[Control.GetLabel(3),, ]$INFO[Control.GetLabel(4)]" />
+                <param name="alt01label" value="$INFO[Control.GetLabel(3),, ]$INFO[Control.GetLabel(4)]" />
                 <top>120</top>
             </include>
 
@@ -102,20 +102,20 @@
                 <include content="View_56_Banners_WallItem">
                     <param name="id" value="$PARAM[id]" />
                     <param name="pos" value="3" />
-                    <param name="altvisible" value="!Container($PARAM[id]).HasNext" />
-                    <param name="altpos" value="0" />
+                    <param name="alt01visible" value="String.IsEmpty(Container($PARAM[id]).ListItemNoWrap(3).Label)" />
+                    <param name="alt01pos" value="0" />
                 </include>
                 <include content="View_56_Banners_WallItem">
                     <param name="id" value="$PARAM[id]" />
                     <param name="pos" value="4" />
-                    <param name="altvisible" value="!Container($PARAM[id]).HasNext" />
-                    <param name="altpos" value="1" />
+                    <param name="alt01visible" value="String.IsEmpty(Container($PARAM[id]).ListItemNoWrap(3).Label)" />
+                    <param name="alt01pos" value="1" />
                 </include>
                 <include content="View_56_Banners_WallItem">
                     <param name="id" value="$PARAM[id]" />
                     <param name="pos" value="5" />
-                    <param name="altvisible" value="!Container($PARAM[id]).HasNext" />
-                    <param name="altpos" value="2" />
+                    <param name="alt01visible" value="String.IsEmpty(Container($PARAM[id]).ListItemNoWrap(3).Label)" />
+                    <param name="alt01pos" value="2" />
                 </include>
             </control>
 
@@ -128,20 +128,26 @@
                 <include content="View_56_Banners_WallItem">
                     <param name="id" value="$PARAM[id]" />
                     <param name="pos" value="6" />
-                    <param name="altvisible" value="!Container($PARAM[id]).HasNext" />
-                    <param name="altpos" value="3" />
+                    <param name="alt01visible" value="String.IsEmpty(Container($PARAM[id]).ListItemNoWrap(3).Label)" />
+                    <param name="alt01pos" value="3" />
+                    <param name="alt02visible" value="!String.IsEmpty(Container($PARAM[id]).ListItemNoWrap(3).Label) + String.IsEmpty(Container($PARAM[id]).ListItemNoWrap(6).Label)" />
+                    <param name="alt02pos" value="0" />
                 </include>
                 <include content="View_56_Banners_WallItem">
                     <param name="id" value="$PARAM[id]" />
                     <param name="pos" value="7" />
-                    <param name="altvisible" value="!Container($PARAM[id]).HasNext" />
-                    <param name="altpos" value="4" />
+                    <param name="alt01visible" value="String.IsEmpty(Container($PARAM[id]).ListItemNoWrap(3).Label)" />
+                    <param name="alt01pos" value="4" />
+                    <param name="alt02visible" value="!String.IsEmpty(Container($PARAM[id]).ListItemNoWrap(3).Label) + String.IsEmpty(Container($PARAM[id]).ListItemNoWrap(6).Label)" />
+                    <param name="alt02pos" value="1" />
                 </include>
                 <include content="View_56_Banners_WallItem">
                     <param name="id" value="$PARAM[id]" />
                     <param name="pos" value="8" />
-                    <param name="altvisible" value="!Container($PARAM[id]).HasNext" />
-                    <param name="altpos" value="5" />
+                    <param name="alt01visible" value="String.IsEmpty(Container($PARAM[id]).ListItemNoWrap(3).Label)" />
+                    <param name="alt01pos" value="5" />
+                    <param name="alt02visible" value="!String.IsEmpty(Container($PARAM[id]).ListItemNoWrap(3).Label) + String.IsEmpty(Container($PARAM[id]).ListItemNoWrap(6).Label)" />
+                    <param name="alt02pos" value="2" />
                 </include>
             </control>
 
@@ -206,20 +212,20 @@
                 <include content="View_56_Banners_WallItem">
                     <param name="id" value="$PARAM[id]" />
                     <param name="pos" value="2" />
-                    <param name="altvisible" value="!Container($PARAM[id]).HasNext" />
-                    <param name="altpos" value="0" />
+                    <param name="alt01visible" value="String.IsEmpty(Container($PARAM[id]).ListItemNoWrap(3).Label)" />
+                    <param name="alt01pos" value="0" />
                 </include>
                 <include content="View_56_Banners_WallItem">
                     <param name="id" value="$PARAM[id]" />
                     <param name="pos" value="3" />
-                    <param name="altvisible" value="!Container($PARAM[id]).HasNext" />
-                    <param name="altpos" value="1" />
+                    <param name="alt01visible" value="String.IsEmpty(Container($PARAM[id]).ListItemNoWrap(3).Label)" />
+                    <param name="alt01pos" value="1" />
                 </include>
                 <include content="View_56_Banners_WallItem">
                     <param name="id" value="$PARAM[id]" />
                     <param name="pos" value="4" />
-                    <param name="altvisible" value="!Container($PARAM[id]).HasNext" />
-                    <param name="altpos" value="2" />
+                    <param name="alt01visible" value="String.IsEmpty(Container($PARAM[id]).ListItemNoWrap(3).Label)" />
+                    <param name="alt01pos" value="2" />
                 </include>
             </control>
 
@@ -232,20 +238,26 @@
                 <include content="View_56_Banners_WallItem">
                     <param name="id" value="$PARAM[id]" />
                     <param name="pos" value="5" />
-                    <param name="altvisible" value="!Container($PARAM[id]).HasNext" />
-                    <param name="altpos" value="3" />
+                    <param name="alt01visible" value="String.IsEmpty(Container($PARAM[id]).ListItemNoWrap(3).Label)" />
+                    <param name="alt01pos" value="3" />
+                    <param name="alt02visible" value="!String.IsEmpty(Container($PARAM[id]).ListItemNoWrap(3).Label) + String.IsEmpty(Container($PARAM[id]).ListItemNoWrap(6).Label)" />
+                    <param name="alt02pos" value="0" />
                 </include>
                 <include content="View_56_Banners_WallItem">
                     <param name="id" value="$PARAM[id]" />
                     <param name="pos" value="6" />
-                    <param name="altvisible" value="!Container($PARAM[id]).HasNext" />
-                    <param name="altpos" value="4" />
+                    <param name="alt01visible" value="String.IsEmpty(Container($PARAM[id]).ListItemNoWrap(3).Label)" />
+                    <param name="alt01pos" value="4" />
+                    <param name="alt02visible" value="!String.IsEmpty(Container($PARAM[id]).ListItemNoWrap(3).Label) + String.IsEmpty(Container($PARAM[id]).ListItemNoWrap(6).Label)" />
+                    <param name="alt02pos" value="1" />
                 </include>
                 <include content="View_56_Banners_WallItem">
                     <param name="id" value="$PARAM[id]" />
                     <param name="pos" value="7" />
-                    <param name="altvisible" value="!Container($PARAM[id]).HasNext" />
-                    <param name="altpos" value="5" />
+                    <param name="alt01visible" value="String.IsEmpty(Container($PARAM[id]).ListItemNoWrap(3).Label)" />
+                    <param name="alt01pos" value="5" />
+                    <param name="alt02visible" value="!String.IsEmpty(Container($PARAM[id]).ListItemNoWrap(3).Label) + String.IsEmpty(Container($PARAM[id]).ListItemNoWrap(6).Label)" />
+                    <param name="alt02pos" value="2" />
                 </include>
             </control>
 
@@ -310,20 +322,20 @@
                 <include content="View_56_Banners_WallItem">
                     <param name="id" value="$PARAM[id]" />
                     <param name="pos" value="1" />
-                    <param name="altvisible" value="!Container($PARAM[id]).HasNext" />
-                    <param name="altpos" value="0" />
+                    <param name="alt01visible" value="String.IsEmpty(Container($PARAM[id]).ListItemNoWrap(3).Label)" />
+                    <param name="alt01pos" value="0" />
                 </include>
                 <include content="View_56_Banners_WallItem">
                     <param name="id" value="$PARAM[id]" />
                     <param name="pos" value="2" />
-                    <param name="altvisible" value="!Container($PARAM[id]).HasNext" />
-                    <param name="altpos" value="1" />
+                    <param name="alt01visible" value="String.IsEmpty(Container($PARAM[id]).ListItemNoWrap(3).Label)" />
+                    <param name="alt01pos" value="1" />
                 </include>
                 <include content="View_56_Banners_WallItem">
                     <param name="id" value="$PARAM[id]" />
                     <param name="pos" value="3" />
-                    <param name="altvisible" value="!Container($PARAM[id]).HasNext" />
-                    <param name="altpos" value="2" />
+                    <param name="alt01visible" value="String.IsEmpty(Container($PARAM[id]).ListItemNoWrap(3).Label)" />
+                    <param name="alt01pos" value="2" />
                 </include>
             </control>
 
@@ -336,20 +348,26 @@
                 <include content="View_56_Banners_WallItem">
                     <param name="id" value="$PARAM[id]" />
                     <param name="pos" value="4" />
-                    <param name="altvisible" value="!Container($PARAM[id]).HasNext" />
-                    <param name="altpos" value="3" />
+                    <param name="alt01visible" value="String.IsEmpty(Container($PARAM[id]).ListItemNoWrap(3).Label)" />
+                    <param name="alt01pos" value="3" />
+                    <param name="alt02visible" value="!String.IsEmpty(Container($PARAM[id]).ListItemNoWrap(3).Label) + String.IsEmpty(Container($PARAM[id]).ListItemNoWrap(6).Label)" />
+                    <param name="alt02pos" value="0" />
                 </include>
                 <include content="View_56_Banners_WallItem">
                     <param name="id" value="$PARAM[id]" />
                     <param name="pos" value="5" />
-                    <param name="altvisible" value="!Container($PARAM[id]).HasNext" />
-                    <param name="altpos" value="4" />
+                    <param name="alt01visible" value="String.IsEmpty(Container($PARAM[id]).ListItemNoWrap(3).Label)" />
+                    <param name="alt01pos" value="4" />
+                    <param name="alt02visible" value="!String.IsEmpty(Container($PARAM[id]).ListItemNoWrap(3).Label) + String.IsEmpty(Container($PARAM[id]).ListItemNoWrap(6).Label)" />
+                    <param name="alt02pos" value="1" />
                 </include>
                 <include content="View_56_Banners_WallItem">
                     <param name="id" value="$PARAM[id]" />
                     <param name="pos" value="6" />
-                    <param name="altvisible" value="!Container($PARAM[id]).HasNext" />
-                    <param name="altpos" value="5" />
+                    <param name="alt01visible" value="String.IsEmpty(Container($PARAM[id]).ListItemNoWrap(3).Label)" />
+                    <param name="alt01pos" value="5" />
+                    <param name="alt02visible" value="!String.IsEmpty(Container($PARAM[id]).ListItemNoWrap(3).Label) + String.IsEmpty(Container($PARAM[id]).ListItemNoWrap(6).Label)" />
+                    <param name="alt02pos" value="2" />
                 </include>
             </control>
 
@@ -358,8 +376,10 @@
 
     <include name="View_56_Banners_WallItem">
         <param name="selectbox" default="false" />
-        <param name="altvisible" default="false" />
-        <param name="altpos" default="0" />
+        <param name="alt01visible" default="false" />
+        <param name="alt01pos" default="0" />
+        <param name="alt02visible" default="false" />
+        <param name="alt02pos" default="0" />
         <definition>
             <control type="group">
                 <width>900</width>
@@ -370,20 +390,33 @@
                     <param name="id" value="$PARAM[id]" />
                     <param name="pos" value="$PARAM[pos]" />
                     <param name="selected" value="$PARAM[selected]" />
-                    <param name="icon" value="$VAR[Image_Banner_C$PARAM[id]_$PARAM[pos]]" />
+                    <param name="icon" value="$VAR[Image_Banner_NoWrap_C$PARAM[id]_$PARAM[pos]]" />
                     <param name="diffuse" value="diffuse/banner-std.png" />
                 </include>
             </control>
             <control type="group">
                 <width>900</width>
                 <height>200</height>
-                <visible>String.IsEmpty(Container($PARAM[id]).ListItemNoWrap($PARAM[pos]).Label) + $PARAM[altvisible]</visible>
+                <visible>String.IsEmpty(Container($PARAM[id]).ListItemNoWrap($PARAM[pos]).Label) + $PARAM[alt01visible]</visible>
                 <include content="View_56_Banners_WallItem_Layout">
                     <param name="selectbox" value="$PARAM[selectbox]" />
                     <param name="id" value="$PARAM[id]" />
-                    <param name="pos" value="$PARAM[altpos]" />
+                    <param name="pos" value="$PARAM[alt01pos]" />
                     <param name="selected" value="$PARAM[selected]" />
-                    <param name="icon" value="$VAR[Image_Banner_Absolute_C$PARAM[id]_$PARAM[altpos]]" />
+                    <param name="icon" value="$VAR[Image_Banner_Absolute_C$PARAM[id]_$PARAM[alt01pos]]" />
+                    <param name="diffuse" value="diffuse/banner-std.png" />
+                </include>
+            </control>
+            <control type="group">
+                <width>900</width>
+                <height>200</height>
+                <visible>String.IsEmpty(Container($PARAM[id]).ListItemNoWrap($PARAM[pos]).Label) + $PARAM[alt02visible]</visible>
+                <include content="View_56_Banners_WallItem_Layout">
+                    <param name="selectbox" value="$PARAM[selectbox]" />
+                    <param name="id" value="$PARAM[id]" />
+                    <param name="pos" value="$PARAM[alt02pos]" />
+                    <param name="selected" value="$PARAM[selected]" />
+                    <param name="icon" value="$VAR[Image_Banner_Absolute_C$PARAM[id]_$PARAM[alt02pos]]" />
                     <param name="diffuse" value="diffuse/banner-std.png" />
                 </include>
             </control>
