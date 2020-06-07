@@ -805,7 +805,8 @@
                 <description>control area</description>
                 <top>view_top</top>
                 <bottom>view_pad</bottom>
-                <left>0</left>
+                <left>40</left>
+                <right>40</right>
                 <itemgap>0</itemgap>
                 <onup>5</onup>
                 <ondown>5</ondown>
@@ -849,8 +850,9 @@
 
         <control type="button" id="7">
             <description>Default Button</description>
-            <textoffsetx>60</textoffsetx>
+            <textoffsetx>20</textoffsetx>
             <textcolor>dialog_fg_70</textcolor>
+            <font>font_tiny</font>
             <include>Dialog_Standard_Button</include>
         </control>
 
@@ -858,16 +860,18 @@
             <description>Default RadioButton</description>
             <radioposx>900</radioposx>
             <textwidth>870</textwidth>
-            <textoffsetx>60</textoffsetx>
+            <textoffsetx>20</textoffsetx>
             <textcolor>dialog_fg_70</textcolor>
+            <font>font_tiny</font>
             <include>Dialog_Standard_Button</include>
         </control>
 
         <control type="spincontrolex" id="9">
             <description>Default spincontrolex</description>
             <reverse>true</reverse>
-            <textoffsetx>60</textoffsetx>
+            <textoffsetx>20</textoffsetx>
             <textcolor>dialog_fg_70</textcolor>
+            <font>font_tiny</font>
             <include>Dialog_Standard_Button</include>
         </control>
 
@@ -878,16 +882,18 @@
 
         <control type="edit" id="12">
             <description>Default Edit</description>
-            <textoffsetx>60</textoffsetx>
+            <textoffsetx>20</textoffsetx>
             <textcolor>dialog_fg_70</textcolor>
+            <font>font_tiny</font>
             <include>Dialog_Standard_Button</include>
         </control>
 
         <control type="sliderex" id="13">
             <description>Default Slider</description>
-            <width>969</width>
-            <textoffsetx>60</textoffsetx>
+            <textoffsetx>20</textoffsetx>
+            <sliderwidth>120</sliderwidth>
             <textcolor>dialog_fg_70</textcolor>
+            <font>font_tiny</font>
             <include>Dialog_Standard_Button</include>
         </control>
 
