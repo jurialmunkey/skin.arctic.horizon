@@ -643,6 +643,7 @@
                 <label>$LOCALIZE[31092]: $INFO[Container.Viewmode]</label>
                 <icon>special://skin/extras/icons/viewmode.png</icon>
                 <onclick>Runscript(script.skinvariables,action=buildviews,contentid=$VAR[Items_ViewMode_Switch],pluginname=$INFO[Container.PluginName])</onclick>
+                <visible>!Skin.HasSetting(KioskMode)</visible>
             </item>
             <!-- <item>
                 <label>$INFO[Container.Viewmode]</label>
