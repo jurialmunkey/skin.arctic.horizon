@@ -1847,11 +1847,11 @@
     <include name="Object_AlphabetNumber">
         <include content="Object_AlphabetLetter_NF">
             <param name="label" value="#" />
-            <param name="visible" value="!$EXP[Exp_SortLetterIsNumber]" />
+            <param name="visible" value="$EXP[Exp_SortLetterIsAlphabet]" />
         </include>
         <include content="Object_AlphabetLetter_FO">
             <param name="label" value="#" />
-            <param name="visible" value="$EXP[Exp_SortLetterIsNumber]" />
+            <param name="visible" value="!$EXP[Exp_SortLetterIsAlphabet]" />
         </include>
     </include>
 
@@ -1903,10 +1903,10 @@
             <onright>SetFocus(60)</onright>
             <onleft>SetFocus(50)</onleft>
             <onleft>Action(prevletter)</onleft>
-            <onleft condition="!Container.HasPrevious | $EXP[Exp_SortLetterIsNumber]">Action(jumpsms9)</onleft>
-            <onleft condition="!Container.HasPrevious | $EXP[Exp_SortLetterIsNumber]">Action(nextletter)</onleft>
-            <onleft condition="!Container.HasPrevious | $EXP[Exp_SortLetterIsNumber]">Action(nextletter)</onleft>
-            <onleft condition="!Container.HasPrevious | $EXP[Exp_SortLetterIsNumber]">Action(nextletter)</onleft>
+            <onleft condition="!Container.HasPrevious | !$EXP[Exp_SortLetterIsAlphabet]">Action(jumpsms9)</onleft>
+            <onleft condition="!Container.HasPrevious | !$EXP[Exp_SortLetterIsAlphabet]">Action(nextletter)</onleft>
+            <onleft condition="!Container.HasPrevious | !$EXP[Exp_SortLetterIsAlphabet]">Action(nextletter)</onleft>
+            <onleft condition="!Container.HasPrevious | !$EXP[Exp_SortLetterIsAlphabet]">Action(nextletter)</onleft>
             <onleft>SetFocus(60)</onleft>
             <ondown condition="Container.CanFilterAdvanced">SetProperty(advancedfilter,1,home)</ondown>
             <ondown condition="Container.CanFilterAdvanced">SetFocus(50)</ondown>
