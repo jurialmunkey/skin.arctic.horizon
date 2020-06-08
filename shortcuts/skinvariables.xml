@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+    <variable name="Label_SmallLandscapeWidget_Sublabel" containers="54,5610,530" start="-10" end="17">
+        <value condition="!String.IsEmpty({listitem}.ChannelName)">$INFO[{listitem}.ChannelName]</value>
+        <value condition="!String.IsEmpty({listitem}.Property(NextDay))">$INFO[{listitem}.Property(NextDay)]$INFO[{listitem}.Property(ShortTime), @ ,]</value>
+        <value condition="!String.IsEmpty({listitem}.TvShowTitle) + !String.IsEqual({listitem}.Label,{listitem}.TvShowTitle)">$INFO[{listitem}.TvShowTitle]</value>
+        <value condition="!String.IsEmpty({listitem}.Studio) + [String.IsEqual({listitem}.DBType,video) | [String.IsEmpty({listitem}.DBType) + String.IsEmpty({listitem}.Genre)]]">$INFO[{listitem}.Studio]$INFO[{listitem}.Duration, - ,]</value>
+        <value condition="!String.IsEmpty({listitem}.Artist) + String.IsEmpty({listitem}.Genre)">$INFO[{listitem}.Artist]</value>
+        <value condition="!String.IsEmpty({listitem}.Genre)">$INFO[{listitem}.Genre]</value>
+        <value condition="!String.IsEmpty({listitem}.Duration)">$INFO[{listitem}.Duration]</value>
+        <value condition="!String.IsEmpty({listitem}.AddonVersion)">$INFO[{listitem}.AddonVersion]</value>
+        <value condition="!String.IsEmpty({listitem}.PictureResolution)">$INFO[{listitem}.PictureResolution]</value>
+        <value condition="!String.IsEmpty({listitem}.Label2)">$INFO[{listitem}.Label2]</value>
+    </variable>
+
+    <variable name="Image_Banner" containers="56" start="-6" end="11">
+        <value condition="!String.IsEmpty({listitem}.Art(banner))">$INFO[{listitem}.Art(banner)]</value>
+        <value condition="!String.IsEmpty({listitem}.Art(tvshow.banner))">$INFO[{listitem}.Art(tvshow.banner)]</value>
+        <value condition="!String.IsEmpty({listitem}.Art(fanart))">$INFO[{listitem}.Art(fanart)]</value>
+        <value>$INFO[{listitem}.Icon]</value>
+    </variable>
+
+    <variable name="Image_Banner_NoWrap" containers="56" start="-6" end="11">
+        <value condition="!String.IsEmpty({listitemnowrap}.Art(banner))">$INFO[{listitemnowrap}.Art(banner)]</value>
+        <value condition="!String.IsEmpty({listitemnowrap}.Art(tvshow.banner))">$INFO[{listitemnowrap}.Art(tvshow.banner)]</value>
+        <value condition="!String.IsEmpty({listitemnowrap}.Art(fanart))">$INFO[{listitemnowrap}.Art(fanart)]</value>
+        <value>$INFO[{listitemnowrap}.Icon]</value>
+    </variable>
+
+    <variable name="Image_Banner_Absolute" containers="56" start="-6" end="11">
+        <value condition="!String.IsEmpty({listitemabsolute}.Art(banner))">$INFO[{listitemabsolute}.Art(banner)]</value>
+        <value condition="!String.IsEmpty({listitemabsolute}.Art(tvshow.banner))">$INFO[{listitemabsolute}.Art(tvshow.banner)]</value>
+        <value condition="!String.IsEmpty({listitemabsolute}.Art(fanart))">$INFO[{listitemabsolute}.Art(fanart)]</value>
+        <value>$INFO[{listitemabsolute}.Icon]</value>
+    </variable>
+
+    <variable name="Image_Landscape" containers="54,5610,530" start="-10" end="17" parent="Control.HasFocus({id})">
+        <value condition="Container.Content(images)">$INFO[{listitem}.Icon]</value>
+        <value condition="!String.IsEmpty({listitem}.Art(thumb)) + String.IsEqual({listitem}.DBType,video) + !String.IsEqual({listitem}.Art(thumb),OverlaySpoiler.png)">$INFO[{listitem}.Art(thumb)]</value>
+        <value condition="!String.IsEmpty({listitem}.Art(thumb)) + String.IsEqual({listitem}.DBType,episode) + String.IsEmpty({listitem}.Property(airday)) + !String.IsEqual({listitem}.Art(thumb),OverlaySpoiler.png) + !String.IsEqual({listitem}.Art(thumb),{listitem}.Art(poster)) + !String.IsEqual({listitem}.Art(thumb),{listitem}.Art(tvshow.poster)) + !String.IsEqual({listitem}.Art(thumb),{listitem}.ActualIcon)">$INFO[{listitem}.Art(thumb)]</value>
+        <value condition="!String.IsEmpty({listitem}.Art(tvshow.landscape)) + !Skin.HasSetting(DisableLandscapeArt)">$INFO[{listitem}.Art(tvshow.landscape)]</value>
+        <value condition="!String.IsEmpty({listitem}.Art(landscape)) + !Skin.HasSetting(DisableLandscapeArt)">$INFO[{listitem}.Art(landscape)]</value>
+        <value condition="!String.IsEmpty({listitem}.Art(tvshow.fanart))">$INFO[{listitem}.Art(tvshow.fanart)]</value>
+        <value condition="!String.IsEmpty({listitem}.Art(fanart))">$INFO[{listitem}.Art(fanart)]</value>
+        <value condition="!String.IsEmpty({listitem}.Property(fanart))">$INFO[{listitem}.Property(fanart)]</value>
+        <value condition="!String.IsEmpty({listitem}.Thumb)">$INFO[{listitem}.Thumb]</value>
+        <value condition="!String.IsEmpty({listitem}.Art(thumb))">$INFO[{listitem}.Art(thumb)]</value>
+        <value>$INFO[{listitem}.Icon]</value>
+    </variable>
+
+    <variable name="Label_Landscape_Title" containers="54,5610,530" start="-10" end="17">
+        <value condition="String.IsEqual({listitem}.DBType,album) | String.IsEqual({listitem}.DBType,song)">$INFO[{listitem}.Album]</value>
+        <value condition="String.IsEqual({listitem}.DBType,episode)">$INFO[{listitem}.Label]</value>
+        <value condition="!String.IsEmpty({listitem}.Title)">$INFO[{listitem}.Title]</value>
+        <value condition="!String.IsEmpty({listitem}.Label)">$INFO[{listitem}.Label]</value>
+        <value condition="Window.IsVisible(DialogAddonInfo.xml)">$LOCALIZE[31209]</value>
+    </variable>
+
+    <variable name="Label_Plot" containers="530,3001,5610">
+        <value condition="Window.IsVisible(1140) + Control.HasFocus(5002) + !String.IsEmpty(Container(5002).ListItem.Plot)">$INFO[Container(5002).ListItem.Plot]</value>
+        <value condition="!String.IsEmpty({listitem}.Property(Artist_Description))">$INFO[{listitem}.Property(Artist_Description)]</value>
+        <value condition="!String.IsEmpty({listitem}.Property(Album_Description))">$INFO[{listitem}.Property(Album_Description)]</value>
+        <value condition="!String.IsEmpty({listitem}.AddonDescription)">$INFO[{listitem}.AddonDescription]</value>
+        <value condition="!String.IsEmpty({listitem}.PlotOutline) + Skin.HasSetting(PlotOutline)">$INFO[{listitem}.PlotOutline]</value>
+        <value condition="!String.IsEmpty({listitem}.Plot)">$INFO[{listitem}.Plot]</value>
+        <value condition="!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Plot))">$INFO[Window(Home).Property(TMDbHelper.ListItem.Plot)]</value>
+    </variable>
+
+    <expression name="Exp_DefaultIcon" containers="51,52,53,54,55,530,3001,5610" start="-16" end="29">[String.IsEmpty({listitem}.Art(poster)) + String.IsEmpty({listitem}.Art(tvshow.poster)) + String.IsEmpty({listitem}.Art(fanart)) + String.IsEmpty({listitem}.Art(tvshow.fanart)) + String.IsEmpty({listitem}.Art(clearlogo))  + String.IsEmpty({listitem}.Art(landscape)) + [String.IsEqual({listitem}.Icon,{listitem}.ActualIcon) | [Window.IsVisible(AddonBrowser.xml) + String.IsEmpty({listitem}.AddonName)] | [Window.IsMedia + String.IsEmpty(Container.FolderPath)]]]</expression>
+
+    <expression name="Exp_SpecialIcon" containers="51,52,53,54,55,530,3001,5610" start="-16" end="29">[[String.IsEqual({listitem}.DBType,country) | String.IsEqual({listitem}.Property(dbtype),country) | String.IsEqual({listitem}.DBType,studio) | String.IsEqual({listitem}.Property(dbtype),studio) | String.IsEqual({listitem}.DBType,genre) | String.IsEqual({listitem}.Property(dbtype),genre)] | [[!String.IsEmpty({listitem}.ChannelNumberLabel) | !String.IsEmpty({listitem}.ChannelName) | !String.IsEmpty({listitem}.ChannelNumber)] + [String.IsEmpty({listitem}.Art(poster)) + String.IsEmpty({listitem}.Art(tvshow.poster)) + String.IsEmpty({listitem}.Art(fanart))]]]</expression>
+
+    <variable name="Image_DefaultIcon" containers="51,52,53,54,55,530,3001,5610" start="-16" end="29">
+        <value condition="String.IsEqual({listitem}.DBType,country) | String.IsEqual({listitem}.Property(dbtype),country)">$INFO[{listitem}.Label,resource://resource.images.moviecountryicons.maps/,.png]</value>
+        <value condition="String.IsEqual({listitem}.DBType,studio) | String.IsEqual({listitem}.Property(dbtype),studio)">$INFO[{listitem}.Label,resource://resource.images.studios.white/,.png]</value>
+        <value condition="String.IsEqual({listitem}.DBType,genre) | String.IsEqual({listitem}.Property(dbtype),genre)">$VAR[Image_GenreIcons_Path]$INFO[{listitem}.Label,,.png]</value>
+        <value>$INFO[{listitem}.Icon]</value>
+    </variable>
+
+    <variable name="Image_Poster" containers="51,52,53,54,55,530,3001,5610" start="-16" end="29">
+        <value condition="!String.IsEmpty({listitem}.Art(season.poster)) + !Window.IsVisible(Home)">$INFO[{listitem}.Art(season.poster)]</value>
+        <value condition="!String.IsEmpty({listitem}.Art(tvshow.poster)) + [String.IsEqual({listitem}.Property(Container.Info),library_nextaired) | String.IsEqual({listitem}.Property(Container.Info),trakt_calendar)]">$INFO[{listitem}.Art(tvshow.poster)]</value>
+        <value condition="!String.IsEmpty({listitem}.Art(poster))">$INFO[{listitem}.Art(poster)]</value>
+        <value condition="!String.IsEmpty({listitem}.Art(tvshow.poster))">$INFO[{listitem}.Art(tvshow.poster)]</value>
+        <value>$INFO[{listitem}.Icon]</value>
+    </variable>
+
+</includes>
