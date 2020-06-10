@@ -10,6 +10,7 @@
                     <texture colordiffuse="7fffffff">common/panel.png</texture>
                     <visible>!Skin.HasSetting(DisablePanelDivider)</visible>
                 </control>
+
                 <include content="Topbar_Left">
                     <param name="fgcolor" value="main_fg" />
                     <param name="label" value="$LOCALIZE[14116]" />

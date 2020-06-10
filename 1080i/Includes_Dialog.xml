@@ -4,7 +4,7 @@
         <param name="include-icon" default="false" />
         <param name="global_overlay" default="true" />
         <definition>
-            <include content="Object_Control" condition="global_overlay">
+            <include content="Object_Control" condition="$PARAM[global_overlay]">
                 <param name="type" value="group" />
                 <visible>Control.HasFocus($PARAM[id])</visible>
                 <include>Animation_FadeInOut</include>

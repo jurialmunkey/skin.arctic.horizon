@@ -56,7 +56,7 @@
             <param name="id" value="3112" />
             <param name="header" value="$LOCALIZE[33063]" />
             <param name="content" value="Items_OSD_MusicVis" />
-            <param name="visible" value="Control.HasFocus(3112)" />
+            <param name="visible" value="Control.HasFocus(3112) + !Window.IsVisible(DialogSlider.xml)" />
             <param name="include-icon" value="true" />
             <param name="onleft" value="9000" />
             <param name="onright" value="9000" />
