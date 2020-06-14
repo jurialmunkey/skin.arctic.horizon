@@ -652,6 +652,35 @@
         <include>Object_NowPlaying</include>
     </include>
 
+    <include name="Defs_RedArrow">
+        <control type="group">
+            <nested />
+            <control type="image">
+                <top>0</top>
+                <centerleft>50%</centerleft>
+                <width>16</width>
+                <height>16</height>
+                <texture colordiffuse="ffaa00aa" flipy="true">common/arrow-small.png</texture>
+            </control>
+            <control type="label">
+                <centertop>50%</centertop>
+                <height>30</height>
+                <textcolor>ffaa00aa</textcolor>
+                <font>font_statusbar</font>
+                <label>$PARAM[label]</label>
+                <aligny>center</aligny>
+                <align>center</align>
+            </control>
+            <control type="image">
+                <bottom>0</bottom>
+                <centerleft>50%</centerleft>
+                <width>16</width>
+                <height>16</height>
+                <texture colordiffuse="ffaa00aa" flipy="false">common/arrow-small.png</texture>
+            </control>
+        </control>
+    </include>
+
     <include name="Defs_Settings_Changer">
         <definition>
             <control type="list" id="300">

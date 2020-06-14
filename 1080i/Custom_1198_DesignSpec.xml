@@ -1,0 +1,858 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window type="window" id="1198">
+    <controls>
+
+        <!-- BACKING PANELS -->
+        <control type="group">
+            <control type="image">
+                <bottom>0</bottom>
+                <left>640</left>
+                <width>560</width>
+                <height>720</height>
+                <texture colordiffuse="1f00aaff">common/white.png</texture>
+            </control>
+            <control type="image">
+                <bottom>0</bottom>
+                <left>0</left>
+                <width>560</width>
+                <height>480</height>
+                <texture colordiffuse="1f00aaff">common/white.png</texture>
+            </control>
+        </control>
+
+        <!-- LEFT DIMENSIONS -->
+        <control type="image">
+            <left>40</left>
+            <width>1</width>
+            <texture colordiffuse="7faa00aa">common/white.png</texture>
+        </control>
+        <control type="grouplist">
+            <left>0</left>
+            <orientation>vertical</orientation>
+            <width>80</width>
+            <itemgap>0</itemgap>
+            <include content="Defs_RedArrow">
+                <param name="label" value="80px" />
+                <height>80</height>
+            </include>
+            <control type="label">
+                <height>40</height>
+                <textcolor>ffaa00aa</textcolor>
+                <font>font_statusbar</font>
+                <label>40px</label>
+                <aligny>center</aligny>
+                <align>center</align>
+            </control>
+            <include content="Defs_RedArrow">
+                <param name="label" value="80px" />
+                <height>80</height>
+            </include>
+            <include content="Defs_RedArrow">
+                <param name="label" value="160px" />
+                <height>160</height>
+            </include>
+            <include content="Defs_RedArrow">
+                <param name="label" value="240px" />
+                <height>240</height>
+            </include>
+            <include content="Defs_RedArrow">
+                <param name="label" value="80px" />
+                <height>80</height>
+            </include>
+            <include content="Defs_RedArrow">
+                <param name="label" value="320px" />
+                <height>320</height>
+            </include>
+            <include content="Defs_RedArrow">
+                <param name="label" value="80px" />
+                <height>80</height>
+            </include>
+        </control>
+
+        <!-- BUTTON DIMENSIONS -->
+        <include content="Defs_RedArrow">
+            <param name="label" value="60px" />
+            <height>60</height>
+            <left>200</left>
+            <top>500</top>
+            <width>160</width>
+        </include>
+
+        <!-- MIDDLE DIMENSIONS -->
+        <control type="image">
+            <left>600</left>
+            <width>1</width>
+            <texture colordiffuse="7faa00aa">common/white.png</texture>
+        </control>
+        <control type="grouplist">
+            <left>560</left>
+            <orientation>vertical</orientation>
+            <width>80</width>
+            <itemgap>0</itemgap>
+            <include content="Defs_RedArrow">
+                <param name="label" value="80px" />
+                <height>80</height>
+            </include>
+            <control type="label">
+                <height>40</height>
+                <textcolor>ffaa00aa</textcolor>
+                <font>font_statusbar</font>
+                <label>40px</label>
+                <aligny>center</aligny>
+                <align>center</align>
+            </control>
+            <include content="Defs_RedArrow">
+                <param name="label" value="80px" />
+                <height>80</height>
+            </include>
+            <include content="Defs_RedArrow">
+                <param name="label" value="160px" />
+                <height>160</height>
+            </include>
+            <include content="Defs_RedArrow">
+                <param name="label" value="80px" />
+                <height>80</height>
+            </include>
+            <include content="Defs_RedArrow">
+                <param name="label" value="160px" />
+                <height>160</height>
+            </include>
+            <control type="label">
+                <height>40</height>
+                <textcolor>ffaa00aa</textcolor>
+                <font>font_statusbar</font>
+                <label>40px</label>
+                <aligny>center</aligny>
+                <align>center</align>
+            </control>
+            <include content="Defs_RedArrow">
+                <param name="label" value="160px" />
+                <height>160</height>
+            </include>
+            <control type="label">
+                <height>40</height>
+                <textcolor>ffaa00aa</textcolor>
+                <font>font_statusbar</font>
+                <label>40px</label>
+                <aligny>center</aligny>
+                <align>center</align>
+            </control>
+            <include content="Defs_RedArrow">
+                <param name="label" value="160px" />
+                <height>160</height>
+            </include>
+            <include content="Defs_RedArrow">
+                <param name="label" value="80px" />
+                <height>80</height>
+            </include>
+        </control>
+
+        <!-- RIGHT DIMENSIONS -->
+        <control type="image">
+            <left>1240</left>
+            <width>1</width>
+            <texture colordiffuse="7faa00aa">common/white.png</texture>
+        </control>
+        <control type="grouplist">
+            <left>1200</left>
+            <orientation>vertical</orientation>
+            <width>80</width>
+            <itemgap>0</itemgap>
+            <include content="Defs_RedArrow">
+                <param name="label" value="80px" />
+                <height>80</height>
+            </include>
+            <control type="label">
+                <height>40</height>
+                <textcolor>ffaa00aa</textcolor>
+                <font>font_statusbar</font>
+                <label>40px</label>
+                <aligny>center</aligny>
+                <align>center</align>
+            </control>
+            <include content="Defs_RedArrow">
+                <param name="label" value="80px" />
+                <height>80</height>
+            </include>
+
+            <include content="Defs_RedArrow">
+                <param name="label" value="370px" />
+                <height>370</height>
+            </include>
+            <control type="label">
+                <height>60</height>
+                <textcolor>ffaa00aa</textcolor>
+                <font>font_statusbar</font>
+                <label>60px</label>
+                <aligny>center</aligny>
+                <align>center</align>
+            </control>
+            <include content="Defs_RedArrow">
+                <param name="label" value="370px" />
+                <height>370</height>
+            </include>
+        </control>
+
+
+        <control type="grouplist">
+            <left>1600</left>
+            <bottom>80</bottom>
+            <align>bottom</align>
+            <orientation>vertical</orientation>
+            <width>80</width>
+            <itemgap>0</itemgap>
+            <include content="Defs_RedArrow">
+                <param name="label" value="110px" />
+                <height>110</height>
+            </include>
+            <include content="Defs_RedArrow">
+                <param name="label" value="320px" />
+                <height>320</height>
+            </include>
+        </control>
+
+        <!-- GRID LINES -->
+        <control type="group">
+            <control type="grouplist">
+                <left>80</left>
+                <itemgap>79</itemgap>
+                <orientation>horizontal</orientation>
+                <control type="image">
+                    <width>1</width>
+                    <texture colordiffuse="44ff0000">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <width>1</width>
+                    <texture colordiffuse="44ff0000">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <width>1</width>
+                    <texture colordiffuse="44ff0000">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <width>1</width>
+                    <texture colordiffuse="44ff0000">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <width>1</width>
+                    <texture colordiffuse="44ff0000">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <width>1</width>
+                    <texture colordiffuse="44ff0000">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <width>1</width>
+                    <texture colordiffuse="44ff0000">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <width>1</width>
+                    <texture colordiffuse="44ff0000">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <width>1</width>
+                    <texture colordiffuse="44ff0000">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <width>1</width>
+                    <texture colordiffuse="44ff0000">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <width>1</width>
+                    <texture colordiffuse="44ff0000">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <width>1</width>
+                    <texture colordiffuse="44ff0000">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <width>1</width>
+                    <texture colordiffuse="44ff0000">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <width>1</width>
+                    <texture colordiffuse="44ff0000">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <width>1</width>
+                    <texture colordiffuse="44ff0000">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <width>1</width>
+                    <texture colordiffuse="44ff0000">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <width>1</width>
+                    <texture colordiffuse="44ff0000">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <width>1</width>
+                    <texture colordiffuse="44ff0000">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <width>1</width>
+                    <texture colordiffuse="44ff0000">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <width>1</width>
+                    <texture colordiffuse="44ff0000">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <width>1</width>
+                    <texture colordiffuse="44ff0000">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <width>1</width>
+                    <texture colordiffuse="44ff0000">common/white.png</texture>
+                </control>
+            </control>
+
+            <control type="grouplist">
+                <left>40</left>
+                <itemgap>79</itemgap>
+                <orientation>horizontal</orientation>
+                <control type="image">
+                    <width>1</width>
+                    <texture colordiffuse="22ff00ff">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <width>1</width>
+                    <texture colordiffuse="22ff00ff">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <width>1</width>
+                    <texture colordiffuse="22ff00ff">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <width>1</width>
+                    <texture colordiffuse="22ff00ff">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <width>1</width>
+                    <texture colordiffuse="22ff00ff">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <width>1</width>
+                    <texture colordiffuse="22ff00ff">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <width>1</width>
+                    <texture colordiffuse="22ff00ff">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <width>1</width>
+                    <texture colordiffuse="22ff00ff">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <width>1</width>
+                    <texture colordiffuse="22ff00ff">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <width>1</width>
+                    <texture colordiffuse="22ff00ff">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <width>1</width>
+                    <texture colordiffuse="22ff00ff">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <width>1</width>
+                    <texture colordiffuse="22ff00ff">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <width>1</width>
+                    <texture colordiffuse="22ff00ff">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <width>1</width>
+                    <texture colordiffuse="22ff00ff">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <width>1</width>
+                    <texture colordiffuse="22ff00ff">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <width>1</width>
+                    <texture colordiffuse="22ff00ff">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <width>1</width>
+                    <texture colordiffuse="22ff00ff">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <width>1</width>
+                    <texture colordiffuse="22ff00ff">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <width>1</width>
+                    <texture colordiffuse="22ff00ff">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <width>1</width>
+                    <texture colordiffuse="22ff00ff">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <width>1</width>
+                    <texture colordiffuse="22ff00ff">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <width>1</width>
+                    <texture colordiffuse="22ff00ff">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <width>1</width>
+                    <texture colordiffuse="22ff00ff">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <width>1</width>
+                    <texture colordiffuse="22ff00ff">common/white.png</texture>
+                </control>
+            </control>
+
+            <control type="grouplist">
+                <top>200</top>
+                <itemgap>79</itemgap>
+                <control type="image">
+                    <height>1</height>
+                    <texture colordiffuse="44ff0000">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <height>1</height>
+                    <texture colordiffuse="44ff0000">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <height>1</height>
+                    <texture colordiffuse="44ff0000">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <height>1</height>
+                    <texture colordiffuse="44ff0000">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <height>1</height>
+                    <texture colordiffuse="44ff0000">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <height>1</height>
+                    <texture colordiffuse="44ff0000">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <height>1</height>
+                    <texture colordiffuse="44ff0000">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <height>1</height>
+                    <texture colordiffuse="44ff0000">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <height>1</height>
+                    <texture colordiffuse="44ff0000">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <height>1</height>
+                    <texture colordiffuse="44ff0000">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <height>1</height>
+                    <texture colordiffuse="44ff0000">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <height>1</height>
+                    <texture colordiffuse="44ff0000">common/white.png</texture>
+                </control>
+            </control>
+
+            <control type="image">
+                <top>40</top>
+                <height>1</height>
+                <texture colordiffuse="22ff00ff">common/white.png</texture>
+            </control>
+            <control type="grouplist">
+                <top>160</top>
+                <itemgap>79</itemgap>
+                <control type="image">
+                    <height>1</height>
+                    <texture colordiffuse="22ff00ff">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <height>1</height>
+                    <texture colordiffuse="22ff00ff">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <height>1</height>
+                    <texture colordiffuse="22ff00ff">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <height>1</height>
+                    <texture colordiffuse="22ff00ff">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <height>1</height>
+                    <texture colordiffuse="22ff00ff">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <height>1</height>
+                    <texture colordiffuse="22ff00ff">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <height>1</height>
+                    <texture colordiffuse="22ff00ff">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <height>1</height>
+                    <texture colordiffuse="22ff00ff">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <height>1</height>
+                    <texture colordiffuse="22ff00ff">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <height>1</height>
+                    <texture colordiffuse="22ff00ff">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <height>1</height>
+                    <texture colordiffuse="22ff00ff">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <height>1</height>
+                    <texture colordiffuse="22ff00ff">common/white.png</texture>
+                </control>
+            </control>
+
+            <control type="group">
+
+                <control type="image">
+                    <left>view_pad</left>
+                    <width>1</width>
+                    <texture colordiffuse="red">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <left>560</left>
+                    <width>1</width>
+                    <texture colordiffuse="red">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <left>640</left>
+                    <width>1</width>
+                    <texture colordiffuse="red">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <left>1200</left>
+                    <width>1</width>
+                    <texture colordiffuse="red">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <left>1280</left>
+                    <width>1</width>
+                    <texture colordiffuse="red">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <right>view_pad</right>
+                    <width>1</width>
+                    <texture colordiffuse="red">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <centertop>360</centertop>
+                    <height>1</height>
+                    <width>560</width>
+                    <left>640</left>
+                    <texture colordiffuse="red">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <centertop>600</centertop>
+                    <height>1</height>
+                    <width>560</width>
+                    <texture colordiffuse="red">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <centertop>570</centertop>
+                    <height>1</height>
+                    <width>640</width>
+                    <right>0</right>
+                    <texture colordiffuse="red">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <top>view_pad</top>
+                    <height>1</height>
+                    <texture colordiffuse="red">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <top>120</top>
+                    <height>1</height>
+                    <texture colordiffuse="red">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <top>view_top</top>
+                    <height>1</height>
+                    <texture colordiffuse="red">common/white.png</texture>
+                </control>
+                <control type="image">
+                    <bottom>view_pad</bottom>
+                    <height>1</height>
+                    <texture colordiffuse="red">common/white.png</texture>
+                </control>
+            </control>
+        </control>
+
+        <!-- MIDDLE INFO -->
+        <control type="group">
+            <left>560</left>
+            <width>640</width>
+            <include content="Topbar_Left">
+                <param name="label" value="Panel / List View" />
+            </include>
+
+            <control type="group">
+                <include>View_Pad</include>
+                <control type="grouplist">
+                    <top>-15</top>
+                    <orientation>vertical</orientation>
+                    <usecontrolcoords>true</usecontrolcoords>
+                    <itemgap>0</itemgap>
+                    <control type="label">
+                        <aligny>top</aligny>
+                        <height>72</height>
+                        <font>font_title_large</font>
+                        <textcolor>main_fg_100</textcolor>
+                        <label>Title</label>
+                    </control>
+                    <control type="label">
+                        <height>42</height>
+                        <font>font_small</font>
+                        <textcolor>main_fg_100</textcolor>
+                        <label>Information Line</label>
+                    </control>
+                </control>
+
+                <control type="group">
+                    <height>50</height>
+                    <top>188</top>
+                    <control type="label">
+                        <height>24</height>
+                        <font>font_tiny_bold</font>
+                        <textcolor>main_fg_100</textcolor>
+                        <label>Content and Sort Method</label>
+                    </control>
+                </control>
+
+                <control type="group">
+                    <right>-120</right>
+                    <bottom>0</bottom>
+                    <width>item_poster_width</width>
+                    <height>360</height>
+                    <control type="image">
+                        <right>40</right>
+                        <top>40</top>
+                        <texture border="16" colordiffuse="33ff0000">common/box.png</texture>
+                    </control>
+                </control>
+                <control type="group">
+                    <bottom>360</bottom>
+                    <right>-120</right>
+                    <width>item_poster_width</width>
+                    <height>360</height>
+                    <control type="image">
+                        <right>40</right>
+                        <top>40</top>
+                        <texture border="16" colordiffuse="33ff0000">common/box.png</texture>
+                    </control>
+                </control>
+
+
+                <control type="group">
+                    <bottom>0</bottom>
+                    <width>item_poster_width</width>
+                    <height>200</height>
+                    <control type="image">
+                        <right>40</right>
+                        <top>40</top>
+                        <texture border="16" colordiffuse="main_fg_12">common/box.png</texture>
+                    </control>
+                </control>
+
+                <control type="group">
+                    <bottom>200</bottom>
+                    <width>item_poster_width</width>
+                    <height>200</height>
+                    <control type="image">
+                        <right>40</right>
+                        <top>40</top>
+                        <texture border="16" colordiffuse="main_fg_12">common/box.png</texture>
+                    </control>
+                </control>
+
+                <control type="group">
+                    <bottom>400</bottom>
+                    <width>item_poster_width</width>
+                    <height>200</height>
+                    <control type="image">
+                        <right>40</right>
+                        <top>40</top>
+                        <texture border="16" colordiffuse="main_fg_12">common/box.png</texture>
+                    </control>
+                </control>
+            </control>
+        </control>
+
+        <!-- LEFT INFO -->
+        <control type="group">
+            <left>0</left>
+            <width>640</width>
+            <include content="Topbar_Left">
+                <param name="label" value="Info View" />
+            </include>
+
+            <control type="group">
+                <include>View_Pad</include>
+                <control type="grouplist">
+                    <top>-15</top>
+                    <orientation>vertical</orientation>
+                    <usecontrolcoords>true</usecontrolcoords>
+                    <itemgap>0</itemgap>
+                    <control type="label">
+                        <aligny>top</aligny>
+                        <height>72</height>
+                        <font>font_title_large</font>
+                        <textcolor>main_fg_100</textcolor>
+                        <label>Title</label>
+                    </control>
+                    <control type="label">
+                        <height>42</height>
+                        <font>font_small</font>
+                        <textcolor>main_fg_100</textcolor>
+                        <label>Information Line</label>
+                    </control>
+                    <include>Object_Info_Ratings</include>
+                    <include content="Object_Info_Plot">
+                        <param name="maxheight" value="80" />
+                        <param name="height" value="80" />
+                        <param name="label" value="Plot text goes here. Plot text goes here. Plot text goes here. Plot text goes here. Plot text goes here. Plot text goes here..." />
+                        <param name="control-type" value="textbox" />
+                        <top>30</top>
+                    </include>
+                </control>
+
+                <include content="Viewtype_Buttons">
+                    <param name="id" value="9000" />
+                    <param name="itemlayout-width" value="247.14" />
+                    <param name="offset" value="0" />
+                    <param name="control-type" value="fixedlist" />
+                    <param name="viewtype-label" value="$LOCALIZE[33054]" />
+                    <movement>3</movement>
+                    <preloaditems>2</preloaditems>
+                    <height>120</height>
+                    <width>1120</width>
+
+                    <left>-20</left>
+                    <bottom>400</bottom>
+                    <content>
+                        <item>
+                            <label>Buttons</label>
+                        </item>
+                    </content>
+                </include>
+
+                <control type="group">
+                    <height>50</height>
+                    <top>428</top>
+                    <control type="label">
+                        <height>24</height>
+                        <font>font_tiny_bold</font>
+                        <textcolor>main_fg_100</textcolor>
+                        <label>Content and Sort Method</label>
+                    </control>
+                </control>
+
+                <control type="group">
+                    <bottom>0</bottom>
+                    <width>item_poster_width</width>
+                    <height>360</height>
+                    <control type="image">
+                        <right>40</right>
+                        <top>40</top>
+                        <texture border="16" colordiffuse="main_fg_12">common/box.png</texture>
+                    </control>
+                </control>
+                <!-- <control type="group">
+                    <bottom>0</bottom>
+                    <left>item_poster_width</left>
+                    <width>item_poster_width</width>
+                    <height>360</height>
+                    <control type="image">
+                        <right>40</right>
+                        <top>40</top>
+                        <texture border="16" colordiffuse="main_fg_12">common/box.png</texture>
+                    </control>
+                </control> -->
+            </control>
+        </control>
+
+        <!-- RIGHT INFO -->
+        <control type="group">
+            <left>1200</left>
+            <width>640</width>
+            <include content="Topbar_Left">
+                <param name="label" value="Widgets" />
+            </include>
+
+            <control type="group">
+                <include>View_Pad</include>
+
+                <control type="group">
+                    <height>50</height>
+                    <top>-2</top>
+                    <control type="label">
+                        <height>24</height>
+                        <font>font_tiny_bold</font>
+                        <textcolor>main_fg_100</textcolor>
+                        <label>Widget Name and Item Title</label>
+                    </control>
+                </control>
+
+                <control type="group">
+                    <height>50</height>
+                    <top>428</top>
+                    <control type="label">
+                        <height>24</height>
+                        <font>font_tiny_bold</font>
+                        <textcolor>main_fg_100</textcolor>
+                        <label>Widget Name and Item Title</label>
+                    </control>
+                </control>
+
+                <control type="group">
+                    <height>50</height>
+                    <bottom>-112</bottom>
+                    <control type="label">
+                        <height>24</height>
+                        <font>font_tiny_bold</font>
+                        <textcolor>main_fg_100</textcolor>
+                        <label>Widget Name and Item Title</label>
+                    </control>
+                </control>
+
+                <control type="group">
+                    <bottom>0</bottom>
+                    <width>item_poster_width</width>
+                    <height>360</height>
+                    <control type="image">
+                        <right>40</right>
+                        <top>40</top>
+                        <texture border="16" colordiffuse="main_fg_12">common/box.png</texture>
+                    </control>
+                </control>
+                <control type="group">
+                    <bottom>430</bottom>
+                    <width>item_poster_width</width>
+                    <height>360</height>
+                    <control type="image">
+                        <right>40</right>
+                        <top>40</top>
+                        <texture border="16" colordiffuse="main_fg_12">common/box.png</texture>
+                    </control>
+                </control>
+            </control>
+        </control>
+    </controls>
+</window>
