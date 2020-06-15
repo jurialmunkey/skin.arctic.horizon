@@ -387,19 +387,21 @@
     <include name="OSD_Clock">
         <!-- Clock -->
         <control type="group">
-            <top>30</top>
-            <height>120</height>
-            <width>500</width>
-            <right>0</right>
             <include>Animation_FadeInOut</include>
             <visible>String.IsEmpty(Player.SeekNumeric) + String.IsEmpty(PVR.ChannelNumberInput)</visible>
-            <control type="image">
-                <left>-400</left>
-                <right>-700</right>
-                <top>-200</top>
-                <bottom>-100</bottom>
-                <aspectratio>stretch</aspectratio>
-                <texture>common/shadowspot.png</texture>
+            <control type="group">
+                <top>30</top>
+                <height>120</height>
+                <width>500</width>
+                <right>0</right>
+                <control type="image">
+                    <left>-400</left>
+                    <right>-700</right>
+                    <top>-200</top>
+                    <bottom>-100</bottom>
+                    <aspectratio>stretch</aspectratio>
+                    <texture>common/shadowspot.png</texture>
+                </control>
             </control>
             <include condition="!Skin.HasSetting(DisableClock)" content="Topbar_Right">
                 <param name="fgcolor" value="panel_fg" />

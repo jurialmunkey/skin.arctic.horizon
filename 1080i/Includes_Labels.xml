@@ -287,6 +287,7 @@
     </variable>
 
     <variable name="Label_Header_Content">
+        <value condition="!String.IsEmpty(PVR.ChannelNumberInput)">$INFO[PVR.ChannelNumberInput]</value>
         <value condition="!String.IsEmpty(Window.Property(Header_Left_Text))">$INFO[Window.Property(Header_Left_Text)]</value>
         <value condition="Window.IsVisible(interfacesettings)">$LOCALIZE[5] [COLOR=$VAR[ColorHighlight]]|[/COLOR] $LOCALIZE[14206]</value>
         <value condition="Window.IsVisible(skinsettings)">$LOCALIZE[5] [COLOR=$VAR[ColorHighlight]]|[/COLOR] $LOCALIZE[166]</value>
