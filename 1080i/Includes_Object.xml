@@ -1585,6 +1585,14 @@
                     <visible>!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Oscar_Wins))</visible>
                 </include>
                 <include content="Object_Control" condition="[$PARAM[oscars]] + !Skin.HasSetting(DisableOscarRating)">
+                    <param name="type" value="image" />
+                    <top>0</top>
+                    <width>32</width>
+                    <height>32</height>
+                    <texture colordiffuse="$PARAM[colordiffuse]_100">flags/$PARAM[directory]/ratings/goldenglobe.png</texture>
+                    <visible>String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Oscar_Wins)) + !String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.GoldenGlobe_Wins))</visible>
+                </include>
+                <include content="Object_Control" condition="[$PARAM[oscars]] + !Skin.HasSetting(DisableOscarRating)">
                     <param name="type" value="label" />
                     <textcolor>$PARAM[colordiffuse]_70</textcolor>
                     <top>2</top>
@@ -1592,8 +1600,8 @@
                     <height>28</height>
                     <align>right</align>
                     <font>font_tiny</font>
-                    <label>$INFO[Window(Home).Property(TMDbHelper.ListItem.Oscar_Wins),x,   ]</label>
-                    <visible>!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Oscar_Wins))</visible>
+                    <label>$VAR[Label_TrophyWins,x,   ]</label>
+                    <visible>!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Oscar_Wins)) | !String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.GoldenGlobe_Wins))</visible>
                 </include>
                 <include content="Object_Control" condition="[$PARAM[metacritic]] + !Skin.HasSetting(DisableMetacriticRating)">
                     <param name="type" value="image" />
