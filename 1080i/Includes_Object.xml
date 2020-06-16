@@ -1600,7 +1600,7 @@
                     <height>28</height>
                     <align>right</align>
                     <font>font_tiny</font>
-                    <label>$VAR[Label_TrophyWins,x,   ]</label>
+                    <label>$VAR[Label_TrophyWins, x,   ]</label>
                     <visible>!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Oscar_Wins)) | !String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.GoldenGlobe_Wins))</visible>
                 </include>
                 <include content="Object_Control" condition="[$PARAM[metacritic]] + !Skin.HasSetting(DisableMetacriticRating)">
