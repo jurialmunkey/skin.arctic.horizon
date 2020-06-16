@@ -459,7 +459,7 @@
     </variable>
 
     <variable name="Label_OverlayCritics">
-        <value condition="!String.IsEmpty(Window(Home).Property(TMDBHelper.ListItem.rottentomatoes_consensus))">[CR][CR][B]Critics Consensus[/B][CR]$INFO[Window(Home).Property(TMDBHelper.ListItem.rottentomatoes_consensus),, ]$INFO[Window(Home).Property(TMDBHelper.ListItem.rottentomatoes_reviewsfresh),Liked by , out of ]$INFO[Window(Home).Property(TMDBHelper.ListItem.rottentomatoes_reviewstotal),, critics. ]$INFO[Window(Home).Property(TMDBHelper.ListItem.awards)]</value>
+        <value condition="!String.IsEmpty(Window(Home).Property(TMDBHelper.ListItem.rottentomatoes_consensus)) | !String.IsEmpty(Window(Home).Property(TMDBHelper.ListItem.awards))">[CR][CR][B]Critics Consensus[/B][CR]$INFO[Window(Home).Property(TMDBHelper.ListItem.rottentomatoes_consensus),, ]$INFO[Window(Home).Property(TMDBHelper.ListItem.rottentomatoes_reviewsfresh),Liked by , out of ]$INFO[Window(Home).Property(TMDBHelper.ListItem.rottentomatoes_reviewstotal),, critics. ]$INFO[Window(Home).Property(TMDBHelper.ListItem.awards)]</value>
     </variable>
 
     <variable name="Label_OverlayPlot">
