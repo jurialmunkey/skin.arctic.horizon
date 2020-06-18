@@ -1684,18 +1684,8 @@
                     <top>0</top>
                     <width>32</width>
                     <height>32</height>
-                    <texture colordiffuse="$PARAM[colordiffuse]_100">flags/$PARAM[directory]/ratings/popcorn.png</texture>
+                    <texture colordiffuse="$PARAM[colordiffuse]_100">flags/$PARAM[directory]/ratings/$VAR[Image_RottenTomatoes_UserMeter]</texture>
                     <visible>!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.RottenTomatoes_UserMeter))</visible>
-                    <visible>Integer.IsGreater(Window(home).Property(TMDbHelper.ListItem.RottenTomatoes_UserMeter),59)</visible>
-                </include>
-                <include content="Object_Control" condition="[$PARAM[usermeter]] + !Skin.HasSetting(DisableRottenTomatoesUserRating)">
-                    <param name="type" value="image" />
-                    <top>0</top>
-                    <width>32</width>
-                    <height>32</height>
-                    <texture colordiffuse="$PARAM[colordiffuse]_100">flags/$PARAM[directory]/ratings/popcorn_spilt.png</texture>
-                    <visible>!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.RottenTomatoes_UserMeter))</visible>
-                    <visible>!Integer.IsGreater(Window(home).Property(TMDbHelper.ListItem.RottenTomatoes_UserMeter),59)</visible>
                     </include>
                 <include content="Object_Control" condition="[$PARAM[usermeter]] + !Skin.HasSetting(DisableRottenTomatoesUserRating)">
                     <param name="type" value="label" />
@@ -1712,26 +1702,8 @@
                     <param name="type" value="image" />
                     <width>32</width>
                     <height>32</height>
-                    <texture colordiffuse="$PARAM[colordiffuse]_100">flags/$PARAM[directory]/ratings/rtrotten.png</texture>
+                    <texture colordiffuse="$PARAM[colordiffuse]_100">flags/$PARAM[directory]/ratings/$VAR[Image_RottenTomatoes]</texture>
                     <visible>!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.RottenTomatoes_Rating))</visible>
-                    <visible>Integer.IsGreater(Window(home).Property(TMDbHelper.ListItem.RottenTomatoes_Rating),0) + !Integer.IsGreater(Window(home).Property(TMDbHelper.ListItem.RottenTomatoes_Rating),59)</visible>
-                </include>
-                <include content="Object_Control" condition="[$PARAM[rottentomatoes]] + !Skin.HasSetting(DisableRottenTomatoesCriticRating)">
-                    <param name="type" value="image" />
-                    <width>32</width>
-                    <height>32</height>
-                    <texture colordiffuse="$PARAM[colordiffuse]_100">flags/$PARAM[directory]/ratings/rtfresh.png</texture>
-                    <visible>!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.RottenTomatoes_Rating))</visible>
-                    <visible>Integer.IsGreater(Window(home).Property(TMDbHelper.ListItem.RottenTomatoes_Rating),59) + !Integer.IsGreater(Window(home).Property(TMDbHelper.ListItem.RottenTomatoes_Rating),74)</visible>
-                </include>
-                <include content="Object_Control" condition="[$PARAM[rottentomatoes]] + !Skin.HasSetting(DisableRottenTomatoesCriticRating)">
-                    <param name="type" value="image" />
-                    <width>32</width>
-                    <height>32</height>
-                    <texture colordiffuse="$PARAM[colordiffuse]_100">flags/$PARAM[directory]/ratings/rtfresh.png</texture>
-                    <texture colordiffuse="$PARAM[colordiffuse]_100">flags/$PARAM[directory]/ratings/certified.png</texture>
-                    <visible>!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.RottenTomatoes_Rating))</visible>
-                    <visible>Integer.IsGreater(Window(home).Property(TMDbHelper.ListItem.RottenTomatoes_Rating),74)</visible>
                 </include>
                 <include content="Object_Control" condition="[$PARAM[rottentomatoes]] + !Skin.HasSetting(DisableRottenTomatoesCriticRating)">
                     <param name="type" value="label" />

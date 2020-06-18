@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
 
+    <variable name="Image_RottenTomatoes">
+        <value condition="String.IsEqual(Window(home).Property(TMDbHelper.ListItem.RottenTomatoes_Image),certified)">certified.png</value>
+        <value condition="String.IsEqual(Window(home).Property(TMDbHelper.ListItem.RottenTomatoes_Image),fresh)">rtfresh.png</value>
+        <value condition="String.IsEqual(Window(home).Property(TMDbHelper.ListItem.RottenTomatoes_Image),rotten)">rtrotten.png</value>
+        <value condition="Integer.IsGreater(Window(home).Property(TMDbHelper.ListItem.RottenTomatoes_Rating),59)">rtfresh.png</value>
+        <value>rtrotten.png</value>
+    </variable>
+
+    <variable name="Image_RottenTomatoes_UserMeter">
+        <value condition="Integer.IsGreater(Window(home).Property(TMDbHelper.ListItem.RottenTomatoes_UserMeter),59)">popcorn.png</value>
+        <value>popcorn_spilt.png</value>
+    </variable>
+
     <variable name="Image_Showcase_PlayBrowse_Icon">
         <value condition="Container(3001).ListItem.IsFolder">special://skin/extras/icons/folder.png</value>
         <value>special://skin/extras/icons/play3.png</value>
