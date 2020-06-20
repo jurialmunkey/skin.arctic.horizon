@@ -129,7 +129,7 @@
                 <right>-15</right>
                 <bottom>-15</bottom>
                 <height>590</height>
-                <width>1016</width>
+                <width>1026</width>
                 <visible>Control.HasFocus(550)</visible>
                 <visible>String.IsEqual(Container.Property(Param.Info),user_discover)</visible>
                 <include>View_Selectbox</include>
