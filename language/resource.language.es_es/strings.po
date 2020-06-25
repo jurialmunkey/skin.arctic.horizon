@@ -358,7 +358,7 @@ msgstr "Nubosidad"
 #: /1080i/Includes_Items.xml
 msgctxt "#31069"
 msgid "From Studio"
-msgstr De estudio""
+msgstr "De estudio"
 
 #: /1080i/Includes_Items.xml
 msgctxt "#31070"
@@ -1161,7 +1161,7 @@ msgstr "Decodificador de vídeo"
 
 msgctxt "#31280"
 msgid "Pixel format"
-msgstr "Formator de pixel"
+msgstr "Formato de píxel"
 
 #: /shortcuts/overrides.xml
 msgctxt "#31283"
