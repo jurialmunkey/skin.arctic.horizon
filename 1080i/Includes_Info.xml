@@ -333,16 +333,6 @@
     </include>
 
     <include name="Info_Buttons_Video">
-        <!-- <include content="$PARAM[buttoninclude]">
-            <param name="id" value="3101" />
-            <param name="groupid" value="3201" />
-            <param name="label" value="$LOCALIZE[31006]" />
-            <param name="icon" value="special://skin/extras/icons/collection.png" />
-            <param name="visible" value="ListItem.IsCollection" />
-            <onclick>SetFocus(5003)</onclick>
-            <onup>9601</onup>
-            <onfocus>ClearProperty(overview)</onfocus>
-        </include> -->
         <include content="$PARAM[buttoninclude]">
             <param name="id" value="3308" />
             <param name="groupid" value="3008" />
@@ -383,6 +373,20 @@
         </include>
 
         <include content="$PARAM[buttoninclude]">
+            <param name="id" value="3101" />
+            <param name="groupid" value="3201" />
+            <param name="label" value="$LOCALIZE[137]" />
+            <param name="icon" value="special://skin/extras/icons/search.png" />
+            <param name="visible" value="True" />
+            <onclick condition="!String.IsEmpty(ListItem.TvShowTitle)">Skin.SetString(SearchTerm,$INFO[ListItem.TvShowTitle])</onclick>
+            <onclick condition="String.IsEmpty(ListItem.TvShowTitle) + !String.IsEmpty(ListItem.Title)">Skin.SetString(SearchTerm,$INFO[ListItem.Title])</onclick>
+            <onclick condition="String.IsEmpty(ListItem.TvShowTitle) + String.IsEmpty(ListItem.Title) + !String.IsEmpty(ListItem.Label)">Skin.SetString(SearchTerm,$INFO[ListItem.Label])</onclick>
+            <onclick>RunScript(plugin.video.themoviedb.helper,close_dialog=1190,call_id=1138)</onclick>
+            <onup>9601</onup>
+            <onfocus>ClearProperty(overview)</onfocus>
+        </include>
+
+        <include content="$PARAM[buttoninclude]">
             <param name="id" value="3111" />
             <param name="groupid" value="3011" />
             <param name="label" value="$LOCALIZE[20410]" />
@@ -408,7 +412,7 @@
             <onfocus>ClearProperty(overview)</onfocus>
         </include>
 
-        <include content="$PARAM[buttoninclude]">
+        <!-- <include content="$PARAM[buttoninclude]">
             <param name="id" value="7" />
             <param name="groupid" value="3007" />
             <param name="label" value="$LOCALIZE[563]" />
@@ -416,7 +420,7 @@
             <param name="visible" value="Control.IsEnabled(7) + !ListItem.IsCollection" />
             <onup>9601</onup>
             <onfocus>ClearProperty(overview)</onfocus>
-        </include>
+        </include> -->
 
         <include content="$PARAM[buttoninclude]">
             <param name="id" value="3105" />
@@ -470,7 +474,7 @@
         <include content="$PARAM[buttoninclude]">
             <param name="id" value="3106" />
             <param name="groupid" value="3206" />
-            <param name="label" value="Manage" />
+            <param name="label" value="$LOCALIZE[31064]" />
             <param name="icon" value="special://skin/extras/icons/settings.png" />
             <param name="visible" value="Control.IsEnabled(6) + !Skin.HasSetting(KioskMode)" />
             <onfocus>SetProperty(FilePath,1,Home)</onfocus>

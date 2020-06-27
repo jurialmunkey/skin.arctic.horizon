@@ -97,6 +97,11 @@
     <include name="Items_Info_Manage">
         <content>
             <item>
+                <label>$LOCALIZE[31310]$INFO[ListITem.UserRating,: ,]</label>
+                <visible>Control.IsEnabled(7)</visible>
+                <onclick>SendClick(7)</onclick>
+            </item>
+            <item>
                 <label>$LOCALIZE[31193]</label>
                 <visible>Control.IsEnabled(10)</visible>
                 <onclick>SendClick(10)</onclick>

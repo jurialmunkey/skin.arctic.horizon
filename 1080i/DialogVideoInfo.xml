@@ -37,6 +37,9 @@
         <control type="button" id="6">
             <include>Defs_Hidden_Button</include>
         </control>
+        <control type="button" id="7">
+            <include>Defs_Hidden_Button</include>
+        </control>
         <control type="button" id="8">
             <include>Defs_Hidden_Button</include>
         </control>
