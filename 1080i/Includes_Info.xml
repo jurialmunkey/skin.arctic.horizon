@@ -144,11 +144,23 @@
         <param name="widget-type" default="infowidgets" />
         <param name="showonupdate" default="true" />
         <param name="specialicon" default="true" />
+        <param name="label-widgetname" default="false" />
         <definition>
-            <include content="View_Cast_Toplabel">
+            <include content="View_Cast_Toplabel" condition="!$PARAM[label-widgetname]">
                 <param name="groupid" value="$PARAM[groupid]" />
                 <param name="id" value="$PARAM[id]" />
                 <param name="label" value="$PARAM[label]" />
+                <param name="widget-type" value="$PARAM[widget-type]" />
+                <param name="issubmenu" value="$PARAM[issubmenu]" />
+                <param name="showonupdate" value="$PARAM[showonupdate]" />
+                <visible>$PARAM[visible]</visible>
+                <visible>$PARAM[label-visible]</visible>
+                <left>85</left>
+            </include>
+            <include content="View_Cast_Toplabel" condition="$PARAM[label-widgetname]">
+                <param name="groupid" value="$PARAM[groupid]" />
+                <param name="id" value="$PARAM[id]" />
+                <param name="label" value="$INFO[Container($PARAM[id]).ListItem.Property(widget),$PARAM[label-widgetstart],$PARAM[label-widgetend]]" />
                 <param name="widget-type" value="$PARAM[widget-type]" />
                 <param name="issubmenu" value="$PARAM[issubmenu]" />
                 <param name="showonupdate" value="$PARAM[showonupdate]" />

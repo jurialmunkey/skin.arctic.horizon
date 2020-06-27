@@ -349,6 +349,29 @@
             <property name="widgetAspect">Poster</property>
             <property name="widgetTarget" tag="property" attribute="name|widgetTarget" />
             <property name="widgetTarget">videos</property>
+
+            <property name="widgetLabelName" tag="property" attribute="name|labelID" value="randommoviesgenre">True</property>
+            <property name="widgetLabelName" tag="property" attribute="name|labelID" value="randomtvshowsgenre">True</property>
+            <property name="widgetLabelName" tag="property" attribute="name|labelID" value="basedonrecentlywatchedmovies">True</property>
+            <property name="widgetLabelName" tag="property" attribute="name|labelID" value="basedonrecentlywatchedtvshows">True</property>
+            <property name="widgetLabelName" tag="property" attribute="name|labelID" value="basedonrecentlywatched">True</property>
+            <property name="widgetLabelName" tag="property" attribute="name|labelID" value="basedonmostwatchedmovies">True</property>
+            <property name="widgetLabelName" tag="property" attribute="name|labelID" value="basedonmostwatchedtvshows">True</property>
+            <property name="widgetLabelName" tag="property" attribute="name|labelID" value="basedonmostwatched">True</property>
+            <property name="widgetLabelName" tag="property" attribute="name|labelID" value="randomtrendinglist">True</property>
+            <property name="widgetLabelName" tag="property" attribute="name|labelID" value="randompopularlist">True</property>
+            <property name="widgetLabelName" tag="property" attribute="name|labelID" value="randomlikedlist">True</property>
+            <property name="widgetLabelName" tag="property" attribute="name|labelID" value="randomyourlist">True</property>
+            <property name="widgetLabelName" tag="label" value="widgetname">True</property>
+            <property name="widgetLabelName">False</property>
+
+            <property name="widgetLabelStart" tag="property" attribute="name|labelID" value="basedonrecentlywatchedmovies">Similar to </property>
+            <property name="widgetLabelStart" tag="property" attribute="name|labelID" value="basedonrecentlywatchedtvshows">Similar to </property>
+            <property name="widgetLabelStart" tag="property" attribute="name|labelID" value="basedonrecentlywatched">Similar to </property>
+            <property name="widgetLabelStart" tag="property" attribute="name|labelID" value="basedonmostwatchedmovies">Similar to </property>
+            <property name="widgetLabelStart" tag="property" attribute="name|labelID" value="basedonmostwatchedtvshows">Similar to </property>
+            <property name="widgetLabelStart" tag="property" attribute="name|labelID" value="basedonmostwatched">Similar to </property>
+
             <property name="widgetName" tag="label" />
             <property name="widgetName">$LOCALIZE[31105]</property>
             <property name="widgetSubmenu" tag="property" attribute="name|list" value="Submenu">True</property>
@@ -455,6 +478,9 @@
                     <param name="widget-type" value="widgets" />
                     <param name="issubmenu" value="$SKINSHORTCUTS[widgetSubmenu]" />
                     <param name="showonupdate" value="false" />
+                    <param name="label-widgetname" value="$SKINSHORTCUTS[widgetLabelName]" />
+                    <param name="label-widgetstart" value="$SKINSHORTCUTS[widgetLabelStart]" />
+                    <param name="label-widgetend" value="$SKINSHORTCUTS[widgetLabelEnd]" />
                     <onback>SetFocus($PYTHON[int(mainmenuid)]3101)</onback>
                     <onback>301</onback>
                     <onfocus>SetProperty(TMDbHelper.WidgetContainer,$NUMBER[$PYTHON[30000 + int(mainmenuid) * 100 + int(id)]],Home)</onfocus>
@@ -753,7 +779,7 @@
 
             <property name="widgetPath" tag="property" attribute="name|list" value="DefaultSearch-Songs">musicdb://songs/?xsp=%7B%22order%22%3A%7B%22direction%22%3A%22ascending%22%2C%22ignorefolders%22%3A0%2C%22method%22%3A%22sorttitle%22%7D%2C%22rules%22%3A%7B%22and%22%3A%5B%7B%22field%22%3A%22title%22%2C%22operator%22%3A%22contains%22%2C%22value%22%3A%5B%22</property>
             <property name="widgetPath2" tag="property" attribute="name|list" value="DefaultSearch-Songs">%22%5D%7D%5D%7D%2C%22type%22%3A%22songs%22%7D</property>
-            
+
             <property name="widgetPath" tag="property" attribute="name|list" value="DefaultSearch-MusicVideos">videodb://musicvideos/titles/?xsp=%7b%22order%22%3a%7b%22direction%22%3a%22ascending%22%2c%22ignorefolders%22%3a0%2c%22method%22%3a%22sorttitle%22%7d%2c%22rules%22%3a%7b%22and%22%3a%5b%7b%22field%22%3a%22title%22%2c%22operator%22%3a%22contains%22%2c%22value%22%3a%5b%22</property>
             <property name="widgetPath2" tag="property" attribute="name|list" value="DefaultSearch-MusicVideos">%22%5d%7d%5d%7d%2c%22type%22%3a%22musicvideos%22%7d</property>
 
