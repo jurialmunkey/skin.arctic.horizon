@@ -276,8 +276,8 @@
     <include name="View_WatchedOverlay">
         <control type="group">
             <control type="image">
-                <top>14</top>
-                <right>14</right>
+                <top>15</top>
+                <right>15</right>
                 <width>48</width>
                 <height>48</height>
                 <texture colordiffuse="ff000000" border="10">$VAR[Image_Overlay_Corner]</texture>
