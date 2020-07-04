@@ -1428,3 +1428,8 @@ msgstr "Clearart with seekbar"
 msgctxt "#31435"
 msgid "Use higher contrast text for unselected widgets"
 msgstr ""
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31437"
+msgid "Move music osd to the bottom of the screen"
+msgstr ""

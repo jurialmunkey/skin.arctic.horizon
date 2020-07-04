@@ -650,6 +650,13 @@
                         <selected>Skin.HasSetting(AutoMusicVis)</selected>
                         <onclick>Skin.ToggleSetting(AutoMusicVis)</onclick>
                     </control>
+                    <control type="radiobutton" id="19517" description="AutoMusicVis">
+                        <visible>Integer.IsEqual(Window.Property(CurrentFocus),9005)</visible>
+                        <include>Defs_Settings_Button</include>
+                        <label>$LOCALIZE[31437]</label>
+                        <selected>Skin.HasSetting(BottomMusicOSD)</selected>
+                        <onclick>Skin.ToggleSetting(BottomMusicOSD)</onclick>
+                    </control>
 
                     <!-- ============= -->
                     <!-- Live TV / PVR -->
