@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+
+    <!-- PVR Recording widget -->
+    <include name="PVRTVRecordingWidget">
+        <control type="grouplist" id="12855">
+            <include>Defs_InfoDialog_Visible</include>
+            <top>view_pad</top>
+            <left>view_pad</left>
+            <height>390</height>
+            <orientation>horizontal</orientation>
+            <align>left</align>
+            <control type="group">
+                <width>674</width>
+                <visible>PVR.IsRecordingTV</visible>
+                <include content="PVRWidget">
+                    <param name="icon" value="$INFO[PVR.TVNowRecordingChannelIcon]" />
+                    <param name="header" value="$LOCALIZE[19158]" />
+                    <param name="label1" value="$INFO[PVR.TVNowRecordingDateTime]" />
+                    <param name="label2" value="$INFO[PVR.TVNowRecordingTitle]" />
+                    <param name="label3" value="$INFO[PVR.TVNowRecordingChannel]" />
+                </include>
+            </control>
+            <control type="group">
+                <width>674</width>
+                <visible>PVR.HasNonRecordingTVTimer</visible>
+                <include content="PVRWidget">
+                    <param name="icon" value="$INFO[PVR.TVNextRecordingChannelIcon]" />
+                    <param name="header" value="$LOCALIZE[19157]" />
+                    <param name="label1" value="$INFO[PVR.TVNextRecordingDateTime]" />
+                    <param name="label2" value="$INFO[PVR.TVNextRecordingTitle]" />
+                    <param name="label3" value="$INFO[PVR.TVNextRecordingChannel]" />
+                </include>
+            </control>
+        </control>
+    </include>
+
+    <include name="PVRWidget">
+        <control type="image">
+            <description>background image</description>
+            <top>75</top>
+            <width>692</width>
+            <height>247</height>
+            <bordersize>15</bordersize>
+            <aspectratio scalediffuse="false">scale</aspectratio>
+            <texture border="30" colordiffuse="panel_fg_12">common/box.png</texture>
+        </control>
+        <control type="image">
+            <left>55</left>
+            <top>122</top>
+            <width>140</width>
+            <height>140</height>
+            <aspectratio>keep</aspectratio>
+            <texture background="true" fallback="DefaultVideo.png">$PARAM[icon]</texture>
+        </control>
+        <control type="label">
+            <left>225</left>
+            <top>127</top>
+            <height>25</height>
+            <width>420</width>
+            <label>$PARAM[header]</label>
+            <aligny>center</aligny>
+            <font>font_small_bold</font>
+            <textcolor>panel_fg_100</textcolor>
+        </control>
+        <control type="label">
+            <left>225</left>
+            <top>172</top>
+            <height>105</height>
+            <width>420</width>
+            <label>$PARAM[label1][CR]$PARAM[label2][CR]$PARAM[label3]</label>
+            <font>font_tiny</font>
+            <textcolor>panel_fg_100</textcolor>
+        </control>
+    </include>
+
+
+</includes>

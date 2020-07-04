@@ -173,6 +173,9 @@
                                 <effect type="slide" end="0,-20" time="60" tween="sine" />
                                 <effect type="slide" end="0,20" time="180" tween="sine" delay="80" />
                             </animation>
+                            <animation condition="String.IsEqual(Container(3700).ListItemAbsolute(0).Property(list),TVPVRRecordingWidget) + [PVR.IsRecordingTV | PVR.HasNonRecordingTVTimer]">
+                                <effect type="slide" start="0,0" end="0,250" time="0" tween="sine" /> 
+                            </animation>
                             <include>skinshortcuts-template-widgets</include>
                             <control type="group">
                                 <visible>String.IsEqual(Container(3700).ListItemAbsolute(0).Property(list),Weather) + Weather.IsFetched</visible>
@@ -185,6 +188,14 @@
                                     <top>20</top>
                                     <bottom>20</bottom>
                                 </include>
+                            </control>
+                            <control type="group">
+                                <visible>String.IsEqual(Container(3700).ListItemAbsolute(0).Property(list),TVPVRRecordingWidget) + [PVR.IsRecordingTV | PVR.HasNonRecordingTVTimer]</visible>
+                                <include content="Animation_UpDown">
+                                    <param name="visible" value="String.IsEqual(Container(3700).ListItemAbsolute(0).Property(list),TVPVRRecordingWidget) + [PVR.IsRecordingTV | PVR.HasNonRecordingTVTimer]" />
+                                </include>
+                                <top>-400</top>
+                                <include>PVRTVRecordingWidget</include>
                             </control>
                             <control type="group">
                                 <visible>Integer.IsEqual(Container(3700).NumItems,0)</visible>

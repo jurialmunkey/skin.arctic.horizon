@@ -31,6 +31,7 @@
     <include file="Includes_Labels.xml" />
     <include file="Includes_Object.xml" />
     <include file="Includes_OSD.xml" />
+    <include file="Includes_PVRWidgets.xml" />
     <include file="Includes_Topbar.xml" />
     <include file="Includes_VideoLyrics.xml" />
     <include file="Includes_Weather.xml" />

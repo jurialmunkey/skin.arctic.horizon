@@ -7,6 +7,7 @@
     <widgetRename>True</widgetRename>
     <widget label="8">Weather</widget>
     <widget label="5">Settings</widget>
+    <widget label="$LOCALIZE[31438]">TVPVRRecordingWidget</widget>
 
     <!-- Warning to Remove Settings -->
     <warn heading="31176" message="31177">ActivateWindow(Settings)</warn>
