@@ -1438,3 +1438,10 @@ msgstr ""
 msgctxt "#31437"
 msgid "Move music osd to the bottom of the screen"
 msgstr ""
+
+#: /shortcuts/overrides.xml
+msgctxt "#31438"
+msgid "TV PVR Recording Widget (must be in first position)"
+msgstr ""
+
+
