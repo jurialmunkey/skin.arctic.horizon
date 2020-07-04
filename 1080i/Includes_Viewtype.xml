@@ -679,10 +679,15 @@
                     <height>$PARAM[textbox-height]</height>
                     <visible>$PARAM[textbox-visible]</visible>
                     <bottom>0</bottom>
-                    <include content="$PARAM[label-include]" description="Unfocused" condition="$PARAM[textpanel]">
+                    <include content="$PARAM[label-include]" description="Unfocused" condition="!Skin.HasSetting(EnableHighContrastWidgetText) + $PARAM[textpanel]">
                         <param name="visible" value="!Control.HasFocus($PARAM[id]) | !$PARAM[selectbox]" />
                         <param name="textcolor_100" value="panel_fg_30" />
                         <param name="textcolor_70" value="panel_fg_30" />
+                    </include>
+                    <include content="$PARAM[label-include]" description="Unfocused" condition="Skin.HasSetting(EnableHighContrastWidgetText) + $PARAM[textpanel]">
+                        <param name="visible" value="!Control.HasFocus($PARAM[id]) | !$PARAM[selectbox]" />
+                        <param name="textcolor_100" value="panel_fg_70" />
+                        <param name="textcolor_70" value="panel_fg_70" />
                     </include>
                     <include content="$PARAM[label-include]" description="Focused" condition="Skin.HasSetting(EnableMonochromeHighlight) + $PARAM[textpanel]">
                         <param name="visible" value="Control.HasFocus($PARAM[id]) + $PARAM[selectbox]" />
@@ -701,10 +706,17 @@
                     <height>$PARAM[textbox-height]</height>
                     <visible>$PARAM[textbox-visible]</visible>
                     <bottom>-10</bottom>
-                    <include content="$PARAM[label-include]" description="Unfocused" condition="!$PARAM[textpanel]">
+                    <include content="$PARAM[label-include]" description="Unfocused" condition="!Skin.HasSetting(EnableHighContrastWidgetText) + !$PARAM[textpanel]">
                         <param name="visible" value="!Control.HasFocus($PARAM[id]) | !$PARAM[selectbox]" />
                         <param name="textcolor_100" value="main_fg_30" />
                         <param name="textcolor_70" value="main_fg_30" />
+                        <param name="align" value="left" />
+                        <param name="pad" value="15" />
+                    </include>
+                    <include content="$PARAM[label-include]" description="Unfocused" condition="Skin.HasSetting(EnableHighContrastWidgetText) + !$PARAM[textpanel]">
+                        <param name="visible" value="!Control.HasFocus($PARAM[id]) | !$PARAM[selectbox]" />
+                        <param name="textcolor_100" value="main_fg_70" />
+                        <param name="textcolor_70" value="main_fg_70" />
                         <param name="align" value="left" />
                         <param name="pad" value="15" />
                     </include>

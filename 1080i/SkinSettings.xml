@@ -390,6 +390,14 @@
                         <onclick>Skin.ToggleSetting(InvertHomeMenuColors)</onclick>
                     </control>
 
+                    <control type="radiobutton" id="19308" description="Use High Contrast Widget Text">
+                        <visible>Integer.IsEqual(Window.Property(CurrentFocus),9003)</visible>
+                        <include>Defs_Settings_Button</include>
+                        <label>$LOCALIZE[31435]</label>
+                        <selected>Skin.HasSetting(EnableHighContrastWidgetText)</selected>
+                        <onclick>Skin.ToggleSetting(EnableHighContrastWidgetText)</onclick>
+                    </control>
+
                     <control type="button" id="19306" description="Reset">
                         <visible>Integer.IsEqual(Window.Property(CurrentFocus),9003)</visible>
                         <include>Defs_Settings_Button</include>
