@@ -501,6 +501,14 @@
                         <selected>Skin.HasSetting(WallShowInfo)</selected>
                     </control>
 
+                    <control type="radiobutton" id="19440" description="Show page and item counts below weather/time">
+                        <visible>Integer.IsEqual(Window.Property(CurrentFocus),9004)</visible>
+                        <include>Defs_Settings_Button</include>
+                        <label>$LOCALIZE[31436]</label>
+                        <selected>Skin.HasSetting(EnableShowItemCount)</selected>
+                        <onclick>Skin.ToggleSetting(EnableShowItemCount)</onclick>
+                    </control>
+
 
                     <!-- ================= -->
                     <!-- Video / Music OSD -->

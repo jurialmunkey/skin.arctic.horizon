@@ -44,7 +44,7 @@
                 <visible>!Window.IsVisible(DialogVolumeBar.xml) | Player.Muted</visible>
                 <visible>!Player.HasMedia | Window.IsVisible(fullscreenvideo)</visible>
                 <control type="grouplist">
-                    <visible>!Control.HasFocus(60) + !Control.HasFocus(64)</visible>
+                    <visible>[!Control.HasFocus(60) + !Control.HasFocus(64)] | Skin.HasSetting(EnableShowItemCount)</visible>
                     <right>view_pad</right>
                     <align>right</align>
                     <orientation>horizontal</orientation>
@@ -89,7 +89,10 @@
                     </control>
                 </control>
                 <control type="grouplist">
-                    <visible>Control.HasFocus(60) | Control.HasFocus(64)</visible>
+                    <visible>Control.HasFocus(60) | Control.HasFocus(64) | Skin.HasSetting(EnableShowItemCount) + !String.IsEmpty(Container.NumItems)</visible>
+                    <animation type="Conditional" reversible="false" condition="Skin.HasSetting(EnableShowItemCount) + !Skin.HasSetting(DisableClock)">
+                        <effect type="slide" start="0,0" end="0,50" time="0" delay="0"/>
+                    </animation>
                     <right>view_pad</right>
                     <align>right</align>
                     <orientation>horizontal</orientation>

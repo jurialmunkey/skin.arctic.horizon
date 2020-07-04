@@ -1430,6 +1430,11 @@ msgid "Use higher contrast text for unselected widgets"
 msgstr ""
 
 #: /1080i/SkinSettings.xml
+msgctxt "#31436"
+msgid "Show page and item counts on list pages"
+msgstr ""
+
+#: /1080i/SkinSettings.xml
 msgctxt "#31437"
 msgid "Move music osd to the bottom of the screen"
 msgstr ""
