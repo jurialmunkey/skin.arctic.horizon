@@ -277,5 +277,281 @@
         <include>VideoLyrics_Fonts</include>
 
     </fontset>
+    <fontset id="Slightly Larger" unicode="true">
+
+        <!-- Standard Fonts -->
+        <font>
+            <name>font_medium</name>
+            <filename>RobotoCondensed-Regular.ttf</filename>
+            <size>42</size>
+        </font>
+        <font>
+            <name>font_medium_bold</name>
+            <filename>RobotoCondensed-Bold.ttf</filename>
+            <size>42</size>
+        </font>
+        <font>
+            <name>font_small</name>
+            <filename>RobotoCondensed-Regular.ttf</filename>
+            <size>33</size>
+        </font>
+        <font>
+            <name>font_small_mono</name>
+            <filename>RobotoMono-Bold.ttf</filename>
+            <size>29</size>
+            <aspect>0.8</aspect>
+        </font>
+        <font>
+            <name>font_small_bold</name>
+            <filename>RobotoCondensed-Bold.ttf</filename>
+            <size>33</size>
+        </font>
+        <font>
+            <name>font_tiny</name>
+            <filename>RobotoCondensed-Regular.ttf</filename>
+            <size>29</size>
+        </font>
+        <font>
+            <name>font_tiny_bold</name>
+            <filename>RobotoCondensed-Bold.ttf</filename>
+            <size>29</size>
+        </font>
+        <font>
+            <name>font_button</name>
+            <style>uppercase</style>
+            <filename>RobotoCondensed-Regular-Caps.ttf</filename>
+            <size>26</size>
+        </font>
+        <font>
+            <name>font_statusbar</name>
+            <filename>RobotoCondensed-Regular.ttf</filename>
+            <size>24</size>
+        </font>
+        <font>
+            <name>font_fps</name>
+            <filename>RobotoCondensed-Regular.ttf</filename>
+            <size>18</size>
+        </font>
+        <font>
+            <name>font_osd_lang</name>
+            <filename>RobotoCondensed-Regular.ttf</filename>
+            <size>12</size>
+        </font>
+        <font>
+            <name>font_statusbar_bold</name>
+            <filename>RobotoCondensed-Bold.ttf</filename>
+            <size>26</size>
+        </font>
+        <font>
+            <name>font_info_buttons</name>
+            <filename>RobotoCondensed-Bold-Caps.ttf</filename>
+            <size>22</size>
+            <style>uppercase</style>
+        </font>
+        <font>
+            <name>font_unwatched</name>
+            <filename>RobotoCondensed-Bold.ttf</filename>
+            <size>18</size>
+        </font>
+        <font>
+            <name>font_mini</name>
+            <style>uppercase</style>
+            <filename>RobotoCondensed-Regular-Caps.ttf</filename>
+            <size>22</size>
+        </font>
+
+        <!-- Plot Font -->
+        <font>
+            <name>font_plotbox</name>
+            <filename>Roboto-Regular-Linespacing.ttf</filename>
+            <linespacing>1</linespacing>
+            <size>32</size>
+            <aspect>0.9</aspect>
+        </font>
+        <font>
+            <name>font_plotbox_small</name>
+            <filename>Roboto-Regular-Linespacing.ttf</filename>
+            <linespacing>1</linespacing>
+            <size>28</size>
+            <aspect>0.9</aspect>
+        </font>
+        <font>
+            <name>font_weather_small</name>
+            <filename>Roboto-Regular-Linespacing.ttf</filename>
+            <size>29</size>
+            <aspect>0.9</aspect>
+        </font>
+        <font>
+            <name>font_overlay_plotbox</name>
+            <filename>Roboto-Regular-Linespacing.ttf</filename>
+            <linespacing>1.45</linespacing>
+            <aspect>0.9</aspect>
+            <size>52</size>
+        </font>
+        <font>
+            <name>font_info_display</name>
+            <style>bold</style>
+            <filename>RobotoCondensed-Bold.ttf</filename>
+            <size>64</size>
+        </font>
+
+        <!-- Music visualisation scrolling text -->
+        <font>
+            <name>font_musicvis_biggest</name>
+            <filename>RobotoCondensed-Light.ttf</filename>
+            <size>230</size>
+        </font>
+        <font>
+            <name>font_musicvis_bigger</name>
+            <filename>RobotoCondensed-Light.ttf</filename>
+            <size>130</size>
+        </font>
+        <font>
+            <name>font_musicvis_big</name>
+            <filename>RobotoCondensed-Light.ttf</filename>
+            <size>80</size>
+        </font>
+
+        <!-- Music visualisation info -->
+        <font>
+            <name>font_lyrics_bold</name>
+            <filename>RobotoCondensed-Bold.ttf</filename>
+            <size>70</size>
+        </font>
+
+        <font>
+            <name>font_splash</name>
+            <filename>RobotoCondensed-Bold.ttf</filename>
+            <size>80</size>
+            <style>bold</style>
+        </font>
+        <!-- Big weather temp -->
+        <font>
+            <name>font_weather_currenttemp</name>
+            <filename>RobotoCondensed-Bold.ttf</filename>
+            <size>150</size>
+            <style>bold</style>
+        </font>
+        <font>
+            <name>font_weather_bold</name>
+            <filename>RobotoCondensed-Bold.ttf</filename>
+            <size>42</size>
+            <style>bold</style>
+        </font>
+
+        <!-- Plot info overlay -->
+        <font>
+            <name>font_overlay_title</name>
+            <filename>RobotoCondensed-Bold.ttf</filename>
+            <size>100</size>
+            <aspect>0.9</aspect>
+            <style>bold</style>
+        </font>
+
+
+        <!-- Showcase title font -->
+        <font>
+            <name>font_title_large</name>
+            <filename>RobotoCondensed-Bold.ttf</filename>
+            <size>60</size>
+            <aspect>0.9</aspect>
+            <style>bold</style>
+        </font>
+        <font>
+            <name>font_title</name>
+            <filename>RobotoCondensed-Bold.ttf</filename>
+            <size>52</size>
+            <aspect>0.9</aspect>
+            <style>bold</style>
+        </font>
+        <font>
+            <name>font_title_small</name>
+            <filename>RobotoCondensed-Bold.ttf</filename>
+            <size>44</size>
+            <aspect>0.9</aspect>
+            <style>bold</style>
+        </font>
+        <font>
+            <name>font_title_mini</name>
+            <filename>RobotoCondensed-Bold.ttf</filename>
+            <size>33</size>
+            <aspect>0.9</aspect>
+            <style>bold</style>
+        </font>
+        <font>
+            <name>font_topbar</name>
+            <filename>RobotoCondensed-Bold.ttf</filename>
+            <size>44</size>
+            <aspect>0.9</aspect>
+            <style>bold</style>
+        </font>
+        <font>
+            <name>font_topbar_small</name>
+            <filename>RobotoCondensed-Regular.ttf</filename>
+            <size>33</size>
+        </font>
+
+        <font>
+            <name>font_mainmenu</name>
+            <filename>RobotoCondensed-Bold.ttf</filename>
+            <size>37</size>
+            <!-- <aspect>0.9</aspect> -->
+            <style>bold</style>
+        </font>
+        <font>
+            <name>font_mainmenu_small</name>
+            <filename>RobotoCondensed-Regular.ttf</filename>
+            <size>33</size>
+        </font>
+
+        <font>
+            <name>font_submenu</name>
+            <filename>RobotoCondensed-Bold.ttf</filename>
+            <size>31</size>
+            <aspect>0.9</aspect>
+            <style>bold</style>
+        </font>
+        <font>
+            <name>font_submenu_small</name>
+            <filename>RobotoCondensed-Regular.ttf</filename>
+            <size>29</size>
+        </font>
+        <font>
+            <name>font_notification</name>
+            <filename>RobotoCondensed-Bold.ttf</filename>
+            <size>33</size>
+            <aspect>0.9</aspect>
+            <style>bold</style>
+        </font>
+
+        <!-- Small Byline -->
+        <font>
+            <name>font_byline</name>
+            <style>uppercase</style>
+            <filename>RobotoCondensed-Bold-Caps.ttf</filename>
+            <size>24</size>
+        </font>
+        <font>
+            <name>font_hintlabel</name>
+            <style>uppercase bold</style>
+            <filename>RobotoCondensed-Bold.ttf</filename>
+            <size>20</size>
+        </font>
+
+        <!-- Required for system -->
+        <font>
+            <name>font13</name>
+            <filename>RobotoCondensed-Regular.ttf</filename>
+            <size>33</size>
+        </font>
+        <font>
+            <name>Clock</name>
+            <filename>RobotoCondensed-Bold.ttf</filename>
+            <size>130</size>
+        </font>
+
+        <include>VideoLyrics_Fonts</include>
+
+    </fontset>
 
 </fonts>
