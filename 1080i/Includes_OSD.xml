@@ -50,12 +50,16 @@
 
     <include name="OSD_Music_Info_Image_Square">
         <param name="side" default="OSD_LeftSide" />
+        <param name="centertop" default="50%" />
+        <param name="centerleft" default="50%" />
+        <param name="width" default="640" />
+        <param name="height" default="640" />
         <definition>
             <control type="group">
-                <centertop>50%</centertop>
-                <centerleft>50%</centerleft>
-                <width>640</width>
-                <height>640</height>
+                <centertop>$PARAM[centertop]</centertop>
+                <centerleft>$PARAM[centerleft]</centerleft>
+                <width>$PARAM[width]</width>
+                <height>$PARAM[height]</height>
                 <control type="image">
                     <aspectratio scalediffuse="false">scale</aspectratio>
                     <include condition="!Skin.HasSetting(DisableShadows)">Defs_Shadow_24</include>
@@ -64,6 +68,104 @@
             </control>
         </definition>
     </include>
+
+    <include name="OSD_Music_Info_Display">
+        <definition>
+            <!-- Album Cover -->
+            <control type="group">
+                <include content="OSD_Music_Info_Image_Square">
+                    <param name="artwork" value="$PARAM[artwork]" />
+                </include>
+                <control type="group">
+                    <width>800</width>
+                    <centerleft>50%</centerleft>
+                    <bottom>80</bottom>
+                    <include>OSD_Progress_Bar</include>
+                </control>
+            </control>
+            <control type="grouplist">
+                <visible>!Window.IsVisible(musicosd)</visible>
+                <width>640</width>
+                <top>890</top>
+                <orientation>vertical</orientation>
+                <centerleft>50%</centerleft>
+                <usecontrolcoords>true</usecontrolcoords>
+                <control type="label">
+                    <textcolor>panel_fg_100</textcolor>
+                    <font>font_title</font>
+                    <height>60</height>
+                    <align>center</align>
+                    <label>$INFO[MusicPlayer.Title]</label>
+                </control>
+                <control type="label">
+                    <textcolor>panel_fg_70</textcolor>
+                    <font>font_small_bold</font>
+                    <height>30</height>
+                    <align>center</align>
+                    <label>$INFO[MusicPlayer.Artist]</label>
+                </control>
+            </control>    
+        </definition>
+    </include>
+
+    <include name="OSD_Music_Info_Display_Bottom">
+        <definition>
+            <!-- Album Cover -->
+            <control type="group">
+                <include content="OSD_Music_Info_Image_Square">
+                    <param name="artwork" value="$PARAM[artwork]" />
+                    <param name="centertop" value="840" />
+                    <param name="centerleft" value="240" />
+                    <param name="width" value="320" />
+                    <param name="height" value="320" />
+                </include>
+                <control type="group">
+                    <bottom>-20</bottom>
+                    <width>1560</width>
+                    <left>360</left>
+                    <include>OSD_Progress_Bar</include>
+                </control>
+                <control type="group">
+                    <bottom>80</bottom>
+                    <left>440</left>
+                    <height>30</height>
+                    <width>1400</width>
+                    <control type="label">
+                        <textcolor>panel_fg_70</textcolor>
+                        <font>font_tiny_bold</font>
+                        <label>$INFO[Player.Time]</label>
+                    </control>
+                    <control type="label">
+                        <align>right</align>
+                        <textcolor>panel_fg_70</textcolor>
+                        <font>font_tiny_bold</font>
+                        <label>$INFO[Player.Duration]</label>
+                    </control>
+                </control>
+            </control>
+            <control type="grouplist">
+                <top>780</top>
+                <left>440</left>
+                <orientation>vertical</orientation>
+                <usecontrolcoords>true</usecontrolcoords>
+                <control type="label">
+                    <width>1400</width>
+                    <textcolor>panel_fg_100</textcolor>
+                    <font>font_title</font>
+                    <height>60</height>
+                    <label>$INFO[MusicPlayer.Title]</label>
+                </control>
+                <control type="label">
+                    <width>1400</width>
+                    <textcolor>panel_fg_70</textcolor>
+                    <font>font_small_bold</font>
+                    <height>30</height>
+                    <label>$INFO[MusicPlayer.Artist]</label>
+                </control>
+            </control>
+        </definition>
+    </include>
+
     <include name="OSD_Music_Info">
         <param name="player" default="MusicPlayer" />
         <param name="rating" default="MusicPlayer.UserRating" />
@@ -83,44 +185,35 @@
                     <animation effect="fade" start="0" end="100" time="300">VisibleChange</animation>
                     <include>Animation_FadeIn</include>
                     <include>Animation_FadeOut</include>
-
-                    <!-- Album Cover -->
-                    <control type="group">
-                        <include content="OSD_Music_Info_Image_Square">
-                            <param name="artwork" value="$PARAM[artwork]" />
-                        </include>
-                        <control type="group">
-                            <width>800</width>
-                            <centerleft>50%</centerleft>
-                            <bottom>80</bottom>
-                            <include>OSD_Progress_Bar</include>
-                        </control>
-                    </control>
                     <include>OSD_Clock</include>
-                    <control type="grouplist">
-                        <visible>!Window.IsVisible(musicosd)</visible>
-                        <width>640</width>
-                        <top>890</top>
-                        <orientation>vertical</orientation>
-                        <centerleft>50%</centerleft>
-                        <usecontrolcoords>true</usecontrolcoords>
-                        <control type="label">
-                            <textcolor>panel_fg_100</textcolor>
-                            <font>font_title</font>
-                            <height>60</height>
-                            <align>center</align>
-                            <label>$INFO[MusicPlayer.Title]</label>
-                        </control>
-                        <control type="label">
-                            <textcolor>panel_fg_70</textcolor>
-                            <font>font_small_bold</font>
-                            <height>30</height>
-                            <align>center</align>
-                            <label>$INFO[MusicPlayer.Artist]</label>
-                        </control>
-                    </control>
-
+                    <include condition="!Skin.HasSetting(BottomMusicOSD)" content="OSD_Music_Info_Display">
+                        <param name="artwork" value="$PARAM[artwork]" />
+                    </include>
+                    <include condition="Skin.HasSetting(BottomMusicOSD)" content="OSD_Music_Info_Display_Bottom">
+                        <param name="artwork" value="$PARAM[artwork]" />
+                    </include>
                 </control>
+            </control>
+        </definition>
+    </include>
+
+    <include name="OSD_MusicButtons">
+        <param name="left" default="0" />
+        <param name="width" default="1920" />
+        <param name="centerbottom" default="165" />
+        <definition>
+            <control type="group">
+            <left>$PARAM[left]</left>
+            <width>$PARAM[width]</width>
+            <control type="grouplist" id="9000">
+                <align>center</align>
+                <height>48</height>
+                <centerbottom>$PARAM[centerbottom]</centerbottom>
+                <itemgap>28</itemgap>
+                <orientation>horizontal</orientation>
+                <usecontrolcoords>true</usecontrolcoords>
+                <include>OSD_Controls</include>
+            </control>
             </control>
         </definition>
     </include>

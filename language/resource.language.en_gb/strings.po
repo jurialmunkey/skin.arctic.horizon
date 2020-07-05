@@ -1423,3 +1423,9 @@ msgstr ""
 msgctxt "#31434"
 msgid "Clearart with seekbar"
 msgstr "Clearart with seekbar"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31435"
+msgid "Move music osd to the bottom of the screen"
+msgstr ""
+

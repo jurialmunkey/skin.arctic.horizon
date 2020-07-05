@@ -7,16 +7,14 @@
         <control type="group">
             <include>Animation_FadeIn</include>
             <include>Animation_FadeOut</include>
-            <control type="grouplist" id="9000">
-                <align>center</align>
-                <height>48</height>
-                <centerbottom>165</centerbottom>
-                <itemgap>28</itemgap>
-                <orientation>horizontal</orientation>
-                <usecontrolcoords>true</usecontrolcoords>
-                <include>OSD_Controls</include>
-            </control>
+            <include condition="!Skin.HasSetting(BottomMusicOSD)">OSD_MusicButtons</include>
+            <include condition="Skin.HasSetting(BottomMusicOSD)" content="OSD_MusicButtons">
+                <param name="left" value="480" />
+                <param name="width" value="1360" />
+                <param name="centerbottom" value="95" />
+            </include>
             <control type="group">
+                <visible>!Skin.HasSetting(BottomMusicOSD)</visible>
                 <height>30</height>
                 <width>640</width>
                 <centerbottom>108</centerbottom>
