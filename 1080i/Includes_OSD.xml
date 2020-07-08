@@ -673,21 +673,7 @@
             <onclick>PlayerControl(Next)</onclick>
             <include>OSD_Button_OnFocus</include>
         </control>
-        <!-- <control type="button" id="39">
-            <centertop>50%</centertop>
-            <description>Audio</description>
-            <width>48</width>
-            <height>48</height>
-            <label/>
-            <font/>
-            <texturefocus colordiffuse="$VAR[ColorHighlight]">osd/audio-settings.png</texturefocus>
-            <texturenofocus colordiffuse="panel_fg_70">osd/audio-settings.png</texturenofocus>
-            <onclick condition="Skin.HasSetting(OSDAudioSettings)">ActivateWindow(osdaudiosettings)</onclick>
-            <onclick condition="!Skin.HasSetting(OSDAudioSettings)">Action(AudioNextLanguage)</onclick>
-            <include>OSD_Button_OnFocus</include>
-            <visible>Window.IsVisible(videoosd)</visible>
-            <visible>!VideoPlayer.Content(musicvideos)</visible>
-        </control> -->
+
         <control type="button" id="10018">
             <centertop>50%</centertop>
             <description>Audio</description>
@@ -709,13 +695,20 @@
             <visible>!VideoPlayer.Content(musicvideos)</visible>
             <visible>!String.IsEmpty(VideoPlayer.AudioLanguage)</visible>
         </control>
+
         <control type="button" id="18">
             <centertop>50%</centertop>
             <description>Subs</description>
             <width>48</width>
             <height>48</height>
-            <label/>
-            <font/>
+            <label>$VAR[Label_OSD_SubtitlesLanguage]</label>
+            <textcolor>panel_fg_70</textcolor>
+            <focusedcolor>Highlight</focusedcolor>
+            <shadowcolor>Shadow</shadowcolor>
+            <font>font_osd_lang</font>
+            <align>right</align>
+            <aligny>top</aligny>
+            <textoffsetx>0</textoffsetx>
             <texturefocus colordiffuse="$VAR[ColorHighlight]">osd/subs.png</texturefocus>
             <texturenofocus colordiffuse="panel_fg_70">osd/subs.png</texturenofocus>
             <onclick condition="Skin.HasSetting(OSDSubtitleSettings)">ActivateWindow(osdsubtitlesettings)</onclick>

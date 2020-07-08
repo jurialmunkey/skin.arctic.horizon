@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
 
+    <variable name="Label_OSD_SubtitlesLanguage">
+        <value condition="VideoPlayer.SubtitlesEnabled">$INFO[VideoPlayer.SubtitlesLanguage,[UPPERCASE],[/UPPERCASE]]</value>
+    </variable>
+
     <variable name="Label_TrophyWins">
         <value condition="!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Oscar_Wins))">$INFO[Window(Home).Property(TMDbHelper.ListItem.Oscar_Wins)]</value>
         <value condition="!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.GoldenGlobe_Wins))">$INFO[Window(Home).Property(TMDbHelper.ListItem.GoldenGlobe_Wins)]</value>
