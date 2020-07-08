@@ -25,21 +25,27 @@
                     <visible>$PARAM[visible-details]</visible>
                     <visible>String.IsEqual($PARAM[container]ListItem.DBType,movie) | String.IsEqual($PARAM[container]ListItem.DBType,episode) | String.IsEqual($PARAM[container]ListItem.DBType,tvshow) | String.IsEqual($PARAM[container]ListItem.DBType,season) | String.IsEqual($PARAM[container]ListItem.DBType,set)</visible>
                 </include>
-                <include content="Object_Info_Title">
-                    <param name="font" value="font_small_bold" />
-                    <param name="titleheight" value="6" />
-                    <param name="label" value="$INFO[$PARAM[container]ListItem.Title]" />
-                    <top>34</top>
-                    <visible>String.IsEqual($PARAM[container]ListItem.DBType,episode)</visible>
+                <control type="grouplist">
+                    <top>35</top>
+                    <orientation>vertical</orientation>
+                    <itemgap>0</itemgap>
+                    <usecontrolcoords>true</usecontrolcoords>
+                    <height>$PARAM[plotmaxheight]</height>
                     <visible>$PARAM[visible-details]</visible>
-                </include>
-                <include content="Object_Info_Plot">
-                    <param name="maxheight" value="$PARAM[plotmaxheight]" />
-                    <param name="height" value="$PARAM[plotheight]" />
-                    <param name="label" value="$PARAM[plot]" />
-                    <param name="control-type" value="textbox" />
-                    <visible>$PARAM[visible-details]</visible>
-                </include>
+                    <include content="Object_Info_Title">
+                        <param name="font" value="font_small_bold" />
+                        <param name="titleheight" value="40" />
+                        <param name="label" value="$INFO[$PARAM[container]ListItem.Title]" />
+                        <visible>String.IsEqual($PARAM[container]ListItem.DBType,episode)</visible>
+                    </include>
+                    <include content="Object_Info_Plot">
+                        <param name="maxheight" value="$PARAM[plotmaxheight]" />
+                        <param name="height" value="auto" />
+                        <param name="label" value="$PARAM[plot]" />
+                        <param name="control-type" value="textbox" />
+                        <top>0</top>
+                    </include>
+                </control>
                 <nested />
             </control>
 
