@@ -102,7 +102,7 @@
                 <right>200</right>
                 <align>center</align>
                 <description>Controller description</description>
-                <font>font_tiny</font>
+                <font>font_tiny_abs</font>
                 <textcolor>dialog_fg_70</textcolor>
             </control>
 
