@@ -799,7 +799,7 @@
                         <param name="label" value="$VAR[Label_Home_InfoLine]" />
                         <param name="image" value="$VAR[Image_Home_VideoQuality]" />
                     </include>
-                    <include content="Object_Info_Ratings">
+                    <include content="Object_Info_Ratings" condition="!Skin.HasSetting(DisableAllRatings)">
                         <param name="container" value="Container($PARAM[id])." />
                         <visible>String.IsEqual(Container($PARAM[id]).ListItem.DBType,movie) | String.IsEqual(Container($PARAM[id]).ListItem.DBType,episode) | String.IsEqual(Container($PARAM[id]).ListItem.DBType,tvshow) | String.IsEqual(Container($PARAM[id]).ListItem.DBType,season) | String.IsEqual(Container($PARAM[id]).ListItem.DBType,set)</visible>
                     </include>
