@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<colors>
+    <!-- Main -->
+    <color name="main_fg_100">ffdedede</color>
+    <color name="main_fg_90">e7dedede</color>
+    <color name="main_fg_70">ccdedede</color>
+    <color name="main_fg_30">99dedede</color>
+    <color name="main_fg_12">1fdedede</color>
+
+    <color name="main_bg_100">ff181818</color>
+    <color name="main_bg_90">e7181818</color>
+    <color name="main_bg_70">cc181818</color>
+    <color name="main_bg_30">99181818</color>
+    <color name="main_bg_12">1f181818</color>
+
+    <!-- Dialogs -->
+    <color name="dialog_fg_100">ffededed</color>
+    <color name="dialog_fg_70">ccededed</color>
+    <color name="dialog_fg_30">99ededed</color>
+    <color name="dialog_fg_12">1fededed</color>
+
+    <color name="dialog_bg_100">ff181818</color>
+    <color name="dialog_bg_70">cc181818</color>
+    <color name="dialog_bg_30">99181818</color>
+    <color name="dialog_bg_12">1f181818</color>
+    
+    <!-- Panels -->
+    <color name="panel_bg">c5000000</color>
+    <color name="panel_fg_100">ffededed</color>
+    <color name="panel_fg_70">ccededed</color>
+    <color name="panel_fg_30">99ededed</color>
+    <color name="panel_fg_12">1fededed</color>
+
+    <!-- Background -->
+    <color name="HomePanel">e7181818</color>
+    <color name="Background">ff181818</color>
+    <color name="PosterBack">ff454545</color>
+    <color name="AltPosterBack">1fdedede</color>
+
+</colors>
