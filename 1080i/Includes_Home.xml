@@ -322,9 +322,8 @@
                             <param name="image" value="$VAR[Image_56560_VideoQuality]" />
                         </include>
                         <include content="Object_Info_Plot">
-                            <param name="maxheight" value="80" />
-                            <param name="height" value="auto" />
                             <param name="label" value="$VAR[Label_Plot_C3001]" />
+                            <height max="80">auto</height>
                             <top>10</top>
                         </include>
                         <control type="group">
@@ -400,7 +399,6 @@
                             <param name="container" value="Container(5610)." />
                         </include>
                         <include content="Object_Info_Plot">
-                            <param name="maxheight" value="160" />
                             <param name="height" value="160" />
                             <param name="label" value="$INFO[Container(5610).ListItem.Plot]" />
                         </include>
@@ -571,13 +569,11 @@
                     <param name="container" value="Container($PARAM[id])." />
                 </include>
                 <include content="Object_Info_Plot" condition="!Skin.HasSetting(DisableAllRatings)">
-                    <param name="maxheight" value="80" />
-                    <param name="height" value="auto" />
+                    <param name="height" value="80" />
                     <param name="label" value="$INFO[Container($PARAM[id]).ListItem.Plot]" />
                 </include>
                 <include content="Object_Info_Plot" condition="Skin.HasSetting(DisableAllRatings)">
-                    <param name="maxheight" value="80" />
-                    <param name="height" value="auto" />
+                    <param name="height" value="80" />
                     <param name="label" value="$INFO[Container($PARAM[id]).ListItem.Plot]" />
                     <top>10</top>
                 </include>
@@ -771,6 +767,7 @@
 
     <include name="Home_Vertical_Info">
         <param name="plotheight" default="160" />
+        <param name="plotheight-nr" default="200" />
         <definition>
             <control type="group" id="$PARAM[groupid]">
                 <nested />
@@ -803,17 +800,19 @@
                         <param name="container" value="Container($PARAM[id])." />
                         <visible>String.IsEqual(Container($PARAM[id]).ListItem.DBType,movie) | String.IsEqual(Container($PARAM[id]).ListItem.DBType,episode) | String.IsEqual(Container($PARAM[id]).ListItem.DBType,tvshow) | String.IsEqual(Container($PARAM[id]).ListItem.DBType,season) | String.IsEqual(Container($PARAM[id]).ListItem.DBType,set)</visible>
                     </include>
-                    <include content="Object_Info_Title">
-                        <param name="font" value="font_small_bold" />
-                        <param name="titleheight" value="10" />
-                        <param name="label" value="$INFO[Container($PARAM[id]).ListItem.Title]" />
-                        <top>30</top>
-                        <visible>String.IsEqual(Container($PARAM[id]).ListItem.DBType,episode)</visible>
+                    <include content="View_Info_Grouplist_Plotbox" condition="!Skin.HasSetting(DisableAllRatings)">
+                        <param name="container" value="Container($PARAM[id])." />
+                        <param name="plot" value="$INFO[Container($PARAM[id]).ListItem.Plot]$INFO[Container($PARAM[id]).ListItem.Property(Album_Description)]$INFO[Container($PARAM[id]).ListItem.Property(Artist_Description)]$INFO[Container($PARAM[id]).ListItem.AddonDescription]" />
+                        <visible>String.IsEqual(Container($PARAM[id]).ListItem.DBType,movie) | String.IsEqual(Container($PARAM[id]).ListItem.DBType,episode) | String.IsEqual(Container($PARAM[id]).ListItem.DBType,tvshow) | String.IsEqual(Container($PARAM[id]).ListItem.DBType,season) | String.IsEqual(Container($PARAM[id]).ListItem.DBType,set)</visible>
+                        <height>$PARAM[plotheight]</height>
+                        <top>35</top>
                     </include>
-                    <include content="Object_Info_Plot">
-                        <param name="maxheight" value="$PARAM[plotheight]" />
-                        <param name="height" value="auto" />
-                        <param name="label" value="$INFO[Container($PARAM[id]).ListItem.Plot]$INFO[Container($PARAM[id]).ListItem.Property(Album_Description)]$INFO[Container($PARAM[id]).ListItem.Property(Artist_Description)]$INFO[Container($PARAM[id]).ListItem.AddonDescription]" />
+                    <include content="View_Info_Grouplist_Plotbox">
+                        <param name="container" value="Container($PARAM[id])." />
+                        <param name="plot" value="$INFO[Container($PARAM[id]).ListItem.Plot]$INFO[Container($PARAM[id]).ListItem.Property(Album_Description)]$INFO[Container($PARAM[id]).ListItem.Property(Artist_Description)]$INFO[Container($PARAM[id]).ListItem.AddonDescription]" />
+                        <visible>![String.IsEqual(Container($PARAM[id]).ListItem.DBType,movie) | String.IsEqual(Container($PARAM[id]).ListItem.DBType,episode) | String.IsEqual(Container($PARAM[id]).ListItem.DBType,tvshow) | String.IsEqual(Container($PARAM[id]).ListItem.DBType,season) | String.IsEqual(Container($PARAM[id]).ListItem.DBType,set)] | Skin.HasSetting(DisableAllRatings)</visible>
+                        <height>$PARAM[plotheight-nr]</height>
+                        <top>35</top>
                     </include>
                 </control>
             </control>

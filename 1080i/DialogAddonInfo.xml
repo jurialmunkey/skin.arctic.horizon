@@ -48,8 +48,7 @@
                             <param name="divider" value="false" />
                         </include>
                         <include content="Object_Info_Plot">
-                            <param name="maxheight" value="120" />
-                            <param name="height" value="auto" />
+                            <param name="height" value="120" />
                         </include>
                     </control>
                 </include>

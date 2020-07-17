@@ -43,8 +43,7 @@
                         </include>
                         <include>Object_Info_Line</include>
                         <include content="Object_Info_Plot">
-                            <param name="maxheight" value="120" />
-                            <param name="height" value="auto" />
+                            <param name="height" value="120" />
                         </include>
                     </control>
                 </include>

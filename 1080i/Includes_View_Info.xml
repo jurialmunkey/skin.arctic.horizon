@@ -1,10 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
 
+    <include name="View_Info_Grouplist_Plotbox">
+        <definition>
+            <include content="Object_Control">
+                <param name="type" value="group" />
+                <nested/>
+                <include content="Object_Info_Plot">
+                    <param name="height" value="100%" />
+                    <param name="title" value="[B][COLOR=main_fg_100]$INFO[$PARAM[container]ListItem.Title][/COLOR][/B]  ~  " />
+                    <param name="label" value="$PARAM[plot]" />
+                    <param name="control-type" value="textbox" />
+                    <top>0</top>
+                    <visible>String.IsEqual($PARAM[container]ListItem.DBType,episode)</visible>
+                </include>
+                <include content="Object_Info_Plot">
+                    <param name="height" value="100%" />
+                    <param name="label" value="$PARAM[plot]" />
+                    <param name="control-type" value="textbox" />
+                    <top>0</top>
+                    <visible>!String.IsEqual($PARAM[container]ListItem.DBType,episode)</visible>
+                </include>
+            </include>
+        </definition>
+    </include>
+
     <include name="View_Info_Grouplist">
         <param name="container" default="" />
-        <param name="plotheight" default="auto" />
-        <param name="plotmaxheight" default="120" />
+        <param name="plotheight" default="80" />
+        <param name="plotheight-nr" default="120" />
         <param name="codectop" default="20" />
         <param name="visible-details" default="true" />
         <param name="ratings" default="true" />
@@ -25,27 +49,22 @@
                     <visible>$PARAM[visible-details]</visible>
                     <visible>String.IsEqual($PARAM[container]ListItem.DBType,movie) | String.IsEqual($PARAM[container]ListItem.DBType,episode) | String.IsEqual($PARAM[container]ListItem.DBType,tvshow) | String.IsEqual($PARAM[container]ListItem.DBType,season) | String.IsEqual($PARAM[container]ListItem.DBType,set)</visible>
                 </include>
-                <control type="grouplist">
+                <include content="View_Info_Grouplist_Plotbox" condition="$PARAM[ratings] + !Skin.HasSetting(DisableAllRatings)">
+                    <param name="container" value="$PARAM[container]" />
+                    <param name="plot" value="$PARAM[plot]" />
                     <top>35</top>
-                    <orientation>vertical</orientation>
-                    <itemgap>0</itemgap>
-                    <usecontrolcoords>true</usecontrolcoords>
-                    <height>$PARAM[plotmaxheight]</height>
+                    <height>$PARAM[plotheight]</height>
                     <visible>$PARAM[visible-details]</visible>
-                    <include content="Object_Info_Title">
-                        <param name="font" value="font_small_bold" />
-                        <param name="titleheight" value="40" />
-                        <param name="label" value="$INFO[$PARAM[container]ListItem.Title]" />
-                        <visible>String.IsEqual($PARAM[container]ListItem.DBType,episode)</visible>
-                    </include>
-                    <include content="Object_Info_Plot">
-                        <param name="maxheight" value="$PARAM[plotmaxheight]" />
-                        <param name="height" value="auto" />
-                        <param name="label" value="$PARAM[plot]" />
-                        <param name="control-type" value="textbox" />
-                        <top>0</top>
-                    </include>
-                </control>
+                    <visible>String.IsEqual($PARAM[container]ListItem.DBType,movie) | String.IsEqual($PARAM[container]ListItem.DBType,episode) | String.IsEqual($PARAM[container]ListItem.DBType,tvshow) | String.IsEqual($PARAM[container]ListItem.DBType,season) | String.IsEqual($PARAM[container]ListItem.DBType,set)</visible>
+                </include>
+                <include content="View_Info_Grouplist_Plotbox" condition="$PARAM[ratings] + !Skin.HasSetting(DisableAllRatings)">
+                    <param name="container" value="$PARAM[container]" />
+                    <param name="plot" value="$PARAM[plot]" />
+                    <top>35</top>
+                    <height>$PARAM[plotheight-nr]</height>
+                    <visible>$PARAM[visible-details]</visible>
+                    <visible>![String.IsEqual($PARAM[container]ListItem.DBType,movie) | String.IsEqual($PARAM[container]ListItem.DBType,episode) | String.IsEqual($PARAM[container]ListItem.DBType,tvshow) | String.IsEqual($PARAM[container]ListItem.DBType,season) | String.IsEqual($PARAM[container]ListItem.DBType,set)] | ![$PARAM[ratings]] | Skin.HasSetting(DisableAllRatings)</visible>
+                </include>
                 <nested />
             </control>
 

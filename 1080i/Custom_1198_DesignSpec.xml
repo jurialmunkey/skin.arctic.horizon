@@ -725,7 +725,6 @@
                     </control>
                     <include>Object_Info_Ratings</include>
                     <include content="Object_Info_Plot">
-                        <param name="maxheight" value="80" />
                         <param name="height" value="80" />
                         <param name="label" value="Plot text goes here. Plot text goes here. Plot text goes here. Plot text goes here. Plot text goes here. Plot text goes here..." />
                         <param name="control-type" value="textbox" />

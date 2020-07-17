@@ -849,16 +849,16 @@
     </include>
 
     <include name="Object_Info_Plot">
-        <param name="maxheight" default="80" />
         <param name="height" default="80" />
+        <param name="title" default="" />
         <param name="label" default="$VAR[Label_Plot]" />
         <param name="control-type" default="textbox" />
         <definition>
             <control type="$PARAM[control-type]">
                 <nested />
                 <top>35</top>
-                <label>$PARAM[label]</label>
-                <height max="$PARAM[maxheight]">$PARAM[height]</height>
+                <label>$PARAM[title]$PARAM[label]</label>
+                <height>$PARAM[height]</height>
                 <aligny>top</aligny>
                 <textcolor>main_fg_70</textcolor>
                 <font>font_plotbox</font>

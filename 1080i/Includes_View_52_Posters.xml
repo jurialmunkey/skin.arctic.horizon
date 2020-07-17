@@ -579,7 +579,8 @@
                         <right>40</right>
                         <include content="View_Info_Grouplist" condition="![Window.IsVisible(1110) | Window.Isvisible(1150)]">
                             <param name="container" value="Container($PARAM[id])." />
-                            <param name="plotmaxheight" value="520" />
+                            <param name="plotheight" value="520" />
+                            <param name="plotheight-nr" value="560" />
                             <param name="infoline-label" value="$VAR[Label_Home_InfoLine]" />
                             <param name="infoline-image" value="$VAR[Image_Home_VideoQuality]" />
                         </include>
@@ -587,7 +588,8 @@
                             <param name="container" value="Container(5610)." />
                             <param name="title" value="$VAR[Label_Hub_InfoTitle]" />
                             <param name="plot" value="$VAR[Label_Plot_C5610]" />
-                            <param name="plotmaxheight" value="520" />
+                            <param name="plotheight" value="520" />
+                            <param name="plotheight-nr" value="560" />
                             <param name="infoline-label" value="$VAR[Label_56560_InfoLine]" />
                             <param name="infoline-image" value="$VAR[Image_56560_VideoQuality]" />
                         </include>

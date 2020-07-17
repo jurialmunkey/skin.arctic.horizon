@@ -51,7 +51,6 @@
                 <param name="title" value="$VAR[Label_Info_Title_530]" />
                 <param name="container" value="Container(530)." />
                 <param name="plot" value="$VAR[Label_Plot_C530]" />
-                <param name="plotheight" value="auto" />
                 <param name="infoline-label" value="$VAR[Label_Home_InfoLine]" />
                 <param name="infoline-image" value="$VAR[Image_Home_VideoQuality]" />
                 <top>-15</top>
@@ -65,7 +64,6 @@
                 <param name="title" value="$VAR[Label_Info_Title_530]" />
                 <param name="container" value="Container(530)." />
                 <param name="plot" value="$INFO[Container(530).ListItem.Plot]" />
-                <param name="plotheight" value="auto" />
                 <param name="infoline-label" value="$VAR[Label_Home_InfoLine]" />
                 <param name="infoline-image" value="$VAR[Image_Home_VideoQuality]" />
                 <top>-15</top>

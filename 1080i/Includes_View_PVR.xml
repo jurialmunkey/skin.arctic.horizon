@@ -556,13 +556,11 @@
                 <visible>Control.HasFocus(9400)</visible>
             </include>
             <include content="Object_Info_Plot">
-                <param name="maxheight" value="120" />
-                <param name="height" value="auto" />
+                <param name="height" value="120" />
                 <visible>!Control.HasFocus(9400)</visible>
             </include>
             <include content="Object_Info_Plot">
-                <param name="maxheight" value="120" />
-                <param name="height" value="auto" />
+                <param name="height" value="120" />
                 <param name="label" value="$INFO[ListItem.NextPlot]" />
                 <visible>Control.HasFocus(9400)</visible>
             </include>

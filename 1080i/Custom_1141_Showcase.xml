@@ -71,7 +71,6 @@
                         <param name="image" value="$VAR[Image_Home_VideoQuality]" />
                     </include>
                     <include content="Object_Info_Plot">
-                        <param name="maxheight" value="80" />
                         <param name="height" value="80" />
                         <param name="label" value="$INFO[Container(1297).ListItem.Plot]" />
                         <top>10</top>
@@ -161,7 +160,6 @@
                         <param name="container" value="Container(3002)." />
                     </include>
                     <include content="Object_Info_Plot">
-                        <param name="maxheight" value="160" />
                         <param name="height" value="160" />
                         <param name="label" value="$INFO[Container(3002).ListItem.Plot]" />
                     </include>
