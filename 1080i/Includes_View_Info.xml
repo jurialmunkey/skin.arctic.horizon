@@ -57,7 +57,7 @@
                     <visible>$PARAM[visible-details]</visible>
                     <visible>String.IsEqual($PARAM[container]ListItem.DBType,movie) | String.IsEqual($PARAM[container]ListItem.DBType,episode) | String.IsEqual($PARAM[container]ListItem.DBType,tvshow) | String.IsEqual($PARAM[container]ListItem.DBType,season) | String.IsEqual($PARAM[container]ListItem.DBType,set)</visible>
                 </include>
-                <include content="View_Info_Grouplist_Plotbox" condition="$PARAM[ratings] + !Skin.HasSetting(DisableAllRatings)">
+                <include content="View_Info_Grouplist_Plotbox">
                     <param name="container" value="$PARAM[container]" />
                     <param name="plot" value="$PARAM[plot]" />
                     <top>35</top>
