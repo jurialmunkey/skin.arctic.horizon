@@ -2,10 +2,12 @@
 <!-- Foundation -->
 <window id="0">
     <defaultcontrol always="false">3992</defaultcontrol>
+    <onload condition="String.IsEmpty(Window(Home).Property(SkinSplashStarted))">AlarmClock(refocus,SetFocus(301),00:01,silent,false)</onload>
+    <onload condition="String.IsEmpty(Window(Home).Property(SkinSplashStarted))">AlarmClock(SkinSplashStarted,SetProperty(SkinSplashStarted,1,home),00:01,silent,false)</onload>
+
     <onload condition="Control.HasFocus(301) | Control.HasFocus(303)">SetFocus(3992)</onload>
     <onload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=301&amp;levels=1&amp;group=mainmenu|powermenu|searchmenu)</onload>
     <onload>RunScript(script.skinvariables,action=buildviews)</onload>
-    <onload condition="String.IsEmpty(Window(Home).Property(SkinSplashStarted))">ActivateWindow(1117)</onload>
     <onunload>ClearProperty(TMDbHelper.WidgetContainer,Home)</onunload>
 
     <onload>SetProperty(TMDbHelper.Blur.Fallback,$VAR[Global_Background_Image_NoFanart_Fallback],Home)</onload>
@@ -46,6 +48,70 @@
         <include>Home_Multi</include>
         <include>Object_NowPlaying</include>
         <include>Home_Submenu</include>
+
+
+        <!-- Splash -->
+        <control type="group">
+            <visible>String.IsEmpty(Skin.String(StartupPlaylist))</visible>
+            <visible>String.IsEmpty(Window(Home).Property(SkinSplashStarted)) | Integer.IsEqual(Container(301).NumItems,0) | Container(301).IsUpdating</visible>
+            <animation effect="fade" start="100" end="0" delay="0" time="500" tween="quadratic">Hidden</animation>
+            <control type="image" description="Background">
+                <include>Dimensions_Fullscreen</include>
+                <texture>special://skin/extras/backgrounds/mountains3.jpg</texture>
+            </control>
+            <control type="grouplist">
+                <top>280</top>
+                <align>center</align>
+                <orientation>vertical</orientation>
+                <control type="label" description="Splash Title">
+                    <height>70</height>
+                    <align>center</align>
+                    <aligny>center</aligny>
+                    <label>Arctic [COLOR=$VAR[ColorHighlight]]Horizon[/COLOR]</label>
+                    <font>font_splash</font>
+                    <textcolor>CDFFFFFF</textcolor>
+                </control>
+                <control type="label" description="Splash Sublabel">
+                    <height>60</height>
+                    <align>center</align>
+                    <aligny>top</aligny>
+                    <label>$LOCALIZE[31349]...</label>
+                    <font>font_tiny</font>
+                    <textcolor>7FFFFFFF</textcolor>
+                </control>
+                <control type="group" description="Busy Spinner">
+                    <height>80</height>
+                    <control type="image" description="Back">
+                        <centerleft>50%</centerleft>
+                        <width>80</width>
+                        <aspectratio align="center" aligny="center">keep</aspectratio>
+                        <texture>dialog/loading-back-busy.png</texture>
+                        <colordiffuse>7FFFFFFF</colordiffuse>
+                    </control>
+                    <control type="image" description="Back">
+                        <centerleft>50%</centerleft>
+                        <width>80</width>
+                        <aspectratio align="center" aligny="center">keep</aspectratio>
+                        <texture>dialog/loading-back.png</texture>
+                        <colordiffuse>7FFFFFFF</colordiffuse>
+                    </control>
+                    <control type="group">
+                        <centerleft>50%</centerleft>
+                        <width>80</width>
+                        <animation effect="rotate" condition="true" start="0" end="360" loop="true" time="1000" center="auto">Conditional</animation>
+                        <control type="image">
+                            <texture colordiffuse="$VAR[ColorHighlight]">dialog/loading-spinner.png</texture>
+                            <aspectratio>keep</aspectratio>
+                        </control>
+                        <control type="image">
+                            <texture colordiffuse="$VAR[ColorGradient]">dialog/loading-spinner.png</texture>
+                            <aspectratio>keep</aspectratio>
+                            <animation effect="fade" condition="true" start="0" end="75" pulse="true" time="1000">Conditional</animation>
+                        </control>
+                    </control>
+                </control>
+            </control>
+        </control>
 
     </controls>
 </window>
