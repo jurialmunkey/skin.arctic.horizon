@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window type="window" id="1110">
     <defaultcontrol always="true">305</defaultcontrol>
-    <onload>SetProperty(TMDbHelper.WidgetContainer,5610,Home)</onload>
     <onunload>ClearProperty(TMDbHelper.WidgetContainer,Home)</onunload>
     <onunload>SetProperty(FocusWidget,$INFO[Container(5610).CurrentItem])</onunload>
     <controls>
         <control type="button" id="305">
             <include>Defs_Hidden_Button</include>
+            <onfocus>SetProperty(TMDbHelper.WidgetContainer,5610,Home)</onfocus>
             <onfocus condition="String.IsEmpty(Window.Property(FocusWidget)) | Window.Previous(Home)">SetFocus(302)</onfocus>
             <onfocus condition="!String.IsEmpty(Window.Property(FocusWidget)) + !Window.Previous(Home)">SetFocus(5610,$INFO[Window.Property(FocusWidget)],absolute)</onfocus>
             <onfocus condition="!String.IsEmpty(Window.Property(FocusWidget)) + !String.IsEqual(Window.Property(FocusWidget),Container(5610).NumItems) + !Window.Previous(Home)">Control.Move(5610,-1)</onfocus>
@@ -64,7 +64,6 @@
                                 <param name="container" value="Container(5610)." />
                                 <param name="title" value="$VAR[Label_Hub_InfoTitle]" />
                                 <param name="plot" value="$VAR[Label_Plot_C5610]" />
-                                <param name="plotheight" value="auto" />
                                 <param name="infoline-label" value="$VAR[Label_56560_InfoLine]" />
                                 <param name="infoline-image" value="$VAR[Image_56560_VideoQuality]" />
                                 <top>-15</top>
