@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
+    <variable name="Label_ColorValue">
+        <value condition="String.IsEqual(Window(Home).Property(colorpick),Highlight) + !String.IsEmpty(Skin.String(focuscolor.name))">$INFO[Skin.String(focuscolor.name)]</value>
+        <value condition="String.IsEqual(Window(Home).Property(colorpick),Gradient) + !String.IsEmpty(Skin.String(gradientcolor.name))">$INFO[Skin.String(gradientcolor.name)]</value>
+        <value condition="String.IsEqual(Window(Home).Property(colorpick),Overlay) + !String.IsEmpty(Skin.String(overlaycolor.name))">$INFO[Skin.String(overlaycolor.name)]</value>
+    </variable>
+
+    <variable name="Label_BusyWaves">
+        <value condition="!Skin.HasSetting(DisableBusyBackground)">$LOCALIZE[31133]</value>
+        <value>$LOCALIZE[16018]</value>
+    </variable>
 
     <variable name="Label_OSD_SubtitlesLanguage">
         <value condition="VideoPlayer.SubtitlesEnabled">$INFO[VideoPlayer.SubtitlesLanguage,[UPPERCASE],[/UPPERCASE]]</value>

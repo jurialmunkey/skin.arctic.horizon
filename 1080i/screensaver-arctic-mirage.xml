@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <window>
     <defaultcontrol always="true">1297</defaultcontrol>
-    <onload condition="Skin.HasSetting(DisableShowcaseScreensaver)">SetProperty(TMDbHelper.WidgetContainer,1297,Home)</onload>
-    <onunload condition="Skin.HasSetting(DisableShowcaseScreensaver)">ClearProperty(TMDbHelper.WidgetContainer,Home)</onunload>
-    <onload condition="!Skin.HasSetting(DisableShowcaseScreensaver)">Action(Close)</onload>
-    <onunload condition="!Skin.HasSetting(DisableShowcaseScreensaver)">ActivateWindow(1141)</onunload>
+    <onload condition="!Skin.HasSetting(MirageShowcase)">SetProperty(TMDbHelper.WidgetContainer,1297,Home)</onload>
+    <onunload condition="!Skin.HasSetting(MirageShowcase)">ClearProperty(TMDbHelper.WidgetContainer,Home)</onunload>
+    <onload condition="Skin.HasSetting(MirageShowcase)">Action(Close)</onload>
+    <onunload condition="Skin.HasSetting(MirageShowcase)">ActivateWindow(1141)</onunload>
     <controls>
         <control type="image">
             <texture colordiffuse="Background">common/bg.jpg</texture>

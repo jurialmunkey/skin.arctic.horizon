@@ -2,11 +2,12 @@
 <window>
     <onload>SetProperty(SkinInitStarted,1,home)</onload>
     <onload>ClearProperty(SkinSplashStarted,home)</onload>
-    <onload>Skin.SetBool(TMDbHelper.Service)</onload>
 
     <!-- Skin Init -->
     <onload condition="!Skin.HasSetting(SkinInit)">Skin.SetString(widgetPath,special://skin/extras/playlists/RandomMovies.xsp)</onload>
     <onload condition="!Skin.HasSetting(SkinInit)">Skin.SetString(widgetTarget,videos)</onload>
+    <onload condition="!Skin.HasSetting(SkinInit)">Skin.SetBool(TMDbHelper.Service)</onload>
+    <onload condition="!Skin.HasSetting(SkinInit)">Skin.SetBool(TMDbHelper.DisablePersonStats)</onload>
     <onload condition="!Skin.HasSetting(SkinInit)">Skin.SetBool(SkinInit)</onload>
 
 

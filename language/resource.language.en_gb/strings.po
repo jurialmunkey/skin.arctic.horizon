@@ -142,7 +142,7 @@ msgstr ""
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31026"
-msgid "Skin logo"
+msgid "Logo"
 msgstr ""
 
 #: /1080i/SkinSettings.xml
@@ -232,7 +232,7 @@ msgstr ""
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31044"
-msgid "Display clock in top right"
+msgid "Clock / Weather"
 msgstr ""
 
 #: /shortcuts/overrides.xml
@@ -422,7 +422,7 @@ msgstr ""
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31082"
-msgid "Customise watched indicators"
+msgid "Watched indicators"
 msgstr ""
 
 #: /1080i/Custom_1121_EnableIndicators.xml
@@ -447,17 +447,17 @@ msgstr ""
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31087"
-msgid "Display colour overlay"
+msgid "Colour overlay"
 msgstr ""
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31088"
-msgid "Display scrolling text effect"
+msgid "Scrolling text effect"
 msgstr ""
 
 #: /1080i/Custom_1122_EnableWallViews.xml
 msgctxt "#31089"
-msgid "Replace scrollbar with wall view if available"
+msgid "Pressing down opens wall view (replaces scrollbar)"
 msgstr ""
 
 #: /1080i/Includes_Items.xml
@@ -467,7 +467,7 @@ msgstr ""
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31091"
-msgid "Play trailer fullscreen in info dialog"
+msgid "Trailer window"
 msgstr ""
 
 #: /1080i/Includes_Items.xml
@@ -492,7 +492,7 @@ msgstr ""
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31096"
-msgid "Prefer track-naming template for songs"
+msgid "Use song track-naming template"
 msgstr ""
 
 #: /1080i/Includes_Home.xml
@@ -582,7 +582,7 @@ msgstr ""
 
 #: /1080i/Custom_1118_EnableRatings.xml
 msgctxt "#31116"
-msgid "Customise ratings"
+msgid "Ratings"
 msgstr ""
 
 #: /1080i/SkinSettings.xml
@@ -591,11 +591,11 @@ msgid "10 seconds"
 msgstr ""
 
 msgctxt "#31118"
-msgid "Display artist slideshow"
+msgid "Artist slideshow"
 msgstr ""
 
 msgctxt "#31119"
-msgid "Display visualisation behind slideshow"
+msgid "Visualisation behind slideshow"
 msgstr ""
 
 msgctxt "#31120"
@@ -641,14 +641,54 @@ msgctxt "#31128"
 msgid "Set autoscroll and time per image"
 msgstr ""
 
+#: /1080i/SkinSettings.xml
+msgctxt "#31129"
+msgid "Gradient colour"
+msgstr ""
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31130"
+msgid "Overlay colour"
+msgstr ""
+
 #: /1080i/MusicOSD.xml
 msgctxt "#31131"
 msgid "Colour overlay"
 msgstr ""
 
+#: /1080i/SkinSettings.xml
+msgctxt "#31132"
+msgid "Foreground"
+msgstr ""
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31133"
+msgid "Waves"
+msgstr ""
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31134"
+msgid "Supported Addons"
+msgstr ""
+
 #: /1080i/Custom_1119_EnableInfoLists.xml
 msgctxt "#31135"
 msgid "Similar"
+msgstr ""
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31136"
+msgid "Music Visualisation"
+msgstr ""
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31137"
+msgid "Fullscreen Video"
+msgstr ""
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31138"
+msgid "List Items"
 msgstr ""
 
 #: /1080i/SkinSettings.xml
@@ -688,6 +728,16 @@ msgstr ""
 #: /1080i/SkinSettings.xml
 msgctxt "#31146"
 msgid "General options"
+msgstr ""
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31147"
+msgid "Items and Views"
+msgstr ""
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31148"
+msgid "Lists and Other"
 msgstr ""
 
 msgctxt "#31150"
@@ -769,7 +819,7 @@ msgstr ""
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31174"
-msgid "Prefer landscape art over fanart if available"
+msgid "Prefer landscape art over fanart"
 msgstr ""
 
 msgctxt "#31176"
@@ -987,7 +1037,7 @@ msgstr ""
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31229"
-msgid "Prefer panels behind item text"
+msgid "Panels behind text"
 msgstr ""
 
 #: /shortcuts/overrides.xml
@@ -1031,7 +1081,7 @@ msgstr ""
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31239"
-msgid "Background busy animation"
+msgid "Busy animation"
 msgstr ""
 
 #: /1080i/SkinSettings.xml
@@ -1041,7 +1091,7 @@ msgstr ""
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31241"
-msgid "Autowidth hub buttons (disable to fix hub scrolling issues)"
+msgid "Autowidth submenu hub buttons (disable to fix hub scrolling issues)"
 msgstr ""
 
 #: /shortcuts/overrides.xml
@@ -1081,7 +1131,7 @@ msgstr ""
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31249"
-msgid "Display clearart"
+msgid "Clearart"
 msgstr ""
 
 #: /1080i/SkinSettings.xml
@@ -1331,7 +1381,7 @@ msgstr ""
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31377"
-msgid "Display video lyrics"
+msgid "Video lyrics"
 msgstr ""
 
 #: /1080i/SkinSettings.xml
@@ -1426,7 +1476,7 @@ msgstr ""
 
 #: /1080i/script-skin_helper_service-ColorPicker.xml
 msgctxt "#31433"
-msgid "Choose Palette"
+msgid "Switch Palette"
 msgstr ""
 
 #: /1080i/SkinSettings.xml
