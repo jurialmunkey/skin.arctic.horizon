@@ -130,6 +130,11 @@
             "viewtypes": ["55"],
             "library": "55"
         },
+        "unknown": {
+            "rule": "Container.Content(unknown)",
+            "viewtypes": ["55"],
+            "library": "55"
+        },
         "playlists": {
             "rule": "Container.Content(playlists)",
             "viewtypes": ["50", "500"],
