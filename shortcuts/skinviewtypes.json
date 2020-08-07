@@ -9,6 +9,8 @@
         "55":  "List",
         "56":  "Banners",
         "57":  "Big Banner",
+        "58":  "Artists",
+        "59":  "Collections",
         "500": "List"
     },
     "icons": {
@@ -20,12 +22,14 @@
         "55":  "special://skin/extras/viewtypes/list-landscape.jpg",
         "56":  "special://skin/extras/viewtypes/banners.jpg",
         "57":  "special://skin/extras/viewtypes/big-banner.jpg",
+        "58":  "special://skin/extras/viewtypes/artists.jpg",
+        "59":  "special://skin/extras/viewtypes/sets.jpg",
         "500": "special://skin/extras/viewtypes/list-square.jpg"
     },
     "rules": {
         "addons": {
             "rule": "Container.Content(addons)",
-            "viewtypes": ["51", "50", "500"],
+            "viewtypes": ["51", "58", "50", "500"],
             "library": "51",
             "plugins": "500"
         },
@@ -46,7 +50,7 @@
         },
         "actors": {
             "rule": "Container.Content(actors)",
-            "viewtypes": ["52", "500"],
+            "viewtypes": ["52", "53", "59", "500"],
             "library": "52"
         },
         "seasons": {
@@ -56,43 +60,55 @@
         },
         "tags": {
             "rule": "Container.Content(tags)",
-            "viewtypes": ["53", "50", "500"],
+            "viewtypes": ["53", "59", "50", "500"],
             "library": "53",
             "plugins": "50"
         },
         "countries": {
             "rule": "Container.Content(countries)",
-            "viewtypes": ["53", "50"],
+            "viewtypes": ["53", "59", "50", "500"],
             "library": "53",
             "plugins": "50"
         },
         "genres": {
-            "rule": "Container.Content(genres)",
-            "viewtypes": ["53", "50"],
+            "rule": "Container.Content(genres) + !Window.IsVisible(MyMusicNav.xml)",
+            "viewtypes": ["53", "59", "50", "500"],
+            "library": "53",
+            "plugins": "50"
+        },
+        "genres-music": {
+            "rule": "Container.Content(genres) + Window.IsVisible(MyMusicNav.xml)",
+            "viewtypes": ["53", "58", "50", "500"],
             "library": "53",
             "plugins": "50"
         },
         "studios": {
             "rule": "Container.Content(studios)",
-            "viewtypes": ["53", "50"],
+            "viewtypes": ["53", "59", "50", "500"],
             "library": "53",
             "plugins": "50"
         },
         "years": {
-            "rule": "Container.Content(years)",
-            "viewtypes": ["53", "50"],
+            "rule": "Container.Content(years) + !Window.IsVisible(MyMusicNav.xml)",
+            "viewtypes": ["53", "59", "50", "500"],
+            "library": "53",
+            "plugins": "50"
+        },
+        "years-music": {
+            "rule": "Container.Content(years) + Window.IsVisible(MyMusicNav.xml)",
+            "viewtypes": ["53", "58", "50", "500"],
             "library": "53",
             "plugins": "50"
         },
         "directors": {
             "rule": "Container.Content(directors)",
-            "viewtypes": ["53", "50", "500"],
+            "viewtypes": ["53", "59", "50", "500"],
             "library": "53",
             "plugins": "500"
         },
         "artists": {
             "rule": "Container.Content(artists)",
-            "viewtypes": ["51", "54", "55", "500"],
+            "viewtypes": ["51", "54", "58", "55", "500"],
             "library": "54"
         },
         "videos": {
@@ -102,7 +118,7 @@
         },
         "sets": {
             "rule": "Container.Content(sets)",
-            "viewtypes": ["52", "54", "55", "53"],
+            "viewtypes": ["52", "54", "55", "53", "59"],
             "library": "54"
         },
         "movies": {
@@ -112,7 +128,7 @@
         },
         "tvshows": {
             "rule": "Container.Content(tvshows)",
-            "viewtypes": ["52", "54", "55", "56", "57"],
+            "viewtypes": ["52", "54", "55", "56", "57", "59"],
             "library": "52"
         },
         "episodes": {
@@ -132,8 +148,8 @@
         },
         "unknown": {
             "rule": "Container.Content(unknown)",
-            "viewtypes": ["55"],
-            "library": "55"
+            "viewtypes": ["50", "500"],
+            "library": "50"
         },
         "playlists": {
             "rule": "Container.Content(playlists)",

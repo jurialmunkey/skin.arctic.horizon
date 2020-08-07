@@ -18,8 +18,8 @@
                 <ondown condition="Skin.HasSetting(NoFanart)">RunScript(plugin.video.themoviedb.helper,blur_image=$VAR[Global_Background_Image_NoFanart_Fallback])</ondown>
                 <ondown condition="Skin.HasSetting(NoFanart)">SetProperty(TMDbHelper.Blur.SourceImage,Art(fallback),Home)</ondown>
                 <ondown condition="!Skin.HasSetting(NoFanart)">SetProperty(TMDbHelper.Blur.SourceImage,thumb,Home)</ondown>
-                <onfocus condition="!$EXP[Exp_View56Hubs]">ClearProperty(TMDbHelper.WidgetContainer,Home)</onfocus>
-                <onfocus condition="$EXP[Exp_View56Hubs]">SetProperty(TMDbHelper.WidgetContainer,530,Home)</onfocus>
+                <onfocus condition="[Container.Content(seasons) | Container.Content(artists) | Container.Content(sets) | Container.Content(tvshows)]">ClearProperty(TMDbHelper.WidgetContainer,Home)</onfocus>
+                <onfocus condition="![Container.Content(seasons) | Container.Content(artists) | Container.Content(sets) | Container.Content(tvshows)]">SetProperty(TMDbHelper.WidgetContainer,530,Home)</onfocus>
                 <onfocus condition="Skin.HasSetting(NoFanart)">SetProperty(TMDbHelper.Blur.SourceImage,Art(fallback),Home)</onfocus>
                 <onfocus condition="!Skin.HasSetting(NoFanart)">SetProperty(TMDbHelper.Blur.SourceImage,poster,Home)</onfocus>
 
@@ -58,7 +58,7 @@
                 <visible>Control.IsVisible(53)</visible>
                 <include>Viewtype_Info_Right</include>
                 <visible>Integer.IsGreater(Container(530).NumItems,0)</visible>
-                <visible>!Container.Content(seasons)</visible>
+                <visible>![Container.Content(seasons) | Container.Content(artists) | Container.Content(sets) | Container.Content(tvshows)]</visible>
             </include>
             <include content="View_Info_Grouplist">
                 <param name="title" value="$VAR[Label_Info_Title_530]" />
@@ -71,153 +71,291 @@
                 <visible>Control.HasFocus(530)</visible>
                 <visible>Control.IsVisible(53)</visible>
                 <include>Viewtype_Info_Right</include>
-                <visible>Container.Content(seasons)</visible>
+                <visible>[Container.Content(seasons) | Container.Content(artists) | Container.Content(sets) | Container.Content(tvshows)]</visible>
             </include>
-            <include>View_53_Episodes</include>
+            <include content="View_53_Episodes">
+                <param name="id" value="530" />
+                <param name="include" value="Viewtype_Landscape" />
+                <param name="parentid" value="53" />
+                <param name="wallid" value="5353" />
+            </include>
         </control>
     </include>
 
     <include name="View_53_Episodes">
-        <control type="group">
-            <visible>Control.IsVisible(53)</visible>
-            <include>Animation_Down</include>
-            <include content="View_53_Episodes_List">
-                <content target="videos" sortby="episode">$INFO[Container(53).ListItemAbsolute(0).FolderPath]</content>
-                <visible>Container(53).ListItemAbsolute(0).IsFolder + [[!Container(53).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container(53).CurrentItem,1)]]</visible>
-            </include>
-            <include content="View_53_Episodes_List">
-                <content target="videos" sortby="episode">$INFO[Container(53).ListItemAbsolute(1).FolderPath]</content>
-                <visible>Container(53).ListItemAbsolute(1).IsFolder + [[!Container(53).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container(53).CurrentItem,2)] | [Container(53).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container(53).CurrentItem,1)]]</visible>
-            </include>
-            <include content="View_53_Episodes_List">
-                <content target="videos" sortby="episode">$INFO[Container(53).ListItemAbsolute(2).FolderPath]</content>
-                <visible>Container(53).ListItemAbsolute(2).IsFolder + [[!Container(53).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container(53).CurrentItem,3)] | [Container(53).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container(53).CurrentItem,2)]]</visible>
-            </include>
-            <include content="View_53_Episodes_List">
-                <content target="videos" sortby="episode">$INFO[Container(53).ListItemAbsolute(3).FolderPath]</content>
-                <visible>Container(53).ListItemAbsolute(3).IsFolder + [[!Container(53).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container(53).CurrentItem,4)] | [Container(53).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container(53).CurrentItem,3)]]</visible>
-            </include>
-            <include content="View_53_Episodes_List">
-                <content target="videos" sortby="episode">$INFO[Container(53).ListItemAbsolute(4).FolderPath]</content>
-                <visible>Container(53).ListItemAbsolute(4).IsFolder + [[!Container(53).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container(53).CurrentItem,5)] | [Container(53).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container(53).CurrentItem,4)]]</visible>
-            </include>
-            <include content="View_53_Episodes_List">
-                <content target="videos" sortby="episode">$INFO[Container(53).ListItemAbsolute(5).FolderPath]</content>
-                <visible>Container(53).ListItemAbsolute(5).IsFolder + [[!Container(53).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container(53).CurrentItem,6)] | [Container(53).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container(53).CurrentItem,5)]]</visible>
-            </include>
-            <include content="View_53_Episodes_List">
-                <content target="videos" sortby="episode">$INFO[Container(53).ListItemAbsolute(6).FolderPath]</content>
-                <visible>Container(53).ListItemAbsolute(6).IsFolder + [[!Container(53).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container(53).CurrentItem,7)] | [Container(53).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container(53).CurrentItem,6)]]</visible>
-            </include>
-            <include content="View_53_Episodes_List">
-                <content target="videos" sortby="episode">$INFO[Container(53).ListItemAbsolute(7).FolderPath]</content>
-                <visible>Container(53).ListItemAbsolute(7).IsFolder + [[!Container(53).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container(53).CurrentItem,8)] | [Container(53).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container(53).CurrentItem,7)]]</visible>
-            </include>
-            <include content="View_53_Episodes_List">
-                <content target="videos" sortby="episode">$INFO[Container(53).ListItemAbsolute(8).FolderPath]</content>
-                <visible>Container(53).ListItemAbsolute(8).IsFolder + [[!Container(53).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container(53).CurrentItem,9)] | [Container(53).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container(53).CurrentItem,8)]]</visible>
-            </include>
-            <include content="View_53_Episodes_List">
-                <content target="videos" sortby="episode">$INFO[Container(53).ListItemAbsolute(9).FolderPath]</content>
-                <visible>Container(53).ListItemAbsolute(9).IsFolder + [[!Container(53).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container(53).CurrentItem,10)] | [Container(53).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container(53).CurrentItem,9)]]</visible>
-            </include>
-            <include content="View_53_Episodes_List">
-                <content target="videos" sortby="episode">$INFO[Container(53).ListItemAbsolute(10).FolderPath]</content>
-                <visible>Container(53).ListItemAbsolute(10).IsFolder + [[!Container(53).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container(53).CurrentItem,11)] | [Container(53).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container(53).CurrentItem,10)]]</visible>
-            </include>
-            <include content="View_53_Episodes_List">
-                <content target="videos" sortby="episode">$INFO[Container(53).ListItemAbsolute(11).FolderPath]</content>
-                <visible>Container(53).ListItemAbsolute(11).IsFolder + [[!Container(53).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container(53).CurrentItem,12)] | [Container(53).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container(53).CurrentItem,11)]]</visible>
-            </include>
-            <include content="View_53_Episodes_List">
-                <content target="videos" sortby="episode">$INFO[Container(53).ListItemAbsolute(12).FolderPath]</content>
-                <visible>Container(53).ListItemAbsolute(12).IsFolder + [[!Container(53).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container(53).CurrentItem,13)] | [Container(53).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container(53).CurrentItem,12)]]</visible>
-            </include>
-            <include content="View_53_Episodes_List">
-                <content target="videos" sortby="episode">$INFO[Container(53).ListItemAbsolute(13).FolderPath]</content>
-                <visible>Container(53).ListItemAbsolute(13).IsFolder + [[!Container(53).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container(53).CurrentItem,14)] | [Container(53).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container(53).CurrentItem,13)]]</visible>
-            </include>
-            <include content="View_53_Episodes_List">
-                <content target="videos" sortby="episode">$INFO[Container(53).ListItemAbsolute(14).FolderPath]</content>
-                <visible>Container(53).ListItemAbsolute(14).IsFolder + [[!Container(53).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container(53).CurrentItem,15)] | [Container(53).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container(53).CurrentItem,14)]]</visible>
-            </include>
-            <include content="View_53_Episodes_List">
-                <content target="videos" sortby="episode">$INFO[Container(53).ListItemAbsolute(15).FolderPath]</content>
-                <visible>Container(53).ListItemAbsolute(15).IsFolder + [[!Container(53).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container(53).CurrentItem,16)] | [Container(53).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container(53).CurrentItem,15)]]</visible>
-            </include>
-            <include content="View_53_Episodes_List">
-                <content target="videos" sortby="episode">$INFO[Container(53).ListItemAbsolute(16).FolderPath]</content>
-                <visible>Container(53).ListItemAbsolute(16).IsFolder + [[!Container(53).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container(53).CurrentItem,17)] | [Container(53).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container(53).CurrentItem,16)]]</visible>
-            </include>
-            <include content="View_53_Episodes_List">
-                <content target="videos" sortby="episode">$INFO[Container(53).ListItemAbsolute(17).FolderPath]</content>
-                <visible>Container(53).ListItemAbsolute(17).IsFolder + [[!Container(53).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container(53).CurrentItem,18)] | [Container(53).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container(53).CurrentItem,17)]]</visible>
-            </include>
-            <include content="View_53_Episodes_List">
-                <content target="videos" sortby="episode">$INFO[Container(53).ListItemAbsolute(18).FolderPath]</content>
-                <visible>Container(53).ListItemAbsolute(18).IsFolder + [[!Container(53).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container(53).CurrentItem,19)] | [Container(53).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container(53).CurrentItem,18)]]</visible>
-            </include>
-            <include content="View_53_Episodes_List">
-                <content target="videos" sortby="episode">$INFO[Container(53).ListItemAbsolute(19).FolderPath]</content>
-                <visible>Container(53).ListItemAbsolute(19).IsFolder + [[!Container(53).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container(53).CurrentItem,20)] | [Container(53).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container(53).CurrentItem,19)]]</visible>
-            </include>
-            <include content="View_53_Episodes_List">
-                <content target="videos" sortby="episode">$INFO[Container(53).ListItem.FolderPath]</content>
-                <visible>Container(53).ListItem.IsFolder + [!Container(53).ListItem.IsParentFolder + !Integer.IsEqual(Container(53).CurrentItem,1) + !Integer.IsEqual(Container(53).CurrentItem,2) + !Integer.IsEqual(Container(53).CurrentItem,3) + !Integer.IsEqual(Container(53).CurrentItem,4) + !Integer.IsEqual(Container(53).CurrentItem,5) + !Integer.IsEqual(Container(53).CurrentItem,6) + !Integer.IsEqual(Container(53).CurrentItem,7) + !Integer.IsEqual(Container(53).CurrentItem,8) + !Integer.IsEqual(Container(53).CurrentItem,9) + !Integer.IsEqual(Container(53).CurrentItem,10) + !Integer.IsEqual(Container(53).CurrentItem,11) + !Integer.IsEqual(Container(53).CurrentItem,12) + !Integer.IsEqual(Container(53).CurrentItem,13) + !Integer.IsEqual(Container(53).CurrentItem,14) + !Integer.IsEqual(Container(53).CurrentItem,15) + !Integer.IsEqual(Container(53).CurrentItem,16) + !Integer.IsEqual(Container(53).CurrentItem,17) + !Integer.IsEqual(Container(53).CurrentItem,18) + !Integer.IsEqual(Container(53).CurrentItem,19) + [!Integer.IsEqual(Container(53).CurrentItem,20) | Container(53).ListItemAbsolute(0).IsParentFolder]]</visible>
-            </include>
-            <include content="Viewtype_Poster">
-                <param name="id" value="530" />
-                <bottom>-20</bottom>
-                <left>-80</left>
-                <right>-80</right>
-                <onback>53</onback>
-                <onup>53</onup>
-                <ondown>60</ondown>
-                <pagecontrol>60</pagecontrol>
-                <onunfocus>ClearProperty(TMDbHelper.WidgetContainer,Home)</onunfocus>
-                <onclick condition="!Container(530).ListItem.IsFolder">PlayMedia($INFO[Container(530).ListItem.FileNameAndPath])</onclick>
-                <onclick condition="Container(530).ListItem.IsFolder">Container.Update($INFO[Container(530).ListItem.FolderPath])</onclick>
-                <onclick>SetFocus(53)</onclick>
-                <visible>Container(53).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container(53).CurrentItem,0)</visible>
-                <animation effect="fade" start="100" end="0" condition="Container(530).IsUpdating">Conditional</animation>
-                <content target="videos">$INFO[Container(53).FolderPath]</content>
-            </include>
-            <include content="Home_Hub_Widget_Label">
-                <param name="id" value="530" />
-                <param name="label" value="$INFO[Container(53).ListItem.Label]" />
-                <param name="altlabel" value="$LOCALIZE[31213]: $LOCALIZE[20359] $LOCALIZE[584]" />
-                <param name="showonupdate" value="!String.IsEqual(Container(530).ListItemAbsolute(0).TvShowTitle,Container(53).ListItem.TvShowTitle)" />
-                <visible>![Container(53).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container(53).CurrentItem,0)]</visible>
-            </include>
-            <include content="Home_Hub_Widget_Label">
-                <param name="id" value="530" />
-                <param name="label" value="$LOCALIZE[33054]" />
-                <param name="altlabel" value="$LOCALIZE[31213]: $LOCALIZE[20373] $LOCALIZE[584]" />
-                <param name="showonupdate" value="!String.IsEqual(Container(530).ListItemAbsolute(0).TvShowTitle,Container(53).ListItem.TvShowTitle)" />
-                <visible>[Container(53).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container(53).CurrentItem,0)]</visible>
-            </include>
-        </control>
+        <param name="id" default="530" />
+        <param name="include" default="Viewtype_Landscape" />
+        <param name="parentid" default="53" />
+        <param name="wallid" default="5353" />
+        <param name="parent-visible-poster" default="Container.Content(seasons)" />
+        <param name="parent-visible-square" default="Container.Content(tags) | Container.Content(countries) | Container.Content(genres) | Container.Content(studios) | Container.Content(years) | Container.Content(directors) | Container.Content(actors)" />
+        <param name="parent-visible-landscape" default="Container.Content(artists) | Container.Content(sets)" />
+        <definition>
+            <control type="group">
+                <visible>Control.IsVisible($PARAM[parentid])</visible>
+                <include>Animation_Down</include>
+                <include content="View_53_Episodes_List">
+                    <param name="include" value="$PARAM[include]" />
+                    <param name="id" value="$PARAM[id]" />
+                    <param name="wallid" value="$PARAM[wallid]" />
+                    <param name="parentid" value="$PARAM[parentid]" />
+                    <content target="videos" sortby="episode">$INFO[Container($PARAM[parentid]).ListItemAbsolute(0).FolderPath]</content>
+                    <visible>Container($PARAM[parentid]).ListItemAbsolute(0).IsFolder + [[!Container($PARAM[parentid]).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container($PARAM[parentid]).CurrentItem,1)]]</visible>
+                </include>
+                <include content="View_53_Episodes_List">
+                    <param name="include" value="$PARAM[include]" />
+                    <param name="id" value="$PARAM[id]" />
+                    <param name="wallid" value="$PARAM[wallid]" />
+                    <param name="parentid" value="$PARAM[parentid]" />
+                    <content target="videos" sortby="episode">$INFO[Container($PARAM[parentid]).ListItemAbsolute(1).FolderPath]</content>
+                    <visible>Container($PARAM[parentid]).ListItemAbsolute(1).IsFolder + [[!Container($PARAM[parentid]).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container($PARAM[parentid]).CurrentItem,2)] | [Container($PARAM[parentid]).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container($PARAM[parentid]).CurrentItem,1)]]</visible>
+                </include>
+                <include content="View_53_Episodes_List">
+                    <param name="include" value="$PARAM[include]" />
+                    <param name="id" value="$PARAM[id]" />
+                    <param name="wallid" value="$PARAM[wallid]" />
+                    <param name="parentid" value="$PARAM[parentid]" />
+                    <content target="videos" sortby="episode">$INFO[Container($PARAM[parentid]).ListItemAbsolute(2).FolderPath]</content>
+                    <visible>Container($PARAM[parentid]).ListItemAbsolute(2).IsFolder + [[!Container($PARAM[parentid]).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container($PARAM[parentid]).CurrentItem,3)] | [Container($PARAM[parentid]).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container($PARAM[parentid]).CurrentItem,2)]]</visible>
+                </include>
+                <include content="View_53_Episodes_List">
+                    <param name="include" value="$PARAM[include]" />
+                    <param name="id" value="$PARAM[id]" />
+                    <param name="wallid" value="$PARAM[wallid]" />
+                    <param name="parentid" value="$PARAM[parentid]" />
+                    <content target="videos" sortby="episode">$INFO[Container($PARAM[parentid]).ListItemAbsolute(3).FolderPath]</content>
+                    <visible>Container($PARAM[parentid]).ListItemAbsolute(3).IsFolder + [[!Container($PARAM[parentid]).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container($PARAM[parentid]).CurrentItem,4)] | [Container($PARAM[parentid]).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container($PARAM[parentid]).CurrentItem,3)]]</visible>
+                </include>
+                <include content="View_53_Episodes_List">
+                    <param name="include" value="$PARAM[include]" />
+                    <param name="id" value="$PARAM[id]" />
+                    <param name="wallid" value="$PARAM[wallid]" />
+                    <param name="parentid" value="$PARAM[parentid]" />
+                    <content target="videos" sortby="episode">$INFO[Container($PARAM[parentid]).ListItemAbsolute(4).FolderPath]</content>
+                    <visible>Container($PARAM[parentid]).ListItemAbsolute(4).IsFolder + [[!Container($PARAM[parentid]).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container($PARAM[parentid]).CurrentItem,5)] | [Container($PARAM[parentid]).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container($PARAM[parentid]).CurrentItem,4)]]</visible>
+                </include>
+                <include content="View_53_Episodes_List">
+                    <param name="include" value="$PARAM[include]" />
+                    <param name="id" value="$PARAM[id]" />
+                    <param name="wallid" value="$PARAM[wallid]" />
+                    <param name="parentid" value="$PARAM[parentid]" />
+                    <content target="videos" sortby="episode">$INFO[Container($PARAM[parentid]).ListItemAbsolute(5).FolderPath]</content>
+                    <visible>Container($PARAM[parentid]).ListItemAbsolute(5).IsFolder + [[!Container($PARAM[parentid]).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container($PARAM[parentid]).CurrentItem,6)] | [Container($PARAM[parentid]).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container($PARAM[parentid]).CurrentItem,5)]]</visible>
+                </include>
+                <include content="View_53_Episodes_List">
+                    <param name="include" value="$PARAM[include]" />
+                    <param name="id" value="$PARAM[id]" />
+                    <param name="wallid" value="$PARAM[wallid]" />
+                    <param name="parentid" value="$PARAM[parentid]" />
+                    <content target="videos" sortby="episode">$INFO[Container($PARAM[parentid]).ListItemAbsolute(6).FolderPath]</content>
+                    <visible>Container($PARAM[parentid]).ListItemAbsolute(6).IsFolder + [[!Container($PARAM[parentid]).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container($PARAM[parentid]).CurrentItem,7)] | [Container($PARAM[parentid]).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container($PARAM[parentid]).CurrentItem,6)]]</visible>
+                </include>
+                <include content="View_53_Episodes_List">
+                    <param name="include" value="$PARAM[include]" />
+                    <param name="id" value="$PARAM[id]" />
+                    <param name="wallid" value="$PARAM[wallid]" />
+                    <param name="parentid" value="$PARAM[parentid]" />
+                    <content target="videos" sortby="episode">$INFO[Container($PARAM[parentid]).ListItemAbsolute(7).FolderPath]</content>
+                    <visible>Container($PARAM[parentid]).ListItemAbsolute(7).IsFolder + [[!Container($PARAM[parentid]).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container($PARAM[parentid]).CurrentItem,8)] | [Container($PARAM[parentid]).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container($PARAM[parentid]).CurrentItem,7)]]</visible>
+                </include>
+                <include content="View_53_Episodes_List">
+                    <param name="include" value="$PARAM[include]" />
+                    <param name="id" value="$PARAM[id]" />
+                    <param name="wallid" value="$PARAM[wallid]" />
+                    <param name="parentid" value="$PARAM[parentid]" />
+                    <content target="videos" sortby="episode">$INFO[Container($PARAM[parentid]).ListItemAbsolute(8).FolderPath]</content>
+                    <visible>Container($PARAM[parentid]).ListItemAbsolute(8).IsFolder + [[!Container($PARAM[parentid]).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container($PARAM[parentid]).CurrentItem,9)] | [Container($PARAM[parentid]).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container($PARAM[parentid]).CurrentItem,8)]]</visible>
+                </include>
+                <include content="View_53_Episodes_List">
+                    <param name="include" value="$PARAM[include]" />
+                    <param name="id" value="$PARAM[id]" />
+                    <param name="wallid" value="$PARAM[wallid]" />
+                    <param name="parentid" value="$PARAM[parentid]" />
+                    <content target="videos" sortby="episode">$INFO[Container($PARAM[parentid]).ListItemAbsolute(9).FolderPath]</content>
+                    <visible>Container($PARAM[parentid]).ListItemAbsolute(9).IsFolder + [[!Container($PARAM[parentid]).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container($PARAM[parentid]).CurrentItem,10)] | [Container($PARAM[parentid]).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container($PARAM[parentid]).CurrentItem,9)]]</visible>
+                </include>
+                <include content="View_53_Episodes_List">
+                    <param name="include" value="$PARAM[include]" />
+                    <param name="id" value="$PARAM[id]" />
+                    <param name="wallid" value="$PARAM[wallid]" />
+                    <param name="parentid" value="$PARAM[parentid]" />
+                    <content target="videos" sortby="episode">$INFO[Container($PARAM[parentid]).ListItemAbsolute(10).FolderPath]</content>
+                    <visible>Container($PARAM[parentid]).ListItemAbsolute(10).IsFolder + [[!Container($PARAM[parentid]).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container($PARAM[parentid]).CurrentItem,11)] | [Container($PARAM[parentid]).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container($PARAM[parentid]).CurrentItem,10)]]</visible>
+                </include>
+                <include content="View_53_Episodes_List">
+                    <param name="include" value="$PARAM[include]" />
+                    <param name="id" value="$PARAM[id]" />
+                    <param name="wallid" value="$PARAM[wallid]" />
+                    <param name="parentid" value="$PARAM[parentid]" />
+                    <content target="videos" sortby="episode">$INFO[Container($PARAM[parentid]).ListItemAbsolute(11).FolderPath]</content>
+                    <visible>Container($PARAM[parentid]).ListItemAbsolute(11).IsFolder + [[!Container($PARAM[parentid]).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container($PARAM[parentid]).CurrentItem,12)] | [Container($PARAM[parentid]).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container($PARAM[parentid]).CurrentItem,11)]]</visible>
+                </include>
+                <include content="View_53_Episodes_List">
+                    <param name="include" value="$PARAM[include]" />
+                    <param name="id" value="$PARAM[id]" />
+                    <param name="wallid" value="$PARAM[wallid]" />
+                    <param name="parentid" value="$PARAM[parentid]" />
+                    <content target="videos" sortby="episode">$INFO[Container($PARAM[parentid]).ListItemAbsolute(12).FolderPath]</content>
+                    <visible>Container($PARAM[parentid]).ListItemAbsolute(12).IsFolder + [[!Container($PARAM[parentid]).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container($PARAM[parentid]).CurrentItem,13)] | [Container($PARAM[parentid]).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container($PARAM[parentid]).CurrentItem,12)]]</visible>
+                </include>
+                <include content="View_53_Episodes_List">
+                    <param name="include" value="$PARAM[include]" />
+                    <param name="id" value="$PARAM[id]" />
+                    <param name="wallid" value="$PARAM[wallid]" />
+                    <param name="parentid" value="$PARAM[parentid]" />
+                    <content target="videos" sortby="episode">$INFO[Container($PARAM[parentid]).ListItemAbsolute(13).FolderPath]</content>
+                    <visible>Container($PARAM[parentid]).ListItemAbsolute(13).IsFolder + [[!Container($PARAM[parentid]).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container($PARAM[parentid]).CurrentItem,14)] | [Container($PARAM[parentid]).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container($PARAM[parentid]).CurrentItem,13)]]</visible>
+                </include>
+                <include content="View_53_Episodes_List">
+                    <param name="include" value="$PARAM[include]" />
+                    <param name="id" value="$PARAM[id]" />
+                    <param name="wallid" value="$PARAM[wallid]" />
+                    <param name="parentid" value="$PARAM[parentid]" />
+                    <content target="videos" sortby="episode">$INFO[Container($PARAM[parentid]).ListItemAbsolute(14).FolderPath]</content>
+                    <visible>Container($PARAM[parentid]).ListItemAbsolute(14).IsFolder + [[!Container($PARAM[parentid]).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container($PARAM[parentid]).CurrentItem,15)] | [Container($PARAM[parentid]).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container($PARAM[parentid]).CurrentItem,14)]]</visible>
+                </include>
+                <include content="View_53_Episodes_List">
+                    <param name="include" value="$PARAM[include]" />
+                    <param name="id" value="$PARAM[id]" />
+                    <param name="wallid" value="$PARAM[wallid]" />
+                    <param name="parentid" value="$PARAM[parentid]" />
+                    <content target="videos" sortby="episode">$INFO[Container($PARAM[parentid]).ListItemAbsolute(15).FolderPath]</content>
+                    <visible>Container($PARAM[parentid]).ListItemAbsolute(15).IsFolder + [[!Container($PARAM[parentid]).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container($PARAM[parentid]).CurrentItem,16)] | [Container($PARAM[parentid]).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container($PARAM[parentid]).CurrentItem,15)]]</visible>
+                </include>
+                <include content="View_53_Episodes_List">
+                    <param name="include" value="$PARAM[include]" />
+                    <param name="id" value="$PARAM[id]" />
+                    <param name="wallid" value="$PARAM[wallid]" />
+                    <param name="parentid" value="$PARAM[parentid]" />
+                    <content target="videos" sortby="episode">$INFO[Container($PARAM[parentid]).ListItemAbsolute(16).FolderPath]</content>
+                    <visible>Container($PARAM[parentid]).ListItemAbsolute(16).IsFolder + [[!Container($PARAM[parentid]).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container($PARAM[parentid]).CurrentItem,17)] | [Container($PARAM[parentid]).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container($PARAM[parentid]).CurrentItem,16)]]</visible>
+                </include>
+                <include content="View_53_Episodes_List">
+                    <param name="include" value="$PARAM[include]" />
+                    <param name="id" value="$PARAM[id]" />
+                    <param name="wallid" value="$PARAM[wallid]" />
+                    <param name="parentid" value="$PARAM[parentid]" />
+                    <content target="videos" sortby="episode">$INFO[Container($PARAM[parentid]).ListItemAbsolute(17).FolderPath]</content>
+                    <visible>Container($PARAM[parentid]).ListItemAbsolute(17).IsFolder + [[!Container($PARAM[parentid]).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container($PARAM[parentid]).CurrentItem,18)] | [Container($PARAM[parentid]).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container($PARAM[parentid]).CurrentItem,17)]]</visible>
+                </include>
+                <include content="View_53_Episodes_List">
+                    <param name="include" value="$PARAM[include]" />
+                    <param name="id" value="$PARAM[id]" />
+                    <param name="wallid" value="$PARAM[wallid]" />
+                    <param name="parentid" value="$PARAM[parentid]" />
+                    <content target="videos" sortby="episode">$INFO[Container($PARAM[parentid]).ListItemAbsolute(18).FolderPath]</content>
+                    <visible>Container($PARAM[parentid]).ListItemAbsolute(18).IsFolder + [[!Container($PARAM[parentid]).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container($PARAM[parentid]).CurrentItem,19)] | [Container($PARAM[parentid]).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container($PARAM[parentid]).CurrentItem,18)]]</visible>
+                </include>
+                <include content="View_53_Episodes_List">
+                    <param name="include" value="$PARAM[include]" />
+                    <param name="id" value="$PARAM[id]" />
+                    <param name="wallid" value="$PARAM[wallid]" />
+                    <param name="parentid" value="$PARAM[parentid]" />
+                    <content target="videos" sortby="episode">$INFO[Container($PARAM[parentid]).ListItemAbsolute(19).FolderPath]</content>
+                    <visible>Container($PARAM[parentid]).ListItemAbsolute(19).IsFolder + [[!Container($PARAM[parentid]).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container($PARAM[parentid]).CurrentItem,20)] | [Container($PARAM[parentid]).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container($PARAM[parentid]).CurrentItem,19)]]</visible>
+                </include>
+                <include content="View_53_Episodes_List">
+                    <param name="include" value="$PARAM[include]" />
+                    <param name="id" value="$PARAM[id]" />
+                    <param name="wallid" value="$PARAM[wallid]" />
+                    <param name="parentid" value="$PARAM[parentid]" />
+                    <content target="videos" sortby="episode">$INFO[Container($PARAM[parentid]).ListItem.FolderPath]</content>
+                    <visible>Container($PARAM[parentid]).ListItem.IsFolder + [!Container($PARAM[parentid]).ListItem.IsParentFolder + !Integer.IsEqual(Container($PARAM[parentid]).CurrentItem,1) + !Integer.IsEqual(Container($PARAM[parentid]).CurrentItem,2) + !Integer.IsEqual(Container($PARAM[parentid]).CurrentItem,3) + !Integer.IsEqual(Container($PARAM[parentid]).CurrentItem,4) + !Integer.IsEqual(Container($PARAM[parentid]).CurrentItem,5) + !Integer.IsEqual(Container($PARAM[parentid]).CurrentItem,6) + !Integer.IsEqual(Container($PARAM[parentid]).CurrentItem,7) + !Integer.IsEqual(Container($PARAM[parentid]).CurrentItem,8) + !Integer.IsEqual(Container($PARAM[parentid]).CurrentItem,9) + !Integer.IsEqual(Container($PARAM[parentid]).CurrentItem,10) + !Integer.IsEqual(Container($PARAM[parentid]).CurrentItem,11) + !Integer.IsEqual(Container($PARAM[parentid]).CurrentItem,12) + !Integer.IsEqual(Container($PARAM[parentid]).CurrentItem,13) + !Integer.IsEqual(Container($PARAM[parentid]).CurrentItem,14) + !Integer.IsEqual(Container($PARAM[parentid]).CurrentItem,15) + !Integer.IsEqual(Container($PARAM[parentid]).CurrentItem,16) + !Integer.IsEqual(Container($PARAM[parentid]).CurrentItem,17) + !Integer.IsEqual(Container($PARAM[parentid]).CurrentItem,18) + !Integer.IsEqual(Container($PARAM[parentid]).CurrentItem,19) + [!Integer.IsEqual(Container($PARAM[parentid]).CurrentItem,20) | Container($PARAM[parentid]).ListItemAbsolute(0).IsParentFolder]]</visible>
+                </include>
+                <include content="Viewtype_Poster">
+                    <param name="id" value="$PARAM[id]" />
+                    <bottom>-20</bottom>
+                    <left>-80</left>
+                    <right>-80</right>
+                    <onback>$PARAM[parentid]</onback>
+                    <onup>$PARAM[parentid]</onup>
+                    <ondown>60</ondown>
+                    <pagecontrol>60</pagecontrol>
+                    <onunfocus>ClearProperty(TMDbHelper.WidgetContainer,Home)</onunfocus>
+                    <onclick condition="!Container($PARAM[id]).ListItem.IsFolder">PlayMedia($INFO[Container($PARAM[id]).ListItem.FileNameAndPath])</onclick>
+                    <onclick condition="Container($PARAM[id]).ListItem.IsFolder">Container.Update($INFO[Container($PARAM[id]).ListItem.FolderPath])</onclick>
+                    <onclick>SetFocus($PARAM[parentid])</onclick>
+                    <visible>Container($PARAM[parentid]).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container($PARAM[parentid]).CurrentItem,0)</visible>
+                    <visible>$PARAM[parent-visible-poster]</visible>
+                    <animation effect="fade" start="100" end="0" condition="Container($PARAM[id]).IsUpdating">Conditional</animation>
+                    <content target="videos">$INFO[Container($PARAM[parentid]).FolderPath]</content>
+                </include>
+                <include content="Viewtype_Square">
+                    <param name="id" value="$PARAM[id]" />
+                    <bottom>-20</bottom>
+                    <left>-80</left>
+                    <right>-80</right>
+                    <onback>$PARAM[parentid]</onback>
+                    <onup>$PARAM[parentid]</onup>
+                    <ondown>60</ondown>
+                    <pagecontrol>60</pagecontrol>
+                    <onunfocus>ClearProperty(TMDbHelper.WidgetContainer,Home)</onunfocus>
+                    <onclick condition="!Container($PARAM[id]).ListItem.IsFolder">PlayMedia($INFO[Container($PARAM[id]).ListItem.FileNameAndPath])</onclick>
+                    <onclick condition="Container($PARAM[id]).ListItem.IsFolder">Container.Update($INFO[Container($PARAM[id]).ListItem.FolderPath])</onclick>
+                    <onclick>SetFocus($PARAM[parentid])</onclick>
+                    <visible>Container($PARAM[parentid]).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container($PARAM[parentid]).CurrentItem,0)</visible>
+                    <visible>$PARAM[parent-visible-square]</visible>
+                    <animation effect="fade" start="100" end="0" condition="Container($PARAM[id]).IsUpdating">Conditional</animation>
+                    <content target="videos">$INFO[Container($PARAM[parentid]).FolderPath]</content>
+                </include>
+                <include content="Viewtype_Landscape">
+                    <param name="id" value="$PARAM[id]" />
+                    <bottom>-20</bottom>
+                    <left>-80</left>
+                    <right>-80</right>
+                    <onback>$PARAM[parentid]</onback>
+                    <onup>$PARAM[parentid]</onup>
+                    <ondown>60</ondown>
+                    <pagecontrol>60</pagecontrol>
+                    <onunfocus>ClearProperty(TMDbHelper.WidgetContainer,Home)</onunfocus>
+                    <onclick condition="!Container($PARAM[id]).ListItem.IsFolder">PlayMedia($INFO[Container($PARAM[id]).ListItem.FileNameAndPath])</onclick>
+                    <onclick condition="Container($PARAM[id]).ListItem.IsFolder">Container.Update($INFO[Container($PARAM[id]).ListItem.FolderPath])</onclick>
+                    <onclick>SetFocus($PARAM[parentid])</onclick>
+                    <visible>Container($PARAM[parentid]).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container($PARAM[parentid]).CurrentItem,0)</visible>
+                    <visible>$PARAM[parent-visible-landscape]</visible>
+                    <animation effect="fade" start="100" end="0" condition="Container($PARAM[id]).IsUpdating">Conditional</animation>
+                    <content target="videos">$INFO[Container($PARAM[parentid]).FolderPath]</content>
+                </include>
+                <include content="Home_Hub_Widget_Label">
+                    <param name="id" value="$PARAM[id]" />
+                    <param name="label" value="$INFO[Container($PARAM[parentid]).ListItem.Label]" />
+                    <param name="altlabel" value="$LOCALIZE[31213]: $LOCALIZE[20359] $LOCALIZE[584]" />
+                    <param name="showonupdate" value="!String.IsEqual(Container($PARAM[id]).ListItemAbsolute(0).TvShowTitle,Container($PARAM[parentid]).ListItem.TvShowTitle)" />
+                    <visible>![Container($PARAM[parentid]).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container($PARAM[parentid]).CurrentItem,0)]</visible>
+                </include>
+                <include content="Home_Hub_Widget_Label">
+                    <param name="id" value="$PARAM[id]" />
+                    <param name="label" value="$LOCALIZE[33054]" />
+                    <param name="altlabel" value="$LOCALIZE[31213]: $LOCALIZE[20373] $LOCALIZE[584]" />
+                    <param name="showonupdate" value="!String.IsEqual(Container($PARAM[id]).ListItemAbsolute(0).TvShowTitle,Container($PARAM[parentid]).ListItem.TvShowTitle)" />
+                    <visible>[Container($PARAM[parentid]).ListItemAbsolute(0).IsParentFolder + Integer.IsEqual(Container($PARAM[parentid]).CurrentItem,0)]</visible>
+                </include>
+            </control>
+        </definition>
     </include>
 
     <include name="View_53_Episodes_List">
         <param name="id" default="530" />
+        <param name="include" default="Viewtype_Landscape" />
+        <param name="parentid" default="53" />
+        <param name="wallid" default="5353" />
         <definition>
-            <include content="Viewtype_Landscape">
+            <include content="$PARAM[include]">
                 <param name="id" value="$PARAM[id]" />
                 <nested />
                 <left>-80</left>
                 <right>-80</right>
                 <bottom>-20</bottom>
-                <onback>53</onback>
-                <onup>53</onup>
-                <ondown condition="!Skin.HasSetting(DisableWallScroll) + [Container($PARAM[id]).HasNext | Container($PARAM[id]).HasPrevious]">5353</ondown>
+                <onback>$PARAM[parentid]</onback>
+                <onup>$PARAM[parentid]</onup>
+                <ondown condition="!Skin.HasSetting(DisableWallScroll) + [Container($PARAM[id]).HasNext | Container($PARAM[id]).HasPrevious]">$PARAM[wallid]</ondown>
                 <ondown condition="Skin.HasSetting(DisableWallScroll)">60</ondown>
                 <pagecontrol>60</pagecontrol>
                 <onunfocus>ClearProperty(TMDbHelper.WidgetContainer,Home)</onunfocus>
                 <onclick condition="!Container($PARAM[id]).ListItem.IsFolder">PlayMedia($INFO[Container($PARAM[id]).ListItem.FileNameAndPath])</onclick>
                 <onclick condition="Container($PARAM[id]).ListItem.IsFolder">Container.Update($INFO[Container($PARAM[id]).ListItem.FolderPath])</onclick>
-                <onclick>SetFocus(53)</onclick>
-                <animation effect="fade" start="100" end="0" condition="Container($PARAM[id]).IsUpdating + [Integer.IsEqual(Container($PARAM[id]).NumAllItems,0) | !String.IsEqual(Container($PARAM[id]).ListItemAbsolute(0).TvShowTitle,Container(53).ListItem.TvShowTitle)]">Conditional</animation>
+                <onclick>SetFocus($PARAM[parentid])</onclick>
+                <animation effect="fade" start="100" end="0" condition="Container($PARAM[id]).IsUpdating + [Integer.IsEqual(Container($PARAM[id]).NumAllItems,0) | !String.IsEqual(Container($PARAM[id]).ListItemAbsolute(0).TvShowTitle,Container($PARAM[parentid]).ListItem.TvShowTitle)]">Conditional</animation>
             </include>
         </definition>
     </include>

@@ -14,6 +14,8 @@
     <include file="Includes_View_55_List.xml" />
     <include file="Includes_View_56_Banners.xml" />
     <include file="Includes_View_57_BigBanner.xml" />
+    <include file="Includes_View_58_Artists.xml" />
+    <include file="Includes_View_59_Sets.xml" />
     <include file="Includes_View_PVR.xml" />
     <include file="Includes_View_Info.xml" />
     <include file="Includes_Viewtype.xml" />

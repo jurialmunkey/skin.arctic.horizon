@@ -182,6 +182,22 @@
         <value>$INFO[System.Time]</value>
     </variable>
 
+    <variable name="Label_Info_Title_580">
+        <value condition="[String.IsEqual(Container(580).ListItem.DBType,season) | String.IsEqual(Container(580).ListItem.DBType,episode) | String.StartsWith(Container(580).ListItem.Label,Season)] + !String.IsEmpty(Container(580).ListItem.TvShowTitle)">$INFO[Container(580).ListItem.TvShowTitle]</value>
+        <value condition="String.IsEqual(Container(580).ListItem.DBType,album) | String.IsEqual(Container(580).ListItem.DBType,song)">$INFO[Container(580).ListItem.Album]</value>
+        <value condition="!String.IsEmpty(Container(580).ListItem.Title)">$INFO[Container(580).ListItem.Title]</value>
+        <value condition="!String.IsEmpty(Container(580).ListItem.Label)">$INFO[Container(580).ListItem.Label]</value>
+        <value>$INFO[System.Time]</value>
+    </variable>
+
+    <variable name="Label_Info_Title_590">
+        <value condition="[String.IsEqual(Container(590).ListItem.DBType,season) | String.IsEqual(Container(590).ListItem.DBType,episode) | String.StartsWith(Container(590).ListItem.Label,Season)] + !String.IsEmpty(Container(590).ListItem.TvShowTitle)">$INFO[Container(590).ListItem.TvShowTitle]</value>
+        <value condition="String.IsEqual(Container(590).ListItem.DBType,album) | String.IsEqual(Container(590).ListItem.DBType,song)">$INFO[Container(590).ListItem.Album]</value>
+        <value condition="!String.IsEmpty(Container(590).ListItem.Title)">$INFO[Container(590).ListItem.Title]</value>
+        <value condition="!String.IsEmpty(Container(590).ListItem.Label)">$INFO[Container(590).ListItem.Label]</value>
+        <value>$INFO[System.Time]</value>
+    </variable>
+
     <variable name="Label_NowPlaying_Mainlabel">
         <!-- <value condition="!String.IsEmpty(VideoPlayer.TvShowTitle) + !String.IsEmpty(VideoPlayer.Season) + !String.IsEmpty(VideoPlayer.Episode) + !String.IsEqual(VideoPlayer.TvShowTitle,Player.Title)">$INFO[VideoPlayer.TvShowTitle,,  •  ]$INFO[VideoPlayer.Season,S,]$INFO[VideoPlayer.Episode,E,  •  ]$INFO[Player.Title]</value> -->
         <value condition="!String.IsEmpty(VideoPlayer.TvShowTitle) + !String.IsEqual(VideoPlayer.TvShowTitle,Player.Title)">$INFO[VideoPlayer.TvShowTitle,,  •  ]$INFO[Player.Title]</value>

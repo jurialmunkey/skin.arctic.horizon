@@ -48,7 +48,7 @@
         <value>$INFO[{listitem}.Icon]</value>
     </variable>
 
-    <variable name="Label_Landscape_Title" containers="54,5610,530" start="-10" end="17">
+    <variable name="Label_Landscape_Title" containers="54,5610,530,580,590" start="-10" end="17">
         <value condition="String.IsEqual({listitem}.DBType,album) | String.IsEqual({listitem}.DBType,song)">$INFO[{listitem}.Album]</value>
         <value condition="String.IsEqual({listitem}.DBType,episode)">$INFO[{listitem}.Label]</value>
         <value condition="!String.IsEmpty({listitem}.Title)">$INFO[{listitem}.Title]</value>
@@ -56,7 +56,7 @@
         <value condition="Window.IsVisible(DialogAddonInfo.xml)">$LOCALIZE[31209]</value>
     </variable>
 
-    <variable name="Label_Plot" containers="530,3001,5610">
+    <variable name="Label_Plot" containers="530,580,590,3001,5610">
         <value condition="Window.IsVisible(1140) + Control.HasFocus(5002) + !String.IsEmpty(Container(5002).ListItem.Plot)">$INFO[Container(5002).ListItem.Plot]</value>
         <value condition="!String.IsEmpty({listitem}.Property(Artist_Description))">$INFO[{listitem}.Property(Artist_Description)]</value>
         <value condition="!String.IsEmpty({listitem}.Property(Album_Description))">$INFO[{listitem}.Property(Album_Description)]</value>
@@ -66,18 +66,18 @@
         <value condition="!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Plot))">$INFO[Window(Home).Property(TMDbHelper.ListItem.Plot)]</value>
     </variable>
 
-    <expression name="Exp_DefaultIcon" containers="51,52,53,54,55,530,3001,5610" start="-16" end="29">[String.IsEmpty({listitem}.Art(poster)) + String.IsEmpty({listitem}.Art(tvshow.poster)) + String.IsEmpty({listitem}.Art(fanart)) + String.IsEmpty({listitem}.Art(tvshow.fanart)) + String.IsEmpty({listitem}.Art(clearlogo))  + String.IsEmpty({listitem}.Art(landscape)) + [String.IsEqual({listitem}.Icon,{listitem}.ActualIcon) | [Window.IsVisible(AddonBrowser.xml) + String.IsEmpty({listitem}.AddonName)] | [Window.IsMedia + String.IsEmpty(Container.FolderPath)]]]</expression>
+    <expression name="Exp_DefaultIcon" containers="51,52,53,54,55,58,59,530,580,590,3001,5610" start="-16" end="29">[String.IsEmpty({listitem}.Art(poster)) + String.IsEmpty({listitem}.Art(tvshow.poster)) + String.IsEmpty({listitem}.Art(fanart)) + String.IsEmpty({listitem}.Art(tvshow.fanart)) + String.IsEmpty({listitem}.Art(clearlogo))  + String.IsEmpty({listitem}.Art(landscape)) + [String.IsEqual({listitem}.Icon,{listitem}.ActualIcon) | [Window.IsVisible(AddonBrowser.xml) + String.IsEmpty({listitem}.AddonName)] | [Window.IsMedia + String.IsEmpty(Container.FolderPath)]]]</expression>
 
-    <expression name="Exp_SpecialIcon" containers="51,52,53,54,55,530,3001,5610" start="-16" end="29">[[String.IsEqual({listitem}.DBType,country) | String.IsEqual({listitem}.Property(dbtype),country) | String.IsEqual({listitem}.DBType,studio) | String.IsEqual({listitem}.Property(dbtype),studio) | String.IsEqual({listitem}.DBType,genre) | String.IsEqual({listitem}.Property(dbtype),genre)] | [[!String.IsEmpty({listitem}.ChannelNumberLabel) | !String.IsEmpty({listitem}.ChannelName) | !String.IsEmpty({listitem}.ChannelNumber)] + [String.IsEmpty({listitem}.Art(poster)) + String.IsEmpty({listitem}.Art(tvshow.poster)) + String.IsEmpty({listitem}.Art(fanart))]]]</expression>
+    <expression name="Exp_SpecialIcon" containers="51,52,53,54,55,58,59,530,580,590,3001,5610" start="-16" end="29">[[String.IsEqual({listitem}.DBType,country) | String.IsEqual({listitem}.Property(dbtype),country) | String.IsEqual({listitem}.DBType,studio) | String.IsEqual({listitem}.Property(dbtype),studio) | String.IsEqual({listitem}.DBType,genre) | String.IsEqual({listitem}.Property(dbtype),genre)] | [[!String.IsEmpty({listitem}.ChannelNumberLabel) | !String.IsEmpty({listitem}.ChannelName) | !String.IsEmpty({listitem}.ChannelNumber)] + [String.IsEmpty({listitem}.Art(poster)) + String.IsEmpty({listitem}.Art(tvshow.poster)) + String.IsEmpty({listitem}.Art(fanart))]]]</expression>
 
-    <variable name="Image_DefaultIcon" containers="51,52,53,54,55,530,3001,5610" start="-16" end="29">
+    <variable name="Image_DefaultIcon" containers="51,52,53,54,55,58,59,530,580,590,3001,5610" start="-16" end="29">
         <value condition="String.IsEqual({listitem}.DBType,country) | String.IsEqual({listitem}.Property(dbtype),country)">$INFO[{listitem}.Label,resource://resource.images.moviecountryicons.maps/,.png]</value>
         <value condition="String.IsEqual({listitem}.DBType,studio) | String.IsEqual({listitem}.Property(dbtype),studio)">$INFO[{listitem}.Label,resource://resource.images.studios.white/,.png]</value>
         <value condition="String.IsEqual({listitem}.DBType,genre) | String.IsEqual({listitem}.Property(dbtype),genre)">$VAR[Image_GenreIcons_Path]$INFO[{listitem}.Label,,.png]</value>
         <value>$INFO[{listitem}.Icon]</value>
     </variable>
 
-    <variable name="Image_Poster" containers="51,52,53,54,55,530,3001,5610" start="-16" end="29">
+    <variable name="Image_Poster" containers="51,52,53,54,55,58,59,530,580,590,3001,5610" start="-16" end="29">
         <value condition="!String.IsEmpty({listitem}.Art(season.poster)) + !Window.IsVisible(Home)">$INFO[{listitem}.Art(season.poster)]</value>
         <value condition="!String.IsEmpty({listitem}.Art(tvshow.poster)) + [String.IsEqual({listitem}.Property(Container.Info),library_nextaired) | String.IsEqual({listitem}.Property(Container.Info),trakt_calendar)]">$INFO[{listitem}.Art(tvshow.poster)]</value>
         <value condition="!String.IsEmpty({listitem}.Art(poster))">$INFO[{listitem}.Art(poster)]</value>

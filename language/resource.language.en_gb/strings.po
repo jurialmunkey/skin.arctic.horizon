@@ -740,6 +740,11 @@ msgctxt "#31148"
 msgid "Lists and Other"
 msgstr ""
 
+#: /1080i/Includes_View_59_Sets.xml
+msgctxt "#31149"
+msgid "Collections"
+msgstr ""
+
 msgctxt "#31150"
 msgid "Fallback image"
 msgstr ""

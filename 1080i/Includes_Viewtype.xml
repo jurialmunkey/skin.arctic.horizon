@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
-    <include name="ViewIDs"><views>50,51,55,500,52,53,54,56,57</views></include>
+    <include name="ViewIDs"><views>50,51,55,500,52,53,54,56,57,58,59</views></include>
     <include name="Viewtype_Info_Right"><right>700</right></include>
     <include name="Viewtype_Info_Right_FixedHome"><right>560</right></include>
     <include name="Viewtypes">
@@ -14,13 +14,21 @@
         <control type="list" id="56560">
             <include>Defs_Offscreen</include>
             <orientation>horizontal</orientation>
-            <visible>Control.IsVisible(53)</visible>
+            <visible>Control.IsVisible(53) | Control.IsVisible(58) | Control.IsVisible(59)</visible>
             <itemlayout />
             <focusedlayout />
             <content>
                 <include content="Object_56560_Item">
                     <param name="listitem" value="Container(530).ListItem" />
                     <visible>Control.IsVisible(53)</visible>
+                </include>
+                <include content="Object_56560_Item">
+                    <param name="listitem" value="Container(580).ListItem" />
+                    <visible>Control.IsVisible(58)</visible>
+                </include>
+                <include content="Object_56560_Item">
+                    <param name="listitem" value="Container(590).ListItem" />
+                    <visible>Control.IsVisible(59)</visible>
                 </include>
             </content>
         </control>
@@ -39,7 +47,11 @@
                             <top>-15</top>
                             <height>285</height>
                             <visible>!Control.HasFocus(530)</visible>
-                            <visible>!Control.IsVisible(53) | Container.Content(seasons)</visible>
+                            <visible>!Control.HasFocus(580)</visible>
+                            <visible>!Control.HasFocus(590)</visible>
+                            <visible>!Control.IsVisible(53) | Container.Content(seasons) | Container.Content(artists) | Container.Content(sets) | Container.Content(tvshows)</visible>
+                            <visible>!Control.IsVisible(58) | Container.Content(seasons) | Container.Content(artists) | Container.Content(sets) | Container.Content(tvshows)</visible>
+                            <visible>!Control.IsVisible(59) | Container.Content(seasons) | Container.Content(artists) | Container.Content(sets) | Container.Content(tvshows)</visible>
                             <visible>!Control.IsVisible(50)</visible>
                             <visible>!Control.IsVisible(55)</visible>
                             <visible>!Control.IsVisible(56)</visible>
@@ -64,7 +76,7 @@
                             <texture background="true">$VAR[Image_ClearArt]</texture>
                             <aspectratio align="right" aligny="bottom" scalediffuse="false">keep</aspectratio>
                             <bordersize>15</bordersize>
-                            <visible>Control.IsVisible(52) | Control.IsVisible(53) | Control.IsVisible(54) | Control.IsVisible(57)</visible>
+                            <visible>Control.IsVisible(52) | Control.IsVisible(53) | Control.IsVisible(54) | Control.IsVisible(57) | Control.IsVisible(58) | Control.IsVisible(59)</visible>
                         </control>
                         <control type="image">
                             <right>-15</right>
@@ -92,6 +104,8 @@
                             <visible>!Control.IsVisible(53)</visible>
                             <visible>!Control.IsVisible(55)</visible>
                             <visible>!Control.IsVisible(56)</visible>
+                            <visible>!Control.IsVisible(58)</visible>
+                            <visible>!Control.IsVisible(59)</visible>
                             <visible>!Control.IsVisible(500)</visible>
                         </include>
                     </control>
@@ -117,6 +131,8 @@
                         <include>View_50_Tags</include>
                         <include>View_56_Banners</include>
                         <include>View_57_BigBanner</include>
+                        <include>View_58_Artists</include>
+                        <include>View_59_Sets</include>
                         <include>View_500_SongList</include>
                     </control>
                 </control>
@@ -141,6 +157,16 @@
                         <param name="id" value="54" />
                         <param name="wall-id" value="5454" />
                         <param name="button-id" value="45454" />
+                    </include>
+                    <include content="View_51_Addons_Wall" condition="!Skin.HasSetting(DisableWallScroll)">
+                        <param name="id" value="580" />
+                        <param name="wall-id" value="5858" />
+                        <param name="button-id" value="85858" />
+                    </include>
+                    <include content="View_52_Posters_Wall" condition="!Skin.HasSetting(DisableWallScroll)">
+                        <param name="id" value="590" />
+                        <param name="wall-id" value="5959" />
+                        <param name="button-id" value="95959" />
                     </include>
                 </control>
                 <include>Topbar_Left</include>
@@ -319,8 +345,8 @@
                 <scrolltime tween="$PARAM[tween]">$PARAM[scrolltime]</scrolltime>
                 <height>$PARAM[height]</height>
                 <viewtype label="$PARAM[viewtype-label]">$PARAM[viewtype]</viewtype>
-                <animation effect="fade" reversible="false" start="0" end="100" delay="399" time="1" condition="![Control.HasFocus(5151) | Control.HasFocus(5252) | Control.HasFocus(5353) | Control.HasFocus(5454) | Control.HasFocus(5656)]">Conditional</animation>
-                <animation effect="fade" reversible="false" end="0" start="100" condition="[Control.HasFocus(5151) | Control.HasFocus(5252) | Control.HasFocus(5353) | Control.HasFocus(5454) | Control.HasFocus(5656)]">Conditional</animation>
+                <animation effect="fade" reversible="false" start="0" end="100" delay="399" time="1" condition="![Control.HasFocus(5151) | Control.HasFocus(5252) | Control.HasFocus(5353) | Control.HasFocus(5454) | Control.HasFocus(5656) | Control.HasFocus(5858) | Control.HasFocus(5959)]">Conditional</animation>
+                <animation effect="fade" reversible="false" end="0" start="100" condition="[Control.HasFocus(5151) | Control.HasFocus(5252) | Control.HasFocus(5353) | Control.HasFocus(5454) | Control.HasFocus(5656) | Control.HasFocus(5858) | Control.HasFocus(5959)]">Conditional</animation>
                 <movement>$PARAM[movement]</movement>
                 <focusposition>$PARAM[focusposition]</focusposition>
                 <itemlayout width="$PARAM[itemlayout-width]" height="$PARAM[itemlayout-height]">

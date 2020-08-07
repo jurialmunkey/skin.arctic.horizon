@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+    <include name="View_59_Sets">
+        <control type="group">
+            <include content="Viewtype_Buttons">
+                <param name="id" value="59" />
+                <param name="itemlayout-width" value="280" />
+                <param name="offset" value="0" />
+                <param name="control-type" value="fixedlist" />
+                <param name="viewtype-label" value="$LOCALIZE[31149]" />
+                <movement>3</movement>
+                <preloaditems>2</preloaditems>
+                <height>120</height>
+                <width>1120</width>
+                <onup>SetFocus(9000)</onup>
+                <ondown>590</ondown>
+                <ondown>SetProperty(TMDbHelper.WidgetContainer,590,Home)</ondown>
+                <ondown condition="Skin.HasSetting(NoFanart)">RunScript(plugin.video.themoviedb.helper,blur_image=$VAR[Global_Background_Image_NoFanart_Fallback])</ondown>
+                <ondown condition="Skin.HasSetting(NoFanart)">SetProperty(TMDbHelper.Blur.SourceImage,Art(fallback),Home)</ondown>
+                <ondown condition="!Skin.HasSetting(NoFanart)">SetProperty(TMDbHelper.Blur.SourceImage,thumb,Home)</ondown>
+                <onfocus condition="[Container.Content(seasons) | Container.Content(artists) | Container.Content(sets) | Container.Content(tvshows)]">ClearProperty(TMDbHelper.WidgetContainer,Home)</onfocus>
+                <onfocus condition="![Container.Content(seasons) | Container.Content(artists) | Container.Content(sets) | Container.Content(tvshows)]">SetProperty(TMDbHelper.WidgetContainer,590,Home)</onfocus>
+                <onfocus condition="Skin.HasSetting(NoFanart)">SetProperty(TMDbHelper.Blur.SourceImage,Art(fallback),Home)</onfocus>
+                <onfocus condition="!Skin.HasSetting(NoFanart)">SetProperty(TMDbHelper.Blur.SourceImage,poster,Home)</onfocus>
+
+                <left>-20</left>
+                <bottom>400</bottom>
+                <animation effect="fade" start="0" end="100" time="400" tween="cubic" easing="inout" reversible="false" delay="200" condition="Container.Content(seasons)">Conditional</animation>
+                <visible>$EXP[Exp_View_59]</visible>
+                <visible>!String.IsEqual(Container.Property(Param.Info),details)</visible>
+            </include>
+            <control type="image">
+                <width>24</width>
+                <height>24</height>
+                <bottom>457</bottom>
+                <left>-56</left>
+                <texture colordiffuse="main_fg_30">buttons/spin-left.png</texture>
+                <visible>Container(59).HasPrevious</visible>
+                <visible>Control.Isvisible(59)</visible>
+            </control>
+            <control type="image">
+                <width>24</width>
+                <height>24</height>
+                <bottom>457</bottom>
+                <left>1122</left>
+                <texture colordiffuse="main_fg_30" flipx="true">buttons/spin-left.png</texture>
+                <visible>Container(59).HasNext</visible>
+                <visible>Control.Isvisible(59)</visible>
+            </control>
+            <include content="View_Info_Grouplist">
+                <param name="title" value="$VAR[Label_Info_Title_590]" />
+                <param name="container" value="Container(590)." />
+                <param name="plot" value="$VAR[Label_Plot_C590]" />
+                <param name="infoline-label" value="$VAR[Label_Home_InfoLine]" />
+                <param name="infoline-image" value="$VAR[Image_Home_VideoQuality]" />
+                <top>-15</top>
+                <height>285</height>
+                <visible>Control.IsVisible(59)</visible>
+                <include>Viewtype_Info_Right</include>
+                <visible>Integer.IsGreater(Container(590).NumItems,0)</visible>
+                <visible>![Container.Content(seasons) | Container.Content(artists) | Container.Content(sets) | Container.Content(tvshows)]</visible>
+            </include>
+            <include content="View_Info_Grouplist">
+                <param name="title" value="$VAR[Label_Info_Title_590]" />
+                <param name="container" value="Container(590)." />
+                <param name="plot" value="$VAR[Label_Plot_C590]" />
+                <param name="infoline-label" value="$VAR[Label_Home_InfoLine]" />
+                <param name="infoline-image" value="$VAR[Image_Home_VideoQuality]" />
+                <top>-15</top>
+                <height>285</height>
+                <visible>Control.HasFocus(590)</visible>
+                <visible>Control.IsVisible(59)</visible>
+                <include>Viewtype_Info_Right</include>
+                <visible>[Container.Content(seasons) | Container.Content(artists) | Container.Content(sets) | Container.Content(tvshows)]</visible>
+            </include>
+            <include content="View_53_Episodes">
+                <param name="id" value="590" />
+                <param name="include" value="Viewtype_Poster" />
+                <param name="parentid" value="59" />
+                <param name="wallid" value="5959" />
+            </include>
+        </control>
+    </include>
+</includes>
+
