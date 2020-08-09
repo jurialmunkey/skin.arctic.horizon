@@ -12,7 +12,7 @@
                 <scrolltime>0</scrolltime>
                 <left>-80</left>
                 <width>900</width>
-                <bottom>-20</bottom>
+                <bottom>view_bottom</bottom>
                 <include>Viewtype_Movement</include>
                 <onup>SetFocus(9000)</onup>
                 <ondown>60</ondown>
@@ -45,8 +45,8 @@
         <control type="grouplist">
             <left>-920</left>
             <right>-920</right>
-            <bottom>-20</bottom>
-            <height>600</height>
+            <bottom>view_bottom</bottom>
+            <height>630</height>
             <usecontrolcoords>true</usecontrolcoords>
             <orientation>horizontal</orientation>
             <itemgap>0</itemgap>
@@ -55,7 +55,7 @@
 
             <visible>Container($PARAM[id]).Position(0)</visible>
             <control type="grouplist">
-                <height>600</height>
+                <height>630</height>
                 <width>900</width>
                 <usecontrolcoords>true</usecontrolcoords>
                 <orientation>vertical</orientation>
@@ -74,7 +74,7 @@
                 </include>
             </control>
             <control type="grouplist">
-                <height>600</height>
+                <height>630</height>
                 <width>900</width>
                 <usecontrolcoords>true</usecontrolcoords>
                 <orientation>vertical</orientation>
@@ -94,7 +94,7 @@
                 </include>
             </control>
             <control type="grouplist">
-                <height>600</height>
+                <height>630</height>
                 <width>900</width>
                 <usecontrolcoords>true</usecontrolcoords>
                 <orientation>vertical</orientation>
@@ -120,7 +120,7 @@
             </control>
 
             <control type="grouplist">
-                <height>600</height>
+                <height>630</height>
                 <width>900</width>
                 <usecontrolcoords>true</usecontrolcoords>
                 <orientation>vertical</orientation>
@@ -156,8 +156,8 @@
         <control type="grouplist">
             <left>-920</left>
             <right>-920</right>
-            <bottom>-20</bottom>
-            <height>600</height>
+            <bottom>view_bottom</bottom>
+            <height>630</height>
             <usecontrolcoords>true</usecontrolcoords>
             <orientation>horizontal</orientation>
             <itemgap>0</itemgap>
@@ -165,7 +165,7 @@
             <animation effect="slide" tween="quadratic" time="400" reversible="false" end="900" condition="!Container($PARAM[id]).OnScrollPrevious">Conditional</animation>
             <visible>Container($PARAM[id]).Position(1)</visible>
             <control type="grouplist">
-                <height>600</height>
+                <height>630</height>
                 <width>900</width>
                 <usecontrolcoords>true</usecontrolcoords>
                 <orientation>vertical</orientation>
@@ -184,7 +184,7 @@
                 </include>
             </control>
             <control type="grouplist">
-                <height>600</height>
+                <height>630</height>
                 <width>900</width>
                 <usecontrolcoords>true</usecontrolcoords>
                 <orientation>vertical</orientation>
@@ -204,7 +204,7 @@
                 </include>
             </control>
             <control type="grouplist">
-                <height>600</height>
+                <height>630</height>
                 <width>900</width>
                 <usecontrolcoords>true</usecontrolcoords>
                 <orientation>vertical</orientation>
@@ -230,7 +230,7 @@
             </control>
 
             <control type="grouplist">
-                <height>600</height>
+                <height>630</height>
                 <width>900</width>
                 <usecontrolcoords>true</usecontrolcoords>
                 <orientation>vertical</orientation>
@@ -266,8 +266,8 @@
         <control type="grouplist">
             <left>-920</left>
             <right>-920</right>
-            <bottom>-20</bottom>
-            <height>600</height>
+            <bottom>view_bottom</bottom>
+            <height>630</height>
             <usecontrolcoords>true</usecontrolcoords>
             <orientation>horizontal</orientation>
             <itemgap>0</itemgap>
@@ -275,7 +275,7 @@
             <animation effect="slide" tween="quadratic" time="400" reversible="false" end="900" condition="!Container($PARAM[id]).OnScrollPrevious">Conditional</animation>
             <visible>Container($PARAM[id]).Position(2)</visible>
             <control type="grouplist">
-                <height>600</height>
+                <height>630</height>
                 <width>900</width>
                 <usecontrolcoords>true</usecontrolcoords>
                 <orientation>vertical</orientation>
@@ -294,7 +294,7 @@
                 </include>
             </control>
             <control type="grouplist">
-                <height>600</height>
+                <height>630</height>
                 <width>900</width>
                 <usecontrolcoords>true</usecontrolcoords>
                 <orientation>vertical</orientation>
@@ -314,7 +314,7 @@
                 </include>
             </control>
             <control type="grouplist">
-                <height>600</height>
+                <height>630</height>
                 <width>900</width>
                 <usecontrolcoords>true</usecontrolcoords>
                 <orientation>vertical</orientation>
@@ -340,7 +340,7 @@
             </control>
 
             <control type="grouplist">
-                <height>600</height>
+                <height>630</height>
                 <width>900</width>
                 <usecontrolcoords>true</usecontrolcoords>
                 <orientation>vertical</orientation>
@@ -391,6 +391,8 @@
                     <param name="pos" value="$PARAM[pos]" />
                     <param name="selected" value="$PARAM[selected]" />
                     <param name="icon" value="$VAR[Image_Banner_NoWrap_C$PARAM[id]_$PARAM[pos]]" />
+                    <param name="affix" value="_NoWrap_C$PARAM[id]_$PARAM[pos]" />
+                    <param name="listitem" value="Container($PARAM[id]).ListItemNoWrap($PARAM[pos])" />
                     <param name="diffuse" value="diffuse/banner-std.png" />
                 </include>
             </control>
@@ -405,6 +407,8 @@
                     <param name="selected" value="$PARAM[selected]" />
                     <param name="icon" value="$VAR[Image_Banner_Absolute_C$PARAM[id]_$PARAM[alt01pos]]" />
                     <param name="diffuse" value="diffuse/banner-std.png" />
+                    <param name="affix" value="_Absolute_C$PARAM[id]_$PARAM[alt01pos]" />
+                    <param name="listitem" value="Container($PARAM[id]).ListItemAbsolute($PARAM[alt01pos])" />
                 </include>
             </control>
             <control type="group">
@@ -418,6 +422,8 @@
                     <param name="selected" value="$PARAM[selected]" />
                     <param name="icon" value="$VAR[Image_Banner_Absolute_C$PARAM[id]_$PARAM[alt02pos]]" />
                     <param name="diffuse" value="diffuse/banner-std.png" />
+                    <param name="affix" value="_Absolute_C$PARAM[id]_$PARAM[alt02pos]" />
+                    <param name="listitem" value="Container($PARAM[id]).ListItemAbsolute($PARAM[alt02pos])" />
                 </include>
             </control>
         </definition>
@@ -430,6 +436,8 @@
 
             <include condition="$PARAM[selectbox]" content="View_Selectbox">
                 <param name="focusbounce" value="true" />
+                <param name="selectbox" value="false" />
+                <param name="overlay" value="false" />
                 <visible>Control.HasFocus($PARAM[id])</visible>
                 <control type="image">
                     <bordersize>7</bordersize>
@@ -460,7 +468,10 @@
                 <visible>String.IsEmpty(Container($PARAM[id]).ListItemNoWrap($PARAM[pos]).Art(banner)) + String.IsEmpty(Container($PARAM[id]).ListItemNoWrap($PARAM[pos]).Art(tvshow.banner))</visible>
                 <visible>String.IsEmpty(Container($PARAM[id]).ListItemNoWrap($PARAM[pos]).Art(clearlogo))</visible>
             </include>
-            <include condition="$PARAM[selectbox] + !Skin.HasSetting(DisableWatchedOverlay)">View_WatchedOverlay</include>
+            <include condition="!Skin.HasSetting(DisableWatchedOverlay)" content="View_WatchedOverlay">
+                <param name="affix" value="$PARAM[affix]" />
+                <param name="listitem" value="$PARAM[listitem]" />
+            </include>
             <include condition="$PARAM[selectbox]" content="View_Selectbox">
                 <param name="focusbounce" value="true" />
                 <visible>Control.HasFocus($PARAM[id])</visible>
