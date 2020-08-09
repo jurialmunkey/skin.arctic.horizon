@@ -273,21 +273,76 @@
         </definition>
     </include>
 
-    <include name="View_WatchedOverlay">
-        <control type="group">
+    <include name="View_WatchedOverlay_Content">
+        <param name="affix" default="" />
+        <param name="listitem" default="ListItem" />
+        <definition>
+            <control type="image">
+                <centerleft>50%</centerleft>
+                <centertop>50%</centertop>
+                <width>44</width>
+                <height>44</height>
+                <texture colordiffuse="ff333333">$VAR[Image_Overlay_Backing$PARAM[affix],,-bg.png]</texture>
+            </control>
+            <control type="group">
+                <centerleft>50%</centerleft>
+                <centertop>50%</centertop>
+                <width>44</width>
+                <height>44</height>
+                <control type="group">
+                    <include content="Defs_Pad">
+                        <param name="pad" value="-8" />
+                    </include>
+                    <control type="image">
+                        <texture colordiffuse="ff08de4b">$VAR[Defs_PercentPlayed$PARAM[affix],progress/circle/p,.png]</texture>
+                        <aspectratio align="center" aligny="center">keep</aspectratio>
+                    </control>
+                </control>
+            </control>
+            <control type="image">
+                <centerleft>50%</centerleft>
+                <centertop>50%</centertop>
+                <width>44</width>
+                <height>44</height>
+                <texture colordiffuse="ff000000">$VAR[Image_Overlay_Backing$PARAM[affix],,-fg.png]</texture>
+            </control>
+            <control type="image">
+                <centerleft>50%</centerleft>
+                <centertop>50%</centertop>
+                <width>24</width>
+                <height>24</height>
+                <texture colordiffuse="ffffffff">$VAR[Image_Overlay$PARAM[affix]]</texture>
+            </control>
+            <control type="label">
+                <font>font_unwatched</font>
+                <align>center</align>
+                <aligny>center</aligny>
+                <textcolor>ffededed</textcolor>
+                <label>$INFO[$PARAM[listitem].Property(UnWatchedEpisodes)]</label>
+                <visible>Integer.IsGreater($PARAM[listitem].Property(UnWatchedEpisodes),0) + [String.IsEqual($PARAM[listitem].DBType,tvshow) | String.IsEqual($PARAM[listitem].DBType,season)] + !Skin.HasSetting(DisableIndicator.Episodes)</visible>
+            </control>
+        </definition>
+    </include>
+
+    <include name="View_WatchedOverlay_Corner">
+        <param name="affix" default="" />
+        <param name="listitem" default="ListItem" />
+        <param name="bg_color" default="ff000000" />
+        <param name="fg_color" default="ffffffff" />
+        <definition>
             <control type="image">
                 <top>15</top>
                 <right>15</right>
                 <width>48</width>
                 <height>48</height>
-                <texture colordiffuse="ff000000" border="10">$VAR[Image_Overlay_Corner]</texture>
+                <texture colordiffuse="$PARAM[bg_color]" border="10">$VAR[Image_Overlay_Backing$PARAM[affix],,.png]</texture>
             </control>
             <control type="image">
                 <top>16</top>
                 <right>16</right>
                 <width>24</width>
                 <height>24</height>
-                <texture colordiffuse="ffffffff">$VAR[Image_Overlay]</texture>
+                <texture colordiffuse="$PARAM[fg_color]">$VAR[Image_Overlay$PARAM[affix]]</texture>
             </control>
             <control type="label">
                 <top>15</top>
@@ -297,43 +352,70 @@
                 <font>font_unwatched</font>
                 <align>center</align>
                 <textcolor>ffededed</textcolor>
-                <label>$INFO[ListItem.Property(UnWatchedEpisodes)]</label>
-                <visible>Integer.IsGreater(ListItem.Property(UnWatchedEpisodes),0) + [String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,season)] + !Skin.HasSetting(DisableIndicator.Episodes)</visible>
+                <label>$INFO[$PARAM[listitem].Property(UnWatchedEpisodes)]</label>
+                <visible>Integer.IsGreater($PARAM[listitem].Property(UnWatchedEpisodes),0) + [String.IsEqual($PARAM[listitem].DBType,tvshow) | String.IsEqual($PARAM[listitem].DBType,season)] + !Skin.HasSetting(DisableIndicator.Episodes)</visible>
             </control>
-        </control>
+        </definition>
+    </include>
+
+    <include name="View_WatchedOverlay">
+        <param name="affix" default="" />
+        <param name="listitem" default="ListItem" />
+        <definition>
+            <include content="View_WatchedOverlay_Corner" condition="Skin.HasSetting(EnableClassicIndicators)">
+                <param name="affix" value="$PARAM[affix]" />
+                <param name="listitem" value="$PARAM[listitem]" />
+            </include>
+            <include content="Object_Control" condition="!Skin.HasSetting(EnableClassicIndicators)">
+                <param name="type" value="group" />
+                <bottom>-6</bottom>
+                <right>34</right>
+                <width>44</width>
+                <height>44</height>
+                <include content="View_WatchedOverlay_Content">
+                    <param name="affix" value="$PARAM[affix]" />
+                    <param name="listitem" value="$PARAM[listitem]" />
+                </include>
+            </include>
+        </definition>
     </include>
 
     <include name="View_WatchedOverlay_Focus">
-        <control type="group">
-            <visible>!Skin.HasSetting(DisableWatchedOverlay)</visible>
-            <control type="image">
-                <top>15</top>
-                <right>15</right>
-                <width>48</width>
-                <height>48</height>
-                <texture colordiffuse="$VAR[ColorHighlight]" border="10">$VAR[Image_Overlay_Corner]</texture>
-            </control>
-            <control type="image">
-                <top>16</top>
-                <right>16</right>
-                <width>24</width>
-                <height>24</height>
-                <texture colordiffuse="panel_bg">$VAR[Image_Overlay_Focus]</texture>
-            </control>
-            <control type="label">
-                <top>15</top>
-                <right>15</right>
-                <width>28</width>
-                <height>28</height>
-                <font>font_unwatched</font>
-                <align>center</align>
-                <textcolor>panel_bg</textcolor>
-                <label>$INFO[ListItem.Property(UnWatchedEpisodes)]</label>
-                <visible>Integer.IsGreater(ListItem.Property(UnWatchedEpisodes),0) + [String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,season)] + !Skin.HasSetting(DisableIndicator.Episodes)</visible>
-            </control>
-        </control>
+        <param name="affix" default="" />
+        <param name="listitem" default="ListItem" />
+        <definition>
+            <include content="View_WatchedOverlay_Corner" condition="Skin.HasSetting(EnableClassicIndicators)">
+                <param name="affix" value="$PARAM[affix]" />
+                <param name="listitem" value="$PARAM[listitem]" />
+                <param name="bg_color" value="$VAR[ColorHighlight]" />
+                <param name="fg_color" value="ff000000" />
+            </include>
+            <include content="Object_Control" condition="!Skin.HasSetting(EnableClassicIndicators)">
+                <param name="type" value="group" />
+                <bottom>-13</bottom>
+                <right>27</right>
+                <width>58</width>
+                <height>58</height>
+                <control type="image">
+                    <include content="Defs_Pad">
+                        <param name="pad" value="-24" />
+                    </include>
+                    <texture>$VAR[Image_Overlay_Backing$PARAM[affix],,-fo-shadow.png]</texture>
+                </control>
+                <control type="image">
+                    <texture colordiffuse="$VAR[ColorHighlight]">$VAR[Image_Overlay_Backing$PARAM[affix],,-fo.png]</texture>
+                </control>
+                <control type="image">
+                    <animation effect="fade" end="50" condition="true">Conditional</animation>
+                    <texture colordiffuse="$VAR[ColorGradient]">$VAR[Image_Overlay_Backing$PARAM[affix],,-fo.png]</texture>
+                </control>
+                <include content="View_WatchedOverlay_Content">
+                    <param name="affix" value="$PARAM[affix]" />
+                    <param name="listitem" value="$PARAM[listitem]" />
+                </include>
+            </include>
+        </definition>
     </include>
-
     <include name="View_List_Selectbox">
         <param name="gradient" default="true" />
         <definition>
@@ -386,6 +468,9 @@
         <param name="focusbounce" default="true" />
         <param name="focusbounce-conditional" default="false" />
         <param name="gradient" default="true" />
+        <param name="affix" default="" />
+        <param name="listitem" default="ListItem" />
+        <param name="selectbox" default="true" />
         <definition>
             <control type="group">
 
@@ -393,7 +478,8 @@
                     <effect type="zoom" start="96.5" end="100" time="150" tween="sine" easing="inout" center="auto"/>
                     <effect type="fade" start="20" end="100" time="150" tween="back" easing="out"/>
                 </animation>
-                <control type="group">
+                <include content="Object_Control" condition="$PARAM[selectbox]">
+                    <param name="type" value="group" />
                     <include content="Defs_Pad">
                         <param name="pad" value="$PARAM[pad]" />
                     </include>
@@ -407,8 +493,11 @@
                         <texture colordiffuse="$VAR[ColorGradient]" border="20">common/selectbox-gradient.png</texture>
                         <visible>$PARAM[gradient]</visible>
                     </control>
-                </control>
-                <include condition="$PARAM[overlay]">View_WatchedOverlay_Focus</include>
+                </include>
+                <include condition="$PARAM[overlay]" content="View_WatchedOverlay_Focus">
+                    <param name="affix" value="$PARAM[affix]" />
+                    <param name="listitem" value="$PARAM[listitem]" />
+                </include>
                 <nested />
             </control>
         </definition>

@@ -11,7 +11,7 @@
                 <param name="viewtype-label" value="$LOCALIZE[31108]" />
                 <left>-80</left>
                 <right>-80</right>
-                <bottom>-20</bottom>
+                <bottom>view_bottom</bottom>
                 <oninfo condition="ListItem.IsCollection">ActivateWindow(1140)</oninfo>
                 <oninfo condition="Container.Content(actors) | Container.Content(directors)">RunScript(plugin.video.themoviedb.helper,add_query=$INFO[Container.ListItem.Label],type=person,call_auto=1190,return)</oninfo>
                 <include>Viewtype_Movement</include>

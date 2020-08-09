@@ -636,7 +636,7 @@
                     </control>
                 </control>
 
-                <control type="group">
+                <!-- <control type="group">
                     <right>-120</right>
                     <bottom>0</bottom>
                     <width>item_poster_width</width>
@@ -657,7 +657,7 @@
                         <top>40</top>
                         <texture border="16" colordiffuse="33ff0000">common/box.png</texture>
                     </control>
-                </control>
+                </control> -->
 
 
                 <control type="group">

@@ -496,7 +496,7 @@
                         </include>
                         <include content="Viewtype_Poster">
                             <param name="id" value="5610" />
-                            <bottom>-20</bottom>
+                            <bottom>view_bottom</bottom>
                             <left>-80</left>
                             <right>-80</right>
                             <onup>302</onup>

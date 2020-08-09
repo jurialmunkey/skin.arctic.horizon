@@ -9,7 +9,7 @@
                 <param name="castlabel" value="Container.Content(actors)" />
                 <param name="label2" value="ListItem.Property(role)" />
                 <param name="viewtype-label" value="$LOCALIZE[31232]" />
-                <bottom>-20</bottom>
+                <bottom>view_bottom</bottom>
                 <left>-80</left>
                 <right>-80</right>
                 <onfocus>ClearProperty(TMDbHelper.WidgetContainer,Home)</onfocus>
@@ -66,7 +66,7 @@
             <right>-534.28</right>
             <orientation>vertical</orientation>
             <usecontrolcoords>true</usecontrolcoords>
-            <itemgap>0</itemgap>
+            <itemgap>view_wall_gap</itemgap>
             <animation effect="slide" tween="quadratic" time="400" reversible="false" end="-257.15" condition="!String.IsEqual(Window.Property($PARAM[wall-id]_OnMove),right)">Conditional</animation>
             <animation effect="slide" tween="quadratic" time="400" reversible="false" end="257.15" condition="!String.IsEqual(Window.Property($PARAM[wall-id]_OnMove),left)">Conditional</animation>
 
@@ -75,7 +75,7 @@
             <control type="grouplist">
                 <animation effect="fade" reversible="false" start="0" end="100" time="400" tween="sine" easing="out" condition="Control.HasFocus($PARAM[wall-id])">Conditional</animation>
                 <animation effect="fade" reversible="false" end="0" start="100" time="400" tween="sine" easing="out" condition="!Control.HasFocus($PARAM[wall-id])">Conditional</animation>
-                <height>360</height>
+                <height>item_view_height</height>
                 <usecontrolcoords>true</usecontrolcoords>
                 <orientation>horizontal</orientation>
                 <itemgap>0</itemgap>
@@ -138,7 +138,7 @@
             <control type="grouplist">
                 <animation effect="fade" reversible="false" start="0" end="100" time="400" tween="sine" easing="out" condition="Control.HasFocus($PARAM[wall-id])">Conditional</animation>
                 <animation effect="fade" reversible="false" end="0" start="100" time="400" tween="sine" easing="out" condition="!Control.HasFocus($PARAM[wall-id])">Conditional</animation>
-                <height>360</height>
+                <height>item_view_height</height>
                 <usecontrolcoords>true</usecontrolcoords>
                 <orientation>horizontal</orientation>
                 <itemgap>0</itemgap>
@@ -199,7 +199,7 @@
                 </include>
             </control>
             <control type="grouplist">
-                <height>360</height>
+                <height>item_view_height</height>
                 <usecontrolcoords>true</usecontrolcoords>
                 <orientation>horizontal</orientation>
                 <itemgap>0</itemgap>
@@ -263,7 +263,7 @@
             <control type="grouplist">
                 <animation effect="fade" reversible="false" start="0" end="100" time="400" tween="sine" easing="out" condition="Control.HasFocus($PARAM[wall-id])">Conditional</animation>
                 <animation effect="fade" reversible="false" end="0" start="100" time="400" tween="sine" easing="out" condition="!Control.HasFocus($PARAM[wall-id])">Conditional</animation>
-                <height>360</height>
+                <height>item_view_height</height>
                 <usecontrolcoords>true</usecontrolcoords>
                 <orientation>horizontal</orientation>
                 <itemgap>0</itemgap>
@@ -326,7 +326,7 @@
             <control type="grouplist">
                 <animation effect="fade" reversible="false" start="0" end="100" time="400" tween="sine" easing="out" condition="Control.HasFocus($PARAM[wall-id])">Conditional</animation>
                 <animation effect="fade" reversible="false" end="0" start="100" time="400" tween="sine" easing="out" condition="!Control.HasFocus($PARAM[wall-id])">Conditional</animation>
-                <height>360</height>
+                <height>item_view_height</height>
                 <usecontrolcoords>true</usecontrolcoords>
                 <orientation>horizontal</orientation>
                 <itemgap>0</itemgap>
@@ -389,7 +389,7 @@
             <control type="grouplist">
                 <animation effect="fade" reversible="false" start="0" end="100" time="400" tween="sine" easing="out" condition="Control.HasFocus($PARAM[wall-id])">Conditional</animation>
                 <animation effect="fade" reversible="false" end="0" start="100" time="400" tween="sine" easing="out" condition="!Control.HasFocus($PARAM[wall-id])">Conditional</animation>
-                <height>360</height>
+                <height>item_view_height</height>
                 <usecontrolcoords>true</usecontrolcoords>
                 <orientation>horizontal</orientation>
                 <itemgap>0</itemgap>
@@ -567,6 +567,8 @@
                     <include content="View_Selectbox">
                         <param name="pad" value="-13" />
                         <param name="overlay" value="false" />
+                        <param name="affix" value="_C$PARAM[id]_$PARAM[pos]" />
+                        <param name="listitem" value="Container($PARAM[id]).ListItem($PARAM[pos])" />
                     </include>
                 </control>
                 <control type="group">
@@ -606,48 +608,20 @@
             <control type="group">
                 <width>item_poster_width</width>
                 <height>360</height>
-                <include content="View_52_Posters_WallItem_Layout">
+                <include content="Viewtype_Poster_Itemlayout">
                     <param name="selectbox" value="$PARAM[selectbox]" />
                     <param name="id" value="$PARAM[id]" />
                     <param name="wall-id" value="$PARAM[wall-id]" />
+                    <param name="altid" value="$PARAM[wall-id]" />
                     <param name="pos" value="$PARAM[pos]" />
                     <param name="icon" value="$VAR[Image_Poster_C$PARAM[id]_$PARAM[pos]]" />
                     <param name="diffuse" value="diffuse/poster-std.png" />
+                    <param name="affix" value="_C$PARAM[id]_$PARAM[pos]" />
+                    <param name="listitem" value="Container($PARAM[id]).ListItem($PARAM[pos])" />
                 </include>
             </control>
         </definition>
     </include>
 
-    <include name="View_52_Posters_WallItem_Layout">
-        <include>Object_PosterBack</include>
-        <control type="group">
-            <include>Defs_Pad</include>
-
-            <include condition="$PARAM[selectbox]" content="View_Selectbox">
-                <param name="focusbounce" value="!String.IsEmpty(Window.Property($PARAM[wall-id]_OnMove))" />
-                <visible>Control.HasFocus($PARAM[id]) | Control.HasFocus($PARAM[wall-id])</visible>
-                <control type="image">
-                    <bordersize>7</bordersize>
-                    <texture border="10" colordiffuse="$VAR[ColorHighlight]">common/box.png</texture>
-                </control>
-                <control type="image">
-                    <bordersize>7</bordersize>
-                    <texture border="10" colordiffuse="$VAR[ColorGradient]">common/box-gradient-vertical.png</texture>
-                </control>
-            </include>
-            <include content="Object_Artwork">
-                <param name="diffuse" value="$PARAM[diffuse]" />
-                <param name="icon" value="$PARAM[icon]" />
-                <param name="Exp_DefaultIcon" value="$EXP[Exp_DefaultIcon_C$PARAM[id]_$PARAM[pos]]" />
-                <param name="Exp_SpecialIcon" value="$EXP[Exp_SpecialIcon_C$PARAM[id]_$PARAM[pos]]" />
-                <param name="Image_DefaultIcon" value="$VAR[Image_DefaultIcon_C$PARAM[id]_$PARAM[pos]]" />
-            </include>
-            <include condition="$PARAM[selectbox] + !Skin.HasSetting(DisableWatchedOverlay)">View_WatchedOverlay</include>
-            <include condition="$PARAM[selectbox]" content="View_Selectbox">
-                <param name="focusbounce" value="!String.IsEmpty(Window.Property($PARAM[wall-id]_OnMove))" />
-                <visible>Control.HasFocus($PARAM[id]) | Control.HasFocus($PARAM[wall-id])</visible>
-            </include>
-        </control>
-    </include>
 </includes>
 

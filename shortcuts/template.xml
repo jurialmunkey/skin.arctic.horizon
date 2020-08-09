@@ -578,7 +578,7 @@
                 <param name="viewsides" value="-80" />
                 <left>-80</left>
                 <right>-80</right>
-                <bottom>-20</bottom>
+                <bottom>view_bottom</bottom>
                 <onup>302</onup>
                 <ondown condition="!Window.IsVisible(Home) + !Skin.HasSetting(DisableWallScroll)">$SKINSHORTCUTS[widgetWallID]</ondown>
                 <ondown condition="!Window.IsVisible(Home)Skin.HasSetting(DisableWallScroll)">60</ondown>
@@ -626,7 +626,7 @@
                 <param name="viewsides" value="-80" />
                 <left>-80</left>
                 <right>-80</right>
-                <bottom>-20</bottom>
+                <bottom>view_bottom</bottom>
                 <onup>302</onup>
                 <ondown condition="!Window.IsVisible(Home) + !Skin.HasSetting(DisableWallScroll)">$SKINSHORTCUTS[widgetWallID]</ondown>
                 <ondown condition="!Window.IsVisible(Home)Skin.HasSetting(DisableWallScroll)">60</ondown>

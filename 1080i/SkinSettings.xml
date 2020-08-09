@@ -363,19 +363,20 @@
                         <include>Dialog_Standard_HintLabel</include>
                         <label>List Items</label>
                     </control>
-                    <control type="radiobutton" id="19402">
+                    <control type="button" id="19402" description="Disable watched indicators">
+                        <visible>Integer.IsEqual(Window.Property(CurrentFocus),9004)</visible>
+                        <include>Defs_Settings_Button</include>
+                        <label>$LOCALIZE[31082]</label>
+                        <onclick>ActivateWindow(1121)</onclick>
+                    </control>
+                    <control type="radiobutton" id="19403">
                         <visible>Integer.IsEqual(Window.Property(CurrentFocus),9004)</visible>
                         <label>$LOCALIZE[31229]</label>
                         <include>Defs_Settings_Button</include>
                         <selected>!Skin.HasSetting(DisableTextPanel)</selected>
                         <onclick>Skin.ToggleSetting(DisableTextPanel)</onclick>
                     </control>
-                    <control type="button" id="19403" description="Disable watched indicators">
-                        <visible>Integer.IsEqual(Window.Property(CurrentFocus),9004)</visible>
-                        <include>Defs_Settings_Button</include>
-                        <label>$LOCALIZE[31082]</label>
-                        <onclick>ActivateWindow(1121)</onclick>
-                    </control>
+
                     <control type="radiobutton" id="19404">
                         <visible>Integer.IsEqual(Window.Property(CurrentFocus),9004)</visible>
                         <label>$LOCALIZE[31174]</label>

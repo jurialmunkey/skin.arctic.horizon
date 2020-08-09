@@ -49,12 +49,15 @@
     <constant name="view_poster_width">570</constant>
     <constant name="view_info_left">700</constant>
     <constant name="view_info_left_nopanel">620</constant>
+    <constant name="view_wall_gap">-30</constant>
+    <constant name="view_bottom">-50</constant>
 
     <constant name="item_list_height">80</constant>
     <constant name="-item_list_height">-80</constant>
     <constant name="item_list_height_half">40</constant>
     <constant name="item_biglist_height">160</constant>
     <constant name="item_icon_height">350</constant>
+    <constant name="item_view_height">390</constant>
     <constant name="item_settings_height">240</constant>
     <constant name="item_square_width">300</constant>
     <constant name="item_landscape_width">450</constant>

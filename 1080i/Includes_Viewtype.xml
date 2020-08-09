@@ -330,7 +330,7 @@
         <param name="itemlayout-width" default="item_poster_width" />
         <param name="itemlayout-height" default="360" />
         <param name="itemlayout" default="Viewtype_Poster_Itemlayout" />
-        <param name="height" default="360" />
+        <param name="height" default="item_view_height" />
         <param name="movement" default="6" />
         <param name="focusposition" default="0" />
         <param name="icon" default="$VAR[Image_Poster]" />
@@ -405,6 +405,8 @@
         <param name="castlabel" default="false" />
         <param name="clearlogooverlay" default="false" />
         <param name="clearlogooverlay-visible" default="String.IsEmpty(ListITem.Art(banner)) + String.IsEmpty(ListITem.Art(tvshow.banner))" />
+        <param name="affix" default="" />
+        <param name="listitem" default="ListItem" />
         <definition>
             <include>Object_PosterBack</include>
             <control type="group">
@@ -412,6 +414,10 @@
 
                 <include condition="$PARAM[selectbox]" content="View_Selectbox">
                     <param name="focusbounce" value="true" />
+                    <param name="overlay" value="false" />
+                    <param name="selectbox" value="false" />
+                    <param name="affix" value="$PARAM[affix]" />
+                    <param name="listitem" value="$PARAM[listitem]" />
                     <visible>Control.HasFocus($PARAM[id]) | Control.HasFocus($PARAM[altid])</visible>
                     <control type="image">
                         <bordersize>7</bordersize>
@@ -429,11 +435,14 @@
                     <param name="selectbox" value="$PARAM[selectbox]" />
                     <param name="diffuse" value="$PARAM[diffuse]" />
                     <param name="icon" value="$PARAM[icon]" />
+                    <param name="Exp_DefaultIcon" value="$EXP[Exp_DefaultIcon$PARAM[affix]]" />
+                    <param name="Exp_SpecialIcon" value="$EXP[Exp_SpecialIcon$PARAM[affix]]" />
+                    <param name="Image_DefaultIcon" value="$VAR[Image_DefaultIcon$PARAM[affix]]" />
                 </include>
 
                 <include content="Object_Control" condition="$PARAM[clearlogooverlay]">
                     <param name="type" value="image" />
-                    <texture background="true">$VAR[Image_ClearLogo]</texture>
+                    <texture background="true">$VAR[Image_ClearLogo$PARAM[affix]]</texture>
                     <aspectratio align="right">keep</aspectratio>
                     <bordersize>30</bordersize>
                     <visible>$PARAM[clearlogooverlay-visible]</visible>
@@ -446,9 +455,14 @@
                 </include>
 
                 <!-- Watched Overlay and Selectbox -->
-                <include condition="!Skin.HasSetting(DisableWatchedOverlay)">View_WatchedOverlay</include>
+                <include condition="!Skin.HasSetting(DisableWatchedOverlay)" content="View_WatchedOverlay">
+                    <param name="affix" value="$PARAM[affix]" />
+                    <param name="listitem" value="$PARAM[listitem]" />
+                </include>
                 <include condition="$PARAM[selectbox]" content="View_Selectbox">
                     <param name="focusbounce" value="$PARAM[focusbounce]" />
+                    <param name="affix" value="$PARAM[affix]" />
+                    <param name="listitem" value="$PARAM[listitem]" />
                     <visible>Control.HasFocus($PARAM[id]) | Control.HasFocus($PARAM[altid])</visible>
                 </include>
             </control>
@@ -639,6 +653,8 @@
         <param name="textbox-visible" default="true" />
         <param name="label-include" default="Viewtype_Landscape_Label" />
         <param name="textpanel" default="true" />
+        <param name="affix" default="" />
+        <param name="listitem" default="ListItem" />
         <definition>
             <include condition="$PARAM[textpanel]">Object_PosterBack</include>
             <control type="group">
@@ -651,6 +667,10 @@
                     </include>
                     <include condition="$PARAM[selectbox] + $PARAM[textpanel]" content="View_Selectbox">
                         <param name="focusbounce" value="true" />
+                        <param name="overlay" value="false" />
+                        <param name="selectbox" value="false" />
+                        <param name="affix" value="$PARAM[affix]" />
+                        <param name="listitem" value="$PARAM[listitem]" />
                         <visible>Control.HasFocus($PARAM[id]) | Control.HasFocus($PARAM[altid])</visible>
                         <bottom>-$PARAM[textbox-height]</bottom>
                         <control type="image">
@@ -664,6 +684,10 @@
                     </include>
                     <include condition="$PARAM[selectbox] + !$PARAM[textpanel]" content="View_Selectbox">
                         <param name="focusbounce" value="true" />
+                        <param name="overlay" value="false" />
+                        <param name="selectbox" value="false" />
+                        <param name="affix" value="$PARAM[affix]" />
+                        <param name="listitem" value="$PARAM[listitem]" />
                         <visible>Control.HasFocus($PARAM[id]) | Control.HasFocus($PARAM[altid])</visible>
                         <control type="image">
                             <bordersize>7</bordersize>
@@ -682,22 +706,47 @@
                         <param name="icon" value="$PARAM[icon]" />
                         <param name="aspectratio" value="$PARAM[aspectratio]" />
                         <param name="specialicon" value="$PARAM[specialicon]" />
+                        <param name="Exp_DefaultIcon" value="$EXP[Exp_DefaultIcon$PARAM[affix]]" />
+                        <param name="Exp_SpecialIcon" value="$EXP[Exp_SpecialIcon$PARAM[affix]]" />
+                        <param name="Image_DefaultIcon" value="$VAR[Image_DefaultIcon$PARAM[affix]]" />
                     </include>
-                    <include condition="!$PARAM[textpanel] + !Skin.HasSetting(DisableWatchedOverlay)">View_WatchedOverlay</include>
+                    <include content="Object_Control" condition="$PARAM[selectbox] + $PARAM[textpanel] + !Skin.HasSetting(EnableClassicIndicators)">
+                        <param name="type" value="group" />
+                        <bottom>-13</bottom>
+                        <right>27</right>
+                        <width>58</width>
+                        <height>58</height>
+                        <visible>Control.HasFocus($PARAM[id]) | Control.HasFocus($PARAM[altid])</visible>
+                        <control type="image">
+                            <texture colordiffuse="$VAR[ColorHighlight]">$VAR[Image_Overlay_Backing$PARAM[affix],,-half-fo.png]</texture>
+                        </control>
+                        <control type="image">
+                            <animation effect="fade" end="40" condition="true">Conditional</animation>
+                            <texture colordiffuse="$VAR[ColorGradient]">$VAR[Image_Overlay_Backing$PARAM[affix],,-half-fo.png]</texture>
+                        </control>
+                    </include>
+                    <include condition="!Skin.HasSetting(DisableWatchedOverlay)" content="View_WatchedOverlay">
+                        <param name="affix" value="$PARAM[affix]" />
+                        <param name="listitem" value="$PARAM[listitem]" />
+                    </include>
                     <include condition="$PARAM[selectbox] + !$PARAM[textpanel]" content="View_Selectbox">
                         <param name="focusbounce" value="true" />
+                        <param name="affix" value="$PARAM[affix]" />
+                        <param name="listitem" value="$PARAM[listitem]" />
                         <visible>Control.HasFocus($PARAM[id]) | Control.HasFocus($PARAM[altid])</visible>
                     </include>
                 </control>
 
-                <!-- Watched Overlay and Selectbox -->
-                <include condition="$PARAM[textpanel] + !Skin.HasSetting(DisableWatchedOverlay)">View_WatchedOverlay</include>
+                <!-- <include condition="!Skin.HasSetting(DisableWatchedOverlay) + $PARAM[textpanel]" content="View_WatchedOverlay">
+                    <param name="affix" value="$PARAM[affix]" />
+                    <param name="listitem" value="$PARAM[listitem]" />
+                </include> -->
                 <include condition="$PARAM[selectbox] + $PARAM[textpanel]" content="View_Selectbox">
                     <param name="focusbounce" value="true" />
+                    <param name="affix" value="$PARAM[affix]" />
+                    <param name="listitem" value="$PARAM[listitem]" />
+                    <param name="overlay" value="Skin.HasSetting(EnableClassicIndicators)" />
                     <visible>Control.HasFocus($PARAM[id]) | Control.HasFocus($PARAM[altid])</visible>
-                    <include content="Viewtype_Landscape_Bottom" condition="!$PARAM[textbox-visible]">
-                        <param name="height" value="$PARAM[textbox-height]" />
-                    </include>
                 </include>
 
                 <!-- Textlabels for Panel -->
@@ -706,19 +755,25 @@
                     <visible>$PARAM[textbox-visible]</visible>
                     <bottom>0</bottom>
                     <include content="$PARAM[label-include]" description="Unfocused" condition="$PARAM[textpanel]">
-                        <param name="visible" value="!Control.HasFocus($PARAM[id]) | !$PARAM[selectbox]" />
+                        <param name="visible" value="![Control.HasFocus($PARAM[id]) | Control.HasFocus($PARAM[altid])] | !$PARAM[selectbox]" />
                         <param name="textcolor_100" value="panel_fg_30" />
                         <param name="textcolor_70" value="panel_fg_30" />
+                        <param name="affix" value="$PARAM[affix]" />
+                        <param name="listitem" value="$PARAM[listitem]" />
                     </include>
                     <include content="$PARAM[label-include]" description="Focused" condition="Skin.HasSetting(EnableMonochromeHighlight) + $PARAM[textpanel]">
-                        <param name="visible" value="Control.HasFocus($PARAM[id]) + $PARAM[selectbox]" />
+                        <param name="visible" value="[Control.HasFocus($PARAM[id]) | Control.HasFocus($PARAM[altid])] + $PARAM[selectbox]" />
                         <param name="textcolor_100" value="panel_bg" />
                         <param name="textcolor_70" value="panel_bg" />
+                        <param name="affix" value="$PARAM[affix]" />
+                        <param name="listitem" value="$PARAM[listitem]" />
                     </include>
                     <include content="$PARAM[label-include]" description="Focused" condition="!Skin.HasSetting(EnableMonochromeHighlight) + $PARAM[textpanel]">
-                        <param name="visible" value="Control.HasFocus($PARAM[id]) + $PARAM[selectbox]" />
+                        <param name="visible" value="[Control.HasFocus($PARAM[id]) | Control.HasFocus($PARAM[altid])] + $PARAM[selectbox]" />
                         <param name="textcolor_100" value="panel_fg_100" />
                         <param name="textcolor_70" value="panel_fg_70" />
+                        <param name="affix" value="$PARAM[affix]" />
+                        <param name="listitem" value="$PARAM[listitem]" />
                     </include>
                 </control>
 
@@ -728,18 +783,22 @@
                     <visible>$PARAM[textbox-visible]</visible>
                     <bottom>-10</bottom>
                     <include content="$PARAM[label-include]" description="Unfocused" condition="!$PARAM[textpanel]">
-                        <param name="visible" value="!Control.HasFocus($PARAM[id]) | !$PARAM[selectbox]" />
+                        <param name="visible" value="![Control.HasFocus($PARAM[id]) | Control.HasFocus($PARAM[altid])] | !$PARAM[selectbox]" />
                         <param name="textcolor_100" value="main_fg_30" />
                         <param name="textcolor_70" value="main_fg_30" />
                         <param name="align" value="left" />
                         <param name="pad" value="15" />
+                        <param name="affix" value="$PARAM[affix]" />
+                        <param name="listitem" value="$PARAM[listitem]" />
                     </include>
                     <include content="$PARAM[label-include]" description="Focused" condition="!$PARAM[textpanel]">
-                        <param name="visible" value="Control.HasFocus($PARAM[id]) + $PARAM[selectbox]" />
+                        <param name="visible" value="[Control.HasFocus($PARAM[id]) | Control.HasFocus($PARAM[altid])] + $PARAM[selectbox]" />
                         <param name="textcolor_100" value="main_fg_100" />
                         <param name="textcolor_70" value="main_fg_70" />
                         <param name="align" value="left" />
                         <param name="pad" value="15" />
+                        <param name="affix" value="$PARAM[affix]" />
+                        <param name="listitem" value="$PARAM[listitem]" />
                     </include>
                 </control>
             </control>
@@ -751,6 +810,7 @@
         <param name="textcolor_70" default="panel_fg_70" />
         <param name="align" default="center" />
         <param name="pad" default="35" />
+        <param name="affix" default="" />
         <definition>
             <control type="label">
                 <left>$PARAM[pad]</left>
@@ -762,7 +822,7 @@
                 <top>0</top>
                 <aligny>center</aligny>
                 <align>$PARAM[align]</align>
-                <label>$VAR[Label_Landscape_Title]</label>
+                <label>$VAR[Label_Landscape_Title$PARAM[affix]]</label>
                 <visible>$PARAM[visible]</visible>
             </control>
             <control type="label">
@@ -775,7 +835,7 @@
                 <top>30</top>
                 <aligny>center</aligny>
                 <align>$PARAM[align]</align>
-                <label fallback="19055">$VAR[Label_SmallLandscapeWidget_Sublabel]</label>
+                <label fallback="19055">$VAR[Label_SmallLandscapeWidget_Sublabel$PARAM[affix]]</label>
                 <visible>$PARAM[visible]</visible>
             </control>
         </definition>
@@ -930,6 +990,7 @@
     <include name="Viewtype_Square_Label">
         <param name="textcolor_100" default="panel_fg_100" />
         <param name="textcolor_70" default="panel_fg_70" />
+        <param name="listitem" default="ListItem" />
         <definition>
             <control type="label">
                 <left>35</left>
@@ -941,7 +1002,7 @@
                 <bottom>20</bottom>
                 <aligny>center</aligny>
                 <align>center</align>
-                <label>$INFO[ListItem.Label]</label>
+                <label>$INFO[$PARAM[listitem].Label]</label>
                 <visible>$PARAM[visible]</visible>
             </control>
         </definition>

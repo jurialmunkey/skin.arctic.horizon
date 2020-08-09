@@ -264,7 +264,7 @@
                 </include>
                 <include content="Viewtype_Poster">
                     <param name="id" value="$PARAM[id]" />
-                    <bottom>-20</bottom>
+                    <bottom>view_bottom</bottom>
                     <left>-80</left>
                     <right>-80</right>
                     <onback>$PARAM[parentid]</onback>
@@ -282,7 +282,7 @@
                 </include>
                 <include content="Viewtype_Square">
                     <param name="id" value="$PARAM[id]" />
-                    <bottom>-20</bottom>
+                    <bottom>view_bottom</bottom>
                     <left>-80</left>
                     <right>-80</right>
                     <onback>$PARAM[parentid]</onback>
@@ -300,7 +300,7 @@
                 </include>
                 <include content="Viewtype_Landscape">
                     <param name="id" value="$PARAM[id]" />
-                    <bottom>-20</bottom>
+                    <bottom>view_bottom</bottom>
                     <left>-80</left>
                     <right>-80</right>
                     <onback>$PARAM[parentid]</onback>
@@ -345,7 +345,7 @@
                 <nested />
                 <left>-80</left>
                 <right>-80</right>
-                <bottom>-20</bottom>
+                <bottom>view_bottom</bottom>
                 <onback>$PARAM[parentid]</onback>
                 <onup>$PARAM[parentid]</onup>
                 <ondown condition="!Skin.HasSetting(DisableWallScroll) + [Container($PARAM[id]).HasNext | Container($PARAM[id]).HasPrevious]">$PARAM[wallid]</ondown>

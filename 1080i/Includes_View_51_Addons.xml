@@ -10,7 +10,7 @@
                 <param name="viewtype-label" value="$LOCALIZE[31237]" />
                 <left>-80</left>
                 <right>-80</right>
-                <bottom>-20</bottom>
+                <bottom>view_bottom</bottom>
                 <pagecontrol>60</pagecontrol>
                 <onfocus>ClearProperty(TMDbHelper.WidgetContainer,Home)</onfocus>
                 <include>Viewtype_Movement</include>
@@ -57,7 +57,7 @@
             <left>-620</left>
             <right>-620</right>
             <orientation>vertical</orientation>
-            <itemgap>0</itemgap>
+            <itemgap>view_wall_gap</itemgap>
             <animation effect="slide" tween="quadratic" time="400" reversible="false" end="-300" condition="!String.IsEqual(Window.Property($PARAM[wall-id]_OnMove),right)">Conditional</animation>
             <animation effect="slide" tween="quadratic" time="400" reversible="false" end="300" condition="!String.IsEqual(Window.Property($PARAM[wall-id]_OnMove),left)">Conditional</animation>
 
@@ -66,7 +66,7 @@
             <control type="grouplist">
                 <animation effect="fade" reversible="false" start="0" end="100" time="400" tween="sine" easing="out" condition="Control.HasFocus($PARAM[wall-id])">Conditional</animation>
                 <animation effect="fade" reversible="false" end="0" start="100" time="400" tween="sine" easing="out" condition="!Control.HasFocus($PARAM[wall-id])">Conditional</animation>
-                <height>360</height>
+                <height>item_view_height</height>
                 <usecontrolcoords>true</usecontrolcoords>
                 <orientation>horizontal</orientation>
                 <itemgap>0</itemgap>
@@ -124,7 +124,7 @@
             <control type="grouplist">
                 <animation effect="fade" reversible="false" start="0" end="100" time="400" tween="sine" easing="out" condition="Control.HasFocus($PARAM[wall-id])">Conditional</animation>
                 <animation effect="fade" reversible="false" end="0" start="100" time="400" tween="sine" easing="out" condition="!Control.HasFocus($PARAM[wall-id])">Conditional</animation>
-                <height>360</height>
+                <height>item_view_height</height>
                 <usecontrolcoords>true</usecontrolcoords>
                 <orientation>horizontal</orientation>
                 <itemgap>0</itemgap>
@@ -180,7 +180,7 @@
                 </include>
             </control>
             <control type="grouplist">
-                <height>360</height>
+                <height>item_view_height</height>
                 <usecontrolcoords>true</usecontrolcoords>
                 <orientation>horizontal</orientation>
                 <itemgap>0</itemgap>
@@ -239,7 +239,7 @@
             <control type="grouplist">
                 <animation effect="fade" reversible="false" start="0" end="100" time="400" tween="sine" easing="out" condition="Control.HasFocus($PARAM[wall-id])">Conditional</animation>
                 <animation effect="fade" reversible="false" end="0" start="100" time="400" tween="sine" easing="out" condition="!Control.HasFocus($PARAM[wall-id])">Conditional</animation>
-                <height>360</height>
+                <height>item_view_height</height>
                 <usecontrolcoords>true</usecontrolcoords>
                 <orientation>horizontal</orientation>
                 <itemgap>0</itemgap>
@@ -297,7 +297,7 @@
             <control type="grouplist">
                 <animation effect="fade" reversible="false" start="0" end="100" time="400" tween="sine" easing="out" condition="Control.HasFocus($PARAM[wall-id])">Conditional</animation>
                 <animation effect="fade" reversible="false" end="0" start="100" time="400" tween="sine" easing="out" condition="!Control.HasFocus($PARAM[wall-id])">Conditional</animation>
-                <height>360</height>
+                <height>item_view_height</height>
                 <usecontrolcoords>true</usecontrolcoords>
                 <orientation>horizontal</orientation>
                 <itemgap>0</itemgap>
@@ -355,7 +355,7 @@
             <control type="grouplist">
                 <animation effect="fade" reversible="false" start="0" end="100" time="400" tween="sine" easing="out" condition="Control.HasFocus($PARAM[wall-id])">Conditional</animation>
                 <animation effect="fade" reversible="false" end="0" start="100" time="400" tween="sine" easing="out" condition="!Control.HasFocus($PARAM[wall-id])">Conditional</animation>
-                <height>360</height>
+                <height>item_view_height</height>
                 <usecontrolcoords>true</usecontrolcoords>
                 <orientation>horizontal</orientation>
                 <itemgap>0</itemgap>
@@ -477,148 +477,36 @@
             <control type="group">
                 <width>item_square_width</width>
                 <height>360</height>
-                <include content="View_51_Addons_WallItem_Layout">
+                <include content="Viewtype_Landscape_Itemlayout" condition="!Skin.HasSetting(DisableTextPanel)">
                     <param name="selectbox" value="$PARAM[selectbox]" />
                     <param name="id" value="$PARAM[id]" />
                     <param name="wall-id" value="$PARAM[wall-id]" />
+                    <param name="altid" value="$PARAM[wall-id]" />
                     <param name="icon" value="$INFO[Container($PARAM[id]).ListItem($PARAM[pos]).Icon]" />
-                    <param name="diffuse" value="diffuse/poster-std.png" />
+                    <param name="diffuse" value="diffuse/square-std.png" />
                     <param name="textpanel" value="true" />
                     <param name="textbox-height" value="60" />
                     <param name="textbox-visible" value="true" />
                     <param name="pos" value="$PARAM[pos]" />
+                    <param name="label-include" value="Viewtype_Square_Label" />
+                    <param name="affix" value="_C$PARAM[id]_$PARAM[pos]" />
+                    <param name="listitem" value="Container($PARAM[id]).ListItem($PARAM[pos])" />
                 </include>
-            </control>
-        </definition>
-    </include>
-
-    <include name="View_51_Addons_WallItem_Layout">
-        <include condition="$PARAM[textpanel]">Object_PosterBack</include>
-        <control type="group">
-            <include>Defs_Pad</include>
-            <!-- Image -->
-            <control type="group">
-                <bottom>$PARAM[textbox-height]</bottom>
-                <include content="Object_PosterBack" condition="!$PARAM[textpanel]">
-                    <param name="pad" value="-5" />
-                </include>
-                <include condition="$PARAM[selectbox] + $PARAM[textpanel]" content="View_Selectbox">
-                    <param name="focusbounce" value="true" />
-                    <bottom>-$PARAM[textbox-height]</bottom>
-                    <control type="image">
-                        <bordersize>7</bordersize>
-                        <texture border="10" colordiffuse="$VAR[ColorHighlight]">common/box.png</texture>
-                    </control>
-                    <control type="image">
-                        <bordersize>7</bordersize>
-                        <texture border="10" colordiffuse="$VAR[ColorGradient]">common/box-gradient-vertical.png</texture>
-                    </control>
-                </include>
-                <include condition="$PARAM[selectbox] + !$PARAM[textpanel]" content="View_Selectbox">
-                    <param name="focusbounce" value="true" />
-                    <control type="image">
-                        <bordersize>7</bordersize>
-                        <texture border="10" colordiffuse="$VAR[ColorHighlight]">common/box.png</texture>
-                    </control>
-                    <control type="image">
-                        <bordersize>7</bordersize>
-                        <texture border="10" colordiffuse="$VAR[ColorGradient]">common/box-gradient-vertical.png</texture>
-                    </control>
-                </include>
-                <include content="Object_Artwork">
-                    <param name="diffuse" value="$PARAM[diffuse]" />
-                    <param name="aspectratio" value="$PARAM[aspectratio]" />
-                    <param name="icon" value="$PARAM[icon]" />
-                    <param name="Exp_DefaultIcon" value="$EXP[Exp_DefaultIcon_C$PARAM[id]_$PARAM[pos]]" />
-                    <param name="Exp_SpecialIcon" value="$EXP[Exp_SpecialIcon_C$PARAM[id]_$PARAM[pos]]" />
-                    <param name="Image_DefaultIcon" value="$VAR[Image_DefaultIcon_C$PARAM[id]_$PARAM[pos]]" />
-                </include>
-                <include condition="$PARAM[selectbox] + !$PARAM[textpanel]" content="View_Selectbox">
-                    <param name="focusbounce" value="true" />
-                </include>
-            </control>
-
-            <!-- Watched Overlay and Selectbox -->
-            <include condition="$PARAM[selectbox] + $PARAM[textpanel]" content="View_Selectbox">
-                <param name="focusbounce" value="true" />
-                <include content="Viewtype_Landscape_Bottom" condition="!$PARAM[textbox-visible]">
-                    <param name="height" value="$PARAM[textbox-height]" />
-                </include>
-            </include>
-
-            <!-- Textlabels for Panel -->
-            <control type="group">
-                <height>$PARAM[textbox-height]</height>
-                <visible>$PARAM[textbox-visible]</visible>
-                <bottom>0</bottom>
-                <include content="View_51_Addons_WallItem_Label" description="Unfocused" condition="$PARAM[textpanel] + !$PARAM[selectbox]">
-                    <param name="pos" value="$PARAM[pos]" />
-                    <param name="textcolor_100" value="panel_fg_30" />
-                    <param name="textcolor_70" value="panel_fg_30" />
+                <include content="Viewtype_Landscape_Itemlayout" condition="Skin.HasSetting(DisableTextPanel)">
+                    <param name="selectbox" value="$PARAM[selectbox]" />
                     <param name="id" value="$PARAM[id]" />
                     <param name="wall-id" value="$PARAM[wall-id]" />
-                </include>
-                <include content="View_51_Addons_WallItem_Label" description="Focused" condition="Skin.HasSetting(EnableMonochromeHighlight) + $PARAM[textpanel] + $PARAM[selectbox]">
+                    <param name="altid" value="$PARAM[wall-id]" />
+                    <param name="icon" value="$INFO[Container($PARAM[id]).ListItem($PARAM[pos]).Icon]" />
+                    <param name="diffuse" value="diffuse/square-std-np.png" />
+                    <param name="textpanel" value="false" />
+                    <param name="textbox-height" value="60" />
+                    <param name="textbox-visible" value="true" />
                     <param name="pos" value="$PARAM[pos]" />
-                    <param name="textcolor_100" value="panel_bg" />
-                    <param name="textcolor_70" value="panel_bg" />
-                    <param name="id" value="$PARAM[id]" />
-                    <param name="wall-id" value="$PARAM[wall-id]" />
+                    <param name="label-include" value="Viewtype_Square_Label" />
+                    <param name="affix" value="_C$PARAM[id]_$PARAM[pos]" />
+                    <param name="listitem" value="Container($PARAM[id]).ListItem($PARAM[pos])" />
                 </include>
-                <include content="View_51_Addons_WallItem_Label" description="Focused" condition="!Skin.HasSetting(EnableMonochromeHighlight) + $PARAM[textpanel] + $PARAM[selectbox]">
-                    <param name="pos" value="$PARAM[pos]" />
-                    <param name="textcolor_100" value="panel_fg_100" />
-                    <param name="textcolor_70" value="panel_fg_70" />
-                    <param name="id" value="$PARAM[id]" />
-                    <param name="wall-id" value="$PARAM[wall-id]" />
-                </include>
-            </control>
-
-            <!-- Textlabels for No Panel -->
-            <control type="group">
-                <height>$PARAM[textbox-height]</height>
-                <visible>$PARAM[textbox-visible]</visible>
-                <bottom>-10</bottom>
-                <include content="View_51_Addons_WallItem_Label" description="Unfocused" condition="!$PARAM[textpanel] + !$PARAM[selectbox]">
-                    <param name="pos" value="$PARAM[pos]" />
-                    <param name="textcolor_100" value="main_fg_30" />
-                    <param name="textcolor_70" value="main_fg_30" />
-                    <param name="align" value="left" />
-                    <param name="pad" value="15" />
-                    <param name="id" value="$PARAM[id]" />
-                    <param name="wall-id" value="$PARAM[wall-id]" />
-                </include>
-                <include content="View_51_Addons_WallItem_Label" description="Focused" condition="!$PARAM[textpanel] + $PARAM[selectbox]">
-                    <param name="pos" value="$PARAM[pos]" />
-                    <param name="textcolor_100" value="main_fg_100" />
-                    <param name="textcolor_70" value="main_fg_70" />
-                    <param name="align" value="left" />
-                    <param name="pad" value="15" />
-                    <param name="id" value="$PARAM[id]" />
-                    <param name="wall-id" value="$PARAM[wall-id]" />
-                </include>
-            </control>
-        </control>
-    </include>
-
-    <include name="View_51_Addons_WallItem_Label">
-        <param name="textcolor_100" default="panel_fg_100" />
-        <param name="textcolor_70" default="panel_fg_70" />
-        <param name="align" default="center" />
-        <param name="pad" default="35" />
-        <definition>
-            <control type="label">
-                <left>35</left>
-                <right>35</right>
-                <font>font_tiny_bold</font>
-                <selectedcolor>$PARAM[textcolor_100]</selectedcolor>
-                <textcolor>$PARAM[textcolor_100]</textcolor>
-                <top>-10</top>
-                <bottom>20</bottom>
-                <aligny>center</aligny>
-                <align>center</align>
-                <label>$INFO[Container($PARAM[id]).ListItem($PARAM[pos]).Label]</label>
-                <visible>$PARAM[visible]</visible>
             </control>
         </definition>
     </include>
