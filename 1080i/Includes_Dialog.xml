@@ -361,6 +361,79 @@
         <alttexturefocus colordiffuse="$VAR[ColorHighlight]">common/white.png</alttexturefocus>
     </include>
 
+    <include name="Dialog_ColorPicker_SwatchLabel">
+        <control type="label">
+            <nested />
+            <height>20</height>
+            <font>font_info_buttons</font>
+            <textcolor>dialog_fg_100</textcolor>
+        </control>
+    </include>
+
+    <include name="Dialog_ColorPicker_SwatchPreview">
+        <control type="group">
+            <width>86.67</width>
+            <left>$PARAM[left]</left>
+            <include content="Dialog_ColorPicker_SwatchLabel">
+                <left>-10</left>
+                <right>-10</right>
+                <align>center</align>
+                <label>$PARAM[label]</label>
+            </include>
+            <control type="group">
+                <top>40</top>
+                <height>40</height>
+                <control type="image">
+                    <include content="Defs_Pad">
+                        <param name="pad" value="-20" />
+                    </include>
+                    <texture border="32" colordiffuse="Shadow">common/shadow-20.png</texture>
+                    <visible>!Control.HasFocus($PARAM[id])</visible>
+                </control>
+                <control type="button" id="$PARAM[id]">
+                    <texturefocus />
+                    <texturenofocus />
+                    <font />
+                    <textcolor>00ffffff</textcolor>
+                    <onleft>$PARAM[onleft]</onleft>
+                    <onright>$PARAM[onright]</onright>
+                    <onup>3012</onup>
+                    <ondown>3015</ondown>
+                    <onclick>SetProperty(colorpick,$PARAM[color],Home)</onclick>
+                    <onclick>SetFocus(3110)</onclick>
+                    <!-- <onfocus>SetProperty(colorpick,$PARAM[color],Home)</onfocus> -->
+                </control>
+                <control type="group">
+                    <control type="image">
+                        <texture colordiffuse="$VAR[Color$PARAM[color]]" border="20">common/box.png</texture>
+                        <visible>!Control.HasFocus(3110) | !String.IsEqual(Window(Home).Property(colorpick),$PARAM[color])</visible>
+                    </control>
+                    <control type="image">
+                        <texture colordiffuse="$INFO[Container(3110).ListItem.Label]" border="20">common/box.png</texture>
+                        <visible>Control.HasFocus(3110) + String.IsEqual(Window(Home).Property(colorpick),$PARAM[color])</visible>
+                    </control>
+                    <control type="image">
+                        <include content="Defs_Pad">
+                            <param name="pad" value="-27" />
+                        </include>
+                        <bordersize>20</bordersize>
+                        <bordertexture border="32" colordiffuse="Shadow">common/shadow-20.png</bordertexture>
+                        <texture border="20" colordiffuse="Selected">common/selectbox.png</texture>
+                        <visible>Control.HasFocus($PARAM[id])</visible>
+                    </control>
+                </control>
+                <control type="image">
+                    <centertop>50%</centertop>
+                    <centerleft>50%</centerleft>
+                    <width>16</width>
+                    <height>16</height>
+                    <texture>diffuse/circle.png</texture>
+                    <visible>String.IsEqual(Window(Home).Property(colorpick),$PARAM[color])</visible>
+                </control>
+            </control>
+        </control>
+    </include>
+
     <!-- ==================== -->
     <!-- Notification Dialogs -->
     <!-- ==================== -->

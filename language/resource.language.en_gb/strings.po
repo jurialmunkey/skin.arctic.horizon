@@ -759,6 +759,16 @@ msgctxt "#31152"
 msgid "Viewtypes"
 msgstr ""
 
+#: /1080i/Custom_1117_ColorPicker.xml
+msgctxt "#31153"
+msgid "Value"
+msgstr ""
+
+#: /1080i/Custom_1117_ColorPicker.xml
+msgctxt "#31154"
+msgid "Color"
+msgstr ""
+
 #: /1080i/SkinSettings.xml
 msgctxt "#31156"
 msgid "PVR Guide"

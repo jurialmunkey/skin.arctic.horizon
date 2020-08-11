@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<window type="dialog" id="1117">
+<window type="window" id="1117">
     <defaultcontrol always="true">9000</defaultcontrol>
     <controls>
         <include>Global_Overlay</include>
@@ -16,248 +16,217 @@
                 <include>Dialog_Standard_Header</include>
                 <label>Colour Picker</label>
             </control>
-            <control type="group">
-                <height>60</height>
-                <top>dialog_top</top>
-                <right>dialog_pad</right>
-                <width>300</width>
-                <control type="group">
-                    <control type="image">
-                        <include content="Defs_Pad">
-                            <param name="pad" value="-20" />
-                        </include>
-                        <texture border="32" colordiffuse="Shadow">common/shadow-20.png</texture>
-                    </control>
-                    <control type="group">
-                        <control type="image">
-                            <texture colordiffuse="$VAR[ColorHighlight]" border="20">common/box.png</texture>
-                            <visible>!Control.HasFocus(3110) | !String.IsEqual(Window(Home).Property(colorpick),Highlight)</visible>
-                        </control>
-                        <control type="image">
-                            <texture colordiffuse="$INFO[Container(3110).ListItem.Label]" border="20">common/box.png</texture>
-                            <visible>Control.HasFocus(3110) + String.IsEqual(Window(Home).Property(colorpick),Highlight)</visible>
-                        </control>
-                        <control type="image">
-                            <texture colordiffuse="$VAR[ColorGradient]" border="20">common/box-gradient.png</texture>
-                            <visible>!Control.HasFocus(3110) | !String.IsEqual(Window(Home).Property(colorpick),Gradient)</visible>
-                        </control>
-                        <control type="image">
-                            <texture colordiffuse="$INFO[Container(3110).ListItem.Label]" border="20">common/box-gradient.png</texture>
-                            <visible>Control.HasFocus(3110) + String.IsEqual(Window(Home).Property(colorpick),Gradient)</visible>
-                        </control>
-                    </control>
-                    <control type="image">
-                        <centertop>50%</centertop>
-                        <centerleft>43.33</centerleft>
-                        <width>16</width>
-                        <height>16</height>
-                        <texture>diffuse/circle.png</texture>
-                        <visible>String.IsEqual(Window(Home).Property(colorpick),Highlight)</visible>
-                    </control>
-                    <control type="image">
-                        <centertop>50%</centertop>
-                        <centerright>43.33</centerright>
-                        <width>16</width>
-                        <height>16</height>
-                        <texture>diffuse/circle.png</texture>
-                        <visible>String.IsEqual(Window(Home).Property(colorpick),Gradient)</visible>
-                    </control>
-                </control>
-            </control>
-            <control type="group">
-                <top>200</top>
-                <height>60</height>
-                <top>dialog_top</top>
-                <right>dialog_pad</right>
-                <width>300</width>
-                <control type="group">
-                    <width>86.67</width>
-                    <left>0</left>
-                    <control type="image">
-                        <include content="Defs_Pad">
-                            <param name="pad" value="-20" />
-                        </include>
-                        <texture border="32" colordiffuse="Shadow">common/shadow-20.png</texture>
-                    </control>
-                    <control type="group">
-                        <control type="image">
-                            <texture colordiffuse="$VAR[ColorHighlight]" border="20">common/box.png</texture>
-                            <visible>!Control.HasFocus(3110) | !String.IsEqual(Window(Home).Property(colorpick),Highlight)</visible>
-                        </control>
-                        <control type="image">
-                            <texture colordiffuse="$INFO[Container(3110).ListItem.Label]" border="20">common/box.png</texture>
-                            <visible>Control.HasFocus(3110) + String.IsEqual(Window(Home).Property(colorpick),Highlight)</visible>
-                        </control>
-                    </control>
-                    <control type="image">
-                        <centertop>50%</centertop>
-                        <centerleft>50%</centerleft>
-                        <width>16</width>
-                        <height>16</height>
-                        <texture>diffuse/circle.png</texture>
-                        <visible>String.IsEqual(Window(Home).Property(colorpick),Highlight)</visible>
-                    </control>
-                </control>
-                <control type="group">
-                    <width>86.67</width>
-                    <left>106.67</left>
-                    <control type="image">
-                        <include content="Defs_Pad">
-                            <param name="pad" value="-20" />
-                        </include>
-                        <texture border="32" colordiffuse="Shadow">common/shadow-20.png</texture>
-                    </control>
-                    <control type="group">
-                        <control type="image">
-                            <texture colordiffuse="$VAR[ColorGradient]" border="20">common/box.png</texture>
-                            <visible>!Control.HasFocus(3110) | !String.IsEqual(Window(Home).Property(colorpick),Gradient)</visible>
-                        </control>
-                        <control type="image">
-                            <texture colordiffuse="$INFO[Container(3110).ListItem.Label]" border="20">common/box.png</texture>
-                            <visible>Control.HasFocus(3110) + String.IsEqual(Window(Home).Property(colorpick),Gradient)</visible>
-                        </control>
-                    </control>
-                    <control type="image">
-                        <centertop>50%</centertop>
-                        <centerleft>50%</centerleft>
-                        <width>16</width>
-                        <height>16</height>
-                        <texture>diffuse/circle.png</texture>
-                        <visible>String.IsEqual(Window(Home).Property(colorpick),Gradient)</visible>
-                    </control>
-                </control>
-                <control type="group">
-                    <width>86.67</width>
-                    <right>0</right>
-                    <control type="image">
-                        <include content="Defs_Pad">
-                            <param name="pad" value="-20" />
-                        </include>
-                        <texture border="32" colordiffuse="Shadow">common/shadow-20.png</texture>
-                    </control>
-                    <control type="group">
-                        <control type="image">
-                            <texture colordiffuse="$VAR[ColorOverlay]" border="20">common/box.png</texture>
-                            <visible>!Control.HasFocus(3110) | !String.IsEqual(Window(Home).Property(colorpick),Overlay)</visible>
-                        </control>
-                        <control type="image">
-                            <texture colordiffuse="$INFO[Container(3110).ListItem.Label]" border="20">common/box.png</texture>
-                            <visible>Control.HasFocus(3110) + String.IsEqual(Window(Home).Property(colorpick),Overlay)</visible>
-                        </control>
-                    </control>
-                    <control type="image">
-                        <centertop>50%</centertop>
-                        <centerleft>50%</centerleft>
-                        <width>16</width>
-                        <height>16</height>
-                        <texture>diffuse/circle.png</texture>
-                        <visible>String.IsEqual(Window(Home).Property(colorpick),Overlay)</visible>
-                    </control>
-                </control>
-            </control>
+
+            <!-- Dialog Content -->
             <control type="group">
                 <left>dialog_pad</left>
-                <right>360</right>
+                <right>dialog_pad</right>
                 <bottom>dialog_pad</bottom>
                 <top>dialog_top</top>
-                <control type="panel" id="3110">
-                    <onup>3110</onup>
-                    <ondown>3110</ondown>
-                    <onleft>noop</onleft>
-                    <onright>9000</onright>
-                    <scrolltime>200</scrolltime>
-                    <orientation>vertical</orientation>
-                    <preloaditems>2</preloaditems>
-                    <onclick condition="String.IsEqual(Window(Home).Property(colorpick),Highlight)">Skin.SetString(focuscolor.name,$INFO[ListItem.Label])</onclick>
-                    <onclick condition="String.IsEqual(Window(Home).Property(colorpick),Gradient)">Skin.SetString(gradientcolor.name,$INFO[ListItem.Label])</onclick>
-                    <onclick condition="String.IsEqual(Window(Home).Property(colorpick),Overlay)">Skin.SetString(overlaycolor.name,$INFO[ListItem.Label])</onclick>
-                    <onclick>SetFocus(3015)</onclick>
-                    <itemlayout width="80" height="80">
-                        <control type="image">
-                            <right>1</right>
-                            <bottom>1</bottom>
-                            <texture background="true">$INFO[ListItem.Icon]</texture>
-                        </control>
-                    </itemlayout>
-                    <focusedlayout width="80" height="80">
-                        <control type="image">
-                            <right>1</right>
-                            <bottom>1</bottom>
-                            <texture background="true">$INFO[ListItem.Icon]</texture>
-                        </control>
-                    </focusedlayout>
-                    <include>Items_ColorPalette_Standard</include>
-                    <include>Items_ColorPalette_Material</include>
-                </control>
+
+                <!-- Swatches -->
                 <control type="group">
-                    <left>-40</left>
-                    <top>-40</top>
-                    <width>160</width>
-                    <height>160</height>
-                    <visible>Control.Hasfocus(3110)</visible>
-                    <animation effect="slide" end="0,80" condition="Container(3110).Row(1)">Conditional</animation>
-                    <animation effect="slide" end="0,160" condition="Container(3110).Row(2)">Conditional</animation>
-                    <animation effect="slide" end="0,240" condition="Container(3110).Row(3)">Conditional</animation>
-                    <animation effect="slide" end="0,320" condition="Container(3110).Row(4)">Conditional</animation>
-                    <animation effect="slide" end="0,400" condition="Container(3110).Row(5)">Conditional</animation>
-                    <animation effect="slide" end="0,480" condition="Container(3110).Row(6)">Conditional</animation>
-                    <animation effect="slide" end="80" condition="Container(3110).Column(1)">Conditional</animation>
-                    <animation effect="slide" end="160" condition="Container(3110).Column(2)">Conditional</animation>
-                    <animation effect="slide" end="240" condition="Container(3110).Column(3)">Conditional</animation>
-                    <animation effect="slide" end="320" condition="Container(3110).Column(4)">Conditional</animation>
-                    <animation effect="slide" end="400" condition="Container(3110).Column(5)">Conditional</animation>
-                    <animation effect="slide" end="480" condition="Container(3110).Column(6)">Conditional</animation>
-                    <control type="image">
-                        <bordersize>20</bordersize>
-                        <texture colordiffuse="$INFO[Container(3110).ListItem.Label]" border="10">common/box.png</texture>
+                    <right>320</right>
+
+                    <!-- Colors Panel -->
+                    <control type="panel" id="3110">
+                        <onup>3110</onup>
+                        <ondown>3110</ondown>
+                        <onback>3012</onback>
+                        <onleft>noop</onleft>
+                        <onright>9000</onright>
+                        <scrolltime>200</scrolltime>
+                        <orientation>vertical</orientation>
+                        <preloaditems>2</preloaditems>
+                        <onclick condition="String.IsEqual(Window(Home).Property(colorpick),Highlight)">Skin.SetString(focuscolor.name,$INFO[ListItem.Label])</onclick>
+                        <onclick condition="String.IsEqual(Window(Home).Property(colorpick),Gradient)">Skin.SetString(gradientcolor.name,$INFO[ListItem.Label])</onclick>
+                        <onclick condition="String.IsEqual(Window(Home).Property(colorpick),Overlay)">Skin.SetString(overlaycolor.name,$INFO[ListItem.Label])</onclick>
+                        <onclick>SetFocus(3015)</onclick>
+                        <itemlayout width="80" height="80">
+                            <control type="image">
+                                <right>1</right>
+                                <bottom>1</bottom>
+                                <texture background="true">$INFO[ListItem.Icon]</texture>
+                            </control>
+                        </itemlayout>
+                        <focusedlayout width="80" height="80">
+                            <control type="image">
+                                <right>1</right>
+                                <bottom>1</bottom>
+                                <texture background="true">$INFO[ListItem.Icon]</texture>
+                            </control>
+                        </focusedlayout>
+                        <include>Items_ColorPalette_Standard</include>
+                        <include>Items_ColorPalette_Material</include>
                     </control>
-                    <control type="image">
-                        <bordersize>20</bordersize>
-                        <bordertexture border="32" colordiffuse="Shadow">common/shadow-20.png</bordertexture>
-                        <texture border="20" colordiffuse="Selected">common/selectbox.png</texture>
+
+                    <!-- Selection Box -->
+                    <control type="group">
+                        <left>-40</left>
+                        <top>-40</top>
+                        <width>160</width>
+                        <height>160</height>
+                        <visible>Control.Hasfocus(3110)</visible>
+                        <animation effect="slide" end="0,80" condition="Container(3110).Row(1)">Conditional</animation>
+                        <animation effect="slide" end="0,160" condition="Container(3110).Row(2)">Conditional</animation>
+                        <animation effect="slide" end="0,240" condition="Container(3110).Row(3)">Conditional</animation>
+                        <animation effect="slide" end="0,320" condition="Container(3110).Row(4)">Conditional</animation>
+                        <animation effect="slide" end="0,400" condition="Container(3110).Row(5)">Conditional</animation>
+                        <animation effect="slide" end="0,480" condition="Container(3110).Row(6)">Conditional</animation>
+                        <animation effect="slide" end="80" condition="Container(3110).Column(1)">Conditional</animation>
+                        <animation effect="slide" end="160" condition="Container(3110).Column(2)">Conditional</animation>
+                        <animation effect="slide" end="240" condition="Container(3110).Column(3)">Conditional</animation>
+                        <animation effect="slide" end="320" condition="Container(3110).Column(4)">Conditional</animation>
+                        <animation effect="slide" end="400" condition="Container(3110).Column(5)">Conditional</animation>
+                        <animation effect="slide" end="480" condition="Container(3110).Column(6)">Conditional</animation>
+                        <control type="image">
+                            <bordersize>20</bordersize>
+                            <texture colordiffuse="$INFO[Container(3110).ListItem.Label]" border="10">common/box.png</texture>
+                        </control>
+                        <control type="image">
+                            <bordersize>20</bordersize>
+                            <bordertexture border="32" colordiffuse="Shadow">common/shadow-20.png</bordertexture>
+                            <texture border="20" colordiffuse="Selected">common/selectbox.png</texture>
+                        </control>
                     </control>
                 </control>
+
+                <!-- Buttons -->
+                <control type="group">
+                    <right>0</right>
+                    <width>300</width>
+                    <!-- Gradient Preview -->
+                    <control type="group">
+                        <include content="Dialog_ColorPicker_SwatchLabel">
+                            <label>Gradient Preview</label>
+                        </include>
+                        <control type="group">
+                            <top>40</top>
+                            <height>40</height>
+                            <control type="image">
+                                <include content="Defs_Pad">
+                                    <param name="pad" value="-20" />
+                                </include>
+                                <texture border="32" colordiffuse="Shadow">common/shadow-20.png</texture>
+                            </control>
+                            <control type="group">
+                                <control type="image">
+                                    <texture colordiffuse="$VAR[ColorHighlight]" border="20">common/box.png</texture>
+                                    <visible>!Control.HasFocus(3110) | !String.IsEqual(Window(Home).Property(colorpick),Highlight)</visible>
+                                </control>
+                                <control type="image">
+                                    <texture colordiffuse="$INFO[Container(3110).ListItem.Label]" border="20">common/box.png</texture>
+                                    <visible>Control.HasFocus(3110) + String.IsEqual(Window(Home).Property(colorpick),Highlight)</visible>
+                                </control>
+                                <control type="image">
+                                    <texture colordiffuse="$VAR[ColorGradient]" border="20">common/box-gradient.png</texture>
+                                    <visible>!Control.HasFocus(3110) | !String.IsEqual(Window(Home).Property(colorpick),Gradient)</visible>
+                                </control>
+                                <control type="image">
+                                    <texture colordiffuse="$INFO[Container(3110).ListItem.Label]" border="20">common/box-gradient.png</texture>
+                                    <visible>Control.HasFocus(3110) + String.IsEqual(Window(Home).Property(colorpick),Gradient)</visible>
+                                </control>
+                            </control>
+                            <control type="image">
+                                <centertop>50%</centertop>
+                                <centerleft>43.33</centerleft>
+                                <width>16</width>
+                                <height>16</height>
+                                <texture>diffuse/circle.png</texture>
+                                <visible>String.IsEqual(Window(Home).Property(colorpick),Highlight)</visible>
+                            </control>
+                            <control type="image">
+                                <centertop>50%</centertop>
+                                <centerright>43.33</centerright>
+                                <width>16</width>
+                                <height>16</height>
+                                <texture>diffuse/circle.png</texture>
+                                <visible>String.IsEqual(Window(Home).Property(colorpick),Gradient)</visible>
+                            </control>
+                        </control>
+                    </control>
+
+                    <!-- Colours Preview -->
+                    <control type="group">
+                        <top>100</top>
+                        <include content="Dialog_ColorPicker_SwatchPreview">
+                            <param name="id" value="3021" />
+                            <param name="onleft" value="3023" />
+                            <param name="onright" value="3022" />
+                            <param name="left" value="0" />
+                            <param name="color" value="Highlight" />
+                            <param name="label" value="Highlight" />
+                        </include>
+                        <include content="Dialog_ColorPicker_SwatchPreview">
+                            <param name="id" value="3022" />
+                            <param name="onleft" value="3021" />
+                            <param name="onright" value="3023" />
+                            <param name="left" value="106.67" />
+                            <param name="color" value="Gradient" />
+                            <param name="label" value="Gradient" />
+                        </include>
+                        <include content="Dialog_ColorPicker_SwatchPreview">
+                            <param name="id" value="3023" />
+                            <param name="onleft" value="3022" />
+                            <param name="onright" value="3021" />
+                            <param name="left" value="213.33" />
+                            <param name="color" value="Overlay" />
+                            <param name="label" value="Overlay" />
+                        </include>
+                    </control>
+
+
+
+                    <!-- Button grouplist -->
+                    <control type="grouplist" id="9000">
+                        <top>210</top>
+                        <orientation>vertical</orientation>
+                        <itemgap>10</itemgap>
+                        <onleft>3110</onleft>
+                        <onright>3110</onright>
+                        <onup condition="String.IsEqual(Window(Home).Property(colorpick),Highlight)">3021</onup>
+                        <onup condition="String.IsEqual(Window(Home).Property(colorpick),Gradient)">3022</onup>
+                        <onup condition="String.IsEqual(Window(Home).Property(colorpick),Overlay)">3023</onup>
+                        <ondown condition="String.IsEqual(Window(Home).Property(colorpick),Highlight)">3021</ondown>
+                        <ondown condition="String.IsEqual(Window(Home).Property(colorpick),Gradient)">3022</ondown>
+                        <ondown condition="String.IsEqual(Window(Home).Property(colorpick),Overlay)">3023</ondown>
+                        <control type="button" id="3015">
+                            <label>$LOCALIZE[31154]: $INFO[Window(Home).Property(colorpick)]</label>
+                            <include>Dialog_Standard_Right_Buttons</include>
+                            <onclick condition="String.IsEqual(Window(Home).Property(colorpick),Highlight)">SetProperty(colorpick,Gradient,Home)</onclick>
+                            <onclick condition="String.IsEqual(Window(Home).Property(colorpick),Gradient)">SetProperty(colorpick,Overlay,Home)</onclick>
+                            <onclick condition="String.IsEqual(Window(Home).Property(colorpick),Overlay)">SetProperty(colorpick,Highlight,Home)</onclick>
+                        </control>
+                        <!-- EDIT -->
+                        <control type="button" id="3010">
+                            <textoffsetx>10</textoffsetx>
+                            <label>$LOCALIZE[31153]: $VAR[Label_ColorValue]</label>
+                            <include>Dialog_Standard_Right_Buttons</include>
+                            <onclick condition="String.IsEqual(Window(Home).Property(colorpick),Highlight)">Skin.SetString(focuscolor.name)</onclick>
+                            <onclick condition="String.IsEqual(Window(Home).Property(colorpick),Gradient)">Skin.SetString(gradientcolor.name)</onclick>
+                            <onclick condition="String.IsEqual(Window(Home).Property(colorpick),Overlay)">Skin.SetString(overlaycolor.name)</onclick>
+                        </control>
+                        <!-- CHOOSE PALETTE -->
+                        <control type="button" id="3030">
+                            <textoffsetx>10</textoffsetx>
+                            <label>31433</label>
+                            <include>Dialog_Standard_Right_Buttons</include>
+                            <onclick>Skin.ToggleSetting(UseOriginalPalette)</onclick>
+                        </control>
+                        <!-- Close -->
+                        <control type="button" id="3012">
+                            <label>$LOCALIZE[15067]</label>
+                            <include>Dialog_Standard_Right_Buttons</include>
+                            <onclick>Action(Close)</onclick>
+                        </control>
+                    </control>
+                </control>
+
             </control>
 
-            <!-- Button grouplist -->
-            <control type="grouplist" id="9000">
-                <top>280</top>
-                <include>Dialog_Standard_Right_Grouplist</include>
-                <onleft>3110</onleft>
-                <onright>3110</onright>
-                <onup>9000</onup>
-                <ondown>9000</ondown>
-                <control type="button" id="3015">
-                    <label>Color: $INFO[Window(Home).Property(colorpick)]</label>
-                    <include>Dialog_Standard_Right_Buttons</include>
-                    <onclick condition="String.IsEqual(Window(Home).Property(colorpick),Highlight)">SetProperty(colorpick,Gradient,Home)</onclick>
-                    <onclick condition="String.IsEqual(Window(Home).Property(colorpick),Gradient)">SetProperty(colorpick,Overlay,Home)</onclick>
-                    <onclick condition="String.IsEqual(Window(Home).Property(colorpick),Overlay)">SetProperty(colorpick,Highlight,Home)</onclick>
-                    <!-- <visible>String.IsEqual(Window(Home).Property(colorpick),Highlight) | String.IsEqual(Window(Home).Property(colorpick),Gradient)</visible> -->
-                </control>
-                <!-- EDIT -->
-                <control type="button" id="3010">
-                    <textoffsetx>10</textoffsetx>
-                    <label>Value: $VAR[Label_ColorValue]</label>
-                    <include>Dialog_Standard_Right_Buttons</include>
-                    <onclick condition="String.IsEqual(Window(Home).Property(colorpick),Highlight)">Skin.SetString(focuscolor.name)</onclick>
-                    <onclick condition="String.IsEqual(Window(Home).Property(colorpick),Gradient)">Skin.SetString(gradientcolor.name)</onclick>
-                    <onclick condition="String.IsEqual(Window(Home).Property(colorpick),Overlay)">Skin.SetString(overlaycolor.name)</onclick>
-                </control>
-                <!-- CHOOSE PALETTE -->
-                <control type="button" id="3030">
-                    <textoffsetx>10</textoffsetx>
-                    <label>31433</label>
-                    <include>Dialog_Standard_Right_Buttons</include>
-                    <onclick>Skin.ToggleSetting(UseOriginalPalette)</onclick>
-                </control>
-                <!-- Close -->
-                <control type="button" id="3012">
-                    <label>$LOCALIZE[15067]</label>
-                    <include>Dialog_Standard_Right_Buttons</include>
-                    <onclick>Action(Close)</onclick>
-                </control>
-            </control>
+
+
+
         </control>
 
     </controls>
