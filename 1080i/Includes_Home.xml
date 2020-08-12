@@ -500,8 +500,8 @@
                             <left>-80</left>
                             <right>-80</right>
                             <onup>302</onup>
-                            <ondown condition="!Window.IsVisible(Home) + !Skin.HasSetting(DisableWallScroll)">565610</ondown>
-                            <ondown condition="!Window.IsVisible(Home) | Skin.HasSetting(DisableWallScroll)">60</ondown>
+                            <ondown condition="!Window.IsVisible(Home) + Skin.HasSetting(EnableWallScroll)">565610</ondown>
+                            <ondown condition="!Window.IsVisible(Home) | !Skin.HasSetting(EnableWallScroll)">60</ondown>
                             <ondown condition="Window.IsVisible(Home)">SetProperty(WidgetFocus,1)</ondown>
                             <ondown condition="Window.IsVisible(Home)">3992</ondown>
                             <ondown condition="Window.IsVisible(Home)">SetProperty(WidgetMovement,OnDown)</ondown>
@@ -525,17 +525,17 @@
         </control>
         <control type="group">
             <include>View_Pad</include>
-            <include content="View_52_Posters_Wall" condition="Window.IsVisible(1150) + !Skin.HasSetting(DisableWallScroll)">
+            <include content="View_52_Posters_Wall" condition="Window.IsVisible(1150) + Skin.HasSetting(EnableWallScroll)">
                 <param name="id" value="5610" />
                 <param name="wall-id" value="565610" />
                 <param name="button-id" value="565620" />
             </include>
-            <include content="View_54_Episodes_Wall" condition="Window.IsVisible(1150) + !Skin.HasSetting(DisableWallScroll)">
+            <include content="View_54_Episodes_Wall" condition="Window.IsVisible(1150) + Skin.HasSetting(EnableWallScroll)">
                 <param name="id" value="5610" />
                 <param name="wall-id" value="565611" />
                 <param name="button-id" value="565621" />
             </include>
-            <include content="View_51_Addons_Wall" condition="Window.IsVisible(1150) + !Skin.HasSetting(DisableWallScroll)">
+            <include content="View_51_Addons_Wall" condition="Window.IsVisible(1150) + Skin.HasSetting(EnableWallScroll)">
                 <param name="id" value="5610" />
                 <param name="wall-id" value="565612" />
                 <param name="button-id" value="565622" />

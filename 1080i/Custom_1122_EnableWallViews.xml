@@ -38,14 +38,14 @@
                     <label>$LOCALIZE[31089]</label>
                     <radioposx>730</radioposx>
                     <include>Dialog_Standard_Button</include>
-                    <onclick>Skin.ToggleSetting(DisableWallScroll)</onclick>
-                    <selected>!Skin.HasSetting(DisableWallScroll)</selected>
+                    <onclick>Skin.ToggleSetting(EnableWallScroll)</onclick>
+                    <selected>Skin.HasSetting(EnableWallScroll)</selected>
                 </control>
                 <control type="radiobutton" id="9002">
                     <label>$LOCALIZE[31063]</label>
                     <radioposx>730</radioposx>
                     <include>Dialog_Standard_Button</include>
-                    <enable>!Skin.HasSetting(DisableWallScroll)</enable>
+                    <enable>Skin.HasSetting(EnableWallScroll)</enable>
                     <onclick>Skin.ToggleSetting(WallShowInfo)</onclick>
                     <selected>Skin.HasSetting(WallShowInfo)</selected>
                 </control>
@@ -53,7 +53,7 @@
                     <label>Posters</label>
                     <radioposx>730</radioposx>
                     <include>Dialog_Standard_Button</include>
-                    <enable>!Skin.HasSetting(DisableWallScroll)</enable>
+                    <enable>Skin.HasSetting(EnableWallScroll)</enable>
                     <onclick>Skin.ToggleSetting(WallScroll.Posters)</onclick>
                     <selected>Skin.HasSetting(WallScroll.Posters)</selected>
                     <onclick condition="!Skin.HasSetting(WallScroll.Posters)">SetFocus(5252)</onclick>
@@ -62,7 +62,7 @@
                     <label>Landscape</label>
                     <radioposx>730</radioposx>
                     <include>Dialog_Standard_Button</include>
-                    <enable>!Skin.HasSetting(DisableWallScroll)</enable>
+                    <enable>Skin.HasSetting(EnableWallScroll)</enable>
                     <onclick>Skin.ToggleSetting(WallScroll.Landscape)</onclick>
                     <selected>Skin.HasSetting(WallScroll.Landscape)</selected>
                 </control>
@@ -70,7 +70,7 @@
                     <label>Landscape (Music)</label>
                     <radioposx>730</radioposx>
                     <include>Dialog_Standard_Button</include>
-                    <enable>!Skin.HasSetting(DisableWallScroll)</enable>
+                    <enable>Skin.HasSetting(EnableWallScroll)</enable>
                     <onclick>Skin.ToggleSetting(WallScroll.music.Landscape)</onclick>
                     <selected>Skin.HasSetting(WallScroll.music.Landscape)</selected>
                 </control>
@@ -78,7 +78,7 @@
                     <label>Square</label>
                     <radioposx>730</radioposx>
                     <include>Dialog_Standard_Button</include>
-                    <enable>!Skin.HasSetting(DisableWallScroll)</enable>
+                    <enable>Skin.HasSetting(EnableWallScroll)</enable>
                     <onclick>Skin.ToggleSetting(WallScroll.Square)</onclick>
                     <selected>Skin.HasSetting(WallScroll.Square)</selected>
                 </control>
@@ -86,7 +86,7 @@
                     <label>Square (Music)</label>
                     <radioposx>730</radioposx>
                     <include>Dialog_Standard_Button</include>
-                    <enable>!Skin.HasSetting(DisableWallScroll)</enable>
+                    <enable>Skin.HasSetting(EnableWallScroll)</enable>
                     <onclick>Skin.ToggleSetting(WallScroll.music.Square)</onclick>
                     <selected>Skin.HasSetting(WallScroll.music.Square)</selected>
                 </control>
@@ -94,7 +94,7 @@
                     <label>Hubs</label>
                     <radioposx>730</radioposx>
                     <include>Dialog_Standard_Button</include>
-                    <enable>!Skin.HasSetting(DisableWallScroll)</enable>
+                    <enable>Skin.HasSetting(EnableWallScroll)</enable>
                     <onclick>Skin.ToggleSetting(WallScroll.Hubs)</onclick>
                     <selected>Skin.HasSetting(WallScroll.Hubs)</selected>
                 </control>

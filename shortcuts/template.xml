@@ -580,8 +580,8 @@
                 <right>-80</right>
                 <bottom>view_bottom</bottom>
                 <onup>302</onup>
-                <ondown condition="!Window.IsVisible(Home) + !Skin.HasSetting(DisableWallScroll)">$SKINSHORTCUTS[widgetWallID]</ondown>
-                <ondown condition="!Window.IsVisible(Home)Skin.HasSetting(DisableWallScroll)">60</ondown>
+                <ondown condition="!Window.IsVisible(Home) + Skin.HasSetting(EnableWallScroll)">$SKINSHORTCUTS[widgetWallID]</ondown>
+                <ondown condition="!Window.IsVisible(Home)!Skin.HasSetting(EnableWallScroll)">60</ondown>
                 <ondown condition="Window.IsVisible(Home)">SetProperty(WidgetFocus,1)</ondown>
                 <ondown condition="Window.IsVisible(Home)">3992</ondown>
                 <ondown condition="Window.IsVisible(Home)">SetProperty(WidgetMovement,OnDown)</ondown>
@@ -628,8 +628,8 @@
                 <right>-80</right>
                 <bottom>view_bottom</bottom>
                 <onup>302</onup>
-                <ondown condition="!Window.IsVisible(Home) + !Skin.HasSetting(DisableWallScroll)">$SKINSHORTCUTS[widgetWallID]</ondown>
-                <ondown condition="!Window.IsVisible(Home)Skin.HasSetting(DisableWallScroll)">60</ondown>
+                <ondown condition="!Window.IsVisible(Home) + Skin.HasSetting(EnableWallScroll)">$SKINSHORTCUTS[widgetWallID]</ondown>
+                <ondown condition="!Window.IsVisible(Home)!Skin.HasSetting(EnableWallScroll)">60</ondown>
                 <ondown condition="Window.IsVisible(Home)">SetProperty(WidgetFocus,1)</ondown>
                 <ondown condition="Window.IsVisible(Home)">3992</ondown>
                 <ondown condition="Window.IsVisible(Home)">SetProperty(WidgetMovement,OnDown)</ondown>

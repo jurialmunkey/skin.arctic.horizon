@@ -6,8 +6,6 @@
     <include>ViewIDs</include>
     <onload>RunScript(plugin.video.themoviedb.helper,kodi_setting=myvideos.selectaction,property=SelectAction)</onload>
     <onunload>ClearProperty(SelectAction,Home)</onunload>
-    <onload>ClearProperty(OSD_Menu,Home)</onload>
-    <onunload>ClearProperty(OSD_Menu,Home)</onunload>
     <controls>
         <include>Viewtypes</include>
 

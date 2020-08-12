@@ -348,8 +348,8 @@
                 <bottom>view_bottom</bottom>
                 <onback>$PARAM[parentid]</onback>
                 <onup>$PARAM[parentid]</onup>
-                <ondown condition="!Skin.HasSetting(DisableWallScroll) + [Container($PARAM[id]).HasNext | Container($PARAM[id]).HasPrevious]">$PARAM[wallid]</ondown>
-                <ondown condition="Skin.HasSetting(DisableWallScroll)">60</ondown>
+                <ondown condition="Skin.HasSetting(EnableWallScroll) + [Container($PARAM[id]).HasNext | Container($PARAM[id]).HasPrevious]">$PARAM[wallid]</ondown>
+                <ondown condition="!Skin.HasSetting(EnableWallScroll)">60</ondown>
                 <pagecontrol>60</pagecontrol>
                 <onunfocus>ClearProperty(TMDbHelper.WidgetContainer,Home)</onunfocus>
                 <onclick condition="!Container($PARAM[id]).ListItem.IsFolder">PlayMedia($INFO[Container($PARAM[id]).ListItem.FileNameAndPath])</onclick>

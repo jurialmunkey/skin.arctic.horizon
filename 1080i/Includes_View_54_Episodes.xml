@@ -18,8 +18,8 @@
 
                 <onfocus condition="Skin.HasSetting(NoFanart)">SetProperty(TMDbHelper.Blur.SourceImage,Art(fallback),Home)</onfocus>
 
-                <ondown condition="!Skin.HasSetting(DisableWallScroll) + [Container(54).HasNext | Container(54).HasPrevious]">5454</ondown>
-                <ondown condition="Skin.HasSetting(DisableWallScroll)">60</ondown>
+                <ondown condition="Skin.HasSetting(EnableWallScroll) + [Container(54).HasNext | Container(54).HasPrevious]">5454</ondown>
+                <ondown condition="!Skin.HasSetting(EnableWallScroll)">60</ondown>
                 <pagecontrol>60</pagecontrol>
                 <onfocus>ClearProperty(TMDbHelper.WidgetContainer,Home)</onfocus>
                 <!-- <visible>Container.Content(artists) | Container.Content(episodes) | Container.Content(videos) | Container.Content(sets) | String.IsEqual(Container.PluginName,plugin.video.abc_iview) | Window.IsVisible(MyPVRRecordings.xml) | Window.IsVisible(MyPVRSearch.xml) | Window.IsVisible(MyPVRTimers.xml) | String.IsEqual(Container.Property(Param.Info),fanart) | [Container.Content(musicvideos) + Window.IsVisible(MyVideoNav.xml)]</visible> -->
