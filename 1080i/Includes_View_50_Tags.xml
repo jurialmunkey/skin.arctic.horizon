@@ -3,7 +3,9 @@
     <include name="View_50_Tags">
         <control type="group">
             <visible>Control.IsVisible(50)</visible>
-            <include>Animation_Down</include>
+            <include content="Animation_Down_Panel">
+                <param name="id" value="50" />
+            </include>
             <include content="Viewtype_Keywords">
                 <param name="id" value="50" />
                 <param name="control-type" value="panel" />
@@ -12,13 +14,47 @@
                 <param name="itemlayout-height" value="200" />
                 <param name="viewtype-label" value="$LOCALIZE[20459]" />
                 <left>-80</left>
-                <right>-80</right>
+                <width>31660</width>
                 <bottom>-20</bottom>
                 <pagecontrol>60</pagecontrol>
                 <onup>SetFocus(9000)</onup>
                 <include>Viewtype_Movement</include>
                 <onfocus>ClearProperty(TMDbHelper.WidgetContainer,Home)</onfocus>
                 <visible>$EXP[Exp_View_50]</visible>
+                <include content="Animation_Wall_Slide">
+                    <param name="id" value="50" />
+                    <param name="slide" value="300" />
+                </include>
+                <include content="Animation_Wall_Slide_Return">
+                    <param name="id" value="50" />
+                    <param name="slide" value="300" />
+                    <param name="condition" value="[Container(50).Row(0) + String.IsEmpty(Container(50).ListItemNoWrap(15).Label)] | [Container(50).Row(1) + String.IsEmpty(Container(50).ListItemNoWrap(14).Label)] | [Container(50).Row(2) + String.IsEmpty(Container(50).ListItemNoWrap(13).Label)]" />
+                </include>
+                <include content="Animation_Wall_Slide_Return">
+                    <param name="id" value="50" />
+                    <param name="slide" value="300" />
+                    <param name="condition" value="[Container(50).Row(0) + String.IsEmpty(Container(50).ListItemNoWrap(12).Label)] | [Container(50).Row(1) + String.IsEmpty(Container(50).ListItemNoWrap(11).Label)] | [Container(50).Row(2) + String.IsEmpty(Container(50).ListItemNoWrap(10).Label)]" />
+                </include>
+                <include content="Animation_Wall_Slide_Return">
+                    <param name="id" value="50" />
+                    <param name="slide" value="300" />
+                    <param name="condition" value="[Container(50).Row(0) + String.IsEmpty(Container(50).ListItemNoWrap(9).Label)] | [Container(50).Row(1) + String.IsEmpty(Container(50).ListItemNoWrap(8).Label)] | [Container(50).Row(2) + String.IsEmpty(Container(50).ListItemNoWrap(7).Label)]" />
+                </include>
+                <include content="Animation_Wall_Slide_Return">
+                    <param name="id" value="50" />
+                    <param name="slide" value="300" />
+                    <param name="condition" value="[Container(50).Row(0) + String.IsEmpty(Container(50).ListItemNoWrap(6).Label)] | [Container(50).Row(1) + String.IsEmpty(Container(50).ListItemNoWrap(5).Label)] | [Container(50).Row(2) + String.IsEmpty(Container(50).ListItemNoWrap(4).Label)]" />
+                </include>
+                <include content="Animation_Wall_Slide_Return">
+                    <param name="id" value="50" />
+                    <param name="slide" value="300" />
+                    <param name="condition" value="[Container(50).Row(0) + String.IsEmpty(Container(50).ListItemNoWrap(3).Label)] | [Container(50).Row(1) + String.IsEmpty(Container(50).ListItemNoWrap(2).Label)] | [Container(50).Row(2) + String.IsEmpty(Container(50).ListItemNoWrap(1).Label)]" />
+                </include>
+                <animation effect="slide" end="-300" condition="!Integer.IsGreater(Container(50).NumItems,15)">Conditional</animation>
+                <animation effect="slide" end="-300" condition="!Integer.IsGreater(Container(50).NumItems,12)">Conditional</animation>
+                <animation effect="slide" end="-300" condition="!Integer.IsGreater(Container(50).NumItems,9)">Conditional</animation>
+                <animation effect="slide" end="-300" condition="!Integer.IsGreater(Container(50).NumItems,6)">Conditional</animation>
+                <animation effect="slide" end="-300" condition="!Integer.IsGreater(Container(50).NumItems,3)">Conditional</animation>
             </include>
 
             <include content="Home_Hub_Widget_Label">

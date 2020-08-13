@@ -6,6 +6,9 @@
 
         <control type="group">
             <visible>Skin.HasSetting(DebugInfo) | Skin.HasSetting(DebugGrid)</visible>
+
+
+
             <control type="grouplist">
                 <left>80</left>
                 <itemgap>79</itemgap>
@@ -349,6 +352,18 @@
                     <height>1</height>
                     <texture colordiffuse="red">common/white.png</texture>
                 </control>
+            </control>
+
+
+            <control type="image">
+                <centertop>50%</centertop>
+                <height>1</height>
+                <texture colordiffuse="green">common/white.png</texture>
+            </control>
+            <control type="image">
+                <centerleft>50%</centerleft>
+                <width>1</width>
+                <texture colordiffuse="green">common/white.png</texture>
             </control>
         </control>
 

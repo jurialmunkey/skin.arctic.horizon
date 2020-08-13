@@ -44,12 +44,12 @@
                     <param name="label" value="$PARAM[infoline-label]" />
                     <param name="image" value="$PARAM[infoline-image]" />
                 </include>
-                <include content="Object_Info_Ratings" condition="$PARAM[ratings] + !Skin.HasSetting(DisableAllRatings)">
+                <include content="Object_Info_Ratings" condition="$PARAM[visible-details] + $PARAM[ratings] + !Skin.HasSetting(DisableAllRatings)">
                     <param name="container" value="$PARAM[container]" />
                     <visible>$PARAM[visible-details]</visible>
                     <visible>String.IsEqual($PARAM[container]ListItem.DBType,movie) | String.IsEqual($PARAM[container]ListItem.DBType,episode) | String.IsEqual($PARAM[container]ListItem.DBType,tvshow) | String.IsEqual($PARAM[container]ListItem.DBType,season) | String.IsEqual($PARAM[container]ListItem.DBType,set)</visible>
                 </include>
-                <include content="View_Info_Grouplist_Plotbox" condition="$PARAM[ratings] + !Skin.HasSetting(DisableAllRatings)">
+                <include content="View_Info_Grouplist_Plotbox" condition="$PARAM[visible-details] + $PARAM[ratings] + !Skin.HasSetting(DisableAllRatings)">
                     <param name="container" value="$PARAM[container]" />
                     <param name="plot" value="$PARAM[plot]" />
                     <top>35</top>
@@ -57,12 +57,11 @@
                     <visible>$PARAM[visible-details]</visible>
                     <visible>String.IsEqual($PARAM[container]ListItem.DBType,movie) | String.IsEqual($PARAM[container]ListItem.DBType,episode) | String.IsEqual($PARAM[container]ListItem.DBType,tvshow) | String.IsEqual($PARAM[container]ListItem.DBType,season) | String.IsEqual($PARAM[container]ListItem.DBType,set)</visible>
                 </include>
-                <include content="View_Info_Grouplist_Plotbox">
+                <include content="View_Info_Grouplist_Plotbox" condition="$PARAM[visible-details]">
                     <param name="container" value="$PARAM[container]" />
                     <param name="plot" value="$PARAM[plot]" />
                     <top>35</top>
                     <height>$PARAM[plotheight-nr]</height>
-                    <visible>$PARAM[visible-details]</visible>
                     <visible>![String.IsEqual($PARAM[container]ListItem.DBType,movie) | String.IsEqual($PARAM[container]ListItem.DBType,episode) | String.IsEqual($PARAM[container]ListItem.DBType,tvshow) | String.IsEqual($PARAM[container]ListItem.DBType,season) | String.IsEqual($PARAM[container]ListItem.DBType,set)] | ![$PARAM[ratings]] | Skin.HasSetting(DisableAllRatings)</visible>
                 </include>
                 <nested />
