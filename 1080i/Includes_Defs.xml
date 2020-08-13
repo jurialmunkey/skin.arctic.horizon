@@ -498,23 +498,10 @@
         <include>Defs_Offscreen_Button</include>
         <visible allowhiddenfocus="true">False</visible>
     </include>
-
     <include name="Defs_Hidden_List">
-        <top>-2000</top>
-        <left>-2000</left>
-        <width>1</width>
-        <height>1</height>
+        <include>Defs_Offscreen</include>
         <itemlayout width="1" height="1"/>
         <focusedlayout width="1" height="1"/>
-    </include>
-
-    <include name="Defs_Visible_Button">
-        <top>-100</top>
-        <width>1</width>
-        <height>1</height>
-        <texturefocus />
-        <texturenofocus />
-        <font />
     </include>
 
     <!-- Keyboard and Numeric Keys -->

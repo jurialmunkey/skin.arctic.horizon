@@ -171,28 +171,28 @@
                 <right>580</right>
                 <height>600</height>
                 <include>Object_PosterBack</include>
-            </control>
-            <include content="Viewtype_FileList">
-                <param name="id" value="500" />
-                <param name="itemlayout-width" value="1160" />
-                <param name="viewtype-label" value="$LOCALIZE[535]" />
-                <param name="altid" value="5090" />
-                <onfocus condition="Skin.HasSetting(NoFanart)">SetProperty(TMDbHelper.Blur.SourceImage,Art(fallback),Home)</onfocus>
-                <onfocus condition="!Skin.HasSetting(NoFanart)">SetProperty(TMDbHelper.Blur.SourceImage,poster,Home)</onfocus>
+                <include content="Viewtype_FileList">
+                    <param name="id" value="500" />
+                    <param name="itemlayout-width" value="1160" />
+                    <param name="viewtype-label" value="$LOCALIZE[535]" />
+                    <param name="altid" value="5090" />
+                    <onfocus condition="Skin.HasSetting(NoFanart)">SetProperty(TMDbHelper.Blur.SourceImage,Art(fallback),Home)</onfocus>
+                    <onfocus condition="!Skin.HasSetting(NoFanart)">SetProperty(TMDbHelper.Blur.SourceImage,poster,Home)</onfocus>
 
-                <movement>3</movement>
-                <width>1160</width>
-                <height>560</height>
-                <onleft>64</onleft>
-                <onright>5090</onright>
-                <left>0</left>
-                <bottom>0</bottom>
-                <pagecontrol>64</pagecontrol>
-                <animation effect="slide" end="0,-80" condition="Integer.IsLess(Container.NumAllItems,7) + !String.IsEmpty(Container.NumAllITems)">Conditional</animation>
-                <animation effect="slide" end="0,-80" condition="Integer.IsLess(Container.NumAllItems,5) + !String.IsEmpty(Container.NumAllITems)">Conditional</animation>
-                <animation effect="slide" end="0,-80" condition="Integer.IsLess(Container.NumAllItems,3) + !String.IsEmpty(Container.NumAllITems)">Conditional</animation>
-                <visible>$EXP[Exp_View_500] | Window.IsVisible(musicplaylist)</visible>
-            </include>
+                    <movement>3</movement>
+                    <width>1160</width>
+                    <height>560</height>
+                    <onleft>64</onleft>
+                    <onright>5090</onright>
+                    <left>20</left>
+                    <top>20</top>
+                    <pagecontrol>64</pagecontrol>
+                    <animation effect="slide" end="0,-80" condition="Integer.IsLess(Container.NumAllItems,7) + !String.IsEmpty(Container.NumAllITems)">Conditional</animation>
+                    <animation effect="slide" end="0,-80" condition="Integer.IsLess(Container.NumAllItems,5) + !String.IsEmpty(Container.NumAllITems)">Conditional</animation>
+                    <animation effect="slide" end="0,-80" condition="Integer.IsLess(Container.NumAllItems,3) + !String.IsEmpty(Container.NumAllITems)">Conditional</animation>
+                    <visible>$EXP[Exp_View_500] | Window.IsVisible(musicplaylist)</visible>
+                </include>
+            </control>
             <control type="group">
                 <right>-20</right>
                 <bottom>-20</bottom>

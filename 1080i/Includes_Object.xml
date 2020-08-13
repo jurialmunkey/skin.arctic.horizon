@@ -241,10 +241,10 @@
 
     <include name="Object_Wall_SortLetter">
         <control type="group">
-            <animation type="Conditional" reversible="false" condition="!String.IsEqual(Window.Property($PARAM[wall-id]_OnMove),down) + !String.IsEqual(Window.Property($PARAM[wall-id]_OnMove),up)">
+            <animation type="Conditional" reversible="false" condition="!Container($PARAM[id]).OnScrollNext + !Container($PARAM[id]).OnScrollPrevious">
                 <effect type="fade" start="100" end="0" time="300" delay="1000"/>
             </animation>
-            <visible>$EXP[Exp_AlphabetTypes_Only] + Control.HasFocus($PARAM[wall-id])</visible>
+            <visible>$EXP[Exp_AlphabetTypes_Only] + Control.HasFocus($PARAM[id])</visible>
             <height>80</height>
             <width>80</width>
             <bottom>-20</bottom>

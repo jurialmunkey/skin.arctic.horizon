@@ -7,11 +7,14 @@
         "53":  "Seasons",
         "54":  "Landscape",
         "55":  "List",
-        "56":  "Banners",
-        "57":  "Big Banner",
+        "57":  "Banner",
         "58":  "Artists",
         "59":  "Collections",
-        "500": "List"
+        "500": "List",
+        "501": "Square Wall",
+        "502": "Poster Wall",
+        "504": "Landscape Wall",
+        "56":  "Banner Wall"
     },
     "icons": {
         "50":  "special://skin/extras/viewtypes/tags.jpg",
@@ -24,7 +27,10 @@
         "57":  "special://skin/extras/viewtypes/big-banner.jpg",
         "58":  "special://skin/extras/viewtypes/artists.jpg",
         "59":  "special://skin/extras/viewtypes/sets.jpg",
-        "500": "special://skin/extras/viewtypes/list-square.jpg"
+        "500": "special://skin/extras/viewtypes/list-square.jpg",
+        "501": "special://skin/extras/viewtypes/wall-square.jpg",
+        "502": "special://skin/extras/viewtypes/wall-posters.jpg",
+        "502": "special://skin/extras/viewtypes/wall-landscape.jpg"
     },
     "rules": {
         "addons": {

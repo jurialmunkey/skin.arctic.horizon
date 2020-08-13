@@ -52,12 +52,6 @@
                     <include>View_Pad</include>
 
                     <control type="group">
-                        <animation type="Conditional" reversible="false" condition="!Control.HasFocus(565610) + !Control.HasFocus(565611) + !Control.HasFocus(565612)">
-                            <effect type="fade" start="0" end="100" delay="400" time="1" />
-                        </animation>
-                        <animation type="Conditional" reversible="false" condition="Control.HasFocus(565610) | Control.HasFocus(565611) | Control.HasFocus(565612)">
-                            <effect type="fade" end="0" start="100" />
-                        </animation>
                         <!-- Top Half -->
                         <control type="group" description="Top Half">
                             <include content="View_Info_Grouplist">
@@ -122,22 +116,6 @@
                             <include>skinshortcuts-template-spotlight-mainmenu</include>
                         </control>
                     </control>
-
-                    <include content="View_52_Posters_Wall" condition="Skin.HasSetting(EnableWallScroll)">
-                        <param name="id" value="5610" />
-                        <param name="wall-id" value="565610" />
-                        <param name="button-id" value="565620" />
-                    </include>
-                    <include content="View_54_Episodes_Wall" condition="Skin.HasSetting(EnableWallScroll)">
-                        <param name="id" value="5610" />
-                        <param name="wall-id" value="565611" />
-                        <param name="button-id" value="565621" />
-                    </include>
-                    <include content="View_51_Addons_Wall" condition="Skin.HasSetting(EnableWallScroll)">
-                        <param name="id" value="5610" />
-                        <param name="wall-id" value="565612" />
-                        <param name="button-id" value="565622" />
-                    </include>
                 </control>
 
                 <include>Topbar_Left</include>

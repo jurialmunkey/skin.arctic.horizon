@@ -6,11 +6,6 @@
         <animation effect="slide" start="-160" end="0" time="300" tween="quadratic" condition="Control.HasFocus(301) | Control.HasFocus(303) | [Control.HasFocus(3992) + String.IsEmpty(Window.Property(WidgetFocus))] | Skin.HasSetting(LockMainMenu)">WindowOpen</animation>
     </include>
 
-    <include name="Animation_WallView_Fade">
-        <animation effect="fade" reversible="false" start="0" end="100" delay="399" time="1" condition="![Control.HasFocus(5151) | Control.HasFocus(5252) | Control.HasFocus(5353) | Control.HasFocus(5454) | Control.HasFocus(5656) | Control.Hasfocus(5858) | Control.HAsfocus(5959)]">Conditional</animation>
-        <animation effect="fade" reversible="false" end="0" start="100" condition="[Control.HasFocus(5151) | Control.HasFocus(5252) | Control.HasFocus(5353) | Control.HasFocus(5454) | Control.HasFocus(5656) | Control.Hasfocus(5858) | Control.HAsfocus(5959)]">Conditional</animation>
-    </include>
-
     <include name="Animation_Settings">
         <animation type="WindowOpen" reversible="false" condition="!Window.Previous(SettingsCategory.xml) + !Window.Previous(SkinSettings.xml) + !Window.Previous(SettingsProfile.xml) + !Window.Previous(SettingsSystemInfo.xml)">
             <effect type="fade" start="0" end="100" time="300" delay="150"/>
@@ -54,6 +49,17 @@
         <animation type="Visible" reversible="false">
             <effect type="fade" start="0" end="100" time="300" tween="sine" easing="out"/>
             <effect type="slide" start="0,320" end="0" time="400" tween="cubic" easing="out" />
+        </animation>
+    </include>
+
+    <include name="Animation_Down_Panel">
+        <animation type="WindowOpen" reversible="false">
+            <effect type="slide" start="0,320" end="0" time="400" tween="cubic" easing="out" />
+            <effect type="fade" start="0" end="100" time="300" tween="sine" easing="out"/>
+        </animation>
+        <animation type="Conditional" reversible="false" condition="Control.IsVisible($PARAM[id])">
+            <effect type="fade" start="0" end="100" delay="500" time="300" tween="sine" easing="out"/>
+            <effect type="slide" start="0,320" end="0" delay="500" time="400" tween="cubic" easing="out" />
         </animation>
     </include>
 
@@ -263,6 +269,206 @@
     <include name="Animation_FadeOut">
         <animation effect="fade" end="0" start="100" time="150">Hidden</animation>
         <animation effect="fade" end="0" start="100" time="150">WindowClose</animation>
+    </include>
+
+
+    <include name="Animation_Wall_Slide_Return">
+        <animation effect="slide" end="$PARAM[slide]" condition="[$PARAM[condition]] + !Integer.IsGreater(Container($PARAM[id]).Column,100)" tween="quadratic" time="400" reversible="false">Conditional</animation>
+        <animation effect="slide" start="$PARAM[slide]" condition="![[$PARAM[condition]] + !Integer.IsGreater(Container($PARAM[id]).Column,100)]" tween="quadratic" time="400" reversible="false">Conditional</animation>
+    </include>
+
+    <include name="Animation_Wall_Slide">
+        <include content="Animation_Wall_Slide_Hun">
+            <param name="id" value="$PARAM[id]" />
+            <param name="slide" value="$PARAM[slide]" />
+            <param name="hun" value="0" />
+        </include>
+        <!-- <include content="Animation_Wall_Slide_Hun">
+        <param name="id" value="$PARAM[id]" />
+            <param name="slide" value="$PARAM[slide]" />
+            <param name="hun" value="1" />
+        </include>
+        <include content="Animation_Wall_Slide_Hun">
+            <param name="id" value="$PARAM[id]" />
+            <param name="slide" value="$PARAM[slide]" />
+            <param name="hun" value="2" />
+        </include>
+        <include content="Animation_Wall_Slide_Hun">
+            <param name="id" value="$PARAM[id]" />
+            <param name="slide" value="$PARAM[slide]" />
+            <param name="hun" value="3" />
+        </include>
+        <include content="Animation_Wall_Slide_Hun">
+            <param name="id" value="$PARAM[id]" />
+            <param name="slide" value="$PARAM[slide]" />
+            <param name="hun" value="4" />
+        </include>
+        <include content="Animation_Wall_Slide_Hun">
+            <param name="id" value="$PARAM[id]" />
+            <param name="slide" value="$PARAM[slide]" />
+            <param name="hun" value="5" />
+        </include>
+        <include content="Animation_Wall_Slide_Hun">
+            <param name="id" value="$PARAM[id]" />
+            <param name="slide" value="$PARAM[slide]" />
+            <param name="hun" value="6" />
+        </include>
+        <include content="Animation_Wall_Slide_Hun">
+            <param name="id" value="$PARAM[id]" />
+            <param name="slide" value="$PARAM[slide]" />
+            <param name="hun" value="7" />
+        </include>
+        <include content="Animation_Wall_Slide_Hun">
+            <param name="id" value="$PARAM[id]" />
+            <param name="slide" value="$PARAM[slide]" />
+            <param name="hun" value="8" />
+        </include>
+        <include content="Animation_Wall_Slide_Hun">
+            <param name="id" value="$PARAM[id]" />
+            <param name="slide" value="$PARAM[slide]" />
+            <param name="hun" value="9" />
+        </include> -->
+    </include>
+
+    <include name="Animation_Wall_Slide_Hun">
+        <include content="Animation_Wall_Slide_Ten">
+            <param name="id" value="$PARAM[id]" />
+            <param name="slide" value="$PARAM[slide]" />
+            <param name="ten" value="0" />
+            <param name="hun" value="$PARAM[hun]" />
+        </include>
+        <include content="Animation_Wall_Slide_Ten">
+            <param name="id" value="$PARAM[id]" />
+            <param name="slide" value="$PARAM[slide]" />
+            <param name="ten" value="1" />
+            <param name="hun" value="$PARAM[hun]" />
+        </include>
+        <include content="Animation_Wall_Slide_Ten">
+            <param name="id" value="$PARAM[id]" />
+            <param name="slide" value="$PARAM[slide]" />
+            <param name="ten" value="2" />
+            <param name="hun" value="$PARAM[hun]" />
+        </include>
+        <include content="Animation_Wall_Slide_Ten">
+            <param name="id" value="$PARAM[id]" />
+            <param name="slide" value="$PARAM[slide]" />
+            <param name="ten" value="3" />
+            <param name="hun" value="$PARAM[hun]" />
+        </include>
+        <include content="Animation_Wall_Slide_Ten">
+            <param name="id" value="$PARAM[id]" />
+            <param name="slide" value="$PARAM[slide]" />
+            <param name="ten" value="4" />
+            <param name="hun" value="$PARAM[hun]" />
+        </include>
+        <include content="Animation_Wall_Slide_Ten">
+            <param name="id" value="$PARAM[id]" />
+            <param name="slide" value="$PARAM[slide]" />
+            <param name="ten" value="5" />
+            <param name="hun" value="$PARAM[hun]" />
+        </include>
+        <include content="Animation_Wall_Slide_Ten">
+            <param name="id" value="$PARAM[id]" />
+            <param name="slide" value="$PARAM[slide]" />
+            <param name="ten" value="6" />
+            <param name="hun" value="$PARAM[hun]" />
+        </include>
+        <include content="Animation_Wall_Slide_Ten">
+            <param name="id" value="$PARAM[id]" />
+            <param name="slide" value="$PARAM[slide]" />
+            <param name="ten" value="7" />
+            <param name="hun" value="$PARAM[hun]" />
+        </include>
+        <include content="Animation_Wall_Slide_Ten">
+            <param name="id" value="$PARAM[id]" />
+            <param name="slide" value="$PARAM[slide]" />
+            <param name="ten" value="8" />
+            <param name="hun" value="$PARAM[hun]" />
+        </include>
+        <include content="Animation_Wall_Slide_Ten">
+            <param name="id" value="$PARAM[id]" />
+            <param name="slide" value="$PARAM[slide]" />
+            <param name="ten" value="9" />
+            <param name="hun" value="$PARAM[hun]" />
+        </include>
+    </include>
+
+    <include name="Animation_Wall_Slide_Ten">
+        <include content="Animation_Wall_Slide_Single">
+            <param name="id" value="$PARAM[id]" />
+            <param name="slide" value="$PARAM[slide]" />
+            <param name="one" value="0" />
+            <param name="ten" value="$PARAM[ten]" />
+            <param name="hun" value="$PARAM[hun]" />
+        </include>
+        <include content="Animation_Wall_Slide_Single">
+            <param name="id" value="$PARAM[id]" />
+            <param name="slide" value="$PARAM[slide]" />
+            <param name="one" value="1" />
+            <param name="ten" value="$PARAM[ten]" />
+            <param name="hun" value="$PARAM[hun]" />
+        </include>
+        <include content="Animation_Wall_Slide_Single">
+            <param name="id" value="$PARAM[id]" />
+            <param name="slide" value="$PARAM[slide]" />
+            <param name="one" value="2" />
+            <param name="ten" value="$PARAM[ten]" />
+            <param name="hun" value="$PARAM[hun]" />
+        </include>
+        <include content="Animation_Wall_Slide_Single">
+            <param name="id" value="$PARAM[id]" />
+            <param name="slide" value="$PARAM[slide]" />
+            <param name="one" value="3" />
+            <param name="ten" value="$PARAM[ten]" />
+            <param name="hun" value="$PARAM[hun]" />
+        </include>
+        <include content="Animation_Wall_Slide_Single">
+            <param name="id" value="$PARAM[id]" />
+            <param name="slide" value="$PARAM[slide]" />
+            <param name="one" value="4" />
+            <param name="ten" value="$PARAM[ten]" />
+            <param name="hun" value="$PARAM[hun]" />
+        </include>
+        <include content="Animation_Wall_Slide_Single">
+            <param name="id" value="$PARAM[id]" />
+            <param name="slide" value="$PARAM[slide]" />
+            <param name="one" value="5" />
+            <param name="ten" value="$PARAM[ten]" />
+            <param name="hun" value="$PARAM[hun]" />
+        </include>
+        <include content="Animation_Wall_Slide_Single">
+            <param name="id" value="$PARAM[id]" />
+            <param name="slide" value="$PARAM[slide]" />
+            <param name="one" value="6" />
+            <param name="ten" value="$PARAM[ten]" />
+            <param name="hun" value="$PARAM[hun]" />
+        </include>
+        <include content="Animation_Wall_Slide_Single">
+            <param name="id" value="$PARAM[id]" />
+            <param name="slide" value="$PARAM[slide]" />
+            <param name="one" value="7" />
+            <param name="ten" value="$PARAM[ten]" />
+            <param name="hun" value="$PARAM[hun]" />
+        </include>
+        <include content="Animation_Wall_Slide_Single">
+            <param name="id" value="$PARAM[id]" />
+            <param name="slide" value="$PARAM[slide]" />
+            <param name="one" value="8" />
+            <param name="ten" value="$PARAM[ten]" />
+            <param name="hun" value="$PARAM[hun]" />
+        </include>
+        <include content="Animation_Wall_Slide_Single">
+            <param name="id" value="$PARAM[id]" />
+            <param name="slide" value="$PARAM[slide]" />
+            <param name="one" value="9" />
+            <param name="ten" value="$PARAM[ten]" />
+            <param name="hun" value="$PARAM[hun]" />
+        </include>
+    </include>
+
+    <include name="Animation_Wall_Slide_Single">
+        <animation effect="slide" end="-$PARAM[slide]" condition="Integer.IsGreater(Container($PARAM[id]).Column,$PARAM[hun]$PARAM[ten]$PARAM[one])" tween="quadratic" time="400" reversible="false">Conditional</animation>
+        <animation effect="slide" start="-$PARAM[slide]" condition="!Integer.IsGreater(Container($PARAM[id]).Column,$PARAM[hun]$PARAM[ten]$PARAM[one])" tween="quadratic" time="400" reversible="false">Conditional</animation>
     </include>
 
 </includes>

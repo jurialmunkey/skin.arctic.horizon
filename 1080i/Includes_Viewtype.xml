@@ -1,22 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
-    <include name="ViewIDs"><views>50,51,55,500,52,53,54,56,57,58,59</views></include>
+    <include name="ViewIDs"><views>50,51,5151,501,55,500,52,5252,502,53,54,5454,504,56,57,58,59</views></include>
     <include name="Viewtype_Info_Right"><right>700</right></include>
     <include name="Viewtype_Info_Right_FixedHome"><right>560</right></include>
+
     <include name="Viewtypes">
+
+        <include>Viewtype_HiddenLists</include>
+
+        <include content="Viewtype_Main">
+            <animation effect="slide" start="0" end="dialog_filter_width" condition="Window.IsActive(DialogSettings.xml) + !String.IsEmpty(Window(Home).Property(advancedfilter))" time="400" tween="quadratic">Conditional</animation>
+            <include>Viewtype_Media</include>
+            <include>Topbar_Left</include>
+            <include>Object_Scrollbars</include>
+        </include>
+
+        <include>Viewtype_FilterPanel</include>
+        <include condition="!Skin.HasSetting(DisableClock)">Topbar_Right</include>
+        <include>Object_NowPlaying</include>
+        <include>Viewtype_Options</include>
+        <include>Object_PlotOverlay</include>
+    </include>
+
+    <include name="Viewtype_HiddenLists">
         <control type="list" id="56561">
-            <include>Defs_Offscreen</include>
+            <include>Defs_Hidden_List</include>
             <visible>ListItem.IsCollection + !String.IsEmpty(ListITem.DBID)</visible>
-            <itemlayout />
-            <focusedlayout />
             <content sortby="year" sortorder="ascending">videodb://movies/sets/$INFO[ListItem.DBID]/</content>
         </control>
         <control type="list" id="56560">
-            <include>Defs_Offscreen</include>
+            <include>Defs_Hidden_List</include>
             <orientation>horizontal</orientation>
             <visible>Control.IsVisible(53) | Control.IsVisible(58) | Control.IsVisible(59)</visible>
-            <itemlayout />
-            <focusedlayout />
             <content>
                 <include content="Object_56560_Item">
                     <param name="listitem" value="Container(530).ListItem" />
@@ -32,148 +47,9 @@
                 </include>
             </content>
         </control>
-        <include content="Viewtype_Main">
-            <animation effect="slide" start="0" end="dialog_filter_width" condition="Window.IsActive(DialogSettings.xml) + !String.IsEmpty(Window(Home).Property(advancedfilter))" time="400" tween="quadratic">Conditional</animation>
-            <control type="group">
-                <visible allowhiddenfocus="true">!$EXP[Exp_CommonAnimation]</visible>
-                <include>Animation_Common</include>
-                <control type="group">
-                    <include>View_Pad</include>
-                    <include condition="Skin.HasSetting(EnableWallScroll)">Animation_WallView_Fade</include>
-                    <control type="group" description="Top Half">
-                        <visible>!Integer.IsEqual(Container.NumAllItems,0)</visible>
-                        <include content="View_Info_Grouplist">
-                            <param name="container" value="Container." />
-                            <top>-15</top>
-                            <height>285</height>
-                            <visible>!Control.HasFocus(530)</visible>
-                            <visible>!Control.HasFocus(580)</visible>
-                            <visible>!Control.HasFocus(590)</visible>
-                            <visible>!Control.IsVisible(53) | Container.Content(seasons) | Container.Content(artists) | Container.Content(sets) | Container.Content(tvshows)</visible>
-                            <visible>!Control.IsVisible(58) | Container.Content(seasons) | Container.Content(artists) | Container.Content(sets) | Container.Content(tvshows)</visible>
-                            <visible>!Control.IsVisible(59) | Container.Content(seasons) | Container.Content(artists) | Container.Content(sets) | Container.Content(tvshows)</visible>
-                            <visible>!Control.IsVisible(50)</visible>
-                            <visible>!Control.IsVisible(55)</visible>
-                            <visible>!Control.IsVisible(56)</visible>
-                            <visible>!Control.IsVisible(500)</visible>
-                            <include>Viewtype_Info_Right</include>
-                        </include>
-                        <include content="View_Info_Grouplist">
-                            <param name="container" value="Container." />
-                            <param name="visible-details" value="false" />
-                            <param name="infoline-label" value="$VAR[Label_Home_InfoLine]" />
-                            <param name="infoline-image" value="$VAR[Image_Home_VideoQuality]" />
-                            <top>-15</top>
-                            <height>285</height>
-                            <visible>Control.IsVisible(50) | Control.IsVisible(500) | Control.IsVisible(55) | Control.IsVisible(56)</visible>
-                            <include>Viewtype_Info_Right</include>
-                        </include>
-                        <control type="image">
-                            <right>-15</right>
-                            <bottom>385</bottom>
-                            <height>350</height>
-                            <width>700</width>
-                            <texture background="true">$VAR[Image_ClearArt]</texture>
-                            <aspectratio align="right" aligny="bottom" scalediffuse="false">keep</aspectratio>
-                            <bordersize>15</bordersize>
-                            <visible>Control.IsVisible(52) | Control.IsVisible(53) | Control.IsVisible(54) | Control.IsVisible(57) | Control.IsVisible(58) | Control.IsVisible(59)</visible>
-                        </control>
-                        <control type="image">
-                            <right>-15</right>
-                            <bottom>465</bottom>
-                            <height>350</height>
-                            <width>700</width>
-                            <texture background="true">$VAR[Image_DiscArt]</texture>
-                            <aspectratio align="right" aligny="bottom" scalediffuse="false">keep</aspectratio>
-                            <bordersize>15</bordersize>
-                            <visible>Control.IsVisible(51)</visible>
-                        </control>
-                        <control type="image">
-                            <right>-15</right>
-                            <top>-30</top>
-                            <height>150</height>
-                            <width>450</width>
-                            <texture background="true">$VAR[Image_ClearLogo]</texture>
-                            <aspectratio align="right" aligny="top" scalediffuse="false">keep</aspectratio>
-                            <bordersize>15</bordersize>
-                            <visible>Control.IsVisible(55) | Control.IsVisible(500) | Control.IsVisible(56)</visible>
-                        </control>
-                        <include content="View_Info_Buttons">
-                            <param name="grouplistid" value="300" />
-                            <visible>!Control.IsVisible(50)</visible>
-                            <visible>!Control.IsVisible(53)</visible>
-                            <visible>!Control.IsVisible(55)</visible>
-                            <visible>!Control.IsVisible(56)</visible>
-                            <visible>!Control.IsVisible(58)</visible>
-                            <visible>!Control.IsVisible(59)</visible>
-                            <visible>!Control.IsVisible(500)</visible>
-                        </include>
-                    </control>
-                    <control type="group" description="Bottom Half">
-                        <animation effect="fade" end="0" start="100" condition="Integer.IsEqual(Container.NumAllItems,0)">Conditional</animation>
-                        <include content="Viewtype_BackPanel">
-                            <include>Animation_Down</include>
-                            <visible>!Integer.IsEqual(Container.NumAllItems,0)</visible>
-                            <visible>[Control.IsVisible(50) | Control.IsVisible(500) | Control.IsVisible(55) | Control.IsVisible(56)]</visible>
-                            <height>720</height>
-                        </include>
-                        <include content="Viewtype_BackPanel">
-                            <include>Animation_Down</include>
-                            <visible>!Integer.IsEqual(Container.NumAllItems,0)</visible>
-                            <visible>![Control.IsVisible(50) | Control.IsVisible(500) | Control.IsVisible(55) | Control.IsVisible(56)]</visible>
-                            <height>480</height>
-                        </include>
-                        <include>View_55_FileList</include>
-                        <include>View_51_Addons</include>
-                        <include>View_52_Posters</include>
-                        <include>View_53_Seasons</include>
-                        <include>View_54_Episodes</include>
-                        <include>View_50_Tags</include>
-                        <include>View_56_Banners</include>
-                        <include>View_57_BigBanner</include>
-                        <include>View_58_Artists</include>
-                        <include>View_59_Sets</include>
-                        <include>View_500_SongList</include>
-                    </control>
-                </control>
-                <control type="group">
-                    <include>View_Pad</include>
-                    <include content="View_51_Addons_Wall" condition="Skin.HasSetting(EnableWallScroll)">
-                        <param name="id" value="51" />
-                        <param name="wall-id" value="5151" />
-                        <param name="button-id" value="15151" />
-                    </include>
-                    <include content="View_52_Posters_Wall" condition="Skin.HasSetting(EnableWallScroll)">
-                        <param name="id" value="52" />
-                        <param name="wall-id" value="5252" />
-                        <param name="button-id" value="25252" />
-                    </include>
-                    <include content="View_54_Episodes_Wall" condition="Skin.HasSetting(EnableWallScroll)">
-                        <param name="id" value="530" />
-                        <param name="wall-id" value="5353" />
-                        <param name="button-id" value="35353" />
-                    </include>
-                    <include content="View_54_Episodes_Wall" condition="Skin.HasSetting(EnableWallScroll)">
-                        <param name="id" value="54" />
-                        <param name="wall-id" value="5454" />
-                        <param name="button-id" value="45454" />
-                    </include>
-                    <include content="View_51_Addons_Wall" condition="Skin.HasSetting(EnableWallScroll)">
-                        <param name="id" value="580" />
-                        <param name="wall-id" value="5858" />
-                        <param name="button-id" value="85858" />
-                    </include>
-                    <include content="View_52_Posters_Wall" condition="Skin.HasSetting(EnableWallScroll)">
-                        <param name="id" value="590" />
-                        <param name="wall-id" value="5959" />
-                        <param name="button-id" value="95959" />
-                    </include>
-                </control>
-                <include>Topbar_Left</include>
-            </control>
-            <include>Object_Scrollbars</include>
-        </include>
+    </include>
 
+    <include name="Viewtype_FilterPanel">
         <control type="group">
             <left>-dialog_filter_width</left>
             <animation effect="slide" start="0" end="dialog_filter_width" condition="!String.IsEmpty(Window(Home).Property(advancedfilter)) + Window.IsActive(DialogSettings.xml)" time="400" tween="quadratic">Conditional</animation>
@@ -182,11 +58,107 @@
                 <param name="colordiffuse" value="dialog_bg_100" />
             </include>
         </control>
+    </include>
 
-        <include condition="!Skin.HasSetting(DisableClock)">Topbar_Right</include>
-        <include>Object_NowPlaying</include>
-        <include>Viewtype_Options</include>
-        <include>Object_PlotOverlay</include>
+    <include name="Viewtype_Media">
+        <control type="group">
+            <visible allowhiddenfocus="true">!$EXP[Exp_CommonAnimation]</visible>
+            <include>Animation_Common</include>
+            <include>View_Pad</include>
+            <animation effect="fade" start="100" end="0" condition="Integer.IsEqual(Container.NumAllItems,0)">Conditional</animation>
+
+            <control type="group" description="Wall Views">
+                <visible>Control.IsVisible(501) | Control.IsVisible(502) | Control.IsVisible(504) | Control.IsVisible(5151) | Control.IsVisible(5252) | Control.IsVisible(5454)</visible>
+                <include>Animation_Down</include>
+                <include content="Viewtype_BackPanel">
+                    <height>880</height>
+                </include>
+            </control>
+
+            <control type="group" description="Standard Fixedlist Views">
+                <visible>Control.IsVisible(51) | Control.IsVisible(52) | Control.IsVisible(53) | Control.IsVisible(54) | Control.IsVisible(57) | Control.IsVisible(58) | Control.IsVisible(59)</visible>
+                <include content="Viewtype_BackPanel">
+                    <include>Animation_Down</include>
+                    <visible>Control.IsVisible(51) | Control.IsVisible(52) | Control.IsVisible(53) | Control.IsVisible(54) | Control.IsVisible(57) | Control.IsVisible(58) | Control.IsVisible(59)</visible>
+                    <height>480</height>
+                </include>
+                <include content="View_Info_Grouplist" description="Top Section Info">
+                    <param name="container" value="Container." />
+                    <top>-15</top>
+                    <height>285</height>
+                    <visible>!Control.HasFocus(530)</visible>
+                    <visible>!Control.HasFocus(580)</visible>
+                    <visible>!Control.HasFocus(590)</visible>
+                    <visible>![Control.IsVisible(53) | Control.IsVisible(58) | Control.IsVisible(59)] | [Container.Content(seasons) | Container.Content(artists) | Container.Content(sets) | Container.Content(tvshows)]</visible>
+                    <include>Viewtype_Info_Right</include>
+                </include>
+                <control type="group" description="Right Side Artwork">
+                    <right>0</right>
+                    <bottom>400</bottom>
+                    <height>320</height>
+                    <width>670</width>
+                    <control type="image">
+                        <texture background="true">$VAR[Image_ClearArt]</texture>
+                        <aspectratio align="right" aligny="bottom" scalediffuse="false">keep</aspectratio>
+                        <visible>!Control.IsVisible(51)</visible>
+                    </control>
+                    <control type="image">
+                        <texture background="true">$VAR[Image_DiscArt]</texture>
+                        <aspectratio align="right" aligny="bottom" scalediffuse="false">keep</aspectratio>
+                        <visible>Control.IsVisible(51)</visible>
+                    </control>
+                </control>
+                <include content="View_Info_Buttons">
+                    <param name="grouplistid" value="300" />
+                    <visible>!Control.IsVisible(53)</visible>
+                    <visible>!Control.IsVisible(56)</visible>
+                    <visible>!Control.IsVisible(58)</visible>
+                    <visible>!Control.IsVisible(59)</visible>
+                </include>
+            </control>
+
+            <control type="group" description="List Height View">
+                <visible>Control.IsVisible(50) | Control.IsVisible(55) | Control.IsVisible(56) | Control.IsVisible(500)</visible>
+                <include content="Viewtype_BackPanel">
+                    <include>Animation_Down</include>
+                    <height>720</height>
+                </include>
+                <include content="View_Info_Grouplist">
+                    <param name="container" value="Container." />
+                    <param name="visible-details" value="false" />
+                    <param name="infoline-label" value="$VAR[Label_Home_InfoLine]" />
+                    <param name="infoline-image" value="$VAR[Image_Home_VideoQuality]" />
+                    <top>-15</top>
+                    <height>285</height>
+                    <include>Viewtype_Info_Right</include>
+                </include>
+                <control type="group" description="Right Side Artwork">
+                    <right>0</right>
+                    <top>-15</top>
+                    <height>120</height>
+                    <width>420</width>
+                    <control type="image">
+                        <texture background="true">$VAR[Image_ClearLogo]</texture>
+                        <aspectratio align="right" aligny="top" scalediffuse="false">keep</aspectratio>
+                    </control>
+                </control>
+            </control>
+
+            <include>View_50_Tags</include>
+            <include>View_51_Addons</include>
+            <include>View_52_Posters</include>
+            <include>View_53_Seasons</include>
+            <include>View_54_Episodes</include>
+            <include>View_55_FileList</include>
+            <include>View_56_Banners</include>
+            <include>View_57_BigBanner</include>
+            <include>View_58_Artists</include>
+            <include>View_59_Sets</include>
+            <include>View_500_SongList</include>
+            <include>View_501_AddonsWall</include>
+            <include>View_502_PosterWall</include>
+            <include>View_504_EpisodeWall</include>
+        </control>
     </include>
 
     <include name="Viewtype_BackPanel">
@@ -340,17 +312,17 @@
         <definition>
             <control type="$PARAM[control-type]" id="$PARAM[id]">
                 <nested />
-                <preloaditems>20</preloaditems>
+                <preloaditems>2</preloaditems>
                 <orientation>$PARAM[orientation]</orientation>
                 <scrolltime tween="$PARAM[tween]">$PARAM[scrolltime]</scrolltime>
                 <height>$PARAM[height]</height>
                 <viewtype label="$PARAM[viewtype-label]">$PARAM[viewtype]</viewtype>
-                <animation effect="fade" reversible="false" start="0" end="100" delay="399" time="1" condition="![Control.HasFocus(5151) | Control.HasFocus(5252) | Control.HasFocus(5353) | Control.HasFocus(5454) | Control.HasFocus(5656) | Control.HasFocus(5858) | Control.HasFocus(5959)]">Conditional</animation>
-                <animation effect="fade" reversible="false" end="0" start="100" condition="[Control.HasFocus(5151) | Control.HasFocus(5252) | Control.HasFocus(5353) | Control.HasFocus(5454) | Control.HasFocus(5656) | Control.HasFocus(5858) | Control.HasFocus(5959)]">Conditional</animation>
                 <movement>$PARAM[movement]</movement>
                 <focusposition>$PARAM[focusposition]</focusposition>
                 <itemlayout width="$PARAM[itemlayout-width]" height="$PARAM[itemlayout-height]">
                     <control type="group">
+                        <top>$PARAM[offsetv]</top>
+                        <bottom>-$PARAM[offsetv]</bottom>
                         <left>$PARAM[offset]</left>
                         <right>-$PARAM[offset]</right>
                         <include content="$PARAM[itemlayout]">
@@ -374,6 +346,8 @@
                 </itemlayout>
                 <focusedlayout width="$PARAM[itemlayout-width]" height="$PARAM[itemlayout-height]">
                     <control type="group">
+                        <top>$PARAM[offsetv]</top>
+                        <bottom>-$PARAM[offsetv]</bottom>
                         <left>$PARAM[offset]</left>
                         <right>-$PARAM[offset]</right>
                         <include content="$PARAM[itemlayout]">
@@ -562,7 +536,8 @@
                 <param name="diffuse" value="diffuse/landscape-std.png" />
                 <param name="height" value="$PARAM[height]" />
                 <param name="textpanel" value="true" />
-                <param name="viewtype-label" value="$LOCALIZE[31234]" />
+                <param name="offsetv" value="$PARAM[offsetv]" />
+                <param name="viewtype-label" value="$PARAM[viewtype-label]" />
                 <param name="specialicon" value="$PARAM[specialicon]" />
                 <nested />
             </include>
@@ -578,7 +553,8 @@
                 <param name="diffuse" value="diffuse/landscape-std-np.png" />
                 <param name="height" value="$PARAM[height]" />
                 <param name="textpanel" value="false" />
-                <param name="viewtype-label" value="$LOCALIZE[31234]" />
+                <param name="offsetv" value="$PARAM[offsetv]" />
+                <param name="viewtype-label" value="$PARAM[viewtype-label]" />
                 <param name="specialicon" value="$PARAM[specialicon]" />
                 <nested />
             </include>
@@ -595,6 +571,7 @@
                 <include>Defs_Pad</include>
                 <include condition="$PARAM[selectbox]" content="View_Selectbox">
                     <param name="focusbounce" value="true" />
+                    <param name="overlay" value="false" />
                     <visible>Control.HasFocus($PARAM[id]) | Control.HasFocus($PARAM[altid])</visible>
                     <control type="image">
                         <bordersize>7</bordersize>
@@ -963,6 +940,7 @@
                 <param name="textbox-visible" value="$PARAM[textbox-visible]" />
                 <param name="aspectratio" value="$PARAM[aspectratio]" />
                 <param name="textpanel" value="true" />
+                <param name="offsetv" value="$PARAM[offsetv]" />
                 <param name="viewtype-label" value="$PARAM[viewtype-label]" />
                 <nested />
             </include>
@@ -982,6 +960,7 @@
                 <param name="textbox-visible" value="$PARAM[textbox-visible]" />
                 <param name="aspectratio" value="$PARAM[aspectratio]" />
                 <param name="textpanel" value="false" />
+                <param name="offsetv" value="$PARAM[offsetv]" />
                 <param name="viewtype-label" value="$PARAM[viewtype-label]" />
                 <nested />
             </include>
@@ -1473,6 +1452,60 @@
             </control>
         </include>
         <include condition="!Skin.HasSetting(DisableClock)">Topbar_Right</include>
+    </include>
+
+    <include name="Viewtype_WallSwitch">
+        <control type="button" id="1$PARAM[id]$PARAM[id]">
+            <include>Defs_Hidden_Button</include>
+            <onfocus>SetFocus($PARAM[id])</onfocus>
+        </control>
+        <control type="button" id="2$PARAM[id]$PARAM[id]">
+            <include>Defs_Hidden_Button</include>
+            <onfocus>Container.SetViewMode($PARAM[id]$PARAM[id])</onfocus>
+            <onfocus>SetFocus($PARAM[id]$PARAM[id])</onfocus>
+        </control>
+        <include content="$PARAM[include]">
+            <param name="id" value="$PARAM[id]$PARAM[id]" />
+            <param name="castlabel" value="Container.Content(actors)" />
+            <param name="label2" value="ListItem.Property(role)" />
+            <param name="viewtype-label" value="$PARAM[viewtype-label]" />
+            <param name="control-type" value="panel" />
+            <param name="orientation" value="vertical" />
+            <param name="height" value="880" />
+            <param name="offsetv" value="98" />
+            <bottom>-82</bottom>
+            <left>-80</left>
+            <right>-80</right>
+            <onback>ClearProperty(WallMode)</onback>
+            <onback>Container.SetViewMode($PARAM[id])</onback>
+            <onback>1$PARAM[id]$PARAM[id]</onback>
+            <visible>$EXP[Exp_View_$PARAM[id]]</visible>
+            <visible>!String.IsEmpty(Window.Property(WallMode))</visible>
+            <nested />
+        </include>
+        <control type="image">
+            <left>-80</left>
+            <right>-80</right>
+            <height>120</height>
+            <texture>common/dim-top.png</texture>
+            <animation effect="fade" start="0" end="100" time="500" tween="cubic" easing="inout">Visible</animation>
+            <animation effect="fade" start="100" end="0" time="500" tween="cubic" easing="inout">Hidden</animation>
+            <visible>Container($PARAM[id]$PARAM[id]).HasPrevious</visible>
+        </control>
+
+        <include content="Home_Hub_Widget_Label">
+            <param name="id" value="$PARAM[id]$PARAM[id]" />
+            <param name="label" value="$VAR[Label_Header_Center]" />
+            <param name="altlabel" value="$INFO[Control.GetLabel(3),, ]$INFO[Control.GetLabel(4)]" />
+            <top>0</top>
+            <!-- <animation effect="fade" start="0" end="100" delay="300" time="500" tween="cubic" easing="inout">Visible</animation>
+            <animation effect="fade" start="100" end="0" time="500" tween="cubic" easing="inout">Hidden</animation>
+            <visible>!Container($PARAM[id]$PARAM[id]).HasPrevious</visible> -->
+        </include>
+
+        <include content="Object_Wall_SortLetter">
+            <param name="id" value="$PARAM[id]$PARAM[id]" />
+        </include>
     </include>
 </includes>
 

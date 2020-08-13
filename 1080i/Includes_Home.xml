@@ -258,12 +258,6 @@
 
     <include name="Home_Hub_Showcase">
         <control type="group">
-            <animation type="Conditional" reversible="false" condition="!Control.HasFocus(565610) + !Control.HasFocus(565611)">
-                <effect type="fade" start="0" end="100" delay="400" time="1" />
-            </animation>
-            <animation type="Conditional" reversible="false" condition="Control.HasFocus(565610) | Control.HasFocus(565611)">
-                <effect type="fade" end="0" start="100" />
-            </animation>
             <control type="group">
                 <visible>$EXP[Exp_GlobalBackground] | !String.IsEmpty(Window(Home).Property(HasTrailer)) | ![Control.HasFocus(5610) | Control.HasFocus(60)]</visible>
                 <include>Animation_FadeInOut</include>
@@ -500,8 +494,7 @@
                             <left>-80</left>
                             <right>-80</right>
                             <onup>302</onup>
-                            <ondown condition="!Window.IsVisible(Home) + Skin.HasSetting(EnableWallScroll)">565610</ondown>
-                            <ondown condition="!Window.IsVisible(Home) | !Skin.HasSetting(EnableWallScroll)">60</ondown>
+                            <ondown>60</ondown>
                             <ondown condition="Window.IsVisible(Home)">SetProperty(WidgetFocus,1)</ondown>
                             <ondown condition="Window.IsVisible(Home)">3992</ondown>
                             <ondown condition="Window.IsVisible(Home)">SetProperty(WidgetMovement,OnDown)</ondown>
@@ -522,24 +515,6 @@
                     </control>
                 </control>
             </control>
-        </control>
-        <control type="group">
-            <include>View_Pad</include>
-            <include content="View_52_Posters_Wall" condition="Window.IsVisible(1150) + Skin.HasSetting(EnableWallScroll)">
-                <param name="id" value="5610" />
-                <param name="wall-id" value="565610" />
-                <param name="button-id" value="565620" />
-            </include>
-            <include content="View_54_Episodes_Wall" condition="Window.IsVisible(1150) + Skin.HasSetting(EnableWallScroll)">
-                <param name="id" value="5610" />
-                <param name="wall-id" value="565611" />
-                <param name="button-id" value="565621" />
-            </include>
-            <include content="View_51_Addons_Wall" condition="Window.IsVisible(1150) + Skin.HasSetting(EnableWallScroll)">
-                <param name="id" value="5610" />
-                <param name="wall-id" value="565612" />
-                <param name="button-id" value="565622" />
-            </include>
         </control>
     </include>
 
