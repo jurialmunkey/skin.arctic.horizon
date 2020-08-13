@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
-    <include name="ViewIDs"><views>50,51,501,55,500,52,502,53,54,504,56,57,58,59</views></include>
+    <include name="ViewIDs"><views>50,51,5151,501,55,500,52,5252,502,53,54,5454,504,56,57,58,59</views></include>
     <include name="Viewtype_Info_Right"><right>700</right></include>
     <include name="Viewtype_Info_Right_FixedHome"><right>560</right></include>
 
@@ -68,9 +68,9 @@
             <animation effect="fade" start="100" end="0" condition="Integer.IsEqual(Container.NumAllItems,0)">Conditional</animation>
 
             <control type="group" description="Wall Views">
-                <visible>Control.IsVisible(501) | Control.IsVisible(502) | Control.IsVisible(504)</visible>
+                <visible>Control.IsVisible(501) | Control.IsVisible(502) | Control.IsVisible(504) | Control.IsVisible(5151) | Control.IsVisible(5252) | Control.IsVisible(5454)</visible>
+                <include>Animation_Down</include>
                 <include content="Viewtype_BackPanel">
-                    <include>Animation_Down</include>
                     <height>880</height>
                 </include>
             </control>
@@ -79,6 +79,7 @@
                 <visible>Control.IsVisible(51) | Control.IsVisible(52) | Control.IsVisible(53) | Control.IsVisible(54) | Control.IsVisible(57) | Control.IsVisible(58) | Control.IsVisible(59)</visible>
                 <include content="Viewtype_BackPanel">
                     <include>Animation_Down</include>
+                    <visible>Control.IsVisible(51) | Control.IsVisible(52) | Control.IsVisible(53) | Control.IsVisible(54) | Control.IsVisible(57) | Control.IsVisible(58) | Control.IsVisible(59)</visible>
                     <height>480</height>
                 </include>
                 <include content="View_Info_Grouplist" description="Top Section Info">
@@ -311,17 +312,17 @@
         <definition>
             <control type="$PARAM[control-type]" id="$PARAM[id]">
                 <nested />
-                <preloaditems>20</preloaditems>
+                <preloaditems>2</preloaditems>
                 <orientation>$PARAM[orientation]</orientation>
                 <scrolltime tween="$PARAM[tween]">$PARAM[scrolltime]</scrolltime>
                 <height>$PARAM[height]</height>
                 <viewtype label="$PARAM[viewtype-label]">$PARAM[viewtype]</viewtype>
-                <animation effect="fade" reversible="false" start="0" end="100" delay="399" time="1" condition="![Control.HasFocus(5151) | Control.HasFocus(5252) | Control.HasFocus(5353) | Control.HasFocus(5454) | Control.HasFocus(5656) | Control.HasFocus(5858) | Control.HasFocus(5959)]">Conditional</animation>
-                <animation effect="fade" reversible="false" end="0" start="100" condition="[Control.HasFocus(5151) | Control.HasFocus(5252) | Control.HasFocus(5353) | Control.HasFocus(5454) | Control.HasFocus(5656) | Control.HasFocus(5858) | Control.HasFocus(5959)]">Conditional</animation>
                 <movement>$PARAM[movement]</movement>
                 <focusposition>$PARAM[focusposition]</focusposition>
                 <itemlayout width="$PARAM[itemlayout-width]" height="$PARAM[itemlayout-height]">
                     <control type="group">
+                        <top>$PARAM[offsetv]</top>
+                        <bottom>-$PARAM[offsetv]</bottom>
                         <left>$PARAM[offset]</left>
                         <right>-$PARAM[offset]</right>
                         <include content="$PARAM[itemlayout]">
@@ -345,6 +346,8 @@
                 </itemlayout>
                 <focusedlayout width="$PARAM[itemlayout-width]" height="$PARAM[itemlayout-height]">
                     <control type="group">
+                        <top>$PARAM[offsetv]</top>
+                        <bottom>-$PARAM[offsetv]</bottom>
                         <left>$PARAM[offset]</left>
                         <right>-$PARAM[offset]</right>
                         <include content="$PARAM[itemlayout]">
@@ -533,6 +536,7 @@
                 <param name="diffuse" value="diffuse/landscape-std.png" />
                 <param name="height" value="$PARAM[height]" />
                 <param name="textpanel" value="true" />
+                <param name="offsetv" value="$PARAM[offsetv]" />
                 <param name="viewtype-label" value="$PARAM[viewtype-label]" />
                 <param name="specialicon" value="$PARAM[specialicon]" />
                 <nested />
@@ -549,6 +553,7 @@
                 <param name="diffuse" value="diffuse/landscape-std-np.png" />
                 <param name="height" value="$PARAM[height]" />
                 <param name="textpanel" value="false" />
+                <param name="offsetv" value="$PARAM[offsetv]" />
                 <param name="viewtype-label" value="$PARAM[viewtype-label]" />
                 <param name="specialicon" value="$PARAM[specialicon]" />
                 <nested />
@@ -935,6 +940,7 @@
                 <param name="textbox-visible" value="$PARAM[textbox-visible]" />
                 <param name="aspectratio" value="$PARAM[aspectratio]" />
                 <param name="textpanel" value="true" />
+                <param name="offsetv" value="$PARAM[offsetv]" />
                 <param name="viewtype-label" value="$PARAM[viewtype-label]" />
                 <nested />
             </include>
@@ -954,6 +960,7 @@
                 <param name="textbox-visible" value="$PARAM[textbox-visible]" />
                 <param name="aspectratio" value="$PARAM[aspectratio]" />
                 <param name="textpanel" value="false" />
+                <param name="offsetv" value="$PARAM[offsetv]" />
                 <param name="viewtype-label" value="$PARAM[viewtype-label]" />
                 <nested />
             </include>
@@ -1445,6 +1452,51 @@
             </control>
         </include>
         <include condition="!Skin.HasSetting(DisableClock)">Topbar_Right</include>
+    </include>
+
+    <include name="Viewtype_WallSwitch">
+        <control type="button" id="1$PARAM[id]$PARAM[id]">
+            <include>Defs_Hidden_Button</include>
+            <onfocus>SetFocus($PARAM[id])</onfocus>
+        </control>
+        <include content="$PARAM[include]">
+            <param name="id" value="$PARAM[id]$PARAM[id]" />
+            <param name="castlabel" value="Container.Content(actors)" />
+            <param name="label2" value="ListItem.Property(role)" />
+            <param name="viewtype-label" value="$PARAM[viewtype-label]" />
+            <param name="control-type" value="panel" />
+            <param name="orientation" value="vertical" />
+            <param name="height" value="900" />
+            <param name="offsetv" value="100" />
+            <bottom>-100</bottom>
+            <left>-80</left>
+            <right>-80</right>
+            <onback>ClearProperty(WallMode)</onback>
+            <onback>Container.SetViewMode($PARAM[id])</onback>
+            <onback>1$PARAM[id]$PARAM[id]</onback>
+            <visible>$EXP[Exp_View_$PARAM[id]]</visible>
+            <visible>String.IsEmpty(Window.Property(WallMode))</visible>
+            <nested />
+        </include>
+        <control type="image">
+            <left>-80</left>
+            <right>-80</right>
+            <height>120</height>
+            <texture>common/dim-top.png</texture>
+            <animation effect="fade" start="0" end="100" time="500" tween="cubic" easing="inout">Visible</animation>
+            <animation effect="fade" start="100" end="0" time="500" tween="cubic" easing="inout">Hidden</animation>
+            <visible>Container($PARAM[id]$PARAM[id]).HasPrevious</visible>
+        </control>
+
+        <include content="Home_Hub_Widget_Label">
+            <param name="id" value="$PARAM[id]$PARAM[id]" />
+            <param name="label" value="$VAR[Label_Header_Center]" />
+            <param name="altlabel" value="$INFO[Control.GetLabel(3),, ]$INFO[Control.GetLabel(4)]" />
+            <top>0</top>
+            <!-- <animation effect="fade" start="0" end="100" delay="300" time="500" tween="cubic" easing="inout">Visible</animation>
+            <animation effect="fade" start="100" end="0" time="500" tween="cubic" easing="inout">Hidden</animation>
+            <visible>!Container($PARAM[id]$PARAM[id]).HasPrevious</visible> -->
+        </include>
     </include>
 </includes>
 

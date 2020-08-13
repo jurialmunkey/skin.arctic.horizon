@@ -13,13 +13,10 @@
                 <bottom>view_bottom</bottom>
                 <include>Viewtype_Movement</include>
                 <onfocus condition="!Skin.HasSetting(NoFanart) + ![Container.Content(episodes) | Container.Content(videos)]">SetProperty(TMDbHelper.Blur.SourceImage,landscape,Home)</onfocus>
-
                 <onfocus condition="!Skin.HasSetting(NoFanart) + [Container.Content(episodes) | Container.Content(videos)]">SetProperty(TMDbHelper.Blur.SourceImage,thumb,Home)</onfocus>
-
                 <onfocus condition="Skin.HasSetting(NoFanart)">SetProperty(TMDbHelper.Blur.SourceImage,Art(fallback),Home)</onfocus>
-
-                <ondown condition="Skin.HasSetting(EnableWallScroll) + [Container(54).HasNext | Container(54).HasPrevious]">5454</ondown>
-                <ondown condition="!Skin.HasSetting(EnableWallScroll)">60</ondown>
+                <ondown>Container.SetViewMode(5454)</ondown>
+                <onfocus>ClearProperty(WallMode)</onfocus>
                 <pagecontrol>60</pagecontrol>
                 <onfocus>ClearProperty(TMDbHelper.WidgetContainer,Home)</onfocus>
                 <visible>$EXP[Exp_View_54]</visible>
@@ -30,6 +27,17 @@
                 <param name="id" value="54" />
                 <param name="label" value="$VAR[Label_Header_Center]" />
                 <param name="altlabel" value="$INFO[Control.GetLabel(3),, ]$INFO[Control.GetLabel(4)]" />
+            </include>
+        </control>
+        <control type="group">
+            <visible>Control.IsVisible(5454)</visible>
+            <include>Animation_Down</include>
+            <include content="Viewtype_WallSwitch">
+                <param name="id" value="54" />
+                <param name="include" value="Viewtype_Landscape" />
+                <param name="viewtype-label" value="$LOCALIZE[31234]" />
+                <visible>!Window.IsVisible(MyPlaylist.xml)</visible>
+                <visible>!String.IsEqual(Container.Property(Param.Info),details)</visible>
             </include>
         </control>
     </include>

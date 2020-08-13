@@ -15,12 +15,12 @@
                 <onfocus>ClearProperty(TMDbHelper.WidgetContainer,Home)</onfocus>
                 <include>Viewtype_Movement</include>
                 <onfocus condition="Skin.HasSetting(NoFanart)">SetProperty(TMDbHelper.Blur.SourceImage,Art(fallback),Home)</onfocus>
-
                 <onfocus condition="!Skin.HasSetting(NoFanart)">SetProperty(TMDbHelper.Blur.SourceImage,poster,Home)</onfocus>
-                <ondown condition="Skin.HasSetting(EnableWallScroll) + [Container(52).HasNext | Container(52).HasPrevious]">5252</ondown>
-                <ondown condition="!Skin.HasSetting(EnableWallScroll)">60</ondown>
+                <onfocus>ClearProperty(WallMode)</onfocus>
+                <!-- <ondown condition="Skin.HasSetting(EnableWallScroll) + [Container(52).HasNext | Container(52).HasPrevious]">5252</ondown> -->
+                <!-- <ondown condition="!Skin.HasSetting(EnableWallScroll)">60</ondown> -->
+                <ondown>Container.SetViewMode(5252)</ondown>
                 <visible>$EXP[Exp_View_52]</visible>
-
                 <visible>!Window.IsVisible(MyPlaylist.xml)</visible>
                 <visible>!String.IsEqual(Container.Property(Param.Info),details)</visible>
             </include>
@@ -30,6 +30,18 @@
                 <param name="altlabel" value="$INFO[Control.GetLabel(3),, ]$INFO[Control.GetLabel(4)]" />
             </include>
         </control>
+        <control type="group">
+            <visible>Control.IsVisible(5252)</visible>
+            <include>Animation_Down</include>
+            <include content="Viewtype_WallSwitch">
+                <param name="id" value="52" />
+                <param name="include" value="Viewtype_Poster" />
+                <param name="viewtype-label" value="$LOCALIZE[31232]" />
+                <visible>!Window.IsVisible(MyPlaylist.xml)</visible>
+                <visible>!String.IsEqual(Container.Property(Param.Info),details)</visible>
+            </include>
+        </control>
+
     </include>
 
     <include name="View_502_PosterWall">
@@ -49,7 +61,7 @@
                 <param name="height" value="800" />
                 <bottom>-100</bottom>
                 <left>-80</left>
-                <width>26131.14</width>
+                <!-- <width>26131.14</width>
                 <include content="Animation_Wall_Slide">
                     <param name="id" value="502" />
                     <param name="slide" value="257.14" />
@@ -89,7 +101,7 @@
                 <animation effect="slide" end="-257.14" condition="!Integer.IsGreater(Container(502).NumItems,8)">Conditional</animation>
                 <animation effect="slide" end="-257.14" condition="!Integer.IsGreater(Container(502).NumItems,6)">Conditional</animation>
                 <animation effect="slide" end="-257.14" condition="!Integer.IsGreater(Container(502).NumItems,4)">Conditional</animation>
-                <animation effect="slide" end="-257.14" condition="!Integer.IsGreater(Container(502).NumItems,2)">Conditional</animation>
+                <animation effect="slide" end="-257.14" condition="!Integer.IsGreater(Container(502).NumItems,2)">Conditional</animation> -->
                 <right>-80</right>
                 <onfocus>ClearProperty(TMDbHelper.WidgetContainer,Home)</onfocus>
                 <include>Viewtype_Movement</include>
