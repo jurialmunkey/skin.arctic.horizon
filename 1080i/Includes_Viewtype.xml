@@ -1471,9 +1471,9 @@
             <param name="viewtype-label" value="$PARAM[viewtype-label]" />
             <param name="control-type" value="panel" />
             <param name="orientation" value="vertical" />
-            <param name="height" value="900" />
-            <param name="offsetv" value="100" />
-            <bottom>-100</bottom>
+            <param name="height" value="880" />
+            <param name="offsetv" value="98" />
+            <bottom>-82</bottom>
             <left>-80</left>
             <right>-80</right>
             <onback>ClearProperty(WallMode)</onback>
@@ -1501,6 +1501,10 @@
             <!-- <animation effect="fade" start="0" end="100" delay="300" time="500" tween="cubic" easing="inout">Visible</animation>
             <animation effect="fade" start="100" end="0" time="500" tween="cubic" easing="inout">Hidden</animation>
             <visible>!Container($PARAM[id]$PARAM[id]).HasPrevious</visible> -->
+        </include>
+
+        <include content="Object_Wall_SortLetter">
+            <param name="id" value="$PARAM[id]$PARAM[id]" />
         </include>
     </include>
 </includes>

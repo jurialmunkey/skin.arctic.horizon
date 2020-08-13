@@ -411,14 +411,14 @@
                         <selected>!Skin.HasSetting(DisableWallScroll)</selected>
                     </control>
 
-                    <control type="radiobutton" id="19409">
+                    <!-- <control type="radiobutton" id="19409">
                         <visible>Integer.IsEqual(Window.Property(CurrentFocus),9004)</visible>
                         <label>$LOCALIZE[31063]</label>
                         <include>Defs_Settings_Button</include>
                         <enable>!Skin.HasSetting(DisableWallScroll)</enable>
                         <onclick>Skin.ToggleSetting(WallShowInfo)</onclick>
                         <selected>Skin.HasSetting(WallShowInfo)</selected>
-                    </control>
+                    </control> -->
 
                     <!-- ================ -->
                     <!-- Fullscreen Video -->
