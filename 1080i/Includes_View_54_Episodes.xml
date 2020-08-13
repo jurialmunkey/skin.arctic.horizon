@@ -37,7 +37,7 @@
 
     <include name="View_504_EpisodeWall">
 
-        <include content="Object_Control" condition="true" description="horizontal wall">
+        <include content="Object_Control" condition="!Skin.HasSetting(WallVertical)" description="horizontal wall">
             <param name="type" value="group" />
             <visible>Control.IsVisible(504)</visible>
             <include content="Animation_Down_Panel">
@@ -101,7 +101,7 @@
         </include>
 
 
-        <include content="Object_Control" condition="false" description="vertical wall">
+        <include content="Object_Control" condition="Skin.HasSetting(WallVertical)" description="vertical wall">
             <param name="type" value="group" />
             <visible>Control.IsVisible(504)</visible>
             <include>Animation_Down</include>

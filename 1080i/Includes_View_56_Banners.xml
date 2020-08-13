@@ -2,7 +2,8 @@
 <includes>
 
     <include name="View_56_Banners">
-        <control type="group">
+        <include content="Object_Control"  condition="!Skin.HasSetting(WallVertical)" description="horizontal wall">
+            <param name="type" value="group" />
             <visible>Control.IsVisible(56)</visible>
             <include content="Animation_Down_Panel">
                 <param name="id" value="56" />
@@ -44,7 +45,40 @@
                 <top>120</top>
             </include>
 
-        </control>
+        </include>
+
+        <include content="Object_Control" condition="Skin.HasSetting(WallVertical)" description="vertical wall">
+            <param name="type" value="group" />
+            <visible>Control.IsVisible(56)</visible>
+            <include>Animation_Down</include>
+            <include content="Viewtype_Banner">
+                <param name="id" value="56" />
+                <param name="height" value="680" />
+                <param name="orientation" value="vertical" />
+                <left>-80</left>
+                <right>-80</right>
+                <bottom>-100</bottom>
+                <include>Viewtype_Movement</include>
+                <onup>SetFocus(9000)</onup>
+                <ondown>60</ondown>
+                <onfocus condition="!Skin.HasSetting(NoFanart)">SetProperty(TMDbHelper.Blur.SourceImage,Art(banner)|Art(tvshow.banner)|Art(fanart)|Art(tvshow.fanart),Home)</onfocus>
+
+                <onfocus condition="Skin.HasSetting(NoFanart)">SetProperty(TMDbHelper.Blur.SourceImage,Art(fallback),Home)</onfocus>
+
+                <pagecontrol>60</pagecontrol>
+                <onfocus>ClearProperty(TMDbHelper.WidgetContainer,Home)</onfocus>
+                <visible>$EXP[Exp_View_56]</visible>
+                <visible>!Window.IsVisible(MyPlaylist.xml)</visible>
+                <visible>!String.IsEqual(Container.Property(Param.Info),details)</visible>
+            </include>
+            <include content="Home_Hub_Widget_Label">
+                <param name="id" value="56" />
+                <param name="label" value="$VAR[Label_Header_Center]" />
+                <param name="alt01label" value="$INFO[Control.GetLabel(3),, ]$INFO[Control.GetLabel(4)]" />
+                <top>120</top>
+            </include>
+
+        </include>
     </include>
 
 </includes>

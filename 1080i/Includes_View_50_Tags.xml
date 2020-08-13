@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
     <include name="View_50_Tags">
-        <control type="group">
+        <include content="Object_Control" condition="!Skin.HasSetting(WallVertical)" description="horizontal wall">
+            <param name="type" value="group" />
             <visible>Control.IsVisible(50)</visible>
             <include content="Animation_Down_Panel">
                 <param name="id" value="50" />
@@ -64,7 +65,38 @@
                 <top>120</top>
             </include>
 
-        </control>
+        </include>
+
+        <include content="Object_Control" condition="Skin.HasSetting(WallVertical)" description="vertical wall">
+            <param name="type" value="group" />
+            <visible>Control.IsVisible(50)</visible>
+            <include>Animation_Down</include>
+            <include content="Viewtype_Keywords">
+                <param name="id" value="50" />
+                <param name="control-type" value="panel" />
+                <param name="orientation" value="vertical" />
+                <param name="height" value="700" />
+                <param name="itemlayout-height" value="200" />
+                <param name="viewtype-label" value="$LOCALIZE[20459]" />
+                <left>-80</left>
+                <right>-80</right>
+                <bottom>-120</bottom>
+                <pagecontrol>60</pagecontrol>
+                <onright>SetFocus(9000)</onright>
+                <onleft>60</onleft>
+                <include>Viewtype_Movement</include>
+                <onfocus>ClearProperty(TMDbHelper.WidgetContainer,Home)</onfocus>
+                <visible>$EXP[Exp_View_50]</visible>
+            </include>
+
+            <include content="Home_Hub_Widget_Label">
+                <param name="id" value="50" />
+                <param name="label" value="$VAR[Label_Header_Center]" />
+                <param name="altlabel" value="$INFO[Control.GetLabel(3),, ]$INFO[Control.GetLabel(4)]" />
+                <top>120</top>
+            </include>
+
+        </include>
     </include>
 </includes>
 
