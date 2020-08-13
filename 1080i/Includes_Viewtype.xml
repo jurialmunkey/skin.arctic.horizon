@@ -1459,6 +1459,11 @@
             <include>Defs_Hidden_Button</include>
             <onfocus>SetFocus($PARAM[id])</onfocus>
         </control>
+        <control type="button" id="2$PARAM[id]$PARAM[id]">
+            <include>Defs_Hidden_Button</include>
+            <onfocus>Container.SetViewMode($PARAM[id]$PARAM[id])</onfocus>
+            <onfocus>SetFocus($PARAM[id]$PARAM[id])</onfocus>
+        </control>
         <include content="$PARAM[include]">
             <param name="id" value="$PARAM[id]$PARAM[id]" />
             <param name="castlabel" value="Container.Content(actors)" />
@@ -1475,7 +1480,7 @@
             <onback>Container.SetViewMode($PARAM[id])</onback>
             <onback>1$PARAM[id]$PARAM[id]</onback>
             <visible>$EXP[Exp_View_$PARAM[id]]</visible>
-            <visible>String.IsEmpty(Window.Property(WallMode))</visible>
+            <visible>!String.IsEmpty(Window.Property(WallMode))</visible>
             <nested />
         </include>
         <control type="image">

@@ -561,9 +561,6 @@
         <property name="widgetInclude" tag="property" attribute="name|widgetAspect" value="Square">Viewtype_Square</property>
         <property name="widgetInclude" tag="property" attribute="name|widgetAspect" value="Banner">Viewtype_BigBanner</property>
         <property name="widgetInclude">Viewtype_Poster</property>
-        <property name="widgetWallID" tag="property" attribute="name|widgetAspect" value="Landscape">565611</property>
-        <property name="widgetWallID" tag="property" attribute="name|widgetAspect" value="Square">565612</property>
-        <property name="widgetWallID">565610</property>
         <property name="widgetSortby" tag="property" attribute="name|widgetSortby" />
         <property name="widgetSortorder" tag="property" attribute="name|widgetSortorder" />
         <property name="widgetSourceArt" tag="property" attribute="name|widgetAspect" value="Banner">Art(tvshow.banner)|Art(banner)|Art(fanart)</property>
@@ -580,8 +577,7 @@
                 <right>-80</right>
                 <bottom>view_bottom</bottom>
                 <onup>302</onup>
-                <ondown condition="!Window.IsVisible(Home) + Skin.HasSetting(EnableWallScroll)">$SKINSHORTCUTS[widgetWallID]</ondown>
-                <ondown condition="!Window.IsVisible(Home)!Skin.HasSetting(EnableWallScroll)">60</ondown>
+                <ondown>60</ondown>
                 <ondown condition="Window.IsVisible(Home)">SetProperty(WidgetFocus,1)</ondown>
                 <ondown condition="Window.IsVisible(Home)">3992</ondown>
                 <ondown condition="Window.IsVisible(Home)">SetProperty(WidgetMovement,OnDown)</ondown>
@@ -609,9 +605,6 @@
         <property name="widgetInclude" tag="property" attribute="name|widgetAspect" value="Square">Viewtype_Square</property>
         <property name="widgetInclude" tag="property" attribute="name|widgetAspect" value="Banner">Viewtype_BigBanner</property>
         <property name="widgetInclude">Viewtype_Poster</property>
-        <property name="widgetWallID" tag="property" attribute="name|widgetAspect" value="Landscape">565611</property>
-        <property name="widgetWallID" tag="property" attribute="name|widgetAspect" value="Square">565612</property>
-        <property name="widgetWallID">565610</property>
         <property name="widgetSortby" tag="property" attribute="name|widgetSortby" />
         <property name="widgetSortorder" tag="property" attribute="name|widgetSortorder" />
         <property name="widgetSourceArt" tag="property" attribute="name|widgetAspect" value="Banner">Art(tvshow.banner)|Art(banner)|Art(fanart)</property>
@@ -628,8 +621,7 @@
                 <right>-80</right>
                 <bottom>view_bottom</bottom>
                 <onup>302</onup>
-                <ondown condition="!Window.IsVisible(Home) + Skin.HasSetting(EnableWallScroll)">$SKINSHORTCUTS[widgetWallID]</ondown>
-                <ondown condition="!Window.IsVisible(Home)!Skin.HasSetting(EnableWallScroll)">60</ondown>
+                <ondown>60</ondown>
                 <ondown condition="Window.IsVisible(Home)">SetProperty(WidgetFocus,1)</ondown>
                 <ondown condition="Window.IsVisible(Home)">3992</ondown>
                 <ondown condition="Window.IsVisible(Home)">SetProperty(WidgetMovement,OnDown)</ondown>

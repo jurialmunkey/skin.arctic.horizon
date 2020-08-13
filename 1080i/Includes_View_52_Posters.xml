@@ -16,10 +16,10 @@
                 <include>Viewtype_Movement</include>
                 <onfocus condition="Skin.HasSetting(NoFanart)">SetProperty(TMDbHelper.Blur.SourceImage,Art(fallback),Home)</onfocus>
                 <onfocus condition="!Skin.HasSetting(NoFanart)">SetProperty(TMDbHelper.Blur.SourceImage,poster,Home)</onfocus>
-                <onfocus>ClearProperty(WallMode)</onfocus>
-                <!-- <ondown condition="Skin.HasSetting(EnableWallScroll) + [Container(52).HasNext | Container(52).HasPrevious]">5252</ondown> -->
-                <!-- <ondown condition="!Skin.HasSetting(EnableWallScroll)">60</ondown> -->
-                <ondown>Container.SetViewMode(5252)</ondown>
+                <ondown condition="Skin.HasSetting(DisableWallScroll)">60</ondown>
+                <ondown condition="!Skin.HasSetting(DisableWallScroll) + [Container(52).HasNext | Container(52).HasPrevious]">SetProperty(WallMode,1)</ondown>
+                <ondown condition="!Skin.HasSetting(DisableWallScroll) + [Container(52).HasNext | Container(52).HasPrevious]">Container.SetViewMode(5252)</ondown>
+                <ondown condition="!Skin.HasSetting(DisableWallScroll) + [Container(52).HasNext | Container(52).HasPrevious]">SetFocus(25252)</ondown>
                 <visible>$EXP[Exp_View_52]</visible>
                 <visible>!Window.IsVisible(MyPlaylist.xml)</visible>
                 <visible>!String.IsEqual(Container.Property(Param.Info),details)</visible>
@@ -45,12 +45,12 @@
     </include>
 
     <include name="View_502_PosterWall">
-        <include content="Object_Control" condition="!Skin.HasSetting(WallVertical)" description="horizontal wall">
-            <param name="type" value="group" />
+        <control type="group">
             <visible>Control.IsVisible(502)</visible>
-            <include content="Animation_Down_Panel">
+            <include>Animation_Down</include>
+            <!-- <include content="Animation_Down_Panel">
                 <param name="id" value="502" />
-            </include>
+            </include> -->
             <include content="Viewtype_Poster">
                 <param name="id" value="502" />
                 <param name="castlabel" value="Container.Content(actors)" />
@@ -121,42 +121,7 @@
                 <param name="altlabel" value="$INFO[Control.GetLabel(3),, ]$INFO[Control.GetLabel(4)]" />
                 <top>0</top>
             </include>
-        </include>
-
-        <include content="Object_Control" condition="Skin.HasSetting(WallVertical)" description="vertical wall">
-            <param name="type" value="group" />
-            <visible>Control.IsVisible(502)</visible>
-            <include>Animation_Down</include>
-            <include content="Viewtype_Poster">
-                <param name="id" value="502" />
-                <param name="castlabel" value="Container.Content(actors)" />
-                <param name="label2" value="ListItem.Property(role)" />
-                <param name="viewtype-label" value="Poster Wall" />
-                <param name="control-type" value="panel" />
-                <param name="orientation" value="vertical" />
-                <param name="height" value="800" />
-                <bottom>-100</bottom>
-                <left>-80</left>
-                <right>-80</right>
-                <onfocus>ClearProperty(TMDbHelper.WidgetContainer,Home)</onfocus>
-                <include>Viewtype_Movement</include>
-                <onfocus condition="Skin.HasSetting(NoFanart)">SetProperty(TMDbHelper.Blur.SourceImage,Art(fallback),Home)</onfocus>
-
-                <onfocus condition="!Skin.HasSetting(NoFanart)">SetProperty(TMDbHelper.Blur.SourceImage,poster,Home)</onfocus>
-                <onleft>60</onleft>
-                <onright>SetFocus(9000)</onright>
-                <visible>$EXP[Exp_View_502]</visible>
-
-                <visible>!Window.IsVisible(MyPlaylist.xml)</visible>
-                <visible>!String.IsEqual(Container.Property(Param.Info),details)</visible>
-            </include>
-            <include content="Home_Hub_Widget_Label">
-                <param name="id" value="502" />
-                <param name="label" value="$VAR[Label_Header_Center]" />
-                <param name="altlabel" value="$INFO[Control.GetLabel(3),, ]$INFO[Control.GetLabel(4)]" />
-                <top>0</top>
-            </include>
-        </include>
+        </control>
     </include>
 
 </includes>

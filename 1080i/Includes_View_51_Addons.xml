@@ -13,7 +13,10 @@
                 <pagecontrol>60</pagecontrol>
                 <onfocus>ClearProperty(TMDbHelper.WidgetContainer,Home)</onfocus>
                 <include>Viewtype_Movement</include>
-                <ondown>Container.SetViewMode(5151)</ondown>
+                <ondown condition="!Skin.HasSetting(DisableWallScroll) + [Container(51).HasNext | Container(51).HasPrevious]">SetProperty(WallMode,1)</ondown>
+                <ondown condition="!Skin.HasSetting(DisableWallScroll) + [Container(51).HasNext | Container(51).HasPrevious]">Container.SetViewMode(5151)</ondown>
+                <ondown condition="!Skin.HasSetting(DisableWallScroll) + [Container(51).HasNext | Container(51).HasPrevious]">SetFocus(25151)</ondown>
+                <ondown condition="Skin.HasSetting(DisableWallScroll)">60</ondown>
                 <visible>$EXP[Exp_View_51]</visible>
             </include>
             <include content="Home_Hub_Widget_Label">
@@ -37,9 +40,10 @@
     <include name="View_501_AddonsWall">
         <control type="group">
             <visible>Control.IsVisible(501)</visible>
-            <include content="Animation_Down_Panel">
+            <include>Animation_Down</include>
+            <!-- <include content="Animation_Down_Panel">
                 <param name="id" value="501" />
-            </include>
+            </include> -->
             <include content="Viewtype_Square">
                 <param name="id" value="501" />
                 <param name="viewtype-label" value="Square Wall" />
