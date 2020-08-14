@@ -465,11 +465,10 @@
                             <param name="id" value="302" />
                             <param name="controltype" value="fixedlist" />
                             <param name="movement" value="5" />
-                            <bottom>-20</bottom>
+                            <bottom>view_bottom</bottom>
                             <left>-80</left>
                             <right>-80</right>
                             <onup>3101</onup>
-                            <!-- <onleft condition="Window.IsVisible(Home)">3101</onleft> -->
                             <onback condition="Window.IsVisible(Home)">3101</onback>
                             <onfocus>SetProperty(TMDbHelper.WidgetContainer,3001,Home)</onfocus>
                             <ondown>SetProperty(TMDbHelper.WidgetContainer,5610,Home)</ondown>
@@ -508,7 +507,6 @@
                             <content>$VAR[Defs_Showcase_Recs]</content>
                             <visible>String.IsEmpty(Container(302).ListItem.Property(widgetPath))</visible>
                             <visible>String.IsEmpty(Container(301).ListItem.Property(widgetPath))</visible>
-                            <!-- <visible>!Container(3001).IsUpdating</visible> -->
                         </include>
                         <include>skinshortcuts-template-spotlight-submenu</include>
                         <include>skinshortcuts-template-spotlight-mainmenu</include>
