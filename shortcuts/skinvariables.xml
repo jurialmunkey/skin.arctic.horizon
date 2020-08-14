@@ -1,20 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
 
-    <variable name="Defs_PercentPlayed" containers="51,52,53,54,55,56,58,59,530,580,590,3001,5610" start="-16" end="29">
+    <variable name="Defs_PercentPlayed">
         <value condition="!String.IsEmpty({listitem}.PercentPlayed) + !Integer.IsEqual({listitem}.PercentPlayed,0)">$INFO[{listitem}.PercentPlayed]</value>
         <value condition="String.IsEqual({listitem}.Overlay,OverlayWatched.png) + !Skin.HasSetting(DisableIndicator.Watched)">100</value>
     </variable>
-    <variable name="Defs_PercentPlayed_NoWrap" containers="51,52,53,54,55,56,58,59,530,580,590,3001,5610" start="-16" end="29">
-        <value condition="!String.IsEmpty({listitemnowrap}.PercentPlayed) + !Integer.IsEqual({listitemnowrap}.PercentPlayed,0)">$INFO[{listitemnowrap}.PercentPlayed]</value>
-        <value condition="String.IsEqual({listitemnowrap}.Overlay,OverlayWatched.png) + !Skin.HasSetting(DisableIndicator.Watched)">100</value>
-    </variable>
-    <variable name="Defs_PercentPlayed_Absolute" containers="51,52,53,54,55,56,58,59,530,580,590,3001,5610" start="-16" end="29">
-        <value condition="!String.IsEmpty({listitemabsolute}.PercentPlayed) + !Integer.IsEqual({listitemabsolute}.PercentPlayed,0)">$INFO[{listitemabsolute}.PercentPlayed]</value>
-        <value condition="String.IsEqual({listitemabsolute}.Overlay,OverlayWatched.png) + !Skin.HasSetting(DisableIndicator.Watched)">100</value>
-    </variable>
 
-    <variable name="Image_Overlay" containers="51,52,53,54,55,56,58,59,530,580,590,3001,5610" start="-16" end="29">
+    <variable name="Image_Overlay">
         <value condition="[String.IsEqual({listitem}.DBType,tvshow) | String.IsEqual({listitem}.DBType,season)] + !Integer.IsEqual({listitem}.Property(UnWatchedEpisodes),0) + !Skin.HasSetting(DisableIndicator.Episodes)">common/null.png</value>
 
         <value condition="{listitem}.IsRecording">indicator/record.png</value>
@@ -38,56 +30,8 @@
         <value condition="Window.IsVisible(AddonBrowser.xml) + String.EndsWith({listitem}.Label2, 34%) | String.EndsWith({listitem}.Label2, 35%) | String.EndsWith({listitem}.Label2, 36%) | String.EndsWith({listitem}.Label2, 37%) | String.EndsWith({listitem}.Label2, 38%) | String.EndsWith({listitem}.Label2, 39%) | String.EndsWith({listitem}.Label2, 40%) | String.EndsWith({listitem}.Label2, 41%) | String.EndsWith({listitem}.Label2, 42%) | String.EndsWith({listitem}.Label2, 43%) | String.EndsWith({listitem}.Label2, 44%) | String.EndsWith({listitem}.Label2, 45%) | String.EndsWith({listitem}.Label2, 46%) | String.EndsWith({listitem}.Label2, 47%) | String.EndsWith({listitem}.Label2, 48%) | String.EndsWith({listitem}.Label2, 49%) | String.EndsWith({listitem}.Label2, 50%) | String.EndsWith({listitem}.Label2, 51%) | String.EndsWith({listitem}.Label2, 52%) | String.EndsWith({listitem}.Label2, 53%) | String.EndsWith({listitem}.Label2, 54%) | String.EndsWith({listitem}.Label2, 55%) | String.EndsWith({listitem}.Label2, 56%) | String.EndsWith({listitem}.Label2, 57%) | String.EndsWith({listitem}.Label2, 58%) | String.EndsWith({listitem}.Label2, 59%) | String.EndsWith({listitem}.Label2, 60%) | String.EndsWith({listitem}.Label2, 61%) | String.EndsWith({listitem}.Label2, 62%) | String.EndsWith({listitem}.Label2, 63%) | String.EndsWith({listitem}.Label2, 64%) | String.EndsWith({listitem}.Label2, 65%) | String.EndsWith({listitem}.Label2, 66%)">indicator/inprogress-50.png</value>
         <value condition="Window.IsVisible(AddonBrowser.xml) + String.EndsWith({listitem}.Label2, 0%) | String.EndsWith({listitem}.Label2, 1%) | String.EndsWith({listitem}.Label2, 2%) | String.EndsWith({listitem}.Label2, 3%) | String.EndsWith({listitem}.Label2, 4%) | String.EndsWith({listitem}.Label2, 5%) | String.EndsWith({listitem}.Label2, 6%) | String.EndsWith({listitem}.Label2, 7%) | String.EndsWith({listitem}.Label2, 8%) | String.EndsWith({listitem}.Label2, 9%) | String.EndsWith({listitem}.Label2, 10%) | String.EndsWith({listitem}.Label2, 11%) | String.EndsWith({listitem}.Label2, 12%) | String.EndsWith({listitem}.Label2, 13%) | String.EndsWith({listitem}.Label2, 14%) | String.EndsWith({listitem}.Label2, 15%) | String.EndsWith({listitem}.Label2, 16%) | String.EndsWith({listitem}.Label2, 17%) | String.EndsWith({listitem}.Label2, 18%) | String.EndsWith({listitem}.Label2, 19%) | String.EndsWith({listitem}.Label2, 20%) | String.EndsWith({listitem}.Label2, 21%) | String.EndsWith({listitem}.Label2, 22%) | String.EndsWith({listitem}.Label2, 23%) | String.EndsWith({listitem}.Label2, 24%) | String.EndsWith({listitem}.Label2, 25%) | String.EndsWith({listitem}.Label2, 26%) | String.EndsWith({listitem}.Label2, 27%) | String.EndsWith({listitem}.Label2, 28%) | String.EndsWith({listitem}.Label2, 29%) | String.EndsWith({listitem}.Label2, 30%) | String.EndsWith({listitem}.Label2, 31%) | String.EndsWith({listitem}.Label2, 32%) | String.EndsWith({listitem}.Label2, 33%)">indicator/inprogress-25.png</value>
     </variable>
-    <variable name="Image_Overlay_NoWrap" containers="51,52,53,54,55,56,58,59,530,580,590,3001,5610" start="-16" end="29">
-        <value condition="[String.IsEqual({listitemnowrap}.DBType,tvshow) | String.IsEqual({listitemnowrap}.DBType,season)] + !Integer.IsEqual({listitemnowrap}.Property(UnWatchedEpisodes),0) + !Skin.HasSetting(DisableIndicator.Episodes)">common/null.png</value>
 
-        <value condition="{listitemnowrap}.IsRecording">indicator/record.png</value>
-        <value condition="{listitemnowrap}.HasTimer">indicator/timer.png</value>
-        <value condition="Skin.HasSetting(EnableClassicIndicators) + {listitemnowrap}.IsResumable + !Skin.HasSetting(DisableIndicator.Progress)">$VAR[Image_Overlay_IsResumable]</value>
-        <value condition="{listitemnowrap}.IsResumable + !Skin.HasSetting(DisableIndicator.Progress)">indicator/timer.png</value>
-
-        <value condition="String.IsEqual({listitemnowrap}.Overlay,OverlayWatched.png) + !Skin.HasSetting(DisableIndicator.Watched)">indicator/checkmark.png</value>
-        <value condition="Integer.IsGreater({listitemnowrap}.PlayCount,0) + !String.IsEqual({listitemnowrap}.DBType,song) + !String.IsEqual({listitemnowrap}.DBType,album) + !String.IsEqual({listitemnowrap}.DBType,artist) + !String.IsEqual({listitemnowrap}.DBType,image) + !String.IsEqual({listitemnowrap}.DBType,addon) + !Skin.HasSetting(DisableIndicator.Watched)">indicator/checkmark.png</value>
-
-        <value condition="String.IsEqual({listitemnowrap}.Overlay,OverlayUnwatched.png) + String.IsEqual({listitemnowrap}.DBType,movie) + [String.IsEqual({listitemnowrap}.Title,Window(Home).Property(LatestMovie.1.Title)) | String.IsEqual({listitemnowrap}.Title,Window(Home).Property(LatestMovie.2.Title)) | String.IsEqual({listitemnowrap}.Title,Window(Home).Property(LatestMovie.3.Title)) | String.IsEqual({listitemnowrap}.Title,Window(Home).Property(LatestMovie.4.Title)) | String.IsEqual({listitemnowrap}.Title,Window(Home).Property(LatestMovie.5.Title)) | String.IsEqual({listitemnowrap}.Title,Window(Home).Property(LatestMovie.6.Title)) | String.IsEqual({listitemnowrap}.Title,Window(Home).Property(LatestMovie.7.Title)) | String.IsEqual({listitemnowrap}.Title,Window(Home).Property(LatestMovie.8.Title)) | String.IsEqual({listitemnowrap}.Title,Window(Home).Property(LatestMovie.9.Title)) | String.IsEqual({listitemnowrap}.Title,Window(Home).Property(LatestMovie.10.Title))] + !Skin.HasSetting(DisableIndicator.New)">indicator/new.png</value>
-
-        <value condition="String.IsEqual({listitemnowrap}.Overlay,OverlayUnwatched.png) + String.IsEqual({listitemnowrap}.DBType,episode) + [String.IsEqual({listitemnowrap}.Title,Window(Home).Property(LatestEpisode.1.EpisodeTitle)) | String.IsEqual({listitemnowrap}.Title,Window(Home).Property(LatestEpisode.2.EpisodeTitle)) | String.IsEqual({listitemnowrap}.Title,Window(Home).Property(LatestEpisode.3.EpisodeTitle)) | String.IsEqual({listitemnowrap}.Title,Window(Home).Property(LatestEpisode.4.EpisodeTitle)) | String.IsEqual({listitemnowrap}.Title,Window(Home).Property(LatestEpisode.5.EpisodeTitle)) | String.IsEqual({listitemnowrap}.Title,Window(Home).Property(LatestEpisode.6.EpisodeTitle)) | String.IsEqual({listitemnowrap}.Title,Window(Home).Property(LatestEpisode.7.EpisodeTitle)) | String.IsEqual({listitemnowrap}.Title,Window(Home).Property(LatestEpisode.8.EpisodeTitle)) | String.IsEqual({listitemnowrap}.Title,Window(Home).Property(LatestEpisode.9.EpisodeTitle)) | String.IsEqual({listitemnowrap}.Title,Window(Home).Property(LatestEpisode.10.EpisodeTitle))] + !Skin.HasSetting(DisableIndicator.New)">indicator/new.png</value>
-
-        <value condition="!String.IsEmpty({listitemnowrap}.Property(Container.Info)) + !String.IsEmpty({listitemnowrap}.DBID) + !Skin.HasSetting(DisableIndicator.Library)">indicator/library.png</value>
-        <value condition="{listitemnowrap}.IsCollection + !Skin.HasSetting(DisableIndicator.MovieSet)">indicator/movieset.png</value>
-
-        <value condition="Window.IsVisible(AddonBrowser.xml) + String.IsEqual({listitemnowrap}.Label2,$LOCALIZE[449])">indicator/checkmark.png</value>
-        <value condition="Window.IsVisible(AddonBrowser.xml) + String.IsEqual({listitemnowrap}.Label2,$LOCALIZE[24068])">indicator/unwatched.png</value>
-        <value condition="Window.IsVisible(AddonBrowser.xml) + String.EndsWith({listitemnowrap}.Label2, 67%) | String.EndsWith({listitemnowrap}.Label2, 68%) | String.EndsWith({listitemnowrap}.Label2, 69%) | String.EndsWith({listitemnowrap}.Label2, 70%) | String.EndsWith({listitemnowrap}.Label2, 71%) | String.EndsWith({listitemnowrap}.Label2, 72%) | String.EndsWith({listitemnowrap}.Label2, 73%) | String.EndsWith({listitemnowrap}.Label2, 74%) | String.EndsWith({listitemnowrap}.Label2, 75%) | String.EndsWith({listitemnowrap}.Label2, 76%) | String.EndsWith({listitemnowrap}.Label2, 77%) | String.EndsWith({listitemnowrap}.Label2, 78%) | String.EndsWith({listitemnowrap}.Label2, 79%) | String.EndsWith({listitemnowrap}.Label2, 80%) | String.EndsWith({listitemnowrap}.Label2, 81%) | String.EndsWith({listitemnowrap}.Label2, 82%) | String.EndsWith({listitemnowrap}.Label2, 83%) | String.EndsWith({listitemnowrap}.Label2, 84%) | String.EndsWith({listitemnowrap}.Label2, 85%) | String.EndsWith({listitemnowrap}.Label2, 86%) | String.EndsWith({listitemnowrap}.Label2, 87%) | String.EndsWith({listitemnowrap}.Label2, 88%) | String.EndsWith({listitemnowrap}.Label2, 89%) | String.EndsWith({listitemnowrap}.Label2, 90%) | String.EndsWith({listitemnowrap}.Label2, 91%) | String.EndsWith({listitemnowrap}.Label2, 92%) | String.EndsWith({listitemnowrap}.Label2, 93%) | String.EndsWith({listitemnowrap}.Label2, 94%) | String.EndsWith({listitemnowrap}.Label2, 95%) | String.EndsWith({listitemnowrap}.Label2, 96%) | String.EndsWith({listitemnowrap}.Label2, 97%) | String.EndsWith({listitemnowrap}.Label2, 98%) | String.EndsWith({listitemnowrap}.Label2, 99%) | String.EndsWith({listitemnowrap}.Label2, 100%)">indicator/inprogress-75.png</value>
-        <value condition="Window.IsVisible(AddonBrowser.xml) + String.EndsWith({listitemnowrap}.Label2, 34%) | String.EndsWith({listitemnowrap}.Label2, 35%) | String.EndsWith({listitemnowrap}.Label2, 36%) | String.EndsWith({listitemnowrap}.Label2, 37%) | String.EndsWith({listitemnowrap}.Label2, 38%) | String.EndsWith({listitemnowrap}.Label2, 39%) | String.EndsWith({listitemnowrap}.Label2, 40%) | String.EndsWith({listitemnowrap}.Label2, 41%) | String.EndsWith({listitemnowrap}.Label2, 42%) | String.EndsWith({listitemnowrap}.Label2, 43%) | String.EndsWith({listitemnowrap}.Label2, 44%) | String.EndsWith({listitemnowrap}.Label2, 45%) | String.EndsWith({listitemnowrap}.Label2, 46%) | String.EndsWith({listitemnowrap}.Label2, 47%) | String.EndsWith({listitemnowrap}.Label2, 48%) | String.EndsWith({listitemnowrap}.Label2, 49%) | String.EndsWith({listitemnowrap}.Label2, 50%) | String.EndsWith({listitemnowrap}.Label2, 51%) | String.EndsWith({listitemnowrap}.Label2, 52%) | String.EndsWith({listitemnowrap}.Label2, 53%) | String.EndsWith({listitemnowrap}.Label2, 54%) | String.EndsWith({listitemnowrap}.Label2, 55%) | String.EndsWith({listitemnowrap}.Label2, 56%) | String.EndsWith({listitemnowrap}.Label2, 57%) | String.EndsWith({listitemnowrap}.Label2, 58%) | String.EndsWith({listitemnowrap}.Label2, 59%) | String.EndsWith({listitemnowrap}.Label2, 60%) | String.EndsWith({listitemnowrap}.Label2, 61%) | String.EndsWith({listitemnowrap}.Label2, 62%) | String.EndsWith({listitemnowrap}.Label2, 63%) | String.EndsWith({listitemnowrap}.Label2, 64%) | String.EndsWith({listitemnowrap}.Label2, 65%) | String.EndsWith({listitemnowrap}.Label2, 66%)">indicator/inprogress-50.png</value>
-        <value condition="Window.IsVisible(AddonBrowser.xml) + String.EndsWith({listitemnowrap}.Label2, 0%) | String.EndsWith({listitemnowrap}.Label2, 1%) | String.EndsWith({listitemnowrap}.Label2, 2%) | String.EndsWith({listitemnowrap}.Label2, 3%) | String.EndsWith({listitemnowrap}.Label2, 4%) | String.EndsWith({listitemnowrap}.Label2, 5%) | String.EndsWith({listitemnowrap}.Label2, 6%) | String.EndsWith({listitemnowrap}.Label2, 7%) | String.EndsWith({listitemnowrap}.Label2, 8%) | String.EndsWith({listitemnowrap}.Label2, 9%) | String.EndsWith({listitemnowrap}.Label2, 10%) | String.EndsWith({listitemnowrap}.Label2, 11%) | String.EndsWith({listitemnowrap}.Label2, 12%) | String.EndsWith({listitemnowrap}.Label2, 13%) | String.EndsWith({listitemnowrap}.Label2, 14%) | String.EndsWith({listitemnowrap}.Label2, 15%) | String.EndsWith({listitemnowrap}.Label2, 16%) | String.EndsWith({listitemnowrap}.Label2, 17%) | String.EndsWith({listitemnowrap}.Label2, 18%) | String.EndsWith({listitemnowrap}.Label2, 19%) | String.EndsWith({listitemnowrap}.Label2, 20%) | String.EndsWith({listitemnowrap}.Label2, 21%) | String.EndsWith({listitemnowrap}.Label2, 22%) | String.EndsWith({listitemnowrap}.Label2, 23%) | String.EndsWith({listitemnowrap}.Label2, 24%) | String.EndsWith({listitemnowrap}.Label2, 25%) | String.EndsWith({listitemnowrap}.Label2, 26%) | String.EndsWith({listitemnowrap}.Label2, 27%) | String.EndsWith({listitemnowrap}.Label2, 28%) | String.EndsWith({listitemnowrap}.Label2, 29%) | String.EndsWith({listitemnowrap}.Label2, 30%) | String.EndsWith({listitemnowrap}.Label2, 31%) | String.EndsWith({listitemnowrap}.Label2, 32%) | String.EndsWith({listitemnowrap}.Label2, 33%)">indicator/inprogress-25.png</value>
-    </variable>
-    <variable name="Image_Overlay_Absolute" containers="51,52,53,54,55,56,58,59,530,580,590,3001,5610" start="-16" end="29">
-        <value condition="[String.IsEqual({listitemabsolute}.DBType,tvshow) | String.IsEqual({listitemabsolute}.DBType,season)] + !Integer.IsEqual({listitemabsolute}.Property(UnWatchedEpisodes),0) + !Skin.HasSetting(DisableIndicator.Episodes)">common/null.png</value>
-
-        <value condition="{listitemabsolute}.IsRecording">indicator/record.png</value>
-        <value condition="{listitemabsolute}.HasTimer">indicator/timer.png</value>
-        <value condition="Skin.HasSetting(EnableClassicIndicators) + {listitemabsolute}.IsResumable + !Skin.HasSetting(DisableIndicator.Progress)">$VAR[Image_Overlay_IsResumable]</value>
-        <value condition="{listitemabsolute}.IsResumable + !Skin.HasSetting(DisableIndicator.Progress)">indicator/timer.png</value>
-
-        <value condition="String.IsEqual({listitemabsolute}.Overlay,OverlayWatched.png) + !Skin.HasSetting(DisableIndicator.Watched)">indicator/checkmark.png</value>
-        <value condition="Integer.IsGreater({listitemabsolute}.PlayCount,0) + !String.IsEqual({listitemabsolute}.DBType,song) + !String.IsEqual({listitemabsolute}.DBType,album) + !String.IsEqual({listitemabsolute}.DBType,artist) + !String.IsEqual({listitemabsolute}.DBType,image) + !String.IsEqual({listitemabsolute}.DBType,addon) + !Skin.HasSetting(DisableIndicator.Watched)">indicator/checkmark.png</value>
-
-        <value condition="String.IsEqual({listitemabsolute}.Overlay,OverlayUnwatched.png) + String.IsEqual({listitemabsolute}.DBType,movie) + [String.IsEqual({listitemabsolute}.Title,Window(Home).Property(LatestMovie.1.Title)) | String.IsEqual({listitemabsolute}.Title,Window(Home).Property(LatestMovie.2.Title)) | String.IsEqual({listitemabsolute}.Title,Window(Home).Property(LatestMovie.3.Title)) | String.IsEqual({listitemabsolute}.Title,Window(Home).Property(LatestMovie.4.Title)) | String.IsEqual({listitemabsolute}.Title,Window(Home).Property(LatestMovie.5.Title)) | String.IsEqual({listitemabsolute}.Title,Window(Home).Property(LatestMovie.6.Title)) | String.IsEqual({listitemabsolute}.Title,Window(Home).Property(LatestMovie.7.Title)) | String.IsEqual({listitemabsolute}.Title,Window(Home).Property(LatestMovie.8.Title)) | String.IsEqual({listitemabsolute}.Title,Window(Home).Property(LatestMovie.9.Title)) | String.IsEqual({listitemabsolute}.Title,Window(Home).Property(LatestMovie.10.Title))] + !Skin.HasSetting(DisableIndicator.New)">indicator/new.png</value>
-
-        <value condition="String.IsEqual({listitemabsolute}.Overlay,OverlayUnwatched.png) + String.IsEqual({listitemabsolute}.DBType,episode) + [String.IsEqual({listitemabsolute}.Title,Window(Home).Property(LatestEpisode.1.EpisodeTitle)) | String.IsEqual({listitemabsolute}.Title,Window(Home).Property(LatestEpisode.2.EpisodeTitle)) | String.IsEqual({listitemabsolute}.Title,Window(Home).Property(LatestEpisode.3.EpisodeTitle)) | String.IsEqual({listitemabsolute}.Title,Window(Home).Property(LatestEpisode.4.EpisodeTitle)) | String.IsEqual({listitemabsolute}.Title,Window(Home).Property(LatestEpisode.5.EpisodeTitle)) | String.IsEqual({listitemabsolute}.Title,Window(Home).Property(LatestEpisode.6.EpisodeTitle)) | String.IsEqual({listitemabsolute}.Title,Window(Home).Property(LatestEpisode.7.EpisodeTitle)) | String.IsEqual({listitemabsolute}.Title,Window(Home).Property(LatestEpisode.8.EpisodeTitle)) | String.IsEqual({listitemabsolute}.Title,Window(Home).Property(LatestEpisode.9.EpisodeTitle)) | String.IsEqual({listitemabsolute}.Title,Window(Home).Property(LatestEpisode.10.EpisodeTitle))] + !Skin.HasSetting(DisableIndicator.New)">indicator/new.png</value>
-
-        <value condition="!String.IsEmpty({listitemabsolute}.Property(Container.Info)) + !String.IsEmpty({listitemabsolute}.DBID) + !Skin.HasSetting(DisableIndicator.Library)">indicator/library.png</value>
-        <value condition="{listitemabsolute}.IsCollection + !Skin.HasSetting(DisableIndicator.MovieSet)">indicator/movieset.png</value>
-
-        <value condition="Window.IsVisible(AddonBrowser.xml) + String.IsEqual({listitemabsolute}.Label2,$LOCALIZE[449])">indicator/checkmark.png</value>
-        <value condition="Window.IsVisible(AddonBrowser.xml) + String.IsEqual({listitemabsolute}.Label2,$LOCALIZE[24068])">indicator/unwatched.png</value>
-        <value condition="Window.IsVisible(AddonBrowser.xml) + String.EndsWith({listitemabsolute}.Label2, 67%) | String.EndsWith({listitemabsolute}.Label2, 68%) | String.EndsWith({listitemabsolute}.Label2, 69%) | String.EndsWith({listitemabsolute}.Label2, 70%) | String.EndsWith({listitemabsolute}.Label2, 71%) | String.EndsWith({listitemabsolute}.Label2, 72%) | String.EndsWith({listitemabsolute}.Label2, 73%) | String.EndsWith({listitemabsolute}.Label2, 74%) | String.EndsWith({listitemabsolute}.Label2, 75%) | String.EndsWith({listitemabsolute}.Label2, 76%) | String.EndsWith({listitemabsolute}.Label2, 77%) | String.EndsWith({listitemabsolute}.Label2, 78%) | String.EndsWith({listitemabsolute}.Label2, 79%) | String.EndsWith({listitemabsolute}.Label2, 80%) | String.EndsWith({listitemabsolute}.Label2, 81%) | String.EndsWith({listitemabsolute}.Label2, 82%) | String.EndsWith({listitemabsolute}.Label2, 83%) | String.EndsWith({listitemabsolute}.Label2, 84%) | String.EndsWith({listitemabsolute}.Label2, 85%) | String.EndsWith({listitemabsolute}.Label2, 86%) | String.EndsWith({listitemabsolute}.Label2, 87%) | String.EndsWith({listitemabsolute}.Label2, 88%) | String.EndsWith({listitemabsolute}.Label2, 89%) | String.EndsWith({listitemabsolute}.Label2, 90%) | String.EndsWith({listitemabsolute}.Label2, 91%) | String.EndsWith({listitemabsolute}.Label2, 92%) | String.EndsWith({listitemabsolute}.Label2, 93%) | String.EndsWith({listitemabsolute}.Label2, 94%) | String.EndsWith({listitemabsolute}.Label2, 95%) | String.EndsWith({listitemabsolute}.Label2, 96%) | String.EndsWith({listitemabsolute}.Label2, 97%) | String.EndsWith({listitemabsolute}.Label2, 98%) | String.EndsWith({listitemabsolute}.Label2, 99%) | String.EndsWith({listitemabsolute}.Label2, 100%)">indicator/inprogress-75.png</value>
-        <value condition="Window.IsVisible(AddonBrowser.xml) + String.EndsWith({listitemabsolute}.Label2, 34%) | String.EndsWith({listitemabsolute}.Label2, 35%) | String.EndsWith({listitemabsolute}.Label2, 36%) | String.EndsWith({listitemabsolute}.Label2, 37%) | String.EndsWith({listitemabsolute}.Label2, 38%) | String.EndsWith({listitemabsolute}.Label2, 39%) | String.EndsWith({listitemabsolute}.Label2, 40%) | String.EndsWith({listitemabsolute}.Label2, 41%) | String.EndsWith({listitemabsolute}.Label2, 42%) | String.EndsWith({listitemabsolute}.Label2, 43%) | String.EndsWith({listitemabsolute}.Label2, 44%) | String.EndsWith({listitemabsolute}.Label2, 45%) | String.EndsWith({listitemabsolute}.Label2, 46%) | String.EndsWith({listitemabsolute}.Label2, 47%) | String.EndsWith({listitemabsolute}.Label2, 48%) | String.EndsWith({listitemabsolute}.Label2, 49%) | String.EndsWith({listitemabsolute}.Label2, 50%) | String.EndsWith({listitemabsolute}.Label2, 51%) | String.EndsWith({listitemabsolute}.Label2, 52%) | String.EndsWith({listitemabsolute}.Label2, 53%) | String.EndsWith({listitemabsolute}.Label2, 54%) | String.EndsWith({listitemabsolute}.Label2, 55%) | String.EndsWith({listitemabsolute}.Label2, 56%) | String.EndsWith({listitemabsolute}.Label2, 57%) | String.EndsWith({listitemabsolute}.Label2, 58%) | String.EndsWith({listitemabsolute}.Label2, 59%) | String.EndsWith({listitemabsolute}.Label2, 60%) | String.EndsWith({listitemabsolute}.Label2, 61%) | String.EndsWith({listitemabsolute}.Label2, 62%) | String.EndsWith({listitemabsolute}.Label2, 63%) | String.EndsWith({listitemabsolute}.Label2, 64%) | String.EndsWith({listitemabsolute}.Label2, 65%) | String.EndsWith({listitemabsolute}.Label2, 66%)">indicator/inprogress-50.png</value>
-        <value condition="Window.IsVisible(AddonBrowser.xml) + String.EndsWith({listitemabsolute}.Label2, 0%) | String.EndsWith({listitemabsolute}.Label2, 1%) | String.EndsWith({listitemabsolute}.Label2, 2%) | String.EndsWith({listitemabsolute}.Label2, 3%) | String.EndsWith({listitemabsolute}.Label2, 4%) | String.EndsWith({listitemabsolute}.Label2, 5%) | String.EndsWith({listitemabsolute}.Label2, 6%) | String.EndsWith({listitemabsolute}.Label2, 7%) | String.EndsWith({listitemabsolute}.Label2, 8%) | String.EndsWith({listitemabsolute}.Label2, 9%) | String.EndsWith({listitemabsolute}.Label2, 10%) | String.EndsWith({listitemabsolute}.Label2, 11%) | String.EndsWith({listitemabsolute}.Label2, 12%) | String.EndsWith({listitemabsolute}.Label2, 13%) | String.EndsWith({listitemabsolute}.Label2, 14%) | String.EndsWith({listitemabsolute}.Label2, 15%) | String.EndsWith({listitemabsolute}.Label2, 16%) | String.EndsWith({listitemabsolute}.Label2, 17%) | String.EndsWith({listitemabsolute}.Label2, 18%) | String.EndsWith({listitemabsolute}.Label2, 19%) | String.EndsWith({listitemabsolute}.Label2, 20%) | String.EndsWith({listitemabsolute}.Label2, 21%) | String.EndsWith({listitemabsolute}.Label2, 22%) | String.EndsWith({listitemabsolute}.Label2, 23%) | String.EndsWith({listitemabsolute}.Label2, 24%) | String.EndsWith({listitemabsolute}.Label2, 25%) | String.EndsWith({listitemabsolute}.Label2, 26%) | String.EndsWith({listitemabsolute}.Label2, 27%) | String.EndsWith({listitemabsolute}.Label2, 28%) | String.EndsWith({listitemabsolute}.Label2, 29%) | String.EndsWith({listitemabsolute}.Label2, 30%) | String.EndsWith({listitemabsolute}.Label2, 31%) | String.EndsWith({listitemabsolute}.Label2, 32%) | String.EndsWith({listitemabsolute}.Label2, 33%)">indicator/inprogress-25.png</value>
-    </variable>
-
-    <variable name="Image_Overlay_Backing" containers="51,52,53,54,55,56,58,59,530,580,590,3001,5610" start="-16" end="29">
+    <variable name="Image_Overlay_Backing">
         <value condition="[String.IsEqual({listitem}.DBType,tvshow) | String.IsEqual({listitem}.DBType,season)] + !Integer.IsEqual({listitem}.Property(UnWatchedEpisodes),0) + !Skin.HasSetting(DisableIndicator.Episodes)">$VAR[Image_IndicatorStyle]</value>
         <value condition="{listitem}.IsRecording">$VAR[Image_IndicatorStyle]</value>
         <value condition="{listitem}.HasTimer">$VAR[Image_IndicatorStyle]</value>
@@ -105,44 +49,8 @@
 
         <value condition="Window.IsVisible(AddonBrowser.xml) + !String.IsEmpty({listitem}.Label2)">$VAR[Image_IndicatorStyle]</value>
     </variable>
-    <variable name="Image_Overlay_Backing_NoWrap" containers="51,52,53,54,55,56,58,59,530,580,590,3001,5610" start="-16" end="29">
-        <value condition="[String.IsEqual({listitemnowrap}.DBType,tvshow) | String.IsEqual({listitemnowrap}.DBType,season)] + !Integer.IsEqual({listitemnowrap}.Property(UnWatchedEpisodes),0) + !Skin.HasSetting(DisableIndicator.Episodes)">$VAR[Image_IndicatorStyle]</value>
-        <value condition="{listitemnowrap}.IsRecording">$VAR[Image_IndicatorStyle]</value>
-        <value condition="{listitemnowrap}.HasTimer">$VAR[Image_IndicatorStyle]</value>
-        <value condition="{listitemnowrap}.IsResumable + !Skin.HasSetting(DisableIndicator.Progress)">$VAR[Image_IndicatorStyle]</value>
 
-        <value condition="String.IsEqual({listitemnowrap}.Overlay,OverlayWatched.png) + !Skin.HasSetting(DisableIndicator.Watched)">$VAR[Image_IndicatorStyle]</value>
-        <value condition="Integer.IsGreater({listitemnowrap}.PlayCount,0) + !String.IsEqual({listitemnowrap}.DBType,song) + !String.IsEqual({listitemnowrap}.DBType,album) + !String.IsEqual({listitemnowrap}.DBType,artist) + !String.IsEqual({listitemnowrap}.DBType,image) + !String.IsEqual({listitemnowrap}.DBType,addon) + !Skin.HasSetting(DisableIndicator.Watched)">$VAR[Image_IndicatorStyle]</value>
-
-        <value condition="String.IsEqual({listitemnowrap}.Overlay,OverlayUnwatched.png) + String.IsEqual({listitemnowrap}.DBType,movie) + [String.IsEqual({listitemnowrap}.Title,Window(Home).Property(LatestMovie.1.Title)) | String.IsEqual({listitemnowrap}.Title,Window(Home).Property(LatestMovie.2.Title)) | String.IsEqual({listitemnowrap}.Title,Window(Home).Property(LatestMovie.3.Title)) | String.IsEqual({listitemnowrap}.Title,Window(Home).Property(LatestMovie.4.Title)) | String.IsEqual({listitemnowrap}.Title,Window(Home).Property(LatestMovie.5.Title)) | String.IsEqual({listitemnowrap}.Title,Window(Home).Property(LatestMovie.6.Title)) | String.IsEqual({listitemnowrap}.Title,Window(Home).Property(LatestMovie.7.Title)) | String.IsEqual({listitemnowrap}.Title,Window(Home).Property(LatestMovie.8.Title)) | String.IsEqual({listitemnowrap}.Title,Window(Home).Property(LatestMovie.9.Title)) | String.IsEqual({listitemnowrap}.Title,Window(Home).Property(LatestMovie.10.Title))] + !Skin.HasSetting(DisableIndicator.New)">$VAR[Image_IndicatorStyle]</value>
-
-        <value condition="String.IsEqual({listitemnowrap}.Overlay,OverlayUnwatched.png) + String.IsEqual({listitemnowrap}.DBType,episode) + [String.IsEqual({listitemnowrap}.Title,Window(Home).Property(LatestEpisode.1.EpisodeTitle)) | String.IsEqual({listitemnowrap}.Title,Window(Home).Property(LatestEpisode.2.EpisodeTitle)) | String.IsEqual({listitemnowrap}.Title,Window(Home).Property(LatestEpisode.3.EpisodeTitle)) | String.IsEqual({listitemnowrap}.Title,Window(Home).Property(LatestEpisode.4.EpisodeTitle)) | String.IsEqual({listitemnowrap}.Title,Window(Home).Property(LatestEpisode.5.EpisodeTitle)) | String.IsEqual({listitemnowrap}.Title,Window(Home).Property(LatestEpisode.6.EpisodeTitle)) | String.IsEqual({listitemnowrap}.Title,Window(Home).Property(LatestEpisode.7.EpisodeTitle)) | String.IsEqual({listitemnowrap}.Title,Window(Home).Property(LatestEpisode.8.EpisodeTitle)) | String.IsEqual({listitemnowrap}.Title,Window(Home).Property(LatestEpisode.9.EpisodeTitle)) | String.IsEqual({listitemnowrap}.Title,Window(Home).Property(LatestEpisode.10.EpisodeTitle))] + !Skin.HasSetting(DisableIndicator.New)">$VAR[Image_IndicatorStyle]</value>
-
-        <value condition="!String.IsEmpty({listitemnowrap}.Property(Container.Info)) + !String.IsEmpty({listitemnowrap}.DBID) + !Skin.HasSetting(DisableIndicator.Library)">$VAR[Image_IndicatorStyle]</value>
-        <value condition="{listitemnowrap}.IsCollection + !Skin.HasSetting(DisableIndicator.MovieSet)">$VAR[Image_IndicatorStyle]</value>
-
-        <value condition="Window.IsVisible(AddonBrowser.xml) + !String.IsEmpty({listitemnowrap}.Label2)">$VAR[Image_IndicatorStyle]</value>
-    </variable>
-    <variable name="Image_Overlay_Backing_Absolute" containers="51,52,53,54,55,56,58,59,530,580,590,3001,5610" start="-16" end="29">
-        <value condition="[String.IsEqual({listitemabsolute}.DBType,tvshow) | String.IsEqual({listitemabsolute}.DBType,season)] + !Integer.IsEqual({listitemabsolute}.Property(UnWatchedEpisodes),0) + !Skin.HasSetting(DisableIndicator.Episodes)">$VAR[Image_IndicatorStyle]</value>
-        <value condition="{listitemabsolute}.IsRecording">$VAR[Image_IndicatorStyle]</value>
-        <value condition="{listitemabsolute}.HasTimer">$VAR[Image_IndicatorStyle]</value>
-        <value condition="{listitemabsolute}.IsResumable + !Skin.HasSetting(DisableIndicator.Progress)">$VAR[Image_IndicatorStyle]</value>
-
-        <value condition="String.IsEqual({listitemabsolute}.Overlay,OverlayWatched.png) + !Skin.HasSetting(DisableIndicator.Watched)">$VAR[Image_IndicatorStyle]</value>
-        <value condition="Integer.IsGreater({listitemabsolute}.PlayCount,0) + !String.IsEqual({listitemabsolute}.DBType,song) + !String.IsEqual({listitemabsolute}.DBType,album) + !String.IsEqual({listitemabsolute}.DBType,artist) + !String.IsEqual({listitemabsolute}.DBType,image) + !String.IsEqual({listitemabsolute}.DBType,addon) + !Skin.HasSetting(DisableIndicator.Watched)">$VAR[Image_IndicatorStyle]</value>
-
-        <value condition="String.IsEqual({listitemabsolute}.Overlay,OverlayUnwatched.png) + String.IsEqual({listitemabsolute}.DBType,movie) + [String.IsEqual({listitemabsolute}.Title,Window(Home).Property(LatestMovie.1.Title)) | String.IsEqual({listitemabsolute}.Title,Window(Home).Property(LatestMovie.2.Title)) | String.IsEqual({listitemabsolute}.Title,Window(Home).Property(LatestMovie.3.Title)) | String.IsEqual({listitemabsolute}.Title,Window(Home).Property(LatestMovie.4.Title)) | String.IsEqual({listitemabsolute}.Title,Window(Home).Property(LatestMovie.5.Title)) | String.IsEqual({listitemabsolute}.Title,Window(Home).Property(LatestMovie.6.Title)) | String.IsEqual({listitemabsolute}.Title,Window(Home).Property(LatestMovie.7.Title)) | String.IsEqual({listitemabsolute}.Title,Window(Home).Property(LatestMovie.8.Title)) | String.IsEqual({listitemabsolute}.Title,Window(Home).Property(LatestMovie.9.Title)) | String.IsEqual({listitemabsolute}.Title,Window(Home).Property(LatestMovie.10.Title))] + !Skin.HasSetting(DisableIndicator.New)">$VAR[Image_IndicatorStyle]</value>
-
-        <value condition="String.IsEqual({listitemabsolute}.Overlay,OverlayUnwatched.png) + String.IsEqual({listitemabsolute}.DBType,episode) + [String.IsEqual({listitemabsolute}.Title,Window(Home).Property(LatestEpisode.1.EpisodeTitle)) | String.IsEqual({listitemabsolute}.Title,Window(Home).Property(LatestEpisode.2.EpisodeTitle)) | String.IsEqual({listitemabsolute}.Title,Window(Home).Property(LatestEpisode.3.EpisodeTitle)) | String.IsEqual({listitemabsolute}.Title,Window(Home).Property(LatestEpisode.4.EpisodeTitle)) | String.IsEqual({listitemabsolute}.Title,Window(Home).Property(LatestEpisode.5.EpisodeTitle)) | String.IsEqual({listitemabsolute}.Title,Window(Home).Property(LatestEpisode.6.EpisodeTitle)) | String.IsEqual({listitemabsolute}.Title,Window(Home).Property(LatestEpisode.7.EpisodeTitle)) | String.IsEqual({listitemabsolute}.Title,Window(Home).Property(LatestEpisode.8.EpisodeTitle)) | String.IsEqual({listitemabsolute}.Title,Window(Home).Property(LatestEpisode.9.EpisodeTitle)) | String.IsEqual({listitemabsolute}.Title,Window(Home).Property(LatestEpisode.10.EpisodeTitle))] + !Skin.HasSetting(DisableIndicator.New)">$VAR[Image_IndicatorStyle]</value>
-
-        <value condition="!String.IsEmpty({listitemabsolute}.Property(Container.Info)) + !String.IsEmpty({listitemabsolute}.DBID) + !Skin.HasSetting(DisableIndicator.Library)">$VAR[Image_IndicatorStyle]</value>
-        <value condition="{listitemabsolute}.IsCollection + !Skin.HasSetting(DisableIndicator.MovieSet)">$VAR[Image_IndicatorStyle]</value>
-
-        <value condition="Window.IsVisible(AddonBrowser.xml) + !String.IsEmpty({listitemabsolute}.Label2)">$VAR[Image_IndicatorStyle]</value>
-    </variable>
-
-    <variable name="Label_SmallLandscapeWidget_Sublabel" containers="54,5610,530" start="-10" end="17">
+    <variable name="Label_SmallLandscapeWidget_Sublabel">
         <value condition="!String.IsEmpty({listitem}.ChannelName)">$INFO[{listitem}.ChannelName]</value>
         <value condition="!String.IsEmpty({listitem}.Property(NextDay))">$INFO[{listitem}.Property(NextDay)]$INFO[{listitem}.Property(ShortTime), @ ,]</value>
         <value condition="!String.IsEmpty({listitem}.TvShowTitle) + !String.IsEqual({listitem}.Label,{listitem}.TvShowTitle)">$INFO[{listitem}.TvShowTitle]</value>
@@ -155,28 +63,14 @@
         <value condition="!String.IsEmpty({listitem}.Label2)">$INFO[{listitem}.Label2]</value>
     </variable>
 
-    <variable name="Image_Banner" containers="56" start="-6" end="11">
+    <variable name="Image_Banner">
         <value condition="!String.IsEmpty({listitem}.Art(banner))">$INFO[{listitem}.Art(banner)]</value>
         <value condition="!String.IsEmpty({listitem}.Art(tvshow.banner))">$INFO[{listitem}.Art(tvshow.banner)]</value>
         <value condition="!String.IsEmpty({listitem}.Art(fanart))">$INFO[{listitem}.Art(fanart)]</value>
         <value>$INFO[{listitem}.Icon]</value>
     </variable>
 
-    <variable name="Image_Banner_NoWrap" containers="56" start="-6" end="11">
-        <value condition="!String.IsEmpty({listitemnowrap}.Art(banner))">$INFO[{listitemnowrap}.Art(banner)]</value>
-        <value condition="!String.IsEmpty({listitemnowrap}.Art(tvshow.banner))">$INFO[{listitemnowrap}.Art(tvshow.banner)]</value>
-        <value condition="!String.IsEmpty({listitemnowrap}.Art(fanart))">$INFO[{listitemnowrap}.Art(fanart)]</value>
-        <value>$INFO[{listitemnowrap}.Icon]</value>
-    </variable>
-
-    <variable name="Image_Banner_Absolute" containers="56" start="-6" end="11">
-        <value condition="!String.IsEmpty({listitemabsolute}.Art(banner))">$INFO[{listitemabsolute}.Art(banner)]</value>
-        <value condition="!String.IsEmpty({listitemabsolute}.Art(tvshow.banner))">$INFO[{listitemabsolute}.Art(tvshow.banner)]</value>
-        <value condition="!String.IsEmpty({listitemabsolute}.Art(fanart))">$INFO[{listitemabsolute}.Art(fanart)]</value>
-        <value>$INFO[{listitemabsolute}.Icon]</value>
-    </variable>
-
-    <variable name="Image_Landscape" containers="54,5610,530" start="-10" end="17" parent="Control.HasFocus({id})">
+    <variable name="Image_Landscape">
         <value condition="Container.Content(images)">$INFO[{listitem}.Icon]</value>
         <value condition="!String.IsEmpty({listitem}.Art(thumb)) + String.IsEqual({listitem}.DBType,video) + !String.IsEqual({listitem}.Art(thumb),OverlaySpoiler.png)">$INFO[{listitem}.Art(thumb)]</value>
         <value condition="!String.IsEmpty({listitem}.Art(thumb)) + String.IsEqual({listitem}.DBType,episode) + String.IsEmpty({listitem}.Property(airday)) + !String.IsEqual({listitem}.Art(thumb),OverlaySpoiler.png) + !String.IsEqual({listitem}.Art(thumb),{listitem}.Art(poster)) + !String.IsEqual({listitem}.Art(thumb),{listitem}.Art(tvshow.poster)) + !String.IsEqual({listitem}.Art(thumb),{listitem}.ActualIcon)">$INFO[{listitem}.Art(thumb)]</value>
@@ -190,13 +84,29 @@
         <value>$INFO[{listitem}.Icon]</value>
     </variable>
 
-    <variable name="Label_Landscape_Title" containers="54,5610,530,580,590" start="-10" end="17">
+    <variable name="Label_Landscape_Title">
         <value condition="String.IsEqual({listitem}.DBType,album) | String.IsEqual({listitem}.DBType,song)">$INFO[{listitem}.Album]</value>
         <value condition="String.IsEqual({listitem}.DBType,episode)">$INFO[{listitem}.Label]</value>
         <value condition="!String.IsEmpty({listitem}.Title)">$INFO[{listitem}.Title]</value>
         <value condition="!String.IsEmpty({listitem}.Label)">$INFO[{listitem}.Label]</value>
         <value condition="Window.IsVisible(DialogAddonInfo.xml)">$LOCALIZE[31209]</value>
     </variable>
+
+    <variable name="Image_DefaultIcon">
+        <value condition="String.IsEqual({listitem}.DBType,country) | String.IsEqual({listitem}.Property(dbtype),country)">$INFO[{listitem}.Label,resource://resource.images.moviecountryicons.maps/,.png]</value>
+        <value condition="String.IsEqual({listitem}.DBType,studio) | String.IsEqual({listitem}.Property(dbtype),studio)">$INFO[{listitem}.Label,resource://resource.images.studios.white/,.png]</value>
+        <value condition="String.IsEqual({listitem}.DBType,genre) | String.IsEqual({listitem}.Property(dbtype),genre)">$VAR[Image_GenreIcons_Path]$INFO[{listitem}.Label,,.png]</value>
+        <value>$INFO[{listitem}.Icon]</value>
+    </variable>
+
+    <variable name="Image_Poster">
+        <value condition="!String.IsEmpty({listitem}.Art(season.poster)) + !Window.IsVisible(Home)">$INFO[{listitem}.Art(season.poster)]</value>
+        <value condition="!String.IsEmpty({listitem}.Art(tvshow.poster)) + [String.IsEqual({listitem}.Property(Container.Info),library_nextaired) | String.IsEqual({listitem}.Property(Container.Info),trakt_calendar)]">$INFO[{listitem}.Art(tvshow.poster)]</value>
+        <value condition="!String.IsEmpty({listitem}.Art(poster))">$INFO[{listitem}.Art(poster)]</value>
+        <value condition="!String.IsEmpty({listitem}.Art(tvshow.poster))">$INFO[{listitem}.Art(tvshow.poster)]</value>
+        <value>$INFO[{listitem}.Icon]</value>
+    </variable>
+
 
     <variable name="Label_Plot" containers="530,580,590,3001,5610">
         <value condition="Window.IsVisible(1140) + Control.HasFocus(5002) + !String.IsEmpty(Container(5002).ListItem.Plot)">$INFO[Container(5002).ListItem.Plot]</value>
@@ -208,23 +118,9 @@
         <value condition="!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Plot))">$INFO[Window(Home).Property(TMDbHelper.ListItem.Plot)]</value>
     </variable>
 
-    <expression name="Exp_DefaultIcon" containers="51,52,53,54,55,56,58,59,530,580,590,3001,5610" start="-16" end="29">[String.IsEmpty({listitem}.Art(poster)) + String.IsEmpty({listitem}.Art(tvshow.poster)) + String.IsEmpty({listitem}.Art(fanart)) + String.IsEmpty({listitem}.Art(tvshow.fanart)) + String.IsEmpty({listitem}.Art(clearlogo))  + String.IsEmpty({listitem}.Art(landscape)) + [String.IsEqual({listitem}.Icon,{listitem}.ActualIcon) | [Window.IsVisible(AddonBrowser.xml) + String.IsEmpty({listitem}.AddonName)] | [Window.IsMedia + String.IsEmpty(Container.FolderPath)]]]</expression>
+    <expression name="Exp_DefaultIcon">[String.IsEmpty({listitem}.Art(poster)) + String.IsEmpty({listitem}.Art(tvshow.poster)) + String.IsEmpty({listitem}.Art(fanart)) + String.IsEmpty({listitem}.Art(tvshow.fanart)) + String.IsEmpty({listitem}.Art(clearlogo))  + String.IsEmpty({listitem}.Art(landscape)) + [String.IsEqual({listitem}.Icon,{listitem}.ActualIcon) | [Window.IsVisible(AddonBrowser.xml) + String.IsEmpty({listitem}.AddonName)] | [Window.IsMedia + String.IsEmpty(Container.FolderPath)]]]</expression>
 
-    <expression name="Exp_SpecialIcon" containers="51,52,53,54,55,56,58,59,530,580,590,3001,5610" start="-16" end="29">[[String.IsEqual({listitem}.DBType,country) | String.IsEqual({listitem}.Property(dbtype),country) | String.IsEqual({listitem}.DBType,studio) | String.IsEqual({listitem}.Property(dbtype),studio) | String.IsEqual({listitem}.DBType,genre) | String.IsEqual({listitem}.Property(dbtype),genre)] | [[!String.IsEmpty({listitem}.ChannelNumberLabel) | !String.IsEmpty({listitem}.ChannelName) | !String.IsEmpty({listitem}.ChannelNumber)] + [String.IsEmpty({listitem}.Art(poster)) + String.IsEmpty({listitem}.Art(tvshow.poster)) + String.IsEmpty({listitem}.Art(fanart))]]]</expression>
+    <expression name="Exp_SpecialIcon">[[String.IsEqual({listitem}.DBType,country) | String.IsEqual({listitem}.Property(dbtype),country) | String.IsEqual({listitem}.DBType,studio) | String.IsEqual({listitem}.Property(dbtype),studio) | String.IsEqual({listitem}.DBType,genre) | String.IsEqual({listitem}.Property(dbtype),genre)] | [[!String.IsEmpty({listitem}.ChannelNumberLabel) | !String.IsEmpty({listitem}.ChannelName) | !String.IsEmpty({listitem}.ChannelNumber)] + [String.IsEmpty({listitem}.Art(poster)) + String.IsEmpty({listitem}.Art(tvshow.poster)) + String.IsEmpty({listitem}.Art(fanart))]]]</expression>
 
-    <variable name="Image_DefaultIcon" containers="51,52,53,54,55,56,58,59,530,580,590,3001,5610" start="-16" end="29">
-        <value condition="String.IsEqual({listitem}.DBType,country) | String.IsEqual({listitem}.Property(dbtype),country)">$INFO[{listitem}.Label,resource://resource.images.moviecountryicons.maps/,.png]</value>
-        <value condition="String.IsEqual({listitem}.DBType,studio) | String.IsEqual({listitem}.Property(dbtype),studio)">$INFO[{listitem}.Label,resource://resource.images.studios.white/,.png]</value>
-        <value condition="String.IsEqual({listitem}.DBType,genre) | String.IsEqual({listitem}.Property(dbtype),genre)">$VAR[Image_GenreIcons_Path]$INFO[{listitem}.Label,,.png]</value>
-        <value>$INFO[{listitem}.Icon]</value>
-    </variable>
-
-    <variable name="Image_Poster" containers="51,52,53,54,55,56,58,59,530,580,590,3001,5610" start="-16" end="29">
-        <value condition="!String.IsEmpty({listitem}.Art(season.poster)) + !Window.IsVisible(Home)">$INFO[{listitem}.Art(season.poster)]</value>
-        <value condition="!String.IsEmpty({listitem}.Art(tvshow.poster)) + [String.IsEqual({listitem}.Property(Container.Info),library_nextaired) | String.IsEqual({listitem}.Property(Container.Info),trakt_calendar)]">$INFO[{listitem}.Art(tvshow.poster)]</value>
-        <value condition="!String.IsEmpty({listitem}.Art(poster))">$INFO[{listitem}.Art(poster)]</value>
-        <value condition="!String.IsEmpty({listitem}.Art(tvshow.poster))">$INFO[{listitem}.Art(tvshow.poster)]</value>
-        <value>$INFO[{listitem}.Icon]</value>
-    </variable>
 
 </includes>
