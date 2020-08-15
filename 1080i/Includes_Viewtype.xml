@@ -1498,9 +1498,9 @@
             <param name="label" value="$VAR[Label_Header_Center]" />
             <param name="altlabel" value="$INFO[Control.GetLabel(3),, ]$INFO[Control.GetLabel(4)]" />
             <top>0</top>
-            <!-- <animation effect="fade" start="0" end="100" delay="300" time="500" tween="cubic" easing="inout">Visible</animation>
+            <animation effect="fade" start="0" end="100" delay="300" time="500" tween="cubic" easing="inout">Visible</animation>
             <animation effect="fade" start="100" end="0" time="500" tween="cubic" easing="inout">Hidden</animation>
-            <visible>!Container($PARAM[id]$PARAM[id]).HasPrevious</visible> -->
+            <visible>!Container($PARAM[id]$PARAM[id]).HasPrevious</visible>
         </include>
 
         <include content="Object_Wall_SortLetter">
