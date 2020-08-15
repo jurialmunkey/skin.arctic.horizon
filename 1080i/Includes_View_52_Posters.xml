@@ -30,6 +30,7 @@
                 <param name="altlabel" value="$INFO[Control.GetLabel(3),, ]$INFO[Control.GetLabel(4)]" />
             </include>
         </control>
+
         <control type="group">
             <visible>Control.IsVisible(5252)</visible>
             <include>Animation_Down</include>
@@ -41,6 +42,9 @@
                 <visible>!String.IsEqual(Container.Property(Param.Info),details)</visible>
             </include>
         </control>
+        <include content="Viewtype_WallSwitch_Furniture">
+            <param name="id" value="52" />
+        </include>
 
     </include>
 

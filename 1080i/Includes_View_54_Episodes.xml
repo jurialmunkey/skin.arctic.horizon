@@ -42,6 +42,9 @@
                 <visible>!String.IsEqual(Container.Property(Param.Info),details)</visible>
             </include>
         </control>
+        <include content="Viewtype_WallSwitch_Furniture">
+            <param name="id" value="54" />
+        </include>
     </include>
 
 

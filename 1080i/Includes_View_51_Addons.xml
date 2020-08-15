@@ -35,6 +35,9 @@
                 <param name="viewtype-label" value="$LOCALIZE[31237]" />
             </include>
         </control>
+        <include content="Viewtype_WallSwitch_Furniture">
+            <param name="id" value="51" />
+        </include>
     </include>
 
     <include name="View_501_AddonsWall">

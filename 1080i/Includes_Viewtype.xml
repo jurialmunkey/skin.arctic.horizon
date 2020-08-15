@@ -67,13 +67,13 @@
             <include>View_Pad</include>
             <animation effect="fade" start="100" end="0" condition="Integer.IsEqual(Container.NumAllItems,0)">Conditional</animation>
 
-            <control type="group" description="Wall Views">
+            <!-- <control type="group" description="Wall Views">
                 <visible>Control.IsVisible(501) | Control.IsVisible(502) | Control.IsVisible(504) | Control.IsVisible(5151) | Control.IsVisible(5252) | Control.IsVisible(5454)</visible>
                 <include>Animation_Down</include>
                 <include content="Viewtype_BackPanel">
                     <height>880</height>
                 </include>
-            </control>
+            </control> -->
 
             <control type="group" description="Standard Fixedlist Views">
                 <visible>Control.IsVisible(51) | Control.IsVisible(52) | Control.IsVisible(53) | Control.IsVisible(54) | Control.IsVisible(57) | Control.IsVisible(58) | Control.IsVisible(59)</visible>
@@ -1455,15 +1455,6 @@
     </include>
 
     <include name="Viewtype_WallSwitch">
-        <control type="button" id="1$PARAM[id]$PARAM[id]">
-            <include>Defs_Hidden_Button</include>
-            <onfocus>SetFocus($PARAM[id])</onfocus>
-        </control>
-        <control type="button" id="2$PARAM[id]$PARAM[id]">
-            <include>Defs_Hidden_Button</include>
-            <onfocus>Container.SetViewMode($PARAM[id]$PARAM[id])</onfocus>
-            <onfocus>SetFocus($PARAM[id]$PARAM[id])</onfocus>
-        </control>
         <include content="$PARAM[include]">
             <param name="id" value="$PARAM[id]$PARAM[id]" />
             <param name="castlabel" value="Container.Content(actors)" />
@@ -1471,9 +1462,9 @@
             <param name="viewtype-label" value="$PARAM[viewtype-label]" />
             <param name="control-type" value="panel" />
             <param name="orientation" value="vertical" />
-            <param name="height" value="880" />
-            <param name="offsetv" value="98" />
-            <bottom>-82</bottom>
+            <param name="height" value="1078" />
+            <param name="offsetv" value="178" />
+            <bottom>-80</bottom>
             <left>-80</left>
             <right>-80</right>
             <onback>ClearProperty(WallMode)</onback>
@@ -1483,29 +1474,44 @@
             <visible>!String.IsEmpty(Window.Property(WallMode))</visible>
             <nested />
         </include>
-        <control type="image">
-            <left>-80</left>
-            <right>-80</right>
-            <height>120</height>
-            <texture>common/dim-top.png</texture>
-            <animation effect="fade" start="0" end="100" time="500" tween="cubic" easing="inout">Visible</animation>
-            <animation effect="fade" start="100" end="0" time="500" tween="cubic" easing="inout">Hidden</animation>
-            <visible>Container($PARAM[id]$PARAM[id]).HasPrevious</visible>
+    </include>
+    <include name="Viewtype_WallSwitch_Furniture">
+        <control type="group">
+            <visible>Control.IsVisible($PARAM[id]$PARAM[id])</visible>
+            <control type="button" id="1$PARAM[id]$PARAM[id]">
+                <include>Defs_Hidden_Button</include>
+                <onfocus>SetFocus($PARAM[id])</onfocus>
+            </control>
+            <control type="button" id="2$PARAM[id]$PARAM[id]">
+                <include>Defs_Hidden_Button</include>
+                <onfocus>Container.SetViewMode($PARAM[id]$PARAM[id])</onfocus>
+                <onfocus>SetFocus($PARAM[id]$PARAM[id])</onfocus>
+            </control>
+            <control type="image">
+                <left>-80</left>
+                <right>-80</right>
+                <height>view_top</height>
+                <top>-200</top>
+                <texture>common/dim-top.png</texture>
+                <animation effect="fade" start="0" end="100" time="500" tween="cubic" easing="inout" reversible="false">Visible</animation>
+                <animation effect="fade" start="100" end="0" time="500" tween="cubic" easing="inout" reversible="false">Hidden</animation>
+                <visible>Container($PARAM[id]$PARAM[id]).HasPrevious</visible>
+            </control>
+            <control type="image">
+                <left>-80</left>
+                <right>-80</right>
+                <height>view_top</height>
+                <bottom>-80</bottom>
+                <texture flipy="true">common/dim-top.png</texture>
+                <animation effect="fade" start="0" end="100" time="500" tween="cubic" easing="inout" reversible="false">Visible</animation>
+                <animation effect="fade" start="100" end="0" time="500" tween="cubic" easing="inout" reversible="false">Hidden</animation>
+                <visible>Container($PARAM[id]$PARAM[id]).HasNext</visible>
+            </control>
+
+            <include content="Object_Wall_SortLetter">
+                <param name="id" value="$PARAM[id]$PARAM[id]" />
+            </include>
         </control>
-
-        <include content="Home_Hub_Widget_Label">
-            <param name="id" value="$PARAM[id]$PARAM[id]" />
-            <param name="label" value="$VAR[Label_Header_Center]" />
-            <param name="altlabel" value="$INFO[Control.GetLabel(3),, ]$INFO[Control.GetLabel(4)]" />
-            <top>0</top>
-            <animation effect="fade" start="0" end="100" delay="300" time="500" tween="cubic" easing="inout">Visible</animation>
-            <animation effect="fade" start="100" end="0" time="500" tween="cubic" easing="inout">Hidden</animation>
-            <visible>!Container($PARAM[id]$PARAM[id]).HasPrevious</visible>
-        </include>
-
-        <include content="Object_Wall_SortLetter">
-            <param name="id" value="$PARAM[id]$PARAM[id]" />
-        </include>
     </include>
 </includes>
 
