@@ -4,6 +4,7 @@
         <include content="View_53_Seasons">
             <param name="id" value="58" />
             <param name="include" value="Viewtype_Square" />
+            <param name="viewtype-label" value="Square Integrated" />
         </include>
     </include>
 </includes>

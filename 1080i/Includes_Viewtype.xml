@@ -67,13 +67,13 @@
             <include>View_Pad</include>
             <animation effect="fade" start="100" end="0" condition="Integer.IsEqual(Container.NumAllItems,0)">Conditional</animation>
 
-            <!-- <control type="group" description="Wall Views">
-                <visible>Control.IsVisible(501) | Control.IsVisible(502) | Control.IsVisible(504) | Control.IsVisible(5151) | Control.IsVisible(5252) | Control.IsVisible(5454)</visible>
+            <control type="group" description="Wall Views">
+                <visible>Control.IsVisible(501) | Control.IsVisible(502) | Control.IsVisible(504)</visible>
                 <include>Animation_Down</include>
                 <include content="Viewtype_BackPanel">
                     <height>880</height>
                 </include>
-            </control> -->
+            </control>
 
             <control type="group" description="Standard Fixedlist Views">
                 <visible>Control.IsVisible(51) | Control.IsVisible(52) | Control.IsVisible(53) | Control.IsVisible(54) | Control.IsVisible(57) | Control.IsVisible(58) | Control.IsVisible(59)</visible>
@@ -93,19 +93,24 @@
                     <include>Viewtype_Info_Right</include>
                 </include>
                 <control type="group" description="Right Side Artwork">
-                    <right>0</right>
-                    <bottom>400</bottom>
-                    <height>320</height>
-                    <width>670</width>
+
                     <control type="image">
                         <texture background="true">$VAR[Image_ClearArt]</texture>
                         <aspectratio align="right" aligny="bottom" scalediffuse="false">keep</aspectratio>
                         <visible>!Control.IsVisible(51)</visible>
+                        <right>0</right>
+                        <bottom>400</bottom>
+                        <height>320</height>
+                        <width>670</width>
                     </control>
                     <control type="image">
                         <texture background="true">$VAR[Image_DiscArt]</texture>
                         <aspectratio align="right" aligny="bottom" scalediffuse="false">keep</aspectratio>
                         <visible>Control.IsVisible(51)</visible>
+                        <right>0</right>
+                        <bottom>480</bottom>
+                        <height>320</height>
+                        <width>670</width>
                     </control>
                 </control>
                 <include content="View_Info_Buttons">
@@ -144,20 +149,20 @@
                 </control>
             </control>
 
-            <include>View_50_Tags</include>
-            <include>View_51_Addons</include>
-            <include>View_52_Posters</include>
-            <include>View_53_Seasons</include>
-            <include>View_54_Episodes</include>
-            <include>View_55_FileList</include>
-            <include>View_56_Banners</include>
-            <include>View_57_BigBanner</include>
-            <include>View_58_Artists</include>
-            <include>View_59_Sets</include>
-            <include>View_500_SongList</include>
-            <include>View_501_AddonsWall</include>
-            <include>View_502_PosterWall</include>
-            <include>View_504_EpisodeWall</include>
+            <include condition="$EXP[Exp_View_50_Include]">View_50_Tags</include>
+            <include condition="$EXP[Exp_View_51_Include]">View_51_Addons</include>
+            <include condition="$EXP[Exp_View_52_Include]">View_52_Posters</include>
+            <include condition="$EXP[Exp_View_53_Include]">View_53_Seasons</include>
+            <include condition="$EXP[Exp_View_54_Include]">View_54_Episodes</include>
+            <include condition="$EXP[Exp_View_55_Include]">View_55_FileList</include>
+            <include condition="$EXP[Exp_View_56_Include]">View_56_Banners</include>
+            <include condition="$EXP[Exp_View_57_Include]">View_57_BigBanner</include>
+            <include condition="$EXP[Exp_View_58_Include]">View_58_Artists</include>
+            <include condition="$EXP[Exp_View_59_Include]">View_59_Sets</include>
+            <include condition="$EXP[Exp_View_500_Include]">View_500_SongList</include>
+            <include condition="$EXP[Exp_View_501_Include]">View_501_AddonsWall</include>
+            <include condition="$EXP[Exp_View_502_Include]">View_502_PosterWall</include>
+            <include condition="$EXP[Exp_View_504_Include]">View_504_EpisodeWall</include>
         </control>
     </include>
 
@@ -512,9 +517,10 @@
                 <param name="diffuse" value="diffuse/banner-std.png" />
                 <param name="height" value="$PARAM[height]" />
                 <param name="textpanel" value="true" />
-                <param name="viewtype-label" value="$LOCALIZE[31095]" />
+                <param name="viewtype-label" value="Banner Wall" />
                 <param name="specialicon" value="$PARAM[specialicon]" />
                 <param name="clearlogooverlay" value="true" />
+                <param name="offset" value="$PARAM[offset]" />
                 <nested />
             </include>
         </definition>
@@ -536,9 +542,11 @@
                 <param name="diffuse" value="diffuse/landscape-std.png" />
                 <param name="height" value="$PARAM[height]" />
                 <param name="textpanel" value="true" />
+                <param name="offset" value="$PARAM[offset]" />
                 <param name="offsetv" value="$PARAM[offsetv]" />
                 <param name="viewtype-label" value="$PARAM[viewtype-label]" />
                 <param name="specialicon" value="$PARAM[specialicon]" />
+                <param name="altid" value="$PARAM[altid]" />
                 <nested />
             </include>
             <include content="Viewtype_Poster" condition="Skin.HasSetting(DisableTextPanel)">
@@ -553,9 +561,11 @@
                 <param name="diffuse" value="diffuse/landscape-std-np.png" />
                 <param name="height" value="$PARAM[height]" />
                 <param name="textpanel" value="false" />
+                <param name="offset" value="$PARAM[offset]" />
                 <param name="offsetv" value="$PARAM[offsetv]" />
                 <param name="viewtype-label" value="$PARAM[viewtype-label]" />
                 <param name="specialicon" value="$PARAM[specialicon]" />
+                <param name="altid" value="$PARAM[altid]" />
                 <nested />
             </include>
         </definition>
@@ -940,6 +950,7 @@
                 <param name="textbox-visible" value="$PARAM[textbox-visible]" />
                 <param name="aspectratio" value="$PARAM[aspectratio]" />
                 <param name="textpanel" value="true" />
+                <param name="offset" value="$PARAM[offset]" />
                 <param name="offsetv" value="$PARAM[offsetv]" />
                 <param name="viewtype-label" value="$PARAM[viewtype-label]" />
                 <nested />
@@ -960,6 +971,7 @@
                 <param name="textbox-visible" value="$PARAM[textbox-visible]" />
                 <param name="aspectratio" value="$PARAM[aspectratio]" />
                 <param name="textpanel" value="false" />
+                <param name="offset" value="$PARAM[offset]" />
                 <param name="offsetv" value="$PARAM[offsetv]" />
                 <param name="viewtype-label" value="$PARAM[viewtype-label]" />
                 <nested />
@@ -1512,6 +1524,604 @@
                 <param name="id" value="$PARAM[id]$PARAM[id]" />
             </include>
         </control>
+    </include>
+
+
+    <include name="Viewtype_HorizontalWall_Item">
+        <param name="selectbox" default="false" />
+        <param name="itemheight" default="360" />
+        <definition>
+            <control type="group">
+                <width>$PARAM[itemwidth]</width>
+                <height>$PARAM[itemheight]</height>
+                <control type="group">
+                    <visible>!String.IsEmpty(Container($PARAM[id]).ListItemNoWrap($PARAM[pos]).Label)</visible>
+                    <include content="$PARAM[include]">
+                        <param name="id" value="$PARAM[id]" />
+                        <param name="affix" value="_C$PARAM[id]_$PARAM[pos]" />
+                        <param name="listitem" value="Container($PARAM[id]).ListItem($PARAM[pos])" />
+                        <param name="diffuse" value="$PARAM[diffuse]" />
+                        <param name="icon" value="$VAR[$PARAM[imagevar]_C$PARAM[id]_$PARAM[pos]]" />
+                        <param name="selectbox" value="$PARAM[selectbox]" />
+                        <param name="textbox-height" value="$PARAM[textbox-height]" />
+                        <param name="label-include" value="$PARAM[label-include]" />
+                    </include>
+                </control>
+            </control>
+        </definition>
+    </include>
+
+    <include name="Viewtype_HorizontalWall_LeftZero">
+        <left>0</left>
+    </include>
+
+    <include name="Viewtype_HorizontalWall_Animation">
+        <param name="7columns" default="false" />
+        <param name="6columns" default="false" />
+        <param name="5columns" default="false" />
+        <param name="4columns" default="false" />
+        <param name="3columns" default="false" />
+        <param name="2columns" default="false" />
+        <definition>
+            <animation effect="slide" tween="quadratic" time="400" end="-$PARAM[itemwidth]" reversible="false" condition="!Container($PARAM[id]).OnScrollNext + [[[[[!String.IsEmpty(Container($PARAM[id]).ListItemNoWrap(12).Label) + $PARAM[7columns]] | [!String.IsEmpty(Container($PARAM[id]).ListItemNoWrap(10).Label) + $PARAM[6columns]]
+            | [!String.IsEmpty(Container($PARAM[id]).ListItemNoWrap(8).Label) + $PARAM[5columns]] | [!String.IsEmpty(Container($PARAM[id]).ListItemNoWrap(6).Label) + $PARAM[4columns]] | [!String.IsEmpty(Container($PARAM[id]).ListItemNoWrap(4).Label) + $PARAM[3columns]] | [!String.IsEmpty(Container($PARAM[id]).ListItemNoWrap(2).Label) + $PARAM[2columns]]] + Container($PARAM[id]).Row(0)] | [[[!String.IsEmpty(Container($PARAM[id]).ListItemNoWrap(11).Label) + $PARAM[7columns]] | [!String.IsEmpty(Container($PARAM[id]).ListItemNoWrap(9).Label) + $PARAM[6columns]]
+            | [!String.IsEmpty(Container($PARAM[id]).ListItemNoWrap(7).Label) + $PARAM[5columns]] | [!String.IsEmpty(Container($PARAM[id]).ListItemNoWrap(5).Label) + $PARAM[4columns]] | [!String.IsEmpty(Container($PARAM[id]).ListItemNoWrap(3).Label) + $PARAM[3columns]] | [!String.IsEmpty(Container($PARAM[id]).ListItemNoWrap(1).Label) + $PARAM[2columns]]] + Container($PARAM[id]).Row(1)]]]">Conditional</animation>
+            <animation effect="slide" tween="quadratic" time="400" end="$PARAM[itemwidth]" reversible="false" condition="!Container($PARAM[id]).OnScrollPrevious + [[[[[!String.IsEmpty(Container($PARAM[id]).ListItemNoWrap(12).Label) + $PARAM[7columns]] | [!String.IsEmpty(Container($PARAM[id]).ListItemNoWrap(10).Label) + $PARAM[6columns]]
+            | [!String.IsEmpty(Container($PARAM[id]).ListItemNoWrap(8).Label) + $PARAM[5columns]] | [!String.IsEmpty(Container($PARAM[id]).ListItemNoWrap(6).Label) + $PARAM[4columns]] | [!String.IsEmpty(Container($PARAM[id]).ListItemNoWrap(4).Label) + $PARAM[3columns]] | [!String.IsEmpty(Container($PARAM[id]).ListItemNoWrap(2).Label) + $PARAM[2columns]]] + Container($PARAM[id]).Row(0)] | [[[!String.IsEmpty(Container($PARAM[id]).ListItemNoWrap(11).Label) + $PARAM[7columns]] | [!String.IsEmpty(Container($PARAM[id]).ListItemNoWrap(9).Label) + $PARAM[6columns]]
+            | [!String.IsEmpty(Container($PARAM[id]).ListItemNoWrap(7).Label) + $PARAM[5columns]] | [!String.IsEmpty(Container($PARAM[id]).ListItemNoWrap(5).Label) + $PARAM[4columns]] | [!String.IsEmpty(Container($PARAM[id]).ListItemNoWrap(3).Label) + $PARAM[3columns]] | [!String.IsEmpty(Container($PARAM[id]).ListItemNoWrap(1).Label) + $PARAM[2columns]]] + Container($PARAM[id]).Row(1)]]]">Conditional</animation>
+
+            <animation effect="slide" end="$PARAM[itemwidth]" condition="[[String.IsEmpty(Container($PARAM[id]).ListItemNoWrap(2).Label) + Container($PARAM[id]).Row(0)] | [String.IsEmpty(Container($PARAM[id]).ListItemNoWrap(1).Label) + Container($PARAM[id]).Row(1)]] + [$PARAM[7columns] | $PARAM[6columns] | $PARAM[5columns] | $PARAM[4columns] | $PARAM[3columns] | $PARAM[2columns]] + Integer.IsGreater(Container($PARAM[id]).NumItems,2)">Conditional</animation>
+            <animation effect="slide" end="$PARAM[itemwidth]" condition="[[String.IsEmpty(Container($PARAM[id]).ListItemNoWrap(4).Label) + Container($PARAM[id]).Row(0)] | [String.IsEmpty(Container($PARAM[id]).ListItemNoWrap(3).Label) + Container($PARAM[id]).Row(1)]] + [$PARAM[7columns] | $PARAM[6columns] | $PARAM[5columns] | $PARAM[4columns] | $PARAM[3columns]] + Integer.IsGreater(Container($PARAM[id]).NumItems,4)">Conditional</animation>
+            <animation effect="slide" end="$PARAM[itemwidth]" condition="[[String.IsEmpty(Container($PARAM[id]).ListItemNoWrap(6).Label) + Container($PARAM[id]).Row(0)] | [String.IsEmpty(Container($PARAM[id]).ListItemNoWrap(5).Label) + Container($PARAM[id]).Row(1)]] + [$PARAM[7columns] | $PARAM[6columns] | $PARAM[5columns] | $PARAM[4columns]] + Integer.IsGreater(Container($PARAM[id]).NumItems,6)">Conditional</animation>
+            <animation effect="slide" end="$PARAM[itemwidth]" condition="[[String.IsEmpty(Container($PARAM[id]).ListItemNoWrap(8).Label) + Container($PARAM[id]).Row(0)] | [String.IsEmpty(Container($PARAM[id]).ListItemNoWrap(7).Label) + Container($PARAM[id]).Row(1)]] + [$PARAM[7columns] | $PARAM[6columns] | $PARAM[5columns]] + Integer.IsGreater(Container($PARAM[id]).NumItems,8)">Conditional</animation>
+            <animation effect="slide" end="$PARAM[itemwidth]" condition="[[String.IsEmpty(Container($PARAM[id]).ListItemNoWrap(10).Label) + Container($PARAM[id]).Row(0)] | [String.IsEmpty(Container($PARAM[id]).ListItemNoWrap(9).Label) + Container($PARAM[id]).Row(1)]] + [$PARAM[7columns] | $PARAM[6columns]] + Integer.IsGreater(Container($PARAM[id]).NumItems,10)">Conditional</animation>
+            <animation effect="slide" end="$PARAM[itemwidth]" condition="[[String.IsEmpty(Container($PARAM[id]).ListItemNoWrap(12).Label) + Container($PARAM[id]).Row(0)] | [String.IsEmpty(Container($PARAM[id]).ListItemNoWrap(11).Label) + Container($PARAM[id]).Row(1)]] + [$PARAM[7columns]] + Integer.IsGreater(Container($PARAM[id]).NumItems,12)">Conditional</animation>
+        </definition>
+    </include>
+
+    <include name="Viewtype_HorizontalWall">
+        <param name="7columns" default="false" />
+        <param name="6columns" default="false" />
+        <param name="5columns" default="false" />
+        <param name="4columns" default="false" />
+        <param name="3columns" default="false" />
+        <param name="2columns" default="false" />
+        <definition>
+            <control type="group">
+                <include condition="$PARAM[2columns]">Viewtype_HorizontalWall_LeftZero</include>
+                <left>-$PARAM[itemwidth]</left>
+                <control type="group">
+                    <include condition="$PARAM[2columns] | $PARAM[3columns]">Viewtype_HorizontalWall_LeftZero</include>
+                    <left>-$PARAM[itemwidth]</left>
+                    <control type="group">
+                        <include condition="$PARAM[2columns] | $PARAM[3columns] | $PARAM[4columns]">Viewtype_HorizontalWall_LeftZero</include>
+                        <left>-$PARAM[itemwidth]</left>
+                        <control type="group">
+                            <include condition="$PARAM[2columns] | $PARAM[3columns] | $PARAM[4columns] | $PARAM[5columns]">Viewtype_HorizontalWall_LeftZero</include>
+                            <left>-$PARAM[itemwidth]</left>
+                            <control type="group">
+                                <include condition="$PARAM[2columns] | $PARAM[3columns] | $PARAM[4columns] | $PARAM[5columns] | $PARAM[6columns]">Viewtype_HorizontalWall_LeftZero</include>
+                                <left>-$PARAM[itemwidth]</left>
+                                <control type="group">
+                                    <left>-$PARAM[itemwidth]</left>
+                                    <right>-$PARAM[itemwidth]</right>
+                                    <bottom>-100</bottom>
+                                    <control type="group">
+                                    <left>-$PARAM[itemwidth]</left>
+                                    <right>-$PARAM[itemwidth]</right>
+                                        <control type="grouplist">
+                                            <top>100</top>
+                                            <left>-20</left>
+                                            <right>-20</right>
+                                            <orientation>vertical</orientation>
+                                            <itemgap>-30</itemgap>
+                                            <control type="grouplist" description="Top Unfocused Row">
+                                                <height>390</height>
+                                                <orientation>horizontal</orientation>
+                                                <itemgap>0</itemgap>
+                                                <visible>Container($PARAM[id]).Row(1)</visible>
+                                                <include content="Viewtype_HorizontalWall_Item" condition="$PARAM[7columns]">
+                                                    <param name="id" value="$PARAM[id]" />
+                                                    <param name="pos" value="-15" />
+                                                    <param name="itemwidth" value="$PARAM[itemwidth]" />
+                                                    <param name="imagevar" value="$PARAM[imagevar]" />
+                                                    <param name="diffuse" value="$PARAM[diffuse]" />
+                                                    <param name="include" value="$PARAM[include]" />
+                                                    <param name="textbox-height" value="$PARAM[textbox-height]" />
+                                                    <param name="label-include" value="$PARAM[label-include]" />
+                                                </include>
+                                                <include content="Viewtype_HorizontalWall_Item" condition="$PARAM[7columns] | $PARAM[6columns]">
+                                                    <param name="id" value="$PARAM[id]" />
+                                                    <param name="pos" value="-13" />
+                                                    <param name="itemwidth" value="$PARAM[itemwidth]" />
+                                                    <param name="imagevar" value="$PARAM[imagevar]" />
+                                                    <param name="diffuse" value="$PARAM[diffuse]" />
+                                                    <param name="include" value="$PARAM[include]" />
+                                                    <param name="textbox-height" value="$PARAM[textbox-height]" />
+                                                    <param name="label-include" value="$PARAM[label-include]" />
+                                                </include>
+                                                <include content="Viewtype_HorizontalWall_Item" condition="$PARAM[7columns] | $PARAM[6columns] | $PARAM[5columns]">
+                                                    <param name="id" value="$PARAM[id]" />
+                                                    <param name="pos" value="-11" />
+                                                    <param name="itemwidth" value="$PARAM[itemwidth]" />
+                                                    <param name="imagevar" value="$PARAM[imagevar]" />
+                                                    <param name="diffuse" value="$PARAM[diffuse]" />
+                                                    <param name="include" value="$PARAM[include]" />
+                                                    <param name="textbox-height" value="$PARAM[textbox-height]" />
+                                                    <param name="label-include" value="$PARAM[label-include]" />
+                                                </include>
+                                                <include content="Viewtype_HorizontalWall_Item" condition="$PARAM[7columns] | $PARAM[6columns] | $PARAM[5columns] | $PARAM[4columns]">
+                                                    <param name="id" value="$PARAM[id]" />
+                                                    <param name="pos" value="-9" />
+                                                    <param name="itemwidth" value="$PARAM[itemwidth]" />
+                                                    <param name="imagevar" value="$PARAM[imagevar]" />
+                                                    <param name="diffuse" value="$PARAM[diffuse]" />
+                                                    <param name="include" value="$PARAM[include]" />
+                                                    <param name="textbox-height" value="$PARAM[textbox-height]" />
+                                                    <param name="label-include" value="$PARAM[label-include]" />
+                                                </include>
+                                                <include content="Viewtype_HorizontalWall_Item" condition="$PARAM[7columns] | $PARAM[6columns] | $PARAM[5columns] | $PARAM[4columns] | $PARAM[3columns]">
+                                                    <param name="id" value="$PARAM[id]" />
+                                                    <param name="pos" value="-7" />
+                                                    <param name="itemwidth" value="$PARAM[itemwidth]" />
+                                                    <param name="imagevar" value="$PARAM[imagevar]" />
+                                                    <param name="diffuse" value="$PARAM[diffuse]" />
+                                                    <param name="include" value="$PARAM[include]" />
+                                                    <param name="textbox-height" value="$PARAM[textbox-height]" />
+                                                    <param name="label-include" value="$PARAM[label-include]" />
+                                                </include>
+                                                <include content="Viewtype_HorizontalWall_Item" condition="$PARAM[7columns] | $PARAM[6columns] | $PARAM[5columns] | $PARAM[4columns] | $PARAM[3columns] | $PARAM[2columns]">
+                                                    <param name="id" value="$PARAM[id]" />
+                                                    <param name="pos" value="-5" />
+                                                    <param name="itemwidth" value="$PARAM[itemwidth]" />
+                                                    <param name="imagevar" value="$PARAM[imagevar]" />
+                                                    <param name="diffuse" value="$PARAM[diffuse]" />
+                                                    <param name="include" value="$PARAM[include]" />
+                                                    <param name="textbox-height" value="$PARAM[textbox-height]" />
+                                                    <param name="label-include" value="$PARAM[label-include]" />
+                                                </include>
+                                                <include content="Viewtype_HorizontalWall_Item" condition="$PARAM[7columns] | $PARAM[6columns] | $PARAM[5columns] | $PARAM[4columns] | $PARAM[3columns] | $PARAM[2columns]">
+                                                    <param name="id" value="$PARAM[id]" />
+                                                    <param name="pos" value="-3" />
+                                                    <param name="itemwidth" value="$PARAM[itemwidth]" />
+                                                    <param name="imagevar" value="$PARAM[imagevar]" />
+                                                    <param name="diffuse" value="$PARAM[diffuse]" />
+                                                    <param name="include" value="$PARAM[include]" />
+                                                    <param name="textbox-height" value="$PARAM[textbox-height]" />
+                                                    <param name="label-include" value="$PARAM[label-include]" />
+                                                </include>
+                                                <include content="Viewtype_HorizontalWall_Item" condition="$PARAM[7columns] | $PARAM[6columns] | $PARAM[5columns] | $PARAM[4columns] | $PARAM[3columns] | $PARAM[2columns]">
+                                                    <param name="id" value="$PARAM[id]" />
+                                                    <param name="pos" value="-1" />
+                                                    <param name="itemwidth" value="$PARAM[itemwidth]" />
+                                                    <param name="imagevar" value="$PARAM[imagevar]" />
+                                                    <param name="diffuse" value="$PARAM[diffuse]" />
+                                                    <param name="include" value="$PARAM[include]" />
+                                                    <param name="textbox-height" value="$PARAM[textbox-height]" />
+                                                    <param name="label-include" value="$PARAM[label-include]" />
+                                                </include>
+                                                <include content="Viewtype_HorizontalWall_Item" condition="$PARAM[7columns] | $PARAM[6columns] | $PARAM[5columns] | $PARAM[4columns] | $PARAM[3columns] | $PARAM[2columns]">
+                                                    <param name="id" value="$PARAM[id]" />
+                                                    <param name="pos" value="1" />
+                                                    <param name="itemwidth" value="$PARAM[itemwidth]" />
+                                                    <param name="imagevar" value="$PARAM[imagevar]" />
+                                                    <param name="diffuse" value="$PARAM[diffuse]" />
+                                                    <param name="include" value="$PARAM[include]" />
+                                                    <param name="textbox-height" value="$PARAM[textbox-height]" />
+                                                    <param name="label-include" value="$PARAM[label-include]" />
+                                                </include>
+                                                <include content="Viewtype_HorizontalWall_Item" condition="$PARAM[7columns] | $PARAM[6columns] | $PARAM[5columns] | $PARAM[4columns] | $PARAM[3columns] | $PARAM[2columns]">
+                                                    <param name="id" value="$PARAM[id]" />
+                                                    <param name="pos" value="3" />
+                                                    <param name="itemwidth" value="$PARAM[itemwidth]" />
+                                                    <param name="imagevar" value="$PARAM[imagevar]" />
+                                                    <param name="diffuse" value="$PARAM[diffuse]" />
+                                                    <param name="include" value="$PARAM[include]" />
+                                                    <param name="textbox-height" value="$PARAM[textbox-height]" />
+                                                    <param name="label-include" value="$PARAM[label-include]" />
+                                                </include>
+                                                <include content="Viewtype_HorizontalWall_Item" condition="$PARAM[7columns] | $PARAM[6columns] | $PARAM[5columns] | $PARAM[4columns] | $PARAM[3columns] | $PARAM[2columns]">
+                                                    <param name="id" value="$PARAM[id]" />
+                                                    <param name="pos" value="5" />
+                                                    <param name="itemwidth" value="$PARAM[itemwidth]" />
+                                                    <param name="imagevar" value="$PARAM[imagevar]" />
+                                                    <param name="diffuse" value="$PARAM[diffuse]" />
+                                                    <param name="include" value="$PARAM[include]" />
+                                                    <param name="textbox-height" value="$PARAM[textbox-height]" />
+                                                    <param name="label-include" value="$PARAM[label-include]" />
+                                                </include>
+                                                <include content="Viewtype_HorizontalWall_Item" condition="$PARAM[7columns] | $PARAM[6columns] | $PARAM[5columns] | $PARAM[4columns] | $PARAM[3columns]">
+                                                    <param name="id" value="$PARAM[id]" />
+                                                    <param name="pos" value="7" />
+                                                    <param name="itemwidth" value="$PARAM[itemwidth]" />
+                                                    <param name="imagevar" value="$PARAM[imagevar]" />
+                                                    <param name="diffuse" value="$PARAM[diffuse]" />
+                                                    <param name="include" value="$PARAM[include]" />
+                                                    <param name="textbox-height" value="$PARAM[textbox-height]" />
+                                                    <param name="label-include" value="$PARAM[label-include]" />
+                                                </include>
+                                                <include content="Viewtype_HorizontalWall_Item" condition="$PARAM[7columns] | $PARAM[6columns] | $PARAM[5columns] | $PARAM[4columns]">
+                                                    <param name="id" value="$PARAM[id]" />
+                                                    <param name="pos" value="9" />
+                                                    <param name="itemwidth" value="$PARAM[itemwidth]" />
+                                                    <param name="imagevar" value="$PARAM[imagevar]" />
+                                                    <param name="diffuse" value="$PARAM[diffuse]" />
+                                                    <param name="include" value="$PARAM[include]" />
+                                                    <param name="textbox-height" value="$PARAM[textbox-height]" />
+                                                    <param name="label-include" value="$PARAM[label-include]" />
+                                                </include>
+                                                <include content="Viewtype_HorizontalWall_Item" condition="$PARAM[7columns] | $PARAM[6columns] | $PARAM[5columns]">
+                                                    <param name="id" value="$PARAM[id]" />
+                                                    <param name="pos" value="11" />
+                                                    <param name="itemwidth" value="$PARAM[itemwidth]" />
+                                                    <param name="imagevar" value="$PARAM[imagevar]" />
+                                                    <param name="diffuse" value="$PARAM[diffuse]" />
+                                                    <param name="include" value="$PARAM[include]" />
+                                                    <param name="textbox-height" value="$PARAM[textbox-height]" />
+                                                    <param name="label-include" value="$PARAM[label-include]" />
+                                                </include>
+                                                <include content="Viewtype_HorizontalWall_Item" condition="$PARAM[7columns] | $PARAM[6columns]">
+                                                    <param name="id" value="$PARAM[id]" />
+                                                    <param name="pos" value="13" />
+                                                    <param name="itemwidth" value="$PARAM[itemwidth]" />
+                                                    <param name="imagevar" value="$PARAM[imagevar]" />
+                                                    <param name="diffuse" value="$PARAM[diffuse]" />
+                                                    <param name="include" value="$PARAM[include]" />
+                                                    <param name="textbox-height" value="$PARAM[textbox-height]" />
+                                                    <param name="label-include" value="$PARAM[label-include]" />
+                                                </include>
+                                                <include content="Viewtype_HorizontalWall_Item" condition="$PARAM[7columns]">
+                                                    <param name="id" value="$PARAM[id]" />
+                                                    <param name="pos" value="15" />
+                                                    <param name="itemwidth" value="$PARAM[itemwidth]" />
+                                                    <param name="imagevar" value="$PARAM[imagevar]" />
+                                                    <param name="diffuse" value="$PARAM[diffuse]" />
+                                                    <param name="include" value="$PARAM[include]" />
+                                                    <param name="textbox-height" value="$PARAM[textbox-height]" />
+                                                    <param name="label-include" value="$PARAM[label-include]" />
+                                                </include>
+                                            </control>
+                                            <control type="grouplist" description="Focused Row">
+                                                <height>390</height>
+                                                <orientation>horizontal</orientation>
+                                                <itemgap>0</itemgap>
+                                                <include content="Viewtype_HorizontalWall_Item" condition="$PARAM[7columns]">
+                                                    <param name="id" value="$PARAM[id]" />
+                                                    <param name="pos" value="-14" />
+                                                    <param name="itemwidth" value="$PARAM[itemwidth]" />
+                                                    <param name="imagevar" value="$PARAM[imagevar]" />
+                                                    <param name="diffuse" value="$PARAM[diffuse]" />
+                                                    <param name="include" value="$PARAM[include]" />
+                                                    <param name="textbox-height" value="$PARAM[textbox-height]" />
+                                                    <param name="label-include" value="$PARAM[label-include]" />
+                                                </include>
+                                                <include content="Viewtype_HorizontalWall_Item" condition="$PARAM[7columns] | $PARAM[6columns]">
+                                                    <param name="id" value="$PARAM[id]" />
+                                                    <param name="pos" value="-12" />
+                                                    <param name="itemwidth" value="$PARAM[itemwidth]" />
+                                                    <param name="imagevar" value="$PARAM[imagevar]" />
+                                                    <param name="diffuse" value="$PARAM[diffuse]" />
+                                                    <param name="include" value="$PARAM[include]" />
+                                                    <param name="textbox-height" value="$PARAM[textbox-height]" />
+                                                    <param name="label-include" value="$PARAM[label-include]" />
+                                                </include>
+                                                <include content="Viewtype_HorizontalWall_Item" condition="$PARAM[7columns] | $PARAM[6columns] | $PARAM[5columns]">
+                                                    <param name="id" value="$PARAM[id]" />
+                                                    <param name="pos" value="-10" />
+                                                    <param name="itemwidth" value="$PARAM[itemwidth]" />
+                                                    <param name="imagevar" value="$PARAM[imagevar]" />
+                                                    <param name="diffuse" value="$PARAM[diffuse]" />
+                                                    <param name="include" value="$PARAM[include]" />
+                                                    <param name="textbox-height" value="$PARAM[textbox-height]" />
+                                                    <param name="label-include" value="$PARAM[label-include]" />
+                                                </include>
+                                                <include content="Viewtype_HorizontalWall_Item" condition="$PARAM[7columns] | $PARAM[6columns] | $PARAM[5columns] | $PARAM[4columns]">
+                                                    <param name="id" value="$PARAM[id]" />
+                                                    <param name="pos" value="-8" />
+                                                    <param name="itemwidth" value="$PARAM[itemwidth]" />
+                                                    <param name="imagevar" value="$PARAM[imagevar]" />
+                                                    <param name="diffuse" value="$PARAM[diffuse]" />
+                                                    <param name="include" value="$PARAM[include]" />
+                                                    <param name="textbox-height" value="$PARAM[textbox-height]" />
+                                                    <param name="label-include" value="$PARAM[label-include]" />
+                                                </include>
+                                                <include content="Viewtype_HorizontalWall_Item" condition="$PARAM[7columns] | $PARAM[6columns] | $PARAM[5columns] | $PARAM[4columns] | $PARAM[3columns]">
+                                                    <param name="id" value="$PARAM[id]" />
+                                                    <param name="pos" value="-6" />
+                                                    <param name="itemwidth" value="$PARAM[itemwidth]" />
+                                                    <param name="imagevar" value="$PARAM[imagevar]" />
+                                                    <param name="diffuse" value="$PARAM[diffuse]" />
+                                                    <param name="include" value="$PARAM[include]" />
+                                                    <param name="textbox-height" value="$PARAM[textbox-height]" />
+                                                    <param name="label-include" value="$PARAM[label-include]" />
+                                                </include>
+                                                <include content="Viewtype_HorizontalWall_Item" condition="$PARAM[7columns] | $PARAM[6columns] | $PARAM[5columns] | $PARAM[4columns] | $PARAM[3columns] | $PARAM[2columns]">
+                                                    <param name="id" value="$PARAM[id]" />
+                                                    <param name="pos" value="-4" />
+                                                    <param name="itemwidth" value="$PARAM[itemwidth]" />
+                                                    <param name="imagevar" value="$PARAM[imagevar]" />
+                                                    <param name="diffuse" value="$PARAM[diffuse]" />
+                                                    <param name="include" value="$PARAM[include]" />
+                                                    <param name="textbox-height" value="$PARAM[textbox-height]" />
+                                                    <param name="label-include" value="$PARAM[label-include]" />
+                                                </include>
+                                                <include content="Viewtype_HorizontalWall_Item" condition="$PARAM[7columns] | $PARAM[6columns] | $PARAM[5columns] | $PARAM[4columns] | $PARAM[3columns] | $PARAM[2columns]">
+                                                    <param name="id" value="$PARAM[id]" />
+                                                    <param name="pos" value="-2" />
+                                                    <param name="itemwidth" value="$PARAM[itemwidth]" />
+                                                    <param name="imagevar" value="$PARAM[imagevar]" />
+                                                    <param name="diffuse" value="$PARAM[diffuse]" />
+                                                    <param name="include" value="$PARAM[include]" />
+                                                    <param name="textbox-height" value="$PARAM[textbox-height]" />
+                                                    <param name="label-include" value="$PARAM[label-include]" />
+                                                </include>
+                                                <include content="Viewtype_HorizontalWall_Item" condition="$PARAM[7columns] | $PARAM[6columns] | $PARAM[5columns] | $PARAM[4columns] | $PARAM[3columns] | $PARAM[2columns]">
+                                                    <param name="id" value="$PARAM[id]" />
+                                                    <param name="pos" value="0" />
+                                                    <param name="itemwidth" value="$PARAM[itemwidth]" />
+                                                    <param name="imagevar" value="$PARAM[imagevar]" />
+                                                    <param name="diffuse" value="$PARAM[diffuse]" />
+                                                    <param name="include" value="$PARAM[include]" />
+                                                    <param name="textbox-height" value="$PARAM[textbox-height]" />
+                                                    <param name="label-include" value="$PARAM[label-include]" />
+                                                    <param name="selectbox" value="true" />
+                                                </include>
+                                                <include content="Viewtype_HorizontalWall_Item" condition="$PARAM[7columns] | $PARAM[6columns] | $PARAM[5columns] | $PARAM[4columns] | $PARAM[3columns] | $PARAM[2columns]">
+                                                    <param name="id" value="$PARAM[id]" />
+                                                    <param name="pos" value="2" />
+                                                    <param name="itemwidth" value="$PARAM[itemwidth]" />
+                                                    <param name="imagevar" value="$PARAM[imagevar]" />
+                                                    <param name="diffuse" value="$PARAM[diffuse]" />
+                                                    <param name="include" value="$PARAM[include]" />
+                                                    <param name="textbox-height" value="$PARAM[textbox-height]" />
+                                                    <param name="label-include" value="$PARAM[label-include]" />
+                                                </include>
+                                                <include content="Viewtype_HorizontalWall_Item" condition="$PARAM[7columns] | $PARAM[6columns] | $PARAM[5columns] | $PARAM[4columns] | $PARAM[3columns] | $PARAM[2columns]">
+                                                    <param name="id" value="$PARAM[id]" />
+                                                    <param name="pos" value="4" />
+                                                    <param name="itemwidth" value="$PARAM[itemwidth]" />
+                                                    <param name="imagevar" value="$PARAM[imagevar]" />
+                                                    <param name="diffuse" value="$PARAM[diffuse]" />
+                                                    <param name="include" value="$PARAM[include]" />
+                                                    <param name="textbox-height" value="$PARAM[textbox-height]" />
+                                                    <param name="label-include" value="$PARAM[label-include]" />
+                                                </include>
+                                                <include content="Viewtype_HorizontalWall_Item" condition="$PARAM[7columns] | $PARAM[6columns] | $PARAM[5columns] | $PARAM[4columns] | $PARAM[3columns] | $PARAM[2columns]">
+                                                    <param name="id" value="$PARAM[id]" />
+                                                    <param name="pos" value="6" />
+                                                    <param name="itemwidth" value="$PARAM[itemwidth]" />
+                                                    <param name="imagevar" value="$PARAM[imagevar]" />
+                                                    <param name="diffuse" value="$PARAM[diffuse]" />
+                                                    <param name="include" value="$PARAM[include]" />
+                                                    <param name="textbox-height" value="$PARAM[textbox-height]" />
+                                                    <param name="label-include" value="$PARAM[label-include]" />
+                                                </include>
+                                                <include content="Viewtype_HorizontalWall_Item" condition="$PARAM[7columns] | $PARAM[6columns] | $PARAM[5columns] | $PARAM[4columns] | $PARAM[3columns]">
+                                                    <param name="id" value="$PARAM[id]" />
+                                                    <param name="pos" value="8" />
+                                                    <param name="itemwidth" value="$PARAM[itemwidth]" />
+                                                    <param name="imagevar" value="$PARAM[imagevar]" />
+                                                    <param name="diffuse" value="$PARAM[diffuse]" />
+                                                    <param name="include" value="$PARAM[include]" />
+                                                    <param name="textbox-height" value="$PARAM[textbox-height]" />
+                                                    <param name="label-include" value="$PARAM[label-include]" />
+                                                </include>
+                                                <include content="Viewtype_HorizontalWall_Item" condition="$PARAM[7columns] | $PARAM[6columns] | $PARAM[5columns] | $PARAM[4columns]">
+                                                    <param name="id" value="$PARAM[id]" />
+                                                    <param name="pos" value="10" />
+                                                    <param name="itemwidth" value="$PARAM[itemwidth]" />
+                                                    <param name="imagevar" value="$PARAM[imagevar]" />
+                                                    <param name="diffuse" value="$PARAM[diffuse]" />
+                                                    <param name="include" value="$PARAM[include]" />
+                                                    <param name="textbox-height" value="$PARAM[textbox-height]" />
+                                                    <param name="label-include" value="$PARAM[label-include]" />
+                                                </include>
+                                                <include content="Viewtype_HorizontalWall_Item" condition="$PARAM[7columns] | $PARAM[6columns] | $PARAM[5columns]">
+                                                    <param name="id" value="$PARAM[id]" />
+                                                    <param name="pos" value="12" />
+                                                    <param name="itemwidth" value="$PARAM[itemwidth]" />
+                                                    <param name="imagevar" value="$PARAM[imagevar]" />
+                                                    <param name="diffuse" value="$PARAM[diffuse]" />
+                                                    <param name="include" value="$PARAM[include]" />
+                                                    <param name="textbox-height" value="$PARAM[textbox-height]" />
+                                                    <param name="label-include" value="$PARAM[label-include]" />
+                                                </include>
+                                                <include content="Viewtype_HorizontalWall_Item" condition="$PARAM[7columns] | $PARAM[6columns]">
+                                                    <param name="id" value="$PARAM[id]" />
+                                                    <param name="pos" value="14" />
+                                                    <param name="itemwidth" value="$PARAM[itemwidth]" />
+                                                    <param name="imagevar" value="$PARAM[imagevar]" />
+                                                    <param name="diffuse" value="$PARAM[diffuse]" />
+                                                    <param name="include" value="$PARAM[include]" />
+                                                    <param name="textbox-height" value="$PARAM[textbox-height]" />
+                                                    <param name="label-include" value="$PARAM[label-include]" />
+                                                </include>
+                                                <include content="Viewtype_HorizontalWall_Item" condition="$PARAM[7columns]">
+                                                    <param name="id" value="$PARAM[id]" />
+                                                    <param name="pos" value="16" />
+                                                    <param name="itemwidth" value="$PARAM[itemwidth]" />
+                                                    <param name="imagevar" value="$PARAM[imagevar]" />
+                                                    <param name="diffuse" value="$PARAM[diffuse]" />
+                                                    <param name="include" value="$PARAM[include]" />
+                                                    <param name="textbox-height" value="$PARAM[textbox-height]" />
+                                                    <param name="label-include" value="$PARAM[label-include]" />
+                                                </include>
+                                            </control>
+                                            <control type="grouplist" description="Bottom Unfocused Row">
+                                                <height>390</height>
+                                                <orientation>horizontal</orientation>
+                                                <itemgap>0</itemgap>
+                                                <visible>Container($PARAM[id]).Row(0)</visible>
+                                                <include content="Viewtype_HorizontalWall_Item" condition="$PARAM[7columns]">
+                                                    <param name="id" value="$PARAM[id]" />
+                                                    <param name="pos" value="-13" />
+                                                    <param name="itemwidth" value="$PARAM[itemwidth]" />
+                                                    <param name="imagevar" value="$PARAM[imagevar]" />
+                                                    <param name="diffuse" value="$PARAM[diffuse]" />
+                                                    <param name="include" value="$PARAM[include]" />
+                                                    <param name="textbox-height" value="$PARAM[textbox-height]" />
+                                                    <param name="label-include" value="$PARAM[label-include]" />
+                                                </include>
+                                                <include content="Viewtype_HorizontalWall_Item" condition="$PARAM[7columns] | $PARAM[6columns]">
+                                                    <param name="id" value="$PARAM[id]" />
+                                                    <param name="pos" value="-11" />
+                                                    <param name="itemwidth" value="$PARAM[itemwidth]" />
+                                                    <param name="imagevar" value="$PARAM[imagevar]" />
+                                                    <param name="diffuse" value="$PARAM[diffuse]" />
+                                                    <param name="include" value="$PARAM[include]" />
+                                                    <param name="textbox-height" value="$PARAM[textbox-height]" />
+                                                    <param name="label-include" value="$PARAM[label-include]" />
+                                                </include>
+                                                <include content="Viewtype_HorizontalWall_Item" condition="$PARAM[7columns] | $PARAM[6columns] | $PARAM[5columns]">
+                                                    <param name="id" value="$PARAM[id]" />
+                                                    <param name="pos" value="-9" />
+                                                    <param name="itemwidth" value="$PARAM[itemwidth]" />
+                                                    <param name="imagevar" value="$PARAM[imagevar]" />
+                                                    <param name="diffuse" value="$PARAM[diffuse]" />
+                                                    <param name="include" value="$PARAM[include]" />
+                                                    <param name="textbox-height" value="$PARAM[textbox-height]" />
+                                                    <param name="label-include" value="$PARAM[label-include]" />
+                                                </include>
+                                                <include content="Viewtype_HorizontalWall_Item" condition="$PARAM[7columns] | $PARAM[6columns] | $PARAM[5columns] | $PARAM[4columns]">
+                                                    <param name="id" value="$PARAM[id]" />
+                                                    <param name="pos" value="-7" />
+                                                    <param name="itemwidth" value="$PARAM[itemwidth]" />
+                                                    <param name="imagevar" value="$PARAM[imagevar]" />
+                                                    <param name="diffuse" value="$PARAM[diffuse]" />
+                                                    <param name="include" value="$PARAM[include]" />
+                                                    <param name="textbox-height" value="$PARAM[textbox-height]" />
+                                                    <param name="label-include" value="$PARAM[label-include]" />
+                                                </include>
+                                                <include content="Viewtype_HorizontalWall_Item" condition="$PARAM[7columns] | $PARAM[6columns] | $PARAM[5columns] | $PARAM[4columns] | $PARAM[3columns]">
+                                                    <param name="id" value="$PARAM[id]" />
+                                                    <param name="pos" value="-5" />
+                                                    <param name="itemwidth" value="$PARAM[itemwidth]" />
+                                                    <param name="imagevar" value="$PARAM[imagevar]" />
+                                                    <param name="diffuse" value="$PARAM[diffuse]" />
+                                                    <param name="include" value="$PARAM[include]" />
+                                                    <param name="textbox-height" value="$PARAM[textbox-height]" />
+                                                    <param name="label-include" value="$PARAM[label-include]" />
+                                                </include>
+                                                <include content="Viewtype_HorizontalWall_Item" condition="$PARAM[7columns] | $PARAM[6columns] | $PARAM[5columns] | $PARAM[4columns] | $PARAM[3columns] | $PARAM[2columns]">
+                                                    <param name="id" value="$PARAM[id]" />
+                                                    <param name="pos" value="-3" />
+                                                    <param name="itemwidth" value="$PARAM[itemwidth]" />
+                                                    <param name="imagevar" value="$PARAM[imagevar]" />
+                                                    <param name="diffuse" value="$PARAM[diffuse]" />
+                                                    <param name="include" value="$PARAM[include]" />
+                                                    <param name="textbox-height" value="$PARAM[textbox-height]" />
+                                                    <param name="label-include" value="$PARAM[label-include]" />
+                                                </include>
+                                                <include content="Viewtype_HorizontalWall_Item" condition="$PARAM[7columns] | $PARAM[6columns] | $PARAM[5columns] | $PARAM[4columns] | $PARAM[3columns] | $PARAM[2columns]">
+                                                    <param name="id" value="$PARAM[id]" />
+                                                    <param name="pos" value="-1" />
+                                                    <param name="itemwidth" value="$PARAM[itemwidth]" />
+                                                    <param name="imagevar" value="$PARAM[imagevar]" />
+                                                    <param name="diffuse" value="$PARAM[diffuse]" />
+                                                    <param name="include" value="$PARAM[include]" />
+                                                    <param name="textbox-height" value="$PARAM[textbox-height]" />
+                                                    <param name="label-include" value="$PARAM[label-include]" />
+                                                </include>
+                                                <include content="Viewtype_HorizontalWall_Item" condition="$PARAM[7columns] | $PARAM[6columns] | $PARAM[5columns] | $PARAM[4columns] | $PARAM[3columns] | $PARAM[2columns]">
+                                                    <param name="id" value="$PARAM[id]" />
+                                                    <param name="pos" value="1" />
+                                                    <param name="itemwidth" value="$PARAM[itemwidth]" />
+                                                    <param name="imagevar" value="$PARAM[imagevar]" />
+                                                    <param name="diffuse" value="$PARAM[diffuse]" />
+                                                    <param name="include" value="$PARAM[include]" />
+                                                    <param name="textbox-height" value="$PARAM[textbox-height]" />
+                                                    <param name="label-include" value="$PARAM[label-include]" />
+                                                </include>
+                                                <include content="Viewtype_HorizontalWall_Item" condition="$PARAM[7columns] | $PARAM[6columns] | $PARAM[5columns] | $PARAM[4columns] | $PARAM[3columns] | $PARAM[2columns]">
+                                                    <param name="id" value="$PARAM[id]" />
+                                                    <param name="pos" value="3" />
+                                                    <param name="itemwidth" value="$PARAM[itemwidth]" />
+                                                    <param name="imagevar" value="$PARAM[imagevar]" />
+                                                    <param name="diffuse" value="$PARAM[diffuse]" />
+                                                    <param name="include" value="$PARAM[include]" />
+                                                    <param name="textbox-height" value="$PARAM[textbox-height]" />
+                                                    <param name="label-include" value="$PARAM[label-include]" />
+                                                </include>
+                                                <include content="Viewtype_HorizontalWall_Item" condition="$PARAM[7columns] | $PARAM[6columns] | $PARAM[5columns] | $PARAM[4columns] | $PARAM[3columns] | $PARAM[2columns]">
+                                                    <param name="id" value="$PARAM[id]" />
+                                                    <param name="pos" value="5" />
+                                                    <param name="itemwidth" value="$PARAM[itemwidth]" />
+                                                    <param name="imagevar" value="$PARAM[imagevar]" />
+                                                    <param name="diffuse" value="$PARAM[diffuse]" />
+                                                    <param name="include" value="$PARAM[include]" />
+                                                    <param name="textbox-height" value="$PARAM[textbox-height]" />
+                                                    <param name="label-include" value="$PARAM[label-include]" />
+                                                </include>
+                                                <include content="Viewtype_HorizontalWall_Item" condition="$PARAM[7columns] | $PARAM[6columns] | $PARAM[5columns] | $PARAM[4columns] | $PARAM[3columns] | $PARAM[2columns]">
+                                                    <param name="id" value="$PARAM[id]" />
+                                                    <param name="pos" value="7" />
+                                                    <param name="itemwidth" value="$PARAM[itemwidth]" />
+                                                    <param name="imagevar" value="$PARAM[imagevar]" />
+                                                    <param name="diffuse" value="$PARAM[diffuse]" />
+                                                    <param name="include" value="$PARAM[include]" />
+                                                    <param name="textbox-height" value="$PARAM[textbox-height]" />
+                                                    <param name="label-include" value="$PARAM[label-include]" />
+                                                </include>
+                                                <include content="Viewtype_HorizontalWall_Item" condition="$PARAM[7columns] | $PARAM[6columns] | $PARAM[5columns] | $PARAM[4columns] | $PARAM[3columns]">
+                                                    <param name="id" value="$PARAM[id]" />
+                                                    <param name="pos" value="9" />
+                                                    <param name="itemwidth" value="$PARAM[itemwidth]" />
+                                                    <param name="imagevar" value="$PARAM[imagevar]" />
+                                                    <param name="diffuse" value="$PARAM[diffuse]" />
+                                                    <param name="include" value="$PARAM[include]" />
+                                                    <param name="textbox-height" value="$PARAM[textbox-height]" />
+                                                    <param name="label-include" value="$PARAM[label-include]" />
+                                                </include>
+                                                <include content="Viewtype_HorizontalWall_Item" condition="$PARAM[7columns] | $PARAM[6columns] | $PARAM[5columns] | $PARAM[4columns]">
+                                                    <param name="id" value="$PARAM[id]" />
+                                                    <param name="pos" value="11" />
+                                                    <param name="itemwidth" value="$PARAM[itemwidth]" />
+                                                    <param name="imagevar" value="$PARAM[imagevar]" />
+                                                    <param name="diffuse" value="$PARAM[diffuse]" />
+                                                    <param name="include" value="$PARAM[include]" />
+                                                    <param name="textbox-height" value="$PARAM[textbox-height]" />
+                                                    <param name="label-include" value="$PARAM[label-include]" />
+                                                </include>
+                                                <include content="Viewtype_HorizontalWall_Item" condition="$PARAM[7columns] | $PARAM[6columns] | $PARAM[5columns]">
+                                                    <param name="id" value="$PARAM[id]" />
+                                                    <param name="pos" value="13" />
+                                                    <param name="itemwidth" value="$PARAM[itemwidth]" />
+                                                    <param name="imagevar" value="$PARAM[imagevar]" />
+                                                    <param name="diffuse" value="$PARAM[diffuse]" />
+                                                    <param name="include" value="$PARAM[include]" />
+                                                    <param name="textbox-height" value="$PARAM[textbox-height]" />
+                                                    <param name="label-include" value="$PARAM[label-include]" />
+                                                </include>
+                                                <include content="Viewtype_HorizontalWall_Item" condition="$PARAM[7columns] | $PARAM[6columns]">
+                                                    <param name="id" value="$PARAM[id]" />
+                                                    <param name="pos" value="15" />
+                                                    <param name="itemwidth" value="$PARAM[itemwidth]" />
+                                                    <param name="imagevar" value="$PARAM[imagevar]" />
+                                                    <param name="diffuse" value="$PARAM[diffuse]" />
+                                                    <param name="include" value="$PARAM[include]" />
+                                                    <param name="textbox-height" value="$PARAM[textbox-height]" />
+                                                    <param name="label-include" value="$PARAM[label-include]" />
+                                                </include>
+                                                <include content="Viewtype_HorizontalWall_Item" condition="$PARAM[7columns]">
+                                                    <param name="id" value="$PARAM[id]" />
+                                                    <param name="pos" value="17" />
+                                                    <param name="itemwidth" value="$PARAM[itemwidth]" />
+                                                    <param name="imagevar" value="$PARAM[imagevar]" />
+                                                    <param name="diffuse" value="$PARAM[diffuse]" />
+                                                    <param name="include" value="$PARAM[include]" />
+                                                    <param name="textbox-height" value="$PARAM[textbox-height]" />
+                                                    <param name="label-include" value="$PARAM[label-include]" />
+                                                </include>
+                                            </control>
+                                        </control>
+                                    </control>
+                                </control>
+                            </control>
+                        </control>
+                    </control>
+                </control>
+            </control>
+        </definition>
     </include>
 </includes>
 

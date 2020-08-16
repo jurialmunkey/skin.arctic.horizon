@@ -240,13 +240,6 @@
         <value condition="Window.IsVisible(AddonBrowser.xml)">$VAR[Image_Overlay_Addons]</value>
     </variable>
 
-    <variable name="Image_Banner">
-        <value condition="!String.IsEmpty(ListItem.Art(banner))">$INFO[ListItem.Art(banner)]</value>
-        <value condition="!String.IsEmpty(ListItem.Art(tvshow.banner))">$INFO[ListItem.Art(tvshow.banner)]</value>
-        <value condition="!String.IsEmpty(ListItem.Art(fanart))">$INFO[ListItem.Art(fanart)]</value>
-        <value>$INFO[ListItem.Icon]</value>
-    </variable>
-
     <variable name="Image_Fanart">
         <value condition="Container.Content(images)">$INFO[ListItem.Icon]</value>
         <value condition="!String.IsEmpty(ListItem.Art(tvshow.fanart))">$INFO[ListItem.Art(tvshow.fanart)]</value>

@@ -6,7 +6,7 @@
             <include>Animation_Down</include>
             <include content="Viewtype_Square">
                 <param name="id" value="51" />
-                <param name="viewtype-label" value="$LOCALIZE[31237]" />
+                <param name="viewtype-label" value="Square Row" />
                 <left>-80</left>
                 <right>-80</right>
                 <bottom>view_bottom</bottom>
@@ -32,7 +32,7 @@
             <include content="Viewtype_WallSwitch">
                 <param name="id" value="51" />
                 <param name="include" value="Viewtype_Square" />
-                <param name="viewtype-label" value="$LOCALIZE[31237]" />
+                <param name="viewtype-label" value="Square Row" />
             </include>
         </control>
         <include content="Viewtype_WallSwitch_Furniture">
@@ -44,50 +44,42 @@
         <control type="group">
             <visible>Control.IsVisible(501)</visible>
             <include>Animation_Down</include>
-            <!-- <include content="Animation_Down_Panel">
-                <param name="id" value="501" />
-            </include> -->
-            <include content="Viewtype_Square">
-                <param name="id" value="501" />
-                <param name="viewtype-label" value="Square Wall" />
-                <param name="control-type" value="panel" />
-                <param name="orientation" value="vertical" />
-                <param name="height" value="800" />
-                <left>-80</left>
-
-                <!-- <width>31360</width>
-                <include content="Animation_Wall_Slide">
+            <control type="group">
+                <include content="Viewtype_HorizontalWall_Animation">
                     <param name="id" value="501" />
-                    <param name="slide" value="300" />
+                    <param name="itemwidth" value="item_square_width" />
+                    <param name="6columns" value="true" />
                 </include>
-                <include content="Animation_Wall_Slide_Return">
+                <include content="Viewtype_Square">
                     <param name="id" value="501" />
-                    <param name="slide" value="300" />
-                    <param name="condition" value="[Container(501).Row(0) + String.IsEmpty(Container(501).ListItemNoWrap(6).Label)] | [Container(501).Row(1) + String.IsEmpty(Container(501).ListItemNoWrap(5).Label)]" />
+                    <param name="viewtype-label" value="Square Wall" />
+                    <param name="control-type" value="panel" />
+                    <param name="orientation" value="horizontal" />
+                    <param name="height" value="800" />
+                    <param name="offset" value="0" />
+                    <scrolltime>0</scrolltime>
+                    <animation effect="fade" end="0" condition="true">Conditional</animation>
+                    <left>-20</left>
+                    <width>300</width>
+                    <bottom>-100</bottom>
+                    <pagecontrol>60</pagecontrol>
+                    <onfocus>ClearProperty(TMDbHelper.WidgetContainer,Home)</onfocus>
+                    <include>Viewtype_Movement</include>
+                    <ondown>60</ondown>
+                    <onup>SetFocus(9000)</onup>
+                    <visible>$EXP[Exp_View_501]</visible>
                 </include>
-                <include content="Animation_Wall_Slide_Return">
+                <include content="Viewtype_HorizontalWall">
                     <param name="id" value="501" />
-                    <param name="slide" value="300" />
-                    <param name="condition" value="[Container(501).Row(0) + String.IsEmpty(Container(501).ListItemNoWrap(4).Label)] | [Container(501).Row(1) + String.IsEmpty(Container(501).ListItemNoWrap(3).Label)]" />
+                    <param name="itemwidth" value="item_square_width" />
+                    <param name="diffuse" value="diffuse/square-std.png" />
+                    <param name="imagevar" value="Image_Poster" />
+                    <param name="include" value="Viewtype_Landscape_Itemlayout" />
+                    <param name="textbox-height" value="60" />
+                    <param name="label-include" value="Viewtype_Square_Label" />
+                    <param name="6columns" value="true" />
                 </include>
-                <include content="Animation_Wall_Slide_Return">
-                    <param name="id" value="501" />
-                    <param name="slide" value="300" />
-                    <param name="condition" value="[Container(501).Row(0) + String.IsEmpty(Container(501).ListItemNoWrap(2).Label)] | [Container(501).Row(1) + String.IsEmpty(Container(501).ListItemNoWrap(1).Label)]" />
-                </include>
-                <animation effect="slide" end="-300" condition="!Integer.IsGreater(Container(501).NumItems,6)">Conditional</animation>
-                <animation effect="slide" end="-300" condition="!Integer.IsGreater(Container(501).NumItems,4)">Conditional</animation>
-                <animation effect="slide" end="-300" condition="!Integer.IsGreater(Container(501).NumItems,2)">Conditional</animation> -->
-
-                <right>-80</right>
-                <bottom>-100</bottom>
-                <pagecontrol>60</pagecontrol>
-                <onfocus>ClearProperty(TMDbHelper.WidgetContainer,Home)</onfocus>
-                <include>Viewtype_Movement</include>
-                <ondown>60</ondown>
-                <onup>SetFocus(9000)</onup>
-                <visible>$EXP[Exp_View_501]</visible>
-            </include>
+            </control>
             <include content="Home_Hub_Widget_Label">
                 <param name="id" value="501" />
                 <param name="label" value="$VAR[Label_Header_Center]" />

@@ -60,8 +60,11 @@
     <constant name="item_view_height">390</constant>
     <constant name="item_settings_height">240</constant>
     <constant name="item_square_width">300</constant>
+    <constant name="-item_square_width">-300</constant>
     <constant name="item_landscape_width">450</constant>
+    <constant name="-item_landscape_width">-450</constant>
     <constant name="item_poster_width">257.14</constant>
+    <constant name="-item_poster_width">-257.14</constant>
 
     <constant name="dialog_top">120</constant>
     <constant name="dialog_pad">40</constant>

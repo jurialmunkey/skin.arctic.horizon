@@ -8,7 +8,7 @@
             <include content="Viewtype_BigBanner">
                 <param name="id" value="57" />
                 <param name="viewsides" value="-80" />
-                <param name="viewtype-label" value="$LOCALIZE[31108]" />
+                <param name="viewtype-label" value="Banner Row" />
                 <left>-80</left>
                 <right>-80</right>
                 <bottom>view_bottom</bottom>

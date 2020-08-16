@@ -3,6 +3,7 @@
     <include name="View_53_Seasons">
         <param name="id" default="53" />
         <param name="include" default="Viewtype_Landscape" />
+        <param name="viewtype-label" default="Landscape Integrated" />
         <definition>
             <control type="group">
                 <visible>Control.Isvisible($PARAM[id])</visible>
@@ -11,7 +12,7 @@
                     <param name="itemlayout-width" value="280" />
                     <param name="offset" value="0" />
                     <param name="control-type" value="fixedlist" />
-                    <param name="viewtype-label" value="$LOCALIZE[33054]" />
+                    <param name="viewtype-label" value="$PARAM[viewtype-label]" />
                     <movement>3</movement>
                     <preloaditems>2</preloaditems>
                     <height>120</height>

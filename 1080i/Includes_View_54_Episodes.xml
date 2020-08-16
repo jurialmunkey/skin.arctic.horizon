@@ -7,7 +7,7 @@
             <include>Animation_Down</include>
             <include content="Viewtype_Landscape">
                 <param name="id" value="54" />
-                <param name="viewtype-label" value="$LOCALIZE[31234]" />
+                <param name="viewtype-label" value="Landscape Row" />
                 <left>-80</left>
                 <right>-80</right>
                 <bottom>view_bottom</bottom>
@@ -37,7 +37,7 @@
             <include content="Viewtype_WallSwitch">
                 <param name="id" value="54" />
                 <param name="include" value="Viewtype_Landscape" />
-                <param name="viewtype-label" value="$LOCALIZE[31234]" />
+                <param name="viewtype-label" value="Landscape Row" />
                 <visible>!Window.IsVisible(MyPlaylist.xml)</visible>
                 <visible>!String.IsEqual(Container.Property(Param.Info),details)</visible>
             </include>
@@ -53,58 +53,46 @@
         <control type="group">
             <visible>Control.IsVisible(504)</visible>
             <include>Animation_Down</include>
-            <!-- <include content="Animation_Down_Panel">
-                <param name="id" value="504" />
-            </include> -->
-            <include content="Viewtype_Landscape">
-                <param name="id" value="504" />
-                <param name="viewtype-label" value="Landscape Wall" />
-                <param name="control-type" value="panel" />
-                <param name="orientation" value="horizontal" />
-                <param name="height" value="800" />
-                <left>-80</left>
-                <!-- <width>46510</width>
-
-                <include content="Animation_Wall_Slide">
+            <control type="group">
+                <include content="Viewtype_HorizontalWall_Animation">
                     <param name="id" value="504" />
-                    <param name="slide" value="450" />
+                    <param name="itemwidth" value="item_landscape_width" />
+                    <param name="4columns" value="true" />
                 </include>
-                <include content="Animation_Wall_Slide_Return">
+
+                <include content="Viewtype_Landscape">
                     <param name="id" value="504" />
-                    <param name="slide" value="450" />
-                    <param name="condition" value="[Container(504).Row(0) + String.IsEmpty(Container(504).ListItemNoWrap(6).Label)] | [Container(504).Row(1) + String.IsEmpty(Container(504).ListItemNoWrap(5).Label)]" />
+                    <param name="viewtype-label" value="Landscape Wall" />
+                    <param name="control-type" value="panel" />
+                    <param name="orientation" value="horizontal" />
+                    <param name="height" value="800" />
+                    <param name="offset" value="0" />
+                    <scrolltime>0</scrolltime>
+                    <animation effect="fade" end="0" condition="true">Conditional</animation>
+                    <left>-20</left>
+                    <width>450</width>
+                    <bottom>-100</bottom>
+                    <include>Viewtype_Movement</include>
+                    <onfocus condition="!Skin.HasSetting(NoFanart) + ![Container.Content(episodes) | Container.Content(videos)]">SetProperty(TMDbHelper.Blur.SourceImage,landscape,Home)</onfocus>
+                    <onfocus condition="!Skin.HasSetting(NoFanart) + [Container.Content(episodes) | Container.Content(videos)]">SetProperty(TMDbHelper.Blur.SourceImage,thumb,Home)</onfocus>
+                    <onfocus condition="Skin.HasSetting(NoFanart)">SetProperty(TMDbHelper.Blur.SourceImage,Art(fallback),Home)</onfocus>
+                    <ondown>60</ondown>
+                    <onup>SetFocus(9000)</onup>
+                    <pagecontrol>60</pagecontrol>
+                    <onfocus>ClearProperty(TMDbHelper.WidgetContainer,Home)</onfocus>
+                    <visible>$EXP[Exp_View_504]</visible>
+                    <visible>!Window.IsVisible(MyPlaylist.xml)</visible>
+                    <visible>!String.IsEqual(Container.Property(Param.Info),details)</visible>
                 </include>
-                <include content="Animation_Wall_Slide_Return">
+                <include content="Viewtype_HorizontalWall">
                     <param name="id" value="504" />
-                    <param name="slide" value="450" />
-                    <param name="condition" value="[Container(504).Row(0) + String.IsEmpty(Container(504).ListItemNoWrap(4).Label)] | [Container(504).Row(1) + String.IsEmpty(Container(504).ListItemNoWrap(3).Label)]" />
+                    <param name="itemwidth" value="item_landscape_width" />
+                    <param name="diffuse" value="diffuse/landscape-std.png" />
+                    <param name="imagevar" value="Image_Landscape" />
+                    <param name="include" value="Viewtype_Landscape_Itemlayout" />
+                    <param name="4columns" value="true" />
                 </include>
-                <include content="Animation_Wall_Slide_Return">
-                    <param name="id" value="504" />
-                    <param name="slide" value="450" />
-                    <param name="condition" value="[Container(504).Row(0) + String.IsEmpty(Container(504).ListItemNoWrap(2).Label)] | [Container(504).Row(1) + String.IsEmpty(Container(504).ListItemNoWrap(1).Label)]" />
-                </include>
-                <animation effect="slide" end="-450" condition="!Integer.IsGreater(Container(504).NumItems,6)">Conditional</animation>
-                <animation effect="slide" end="-450" condition="!Integer.IsGreater(Container(504).NumItems,4)">Conditional</animation>
-                <animation effect="slide" end="-450" condition="!Integer.IsGreater(Container(504).NumItems,2)">Conditional</animation> -->
-
-                <right>-80</right>
-                <bottom>-100</bottom>
-                <include>Viewtype_Movement</include>
-                <onfocus condition="!Skin.HasSetting(NoFanart) + ![Container.Content(episodes) | Container.Content(videos)]">SetProperty(TMDbHelper.Blur.SourceImage,landscape,Home)</onfocus>
-
-                <onfocus condition="!Skin.HasSetting(NoFanart) + [Container.Content(episodes) | Container.Content(videos)]">SetProperty(TMDbHelper.Blur.SourceImage,thumb,Home)</onfocus>
-
-                <onfocus condition="Skin.HasSetting(NoFanart)">SetProperty(TMDbHelper.Blur.SourceImage,Art(fallback),Home)</onfocus>
-
-                <ondown>60</ondown>
-                <onup>SetFocus(9000)</onup>
-                <pagecontrol>60</pagecontrol>
-                <onfocus>ClearProperty(TMDbHelper.WidgetContainer,Home)</onfocus>
-                <visible>$EXP[Exp_View_504]</visible>
-                <visible>!Window.IsVisible(MyPlaylist.xml)</visible>
-                <visible>!String.IsEqual(Container.Property(Param.Info),details)</visible>
-            </include>
+            </control>
             <include content="Home_Hub_Widget_Label">
                 <param name="id" value="504" />
                 <param name="label" value="$VAR[Label_Header_Center]" />
