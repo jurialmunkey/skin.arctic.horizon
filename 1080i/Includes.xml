@@ -47,14 +47,14 @@
 
     <!-- Highlight Color -->
     <variable name="ColorHighlight">
-        <value condition="Skin.HasSetting(EnableColorMatch) + !String.IsEqual(Window(home).Property(SEVEN_daemon_set),None) + !String.IsEmpty(Window(home).Property(ImageColorSEVEN)) + !String.IsEqual(Window(home).Property(ImageColorSEVEN),ffffffff) + !String.IsEqual(Window(home).Property(ImageColorSEVEN),ff000000)">$INFO[Window(home).Property(ImageColorSEVEN)]</value>
+        <value condition="Skin.HasSetting(TMDbHelper.EnableColors) + !String.IsEmpty(Window(home).Property(TMDbHelper.ListItem.Colors.Main))">$INFO[Window(home).Property(TMDbHelper.ListItem.Colors.Main)]</value>
         <value condition="!String.IsEmpty(Skin.String(focuscolor.name))">$INFO[Skin.String(focuscolor.name)]</value>
         <value>Highlight</value>
     </variable>
 
     <!-- Gradient Color -->
     <variable name="ColorGradient">
-        <value condition="Skin.HasSetting(EnableColorMatch) + !String.IsEqual(Window(home).Property(SEVEN_daemon_set),None) + !String.IsEmpty(Window(home).Property(ImageCColorSEVEN)) + !String.IsEqual(Window(home).Property(ImageCColorSEVEN),ffffffff) + !String.IsEqual(Window(home).Property(ImageCColorSEVEN),ff000000)">$INFO[Window(home).Property(ImageCColorSEVEN)]</value>
+        <value condition="Skin.HasSetting(TMDbHelper.EnableColors) + !String.IsEmpty(Window(home).Property(TMDbHelper.ListItem.Colors.Comp))">$INFO[Window(home).Property(TMDbHelper.ListItem.Colors.Comp)]</value>
         <value condition="!Skin.HasSetting(EnableMonochromeHighlight) + !String.IsEmpty(Skin.String(gradientcolor.name))">$INFO[Skin.String(gradientcolor.name)]</value>
         <value condition="!Skin.HasSetting(EnableMonochromeHighlight)">Gradient</value>
         <value>00ffffff</value>
@@ -63,6 +63,7 @@
     <!-- Overlay Color -->
     <variable name="ColorOverlay">
         <value condition="Skin.HasSetting(DisableOverlay)">7f000000</value>
+        <value condition="Skin.HasSetting(TMDbHelper.EnableColors) + !String.IsEmpty(Window(home).Property(TMDbHelper.ListItem.Colors.Main))">$INFO[Window(home).Property(TMDbHelper.ListItem.Colors.Main)]</value>
         <value condition="!String.IsEmpty(Skin.String(overlaycolor.name))">$INFO[Skin.String(overlaycolor.name)]</value>
         <value>Highlight</value>
     </variable>

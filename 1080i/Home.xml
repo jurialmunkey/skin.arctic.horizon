@@ -10,6 +10,12 @@
     <onload>RunScript(script.skinvariables,action=buildviews)</onload>
     <onunload>ClearProperty(TMDbHelper.WidgetContainer,Home)</onunload>
 
+    <!-- <onload>Skin.SetBool(TMDbHelper.EnableColors)</onload>
+    <onload>Skin.SetString(TMDbHelper.Colors.Luminance,0.5)</onload>
+    <onload>Skin.SetString(TMDbHelper.Colors.Saturation,0.8)</onload>
+    <onload>SetProperty(TMDbHelper.Colors.Fallback,$VAR[Global_Background_Image_NoFanart_Fallback],Home)</onload>
+    <onload>SetProperty(TMDbHelper.Colors.SourceImage,poster,Home)</onload> -->
+
     <onload>SetProperty(TMDbHelper.Blur.Fallback,$VAR[Global_Background_Image_NoFanart_Fallback],Home)</onload>
     <onload condition="Skin.HasSetting(NoFanart)">SetProperty(TMDbHelper.Blur.SourceImage,Art(fallback),Home)</onload>
     <onload condition="!Skin.HasSetting(NoFanart)">SetProperty(TMDbHelper.Blur.SourceImage,poster,Home)</onload>
