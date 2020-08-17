@@ -63,6 +63,6 @@
         <label2>32034</label2>
         <icon>DefaultDVDFull.png</icon>
         <thumb />
-        <action>XBMC.PlayDVD()</action>
+        <action>PlayDVD()</action>
     </shortcut>
 </shortcuts>

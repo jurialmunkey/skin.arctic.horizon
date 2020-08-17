@@ -757,7 +757,7 @@
             <texturefocus colordiffuse="$VAR[ColorHighlight]">osd/repeat-off.png</texturefocus>
             <texturenofocus colordiffuse="panel_fg_70">osd/repeat-off.png</texturenofocus>
             <include>OSD_Button_OnFocus</include>
-            <onclick>XBMC.PlayerControl(Repeat)</onclick>
+            <onclick>PlayerControl(Repeat)</onclick>
             <visible>Window.IsVisible(musicosd)</visible>
             <visible>!Playlist.IsRepeatOne + !Playlist.IsRepeat</visible>
         </control>
@@ -774,7 +774,7 @@
             <texturefocus colordiffuse="$VAR[ColorHighlight]">osd/repeat-one.png</texturefocus>
             <texturenofocus colordiffuse="panel_fg_70">osd/repeat-one.png</texturenofocus>
             <include>OSD_Button_OnFocus</include>
-            <onclick>XBMC.PlayerControl(Repeat)</onclick>
+            <onclick>PlayerControl(Repeat)</onclick>
             <visible>Window.IsVisible(musicosd)</visible>
             <visible>Playlist.IsRepeatOne</visible>
         </control>
@@ -791,7 +791,7 @@
             <texturefocus colordiffuse="$VAR[ColorHighlight]">osd/repeat-all.png</texturefocus>
             <texturenofocus colordiffuse="panel_fg_70">osd/repeat-all.png</texturenofocus>
             <include>OSD_Button_OnFocus</include>
-            <onclick>XBMC.PlayerControl(Repeat)</onclick>
+            <onclick>PlayerControl(Repeat)</onclick>
             <visible>Window.IsVisible(musicosd)</visible>
             <visible>Playlist.IsRepeat</visible>
         </control>
@@ -808,7 +808,7 @@
             <alttexturefocus colordiffuse="$VAR[ColorHighlight]">osd/shuffle-on.png</alttexturefocus>
             <alttexturenofocus colordiffuse="panel_fg_70">osd/shuffle-on.png</alttexturenofocus>
             <include>OSD_Button_OnFocus</include>
-            <onclick>XBMC.PlayerControl(Random)</onclick>
+            <onclick>PlayerControl(Random)</onclick>
             <visible>Window.IsVisible(musicosd)</visible>
         </control>
         <!-- <control type="button" id="24">
