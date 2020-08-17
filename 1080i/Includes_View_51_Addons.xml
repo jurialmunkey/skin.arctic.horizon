@@ -13,7 +13,7 @@
                 <pagecontrol>60</pagecontrol>
                 <onfocus>ClearProperty(TMDbHelper.WidgetContainer,Home)</onfocus>
                 <include>Viewtype_Movement</include>
-                <ondown condition="!Skin.HasSetting(DisableWallScroll) + [Container(51).HasNext | Container(51).HasPrevious]">SetProperty(WallMode,1)</ondown>
+                <ondown condition="!Skin.HasSetting(DisableWallScroll) + [Container(51).HasNext | Container(51).HasPrevious]">SetProperty(WallMode,$INFO[Container.FolderPath])</ondown>
                 <ondown condition="!Skin.HasSetting(DisableWallScroll) + [Container(51).HasNext | Container(51).HasPrevious]">Container.SetViewMode(5151)</ondown>
                 <ondown condition="!Skin.HasSetting(DisableWallScroll) + [Container(51).HasNext | Container(51).HasPrevious]">SetFocus(25151)</ondown>
                 <ondown condition="Skin.HasSetting(DisableWallScroll)">60</ondown>

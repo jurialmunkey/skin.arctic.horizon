@@ -17,7 +17,7 @@
                 <onfocus condition="Skin.HasSetting(NoFanart)">SetProperty(TMDbHelper.Blur.SourceImage,Art(fallback),Home)</onfocus>
                 <onfocus condition="!Skin.HasSetting(NoFanart)">SetProperty(TMDbHelper.Blur.SourceImage,poster,Home)</onfocus>
                 <ondown condition="Skin.HasSetting(DisableWallScroll)">60</ondown>
-                <ondown condition="!Skin.HasSetting(DisableWallScroll) + [Container(52).HasNext | Container(52).HasPrevious]">SetProperty(WallMode,1)</ondown>
+                <ondown condition="!Skin.HasSetting(DisableWallScroll) + [Container(52).HasNext | Container(52).HasPrevious]">SetProperty(WallMode,$INFO[Container.FolderPath])</ondown>
                 <ondown condition="!Skin.HasSetting(DisableWallScroll) + [Container(52).HasNext | Container(52).HasPrevious]">Container.SetViewMode(5252)</ondown>
                 <ondown condition="!Skin.HasSetting(DisableWallScroll) + [Container(52).HasNext | Container(52).HasPrevious]">SetFocus(25252)</ondown>
                 <visible>$EXP[Exp_View_52]</visible>

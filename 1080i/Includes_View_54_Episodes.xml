@@ -16,7 +16,7 @@
                 <onfocus condition="!Skin.HasSetting(NoFanart) + [Container.Content(episodes) | Container.Content(videos)]">SetProperty(TMDbHelper.Blur.SourceImage,thumb,Home)</onfocus>
                 <onfocus condition="Skin.HasSetting(NoFanart)">SetProperty(TMDbHelper.Blur.SourceImage,Art(fallback),Home)</onfocus>
                 <onfocus>ClearProperty(TMDbHelper.WidgetContainer,Home)</onfocus>
-                <ondown condition="!Skin.HasSetting(DisableWallScroll) + [Container(54).HasNext | Container(54).HasPrevious]">SetProperty(WallMode,1)</ondown>
+                <ondown condition="!Skin.HasSetting(DisableWallScroll) + [Container(54).HasNext | Container(54).HasPrevious]">SetProperty(WallMode,$INFO[Container.FolderPath])</ondown>
                 <ondown condition="!Skin.HasSetting(DisableWallScroll) + [Container(54).HasNext | Container(54).HasPrevious]">Container.SetViewMode(5454)</ondown>
                 <ondown condition="!Skin.HasSetting(DisableWallScroll) + [Container(54).HasNext | Container(54).HasPrevious]">SetFocus(25454)</ondown>
                 <ondown condition="Skin.HasSetting(DisableWallScroll)">60</ondown>

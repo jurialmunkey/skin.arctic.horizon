@@ -268,6 +268,7 @@
         <oninfo condition="ListItem.IsCollection">ActivateWindow(1140)</oninfo>
         <oninfo condition="Container.Content(actors) | Container.Content(directors)">RunScript(plugin.video.themoviedb.helper,add_query=$INFO[Container.ListItem.Label],type=person,call_auto=1190,return)</oninfo>
         <pagecontrol>60</pagecontrol>
+        <!-- <onfocus>ClearProperty(WallMode)</onfocus> -->
     </include>
 
     <include name="Viewtype_Poster_Item">
@@ -1483,7 +1484,7 @@
             <onback>Container.SetViewMode($PARAM[id])</onback>
             <onback>1$PARAM[id]$PARAM[id]</onback>
             <visible>$EXP[Exp_View_$PARAM[id]]</visible>
-            <visible>!String.IsEmpty(Window.Property(WallMode))</visible>
+            <visible>String.IsEqual(Window.Property(WallMode),Container.FolderPath)</visible>
             <nested />
         </include>
     </include>
