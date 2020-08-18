@@ -5,31 +5,45 @@
     </include>
 
     <include name="Home_Movement_Widgets_UpDown">
-        <onup>SetProperty(WidgetFocus,1)</onup>
-        <ondown>SetProperty(WidgetFocus,1)</ondown>
+        <onup condition="!Skin.HasSetting(EnableHorizontalHome)">SetProperty(WidgetFocus,1)</onup>
+        <ondown condition="!Skin.HasSetting(EnableHorizontalHome)">SetProperty(WidgetFocus,1)</ondown>
+        <onleft condition="Skin.HasSetting(EnableHorizontalHome)">SetProperty(WidgetFocus,1)</onleft>
+        <onright condition="Skin.HasSetting(EnableHorizontalHome)">SetProperty(WidgetFocus,1)</onright>
         <include>Home_Movement_UpDown</include>
-        <onup>SetFocus(3992)</onup>
-        <ondown>SetFocus(3992)</ondown>
+        <onup condition="!Skin.HasSetting(EnableHorizontalHome)">SetFocus(3992)</onup>
+        <ondown condition="!Skin.HasSetting(EnableHorizontalHome)">SetFocus(3992)</ondown>
+        <onleft condition="Skin.HasSetting(EnableHorizontalHome)">SetFocus(3992)</onleft>
+        <onright condition="Skin.HasSetting(EnableHorizontalHome)">SetFocus(3992)</onright>
     </include>
 
     <include name="Home_Movement_UpDown">
-        <onup>ClearProperty(CurrentWidget)</onup>
-        <ondown>ClearProperty(CurrentWidget)</ondown>
-        <onup>SetProperty(WidgetMovement,OnUp)</onup>
-        <onup>Control.Move(301,-1)</onup>
-        <ondown>SetProperty(WidgetMovement,OnDown)</ondown>
-        <ondown>Control.Move(301,1)</ondown>
+        <onup condition="!Skin.HasSetting(EnableHorizontalHome)">ClearProperty(CurrentWidget)</onup>
+        <ondown condition="!Skin.HasSetting(EnableHorizontalHome)">ClearProperty(CurrentWidget)</ondown>
+        <onup condition="!Skin.HasSetting(EnableHorizontalHome)">SetProperty(WidgetMovement,OnUp)</onup>
+        <onup condition="!Skin.HasSetting(EnableHorizontalHome)">Control.Move(301,-1)</onup>
+        <ondown condition="!Skin.HasSetting(EnableHorizontalHome)">SetProperty(WidgetMovement,OnDown)</ondown>
+        <ondown condition="!Skin.HasSetting(EnableHorizontalHome)">Control.Move(301,1)</ondown>
+
+        <onleft condition="Skin.HasSetting(EnableHorizontalHome)">ClearProperty(CurrentWidget)</onleft>
+        <onright condition="Skin.HasSetting(EnableHorizontalHome)">ClearProperty(CurrentWidget)</onright>
+        <onleft condition="Skin.HasSetting(EnableHorizontalHome)">SetProperty(WidgetMovement,OnUp)</onleft>
+        <onleft condition="Skin.HasSetting(EnableHorizontalHome)">Control.Move(301,-1)</onleft>
+        <onright condition="Skin.HasSetting(EnableHorizontalHome)">SetProperty(WidgetMovement,OnDown)</onright>
+        <onright condition="Skin.HasSetting(EnableHorizontalHome)">Control.Move(301,1)</onright>
     </include>
 
     <include name="Home_Movement_LeftRight">
-        <onleft>ClearProperty(WidgetMovement)</onleft>
-        <onleft condition="String.IsEmpty(Window(Home).Property(WidgetFocus))">SetFocus($INFO[Window(Home).Property(CurrentWidget)],9999,absolute)</onleft>
-        <onleft condition="!String.IsEmpty(Window(Home).Property(WidgetFocus))">ClearProperty(WidgetFocus)</onleft>
-        <onleft condition="Integer.IsEqual(Container(3700).NumItems,0) + String.IsEmpty(Container(301).ListItem.Property(background)) + String.IsEmpty(Window(Home).Property(WidgetFocus))">Control.Move(3001,-1)</onleft>
+        <onleft condition="!Skin.HasSetting(EnableHorizontalHome)">ClearProperty(WidgetMovement)</onleft>
+        <onleft condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEmpty(Window(Home).Property(WidgetFocus))">SetFocus($INFO[Window(Home).Property(CurrentWidget)],9999,absolute)</onleft>
+        <onleft condition="!Skin.HasSetting(EnableHorizontalHome) + !String.IsEmpty(Window(Home).Property(WidgetFocus))">ClearProperty(WidgetFocus)</onleft>
+        <onleft condition="!Skin.HasSetting(EnableHorizontalHome) + Integer.IsEqual(Container(3700).NumItems,0) + String.IsEmpty(Container(301).ListItem.Property(background)) + String.IsEmpty(Window(Home).Property(WidgetFocus))">Control.Move(3001,-1)</onleft>
         <include>skinshortcuts-template-onmovement</include>
-        <onright>ClearProperty(WidgetMovement)</onright>
+        <onright condition="!Skin.HasSetting(EnableHorizontalHome)">ClearProperty(WidgetMovement)</onright>
+        <ondown condition="Skin.HasSetting(EnableHorizontalHome)">ClearProperty(WidgetMovement)</ondown>
         <oninfo>ClearProperty(WidgetFocus)</oninfo>
         <oninfo>SetFocus(303,0,absolute)</oninfo>
+        <onup condition="Skin.HasSetting(EnableHorizontalHome)">ClearProperty(WidgetFocus)</onup>
+        <onup condition="Skin.HasSetting(EnableHorizontalHome)">SetFocus(303,0,absolute)</onup>
     </include>
 
     <include name="Home_Weather_Button">
@@ -42,12 +56,12 @@
     </include>
 
     <include name="Home_Submenu">
-        <include content="Global_Overlay">
+        <include content="Global_Overlay" condition="!Skin.HasSetting(EnableHorizontalHome)">
             <left>160</left>
             <visible>Control.HasFocus(303)</visible>
         </include>
-
-        <control type="group">
+        <include content="Object_Control" condition="!Skin.HasSetting(EnableHorizontalHome)">
+            <param name="type" value="group" />
             <animation type="Condition" reversible="false" condition="Control.Hasfocus(303)">
                 <effect type="fade" start="0" end="100" time="300" delay="150"/>
                 <effect type="slide" start="0,48" end="0" center="auto" tween="back" easing="out" time="350" delay="150"/>
@@ -106,13 +120,67 @@
                 <animation effect="slide" end="0,80" condition="Integer.IsGreater(Container(301).Position,6)">Conditional</animation>
                 <animation effect="slide" end="0,80" condition="Integer.IsGreater(Container(301).Position,7)">Conditional</animation>
             </control>
-        </control>
+        </include>
+
+        <!-- Horizontal Menu Version -->
+        <include content="Global_Overlay" condition="Skin.HasSetting(EnableHorizontalHome)">
+            <visible>Control.HasFocus(303)</visible>
+        </include>
+        <include content="Object_Control" condition="Skin.HasSetting(EnableHorizontalHome)">
+            <param name="type" value="group" />
+            <animation effect="slide" start="0" end="220" condition="Control.HasFocus(303) + Container(301).Position(0)">Conditional</animation>
+            <animation effect="slide" start="0" end="440" condition="Control.HasFocus(303) + Container(301).Position(1)">Conditional</animation>
+            <animation effect="slide" start="0" end="660" condition="Control.HasFocus(303) + Container(301).Position(2)">Conditional</animation>
+            <animation effect="slide" start="0" end="880" condition="Control.HasFocus(303) + Container(301).Position(3)">Conditional</animation>
+            <animation type="Condition" reversible="false" condition="Control.Hasfocus(303)">
+                <effect type="fade" start="0" end="100" time="300" delay="150"/>
+                <effect type="slide" start="0,48" end="0" center="auto" tween="back" easing="out" time="350" delay="150"/>
+            </animation>
+            <include content="Dialog_Menu">
+                <param name="id" value="303" />
+                <param name="header" value="$INFO[Container(301).ListItem.Label]" />
+                <param name="content" value="Items_SubMenu" />
+                <param name="onleft" value="SetFocus(3992)" />
+                <param name="onright" value="SetFocus(3992)" />
+                <param name="onback" value="SetFocus(3992)" />
+                <param name="include-icon" value="true" />
+                <param name="global_overlay" value="false" />
+                <top>220</top>
+                <left>-650</left>
+                <width>450</width>
+                <animation effect="slide" start="0" end="850" condition="Control.HasFocus(303)">Conditional</animation>
+                <animation type="WindowClose">
+                    <effect type="slide" start="0" end="-160" time="400" tween="quadratic" />
+                    <effect type="fade" start="100" end="0" tween="cubic" easing="out" delay="0" time="400" />
+                </animation>
+                <animation effect="slide" end="0,-40" condition="Integer.IsLess(Container(303).NumItems,8)">Conditional</animation>
+                <animation effect="slide" end="0,-40" condition="Integer.IsLess(Container(303).NumItems,7)">Conditional</animation>
+                <animation effect="slide" end="0,-40" condition="Integer.IsLess(Container(303).NumItems,6)">Conditional</animation>
+                <animation effect="slide" end="0,-40" condition="Integer.IsLess(Container(303).NumItems,5)">Conditional</animation>
+                <animation effect="slide" end="0,-40" condition="Integer.IsLess(Container(303).NumItems,4)">Conditional</animation>
+                <animation effect="slide" end="0,-40" condition="Integer.IsLess(Container(303).NumItems,3)">Conditional</animation>
+                <animation effect="slide" end="0,-40" condition="Integer.IsLess(Container(303).NumItems,2)">Conditional</animation>
+            </include>
+
+            <control type="image">
+                <left>409</left>
+                <top>164</top>
+                <height>16</height>
+                <width>16</width>
+                <visible>Control.HasFocus(303)</visible>
+                <animation type="WindowClose">
+                    <effect type="slide" start="0" end="-160" time="400" tween="quadratic" />
+                    <effect type="fade" start="100" end="0" tween="cubic" easing="out" delay="0" time="400" />
+                </animation>
+                <texture colordiffuse="dialog_bg_100">common/arrow-menu-up.png</texture>
+            </control>
+        </include>
     </include>
 
     <include name="Home_Multi">
-        <include>Home_Menu_Vertical</include>
+        <include condition="!Skin.HasSetting(EnableHorizontalHome)">Home_Menu_Vertical</include>
         <include content="Viewtype_Main">
-            <include>Animation_Home_Slide</include>
+            <include condition="!Skin.HasSetting(EnableHorizontalHome)">Animation_Home_Slide</include>
             <control type="group">
                 <visible>!$EXP[Exp_InfoVisible]</visible>
                 <include>Animation_Common</include>
@@ -130,8 +198,10 @@
                             <left>-2000</left>
                             <include>Home_Movement_LeftRight</include>
                             <include>Home_Movement_UpDown</include>
-                            <onup>AlarmClock(refocusit,SetFocus(3992),00:00,silent)</onup>
-                            <ondown>AlarmClock(refocusit,SetFocus(3992),00:00,silent)</ondown>
+                            <onup condition="!Skin.HasSetting(EnableHorizontalHome)">AlarmClock(refocusit,SetFocus(3992),00:00,silent)</onup>
+                            <onleft condition="Skin.HasSetting(EnableHorizontalHome)">AlarmClock(refocusit,SetFocus(3992),00:00,silent)</onleft>
+                            <ondown condition="!Skin.HasSetting(EnableHorizontalHome)">AlarmClock(refocusit,SetFocus(3992),00:00,silent)</ondown>
+                            <onright condition="Skin.HasSetting(EnableHorizontalHome)">AlarmClock(refocusit,SetFocus(3992),00:00,silent)</onright>
                             <onclick>ClearProperty(WidgetMovement)</onclick>
                             <onfocus>RunScript(plugin.video.themoviedb.helper,blur_image=$VAR[Global_Background_Image_NoFanart_Fallback])</onfocus>
                             <onclick condition="!String.IsEmpty(Window.Property(WidgetFocus)) + [!Integer.IsEqual(Container(3700).NumItems,0) | String.IsEmpty(Container(301).ListItem.Property(background))]">SetFocus(3000)</onclick>
@@ -328,9 +398,9 @@
                             <right>-26</right>
                             <align>left</align>
                             <height>110</height>
-                            <onleft condition="!Window.IsVisible(Home)">Control.Move(3001,-1)</onleft>
-                            <onleft condition="!Window.IsVisible(Home)">3101</onleft>
-                            <onleft condition="Window.IsVisible(Home)">301</onleft>
+                            <onleft condition="!Window.IsVisible(Home) | Skin.HasSetting(EnableHorizontalHome)">Control.Move(3001,-1)</onleft>
+                            <onleft condition="!Window.IsVisible(Home) | Skin.HasSetting(EnableHorizontalHome)">3101</onleft>
+                            <onleft condition="Window.IsVisible(Home) + !Skin.HasSetting(EnableHorizontalHome)">301</onleft>
                             <onright>Control.Move(3001,1)</onright>
                             <onright>3102</onright>
                             <onback condition="!Window.IsVisible(Home)">302</onback>
@@ -345,7 +415,9 @@
                                 <param name="icon" value="$VAR[Image_Showcase_PlayBrowse_Icon]" />
                                 <param name="ondown" value="302" />
                                 <param name="visible" value="true" />
-                                <param name="onup" value="Control.Move(3001,-1)" />
+                                <param name="onup" value="noop" />
+                                <onup condition="!Skin.HasSetting(EnableHorizontalHome) | !Window.IsVisible(home)">Control.Move(3001,-1)</onup>
+                                <onup condition="Skin.HasSetting(EnableHorizontalHome) + Window.IsVisible(home)">SetFocus(301)</onup>
                                 <onfocus>SetProperty(WidgetFocus,1)</onfocus>
                                 <onclick>SetFocus(3001)</onclick>
                                 <onclick>Action(Select)</onclick>
@@ -358,7 +430,9 @@
                                 <param name="icon" value="special://skin/extras/icons/info2.png" />
                                 <param name="ondown" value="302" />
                                 <param name="visible" value="true" />
-                                <param name="onup" value="Control.Move(3001,-1)" />
+                                <param name="onup" value="noop" />
+                                <onup condition="!Skin.HasSetting(EnableHorizontalHome) | !Window.IsVisible(home)">Control.Move(3001,-1)</onup>
+                                <onup condition="Skin.HasSetting(EnableHorizontalHome) + Window.IsVisible(home)">SetFocus(301)</onup>
                                 <onfocus>SetProperty(WidgetFocus,1)</onfocus>
                                 <onclick>SetFocus(3001)</onclick>
                                 <onclick>Action(Info)</onclick>
@@ -407,7 +481,7 @@
                         <height>80</height>
                         <fadetime>200</fadetime>
                         <animation effect="slide" time="0" start="0" end="0,250" condition="Integer.IsEqual(Container(302).NumItems,0)">Conditional</animation>
-                        <animation effect="slide" end="-160" time="400" tween="quadratic" condition="Control.HasFocus(301) | Control.HasFocus(303) | [Control.HasFocus(3992) + String.IsEmpty(Window.Property(WidgetFocus))] | Skin.HasSetting(LockMainMenu)">Conditional</animation>
+                        <animation effect="slide" end="-160" time="400" tween="quadratic" condition="!Skin.HasSetting(EnableHorizontalHome) + [Control.HasFocus(301) | Control.HasFocus(303) | [Control.HasFocus(3992) + String.IsEmpty(Window.Property(WidgetFocus))] | Skin.HasSetting(LockMainMenu)]">Conditional</animation>
                         <texture background="true">$VAR[Image_Home_ClearLogo]</texture>
                         <animation type="Hidden">
                             <effect type="fade" start="100" end="0" delay="0" time="300" tween="cubic" easing="inout" />
@@ -494,10 +568,10 @@
                             <right>-80</right>
                             <onup>302</onup>
                             <ondown>60</ondown>
-                            <ondown condition="Window.IsVisible(Home)">SetProperty(WidgetFocus,1)</ondown>
-                            <ondown condition="Window.IsVisible(Home)">3992</ondown>
-                            <ondown condition="Window.IsVisible(Home)">SetProperty(WidgetMovement,OnDown)</ondown>
-                            <ondown condition="Window.IsVisible(Home)">Control.Move(301,1)</ondown>
+                            <ondown condition="Window.IsVisible(Home) + !Skin.HasSetting(EnableHorizontalHome)">SetProperty(WidgetFocus,1)</ondown>
+                            <ondown condition="Window.IsVisible(Home) + !Skin.HasSetting(EnableHorizontalHome)">3992</ondown>
+                            <ondown condition="Window.IsVisible(Home) + !Skin.HasSetting(EnableHorizontalHome)">SetProperty(WidgetMovement,OnDown)</ondown>
+                            <ondown condition="Window.IsVisible(Home) + !Skin.HasSetting(EnableHorizontalHome)">Control.Move(301,1)</ondown>
                             <onback condition="!Window.IsVisible(Home)">302</onback>
                             <onback condition="Window.IsVisible(Home)">3101</onback>
                             <onfocus condition="Skin.HasSetting(NoFanart)">SetProperty(TMDbHelper.Blur.SourceImage,Art(fallback),Home)</onfocus>
@@ -557,7 +631,7 @@
                 <aspectratio align="right" aligny="bottom">keep</aspectratio>
                 <height>80</height>
                 <fadetime>200</fadetime>
-                <animation effect="slide" end="-160" time="400" tween="quadratic" condition="Control.HasFocus(301) | Control.HasFocus(303) | [Control.HasFocus(3992) + String.IsEmpty(Window.Property(WidgetFocus))] | Skin.HasSetting(LockMainMenu)">Conditional</animation>
+                <animation effect="slide" end="-160" time="400" tween="quadratic" condition="!Skin.HasSetting(EnableHorizontalHome) + [Control.HasFocus(301) | Control.HasFocus(303) | [Control.HasFocus(3992) + String.IsEmpty(Window.Property(WidgetFocus))] | Skin.HasSetting(LockMainMenu)]">Conditional</animation>
                 <texture background="true">$VAR[Image_Home_ClearLogo]</texture>
             </control>
         </control>
@@ -703,6 +777,106 @@
         </definition>
     </include>
 
+    <include name="Home_Menu_Horizontal">
+        <param name="mainmenu-id" default="301" />
+        <definition>
+            <control type="group">
+                <visible allowhiddenfocus="true">Control.HasFocus(301) | Control.HasFocus(303) | [Control.HasFocus(3992) + String.IsEmpty(Window.Property(WidgetFocus))]</visible>
+                <animation type="Visible">
+                    <effect type="zoom" start="80" end="100" time="400" tween="back" easing="out" center="auto"/>
+                    <effect type="fade" start="0" end="100" time="400" tween="sine" easing="inout"/>
+                </animation>
+                <animation type="WindowOpen">
+                    <effect type="zoom" start="80" end="100" time="400" tween="back" easing="out" center="auto"/>
+                    <effect type="fade" start="0" end="100" time="400" tween="sine" easing="inout"/>
+                </animation>
+                <include>Animation_FadeOut</include>
+                <centertop>100</centertop>
+                <height>100</height>
+                <left>420</left>
+                <right>500</right>
+                <control type="image">
+                    <centertop>50%</centertop>
+                    <left>-16</left>
+                    <width>24</width>
+                    <height>24</height>
+                    <texture colordiffuse="main_fg_70">buttons/spin-left.png</texture>
+                    <visible>Container(301).HasPrevious</visible>
+                    <include>Animation_FadeInOut</include>
+                </control>
+                <control type="image">
+                    <centertop>50%</centertop>
+                    <right>-16</right>
+                    <width>24</width>
+                    <height>24</height>
+                    <texture colordiffuse="main_fg_70" flipx="true">buttons/spin-left.png</texture>
+                    <visible>Container(301).HasNext</visible>
+                    <include>Animation_FadeInOut</include>
+                </control>
+                <control type="image">
+                    <texture colordiffuse="Shadow" border="80,40,80,40">common/button-view-round-base-shadow.png</texture>
+                </control>
+                <control type="image">
+                    <texture colordiffuse="AltPosterBack" border="80,40,80,40">common/button-view-round-base.png</texture>
+                </control>
+                <include content="Object_Control">
+                    <param name="type" value="image" />
+                    <centerleft>60</centerleft>
+                    <centertop>50%</centertop>
+                    <width>72</width>
+                    <height>72</height>
+                    <texture colordiffuse="main_fg_70">$VAR[Image_SkinLogo]</texture>
+                </include>
+                <control type="list" id="$PARAM[mainmenu-id]">
+                    <orientation>horizontal</orientation>
+                    <left>80</left>
+                    <include>Home_Movement_OnFocus</include>
+                    <include>Home_Movement_LeftRight</include>
+                    <focusposition>1</focusposition>
+                    <movement>2</movement>
+                    <itemlayout width="220">
+                        <control type="group">
+                            <left>0</left>
+                            <right>-40</right>
+                            <control type="label">
+                                <left>40</left>
+                                <right>40</right>
+                                <font>font_title_mini</font>
+                                <textcolor>main_fg_70</textcolor>
+                                <align>center</align>
+                                <label>$INFO[ListItem.LAbel]</label>
+                            </control>
+                        </control>
+                    </itemlayout>
+                    <focusedlayout width="220">
+                        <control type="group">
+                            <left>0</left>
+                            <right>-40</right>
+                            <animation effect="zoom" end="-91" center="auto" condition="true">Conditional</animation>
+                            <animation effect="zoom" end="-91" center="auto" condition="true">Conditional</animation>
+                            <animation effect="zoom" start="100" end="120" time="400" tween="back" easing="out" center="auto" reversible="false" condition="!Container(301).OnNext + !Container(301).OnPrevious">Conditional</animation>
+                            <control type="image">
+                                <texture colordiffuse="$VAR[ColorHighlight]" border="40,40,40,40">common/button-view-round-base-fo.png</texture>
+                            </control>
+                            <control type="image">
+                                <texture colordiffuse="$VAR[ColorGradient]" diffuse="common/white-gradient.png" border="40,40,40,40">common/button-view-round-base.png</texture>
+                            </control>
+                            <control type="label">
+                                <left>40</left>
+                                <right>40</right>
+                                <font>font_title_mini</font>
+                                <textcolor>Selected</textcolor>
+                                <align>center</align>
+                                <label>$INFO[ListItem.LAbel]</label>
+                            </control>
+                        </control>
+                    </focusedlayout>
+                    <content><include>skinshortcuts-mainmenu</include></content>
+                </control>
+            </control>
+        </definition>
+    </include>
+
     <include name="Home_Menu_Vertical">
         <param name="mainmenu-id" default="301" />
         <definition>
@@ -723,19 +897,23 @@
                         <param name="id" value="$PARAM[mainmenu-id]" />
                         <param name="font" value="font_mainmenu" />
                         <param name="top" value="view_pad" />
-                        <onfocus>RunScript(plugin.video.themoviedb.helper,blur_image=$VAR[Global_Background_Image_NoFanart_Fallback])</onfocus>
-                        <onfocus>ClearProperty(TMDbHelper.WidgetContainer,Home)</onfocus>
-                        <onback>3000</onback>
-                        <onfocus>ClearProperty(WidgetMovement)</onfocus>
-                        <onfocus>ClearProperty(WidgetFocus)</onfocus>
-                        <onfocus condition="String.IsEmpty(Window.Property(301Click))">SetFocus(3992)</onfocus>
-                        <onfocus>ClearProperty(301Click)</onfocus>
+                        <include>Home_Movement_OnFocus</include>
                         <include>Home_Movement_LeftRight</include>
                         <content><include>skinshortcuts-mainmenu</include></content>
                     </include>
                 </include>
             </include>
         </definition>
+    </include>
+
+    <include name="Home_Movement_OnFocus">
+        <onfocus>RunScript(plugin.video.themoviedb.helper,blur_image=$VAR[Global_Background_Image_NoFanart_Fallback])</onfocus>
+        <onfocus>ClearProperty(TMDbHelper.WidgetContainer,Home)</onfocus>
+        <onback>3000</onback>
+        <onfocus>ClearProperty(WidgetMovement)</onfocus>
+        <onfocus>ClearProperty(WidgetFocus)</onfocus>
+        <onfocus condition="String.IsEmpty(Window.Property(301Click))">SetFocus(3992)</onfocus>
+        <onfocus>ClearProperty(301Click)</onfocus>
     </include>
 
     <include name="Home_Vertical_Info">

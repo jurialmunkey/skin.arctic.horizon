@@ -52,7 +52,7 @@
         <include>Home_Multi</include>
         <include>Object_NowPlaying</include>
         <include>Home_Submenu</include>
-
+        <include condition="Skin.HasSetting(EnableHorizontalHome)">Home_Menu_Horizontal</include>
 
         <!-- Splash -->
         <control type="group">

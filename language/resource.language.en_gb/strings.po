@@ -132,7 +132,7 @@ msgstr ""
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31024"
-msgid "Use showcase hub for fullscreen widget"
+msgid "Fullscreen widget type"
 msgstr ""
 
 #: /1080i/Includes_Labels.xml
@@ -157,7 +157,7 @@ msgstr ""
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31029"
-msgid "Show profile picture on main menu"
+msgid "Profile picture"
 msgstr ""
 
 #: /1080i/SkinSettings.xml
@@ -187,7 +187,7 @@ msgstr ""
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31035"
-msgid "Lock main menu position"
+msgid "Lock position"
 msgstr ""
 
 #: /1080i/Includes_Labels.xml
@@ -222,7 +222,7 @@ msgstr ""
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31042"
-msgid "Invert home menu colours"
+msgid "Invert colours"
 msgstr ""
 
 #: /1080i/SkinSettings.xml

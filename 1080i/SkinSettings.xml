@@ -143,6 +143,37 @@
                         <label>$LOCALIZE[31109]</label>
                         <onclick>RunScript(script.skinshortcuts,type=manage&amp;group=mainmenu)</onclick>
                     </control>
+                    <control type="button" id="19120" description="Orientation">
+                        <visible>Integer.IsEqual(Window.Property(CurrentFocus),9001)</visible>
+                        <include>Defs_Settings_Button</include>
+                        <label>Menu orientation</label>
+                        <label2>$VAR[Label_SkinSettings_HomeStyle]</label2>
+                        <onclick>Skin.ToggleSetting(EnableHorizontalHome)</onclick>
+                    </control>
+                    <control type="radiobutton" id="19107" description="Lock main menu">
+                        <visible>Integer.IsEqual(Window.Property(CurrentFocus),9001)</visible>
+                        <include>Defs_Settings_Button</include>
+                        <label>- $LOCALIZE[31035]</label>
+                        <selected>Skin.HasSetting(LockMainMenu)</selected>
+                        <onclick>Skin.ToggleSetting(LockMainMenu)</onclick>
+                        <visible>!Skin.HasSetting(EnableHorizontalHome)</visible>
+                    </control>
+                    <control type="radiobutton" id="19108" description="Profile Pic">
+                        <visible>Integer.IsEqual(Window.Property(CurrentFocus),9001)</visible>
+                        <include>Defs_Settings_Button</include>
+                        <label>- $LOCALIZE[31029]</label>
+                        <selected>Skin.HasSetting(ProfilePicture)</selected>
+                        <onclick>Skin.ToggleSetting(ProfilePicture)</onclick>
+                        <visible>!Skin.HasSetting(EnableHorizontalHome)</visible>
+                    </control>
+                    <control type="radiobutton" id="19109" description="Invert Main Menu Colors">
+                        <visible>Integer.IsEqual(Window.Property(CurrentFocus),9001)</visible>
+                        <include>Defs_Settings_Button</include>
+                        <label>- $LOCALIZE[31042]</label>
+                        <selected>Skin.HasSetting(InvertHomeMenuColors)</selected>
+                        <onclick>Skin.ToggleSetting(InvertHomeMenuColors)</onclick>
+                        <visible>!Skin.HasSetting(EnableHorizontalHome)</visible>
+                    </control>
                     <control type="button" id="19103" description="Global Widget">
                         <visible>Integer.IsEqual(Window.Property(CurrentFocus),9001)</visible>
                         <include>Defs_Settings_Button</include>
@@ -150,11 +181,11 @@
                         <label2>$INFO[Skin.String(screensaver.arctic.mirage.path)]</label2>
                         <onclick>RunScript(script.skinshortcuts,type=widgets&amp;showNone=True&amp;skinWidgetName=screensaver.arctic.mirage.name&amp;skinWidgetTarget=screensaver.arctic.mirage.target&amp;skinWidgetPath=screensaver.arctic.mirage.path)</onclick>
                     </control>
-                    <control type="radiobutton" id="19104" description="Fullscreen Widget Option">
+                    <control type="button" id="19104" description="Fullscreen Widget Option">
                         <visible>Integer.IsEqual(Window.Property(CurrentFocus),9001)</visible>
                         <include>Defs_Settings_Button</include>
                         <label>$LOCALIZE[31024]</label>
-                        <selected>Skin.HasSetting(FullscreenWidgetShowcase)</selected>
+                        <label2>$VAR[Label_SkinSettings_FullScreenWidgetStyle]</label2>
                         <onclick>Skin.ToggleSetting(FullscreenWidgetShowcase)</onclick>
                     </control>
                     <control type="radiobutton" id="19105" description="Autoscroll Widgets">
@@ -171,27 +202,7 @@
                         <selected>Skin.HasSetting(EnableShowMore)</selected>
                         <onclick>Skin.ToggleSetting(EnableShowMore)</onclick>
                     </control>
-                    <control type="radiobutton" id="19107" description="Lock main menu">
-                        <visible>Integer.IsEqual(Window.Property(CurrentFocus),9001)</visible>
-                        <include>Defs_Settings_Button</include>
-                        <label>$LOCALIZE[31035]</label>
-                        <selected>Skin.HasSetting(LockMainMenu)</selected>
-                        <onclick>Skin.ToggleSetting(LockMainMenu)</onclick>
-                    </control>
-                    <control type="radiobutton" id="19108" description="Profile Pic">
-                        <visible>Integer.IsEqual(Window.Property(CurrentFocus),9001)</visible>
-                        <include>Defs_Settings_Button</include>
-                        <label>$LOCALIZE[31029]</label>
-                        <selected>Skin.HasSetting(ProfilePicture)</selected>
-                        <onclick>Skin.ToggleSetting(ProfilePicture)</onclick>
-                    </control>
-                    <control type="radiobutton" id="19109" description="Invert Main Menu Colors">
-                        <visible>Integer.IsEqual(Window.Property(CurrentFocus),9001)</visible>
-                        <include>Defs_Settings_Button</include>
-                        <label>$LOCALIZE[31042]</label>
-                        <selected>Skin.HasSetting(InvertHomeMenuColors)</selected>
-                        <onclick>Skin.ToggleSetting(InvertHomeMenuColors)</onclick>
-                    </control>
+
                     <control type="radiobutton" id="19110" description="Auto width hub buttons">
                         <visible>Integer.IsEqual(Window.Property(CurrentFocus),9001)</visible>
                         <include>Defs_Settings_Button</include>

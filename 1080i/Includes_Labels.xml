@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
+    <variable name="Label_SkinSettings_HomeStyle">
+        <value condition="Skin.HasSetting(EnableHorizontalHome)">Horizontal</value>
+        <value>Vertical</value>
+    </variable>
+    <variable name="Label_SkinSettings_FullScreenWidgetStyle">
+        <value condition="Skin.HasSetting(FullscreenWidgetShowcase)">Showcase</value>
+        <value>Standard</value>
+    </variable>
+
     <variable name="Label_ColorValue">
         <value condition="String.IsEqual(Window(Home).Property(colorpick),Highlight) + !String.IsEmpty(Skin.String(focuscolor.name))">$INFO[Skin.String(focuscolor.name)]</value>
         <value condition="String.IsEqual(Window(Home).Property(colorpick),Gradient) + !String.IsEmpty(Skin.String(gradientcolor.name))">$INFO[Skin.String(gradientcolor.name)]</value>

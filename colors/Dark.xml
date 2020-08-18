@@ -23,11 +23,10 @@
     <color name="dialog_bg_70">B3181818</color>
     <color name="dialog_bg_30">4D181818</color>
     <color name="dialog_bg_12">1F181818</color>
-    
+
     <!-- Background -->
     <color name="HomePanel">e7181818</color>
     <color name="Background">ff181818</color>
     <color name="PosterBack">ff454545</color>
-    <color name="AltPosterBack">1fdedede</color>
 
 </colors>

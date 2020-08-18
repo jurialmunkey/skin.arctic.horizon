@@ -190,19 +190,20 @@
 
     <include name="Viewtype_KodiLogo">
         <param name="textcolor" default="dialog_fg_100" />
+        <param name="profilepic" default="Skin.HasSetting(ProfilePicture)" />
         <definition>
             <control type="group">
+                <nested />
                 <centertop>100</centertop>
                 <height>128</height>
-                <nested />
-                <include content="Object_Control" condition="!Skin.HasSetting(ProfilePicture)">
+                <include content="Object_Control" condition="!$PARAM[profilepic]">
                     <param name="type" value="image" />
                     <left>16</left>
                     <width>128</width>
                     <bordersize>20</bordersize>
                     <texture colordiffuse="$VAR[ColorHighlight]">$VAR[Image_SkinLogo]</texture>
                 </include>
-                <include content="Object_Control" condition="Skin.HasSetting(ProfilePicture)">
+                <include content="Object_Control" condition="$PARAM[profilepic]">
                     <param name="type" value="group" />
                     <control type="image">
                         <left>16</left>
