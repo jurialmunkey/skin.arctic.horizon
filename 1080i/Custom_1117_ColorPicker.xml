@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window type="dialog" id="1117">
     <defaultcontrol always="true">9000</defaultcontrol>
+    <onunload>ClearProperty(colorpick,home)</onunload>
     <controls>
         <include>Global_Overlay</include>
         <control type="group">
@@ -41,7 +42,8 @@
                         <onclick condition="String.IsEqual(Window(Home).Property(colorpick),Highlight)">Skin.SetString(focuscolor.name,$INFO[ListItem.Label])</onclick>
                         <onclick condition="String.IsEqual(Window(Home).Property(colorpick),Gradient)">Skin.SetString(gradientcolor.name,$INFO[ListItem.Label])</onclick>
                         <onclick condition="String.IsEqual(Window(Home).Property(colorpick),Overlay)">Skin.SetString(overlaycolor.name,$INFO[ListItem.Label])</onclick>
-                        <onclick>SetFocus(3015)</onclick>
+                        <onclick condition="String.IsEqual(Window(Home).Property(colorpick),Watched)">Skin.SetString(watchedprogresscolor.name,$INFO[ListItem.Label])</onclick>
+                        <onclick>SetFocus(3010)</onclick>
                         <itemlayout width="80" height="80">
                             <control type="image">
                                 <right>1</right>
@@ -92,11 +94,37 @@
                 </control>
 
                 <!-- Buttons -->
-                <control type="group">
-                    <right>0</right>
-                    <width>300</width>
+                <control type="grouplist">
+                    <right>-40</right>
+                    <width>380</width>
+                    <orientation>vertical</orientation>
+                    <itemgap>0</itemgap>
+                    <usecontrolcoords>true</usecontrolcoords>
+                    <!-- Watched Preview -->
+                    <control type="group">
+                        <left>40</left>
+                        <right>40</right>
+                        <height>140</height>
+                        <visible>String.IsEqual(Window(Home).Property(colorpick),Watched)</visible>
+                        <include content="Dialog_ColorPicker_SwatchLabel">
+                            <label>Watched Indicators</label>
+                        </include>
+                        <include content="Dialog_ColorPicker_WatchedIndicator_Group">
+                            <param name="colordiffuse" value="$VAR[ColorWatchedProgress]" />
+                            <visible>!Control.HasFocus(3110)</visible>
+                        </include>
+                        <include content="Dialog_ColorPicker_WatchedIndicator_Group">
+                            <param name="colordiffuse" value="$INFO[Container(3110).ListItem.Label]" />
+                            <visible>Control.HasFocus(3110)</visible>
+                        </include>
+                    </control>
+
                     <!-- Gradient Preview -->
                     <control type="group">
+                        <left>40</left>
+                        <right>40</right>
+                        <height>100</height>
+                        <visible>String.IsEqual(Window(Home).Property(colorpick),Highlight) | String.IsEqual(Window(Home).Property(colorpick),Gradient) | String.IsEqual(Window(Home).Property(colorpick),Overlay)</visible>
                         <include content="Dialog_ColorPicker_SwatchLabel">
                             <label>Gradient Preview</label>
                         </include>
@@ -148,7 +176,10 @@
 
                     <!-- Colours Preview -->
                     <control type="group">
-                        <top>100</top>
+                        <left>40</left>
+                        <right>40</right>
+                        <height>110</height>
+                        <visible>String.IsEqual(Window(Home).Property(colorpick),Highlight) | String.IsEqual(Window(Home).Property(colorpick),Gradient) | String.IsEqual(Window(Home).Property(colorpick),Overlay)</visible>
                         <include content="Dialog_ColorPicker_SwatchPreview">
                             <param name="id" value="3021" />
                             <param name="onleft" value="3023" />
@@ -175,15 +206,15 @@
                         </include>
                     </control>
 
-
-
                     <!-- Button grouplist -->
                     <control type="grouplist" id="9000">
-                        <top>210</top>
+                        <left>40</left>
+                        <right>40</right>
                         <orientation>vertical</orientation>
                         <itemgap>10</itemgap>
                         <onleft>3110</onleft>
                         <onright>3110</onright>
+                        <height>350</height>
                         <onup condition="String.IsEqual(Window(Home).Property(colorpick),Highlight)">3021</onup>
                         <onup condition="String.IsEqual(Window(Home).Property(colorpick),Gradient)">3022</onup>
                         <onup condition="String.IsEqual(Window(Home).Property(colorpick),Overlay)">3023</onup>
@@ -196,6 +227,7 @@
                             <onclick condition="String.IsEqual(Window(Home).Property(colorpick),Highlight)">SetProperty(colorpick,Gradient,Home)</onclick>
                             <onclick condition="String.IsEqual(Window(Home).Property(colorpick),Gradient)">SetProperty(colorpick,Overlay,Home)</onclick>
                             <onclick condition="String.IsEqual(Window(Home).Property(colorpick),Overlay)">SetProperty(colorpick,Highlight,Home)</onclick>
+                            <visible>String.IsEqual(Window(Home).Property(colorpick),Highlight) | String.IsEqual(Window(Home).Property(colorpick),Gradient) | String.IsEqual(Window(Home).Property(colorpick),Overlay)</visible>
                         </control>
                         <!-- EDIT -->
                         <control type="button" id="3010">
@@ -205,6 +237,7 @@
                             <onclick condition="String.IsEqual(Window(Home).Property(colorpick),Highlight)">Skin.SetString(focuscolor.name)</onclick>
                             <onclick condition="String.IsEqual(Window(Home).Property(colorpick),Gradient)">Skin.SetString(gradientcolor.name)</onclick>
                             <onclick condition="String.IsEqual(Window(Home).Property(colorpick),Overlay)">Skin.SetString(overlaycolor.name)</onclick>
+                            <onclick condition="String.IsEqual(Window(Home).Property(colorpick),Watched)">Skin.SetString(watchedprogress.name)</onclick>
                         </control>
                         <!-- CHOOSE PALETTE -->
                         <control type="button" id="3030">

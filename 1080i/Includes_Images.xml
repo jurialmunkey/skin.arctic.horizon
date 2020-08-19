@@ -221,6 +221,11 @@
         <value>indicator/inprogress-25.png</value>
     </variable>
 
+    <variable name="Image_Overlay_Watched">
+        <value condition="!Skin.HasSetting(EnableClassicIndicators)">common/null.png</value>
+        <value>indicator/checkmark-classic.png</value>
+    </variable>
+
     <variable name="Image_Overlay_Focus">
         <value condition="[String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,season)] + !Integer.IsEqual(ListItem.Property(UnWatchedEpisodes),0) + !Skin.HasSetting(DisableIndicator.Episodes)">common/null.png</value>
         <value condition="ListItem.IsRecording">indicator/record.png</value>

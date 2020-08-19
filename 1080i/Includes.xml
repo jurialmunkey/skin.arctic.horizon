@@ -68,6 +68,12 @@
         <value>Highlight</value>
     </variable>
 
+    <!-- Watched / Progress Color -->
+    <variable name="ColorWatchedProgress">
+        <value condition="!String.IsEmpty(Skin.String(watchedprogresscolor.name))">$INFO[Skin.String(watchedprogresscolor.name)]</value>
+        <value>WatchedProgress</value>
+    </variable>
+
     <include name="Dimensions_Fullscreen">
         <left>0</left>
         <top>0</top>

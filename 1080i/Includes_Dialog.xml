@@ -361,6 +361,87 @@
         <alttexturefocus colordiffuse="$VAR[ColorHighlight]">common/white.png</alttexturefocus>
     </include>
 
+    <include name="Dialog_ColorPicker_WatchedIndicator_Group">
+        <param name="colordiffuse" default="$VAR[ColorWatchedProgress]" />
+        <definition>
+            <control type="grouplist">
+                <nested />
+                <top>50</top>
+                <left>-10</left>
+                <right>-10</right>
+                <orientation>horizontal</orientation>
+                <itemgap>30</itemgap>
+                <usecontrolcoords>true</usecontrolcoords>
+                <include content="Dialog_ColorPicker_WatchedIndicator">
+                    <param name="selected" value="false" />
+                    <param name="colordiffuse-progress" value="$PARAM[colordiffuse]" />
+                    <param name="colordiffuse-indicator" value="$PARAM[colordiffuse]" />
+                </include>
+                <include content="Dialog_ColorPicker_WatchedIndicator">
+                    <param name="selected" value="false" />
+                    <param name="progress" value="75" />
+                    <param name="texture" value="indicator/timer.png" />
+                    <param name="colordiffuse-progress" value="$PARAM[colordiffuse]" />
+                    <param name="colordiffuse-indicator" value="white" />
+                </include>
+                <include content="Dialog_ColorPicker_WatchedIndicator">
+                    <param name="selected" value="true" />
+                    <param name="colordiffuse-progress" value="$PARAM[colordiffuse]" />
+                    <param name="colordiffuse-indicator" value="$PARAM[colordiffuse]" />
+                </include>
+                <include content="Dialog_ColorPicker_WatchedIndicator">
+                    <param name="selected" value="true" />
+                    <param name="progress" value="75" />
+                    <param name="texture" value="indicator/timer.png" />
+                    <param name="colordiffuse-progress" value="$PARAM[colordiffuse]" />
+                    <param name="colordiffuse-indicator" value="white" />
+                </include>
+            </control>
+        </definition>
+    </include>
+
+    <include name="Dialog_ColorPicker_WatchedIndicator">
+        <param name="selected" default="false" />
+        <param name="progress" default="100" />
+        <param name="colordiffuse-progress" default="$VAR[ColorWatchedProgress]" />
+        <param name="colordiffuse-indicator" default="$VAR[ColorWatchedProgress]" />
+        <param name="texture" default="indicator/checkmark.png" />
+        <definition>
+            <control type="group">
+                <top>10</top>
+                <left>10</left>
+                <width>44</width>
+                <height>44</height>
+                <include content="Object_Control" condition="$PARAM[selected]">
+                    <param name="type" value="group" />
+                    <include content="Defs_Pad"><param name="pad" value="-7" /></include>
+                    <control type="image">
+                        <texture colordiffuse="$VAR[ColorHighlight]">indicator/circle-fo.png</texture>
+                    </control>
+                    <control type="image">
+                        <animation effect="fade" end="50" condition="true">Conditional</animation>
+                        <texture colordiffuse="$VAR[ColorGradient]">indicator/circle-fo.png</texture>
+                    </control>
+                </include>
+                <control type="image">
+                    <texture colordiffuse="ff333333">indicator/circle-bg.png</texture>
+                </control>
+                <control type="image">
+                    <include content="Defs_Pad"><param name="pad" value="-8" /></include>
+                    <texture colordiffuse="$PARAM[colordiffuse-progress]">progress/circle/p$PARAM[progress].png</texture>
+                    <aspectratio align="center" aligny="center">keep</aspectratio>
+                </control>
+                <control type="image">
+                    <texture colordiffuse="black">indicator/circle-fg.png</texture>
+                </control>
+                <control type="image">
+                    <include content="Defs_Pad"><param name="pad" value="10" /></include>
+                    <texture colordiffuse="$PARAM[colordiffuse-indicator]">$PARAM[texture]</texture>
+                </control>
+            </control>
+        </definition>
+    </include>
+
     <include name="Dialog_ColorPicker_SwatchLabel">
         <control type="label">
             <nested />

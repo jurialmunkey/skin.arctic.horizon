@@ -7,7 +7,7 @@
         <control type="group">
             <include content="Dialog_Standard_Group">
                 <param name="width" value="1200" />
-                <param name="height" value="790" />
+                <param name="height" value="870" />
                 <param name="centertop" value="595" />
             </include>
 
@@ -35,13 +35,23 @@
                 <pagecontrol>61</pagecontrol>
                 <orientation>vertical</orientation>
                 <usecontrolcoords>true</usecontrolcoords>
-                <control type="radiobutton" id="9099">
+                <control type="button" id="9099">
+                    <label>Watched progress colour</label>
+                    <radioposx>730</radioposx>
+                    <include>Dialog_Standard_Button</include>
+                    <label2>$INFO[Skin.String(watchedprogresscolor.name)]</label2>
+                    <onclick>SetProperty(colorpick,Watched,Home)</onclick>
+                    <onclick>ActivateWindow(1117)</onclick>
+                    <enable>!Skin.HasSetting(EnableClassicIndicators) + !Skin.HasSetting(DisableWatchedOverlay)</enable>
+                </control>
+                <control type="radiobutton" id="9098">
                     <label>$LOCALIZE[31083]</label>
                     <radioposx>730</radioposx>
                     <include>Dialog_Standard_Button</include>
                     <onclick>Skin.ToggleSetting(DisableWatchedOverlay)</onclick>
                     <selected>Skin.HasSetting(DisableWatchedOverlay)</selected>
                 </control>
+
                 <control type="radiobutton" id="9001">
                     <label>$LOCALIZE[31151]</label>
                     <radioposx>730</radioposx>
@@ -108,7 +118,7 @@
                 <include content="Dialog_Indicators_RadioButton">
                     <param name="onup" value="9006" />
                     <param name="id" value="9007" />
-                    <param name="ondown" value="9001" />
+                    <param name="ondown" value="9099" />
                     <param name="group-id" value="9107" />
                     <param name="label" value="Movie set" />
                     <param name="icon" value="indicator/movieset.png" />
