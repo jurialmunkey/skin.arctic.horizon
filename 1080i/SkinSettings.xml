@@ -150,6 +150,16 @@
                         <label2>$VAR[Label_SkinSettings_HomeStyle]</label2>
                         <onclick>Skin.ToggleSetting(EnableHorizontalHome)</onclick>
                     </control>
+                    <control type="radiobutton" id="19121" description="Iconic Horizontal Menu">
+                        <visible>Integer.IsEqual(Window.Property(CurrentFocus),9001)</visible>
+                        <include>Defs_Settings_Button</include>
+                        <label>- Icon only</label>
+                        <selected>Skin.HasSetting(HomeIconicMenu)</selected>
+                        <onclick>Skin.ToggleSetting(HomeIconicMenu)</onclick>
+                        <onclick>ReloadSkin()</onclick>
+                        <onclick>SetFocus(19121)</onclick>
+                        <visible>Skin.HasSetting(EnableHorizontalHome)</visible>
+                    </control>
                     <control type="radiobutton" id="19107" description="Lock main menu">
                         <visible>Integer.IsEqual(Window.Property(CurrentFocus),9001)</visible>
                         <include>Defs_Settings_Button</include>

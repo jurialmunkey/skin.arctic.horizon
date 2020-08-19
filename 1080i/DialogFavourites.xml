@@ -3,7 +3,7 @@
 <window type="dialog" id="134">
     <defaultcontrol always="true">450</defaultcontrol>
     <animation effect="fade" start="100" end="0" time="100">WindowClose</animation>
-
+    <onload>SetProperty(Header_Left_Text,Favourites)</onload>
     <controls>
 
         <include>Global_Background</include>
@@ -27,11 +27,11 @@
                 <param name="id" value="450" />
                 <param name="control-type" value="panel" />
                 <param name="orientation" value="vertical" />
-                <param name="height" value="800" />
+                <param name="height" value="750" />
                 <param name="aspectratio" value="keep" />
                 <left>-80</left>
                 <right>-80</right>
-                <bottom>-120</bottom>
+                <bottom>view_bottom</bottom>
                 <include>Viewtype_Movement</include>
             </include>
         </control>
