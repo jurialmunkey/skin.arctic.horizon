@@ -852,14 +852,27 @@
                         <control type="group">
                             <left>0</left>
                             <right>-40</right>
-                            <!-- <animation effect="zoom" end="-91" center="auto" condition="true">Conditional</animation>
-                            <animation effect="zoom" end="-91" center="auto" condition="true">Conditional</animation>
-                            <animation effect="zoom" start="100" end="120" time="400" tween="back" easing="out" center="auto" reversible="false" condition="!Container(301).OnNext + !Container(301).OnPrevious">Conditional</animation> -->
-                            <control type="image">
-                                <texture colordiffuse="$VAR[ColorHighlight]" border="40,40,40,40">common/button-view-round-base-fo.png</texture>
-                            </control>
-                            <control type="image">
-                                <texture colordiffuse="$VAR[ColorGradient]" diffuse="common/white-gradient.png" border="40,40,40,40">common/button-view-round-base.png</texture>
+                            <!-- <include content="View_Selectbox">
+                                <param name="focusbounce" value="false" />
+                                <param name="pad" value="-5" />
+                                <param name="overlay" value="false" />
+                                <control type="image">
+                                    <bordersize>15</bordersize>
+                                    <texture border="10" colordiffuse="$VAR[ColorHighlight]">common/box.png</texture>
+                                </control>
+                                <control type="image">
+                                    <bordersize>15</bordersize>
+                                    <texture border="10" colordiffuse="$VAR[ColorGradient]">common/box-gradient-vertical.png</texture>
+                                </control>
+                            </include> -->
+                            <control type="group">
+                                <include content="Defs_Pad"><param name="pad" value="-4" /></include>
+                                <control type="image">
+                                    <texture colordiffuse="$VAR[ColorHighlight]" border="40,40,40,40">common/button-view-round-base-fo.png</texture>
+                                </control>
+                                <control type="image">
+                                    <texture colordiffuse="$VAR[ColorGradient]" diffuse="common/white-gradient.png" border="40,40,40,40">common/button-view-round-base.png</texture>
+                                </control>
                             </control>
                             <control type="label">
                                 <left>40</left>
