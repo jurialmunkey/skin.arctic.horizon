@@ -166,7 +166,7 @@
                         <label>- $LOCALIZE[31035]</label>
                         <selected>Skin.HasSetting(LockMainMenu)</selected>
                         <onclick>Skin.ToggleSetting(LockMainMenu)</onclick>
-                        <visible>!Skin.HasSetting(EnableHorizontalHome)</visible>
+                        <!-- <visible>!Skin.HasSetting(EnableHorizontalHome)</visible> -->
                     </control>
                     <control type="radiobutton" id="19108" description="Profile Pic">
                         <visible>Integer.IsEqual(Window.Property(CurrentFocus),9001)</visible>
@@ -174,7 +174,7 @@
                         <label>- $LOCALIZE[31029]</label>
                         <selected>Skin.HasSetting(ProfilePicture)</selected>
                         <onclick>Skin.ToggleSetting(ProfilePicture)</onclick>
-                        <visible>!Skin.HasSetting(EnableHorizontalHome)</visible>
+                        <!-- <visible>!Skin.HasSetting(EnableHorizontalHome)</visible> -->
                     </control>
                     <control type="radiobutton" id="19109" description="Invert Main Menu Colors">
                         <visible>Integer.IsEqual(Window.Property(CurrentFocus),9001)</visible>

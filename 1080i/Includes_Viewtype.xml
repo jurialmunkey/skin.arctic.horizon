@@ -891,7 +891,7 @@
         <param name="textbox-visible" default="true" />
         <param name="movement" default="5" />
         <definition>
-            <include content="Viewtype_Keywords" condition="!Skin.HasSetting(LockMainMenu) | !Window.IsVisible(Home)">
+            <include content="Viewtype_Keywords" condition="!Skin.HasSetting(LockMainMenu) | !Window.IsVisible(Home) | Skin.HasSetting(EnableHorizontalHome)">
                 <param name="height" value="$PARAM[height]" />
                 <param name="control-type" value="panel" />
                 <param name="orientation" value="$PARAM[orientation]" />
@@ -908,7 +908,7 @@
                 <param name="aspectratio" value="$PARAM[aspectratio]" />
                 <nested />
             </include>
-            <include content="Viewtype_Keywords" condition="Skin.HasSetting(LockMainMenu) + Window.IsVisible(Home)">
+            <include content="Viewtype_Keywords" condition="Skin.HasSetting(LockMainMenu) + Window.IsVisible(Home) + !Skin.HasSetting(EnableHorizontalHome)">
                 <param name="height" value="$PARAM[height]" />
                 <param name="control-type" value="panel" />
                 <param name="orientation" value="$PARAM[orientation]" />

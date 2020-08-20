@@ -294,7 +294,7 @@
                         <top>widgets_label_top</top>
                         <height>470</height>
                         <visible>Integer.IsEqual(Container($PYTHON[50000 + int(mainmenuid) * 100]).NumItems,1) + Control.IsVisible($PYTHON[30001 + int(mainmenuid) * 100])</visible>
-                        <include content="Object_Control" condition="!Skin.HasSetting(LockMainMenu)">
+                        <include content="Object_Control" condition="!Skin.HasSetting(LockMainMenu) | Skin.HasSetting(EnableHorizontalHome)">
                             <param name="type" value="image" />
                             <right>100</right>
                             <bottom>50</bottom>

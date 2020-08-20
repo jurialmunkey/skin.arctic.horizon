@@ -813,7 +813,7 @@
         <param name="mainmenu-id" default="301" />
         <definition>
             <control type="group">
-                <visible allowhiddenfocus="true">Control.HasFocus(301) | Control.HasFocus(303) | [Control.HasFocus(3992) + String.IsEmpty(Window.Property(WidgetFocus))]</visible>
+                <visible allowhiddenfocus="true">Control.HasFocus(301) | Control.HasFocus(303) | [Control.HasFocus(3992) + String.IsEmpty(Window.Property(WidgetFocus))] | Skin.HasSetting(LockMainMenu)</visible>
                 <animation type="Visible">
                     <effect type="zoom" start="80" end="100" time="400" tween="back" easing="out" center="auto"/>
                     <effect type="fade" start="0" end="100" time="400" tween="sine" easing="inout"/>
@@ -914,14 +914,37 @@
                 <control type="group">
                     <left>20</left>
                     <width>80</width>
-                    <include content="Object_Control">
-                        <param name="type" value="image" />
+                    <control type="group">
                         <centerleft>50%</centerleft>
                         <centertop>50%</centertop>
                         <width>72</width>
                         <height>72</height>
-                        <texture colordiffuse="main_fg_70">$VAR[Image_SkinLogo]</texture>
-                    </include>
+                        <include content="Object_Control" condition="!Skin.HasSetting(ProfilePicture)">
+                            <param name="type" value="image" />
+                            <texture colordiffuse="main_fg_70">$VAR[Image_SkinLogo]</texture>
+                        </include>
+                        <include content="Object_Control" condition="Skin.HasSetting(ProfilePicture)">
+                            <param name="type" value="group" />
+                            <top>1</top>
+                            <bottom>1</bottom>
+                            <control type="image">
+                                <bottom>-2</bottom>
+                                <top>2</top>
+                                <bordersize>16</bordersize>
+                                <texture colordiffuse="main_fg_30">diffuse/circle.png</texture>
+                            </control>
+                            <control type="image">
+                                <bottom>2</bottom>
+                                <top>-2</top>
+                                <bordersize>16</bordersize>
+                                <texture colordiffuse="main_bg_30">diffuse/circle.png</texture>
+                            </control>
+                            <control type="image">
+                                <bordersize>16</bordersize>
+                                <texture diffuse="diffuse/circle.png">$INFO[System.ProfileThumb]</texture>
+                            </control>
+                        </include>
+                    </control>
                     <control type="group">
                         <height>40</height>
                         <centertop>50%</centertop>
@@ -961,6 +984,17 @@
                         <control type="group">
                             <left>0</left>
                             <right>-40</right>
+                            <visible>![Control.HasFocus(301) | Control.HasFocus(303) | [Control.HasFocus(3992) + String.IsEmpty(Window.Property(WidgetFocus))]]</visible>
+                            <control type="image">
+                                <bordersize>16</bordersize>
+                                <aspectratio>keep</aspectratio>
+                                <texture colordiffuse="main_fg_70" background="true">$INFO[ListItem.Icon]</texture>
+                            </control>
+                        </control>
+                        <control type="group">
+                            <left>0</left>
+                            <right>-40</right>
+                            <visible>Control.HasFocus(301) | Control.HasFocus(303) | [Control.HasFocus(3992) + String.IsEmpty(Window.Property(WidgetFocus))]</visible>
                             <control type="group">
                                 <include content="Defs_Pad"><param name="pad" value="-4" /></include>
                                 <control type="image">
@@ -995,6 +1029,20 @@
                         <control type="group">
                             <left>0</left>
                             <right>-40</right>
+                            <visible>![Control.HasFocus(301) | Control.HasFocus(303) | [Control.HasFocus(3992) + String.IsEmpty(Window.Property(WidgetFocus))]]</visible>
+                            <control type="label">
+                                <left>40</left>
+                                <right>40</right>
+                                <font>font_title_mini</font>
+                                <textcolor>main_fg_70</textcolor>
+                                <align>center</align>
+                                <label>$INFO[ListItem.LAbel]</label>
+                            </control>
+                        </control>
+                        <control type="group">
+                            <left>0</left>
+                            <right>-40</right>
+                            <visible>[Control.HasFocus(301) | Control.HasFocus(303) | [Control.HasFocus(3992) + String.IsEmpty(Window.Property(WidgetFocus))]]</visible>
                             <control type="group">
                                 <include content="Defs_Pad"><param name="pad" value="-4" /></include>
                                 <control type="image">
@@ -1069,8 +1117,8 @@
                     <top>5</top>
                     <left>100</left>
                     <bottom>60</bottom>
-                    <include condition="Skin.HasSetting(LockMainMenu)">Viewtype_Info_Right_FixedHome</include>
-                    <include condition="!Skin.HasSetting(LockMainMenu)">Viewtype_Info_Right</include>
+                    <include condition="Skin.HasSetting(LockMainMenu) + !Skin.HasSetting(EnableHorizontalHome)">Viewtype_Info_Right_FixedHome</include>
+                    <include condition="!Skin.HasSetting(LockMainMenu) | Skin.HasSetting(EnableHorizontalHome)">Viewtype_Info_Right</include>
                     <orientation>vertical</orientation>
                     <usecontrolcoords>true</usecontrolcoords>
                     <itemgap>0</itemgap>
