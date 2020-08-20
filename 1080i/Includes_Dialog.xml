@@ -50,12 +50,12 @@
                 </control>
                 <control type="group">
                     <include>Dialog_Menu_BG</include>
-                    <bottom>240</bottom>
+                    <bottom>400</bottom>
                     <visible>Integer.IsEqual(Container($PARAM[id]).NumItems,2)</visible>
                 </control>
                 <control type="group">
                     <include>Dialog_Menu_BG</include>
-                    <bottom>160</bottom>
+                    <bottom>480</bottom>
                     <visible>Integer.IsEqual(Container($PARAM[id]).NumItems,1)</visible>
                 </control>
                 <control type="group">

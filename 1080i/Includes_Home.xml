@@ -128,37 +128,41 @@
         </include>
         <include content="Object_Control" condition="Skin.HasSetting(EnableHorizontalHome)">
             <param name="type" value="group" />
-            <animation effect="slide" start="0" end="135" condition="Skin.HasSetting(HomeIconicMenu) + Control.HasFocus(303) + Container(301).Position(0)">Conditional</animation>
-            <animation effect="slide" start="0" end="235" condition="Skin.HasSetting(HomeIconicMenu) + Control.HasFocus(303) + Container(301).Position(1)">Conditional</animation>
-            <animation effect="slide" start="0" end="335" condition="Skin.HasSetting(HomeIconicMenu) + Control.HasFocus(303) + Container(301).Position(2)">Conditional</animation>
-            <animation effect="slide" start="0" end="435" condition="Skin.HasSetting(HomeIconicMenu) + Control.HasFocus(303) + Container(301).Position(3)">Conditional</animation>
-            <animation effect="slide" start="0" end="535" condition="Skin.HasSetting(HomeIconicMenu) + Control.HasFocus(303) + Container(301).Position(4)">Conditional</animation>
-            <animation effect="slide" start="0" end="635" condition="Skin.HasSetting(HomeIconicMenu) + Control.HasFocus(303) + Container(301).Position(5)">Conditional</animation>
-            <animation effect="slide" start="0" end="735" condition="Skin.HasSetting(HomeIconicMenu) + Control.HasFocus(303) + Container(301).Position(6)">Conditional</animation>
-            <animation effect="slide" start="0" end="835" condition="Skin.HasSetting(HomeIconicMenu) + Control.HasFocus(303) + Container(301).Position(7)">Conditional</animation>
-            <animation effect="slide" start="0" end="935" condition="Skin.HasSetting(HomeIconicMenu) + Control.HasFocus(303) + Container(301).Position(8)">Conditional</animation>
-            <animation effect="slide" end="50" condition="Skin.HasSetting(HomeIconicMenu) + Control.HasFocus(303) + Integer.IsEqual(Container(301).NumItems,8)">Conditional</animation>
-            <animation effect="slide" end="100" condition="Skin.HasSetting(HomeIconicMenu) + Control.HasFocus(303) + Integer.IsEqual(Container(301).NumItems,7)">Conditional</animation>
-            <animation effect="slide" end="150" condition="Skin.HasSetting(HomeIconicMenu) + Control.HasFocus(303) + Integer.IsEqual(Container(301).NumItems,6)">Conditional</animation>
-            <animation effect="slide" end="200" condition="Skin.HasSetting(HomeIconicMenu) + Control.HasFocus(303) + Integer.IsEqual(Container(301).NumItems,5)">Conditional</animation>
-            <animation effect="slide" end="250" condition="Skin.HasSetting(HomeIconicMenu) + Control.HasFocus(303) + Integer.IsEqual(Container(301).NumItems,4)">Conditional</animation>
-            <animation effect="slide" end="300" condition="Skin.HasSetting(HomeIconicMenu) + Control.HasFocus(303) + Integer.IsEqual(Container(301).NumItems,3)">Conditional</animation>
-            <animation effect="slide" end="350" condition="Skin.HasSetting(HomeIconicMenu) + Control.HasFocus(303) + Integer.IsEqual(Container(301).NumItems,2)">Conditional</animation>
-            <animation effect="slide" end="400" condition="Skin.HasSetting(HomeIconicMenu) + Control.HasFocus(303) + Integer.IsEqual(Container(301).NumItems,1)">Conditional</animation>
 
-            <animation effect="slide" start="0" end="200" condition="!Skin.HasSetting(HomeIconicMenu) + Control.HasFocus(303) + Container(301).Position(0)">Conditional</animation>
-            <animation effect="slide" start="0" end="425" condition="!Skin.HasSetting(HomeIconicMenu) + Control.HasFocus(303) + Container(301).Position(1)">Conditional</animation>
-            <animation effect="slide" start="0" end="650" condition="!Skin.HasSetting(HomeIconicMenu) + Control.HasFocus(303) + Container(301).Position(2)">Conditional</animation>
-            <animation effect="slide" start="0" end="875" condition="!Skin.HasSetting(HomeIconicMenu) + Control.HasFocus(303) + Container(301).Position(3)">Conditional</animation>
-            <animation effect="slide" end="112.5" condition="!Skin.HasSetting(HomeIconicMenu) + Control.HasFocus(303) + Integer.IsEqual(Container(301).NumItems,3)">Conditional</animation>
-            <animation effect="slide" end="225" condition="!Skin.HasSetting(HomeIconicMenu) + Control.HasFocus(303) + Integer.IsEqual(Container(301).NumItems,2)">Conditional</animation>
-            <animation effect="slide" end="337.5" condition="!Skin.HasSetting(HomeIconicMenu) + Control.HasFocus(303) + Integer.IsEqual(Container(301).NumItems,1)">Conditional</animation>
+            <animation effect="slide" end="100" condition="!Skin.HasSetting(HomeIconicMenu) + Control.HasFocus(303) + Container(301).Position(0)">Conditional</animation>
+            <animation effect="slide" end="300" condition="!Skin.HasSetting(HomeIconicMenu) + Control.HasFocus(303) + Container(301).Position(1)">Conditional</animation>
+            <animation effect="slide" end="500" condition="!Skin.HasSetting(HomeIconicMenu) + Control.HasFocus(303) + Container(301).Position(2)">Conditional</animation>
+            <animation effect="slide" end="700" condition="!Skin.HasSetting(HomeIconicMenu) + Control.HasFocus(303) + Container(301).Position(3)">Conditional</animation>
+            <animation effect="slide" end="100" condition="!Skin.HasSetting(HomeIconicMenu) + Control.HasFocus(303) + Integer.IsEqual(Container(301).NumItems,3)">Conditional</animation>
+            <animation effect="slide" end="200" condition="!Skin.HasSetting(HomeIconicMenu) + Control.HasFocus(303) + Integer.IsEqual(Container(301).NumItems,2)">Conditional</animation>
+            <animation effect="slide" end="300" condition="!Skin.HasSetting(HomeIconicMenu) + Control.HasFocus(303) + Integer.IsEqual(Container(301).NumItems,1)">Conditional</animation>
+
+            <animation effect="slide" end="50" condition="Skin.HasSetting(HomeIconicMenu) + Control.HasFocus(303) + Container(301).Position(0)">Conditional</animation>
+            <animation effect="slide" end="150" condition="Skin.HasSetting(HomeIconicMenu) + Control.HasFocus(303) + Container(301).Position(1)">Conditional</animation>
+            <animation effect="slide" end="250" condition="Skin.HasSetting(HomeIconicMenu) + Control.HasFocus(303) + Container(301).Position(2)">Conditional</animation>
+            <animation effect="slide" end="350" condition="Skin.HasSetting(HomeIconicMenu) + Control.HasFocus(303) + Container(301).Position(3)">Conditional</animation>
+            <animation effect="slide" end="450" condition="Skin.HasSetting(HomeIconicMenu) + Control.HasFocus(303) + Container(301).Position(4)">Conditional</animation>
+            <animation effect="slide" end="550" condition="Skin.HasSetting(HomeIconicMenu) + Control.HasFocus(303) + Container(301).Position(5)">Conditional</animation>
+            <animation effect="slide" end="650" condition="Skin.HasSetting(HomeIconicMenu) + Control.HasFocus(303) + Container(301).Position(6)">Conditional</animation>
+            <animation effect="slide" end="750" condition="Skin.HasSetting(HomeIconicMenu) + Control.HasFocus(303) + Container(301).Position(7)">Conditional</animation>
+            <animation effect="slide" end="50" condition="Skin.HasSetting(HomeIconicMenu) + Control.HasFocus(303) + Integer.IsEqual(Container(301).NumItems,7)">Conditional</animation>
+            <animation effect="slide" end="100" condition="Skin.HasSetting(HomeIconicMenu) + Control.HasFocus(303) + Integer.IsEqual(Container(301).NumItems,6)">Conditional</animation>
+            <animation effect="slide" end="150" condition="Skin.HasSetting(HomeIconicMenu) + Control.HasFocus(303) + Integer.IsEqual(Container(301).NumItems,5)">Conditional</animation>
+            <animation effect="slide" end="200" condition="Skin.HasSetting(HomeIconicMenu) + Control.HasFocus(303) + Integer.IsEqual(Container(301).NumItems,4)">Conditional</animation>
+            <animation effect="slide" end="250" condition="Skin.HasSetting(HomeIconicMenu) + Control.HasFocus(303) + Integer.IsEqual(Container(301).NumItems,3)">Conditional</animation>
+            <animation effect="slide" end="300" condition="Skin.HasSetting(HomeIconicMenu) + Control.HasFocus(303) + Integer.IsEqual(Container(301).NumItems,2)">Conditional</animation>
+            <animation effect="slide" end="350" condition="Skin.HasSetting(HomeIconicMenu) + Control.HasFocus(303) + Integer.IsEqual(Container(301).NumItems,1)">Conditional</animation>
 
 
 
             <animation type="Condition" reversible="false" condition="Control.Hasfocus(303)">
                 <effect type="fade" start="0" end="100" time="300" delay="150"/>
-                <effect type="slide" start="0,48" end="0" center="auto" tween="back" easing="out" time="350" delay="150"/>
+                <effect type="slide" start="0,48" end="0" tween="back" easing="out" time="350" delay="150"/>
+                <effect type="slide" end="1035" time="0" />
+            </animation>
+
+            <animation type="WindowClose">
+                <effect type="fade" start="100" end="0" tween="cubic" easing="out" delay="0" time="400" />
             </animation>
             <include content="Dialog_Menu">
                 <param name="id" value="303" />
@@ -171,12 +175,6 @@
                 <param name="global_overlay" value="false" />
                 <top>220</top>
                 <left>-650</left>
-                <width>450</width>
-                <animation effect="slide" start="0" end="850" condition="Control.HasFocus(303)">Conditional</animation>
-                <animation type="WindowClose">
-                    <effect type="slide" start="0" end="-160" time="400" tween="quadratic" />
-                    <effect type="fade" start="100" end="0" tween="cubic" easing="out" delay="0" time="400" />
-                </animation>
                 <animation effect="slide" end="0,-40" condition="Integer.IsLess(Container(303).NumItems,8)">Conditional</animation>
                 <animation effect="slide" end="0,-40" condition="Integer.IsLess(Container(303).NumItems,7)">Conditional</animation>
                 <animation effect="slide" end="0,-40" condition="Integer.IsLess(Container(303).NumItems,6)">Conditional</animation>
@@ -186,16 +184,12 @@
                 <animation effect="slide" end="0,-40" condition="Integer.IsLess(Container(303).NumItems,2)">Conditional</animation>
             </include>
 
-            <control type="image">
-                <left>417</left>
+            <control type="image" description="nib">
+                <centerleft>-425</centerleft>
                 <top>164</top>
                 <height>16</height>
                 <width>16</width>
                 <visible>Control.HasFocus(303)</visible>
-                <animation type="WindowClose">
-                    <effect type="slide" start="0" end="-160" time="400" tween="quadratic" />
-                    <effect type="fade" start="100" end="0" tween="cubic" easing="out" delay="0" time="400" />
-                </animation>
                 <texture colordiffuse="dialog_bg_100">common/arrow-menu-up.png</texture>
             </control>
         </include>
@@ -831,7 +825,7 @@
                 <include>Animation_FadeOut</include>
                 <centertop>100</centertop>
                 <height>100</height>
-                <left>390</left>
+                <left>490</left>
                 <right>490</right>
 
                 <control type="image">
@@ -855,71 +849,66 @@
 
                 <!-- Textures for Label Menu -->
                 <include content="Home_Menu_Horizontal_Texture" condition="!Skin.HasSetting(HomeIconicMenu)">
-                    <param name="width" value="1040" />
+                    <param name="width" value="940" />
                     <param name="visible" value="Integer.IsGreater(Container(301).NumItems,3)" />
                     <param name="slide" value="0" />
                 </include>
                 <include content="Home_Menu_Horizontal_Texture" condition="!Skin.HasSetting(HomeIconicMenu)">
-                    <param name="width" value="815" />
+                    <param name="width" value="740" />
                     <param name="visible" value="Integer.IsEqual(Container(301).NumItems,3)" />
-                    <param name="slide" value="112.5" />
+                    <param name="slide" value="100" />
                 </include>
                 <include content="Home_Menu_Horizontal_Texture" condition="!Skin.HasSetting(HomeIconicMenu)">
-                    <param name="width" value="590" />
+                    <param name="width" value="540" />
                     <param name="visible" value="Integer.IsEqual(Container(301).NumItems,2)" />
-                    <param name="slide" value="225" />
+                    <param name="slide" value="200" />
                 </include>
                 <include content="Home_Menu_Horizontal_Texture" condition="!Skin.HasSetting(HomeIconicMenu)">
-                    <param name="width" value="365" />
+                    <param name="width" value="340" />
                     <param name="visible" value="Integer.IsEqual(Container(301).NumItems,1)" />
-                    <param name="slide" value="337.5" />
+                    <param name="slide" value="300" />
                 </include>
 
                 <!-- Textures for Iconic Menu -->
                 <include content="Home_Menu_Horizontal_Texture" condition="Skin.HasSetting(HomeIconicMenu)">
-                    <param name="width" value="1040" />
-                    <param name="visible" value="Integer.IsGreater(Container(301).NumItems,8)" />
-                    <param name="slide" value="0" />
-                </include>
-                <include content="Home_Menu_Horizontal_Texture" condition="Skin.HasSetting(HomeIconicMenu)">
                     <param name="width" value="940" />
-                    <param name="visible" value="Integer.IsEqual(Container(301).NumItems,8)" />
-                    <param name="slide" value="50" />
+                    <param name="visible" value="Integer.IsGreater(Container(301).NumItems,7)" />
+                    <param name="slide" value="0" />
                 </include>
                 <include content="Home_Menu_Horizontal_Texture" condition="Skin.HasSetting(HomeIconicMenu)">
                     <param name="width" value="840" />
                     <param name="visible" value="Integer.IsEqual(Container(301).NumItems,7)" />
-                    <param name="slide" value="100" />
+                    <param name="slide" value="50" />
                 </include>
                 <include content="Home_Menu_Horizontal_Texture" condition="Skin.HasSetting(HomeIconicMenu)">
                     <param name="width" value="740" />
                     <param name="visible" value="Integer.IsEqual(Container(301).NumItems,6)" />
-                    <param name="slide" value="150" />
+                    <param name="slide" value="100" />
                 </include>
                 <include content="Home_Menu_Horizontal_Texture" condition="Skin.HasSetting(HomeIconicMenu)">
                     <param name="width" value="640" />
                     <param name="visible" value="Integer.IsEqual(Container(301).NumItems,5)" />
-                    <param name="slide" value="200" />
+                    <param name="slide" value="150" />
                 </include>
                 <include content="Home_Menu_Horizontal_Texture" condition="Skin.HasSetting(HomeIconicMenu)">
                     <param name="width" value="540" />
                     <param name="visible" value="Integer.IsEqual(Container(301).NumItems,4)" />
-                    <param name="slide" value="250" />
+                    <param name="slide" value="200" />
                 </include>
                 <include content="Home_Menu_Horizontal_Texture" condition="Skin.HasSetting(HomeIconicMenu)">
                     <param name="width" value="440" />
                     <param name="visible" value="Integer.IsEqual(Container(301).NumItems,3)" />
-                    <param name="slide" value="300" />
+                    <param name="slide" value="250" />
                 </include>
                 <include content="Home_Menu_Horizontal_Texture" condition="Skin.HasSetting(HomeIconicMenu)">
                     <param name="width" value="340" />
                     <param name="visible" value="Integer.IsEqual(Container(301).NumItems,2)" />
-                    <param name="slide" value="350" />
+                    <param name="slide" value="300" />
                 </include>
                 <include content="Home_Menu_Horizontal_Texture" condition="Skin.HasSetting(HomeIconicMenu)">
                     <param name="width" value="240" />
                     <param name="visible" value="Integer.IsEqual(Container(301).NumItems,1)" />
-                    <param name="slide" value="400" />
+                    <param name="slide" value="350" />
                 </include>
 
                 <control type="group">
@@ -988,7 +977,7 @@
                             </control>
                         </control>
                     </focusedlayout>
-                    <itemlayout width="225" condition="!Skin.HasSetting(HomeIconicMenu)">
+                    <itemlayout width="200" condition="!Skin.HasSetting(HomeIconicMenu)">
                         <control type="group">
                             <left>0</left>
                             <right>-40</right>
@@ -1002,7 +991,7 @@
                             </control>
                         </control>
                     </itemlayout>
-                    <focusedlayout width="225" condition="!Skin.HasSetting(HomeIconicMenu)">
+                    <focusedlayout width="200" condition="!Skin.HasSetting(HomeIconicMenu)">
                         <control type="group">
                             <left>0</left>
                             <right>-40</right>
