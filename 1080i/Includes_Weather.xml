@@ -116,32 +116,32 @@
                 <include content="Weather_DailyForecast">
                     <param name="day" value="Day1" />
                     <param name="label" value="$INFO[Window(Weather).Property(Day1.Title)]" />
-                    <animation effect="slide" end="22" time="300" tween="quadratic" condition="Control.HasFocus(301) | Control.HasFocus(302) | [Control.HasFocus(3992) + String.IsEmpty(Window.Property(WidgetFocus))] | [Window.IsVisible(home) + Skin.HasSetting(LockMainMenu) + !Window.Next(Weather)]">Conditional</animation>
+                    <animation effect="slide" end="22" time="300" tween="quadratic" condition="!Skin.HasSetting(EnableHorizontalHome) + [Control.HasFocus(301) | Control.HasFocus(303) | [Control.HasFocus(3992) + String.IsEmpty(Window.Property(WidgetFocus))] | [Window.IsVisible(home) + Skin.HasSetting(LockMainMenu) + !Window.Next(Weather)]]">Conditional</animation>
                 </include>
                 <include content="Weather_DailyForecast">
                     <param name="day" value="Day2" />
                     <param name="label" value="$INFO[Window(Weather).Property(Day2.Title)]" />
-                    <animation effect="slide" end="44" time="300" tween="quadratic" condition="Control.HasFocus(301) | Control.HasFocus(302) | [Control.HasFocus(3992) + String.IsEmpty(Window.Property(WidgetFocus))] | [Window.IsVisible(home) + Skin.HasSetting(LockMainMenu) + !Window.Next(Weather)]">Conditional</animation>
+                    <animation effect="slide" end="44" time="300" tween="quadratic" condition="!Skin.HasSetting(EnableHorizontalHome) + [Control.HasFocus(301) | Control.HasFocus(303) | [Control.HasFocus(3992) + String.IsEmpty(Window.Property(WidgetFocus))] | [Window.IsVisible(home) + Skin.HasSetting(LockMainMenu) + !Window.Next(Weather)]]">Conditional</animation>
                 </include>
                 <include content="Weather_DailyForecast">
                     <param name="day" value="Day3" />
                     <param name="label" value="$INFO[Window(Weather).Property(Day3.Title)]" />
-                    <animation effect="slide" end="66" time="300" tween="quadratic" condition="Control.HasFocus(301) | Control.HasFocus(302) | [Control.HasFocus(3992) + String.IsEmpty(Window.Property(WidgetFocus))] | [Window.IsVisible(home) + Skin.HasSetting(LockMainMenu) + !Window.Next(Weather)]">Conditional</animation>
+                    <animation effect="slide" end="66" time="300" tween="quadratic" condition="!Skin.HasSetting(EnableHorizontalHome) + [Control.HasFocus(301) | Control.HasFocus(303) | [Control.HasFocus(3992) + String.IsEmpty(Window.Property(WidgetFocus))] | [Window.IsVisible(home) + Skin.HasSetting(LockMainMenu) + !Window.Next(Weather)]]">Conditional</animation>
                 </include>
                 <include content="Weather_DailyForecast">
                     <param name="day" value="Day4" />
                     <param name="label" value="$INFO[Window(Weather).Property(Day4.Title)]" />
-                    <animation effect="slide" end="88" time="300" tween="quadratic" condition="Control.HasFocus(301) | Control.HasFocus(302) | [Control.HasFocus(3992) + String.IsEmpty(Window.Property(WidgetFocus))] | [Window.IsVisible(home) + Skin.HasSetting(LockMainMenu) + !Window.Next(Weather)]">Conditional</animation>
+                    <animation effect="slide" end="88" time="300" tween="quadratic" condition="!Skin.HasSetting(EnableHorizontalHome) + [Control.HasFocus(301) | Control.HasFocus(303) | [Control.HasFocus(3992) + String.IsEmpty(Window.Property(WidgetFocus))] | [Window.IsVisible(home) + Skin.HasSetting(LockMainMenu) + !Window.Next(Weather)]]">Conditional</animation>
                 </include>
                 <include content="Weather_DailyForecast">
                     <param name="day" value="Day5" />
                     <param name="label" value="$INFO[Window(Weather).Property(Day5.Title)]" />
-                    <animation effect="slide" end="110" time="300" tween="quadratic" condition="Control.HasFocus(301) | Control.HasFocus(302) | [Control.HasFocus(3992) + String.IsEmpty(Window.Property(WidgetFocus))] | [Window.IsVisible(home) + Skin.HasSetting(LockMainMenu) + !Window.Next(Weather)]">Conditional</animation>
+                    <animation effect="slide" end="110" time="300" tween="quadratic" condition="!Skin.HasSetting(EnableHorizontalHome) + [Control.HasFocus(301) | Control.HasFocus(303) | [Control.HasFocus(3992) + String.IsEmpty(Window.Property(WidgetFocus))] | [Window.IsVisible(home) + Skin.HasSetting(LockMainMenu) + !Window.Next(Weather)]]">Conditional</animation>
                 </include>
                 <include content="Weather_DailyForecast">
                     <param name="day" value="Day6" />
                     <param name="label" value="$INFO[Window(Weather).Property(Day6.Title)]" />
-                    <animation effect="slide" end="132" time="300" tween="quadratic" condition="Control.HasFocus(301) | Control.HasFocus(302) | [Control.HasFocus(3992) + String.IsEmpty(Window.Property(WidgetFocus))] | [Window.IsVisible(home) + Skin.HasSetting(LockMainMenu) + !Window.Next(Weather)]">Conditional</animation>
+                    <animation effect="slide" end="132" time="300" tween="quadratic" condition="!Skin.HasSetting(EnableHorizontalHome) + [Control.HasFocus(301) | Control.HasFocus(303) | [Control.HasFocus(3992) + String.IsEmpty(Window.Property(WidgetFocus))] | [Window.IsVisible(home) + Skin.HasSetting(LockMainMenu) + !Window.Next(Weather)]]">Conditional</animation>
                 </include>
             </control>
         </control>
