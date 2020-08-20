@@ -2,6 +2,18 @@
 <window id="2006">
     <onload>RunScript(script.artistslideshow)</onload>
     <controls>
+        <control type="list" id="56560">
+            <include>Defs_Offscreen</include>
+            <orientation>horizontal</orientation>
+            <itemlayout />
+            <focusedlayout />
+            <content>
+                <include content="Object_56560_Item">
+                    <param name="listitem" value="MusicPlayer" />
+                </include>
+            </content>
+        </control>
+
         <control type="visualisation" id="2">
             <visible>Skin.HasSetting(OSDVisualisation.ShowFanart) | [!Skin.HasSetting(musicvis.fanartfallback) + Skin.HasSetting(ArtistSlideShow.Disabled)]</visible>
             <description>visualisation</description>
@@ -91,6 +103,7 @@
                 <scrollspeed>80</scrollspeed>
             </control>
         </control>
-        <include>OSD_Music_Info</include>
+        <include condition="Skin.HasSetting(StandardMusicOSD)">OSD_Video_Seekbar</include>
+        <include condition="!Skin.HasSetting(StandardMusicOSD)">OSD_Music_Info</include>
     </controls>
 </window>

@@ -125,10 +125,17 @@
         </definition>
     </include>
 
+    <include name="OSD_MusicMenuPosition">
+        <centertop>600</centertop>
+        <centerleft>1280</centerleft>
+    </include>
     <include name="OSD_VideoPosition">
         <align>center</align>
         <height>48</height>
         <centerbottom>95</centerbottom>
+        <orientation>horizontal</orientation>
+        <usecontrolcoords>true</usecontrolcoords>
+        <itemgap>32</itemgap>
     </include>
     <include name="OSD_LiveTVPosition">
         <align>center</align>
@@ -141,7 +148,10 @@
     <include name="OSD_MusicPosition">
         <align>center</align>
         <height>48</height>
-        <centerbottom>95</centerbottom>
+        <centerbottom>165</centerbottom>
+        <itemgap>28</itemgap>
+        <orientation>horizontal</orientation>
+        <usecontrolcoords>true</usecontrolcoords>
     </include>
 
     <include name="OSD_Video_Seekbar_Left"><left>330</left></include>
@@ -192,13 +202,13 @@
                                 <bordersize>20</bordersize>
                                 <bordertexture border="30" colordiffuse="Shadow">common/shadow-20.png</bordertexture>
                                 <aspectratio scalediffuse="true" align="left" aligny="bottom">keep</aspectratio>
-                                <visible>!String.IsEmpty(Player.Art(poster)) | !String.IsEmpty(Player.Art(tvshow.poster))</visible>
+                                <visible>!String.IsEmpty(Player.Art(poster)) | !String.IsEmpty(Player.Art(tvshow.poster)) | !String.IsEmpty(MusicPlayer.Cover)</visible>
                                 <texture background="true" diffuse="diffuse/poster-big.png">$VAR[Image_OSD_Artwork]</texture>
                             </control>
                         </control>
                     </control>
                     <control type="grouplist">
-                        <include condition="!String.IsEmpty(Player.Art(poster)) | !String.IsEmpty(Player.Art(tvshow.poster))">OSD_Video_Seekbar_Left</include>
+                        <include condition="!String.IsEmpty(Player.Art(poster)) | !String.IsEmpty(Player.Art(tvshow.poster)) | !String.IsEmpty(MusicPlayer.Cover)">OSD_Video_Seekbar_Left</include>
                         <usecontrolcoords>true</usecontrolcoords>
                         <bottom>0</bottom>
                         <right>0</right>
@@ -317,8 +327,8 @@
                             <width>100%</width>
                             <font>font_plotbox</font>
                             <textcolor>panel_fg_70</textcolor>
-                            <label>$INFO[VideoPlayer.Plot]</label>
-                            <visible>!String.IsEmpty(VideoPlayer.Plot)</visible>
+                            <label>$INFO[VideoPlayer.Plot,, ]$INFO[MusicPlayer.Property(Artist_Description),, ]$INFO[MusicPlayer.Property(Album_Description)]</label>
+                            <visible>!String.IsEmpty(VideoPlayer.Plot) | !String.IsEmpty(MusicPlayer.Property(Artist_Description)) | !String.IsEmpty(MusicPlayer.Property(Album_Description))</visible>
                         </control>
                     </control>
                 </control>

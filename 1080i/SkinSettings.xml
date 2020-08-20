@@ -574,6 +574,14 @@
                         <onclick>Skin.ToggleSetting(NormalLyrics)</onclick>
                     </control>
 
+                    <control type="radiobutton" id="19611" description="Standard style">
+                        <visible>Integer.IsEqual(Window.Property(CurrentFocus),9006)</visible>
+                        <include>Defs_Settings_Button</include>
+                        <label>Large artwork replaces seekbar</label>
+                        <selected>!Skin.HasSetting(StandardMusicOSD)</selected>
+                        <onclick>Skin.ToggleSetting(StandardMusicOSD)</onclick>
+                    </control>
+
 
                     <control type="radiobutton" id="19609" description="Musicvideo auto info">
                         <visible>Integer.IsEqual(Window.Property(CurrentFocus),9006)</visible>

@@ -24,6 +24,8 @@
             <property name="AddonVersion">$INFO[$PARAM[listitem].Property(AddonVersion)]</property>
             <property name="AddonType">$INFO[$PARAM[listitem].Property(AddonType)]</property>
             <property name="AddonCreator">$INFO[$PARAM[listitem].Property(AddonCreator)]</property>
+            <property name="Artist">$INFO[$PARAM[listitem].Artist]</property>
+            <property name="Album">$INFO[$PARAM[listitem].Album]</property>
             <property name="AlbumArtist">$INFO[$PARAM[listitem].AlbumArtist]</property>
             <property name="Album_Label">$INFO[$PARAM[listitem].Property(Album_Label)]</property>
             <property name="Artist_Genre">$INFO[$PARAM[listitem].Property(Artist_Genre)]</property>

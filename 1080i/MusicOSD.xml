@@ -3,20 +3,22 @@
 <window id="120">
     <onload condition="!Player.PauseEnabled">SetFocus(15)</onload>
     <onload condition="Player.PauseEnabled">SetFocus(14)</onload>
+    <onunload>ClearProperty(OSDInfo,Home)</onunload>
     <controls>
         <control type="group">
             <include>Animation_FadeIn</include>
             <include>Animation_FadeOut</include>
             <control type="grouplist" id="9000">
-                <align>center</align>
-                <height>48</height>
-                <centerbottom>165</centerbottom>
-                <itemgap>28</itemgap>
-                <orientation>horizontal</orientation>
-                <usecontrolcoords>true</usecontrolcoords>
+                <include condition="Skin.HasSetting(StandardMusicOSD)">OSD_VideoPosition</include>
+                <include condition="!Skin.HasSetting(StandardMusicOSD)">OSD_MusicPosition</include>
+                <onup condition="String.IsEmpty(Window(Home).Property(OSDInfo))">SetProperty(OSDInfo,1,Home)</onup>
+                <onup condition="!String.IsEmpty(Window(Home).Property(OSDInfo))">ClearProperty(OSDInfo,Home)</onup>
+                <ondown condition="String.IsEmpty(Window(Home).Property(OSDInfo))">Close</ondown>
+                <ondown condition="!String.IsEmpty(Window(Home).Property(OSDInfo))">ClearProperty(OSDInfo,Home)</ondown>
                 <include>OSD_Controls</include>
             </control>
-            <control type="group">
+            <include content="Object_Control" condition="!Skin.HasSetting(StandardMusicOSD)">
+                <param name="type" value="group" />
                 <height>30</height>
                 <width>640</width>
                 <centerbottom>108</centerbottom>
@@ -29,15 +31,7 @@
                     <align>center</align>
                     <label>$INFO[Player.Time,[COLOR=panel_fg_70],[/COLOR]]$INFO[Player.Duration,  •  [COLOR=panel_fg_70],[/COLOR]]</label>
                 </control>
-                <!-- <control type="label">
-                    <textcolor>panel_fg_70</textcolor>
-                    <font>font_tiny</font>
-                    <height>30</height>
-                    <aligny>center</aligny>
-                    <align>right</align>
-                    <label>$INFO[Player.Duration]</label>
-                </control> -->
-            </control>
+            </include>
         </control>
 
         <control type="slider">
@@ -61,6 +55,7 @@
             <param name="onleft" value="9000" />
             <param name="onright" value="9000" />
             <param name="onback" value="9000" />
+            <include condition="Skin.HasSetting(StandardMusicOSD)">OSD_MusicMenuPosition</include>
         </include>
 
     </controls>
