@@ -160,22 +160,6 @@
                         <onclick>SetFocus(19121)</onclick>
                         <visible>Skin.HasSetting(EnableHorizontalHome)</visible>
                     </control>
-                    <control type="radiobutton" id="19107" description="Lock main menu">
-                        <visible>Integer.IsEqual(Window.Property(CurrentFocus),9001)</visible>
-                        <include>Defs_Settings_Button</include>
-                        <label>- $LOCALIZE[31035]</label>
-                        <selected>Skin.HasSetting(LockMainMenu)</selected>
-                        <onclick>Skin.ToggleSetting(LockMainMenu)</onclick>
-                        <!-- <visible>!Skin.HasSetting(EnableHorizontalHome)</visible> -->
-                    </control>
-                    <control type="radiobutton" id="19108" description="Profile Pic">
-                        <visible>Integer.IsEqual(Window.Property(CurrentFocus),9001)</visible>
-                        <include>Defs_Settings_Button</include>
-                        <label>- $LOCALIZE[31029]</label>
-                        <selected>Skin.HasSetting(ProfilePicture)</selected>
-                        <onclick>Skin.ToggleSetting(ProfilePicture)</onclick>
-                        <!-- <visible>!Skin.HasSetting(EnableHorizontalHome)</visible> -->
-                    </control>
                     <control type="radiobutton" id="19109" description="Invert Main Menu Colors">
                         <visible>Integer.IsEqual(Window.Property(CurrentFocus),9001)</visible>
                         <include>Defs_Settings_Button</include>
@@ -184,6 +168,21 @@
                         <onclick>Skin.ToggleSetting(InvertHomeMenuColors)</onclick>
                         <visible>!Skin.HasSetting(EnableHorizontalHome)</visible>
                     </control>
+                    <control type="radiobutton" id="19107" description="Lock main menu">
+                        <visible>Integer.IsEqual(Window.Property(CurrentFocus),9001)</visible>
+                        <include>Defs_Settings_Button</include>
+                        <label>- $LOCALIZE[31035]</label>
+                        <selected>Skin.HasSetting(LockMainMenu)</selected>
+                        <onclick>Skin.ToggleSetting(LockMainMenu)</onclick>
+                    </control>
+                    <control type="radiobutton" id="19108" description="Profile Pic">
+                        <visible>Integer.IsEqual(Window.Property(CurrentFocus),9001)</visible>
+                        <include>Defs_Settings_Button</include>
+                        <label>- $LOCALIZE[31029]</label>
+                        <selected>Skin.HasSetting(ProfilePicture)</selected>
+                        <onclick>Skin.ToggleSetting(ProfilePicture)</onclick>
+                    </control>
+
                     <control type="button" id="19103" description="Global Widget">
                         <visible>Integer.IsEqual(Window.Property(CurrentFocus),9001)</visible>
                         <include>Defs_Settings_Button</include>
