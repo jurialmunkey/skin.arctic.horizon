@@ -430,9 +430,8 @@
                                 <param name="groupid" value="3201" />
                                 <param name="label" value="$VAR[Label_Showcase_PlayBrowse]" />
                                 <param name="icon" value="$VAR[Image_Showcase_PlayBrowse_Icon]" />
-                                <param name="ondown" value="302" />
                                 <param name="visible" value="true" />
-                                <param name="onup" value="noop" />
+                                <ondown>302</ondown>
                                 <onup condition="!Skin.HasSetting(EnableHorizontalHome) | !Window.IsVisible(home)">Control.Move(3001,-1)</onup>
                                 <onup condition="Skin.HasSetting(EnableHorizontalHome) + Window.IsVisible(home)">SetFocus(301)</onup>
                                 <onfocus>SetProperty(WidgetFocus,1)</onfocus>
@@ -445,9 +444,8 @@
                                 <param name="groupid" value="3202" />
                                 <param name="label" value="$LOCALIZE[31078]" />
                                 <param name="icon" value="special://skin/extras/icons/info2.png" />
-                                <param name="ondown" value="302" />
                                 <param name="visible" value="true" />
-                                <param name="onup" value="noop" />
+                                <ondown>302</ondown>
                                 <onup condition="!Skin.HasSetting(EnableHorizontalHome) | !Window.IsVisible(home)">Control.Move(3001,-1)</onup>
                                 <onup condition="Skin.HasSetting(EnableHorizontalHome) + Window.IsVisible(home)">SetFocus(301)</onup>
                                 <onfocus>SetProperty(WidgetFocus,1)</onfocus>

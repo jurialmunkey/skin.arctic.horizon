@@ -995,10 +995,8 @@
     <include name="Object_Info_Button">
         <param name="visible" default="true" />
         <param name="controltype" default="button" />
-        <param name="ondown" default="5000" />
         <param name="width" default="auto" />
         <param name="focused" default="false" />
-        <param name="onup" default="SetFocus(9601)" />
         <definition>
             <control type="group" id="$PARAM[groupid]">
                 <left>0</left>
@@ -1024,7 +1022,6 @@
                 <left>-14</left>
                 <width>$PARAM[width]</width>
                 <visible>$PARAM[visible]</visible>
-                <ondown>$PARAM[ondown]</ondown>
                 <height>100</height>
                 <texturenofocus border="0,50,50,50" flipx="true" colordiffuse="main_fg_12">common/button-view-nf.png</texturenofocus>
                 <texturefocus border="0,50,50,50" flipx="true" colordiffuse="Selected">common/button-view-fo.png</texturefocus>
@@ -1035,7 +1032,6 @@
                 <textcolor>main_fg_70</textcolor>
                 <focusedcolor>panel_bg</focusedcolor>
                 <nested />
-                <onup>$PARAM[onup]</onup>
             </control>
         </definition>
     </include>

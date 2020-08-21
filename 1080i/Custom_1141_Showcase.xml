@@ -100,9 +100,9 @@
                             <param name="groupid" value="3201" />
                             <param name="label" value="Play" />
                             <param name="icon" value="special://skin/extras/icons/play3.png" />
-                            <param name="ondown" value="3002" />
                             <param name="visible" value="true" />
-                            <param name="onup" value="Control.Move(1297,1)" />
+                            <ondown>3002</ondown>
+                            <onup>Control.Move(1297,1)</onup>
                             <onclick>SetFocus(1297)</onclick>
                             <onclick>Action(Select)</onclick>
                             <onclick>Action(Close)</onclick>
@@ -113,24 +113,13 @@
                             <param name="groupid" value="3202" />
                             <param name="label" value="More Information" />
                             <param name="icon" value="special://skin/extras/icons/info2.png" />
-                            <param name="ondown" value="3002" />
                             <param name="visible" value="true" />
-                            <param name="onup" value="Control.Move(1297,1)" />
+                            <ondown>3002</ondown>
+                            <onup>Control.Move(1297,1)</onup>
                             <onclick>SetFocus(1297)</onclick>
                             <onclick>Action(Info)</onclick>
                             <onfocus>SetProperty(TMDbHelper.WidgetContainer,1297,Home)</onfocus>
                         </include>
-                        <!-- <include content="Object_Info_Button" description="Close">
-                            <param name="id" value="3103" />
-                            <param name="groupid" value="3203" />
-                            <param name="label" value="$LOCALIZE[15067]" />
-                            <param name="icon" value="special://skin/extras/icons/disabled.png" />
-                            <param name="ondown" value="3002" />
-                            <param name="visible" value="true" />
-                            <param name="onup" value="Control.Move(1297,1)" />
-                            <onclick>Action(Close)</onclick>
-                            <onfocus>SetProperty(TMDbHelper.WidgetContainer,1297,Home)</onfocus>
-                        </include> -->
                         <control type="button" id="3104">
                             <visible allowhiddenfocus="true">false</visible>
                             <onfocus>Control.Move(1297,1)</onfocus>

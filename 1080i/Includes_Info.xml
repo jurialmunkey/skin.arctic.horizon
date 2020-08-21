@@ -195,6 +195,8 @@
             <param name="label" value="$LOCALIZE[19165]" />
             <param name="icon" value="special://skin/extras/icons/signpost.png" />
             <param name="visible" value="Control.IsVisible(5) + Window.IsActive(PVRGuideInfo)" />
+            <onup>SetFocus(9601)</onup>
+            <ondown>5000</ondown>
             <onclick>SendClick(5)</onclick>
         </include>
         <!-- Switch -->
@@ -204,6 +206,8 @@
             <param name="label" value="$INFO[Control.GetLabel(6)]" />
             <param name="icon" value="special://skin/extras/icons/alarm.png" />
             <param name="visible" value="Control.IsVisible(6) + Window.IsActive(PVRGuideInfo)" />
+            <onup>SetFocus(9601)</onup>
+            <ondown>5000</ondown>
             <onclick>SendClick(6)</onclick>
         </include>
         <!-- Switch -->
@@ -213,6 +217,8 @@
             <param name="label" value="Play Recording" />
             <param name="icon" value="special://skin/extras/icons/database.png" />
             <param name="visible" value="Control.IsVisible(8) + [Window.IsActive(PVRGuideInfo) | Window.IsActive(PVRRecordingInfo)]" />
+            <onup>SetFocus(9601)</onup>
+            <ondown>5000</ondown>
             <onclick>SendClick(8)</onclick>
         </include>
         <!-- Switch -->
@@ -222,6 +228,8 @@
             <param name="label" value="Play" />
             <param name="icon" value="special://skin/extras/icons/play3.png" />
             <param name="visible" value="Control.IsVisible(10) + Window.IsActive(PVRGuideInfo)" />
+            <onup>SetFocus(9601)</onup>
+            <ondown>5000</ondown>
             <onclick>SendClick(10)</onclick>
         </include>
         <!-- Add Timer -->
@@ -231,6 +239,8 @@
             <param name="label" value="Add Timer" />
             <param name="icon" value="special://skin/extras/icons/timer.png" />
             <param name="visible" value="Control.IsVisible(9) + Window.IsActive(PVRGuideInfo)" />
+            <onup>SetFocus(9601)</onup>
+            <ondown>5000</ondown>
             <onclick>SendClick(9)</onclick>
         </include>
         <!-- Similar -->
@@ -240,6 +250,8 @@
             <param name="label" value="Similar" />
             <param name="icon" value="special://skin/extras/icons/search.png" />
             <param name="visible" value="Control.IsVisible(4) + Window.IsActive(PVRGuideInfo)" />
+            <onup>SetFocus(9601)</onup>
+            <ondown>5000</ondown>
             <onclick>SendClick(4)</onclick>
         </include>
     </include>
@@ -363,7 +375,8 @@
             <onclick>SetProperty(CloseBusyDialog,1)</onclick>
             <onclick>AlarmClock(closebusydialog,Dialog.Close(busydialognocancel),00:05,silent)</onclick>
 
-            <onup>9601</onup>
+            <onup>SetFocus(9601)</onup>
+            <ondown>5000</ondown>
         </include>
 
         <include content="$PARAM[buttoninclude]">
@@ -380,7 +393,8 @@
             <onclick condition="!Window.IsVisible(MyVideoNav.xml) + String.IsEmpty(ListItem.DBID)">RunScript(plugin.video.themoviedb.helper,close_dialog=1190,call_path=$INFO[ListItem.FolderPath])</onclick>
             <onclick condition="!Window.IsVisible(MyVideoNav.xml) + !String.IsEmpty(ListItem.DBID) + String.IsEqual(ListItem.DBType,tvshow)">RunScript(plugin.video.themoviedb.helper,close_dialog=1190,call_path=$INFO[ListItem.DBID,videodb://tvshows/titles/,/])</onclick>
             <onclick condition="Window.IsVisible(MyVideoNav.xml) + !String.IsEmpty(ListItem.DBID) + ListItem.IsCollection">RunScript(plugin.video.themoviedb.helper,close_dialog=1190,call_path=$INFO[ListItem.DBID,videodb://movies/sets/,/])</onclick>
-            <onup>9601</onup>
+            <onup>SetFocus(9601)</onup>
+            <ondown>5000</ondown>
             <onfocus>ClearProperty(overview)</onfocus>
         </include>
 
@@ -394,7 +408,8 @@
             <onclick condition="String.IsEmpty(ListItem.TvShowTitle) + !String.IsEmpty(ListItem.Title)">Skin.SetString(SearchTerm,$INFO[ListItem.Title])</onclick>
             <onclick condition="String.IsEmpty(ListItem.TvShowTitle) + String.IsEmpty(ListItem.Title) + !String.IsEmpty(ListItem.Label)">Skin.SetString(SearchTerm,$INFO[ListItem.Label])</onclick>
             <onclick>RunScript(plugin.video.themoviedb.helper,close_dialog=1190,call_id=1138)</onclick>
-            <onup>9601</onup>
+            <onup>SetFocus(9601)</onup>
+            <ondown>5000</ondown>
             <onfocus>ClearProperty(overview)</onfocus>
         </include>
 
@@ -409,7 +424,8 @@
             <onclick condition="String.IsEmpty(ListItem.Trailer)">SetProperty(HasTrailer,$INFO[Window(Home).Property(TMDbHelper.ListItem.Trailer)],Home)</onclick>
             <onclick condition="String.IsEmpty(ListItem.Trailer)">PlayMedia($INFO[Window(Home).Property(TMDbHelper.ListItem.Trailer)],False,1)</onclick>
             <onclick>SetFocus(9608)</onclick>
-            <onup>9601</onup>
+            <onup>SetFocus(9601)</onup>
+            <ondown>5000</ondown>
             <onfocus>ClearProperty(overview)</onfocus>
         </include>
 
@@ -420,7 +436,8 @@
             <param name="icon" value="special://skin/extras/icons/watchlist.png" />
             <param name="visible" value="!String.IsEmpty(ListItem.Property(tmdb_id)) + [String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,tvshow)]" />
             <onclick>RunScript(plugin.video.themoviedb.helper,sync_trakt=watchlist,tmdb_id=$INFO[ListItem.Property(tmdb_id)],$VAR[Info_Param_Type],cache_refresh)</onclick>
-            <onup>9601</onup>
+            <onup>SetFocus(9601)</onup>
+            <ondown>5000</ondown>
             <onfocus>ClearProperty(overview)</onfocus>
         </include>
 
@@ -430,7 +447,8 @@
             <param name="label" value="$LOCALIZE[563]" />
             <param name="icon" value="special://skin/extras/icons/userrating.png" />
             <param name="visible" value="Control.IsEnabled(7) + !ListItem.IsCollection" />
-            <onup>9601</onup>
+            <onup>SetFocus(9601)</onup>
+            <ondown>5000</ondown>
             <onfocus>ClearProperty(overview)</onfocus>
         </include> -->
 
@@ -441,7 +459,8 @@
             <param name="icon" value="special://skin/extras/icons/infobubble.png" />
             <onclick>SetFocus(9601)</onclick>
             <onfocus>SetProperty(overview,1)</onfocus>
-            <onup>9601</onup>
+            <onup>SetFocus(9601)</onup>
+            <ondown>5000</ondown>
         </include>
 
         <include content="$PARAM[buttoninclude]">
@@ -452,7 +471,8 @@
             <param name="visible" value="String.IsEmpty(ListItem.Property(tmdb_id)) + Control.IsEnabled(6) + !Skin.HasSetting(KioskMode)" />
             <onclick>SetFocus(3600)</onclick>
             <onfocus>SetProperty(overview,1)</onfocus>
-            <onup>9601</onup>
+            <onup>SetFocus(9601)</onup>
+            <ondown>5000</ondown>
         </include>
     </include>
 
@@ -468,7 +488,8 @@
             <onclick condition="System.HasAddon(script.playalbum) + String.IsEqual(ListItem.DBType,song)">RunScript(script.playalbum,songid=$INFO[ListItem.DBID])</onclick>
             <onclick condition="System.HasAddon(script.playalbum)">Action(close)</onclick>
             <onclick condition="!System.HasAddon(script.playalbum) + !String.IsEmpty(ListItem.DBID)">InstallAddon(script.playalbum)</onclick>
-            <onup>9601</onup>
+            <onup>SetFocus(9601)</onup>
+            <ondown>5000</ondown>
             <ondown>5001</ondown>
         </include>
         <include content="$PARAM[buttoninclude]">
@@ -480,7 +501,8 @@
             <onclick>Close</onclick>
             <onclick>ActivateWindow(videos,plugin://plugin.video.youtube/search/?q=$INFO[ListItem.Artist],return)</onclick>
             <onclick>SetFocus(50)</onclick>
-            <onup>9601</onup>
+            <onup>SetFocus(9601)</onup>
+            <ondown>5000</ondown>
             <ondown>5001</ondown>
         </include>
         <include content="$PARAM[buttoninclude]">
@@ -492,7 +514,8 @@
             <onfocus>SetProperty(FilePath,1,Home)</onfocus>
             <onunfocus>ClearProperty(FilePath,Home)</onunfocus>
             <onclick>SetFocus(3600)</onclick>
-            <onup>9601</onup>
+            <onup>SetFocus(9601)</onup>
+            <ondown>5000</ondown>
             <ondown>5001</ondown>
         </include>
     </include>
@@ -503,7 +526,8 @@
             <control type="grouplist" id="300">
                 <nested />
                 <bottom>10</bottom>
-                <onup>9601</onup>
+                <onup>SetFocus(9601)</onup>
+                <ondown>5000</ondown>
                 <ondown>5000</ondown>
                 <include>Defs_ButtonList</include>
                 <include content="$PARAM[includebuttons]">

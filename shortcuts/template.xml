@@ -713,10 +713,11 @@
                     <param name="groupid" value="$PYTHON[80000 + int(mainmenuid) * 100 + int(id)]" />
                     <param name="label" value="$INFO[Container(302).ListItemAbsolute($PYTHON[int(id) - 1]).Label]" />
                     <param name="icon" value="$INFO[Container(302).ListItemAbsolute($PYTHON[int(id) - 1]).Icon]" />
-                    <param name="ondown" value="5610" />
                     <param name="controltype" value="togglebutton" />
                     <param name="visible" value="[String.IsEqual(Container(301).ListItem.Property(submenuVisibility),num-$SKINSHORTCUTS[submenuVisibility]) | String.IsEqual(Container(301).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility])] + !String.IsEmpty(Container(302).ListItemAbsolute($PYTHON[int(id) - 1]).Label)" />
                     <param name="focused" value="String.IsEqual(Container(302).ListItemAbsolute($PYTHON[int(id) - 1]).Label,Container(302).ListItem.Label) + Control.HasFocus(302)" />
+                    <ondown>5610</ondown>
+                    <onup>SetFocus(9601)</onup>
                     <onfocus>SetFocus(302,$PYTHON[int(id) - 1],absolute)</onfocus>
                     <onclick>SetFocus(302)</onclick>
                     <onclick>Action(Select)</onclick>
