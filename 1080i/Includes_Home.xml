@@ -337,7 +337,6 @@
                 <include>skinshortcuts-template-homefader</include>
                 <include>Topbar_Left</include>
             </control>
-
         </include>
 
         <!-- Clock -->
@@ -814,255 +813,251 @@
         <definition>
             <control type="group">
                 <visible allowhiddenfocus="true">Control.HasFocus(301) | Control.HasFocus(303) | [Control.HasFocus(3992) + String.IsEmpty(Window.Property(WidgetFocus))] | Skin.HasSetting(LockMainMenu)</visible>
-                <animation type="Visible">
-                    <effect type="zoom" start="80" end="100" time="400" tween="back" easing="out" center="auto"/>
-                    <effect type="fade" start="0" end="100" time="400" tween="sine" easing="inout"/>
-                </animation>
-                <animation type="WindowOpen">
-                    <effect type="zoom" start="80" end="100" time="400" tween="back" easing="out" center="auto"/>
-                    <effect type="fade" start="0" end="100" time="400" tween="sine" easing="inout"/>
-                </animation>
-                <include>Animation_FadeOut</include>
-                <centertop>100</centertop>
-                <height>100</height>
-                <left>490</left>
-                <right>490</right>
-
-                <control type="image">
-                    <centertop>50%</centertop>
-                    <left>-16</left>
-                    <width>24</width>
-                    <height>24</height>
-                    <texture colordiffuse="main_fg_70">buttons/spin-left.png</texture>
-                    <visible>Container(301).HasPrevious</visible>
-                    <include>Animation_FadeInOut</include>
-                </control>
-                <control type="image">
-                    <centertop>50%</centertop>
-                    <right>-16</right>
-                    <width>24</width>
-                    <height>24</height>
-                    <texture colordiffuse="main_fg_70" flipx="true">buttons/spin-left.png</texture>
-                    <visible>Container(301).HasNext</visible>
-                    <include>Animation_FadeInOut</include>
-                </control>
-
-                <!-- Textures for Label Menu -->
-                <include content="Home_Menu_Horizontal_Texture" condition="!Skin.HasSetting(HomeIconicMenu)">
-                    <param name="width" value="940" />
-                    <param name="visible" value="Integer.IsGreater(Container(301).NumItems,3)" />
-                    <param name="slide" value="0" />
-                </include>
-                <include content="Home_Menu_Horizontal_Texture" condition="!Skin.HasSetting(HomeIconicMenu)">
-                    <param name="width" value="740" />
-                    <param name="visible" value="Integer.IsEqual(Container(301).NumItems,3)" />
-                    <param name="slide" value="100" />
-                </include>
-                <include content="Home_Menu_Horizontal_Texture" condition="!Skin.HasSetting(HomeIconicMenu)">
-                    <param name="width" value="540" />
-                    <param name="visible" value="Integer.IsEqual(Container(301).NumItems,2)" />
-                    <param name="slide" value="200" />
-                </include>
-                <include content="Home_Menu_Horizontal_Texture" condition="!Skin.HasSetting(HomeIconicMenu)">
-                    <param name="width" value="340" />
-                    <param name="visible" value="Integer.IsEqual(Container(301).NumItems,1)" />
-                    <param name="slide" value="300" />
-                </include>
-
-                <!-- Textures for Iconic Menu -->
-                <include content="Home_Menu_Horizontal_Texture" condition="Skin.HasSetting(HomeIconicMenu)">
-                    <param name="width" value="940" />
-                    <param name="visible" value="Integer.IsGreater(Container(301).NumItems,7)" />
-                    <param name="slide" value="0" />
-                </include>
-                <include content="Home_Menu_Horizontal_Texture" condition="Skin.HasSetting(HomeIconicMenu)">
-                    <param name="width" value="840" />
-                    <param name="visible" value="Integer.IsEqual(Container(301).NumItems,7)" />
-                    <param name="slide" value="50" />
-                </include>
-                <include content="Home_Menu_Horizontal_Texture" condition="Skin.HasSetting(HomeIconicMenu)">
-                    <param name="width" value="740" />
-                    <param name="visible" value="Integer.IsEqual(Container(301).NumItems,6)" />
-                    <param name="slide" value="100" />
-                </include>
-                <include content="Home_Menu_Horizontal_Texture" condition="Skin.HasSetting(HomeIconicMenu)">
-                    <param name="width" value="640" />
-                    <param name="visible" value="Integer.IsEqual(Container(301).NumItems,5)" />
-                    <param name="slide" value="150" />
-                </include>
-                <include content="Home_Menu_Horizontal_Texture" condition="Skin.HasSetting(HomeIconicMenu)">
-                    <param name="width" value="540" />
-                    <param name="visible" value="Integer.IsEqual(Container(301).NumItems,4)" />
-                    <param name="slide" value="200" />
-                </include>
-                <include content="Home_Menu_Horizontal_Texture" condition="Skin.HasSetting(HomeIconicMenu)">
-                    <param name="width" value="440" />
-                    <param name="visible" value="Integer.IsEqual(Container(301).NumItems,3)" />
-                    <param name="slide" value="250" />
-                </include>
-                <include content="Home_Menu_Horizontal_Texture" condition="Skin.HasSetting(HomeIconicMenu)">
-                    <param name="width" value="340" />
-                    <param name="visible" value="Integer.IsEqual(Container(301).NumItems,2)" />
-                    <param name="slide" value="300" />
-                </include>
-                <include content="Home_Menu_Horizontal_Texture" condition="Skin.HasSetting(HomeIconicMenu)">
-                    <param name="width" value="240" />
-                    <param name="visible" value="Integer.IsEqual(Container(301).NumItems,1)" />
-                    <param name="slide" value="350" />
-                </include>
-
+                <visible allowhiddenfocus="true">!$EXP[Exp_ShowPlotOverlay] + !$EXP[Exp_InfoVisible]</visible>
+                <include>Animation_Common</include>
+                <include>Animation_FadeInOut_Common</include>
                 <control type="group">
-                    <left>20</left>
-                    <width>80</width>
-                    <control type="group">
-                        <centerleft>50%</centerleft>
+                    <centertop>100</centertop>
+                    <height>100</height>
+                    <left>490</left>
+                    <right>490</right>
+
+                    <control type="image">
                         <centertop>50%</centertop>
-                        <width>72</width>
-                        <height>72</height>
-                        <include content="Object_Control" condition="!Skin.HasSetting(ProfilePicture)">
-                            <param name="type" value="image" />
-                            <texture colordiffuse="main_fg_70">$VAR[Image_SkinLogo]</texture>
-                        </include>
-                        <include content="Object_Control" condition="Skin.HasSetting(ProfilePicture)">
-                            <param name="type" value="group" />
-                            <top>1</top>
-                            <bottom>1</bottom>
-                            <control type="image">
-                                <bottom>-2</bottom>
-                                <top>2</top>
-                                <bordersize>16</bordersize>
-                                <texture colordiffuse="main_fg_30">diffuse/circle.png</texture>
-                            </control>
-                            <control type="image">
-                                <bottom>2</bottom>
-                                <top>-2</top>
-                                <bordersize>16</bordersize>
-                                <texture colordiffuse="main_bg_30">diffuse/circle.png</texture>
-                            </control>
-                            <control type="image">
-                                <bordersize>16</bordersize>
-                                <texture diffuse="diffuse/circle.png">$INFO[System.ProfileThumb]</texture>
-                            </control>
-                        </include>
+                        <left>-16</left>
+                        <width>24</width>
+                        <height>24</height>
+                        <texture colordiffuse="main_fg_70">buttons/spin-left.png</texture>
+                        <visible>Container(301).HasPrevious</visible>
+                        <include>Animation_FadeInOut</include>
                     </control>
-                    <control type="group">
-                        <height>40</height>
+                    <control type="image">
                         <centertop>50%</centertop>
-                        <control type="image">
-                            <width>1</width>
-                            <right>1</right>
-                            <texture colordiffuse="main_bg_30">common/white.png</texture>
+                        <right>-16</right>
+                        <width>24</width>
+                        <height>24</height>
+                        <texture colordiffuse="main_fg_70" flipx="true">buttons/spin-left.png</texture>
+                        <visible>Container(301).HasNext</visible>
+                        <include>Animation_FadeInOut</include>
+                    </control>
+
+                    <!-- Textures for Label Menu -->
+                    <include content="Home_Menu_Horizontal_Texture" condition="!Skin.HasSetting(HomeIconicMenu)">
+                        <param name="width" value="940" />
+                        <param name="visible" value="Integer.IsGreater(Container(301).NumItems,3)" />
+                        <param name="slide" value="0" />
+                    </include>
+                    <include content="Home_Menu_Horizontal_Texture" condition="!Skin.HasSetting(HomeIconicMenu)">
+                        <param name="width" value="740" />
+                        <param name="visible" value="Integer.IsEqual(Container(301).NumItems,3)" />
+                        <param name="slide" value="100" />
+                    </include>
+                    <include content="Home_Menu_Horizontal_Texture" condition="!Skin.HasSetting(HomeIconicMenu)">
+                        <param name="width" value="540" />
+                        <param name="visible" value="Integer.IsEqual(Container(301).NumItems,2)" />
+                        <param name="slide" value="200" />
+                    </include>
+                    <include content="Home_Menu_Horizontal_Texture" condition="!Skin.HasSetting(HomeIconicMenu)">
+                        <param name="width" value="340" />
+                        <param name="visible" value="Integer.IsEqual(Container(301).NumItems,1)" />
+                        <param name="slide" value="300" />
+                    </include>
+
+                    <!-- Textures for Iconic Menu -->
+                    <include content="Home_Menu_Horizontal_Texture" condition="Skin.HasSetting(HomeIconicMenu)">
+                        <param name="width" value="940" />
+                        <param name="visible" value="Integer.IsGreater(Container(301).NumItems,7)" />
+                        <param name="slide" value="0" />
+                    </include>
+                    <include content="Home_Menu_Horizontal_Texture" condition="Skin.HasSetting(HomeIconicMenu)">
+                        <param name="width" value="840" />
+                        <param name="visible" value="Integer.IsEqual(Container(301).NumItems,7)" />
+                        <param name="slide" value="50" />
+                    </include>
+                    <include content="Home_Menu_Horizontal_Texture" condition="Skin.HasSetting(HomeIconicMenu)">
+                        <param name="width" value="740" />
+                        <param name="visible" value="Integer.IsEqual(Container(301).NumItems,6)" />
+                        <param name="slide" value="100" />
+                    </include>
+                    <include content="Home_Menu_Horizontal_Texture" condition="Skin.HasSetting(HomeIconicMenu)">
+                        <param name="width" value="640" />
+                        <param name="visible" value="Integer.IsEqual(Container(301).NumItems,5)" />
+                        <param name="slide" value="150" />
+                    </include>
+                    <include content="Home_Menu_Horizontal_Texture" condition="Skin.HasSetting(HomeIconicMenu)">
+                        <param name="width" value="540" />
+                        <param name="visible" value="Integer.IsEqual(Container(301).NumItems,4)" />
+                        <param name="slide" value="200" />
+                    </include>
+                    <include content="Home_Menu_Horizontal_Texture" condition="Skin.HasSetting(HomeIconicMenu)">
+                        <param name="width" value="440" />
+                        <param name="visible" value="Integer.IsEqual(Container(301).NumItems,3)" />
+                        <param name="slide" value="250" />
+                    </include>
+                    <include content="Home_Menu_Horizontal_Texture" condition="Skin.HasSetting(HomeIconicMenu)">
+                        <param name="width" value="340" />
+                        <param name="visible" value="Integer.IsEqual(Container(301).NumItems,2)" />
+                        <param name="slide" value="300" />
+                    </include>
+                    <include content="Home_Menu_Horizontal_Texture" condition="Skin.HasSetting(HomeIconicMenu)">
+                        <param name="width" value="240" />
+                        <param name="visible" value="Integer.IsEqual(Container(301).NumItems,1)" />
+                        <param name="slide" value="350" />
+                    </include>
+
+                    <control type="group">
+                        <left>20</left>
+                        <width>80</width>
+                        <control type="group">
+                            <centerleft>50%</centerleft>
+                            <centertop>50%</centertop>
+                            <width>72</width>
+                            <height>72</height>
+                            <include content="Object_Control" condition="!Skin.HasSetting(ProfilePicture)">
+                                <param name="type" value="image" />
+                                <texture colordiffuse="main_fg_70">$VAR[Image_SkinLogo]</texture>
+                            </include>
+                            <include content="Object_Control" condition="Skin.HasSetting(ProfilePicture)">
+                                <param name="type" value="group" />
+                                <top>1</top>
+                                <bottom>1</bottom>
+                                <control type="image">
+                                    <bottom>-2</bottom>
+                                    <top>2</top>
+                                    <bordersize>16</bordersize>
+                                    <texture colordiffuse="main_fg_30">diffuse/circle.png</texture>
+                                </control>
+                                <control type="image">
+                                    <bottom>2</bottom>
+                                    <top>-2</top>
+                                    <bordersize>16</bordersize>
+                                    <texture colordiffuse="main_bg_30">diffuse/circle.png</texture>
+                                </control>
+                                <control type="image">
+                                    <bordersize>16</bordersize>
+                                    <texture diffuse="diffuse/circle.png">$INFO[System.ProfileThumb]</texture>
+                                </control>
+                            </include>
                         </control>
-                        <control type="image">
-                            <width>1</width>
-                            <right>0</right>
-                            <texture colordiffuse="main_fg_30">common/white.png</texture>
+                        <control type="group">
+                            <height>40</height>
+                            <centertop>50%</centertop>
+                            <control type="image">
+                                <width>1</width>
+                                <right>1</right>
+                                <texture colordiffuse="main_bg_30">common/white.png</texture>
+                            </control>
+                            <control type="image">
+                                <width>1</width>
+                                <right>0</right>
+                                <texture colordiffuse="main_fg_30">common/white.png</texture>
+                            </control>
                         </control>
                     </control>
-                </control>
 
 
-                <control type="list" id="$PARAM[mainmenu-id]">
-                    <orientation>horizontal</orientation>
-                    <left>100</left>
-                    <include>Home_Movement_OnFocus</include>
-                    <include>Home_Movement_LeftRight</include>
-                    <focusposition>1</focusposition>
-                    <movement>2</movement>
-                    <itemlayout width="100" condition="Skin.HasSetting(HomeIconicMenu)">
-                        <control type="group">
-                            <left>0</left>
-                            <right>-40</right>
-                            <control type="image">
-                                <bordersize>16</bordersize>
-                                <aspectratio>keep</aspectratio>
-                                <texture colordiffuse="main_fg_70" background="true">$INFO[ListItem.Icon]</texture>
-                            </control>
-                        </control>
-                    </itemlayout>
-                    <focusedlayout width="100" condition="Skin.HasSetting(HomeIconicMenu)">
-                        <control type="group">
-                            <left>0</left>
-                            <right>-40</right>
-                            <visible>![Control.HasFocus(301) | Control.HasFocus(303) | [Control.HasFocus(3992) + String.IsEmpty(Window.Property(WidgetFocus))]]</visible>
-                            <control type="image">
-                                <bordersize>16</bordersize>
-                                <aspectratio>keep</aspectratio>
-                                <texture colordiffuse="main_fg_70" background="true">$INFO[ListItem.Icon]</texture>
-                            </control>
-                        </control>
-                        <control type="group">
-                            <left>0</left>
-                            <right>-40</right>
-                            <visible>Control.HasFocus(301) | Control.HasFocus(303) | [Control.HasFocus(3992) + String.IsEmpty(Window.Property(WidgetFocus))]</visible>
+                    <control type="list" id="$PARAM[mainmenu-id]">
+                        <orientation>horizontal</orientation>
+                        <left>100</left>
+                        <include>Home_Movement_OnFocus</include>
+                        <include>Home_Movement_LeftRight</include>
+                        <focusposition>1</focusposition>
+                        <movement>2</movement>
+                        <itemlayout width="100" condition="Skin.HasSetting(HomeIconicMenu)">
                             <control type="group">
-                                <include content="Defs_Pad"><param name="pad" value="-4" /></include>
+                                <left>0</left>
+                                <right>-40</right>
                                 <control type="image">
-                                    <texture colordiffuse="$VAR[ColorHighlight]" border="40,40,40,40">common/button-view-base-fo.png</texture>
+                                    <bordersize>16</bordersize>
+                                    <aspectratio>keep</aspectratio>
+                                    <texture colordiffuse="main_fg_70" background="true">$INFO[ListItem.Icon]</texture>
                                 </control>
-                                <control type="image">
-                                    <texture colordiffuse="$VAR[ColorGradient]" diffuse="common/white-gradient.png" border="40,40,40,40">common/button-view-base.png</texture>
-                                </control>
                             </control>
-                            <control type="image">
-                                <bordersize>16</bordersize>
-                                <aspectratio>keep</aspectratio>
-                                <texture colordiffuse="Selected" background="true">$INFO[ListItem.Icon]</texture>
-                            </control>
-                        </control>
-                    </focusedlayout>
-                    <itemlayout width="200" condition="!Skin.HasSetting(HomeIconicMenu)">
-                        <control type="group">
-                            <left>0</left>
-                            <right>-40</right>
-                            <control type="label">
-                                <left>40</left>
-                                <right>40</right>
-                                <font>font_title_mini</font>
-                                <textcolor>main_fg_70</textcolor>
-                                <align>center</align>
-                                <label>$INFO[ListItem.LAbel]</label>
-                            </control>
-                        </control>
-                    </itemlayout>
-                    <focusedlayout width="200" condition="!Skin.HasSetting(HomeIconicMenu)">
-                        <control type="group">
-                            <left>0</left>
-                            <right>-40</right>
-                            <visible>![Control.HasFocus(301) | Control.HasFocus(303) | [Control.HasFocus(3992) + String.IsEmpty(Window.Property(WidgetFocus))]]</visible>
-                            <control type="label">
-                                <left>40</left>
-                                <right>40</right>
-                                <font>font_title_mini</font>
-                                <textcolor>main_fg_70</textcolor>
-                                <align>center</align>
-                                <label>$INFO[ListItem.LAbel]</label>
-                            </control>
-                        </control>
-                        <control type="group">
-                            <left>0</left>
-                            <right>-40</right>
-                            <visible>[Control.HasFocus(301) | Control.HasFocus(303) | [Control.HasFocus(3992) + String.IsEmpty(Window.Property(WidgetFocus))]]</visible>
+                        </itemlayout>
+                        <focusedlayout width="100" condition="Skin.HasSetting(HomeIconicMenu)">
                             <control type="group">
-                                <include content="Defs_Pad"><param name="pad" value="-4" /></include>
+                                <left>0</left>
+                                <right>-40</right>
+                                <visible>![Control.HasFocus(301) | Control.HasFocus(303) | [Control.HasFocus(3992) + String.IsEmpty(Window.Property(WidgetFocus))]]</visible>
                                 <control type="image">
-                                    <texture colordiffuse="$VAR[ColorHighlight]" border="40,40,40,40">common/button-view-base-fo.png</texture>
-                                </control>
-                                <control type="image">
-                                    <texture colordiffuse="$VAR[ColorGradient]" diffuse="common/white-gradient.png" border="40,40,40,40">common/button-view-base.png</texture>
+                                    <bordersize>16</bordersize>
+                                    <aspectratio>keep</aspectratio>
+                                    <texture colordiffuse="main_fg_70" background="true">$INFO[ListItem.Icon]</texture>
                                 </control>
                             </control>
-                            <control type="label">
-                                <left>40</left>
-                                <right>40</right>
-                                <font>font_title_mini</font>
-                                <textcolor>Selected</textcolor>
-                                <align>center</align>
-                                <label>$INFO[ListItem.LAbel]</label>
+                            <control type="group">
+                                <left>0</left>
+                                <right>-40</right>
+                                <visible>Control.HasFocus(301) | Control.HasFocus(303) | [Control.HasFocus(3992) + String.IsEmpty(Window.Property(WidgetFocus))]</visible>
+                                <control type="group">
+                                    <include content="Defs_Pad"><param name="pad" value="-4" /></include>
+                                    <control type="image">
+                                        <texture colordiffuse="$VAR[ColorHighlight]" border="40,40,40,40">common/button-view-base-fo.png</texture>
+                                    </control>
+                                    <control type="image">
+                                        <texture colordiffuse="$VAR[ColorGradient]" diffuse="common/white-gradient.png" border="40,40,40,40">common/button-view-base.png</texture>
+                                    </control>
+                                </control>
+                                <control type="image">
+                                    <bordersize>16</bordersize>
+                                    <aspectratio>keep</aspectratio>
+                                    <texture colordiffuse="Selected" background="true">$INFO[ListItem.Icon]</texture>
+                                </control>
                             </control>
-                        </control>
-                    </focusedlayout>
-                    <content><include>skinshortcuts-mainmenu</include></content>
+                        </focusedlayout>
+                        <itemlayout width="200" condition="!Skin.HasSetting(HomeIconicMenu)">
+                            <control type="group">
+                                <left>0</left>
+                                <right>-40</right>
+                                <control type="label">
+                                    <left>40</left>
+                                    <right>40</right>
+                                    <font>font_title_mini</font>
+                                    <textcolor>main_fg_70</textcolor>
+                                    <align>center</align>
+                                    <label>$INFO[ListItem.LAbel]</label>
+                                </control>
+                            </control>
+                        </itemlayout>
+                        <focusedlayout width="200" condition="!Skin.HasSetting(HomeIconicMenu)">
+                            <control type="group">
+                                <left>0</left>
+                                <right>-40</right>
+                                <visible>![Control.HasFocus(301) | Control.HasFocus(303) | [Control.HasFocus(3992) + String.IsEmpty(Window.Property(WidgetFocus))]]</visible>
+                                <control type="label">
+                                    <left>40</left>
+                                    <right>40</right>
+                                    <font>font_title_mini</font>
+                                    <textcolor>main_fg_70</textcolor>
+                                    <align>center</align>
+                                    <label>$INFO[ListItem.LAbel]</label>
+                                </control>
+                            </control>
+                            <control type="group">
+                                <left>0</left>
+                                <right>-40</right>
+                                <visible>[Control.HasFocus(301) | Control.HasFocus(303) | [Control.HasFocus(3992) + String.IsEmpty(Window.Property(WidgetFocus))]]</visible>
+                                <control type="group">
+                                    <include content="Defs_Pad"><param name="pad" value="-4" /></include>
+                                    <control type="image">
+                                        <texture colordiffuse="$VAR[ColorHighlight]" border="40,40,40,40">common/button-view-base-fo.png</texture>
+                                    </control>
+                                    <control type="image">
+                                        <texture colordiffuse="$VAR[ColorGradient]" diffuse="common/white-gradient.png" border="40,40,40,40">common/button-view-base.png</texture>
+                                    </control>
+                                </control>
+                                <control type="label">
+                                    <left>40</left>
+                                    <right>40</right>
+                                    <font>font_title_mini</font>
+                                    <textcolor>Selected</textcolor>
+                                    <align>center</align>
+                                    <label>$INFO[ListItem.LAbel]</label>
+                                </control>
+                            </control>
+                        </focusedlayout>
+                        <content><include>skinshortcuts-mainmenu</include></content>
+                    </control>
                 </control>
             </control>
         </definition>
