@@ -6,7 +6,10 @@
         <include>Global_Background</include>
         <include condition="!Skin.HasSetting(DisableClock)">Topbar_Right</include>
         <include>Topbar_Left</include>
-        <include>View_Settings</include>
+        <control type="group">
+            <include>View_Pad</include>
+            <include>View_Settings</include>
+        </control>
         <include>Object_NowPlaying</include>
     </controls>
 </window>

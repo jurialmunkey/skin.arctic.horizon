@@ -1463,13 +1463,13 @@
                 <label>$LOCALIZE[31135]</label>
                 <onclick>SetFocus(50)</onclick>
                 <onclick>Container.Update($VAR[Info_Similar]&amp;plugincategory=$INFO[ListItem.Title,Similar to ,])</onclick>
-                <visible>!Skin.HasSetting(DisableExtendedInfo)</visible>
+                <visible>Skin.HasSetting(EnableExtendedInfo)</visible>
             </item>
             <item>
                 <label>$LOCALIZE[31252]</label>
                 <onclick>SetFocus(50)</onclick>
                 <onclick>Container.Update($VAR[Info_Recommended]&amp;plugincategory=$INFO[ListItem.Title,Recommendations for ,])</onclick>
-                <visible>!Skin.HasSetting(DisableExtendedInfo)</visible>
+                <visible>Skin.HasSetting(EnableExtendedInfo)</visible>
             </item>
             <item>
                 <label>$LOCALIZE[31052] $INFO[Window(Home).Property(ListItem.Director.0)]</label>
@@ -1502,7 +1502,7 @@
                 <onclick>Container.Update(plugin://plugin.video.themoviedb.helper/?info=discover&amp;type=movie&amp;with_cast=$INFO[Window(Home).Property(TMDBHelper.ListItem.Cast.1.Name)]$INFO[Window(Home).Property(TMDBHelper.ListItem.Cast.2.Name), / ,]$INFO[Window(Home).Property(TMDBHelper.ListItem.Cast.3.Name), / ,]&amp;with_separator=OR&amp;plugincategory=$INFO[Window(Home).Property(TMDBHelper.ListItem.Cast.1.Name),Starring ,]$INFO[Window(Home).Property(TMDBHelper.ListItem.Cast.2.Name), / ,]$INFO[Window(Home).Property(TMDBHelper.ListItem.Cast.3.Name), / ,])</onclick>
                 <visible>!String.IsEmpty(Window(Home).Property(TMDBHelper.ListItem.Cast.1.Name))</visible>
                 <visible>String.IsEqual(ListItem.DBType,movie)</visible>
-                <visible>!Skin.HasSetting(DisableExtendedInfo)</visible>
+                <visible>Skin.HasSetting(EnableExtendedInfo)</visible>
             </item>
             <item>
                 <label>$LOCALIZE[21861]</label>
@@ -1510,14 +1510,14 @@
                 <onclick>Container.Update(plugin://plugin.video.themoviedb.helper/?info=movie_keywords&amp;tmdb_id=$INFO[ListItem.Property(tmdb_id)]&amp;type=movie&amp;plugincategory=$INFO[ListItem.Title,$LOCALIZE[31075] ,])</onclick>
                 <visible>!String.IsEmpty(Container.ListItem.Property(tmdb_id))</visible>
                 <visible>String.IsEqual(ListItem.DBType,movie)</visible>
-                <visible>!Skin.HasSetting(DisableExtendedInfo)</visible>
+                <visible>Skin.HasSetting(EnableExtendedInfo)</visible>
             </item>
             <item>
                 <label>$LOCALIZE[31076]</label>
                 <onclick>SetFocus(50)</onclick>
                 <onclick>Container.Update(plugin://plugin.video.themoviedb.helper/?info=trakt_inlists&amp;imdb_id=$INFO[ListItem.IMDBNumber]&amp;type=movie&amp;plugincategory=$INFO[ListItem.Title,$LOCALIZE[31077] ,])</onclick>
                 <visible>String.IsEqual(ListItem.DBType,movie)</visible>
-                <visible>!Skin.HasSetting(DisableExtendedInfo)</visible>
+                <visible>Skin.HasSetting(EnableExtendedInfo)</visible>
             </item>
         </content>
     </include>

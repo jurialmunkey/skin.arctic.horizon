@@ -190,13 +190,13 @@
                         <label2>$INFO[Skin.String(screensaver.arctic.mirage.path)]</label2>
                         <onclick>RunScript(script.skinshortcuts,type=widgets&amp;showNone=True&amp;skinWidgetName=screensaver.arctic.mirage.name&amp;skinWidgetTarget=screensaver.arctic.mirage.target&amp;skinWidgetPath=screensaver.arctic.mirage.path)</onclick>
                     </control>
-                    <control type="button" id="19104" description="Fullscreen Widget Option">
+                    <!-- <control type="button" id="19104" description="Fullscreen Widget Option">
                         <visible>Integer.IsEqual(Window.Property(CurrentFocus),9001)</visible>
                         <include>Defs_Settings_Button</include>
                         <label>$LOCALIZE[31024]</label>
                         <label2>$VAR[Label_SkinSettings_FullScreenWidgetStyle]</label2>
                         <onclick>Skin.ToggleSetting(FullscreenWidgetShowcase)</onclick>
-                    </control>
+                    </control> -->
                     <control type="radiobutton" id="19105" description="Autoscroll Widgets">
                         <visible>Integer.IsEqual(Window.Property(CurrentFocus),9001)</visible>
                         <include>Defs_Settings_Button</include>

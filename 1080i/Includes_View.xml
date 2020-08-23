@@ -38,6 +38,7 @@
         <param name="widget-type" default="infowidgets" />
         <param name="issubmenu" default="false" />
         <param name="showonupdate" default="false" />
+        <param name="infoslide" default="false" />
         <definition>
             <control type="group" id="$PARAM[groupid]">
                 <nested />
@@ -45,73 +46,80 @@
                 <height>$PARAM[widget-type]_item_top</height>
                 <visible>Integer.IsGreater(Container($PARAM[id]).NumAllItems,0) | Container($PARAM[id]).IsUpdating | $PARAM[issubmenu]</visible>
                 <control type="group">
-                    <top>50</top>
-                    <height>item_cast_height</height>
-                    <include content="Defs_BusySpinner" condition="$PARAM[spinner-visible]">
-                        <param name="label" value="$LOCALIZE[31428]..." />
-                        <param name="textcolor" value="main_fg_70" />
-                    </include>
-                    <visible>Container($PARAM[id]).IsUpdating</visible>
-                    <visible>Integer.IsEqual(Container($PARAM[id]).NumAllItems,0) | $PARAM[showonupdate]</visible>
-                </control>
-                <control type="grouplist" description="Focused List">
-                    <right>100</right>
-                    <height>$PARAM[widget-type]_item_top</height>
-                    <orientation>horizontal</orientation>
-                    <usecontrolcoords>true</usecontrolcoords>
-                    <itemgap>10</itemgap>
-                    <visible>Control.HasFocus($PARAM[id]) | Control.HasFocus($PARAM[altid])</visible>
-                    <control type="label">
-                        <top>17</top>
-                        <left>15</left>
-                        <width>auto</width>
-                        <height>24</height>
-                        <aligny>center</aligny>
-                        <font>font_tiny_bold</font>
-                        <textcolor>main_fg_100</textcolor>
-                        <label>$PARAM[label]</label>
+                    <include condition="$PARAM[infoslide]">View_Cast_Toplabel_InfoSlide</include>
+                    <control type="group">
+                        <top>50</top>
+                        <height>item_cast_height</height>
+                        <include content="Defs_BusySpinner" condition="$PARAM[spinner-visible]">
+                            <param name="label" value="$LOCALIZE[31428]..." />
+                            <param name="textcolor" value="main_fg_70" />
+                        </include>
+                        <visible>Container($PARAM[id]).IsUpdating</visible>
+                        <visible>Integer.IsEqual(Container($PARAM[id]).NumAllItems,0) | $PARAM[showonupdate]</visible>
                     </control>
-                    <control type="label">
-                        <top>17</top>
-                        <width>auto</width>
-                        <label>|</label>
-                        <aligny>center</aligny>
-                        <textcolor>$VAR[ColorHighlight]</textcolor>
-                        <font>font_tiny_bold</font>
-                        <height>24</height>
-                        <visible>!String.IsEmpty(Container($PARAM[id]).ListItem.Label)</visible>
+                    <control type="grouplist" description="Focused List">
+                        <right>100</right>
+                        <height>$PARAM[widget-type]_item_top</height>
+                        <orientation>horizontal</orientation>
+                        <usecontrolcoords>true</usecontrolcoords>
+                        <itemgap>10</itemgap>
+                        <visible>Control.HasFocus($PARAM[id]) | Control.HasFocus($PARAM[altid])</visible>
+                        <control type="label">
+                            <top>17</top>
+                            <left>15</left>
+                            <width>auto</width>
+                            <height>24</height>
+                            <aligny>center</aligny>
+                            <font>font_tiny_bold</font>
+                            <textcolor>main_fg_100</textcolor>
+                            <label>$PARAM[label]</label>
+                        </control>
+                        <control type="label">
+                            <top>17</top>
+                            <width>auto</width>
+                            <label>|</label>
+                            <aligny>center</aligny>
+                            <textcolor>$VAR[ColorHighlight]</textcolor>
+                            <font>font_tiny_bold</font>
+                            <height>24</height>
+                            <visible>!String.IsEmpty(Container($PARAM[id]).ListItem.Label)</visible>
+                        </control>
+                        <control type="label">
+                            <top>17</top>
+                            <width>auto</width>
+                            <label>$PARAM[altlabel]</label>
+                            <label>$INFO[Container($PARAM[id]).ListItem.Label]</label>
+                            <aligny>center</aligny>
+                            <textcolor>main_fg_100</textcolor>
+                            <font>font_tiny</font>
+                            <height>24</height>
+                        </control>
                     </control>
-                    <control type="label">
-                        <top>17</top>
-                        <width>auto</width>
-                        <label>$PARAM[altlabel]</label>
-                        <label>$INFO[Container($PARAM[id]).ListItem.Label]</label>
-                        <aligny>center</aligny>
-                        <textcolor>main_fg_100</textcolor>
-                        <font>font_tiny</font>
-                        <height>24</height>
-                    </control>
-                </control>
-                <control type="grouplist" description="Unfocused List">
-                    <right>100</right>
-                    <height>$PARAM[widget-type]_item_top</height>
-                    <orientation>horizontal</orientation>
-                    <usecontrolcoords>true</usecontrolcoords>
-                    <itemgap>10</itemgap>
-                    <visible>!Control.HasFocus($PARAM[id]) + !Control.HasFocus($PARAM[altid])</visible>
-                    <control type="label">
-                        <top>17</top>
-                        <left>15</left>
-                        <width>auto</width>
-                        <height>24</height>
-                        <aligny>center</aligny>
-                        <font>font_tiny_bold</font>
-                        <textcolor>main_fg_30</textcolor>
-                        <label>$PARAM[label]</label>
+                    <control type="grouplist" description="Unfocused List">
+                        <right>100</right>
+                        <height>$PARAM[widget-type]_item_top</height>
+                        <orientation>horizontal</orientation>
+                        <usecontrolcoords>true</usecontrolcoords>
+                        <itemgap>10</itemgap>
+                        <visible>!Control.HasFocus($PARAM[id]) + !Control.HasFocus($PARAM[altid])</visible>
+                        <control type="label">
+                            <top>17</top>
+                            <left>15</left>
+                            <width>auto</width>
+                            <height>24</height>
+                            <aligny>center</aligny>
+                            <font>font_tiny_bold</font>
+                            <textcolor>main_fg_30</textcolor>
+                            <label>$PARAM[label]</label>
+                        </control>
                     </control>
                 </control>
             </control>
         </definition>
+    </include>
+
+    <include name="View_Cast_Toplabel_InfoSlide">
+        <top>430</top>
     </include>
 
     <include name="View_Cast_Label">
@@ -219,44 +227,58 @@
     </include>
 
     <include name="View_Settings">
-        <param name="hideonwindowopen" default="!Window.IsVisible(Settings.xml)" />
-        <param name="topid" default="5000" />
-        <param name="bottomid" default="5100" />
+        <param name="top-id" default="5100" />
+        <param name="bottom-id" default="5000" />
         <definition>
-            <control type="group">
-                <include>View_Pad</include>
-                <control type="group">
-                    <top>-20</top>
-                    <left>-100</left>
-                    <right>-100</right>
-                    <control type="grouplist" id="5300">
-                        <top>widgets_group_top</top>
-                        <height>widgets_group_height</height>
-                        <orientation>vertical</orientation>
-                        <itemgap>widgets_group_itemgap</itemgap>
-                        <usecontrolcoords>true</usecontrolcoords>
-                        <scrolltime tween="quadratic">400</scrolltime>
-                        <control type="group" id="5200"><height>widgets_bumper_top</height></control>
-                        <animation effect="fade" start="100" end="0" time="300" condition="$PARAM[hideonwindowopen]">WindowOpen</animation>
-                        <include content="Info_Widget_Poster">
-                            <param name="groupid" value="5101" />
-                            <param name="id" value="5100" />
-                            <param name="label" value="Management" />
-                            <param name="viewtype-include" value="Viewtype_Settings" />
-                            <param name="widget-type" value="widgets_settings_bottom" />
-                            <include>Items_Settings_System</include>
-                        </include>
-                        <include content="Info_Widget_Poster">
-                            <param name="groupid" value="5001" />
-                            <param name="id" value="5000" />
-                            <param name="label" value="Settings"/>
-                            <param name="viewtype-include" value="Viewtype_Settings" />
-                            <param name="widget-type" value="widgets_settings_top" />
-                            <include>Items_Settings_Main</include>
-                        </include>
-                    </control>
-                </control>
-            </control>
+            <include content="Home_Hub_Widget_Label">
+                <param name="id" value="$PARAM[top-id]" />
+                <param name="label" value="Management" />
+                <top>-70</top>
+            </include>
+            <include content="Viewtype_Settings">
+                <param name="id" value="$PARAM[top-id]" />
+                <include>Items_Settings_System</include>
+                <top>40</top>
+                <left>-80</left>
+                <right>-80</right>
+                <nested />
+                <onback>301</onback>
+                <ondown condition="Container($PARAM[top-id]).Column(0)">SetFocus($PARAM[bottom-id],0)</ondown>
+                <ondown condition="Container($PARAM[top-id]).Column(1)">SetFocus($PARAM[bottom-id],2)</ondown>
+                <ondown condition="Container($PARAM[top-id]).Column(2)">SetFocus($PARAM[bottom-id],4)</ondown>
+                <ondown condition="Container($PARAM[top-id]).Column(3)">SetFocus($PARAM[bottom-id],6)</ondown>
+                <onup condition="Window.IsVisible(Home)">SetProperty(SpecialWidgetControl,MoveUp,Home)</onup>
+                <onup condition="Window.IsVisible(Home)">SetFocus(3000)</onup>
+                <onleft condition="Window.IsVisible(Home)">SetProperty(SpecialWidgetControl,MoveLeft,Home)</onleft>
+                <onleft condition="Window.IsVisible(Home)">SetFocus(3000)</onleft>
+                <onright condition="Window.IsVisible(Home)">SetProperty(SpecialWidgetControl,MoveRight,Home)</onright>
+                <onright condition="Window.IsVisible(Home)">SetFocus(3000)</onright>
+            </include>
+            <include content="Home_Hub_Widget_Label">
+                <param name="id" value="$PARAM[bottom-id]" />
+                <param name="label" value="Settings" />
+                <top>240</top>
+            </include>
+            <include content="Viewtype_Settings">
+                <param name="id" value="$PARAM[bottom-id]" />
+                <param name="height" value="480" />
+                <include>Items_Settings_Main</include>
+                <bottom>-20</bottom>
+                <left>-80</left>
+                <right>-80</right>
+                <nested />
+                <onback>301</onback>
+                <onup condition="Container($PARAM[bottom-id]).Column(0)">SetFocus($PARAM[top-id],0)</onup>
+                <onup condition="Container($PARAM[bottom-id]).Column(1)">SetFocus($PARAM[top-id],1)</onup>
+                <onup condition="Container($PARAM[bottom-id]).Column(2)">SetFocus($PARAM[top-id],2)</onup>
+                <onup condition="Container($PARAM[bottom-id]).Column(3)">SetFocus($PARAM[top-id],3)</onup>
+                <ondown condition="Window.IsVisible(Home)">SetProperty(SpecialWidgetControl,MoveDown,Home)</ondown>
+                <ondown condition="Window.IsVisible(Home)">SetFocus(3000)</ondown>
+                <onleft condition="Window.IsVisible(Home)">SetProperty(SpecialWidgetControl,MoveLeft,Home)</onleft>
+                <onleft condition="Window.IsVisible(Home)">SetFocus(3000)</onleft>
+                <onright condition="Window.IsVisible(Home)">SetProperty(SpecialWidgetControl,MoveRight,Home)</onright>
+                <onright condition="Window.IsVisible(Home)">SetFocus(3000)</onright>
+            </include>
         </definition>
     </include>
 

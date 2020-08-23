@@ -333,11 +333,11 @@
                 <texturenofocus />
                 <font />
                 <textcolor />
-                <onclick condition="Skin.HasSetting(DisableExtendedInfo)">SetFocus(50)</onclick>
-                <onclick condition="Skin.HasSetting(DisableExtendedInfo)">Action(Select)</onclick>
-                <onclick condition="!Skin.HasSetting(DisableExtendedInfo)">SetFocus(5000)</onclick>
-                <onclick condition="!Skin.HasSetting(DisableExtendedInfo)">SetFocus(300)</onclick>
-                <onclick condition="!Skin.HasSetting(DisableExtendedInfo)">RunScript(plugin.video.themoviedb.helper,add_query=$INFO[Container(50).ListItem.Label],type=person,call_auto=1190)</onclick>
+                <onclick condition="!Skin.HasSetting(EnableExtendedInfo)">SetFocus(50)</onclick>
+                <onclick condition="!Skin.HasSetting(EnableExtendedInfo)">Action(Select)</onclick>
+                <onclick condition="Skin.HasSetting(EnableExtendedInfo)">SetFocus(5000)</onclick>
+                <onclick condition="Skin.HasSetting(EnableExtendedInfo)">SetFocus(300)</onclick>
+                <onclick condition="Skin.HasSetting(EnableExtendedInfo)">RunScript(plugin.video.themoviedb.helper,add_query=$INFO[Container(50).ListItem.Label],type=person,call_auto=1190)</onclick>
                 <onback>300</onback>
                 <onup>300</onup>
                 <ondown>5001</ondown>
@@ -361,7 +361,7 @@
             <nested />
             <movement>3</movement>
             <onfocus>SetFocus(5000)</onfocus>
-            <onback condition="Skin.HasSetting(DisableExtendedInfo)">SetFocus(5999)</onback>
+            <onback condition="!Skin.HasSetting(EnableExtendedInfo)">SetFocus(5999)</onback>
             <onback>SetFocus(5000)</onback>
             <onback>300</onback>
         </include>

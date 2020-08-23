@@ -52,278 +52,189 @@
         <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[49]">49</property>
         <property name="mainmenuid">50</property>
         <property name="submenuVisibility" tag="property" attribute="name|submenuVisibility"/>
+
+        <property name="widgethubTarget" tag="property" attribute="name|widgetTarget.showcaseBackground" />
+        <property name="widgethubTarget" tag="property" attribute="name|widgetTarget" />
+        <property name="widgethubTarget">$INFO[Skin.String(screensaver.arctic.mirage.target)]</property>
+
+        <property name="widgethubPath" tag="property" attribute="name|widgetPath.showcaseBackground" />
+        <property name="widgethubPath" tag="property" attribute="name|widgetPath" />
+        <property name="widgethubPath">$INFO[Skin.String(screensaver.arctic.mirage.path)]</property>
+
+        <property name="widgethubSortby" tag="property" attribute="name|widgetSortby.showcaseBackground" />
+        <property name="widgethubSortby" tag="property" attribute="name|widgetSortby" />
+        <property name="widgethubSortby">random</property>
+
+        <property name="widgethubSortorder" tag="property" attribute="name|widgetSortorder.showcaseBackground" />
+        <property name="widgethubSortorder" tag="property" attribute="name|widgetSortorder" />
+
         <controls>
             <control type="group">
                 <visible>String.IsEqual(Container(301).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility])</visible>
                 <include content="Animation_UpDown">
                     <param name="visible" value="String.IsEqual(Container(301).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility])" />
                 </include>
-                <include content="Viewtype_BackPanel">
-                    <height>480</height>
-                    <left>20</left>
-                    <bottom>-65</bottom>
-                    <visible>Integer.IsEqual(Container($PYTHON[50000 + int(mainmenuid) * 100]).NumItems,1)</visible>
-                    <visible>Control.IsVisible($PYTHON[30001 + int(mainmenuid) * 100])</visible>
-                </include>
-                <control type="grouplist" id="$PYTHON[50000 + int(mainmenuid) * 100]">
-                    <top>widgets_group_top</top>
-                    <height>widgets_group_height</height>
-                    <itemgap>widgets_group_itemgap</itemgap>
-                    <include condition="Skin.HasSetting(LockMainMenu) + !Skin.HasSetting(EnableHorizontalHome)">Home_FixedMenu_Right</include>
-                    <orientation>vertical</orientation>
-                    <usecontrolcoords>true</usecontrolcoords>
-                    <scrolltime tween="quadratic">400</scrolltime>
-                    <onup condition="Skin.HasSetting(EnableHorizontalHome)">SetProperty(CurrentWidget,$INFO[System.CurrentControlID])</onup>
-                    <onup condition="Skin.HasSetting(EnableHorizontalHome)">301</onup>
-                    <ondown condition="Skin.HasSetting(EnableHorizontalHome)">noop</ondown>
 
-                    <onleft condition="!Skin.HasSetting(EnableHorizontalHome)">SetProperty(CurrentWidget,$INFO[System.CurrentControlID])</onleft>
-                    <onleft condition="!Skin.HasSetting(EnableHorizontalHome)">301</onleft>
-                    <include condition="!Skin.HasSetting(EnableHorizontalHome)">Home_Movement_Widgets_UpDown</include>
-                    <onup condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) - 49])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 50]).Property(grouplistid)])</onup>
-                    <onup condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) - 48])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 49]).Property(grouplistid)])</onup>
-                    <onup condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) - 47])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 48]).Property(grouplistid)])</onup>
-                    <onup condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) - 46])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 47]).Property(grouplistid)])</onup>
-                    <onup condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) - 45])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 46]).Property(grouplistid)])</onup>
-                    <onup condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) - 44])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 45]).Property(grouplistid)])</onup>
-                    <onup condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) - 43])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 44]).Property(grouplistid)])</onup>
-                    <onup condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) - 42])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 43]).Property(grouplistid)])</onup>
-                    <onup condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) - 41])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 42]).Property(grouplistid)])</onup>
-                    <onup condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) - 40])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 41]).Property(grouplistid)])</onup>
-                    <onup condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) - 39])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 40]).Property(grouplistid)])</onup>
-                    <onup condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) - 38])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 39]).Property(grouplistid)])</onup>
-                    <onup condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) - 37])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 38]).Property(grouplistid)])</onup>
-                    <onup condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) - 36])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 37]).Property(grouplistid)])</onup>
-                    <onup condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) - 35])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 36]).Property(grouplistid)])</onup>
-                    <onup condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) - 34])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 35]).Property(grouplistid)])</onup>
-                    <onup condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) - 33])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 34]).Property(grouplistid)])</onup>
-                    <onup condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) - 32])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 33]).Property(grouplistid)])</onup>
-                    <onup condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) - 31])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 32]).Property(grouplistid)])</onup>
-                    <onup condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) - 30])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 31]).Property(grouplistid)])</onup>
-                    <onup condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) - 29])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 30]).Property(grouplistid)])</onup>
-                    <onup condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) - 28])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 29]).Property(grouplistid)])</onup>
-                    <onup condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) - 27])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 28]).Property(grouplistid)])</onup>
-                    <onup condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) - 26])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 27]).Property(grouplistid)])</onup>
-                    <onup condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) - 25])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 26]).Property(grouplistid)])</onup>
-                    <onup condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) - 24])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 25]).Property(grouplistid)])</onup>
-                    <onup condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) - 23])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 24]).Property(grouplistid)])</onup>
-                    <onup condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) - 22])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 23]).Property(grouplistid)])</onup>
-                    <onup condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) - 21])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 22]).Property(grouplistid)])</onup>
-                    <onup condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) - 20])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 21]).Property(grouplistid)])</onup>
-                    <onup condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) - 19])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 20]).Property(grouplistid)])</onup>
-                    <onup condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) - 18])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 19]).Property(grouplistid)])</onup>
-                    <onup condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) - 17])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 18]).Property(grouplistid)])</onup>
-                    <onup condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) - 16])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 17]).Property(grouplistid)])</onup>
-                    <onup condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) - 15])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 16]).Property(grouplistid)])</onup>
-                    <onup condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) - 14])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 15]).Property(grouplistid)])</onup>
-                    <onup condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) - 13])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 14]).Property(grouplistid)])</onup>
-                    <onup condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) - 12])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 13]).Property(grouplistid)])</onup>
-                    <onup condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) - 11])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 12]).Property(grouplistid)])</onup>
-                    <onup condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) - 10])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 11]).Property(grouplistid)])</onup>
-                    <onup condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) - 9])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 10]).Property(grouplistid)])</onup>
-                    <onup condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) - 8])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 9]).Property(grouplistid)])</onup>
-                    <onup condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) - 7])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 8]).Property(grouplistid)])</onup>
-                    <onup condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) - 6])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 7]).Property(grouplistid)])</onup>
-                    <onup condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) - 5])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 6]).Property(grouplistid)])</onup>
-                    <onup condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) - 4])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 5]).Property(grouplistid)])</onup>
-                    <onup condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) - 3])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 4]).Property(grouplistid)])</onup>
-                    <onup condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) - 2])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 3]).Property(grouplistid)])</onup>
-                    <onup condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) - 1])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 2]).Property(grouplistid)])</onup>
-                    <onup condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) - 0])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 1]).Property(grouplistid)])</onup>
-                    <onup condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) + 1])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 0]).Property(grouplistid)])</onup>
-                    <onup condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) + 2])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 1]).Property(grouplistid)])</onup>
-                    <onup condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) + 3])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 2]).Property(grouplistid)])</onup>
-                    <onup condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) + 4])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 3]).Property(grouplistid)])</onup>
-                    <onup condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) + 5])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 4]).Property(grouplistid)])</onup>
-                    <onup condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) + 6])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 5]).Property(grouplistid)])</onup>
-                    <onup condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) + 7])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 6]).Property(grouplistid)])</onup>
-                    <onup condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) + 8])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 7]).Property(grouplistid)])</onup>
-                    <onup condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) + 9])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 8]).Property(grouplistid)])</onup>
-                    <onup condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) + 10])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 9]).Property(grouplistid)])</onup>
-                    <onup condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) + 11])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 10]).Property(grouplistid)])</onup>
-                    <onup condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) + 12])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 11]).Property(grouplistid)])</onup>
-                    <onup condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) + 13])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 12]).Property(grouplistid)])</onup>
-                    <onup condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) + 14])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 13]).Property(grouplistid)])</onup>
-                    <onup condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) + 15])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 14]).Property(grouplistid)])</onup>
-                    <onup condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) + 16])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 15]).Property(grouplistid)])</onup>
-                    <onup condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) + 17])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 16]).Property(grouplistid)])</onup>
-                    <onup condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) + 18])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 17]).Property(grouplistid)])</onup>
-                    <onup condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) + 19])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 18]).Property(grouplistid)])</onup>
-                    <onup condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) + 20])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 19]).Property(grouplistid)])</onup>
-                    <onup condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) + 21])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 20]).Property(grouplistid)])</onup>
-                    <onup condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) + 22])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 21]).Property(grouplistid)])</onup>
-                    <onup condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) + 23])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 22]).Property(grouplistid)])</onup>
-                    <onup condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) + 24])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 23]).Property(grouplistid)])</onup>
-                    <onup condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) + 25])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 24]).Property(grouplistid)])</onup>
-                    <onup condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) + 26])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 25]).Property(grouplistid)])</onup>
-                    <onup condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) + 27])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 26]).Property(grouplistid)])</onup>
-                    <onup condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) + 28])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 27]).Property(grouplistid)])</onup>
-                    <onup condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) + 29])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 28]).Property(grouplistid)])</onup>
-                    <onup condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) + 30])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 29]).Property(grouplistid)])</onup>
-                    <onup condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) + 31])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 30]).Property(grouplistid)])</onup>
-                    <onup condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) + 32])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 31]).Property(grouplistid)])</onup>
-                    <onup condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) + 33])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 32]).Property(grouplistid)])</onup>
-                    <onup condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) + 34])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 33]).Property(grouplistid)])</onup>
-                    <onup condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) + 35])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 34]).Property(grouplistid)])</onup>
-                    <onup condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) + 36])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 35]).Property(grouplistid)])</onup>
-                    <onup condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) + 37])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 36]).Property(grouplistid)])</onup>
-                    <onup condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) + 38])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 37]).Property(grouplistid)])</onup>
-                    <onup condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) + 39])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 38]).Property(grouplistid)])</onup>
-                    <onup condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) + 40])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 39]).Property(grouplistid)])</onup>
-                    <onup condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) + 41])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 40]).Property(grouplistid)])</onup>
-                    <onup condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) + 42])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 41]).Property(grouplistid)])</onup>
-                    <onup condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) + 43])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 42]).Property(grouplistid)])</onup>
-                    <onup condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) + 44])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 43]).Property(grouplistid)])</onup>
-                    <onup condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) + 45])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 44]).Property(grouplistid)])</onup>
-                    <onup condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) + 46])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 45]).Property(grouplistid)])</onup>
-                    <onup condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) + 47])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 46]).Property(grouplistid)])</onup>
-                    <onup condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) + 48])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 47]).Property(grouplistid)])</onup>
-                    <onup condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) + 49])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 48]).Property(grouplistid)])</onup>
-                    <onup condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(-1).Property(id),$PYTHON[int(mainmenuid) + 50])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 49]).Property(grouplistid)])</onup>
+                <control type="group">
+                    <!-- Widget Grouplist -->
+                    <control type="grouplist" id="$PYTHON[50000 + int(mainmenuid) * 100]">
+                        <top>widgets_group_top</top>
+                        <height>widgets_group_height</height>
+                        <itemgap>widgets_group_itemgap</itemgap>
+                        <include condition="Skin.HasSetting(LockMainMenu) + !Skin.HasSetting(EnableHorizontalHome)">Home_FixedMenu_Right</include>
+                        <orientation>vertical</orientation>
+                        <usecontrolcoords>true</usecontrolcoords>
+                        <scrolltime tween="quadratic">400</scrolltime>
 
-                    <ondown condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) - 49])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 50]).Property(grouplistid)])</ondown>
-                    <ondown condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) - 48])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 49]).Property(grouplistid)])</ondown>
-                    <ondown condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) - 47])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 48]).Property(grouplistid)])</ondown>
-                    <ondown condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) - 46])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 47]).Property(grouplistid)])</ondown>
-                    <ondown condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) - 45])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 46]).Property(grouplistid)])</ondown>
-                    <ondown condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) - 44])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 45]).Property(grouplistid)])</ondown>
-                    <ondown condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) - 43])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 44]).Property(grouplistid)])</ondown>
-                    <ondown condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) - 42])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 43]).Property(grouplistid)])</ondown>
-                    <ondown condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) - 41])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 42]).Property(grouplistid)])</ondown>
-                    <ondown condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) - 40])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 41]).Property(grouplistid)])</ondown>
-                    <ondown condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) - 39])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 40]).Property(grouplistid)])</ondown>
-                    <ondown condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) - 38])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 39]).Property(grouplistid)])</ondown>
-                    <ondown condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) - 37])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 38]).Property(grouplistid)])</ondown>
-                    <ondown condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) - 36])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 37]).Property(grouplistid)])</ondown>
-                    <ondown condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) - 35])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 36]).Property(grouplistid)])</ondown>
-                    <ondown condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) - 34])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 35]).Property(grouplistid)])</ondown>
-                    <ondown condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) - 33])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 34]).Property(grouplistid)])</ondown>
-                    <ondown condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) - 32])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 33]).Property(grouplistid)])</ondown>
-                    <ondown condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) - 31])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 32]).Property(grouplistid)])</ondown>
-                    <ondown condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) - 30])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 31]).Property(grouplistid)])</ondown>
-                    <ondown condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) - 29])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 30]).Property(grouplistid)])</ondown>
-                    <ondown condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) - 28])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 29]).Property(grouplistid)])</ondown>
-                    <ondown condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) - 27])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 28]).Property(grouplistid)])</ondown>
-                    <ondown condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) - 26])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 27]).Property(grouplistid)])</ondown>
-                    <ondown condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) - 25])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 26]).Property(grouplistid)])</ondown>
-                    <ondown condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) - 24])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 25]).Property(grouplistid)])</ondown>
-                    <ondown condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) - 23])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 24]).Property(grouplistid)])</ondown>
-                    <ondown condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) - 22])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 23]).Property(grouplistid)])</ondown>
-                    <ondown condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) - 21])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 22]).Property(grouplistid)])</ondown>
-                    <ondown condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) - 20])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 21]).Property(grouplistid)])</ondown>
-                    <ondown condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) - 19])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 20]).Property(grouplistid)])</ondown>
-                    <ondown condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) - 18])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 19]).Property(grouplistid)])</ondown>
-                    <ondown condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) - 17])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 18]).Property(grouplistid)])</ondown>
-                    <ondown condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) - 16])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 17]).Property(grouplistid)])</ondown>
-                    <ondown condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) - 15])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 16]).Property(grouplistid)])</ondown>
-                    <ondown condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) - 14])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 15]).Property(grouplistid)])</ondown>
-                    <ondown condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) - 13])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 14]).Property(grouplistid)])</ondown>
-                    <ondown condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) - 12])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 13]).Property(grouplistid)])</ondown>
-                    <ondown condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) - 11])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 12]).Property(grouplistid)])</ondown>
-                    <ondown condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) - 10])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 11]).Property(grouplistid)])</ondown>
-                    <ondown condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) - 9])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 10]).Property(grouplistid)])</ondown>
-                    <ondown condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) - 8])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 9]).Property(grouplistid)])</ondown>
-                    <ondown condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) - 7])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 8]).Property(grouplistid)])</ondown>
-                    <ondown condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) - 6])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 7]).Property(grouplistid)])</ondown>
-                    <ondown condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) - 5])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 6]).Property(grouplistid)])</ondown>
-                    <ondown condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) - 4])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 5]).Property(grouplistid)])</ondown>
-                    <ondown condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) - 3])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 4]).Property(grouplistid)])</ondown>
-                    <ondown condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) - 2])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 3]).Property(grouplistid)])</ondown>
-                    <ondown condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) - 1])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 2]).Property(grouplistid)])</ondown>
-                    <ondown condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) - 0])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) - 1]).Property(grouplistid)])</ondown>
-                    <ondown condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) + 1])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 0]).Property(grouplistid)])</ondown>
-                    <ondown condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) + 2])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 1]).Property(grouplistid)])</ondown>
-                    <ondown condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) + 3])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 2]).Property(grouplistid)])</ondown>
-                    <ondown condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) + 4])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 3]).Property(grouplistid)])</ondown>
-                    <ondown condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) + 5])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 4]).Property(grouplistid)])</ondown>
-                    <ondown condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) + 6])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 5]).Property(grouplistid)])</ondown>
-                    <ondown condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) + 7])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 6]).Property(grouplistid)])</ondown>
-                    <ondown condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) + 8])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 7]).Property(grouplistid)])</ondown>
-                    <ondown condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) + 9])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 8]).Property(grouplistid)])</ondown>
-                    <ondown condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) + 10])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 9]).Property(grouplistid)])</ondown>
-                    <ondown condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) + 11])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 10]).Property(grouplistid)])</ondown>
-                    <ondown condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) + 12])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 11]).Property(grouplistid)])</ondown>
-                    <ondown condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) + 13])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 12]).Property(grouplistid)])</ondown>
-                    <ondown condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) + 14])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 13]).Property(grouplistid)])</ondown>
-                    <ondown condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) + 15])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 14]).Property(grouplistid)])</ondown>
-                    <ondown condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) + 16])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 15]).Property(grouplistid)])</ondown>
-                    <ondown condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) + 17])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 16]).Property(grouplistid)])</ondown>
-                    <ondown condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) + 18])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 17]).Property(grouplistid)])</ondown>
-                    <ondown condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) + 19])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 18]).Property(grouplistid)])</ondown>
-                    <ondown condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) + 20])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 19]).Property(grouplistid)])</ondown>
-                    <ondown condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) + 21])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 20]).Property(grouplistid)])</ondown>
-                    <ondown condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) + 22])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 21]).Property(grouplistid)])</ondown>
-                    <ondown condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) + 23])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 22]).Property(grouplistid)])</ondown>
-                    <ondown condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) + 24])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 23]).Property(grouplistid)])</ondown>
-                    <ondown condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) + 25])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 24]).Property(grouplistid)])</ondown>
-                    <ondown condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) + 26])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 25]).Property(grouplistid)])</ondown>
-                    <ondown condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) + 27])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 26]).Property(grouplistid)])</ondown>
-                    <ondown condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) + 28])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 27]).Property(grouplistid)])</ondown>
-                    <ondown condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) + 29])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 28]).Property(grouplistid)])</ondown>
-                    <ondown condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) + 30])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 29]).Property(grouplistid)])</ondown>
-                    <ondown condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) + 31])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 30]).Property(grouplistid)])</ondown>
-                    <ondown condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) + 32])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 31]).Property(grouplistid)])</ondown>
-                    <ondown condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) + 33])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 32]).Property(grouplistid)])</ondown>
-                    <ondown condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) + 34])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 33]).Property(grouplistid)])</ondown>
-                    <ondown condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) + 35])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 34]).Property(grouplistid)])</ondown>
-                    <ondown condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) + 36])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 35]).Property(grouplistid)])</ondown>
-                    <ondown condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) + 37])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 36]).Property(grouplistid)])</ondown>
-                    <ondown condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) + 38])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 37]).Property(grouplistid)])</ondown>
-                    <ondown condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) + 39])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 38]).Property(grouplistid)])</ondown>
-                    <ondown condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) + 40])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 39]).Property(grouplistid)])</ondown>
-                    <ondown condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) + 41])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 40]).Property(grouplistid)])</ondown>
-                    <ondown condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) + 42])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 41]).Property(grouplistid)])</ondown>
-                    <ondown condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) + 43])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 42]).Property(grouplistid)])</ondown>
-                    <ondown condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) + 44])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 43]).Property(grouplistid)])</ondown>
-                    <ondown condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) + 45])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 44]).Property(grouplistid)])</ondown>
-                    <ondown condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) + 46])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 45]).Property(grouplistid)])</ondown>
-                    <ondown condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) + 47])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 46]).Property(grouplistid)])</ondown>
-                    <ondown condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) + 48])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 47]).Property(grouplistid)])</ondown>
-                    <ondown condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) + 49])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 48]).Property(grouplistid)])</ondown>
-                    <ondown condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem(1).Property(id),$PYTHON[int(mainmenuid) + 50])">SetFocus($INFO[Container(3701).ListItem($PYTHON[int(mainmenuid) + 49]).Property(grouplistid)])</ondown>
+                        <!-- Movement to HMenu -->
+                        <onup condition="Skin.HasSetting(EnableHorizontalHome)">SetProperty(CG_$PYTHON[50000 + int(mainmenuid) * 100]_CurrentWidget,$INFO[System.CurrentControlID])</onup>
+                        <onup condition="Skin.HasSetting(EnableHorizontalHome)">301</onup>
+                        <ondown condition="Skin.HasSetting(EnableHorizontalHome)">SetFocus(3991)</ondown>
 
+                         <!-- No Wrap Movement for VMenu-->
+                        <onup condition="!Skin.HasSetting(EnableHorizontalHome) + Skin.HasSetting(DisableHomeWrap)">SetProperty(CG_$PYTHON[50000 + int(mainmenuid) * 100]_CurrentWidget,$INFO[System.CurrentControlID])</onup>
+                        <onup condition="!Skin.HasSetting(EnableHorizontalHome) + Skin.HasSetting(DisableHomeWrap)">301</onup>
+                        <ondown condition="!Skin.HasSetting(EnableHorizontalHome) + Skin.HasSetting(DisableHomeWrap)">SetFocus(3991)</ondown>
+                        <onright condition="!Skin.HasSetting(EnableHorizontalHome) + Skin.HasSetting(DisableHomeWrap)">SetFocus(3990)</onright>
 
-                    <onright condition="!Skin.HasSetting(EnableHorizontalHome)">SetProperty(CurrentWidget,$INFO[System.CurrentControlID])</onright>
-                    <onright condition="!Skin.HasSetting(EnableHorizontalHome)">301</onright>
-                    <control type="group" id="$PYTHON[30099 + int(mainmenuid) * 100]"><height>widgets_bumper_top</height></control>
-                    <include content="Home_Vertical_Info">
-                        <param name="font" value="font_title" />
-                        <param name="titleheight" value="60" />
-                        <param name="id" value="$PYTHON[30001 + int(mainmenuid) * 100]" />
-                        <param name="groupid" value="$PYTHON[30097 + int(mainmenuid) * 100]" />
-                        <top>widgets_label_top</top>
-                        <height>470</height>
-                        <visible>Integer.IsEqual(Container($PYTHON[50000 + int(mainmenuid) * 100]).NumItems,1) + Control.IsVisible($PYTHON[30001 + int(mainmenuid) * 100])</visible>
-                        <include content="Object_Control" condition="!Skin.HasSetting(LockMainMenu) | Skin.HasSetting(EnableHorizontalHome)">
-                            <param name="type" value="image" />
-                            <right>100</right>
-                            <bottom>50</bottom>
-                            <height>320</height>
-                            <width>670</width>
-                            <texture background="true">$VAR[Image_ClearArt]</texture>
-                            <aspectratio align="right" aligny="bottom" scalediffuse="false">keep</aspectratio>
-                            <animation effect="fade" start="0" end="100" delay="400" time="400" tween="cubic" easing="inout" reversible="false" condition="Control.HasFocus($PYTHON[30001 + int(mainmenuid) * 100])">Conditional</animation>
+                        <!-- Movement to VMenu -->
+                        <onleft condition="!Skin.HasSetting(EnableHorizontalHome)">SetProperty(CG_$PYTHON[50000 + int(mainmenuid) * 100]_CurrentWidget,$INFO[System.CurrentControlID])</onleft>
+                        <onleft condition="!Skin.HasSetting(EnableHorizontalHome)">301</onleft>
+                        <onright condition="!Skin.HasSetting(EnableHorizontalHome) + !Skin.HasSetting(DisableHomeWrap)">SetProperty(CG_$PYTHON[50000 + int(mainmenuid) * 100]_CurrentWidget,$INFO[System.CurrentControlID])</onright>
+                        <onright condition="!Skin.HasSetting(EnableHorizontalHome) + !Skin.HasSetting(DisableHomeWrap)">301</onright>
 
-                            <animation effect="fade" start="100" end="0" delay="0" time="400" tween="cubic" easing="inout" reversible="false" condition="[Control.HasFocus(301) | Control.HasFocus(302) | [Control.HasFocus(3992) + String.IsEmpty(Window.Property(WidgetFocus))]]">Conditional</animation>
-
-                            <animation effect="fade" start="100" end="0" condition="![Control.HasFocus(301) | Control.HasFocus(302) | [Control.HasFocus(3992) + String.IsEmpty(Window.Property(WidgetFocus))]] + !Control.HasFocus($PYTHON[30001 + int(mainmenuid) * 100])">Conditional</animation>
+                        <!-- Wrap Movement for VMenu -->
+                        <include content="Home_Movement_Widgets_Wrap" condition="!Skin.HasSetting(EnableHorizontalHome) + !Skin.HasSetting(DisableHomeWrap)">
+                            <param name="id-neg-50" value="$PYTHON[int(mainmenuid) - 50]" />
+                            <param name="id-neg-49" value="$PYTHON[int(mainmenuid) - 49]" />
+                            <param name="id-neg-48" value="$PYTHON[int(mainmenuid) - 48]" />
+                            <param name="id-neg-47" value="$PYTHON[int(mainmenuid) - 47]" />
+                            <param name="id-neg-46" value="$PYTHON[int(mainmenuid) - 46]" />
+                            <param name="id-neg-45" value="$PYTHON[int(mainmenuid) - 45]" />
+                            <param name="id-neg-44" value="$PYTHON[int(mainmenuid) - 44]" />
+                            <param name="id-neg-43" value="$PYTHON[int(mainmenuid) - 43]" />
+                            <param name="id-neg-42" value="$PYTHON[int(mainmenuid) - 42]" />
+                            <param name="id-neg-41" value="$PYTHON[int(mainmenuid) - 41]" />
+                            <param name="id-neg-40" value="$PYTHON[int(mainmenuid) - 40]" />
+                            <param name="id-neg-39" value="$PYTHON[int(mainmenuid) - 39]" />
+                            <param name="id-neg-38" value="$PYTHON[int(mainmenuid) - 38]" />
+                            <param name="id-neg-37" value="$PYTHON[int(mainmenuid) - 37]" />
+                            <param name="id-neg-36" value="$PYTHON[int(mainmenuid) - 36]" />
+                            <param name="id-neg-35" value="$PYTHON[int(mainmenuid) - 35]" />
+                            <param name="id-neg-34" value="$PYTHON[int(mainmenuid) - 34]" />
+                            <param name="id-neg-33" value="$PYTHON[int(mainmenuid) - 33]" />
+                            <param name="id-neg-32" value="$PYTHON[int(mainmenuid) - 32]" />
+                            <param name="id-neg-31" value="$PYTHON[int(mainmenuid) - 31]" />
+                            <param name="id-neg-30" value="$PYTHON[int(mainmenuid) - 30]" />
+                            <param name="id-neg-29" value="$PYTHON[int(mainmenuid) - 29]" />
+                            <param name="id-neg-28" value="$PYTHON[int(mainmenuid) - 28]" />
+                            <param name="id-neg-27" value="$PYTHON[int(mainmenuid) - 27]" />
+                            <param name="id-neg-26" value="$PYTHON[int(mainmenuid) - 26]" />
+                            <param name="id-neg-25" value="$PYTHON[int(mainmenuid) - 25]" />
+                            <param name="id-neg-24" value="$PYTHON[int(mainmenuid) - 24]" />
+                            <param name="id-neg-23" value="$PYTHON[int(mainmenuid) - 23]" />
+                            <param name="id-neg-22" value="$PYTHON[int(mainmenuid) - 22]" />
+                            <param name="id-neg-21" value="$PYTHON[int(mainmenuid) - 21]" />
+                            <param name="id-neg-20" value="$PYTHON[int(mainmenuid) - 20]" />
+                            <param name="id-neg-19" value="$PYTHON[int(mainmenuid) - 19]" />
+                            <param name="id-neg-18" value="$PYTHON[int(mainmenuid) - 18]" />
+                            <param name="id-neg-17" value="$PYTHON[int(mainmenuid) - 17]" />
+                            <param name="id-neg-16" value="$PYTHON[int(mainmenuid) - 16]" />
+                            <param name="id-neg-15" value="$PYTHON[int(mainmenuid) - 15]" />
+                            <param name="id-neg-14" value="$PYTHON[int(mainmenuid) - 14]" />
+                            <param name="id-neg-13" value="$PYTHON[int(mainmenuid) - 13]" />
+                            <param name="id-neg-12" value="$PYTHON[int(mainmenuid) - 12]" />
+                            <param name="id-neg-11" value="$PYTHON[int(mainmenuid) - 11]" />
+                            <param name="id-neg-10" value="$PYTHON[int(mainmenuid) - 10]" />
+                            <param name="id-neg-9" value="$PYTHON[int(mainmenuid) - 9]" />
+                            <param name="id-neg-8" value="$PYTHON[int(mainmenuid) - 8]" />
+                            <param name="id-neg-7" value="$PYTHON[int(mainmenuid) - 7]" />
+                            <param name="id-neg-6" value="$PYTHON[int(mainmenuid) - 6]" />
+                            <param name="id-neg-5" value="$PYTHON[int(mainmenuid) - 5]" />
+                            <param name="id-neg-4" value="$PYTHON[int(mainmenuid) - 4]" />
+                            <param name="id-neg-3" value="$PYTHON[int(mainmenuid) - 3]" />
+                            <param name="id-neg-2" value="$PYTHON[int(mainmenuid) - 2]" />
+                            <param name="id-neg-1" value="$PYTHON[int(mainmenuid) - 1]" />
+                            <param name="id-neg-0" value="$PYTHON[int(mainmenuid) - 0]" />
+                            <param name="id-pos-50" value="$PYTHON[int(mainmenuid) + 50]" />
+                            <param name="id-pos-49" value="$PYTHON[int(mainmenuid) + 49]" />
+                            <param name="id-pos-48" value="$PYTHON[int(mainmenuid) + 48]" />
+                            <param name="id-pos-47" value="$PYTHON[int(mainmenuid) + 47]" />
+                            <param name="id-pos-46" value="$PYTHON[int(mainmenuid) + 46]" />
+                            <param name="id-pos-45" value="$PYTHON[int(mainmenuid) + 45]" />
+                            <param name="id-pos-44" value="$PYTHON[int(mainmenuid) + 44]" />
+                            <param name="id-pos-43" value="$PYTHON[int(mainmenuid) + 43]" />
+                            <param name="id-pos-42" value="$PYTHON[int(mainmenuid) + 42]" />
+                            <param name="id-pos-41" value="$PYTHON[int(mainmenuid) + 41]" />
+                            <param name="id-pos-40" value="$PYTHON[int(mainmenuid) + 40]" />
+                            <param name="id-pos-39" value="$PYTHON[int(mainmenuid) + 39]" />
+                            <param name="id-pos-38" value="$PYTHON[int(mainmenuid) + 38]" />
+                            <param name="id-pos-37" value="$PYTHON[int(mainmenuid) + 37]" />
+                            <param name="id-pos-36" value="$PYTHON[int(mainmenuid) + 36]" />
+                            <param name="id-pos-35" value="$PYTHON[int(mainmenuid) + 35]" />
+                            <param name="id-pos-34" value="$PYTHON[int(mainmenuid) + 34]" />
+                            <param name="id-pos-33" value="$PYTHON[int(mainmenuid) + 33]" />
+                            <param name="id-pos-32" value="$PYTHON[int(mainmenuid) + 32]" />
+                            <param name="id-pos-31" value="$PYTHON[int(mainmenuid) + 31]" />
+                            <param name="id-pos-30" value="$PYTHON[int(mainmenuid) + 30]" />
+                            <param name="id-pos-29" value="$PYTHON[int(mainmenuid) + 29]" />
+                            <param name="id-pos-28" value="$PYTHON[int(mainmenuid) + 28]" />
+                            <param name="id-pos-27" value="$PYTHON[int(mainmenuid) + 27]" />
+                            <param name="id-pos-26" value="$PYTHON[int(mainmenuid) + 26]" />
+                            <param name="id-pos-25" value="$PYTHON[int(mainmenuid) + 25]" />
+                            <param name="id-pos-24" value="$PYTHON[int(mainmenuid) + 24]" />
+                            <param name="id-pos-23" value="$PYTHON[int(mainmenuid) + 23]" />
+                            <param name="id-pos-22" value="$PYTHON[int(mainmenuid) + 22]" />
+                            <param name="id-pos-21" value="$PYTHON[int(mainmenuid) + 21]" />
+                            <param name="id-pos-20" value="$PYTHON[int(mainmenuid) + 20]" />
+                            <param name="id-pos-19" value="$PYTHON[int(mainmenuid) + 19]" />
+                            <param name="id-pos-18" value="$PYTHON[int(mainmenuid) + 18]" />
+                            <param name="id-pos-17" value="$PYTHON[int(mainmenuid) + 17]" />
+                            <param name="id-pos-16" value="$PYTHON[int(mainmenuid) + 16]" />
+                            <param name="id-pos-15" value="$PYTHON[int(mainmenuid) + 15]" />
+                            <param name="id-pos-14" value="$PYTHON[int(mainmenuid) + 14]" />
+                            <param name="id-pos-13" value="$PYTHON[int(mainmenuid) + 13]" />
+                            <param name="id-pos-12" value="$PYTHON[int(mainmenuid) + 12]" />
+                            <param name="id-pos-11" value="$PYTHON[int(mainmenuid) + 11]" />
+                            <param name="id-pos-10" value="$PYTHON[int(mainmenuid) + 10]" />
+                            <param name="id-pos-9" value="$PYTHON[int(mainmenuid) + 9]" />
+                            <param name="id-pos-8" value="$PYTHON[int(mainmenuid) + 8]" />
+                            <param name="id-pos-7" value="$PYTHON[int(mainmenuid) + 7]" />
+                            <param name="id-pos-6" value="$PYTHON[int(mainmenuid) + 6]" />
+                            <param name="id-pos-5" value="$PYTHON[int(mainmenuid) + 5]" />
+                            <param name="id-pos-4" value="$PYTHON[int(mainmenuid) + 4]" />
+                            <param name="id-pos-3" value="$PYTHON[int(mainmenuid) + 3]" />
+                            <param name="id-pos-2" value="$PYTHON[int(mainmenuid) + 2]" />
+                            <param name="id-pos-1" value="$PYTHON[int(mainmenuid) + 1]" />
+                            <param name="id-pos-0" value="$PYTHON[int(mainmenuid) + 0]" />
                         </include>
-                    </include>
-                    <skinshortcuts insert="widgets">items</skinshortcuts>
-                    <control type="group" id="$PYTHON[30098 + int(mainmenuid) * 100]"><height>widgets_bumper_bottom</height></control>
+
+                        <control type="group" id="$PYTHON[30099 + int(mainmenuid) * 100]"><height>widgets_bumper_top</height></control>
+
+                        <skinshortcuts insert="widgets">items</skinshortcuts>
+
+                        <control type="group" id="$PYTHON[30098 + int(mainmenuid) * 100]"><height>widgets_bumper_bottom</height></control>
+                    </control>
                 </control>
             </control>
         </controls>
         <items insert="widgets">
             <condition tag="property" attribute="name|list" />
+
+            <!-- Widget Type -->
             <property name="isWidget" tag="property" attribute="name|list" value="Weather">false</property>
             <property name="isWidget" tag="property" attribute="name|list" value="Settings">false</property>
+            <property name="isWidget" tag="property" attribute="name|list" value="Background">false</property>
             <property name="isWidget" tag="property" attribute="name|list">true</property>
             <property name="isWidget">false</property>
-
+            <property name="isFirstPosition" tag="property" attribute="name|id" value="$NUMBER[1]">true</property>
+            <property name="isFirstPosition">false</property>
+            <property name="isBackground" tag="property" attribute="name|list" value="Background">true</property>
+            <property name="isBackground">false</property>
             <property name="isSettings" tag="property" attribute="name|list" value="Settings">true</property>
             <property name="isSettings">false</property>
 
+            <!-- Widget Aspect Include -->
             <property name="widgetInclude" tag="property" attribute="name|list" value="Submenu">Viewtype_Keywords</property>
             <property name="widgetInclude" tag="property" attribute="name|widgetAspect" value="Banner">Viewtype_BigBanner</property>
             <property name="widgetInclude" tag="property" attribute="name|widgetAspect" value="Square">Viewtype_Square</property>
@@ -332,6 +243,12 @@
             <property name="widgetInclude" tag="property" attribute="name|widgetAspect" value="Small Landscape">Viewtype_Landscape</property>
             <property name="widgetInclude" tag="property" attribute="name|widgetAspect" value="Icon">Viewtype_Keywords</property>
             <property name="widgetInclude">Viewtype_Poster</property>
+
+            <!-- Widget Aspect -->
+            <property name="widgetAspect" tag="property" attribute="name|widgetAspect" />
+            <property name="widgetAspect">Poster</property>
+
+            <!-- Widget Aspect Movement -->
             <property name="widgetMovement" tag="property" attribute="name|widgetAspect" value="Banner">Defs_Movement_Banner</property>
             <property name="widgetMovement" tag="property" attribute="name|widgetAspect" value="Square">Defs_Movement_Square</property>
             <property name="widgetMovement" tag="property" attribute="name|widgetAspect" value="Small Square">Defs_Movement_Square</property>
@@ -339,6 +256,7 @@
             <property name="widgetMovement" tag="property" attribute="name|widgetAspect" value="Small Landscape">Defs_Movement_Landscape</property>
             <property name="widgetMovement">Defs_Movement_Poster</property>
 
+            <!-- Widget Blur Source Artwork -->
             <property name="widgetSourceArt" tag="property" attribute="name|widgetAspect" value="Banner">Art(tvshow.banner)|Art(banner)|Art(fanart)</property>
             <property name="widgetSourceArt" tag="property" attribute="name|widgetAspect" value="Square">thumb</property>
             <property name="widgetSourceArt" tag="property" attribute="name|widgetAspect" value="Small Square">thumb</property>
@@ -346,11 +264,7 @@
             <property name="widgetSourceArt" tag="property" attribute="name|widgetAspect" value="Small Landscape">landscape</property>
             <property name="widgetSourceArt">poster</property>
 
-            <property name="widgetAspect" tag="property" attribute="name|widgetAspect" />
-            <property name="widgetAspect">Poster</property>
-            <property name="widgetTarget" tag="property" attribute="name|widgetTarget" />
-            <property name="widgetTarget">videos</property>
-
+            <!-- Widget Label Renaming for Special TMDBHelper Widgets -->
             <property name="widgetLabelName" tag="property" attribute="name|labelID" value="randommoviesgenre">True</property>
             <property name="widgetLabelName" tag="property" attribute="name|labelID" value="randomtvshowsgenre">True</property>
             <property name="widgetLabelName" tag="property" attribute="name|labelID" value="basedonrecentlywatchedmovies">True</property>
@@ -366,6 +280,7 @@
             <property name="widgetLabelName" tag="label" value="widgetname">True</property>
             <property name="widgetLabelName">False</property>
 
+            <!-- Widget Label Renaming Strings -->
             <property name="widgetLabelStart" tag="property" attribute="name|labelID" value="basedonrecentlywatchedmovies">Similar to </property>
             <property name="widgetLabelStart" tag="property" attribute="name|labelID" value="basedonrecentlywatchedtvshows">Similar to </property>
             <property name="widgetLabelStart" tag="property" attribute="name|labelID" value="basedonrecentlywatched">Similar to </property>
@@ -373,18 +288,39 @@
             <property name="widgetLabelStart" tag="property" attribute="name|labelID" value="basedonmostwatchedtvshows">Similar to </property>
             <property name="widgetLabelStart" tag="property" attribute="name|labelID" value="basedonmostwatched">Similar to </property>
 
+            <!-- Widget Label -->
             <property name="widgetName" tag="label" />
             <property name="widgetName">$LOCALIZE[31105]</property>
+
+            <!-- Widget Submenu Property -->
             <property name="widgetSubmenu" tag="property" attribute="name|list" value="Submenu">True</property>
             <property name="widgetSubmenu">False</property>
+
+            <!-- Widget Submenu Property -->
+            <property name="widgetConstant" tag="property" attribute="name|list" value="Submenu">widgets_submenu</property>
+            <property name="widgetConstant">widgets</property>
+
+            <!-- Widget Height Property -->
+            <property name="widgetTop" tag="property" attribute="name|list" value="Submenu">widgets_submenu_item_top</property>
+            <property name="widgetTop" tag="property" attribute="name|widgetInfo" value="True">widgets_info_item_top</property>
+            <property name="widgetTop">widgets_item_top</property>
+
+            <!-- Widget Info Property -->
+            <property name="widgetInfo" tag="property" attribute="name|list" value="Submenu">False</property>
+            <property name="widgetInfo" tag="property" attribute="name|widgetInfo" value="True">True</property>
+            <property name="widgetInfo">False</property>
+
+            <!-- Widget Content Tags -->
             <property name="widgetPath" tag="property" attribute="name|list" />
+            <property name="widgetTarget" tag="property" attribute="name|widgetTarget" />
+            <property name="widgetTarget">videos</property>
             <property name="widgetSortby" tag="property" attribute="name|widgetSortby" />
             <property name="widgetSortorder" tag="property" attribute="name|widgetSortorder" />
             <property name="widgetLimit" tag="property" attribute="name|widgetLimit" />
             <property name="widgetLimit">20</property>
 
+            <!-- Menu IDs -->
             <property name="mainmenuid" tag="property" attribute="name|mainmenuid" />
-
             <property name="id" tag="property" attribute="name|id" value="$NUMBER[1]">1</property>
             <property name="id" tag="property" attribute="name|id" value="$NUMBER[2]">2</property>
             <property name="id" tag="property" attribute="name|id" value="$NUMBER[3]">3</property>
@@ -436,58 +372,52 @@
             <property name="id" tag="property" attribute="name|id" value="$NUMBER[49]">49</property>
             <property name="id">50</property>
             <controls>
-                <include content="Info_Widget_Poster" condition="$SKINSHORTCUTS[isSettings]">
-                    <param name="groupid" value="$PYTHON[40000 + int(mainmenuid) * 100 + int(id)]" />
+
+                <include content="Home_Vertical_Info" condition="$SKINSHORTCUTS[isWidget] + !$SKINSHORTCUTS[widgetSubmenu] + $SKINSHORTCUTS[widgetInfo]">
+                    <param name="font" value="font_title" />
+                    <param name="titleheight" value="60" />
+                    <param name="groupid" value="$PYTHON[60000 + int(mainmenuid) * 100 + int(id)]" />
                     <param name="id" value="$PYTHON[30000 + int(mainmenuid) * 100 + int(id)]" />
-                    <param name="label" value="$SKINSHORTCUTS[widgetName]" />
-                    <param name="viewtype-include" value="Viewtype_Settings" />
-                    <param name="widget-type" value="widgets_settings_top" />
-                    <onfocus condition="!Skin.HasSetting(NoFanart)">SetProperty(TMDbHelper.Blur.SourceImage,$SKINSHORTCUTS[widgetSourceArt],Home)</onfocus>
-                    <onfocus condition="Skin.HasSetting(NoFanart)">SetProperty(TMDbHelper.Blur.SourceImage,Art(fallback),Home)</onfocus>
-                    <onback>SetFocus($PYTHON[int(mainmenuid)]3101)</onback>
-                    <onback>301</onback>
-                    <onfocus>SetProperty(WidgetFocus,1)</onfocus>
-                    <include>Items_Settings_Main</include>
+                    <param name="visible" value="Control.HasFocus($PYTHON[30000 + int(mainmenuid) * 100 + int(id)]) | Integer.IsEqual(Window(Home).Property(CG_$PYTHON[50000 + int(mainmenuid) * 100]_CurrentWidget),$NUMBER[$PYTHON[30000 + int(mainmenuid) * 100 + int(id)]])" />
+                    <top>-60</top>
+                    <height>470</height>
+                    <include content="Object_Control" condition="!Skin.HasSetting(LockMainMenu) | Skin.HasSetting(EnableHorizontalHome)">
+                        <param name="type" value="image" />
+                        <right>100</right>
+                        <bottom>480</bottom>
+                        <height>320</height>
+                        <width>670</width>
+                        <texture background="true">$VAR[Image_ClearArt]</texture>
+                        <aspectratio align="right" aligny="bottom" scalediffuse="false">keep</aspectratio>
+                        <animation effect="fade" start="0" end="100" delay="400" time="400" tween="cubic" easing="inout" reversible="false" condition="Control.HasFocus($PYTHON[30000 + int(mainmenuid) * 100 + int(id)])">Conditional</animation>
+
+                        <animation effect="fade" start="100" end="0" delay="0" time="400" tween="cubic" easing="inout" reversible="false" condition="[Control.HasFocus(301) | Control.HasFocus(302) | [Control.HasFocus(3992) + String.IsEmpty(Window.Property(WidgetFocus))]]">Conditional</animation>
+
+                        <animation effect="fade" start="100" end="0" condition="![Control.HasFocus(301) | Control.HasFocus(302) | [Control.HasFocus(3992) + String.IsEmpty(Window.Property(WidgetFocus))]] + !Control.HasFocus($PYTHON[30000 + int(mainmenuid) * 100 + int(id)])">Conditional</animation>
+                    </include>
                 </include>
-                <include content="Info_Widget_Poster" condition="$SKINSHORTCUTS[isSettings]">
-                    <param name="groupid" value="$PYTHON[41000 + int(mainmenuid) * 100 + int(id)]" />
-                    <param name="id" value="$PYTHON[31000 + int(mainmenuid) * 100 + int(id)]" />
-                    <param name="label" value="Management" />
-                    <param name="viewtype-include" value="Viewtype_Settings" />
-                    <param name="widget-type" value="widgets_settings_bottom" />
-                    <onfocus condition="!Skin.HasSetting(NoFanart)">SetProperty(TMDbHelper.Blur.SourceImage,$SKINSHORTCUTS[widgetSourceArt],Home)</onfocus>
-                    <onfocus condition="Skin.HasSetting(NoFanart)">SetProperty(TMDbHelper.Blur.SourceImage,Art(fallback),Home)</onfocus>
-                    <onback>SetFocus($PYTHON[int(mainmenuid)]3101)</onback>
-                    <onback>301</onback>
-                    <onfocus>SetProperty(WidgetFocus,1)</onfocus>
-                    <include>Items_Settings_System</include>
-                </include>
-                <include content="Home_Weather_Button" condition="!$SKINSHORTCUTS[isWidget] + !$SKINSHORTCUTS[isSettings]">
-                    <param name="id" value="$PYTHON[30000 + int(mainmenuid) * 100 + int(id)]" />
-                    <onback>SetFocus($PYTHON[int(mainmenuid)]3101)</onback>
-                    <onback>301</onback>
-                    <onfocus>SetProperty(TMDbHelper.WidgetContainer,$NUMBER[$PYTHON[30000 + int(mainmenuid) * 100 + int(id)]],Home)</onfocus>
-                    <onfocus condition="!Skin.HasSetting(NoFanart)">SetProperty(TMDbHelper.Blur.SourceImage,$SKINSHORTCUTS[widgetSourceArt],Home)</onfocus>
-                    <onfocus condition="Skin.HasSetting(NoFanart)">SetProperty(TMDbHelper.Blur.SourceImage,Art(fallback),Home)</onfocus>
-                    <onfocus>SetProperty(WidgetFocus,1)</onfocus>
-                </include>
+
                 <include content="Info_Widget_Poster" condition="$SKINSHORTCUTS[isWidget]">
                     <param name="groupid" value="$PYTHON[40000 + int(mainmenuid) * 100 + int(id)]" />
                     <param name="id" value="$PYTHON[30000 + int(mainmenuid) * 100 + int(id)]" />
                     <param name="label" value="$SKINSHORTCUTS[widgetName]" />
                     <param name="viewtype-include" value="$SKINSHORTCUTS[widgetInclude]" />
-                    <param name="widget-type" value="widgets" />
+                    <param name="widget-type" value="$SKINSHORTCUTS[widgetConstant]" />
                     <param name="issubmenu" value="$SKINSHORTCUTS[widgetSubmenu]" />
                     <param name="showonupdate" value="false" />
                     <param name="label-widgetname" value="$SKINSHORTCUTS[widgetLabelName]" />
                     <param name="label-widgetstart" value="$SKINSHORTCUTS[widgetLabelStart]" />
                     <param name="label-widgetend" value="$SKINSHORTCUTS[widgetLabelEnd]" />
-                    <onback>SetFocus($PYTHON[int(mainmenuid)]3101)</onback>
+                    <param name="infoslide" value="!$SKINSHORTCUTS[widgetSubmenu] + $SKINSHORTCUTS[widgetInfo]" />
+                    <top>$SKINSHORTCUTS[widgetTop]</top>
+                    <onback>SetFocus($PYTHON[30000 + int(mainmenuid) * 100 + 1])</onback>
                     <onback>301</onback>
-                    <onfocus>SetProperty(TMDbHelper.WidgetContainer,$NUMBER[$PYTHON[30000 + int(mainmenuid) * 100 + int(id)]],Home)</onfocus>
-                    <onfocus condition="!Skin.HasSetting(NoFanart)">SetProperty(TMDbHelper.Blur.SourceImage,$SKINSHORTCUTS[widgetSourceArt],Home)</onfocus>
-                    <onfocus condition="Skin.HasSetting(NoFanart)">SetProperty(TMDbHelper.Blur.SourceImage,Art(fallback),Home)</onfocus>
+                    <onfocus condition="!$SKINSHORTCUTS[widgetSubmenu]">SetProperty(TMDbHelper.WidgetContainer,$NUMBER[$PYTHON[30000 + int(mainmenuid) * 100 + int(id)]],Home)</onfocus>
+                    <onfocus>SetProperty(CG_$PYTHON[50000 + int(mainmenuid) * 100]_CurrentWidget,$NUMBER[$PYTHON[30000 + int(mainmenuid) * 100 + int(id)]],Home)</onfocus>
+                    <onfocus condition="!Skin.HasSetting(NoFanart) + !$SKINSHORTCUTS[widgetSubmenu]">SetProperty(TMDbHelper.Blur.SourceImage,$SKINSHORTCUTS[widgetSourceArt],Home)</onfocus>
+                    <onfocus condition="Skin.HasSetting(NoFanart) + !$SKINSHORTCUTS[widgetSubmenu]">SetProperty(TMDbHelper.Blur.SourceImage,Art(fallback),Home)</onfocus>
                     <onfocus>SetProperty(WidgetFocus,1)</onfocus>
+                    <onfocus condition="!$SKINSHORTCUTS[widgetSubmenu]">SetProperty(HW_$PYTHON[50000 + int(mainmenuid) * 100]_NotFocused,$PYTHON[30000 + int(mainmenuid) * 100 + int(id)],Home)</onfocus>
                     <include content="Defs_AutoScroll">
                         <param name="condition" value="[!ControlGroup($PYTHON[50000 + int(mainmenuid) * 100]).HasFocus() + System.IdleTime(1) + !Skin.HasSetting(DisableAutoScrollWidgets) + Integer.IsEqual(Container($PYTHON[50000 + int(mainmenuid) * 100]).NumItems,1)] | [$PYTHON['true' if widgetAspect in 'Banner' else 'false'] + !Control.HasFocus($PYTHON[30000 + int(mainmenuid) * 100 + int(id)]) + !Skin.HasSetting(DisableAutoScrollWidgets)]" />
                     </include>
@@ -495,22 +425,450 @@
                     <content><include condition="$SKINSHORTCUTS[widgetSubmenu]">skinshortcuts-submenu</include></content>
                     <content target="$SKINSHORTCUTS[widgetTarget]" limit="$SKINSHORTCUTS[widgetLimit]" sortby="$SKINSHORTCUTS[widgetSortby]" sortorder="$SKINSHORTCUTS[widgetSortorder]">$SKINSHORTCUTS[widgetPath]</content>
                     <content>
-                        <item>
+                        <include content="Object_Item" condition="Skin.HasSetting(EnableShowMore) + !$SKINSHORTCUTS[widgetSubmenu]">
                             <label>$LOCALIZE[31061]...</label>
                             <label2>$LOCALIZE[31062]</label2>
                             <icon>common/nextitem.png</icon>
                             <onclick>ActivateWindow($SKINSHORTCUTS[widgetTarget],$SKINSHORTCUTS[widgetPath],return)</onclick>
-                            <visible>Skin.HasSetting(EnableShowMore)</visible>
-                            <visible>!$SKINSHORTCUTS[widgetSubmenu]</visible>
                             <visible>!Integer.IsLess(Container($PYTHON[30000 + int(mainmenuid) * 100 + int(id)]).NumItems,$SKINSHORTCUTS[widgetLimit])</visible>
-                        </item>
+                        </include>
                     </content>
+                </include>
+
+                <include content="Home_Widget_Fullscreen_HubInfo" condition="$SKINSHORTCUTS[isBackground] + $SKINSHORTCUTS[isFirstPosition]">
+                    <param name="group-id" value="$PYTHON[35000 + int(mainmenuid) * 100 + int(id)]]" />
+                    <param name="group2-id" value="$PYTHON[75000 + int(mainmenuid) * 100 + int(id)]]" />
+                    <param name="button-play-id" value="$PYTHON[30000 + int(mainmenuid) * 100 + int(id)]" />
+                    <param name="group-play-id" value="$PYTHON[45000 + int(mainmenuid) * 100 + int(id)]" />
+                    <param name="button-info-id" value="$PYTHON[55000 + int(mainmenuid) * 100 + int(id)]" />
+                    <param name="group-info-id" value="$PYTHON[65000 + int(mainmenuid) * 100 + int(id)]" />
+                    <param name="ondown" value="$PYTHON[30001 + int(mainmenuid) * 100 + int(id)]" />
+                    <param name="onfocus" value="SetProperty(CG_$PYTHON[50000 + int(mainmenuid) * 100]_CurrentWidget,$PYTHON[35000 + int(mainmenuid) * 100 + int(id)]],Home)" />
+                    <param name="onfocus2" value="ClearProperty(HW_$PYTHON[50000 + int(mainmenuid) * 100]_NotFocused,Home)" />
+                    <param name="hideinfo" value="!String.IsEmpty(Window(Home).Property(HW_$PYTHON[50000 + int(mainmenuid) * 100]_NotFocused))" />
+                    <include>Animation_FadeInOut_Common</include>
+                    <top>740</top>
+                    <height>40</height>
+                </include>
+
+
+
+                <include content="Object_Control" condition="!$SKINSHORTCUTS[isWidget] + !$SKINSHORTCUTS[isBackground]">
+                    <param name="type" value="button" />
+                    <param name="id" value="$PYTHON[30000 + int(mainmenuid) * 100 + int(id)]" />
+                    <description>Special Widget Control</description>
+                    <include>Defs_Hidden_Button</include>
+                    <onback>301</onback>
+                    <onclick condition="!$SKINSHORTCUTS[isSettings]">ActivateWindow(Weather)</onclick>
+                    <onfocus>ClearProperty(TMDbHelper.WidgetContainer,Home)</onfocus>
+                    <onfocus>SetProperty(CG_$PYTHON[50000 + int(mainmenuid) * 100]_CurrentWidget,$NUMBER[$PYTHON[30000 + int(mainmenuid) * 100 + int(id)]],Home)</onfocus>
+                    <onfocus condition="!Skin.HasSetting(NoFanart)">SetProperty(TMDbHelper.Blur.SourceImage,$SKINSHORTCUTS[widgetSourceArt],Home)</onfocus>
+                    <onfocus condition="Skin.HasSetting(NoFanart)">SetProperty(TMDbHelper.Blur.SourceImage,Art(fallback),Home)</onfocus>
+                    <onfocus>SetProperty(HW_$PYTHON[50000 + int(mainmenuid) * 100]_NotFocused,$PYTHON[30000 + int(mainmenuid) * 100 + int(id)],Home)</onfocus>
+                    <onfocus>SetProperty(WidgetFocus,1)</onfocus>
+                    <onfocus condition="$SKINSHORTCUTS[isSettings] + String.IsEmpty(Window(Home).Property(SpecialWidgetControl))">SetFocus(5200)</onfocus>
+                    <onfocus condition="$SKINSHORTCUTS[isSettings] + String.IsEqual(Window(Home).Property(SpecialWidgetControl),MoveUp)">Action(Up)</onfocus>
+                    <onfocus condition="$SKINSHORTCUTS[isSettings] + String.IsEqual(Window(Home).Property(SpecialWidgetControl),MoveDown)">Action(Down)</onfocus>
+                    <onfocus condition="$SKINSHORTCUTS[isSettings] + String.IsEqual(Window(Home).Property(SpecialWidgetControl),MoveLeft)">Action(Left)</onfocus>
+                    <onfocus condition="$SKINSHORTCUTS[isSettings] + String.IsEqual(Window(Home).Property(SpecialWidgetControl),MoveRight)">Action(Right)</onfocus>
+                    <onfocus>ClearProperty(SpecialWidgetControl,Home)</onfocus>
                 </include>
             </controls>
         </items>
     </submenu>
 
-    <other include="showcase-background" container="302">
+    <other include="homefader">
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[1]">1</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[2]">2</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[3]">3</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[4]">4</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[5]">5</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[6]">6</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[7]">7</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[8]">8</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[9]">9</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[10]">10</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[11]">11</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[12]">12</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[13]">13</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[14]">14</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[15]">15</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[16]">16</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[17]">17</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[18]">18</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[19]">19</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[20]">20</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[21]">21</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[22]">22</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[23]">23</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[24]">24</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[25]">25</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[26]">26</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[27]">27</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[28]">28</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[29]">29</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[30]">30</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[31]">31</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[32]">32</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[33]">33</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[34]">34</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[35]">35</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[36]">36</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[37]">37</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[38]">38</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[39]">39</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[40]">40</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[41]">41</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[42]">42</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[43]">43</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[44]">44</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[45]">45</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[46]">46</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[47]">47</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[48]">48</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[49]">49</property>
+        <property name="id">50</property>
+        <property name="submenuVisibility" tag="property" attribute="name|submenuVisibility"/>
+        <controls>
+            <control type="image">
+                <height>200</height>
+                <texture>common/dim-top.png</texture>
+                <animation effect="fade" start="0" end="100" time="500" tween="cubic" easing="inout">Visible</animation>
+                <animation effect="fade" start="100" end="0" time="500" tween="cubic" easing="inout">Hidden</animation>
+                <visible>String.IsEqual(Container(301).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility])</visible>
+                <visible>Container($PYTHON[50000 + int(id) * 100]).HasPrevious</visible>
+            </control>
+        </controls>
+    </other>
+
+    <other include="widgetgrouplists">
+        <property name="id" tag="property" attribute="name|id" />
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[1]">1</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[2]">2</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[3]">3</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[4]">4</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[5]">5</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[6]">6</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[7]">7</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[8]">8</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[9]">9</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[10]">10</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[11]">11</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[12]">12</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[13]">13</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[14]">14</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[15]">15</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[16]">16</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[17]">17</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[18]">18</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[19]">19</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[20]">20</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[21]">21</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[22]">22</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[23]">23</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[24]">24</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[25]">25</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[26]">26</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[27]">27</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[28]">28</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[29]">29</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[30]">30</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[31]">31</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[32]">32</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[33]">33</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[34]">34</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[35]">35</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[36]">36</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[37]">37</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[38]">38</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[39]">39</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[40]">40</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[41]">41</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[42]">42</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[43]">43</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[44]">44</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[45]">45</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[46]">46</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[47]">47</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[48]">48</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[49]">49</property>
+        <property name="mainmenuid">50</property>
+        <property name="visibility" tag="visible"/>
+        <controls>
+            <item>
+                <label>num-$SKINSHORTCUTS[id]</label>
+                <property name="grouplistid">$NUMBER[$PYTHON[50000 + int(mainmenuid) * 100]]</property>
+                <property name="visibility">$SKINSHORTCUTS[visibility]</property>
+            </item>
+        </controls>
+    </other>
+
+    <other include="infoline">
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[1]">1</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[2]">2</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[3]">3</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[4]">4</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[5]">5</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[6]">6</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[7]">7</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[8]">8</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[9]">9</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[10]">10</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[11]">11</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[12]">12</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[13]">13</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[14]">14</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[15]">15</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[16]">16</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[17]">17</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[18]">18</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[19]">19</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[20]">20</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[21]">21</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[22]">22</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[23]">23</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[24]">24</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[25]">25</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[26]">26</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[27]">27</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[28]">28</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[29]">29</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[30]">30</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[31]">31</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[32]">32</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[33]">33</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[34]">34</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[35]">35</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[36]">36</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[37]">37</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[38]">38</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[39]">39</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[40]">40</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[41]">41</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[42]">42</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[43]">43</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[44]">44</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[45]">45</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[46]">46</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[47]">47</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[48]">48</property>
+        <property name="id" tag="property" attribute="name|id" value="$NUMBER[49]">49</property>
+        <property name="id">50</property>
+        <property name="submenuVisibility" tag="property" attribute="name|submenuVisibility"/>
+        <controls>
+            <include content="Object_56560_Item">
+                <param name="listitem" value="Container($PYTHON[30001 + int(id) * 100]).ListItem" />
+                <visible>String.IsEqual(Container(301).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility]) + [Control.HasFocus($PYTHON[30001 + int(id) * 100]) | Integer.IsEqual(Window(Home).Property(CG_$PYTHON[50000 + int(id) * 100]_CurrentWidget),$NUMBER[$PYTHON[30001 + int(id) * 100]])] + !Integer.IsEqual(Container(3700).NumItems,0) + !Integer.IsEqual(Window(Home).Property(TMDbHelper.WidgetContainer),3001)</visible>
+            </include>
+            <include content="Object_56560_Item">
+                <param name="listitem" value="Container($PYTHON[30002 + int(id) * 100]).ListItem" />
+                <visible>String.IsEqual(Container(301).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility]) + [Control.HasFocus($PYTHON[30002 + int(id) * 100]) | Integer.IsEqual(Window(Home).Property(CG_$PYTHON[50000 + int(id) * 100]_CurrentWidget),$NUMBER[$PYTHON[30002 + int(id) * 100]])] + !Integer.IsEqual(Container(3700).NumItems,0) + !Integer.IsEqual(Window(Home).Property(TMDbHelper.WidgetContainer),3001)</visible>
+            </include>
+            <include content="Object_56560_Item">
+                <param name="listitem" value="Container($PYTHON[30003 + int(id) * 100]).ListItem" />
+                <visible>String.IsEqual(Container(301).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility]) + [Control.HasFocus($PYTHON[30003 + int(id) * 100]) | Integer.IsEqual(Window(Home).Property(CG_$PYTHON[50000 + int(id) * 100]_CurrentWidget),$NUMBER[$PYTHON[30003 + int(id) * 100]])] + !Integer.IsEqual(Container(3700).NumItems,0) + !Integer.IsEqual(Window(Home).Property(TMDbHelper.WidgetContainer),3001)</visible>
+            </include>
+            <include content="Object_56560_Item">
+                <param name="listitem" value="Container($PYTHON[30004 + int(id) * 100]).ListItem" />
+                <visible>String.IsEqual(Container(301).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility]) + [Control.HasFocus($PYTHON[30004 + int(id) * 100]) | Integer.IsEqual(Window(Home).Property(CG_$PYTHON[50000 + int(id) * 100]_CurrentWidget),$NUMBER[$PYTHON[30004 + int(id) * 100]])] + !Integer.IsEqual(Container(3700).NumItems,0) + !Integer.IsEqual(Window(Home).Property(TMDbHelper.WidgetContainer),3001)</visible>
+            </include>
+            <include content="Object_56560_Item">
+                <param name="listitem" value="Container($PYTHON[30005 + int(id) * 100]).ListItem" />
+                <visible>String.IsEqual(Container(301).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility]) + [Control.HasFocus($PYTHON[30005 + int(id) * 100]) | Integer.IsEqual(Window(Home).Property(CG_$PYTHON[50000 + int(id) * 100]_CurrentWidget),$NUMBER[$PYTHON[30005 + int(id) * 100]])] + !Integer.IsEqual(Container(3700).NumItems,0) + !Integer.IsEqual(Window(Home).Property(TMDbHelper.WidgetContainer),3001)</visible>
+            </include>
+            <include content="Object_56560_Item">
+                <param name="listitem" value="Container($PYTHON[30006 + int(id) * 100]).ListItem" />
+                <visible>String.IsEqual(Container(301).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility]) + [Control.HasFocus($PYTHON[30006 + int(id) * 100]) | Integer.IsEqual(Window(Home).Property(CG_$PYTHON[50000 + int(id) * 100]_CurrentWidget),$NUMBER[$PYTHON[30006 + int(id) * 100]])] + !Integer.IsEqual(Container(3700).NumItems,0) + !Integer.IsEqual(Window(Home).Property(TMDbHelper.WidgetContainer),3001)</visible>
+            </include>
+            <include content="Object_56560_Item">
+                <param name="listitem" value="Container($PYTHON[30007 + int(id) * 100]).ListItem" />
+                <visible>String.IsEqual(Container(301).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility]) + [Control.HasFocus($PYTHON[30007 + int(id) * 100]) | Integer.IsEqual(Window(Home).Property(CG_$PYTHON[50000 + int(id) * 100]_CurrentWidget),$NUMBER[$PYTHON[30007 + int(id) * 100]])] + !Integer.IsEqual(Container(3700).NumItems,0) + !Integer.IsEqual(Window(Home).Property(TMDbHelper.WidgetContainer),3001)</visible>
+            </include>
+            <include content="Object_56560_Item">
+                <param name="listitem" value="Container($PYTHON[30008 + int(id) * 100]).ListItem" />
+                <visible>String.IsEqual(Container(301).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility]) + [Control.HasFocus($PYTHON[30008 + int(id) * 100]) | Integer.IsEqual(Window(Home).Property(CG_$PYTHON[50000 + int(id) * 100]_CurrentWidget),$NUMBER[$PYTHON[30008 + int(id) * 100]])] + !Integer.IsEqual(Container(3700).NumItems,0) + !Integer.IsEqual(Window(Home).Property(TMDbHelper.WidgetContainer),3001)</visible>
+            </include>
+            <include content="Object_56560_Item">
+                <param name="listitem" value="Container($PYTHON[30009 + int(id) * 100]).ListItem" />
+                <visible>String.IsEqual(Container(301).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility]) + [Control.HasFocus($PYTHON[30009 + int(id) * 100]) | Integer.IsEqual(Window(Home).Property(CG_$PYTHON[50000 + int(id) * 100]_CurrentWidget),$NUMBER[$PYTHON[30009 + int(id) * 100]])] + !Integer.IsEqual(Container(3700).NumItems,0) + !Integer.IsEqual(Window(Home).Property(TMDbHelper.WidgetContainer),3001)</visible>
+            </include>
+            <include content="Object_56560_Item">
+                <param name="listitem" value="Container($PYTHON[30010 + int(id) * 100]).ListItem" />
+                <visible>String.IsEqual(Container(301).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility]) + [Control.HasFocus($PYTHON[30010 + int(id) * 100]) | Integer.IsEqual(Window(Home).Property(CG_$PYTHON[50000 + int(id) * 100]_CurrentWidget),$NUMBER[$PYTHON[30010 + int(id) * 100]])] + !Integer.IsEqual(Container(3700).NumItems,0) + !Integer.IsEqual(Window(Home).Property(TMDbHelper.WidgetContainer),3001)</visible>
+            </include>
+            <include content="Object_56560_Item">
+                <param name="listitem" value="Container($PYTHON[30011 + int(id) * 100]).ListItem" />
+                <visible>String.IsEqual(Container(301).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility]) + [Control.HasFocus($PYTHON[30011 + int(id) * 100]) | Integer.IsEqual(Window(Home).Property(CG_$PYTHON[50000 + int(id) * 100]_CurrentWidget),$NUMBER[$PYTHON[30011 + int(id) * 100]])] + !Integer.IsEqual(Container(3700).NumItems,0) + !Integer.IsEqual(Window(Home).Property(TMDbHelper.WidgetContainer),3001)</visible>
+            </include>
+            <include content="Object_56560_Item">
+                <param name="listitem" value="Container($PYTHON[30012 + int(id) * 100]).ListItem" />
+                <visible>String.IsEqual(Container(301).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility]) + [Control.HasFocus($PYTHON[30012 + int(id) * 100]) | Integer.IsEqual(Window(Home).Property(CG_$PYTHON[50000 + int(id) * 100]_CurrentWidget),$NUMBER[$PYTHON[30012 + int(id) * 100]])] + !Integer.IsEqual(Container(3700).NumItems,0) + !Integer.IsEqual(Window(Home).Property(TMDbHelper.WidgetContainer),3001)</visible>
+            </include>
+            <include content="Object_56560_Item">
+                <param name="listitem" value="Container($PYTHON[30013 + int(id) * 100]).ListItem" />
+                <visible>String.IsEqual(Container(301).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility]) + [Control.HasFocus($PYTHON[30013 + int(id) * 100]) | Integer.IsEqual(Window(Home).Property(CG_$PYTHON[50000 + int(id) * 100]_CurrentWidget),$NUMBER[$PYTHON[30013 + int(id) * 100]])] + !Integer.IsEqual(Container(3700).NumItems,0) + !Integer.IsEqual(Window(Home).Property(TMDbHelper.WidgetContainer),3001)</visible>
+            </include>
+            <include content="Object_56560_Item">
+                <param name="listitem" value="Container($PYTHON[30014 + int(id) * 100]).ListItem" />
+                <visible>String.IsEqual(Container(301).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility]) + [Control.HasFocus($PYTHON[30014 + int(id) * 100]) | Integer.IsEqual(Window(Home).Property(CG_$PYTHON[50000 + int(id) * 100]_CurrentWidget),$NUMBER[$PYTHON[30014 + int(id) * 100]])] + !Integer.IsEqual(Container(3700).NumItems,0) + !Integer.IsEqual(Window(Home).Property(TMDbHelper.WidgetContainer),3001)</visible>
+            </include>
+            <include content="Object_56560_Item">
+                <param name="listitem" value="Container($PYTHON[30015 + int(id) * 100]).ListItem" />
+                <visible>String.IsEqual(Container(301).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility]) + [Control.HasFocus($PYTHON[30015 + int(id) * 100]) | Integer.IsEqual(Window(Home).Property(CG_$PYTHON[50000 + int(id) * 100]_CurrentWidget),$NUMBER[$PYTHON[30015 + int(id) * 100]])] + !Integer.IsEqual(Container(3700).NumItems,0) + !Integer.IsEqual(Window(Home).Property(TMDbHelper.WidgetContainer),3001)</visible>
+            </include>
+            <include content="Object_56560_Item">
+                <param name="listitem" value="Container($PYTHON[30016 + int(id) * 100]).ListItem" />
+                <visible>String.IsEqual(Container(301).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility]) + [Control.HasFocus($PYTHON[30016 + int(id) * 100]) | Integer.IsEqual(Window(Home).Property(CG_$PYTHON[50000 + int(id) * 100]_CurrentWidget),$NUMBER[$PYTHON[30016 + int(id) * 100]])] + !Integer.IsEqual(Container(3700).NumItems,0) + !Integer.IsEqual(Window(Home).Property(TMDbHelper.WidgetContainer),3001)</visible>
+            </include>
+            <include content="Object_56560_Item">
+                <param name="listitem" value="Container($PYTHON[30017 + int(id) * 100]).ListItem" />
+                <visible>String.IsEqual(Container(301).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility]) + [Control.HasFocus($PYTHON[30017 + int(id) * 100]) | Integer.IsEqual(Window(Home).Property(CG_$PYTHON[50000 + int(id) * 100]_CurrentWidget),$NUMBER[$PYTHON[30017 + int(id) * 100]])] + !Integer.IsEqual(Container(3700).NumItems,0) + !Integer.IsEqual(Window(Home).Property(TMDbHelper.WidgetContainer),3001)</visible>
+            </include>
+            <include content="Object_56560_Item">
+                <param name="listitem" value="Container($PYTHON[30018 + int(id) * 100]).ListItem" />
+                <visible>String.IsEqual(Container(301).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility]) + [Control.HasFocus($PYTHON[30018 + int(id) * 100]) | Integer.IsEqual(Window(Home).Property(CG_$PYTHON[50000 + int(id) * 100]_CurrentWidget),$NUMBER[$PYTHON[30018 + int(id) * 100]])] + !Integer.IsEqual(Container(3700).NumItems,0) + !Integer.IsEqual(Window(Home).Property(TMDbHelper.WidgetContainer),3001)</visible>
+            </include>
+            <include content="Object_56560_Item">
+                <param name="listitem" value="Container($PYTHON[30019 + int(id) * 100]).ListItem" />
+                <visible>String.IsEqual(Container(301).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility]) + [Control.HasFocus($PYTHON[30019 + int(id) * 100]) | Integer.IsEqual(Window(Home).Property(CG_$PYTHON[50000 + int(id) * 100]_CurrentWidget),$NUMBER[$PYTHON[30019 + int(id) * 100]])] + !Integer.IsEqual(Container(3700).NumItems,0) + !Integer.IsEqual(Window(Home).Property(TMDbHelper.WidgetContainer),3001)</visible>
+            </include>
+            <include content="Object_56560_Item">
+                <param name="listitem" value="Container($PYTHON[30020 + int(id) * 100]).ListItem" />
+                <visible>String.IsEqual(Container(301).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility]) + [Control.HasFocus($PYTHON[30020 + int(id) * 100]) | Integer.IsEqual(Window(Home).Property(CG_$PYTHON[50000 + int(id) * 100]_CurrentWidget),$NUMBER[$PYTHON[30020 + int(id) * 100]])] + !Integer.IsEqual(Container(3700).NumItems,0) + !Integer.IsEqual(Window(Home).Property(TMDbHelper.WidgetContainer),3001)</visible>
+            </include>
+        </controls>
+    </other>
+
+    <other include="fullscreen-widget-background">
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[1]">1</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[2]">2</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[3]">3</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[4]">4</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[5]">5</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[6]">6</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[7]">7</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[8]">8</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[9]">9</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[10]">10</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[11]">11</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[12]">12</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[13]">13</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[14]">14</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[15]">15</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[16]">16</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[17]">17</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[18]">18</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[19]">19</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[20]">20</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[21]">21</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[22]">22</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[23]">23</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[24]">24</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[25]">25</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[26]">26</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[27]">27</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[28]">28</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[29]">29</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[30]">30</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[31]">31</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[32]">32</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[33]">33</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[34]">34</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[35]">35</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[36]">36</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[37]">37</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[38]">38</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[39]">39</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[40]">40</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[41]">41</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[42]">42</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[43]">43</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[44]">44</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[45]">45</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[46]">46</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[47]">47</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[48]">48</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[49]">49</property>
+        <property name="mainmenuid">50</property>
+
+        <property name="widgetTarget" tag="property" attribute="name|widgetTarget.showcaseBackground" />
+        <property name="widgetTarget" tag="property" attribute="name|widgetTarget" />
+        <property name="widgetTarget">$VAR[Defs_ScreensaverWidget_Target]</property>
+
+        <property name="widgetPath" tag="property" attribute="name|widgetPath.showcaseBackground" />
+        <property name="widgetPath" tag="property" attribute="name|widgetPath" />
+        <property name="widgetPath">$VAR[Defs_ScreensaverWidget]</property>
+
+        <property name="widgetSortby" tag="property" attribute="name|widgetSortby.showcaseBackground" />
+        <property name="widgetSortby" tag="property" attribute="name|widgetSortby" />
+        <property name="widgetSortby">random</property>
+
+        <property name="widgetSortorder" tag="property" attribute="name|widgetSortorder.showcaseBackground" />
+        <property name="widgetSortorder" tag="property" attribute="name|widgetSortorder" />
+
+        <property name="submenuVisibility" tag="property" attribute="name|submenuVisibility"/>
+        <controls>
+            <control type="wraplist" id="3001">
+                <top>-180</top>
+                <bottom>-65</bottom>
+                <left>20</left>
+                <right>20</right>
+                <ondown>$PYTHON[90001 + int(mainmenuid) * 100]</ondown>
+                <onup>$PYTHON[90001 + int(mainmenuid) * 100]</onup>
+                <orientation>horizontal</orientation>
+                <scrolltime tween="quadratic">400</scrolltime>
+                <preloaditems>2</preloaditems>
+                <include>Animation_FadeInOut_Common</include>
+                <onfocus>SetProperty(TMDbHelper.WidgetContainer,3001,Home)</onfocus>
+                <visible>[[Integer.IsEqual(Container(3700).NumItems,0) + String.IsEmpty(Container(301).ListItem.Property(background))] | String.IsEqual(Container(3700).ListItemAbsolute(0).Property(list),Background)] + String.IsEqual(Container(301).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility])</visible>
+                <animation effect="fade" start="100" end="0" time="300" condition="!String.IsEmpty(Window(Home).Property(HW_$PYTHON[50000 + int(mainmenuid) * 100]_NotFocused))">Conditional</animation>
+                <include content="Animation_UpDown">
+                    <param name="visible" value="String.IsEqual(Container(301).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility])" />
+                </include>
+                <itemlayout width="1920" height="1080">
+                    <control type="image">
+                        <texture background="true">$VAR[Image_Fanart]</texture>
+                    </control>
+                </itemlayout>
+                <focusedlayout width="1920" height="1080">
+                    <control type="image">
+                        <texture background="true">$VAR[Image_Fanart]</texture>
+                    </control>
+                </focusedlayout>
+                <content target="$SKINSHORTCUTS[widgetTarget]" sortby="$SKINSHORTCUTS[widgetSortby]" sortorder="$SKINSHORTCUTS[widgetSortorder]">$SKINSHORTCUTS[widgetPath]</content>
+                <include content="Defs_AutoScroll">
+                    <param name="condition" value="[System.IdleTime(3) + [Control.HasFocus(3001) | Control.HasFocus($PYTHON[60001 + int(mainmenuid) * 100]) | Control.HasFocus($PYTHON[60003 + int(mainmenuid) * 100])]] | ![Control.HasFocus(3001) | Control.HasFocus($PYTHON[60001 + int(mainmenuid) * 100]) | Control.HasFocus($PYTHON[60003 + int(mainmenuid) * 100]) | Control.HasFocus(5610)]" />
+                </include>
+            </control>
+            <control type="group">
+                <visible>[[Integer.IsEqual(Container(3700).NumItems,0) + String.IsEmpty(Container(301).ListItem.Property(background))] | String.IsEqual(Container(3700).ListItemAbsolute(0).Property(list),Background)] + String.IsEqual(Container(301).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility])</visible>
+                <include content="Animation_UpDown">
+                    <param name="visible" value="String.IsEqual(Container(301).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility])" />
+                </include>
+                <include content="Home_Widget_Fullscreen_HubBase">
+                    <include>Animation_FadeInOut_Common</include>
+                </include>
+                <control type="group">
+                    <top>110</top>
+                    <bottom>-110</bottom>
+                    <visible>[Integer.IsEqual(Container(3700).NumItems,0) + String.IsEmpty(Container(301).ListItem.Property(background))]</visible>
+                    <include content="Home_Widget_Fullscreen_HubInfo">
+                        <param name="group-id" value="$PYTHON[90000 + int(mainmenuid) * 100]" />
+                        <param name="button-play-id" value="$PYTHON[90001 + int(mainmenuid) * 100]" />
+                        <param name="group-play-id" value="$PYTHON[90002 + int(mainmenuid) * 100]" />
+                        <param name="button-info-id" value="$PYTHON[90003 + int(mainmenuid) * 100]" />
+                        <param name="group-info-id" value="$PYTHON[90004 + int(mainmenuid) * 100]" />
+                        <param name="ondown" value="SetFocus(3991)" />
+                        <param name="onfocus" value="SetProperty(CG_$PYTHON[50000 + int(mainmenuid) * 100]_CurrentWidget,$PYTHON[90001 + int(mainmenuid) * 100],Home)" />
+                        <param name="onfocus2" value="ClearProperty(HW_$PYTHON[50000 + int(mainmenuid) * 100]_NotFocused,Home)" />
+                    </include>
+                </control>
+            </control>
+
+        </controls>
+    </other>
+
+    <other include="showcase-background">
         <property name="widgetTarget" tag="property" attribute="name|widgetTarget.showcaseBackground" />
         <property name="widgetTarget" tag="property" attribute="name|widgetTarget" />
         <property name="widgetTarget">$INFO[Skin.String(screensaver.arctic.mirage.target)]</property>
@@ -555,10 +913,11 @@
         </controls>
     </other>
 
-    <other include="spotlight-mainmenu" container="302">
+    <other include="spotlight-mainmenu">
         <property name="widgetTarget" tag="property" attribute="name|widgetTarget" />
         <property name="widgetName" tag="property" attribute="name|widgetName" />
         <property name="widgetPath" tag="property" attribute="name|widgetPath" />
+        <property name="widgetPath">$VAR[Defs_ScreensaverWidget]</property>
         <property name="widgetInclude" tag="property" attribute="name|widgetAspect" value="Landscape">Viewtype_Landscape</property>
         <property name="widgetInclude" tag="property" attribute="name|widgetAspect" value="Square">Viewtype_Square</property>
         <property name="widgetInclude" tag="property" attribute="name|widgetAspect" value="Banner">Viewtype_BigBanner</property>
@@ -635,7 +994,7 @@
                 <pagecontrol>60</pagecontrol>
                 <content target="$SKINSHORTCUTS[widgetTarget]" sortby="$SKINSHORTCUTS[widgetSortby]" sortorder="$SKINSHORTCUTS[widgetSortorder]">$SKINSHORTCUTS[widgetPath]</content>
                 <visible>String.IsEqual(Container(301).ListItem.Property(submenuVisibility),num-$SKINSHORTCUTS[submenuVisibility]) | String.IsEqual(Container(301).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility])</visible>
-                <visible>String.IsEqual(Container(302).ListItem.Property(id),$SKINSHORTCUTS[id])</visible>
+                <visible>Integer.IsEqual(Container(302).ListItem.Property(id),$SKINSHORTCUTS[id])</visible>
                 <visible>!String.IsEmpty(Container(302).ListItem.Property(widgetPath))</visible>
             </include>
         </controls>
@@ -951,209 +1310,22 @@
         <property name="id">50</property>
         <property name="submenuVisibility" tag="property" attribute="name|submenuVisibility"/>
         <controls>
-            <onright condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility]) + !Integer.IsEqual(Container(3700).NumItems,0) + String.IsEmpty(Window(Home).Property(CurrentWidget))">SetFocus($PYTHON[50000 + int(id) * 100])</onright>
-            <onright condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility]) + !Integer.IsEqual(Container(3700).NumItems,0) + !String.IsEmpty(Window(Home).Property(CurrentWidget))">SetFocus($INFO[Window(Home).Property(CurrentWidget)],0,absolute)</onright>
-            <onright condition="!Skin.HasSetting(EnableHorizontalHome) + Integer.IsEqual(Container(3700).NumItems,0) + !Skin.HasSetting(FullscreenWidgetShowcase) + String.IsEmpty(Container(301).ListItem.Property(background))">SetFocus(3001)</onright>
-            <onright condition="!Skin.HasSetting(EnableHorizontalHome) + Integer.IsEqual(Container(3700).NumItems,0) + Skin.HasSetting(FullscreenWidgetShowcase) + String.IsEmpty(Container(301).ListItem.Property(background))">SetFocus(3101)</onright>
-            <onright condition="!Skin.HasSetting(EnableHorizontalHome) + Integer.IsEqual(Container(3700).NumItems,0) + !String.IsEmpty(Container(301).ListItem.Property(background))">SetFocus(3992)</onright>
-            <onright condition="!Skin.HasSetting(EnableHorizontalHome) + Integer.IsEqual(Container(3700).NumItems,0) + !String.IsEmpty(Container(301).ListItem.Property(background))">SetProperty(WidgetFocus,1)</onright>
+            <!-- Focus Last Used Widget -->
+            <onright condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility]) + !String.IsEmpty(Window(Home).Property(CG_$PYTHON[50000 + int(id) * 100]_CurrentWidget))">SetFocus($INFO[Window(Home).Property(CG_$PYTHON[50000 + int(id) * 100]_CurrentWidget)],0,absolute)</onright>
+            <onleft condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility]) + !String.IsEmpty(Window(Home).Property(CG_$PYTHON[50000 + int(id) * 100]_CurrentWidget))">SetFocus($INFO[Window(Home).Property(CG_$PYTHON[50000 + int(id) * 100]_CurrentWidget)],9999,absolute)</onleft>
+            <ondown condition="Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility]) + !String.IsEmpty(Window(Home).Property(CG_$PYTHON[50000 + int(id) * 100]_CurrentWidget))">SetFocus($INFO[Window(Home).Property(CG_$PYTHON[50000 + int(id) * 100]_CurrentWidget)])</ondown>
 
-            <ondown condition="Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility]) + !Integer.IsEqual(Container(3700).NumItems,0) + String.IsEmpty(Window(Home).Property(CurrentWidget))">SetFocus($PYTHON[50000 + int(id) * 100])</ondown>
-            <ondown condition="Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility]) + !Integer.IsEqual(Container(3700).NumItems,0) + !String.IsEmpty(Window(Home).Property(CurrentWidget))">SetFocus($INFO[Window(Home).Property(CurrentWidget)],0,absolute)</ondown>
-            <ondown condition="Skin.HasSetting(EnableHorizontalHome) + Integer.IsEqual(Container(3700).NumItems,0) + !Skin.HasSetting(FullscreenWidgetShowcase) + String.IsEmpty(Container(301).ListItem.Property(background))">SetFocus(3001)</ondown>
-            <ondown condition="Skin.HasSetting(EnableHorizontalHome) + Integer.IsEqual(Container(3700).NumItems,0) + Skin.HasSetting(FullscreenWidgetShowcase) + String.IsEmpty(Container(301).ListItem.Property(background))">SetFocus(3101)</ondown>
-            <ondown condition="Skin.HasSetting(EnableHorizontalHome) + Integer.IsEqual(Container(3700).NumItems,0) + !String.IsEmpty(Container(301).ListItem.Property(background))">SetFocus(3992)</ondown>
-            <ondown condition="Skin.HasSetting(EnableHorizontalHome) + Integer.IsEqual(Container(3700).NumItems,0) + !String.IsEmpty(Container(301).ListItem.Property(background))">SetProperty(WidgetFocus,1)</ondown>
+            <!-- Focus Widget Grouplist -->
+            <onright condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility]) + String.IsEmpty(Window(Home).Property(CG_$PYTHON[50000 + int(id) * 100]_CurrentWidget)) + !Integer.IsEqual(Container(3700).NumItems,0)">SetFocus($PYTHON[50000 + int(id) * 100])</onright>
+            <onleft condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility]) + String.IsEmpty(Window(Home).Property(CG_$PYTHON[50000 + int(id) * 100]_CurrentWidget)) + !Integer.IsEqual(Container(3700).NumItems,0)">SetFocus($PYTHON[50000 + int(id) * 100])</onleft>
+            <ondown condition="Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility]) + String.IsEmpty(Window(Home).Property(CG_$PYTHON[50000 + int(id) * 100]_CurrentWidget)) + !Integer.IsEqual(Container(3700).NumItems,0)">SetFocus($PYTHON[50000 + int(id) * 100])</ondown>
 
-            <onfocus condition="String.IsEqual(Container(301).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility]) + Integer.IsEqual(Container(3700).NumItems,1)">SetProperty(TMDbHelper.WidgetContainer,$PYTHON[30001 + int(id) * 100],Home)</onfocus>
-            <onfocus condition="String.IsEqual(Container(301).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility]) + Integer.IsEqual(Container(3700).NumItems,0)">SetProperty(TMDbHelper.WidgetContainer,3001,Home)</onfocus>
+            <!-- Focus Fullscreen Widget Button -->
+            <onright condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility]) + String.IsEmpty(Window(Home).Property(CG_$PYTHON[50000 + int(id) * 100]_CurrentWidget)) + Integer.IsEqual(Container(3700).NumItems,0)">SetFocus($PYTHON[90001 + int(id) * 100])</onright>
+            <onleft condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility]) + String.IsEmpty(Window(Home).Property(CG_$PYTHON[50000 + int(id) * 100]_CurrentWidget)) + Integer.IsEqual(Container(3700).NumItems,0)">SetFocus($PYTHON[90001 + int(id) * 100])</onleft>
+            <ondown condition="Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility]) + String.IsEmpty(Window(Home).Property(CG_$PYTHON[50000 + int(id) * 100]_CurrentWidget)) + Integer.IsEqual(Container(3700).NumItems,0)">SetFocus($PYTHON[90001 + int(id) * 100])</ondown>
 
         </controls>
     </other>
 
-    <other include="infoline">
-        <property name="id" tag="property" attribute="name|id" value="$NUMBER[1]">1</property>
-        <property name="id" tag="property" attribute="name|id" value="$NUMBER[2]">2</property>
-        <property name="id" tag="property" attribute="name|id" value="$NUMBER[3]">3</property>
-        <property name="id" tag="property" attribute="name|id" value="$NUMBER[4]">4</property>
-        <property name="id" tag="property" attribute="name|id" value="$NUMBER[5]">5</property>
-        <property name="id" tag="property" attribute="name|id" value="$NUMBER[6]">6</property>
-        <property name="id" tag="property" attribute="name|id" value="$NUMBER[7]">7</property>
-        <property name="id" tag="property" attribute="name|id" value="$NUMBER[8]">8</property>
-        <property name="id" tag="property" attribute="name|id" value="$NUMBER[9]">9</property>
-        <property name="id" tag="property" attribute="name|id" value="$NUMBER[10]">10</property>
-        <property name="id" tag="property" attribute="name|id" value="$NUMBER[11]">11</property>
-        <property name="id" tag="property" attribute="name|id" value="$NUMBER[12]">12</property>
-        <property name="id" tag="property" attribute="name|id" value="$NUMBER[13]">13</property>
-        <property name="id" tag="property" attribute="name|id" value="$NUMBER[14]">14</property>
-        <property name="id" tag="property" attribute="name|id" value="$NUMBER[15]">15</property>
-        <property name="id" tag="property" attribute="name|id" value="$NUMBER[16]">16</property>
-        <property name="id" tag="property" attribute="name|id" value="$NUMBER[17]">17</property>
-        <property name="id" tag="property" attribute="name|id" value="$NUMBER[18]">18</property>
-        <property name="id" tag="property" attribute="name|id" value="$NUMBER[19]">19</property>
-        <property name="id" tag="property" attribute="name|id" value="$NUMBER[20]">20</property>
-        <property name="id" tag="property" attribute="name|id" value="$NUMBER[21]">21</property>
-        <property name="id" tag="property" attribute="name|id" value="$NUMBER[22]">22</property>
-        <property name="id" tag="property" attribute="name|id" value="$NUMBER[23]">23</property>
-        <property name="id" tag="property" attribute="name|id" value="$NUMBER[24]">24</property>
-        <property name="id" tag="property" attribute="name|id" value="$NUMBER[25]">25</property>
-        <property name="id" tag="property" attribute="name|id" value="$NUMBER[26]">26</property>
-        <property name="id" tag="property" attribute="name|id" value="$NUMBER[27]">27</property>
-        <property name="id" tag="property" attribute="name|id" value="$NUMBER[28]">28</property>
-        <property name="id" tag="property" attribute="name|id" value="$NUMBER[29]">29</property>
-        <property name="id" tag="property" attribute="name|id" value="$NUMBER[30]">30</property>
-        <property name="id" tag="property" attribute="name|id" value="$NUMBER[31]">31</property>
-        <property name="id" tag="property" attribute="name|id" value="$NUMBER[32]">32</property>
-        <property name="id" tag="property" attribute="name|id" value="$NUMBER[33]">33</property>
-        <property name="id" tag="property" attribute="name|id" value="$NUMBER[34]">34</property>
-        <property name="id" tag="property" attribute="name|id" value="$NUMBER[35]">35</property>
-        <property name="id" tag="property" attribute="name|id" value="$NUMBER[36]">36</property>
-        <property name="id" tag="property" attribute="name|id" value="$NUMBER[37]">37</property>
-        <property name="id" tag="property" attribute="name|id" value="$NUMBER[38]">38</property>
-        <property name="id" tag="property" attribute="name|id" value="$NUMBER[39]">39</property>
-        <property name="id" tag="property" attribute="name|id" value="$NUMBER[40]">40</property>
-        <property name="id" tag="property" attribute="name|id" value="$NUMBER[41]">41</property>
-        <property name="id" tag="property" attribute="name|id" value="$NUMBER[42]">42</property>
-        <property name="id" tag="property" attribute="name|id" value="$NUMBER[43]">43</property>
-        <property name="id" tag="property" attribute="name|id" value="$NUMBER[44]">44</property>
-        <property name="id" tag="property" attribute="name|id" value="$NUMBER[45]">45</property>
-        <property name="id" tag="property" attribute="name|id" value="$NUMBER[46]">46</property>
-        <property name="id" tag="property" attribute="name|id" value="$NUMBER[47]">47</property>
-        <property name="id" tag="property" attribute="name|id" value="$NUMBER[48]">48</property>
-        <property name="id" tag="property" attribute="name|id" value="$NUMBER[49]">49</property>
-        <property name="id">50</property>
-        <property name="submenuVisibility" tag="property" attribute="name|submenuVisibility"/>
-        <controls>
-            <include content="Object_56560_Item">
-                <param name="listitem" value="Container($PYTHON[30001 + int(id) * 100]).ListItem" />
-                <visible>String.IsEqual(Container(301).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility])</visible>
-            </include>
-        </controls>
-    </other>
-
-    <other include="homefader">
-        <property name="id" tag="property" attribute="name|id" value="$NUMBER[1]">1</property>
-        <property name="id" tag="property" attribute="name|id" value="$NUMBER[2]">2</property>
-        <property name="id" tag="property" attribute="name|id" value="$NUMBER[3]">3</property>
-        <property name="id" tag="property" attribute="name|id" value="$NUMBER[4]">4</property>
-        <property name="id" tag="property" attribute="name|id" value="$NUMBER[5]">5</property>
-        <property name="id" tag="property" attribute="name|id" value="$NUMBER[6]">6</property>
-        <property name="id" tag="property" attribute="name|id" value="$NUMBER[7]">7</property>
-        <property name="id" tag="property" attribute="name|id" value="$NUMBER[8]">8</property>
-        <property name="id" tag="property" attribute="name|id" value="$NUMBER[9]">9</property>
-        <property name="id" tag="property" attribute="name|id" value="$NUMBER[10]">10</property>
-        <property name="id" tag="property" attribute="name|id" value="$NUMBER[11]">11</property>
-        <property name="id" tag="property" attribute="name|id" value="$NUMBER[12]">12</property>
-        <property name="id" tag="property" attribute="name|id" value="$NUMBER[13]">13</property>
-        <property name="id" tag="property" attribute="name|id" value="$NUMBER[14]">14</property>
-        <property name="id" tag="property" attribute="name|id" value="$NUMBER[15]">15</property>
-        <property name="id" tag="property" attribute="name|id" value="$NUMBER[16]">16</property>
-        <property name="id" tag="property" attribute="name|id" value="$NUMBER[17]">17</property>
-        <property name="id" tag="property" attribute="name|id" value="$NUMBER[18]">18</property>
-        <property name="id" tag="property" attribute="name|id" value="$NUMBER[19]">19</property>
-        <property name="id" tag="property" attribute="name|id" value="$NUMBER[20]">20</property>
-        <property name="id" tag="property" attribute="name|id" value="$NUMBER[21]">21</property>
-        <property name="id" tag="property" attribute="name|id" value="$NUMBER[22]">22</property>
-        <property name="id" tag="property" attribute="name|id" value="$NUMBER[23]">23</property>
-        <property name="id" tag="property" attribute="name|id" value="$NUMBER[24]">24</property>
-        <property name="id" tag="property" attribute="name|id" value="$NUMBER[25]">25</property>
-        <property name="id" tag="property" attribute="name|id" value="$NUMBER[26]">26</property>
-        <property name="id" tag="property" attribute="name|id" value="$NUMBER[27]">27</property>
-        <property name="id" tag="property" attribute="name|id" value="$NUMBER[28]">28</property>
-        <property name="id" tag="property" attribute="name|id" value="$NUMBER[29]">29</property>
-        <property name="id" tag="property" attribute="name|id" value="$NUMBER[30]">30</property>
-        <property name="id" tag="property" attribute="name|id" value="$NUMBER[31]">31</property>
-        <property name="id" tag="property" attribute="name|id" value="$NUMBER[32]">32</property>
-        <property name="id" tag="property" attribute="name|id" value="$NUMBER[33]">33</property>
-        <property name="id" tag="property" attribute="name|id" value="$NUMBER[34]">34</property>
-        <property name="id" tag="property" attribute="name|id" value="$NUMBER[35]">35</property>
-        <property name="id" tag="property" attribute="name|id" value="$NUMBER[36]">36</property>
-        <property name="id" tag="property" attribute="name|id" value="$NUMBER[37]">37</property>
-        <property name="id" tag="property" attribute="name|id" value="$NUMBER[38]">38</property>
-        <property name="id" tag="property" attribute="name|id" value="$NUMBER[39]">39</property>
-        <property name="id" tag="property" attribute="name|id" value="$NUMBER[40]">40</property>
-        <property name="id" tag="property" attribute="name|id" value="$NUMBER[41]">41</property>
-        <property name="id" tag="property" attribute="name|id" value="$NUMBER[42]">42</property>
-        <property name="id" tag="property" attribute="name|id" value="$NUMBER[43]">43</property>
-        <property name="id" tag="property" attribute="name|id" value="$NUMBER[44]">44</property>
-        <property name="id" tag="property" attribute="name|id" value="$NUMBER[45]">45</property>
-        <property name="id" tag="property" attribute="name|id" value="$NUMBER[46]">46</property>
-        <property name="id" tag="property" attribute="name|id" value="$NUMBER[47]">47</property>
-        <property name="id" tag="property" attribute="name|id" value="$NUMBER[48]">48</property>
-        <property name="id" tag="property" attribute="name|id" value="$NUMBER[49]">49</property>
-        <property name="id">50</property>
-        <property name="submenuVisibility" tag="property" attribute="name|submenuVisibility"/>
-        <controls>
-            <control type="image">
-                <height>200</height>
-                <texture>common/dim-top.png</texture>
-                <animation effect="fade" start="0" end="100" time="500" tween="cubic" easing="inout">Visible</animation>
-                <animation effect="fade" start="100" end="0" time="500" tween="cubic" easing="inout">Hidden</animation>
-                <visible>String.IsEqual(Container(301).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility])</visible>
-                <visible>Container($PYTHON[50000 + int(id) * 100]).HasPrevious</visible>
-            </control>
-        </controls>
-    </other>
-
-    <other include="widgetgrouplists">
-        <property name="id" tag="property" attribute="name|id" />
-        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[1]">1</property>
-        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[2]">2</property>
-        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[3]">3</property>
-        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[4]">4</property>
-        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[5]">5</property>
-        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[6]">6</property>
-        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[7]">7</property>
-        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[8]">8</property>
-        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[9]">9</property>
-        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[10]">10</property>
-        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[11]">11</property>
-        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[12]">12</property>
-        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[13]">13</property>
-        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[14]">14</property>
-        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[15]">15</property>
-        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[16]">16</property>
-        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[17]">17</property>
-        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[18]">18</property>
-        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[19]">19</property>
-        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[20]">20</property>
-        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[21]">21</property>
-        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[22]">22</property>
-        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[23]">23</property>
-        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[24]">24</property>
-        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[25]">25</property>
-        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[26]">26</property>
-        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[27]">27</property>
-        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[28]">28</property>
-        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[29]">29</property>
-        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[30]">30</property>
-        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[31]">31</property>
-        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[32]">32</property>
-        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[33]">33</property>
-        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[34]">34</property>
-        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[35]">35</property>
-        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[36]">36</property>
-        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[37]">37</property>
-        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[38]">38</property>
-        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[39]">39</property>
-        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[40]">40</property>
-        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[41]">41</property>
-        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[42]">42</property>
-        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[43]">43</property>
-        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[44]">44</property>
-        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[45]">45</property>
-        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[46]">46</property>
-        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[47]">47</property>
-        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[48]">48</property>
-        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[49]">49</property>
-        <property name="mainmenuid">50</property>
-        <property name="visibility" tag="visible"/>
-        <controls>
-            <item>
-                <label>num-$SKINSHORTCUTS[id]</label>
-                <property name="grouplistid">$NUMBER[$PYTHON[50000 + int(mainmenuid) * 100]]</property>
-                <property name="visibility">$SKINSHORTCUTS[visibility]</property>
-            </item>
-        </controls>
-    </other>
 </template>

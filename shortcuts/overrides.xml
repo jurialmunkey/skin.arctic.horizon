@@ -5,8 +5,8 @@
     <thumbnailBrowseDefault>special://skin/extras/icons/</thumbnailBrowseDefault>
     <backgroundBrowse>True</backgroundBrowse>
     <widgetRename>True</widgetRename>
-    <widget label="8">Weather</widget>
-    <widget label="5">Settings</widget>
+    <widget label="Weather (must be first position)">Weather</widget>
+    <widget label="Settings (must be first position)">Settings</widget>
 
     <!-- Warning to Remove Settings -->
     <warn heading="31176" message="31177">ActivateWindow(Settings)</warn>
@@ -79,6 +79,9 @@
 
 
     <!-- Properties -->
+    <property property="widgetInfo">True</property>
+    <propertySettings property="widgetInfo" buttonID="9916" title="Show Info With Widget" />
+
     <!-- Widget Aspect -->
     <property property="widgetAspect">Poster</property>
     <property property="widgetAspect">Square</property>
@@ -439,6 +442,11 @@
 
     <!-- Widget Grouping -->
     <widget-groupings>
+        <node label="Special Widgets (home only)">
+            <shortcut widget="Background" label="Fullscreen Widget (must be first position)" icon="DefaultPicture.png" widgetTarget="video">Background</shortcut>
+            <shortcut widget="Submenu" label="Submenu" icon="DefaultPlaylist.png">Submenu</shortcut>
+            <content>widgets</content>
+        </node>
         <node label="$LOCALIZE[31183]">
             <node label="$LOCALIZE[342]">
                 <shortcut widget="NewMovies" label="$LOCALIZE[31185]" icon="DefaultRecentlyAddedMovies.png" widgetTarget="video">special://skin/extras/playlists/NewMovies.xsp</shortcut>
@@ -497,8 +505,6 @@
                 <shortcut widget="RadioTimers" label="$LOCALIZE[19040]" icon="DefaultAddonPVRClient.png" widgetTarget="pvr">pvr://timers/radio/timers</shortcut>
             </node>
             <node label="$LOCALIZE[29921]">
-                <content>widgets</content>
-                <shortcut widget="Submenu" label="Submenu" icon="DefaultPlaylist.png">Submenu</shortcut>
                 <shortcut widget="VideoSources" label="$LOCALIZE[31159]" icon="DefaultVideo.png" widgetTarget="video">sources://video/</shortcut>
                 <shortcut widget="MusicSources" label="$LOCALIZE[31302]" icon="DefaultMusicSongs.png" widgetTarget="music">sources://music/</shortcut>
                 <shortcut widget="PictureSources" label="$LOCALIZE[31304]" icon="DefaultPicture.png" widgetTarget="pictures">sources://pictures/</shortcut>

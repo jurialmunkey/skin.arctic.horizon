@@ -43,8 +43,8 @@
         <movement>5</movement>
     </include>
     <include name="Defs_Movement_Square">
-        <include condition="Skin.HasSetting(LockMainMenu)">Defs_Movement_Square_Locked</include>
-        <include condition="!Skin.HasSetting(LockMainMenu)">Defs_Movement_Square_Normal</include>
+        <include condition="[Skin.HasSetting(LockMainMenu) + !Skin.HasSetting(EnableHorizontalHome)]">Defs_Movement_Square_Locked</include>
+        <include condition="![Skin.HasSetting(LockMainMenu) + !Skin.HasSetting(EnableHorizontalHome)]">Defs_Movement_Square_Normal</include>
     </include>
 
     <include name="Defs_Movement_Landscape_Locked">
@@ -54,8 +54,8 @@
         <movement>3</movement>
     </include>
     <include name="Defs_Movement_Landscape">
-        <include condition="Skin.HasSetting(LockMainMenu)">Defs_Movement_Landscape_Locked</include>
-        <include condition="!Skin.HasSetting(LockMainMenu)">Defs_Movement_Landscape_Normal</include>
+        <include condition="[Skin.HasSetting(LockMainMenu) + !Skin.HasSetting(EnableHorizontalHome)]">Defs_Movement_Landscape_Locked</include>
+        <include condition="![Skin.HasSetting(LockMainMenu) + !Skin.HasSetting(EnableHorizontalHome)]">Defs_Movement_Landscape_Normal</include>
     </include>
 
     <include name="Defs_Movement_Poster_Locked">
@@ -65,10 +65,14 @@
         <movement>6</movement>
     </include>
     <include name="Defs_Movement_Poster">
-        <include condition="Skin.HasSetting(LockMainMenu)">Defs_Movement_Poster_Locked</include>
-        <include condition="!Skin.HasSetting(LockMainMenu)">Defs_Movement_Poster_Normal</include>
+        <include condition="[Skin.HasSetting(LockMainMenu) + !Skin.HasSetting(EnableHorizontalHome)]">Defs_Movement_Poster_Locked</include>
+        <include condition="![Skin.HasSetting(LockMainMenu) + !Skin.HasSetting(EnableHorizontalHome)]">Defs_Movement_Poster_Normal</include>
     </include>
 
+    <variable name="Defs_ScreensaverWidget_Target">
+        <value condition="!String.IsEmpty(Skin.String(screensaver.arctic.mirage.target))">$INFO[Skin.String(screensaver.arctic.mirage.target)]</value>
+        <value>videos</value>
+    </variable>
     <variable name="Defs_ScreensaverWidget">
         <value condition="!String.IsEmpty(Skin.String(screensaver.arctic.mirage.path))">$INFO[Skin.String(screensaver.arctic.mirage.path)]</value>
         <value>special://skin/extras/playlists/RandomMovies.xsp</value>
@@ -216,6 +220,7 @@
             <animation effect="slide" end="0,item_list_height" condition="Integer.IsGreater(Container($PARAM[id]).Position,6)">Conditional</animation>
             <animation effect="slide" end="0,item_list_height" condition="Integer.IsGreater(Container($PARAM[id]).Position,7)">Conditional</animation>
             <animation effect="slide" end="0,item_list_height" condition="Integer.IsGreater(Container($PARAM[id]).Position,8)">Conditional</animation>
+            <animation effect="slide" end="0,item_list_height" condition="Integer.IsGreater(Container($PARAM[id]).Position,9)">Conditional</animation>
             <control type="image">
                 <texture colordiffuse="$VAR[ColorHighlight]">common/white.png</texture>
             </control>
@@ -633,9 +638,10 @@
             <param name="fgcolor" value="panel_fg" />
         </include>
         <include>Topbar_Left</include>
-        <include condition="!Window.Previous(home)" content="View_Settings">
+        <control type="group">
             <include>View_Pad</include>
-        </include>
+            <include condition="!Window.Previous(home)">View_Settings</include>
+        </control>
         <include>Object_NowPlaying</include>
     </include>
 

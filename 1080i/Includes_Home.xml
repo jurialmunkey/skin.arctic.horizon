@@ -17,15 +17,11 @@
     </include>
 
     <include name="Home_Movement_UpDown">
-        <onup condition="!Skin.HasSetting(EnableHorizontalHome)">ClearProperty(CurrentWidget)</onup>
-        <ondown condition="!Skin.HasSetting(EnableHorizontalHome)">ClearProperty(CurrentWidget)</ondown>
         <onup condition="!Skin.HasSetting(EnableHorizontalHome)">SetProperty(WidgetMovement,OnUp)</onup>
         <onup condition="!Skin.HasSetting(EnableHorizontalHome)">Control.Move(301,-1)</onup>
         <ondown condition="!Skin.HasSetting(EnableHorizontalHome)">SetProperty(WidgetMovement,OnDown)</ondown>
         <ondown condition="!Skin.HasSetting(EnableHorizontalHome)">Control.Move(301,1)</ondown>
 
-        <onleft condition="Skin.HasSetting(EnableHorizontalHome)">ClearProperty(CurrentWidget)</onleft>
-        <onright condition="Skin.HasSetting(EnableHorizontalHome)">ClearProperty(CurrentWidget)</onright>
         <onleft condition="Skin.HasSetting(EnableHorizontalHome)">SetProperty(WidgetMovement,OnUp)</onleft>
         <onleft condition="Skin.HasSetting(EnableHorizontalHome)">Control.Move(301,-1)</onleft>
         <onright condition="Skin.HasSetting(EnableHorizontalHome)">SetProperty(WidgetMovement,OnDown)</onright>
@@ -33,26 +29,222 @@
     </include>
 
     <include name="Home_Movement_LeftRight">
-        <onleft condition="!Skin.HasSetting(EnableHorizontalHome)">ClearProperty(WidgetMovement)</onleft>
-        <onleft condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEmpty(Window(Home).Property(WidgetFocus))">SetFocus($INFO[Window(Home).Property(CurrentWidget)],9999,absolute)</onleft>
-        <onleft condition="!Skin.HasSetting(EnableHorizontalHome) + !String.IsEmpty(Window(Home).Property(WidgetFocus))">ClearProperty(WidgetFocus)</onleft>
-        <onleft condition="!Skin.HasSetting(EnableHorizontalHome) + Integer.IsEqual(Container(3700).NumItems,0) + String.IsEmpty(Container(301).ListItem.Property(background)) + String.IsEmpty(Window(Home).Property(WidgetFocus))">Control.Move(3001,-1)</onleft>
         <include>skinshortcuts-template-onmovement</include>
         <onright condition="!Skin.HasSetting(EnableHorizontalHome)">ClearProperty(WidgetMovement)</onright>
         <ondown condition="Skin.HasSetting(EnableHorizontalHome)">ClearProperty(WidgetMovement)</ondown>
+
+        <!-- Submenu Move -->
         <oninfo>ClearProperty(WidgetFocus)</oninfo>
         <oninfo>SetFocus(303,0,absolute)</oninfo>
         <onup condition="Skin.HasSetting(EnableHorizontalHome)">ClearProperty(WidgetFocus)</onup>
         <onup condition="Skin.HasSetting(EnableHorizontalHome)">SetFocus(303,0,absolute)</onup>
+        <!-- <onleft condition="!Skin.HasSetting(EnableHorizontalHome)">ClearProperty(WidgetFocus)</onleft>
+        <onleft condition="!Skin.HasSetting(EnableHorizontalHome)">SetFocus(303,0,absolute)</onleft> -->
     </include>
 
-    <include name="Home_Weather_Button">
-        <control type="button" id="$PARAM[id]">
-            <description>Weather Jump</description>
-            <include>Defs_Hidden_Button</include>
-            <onclick>ActivateWindow(Weather)</onclick>
-            <nested />
-        </control>
+    <include name="Home_Movement_Widgets_Wrap">
+        <include>Home_Movement_Widgets_UpDown</include>
+        <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PARAM[id-neg-49])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-neg-50]).Property(grouplistid)])</onup>
+        <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PARAM[id-neg-48])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-neg-49]).Property(grouplistid)])</onup>
+        <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PARAM[id-neg-47])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-neg-48]).Property(grouplistid)])</onup>
+        <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PARAM[id-neg-46])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-neg-47]).Property(grouplistid)])</onup>
+        <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PARAM[id-neg-45])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-neg-46]).Property(grouplistid)])</onup>
+        <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PARAM[id-neg-44])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-neg-45]).Property(grouplistid)])</onup>
+        <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PARAM[id-neg-43])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-neg-44]).Property(grouplistid)])</onup>
+        <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PARAM[id-neg-42])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-neg-43]).Property(grouplistid)])</onup>
+        <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PARAM[id-neg-41])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-neg-42]).Property(grouplistid)])</onup>
+        <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PARAM[id-neg-40])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-neg-41]).Property(grouplistid)])</onup>
+        <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PARAM[id-neg-39])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-neg-40]).Property(grouplistid)])</onup>
+        <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PARAM[id-neg-38])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-neg-39]).Property(grouplistid)])</onup>
+        <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PARAM[id-neg-37])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-neg-38]).Property(grouplistid)])</onup>
+        <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PARAM[id-neg-36])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-neg-37]).Property(grouplistid)])</onup>
+        <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PARAM[id-neg-35])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-neg-36]).Property(grouplistid)])</onup>
+        <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PARAM[id-neg-34])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-neg-35]).Property(grouplistid)])</onup>
+        <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PARAM[id-neg-33])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-neg-34]).Property(grouplistid)])</onup>
+        <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PARAM[id-neg-32])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-neg-33]).Property(grouplistid)])</onup>
+        <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PARAM[id-neg-31])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-neg-32]).Property(grouplistid)])</onup>
+        <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PARAM[id-neg-30])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-neg-31]).Property(grouplistid)])</onup>
+        <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PARAM[id-neg-29])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-neg-30]).Property(grouplistid)])</onup>
+        <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PARAM[id-neg-28])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-neg-29]).Property(grouplistid)])</onup>
+        <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PARAM[id-neg-27])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-neg-28]).Property(grouplistid)])</onup>
+        <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PARAM[id-neg-26])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-neg-27]).Property(grouplistid)])</onup>
+        <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PARAM[id-neg-25])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-neg-26]).Property(grouplistid)])</onup>
+        <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PARAM[id-neg-24])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-neg-25]).Property(grouplistid)])</onup>
+        <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PARAM[id-neg-23])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-neg-24]).Property(grouplistid)])</onup>
+        <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PARAM[id-neg-22])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-neg-23]).Property(grouplistid)])</onup>
+        <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PARAM[id-neg-21])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-neg-22]).Property(grouplistid)])</onup>
+        <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PARAM[id-neg-20])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-neg-21]).Property(grouplistid)])</onup>
+        <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PARAM[id-neg-19])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-neg-20]).Property(grouplistid)])</onup>
+        <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PARAM[id-neg-18])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-neg-19]).Property(grouplistid)])</onup>
+        <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PARAM[id-neg-17])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-neg-18]).Property(grouplistid)])</onup>
+        <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PARAM[id-neg-16])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-neg-17]).Property(grouplistid)])</onup>
+        <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PARAM[id-neg-15])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-neg-16]).Property(grouplistid)])</onup>
+        <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PARAM[id-neg-14])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-neg-15]).Property(grouplistid)])</onup>
+        <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PARAM[id-neg-13])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-neg-14]).Property(grouplistid)])</onup>
+        <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PARAM[id-neg-12])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-neg-13]).Property(grouplistid)])</onup>
+        <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PARAM[id-neg-11])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-neg-12]).Property(grouplistid)])</onup>
+        <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PARAM[id-neg-10])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-neg-11]).Property(grouplistid)])</onup>
+        <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PARAM[id-neg-9])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-neg-10]).Property(grouplistid)])</onup>
+        <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PARAM[id-neg-8])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-neg-9]).Property(grouplistid)])</onup>
+        <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PARAM[id-neg-7])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-neg-8]).Property(grouplistid)])</onup>
+        <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PARAM[id-neg-6])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-neg-7]).Property(grouplistid)])</onup>
+        <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PARAM[id-neg-5])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-neg-6]).Property(grouplistid)])</onup>
+        <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PARAM[id-neg-4])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-neg-5]).Property(grouplistid)])</onup>
+        <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PARAM[id-neg-3])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-neg-4]).Property(grouplistid)])</onup>
+        <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PARAM[id-neg-2])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-neg-3]).Property(grouplistid)])</onup>
+        <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PARAM[id-neg-1])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-neg-2]).Property(grouplistid)])</onup>
+        <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PARAM[id-neg-0])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-neg-1]).Property(grouplistid)])</onup>
+        <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PARAM[id-pos-1])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-pos-0]).Property(grouplistid)])</onup>
+        <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PARAM[id-pos-2])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-pos-1]).Property(grouplistid)])</onup>
+        <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PARAM[id-pos-3])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-pos-2]).Property(grouplistid)])</onup>
+        <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PARAM[id-pos-4])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-pos-3]).Property(grouplistid)])</onup>
+        <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PARAM[id-pos-5])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-pos-4]).Property(grouplistid)])</onup>
+        <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PARAM[id-pos-6])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-pos-5]).Property(grouplistid)])</onup>
+        <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PARAM[id-pos-7])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-pos-6]).Property(grouplistid)])</onup>
+        <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PARAM[id-pos-8])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-pos-7]).Property(grouplistid)])</onup>
+        <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PARAM[id-pos-9])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-pos-8]).Property(grouplistid)])</onup>
+        <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PARAM[id-pos-10])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-pos-9]).Property(grouplistid)])</onup>
+        <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PARAM[id-pos-11])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-pos-10]).Property(grouplistid)])</onup>
+        <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PARAM[id-pos-12])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-pos-11]).Property(grouplistid)])</onup>
+        <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PARAM[id-pos-13])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-pos-12]).Property(grouplistid)])</onup>
+        <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PARAM[id-pos-14])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-pos-13]).Property(grouplistid)])</onup>
+        <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PARAM[id-pos-15])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-pos-14]).Property(grouplistid)])</onup>
+        <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PARAM[id-pos-16])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-pos-15]).Property(grouplistid)])</onup>
+        <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PARAM[id-pos-17])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-pos-16]).Property(grouplistid)])</onup>
+        <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PARAM[id-pos-18])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-pos-17]).Property(grouplistid)])</onup>
+        <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PARAM[id-pos-19])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-pos-18]).Property(grouplistid)])</onup>
+        <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PARAM[id-pos-20])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-pos-19]).Property(grouplistid)])</onup>
+        <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PARAM[id-pos-21])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-pos-20]).Property(grouplistid)])</onup>
+        <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PARAM[id-pos-22])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-pos-21]).Property(grouplistid)])</onup>
+        <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PARAM[id-pos-23])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-pos-22]).Property(grouplistid)])</onup>
+        <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PARAM[id-pos-24])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-pos-23]).Property(grouplistid)])</onup>
+        <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PARAM[id-pos-25])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-pos-24]).Property(grouplistid)])</onup>
+        <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PARAM[id-pos-26])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-pos-25]).Property(grouplistid)])</onup>
+        <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PARAM[id-pos-27])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-pos-26]).Property(grouplistid)])</onup>
+        <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PARAM[id-pos-28])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-pos-27]).Property(grouplistid)])</onup>
+        <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PARAM[id-pos-29])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-pos-28]).Property(grouplistid)])</onup>
+        <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PARAM[id-pos-30])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-pos-29]).Property(grouplistid)])</onup>
+        <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PARAM[id-pos-31])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-pos-30]).Property(grouplistid)])</onup>
+        <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PARAM[id-pos-32])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-pos-31]).Property(grouplistid)])</onup>
+        <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PARAM[id-pos-33])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-pos-32]).Property(grouplistid)])</onup>
+        <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PARAM[id-pos-34])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-pos-33]).Property(grouplistid)])</onup>
+        <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PARAM[id-pos-35])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-pos-34]).Property(grouplistid)])</onup>
+        <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PARAM[id-pos-36])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-pos-35]).Property(grouplistid)])</onup>
+        <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PARAM[id-pos-37])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-pos-36]).Property(grouplistid)])</onup>
+        <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PARAM[id-pos-38])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-pos-37]).Property(grouplistid)])</onup>
+        <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PARAM[id-pos-39])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-pos-38]).Property(grouplistid)])</onup>
+        <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PARAM[id-pos-40])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-pos-39]).Property(grouplistid)])</onup>
+        <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PARAM[id-pos-41])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-pos-40]).Property(grouplistid)])</onup>
+        <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PARAM[id-pos-42])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-pos-41]).Property(grouplistid)])</onup>
+        <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PARAM[id-pos-43])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-pos-42]).Property(grouplistid)])</onup>
+        <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PARAM[id-pos-44])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-pos-43]).Property(grouplistid)])</onup>
+        <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PARAM[id-pos-45])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-pos-44]).Property(grouplistid)])</onup>
+        <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PARAM[id-pos-46])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-pos-45]).Property(grouplistid)])</onup>
+        <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PARAM[id-pos-47])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-pos-46]).Property(grouplistid)])</onup>
+        <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PARAM[id-pos-48])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-pos-47]).Property(grouplistid)])</onup>
+        <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PARAM[id-pos-49])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-pos-48]).Property(grouplistid)])</onup>
+        <onup condition="String.IsEqual(Container(301).ListItem(-1).Property(id),$PARAM[id-pos-50])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-pos-49]).Property(grouplistid)])</onup>
+
+        <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PARAM[id-neg-49])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-neg-50]).Property(grouplistid)])</ondown>
+        <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PARAM[id-neg-48])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-neg-49]).Property(grouplistid)])</ondown>
+        <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PARAM[id-neg-47])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-neg-48]).Property(grouplistid)])</ondown>
+        <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PARAM[id-neg-46])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-neg-47]).Property(grouplistid)])</ondown>
+        <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PARAM[id-neg-45])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-neg-46]).Property(grouplistid)])</ondown>
+        <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PARAM[id-neg-44])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-neg-45]).Property(grouplistid)])</ondown>
+        <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PARAM[id-neg-43])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-neg-44]).Property(grouplistid)])</ondown>
+        <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PARAM[id-neg-42])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-neg-43]).Property(grouplistid)])</ondown>
+        <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PARAM[id-neg-41])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-neg-42]).Property(grouplistid)])</ondown>
+        <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PARAM[id-neg-40])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-neg-41]).Property(grouplistid)])</ondown>
+        <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PARAM[id-neg-39])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-neg-40]).Property(grouplistid)])</ondown>
+        <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PARAM[id-neg-38])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-neg-39]).Property(grouplistid)])</ondown>
+        <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PARAM[id-neg-37])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-neg-38]).Property(grouplistid)])</ondown>
+        <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PARAM[id-neg-36])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-neg-37]).Property(grouplistid)])</ondown>
+        <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PARAM[id-neg-35])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-neg-36]).Property(grouplistid)])</ondown>
+        <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PARAM[id-neg-34])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-neg-35]).Property(grouplistid)])</ondown>
+        <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PARAM[id-neg-33])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-neg-34]).Property(grouplistid)])</ondown>
+        <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PARAM[id-neg-32])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-neg-33]).Property(grouplistid)])</ondown>
+        <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PARAM[id-neg-31])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-neg-32]).Property(grouplistid)])</ondown>
+        <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PARAM[id-neg-30])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-neg-31]).Property(grouplistid)])</ondown>
+        <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PARAM[id-neg-29])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-neg-30]).Property(grouplistid)])</ondown>
+        <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PARAM[id-neg-28])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-neg-29]).Property(grouplistid)])</ondown>
+        <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PARAM[id-neg-27])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-neg-28]).Property(grouplistid)])</ondown>
+        <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PARAM[id-neg-26])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-neg-27]).Property(grouplistid)])</ondown>
+        <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PARAM[id-neg-25])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-neg-26]).Property(grouplistid)])</ondown>
+        <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PARAM[id-neg-24])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-neg-25]).Property(grouplistid)])</ondown>
+        <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PARAM[id-neg-23])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-neg-24]).Property(grouplistid)])</ondown>
+        <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PARAM[id-neg-22])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-neg-23]).Property(grouplistid)])</ondown>
+        <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PARAM[id-neg-21])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-neg-22]).Property(grouplistid)])</ondown>
+        <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PARAM[id-neg-20])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-neg-21]).Property(grouplistid)])</ondown>
+        <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PARAM[id-neg-19])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-neg-20]).Property(grouplistid)])</ondown>
+        <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PARAM[id-neg-18])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-neg-19]).Property(grouplistid)])</ondown>
+        <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PARAM[id-neg-17])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-neg-18]).Property(grouplistid)])</ondown>
+        <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PARAM[id-neg-16])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-neg-17]).Property(grouplistid)])</ondown>
+        <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PARAM[id-neg-15])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-neg-16]).Property(grouplistid)])</ondown>
+        <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PARAM[id-neg-14])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-neg-15]).Property(grouplistid)])</ondown>
+        <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PARAM[id-neg-13])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-neg-14]).Property(grouplistid)])</ondown>
+        <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PARAM[id-neg-12])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-neg-13]).Property(grouplistid)])</ondown>
+        <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PARAM[id-neg-11])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-neg-12]).Property(grouplistid)])</ondown>
+        <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PARAM[id-neg-10])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-neg-11]).Property(grouplistid)])</ondown>
+        <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PARAM[id-neg-9])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-neg-10]).Property(grouplistid)])</ondown>
+        <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PARAM[id-neg-8])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-neg-9]).Property(grouplistid)])</ondown>
+        <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PARAM[id-neg-7])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-neg-8]).Property(grouplistid)])</ondown>
+        <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PARAM[id-neg-6])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-neg-7]).Property(grouplistid)])</ondown>
+        <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PARAM[id-neg-5])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-neg-6]).Property(grouplistid)])</ondown>
+        <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PARAM[id-neg-4])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-neg-5]).Property(grouplistid)])</ondown>
+        <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PARAM[id-neg-3])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-neg-4]).Property(grouplistid)])</ondown>
+        <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PARAM[id-neg-2])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-neg-3]).Property(grouplistid)])</ondown>
+        <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PARAM[id-neg-1])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-neg-2]).Property(grouplistid)])</ondown>
+        <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PARAM[id-neg-0])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-neg-1]).Property(grouplistid)])</ondown>
+        <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PARAM[id-pos-1])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-pos-0]).Property(grouplistid)])</ondown>
+        <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PARAM[id-pos-2])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-pos-1]).Property(grouplistid)])</ondown>
+        <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PARAM[id-pos-3])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-pos-2]).Property(grouplistid)])</ondown>
+        <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PARAM[id-pos-4])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-pos-3]).Property(grouplistid)])</ondown>
+        <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PARAM[id-pos-5])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-pos-4]).Property(grouplistid)])</ondown>
+        <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PARAM[id-pos-6])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-pos-5]).Property(grouplistid)])</ondown>
+        <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PARAM[id-pos-7])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-pos-6]).Property(grouplistid)])</ondown>
+        <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PARAM[id-pos-8])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-pos-7]).Property(grouplistid)])</ondown>
+        <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PARAM[id-pos-9])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-pos-8]).Property(grouplistid)])</ondown>
+        <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PARAM[id-pos-10])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-pos-9]).Property(grouplistid)])</ondown>
+        <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PARAM[id-pos-11])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-pos-10]).Property(grouplistid)])</ondown>
+        <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PARAM[id-pos-12])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-pos-11]).Property(grouplistid)])</ondown>
+        <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PARAM[id-pos-13])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-pos-12]).Property(grouplistid)])</ondown>
+        <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PARAM[id-pos-14])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-pos-13]).Property(grouplistid)])</ondown>
+        <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PARAM[id-pos-15])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-pos-14]).Property(grouplistid)])</ondown>
+        <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PARAM[id-pos-16])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-pos-15]).Property(grouplistid)])</ondown>
+        <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PARAM[id-pos-17])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-pos-16]).Property(grouplistid)])</ondown>
+        <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PARAM[id-pos-18])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-pos-17]).Property(grouplistid)])</ondown>
+        <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PARAM[id-pos-19])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-pos-18]).Property(grouplistid)])</ondown>
+        <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PARAM[id-pos-20])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-pos-19]).Property(grouplistid)])</ondown>
+        <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PARAM[id-pos-21])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-pos-20]).Property(grouplistid)])</ondown>
+        <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PARAM[id-pos-22])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-pos-21]).Property(grouplistid)])</ondown>
+        <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PARAM[id-pos-23])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-pos-22]).Property(grouplistid)])</ondown>
+        <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PARAM[id-pos-24])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-pos-23]).Property(grouplistid)])</ondown>
+        <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PARAM[id-pos-25])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-pos-24]).Property(grouplistid)])</ondown>
+        <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PARAM[id-pos-26])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-pos-25]).Property(grouplistid)])</ondown>
+        <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PARAM[id-pos-27])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-pos-26]).Property(grouplistid)])</ondown>
+        <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PARAM[id-pos-28])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-pos-27]).Property(grouplistid)])</ondown>
+        <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PARAM[id-pos-29])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-pos-28]).Property(grouplistid)])</ondown>
+        <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PARAM[id-pos-30])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-pos-29]).Property(grouplistid)])</ondown>
+        <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PARAM[id-pos-31])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-pos-30]).Property(grouplistid)])</ondown>
+        <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PARAM[id-pos-32])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-pos-31]).Property(grouplistid)])</ondown>
+        <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PARAM[id-pos-33])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-pos-32]).Property(grouplistid)])</ondown>
+        <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PARAM[id-pos-34])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-pos-33]).Property(grouplistid)])</ondown>
+        <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PARAM[id-pos-35])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-pos-34]).Property(grouplistid)])</ondown>
+        <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PARAM[id-pos-36])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-pos-35]).Property(grouplistid)])</ondown>
+        <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PARAM[id-pos-37])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-pos-36]).Property(grouplistid)])</ondown>
+        <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PARAM[id-pos-38])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-pos-37]).Property(grouplistid)])</ondown>
+        <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PARAM[id-pos-39])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-pos-38]).Property(grouplistid)])</ondown>
+        <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PARAM[id-pos-40])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-pos-39]).Property(grouplistid)])</ondown>
+        <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PARAM[id-pos-41])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-pos-40]).Property(grouplistid)])</ondown>
+        <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PARAM[id-pos-42])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-pos-41]).Property(grouplistid)])</ondown>
+        <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PARAM[id-pos-43])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-pos-42]).Property(grouplistid)])</ondown>
+        <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PARAM[id-pos-44])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-pos-43]).Property(grouplistid)])</ondown>
+        <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PARAM[id-pos-45])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-pos-44]).Property(grouplistid)])</ondown>
+        <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PARAM[id-pos-46])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-pos-45]).Property(grouplistid)])</ondown>
+        <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PARAM[id-pos-47])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-pos-46]).Property(grouplistid)])</ondown>
+        <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PARAM[id-pos-48])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-pos-47]).Property(grouplistid)])</ondown>
+        <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PARAM[id-pos-49])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-pos-48]).Property(grouplistid)])</ondown>
+        <ondown condition="String.IsEqual(Container(301).ListItem(1).Property(id),$PARAM[id-pos-50])">SetFocus($INFO[Container(3701).ListItem($PARAM[id-pos-49]).Property(grouplistid)])</ondown>
     </include>
 
     <include name="Home_Submenu">
@@ -197,6 +389,7 @@
 
     <include name="Home_Multi">
         <include condition="!Skin.HasSetting(EnableHorizontalHome)">Home_Menu_Vertical</include>
+
         <include content="Viewtype_Main">
             <include condition="!Skin.HasSetting(EnableHorizontalHome)">Animation_Home_Slide</include>
             <control type="group">
@@ -234,6 +427,7 @@
                             <onback>ClearProperty(WidgetMovement)</onback>
                             <visible allowhiddenfocus="true">Control.HasFocus(3992)</visible>
                         </control>
+
                         <control type="button" id="3990">
                             <width>1</width>
                             <height>1</height>
@@ -252,87 +446,20 @@
                             <onclick>noop</onclick>
                             <visible allowhiddenfocus="true">Control.HasFocus(3991)</visible>
                         </control>
+                        <include>skinshortcuts-template-fullscreen-widget-background</include>
                         <control type="group" id="3000">
                             <animation type="Conditional" condition="Control.IsVisible(3990)" reversible="false">
-                                <effect type="slide" end="0,20" time="60" tween="sine" />
-                                <effect type="slide" end="0,-20" time="180" tween="sine" delay="80" />
+                                <effect type="slide" end="20" time="60" tween="sine" />
+                                <effect type="slide" end="-20" time="180" tween="sine" delay="80" />
                             </animation>
                             <animation type="Conditional" condition="Control.IsVisible(3991)" reversible="false">
                                 <effect type="slide" end="0,-20" time="60" tween="sine" />
                                 <effect type="slide" end="0,20" time="180" tween="sine" delay="80" />
                             </animation>
                             <include>skinshortcuts-template-widgets</include>
-                            <control type="group">
-                                <visible>String.IsEqual(Container(3700).ListItemAbsolute(0).Property(list),Weather) + Weather.IsFetched</visible>
-                                <include content="Animation_UpDown">
-                                    <param name="visible" value="String.IsEqual(Container(3700).ListItemAbsolute(0).Property(list),Weather) + Weather.IsFetched" />
-                                </include>
-                                <include content="Weather">
-                                    <left>100</left>
-                                    <right>100</right>
-                                    <top>20</top>
-                                    <bottom>20</bottom>
-                                </include>
-                            </control>
-                            <control type="group">
-                                <visible>Integer.IsEqual(Container(3700).NumItems,0)</visible>
-                                <visible>String.IsEmpty(Container(301).ListItem.Property(background))</visible>
-                                <left>20</left>
-                                <right>20</right>
-                                <top>-180</top>
-                                <bottom>-65</bottom>
-                                <include content="Animation_UpDown">
-                                    <param name="visible" value="Integer.IsEqual(Container(3700).NumItems,0) + String.IsEmpty(Container(301).ListItem.Property(background))" />
-                                </include>
-                                <include content="Home_Widget_Fullscreen" condition="!Skin.HasSetting(FullscreenWidgetShowcase)">
-                                    <onleft>301</onleft>
-                                    <onback>301</onback>
-                                    <include>Home_Movement_Widgets_UpDown</include>
-                                    <onfocus>SetProperty(TMDbHelper.WidgetContainer,3001,Home)</onfocus>
-                                </include>
-                                <include condition="Skin.HasSetting(FullscreenWidgetShowcase)">Home_Hub_Showcase</include>
-                            </control>
-                            <control type="group">
-                                <visible>Integer.IsEqual(Container(3700).NumItems,0)</visible>
-                                <visible>!String.IsEmpty(Container(301).ListItem.Property(background))</visible>
-                                <left>20</left>
-                                <right>20</right>
-                                <top>-180</top>
-                                <bottom>-65</bottom>
-                                <include content="Animation_UpDown">
-                                    <param name="visible" value="Integer.IsEqual(Container(3700).NumItems,0) + !String.IsEmpty(Container(301).ListItem.Property(background))" />
-                                </include>
-                                <control type="multiimage">
-                                    <include>Defs_TimePerImage</include>
-                                    <randomize>true</randomize>
-                                    <aspectratio>scale</aspectratio>
-                                    <fadetime>600</fadetime>
-                                    <imagepath background="true">$INFO[Container(301).ListItem.Property(background)]</imagepath>
-                                </control>
-                                <control type="image">
-                                    <texture background="true" colordiffuse="cdffffff">common/vignette-home.png</texture>
-                                </control>
-                                <control type="grouplist">
-                                    <left>view_pad</left>
-                                    <top>65</top>
-                                    <bottom>view_pad</bottom>
-                                    <width>1100</width>
-                                    <align>bottom</align>
-                                    <orientation>vertical</orientation>
-                                    <usecontrolcoords>true</usecontrolcoords>
-                                    <itemgap>0</itemgap>
-                                    <include content="Object_Info_Title">
-                                        <param name="label" value="$INFO[System.Time]" />
-                                    </include>
-                                    <include content="Object_Info_Line">
-                                        <param name="label" value="$INFO[System.Date,  |  [COLOR=main_fg_100],[/COLOR]]" />
-                                        <param name="image" value="flags/quality/info.png" />
-                                    </include>
-                                </control>
-                            </control>
                         </control>
+                        <include>Home_Widgets_Fullscreen</include>
                     </control>
-
                 </control>
                 <include>skinshortcuts-template-homefader</include>
                 <include>Topbar_Left</include>
@@ -341,6 +468,176 @@
 
         <!-- Clock -->
         <include condition="!Skin.HasSetting(DisableClock)">Topbar_Right</include>
+    </include>
+
+    <include name="Home_Widget_Fullscreen_HubInfo">
+        <control type="group" id="$PARAM[group2-id]">
+            <nested />
+            <left>view_pad</left>
+            <top>widgets_label_top</top>
+            <height>widgets_item_height</height>
+            <width>1100</width>
+            <animation effect="fade" start="100" end="0" condition="$PARAM[hideinfo]">Conditional</animation>
+            <include content="Object_Info_Title">
+                <param name="label" value="$VAR[Label_3001_Info_Title]" />
+                <left>20</left>
+                <top>35</top>
+            </include>
+            <include content="Object_Info_Line">
+                <param name="label" value="$VAR[Label_56560_InfoLine]" />
+                <param name="image" value="$VAR[Image_56560_VideoQuality]" />
+                <left>20</left>
+                <top>108</top>
+            </include>
+            <include content="Object_Info_Plot">
+                <param name="label" value="$VAR[Label_Plot_C3001]" />
+                <height max="80">auto</height>
+                <top>165</top>
+                <left>20</left>
+            </include>
+            <control type="group">
+                <height>20</height>
+            </control>
+        </control>
+        <control type="grouplist" id="$PARAM[group-id]" >
+            <top>630</top>
+            <left>view_pad</left>
+            <right>-26</right>
+            <align>left</align>
+            <height>160</height>
+            <orientation>horizontal</orientation>
+            <usecontrolcoords>true</usecontrolcoords>
+            <itemgap>-10</itemgap>
+            <onup condition="Skin.HasSetting(EnableHorizontalHome)">301</onup>
+            <onleft condition="!Skin.HasSetting(EnableHorizontalHome)">301</onleft>
+            <onleft condition="Skin.HasSetting(EnableHorizontalHome)">$PARAM[button-play-id]</onleft>
+            <onleft condition="Skin.HasSetting(EnableHorizontalHome)">Control.Move(3001,-1)</onleft>
+            <onright>$PARAM[button-info-id]</onright>
+            <onright>Control.Move(3001,1)</onright>
+            <include content="Object_Info_Button" description="Play">
+                <param name="id" value="$PARAM[button-play-id]" />
+                <param name="groupid" value="$PARAM[group-play-id]" />
+                <param name="label" value="$VAR[Label_Showcase_PlayBrowse]" />
+                <param name="icon" value="$VAR[Image_Showcase_PlayBrowse_Icon]" />
+                <param name="visible" value="true" />
+                <onback>301</onback>
+                <ondown>$PARAM[ondown]</ondown>
+                <onclick>SetFocus(3001)</onclick>
+                <onclick>Action(Select)</onclick>
+                <onfocus>SetProperty(WidgetFocus,1)</onfocus>
+                <onfocus>SetProperty(TMDbHelper.WidgetContainer,3001,Home)</onfocus>
+                <onfocus>$PARAM[onfocus]</onfocus>
+                <onfocus>$PARAM[onfocus2]</onfocus>
+            </include>
+            <include content="Object_Info_Button" description="Info">
+                <param name="id" value="$PARAM[button-info-id]" />
+                <param name="groupid" value="$PARAM[group-info-id]" />
+                <param name="label" value="$LOCALIZE[31078]" />
+                <param name="icon" value="special://skin/extras/icons/info2.png" />
+                <param name="visible" value="true" />
+                <onback>301</onback>
+                <ondown>$PARAM[ondown]</ondown>
+                <onclick>SetFocus(3001)</onclick>
+                <onclick>Action(Info)</onclick>
+                <onfocus>SetProperty(WidgetFocus,1)</onfocus>
+                <onfocus>SetProperty(TMDbHelper.WidgetContainer,3001,Home)</onfocus>
+                <onfocus>$PARAM[onfocus]</onfocus>
+                <onfocus>$PARAM[onfocus2]</onfocus>
+            </include>
+        </control>
+    </include>
+
+    <include name="Home_Widget_Fullscreen_HubBase">
+        <control type="group">
+            <nested />
+            <left>20</left>
+            <right>20</right>
+            <top>-180</top>
+            <bottom>-65</bottom>
+            <control type="image">
+                <bottom>480</bottom>
+                <texture background="true" colordiffuse="cdffffff">common/vignette-home.png</texture>
+                <include>Animation_FadeInOut_Common</include>
+            </control>
+            <control type="image">
+                <bottom>0</bottom>
+                <height>480</height>
+                <texture colordiffuse="cdffffff">common/vignette-home-bottom.png</texture>
+                <include>Animation_FadeInOut_Common</include>
+            </control>
+        </control>
+    </include>
+
+    <include name="Home_Widgets_Fullscreen">
+
+        <!-- Background Image -->
+        <control type="group">
+            <visible>Integer.IsEqual(Container(3700).NumItems,0) + !String.IsEmpty(Container(301).ListItem.Property(background))</visible>
+            <include content="Animation_UpDown">
+                <param name="visible" value="Integer.IsEqual(Container(3700).NumItems,0) + !String.IsEmpty(Container(301).ListItem.Property(background))" />
+            </include>
+            <left>20</left>
+            <right>20</right>
+            <top>-180</top>
+            <bottom>-65</bottom>
+            <control type="multiimage">
+                <include>Defs_TimePerImage</include>
+                <randomize>true</randomize>
+                <aspectratio>scale</aspectratio>
+                <fadetime>600</fadetime>
+                <imagepath background="true">$INFO[Container(301).ListItem.Property(background)]</imagepath>
+            </control>
+            <control type="image">
+                <texture background="true" colordiffuse="cdffffff">common/vignette-home.png</texture>
+            </control>
+            <control type="grouplist">
+                <left>view_pad</left>
+                <top>65</top>
+                <bottom>72</bottom>
+                <width>1100</width>
+                <align>bottom</align>
+                <orientation>vertical</orientation>
+                <usecontrolcoords>true</usecontrolcoords>
+                <itemgap>0</itemgap>
+                <include content="Object_Info_Title">
+                    <param name="label" value="$INFO[System.Time]" />
+                </include>
+                <include content="Object_Info_Line">
+                    <param name="label" value="$INFO[System.Date,  |  [COLOR=main_fg_100],[/COLOR]]" />
+                    <param name="image" value="flags/quality/info.png" />
+                </include>
+            </control>
+        </control>
+
+        <!-- Weather -->
+        <control type="group">
+            <visible>String.IsEqual(Container(3700).ListItemAbsolute(0).Property(list),Weather) + Weather.IsFetched</visible>
+            <include content="Animation_UpDown">
+                <param name="visible" value="String.IsEqual(Container(3700).ListItemAbsolute(0).Property(list),Weather) + Weather.IsFetched" />
+            </include>
+            <include content="Weather">
+                <left>100</left>
+                <right>100</right>
+                <top>20</top>
+                <bottom>20</bottom>
+            </include>
+        </control>
+
+        <!-- Settings -->
+        <control type="group">
+            <top>-180</top>
+            <bottom>-65</bottom>
+            <left>20</left>
+            <right>20</right>
+            <visible>String.IsEqual(Container(3700).ListItemAbsolute(0).Property(list),Settings)</visible>
+            <include content="Animation_UpDown">
+                <param name="visible" value="String.IsEqual(Container(3700).ListItemAbsolute(0).Property(list),Settings)" />
+            </include>
+            <control type="group" id="5200">
+                <include>View_Pad</include>
+                <include>View_Settings</include>
+            </control>
+        </control>
     </include>
 
     <include name="Home_Hub_Showcase">
@@ -576,27 +873,6 @@
                             <param name="id" value="5610" />
                             <param name="label" value="$VAR[Label_Hub_WidgetName]" />
                         </include>
-                        <include content="Viewtype_Poster">
-                            <param name="id" value="5610" />
-                            <bottom>view_bottom</bottom>
-                            <left>-80</left>
-                            <right>-80</right>
-                            <onup>302</onup>
-                            <ondown>60</ondown>
-                            <ondown condition="Window.IsVisible(Home) + !Skin.HasSetting(EnableHorizontalHome)">SetProperty(WidgetFocus,1)</ondown>
-                            <ondown condition="Window.IsVisible(Home) + !Skin.HasSetting(EnableHorizontalHome)">3992</ondown>
-                            <ondown condition="Window.IsVisible(Home) + !Skin.HasSetting(EnableHorizontalHome)">SetProperty(WidgetMovement,OnDown)</ondown>
-                            <ondown condition="Window.IsVisible(Home) + !Skin.HasSetting(EnableHorizontalHome)">Control.Move(301,1)</ondown>
-                            <onback condition="!Window.IsVisible(Home)">302</onback>
-                            <onback condition="Window.IsVisible(Home)">3101</onback>
-                            <onfocus condition="Skin.HasSetting(NoFanart)">SetProperty(TMDbHelper.Blur.SourceImage,Art(fallback),Home)</onfocus>
-
-                            <onfocus condition="!Skin.HasSetting(NoFanart)">SetProperty(TMDbHelper.Blur.SourceImage,poster,Home)</onfocus>
-                            <pagecontrol>60</pagecontrol>
-                            <content>$VAR[Defs_Showcase_Recs]</content>
-                            <visible>String.IsEmpty(Container(302).ListItem.Property(widgetPath))</visible>
-                            <visible>String.IsEmpty(Container(301).ListItem.Property(widgetPath))</visible>
-                        </include>
                         <include>skinshortcuts-template-spotlight-submenu</include>
                         <include>skinshortcuts-template-spotlight-mainmenu</include>
                     </control>
@@ -651,6 +927,7 @@
             </control>
         </control>
     </include>
+
     <include name="Home_Widget_Fullscreen">
         <param name="content" default="$VAR[Defs_ScreensaverWidget]" />
         <param name="sortby" default="random" />
@@ -673,13 +950,9 @@
                 </focusedlayout>
                 <content target="videos" sortby="random">$PARAM[content]</content>
                 <include content="Defs_AutoScroll">
-                    <param name="condition" value="!Control.HasFocus(3001) + System.IdleTime(1) + !Skin.HasSetting(DisableAutoScrollWidgets)" />
+                    <param name="condition" value="!Control.HasFocus($PARAM[id]) + System.IdleTime(1) + !Skin.HasSetting(DisableAutoScrollWidgets)" />
                 </include>
             </control>
-
-            <include content="Home_Widget_Fullscreen_Info">
-                <param name="id" value="$PARAM[id]" />
-            </include>
         </definition>
     </include>
 
@@ -1107,15 +1380,16 @@
     </include>
 
     <include name="Home_Vertical_Info">
-        <param name="plotheight" default="160" />
-        <param name="plotheight-nr" default="200" />
+        <param name="plotheight" default="200" />
+        <param name="plotheight-nr" default="240" />
         <definition>
             <control type="group" id="$PARAM[groupid]">
                 <nested />
                 <control type="grouplist">
-                    <top>5</top>
+                    <top>-425</top>
                     <left>100</left>
                     <bottom>60</bottom>
+
                     <include condition="Skin.HasSetting(LockMainMenu) + !Skin.HasSetting(EnableHorizontalHome)">Viewtype_Info_Right_FixedHome</include>
                     <include condition="!Skin.HasSetting(LockMainMenu) | Skin.HasSetting(EnableHorizontalHome)">Viewtype_Info_Right</include>
                     <orientation>vertical</orientation>

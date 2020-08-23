@@ -42,6 +42,12 @@
         </item>
     </include>
 
+    <include name="Object_Item">
+        <item>
+            <nested />
+        </item>
+    </include>
+
     <include name="Object_Control">
         <control type="$PARAM[type]" id="$PARAM[id]">
             <nested />
@@ -792,8 +798,6 @@
                 <orientation>horizontal</orientation>
                 <usecontrolcoords>true</usecontrolcoords>
                 <itemgap>0</itemgap>
-                <left>0</left>
-                <right>0</right>
                 <control type="image">
                     <top>10</top>
                     <width>37</width>
@@ -810,6 +814,8 @@
                     <font>font_small</font>
                 </control>
                 <nested />
+                <left>0</left>
+                <right>0</right>
             </control>
         </definition>
     </include>

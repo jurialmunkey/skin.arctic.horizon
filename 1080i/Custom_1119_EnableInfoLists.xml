@@ -38,8 +38,9 @@
                     <label>$LOCALIZE[31007]</label>
                     <radioposx>730</radioposx>
                     <include>Dialog_Standard_Button</include>
-                    <onclick>Skin.ToggleSetting(DisableExtendedInfo)</onclick>
-                    <selected>!Skin.HasSetting(DisableExtendedInfo)</selected>
+                    <onclick condition="!System.HasAddon(plugin.video.themoviedb.helper)">InstallAddon(plugin.video.themoviedb.helper)</onclick>
+                    <onclick>Skin.ToggleSetting(EnableExtendedInfo)</onclick>
+                    <selected>Skin.HasSetting(EnableExtendedInfo)</selected>
                 </control>
                 <control type="radiobutton" id="9002">
                     <label>$LOCALIZE[31251]</label>

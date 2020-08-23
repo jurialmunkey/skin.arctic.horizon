@@ -330,6 +330,14 @@
                             <include>Dialog_Standard_Button</include>
                         </control>
 
+                        <control type="button" id="9916" description="Display Info">
+                            <label>Display info</label>
+                            <visible>!String.IsEqual(Container(211).ListItem.Property(skinshortcuts-disabled),True)</visible>
+                            <label2>$INFO[Container(211).ListItem.Property(widgetInfo)]</label2>
+                            <include>Dialog_Standard_Button</include>
+                            <visible>String.EndsWith(Window.Property(groupname),.1)</visible>
+                        </control>
+
                         <control type="button" id="9903" description="Sort by">
                             <label>$LOCALIZE[581]</label>
                             <visible>!String.IsEqual(Container(211).ListItem.Property(skinshortcuts-disabled),True)</visible>
@@ -375,7 +383,7 @@
                 <centerleft>50%</centerleft>
                 <centertop>540</centertop>
                 <width>1020</width>
-                <height>920</height>
+                <height>1000</height>
                 <include>Animation_FadeIn_Slide</include>
                 <animation effect="slide" start="0" end="0,160" condition="!String.IsEqual(Window.Property(groupname),mainmenu)">Conditional</animation>
                 <control type="image">
@@ -384,7 +392,7 @@
                     <visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
                 </control>
                 <control type="group">
-                    <bottom>320</bottom>
+                    <bottom>400</bottom>
                     <control type="image">
                         <include condition="!Skin.HasSetting(DisableShadows)">Defs_Shadow_24</include>
                         <texture border="16" colordiffuse="dialog_bg_100">common/dialog.png</texture>

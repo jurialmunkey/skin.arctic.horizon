@@ -7,7 +7,7 @@
         <control type="group">
             <include content="Dialog_Standard_Group">
                 <param name="width" value="1200" />
-                <param name="height" value="960" />
+                <param name="height" value="1040" />
             </include>
 
             <control type="label">
@@ -29,7 +29,7 @@
                 <description>Control Area</description>
                 <right>dialog_side_grouplist</right>
                 <top>dialog_top</top>
-                <height>800</height>
+                <height>880</height>
                 <itemgap>0</itemgap>
                 <pagecontrol>61</pagecontrol>
                 <orientation>vertical</orientation>
@@ -40,6 +40,15 @@
                     <include>Dialog_Standard_Button</include>
                     <onclick>Skin.ToggleSetting(DisableAllRatings)</onclick>
                     <selected>Skin.HasSetting(DisableAllRatings)</selected>
+                </control>
+                <control type="radiobutton" id="9099">
+                    <label>$LOCALIZE[31007]</label>
+                    <radioposx>730</radioposx>
+                    <include>Dialog_Standard_Button</include>
+                    <onclick condition="!System.HasAddon(plugin.video.themoviedb.helper)">InstallAddon(plugin.video.themoviedb.helper)</onclick>
+                    <onclick>Skin.ToggleSetting(TMDbHelper.Service)</onclick>
+                    <selected>Skin.HasSetting(TMDbHelper.Service)</selected>
+                    <enable>!Skin.HasSetting(DisableAllRatings)</enable>
                 </control>
                 <control type="radiobutton" id="9002">
                     <label>$LOCALIZE[31000]</label>
@@ -61,7 +70,7 @@
                 <control type="radiobutton" id="9004">
                     <label>$LOCALIZE[31003]</label>
                     <radioposx>730</radioposx>
-                    <enable>!Skin.HasSetting(DisableAllRatings)</enable>
+                    <enable>!Skin.HasSetting(DisableAllRatings) + Skin.HasSetting(TMDbHelper.Service)  + System.HasAddon(plugin.video.themoviedb.helper)</enable>
                     <include>Dialog_Standard_Button</include>
                     <onclick>Skin.ToggleSetting(DisableOscarRating)</onclick>
                     <selected>!Skin.HasSetting(DisableOscarRating)</selected>
@@ -69,7 +78,7 @@
                 <control type="radiobutton" id="9005">
                     <label>$LOCALIZE[31004]</label>
                     <radioposx>730</radioposx>
-                    <enable>!Skin.HasSetting(DisableAllRatings)</enable>
+                    <enable>!Skin.HasSetting(DisableAllRatings) + Skin.HasSetting(TMDbHelper.Service)  + System.HasAddon(plugin.video.themoviedb.helper)</enable>
                     <include>Dialog_Standard_Button</include>
                     <onclick>Skin.ToggleSetting(DisableMetacriticRating)</onclick>
                     <selected>!Skin.HasSetting(DisableMetacriticRating)</selected>
@@ -77,7 +86,7 @@
                 <!-- <control type="radiobutton" id="9006">
                     <label>Star Rating</label>
                     <radioposx>730</radioposx>
-                    <enable>!Skin.HasSetting(DisableAllRatings)</enable>
+                    <enable>!Skin.HasSetting(DisableAllRatings) + Skin.HasSetting(TMDbHelper.Service)  + System.HasAddon(plugin.video.themoviedb.helper)</enable>
                     <include>Dialog_Standard_Button</include>
                     <onclick>Skin.ToggleSetting(DisableTVDBRating)</onclick>
                     <selected>!Skin.HasSetting(DisableTVDBRating)</selected>
@@ -85,7 +94,7 @@
                 <control type="radiobutton" id="9007">
                     <label>$LOCALIZE[31005]</label>
                     <radioposx>730</radioposx>
-                    <enable>!Skin.HasSetting(DisableAllRatings)</enable>
+                    <enable>!Skin.HasSetting(DisableAllRatings) + Skin.HasSetting(TMDbHelper.Service)  + System.HasAddon(plugin.video.themoviedb.helper)</enable>
                     <include>Dialog_Standard_Button</include>
                     <onclick>Skin.ToggleSetting(DisableRottenTomatoesUserRating)</onclick>
                     <selected>!Skin.HasSetting(DisableRottenTomatoesUserRating)</selected>
@@ -93,7 +102,7 @@
                 <control type="radiobutton" id="9008">
                     <label>$LOCALIZE[31009]</label>
                     <radioposx>730</radioposx>
-                    <enable>!Skin.HasSetting(DisableAllRatings)</enable>
+                    <enable>!Skin.HasSetting(DisableAllRatings) + Skin.HasSetting(TMDbHelper.Service)  + System.HasAddon(plugin.video.themoviedb.helper)</enable>
                     <include>Dialog_Standard_Button</include>
                     <onclick>Skin.ToggleSetting(DisableRottenTomatoesCriticRating)</onclick>
                     <selected>!Skin.HasSetting(DisableRottenTomatoesCriticRating)</selected>
@@ -101,7 +110,7 @@
                 <control type="radiobutton" id="9009">
                     <label>$LOCALIZE[368]</label>
                     <radioposx>730</radioposx>
-                    <enable>!Skin.HasSetting(DisableAllRatings)</enable>
+                    <enable>!Skin.HasSetting(DisableAllRatings) + Skin.HasSetting(TMDbHelper.Service)  + System.HasAddon(plugin.video.themoviedb.helper)</enable>
                     <include>Dialog_Standard_Button</include>
                     <onclick>Skin.ToggleSetting(DisableIMDBRating)</onclick>
                     <selected>!Skin.HasSetting(DisableIMDBRating)</selected>
@@ -109,7 +118,7 @@
                 <control type="radiobutton" id="9010">
                     <label>$LOCALIZE[31010]</label>
                     <radioposx>730</radioposx>
-                    <enable>!Skin.HasSetting(DisableAllRatings)</enable>
+                    <enable>!Skin.HasSetting(DisableAllRatings) + Skin.HasSetting(TMDbHelper.Service)  + System.HasAddon(plugin.video.themoviedb.helper)</enable>
                     <include>Dialog_Standard_Button</include>
                     <onclick>Skin.ToggleSetting(DisableTraktRating)</onclick>
                     <selected>!Skin.HasSetting(DisableTraktRating)</selected>
@@ -117,7 +126,7 @@
                 <control type="radiobutton" id="9011">
                     <label>$LOCALIZE[31016]</label>
                     <radioposx>730</radioposx>
-                    <enable>!Skin.HasSetting(DisableAllRatings)</enable>
+                    <enable>!Skin.HasSetting(DisableAllRatings) + Skin.HasSetting(TMDbHelper.Service)  + System.HasAddon(plugin.video.themoviedb.helper)</enable>
                     <include>Dialog_Standard_Button</include>
                     <onclick>Skin.ToggleSetting(DisableTMDBRating)</onclick>
                     <selected>!Skin.HasSetting(DisableTMDBRating)</selected>

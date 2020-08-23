@@ -1012,7 +1012,7 @@
                 <align>right</align>
                 <aligny>top</aligny>
 
-                <label>[COLOR=FF00FF00]$INFO[System.CurrentControlID,ID  ][/COLOR]
+                <label>[COLOR=FF00FF00]$INFO[System.CurrentControlID,ID  ]$INFO[Window(Home).Property(CG_50100_CurrentWidget),  CW  ][/COLOR]
                     $INFO[Container.Content(),[COLOR=FFFF00FF]CONTENT  [/COLOR],]$INFO[ListItem.DBType,[COLOR=FFFF00FF]  DBTYPE  [/COLOR],]$INFO[ListItem.Property(dbtype),[COLOR=FFFF00FF]  PROP_DBTYPE  [/COLOR],]$INFO[Container.SortMethod,[COLOR=FFFF00FF]  SORT  [/COLOR],]
                     $INFO[ListItem.Property(Container.Info),[COLOR=FFFF00FF]  C.INFO  [/COLOR],]$INFO[ListItem.Property(Container.Type),[COLOR=FFFF00FF]  C.TYPE  [/COLOR],]$INFO[ListItem.Property(Item.Info),[COLOR=FFFF00FF]  I.INFO  [/COLOR],]$INFO[ListItem.Property(Item.Type),[COLOR=FFFF00FF]  I.TYPE  [/COLOR],]
                     $INFO[Window(Home).Property(TMDbHelper.ListItem.Oscar_Wins),[COLOR=FFFF00FF]  OSCARS_W  [/COLOR],]$INFO[Window(Home).Property(TMDbHelper.ListItem.Oscar_Nominations),[COLOR=FFFF00FF]  OSCARS_N  [/COLOR],]$INFO[Window(Home).Property(TMDbHelper.ListItem.Award_Wins),[COLOR=FFFF00FF]  AWARDS_W  [/COLOR],]$INFO[Window(Home).Property(TMDbHelper.ListItem.Award_Nominations),[COLOR=FFFF00FF]  AWARDS_N  [/COLOR],]$INFO[ListItem.Rating,[COLOR=FFFF00FF]  RATING  [/COLOR],]$INFO[ListItem.UserRating,[COLOR=FFFF00FF]  USER RATING  [/COLOR],]$INFO[ListItem.Top250,[COLOR=FFFF00FF]  TOP250  [/COLOR],]
