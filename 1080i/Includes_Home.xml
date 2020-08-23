@@ -1073,6 +1073,7 @@
             <control type="image">
                 <texture colordiffuse="Shadow" border="40,40,40,40">common/button-view-base-shadow.png</texture>
             </control>
+            <include>skinshortcuts-template-homehorizontalfader</include>
             <control type="image">
                 <texture colordiffuse="AltPosterBack" border="40,40,40,40">common/button-view-base.png</texture>
             </control>
