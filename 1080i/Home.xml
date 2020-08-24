@@ -22,6 +22,7 @@
     <onload condition="Skin.HasSetting(DisableBlur)">Skin.Reset(TMDbHelper.EnableBlur)</onload>
     <onload condition="!Skin.HasSetting(DisableBlur)">Skin.SetBool(TMDbHelper.EnableBlur)</onload>
 
+    <include>skinshortcuts-template-onhomeload</include>
     <controls>
         <control type="list" id="3700">
             <description>Hidden container for widget count</description>
@@ -39,10 +40,6 @@
             <itemlayout />
             <focusedlayout />
             <content>
-                <include content="Object_56560_Item">
-                    <param name="listitem" value="Container(3001).ListItem" />
-                    <visible>Integer.IsEqual(Container(3700).NumItems,0) | Integer.IsEqual(Window(Home).Property(TMDbHelper.WidgetContainer),3001) | String.IsEmpty(Window(Home).Property(TMDbHelper.WidgetContainer))</visible>
-                </include>
                 <include>skinshortcuts-template-infoline</include>
             </content>
         </control>

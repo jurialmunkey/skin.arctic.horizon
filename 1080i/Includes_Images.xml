@@ -30,11 +30,11 @@
     </variable>
 
     <variable name="Image_56560_VideoQuality">
-        <value condition="Container(56560).ListItem.Property(IsCollection)">flags/quality/sets.png</value>
-        <value condition="Integer.IsGreater(Container(56560).ListItem.Property(VideoResolution),1080) | String.IsEqual(Container(56560).ListItem.Property(VideoResolution),4K)">flags/quality/4k.png</value>
-        <value condition="Integer.IsGreater(Container(56560).ListItem.Property(VideoResolution),719)">flags/quality/hd.png</value>
-        <value condition="!String.IsEmpty(Container(56560).ListItem.Property(VideoResolution))">flags/quality/sd.png</value>
-        <value condition="String.IsEqual(Container(56560).ListItem.Property(DBType),movie) | String.IsEqual(Container(56560).ListItem.Property(DBType),episode) | String.IsEqual(Container(56560).ListItem.Property(DBType),video)">flags/quality/web.png</value>
+        <value condition="Container(56560).ListItemAbsolute(0).Property(IsCollection)">flags/quality/sets.png</value>
+        <value condition="Integer.IsGreater(Container(56560).ListItemAbsolute(0).Property(VideoResolution),1080) | String.IsEqual(Container(56560).ListItemAbsolute(0).Property(VideoResolution),4K)">flags/quality/4k.png</value>
+        <value condition="Integer.IsGreater(Container(56560).ListItemAbsolute(0).Property(VideoResolution),719)">flags/quality/hd.png</value>
+        <value condition="!String.IsEmpty(Container(56560).ListItemAbsolute(0).Property(VideoResolution))">flags/quality/sd.png</value>
+        <value condition="String.IsEqual(Container(56560).ListItemAbsolute(0).Property(DBType),movie) | String.IsEqual(Container(56560).ListItemAbsolute(0).Property(DBType),episode) | String.IsEqual(Container(56560).ListItemAbsolute(0).Property(DBType),video)">flags/quality/web.png</value>
         <value>flags/quality/info.png</value>
     </variable>
 

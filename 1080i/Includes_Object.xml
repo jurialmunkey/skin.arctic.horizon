@@ -2,6 +2,7 @@
 <includes>
     <include name="Object_56560_Item">
         <item>
+            <property name="Label">$INFO[$PARAM[listitem].Label]</property>
             <property name="Label2">$INFO[$PARAM[listitem].Label2]</property>
             <property name="DBType">$INFO[$PARAM[listitem].DBType]</property>
             <property name="FolderPath">$INFO[$PARAM[listitem].FolderPath]</property>
@@ -20,6 +21,9 @@
             <property name="EPGEventTitle">$INFO[$PARAM[listitem].EPGEventTitle]</property>
             <property name="Title">$INFO[$PARAM[listitem].Title]</property>
             <property name="Plot">$INFO[$PARAM[listitem].Plot]</property>
+            <property name="Album_Description">$INFO[$PARAM[listitem].Property(Album_Description)]</property>
+            <property name="Artist_Description">$INFO[$PARAM[listitem].Property(Artist_Description)]</property>
+            <property name="AddonDescription">$INFO[$PARAM[listitem].Property(AddonDescription)]</property>
             <property name="TvShowTitle">$INFO[$PARAM[listitem].TvShowTitle]</property>
             <property name="AddonVersion">$INFO[$PARAM[listitem].Property(AddonVersion)]</property>
             <property name="AddonType">$INFO[$PARAM[listitem].Property(AddonType)]</property>

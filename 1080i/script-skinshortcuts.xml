@@ -383,7 +383,7 @@
                 <centerleft>50%</centerleft>
                 <centertop>540</centertop>
                 <width>1020</width>
-                <height>1000</height>
+                <height>920</height>
                 <include>Animation_FadeIn_Slide</include>
                 <animation effect="slide" start="0" end="0,160" condition="!String.IsEqual(Window.Property(groupname),mainmenu)">Conditional</animation>
                 <control type="image">
