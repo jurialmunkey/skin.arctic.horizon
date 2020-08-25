@@ -543,35 +543,15 @@
             <control type="grouplist">
                 <left>20</left>
                 <height>widgets_item_height</height>
-                <bottom>-200</bottom>
+                <bottom>-210</bottom>
                 <orientation>vertical</orientation>
                 <usecontrolcoords>true</usecontrolcoords>
                 <align>bottom</align>
                 <itemgap>0</itemgap>
-                <include content="Object_Info_Title">
-                    <param name="label" value="$VAR[Label_Home_Title]" />
-                </include>
-                <include content="Object_Info_Line">
-                    <param name="label" value="$VAR[Label_56560_InfoLine]" />
-                    <param name="image" value="$VAR[Image_56560_VideoQuality]" />
-                </include>
-                <include content="Object_Info_Ratings" condition="!Skin.HasSetting(DisableAllRatings)">
-                    <param name="container" value="Container(3001)." />
-                    <visible>String.IsEqual(Container(56560).ListItemAbsolute(0).Property(DBType),movie) | String.IsEqual(Container(56560).ListItemAbsolute(0).Property(DBType),episode) | String.IsEqual(Container(56560).ListItemAbsolute(0).Property(DBType),tvshow) | String.IsEqual(Container(56560).ListItemAbsolute(0).Property(DBType),season) | String.IsEqual(Container(56560).ListItemAbsolute(0).Property(DBType),set)</visible>
-                </include>
-                <include content="View_Info_Grouplist_Plotbox" condition="!Skin.HasSetting(DisableAllRatings)">
-                    <param name="container" value="Container(3001)." />
-                    <param name="plot" value="$VAR[Label_Home_Plot]" />
-                    <visible>String.IsEqual(Container(56560).ListItemAbsolute(0).Property(DBType),movie) | String.IsEqual(Container(56560).ListItemAbsolute(0).Property(DBType),episode) | String.IsEqual(Container(56560).ListItemAbsolute(0).Property(DBType),tvshow) | String.IsEqual(Container(56560).ListItemAbsolute(0).Property(DBType),season) | String.IsEqual(Container(56560).ListItemAbsolute(0).Property(DBType),set)</visible>
-                    <height>80</height>
-                    <top>35</top>
-                </include>
-                <include content="View_Info_Grouplist_Plotbox">
-                    <param name="container" value="Container(3001)." />
-                    <param name="plot" value="$VAR[Label_Home_Plot]" />
-                    <visible>![String.IsEqual(Container(56560).ListItemAbsolute(0).Property(DBType),movie) | String.IsEqual(Container(56560).ListItemAbsolute(0).Property(DBType),episode) | String.IsEqual(Container(56560).ListItemAbsolute(0).Property(DBType),tvshow) | String.IsEqual(Container(56560).ListItemAbsolute(0).Property(DBType),season) | String.IsEqual(Container(56560).ListItemAbsolute(0).Property(DBType),set)] | Skin.HasSetting(DisableAllRatings)</visible>
-                    <height>120</height>
-                    <top>35</top>
+                <include content="Home_Vertical_Info_Content">
+                    <param name="id" value="3001" />
+                    <param name="plotheight" value="80" />
+                    <param name="plotheight-nr" value="120" />
                 </include>
             </control>
         </control>
@@ -580,7 +560,7 @@
             <left>view_pad</left>
             <right>-26</right>
             <align>left</align>
-            <height>160</height>
+            <height>170</height>
             <orientation>horizontal</orientation>
             <usecontrolcoords>true</usecontrolcoords>
             <itemgap>-10</itemgap>
@@ -604,6 +584,7 @@
                 <onfocus>SetProperty(TMDbHelper.WidgetContainer,3001,Home)</onfocus>
                 <onfocus>$PARAM[onfocus]</onfocus>
                 <onfocus>$PARAM[onfocus2]</onfocus>
+                <onfocus>$PARAM[onfocus3]</onfocus>
             </include>
             <include content="Object_Info_Button" description="Info">
                 <param name="id" value="$PARAM[button-info-id]" />
@@ -619,6 +600,7 @@
                 <onfocus>SetProperty(TMDbHelper.WidgetContainer,3001,Home)</onfocus>
                 <onfocus>$PARAM[onfocus]</onfocus>
                 <onfocus>$PARAM[onfocus2]</onfocus>
+                <onfocus>$PARAM[onfocus3]</onfocus>
             </include>
         </control>
     </include>
@@ -1417,6 +1399,41 @@
         <onfocus>ClearProperty(301Click)</onfocus>
     </include>
 
+    <include name="Home_Vertical_Info_Content">
+        <param name="id" default="300" />
+        <param name="plotheight" default="80" />
+        <param name="plotheight-nr" default="120" />
+        <definition>
+            <include content="Object_Info_Title">
+                <param name="label" value="$VAR[Label_Home_Title]" />
+            </include>
+            <include content="Object_Info_Line">
+                <param name="label" value="$VAR[Label_56560_InfoLine]" />
+                <param name="image" value="$VAR[Image_56560_VideoQuality]" />
+            </include>
+            <include content="Object_Info_Ratings" condition="!Skin.HasSetting(DisableAllRatings)">
+                <param name="container" value="Container($PARAM[id])." />
+                <visible>String.IsEqual(Container(56560).ListItemAbsolute(0).Property(DBType),movie) | String.IsEqual(Container(56560).ListItemAbsolute(0).Property(DBType),episode) | String.IsEqual(Container(56560).ListItemAbsolute(0).Property(DBType),tvshow) | String.IsEqual(Container(56560).ListItemAbsolute(0).Property(DBType),season) | String.IsEqual(Container(56560).ListItemAbsolute(0).Property(DBType),set)</visible>
+            </include>
+            <include content="View_Info_Grouplist_Plotbox" condition="!Skin.HasSetting(DisableAllRatings)">
+                <param name="episodetitle" value="$INFO[Container(56560).ListItemAbsolute(0).Property(Title)]" />
+                <param name="episodetitle-visible" value="!String.IsEmpty(Container(56560).ListItemAbsolute(0).Property(Title)) + String.IsEqual(Container(56560).ListItemAbsolute(0).Property(DBType),episode)" />
+                <param name="plot" value="$VAR[Label_Home_Plot]" />
+                <visible>String.IsEqual(Container(56560).ListItemAbsolute(0).Property(DBType),movie) | String.IsEqual(Container(56560).ListItemAbsolute(0).Property(DBType),episode) | String.IsEqual(Container(56560).ListItemAbsolute(0).Property(DBType),tvshow) | String.IsEqual(Container(56560).ListItemAbsolute(0).Property(DBType),season) | String.IsEqual(Container(56560).ListItemAbsolute(0).Property(DBType),set)</visible>
+                <height>$PARAM[plotheight]</height>
+                <top>35</top>
+            </include>
+            <include content="View_Info_Grouplist_Plotbox">
+                <param name="episodetitle" value="$INFO[Container(56560).ListItemAbsolute(0).Property(Title)]" />
+                <param name="episodetitle-visible" value="!String.IsEmpty(Container(56560).ListItemAbsolute(0).Property(Title)) + String.IsEqual(Container(56560).ListItemAbsolute(0).Property(DBType),episode)" />
+                <param name="plot" value="$VAR[Label_Home_Plot]" />
+                <visible>![String.IsEqual(Container(56560).ListItemAbsolute(0).Property(DBType),movie) | String.IsEqual(Container(56560).ListItemAbsolute(0).Property(DBType),episode) | String.IsEqual(Container(56560).ListItemAbsolute(0).Property(DBType),tvshow) | String.IsEqual(Container(56560).ListItemAbsolute(0).Property(DBType),season) | String.IsEqual(Container(56560).ListItemAbsolute(0).Property(DBType),set)] | Skin.HasSetting(DisableAllRatings)</visible>
+                <height>$PARAM[plotheight-nr]</height>
+                <top>35</top>
+            </include>
+        </definition>
+    </include>
+
     <include name="Home_Vertical_Info">
         <param name="plotheight" default="120" />
         <param name="plotheight-nr" default="160" />
@@ -1427,7 +1444,6 @@
                     <top>-425</top>
                     <left>100</left>
                     <bottom>60</bottom>
-
                     <include condition="Skin.HasSetting(LockMainMenu) + !Skin.HasSetting(EnableHorizontalHome)">Viewtype_Info_Right_FixedHome</include>
                     <include condition="!Skin.HasSetting(LockMainMenu) | Skin.HasSetting(EnableHorizontalHome)">Viewtype_Info_Right</include>
                     <orientation>vertical</orientation>
@@ -1445,30 +1461,10 @@
                     <control type="group">
                         <height>30</height>
                     </control>
-                    <include content="Object_Info_Title">
-                        <param name="label" value="$VAR[Label_Home_Title]" />
-                    </include>
-                    <include content="Object_Info_Line">
-                        <param name="label" value="$VAR[Label_56560_InfoLine]" />
-                        <param name="image" value="$VAR[Image_56560_VideoQuality]" />
-                    </include>
-                    <include content="Object_Info_Ratings" condition="!Skin.HasSetting(DisableAllRatings)">
-                        <param name="container" value="Container($PARAM[id])." />
-                        <visible>String.IsEqual(Container(56560).ListItemAbsolute(0).Property(DBType),movie) | String.IsEqual(Container(56560).ListItemAbsolute(0).Property(DBType),episode) | String.IsEqual(Container(56560).ListItemAbsolute(0).Property(DBType),tvshow) | String.IsEqual(Container(56560).ListItemAbsolute(0).Property(DBType),season) | String.IsEqual(Container(56560).ListItemAbsolute(0).Property(DBType),set)</visible>
-                    </include>
-                    <include content="View_Info_Grouplist_Plotbox" condition="!Skin.HasSetting(DisableAllRatings)">
-                        <param name="container" value="Container($PARAM[id])." />
-                        <param name="plot" value="$VAR[Label_Home_Plot]" />
-                        <visible>String.IsEqual(Container(56560).ListItemAbsolute(0).Property(DBType),movie) | String.IsEqual(Container(56560).ListItemAbsolute(0).Property(DBType),episode) | String.IsEqual(Container(56560).ListItemAbsolute(0).Property(DBType),tvshow) | String.IsEqual(Container(56560).ListItemAbsolute(0).Property(DBType),season) | String.IsEqual(Container(56560).ListItemAbsolute(0).Property(DBType),set)</visible>
-                        <height>$PARAM[plotheight]</height>
-                        <top>35</top>
-                    </include>
-                    <include content="View_Info_Grouplist_Plotbox">
-                        <param name="container" value="Container($PARAM[id])." />
-                        <param name="plot" value="$VAR[Label_Home_Plot]" />
-                        <visible>![String.IsEqual(Container(56560).ListItemAbsolute(0).Property(DBType),movie) | String.IsEqual(Container(56560).ListItemAbsolute(0).Property(DBType),episode) | String.IsEqual(Container(56560).ListItemAbsolute(0).Property(DBType),tvshow) | String.IsEqual(Container(56560).ListItemAbsolute(0).Property(DBType),season) | String.IsEqual(Container(56560).ListItemAbsolute(0).Property(DBType),set)] | Skin.HasSetting(DisableAllRatings)</visible>
-                        <height>$PARAM[plotheight-nr]</height>
-                        <top>35</top>
+                    <include content="Home_Vertical_Info_Content">
+                        <param name="id" value="$PARAM[id]" />
+                        <param name="plotheight" value="$PARAM[plotheight]" />
+                        <param name="plotheight-nr" value="$PARAM[plotheight-nr]" />
                     </include>
                 </control>
             </control>

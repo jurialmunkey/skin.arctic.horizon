@@ -146,6 +146,8 @@
         <param name="specialicon" default="true" />
         <param name="label-widgetname" default="false" />
         <param name="infoslide" default="false" />
+        <param name="backpanel" default="false" />
+        <param name="clearart" default="false" />
         <definition>
             <include content="View_Cast_Toplabel" condition="!$PARAM[label-widgetname]">
                 <param name="groupid" value="$PARAM[groupid]" />
@@ -155,10 +157,11 @@
                 <param name="issubmenu" value="$PARAM[issubmenu]" />
                 <param name="showonupdate" value="$PARAM[showonupdate]" />
                 <param name="infoslide" value="$PARAM[infoslide]" />
+                <param name="backpanel" value="$PARAM[backpanel]" />
+                <param name="clearart" value="$PARAM[clearart]" />
                 <visible>$PARAM[visible]</visible>
                 <visible>$PARAM[label-visible]</visible>
                 <left>85</left>
-                <!-- <animation effect="slide" end="0,430" condition="$PARAM[infoslide]">Conditional</animation> -->
             </include>
             <include content="View_Cast_Toplabel" condition="$PARAM[label-widgetname]">
                 <param name="groupid" value="$PARAM[groupid]" />
@@ -168,10 +171,10 @@
                 <param name="issubmenu" value="$PARAM[issubmenu]" />
                 <param name="showonupdate" value="$PARAM[showonupdate]" />
                 <param name="infoslide" value="$PARAM[infoslide]" />
+                <param name="backpanel" value="$PARAM[backpanel]" />
                 <visible>$PARAM[visible]</visible>
                 <visible>$PARAM[label-visible]</visible>
                 <left>85</left>
-                <!-- <animation effect="slide" end="0,430" condition="$PARAM[infoslide]">Conditional</animation> -->
             </include>
             <include content="$PARAM[viewtype-include]">
                 <param name="id" value="$PARAM[id]" />
@@ -189,7 +192,6 @@
                 <visible>$PARAM[visible]</visible>
                 <visible>Integer.IsGreater(Container($PARAM[id]).NumAllItems,0) | Container($PARAM[id]).IsUpdating | $PARAM[issubmenu]</visible>
                 <movement>6</movement>
-                <!-- <animation effect="slide" end="0,430" condition="$PARAM[infoslide]">Conditional</animation> -->
             </include>
         </definition>
     </include>

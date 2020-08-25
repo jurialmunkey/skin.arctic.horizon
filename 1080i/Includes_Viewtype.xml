@@ -166,6 +166,24 @@
         </control>
     </include>
 
+    <include name="Viewtype_BackPanel_Widget">
+        <control type="group">
+            <control type="image">
+                <aspectratio align="left">scale</aspectratio>
+                <texture colordiffuse="7fffffff">common/panel.png</texture>
+                <visible>!Skin.HasSetting(DisablePanelDivider)</visible>
+            </control>
+            <control type="image">
+                <height>24</height>
+                <top>0</top>
+                <texture>common/shadow-line-24.png</texture>
+                <visible>!Skin.HasSetting(DisablePanelDivider)</visible>
+                <visible>Skin.HasSetting(ShadowLines)</visible>
+            </control>
+            <nested />
+        </control>
+    </include>
+
     <include name="Viewtype_BackPanel">
         <control type="group">
             <nested />

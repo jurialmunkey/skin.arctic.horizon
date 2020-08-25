@@ -42,6 +42,9 @@
             <property name="Duration_H">$INFO[$PARAM[listitem].Duration(h)]</property>
             <property name="Duration_M">$INFO[$PARAM[listitem].Duration(mm)]</property>
             <property name="Duration_Mins">$INFO[$PARAM[listitem].Duration(mins)]</property>
+            <property name="clearart">$INFO[$PARAM[listitem].Art(clearart)]</property>
+            <property name="tvshow.clearart">$INFO[$PARAM[listitem].Art(tvshow.clearart)]</property>
+            <property name="artist.clearart">$INFO[$PARAM[listitem].Art(artist.clearart)]</property>
             <nested />
         </item>
     </include>

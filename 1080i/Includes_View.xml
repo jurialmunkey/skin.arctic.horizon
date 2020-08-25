@@ -39,6 +39,8 @@
         <param name="issubmenu" default="false" />
         <param name="showonupdate" default="false" />
         <param name="infoslide" default="false" />
+        <param name="backpanel" default="false" />
+        <param name="clearart" default="false" />
         <definition>
             <control type="group" id="$PARAM[groupid]">
                 <nested />
@@ -47,6 +49,24 @@
                 <visible>Integer.IsGreater(Container($PARAM[id]).NumAllItems,0) | Container($PARAM[id]).IsUpdating | $PARAM[issubmenu]</visible>
                 <control type="group">
                     <include condition="$PARAM[infoslide]">View_Cast_Toplabel_InfoSlide</include>
+                    <include content="Viewtype_BackPanel_Widget">
+                        <left>-65</left>
+                        <top>-10</top>
+                        <height>1080</height>
+                        <include>Animation_FadeInOut_Common</include>
+                        <visible>$PARAM[backpanel]</visible>
+                        <include content="Object_Control" condition="[!Skin.HasSetting(LockMainMenu) | Skin.HasSetting(EnableHorizontalHome)]">
+                            <param name="type" value="image" />
+                            <right>100</right>
+                            <top>-320</top>
+                            <height>320</height>
+                            <width>600</width>
+                            <fadetime>200</fadetime>
+                            <texture background="true">$VAR[Image_Home_ClearArt]</texture>
+                            <aspectratio align="right" aligny="bottom" scalediffuse="false">keep</aspectratio>
+                            <visible>$PARAM[clearart]</visible>
+                        </include>
+                    </include>
                     <control type="group">
                         <top>50</top>
                         <height>item_cast_height</height>

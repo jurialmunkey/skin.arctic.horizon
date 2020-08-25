@@ -2,24 +2,25 @@
 <includes>
 
     <include name="View_Info_Grouplist_Plotbox">
+        <param name="episodetitle-visible" default="false" />
         <definition>
             <include content="Object_Control">
                 <param name="type" value="group" />
                 <nested/>
                 <include content="Object_Info_Plot">
                     <param name="height" value="100%" />
-                    <param name="title" value="[B][COLOR=main_fg_100]$INFO[$PARAM[container]ListItem.Title][/COLOR][/B]  ~  " />
+                    <param name="title" value="[B][COLOR=main_fg_100]$PARAM[episodetitle][/COLOR][/B]  ~  " />
                     <param name="label" value="$PARAM[plot]" />
                     <param name="control-type" value="textbox" />
                     <top>0</top>
-                    <visible>String.IsEqual($PARAM[container]ListItem.DBType,episode)</visible>
+                    <visible>$PARAM[episodetitle-visible]</visible>
                 </include>
                 <include content="Object_Info_Plot">
                     <param name="height" value="100%" />
                     <param name="label" value="$PARAM[plot]" />
                     <param name="control-type" value="textbox" />
                     <top>0</top>
-                    <visible>!String.IsEqual($PARAM[container]ListItem.DBType,episode)</visible>
+                    <visible>![$PARAM[episodetitle-visible]]</visible>
                 </include>
             </include>
         </definition>
@@ -50,7 +51,8 @@
                     <visible>String.IsEqual($PARAM[container]ListItem.DBType,movie) | String.IsEqual($PARAM[container]ListItem.DBType,episode) | String.IsEqual($PARAM[container]ListItem.DBType,tvshow) | String.IsEqual($PARAM[container]ListItem.DBType,season) | String.IsEqual($PARAM[container]ListItem.DBType,set)</visible>
                 </include>
                 <include content="View_Info_Grouplist_Plotbox" condition="$PARAM[visible-details] + $PARAM[ratings] + !Skin.HasSetting(DisableAllRatings)">
-                    <param name="container" value="$PARAM[container]" />
+                    <param name="episodetitle" value="$INFO[$PARAM[container]ListItem.Title]" />
+                    <param name="episodetitle-visible" value="!String.IsEmpty($PARAM[container]ListItem.Title) + String.IsEqual($PARAM[container]ListItem.DBType,episode)" />
                     <param name="plot" value="$PARAM[plot]" />
                     <top>35</top>
                     <height>$PARAM[plotheight]</height>
@@ -58,7 +60,8 @@
                     <visible>String.IsEqual($PARAM[container]ListItem.DBType,movie) | String.IsEqual($PARAM[container]ListItem.DBType,episode) | String.IsEqual($PARAM[container]ListItem.DBType,tvshow) | String.IsEqual($PARAM[container]ListItem.DBType,season) | String.IsEqual($PARAM[container]ListItem.DBType,set)</visible>
                 </include>
                 <include content="View_Info_Grouplist_Plotbox" condition="$PARAM[visible-details]">
-                    <param name="container" value="$PARAM[container]" />
+                    <param name="episodetitle" value="$INFO[$PARAM[container]ListItem.Title]" />
+                    <param name="episodetitle-visible" value="!String.IsEmpty($PARAM[container]ListItem.Title) + String.IsEqual($PARAM[container]ListItem.DBType,episode)" />
                     <param name="plot" value="$PARAM[plot]" />
                     <top>35</top>
                     <height>$PARAM[plotheight-nr]</height>

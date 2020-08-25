@@ -319,6 +319,10 @@
             <property name="widgetLimit" tag="property" attribute="name|widgetLimit" />
             <property name="widgetLimit">20</property>
 
+            <!-- Is Second Position -->
+            <property name="isSecondPosition" tag="property" attribute="name|id" value="$NUMBER[2]">true</property>
+            <property name="isSecondPosition">false</property>
+
             <!-- Menu IDs -->
             <property name="mainmenuid" tag="property" attribute="name|mainmenuid" />
             <property name="id" tag="property" attribute="name|id" value="$NUMBER[1]">1</property>
@@ -381,20 +385,6 @@
                     <param name="visible" value="Control.HasFocus($PYTHON[30000 + int(mainmenuid) * 100 + int(id)]) | Integer.IsEqual(Window(Home).Property(CG_$PYTHON[50000 + int(mainmenuid) * 100]_CurrentWidget),$NUMBER[$PYTHON[30000 + int(mainmenuid) * 100 + int(id)]])" />
                     <top>-60</top>
                     <height>470</height>
-                    <!-- <include content="Object_Control" condition="!Skin.HasSetting(LockMainMenu) | Skin.HasSetting(EnableHorizontalHome)">
-                        <param name="type" value="image" />
-                        <right>100</right>
-                        <bottom>480</bottom>
-                        <height>320</height>
-                        <width>670</width>
-                        <texture background="true">$VAR[Image_ClearArt]</texture>
-                        <aspectratio align="right" aligny="bottom" scalediffuse="false">keep</aspectratio>
-                        <animation effect="fade" start="0" end="100" delay="400" time="400" tween="cubic" easing="inout" reversible="false" condition="Control.HasFocus($PYTHON[30000 + int(mainmenuid) * 100 + int(id)])">Conditional</animation>
-
-                        <animation effect="fade" start="100" end="0" delay="0" time="400" tween="cubic" easing="inout" reversible="false" condition="[Control.HasFocus(301) | Control.HasFocus(302) | [Control.HasFocus(3992) + String.IsEmpty(Window.Property(WidgetFocus))]]">Conditional</animation>
-
-                        <animation effect="fade" start="100" end="0" condition="![Control.HasFocus(301) | Control.HasFocus(302) | [Control.HasFocus(3992) + String.IsEmpty(Window.Property(WidgetFocus))]] + !Control.HasFocus($PYTHON[30000 + int(mainmenuid) * 100 + int(id)])">Conditional</animation>
-                    </include> -->
                 </include>
 
                 <include content="Info_Widget_Poster" condition="$SKINSHORTCUTS[isWidget]">
@@ -409,6 +399,8 @@
                     <param name="label-widgetstart" value="$SKINSHORTCUTS[widgetLabelStart]" />
                     <param name="label-widgetend" value="$SKINSHORTCUTS[widgetLabelEnd]" />
                     <param name="infoslide" value="!$SKINSHORTCUTS[widgetSubmenu] + $SKINSHORTCUTS[widgetInfo]" />
+                    <param name="backpanel" value="!$SKINSHORTCUTS[widgetSubmenu] + [$SKINSHORTCUTS[widgetInfo] | [$SKINSHORTCUTS[isSecondPosition] + String.IsEqual(Container(3700).ListItemAbsolute(0).Property(list),Background) + !String.IsEmpty(Window(Home).Property(PW_$PYTHON[50000 + int(mainmenuid) * 100]_InfoWidget))]] + [Control.HasFocus($PYTHON[30000 + int(mainmenuid) * 100 + int(id)]) | Integer.IsEqual(Window(Home).Property(HW_$PYTHON[50000 + int(mainmenuid) * 100]_InfoWidget),$PYTHON[30000 + int(mainmenuid) * 100 + int(id)])]" />
+                    <param name="clearart" value="$SKINSHORTCUTS[widgetInfo] | [$SKINSHORTCUTS[isSecondPosition] + String.IsEqual(Container(3700).ListItemAbsolute(0).Property(list),Background) + !String.IsEmpty(Window(Home).Property(PW_$PYTHON[50000 + int(mainmenuid) * 100]_InfoWidget))]" />
                     <top>$SKINSHORTCUTS[widgetTop]</top>
                     <onback>SetFocus($PYTHON[30000 + int(mainmenuid) * 100 + 1])</onback>
                     <onback>301</onback>
@@ -417,6 +409,7 @@
                     <onfocus condition="!Skin.HasSetting(NoFanart) + !$SKINSHORTCUTS[widgetSubmenu]">SetProperty(TMDbHelper.Blur.SourceImage,$SKINSHORTCUTS[widgetSourceArt],Home)</onfocus>
                     <onfocus condition="Skin.HasSetting(NoFanart) + !$SKINSHORTCUTS[widgetSubmenu]">SetProperty(TMDbHelper.Blur.SourceImage,Art(fallback),Home)</onfocus>
                     <onfocus>SetProperty(WidgetFocus,1)</onfocus>
+                    <onfocus condition="![$SKINSHORTCUTS[isSecondPosition] + String.IsEqual(Container(3700).ListItemAbsolute(0).Property(list),Background)]">ClearProperty(PW_$PYTHON[50000 + int(mainmenuid) * 100]_InfoWidget,Home)</onfocus>
                     <onfocus condition="!$SKINSHORTCUTS[widgetSubmenu]">SetProperty(HW_$PYTHON[50000 + int(mainmenuid) * 100]_InfoWidget,$PYTHON[30000 + int(mainmenuid) * 100 + int(id)],Home)</onfocus>
                     <include content="Defs_AutoScroll">
                         <param name="condition" value="[!ControlGroup($PYTHON[50000 + int(mainmenuid) * 100]).HasFocus() + System.IdleTime(1) + !Skin.HasSetting(DisableAutoScrollWidgets) + Integer.IsEqual(Container($PYTHON[50000 + int(mainmenuid) * 100]).NumItems,1)] | [$PYTHON['true' if widgetAspect in 'Banner' else 'false'] + !Control.HasFocus($PYTHON[30000 + int(mainmenuid) * 100 + int(id)]) + !Skin.HasSetting(DisableAutoScrollWidgets)]" />
@@ -445,10 +438,21 @@
                     <param name="ondown" value="$PYTHON[30001 + int(mainmenuid) * 100 + int(id)]" />
                     <param name="onfocus" value="SetProperty(CG_$PYTHON[50000 + int(mainmenuid) * 100]_CurrentWidget,$PYTHON[30000 + int(mainmenuid) * 100 + int(id)],Home)" />
                     <param name="onfocus2" value="SetProperty(HW_$PYTHON[50000 + int(mainmenuid) * 100]_InfoWidget,$PYTHON[30000 + int(mainmenuid) * 100 + int(id)],Home)" />
+                    <param name="onfocus3" value="SetProperty(PW_$PYTHON[50000 + int(mainmenuid) * 100]_InfoWidget,1,Home)" />
                     <!-- <param name="hideinfo" value="!String.IsEmpty(Window(Home).Property(HW_$PYTHON[50000 + int(mainmenuid) * 100]_InfoWidget))" /> -->
                     <include>Animation_FadeInOut_Common</include>
                     <top>740</top>
-                    <height>40</height>
+                    <height>30</height>
+                    <!-- <include content="Object_Control" condition="!Skin.HasSetting(LockMainMenu) | Skin.HasSetting(EnableHorizontalHome)">
+                        <param name="type" value="image" />
+                        <right>-680</right>
+                        <bottom>-340</bottom>
+                        <height>320</height>
+                        <width>670</width>
+                        <texture background="true">$VAR[Image_ClearArt]</texture>
+                        <aspectratio align="right" aligny="bottom" scalediffuse="false">keep</aspectratio>
+                        <visible>!String.IsEmpty(Window(Home).Property(HW_$PYTHON[50000 + int(mainmenuid) * 100]_InfoWidget)) + Integer.IsEqual(Window(Home).Property(HW_$PYTHON[50000 + int(mainmenuid) * 100]_InfoWidget),$PYTHON[30000 + int(mainmenuid) * 100 + int(id) + 1])</visible>
+                    </include> -->
                 </include>
 
 

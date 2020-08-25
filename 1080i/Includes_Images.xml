@@ -52,6 +52,15 @@
         <value>special://skin/extras/icons/kodi.png</value>
     </variable>
 
+    <variable name="Image_Home_ClearArt">
+        <value condition="Skin.HasSetting(DisableClearArt)">common/null.png</value>
+        <value condition="!String.IsEmpty(Container(56560).ListItemAbsolute(0).Property(clearart))">$INFO[Container(56560).ListItemAbsolute(0).Property(clearart)]</value>
+        <value condition="!String.IsEmpty(Container(56560).ListItemAbsolute(0).Property(tvshow.clearart))">$INFO[Container(56560).ListItemAbsolute(0).Property(tvshow.clearart)]</value>
+        <value condition="!String.IsEmpty(Container(56560).ListItemAbsolute(0).Property(artist.clearart))">$INFO[Container(56560).ListItemAbsolute(0).Property(artist.clearart)]</value>
+        <value condition="!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.clearart))">$INFO[Window(Home).Property(TMDbHelper.ListItem.clearart)]</value>
+        <value condition="!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.tvshow.clearart))">$INFO[Window(Home).Property(TMDbHelper.ListItem.tvshow.clearart)]</value>
+    </variable>
+
     <variable name="Image_ClearArt">
         <value condition="Skin.HasSetting(DisableClearArt)">common/null.png</value>
         <value condition="Control.IsVisible(53) + !String.IsEmpty(Container(530).ListItem.Art(clearart))">$INFO[Container(530).ListItem.Art(clearart)]</value>
@@ -165,18 +174,6 @@
         <value condition="!String.IsEmpty(ListItem.Art(clearlogo))">$INFO[ListItem.Art(clearlogo)]</value>
         <value condition="!String.IsEmpty(ListItem.Art(tvshow.clearlogo))">$INFO[ListItem.Art(tvshow.clearlogo)]</value>
         <value condition="!String.IsEmpty(ListItem.Art(artist.clearlogo))">$INFO[ListItem.Art(artist.clearlogo)]</value>
-    </variable>
-
-    <variable name="Image_Home_ClearLogo">
-        <value condition="!String.IsEmpty(ListItem.Art(clearlogo))">$INFO[ListItem.Art(clearlogo)]</value>
-        <value condition="!String.IsEmpty(ListItem.Art(tvshow.clearlogo))">$INFO[ListItem.Art(tvshow.clearlogo)]</value>
-        <value condition="!String.IsEmpty(ListItem.Art(artist.clearlogo))">$INFO[ListItem.Art(artist.clearlogo)]</value>
-        <value condition="!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.clearlogo))">$INFO[Window(Home).Property(TMDbHelper.ListItem.clearlogo)]</value>
-    </variable>
-
-    <variable name="Image_TopBar_ClearLogo">
-        <value condition="!String.IsEmpty(ListItem.Art(clearlogo))">$INFO[ListItem.Art(clearlogo)]</value>
-        <value condition="!String.IsEmpty(ListItem.Art(tvshow.clearlogo))">$INFO[ListItem.Art(tvshow.clearlogo)]</value>
     </variable>
 
     <variable name="Image_Watched">
