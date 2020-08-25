@@ -766,7 +766,7 @@ msgstr ""
 
 #: /1080i/Custom_1117_ColorPicker.xml
 msgctxt "#31154"
-msgid "Color"
+msgid "Colour"
 msgstr ""
 
 #: /1080i/SkinSettings.xml
