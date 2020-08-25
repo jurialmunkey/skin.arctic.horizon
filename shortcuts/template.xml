@@ -887,6 +887,7 @@
                 <preloaditems>2</preloaditems>
                 <include>Animation_FadeInOut_Common</include>
                 <onfocus>SetProperty(TMDbHelper.WidgetContainer,3001,Home)</onfocus>
+                <visible>!String.IsEmpty(Container(301).ListItem.Property(widgetPath.showcaseBackground)) | !String.IsEmpty(Container(301).ListItem.Property(widgetPath))</visible>
                 <visible>[[Integer.IsEqual(Container(3700).NumItems,0) + String.IsEmpty(Container(301).ListItem.Property(background))] | String.IsEqual(Container(3700).ListItemAbsolute(0).Property(list),Background)] + String.IsEqual(Container(301).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility])</visible>
                 <animation effect="fade" start="100" end="0" time="300" condition="!Integer.IsEqual(Window(Home).Property(HW_$PYTHON[50000 + int(mainmenuid) * 100]_InfoWidget),$PYTHON[30001 + int(mainmenuid) * 100])">Conditional</animation>
                 <include content="Animation_UpDown">
@@ -909,11 +910,13 @@
             </control>
             <control type="group">
                 <visible>[[Integer.IsEqual(Container(3700).NumItems,0) + String.IsEmpty(Container(301).ListItem.Property(background))] | String.IsEqual(Container(3700).ListItemAbsolute(0).Property(list),Background)] + String.IsEqual(Container(301).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility])</visible>
+                <animation effect="fade" start="100" end="0" time="300" condition="!Integer.IsEqual(Window(Home).Property(HW_$PYTHON[50000 + int(mainmenuid) * 100]_InfoWidget),$PYTHON[30001 + int(mainmenuid) * 100])">Conditional</animation>
                 <include content="Animation_UpDown">
                     <param name="visible" value="String.IsEqual(Container(301).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility])" />
                 </include>
                 <include content="Home_Widget_Fullscreen_HubBase">
                     <include>Animation_FadeInOut_Common</include>
+                    <visible>!String.IsEmpty(Container(301).ListItem.Property(widgetPath.showcaseBackground)) | !String.IsEmpty(Container(301).ListItem.Property(widgetPath))</visible>
                 </include>
                 <control type="group">
                     <top>110</top>
@@ -933,6 +936,66 @@
                 </control>
             </control>
 
+        </controls>
+    </other>
+
+    <other include="fullscreen-globalwidget">
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[1]">1</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[2]">2</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[3]">3</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[4]">4</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[5]">5</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[6]">6</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[7]">7</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[8]">8</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[9]">9</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[10]">10</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[11]">11</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[12]">12</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[13]">13</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[14]">14</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[15]">15</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[16]">16</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[17]">17</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[18]">18</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[19]">19</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[20]">20</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[21]">21</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[22]">22</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[23]">23</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[24]">24</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[25]">25</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[26]">26</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[27]">27</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[28]">28</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[29]">29</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[30]">30</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[31]">31</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[32]">32</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[33]">33</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[34]">34</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[35]">35</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[36]">36</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[37]">37</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[38]">38</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[39]">39</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[40]">40</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[41]">41</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[42]">42</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[43]">43</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[44]">44</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[45]">45</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[46]">46</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[47]">47</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[48]">48</property>
+        <property name="mainmenuid" tag="property" attribute="name|id" value="$NUMBER[49]">49</property>
+        <property name="mainmenuid">50</property>
+
+        <property name="submenuVisibility" tag="property" attribute="name|submenuVisibility"/>
+        <controls>
+            <animation effect="fade" start="100" end="0" time="300" condition="!Integer.IsEqual(Window(Home).Property(HW_$PYTHON[50000 + int(mainmenuid) * 100]_InfoWidget),$PYTHON[30001 + int(mainmenuid) * 100]) + String.IsEqual(Container(301).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility])">Conditional</animation>
+            <onup condition="String.IsEqual(Container(301).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility])">SetFocus($PYTHON[30001 + int(mainmenuid) * 100])</onup>
+            <ondown condition="String.IsEqual(Container(301).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility])">SetFocus($PYTHON[30001 + int(mainmenuid) * 100])</ondown>
         </controls>
     </other>
 

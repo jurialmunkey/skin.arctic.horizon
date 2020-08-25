@@ -446,6 +446,42 @@
                             <onclick>noop</onclick>
                             <visible allowhiddenfocus="true">Control.HasFocus(3991)</visible>
                         </control>
+                        <control type="wraplist" id="3001">
+                            <top>-180</top>
+                            <bottom>-65</bottom>
+                            <left>20</left>
+                            <right>20</right>
+                            <ondown>301</ondown>
+                            <onup>301</onup>
+                            <orientation>horizontal</orientation>
+                            <scrolltime tween="quadratic">400</scrolltime>
+                            <preloaditems>2</preloaditems>
+                            <include>skinshortcuts-template-fullscreen-globalwidget</include>
+                            <include>Animation_FadeInOut_Common</include>
+                            <onfocus>SetProperty(TMDbHelper.WidgetContainer,3001,Home)</onfocus>
+                            <visible>String.IsEmpty(Container(301).ListItem.Property(widgetPath.showcaseBackground)) + String.IsEmpty(Container(301).ListItem.Property(widgetPath))</visible>
+                            <visible>[[Integer.IsEqual(Container(3700).NumItems,0) + String.IsEmpty(Container(301).ListItem.Property(background))] | String.IsEqual(Container(3700).ListItemAbsolute(0).Property(list),Background)]</visible>
+                            <itemlayout width="1920" height="1080">
+                                <control type="image">
+                                    <texture background="true">$VAR[Image_Fanart]</texture>
+                                </control>
+                            </itemlayout>
+                            <focusedlayout width="1920" height="1080">
+                                <control type="image">
+                                    <texture background="true">$VAR[Image_Fanart]</texture>
+                                </control>
+                            </focusedlayout>
+                            <content target="$VAR[Defs_ScreensaverWidget_Target]" sortby="random">$VAR[Defs_ScreensaverWidget]</content>
+                            <include content="Defs_AutoScroll">
+                                <param name="condition" value="System.IdleTime(3)" />
+                            </include>
+                        </control>
+                        <include content="Home_Widget_Fullscreen_HubBase">
+                            <include>skinshortcuts-template-fullscreen-globalwidget</include>
+                            <include>Animation_FadeInOut_Common</include>
+                            <visible>String.IsEmpty(Container(301).ListItem.Property(widgetPath.showcaseBackground)) + String.IsEmpty(Container(301).ListItem.Property(widgetPath))</visible>
+                            <visible>[[Integer.IsEqual(Container(3700).NumItems,0) + String.IsEmpty(Container(301).ListItem.Property(background))] | String.IsEqual(Container(3700).ListItemAbsolute(0).Property(list),Background)]</visible>
+                        </include>
                         <include>skinshortcuts-template-fullscreen-widget-background</include>
                         <control type="group" id="3000">
                             <animation type="Conditional" condition="Control.IsVisible(3990)" reversible="false">
