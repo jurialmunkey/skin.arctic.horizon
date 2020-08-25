@@ -904,7 +904,7 @@
                 </focusedlayout>
                 <content target="$SKINSHORTCUTS[widgetTarget]" sortby="$SKINSHORTCUTS[widgetSortby]" sortorder="$SKINSHORTCUTS[widgetSortorder]">$SKINSHORTCUTS[widgetPath]</content>
                 <include content="Defs_AutoScroll">
-                    <param name="condition" value="[System.IdleTime(3) + [Control.HasFocus(3001) | Control.HasFocus($PYTHON[90001 + int(mainmenuid) * 100]) | Control.HasFocus($PYTHON[90003 + int(mainmenuid) * 100])]] | ![Control.HasFocus(3001) | Control.HasFocus($PYTHON[90001 + int(mainmenuid) * 100]) | Control.HasFocus($PYTHON[90003 + int(mainmenuid) * 100]) | Control.HasFocus(5610)]" />
+                    <param name="condition" value="System.IdleTime(3)" />
                 </include>
             </control>
             <control type="group">
@@ -975,7 +975,7 @@
                 </focusedlayout>
                 <content target="$SKINSHORTCUTS[widgetTarget]" sortby="$SKINSHORTCUTS[widgetSortby]" sortorder="$SKINSHORTCUTS[widgetSortorder]">$SKINSHORTCUTS[widgetPath]</content>
                 <include content="Defs_AutoScroll">
-                    <param name="condition" value="[System.IdleTime(3) + [Control.HasFocus(3001) | Control.HasFocus(3101) | Control.HasFocus(3102)]] | ![Control.HasFocus(3001) | Control.HasFocus(3101) | Control.HasFocus(3102) | Control.HasFocus(5610)]" />
+                    <param name="condition" value="System.IdleTime(3)" />
                 </include>
             </control>
         </controls>

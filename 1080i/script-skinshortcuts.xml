@@ -283,11 +283,20 @@
                         </control>
 
                         <control type="button" id="406" description="Widgets">
-                            <label>$LOCALIZE[31099]</label>
+                            <label>$LOCALIZE[31099] - Home</label>
                             <visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
                             <visible>!String.IsEqual(Container(211).ListItem.Property(skinshortcuts-disabled),True)</visible>
                             <include>Dialog_Standard_Button</include>
                             <visible>![String.EndsWith(Window.Property(groupname),.1) | String.IsEqual(Window.Property(groupname),searchmenu)]</visible>
+                        </control>
+
+                        <control type="button" id="9908" description="Hub Widget">
+                            <label>$LOCALIZE[31099] - Fullscreen / Hub</label>
+                            <label2>$INFO[Container(211).ListItem.Property(widgetName)]</label2>
+                            <onclick>SetFocus(9300)</onclick>
+                            <visible>!String.IsEqual(Container(211).ListItem.Property(skinshortcuts-disabled),True)</visible>
+                            <visible>![String.EndsWith(Window.Property(groupname),.1) | String.IsEqual(Window.Property(groupname),searchmenu)]</visible>
+                            <include>Dialog_Standard_Button</include>
                         </control>
 
                         <control type="button" id="405" description="Submenu">
@@ -296,15 +305,6 @@
                             <visible>!String.IsEqual(Container(211).ListItem.Property(skinshortcuts-disabled),True)</visible>
                             <include>Dialog_Standard_Button</include>
                             <visible>![String.EndsWith(Window.Property(groupname),.1) | String.IsEqual(Window.Property(groupname),searchmenu)]</visible>
-                        </control>
-
-                        <control type="button" id="9908" description="Hub Widget">
-                            <label>Hub widget</label>
-                            <label2>$INFO[Container(211).ListItem.Property(widgetName)]</label2>
-                            <onclick>SetFocus(9300)</onclick>
-                            <visible>!String.IsEqual(Container(211).ListItem.Property(skinshortcuts-disabled),True)</visible>
-                            <visible>![String.EndsWith(Window.Property(groupname),.1) | String.IsEqual(Window.Property(groupname),searchmenu)]</visible>
-                            <include>Dialog_Standard_Button</include>
                         </control>
 
                         <control type="button" id="308" description="Reset">
