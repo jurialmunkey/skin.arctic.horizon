@@ -274,7 +274,7 @@
                         </control>
 
                         <control type="button" id="310" description="Background">
-                            <label>31110</label>
+                            <label>Background image</label>
                             <label2>$INFO[Container(211).ListItem.Property(background)]</label2>
                             <visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
                             <visible>!String.IsEqual(Container(211).ListItem.Property(skinshortcuts-disabled),True)</visible>
@@ -283,15 +283,7 @@
                         </control>
 
                         <control type="button" id="406" description="Widgets">
-                            <label>$LOCALIZE[31099]</label>
-                            <visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
-                            <visible>!String.IsEqual(Container(211).ListItem.Property(skinshortcuts-disabled),True)</visible>
-                            <include>Dialog_Standard_Button</include>
-                            <visible>![String.EndsWith(Window.Property(groupname),.1) | String.IsEqual(Window.Property(groupname),searchmenu)]</visible>
-                        </control>
-
-                        <control type="button" id="405" description="Submenu">
-                            <label>$LOCALIZE[31112]</label>
+                            <label>Widgets - Home</label>
                             <visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
                             <visible>!String.IsEqual(Container(211).ListItem.Property(skinshortcuts-disabled),True)</visible>
                             <include>Dialog_Standard_Button</include>
@@ -299,12 +291,20 @@
                         </control>
 
                         <control type="button" id="9908" description="Hub Widget">
-                            <label>Hub widget</label>
+                            <label>Widgets - Fullscreen / Hub</label>
                             <label2>$INFO[Container(211).ListItem.Property(widgetName)]</label2>
                             <onclick>SetFocus(9300)</onclick>
                             <visible>!String.IsEqual(Container(211).ListItem.Property(skinshortcuts-disabled),True)</visible>
                             <visible>![String.EndsWith(Window.Property(groupname),.1) | String.IsEqual(Window.Property(groupname),searchmenu)]</visible>
                             <include>Dialog_Standard_Button</include>
+                        </control>
+
+                        <control type="button" id="405" description="Submenu">
+                            <label>Submenu</label>
+                            <visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
+                            <visible>!String.IsEqual(Container(211).ListItem.Property(skinshortcuts-disabled),True)</visible>
+                            <include>Dialog_Standard_Button</include>
+                            <visible>![String.EndsWith(Window.Property(groupname),.1) | String.IsEqual(Window.Property(groupname),searchmenu)]</visible>
                         </control>
 
                         <control type="button" id="308" description="Reset">
@@ -392,7 +392,7 @@
                     <visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
                 </control>
                 <control type="group">
-                    <bottom>400</bottom>
+                    <bottom>320</bottom>
                     <control type="image">
                         <include condition="!Skin.HasSetting(DisableShadows)">Defs_Shadow_24</include>
                         <texture border="16" colordiffuse="dialog_bg_100">common/dialog.png</texture>
@@ -462,7 +462,7 @@
                                     <include>Dialog_Standard_Button</include>
                                 </control>
 
-                                <!-- Background Widget -->
+                                <!-- Fullscreen Widget -->
                                 <control type="label" id="9929">
                                     <label>$LOCALIZE[31039]</label>
                                     <include>Dialog_Standard_HintLabel</include>

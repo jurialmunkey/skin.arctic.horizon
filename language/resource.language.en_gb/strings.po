@@ -207,7 +207,7 @@ msgstr ""
 
 #: /1080i/script-skinshortcuts.xml
 msgctxt "#31039"
-msgid "Background widget"
+msgid "Fullscreen widget"
 msgstr ""
 
 #: /1080i/SkinSettings.xml
@@ -342,7 +342,7 @@ msgstr ""
 
 #: /1080i/script-skinshortcuts.xml
 msgctxt "#31066"
-msgid "Choose background widget"
+msgid "Choose fullscreen widget"
 msgstr ""
 
 #: /1080i/Includes_Labels.xml
