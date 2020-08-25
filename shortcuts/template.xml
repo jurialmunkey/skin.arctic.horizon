@@ -531,7 +531,7 @@
         <property name="submenuVisibility" tag="property" attribute="name|submenuVisibility"/>
         <controls>
             <control type="image">
-                <texture colordiffuse="main_bg_90" border="40,40,40,40">common/button-view-base.png</texture>
+                <texture colordiffuse="main_bg_70" border="40,40,40,40">common/button-view-base.png</texture>
                 <animation effect="fade" start="0" end="100" time="500" tween="cubic" easing="inout">Visible</animation>
                 <animation effect="fade" start="100" end="0" time="500" tween="cubic" easing="inout">Hidden</animation>
                 <visible>String.IsEqual(Container(301).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility])</visible>
