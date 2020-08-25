@@ -446,6 +446,27 @@
                             <onclick>noop</onclick>
                             <visible allowhiddenfocus="true">Control.HasFocus(3991)</visible>
                         </control>
+                        <!-- Background Image -->
+                        <control type="group">
+                            <visible>Integer.IsEqual(Container(3700).NumItems,0) + !String.IsEmpty(Container(301).ListItem.Property(background))</visible>
+                            <include>Animation_FadeInOut_Common</include>
+                            <left>20</left>
+                            <right>20</right>
+                            <top>-180</top>
+                            <bottom>-65</bottom>
+                            <control type="multiimage">
+                                <include>Defs_TimePerImage</include>
+                                <randomize>true</randomize>
+                                <aspectratio>scale</aspectratio>
+                                <fadetime>600</fadetime>
+                                <imagepath background="true">$INFO[Container(301).ListItem.Property(background)]</imagepath>
+                            </control>
+                            <control type="image">
+                                <texture background="true" colordiffuse="cdffffff">common/vignette-home.png</texture>
+                            </control>
+                        </control>
+
+                        <!-- Global Fullscreen Widget -->
                         <control type="wraplist" id="3001">
                             <top>-180</top>
                             <bottom>-65</bottom>
@@ -482,7 +503,11 @@
                             <visible>String.IsEmpty(Container(301).ListItem.Property(widgetPath.showcaseBackground)) + String.IsEmpty(Container(301).ListItem.Property(widgetPath))</visible>
                             <visible>[[Integer.IsEqual(Container(3700).NumItems,0) + String.IsEmpty(Container(301).ListItem.Property(background))] | String.IsEqual(Container(3700).ListItemAbsolute(0).Property(list),Background)]</visible>
                         </include>
+
+                        <!-- Individual Fullscreen Widgets -->
                         <include>skinshortcuts-template-fullscreen-widget-background</include>
+
+                        <!-- Home Widgets -->
                         <control type="group" id="3000">
                             <animation type="Conditional" condition="Control.IsVisible(3990)" reversible="false">
                                 <effect type="slide" end="20" time="60" tween="sine" />
@@ -494,6 +519,8 @@
                             </animation>
                             <include>skinshortcuts-template-widgets</include>
                         </control>
+
+                        <!-- Weather and Settings Widgets -->
                         <include>Home_Widgets_Fullscreen</include>
                     </control>
                 </control>
@@ -607,45 +634,6 @@
     </include>
 
     <include name="Home_Widgets_Fullscreen">
-
-        <!-- Background Image -->
-        <control type="group">
-            <visible>Integer.IsEqual(Container(3700).NumItems,0) + !String.IsEmpty(Container(301).ListItem.Property(background))</visible>
-            <include content="Animation_UpDown">
-                <param name="visible" value="Integer.IsEqual(Container(3700).NumItems,0) + !String.IsEmpty(Container(301).ListItem.Property(background))" />
-            </include>
-            <left>20</left>
-            <right>20</right>
-            <top>-180</top>
-            <bottom>-65</bottom>
-            <control type="multiimage">
-                <include>Defs_TimePerImage</include>
-                <randomize>true</randomize>
-                <aspectratio>scale</aspectratio>
-                <fadetime>600</fadetime>
-                <imagepath background="true">$INFO[Container(301).ListItem.Property(background)]</imagepath>
-            </control>
-            <control type="image">
-                <texture background="true" colordiffuse="cdffffff">common/vignette-home.png</texture>
-            </control>
-            <control type="grouplist">
-                <left>view_pad</left>
-                <top>65</top>
-                <bottom>72</bottom>
-                <width>1100</width>
-                <align>bottom</align>
-                <orientation>vertical</orientation>
-                <usecontrolcoords>true</usecontrolcoords>
-                <itemgap>0</itemgap>
-                <include content="Object_Info_Title">
-                    <param name="label" value="$INFO[System.Time]" />
-                </include>
-                <include content="Object_Info_Line">
-                    <param name="label" value="$INFO[System.Date,  |  [COLOR=main_fg_100],[/COLOR]]" />
-                    <param name="image" value="flags/quality/info.png" />
-                </include>
-            </control>
-        </control>
 
         <!-- Weather -->
         <control type="group">
