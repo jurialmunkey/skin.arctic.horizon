@@ -54,9 +54,10 @@
     </variable>
 
     <variable name="Label_Home_Title">
+        <value condition="String.IsEmpty(Container(56560).ListItemAbsolute(0).Property(DBType))">$INFO[System.Date]</value>
         <value condition="!String.IsEmpty(Container(56560).ListItemAbsolute(0).Property(TvShowtitle))">$INFO[Container(56560).ListItemAbsolute(0).Property(TvShowtitle)]</value>
         <value condition="!String.IsEmpty(Container(56560).ListItemAbsolute(0).Property(Title))">$INFO[Container(56560).ListItemAbsolute(0).Property(Title)]</value>
-        <value condition="!String.IsEmpty(Container(56560).ListItemAbsolute(0).Property(Label))">$INFO[Container(56560).ListItemAbsolute(0).Property(Label)]</value>
+        <value condition="!String.IsEmpty(Container(56560).ListItemAbsolute(0).Property(MainLabel))">$INFO[Container(56560).ListItemAbsolute(0).Property(MainLabel)]</value>
         <value>$INFO[System.Date]</value>
     </variable>
 
@@ -96,7 +97,9 @@
 
         <value condition="[!String.IsEmpty(Container(56560).ListItemAbsolute(0).Property(ChannelNumberLabel)) | Window.IsVisible(DialogPVRInfo.xml)] + !Control.HasFocus(9400)">$INFO[Container(56560).ListItemAbsolute(0).Property(ChannelName),  |  [COLOR=main_fg_100],[/COLOR]]$INFO[Container(56560).ListItemAbsolute(0).Property(Season),  |  [COLOR=main_fg_100]S,[/COLOR]]$INFO[Container(56560).ListItemAbsolute(0).Property(Episode),  |  [COLOR=main_fg_100]E,[/COLOR]]$VAR[Label_PVR_EpisodeName,  |  [COLOR=main_fg_100],[/COLOR]]$VAR[Label_PVR_EPGEventTitle,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[Container(56560).ListItemAbsolute(0).Property(Year),  |  [COLOR=main_fg_100],[/COLOR]]$INFO[Container(56560).ListItemAbsolute(0).Property(MPAA),  |  [COLOR=main_fg_100],[/COLOR]]$INFO[Container(56560).ListItemAbsolute(0).Property(StartTime),  |  [COLOR=main_fg_100],[/COLOR]]$INFO[Container(56560).ListItemAbsolute(0).Property(EndTime),[COLOR=main_fg_100] - ,[/COLOR]]</value>
 
-        <value>$INFO[System.FriendlyName,  |  [COLOR=main_fg_100],[/COLOR]]  |  [COLOR=main_fg_100]Arctic Horizon $INFO[System.AddonVersion(skin.arctic.horizon)][/COLOR]</value>
+        <value condition="String.IsEmpty(Container(56560).ListItem.Property(DBType))">$INFO[System.FriendlyName,  |  [COLOR=main_fg_100],[/COLOR]]  |  [COLOR=main_fg_100]Arctic Horizon $INFO[System.AddonVersion(skin.arctic.horizon)][/COLOR]</value>
+
+        <value>  |  [COLOR=main_fg_100]$LOCALIZE[19055][/COLOR]</value>
     </variable>
 
     <variable name="Label_InfoLine">
@@ -126,7 +129,9 @@
 
         <value condition="[!String.IsEmpty(ListItem.ChannelNumberLabel) | Window.IsVisible(DialogPVRInfo.xml)] + Control.HasFocus(9400) + [!String.IsEmpty(ListItem.ChannelName) | !String.IsEmpty(ListITem.StartTime)]">$INFO[ListItem.ChannelName,  |  [COLOR=main_fg_100],[/COLOR]]$VAR[Label_PVR_EpisodeName,  |  [COLOR=main_fg_100],[/COLOR]]$VAR[Label_PVR_EPGEventTitle,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.NextStartTime,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.NextEndTime,[COLOR=main_fg_100] - ,[/COLOR]]</value>
 
-        <value>$INFO[System.FriendlyName,  |  [COLOR=main_fg_100],[/COLOR]]  |  [COLOR=main_fg_100]Arctic Horizon $INFO[System.AddonVersion(skin.arctic.horizon)][/COLOR]</value>
+        <value condition="String.IsEmpty(ListItem.DBType)">$INFO[System.FriendlyName,  |  [COLOR=main_fg_100],[/COLOR]]  |  [COLOR=main_fg_100]Arctic Horizon $INFO[System.AddonVersion(skin.arctic.horizon)][/COLOR]</value>
+
+        <value>  |  [COLOR=main_fg_100]$LOCALIZE[19055][/COLOR]</value>
     </variable>
 
     <variable name="Label_56560_PVR_EpisodeName">
@@ -198,7 +203,7 @@
 
 
     <variable name="Label_Info_Title">
-        <value condition="[Container.Content() | Container.Content(playlists)] + String.IsEmpty(ListItem.DBType)">$INFO[System.Date]</value>
+        <value condition="String.IsEmpty(ListItem.DBType)">$INFO[System.Date]</value>
         <value condition="[String.IsEqual(ListItem.DBType,season) | String.IsEqual(ListItem.DBType,episode)] + !String.IsEmpty(ListItem.TvShowTitle)">$INFO[ListItem.TvShowTitle]</value>
         <value condition="String.IsEqual(ListItem.DBType,album) | String.IsEqual(ListItem.DBType,song)">$INFO[ListItem.Album]</value>
         <value condition="!String.IsEmpty(ListItem.Title)">$INFO[ListItem.Title]</value>
@@ -207,6 +212,7 @@
     </variable>
 
     <variable name="Label_Info_Title_530">
+        <value condition="String.IsEmpty(Container(530).ListItem.DBType)">$INFO[System.Date]</value>
         <value condition="[String.IsEqual(Container(530).ListItem.DBType,season) | String.IsEqual(Container(530).ListItem.DBType,episode) | String.StartsWith(Container(530).ListItem.Label,Season)] + !String.IsEmpty(Container(530).ListItem.TvShowTitle)">$INFO[Container(530).ListItem.TvShowTitle]</value>
         <value condition="String.IsEqual(Container(530).ListItem.DBType,album) | String.IsEqual(Container(530).ListItem.DBType,song)">$INFO[Container(530).ListItem.Album]</value>
         <value condition="!String.IsEmpty(Container(530).ListItem.Title)">$INFO[Container(530).ListItem.Title]</value>
@@ -215,6 +221,7 @@
     </variable>
 
     <variable name="Label_Info_Title_580">
+        <value condition="String.IsEmpty(Container(580).ListItem.DBType)">$INFO[System.Date]</value>
         <value condition="[String.IsEqual(Container(580).ListItem.DBType,season) | String.IsEqual(Container(580).ListItem.DBType,episode) | String.StartsWith(Container(580).ListItem.Label,Season)] + !String.IsEmpty(Container(580).ListItem.TvShowTitle)">$INFO[Container(580).ListItem.TvShowTitle]</value>
         <value condition="String.IsEqual(Container(580).ListItem.DBType,album) | String.IsEqual(Container(580).ListItem.DBType,song)">$INFO[Container(580).ListItem.Album]</value>
         <value condition="!String.IsEmpty(Container(580).ListItem.Title)">$INFO[Container(580).ListItem.Title]</value>
@@ -223,6 +230,7 @@
     </variable>
 
     <variable name="Label_Info_Title_590">
+        <value condition="String.IsEmpty(Container(590).ListItem.DBType)">$INFO[System.Date]</value>
         <value condition="[String.IsEqual(Container(590).ListItem.DBType,season) | String.IsEqual(Container(590).ListItem.DBType,episode) | String.StartsWith(Container(590).ListItem.Label,Season)] + !String.IsEmpty(Container(590).ListItem.TvShowTitle)">$INFO[Container(590).ListItem.TvShowTitle]</value>
         <value condition="String.IsEqual(Container(590).ListItem.DBType,album) | String.IsEqual(Container(590).ListItem.DBType,song)">$INFO[Container(590).ListItem.Album]</value>
         <value condition="!String.IsEmpty(Container(590).ListItem.Title)">$INFO[Container(590).ListItem.Title]</value>

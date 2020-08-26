@@ -124,7 +124,7 @@
         },
         "sets": {
             "rule": "Container.Content(sets)",
-            "viewtypes": ["52", "502", "54", "504", "55", "53", "59"],
+            "viewtypes": ["52", "502", "59", "54", "504", "55", "53"],
             "library": "54"
         },
         "movies": {

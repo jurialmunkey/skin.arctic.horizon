@@ -2,7 +2,7 @@
 <includes>
     <include name="Object_56560_Item">
         <item>
-            <property name="Label">$INFO[$PARAM[listitem].Label]</property>
+            <property name="MainLabel">$INFO[$PARAM[listitem].Label]</property>
             <property name="Label2">$INFO[$PARAM[listitem].Label2]</property>
             <property name="DBType">$INFO[$PARAM[listitem].DBType]</property>
             <property name="FolderPath">$INFO[$PARAM[listitem].FolderPath]</property>
