@@ -46,7 +46,8 @@
                     <param name="image" value="$PARAM[infoline-image]" />
                 </include>
                 <include content="Object_Info_Ratings" condition="$PARAM[visible-details] + $PARAM[ratings] + !Skin.HasSetting(DisableAllRatings)">
-                    <param name="container" value="$PARAM[container]" />
+                    <param name="userrating" value="$PARAM[container]ListItem.UserRating" />
+                    <param name="starrating" value="$PARAM[container]ListItem.Rating" />
                     <visible>$PARAM[visible-details]</visible>
                     <visible>String.IsEqual($PARAM[container]ListItem.DBType,movie) | String.IsEqual($PARAM[container]ListItem.DBType,episode) | String.IsEqual($PARAM[container]ListItem.DBType,tvshow) | String.IsEqual($PARAM[container]ListItem.DBType,season) | String.IsEqual($PARAM[container]ListItem.DBType,set)</visible>
                 </include>

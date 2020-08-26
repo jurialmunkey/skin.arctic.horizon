@@ -146,7 +146,8 @@
                         <param name="container" value="Container(3002)." />
                     </include>
                     <include content="Object_Info_Ratings" condition="!Skin.HasSetting(DisableAllRatings)">
-                        <param name="container" value="Container(3002)." />
+                        <param name="userrating" value="Container(3002).ListItem.UserRating" />
+                        <param name="starrating" value="Container(3002).ListItem.Rating" />
                     </include>
                     <include content="Object_Info_Plot">
                         <param name="height" value="160" />

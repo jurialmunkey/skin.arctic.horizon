@@ -795,7 +795,8 @@
                             <param name="container" value="Container(5610)." />
                         </include>
                         <include content="Object_Info_Ratings" condition="!Skin.HasSetting(DisableAllRatings)">
-                            <param name="container" value="Container(5610)." />
+                            <param name="userrating" value="Container(5610).ListItem.UserRating" />
+                            <param name="starrating" value="Container(5610).ListItem.Rating" />
                         </include>
                         <include content="Object_Info_Plot">
                             <param name="height" value="160" />
@@ -923,7 +924,8 @@
                     <param name="image" value="$VAR[Image_Home_VideoQuality]" />
                 </include>
                 <include content="Object_Info_Ratings" condition="!Skin.HasSetting(DisableAllRatings)">
-                    <param name="container" value="Container($PARAM[id])." />
+                    <param name="userrating" value="Container($PARAM[id]).ListItem.UserRating" />
+                    <param name="starrating" value="Container($PARAM[id]).ListItem.Rating" />
                 </include>
                 <include content="Object_Info_Plot" condition="!Skin.HasSetting(DisableAllRatings)">
                     <param name="height" value="80" />
@@ -1412,7 +1414,8 @@
                 <param name="image" value="$VAR[Image_56560_VideoQuality]" />
             </include>
             <include content="Object_Info_Ratings" condition="!Skin.HasSetting(DisableAllRatings)">
-                <param name="container" value="Container($PARAM[id])." />
+                <param name="userrating" value="Container(56560).ListItemAbsolute(0).Property(UserRating)" />
+                <param name="starrating" value="Container(56560).ListItemAbsolute(0).Property(Rating)" />
                 <visible>String.IsEqual(Container(56560).ListItemAbsolute(0).Property(DBType),movie) | String.IsEqual(Container(56560).ListItemAbsolute(0).Property(DBType),episode) | String.IsEqual(Container(56560).ListItemAbsolute(0).Property(DBType),tvshow) | String.IsEqual(Container(56560).ListItemAbsolute(0).Property(DBType),season) | String.IsEqual(Container(56560).ListItemAbsolute(0).Property(DBType),set)</visible>
             </include>
             <include content="View_Info_Grouplist_Plotbox" condition="!Skin.HasSetting(DisableAllRatings)">

@@ -3,6 +3,8 @@
     <include name="Object_56560_Item">
         <item>
             <property name="MainLabel">$INFO[$PARAM[listitem].Label]</property>
+            <property name="Rating">$INFO[$PARAM[listitem].Rating]</property>
+            <property name="UserRating">$INFO[$PARAM[listitem].UserRating]</property>
             <property name="Label2">$INFO[$PARAM[listitem].Label2]</property>
             <property name="DBType">$INFO[$PARAM[listitem].DBType]</property>
             <property name="FolderPath">$INFO[$PARAM[listitem].FolderPath]</property>
@@ -712,7 +714,8 @@
         <param name="top250" default="true" />
         <param name="oscars" default="true" />
         <param name="additionalratings" default="true" />
-        <param name="container" default="" />
+        <param name="userrating" default="ListItem.UserRating" />
+        <param name="starrating" default="ListItem.Rating" />
         <definition>
             <control type="group">
                 <nested />
@@ -720,22 +723,22 @@
                 <height>66</height>
                 <control type="group">
                     <left>-14</left>
-                    <visible>String.IsEmpty($PARAM[container]ListItem.UserRating)</visible>
+                    <visible>String.IsEmpty($PARAM[userrating])</visible>
                     <visible>!Skin.HasSetting(DisableStarRating)</visible>
                     <visible>!Window.IsVisible(DialogPVRInfo.xml)</visible>
                     <visible>!Skin.HasSetting(NumericStarRating)</visible>
                     <include content="Object_StarRating">
-                        <param name="rating_prop" value="$PARAM[container]ListItem.Rating" />
+                        <param name="rating_prop" value="$PARAM[starrating]" />
                     </include>
                 </control>
                 <control type="group">
                     <left>-14</left>
-                    <visible>!String.IsEmpty($PARAM[container]ListItem.UserRating)</visible>
+                    <visible>!String.IsEmpty($PARAM[userrating])</visible>
                     <visible>!Skin.HasSetting(DisableStarRating)</visible>
                     <visible>!Skin.HasSetting(NumericStarRating)</visible>
                     <visible>!Window.IsVisible(DialogPVRInfo.xml)</visible>
                     <include content="Object_StarRating">
-                        <param name="rating_prop" value="$PARAM[container]ListItem.UserRating" />
+                        <param name="rating_prop" value="$PARAM[userrating]" />
                     </include>
                 </control>
                 <control type="group">
@@ -748,7 +751,8 @@
                         <param name="imdbvotes" value="$PARAM[imdbvotes]" />
                         <param name="top250" value="$PARAM[top250]" />
                         <param name="oscars" value="$PARAM[oscars]" />
-                        <param name="container" value="$PARAM[container]" />
+                        <param name="userrating" value="$PARAM[userrating]" />
+                        <param name="starrating" value="$PARAM[starrating]" />
                     </include>
                 </control>
                 <control type="group">
@@ -761,7 +765,8 @@
                         <param name="imdbvotes" value="$PARAM[imdbvotes]" />
                         <param name="top250" value="$PARAM[top250]" />
                         <param name="oscars" value="$PARAM[oscars]" />
-                        <param name="container" value="$PARAM[container]" />
+                        <param name="userrating" value="$PARAM[userrating]" />
+                        <param name="starrating" value="$PARAM[starrating]" />
                     </include>
                 </control>
             </control>
@@ -1134,7 +1139,7 @@
                             <param name="colordiffuse" value="ffeebb00" />
                         </include>
                         <texture colordiffuse="$PARAM[colordiffuse]_100">flags/star5.png</texture>
-                        <animation effect="fade" start="100" end="0" condition="!Integer.IsEqual($PARAM[rating_prop],1)">Conditional</animation>
+                        <animation effect="fade" start="100" end="0" condition="!String.StartsWith($PARAM[rating_prop],1)">Conditional</animation>
                     </control>
                     <control type="image">
                         <height>64</height>
@@ -1144,7 +1149,7 @@
                             <param name="colordiffuse" value="ffeebb00" />
                         </include>
                         <texture colordiffuse="$PARAM[colordiffuse]_100">flags/star5.png</texture>
-                        <animation effect="fade" start="100" end="0" condition="!Integer.IsEqual($PARAM[rating_prop],3)">Conditional</animation>
+                        <animation effect="fade" start="100" end="0" condition="!String.StartsWith($PARAM[rating_prop],3)">Conditional</animation>
                     </control>
                     <control type="image">
                         <height>64</height>
@@ -1154,7 +1159,7 @@
                             <param name="colordiffuse" value="ffeebb00" />
                         </include>
                         <texture colordiffuse="$PARAM[colordiffuse]_100">flags/star5.png</texture>
-                        <animation effect="fade" start="100" end="0" condition="!Integer.IsEqual($PARAM[rating_prop],5)">Conditional</animation>
+                        <animation effect="fade" start="100" end="0" condition="!String.StartsWith($PARAM[rating_prop],5)">Conditional</animation>
                     </control>
                     <control type="image">
                         <height>64</height>
@@ -1164,7 +1169,7 @@
                             <param name="colordiffuse" value="ffeebb00" />
                         </include>
                         <texture colordiffuse="$PARAM[colordiffuse]_100">flags/star5.png</texture>
-                        <animation effect="fade" start="100" end="0" condition="!Integer.IsEqual($PARAM[rating_prop],7)">Conditional</animation>
+                        <animation effect="fade" start="100" end="0" condition="!String.StartsWith($PARAM[rating_prop],7)">Conditional</animation>
                     </control>
                     <control type="image">
                         <height>64</height>
@@ -1174,7 +1179,7 @@
                             <param name="colordiffuse" value="ffeebb00" />
                         </include>
                         <texture colordiffuse="$PARAM[colordiffuse]_100">flags/star5.png</texture>
-                        <animation effect="fade" start="100" end="0" condition="!Integer.IsEqual($PARAM[rating_prop],9)">Conditional</animation>
+                        <animation effect="fade" start="100" end="0" condition="!String.StartsWith($PARAM[rating_prop],9)">Conditional</animation>
                     </control>
                 </control>
                 <control type="grouplist">
@@ -1191,7 +1196,7 @@
                             <param name="colordiffuse" value="ffeebb00" />
                         </include>
                         <texture colordiffuse="$PARAM[colordiffuse]_100">flags/star10.png</texture>
-                        <animation effect="fade" start="100" end="0" condition="!Integer.IsGreater($PARAM[rating_prop],1)">Conditional</animation>
+                        <animation effect="fade" start="100" end="0" condition="!String.StartsWith($PARAM[rating_prop],10) + !String.StartsWith($PARAM[rating_prop],9) + !String.StartsWith($PARAM[rating_prop],8) + !String.StartsWith($PARAM[rating_prop],7) + !String.StartsWith($PARAM[rating_prop],6) + !String.StartsWith($PARAM[rating_prop],5) + !String.StartsWith($PARAM[rating_prop],4) + !String.StartsWith($PARAM[rating_prop],3) + !String.StartsWith($PARAM[rating_prop],2)">Conditional</animation>
                     </control>
                     <control type="image">
                         <height>64</height>
@@ -1201,7 +1206,7 @@
                             <param name="colordiffuse" value="ffeebb00" />
                         </include>
                         <texture colordiffuse="$PARAM[colordiffuse]_100">flags/star10.png</texture>
-                        <animation effect="fade" start="100" end="0" condition="!Integer.IsGreater($PARAM[rating_prop],3)">Conditional</animation>
+                        <animation effect="fade" start="100" end="0" condition="!String.StartsWith($PARAM[rating_prop],10) + !String.StartsWith($PARAM[rating_prop],9) + !String.StartsWith($PARAM[rating_prop],8) + !String.StartsWith($PARAM[rating_prop],7) + !String.StartsWith($PARAM[rating_prop],6) + !String.StartsWith($PARAM[rating_prop],5) + !String.StartsWith($PARAM[rating_prop],4)">Conditional</animation>
                     </control>
                     <control type="image">
                         <height>64</height>
@@ -1211,7 +1216,7 @@
                             <param name="colordiffuse" value="ffeebb00" />
                         </include>
                         <texture colordiffuse="$PARAM[colordiffuse]_100">flags/star10.png</texture>
-                        <animation effect="fade" start="100" end="0" condition="!Integer.IsGreater($PARAM[rating_prop],5)">Conditional</animation>
+                        <animation effect="fade" start="100" end="0" condition="!String.StartsWith($PARAM[rating_prop],10) + !String.StartsWith($PARAM[rating_prop],9) + !String.StartsWith($PARAM[rating_prop],8) + !String.StartsWith($PARAM[rating_prop],7) + !String.StartsWith($PARAM[rating_prop],6)">Conditional</animation>
                     </control>
                     <control type="image">
                         <height>64</height>
@@ -1221,7 +1226,7 @@
                             <param name="colordiffuse" value="ffeebb00" />
                         </include>
                         <texture colordiffuse="$PARAM[colordiffuse]_100">flags/star10.png</texture>
-                        <animation effect="fade" start="100" end="0" condition="!Integer.IsGreater($PARAM[rating_prop],7)">Conditional</animation>
+                        <animation effect="fade" start="100" end="0" condition="!String.StartsWith($PARAM[rating_prop],10) + !String.StartsWith($PARAM[rating_prop],9) + !String.StartsWith($PARAM[rating_prop],8)">Conditional</animation>
                     </control>
                     <control type="image">
                         <height>64</height>
@@ -1231,7 +1236,7 @@
                             <param name="colordiffuse" value="ffeebb00" />
                         </include>
                         <texture colordiffuse="$PARAM[colordiffuse]_100">flags/star10.png</texture>
-                        <animation effect="fade" start="100" end="0" condition="!Integer.IsGreater($PARAM[rating_prop],9)">Conditional</animation>
+                        <animation effect="fade" start="100" end="0" condition="!String.StartsWith($PARAM[rating_prop],10)">Conditional</animation>
                     </control>
                 </control>
             </control>
@@ -1518,6 +1523,8 @@
         <param name="oscars" default="true" />
         <param name="numericstarrating" default="Skin.HasSetting(NumericStarRating) + !Skin.HasSetting(DisableStarRating)" />
         <param name="top250" default="true" />
+        <param name="userrating" default="ListItem.UserRating" />
+        <param name="starrating" default="ListItem.Rating" />
         <definition>
             <control type="grouplist">
                 <left>0</left>
@@ -1535,7 +1542,7 @@
                     <width>64</width>
                     <height>64</height>
                     <texture colordiffuse="$PARAM[colordiffuse]_100">flags/star10.png</texture>
-                    <visible>!String.IsEmpty($PARAM[container]ListItem.Rating)</visible>
+                    <visible>!String.IsEmpty($PARAM[starrating])</visible>
                 </include>
                 <include content="Object_Control" condition="!Skin.HasSetting(EnableMonochromeFlags) + $PARAM[numericstarrating]">
                     <param name="type" value="image" />
@@ -1544,7 +1551,7 @@
                     <width>64</width>
                     <height>64</height>
                     <texture colordiffuse="ffeebb00">flags/star10.png</texture>
-                    <visible>!String.IsEmpty($PARAM[container]ListItem.Rating)</visible>
+                    <visible>!String.IsEmpty($PARAM[starrating])</visible>
                 </include>
                 <include content="Object_Control" condition="$PARAM[numericstarrating]">
                     <param name="type" value="label" />
@@ -1555,8 +1562,8 @@
                     <height>28</height>
                     <align>right</align>
                     <font>font_tiny</font>
-                    <label>$INFO[$PARAM[container]ListItem.Rating,,   ]</label>
-                    <visible>!String.IsEmpty($PARAM[container]ListItem.Rating)</visible>
+                    <label>$INFO[$PARAM[starrating],,   ]</label>
+                    <visible>!String.IsEmpty($PARAM[starrating])</visible>
                 </include>
 
                 <include content="Object_Control" condition="Skin.HasSetting(EnableMonochromeFlags) + $PARAM[numericstarrating]">
@@ -1565,7 +1572,7 @@
                     <width>32</width>
                     <height>32</height>
                     <texture colordiffuse="$PARAM[colordiffuse]_100">flags/user_rating.png</texture>
-                    <visible>!String.IsEmpty($PARAM[container]ListItem.UserRating)</visible>
+                    <visible>!String.IsEmpty($PARAM[userrating])</visible>
                 </include>
                 <include content="Object_Control" condition="!Skin.HasSetting(EnableMonochromeFlags) + $PARAM[numericstarrating]">
                     <param name="type" value="image" />
@@ -1573,7 +1580,7 @@
                     <width>32</width>
                     <height>32</height>
                     <texture colordiffuse="ff0088bb">flags/user_rating.png</texture>
-                    <visible>!String.IsEmpty($PARAM[container]ListItem.UserRating)</visible>
+                    <visible>!String.IsEmpty($PARAM[userrating])</visible>
                 </include>
                 <include content="Object_Control" condition="$PARAM[numericstarrating]">
                     <param name="type" value="label" />
@@ -1583,8 +1590,8 @@
                     <width>auto</width>
                     <height>28</height>
                     <font>font_tiny</font>
-                    <label>$INFO[$PARAM[container]ListItem.UserRating,,.0   ]</label>
-                    <visible>!String.IsEmpty($PARAM[container]ListItem.UserRating)</visible>
+                    <label>$INFO[$PARAM[userrating],,.0   ]</label>
+                    <visible>!String.IsEmpty($PARAM[userrating])</visible>
                 </include>
 
                 <include content="Object_Control" condition="[$PARAM[oscars]] + !Skin.HasSetting(DisableOscarRating)">
