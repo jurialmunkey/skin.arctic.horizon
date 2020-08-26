@@ -34,10 +34,10 @@
         <ondown condition="Skin.HasSetting(EnableHorizontalHome)">ClearProperty(WidgetMovement)</ondown>
 
         <!-- Submenu Move -->
-        <oninfo>ClearProperty(WidgetFocus)</oninfo>
-        <oninfo>SetFocus(303,0,absolute)</oninfo>
-        <onup condition="Skin.HasSetting(EnableHorizontalHome)">ClearProperty(WidgetFocus)</onup>
-        <onup condition="Skin.HasSetting(EnableHorizontalHome)">SetFocus(303,0,absolute)</onup>
+        <oninfo condition="!Integer.IsEqual(Container(303).NumItems,0)">ClearProperty(WidgetFocus)</oninfo>
+        <oninfo condition="!Integer.IsEqual(Container(303).NumItems,0)">SetFocus(303,0,absolute)</oninfo>
+        <onup condition="Skin.HasSetting(EnableHorizontalHome) + !Integer.IsEqual(Container(303).NumItems,0)">ClearProperty(WidgetFocus)</onup>
+        <onup condition="Skin.HasSetting(EnableHorizontalHome) + !Integer.IsEqual(Container(303).NumItems,0)">SetFocus(303,0,absolute)</onup>
         <!-- <onleft condition="!Skin.HasSetting(EnableHorizontalHome)">ClearProperty(WidgetFocus)</onleft>
         <onleft condition="!Skin.HasSetting(EnableHorizontalHome)">SetFocus(303,0,absolute)</onleft> -->
     </include>
