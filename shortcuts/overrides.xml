@@ -5,8 +5,6 @@
     <thumbnailBrowseDefault>special://skin/extras/icons/</thumbnailBrowseDefault>
     <backgroundBrowse>True</backgroundBrowse>
     <widgetRename>True</widgetRename>
-    <widget label="Weather (must be first position)">Weather</widget>
-    <widget label="Settings (must be first position)">Settings</widget>
 
     <!-- Warning to Remove Settings -->
     <warn heading="31176" message="31177">ActivateWindow(Settings)</warn>
@@ -445,7 +443,8 @@
         <node label="Special Widgets (home only)">
             <shortcut widget="Background" label="Fullscreen Widget (must be first position)" icon="DefaultPicture.png" widgetTarget="video">Background</shortcut>
             <shortcut widget="Submenu" label="Submenu" icon="DefaultPlaylist.png">Submenu</shortcut>
-            <content>widgets</content>
+            <shortcut widget="Weather" label="Weather (must be only widget in group)" icon="special://skin/extras/icons/sun.png" widgetTarget="video">Background</shortcut>
+            <shortcut widget="Settings" label="Settings (must be only widget in group)" icon="special://skin/extras/icons/settings.png" widgetTarget="video">Background</shortcut>
         </node>
         <node label="$LOCALIZE[31183]">
             <node label="$LOCALIZE[342]">
@@ -505,6 +504,7 @@
                 <shortcut widget="RadioTimers" label="$LOCALIZE[19040]" icon="DefaultAddonPVRClient.png" widgetTarget="pvr">pvr://timers/radio/timers</shortcut>
             </node>
             <node label="$LOCALIZE[29921]">
+                <content>widgets</content>
                 <shortcut widget="VideoSources" label="$LOCALIZE[31159]" icon="DefaultVideo.png" widgetTarget="video">sources://video/</shortcut>
                 <shortcut widget="MusicSources" label="$LOCALIZE[31302]" icon="DefaultMusicSongs.png" widgetTarget="music">sources://music/</shortcut>
                 <shortcut widget="PictureSources" label="$LOCALIZE[31304]" icon="DefaultPicture.png" widgetTarget="pictures">sources://pictures/</shortcut>
