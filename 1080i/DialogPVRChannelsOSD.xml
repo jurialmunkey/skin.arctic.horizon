@@ -37,14 +37,14 @@
                     <label>$INFO[System.Date]</label>
                     <textcolor>panel_fg_70</textcolor>
                 </control>
-                <control type="wraplist" id="11">
+                <control type="fixedlist" id="11">
                     <left>0</left>
                     <width>740</width>
                     <top>view_pad</top>
                     <height>720</height>
                     <orientation>vertical</orientation>
-                    <focusposition>3</focusposition>
-                    <movement>0</movement>
+                    <focusposition>2</focusposition>
+                    <movement>3</movement>
                     <onleft>PreviousChannelGroup</onleft>
                     <onright>NextChannelGroup</onright>
                     <itemlayout width="740" height="120">
