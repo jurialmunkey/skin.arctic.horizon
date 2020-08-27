@@ -44,7 +44,7 @@
                 <visible>!Window.IsVisible(DialogVolumeBar.xml) | Player.Muted</visible>
                 <visible>!Player.HasMedia | Window.IsVisible(fullscreenvideo)</visible>
                 <control type="grouplist">
-                    <visible>!Control.HasFocus(60) + !Control.HasFocus(64)</visible>
+                    <visible>[!Control.HasFocus(60) + !Control.HasFocus(64)] | String.IsEmpty(Container.NumItems)</visible>
                     <right>view_pad</right>
                     <align>right</align>
                     <orientation>horizontal</orientation>
@@ -89,7 +89,7 @@
                     </control>
                 </control>
                 <control type="grouplist">
-                    <visible>Control.HasFocus(60) | Control.HasFocus(64)</visible>
+                    <visible>[Control.HasFocus(60) | Control.HasFocus(64)] + !String.IsEmpty(Container.NumItems)</visible>
                     <right>view_pad</right>
                     <align>right</align>
                     <orientation>horizontal</orientation>
