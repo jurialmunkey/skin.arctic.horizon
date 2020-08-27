@@ -29,6 +29,8 @@
     </include>
 
     <include name="Home_Movement_LeftRight">
+        <onright condition="!Skin.HasSetting(EnableHorizontalHome) + !Integer.IsEqual(Container(3700).NumItems,0)">SetFocus(3000)</onright>
+        <ondown condition="Skin.HasSetting(EnableHorizontalHome) + !Integer.IsEqual(Container(3700).NumItems,0)">SetFocus(3000)</ondown>
         <include>skinshortcuts-template-onmovement</include>
         <onright condition="!Skin.HasSetting(EnableHorizontalHome)">ClearProperty(WidgetMovement)</onright>
         <ondown condition="Skin.HasSetting(EnableHorizontalHome)">ClearProperty(WidgetMovement)</ondown>
@@ -534,75 +536,78 @@
     </include>
 
     <include name="Home_Widget_Fullscreen_HubInfo">
-        <control type="group" id="$PARAM[group2-id]">
-            <nested />
-            <left>view_pad</left>
-            <top>widgets_label_top</top>
-            <height>widgets_item_height</height>
-            <width>1100</width>
-            <control type="grouplist">
-                <left>20</left>
+        <param name="visible" default="true" />
+        <definition>
+            <control type="group" id="$PARAM[group2-id]">
+                <nested />
+                <left>view_pad</left>
+                <top>widgets_label_top</top>
                 <height>widgets_item_height</height>
-                <bottom>-210</bottom>
-                <orientation>vertical</orientation>
+                <width>1100</width>
+                <control type="grouplist">
+                    <left>20</left>
+                    <height>widgets_item_height</height>
+                    <bottom>-210</bottom>
+                    <orientation>vertical</orientation>
+                    <usecontrolcoords>true</usecontrolcoords>
+                    <align>bottom</align>
+                    <itemgap>0</itemgap>
+                    <include content="Home_Vertical_Info_Content">
+                        <param name="id" value="3001" />
+                        <param name="plotheight" value="80" />
+                        <param name="plotheight-nr" value="120" />
+                    </include>
+                </control>
+            </control>
+            <control type="grouplist" id="$PARAM[group-id]" >
+                <top>630</top>
+                <left>view_pad</left>
+                <right>-26</right>
+                <align>left</align>
+                <height>170</height>
+                <orientation>horizontal</orientation>
                 <usecontrolcoords>true</usecontrolcoords>
-                <align>bottom</align>
-                <itemgap>0</itemgap>
-                <include content="Home_Vertical_Info_Content">
-                    <param name="id" value="3001" />
-                    <param name="plotheight" value="80" />
-                    <param name="plotheight-nr" value="120" />
+                <itemgap>-10</itemgap>
+                <onup condition="Skin.HasSetting(EnableHorizontalHome)">301</onup>
+                <onleft condition="!Skin.HasSetting(EnableHorizontalHome)">301</onleft>
+                <onleft condition="Skin.HasSetting(EnableHorizontalHome)">$PARAM[button-play-id]</onleft>
+                <onleft condition="Skin.HasSetting(EnableHorizontalHome)">Control.Move(3001,-1)</onleft>
+                <onright>$PARAM[button-info-id]</onright>
+                <onright>Control.Move(3001,1)</onright>
+                <include content="Object_Info_Button" description="Play">
+                    <param name="id" value="$PARAM[button-play-id]" />
+                    <param name="groupid" value="$PARAM[group-play-id]" />
+                    <param name="label" value="$VAR[Label_Showcase_PlayBrowse]" />
+                    <param name="icon" value="$VAR[Image_Showcase_PlayBrowse_Icon]" />
+                    <param name="visible" value="$PARAM[visible]" />
+                    <onback>301</onback>
+                    <ondown>$PARAM[ondown]</ondown>
+                    <onclick>SetFocus(3001)</onclick>
+                    <onclick>Action(Select)</onclick>
+                    <onfocus>SetProperty(WidgetFocus,1)</onfocus>
+                    <onfocus>SetProperty(TMDbHelper.WidgetContainer,3001,Home)</onfocus>
+                    <onfocus>$PARAM[onfocus]</onfocus>
+                    <onfocus>$PARAM[onfocus2]</onfocus>
+                    <onfocus>$PARAM[onfocus3]</onfocus>
+                </include>
+                <include content="Object_Info_Button" description="Info">
+                    <param name="id" value="$PARAM[button-info-id]" />
+                    <param name="groupid" value="$PARAM[group-info-id]" />
+                    <param name="label" value="$LOCALIZE[31078]" />
+                    <param name="icon" value="special://skin/extras/icons/info2.png" />
+                    <param name="visible" value="$PARAM[visible]" />
+                    <onback>301</onback>
+                    <ondown>$PARAM[ondown]</ondown>
+                    <onclick>SetFocus(3001)</onclick>
+                    <onclick>Action(Info)</onclick>
+                    <onfocus>SetProperty(WidgetFocus,1)</onfocus>
+                    <onfocus>SetProperty(TMDbHelper.WidgetContainer,3001,Home)</onfocus>
+                    <onfocus>$PARAM[onfocus]</onfocus>
+                    <onfocus>$PARAM[onfocus2]</onfocus>
+                    <onfocus>$PARAM[onfocus3]</onfocus>
                 </include>
             </control>
-        </control>
-        <control type="grouplist" id="$PARAM[group-id]" >
-            <top>630</top>
-            <left>view_pad</left>
-            <right>-26</right>
-            <align>left</align>
-            <height>170</height>
-            <orientation>horizontal</orientation>
-            <usecontrolcoords>true</usecontrolcoords>
-            <itemgap>-10</itemgap>
-            <onup condition="Skin.HasSetting(EnableHorizontalHome)">301</onup>
-            <onleft condition="!Skin.HasSetting(EnableHorizontalHome)">301</onleft>
-            <onleft condition="Skin.HasSetting(EnableHorizontalHome)">$PARAM[button-play-id]</onleft>
-            <onleft condition="Skin.HasSetting(EnableHorizontalHome)">Control.Move(3001,-1)</onleft>
-            <onright>$PARAM[button-info-id]</onright>
-            <onright>Control.Move(3001,1)</onright>
-            <include content="Object_Info_Button" description="Play">
-                <param name="id" value="$PARAM[button-play-id]" />
-                <param name="groupid" value="$PARAM[group-play-id]" />
-                <param name="label" value="$VAR[Label_Showcase_PlayBrowse]" />
-                <param name="icon" value="$VAR[Image_Showcase_PlayBrowse_Icon]" />
-                <param name="visible" value="true" />
-                <onback>301</onback>
-                <ondown>$PARAM[ondown]</ondown>
-                <onclick>SetFocus(3001)</onclick>
-                <onclick>Action(Select)</onclick>
-                <onfocus>SetProperty(WidgetFocus,1)</onfocus>
-                <onfocus>SetProperty(TMDbHelper.WidgetContainer,3001,Home)</onfocus>
-                <onfocus>$PARAM[onfocus]</onfocus>
-                <onfocus>$PARAM[onfocus2]</onfocus>
-                <onfocus>$PARAM[onfocus3]</onfocus>
-            </include>
-            <include content="Object_Info_Button" description="Info">
-                <param name="id" value="$PARAM[button-info-id]" />
-                <param name="groupid" value="$PARAM[group-info-id]" />
-                <param name="label" value="$LOCALIZE[31078]" />
-                <param name="icon" value="special://skin/extras/icons/info2.png" />
-                <param name="visible" value="true" />
-                <onback>301</onback>
-                <ondown>$PARAM[ondown]</ondown>
-                <onclick>SetFocus(3001)</onclick>
-                <onclick>Action(Info)</onclick>
-                <onfocus>SetProperty(WidgetFocus,1)</onfocus>
-                <onfocus>SetProperty(TMDbHelper.WidgetContainer,3001,Home)</onfocus>
-                <onfocus>$PARAM[onfocus]</onfocus>
-                <onfocus>$PARAM[onfocus2]</onfocus>
-                <onfocus>$PARAM[onfocus3]</onfocus>
-            </include>
-        </control>
+        </definition>
     </include>
 
     <include name="Home_Widget_Fullscreen_HubBase">

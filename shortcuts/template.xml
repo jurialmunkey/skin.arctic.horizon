@@ -439,20 +439,9 @@
                     <param name="onfocus" value="SetProperty(CG_$PYTHON[50000 + int(mainmenuid) * 100]_CurrentWidget,$PYTHON[30000 + int(mainmenuid) * 100 + int(id)],Home)" />
                     <param name="onfocus2" value="SetProperty(HW_$PYTHON[50000 + int(mainmenuid) * 100]_InfoWidget,$PYTHON[30000 + int(mainmenuid) * 100 + int(id)],Home)" />
                     <param name="onfocus3" value="SetProperty(PW_$PYTHON[50000 + int(mainmenuid) * 100]_InfoWidget,1,Home)" />
-                    <!-- <param name="hideinfo" value="!String.IsEmpty(Window(Home).Property(HW_$PYTHON[50000 + int(mainmenuid) * 100]_InfoWidget))" /> -->
                     <include>Animation_FadeInOut_Common</include>
                     <top>740</top>
                     <height>30</height>
-                    <!-- <include content="Object_Control" condition="!Skin.HasSetting(LockMainMenu) | Skin.HasSetting(EnableHorizontalHome)">
-                        <param name="type" value="image" />
-                        <right>-680</right>
-                        <bottom>-340</bottom>
-                        <height>320</height>
-                        <width>670</width>
-                        <texture background="true">$VAR[Image_ClearArt]</texture>
-                        <aspectratio align="right" aligny="bottom" scalediffuse="false">keep</aspectratio>
-                        <visible>!String.IsEmpty(Window(Home).Property(HW_$PYTHON[50000 + int(mainmenuid) * 100]_InfoWidget)) + Integer.IsEqual(Window(Home).Property(HW_$PYTHON[50000 + int(mainmenuid) * 100]_InfoWidget),$PYTHON[30000 + int(mainmenuid) * 100 + int(id) + 1])</visible>
-                    </include> -->
                 </include>
 
 
@@ -877,9 +866,18 @@
         <property name="widgetSortorder" tag="property" attribute="name|widgetSortorder.showcaseBackground" />
         <property name="widgetSortorder" tag="property" attribute="name|widgetSortorder" />
 
+        <property name="isBackgroundImage" tag="property" attribute="name|background">true</property>
+        <property name="isBackgroundImage">false</property>
+
+        <property name="isFullscreenWidget" tag="property" attribute="name|widgetPath.showcaseBackground">true</property>
+        <property name="isFullscreenWidget" tag="property" attribute="name|widgetPath">true</property>
+        <property name="isFullscreenWidget">false</property>
+
         <property name="submenuVisibility" tag="property" attribute="name|submenuVisibility"/>
         <controls>
-            <control type="wraplist" id="3001">
+            <include content="Object_Control" condition="!$SKINSHORTCUTS[isBackgroundImage] + $SKINSHORTCUTS[isFullscreenWidget]">
+                <param name="type" value="wraplist" />
+                <param name="id" value="3001" />
                 <top>-180</top>
                 <bottom>-65</bottom>
                 <left>20</left>
@@ -891,8 +889,8 @@
                 <preloaditems>2</preloaditems>
                 <include>Animation_FadeInOut_Common</include>
                 <onfocus>SetProperty(TMDbHelper.WidgetContainer,3001,Home)</onfocus>
-                <visible>!String.IsEmpty(Container(301).ListItem.Property(widgetPath.showcaseBackground)) | !String.IsEmpty(Container(301).ListItem.Property(widgetPath))</visible>
-                <visible>[[Integer.IsEqual(Container(3700).NumItems,0) + String.IsEmpty(Container(301).ListItem.Property(background))] | String.IsEqual(Container(3700).ListItemAbsolute(0).Property(list),Background)] + String.IsEqual(Container(301).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility])</visible>
+                <visible>Integer.IsEqual(Container(3700).NumItems,0) | String.IsEqual(Container(3700).ListItemAbsolute(0).Property(list),Background)</visible>
+                <visible>String.IsEqual(Container(301).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility])</visible>
                 <animation effect="fade" start="100" end="0" time="300" condition="!Integer.IsEqual(Window(Home).Property(HW_$PYTHON[50000 + int(mainmenuid) * 100]_InfoWidget),$PYTHON[30001 + int(mainmenuid) * 100])">Conditional</animation>
                 <itemlayout width="1920" height="1080">
                     <control type="image">
@@ -908,24 +906,24 @@
                 <include content="Defs_AutoScroll">
                     <param name="condition" value="System.IdleTime(3)" />
                 </include>
-            </control>
-            <control type="group">
+            </include>
+            <include content="Object_Control" condition="!$SKINSHORTCUTS[isBackgroundImage] + $SKINSHORTCUTS[isFullscreenWidget]">
+                <param name="type" value="group" />
                 <visible>String.IsEqual(Container(301).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility])</visible>
-                <visible>[[Integer.IsEqual(Container(3700).NumItems,0) + String.IsEmpty(Container(301).ListItem.Property(background))] | String.IsEqual(Container(3700).ListItemAbsolute(0).Property(list),Background)]</visible>
+                <visible>Integer.IsEqual(Container(3700).NumItems,0) | String.IsEqual(Container(3700).ListItemAbsolute(0).Property(list),Background)</visible>
                 <animation effect="fade" start="100" end="0" time="300" condition="!Integer.IsEqual(Window(Home).Property(HW_$PYTHON[50000 + int(mainmenuid) * 100]_InfoWidget),$PYTHON[30001 + int(mainmenuid) * 100])">Conditional</animation>
                 <include>Animation_FadeInOut_Common</include>
-                <visible>!String.IsEmpty(Container(301).ListItem.Property(widgetPath.showcaseBackground)) | !String.IsEmpty(Container(301).ListItem.Property(widgetPath))</visible>
-                <include content="Home_Widget_Fullscreen_HubBase">
-                </include>
-            </control>
-            <control type="group">
+                <include>Home_Widget_Fullscreen_HubBase</include>
+            </include>
+            <include content="Object_Control" condition="!$SKINSHORTCUTS[isBackgroundImage]">
+                <param name="type" value="group" />
                 <top>110</top>
                 <bottom>-110</bottom>
                 <include content="Animation_UpDown">
                     <param name="visible" value="String.IsEqual(Container(301).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility])" />
                 </include>
                 <visible>String.IsEqual(Container(301).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility])</visible>
-                <visible>[Integer.IsEqual(Container(3700).NumItems,0) + String.IsEmpty(Container(301).ListItem.Property(background))]</visible>
+                <visible>Integer.IsEqual(Container(3700).NumItems,0)</visible>
                 <include content="Home_Widget_Fullscreen_HubInfo">
                     <param name="group-id" value="$PYTHON[90000 + int(mainmenuid) * 100]" />
                     <param name="button-play-id" value="$PYTHON[90001 + int(mainmenuid) * 100]" />
@@ -937,13 +935,14 @@
                     <param name="onfocus2" value="SetProperty(HW_$PYTHON[50000 + int(mainmenuid) * 100]_InfoWidget,$PYTHON[30001 + int(mainmenuid) * 100],Home)" />
                     <top>-10</top>
                 </include>
-            </control>
-            <control type="grouplist">
+            </include>
+            <include content="Object_Control" condition="$SKINSHORTCUTS[isBackgroundImage]">
+                <param name="type" value="grouplist" />
                 <include content="Animation_UpDown">
                     <param name="visible" value="String.IsEqual(Container(301).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility])" />
                 </include>
                 <visible>String.IsEqual(Container(301).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility])</visible>
-                <visible>[Integer.IsEqual(Container(3700).NumItems,0) + !String.IsEmpty(Container(301).ListItem.Property(background))]</visible>
+                <visible>Integer.IsEqual(Container(3700).NumItems,0)</visible>
                 <left>100</left>
                 <top>65</top>
                 <bottom>10</bottom>
@@ -959,7 +958,7 @@
                     <param name="label" value="$VAR[Label_BackgroundPicture_InfoLine]" />
                     <param name="image" value="flags/quality/info.png" />
                 </include>
-            </control>
+            </include>
         </controls>
     </other>
 
@@ -1522,18 +1521,18 @@
         <property name="submenuVisibility" tag="property" attribute="name|submenuVisibility"/>
         <controls>
             <!-- Focus Last Used Widget -->
-            <onright condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility]) + !String.IsEmpty(Window(Home).Property(CG_$PYTHON[50000 + int(id) * 100]_CurrentWidget)) + !Integer.IsEqual(Container(3700).NumItems,0)">SetFocus($INFO[Window(Home).Property(CG_$PYTHON[50000 + int(id) * 100]_CurrentWidget)],0,absolute)</onright>
+            <!-- <onright condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility]) + !String.IsEmpty(Window(Home).Property(CG_$PYTHON[50000 + int(id) * 100]_CurrentWidget)) + !Integer.IsEqual(Container(3700).NumItems,0)">SetFocus($INFO[Window(Home).Property(CG_$PYTHON[50000 + int(id) * 100]_CurrentWidget)],0,absolute)</onright>
             <onleft condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility]) + !String.IsEmpty(Window(Home).Property(CG_$PYTHON[50000 + int(id) * 100]_CurrentWidget)) + !Integer.IsEqual(Container(3700).NumItems,0)">SetFocus($INFO[Window(Home).Property(CG_$PYTHON[50000 + int(id) * 100]_CurrentWidget)],9999,absolute)</onleft>
-            <ondown condition="Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility]) + !String.IsEmpty(Window(Home).Property(CG_$PYTHON[50000 + int(id) * 100]_CurrentWidget)) + !Integer.IsEqual(Container(3700).NumItems,0)">SetFocus($INFO[Window(Home).Property(CG_$PYTHON[50000 + int(id) * 100]_CurrentWidget)])</ondown>
+            <ondown condition="Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility]) + !String.IsEmpty(Window(Home).Property(CG_$PYTHON[50000 + int(id) * 100]_CurrentWidget)) + !Integer.IsEqual(Container(3700).NumItems,0)">SetFocus($INFO[Window(Home).Property(CG_$PYTHON[50000 + int(id) * 100]_CurrentWidget)])</ondown> -->
 
             <!-- Focus Widget Grouplist -->
-            <onright condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility]) + String.IsEmpty(Window(Home).Property(CG_$PYTHON[50000 + int(id) * 100]_CurrentWidget)) + !Integer.IsEqual(Container(3700).NumItems,0)">SetFocus($PYTHON[50000 + int(id) * 100])</onright>
+            <!-- <onright condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility]) + String.IsEmpty(Window(Home).Property(CG_$PYTHON[50000 + int(id) * 100]_CurrentWidget)) + !Integer.IsEqual(Container(3700).NumItems,0)">SetFocus($PYTHON[50000 + int(id) * 100])</onright>
             <onleft condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility]) + String.IsEmpty(Window(Home).Property(CG_$PYTHON[50000 + int(id) * 100]_CurrentWidget)) + !Integer.IsEqual(Container(3700).NumItems,0)">SetFocus($PYTHON[50000 + int(id) * 100])</onleft>
-            <ondown condition="Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility]) + String.IsEmpty(Window(Home).Property(CG_$PYTHON[50000 + int(id) * 100]_CurrentWidget)) + !Integer.IsEqual(Container(3700).NumItems,0)">SetFocus($PYTHON[50000 + int(id) * 100])</ondown>
+            <ondown condition="Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility]) + String.IsEmpty(Window(Home).Property(CG_$PYTHON[50000 + int(id) * 100]_CurrentWidget)) + !Integer.IsEqual(Container(3700).NumItems,0)">SetFocus($PYTHON[50000 + int(id) * 100])</ondown> -->
 
             <!-- Focus Fullscreen Widget Button -->
             <onright condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility]) + Integer.IsEqual(Container(3700).NumItems,0)">SetFocus($PYTHON[90001 + int(id) * 100])</onright>
-            <onleft condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility]) + Integer.IsEqual(Container(3700).NumItems,0)">SetFocus($PYTHON[90001 + int(id) * 100])</onleft>
+            <!-- <onleft condition="!Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility]) + Integer.IsEqual(Container(3700).NumItems,0)">SetFocus($PYTHON[90001 + int(id) * 100])</onleft> -->
             <ondown condition="Skin.HasSetting(EnableHorizontalHome) + String.IsEqual(Container(301).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility]) + Integer.IsEqual(Container(3700).NumItems,0)">SetFocus($PYTHON[90001 + int(id) * 100])</ondown>
 
         </controls>
