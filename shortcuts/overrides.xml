@@ -443,8 +443,8 @@
         <node label="Special Widgets (home only)">
             <shortcut widget="Background" label="Fullscreen Widget (must be first position)" icon="DefaultPicture.png" widgetTarget="video">Background</shortcut>
             <shortcut widget="Submenu" label="Submenu" icon="DefaultPlaylist.png">Submenu</shortcut>
-            <shortcut widget="Weather" label="Weather (must be only widget in group)" icon="special://skin/extras/icons/sun.png" widgetTarget="video">Background</shortcut>
-            <shortcut widget="Settings" label="Settings (must be only widget in group)" icon="special://skin/extras/icons/settings.png" widgetTarget="video">Background</shortcut>
+            <shortcut widget="Weather" label="Weather (must be only widget in group)" icon="special://skin/extras/icons/sun.png" widgetTarget="video">Weather</shortcut>
+            <shortcut widget="Settings" label="Settings (must be only widget in group)" icon="special://skin/extras/icons/settings.png" widgetTarget="video">Settings</shortcut>
         </node>
         <node label="$LOCALIZE[31183]">
             <node label="$LOCALIZE[342]">
