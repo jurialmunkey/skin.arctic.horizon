@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
 
+    <variable name="Label_Info_Title" container="530,580,590,3001">
+        <value condition="String.IsEmpty({listitem}.DBType) + String.IsEmpty({listitem}.ChannelNumberLabel) + String.IsEmpty({listitem}.ChannelName)">$INFO[System.Date]</value>
+        <value condition="String.IsEmpty({listitem}.DBType)">$INFO[System.Date]</value>
+        <value condition="[String.IsEqual({listitem}.DBType,season) | String.IsEqual({listitem}.DBType,episode)] + !String.IsEmpty({listitem}.TvShowTitle)">$INFO[{listitem}.TvShowTitle]</value>
+        <value condition="String.IsEqual({listitem}.DBType,album) | String.IsEqual({listitem}.DBType,song)">$INFO[{listitem}.Album]</value>
+        <value condition="!String.IsEmpty({listitem}.Title)">$INFO[{listitem}.Title]</value>
+        <value condition="!String.IsEmpty({listitem}.Label)">$INFO[{listitem}.Label]</value>
+        <value>$INFO[System.Date]</value>
+    </variable>
+
     <variable name="Defs_PercentPlayed" containers="501,502,504,56" start="-15" end="17">
         <value condition="Window.IsVisible(AddonBrowser.xml) + String.EndsWith({listitem}.Label2,%)">$INFO[{listitem}.Label2]</value>
         <value condition="!String.IsEmpty({listitem}.PercentPlayed) + !Integer.IsEqual({listitem}.PercentPlayed,0)">$INFO[{listitem}.PercentPlayed]</value>

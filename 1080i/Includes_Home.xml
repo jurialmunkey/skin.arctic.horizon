@@ -40,8 +40,8 @@
         <oninfo condition="!Integer.IsEqual(Container(303).NumItems,0)">SetFocus(303,0,absolute)</oninfo>
         <onup condition="Skin.HasSetting(EnableHorizontalHome) + !Integer.IsEqual(Container(303).NumItems,0)">ClearProperty(WidgetFocus)</onup>
         <onup condition="Skin.HasSetting(EnableHorizontalHome) + !Integer.IsEqual(Container(303).NumItems,0)">SetFocus(303,0,absolute)</onup>
-        <!-- <onleft condition="!Skin.HasSetting(EnableHorizontalHome)">ClearProperty(WidgetFocus)</onleft>
-        <onleft condition="!Skin.HasSetting(EnableHorizontalHome)">SetFocus(303,0,absolute)</onleft> -->
+        <onleft condition="!Skin.HasSetting(EnableHorizontalHome) + !Integer.IsEqual(Container(303).NumItems,0)">ClearProperty(WidgetFocus)</onleft>
+        <onleft condition="!Skin.HasSetting(EnableHorizontalHome) + !Integer.IsEqual(Container(303).NumItems,0)">SetFocus(303,0,absolute)</onleft>
     </include>
 
     <include name="Home_Movement_Widgets_Wrap">
@@ -717,7 +717,7 @@
                         <usecontrolcoords>true</usecontrolcoords>
                         <itemgap>0</itemgap>
                         <include content="Object_Info_Title">
-                            <param name="label" value="$VAR[Label_3001_Info_Title]" />
+                            <param name="label" value="$VAR[Label_Info_Title_C3001]" />
                         </include>
                         <include content="Object_Info_Line">
                             <param name="label" value="$VAR[Label_56560_InfoLine]" />

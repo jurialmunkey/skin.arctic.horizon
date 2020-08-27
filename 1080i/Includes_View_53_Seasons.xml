@@ -51,7 +51,7 @@
                     <visible>Container($PARAM[id]).HasNext</visible>
                 </control>
                 <include content="View_Info_Grouplist">
-                    <param name="title" value="$VAR[Label_Info_Title_$PARAM[id]0]" />
+                    <param name="title" value="$VAR[Label_Info_Title_C$PARAM[id]0]" />
                     <param name="container" value="Container($PARAM[id]0)." />
                     <param name="plot" value="$VAR[Label_Plot_C$PARAM[id]0]" />
                     <param name="infoline-label" value="$VAR[Label_Home_InfoLine]" />
@@ -63,7 +63,7 @@
                     <visible>![Container.Content(seasons) | Container.Content(artists) | Container.Content(sets) | Container.Content(tvshows)]</visible>
                 </include>
                 <include content="View_Info_Grouplist">
-                    <param name="title" value="$VAR[Label_Info_Title_$PARAM[id]0]" />
+                    <param name="title" value="$VAR[Label_Info_Title_C$PARAM[id]0]" />
                     <param name="container" value="Container($PARAM[id]0)." />
                     <param name="plot" value="$INFO[Container($PARAM[id]0).ListItem.Plot]" />
                     <param name="infoline-label" value="$VAR[Label_Home_InfoLine]" />

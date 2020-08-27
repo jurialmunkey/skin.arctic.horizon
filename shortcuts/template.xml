@@ -95,13 +95,11 @@
                         <onup condition="!Skin.HasSetting(EnableHorizontalHome) + Skin.HasSetting(DisableHomeWrap)">SetProperty(CG_$PYTHON[50000 + int(mainmenuid) * 100]_CurrentWidget,$INFO[System.CurrentControlID])</onup>
                         <onup condition="!Skin.HasSetting(EnableHorizontalHome) + Skin.HasSetting(DisableHomeWrap)">301</onup>
                         <ondown condition="!Skin.HasSetting(EnableHorizontalHome) + Skin.HasSetting(DisableHomeWrap)">SetFocus(3991)</ondown>
-                        <onright condition="!Skin.HasSetting(EnableHorizontalHome) + Skin.HasSetting(DisableHomeWrap)">SetFocus(3990)</onright>
+                        <onright condition="!Skin.HasSetting(EnableHorizontalHome)">SetFocus(3990)</onright>
 
                         <!-- Movement to VMenu -->
                         <onleft condition="!Skin.HasSetting(EnableHorizontalHome)">SetProperty(CG_$PYTHON[50000 + int(mainmenuid) * 100]_CurrentWidget,$INFO[System.CurrentControlID])</onleft>
                         <onleft condition="!Skin.HasSetting(EnableHorizontalHome)">301</onleft>
-                        <onright condition="!Skin.HasSetting(EnableHorizontalHome) + !Skin.HasSetting(DisableHomeWrap)">SetProperty(CG_$PYTHON[50000 + int(mainmenuid) * 100]_CurrentWidget,$INFO[System.CurrentControlID])</onright>
-                        <onright condition="!Skin.HasSetting(EnableHorizontalHome) + !Skin.HasSetting(DisableHomeWrap)">301</onright>
 
                         <!-- Wrap Movement for VMenu -->
                         <include content="Home_Movement_Widgets_Wrap" condition="!Skin.HasSetting(EnableHorizontalHome) + !Skin.HasSetting(DisableHomeWrap)">
@@ -385,6 +383,7 @@
                     <param name="visible" value="Control.HasFocus($PYTHON[30000 + int(mainmenuid) * 100 + int(id)]) | Integer.IsEqual(Window(Home).Property(CG_$PYTHON[50000 + int(mainmenuid) * 100]_CurrentWidget),$NUMBER[$PYTHON[30000 + int(mainmenuid) * 100 + int(id)]])" />
                     <top>-60</top>
                     <height>470</height>
+                    <visible>Integer.IsGreater(Container($PYTHON[30000 + int(mainmenuid) * 100 + int(id)]).NumAllItems,0) | Container($PYTHON[30000 + int(mainmenuid) * 100 + int(id)]).IsUpdating</visible>
                 </include>
 
                 <include content="Info_Widget_Poster" condition="$SKINSHORTCUTS[isWidget]">
