@@ -110,6 +110,7 @@
         <value condition="String.Contains(ListItem.FileNameAndPath,hdtv) | String.Contains(ListItem.FileNameAndPath,pdtv) | String.Contains(ListItem.FileNameAndPath,dsr)">flags/$VAR[Defs_ColorMode_Dir]/other/hdtv.png</value>
         <value condition="String.Contains(ListItem.FileNameAndPath,sdtv)">flags/$VAR[Defs_ColorMode_Dir]/other/sdtv.png</value>
         <value condition="String.Contains(ListItem.FileNameAndPath,web-dl) | String.Contains(ListItem.FileNameAndPath,webdl) | String.Contains(ListItem.FileNameAndPath,WEBRip) | String.EndsWith(ListItem.FileNameAndPath,.strm) | [String.IsEmpty(ListItem.VideoCodec) + String.IsEmpty(ListItem.AudioCodec)]">flags/$VAR[Defs_ColorMode_Dir]/other/web-dl.png</value>
+        <value>common/null.png</value>
     </variable>
 
     <variable name="Image_AudioCodec">

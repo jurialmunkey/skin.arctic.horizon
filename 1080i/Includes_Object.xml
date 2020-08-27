@@ -341,7 +341,6 @@
     <include name="Object_Codecs">
         <param name="infohide" default="true" />
         <param name="directory" default="$VAR[Defs_ColorMode_Dir]" />
-        <param name="uid" default="2001" />
         <definition>
             <control type="grouplist">
                 <top>20</top>
@@ -351,36 +350,6 @@
                 <itemgap>20</itemgap>
                 <usecontrolcoords>true</usecontrolcoords>
                 <control type="image">
-                    <fadetime>100</fadetime>
-                    <centertop>50%</centertop>
-                    <width>64</width>
-                    <height>56</height>
-                    <aspectratio align="left">keep</aspectratio>
-                    <texture colordiffuse="$VAR[Defs_ColorMode_ColorDiffuse]">flags/$PARAM[directory]/other/3D.png</texture>
-                    <visible>String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,episode) | String.IsEqual(ListItem.DBType,video)</visible>
-                    <visible>ListItem.IsStereoscopic</visible>
-                </control>
-                <control type="image" id="$PARAM[uid]1">
-                    <fadetime>100</fadetime>
-                    <centertop>50%</centertop>
-                    <width>74</width>
-                    <height>56</height>
-                    <aspectratio align="left">keep</aspectratio>
-                    <texture colordiffuse="$VAR[Defs_ColorMode_ColorDiffuse]">$VAR[Image_RipSource]</texture>
-                    <visible>String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,episode) | String.IsEqual(ListItem.DBType,video)</visible>
-                    <visible>!String.IsEmpty(Control.GetLabel($PARAM[uid]1))</visible>
-                </control>
-                <control type="image">
-                    <fadetime>100</fadetime>
-                    <centertop>50%</centertop>
-                    <width>74</width>
-                    <height>56</height>
-                    <aspectratio align="left">keep</aspectratio>
-                    <texture colordiffuse="$VAR[Defs_ColorMode_ColorDiffuse]">flags/$PARAM[directory]/other/HDR.png</texture>
-                    <visible>String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,episode) | String.IsEqual(ListItem.DBType,video)</visible>
-                    <visible>String.Contains(ListItem.FileNameAndPath,HDR)</visible>
-                </control>
-                <control type="image" id="$PARAM[uid]2">
                     <left>-10</left>
                     <fadetime>100</fadetime>
                     <centertop>50%</centertop>
@@ -389,9 +358,9 @@
                     <aspectratio align="left">keep</aspectratio>
                     <texture colordiffuse="$VAR[Defs_ColorMode_ColorDiffuse]">flags/$PARAM[directory]/resolution/$INFO[ListItem.VideoResolution].png</texture>
                     <visible>String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,episode) | String.IsEqual(ListItem.DBType,video)</visible>
-                    <visible>!String.IsEmpty(Control.GetLabel($PARAM[uid]2))</visible>
+                    <visible>!String.IsEmpty(ListItem.VideoResolution)</visible>
                 </control>
-                <control type="image" id="$PARAM[uid]3">
+                <control type="image">
                     <fadetime>100</fadetime>
                     <centertop>50%</centertop>
                     <width>71</width>
@@ -399,9 +368,9 @@
                     <aspectratio>keep</aspectratio>
                     <texture colordiffuse="$VAR[Defs_ColorMode_ColorDiffuse]">flags/$PARAM[directory]/source/$INFO[ListItem.VideoCodec].png</texture>
                     <visible>String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,episode) | String.IsEqual(ListItem.DBType,video)</visible>
-                    <visible>!String.IsEmpty(Control.GetLabel($PARAM[uid]3))</visible>
+                    <visible>!String.IsEmpty(ListItem.VideoCodec)</visible>
                 </control>
-                <control type="image" id="$PARAM[uid]4">
+                <control type="image">
                     <fadetime>100</fadetime>
                     <centertop>50%</centertop>
                     <width>71</width>
@@ -409,9 +378,9 @@
                     <aspectratio>keep</aspectratio>
                     <texture colordiffuse="$VAR[Defs_ColorMode_ColorDiffuse]">flags/$PARAM[directory]/aspectratio/$INFO[ListItem.VideoAspect].png</texture>
                     <visible>String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,episode) | String.IsEqual(ListItem.DBType,video)</visible>
-                    <visible>!String.IsEmpty(Control.GetLabel($PARAM[uid]4))</visible>
+                    <visible>!String.IsEmpty(ListItem.VideoAspect)</visible>
                 </control>
-                <control type="image" id="$PARAM[uid]5">
+                <control type="image">
                     <fadetime>100</fadetime>
                     <centertop>50%</centertop>
                     <width>71</width>
@@ -419,18 +388,46 @@
                     <aspectratio>keep</aspectratio>
                     <texture colordiffuse="$VAR[Defs_ColorMode_ColorDiffuse]">$VAR[Image_AudioCodec]</texture>
                     <visible>String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,episode) | String.IsEqual(ListItem.DBType,video)</visible>
-                    <visible>!String.IsEmpty(Control.GetLabel($PARAM[uid]5))</visible>
+                    <visible>!String.IsEmpty(ListItem.AudioCodec)</visible>
                 </control>
-                <control type="image" id="$PARAM[uid]6">
-                    <left>7</left>
+                <control type="image">
                     <fadetime>100</fadetime>
                     <centertop>50%</centertop>
-                    <width>52</width>
+                    <width>71</width>
                     <height>32</height>
                     <aspectratio>center</aspectratio>
                     <texture colordiffuse="$VAR[Defs_ColorMode_ColorDiffuse]">flags/$PARAM[directory]/channels/$INFO[ListItem.AudioChannels].png</texture>
                     <visible>String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,episode) | String.IsEqual(ListItem.DBType,video)</visible>
-                    <visible>!String.IsEmpty(Control.GetLabel($PARAM[uid]6))</visible>
+                    <visible>!String.IsEmpty(ListItem.AudioChannels)</visible>
+                </control>
+                <control type="image">
+                    <fadetime>100</fadetime>
+                    <centertop>50%</centertop>
+                    <width>64</width>
+                    <height>56</height>
+                    <aspectratio>keep</aspectratio>
+                    <texture colordiffuse="$VAR[Defs_ColorMode_ColorDiffuse]">flags/$PARAM[directory]/other/3D.png</texture>
+                    <visible>String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,episode) | String.IsEqual(ListItem.DBType,video)</visible>
+                    <visible>ListItem.IsStereoscopic</visible>
+                </control>
+                <control type="image">
+                    <fadetime>100</fadetime>
+                    <centertop>50%</centertop>
+                    <width>71</width>
+                    <height>56</height>
+                    <aspectratio>keep</aspectratio>
+                    <texture colordiffuse="$VAR[Defs_ColorMode_ColorDiffuse]">flags/$PARAM[directory]/other/HDR.png</texture>
+                    <visible>String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,episode) | String.IsEqual(ListItem.DBType,video)</visible>
+                    <visible>String.Contains(ListItem.FileNameAndPath,HDR)</visible>
+                </control>
+                <control type="image">
+                    <fadetime>100</fadetime>
+                    <centertop>50%</centertop>
+                    <width>71</width>
+                    <height>56</height>
+                    <aspectratio>keep</aspectratio>
+                    <texture colordiffuse="$VAR[Defs_ColorMode_ColorDiffuse]">$VAR[Image_RipSource]</texture>
+                    <visible>String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,episode) | String.IsEqual(ListItem.DBType,video)</visible>
                 </control>
             </control>
         </definition>

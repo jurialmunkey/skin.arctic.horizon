@@ -4,7 +4,6 @@
     <defaultcontrol always="false">3992</defaultcontrol>
     <onload condition="String.IsEmpty(Window(Home).Property(SkinSplashStarted))">AlarmClock(refocus,SetFocus(301),00:01,silent,false)</onload>
     <onload condition="String.IsEmpty(Window(Home).Property(SkinSplashStarted))">AlarmClock(SkinSplashStarted,SetProperty(SkinSplashStarted,1,home),00:01,silent,false)</onload>
-
     <onload condition="Control.HasFocus(301) | Control.HasFocus(303)">SetFocus(3992)</onload>
     <onload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=301&amp;levels=1&amp;group=mainmenu|powermenu|searchmenu)</onload>
     <onload>RunScript(script.skinvariables,action=buildviews)</onload>
