@@ -2,8 +2,7 @@
 <includes>
 
     <variable name="Label_Info_Title" containers="530,580,590,3001">
-        <value condition="String.IsEmpty({listitem}.DBType) + String.IsEmpty({listitem}.ChannelNumberLabel) + String.IsEmpty({listitem}.ChannelName)">$INFO[System.Date]</value>
-        <value condition="String.IsEmpty({listitem}.DBType)">$INFO[System.Date]</value>
+        <value condition="String.IsEmpty({listitem}.DBType) + String.IsEmpty({listitem}.ChannelNumberLabel) + String.IsEmpty({listitem}.ChannelName) + String.IsEmpty({listitem}.Title) + String.IsEmpty({listitem}.TVShowTitle) + String.IsEmpty({listitem}.AddonVersion)">$INFO[System.Date]</value>
         <value condition="[String.IsEqual({listitem}.DBType,season) | String.IsEqual({listitem}.DBType,episode)] + !String.IsEmpty({listitem}.TvShowTitle)">$INFO[{listitem}.TvShowTitle]</value>
         <value condition="String.IsEqual({listitem}.DBType,album) | String.IsEqual({listitem}.DBType,song)">$INFO[{listitem}.Album]</value>
         <value condition="!String.IsEmpty({listitem}.Title)">$INFO[{listitem}.Title]</value>

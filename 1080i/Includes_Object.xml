@@ -25,11 +25,11 @@
             <property name="Plot">$INFO[$PARAM[listitem].Plot]</property>
             <property name="Album_Description">$INFO[$PARAM[listitem].Property(Album_Description)]</property>
             <property name="Artist_Description">$INFO[$PARAM[listitem].Property(Artist_Description)]</property>
-            <property name="AddonDescription">$INFO[$PARAM[listitem].Property(AddonDescription)]</property>
+            <property name="AddonDescription">$INFO[$PARAM[listitem].AddonDescription]</property>
             <property name="TvShowTitle">$INFO[$PARAM[listitem].TvShowTitle]</property>
-            <property name="AddonVersion">$INFO[$PARAM[listitem].Property(AddonVersion)]</property>
-            <property name="AddonType">$INFO[$PARAM[listitem].Property(AddonType)]</property>
-            <property name="AddonCreator">$INFO[$PARAM[listitem].Property(AddonCreator)]</property>
+            <property name="AddonVersion">$INFO[$PARAM[listitem].AddonVersion]</property>
+            <property name="AddonType">$INFO[$PARAM[listitem].AddonType]</property>
+            <property name="AddonCreator">$INFO[$PARAM[listitem].AddonCreator]</property>
             <property name="Artist">$INFO[$PARAM[listitem].Artist]</property>
             <property name="Album">$INFO[$PARAM[listitem].Album]</property>
             <property name="AlbumArtist">$INFO[$PARAM[listitem].AlbumArtist]</property>

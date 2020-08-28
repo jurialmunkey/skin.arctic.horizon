@@ -2,8 +2,7 @@
 <includes>
 
     <variable name="Label_Info_Title_C530">
-        <value condition="String.IsEmpty(Container(530).ListItem.DBType) + String.IsEmpty(Container(530).ListItem.ChannelNumberLabel) + String.IsEmpty(Container(530).ListItem.ChannelName)">$INFO[System.Date]</value>
-        <value condition="String.IsEmpty(Container(530).ListItem.DBType)">$INFO[System.Date]</value>
+        <value condition="String.IsEmpty(Container(530).ListItem.DBType) + String.IsEmpty(Container(530).ListItem.ChannelNumberLabel) + String.IsEmpty(Container(530).ListItem.ChannelName) + String.IsEmpty(Container(530).ListItem.Title) + String.IsEmpty(Container(530).ListItem.TVShowTitle) + String.IsEmpty(Container(530).ListItem.AddonVersion)">$INFO[System.Date]</value>
         <value condition="[String.IsEqual(Container(530).ListItem.DBType,season) | String.IsEqual(Container(530).ListItem.DBType,episode)] + !String.IsEmpty(Container(530).ListItem.TvShowTitle)">$INFO[Container(530).ListItem.TvShowTitle]</value>
         <value condition="String.IsEqual(Container(530).ListItem.DBType,album) | String.IsEqual(Container(530).ListItem.DBType,song)">$INFO[Container(530).ListItem.Album]</value>
         <value condition="!String.IsEmpty(Container(530).ListItem.Title)">$INFO[Container(530).ListItem.Title]</value>
@@ -11,8 +10,7 @@
         <value condition="True">$INFO[System.Date]</value>
     </variable>
     <variable name="Label_Info_Title_C580">
-        <value condition="String.IsEmpty(Container(580).ListItem.DBType) + String.IsEmpty(Container(580).ListItem.ChannelNumberLabel) + String.IsEmpty(Container(580).ListItem.ChannelName)">$INFO[System.Date]</value>
-        <value condition="String.IsEmpty(Container(580).ListItem.DBType)">$INFO[System.Date]</value>
+        <value condition="String.IsEmpty(Container(580).ListItem.DBType) + String.IsEmpty(Container(580).ListItem.ChannelNumberLabel) + String.IsEmpty(Container(580).ListItem.ChannelName) + String.IsEmpty(Container(580).ListItem.Title) + String.IsEmpty(Container(580).ListItem.TVShowTitle) + String.IsEmpty(Container(580).ListItem.AddonVersion)">$INFO[System.Date]</value>
         <value condition="[String.IsEqual(Container(580).ListItem.DBType,season) | String.IsEqual(Container(580).ListItem.DBType,episode)] + !String.IsEmpty(Container(580).ListItem.TvShowTitle)">$INFO[Container(580).ListItem.TvShowTitle]</value>
         <value condition="String.IsEqual(Container(580).ListItem.DBType,album) | String.IsEqual(Container(580).ListItem.DBType,song)">$INFO[Container(580).ListItem.Album]</value>
         <value condition="!String.IsEmpty(Container(580).ListItem.Title)">$INFO[Container(580).ListItem.Title]</value>
@@ -20,8 +18,7 @@
         <value condition="True">$INFO[System.Date]</value>
     </variable>
     <variable name="Label_Info_Title_C590">
-        <value condition="String.IsEmpty(Container(590).ListItem.DBType) + String.IsEmpty(Container(590).ListItem.ChannelNumberLabel) + String.IsEmpty(Container(590).ListItem.ChannelName)">$INFO[System.Date]</value>
-        <value condition="String.IsEmpty(Container(590).ListItem.DBType)">$INFO[System.Date]</value>
+        <value condition="String.IsEmpty(Container(590).ListItem.DBType) + String.IsEmpty(Container(590).ListItem.ChannelNumberLabel) + String.IsEmpty(Container(590).ListItem.ChannelName) + String.IsEmpty(Container(590).ListItem.Title) + String.IsEmpty(Container(590).ListItem.TVShowTitle) + String.IsEmpty(Container(590).ListItem.AddonVersion)">$INFO[System.Date]</value>
         <value condition="[String.IsEqual(Container(590).ListItem.DBType,season) | String.IsEqual(Container(590).ListItem.DBType,episode)] + !String.IsEmpty(Container(590).ListItem.TvShowTitle)">$INFO[Container(590).ListItem.TvShowTitle]</value>
         <value condition="String.IsEqual(Container(590).ListItem.DBType,album) | String.IsEqual(Container(590).ListItem.DBType,song)">$INFO[Container(590).ListItem.Album]</value>
         <value condition="!String.IsEmpty(Container(590).ListItem.Title)">$INFO[Container(590).ListItem.Title]</value>
@@ -29,8 +26,7 @@
         <value condition="True">$INFO[System.Date]</value>
     </variable>
     <variable name="Label_Info_Title_C3001">
-        <value condition="String.IsEmpty(Container(3001).ListItem.DBType) + String.IsEmpty(Container(3001).ListItem.ChannelNumberLabel) + String.IsEmpty(Container(3001).ListItem.ChannelName)">$INFO[System.Date]</value>
-        <value condition="String.IsEmpty(Container(3001).ListItem.DBType)">$INFO[System.Date]</value>
+        <value condition="String.IsEmpty(Container(3001).ListItem.DBType) + String.IsEmpty(Container(3001).ListItem.ChannelNumberLabel) + String.IsEmpty(Container(3001).ListItem.ChannelName) + String.IsEmpty(Container(3001).ListItem.Title) + String.IsEmpty(Container(3001).ListItem.TVShowTitle) + String.IsEmpty(Container(3001).ListItem.AddonVersion)">$INFO[System.Date]</value>
         <value condition="[String.IsEqual(Container(3001).ListItem.DBType,season) | String.IsEqual(Container(3001).ListItem.DBType,episode)] + !String.IsEmpty(Container(3001).ListItem.TvShowTitle)">$INFO[Container(3001).ListItem.TvShowTitle]</value>
         <value condition="String.IsEqual(Container(3001).ListItem.DBType,album) | String.IsEqual(Container(3001).ListItem.DBType,song)">$INFO[Container(3001).ListItem.Album]</value>
         <value condition="!String.IsEmpty(Container(3001).ListItem.Title)">$INFO[Container(3001).ListItem.Title]</value>
@@ -38,8 +34,7 @@
         <value condition="True">$INFO[System.Date]</value>
     </variable>
     <variable name="Label_Info_Title">
-        <value condition="String.IsEmpty(ListItem.DBType) + String.IsEmpty(ListItem.ChannelNumberLabel) + String.IsEmpty(ListItem.ChannelName)">$INFO[System.Date]</value>
-        <value condition="String.IsEmpty(ListItem.DBType)">$INFO[System.Date]</value>
+        <value condition="String.IsEmpty(ListItem.DBType) + String.IsEmpty(ListItem.ChannelNumberLabel) + String.IsEmpty(ListItem.ChannelName) + String.IsEmpty(ListItem.Title) + String.IsEmpty(ListItem.TVShowTitle) + String.IsEmpty(ListItem.AddonVersion)">$INFO[System.Date]</value>
         <value condition="[String.IsEqual(ListItem.DBType,season) | String.IsEqual(ListItem.DBType,episode)] + !String.IsEmpty(ListItem.TvShowTitle)">$INFO[ListItem.TvShowTitle]</value>
         <value condition="String.IsEqual(ListItem.DBType,album) | String.IsEqual(ListItem.DBType,song)">$INFO[ListItem.Album]</value>
         <value condition="!String.IsEmpty(ListItem.Title)">$INFO[ListItem.Title]</value>
