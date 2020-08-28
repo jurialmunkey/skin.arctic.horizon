@@ -2,7 +2,7 @@
 <includes>
 
     <variable name="Global_BusyLoader">
-        <value>loader/</value>
+        <value>resource://resource.images.arctic.waves/</value>
     </variable>
 
     <include name="Global_Overlay">
