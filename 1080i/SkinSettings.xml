@@ -273,7 +273,8 @@
                         <include>Defs_Settings_Button</include>
                         <label>$LOCALIZE[31239]</label>
                         <label2>$VAR[Label_BusyWaves]</label2>
-                        <onclick>Skin.ToggleSetting(DisableBusyBackground)</onclick>
+                        <onclick condition="System.HasAddon(resource.images.arctic.waves)">Skin.ToggleSetting(DisableBusyBackground)</onclick>
+                        <onclick condition="!System.HasAddon(resource.images.arctic.waves)">Skin.SetBool(DisableBusyBackground)</onclick>
                         <onclick condition="!System.HasAddon(resource.images.arctic.waves)">InstallAddon(resource.images.arctic.waves)</onclick>
                     </control>
 

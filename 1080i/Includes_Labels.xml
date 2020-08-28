@@ -22,7 +22,7 @@
     </variable>
 
     <variable name="Label_BusyWaves">
-        <value condition="!Skin.HasSetting(DisableBusyBackground)">$LOCALIZE[31133]</value>
+        <value condition="!Skin.HasSetting(DisableBusyBackground) + System.HasAddon(resource.images.arctic.waves)">$LOCALIZE[31133]</value>
         <value>$LOCALIZE[16018]</value>
     </variable>
 

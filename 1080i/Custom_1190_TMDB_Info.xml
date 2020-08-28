@@ -12,7 +12,7 @@
                 <content target="videos">$INFO[Window(Home).Property(TMDbHelper.Path.Current)]</content>
             </control>
         </include>
-        <include condition="!Skin.HasSetting(DisableBusyBackground)">Global_Background_BusyLoader_1190</include>
+        <include condition="!Skin.HasSetting(DisableBusyBackground) + System.HasAddon(resource.images.arctic.waves)">Global_Background_BusyLoader_1190</include>
         <control type="group">
             <visible>!$EXP[Exp_InfoVisible]</visible>
             <include>Dialog_Busy</include>

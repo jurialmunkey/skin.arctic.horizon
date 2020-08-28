@@ -127,9 +127,9 @@
                 <animation effect="fade" end="50" condition="!Skin.HasSetting(DisableBlur)">Conditional</animation>
                 <animation effect="fade" end="40" condition="Skin.HasSetting(DisableBlur)">Conditional</animation>
                 <visible>$EXP[Exp_GlobalBackground]</visible>
-                <animation effect="fade" start="100" end="0" time="2000" tween="cubic" easing="inout" condition="Window.IsVisible(DialogBusy.xml) + Skin.HasSetting(DisableBlur) + !Skin.HasSetting(DisableBusyBackground)">Conditional</animation>
+                <animation effect="fade" start="100" end="0" time="2000" tween="cubic" easing="inout" condition="Window.IsVisible(DialogBusy.xml) + Skin.HasSetting(DisableBlur) + !Skin.HasSetting(DisableBusyBackground) + System.HasAddon(resource.images.arctic.waves)">Conditional</animation>
             </control>
-            <include condition="!Skin.HasSetting(DisableBusyBackground)">Global_Background_BusyLoader</include>
+            <include condition="!Skin.HasSetting(DisableBusyBackground) + System.HasAddon(resource.images.arctic.waves)">Global_Background_BusyLoader</include>
             <nested />
             <include condition="Skin.HasSetting(DisableBlur)">Global_Background_Overlay</include>
         </control>

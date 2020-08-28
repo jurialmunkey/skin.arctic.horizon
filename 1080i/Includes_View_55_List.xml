@@ -40,7 +40,7 @@
                         </include>
                         <randomize>false</randomize>
                         <visible>Container(550).IsUpdating</visible>
-                        <visible>!Skin.HasSetting(DisableBusyBackground)</visible>
+                        <visible>!Skin.HasSetting(DisableBusyBackground) + System.HasAddon(resource.images.arctic.waves)</visible>
                     </control>
                     <control type="group">
                         <centerleft>50%</centerleft>

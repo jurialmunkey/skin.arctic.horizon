@@ -18,7 +18,7 @@
             <content sortby="$INFO[Window(Home).Property(1139_SortBy)]">$INFO[Window(Home).Property(1139_FolderPath)]</content>
         </control>
         <include>Global_Background</include>
-        <include condition="!Skin.HasSetting(DisableBusyBackground)" content="Global_Background_BusyLoader_1190">
+        <include condition="!Skin.HasSetting(DisableBusyBackground) + System.HasAddon(resource.images.arctic.waves)" content="Global_Background_BusyLoader_1190">
             <visible>Container(5001).IsUpdating</visible>
         </include>
         <control type="group">
