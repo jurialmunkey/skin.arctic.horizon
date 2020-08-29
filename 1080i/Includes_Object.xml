@@ -364,7 +364,7 @@
                     <visible>String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,episode) | String.IsEqual(ListItem.DBType,video)</visible>
                     <visible>String.Contains(ListItem.FileNameAndPath,HDR)</visible>
                 </control>
-                <control type="image">
+                <control type="image" id="991100">
                     <fadetime>100</fadetime>
                     <centertop>50%</centertop>
                     <width>71</width>
@@ -372,6 +372,19 @@
                     <aspectratio>keep</aspectratio>
                     <texture colordiffuse="$VAR[Defs_ColorMode_ColorDiffuse]">$VAR[Image_RipSource]</texture>
                     <visible>String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,episode) | String.IsEqual(ListItem.DBType,video)</visible>
+                </control>
+                <control type="group">
+                    <left>-111</left>
+                    <width>0</width>
+                    <visible>String.IsEqual(Control.GetLabel(991100),common/null.png)</visible>
+                </control>
+                <control type="image">
+                    <fadetime>100</fadetime>
+                    <centertop>50%</centertop>
+                    <width>71</width>
+                    <height>42</height>
+                    <aspectratio>keep</aspectratio>
+                    <texture>$INFO[ListItem.Studio,resource://resource.images.studios.coloured/,.png]</texture>
                 </control>
             </control>
         </definition>
