@@ -473,11 +473,11 @@
                 <right>0</right>
                 <height>item_widget_details_height</height>
                 <control type="grouplist">
-                    <top>10</top>
+                    <top>-20</top>
                     <width>410</width>
                     <left>100</left>
                     <orientation>vertical</orientation>
-                    <itemgap>10</itemgap>
+                    <itemgap>21</itemgap>
                     <usecontrolcoords>true</usecontrolcoords>
                     <!-- Studio -->
                     <include content="DialogVideoInfo_Widget_Details_Label">
@@ -546,11 +546,11 @@
                     </include>
                 </control>
                 <control type="grouplist">
-                    <top>10</top>
+                    <top>-20</top>
                     <right>100</right>
                     <left>550</left>
                     <orientation>vertical</orientation>
-                    <itemgap>10</itemgap>
+                    <itemgap>21</itemgap>
                     <!-- Director -->
                     <include content="DialogVideoInfo_Widget_Details_Label">
                         <param name="label" value="$LOCALIZE[20339]" />
