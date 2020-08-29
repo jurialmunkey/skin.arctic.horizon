@@ -211,6 +211,12 @@
         <value condition="!String.IsEmpty(ListItem.Property(Container.Info)) + !String.IsEmpty(ListItem.DBID) + !Skin.HasSetting(DisableIndicator.Library)">indicator/library.png</value>
         <value condition="ListItem.IsCollection + !Skin.HasSetting(DisableIndicator.MovieSet)">indicator/movieset.png</value>
         <value condition="ListItem.IsFolder">indicator/folder.png</value>
+
+        <value condition="Window.IsVisible(AddonBrowser.xml) + !String.IsEmpty(ListItem.AddonBroken)">indicator/broken.png</value>
+        <value condition="Window.IsVisible(AddonBrowser.xml) + ListItem.Property(addon.orphaned)">indicator/orphaned.png</value>
+        <value condition="Window.IsVisible(AddonBrowser.xml) + ListItem.Property(addon.downloading)">indicator/download.png</value>
+        <value condition="Window.IsVisible(AddonBrowser.xml) + ListItem.Property(addon.isinstalled) + !ListItem.Property(addon.isenabled) + Window.IsActive(addonbrowser)">indicator/disabled.png</value>
+        <value condition="Window.IsVisible(AddonBrowser.xml) + ListItem.Property(addon.hasupdate)">indicator/update.png</value>
         <value>indicator/library.png</value>
     </variable>
 
