@@ -57,7 +57,6 @@
                         <movement>3</movement>
                         <include>Defs_InfoList_OnClick</include>
                         <include>Defs_InfoList_OnBack</include>
-                        <onclick>RunScript(plugin.video.themoviedb.helper,add_query=$INFO[Container(5000).ListItem.Label],type=person,call_auto=1190)</onclick>
                         <content>
                             <item>
                                 <label>$INFO[Window(1142).Property(Cast.0.Name)]</label>
