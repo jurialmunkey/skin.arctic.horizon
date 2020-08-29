@@ -57,186 +57,217 @@
                         <movement>3</movement>
                         <include>Defs_InfoList_OnClick</include>
                         <include>Defs_InfoList_OnBack</include>
+                        <onclick condition="!String.IsEmpty(Container(5000).ListItem.Property(isClick))">RunScript(plugin.video.themoviedb.helper,add_query=$INFO[Container(5000).ListItem.Label],type=person,call_auto=1190)</onclick>
                         <content>
                             <item>
                                 <label>$INFO[Window(1142).Property(Cast.0.Name)]</label>
                                 <icon>$INFO[Window(1142).Property(Cast.0.Icon)]</icon>
                                 <property name="character">$INFO[Window(1142).Property(Cast.0.Job)]</property>
                                 <visible>!String.IsEmpty(Window(1142).Property(Cast.0.Name))</visible>
+                                <property name="isClick">True</property>
                             </item>
                             <item>
                                 <label>$INFO[Window(1142).Property(Cast.1.Name)]</label>
                                 <icon>$INFO[Window(1142).Property(Cast.1.Icon)]</icon>
                                 <property name="character">$INFO[Window(1142).Property(Cast.1.Job)]</property>
                                 <visible>!String.IsEmpty(Window(1142).Property(Cast.1.Name))</visible>
+                                <property name="isClick">True</property>
                             </item>
                             <item>
                                 <label>$INFO[Window(1142).Property(Cast.2.Name)]</label>
                                 <icon>$INFO[Window(1142).Property(Cast.2.Icon)]</icon>
                                 <property name="character">$INFO[Window(1142).Property(Cast.2.Job)]</property>
                                 <visible>!String.IsEmpty(Window(1142).Property(Cast.2.Name))</visible>
+                                <property name="isClick">True</property>
                             </item>
                             <item>
                                 <label>$INFO[Window(1142).Property(Cast.3.Name)]</label>
                                 <icon>$INFO[Window(1142).Property(Cast.3.Icon)]</icon>
                                 <property name="character">$INFO[Window(1142).Property(Cast.3.Job)]</property>
                                 <visible>!String.IsEmpty(Window(1142).Property(Cast.3.Name))</visible>
+                                <property name="isClick">True</property>
                             </item>
                             <item>
                                 <label>$INFO[Window(1142).Property(Cast.4.Name)]</label>
                                 <icon>$INFO[Window(1142).Property(Cast.4.Icon)]</icon>
                                 <property name="character">$INFO[Window(1142).Property(Cast.4.Job)]</property>
                                 <visible>!String.IsEmpty(Window(1142).Property(Cast.4.Name))</visible>
+                                <property name="isClick">True</property>
                             </item>
                             <item>
                                 <label>$INFO[Window(1142).Property(Cast.5.Name)]</label>
                                 <icon>$INFO[Window(1142).Property(Cast.5.Icon)]</icon>
                                 <property name="character">$INFO[Window(1142).Property(Cast.5.Job)]</property>
                                 <visible>!String.IsEmpty(Window(1142).Property(Cast.5.Name))</visible>
+                                <property name="isClick">True</property>
                             </item>
                             <item>
                                 <label>$INFO[Window(1142).Property(Cast.6.Name)]</label>
                                 <icon>$INFO[Window(1142).Property(Cast.6.Icon)]</icon>
                                 <property name="character">$INFO[Window(1142).Property(Cast.6.Job)]</property>
                                 <visible>!String.IsEmpty(Window(1142).Property(Cast.6.Name))</visible>
+                                <property name="isClick">True</property>
                             </item>
                             <item>
                                 <label>$INFO[Window(1142).Property(Cast.7.Name)]</label>
                                 <icon>$INFO[Window(1142).Property(Cast.7.Icon)]</icon>
                                 <property name="character">$INFO[Window(1142).Property(Cast.7.Job)]</property>
                                 <visible>!String.IsEmpty(Window(1142).Property(Cast.7.Name))</visible>
+                                <property name="isClick">True</property>
                             </item>
                             <item>
                                 <label>$INFO[Window(1142).Property(Cast.8.Name)]</label>
                                 <icon>$INFO[Window(1142).Property(Cast.8.Icon)]</icon>
                                 <property name="character">$INFO[Window(1142).Property(Cast.8.Job)]</property>
                                 <visible>!String.IsEmpty(Window(1142).Property(Cast.8.Name))</visible>
+                                <property name="isClick">True</property>
                             </item>
                             <item>
                                 <label>$INFO[Window(1142).Property(Cast.9.Name)]</label>
                                 <icon>$INFO[Window(1142).Property(Cast.9.Icon)]</icon>
                                 <property name="character">$INFO[Window(1142).Property(Cast.9.Job)]</property>
                                 <visible>!String.IsEmpty(Window(1142).Property(Cast.9.Name))</visible>
+                                <property name="isClick">True</property>
                             </item>
                             <item>
                                 <label>$INFO[Window(1142).Property(Cast.10.Name)]</label>
                                 <icon>$INFO[Window(1142).Property(Cast.10.Icon)]</icon>
                                 <property name="character">$INFO[Window(1142).Property(Cast.10.Job)]</property>
                                 <visible>!String.IsEmpty(Window(1142).Property(Cast.10.Name))</visible>
+                                <property name="isClick">True</property>
                             </item>
                             <item>
                                 <label>$INFO[Window(1142).Property(Cast.11.Name)]</label>
                                 <icon>$INFO[Window(1142).Property(Cast.11.Icon)]</icon>
                                 <property name="character">$INFO[Window(1142).Property(Cast.11.Job)]</property>
                                 <visible>!String.IsEmpty(Window(1142).Property(Cast.11.Name))</visible>
+                                <property name="isClick">True</property>
                             </item>
                             <item>
                                 <label>$INFO[Window(1142).Property(Cast.12.Name)]</label>
                                 <icon>$INFO[Window(1142).Property(Cast.12.Icon)]</icon>
                                 <property name="character">$INFO[Window(1142).Property(Cast.12.Job)]</property>
                                 <visible>!String.IsEmpty(Window(1142).Property(Cast.12.Name))</visible>
+                                <property name="isClick">True</property>
                             </item>
                             <item>
                                 <label>$INFO[Window(1142).Property(Cast.13.Name)]</label>
                                 <icon>$INFO[Window(1142).Property(Cast.13.Icon)]</icon>
                                 <property name="character">$INFO[Window(1142).Property(Cast.13.Job)]</property>
                                 <visible>!String.IsEmpty(Window(1142).Property(Cast.13.Name))</visible>
+                                <property name="isClick">True</property>
                             </item>
                             <item>
                                 <label>$INFO[Window(1142).Property(Cast.14.Name)]</label>
                                 <icon>$INFO[Window(1142).Property(Cast.14.Icon)]</icon>
                                 <property name="character">$INFO[Window(1142).Property(Cast.14.Job)]</property>
                                 <visible>!String.IsEmpty(Window(1142).Property(Cast.14.Name))</visible>
+                                <property name="isClick">True</property>
                             </item>
                             <item>
                                 <label>$INFO[Window(1142).Property(Cast.15.Name)]</label>
                                 <icon>$INFO[Window(1142).Property(Cast.15.Icon)]</icon>
                                 <property name="character">$INFO[Window(1142).Property(Cast.15.Job)]</property>
                                 <visible>!String.IsEmpty(Window(1142).Property(Cast.15.Name))</visible>
+                                <property name="isClick">True</property>
                             </item>
                             <item>
                                 <label>$INFO[Window(1142).Property(Cast.16.Name)]</label>
                                 <icon>$INFO[Window(1142).Property(Cast.16.Icon)]</icon>
                                 <property name="character">$INFO[Window(1142).Property(Cast.16.Job)]</property>
                                 <visible>!String.IsEmpty(Window(1142).Property(Cast.16.Name))</visible>
+                                <property name="isClick">True</property>
                             </item>
                             <item>
                                 <label>$INFO[Window(1142).Property(Cast.17.Name)]</label>
                                 <icon>$INFO[Window(1142).Property(Cast.17.Icon)]</icon>
                                 <property name="character">$INFO[Window(1142).Property(Cast.17.Job)]</property>
                                 <visible>!String.IsEmpty(Window(1142).Property(Cast.17.Name))</visible>
+                                <property name="isClick">True</property>
                             </item>
                             <item>
                                 <label>$INFO[Window(1142).Property(Cast.18.Name)]</label>
                                 <icon>$INFO[Window(1142).Property(Cast.18.Icon)]</icon>
                                 <property name="character">$INFO[Window(1142).Property(Cast.18.Job)]</property>
                                 <visible>!String.IsEmpty(Window(1142).Property(Cast.18.Name))</visible>
+                                <property name="isClick">True</property>
                             </item>
                             <item>
                                 <label>$INFO[Window(1142).Property(Cast.19.Name)]</label>
                                 <icon>$INFO[Window(1142).Property(Cast.19.Icon)]</icon>
                                 <property name="character">$INFO[Window(1142).Property(Cast.19.Job)]</property>
                                 <visible>!String.IsEmpty(Window(1142).Property(Cast.19.Name))</visible>
+                                <property name="isClick">True</property>
                             </item>
                             <item>
                                 <label>$INFO[Window(1142).Property(Cast.20.Name)]</label>
                                 <icon>$INFO[Window(1142).Property(Cast.20.Icon)]</icon>
                                 <property name="character">$INFO[Window(1142).Property(Cast.20.Job)]</property>
                                 <visible>!String.IsEmpty(Window(1142).Property(Cast.20.Name))</visible>
+                                <property name="isClick">True</property>
                             </item>
                             <item>
                                 <label>$INFO[Window(1142).Property(Cast.21.Name)]</label>
                                 <icon>$INFO[Window(1142).Property(Cast.21.Icon)]</icon>
                                 <property name="character">$INFO[Window(1142).Property(Cast.21.Job)]</property>
                                 <visible>!String.IsEmpty(Window(1142).Property(Cast.21.Name))</visible>
+                                <property name="isClick">True</property>
                             </item>
                             <item>
                                 <label>$INFO[Window(1142).Property(Cast.22.Name)]</label>
                                 <icon>$INFO[Window(1142).Property(Cast.22.Icon)]</icon>
                                 <property name="character">$INFO[Window(1142).Property(Cast.22.Job)]</property>
                                 <visible>!String.IsEmpty(Window(1142).Property(Cast.22.Name))</visible>
+                                <property name="isClick">True</property>
                             </item>
                             <item>
                                 <label>$INFO[Window(1142).Property(Cast.23.Name)]</label>
                                 <icon>$INFO[Window(1142).Property(Cast.23.Icon)]</icon>
                                 <property name="character">$INFO[Window(1142).Property(Cast.23.Job)]</property>
                                 <visible>!String.IsEmpty(Window(1142).Property(Cast.23.Name))</visible>
+                                <property name="isClick">True</property>
                             </item>
                             <item>
                                 <label>$INFO[Window(1142).Property(Cast.24.Name)]</label>
                                 <icon>$INFO[Window(1142).Property(Cast.24.Icon)]</icon>
                                 <property name="character">$INFO[Window(1142).Property(Cast.24.Job)]</property>
                                 <visible>!String.IsEmpty(Window(1142).Property(Cast.24.Name))</visible>
+                                <property name="isClick">True</property>
                             </item>
                             <item>
                                 <label>$INFO[Window(1142).Property(Cast.25.Name)]</label>
                                 <icon>$INFO[Window(1142).Property(Cast.25.Icon)]</icon>
                                 <property name="character">$INFO[Window(1142).Property(Cast.25.Job)]</property>
                                 <visible>!String.IsEmpty(Window(1142).Property(Cast.25.Name))</visible>
+                                <property name="isClick">True</property>
                             </item>
                             <item>
                                 <label>$INFO[Window(1142).Property(Cast.26.Name)]</label>
                                 <icon>$INFO[Window(1142).Property(Cast.26.Icon)]</icon>
                                 <property name="character">$INFO[Window(1142).Property(Cast.26.Job)]</property>
                                 <visible>!String.IsEmpty(Window(1142).Property(Cast.26.Name))</visible>
+                                <property name="isClick">True</property>
                             </item>
                             <item>
                                 <label>$INFO[Window(1142).Property(Cast.27.Name)]</label>
                                 <icon>$INFO[Window(1142).Property(Cast.27.Icon)]</icon>
                                 <property name="character">$INFO[Window(1142).Property(Cast.27.Job)]</property>
                                 <visible>!String.IsEmpty(Window(1142).Property(Cast.27.Name))</visible>
+                                <property name="isClick">True</property>
                             </item>
                             <item>
                                 <label>$INFO[Window(1142).Property(Cast.28.Name)]</label>
                                 <icon>$INFO[Window(1142).Property(Cast.28.Icon)]</icon>
                                 <property name="character">$INFO[Window(1142).Property(Cast.28.Job)]</property>
                                 <visible>!String.IsEmpty(Window(1142).Property(Cast.28.Name))</visible>
+                                <property name="isClick">True</property>
                             </item>
                             <item>
                                 <label>$INFO[Window(1142).Property(Cast.29.Name)]</label>
                                 <icon>$INFO[Window(1142).Property(Cast.29.Icon)]</icon>
                                 <property name="character">$INFO[Window(1142).Property(Cast.29.Job)]</property>
                                 <visible>!String.IsEmpty(Window(1142).Property(Cast.29.Name))</visible>
+                                <property name="isClick">True</property>
                             </item>
                         </content>
                         <content limit="25" target="videos">$INFO[Window.Property(Path.Cast)]</content>
