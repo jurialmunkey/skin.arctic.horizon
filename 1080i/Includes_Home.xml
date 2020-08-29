@@ -1108,11 +1108,6 @@
         </include>
     </include>
 
-    <include name="Home_Menu_Horizontal_IconicMovement">
-        <focusposition>3</focusposition>
-        <movement>4</movement>
-    </include>
-
     <include name="Home_Menu_Horizontal">
         <param name="mainmenu-id" default="301" />
         <definition>
@@ -1267,14 +1262,11 @@
                     </control>
 
 
-                    <control type="fixedlist" id="$PARAM[mainmenu-id]">
+                    <control type="list" id="$PARAM[mainmenu-id]">
                         <orientation>horizontal</orientation>
                         <left>100</left>
                         <include>Home_Movement_OnFocus</include>
                         <include>Home_Movement_LeftRight</include>
-                        <include condition="Skin.HasSetting(HomeIconicMenu)">Home_Menu_Horizontal_IconicMovement</include>
-                        <focusposition>1</focusposition>
-                        <movement>2</movement>
                         <itemlayout width="100" condition="Skin.HasSetting(HomeIconicMenu)">
                             <control type="group">
                                 <left>0</left>
