@@ -112,19 +112,24 @@
                 <texture>common/dim-osd.png</texture>
             </control>
 
+            <!-- Overlay -->
+            <control type="image">
+                <bottom>0</bottom>
+                <top>0</top>
+                <texture>common/dim-gradient.png</texture>
+                <visible>Window.IsVisible(1143) | [[!String.IsEmpty(Window(Home).Property(OSDInfo)) | Player.ShowInfo | Window.IsActive(DialogFullScreenInfo.xml) | [Skin.HasSetting(ShowInfoPaused) + [Player.Paused | Window.IsVisible(videoosd)]]] + !Window.IsVisible(DialogPlayerProcessInfo.xml) + !Skin.HasSetting(DisableOSDInfo)]</visible>
+                <include>Animation_FadeIn</include>
+                <include>Animation_FadeOut</include>
+            </control>
+
             <!-- Large Info OSD -->
             <control type="group">
                 <visible>!String.IsEmpty(Window(Home).Property(OSDInfo)) | Player.ShowInfo | Window.IsActive(DialogFullScreenInfo.xml) | [Skin.HasSetting(ShowInfoPaused) + [Player.Paused | Window.IsVisible(videoosd)]]</visible>
                 <visible>!Window.IsVisible(DialogPlayerProcessInfo.xml)</visible>
                 <visible>!Skin.HasSetting(DisableOSDInfo)</visible>
+                <visible>!Window.IsVisible(1143)</visible>
                 <include>Animation_FadeIn</include>
                 <include>Animation_FadeOut</include>
-                <!-- Overlay -->
-                <control type="image">
-                    <bottom>0</bottom>
-                    <top>0</top>
-                    <texture>common/dim-gradient.png</texture>
-                </control>
                 <control type="group" description="info">
                     <left>view_pad</left>
                     <right>view_pad</right>
@@ -152,6 +157,7 @@
                         <bottom>-10</bottom>
                         <right>0</right>
                         <align>bottom</align>
+                        <itemgap>0</itemgap>
                         <include content="Object_Info_Title">
                             <param name="label" value="$VAR[Label_OSD_Title]" />
                             <param name="textcolor" value="panel_fg_100" />
@@ -161,31 +167,34 @@
                             <param name="image" value="$VAR[Image_56560_VideoQuality]" />
                             <param name="textcolor" value="panel_fg_100" />
                         </include>
-
-                        <include content="Object_Info_Ratings" condition="!Skin.HasSetting(DisableAllRatings)">
-                            <param name="userrating" value="VideoPlayer.UserRating" />
-                            <param name="starrating" value="VideoPlayer.Rating" />
-                            <param name="tmdbtype" value="Player" />
-                            <top>-20</top>
-                            <visible>VideoPlayer.Content(movies) | VideoPlayer.Content(episodes)</visible>
-                        </include>
-                        <control type="textbox">
-                            <top>25</top>
-                            <height max="120">auto</height>
-                            <font>font_plotbox</font>
-                            <textcolor>panel_fg_70</textcolor>
-                            <label>$INFO[VideoPlayer.Plot,, ]$INFO[MusicPlayer.Property(Artist_Description),, ]$INFO[MusicPlayer.Property(Album_Description)]</label>
-                            <visible>!String.IsEmpty(VideoPlayer.Plot) | !String.IsEmpty(MusicPlayer.Property(Artist_Description)) | !String.IsEmpty(MusicPlayer.Property(Album_Description))</visible>
-                        </control>
                         <control type="group">
-                            <height>70</height>
+                            <top>-42</top>
+                            <height>42</height>
                             <control type="grouplist">
                                 <left>-14</left>
-                                <top>20</top>
+                                <height>64</height>
+                                <centertop>50%</centertop>
                                 <orientation>horizontal</orientation>
-                                <align>left</align>
+                                <align>right</align>
                                 <itemgap>20</itemgap>
                                 <usecontrolcoords>true</usecontrolcoords>
+                                <control type="image">
+                                    <fadetime>100</fadetime>
+                                    <centertop>50%</centertop>
+                                    <width>64</width>
+                                    <height>56</height>
+                                    <aspectratio align="left">keep</aspectratio>
+                                    <texture colordiffuse="panel_fg_100">flags/$VAR[Defs_ColorMode_Dir]/other/3D.png</texture>
+                                    <visible>VideoPlayer.IsStereoscopic</visible>
+                                </control>
+                                <control type="image">
+                                    <fadetime>100</fadetime>
+                                    <centertop>50%</centertop>
+                                    <width>71</width>
+                                    <height>56</height>
+                                    <aspectratio align="left">keep</aspectratio>
+                                    <texture colordiffuse="panel_fg_100">$VAR[Image_VideoPlayer_RipSource]</texture>
+                                </control>
                                 <control type="image">
                                     <fadetime>100</fadetime>
                                     <centertop>50%</centertop>
@@ -249,25 +258,27 @@
                                     <texture colordiffuse="panel_fg_100">$INFO[VideoPlayer.AudioChannels,flags/monochrome/channels/,.png]</texture>
                                     <visible>Skin.HasSetting(EnableMonochromeFlags)</visible>
                                 </control>
-                                <control type="image">
-                                    <fadetime>100</fadetime>
-                                    <centertop>50%</centertop>
-                                    <width>64</width>
-                                    <height>56</height>
-                                    <aspectratio align="left">keep</aspectratio>
-                                    <texture colordiffuse="panel_fg_100">flags/$VAR[Defs_ColorMode_Dir]/other/3D.png</texture>
-                                    <visible>VideoPlayer.IsStereoscopic</visible>
-                                </control>
-                                <control type="image">
-                                    <fadetime>100</fadetime>
-                                    <centertop>50%</centertop>
-                                    <width>71</width>
-                                    <height>56</height>
-                                    <aspectratio align="left">keep</aspectratio>
-                                    <texture colordiffuse="panel_fg_100">$VAR[Image_VideoPlayer_RipSource]</texture>
-                                </control>
                             </control>
                         </control>
+
+                        <include content="Object_Info_Ratings" condition="!Skin.HasSetting(DisableAllRatings) + Skin.HasSetting(EnableOSDRatings)">
+                            <param name="userrating" value="VideoPlayer.UserRating" />
+                            <param name="starrating" value="VideoPlayer.Rating" />
+                            <param name="tmdbtype" value="Player" />
+                            <top>-20</top>
+                            <height>76</height>
+                            <visible>VideoPlayer.Content(movies) | VideoPlayer.Content(episodes)</visible>
+                        </include>
+
+                        <control type="textbox">
+                            <top>15</top>
+                            <height max="120">auto</height>
+                            <font>font_plotbox</font>
+                            <textcolor>panel_fg_70</textcolor>
+                            <label>$INFO[VideoPlayer.Plot,, ]$INFO[MusicPlayer.Property(Artist_Description),, ]$INFO[MusicPlayer.Property(Album_Description)]</label>
+                            <visible>!String.IsEmpty(VideoPlayer.Plot) | !String.IsEmpty(MusicPlayer.Property(Artist_Description)) | !String.IsEmpty(MusicPlayer.Property(Album_Description))</visible>
+                        </control>
+
                     </control>
                 </control>
             </control>
@@ -277,6 +288,7 @@
                 <visible>!String.IsEmpty(Window(Home).Property(OSDInfo)) | Player.ShowInfo | Window.IsActive(DialogFullScreenInfo.xml) | Skin.HasSetting(ShowInfoPaused)</visible>
                 <visible>!Window.IsVisible(DialogPlayerProcessInfo.xml)</visible>
                 <visible>Skin.HasSetting(DisableOSDInfo)</visible>
+                <visible>!Window.IsVisible(1143)</visible>
                 <include>Animation_FadeIn</include>
                 <include>Animation_FadeOut</include>
                 <control type="group" description="info">

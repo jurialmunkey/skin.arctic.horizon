@@ -30,39 +30,11 @@
                 <control type="grouplist" id="9000">
                     <include>OSD_VideoPosition</include>
                     <onup condition="String.IsEmpty(Window(Home).Property(OSDInfo))">SetProperty(OSDInfo,1,Home)</onup>
-                    <onup condition="!String.IsEmpty(Window(Home).Property(OSDInfo))">SetFocus(5000)</onup>
-                    <onup condition="!String.IsEmpty(Window(Home).Property(OSDInfo))">ClearProperty(OSDInfo,Home)</onup>
+                    <!-- <onup condition="!String.IsEmpty(Window(Home).Property(OSDInfo))">ClearProperty(OSDInfo,Home)</onup> -->
+                    <onup condition="!String.IsEmpty(Window(Home).Property(OSDInfo))">ActivateWindow(1143)</onup>
                     <ondown condition="String.IsEmpty(Window(Home).Property(OSDInfo))">Close</ondown>
                     <ondown condition="!String.IsEmpty(Window(Home).Property(OSDInfo))">ClearProperty(OSDInfo,Home)</ondown>
                     <include>OSD_Controls</include>
-                </control>
-
-                <control type="group">
-                    <visible allowhiddenfocus="true">Control.HasFocus(5000)</visible>
-                    <include>Animation_FadeIn_Delay</include>
-                    <include content="Viewtype_Poster">
-                        <param name="id" value="5000" />
-                        <param name="castlabel" value="true" />
-                        <param name="label2" value="ListItem.Property(character)" />
-                        <bottom>150</bottom>
-                        <left>0</left>
-                        <right>-80</right>
-                        <!-- <focusposition>3</focusposition>
-                        <movement>3</movement> -->
-                        <onup>SetFocus(9000)</onup>
-                        <ondown>SetFocus(9000)</ondown>
-                        <onclick>SetProperty(OSDExtendedInfo,1,Home)</onclick>
-                        <onclick condition="!Player.Paused + !Skin.HasSetting(DontPauseOSD)">Pause</onclick>
-                        <onclick>Close</onclick>
-                        <onclick>RunScript(plugin.video.themoviedb.helper,add_path=$INFO[ListItem.FolderPath],call_auto=1190,return)</onclick>
-                        <content>$VAR[OSD_Cast]</content>
-                    </include>
-                    <include content="Home_Hub_Widget_Label">
-                        <param name="id" value="5000" />
-                        <param name="label" value="$LOCALIZE[31013] $INFO[Player.Title]" />
-                        <left>65</left>
-                        <top>438</top>
-                    </include>
                 </control>
             </control>
 

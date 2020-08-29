@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window type="dialog" id="1143">
+    <defaultcontrol always="true">5000</defaultcontrol>
+    <controls>
+        <control type="group">
+            <animation effect="fade" start="0" end="100" time="400" tween="cubic" easing="inout" reversible="false" delay="400">Visible</animation>
+            <animation effect="fade" start="0" end="100" time="400" tween="cubic" easing="inout" reversible="false" delay="400">WindowOpen</animation>
+            <include content="Viewtype_Poster">
+                <param name="id" value="5000" />
+                <param name="castlabel" value="true" />
+                <param name="label2" value="ListItem.Property(character)" />
+                <bottom>150</bottom>
+                <left>0</left>
+                <right>-80</right>
+                <!-- <onup>Action(Close)</onup> -->
+                <ondown>Action(Close)</ondown>
+                <onclick>SetProperty(OSDExtendedInfo,1,Home)</onclick>
+                <onclick condition="!Player.Paused + !Skin.HasSetting(DontPauseOSD)">Pause</onclick>
+                <onclick>Dialog.Close(videoosd,force)</onclick>
+                <onclick>Close</onclick>
+                <onclick>AlarmClock(callit,RunScript(plugin.video.themoviedb.helper,add_path=$INFO[ListItem.FolderPath],call_auto=1190,return),00:00,silent)</onclick>
+                <content>$VAR[OSD_Cast]</content>
+            </include>
+            <include content="Home_Hub_Widget_Label">
+                <param name="id" value="5000" />
+                <param name="label" value="$LOCALIZE[31013] $INFO[Player.Title]" />
+                <left>65</left>
+                <top>438</top>
+            </include>
+        </control>
+    </controls>
+</window>
