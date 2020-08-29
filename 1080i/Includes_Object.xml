@@ -530,6 +530,7 @@
         <param name="additionalratings" default="true" />
         <param name="userrating" default="ListItem.UserRating" />
         <param name="starrating" default="ListItem.Rating" />
+        <param name="tmdbtype" default="ListItem" />
         <definition>
             <control type="group">
                 <nested />
@@ -567,6 +568,7 @@
                         <param name="oscars" value="$PARAM[oscars]" />
                         <param name="userrating" value="$PARAM[userrating]" />
                         <param name="starrating" value="$PARAM[starrating]" />
+                        <param name="tmdbtype" value="$PARAM[tmdbtype]" />
                     </include>
                 </control>
                 <control type="group">
@@ -581,6 +583,7 @@
                         <param name="oscars" value="$PARAM[oscars]" />
                         <param name="userrating" value="$PARAM[userrating]" />
                         <param name="starrating" value="$PARAM[starrating]" />
+                        <param name="tmdbtype" value="$PARAM[tmdbtype]" />
                     </include>
                 </control>
             </control>
@@ -976,6 +979,7 @@
         <param name="oscars" default="true" />
         <param name="numericstarrating" default="Skin.HasSetting(NumericStarRating) + !Skin.HasSetting(DisableStarRating)" />
         <param name="top250" default="true" />
+        <param name="tmdbtype" default="ListItem" />
         <param name="userrating" default="ListItem.UserRating" />
         <param name="starrating" default="ListItem.Rating" />
         <definition>
@@ -1053,7 +1057,7 @@
                     <width>32</width>
                     <height>32</height>
                     <texture colordiffuse="$PARAM[colordiffuse]_100">flags/$PARAM[directory]/ratings/oscar.png</texture>
-                    <visible>!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Oscar_Wins))</visible>
+                    <visible>!String.IsEmpty(Window(Home).Property(TMDbHelper.$PARAM[tmdbtype].Oscar_Wins))</visible>
                 </include>
                 <include content="Object_Control" condition="[$PARAM[oscars]] + !Skin.HasSetting(DisableOscarRating)">
                     <param name="type" value="image" />
@@ -1061,7 +1065,7 @@
                     <width>32</width>
                     <height>32</height>
                     <texture colordiffuse="$PARAM[colordiffuse]_100">flags/$PARAM[directory]/ratings/goldenglobe.png</texture>
-                    <visible>String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Oscar_Wins)) + !String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.GoldenGlobe_Wins))</visible>
+                    <visible>String.IsEmpty(Window(Home).Property(TMDbHelper.$PARAM[tmdbtype].Oscar_Wins)) + !String.IsEmpty(Window(Home).Property(TMDbHelper.$PARAM[tmdbtype].GoldenGlobe_Wins))</visible>
                 </include>
                 <include content="Object_Control" condition="[$PARAM[oscars]] + !Skin.HasSetting(DisableOscarRating)">
                     <param name="type" value="label" />
@@ -1071,8 +1075,8 @@
                     <height>28</height>
                     <align>right</align>
                     <font>font_tiny</font>
-                    <label>$VAR[Label_TrophyWins, x,   ]</label>
-                    <visible>!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Oscar_Wins)) | !String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.GoldenGlobe_Wins))</visible>
+                    <label>$VAR[Label_$PARAM[tmdbtype]_TrophyWins, x,   ]</label>
+                    <visible>!String.IsEmpty(Window(Home).Property(TMDbHelper.$PARAM[tmdbtype].Oscar_Wins)) | !String.IsEmpty(Window(Home).Property(TMDbHelper.$PARAM[tmdbtype].GoldenGlobe_Wins))</visible>
                 </include>
                 <include content="Object_Control" condition="[$PARAM[metacritic]] + !Skin.HasSetting(DisableMetacriticRating)">
                     <param name="type" value="image" />
@@ -1080,7 +1084,7 @@
                     <width>32</width>
                     <height>32</height>
                     <texture colordiffuse="$PARAM[colordiffuse]_100">flags/$PARAM[directory]/ratings/metacritic.png</texture>
-                    <visible>!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.MetaCritic_Rating))</visible>
+                    <visible>!String.IsEmpty(Window(Home).Property(TMDbHelper.$PARAM[tmdbtype].MetaCritic_Rating))</visible>
                 </include>
                 <include content="Object_Control" condition="[$PARAM[metacritic]] + !Skin.HasSetting(DisableMetacriticRating)">
                     <param name="type" value="label" />
@@ -1090,8 +1094,8 @@
                     <height>28</height>
                     <align>right</align>
                     <font>font_tiny</font>
-                    <label>$INFO[Window(Home).Property(TMDbHelper.ListItem.MetaCritic_Rating), ,%   ]</label>
-                    <visible>!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.MetaCritic_Rating))</visible>
+                    <label>$INFO[Window(Home).Property(TMDbHelper.$PARAM[tmdbtype].MetaCritic_Rating), ,%   ]</label>
+                    <visible>!String.IsEmpty(Window(Home).Property(TMDbHelper.$PARAM[tmdbtype].MetaCritic_Rating))</visible>
                 </include>
                 <include content="Object_Control" condition="[$PARAM[trakt]] + !Skin.HasSetting(DisableTraktRating)">
                     <param name="type" value="image" />
@@ -1099,7 +1103,7 @@
                     <width>32</width>
                     <height>32</height>
                     <texture colordiffuse="$PARAM[colordiffuse]_100">flags/$PARAM[directory]/ratings/trakt.png</texture>
-                    <visible>!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Trakt_Rating))</visible>
+                    <visible>!String.IsEmpty(Window(Home).Property(TMDbHelper.$PARAM[tmdbtype].Trakt_Rating))</visible>
                 </include>
                 <include content="Object_Control" condition="[$PARAM[trakt]] + !Skin.HasSetting(DisableTraktRating)">
                     <param name="type" value="label" />
@@ -1109,8 +1113,8 @@
                     <height>28</height>
                     <align>right</align>
                     <font>font_tiny</font>
-                    <label>$INFO[Window(Home).Property(TMDbHelper.ListItem.Trakt_Rating), ,    ]</label>
-                    <visible>!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Trakt_Rating))</visible>
+                    <label>$INFO[Window(Home).Property(TMDbHelper.$PARAM[tmdbtype].Trakt_Rating), ,    ]</label>
+                    <visible>!String.IsEmpty(Window(Home).Property(TMDbHelper.$PARAM[tmdbtype].Trakt_Rating))</visible>
                 </include>
                 <include content="Object_Control" condition="[$PARAM[tmdb]] + !Skin.HasSetting(DisableTMDBRating)">
                     <param name="type" value="image" />
@@ -1118,7 +1122,7 @@
                     <width>32</width>
                     <height>32</height>
                     <texture colordiffuse="$PARAM[colordiffuse]_100">flags/$PARAM[directory]/ratings/tmdb.png</texture>
-                    <visible>!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.TMDb_Rating))</visible>
+                    <visible>!String.IsEmpty(Window(Home).Property(TMDbHelper.$PARAM[tmdbtype].TMDb_Rating))</visible>
                 </include>
                 <include content="Object_Control" condition="[$PARAM[tmdb]] + !Skin.HasSetting(DisableTMDBRating)">
                     <param name="type" value="label" />
@@ -1128,8 +1132,8 @@
                     <height>28</height>
                     <align>right</align>
                     <font>font_tiny</font>
-                    <label>$INFO[Window(Home).Property(TMDbHelper.ListItem.TMDb_Rating), ,   ]</label>
-                    <visible>!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.TMDb_Rating))</visible>
+                    <label>$INFO[Window(Home).Property(TMDbHelper.$PARAM[tmdbtype].TMDb_Rating), ,   ]</label>
+                    <visible>!String.IsEmpty(Window(Home).Property(TMDbHelper.$PARAM[tmdbtype].TMDb_Rating))</visible>
                 </include>
                 <include content="Object_Control" condition="[$PARAM[tvdb]] + !Skin.HasSetting(DisableTVDBRating)">
                     <param name="type" value="image" />
@@ -1137,7 +1141,7 @@
                     <width>32</width>
                     <height>32</height>
                     <texture colordiffuse="$PARAM[colordiffuse]_100">flags/$PARAM[directory]/ratings/tvdb.png</texture>
-                    <visible>!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Rating.TVDB))</visible>
+                    <visible>!String.IsEmpty(Window(Home).Property(TMDbHelper.$PARAM[tmdbtype].Rating.TVDB))</visible>
                 </include>
                 <include content="Object_Control" condition="[$PARAM[tvdb]] + !Skin.HasSetting(DisableTVDBRating)">
                     <param name="type" value="label" />
@@ -1147,16 +1151,16 @@
                     <height>28</height>
                     <align>right</align>
                     <font>font_tiny</font>
-                    <label>$INFO[Window(Home).Property(TMDbHelper.ListItem.Rating.TVDB), ,   ]</label>
-                    <visible>!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Rating.TVDB))</visible>
+                    <label>$INFO[Window(Home).Property(TMDbHelper.$PARAM[tmdbtype].Rating.TVDB), ,   ]</label>
+                    <visible>!String.IsEmpty(Window(Home).Property(TMDbHelper.$PARAM[tmdbtype].Rating.TVDB))</visible>
                 </include>
                 <include content="Object_Control" condition="[$PARAM[usermeter]] + !Skin.HasSetting(DisableRottenTomatoesUserRating)">
                     <param name="type" value="image" />
                     <top>0</top>
                     <width>32</width>
                     <height>32</height>
-                    <texture colordiffuse="$PARAM[colordiffuse]_100">flags/$PARAM[directory]/ratings/$VAR[Image_RottenTomatoes_UserMeter]</texture>
-                    <visible>!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.RottenTomatoes_UserMeter))</visible>
+                    <texture colordiffuse="$PARAM[colordiffuse]_100">flags/$PARAM[directory]/ratings/$VAR[Image_$PARAM[tmdbtype]_RottenTomatoes_UserMeter]</texture>
+                    <visible>!String.IsEmpty(Window(Home).Property(TMDbHelper.$PARAM[tmdbtype].RottenTomatoes_UserMeter))</visible>
                     </include>
                 <include content="Object_Control" condition="[$PARAM[usermeter]] + !Skin.HasSetting(DisableRottenTomatoesUserRating)">
                     <param name="type" value="label" />
@@ -1166,15 +1170,15 @@
                     <height>28</height>
                     <align>right</align>
                     <font>font_tiny</font>
-                    <label>$INFO[Window(Home).Property(TMDbHelper.ListItem.RottenTomatoes_UserMeter), ,%   ]</label>
-                    <visible>!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.RottenTomatoes_UserMeter))</visible>
+                    <label>$INFO[Window(Home).Property(TMDbHelper.$PARAM[tmdbtype].RottenTomatoes_UserMeter), ,%   ]</label>
+                    <visible>!String.IsEmpty(Window(Home).Property(TMDbHelper.$PARAM[tmdbtype].RottenTomatoes_UserMeter))</visible>
                 </include>
                 <include content="Object_Control" condition="[$PARAM[rottentomatoes]] + !Skin.HasSetting(DisableRottenTomatoesCriticRating)">
                     <param name="type" value="image" />
                     <width>32</width>
                     <height>32</height>
-                    <texture colordiffuse="$PARAM[colordiffuse]_100">flags/$PARAM[directory]/ratings/$VAR[Image_RottenTomatoes]</texture>
-                    <visible>!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.RottenTomatoes_Rating))</visible>
+                    <texture colordiffuse="$PARAM[colordiffuse]_100">flags/$PARAM[directory]/ratings/$VAR[Image_$PARAM[tmdbtype]_RottenTomatoes]</texture>
+                    <visible>!String.IsEmpty(Window(Home).Property(TMDbHelper.$PARAM[tmdbtype].RottenTomatoes_Rating))</visible>
                 </include>
                 <include content="Object_Control" condition="[$PARAM[rottentomatoes]] + !Skin.HasSetting(DisableRottenTomatoesCriticRating)">
                     <param name="type" value="label" />
@@ -1184,8 +1188,8 @@
                     <height>28</height>
                     <align>right</align>
                     <font>font_tiny</font>
-                    <label>$INFO[Window(Home).Property(TMDbHelper.ListItem.RottenTomatoes_Rating), ,%   ]</label>
-                    <visible>!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.RottenTomatoes_Rating))</visible>
+                    <label>$INFO[Window(Home).Property(TMDbHelper.$PARAM[tmdbtype].RottenTomatoes_Rating), ,%   ]</label>
+                    <visible>!String.IsEmpty(Window(Home).Property(TMDbHelper.$PARAM[tmdbtype].RottenTomatoes_Rating))</visible>
                 </include>
                 <include content="Object_Control" condition="[$PARAM[imdb]] + !Skin.HasSetting(DisableIMDBRating)">
                     <param name="type" value="image" />
@@ -1193,7 +1197,7 @@
                     <width>52</width>
                     <height>32</height>
                     <texture colordiffuse="$PARAM[colordiffuse]_100">flags/$PARAM[directory]/ratings/imdb.png</texture>
-                    <visible>!String.IsEmpty(Window(home).Property(TMDbHelper.ListItem.IMDb_Rating))</visible>
+                    <visible>!String.IsEmpty(Window(home).Property(TMDbHelper.$PARAM[tmdbtype].IMDb_Rating))</visible>
                 </include>
                 <include content="Object_Control" condition="[$PARAM[imdb]] + [$PARAM[imdbvotes]] + !Skin.HasSetting(DisableIMDBRating)">
                     <param name="type" value="label" />
@@ -1203,8 +1207,8 @@
                     <height>28</height>
                     <align>right</align>
                     <font>font_tiny</font>
-                    <label>$INFO[Window(home).Property(TMDbHelper.ListItem.IMDb_Rating), ,]$INFO[Window(home).Property(TMDbHelper.ListItem.IMDb_Votes), (, $LOCALIZE[205])]</label>
-                    <visible>!String.IsEmpty(Window(home).Property(TMDbHelper.ListItem.IMDb_Rating))</visible>
+                    <label>$INFO[Window(home).Property(TMDbHelper.$PARAM[tmdbtype].IMDb_Rating), ,]$INFO[Window(home).Property(TMDbHelper.$PARAM[tmdbtype].IMDb_Votes), (, $LOCALIZE[205])]</label>
+                    <visible>!String.IsEmpty(Window(home).Property(TMDbHelper.$PARAM[tmdbtype].IMDb_Rating))</visible>
                 </include>
                 <include content="Object_Control" condition="[$PARAM[imdb]] + ![$PARAM[imdbvotes]] + !Skin.HasSetting(DisableIMDBRating)">
                     <param name="type" value="label" />
@@ -1214,8 +1218,8 @@
                     <height>28</height>
                     <align>right</align>
                     <font>font_tiny</font>
-                    <label>$INFO[Window(home).Property(TMDbHelper.ListItem.IMDb_Rating), ,]</label>
-                    <visible>!String.IsEmpty(Window(home).Property(TMDbHelper.ListItem.IMDb_Rating))</visible>
+                    <label>$INFO[Window(home).Property(TMDbHelper.$PARAM[tmdbtype].IMDb_Rating), ,]</label>
+                    <visible>!String.IsEmpty(Window(home).Property(TMDbHelper.$PARAM[tmdbtype].IMDb_Rating))</visible>
                 </include>
                 <include content="Object_Control" condition="[$PARAM[imdb]] + [$PARAM[top250]] + !Skin.HasSetting(DisableIMDBRating) + !Skin.HasSetting(DisableIMDBRatingTop250)">
                     <param name="type" value="label" />
@@ -1225,8 +1229,8 @@
                     <height>28</height>
                     <align>right</align>
                     <font>font_tiny</font>
-                    <label>$INFO[Window(Home).Property(TMDbHelper.ListItem.IMDB.Top250),#,]</label>
-                    <visible>Integer.IsGreater(Window(home).Property(TMDbHelper.ListItem.IMDB.Top250),0)</visible>
+                    <label>$INFO[Window(Home).Property(TMDbHelper.$PARAM[tmdbtype].IMDB.Top250),#,]</label>
+                    <visible>Integer.IsGreater(Window(home).Property(TMDbHelper.$PARAM[tmdbtype].IMDB.Top250),0)</visible>
                 </include>
             </control>
         </definition>

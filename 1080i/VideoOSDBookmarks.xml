@@ -66,7 +66,7 @@
                     <param name="id" value="11" />
                     <param name="icon" value="$INFO[ListItem.Icon]" />
                     <param name="visible" value="true" />
-                    <bottom>-20</bottom>
+                    <bottom>view_bottom</bottom>
                     <orientation>horizontal</orientation>
                     <onup>9000</onup>
                     <ondown>9000</ondown>

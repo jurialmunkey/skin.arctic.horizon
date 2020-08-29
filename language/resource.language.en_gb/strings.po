@@ -20,6 +20,11 @@ msgctxt "#31001"
 msgid "Controllers"
 msgstr ""
 
+#: /1080i/Includes_OSD.xml
+msgctxt "#31002"
+msgid "Finishes at"
+msgstr ""
+
 #: /1080i/Custom_1118_EnableRatings.xml
 msgctxt "#31003"
 msgid "Oscars"
@@ -68,6 +73,11 @@ msgstr ""
 #: /1080i/MyWeather.xml
 msgctxt "#31012"
 msgid "Weather fanart installed"
+msgstr ""
+
+#: /1080i/VideoOSD.xml
+msgctxt "#31013"
+msgid "Cast of"
 msgstr ""
 
 #: /1080i/MyVideoNav.xml
