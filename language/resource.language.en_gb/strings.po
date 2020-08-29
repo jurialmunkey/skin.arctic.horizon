@@ -769,6 +769,11 @@ msgctxt "#31154"
 msgid "Color"
 msgstr ""
 
+#: /1080i/Includes_DialogVideoInfo.xml
+msgctxt "#31155"
+msgid "Revenue / Budget"
+msgstr ""
+
 #: /1080i/SkinSettings.xml
 msgctxt "#31156"
 msgid "PVR Guide"
@@ -809,6 +814,11 @@ msgctxt "#31163"
 msgid "Submenu Items"
 msgstr ""
 
+#: /1080i/Includes_DialogVideoInfo.xml
+msgctxt "#31164"
+msgid "Awards"
+msgstr ""
+
 #: /1080i/SkinSettings.xml
 msgctxt "#31165"
 msgid "Lists and indicators"
@@ -831,6 +841,21 @@ msgstr ""
 #: /1080i/Custom_1120_EnableSearchLists.xml
 msgctxt "#31169"
 msgid "Edit custom search lists"
+msgstr ""
+
+#: /1080i/Includes_DialogVideoInfo.xml
+msgctxt "#31170"
+msgid "Creator"
+msgstr ""
+
+#: /1080i/Includes_DialogVideoInfo.xml
+msgctxt "#31171"
+msgid "Filename"
+msgstr ""
+
+#: /1080i/Includes_DialogVideoInfo.xml
+msgctxt "#31172"
+msgid "Plugin"
 msgstr ""
 
 msgctxt "#31173"

@@ -19,7 +19,7 @@
         <include condition="!Skin.HasSetting(DisableClock)">Topbar_Right</include>
         <include>Object_NowPlaying</include>
         <include>Viewtype_Options</include>
-        <include>Object_PlotOverlay</include>
+
     </include>
 
     <include name="Viewtype_HiddenLists">
@@ -439,6 +439,7 @@
                     <param name="Exp_DefaultIcon" value="$EXP[Exp_DefaultIcon$PARAM[affix]]" />
                     <param name="Exp_SpecialIcon" value="$EXP[Exp_SpecialIcon$PARAM[affix]]" />
                     <param name="Image_DefaultIcon" value="$VAR[Image_DefaultIcon$PARAM[affix]]" />
+                    <param name="specialicon" value="$PARAM[specialicon]" />
                 </include>
 
                 <include content="Object_Control" condition="$PARAM[clearlogooverlay]">

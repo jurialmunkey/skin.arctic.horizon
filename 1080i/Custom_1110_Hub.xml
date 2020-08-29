@@ -63,24 +63,7 @@
                                 <top>-15</top>
                                 <height>285</height>
                                 <include>Viewtype_Info_Right</include>
-                                <visible>!String.IsEmpty(Container(5610).ListItem.Title)</visible>
                             </include>
-                            <control type="grouplist">
-                                <top>-15</top>
-                                <height>285</height>
-                                <orientation>vertical</orientation>
-                                <usecontrolcoords>true</usecontrolcoords>
-                                <itemgap>0</itemgap>
-                                <visible>String.IsEmpty(Container(5610).ListItem.Title)</visible>
-                                <include content="Object_Info_Title">
-                                    <param name="label" value="$INFO[System.Time]" />
-                                </include>
-                                <include content="Object_Info_Line_Label">
-                                    <param name="label" value="$INFO[System.Date]" />
-                                    <param name="textcolor" value="main_fg_100" />
-                                    <param name="divider" value="false" />
-                                </include>
-                            </control>
                             <include content="View_Hub_Buttons" condition="!Skin.HasSetting(DisableAutoWidthHub)">
                                 <param name="grouplistid" value="300" />
                             </include>
@@ -125,6 +108,6 @@
         <include condition="!Skin.HasSetting(DisableClock)">Topbar_Right</include>
         <include>Object_NowPlaying</include>
         <include>Viewtype_Options</include>
-        <include>Object_PlotOverlay</include>
+
     </controls>
 </window>

@@ -15,7 +15,7 @@
             <control type="label">
                 <left>dialog_pad</left>
                 <include>Dialog_Standard_Header</include>
-                <label>Colour Picker</label>
+                <label>$LOCALIZE[31170]</label>
             </control>
 
             <!-- Dialog Content -->

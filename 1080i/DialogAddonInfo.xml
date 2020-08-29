@@ -94,6 +94,6 @@
             <param name="onback" value="300" />
         </include>
 
-        <include>Object_PlotOverlay</include>
+
     </controls>
 </window>

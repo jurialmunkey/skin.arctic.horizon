@@ -83,7 +83,7 @@
         <include condition="!Skin.HasSetting(DisableClock)">Topbar_Right</include>
         <include>Object_NowPlaying</include>
         <include>Viewtype_Options</include>
-        <include>Object_PlotOverlay</include>
+
 
         <control type="button" id="9400">
             <onfocus>ClearProperty(Refocus)</onfocus>

@@ -738,14 +738,6 @@
                         <onclick>Skin.ToggleSetting(KioskMode)</onclick>
                     </control>
 
-                    <!-- <control type="radiobutton" id="19808" description="Mirage">
-                        <visible>Integer.IsEqual(Window.Property(CurrentFocus),9008)</visible>
-                        <include>Defs_Settings_Button</include>
-                        <label>$LOCALIZE[31043]</label>
-                        <selected>!Skin.HasSetting(MirageShowcase)</selected>
-                        <onclick>Skin.ToggleSetting(MirageShowcase)</onclick>
-                    </control> -->
-
                     <control type="button" id="19809" description="Startup Video">
                         <visible>Integer.IsEqual(Window.Property(CurrentFocus),9008)</visible>
                         <include>Defs_Settings_Button</include>

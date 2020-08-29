@@ -46,6 +46,9 @@
         <control type="button" id="10">
             <include>Defs_Hidden_Button</include>
         </control>
+        <control type="list" id="50">
+            <include>Defs_Hidden_List</include>
+        </control>
 
     </controls>
 </window>

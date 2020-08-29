@@ -34,6 +34,6 @@
             <include>Topbar_Left</include>
         </control>
         <include condition="!Skin.HasSetting(DisableClock)">Topbar_Right</include>
-        <include>Object_PlotOverlay</include>
+
     </controls>
 </window>

@@ -14560,7 +14560,7 @@
         <value condition="True">$INFO[ListItem.Icon]</value>
     </variable>
     <variable name="Label_Plot_C530">
-        <value condition="Window.IsVisible(1140) + Control.HasFocus(5002) + !String.IsEmpty(Container(5002).ListItem.Plot)">$INFO[Container(5002).ListItem.Plot]</value>
+        <value condition="Window.IsVisible(1140) + Control.HasFocus(5000)">$INFO[Container(5000).ListItem.Plot]</value>
         <value condition="!String.IsEmpty(Container(530).ListItem.Property(Artist_Description))">$INFO[Container(530).ListItem.Property(Artist_Description)]</value>
         <value condition="!String.IsEmpty(Container(530).ListItem.Property(Album_Description))">$INFO[Container(530).ListItem.Property(Album_Description)]</value>
         <value condition="!String.IsEmpty(Container(530).ListItem.AddonDescription)">$INFO[Container(530).ListItem.AddonDescription]</value>
@@ -14569,7 +14569,7 @@
         <value condition="!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Plot))">$INFO[Window(Home).Property(TMDbHelper.ListItem.Plot)]</value>
     </variable>
     <variable name="Label_Plot_C580">
-        <value condition="Window.IsVisible(1140) + Control.HasFocus(5002) + !String.IsEmpty(Container(5002).ListItem.Plot)">$INFO[Container(5002).ListItem.Plot]</value>
+        <value condition="Window.IsVisible(1140) + Control.HasFocus(5000)">$INFO[Container(5000).ListItem.Plot]</value>
         <value condition="!String.IsEmpty(Container(580).ListItem.Property(Artist_Description))">$INFO[Container(580).ListItem.Property(Artist_Description)]</value>
         <value condition="!String.IsEmpty(Container(580).ListItem.Property(Album_Description))">$INFO[Container(580).ListItem.Property(Album_Description)]</value>
         <value condition="!String.IsEmpty(Container(580).ListItem.AddonDescription)">$INFO[Container(580).ListItem.AddonDescription]</value>
@@ -14578,7 +14578,7 @@
         <value condition="!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Plot))">$INFO[Window(Home).Property(TMDbHelper.ListItem.Plot)]</value>
     </variable>
     <variable name="Label_Plot_C590">
-        <value condition="Window.IsVisible(1140) + Control.HasFocus(5002) + !String.IsEmpty(Container(5002).ListItem.Plot)">$INFO[Container(5002).ListItem.Plot]</value>
+        <value condition="Window.IsVisible(1140) + Control.HasFocus(5000)">$INFO[Container(5000).ListItem.Plot]</value>
         <value condition="!String.IsEmpty(Container(590).ListItem.Property(Artist_Description))">$INFO[Container(590).ListItem.Property(Artist_Description)]</value>
         <value condition="!String.IsEmpty(Container(590).ListItem.Property(Album_Description))">$INFO[Container(590).ListItem.Property(Album_Description)]</value>
         <value condition="!String.IsEmpty(Container(590).ListItem.AddonDescription)">$INFO[Container(590).ListItem.AddonDescription]</value>
@@ -14587,7 +14587,7 @@
         <value condition="!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Plot))">$INFO[Window(Home).Property(TMDbHelper.ListItem.Plot)]</value>
     </variable>
     <variable name="Label_Plot_C3001">
-        <value condition="Window.IsVisible(1140) + Control.HasFocus(5002) + !String.IsEmpty(Container(5002).ListItem.Plot)">$INFO[Container(5002).ListItem.Plot]</value>
+        <value condition="Window.IsVisible(1140) + Control.HasFocus(5000)">$INFO[Container(5000).ListItem.Plot]</value>
         <value condition="!String.IsEmpty(Container(3001).ListItem.Property(Artist_Description))">$INFO[Container(3001).ListItem.Property(Artist_Description)]</value>
         <value condition="!String.IsEmpty(Container(3001).ListItem.Property(Album_Description))">$INFO[Container(3001).ListItem.Property(Album_Description)]</value>
         <value condition="!String.IsEmpty(Container(3001).ListItem.AddonDescription)">$INFO[Container(3001).ListItem.AddonDescription]</value>
@@ -14596,7 +14596,7 @@
         <value condition="!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Plot))">$INFO[Window(Home).Property(TMDbHelper.ListItem.Plot)]</value>
     </variable>
     <variable name="Label_Plot_C5610">
-        <value condition="Window.IsVisible(1140) + Control.HasFocus(5002) + !String.IsEmpty(Container(5002).ListItem.Plot)">$INFO[Container(5002).ListItem.Plot]</value>
+        <value condition="Window.IsVisible(1140) + Control.HasFocus(5000)">$INFO[Container(5000).ListItem.Plot]</value>
         <value condition="!String.IsEmpty(Container(5610).ListItem.Property(Artist_Description))">$INFO[Container(5610).ListItem.Property(Artist_Description)]</value>
         <value condition="!String.IsEmpty(Container(5610).ListItem.Property(Album_Description))">$INFO[Container(5610).ListItem.Property(Album_Description)]</value>
         <value condition="!String.IsEmpty(Container(5610).ListItem.AddonDescription)">$INFO[Container(5610).ListItem.AddonDescription]</value>
@@ -14605,7 +14605,7 @@
         <value condition="!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Plot))">$INFO[Window(Home).Property(TMDbHelper.ListItem.Plot)]</value>
     </variable>
     <variable name="Label_Plot">
-        <value condition="Window.IsVisible(1140) + Control.HasFocus(5002) + !String.IsEmpty(Container(5002).ListItem.Plot)">$INFO[Container(5002).ListItem.Plot]</value>
+        <value condition="Window.IsVisible(1140) + Control.HasFocus(5000)">$INFO[Container(5000).ListItem.Plot]</value>
         <value condition="!String.IsEmpty(ListItem.Property(Artist_Description))">$INFO[ListItem.Property(Artist_Description)]</value>
         <value condition="!String.IsEmpty(ListItem.Property(Album_Description))">$INFO[ListItem.Property(Album_Description)]</value>
         <value condition="!String.IsEmpty(ListItem.AddonDescription)">$INFO[ListItem.AddonDescription]</value>

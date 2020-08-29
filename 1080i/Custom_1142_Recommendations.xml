@@ -1,24 +1,387 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window type="dialog" id="1142">
-    <defaultcontrol always="true">4100</defaultcontrol>
-    <onload>SetProperty(Header_Center_Text,$LOCALIZE[14116])</onload>
-    <onload>SetProperty(Header_Left_Text,$LOCALIZE[31006])</onload>
+    <defaultcontrol always="true">5000</defaultcontrol>
+    <onload>SetProperty(Header_Left_Text,$LOCALIZE[14116])</onload>
+    <onunload>ClearProperty(GlobalBackground,1142)</onunload>
     <controls>
+        <control type="button" id="3990">
+            <width>1</width>
+            <height>1</height>
+            <left>-2000</left>
+            <animation effect="fade" time="300" start="100" end="0">Focus</animation>
+            <onfocus>SetFocus(4100)</onfocus>
+            <onclick>noop</onclick>
+            <visible allowhiddenfocus="true">Control.HasFocus(3990)</visible>
+        </control>
         <control type="group">
-            <visible>!$EXP[Exp_InfoVisible]</visible>
-            <include>Animation_Common</include>
-            <include content="DialogVideoInfo_Left">
-                <include>Animation_Left_Delay</include>
-            </include>
             <include content="DialogVideoInfo_MainGroup">
-                <include>Animation_Right_Delay</include>
+                <include>Animation_Down_Info</include>
+                <control type="group">
+                    <top>-53</top>
+                    <bottom>-53</bottom>
+                    <right>-80</right>
+                    <control type="group">
+                        <left>80</left>
+                        <width>16</width>
+                        <control type="group">
+                            <!-- <visible>Container(4100).HasPrevious</visible> -->
+                            <!-- <visible>System.IdleTime(1)</visible> -->
+                            <include>Animation_FadeIn</include>
+                            <include>Animation_FadeOut</include>
+                            <include content="Object_DoubleArrow_Up">
+                                <param name="colordiffuse" value="main_fg_30" />
+                            </include>
+                        </control>
+                        <control type="group">
+                            <visible>Container(4100).HasNext</visible>
+                            <!-- <visible>System.IdleTime(1)</visible> -->
+                            <include>Animation_FadeIn</include>
+                            <include>Animation_FadeOut</include>
+                            <include content="Object_DoubleArrow_Down">
+                                <param name="colordiffuse" value="main_fg_30" />
+                            </include>
+                        </control>
+                    </control>
+                </control>
                 <include content="DialogVideoInfo_WidgetGroupList">
-                    <onup>Close</onup>
-                    <ondown>Close</ondown>
-                    <include>DialogVideoInfo_Widget_Recommended</include>
-                    <include>DialogVideoInfo_Widget_Similar</include>
+                    <onup>Back</onup>
+                    <ondown>SetFocus(3990)</ondown>
+                    <include content="Info_Widget_Poster">
+                        <param name="id" value="5000" />
+                        <param name="groupid" value="5100" />
+                        <param name="label" value="$VAR[Label_OverlayTitle,Cast of ,]" />
+                        <param name="castlabel" value="true" />
+                        <param name="label2" value="ListItem.Property(character)" />
+                        <param name="hideisupdating" value="true" />
+                        <param name="specialicon" value="false" />
+                        <movement>3</movement>
+                        <include>Defs_InfoList_OnClick</include>
+                        <include>Defs_InfoList_OnBack</include>
+                        <onclick>RunScript(plugin.video.themoviedb.helper,add_query=$INFO[Container(5000).ListItem.Label],type=person,call_auto=1190)</onclick>
+                        <content>
+                            <item>
+                                <label>$INFO[Window(1142).Property(Cast.0.Name)]</label>
+                                <icon>$INFO[Window(1142).Property(Cast.0.Icon)]</icon>
+                                <property name="character">$INFO[Window(1142).Property(Cast.0.Job)]</property>
+                                <visible>!String.IsEmpty(Window(1142).Property(Cast.0.Name))</visible>
+                            </item>
+                            <item>
+                                <label>$INFO[Window(1142).Property(Cast.1.Name)]</label>
+                                <icon>$INFO[Window(1142).Property(Cast.1.Icon)]</icon>
+                                <property name="character">$INFO[Window(1142).Property(Cast.1.Job)]</property>
+                                <visible>!String.IsEmpty(Window(1142).Property(Cast.1.Name))</visible>
+                            </item>
+                            <item>
+                                <label>$INFO[Window(1142).Property(Cast.2.Name)]</label>
+                                <icon>$INFO[Window(1142).Property(Cast.2.Icon)]</icon>
+                                <property name="character">$INFO[Window(1142).Property(Cast.2.Job)]</property>
+                                <visible>!String.IsEmpty(Window(1142).Property(Cast.2.Name))</visible>
+                            </item>
+                            <item>
+                                <label>$INFO[Window(1142).Property(Cast.3.Name)]</label>
+                                <icon>$INFO[Window(1142).Property(Cast.3.Icon)]</icon>
+                                <property name="character">$INFO[Window(1142).Property(Cast.3.Job)]</property>
+                                <visible>!String.IsEmpty(Window(1142).Property(Cast.3.Name))</visible>
+                            </item>
+                            <item>
+                                <label>$INFO[Window(1142).Property(Cast.4.Name)]</label>
+                                <icon>$INFO[Window(1142).Property(Cast.4.Icon)]</icon>
+                                <property name="character">$INFO[Window(1142).Property(Cast.4.Job)]</property>
+                                <visible>!String.IsEmpty(Window(1142).Property(Cast.4.Name))</visible>
+                            </item>
+                            <item>
+                                <label>$INFO[Window(1142).Property(Cast.5.Name)]</label>
+                                <icon>$INFO[Window(1142).Property(Cast.5.Icon)]</icon>
+                                <property name="character">$INFO[Window(1142).Property(Cast.5.Job)]</property>
+                                <visible>!String.IsEmpty(Window(1142).Property(Cast.5.Name))</visible>
+                            </item>
+                            <item>
+                                <label>$INFO[Window(1142).Property(Cast.6.Name)]</label>
+                                <icon>$INFO[Window(1142).Property(Cast.6.Icon)]</icon>
+                                <property name="character">$INFO[Window(1142).Property(Cast.6.Job)]</property>
+                                <visible>!String.IsEmpty(Window(1142).Property(Cast.6.Name))</visible>
+                            </item>
+                            <item>
+                                <label>$INFO[Window(1142).Property(Cast.7.Name)]</label>
+                                <icon>$INFO[Window(1142).Property(Cast.7.Icon)]</icon>
+                                <property name="character">$INFO[Window(1142).Property(Cast.7.Job)]</property>
+                                <visible>!String.IsEmpty(Window(1142).Property(Cast.7.Name))</visible>
+                            </item>
+                            <item>
+                                <label>$INFO[Window(1142).Property(Cast.8.Name)]</label>
+                                <icon>$INFO[Window(1142).Property(Cast.8.Icon)]</icon>
+                                <property name="character">$INFO[Window(1142).Property(Cast.8.Job)]</property>
+                                <visible>!String.IsEmpty(Window(1142).Property(Cast.8.Name))</visible>
+                            </item>
+                            <item>
+                                <label>$INFO[Window(1142).Property(Cast.9.Name)]</label>
+                                <icon>$INFO[Window(1142).Property(Cast.9.Icon)]</icon>
+                                <property name="character">$INFO[Window(1142).Property(Cast.9.Job)]</property>
+                                <visible>!String.IsEmpty(Window(1142).Property(Cast.9.Name))</visible>
+                            </item>
+                            <item>
+                                <label>$INFO[Window(1142).Property(Cast.10.Name)]</label>
+                                <icon>$INFO[Window(1142).Property(Cast.10.Icon)]</icon>
+                                <property name="character">$INFO[Window(1142).Property(Cast.10.Job)]</property>
+                                <visible>!String.IsEmpty(Window(1142).Property(Cast.10.Name))</visible>
+                            </item>
+                            <item>
+                                <label>$INFO[Window(1142).Property(Cast.11.Name)]</label>
+                                <icon>$INFO[Window(1142).Property(Cast.11.Icon)]</icon>
+                                <property name="character">$INFO[Window(1142).Property(Cast.11.Job)]</property>
+                                <visible>!String.IsEmpty(Window(1142).Property(Cast.11.Name))</visible>
+                            </item>
+                            <item>
+                                <label>$INFO[Window(1142).Property(Cast.12.Name)]</label>
+                                <icon>$INFO[Window(1142).Property(Cast.12.Icon)]</icon>
+                                <property name="character">$INFO[Window(1142).Property(Cast.12.Job)]</property>
+                                <visible>!String.IsEmpty(Window(1142).Property(Cast.12.Name))</visible>
+                            </item>
+                            <item>
+                                <label>$INFO[Window(1142).Property(Cast.13.Name)]</label>
+                                <icon>$INFO[Window(1142).Property(Cast.13.Icon)]</icon>
+                                <property name="character">$INFO[Window(1142).Property(Cast.13.Job)]</property>
+                                <visible>!String.IsEmpty(Window(1142).Property(Cast.13.Name))</visible>
+                            </item>
+                            <item>
+                                <label>$INFO[Window(1142).Property(Cast.14.Name)]</label>
+                                <icon>$INFO[Window(1142).Property(Cast.14.Icon)]</icon>
+                                <property name="character">$INFO[Window(1142).Property(Cast.14.Job)]</property>
+                                <visible>!String.IsEmpty(Window(1142).Property(Cast.14.Name))</visible>
+                            </item>
+                            <item>
+                                <label>$INFO[Window(1142).Property(Cast.15.Name)]</label>
+                                <icon>$INFO[Window(1142).Property(Cast.15.Icon)]</icon>
+                                <property name="character">$INFO[Window(1142).Property(Cast.15.Job)]</property>
+                                <visible>!String.IsEmpty(Window(1142).Property(Cast.15.Name))</visible>
+                            </item>
+                            <item>
+                                <label>$INFO[Window(1142).Property(Cast.16.Name)]</label>
+                                <icon>$INFO[Window(1142).Property(Cast.16.Icon)]</icon>
+                                <property name="character">$INFO[Window(1142).Property(Cast.16.Job)]</property>
+                                <visible>!String.IsEmpty(Window(1142).Property(Cast.16.Name))</visible>
+                            </item>
+                            <item>
+                                <label>$INFO[Window(1142).Property(Cast.17.Name)]</label>
+                                <icon>$INFO[Window(1142).Property(Cast.17.Icon)]</icon>
+                                <property name="character">$INFO[Window(1142).Property(Cast.17.Job)]</property>
+                                <visible>!String.IsEmpty(Window(1142).Property(Cast.17.Name))</visible>
+                            </item>
+                            <item>
+                                <label>$INFO[Window(1142).Property(Cast.18.Name)]</label>
+                                <icon>$INFO[Window(1142).Property(Cast.18.Icon)]</icon>
+                                <property name="character">$INFO[Window(1142).Property(Cast.18.Job)]</property>
+                                <visible>!String.IsEmpty(Window(1142).Property(Cast.18.Name))</visible>
+                            </item>
+                            <item>
+                                <label>$INFO[Window(1142).Property(Cast.19.Name)]</label>
+                                <icon>$INFO[Window(1142).Property(Cast.19.Icon)]</icon>
+                                <property name="character">$INFO[Window(1142).Property(Cast.19.Job)]</property>
+                                <visible>!String.IsEmpty(Window(1142).Property(Cast.19.Name))</visible>
+                            </item>
+                            <item>
+                                <label>$INFO[Window(1142).Property(Cast.20.Name)]</label>
+                                <icon>$INFO[Window(1142).Property(Cast.20.Icon)]</icon>
+                                <property name="character">$INFO[Window(1142).Property(Cast.20.Job)]</property>
+                                <visible>!String.IsEmpty(Window(1142).Property(Cast.20.Name))</visible>
+                            </item>
+                            <item>
+                                <label>$INFO[Window(1142).Property(Cast.21.Name)]</label>
+                                <icon>$INFO[Window(1142).Property(Cast.21.Icon)]</icon>
+                                <property name="character">$INFO[Window(1142).Property(Cast.21.Job)]</property>
+                                <visible>!String.IsEmpty(Window(1142).Property(Cast.21.Name))</visible>
+                            </item>
+                            <item>
+                                <label>$INFO[Window(1142).Property(Cast.22.Name)]</label>
+                                <icon>$INFO[Window(1142).Property(Cast.22.Icon)]</icon>
+                                <property name="character">$INFO[Window(1142).Property(Cast.22.Job)]</property>
+                                <visible>!String.IsEmpty(Window(1142).Property(Cast.22.Name))</visible>
+                            </item>
+                            <item>
+                                <label>$INFO[Window(1142).Property(Cast.23.Name)]</label>
+                                <icon>$INFO[Window(1142).Property(Cast.23.Icon)]</icon>
+                                <property name="character">$INFO[Window(1142).Property(Cast.23.Job)]</property>
+                                <visible>!String.IsEmpty(Window(1142).Property(Cast.23.Name))</visible>
+                            </item>
+                            <item>
+                                <label>$INFO[Window(1142).Property(Cast.24.Name)]</label>
+                                <icon>$INFO[Window(1142).Property(Cast.24.Icon)]</icon>
+                                <property name="character">$INFO[Window(1142).Property(Cast.24.Job)]</property>
+                                <visible>!String.IsEmpty(Window(1142).Property(Cast.24.Name))</visible>
+                            </item>
+                            <item>
+                                <label>$INFO[Window(1142).Property(Cast.25.Name)]</label>
+                                <icon>$INFO[Window(1142).Property(Cast.25.Icon)]</icon>
+                                <property name="character">$INFO[Window(1142).Property(Cast.25.Job)]</property>
+                                <visible>!String.IsEmpty(Window(1142).Property(Cast.25.Name))</visible>
+                            </item>
+                            <item>
+                                <label>$INFO[Window(1142).Property(Cast.26.Name)]</label>
+                                <icon>$INFO[Window(1142).Property(Cast.26.Icon)]</icon>
+                                <property name="character">$INFO[Window(1142).Property(Cast.26.Job)]</property>
+                                <visible>!String.IsEmpty(Window(1142).Property(Cast.26.Name))</visible>
+                            </item>
+                            <item>
+                                <label>$INFO[Window(1142).Property(Cast.27.Name)]</label>
+                                <icon>$INFO[Window(1142).Property(Cast.27.Icon)]</icon>
+                                <property name="character">$INFO[Window(1142).Property(Cast.27.Job)]</property>
+                                <visible>!String.IsEmpty(Window(1142).Property(Cast.27.Name))</visible>
+                            </item>
+                            <item>
+                                <label>$INFO[Window(1142).Property(Cast.28.Name)]</label>
+                                <icon>$INFO[Window(1142).Property(Cast.28.Icon)]</icon>
+                                <property name="character">$INFO[Window(1142).Property(Cast.28.Job)]</property>
+                                <visible>!String.IsEmpty(Window(1142).Property(Cast.28.Name))</visible>
+                            </item>
+                            <item>
+                                <label>$INFO[Window(1142).Property(Cast.29.Name)]</label>
+                                <icon>$INFO[Window(1142).Property(Cast.29.Icon)]</icon>
+                                <property name="character">$INFO[Window(1142).Property(Cast.29.Job)]</property>
+                                <visible>!String.IsEmpty(Window(1142).Property(Cast.29.Name))</visible>
+                            </item>
+                        </content>
+                        <content limit="25" target="videos">$INFO[Window.Property(Path.Cast)]</content>
+                    </include>
+                    <include content="Info_Widget_Poster" condition="!Skin.HasSetting(DisableInfoListCrew)" >
+                        <param name="id" value="5050" />
+                        <param name="groupid" value="5150" />
+                        <param name="label" value="$VAR[Label_OverlayTitle,Crew of ,]" />
+                        <param name="castlabel" value="true" />
+                        <param name="label2" value="ListItem.Property(job)" />
+                        <param name="hideisupdating" value="true" />
+                        <movement>3</movement>
+                        <include>Defs_InfoList_OnClick</include>
+                        <include>Defs_InfoList_OnBack</include>
+                        <content limit="25" target="videos">$INFO[Window.Property(Path.Crew)]</content>
+                    </include>
+                    <include content="Info_Widget_Poster" condition="!Skin.HasSetting(DisableInfoListSets)">
+                        <param name="id" value="5002" />
+                        <param name="groupid" value="5102" />
+                        <param name="label" value="$VAR[Label_SetName,$LOCALIZE[31057] ,]" />
+                        <param name="visible" value="[!String.IsEmpty(Window.Property(Set)) | !String.IsEmpty(Window.Property(isCollection))]" />
+                        <param name="hideisupdating" value="true" />
+                        <movement>3</movement>
+                        <include>Defs_InfoList_OnClick</include>
+                        <include>Defs_InfoList_OnBack</include>
+                        <content limit="25" target="videos" sortby="year" sortorder="ascending">$INFO[Window.Property(Path.Sets)]</content>
+                    </include>
+                    <include content="Info_Widget_Poster" condition="!Skin.HasSetting(DisableInfoListSets)">
+                        <param name="id" value="5003" />
+                        <param name="groupid" value="5103" />
+                        <param name="castlabel" value="true" />
+                        <param name="label2" value="ListItem.Property(character)" />
+                        <param name="label" value="$INFO[Container(5002).ListItem.Label,Cast of ,]" />
+                        <param name="visible" value="!String.IsEmpty(Container(5002).ListItem.Property(tmdb_id)) + !Container(5002).IsUpdating + !String.IsEmpty(Window.Property(isCollection))" />
+                        <param name="hideisupdating" value="true" />
+                        <movement>3</movement>
+                        <onclick>SetFocus(5000)</onclick>
+                        <onclick>SetFocus(300)</onclick>
+                        <onclick>RunScript(plugin.video.themoviedb.helper,add_query=$INFO[Container(5077).ListItem.Label],type=person,call_auto=1190)</onclick>
+                        <include>Defs_InfoList_OnBack</include>
+                        <content limit="25" target="videos">plugin://plugin.video.themoviedb.helper/?info=cast&amp;type=movie&amp;tmdb_id=$INFO[Container(5002).ListItem.Property(tmdb_id)]</content>
+                    </include>
+                    <include content="Info_Widget_Poster" condition="!Skin.HasSetting(DisableInfoListDirector)" >
+                        <param name="id" value="5004" />
+                        <param name="groupid" value="5104" />
+                        <param name="visible" value="!String.IsEmpty(Window.Property(Director))" />
+                        <param name="label" value="$INFO[Window.Property(Director),$LOCALIZE[31052] ,]" />
+                        <param name="hideisupdating" value="true" />
+                        <movement>3</movement>
+                        <include>Defs_InfoList_OnClick</include>
+                        <include>Defs_InfoList_OnBack</include>
+                        <content limit="25" target="videos" sortby="year" sortorder="descending">$INFO[Window.Property(Path.Director)]</content>
+                    </include>
+                    <include content="Info_Widget_Poster" condition="!Skin.HasSetting(DisableInfoListStudio)" >
+                        <param name="id" value="5005" />
+                        <param name="groupid" value="5105" />
+                        <param name="label" value="$INFO[Window.Property(Studio),From ,]" />
+                        <param name="hideisupdating" value="true" />
+                        <movement>3</movement>
+                        <include>Defs_InfoList_OnClick</include>
+                        <include>Defs_InfoList_OnBack</include>
+                        <content limit="25" target="videos">$INFO[Window.Property(Path.Studio)]</content>
+                    </include>
+                    <include content="Info_Widget_Poster" condition="!Skin.HasSetting(DisableInfoListRecommended)" >
+                        <param name="id" value="5006" />
+                        <param name="groupid" value="5106" />
+                        <param name="label" value="Recommended" />
+                        <param name="hideisupdating" value="true" />
+                        <movement>3</movement>
+                        <include>Defs_InfoList_OnClick</include>
+                        <include>Defs_InfoList_OnBack</include>
+                        <content limit="25" target="videos">$INFO[Window.Property(Path.Recommended)]</content>
+                    </include>
+                    <include content="Info_Widget_Poster" condition="!Skin.HasSetting(DisableInfoListSimilar)" >
+                        <param name="id" value="5007" />
+                        <param name="groupid" value="5107" />
+                        <param name="label" value="$VAR[Label_OverlayTitle,$LOCALIZE[31051] ,]" />
+                        <param name="hideisupdating" value="true" />
+                        <movement>3</movement>
+                        <include>Defs_InfoList_OnClick</include>
+                        <include>Defs_InfoList_OnBack</include>
+                        <content limit="25" target="videos">$INFO[Window.Property(Path.Similar)]</content>
+                    </include>
+                    <include content="Info_Widget_Poster" condition="!Skin.HasSetting(DisableInfoListYear)" >
+                        <param name="id" value="5008" />
+                        <param name="groupid" value="5108" />
+                        <param name="visible" value="!String.IsEmpty(Window.Property(year))" />
+                        <param name="label" value="$INFO[Window.Property(year),From ,]" />
+                        <param name="hideisupdating" value="true" />
+                        <movement>3</movement>
+                        <include>Defs_InfoList_OnClick</include>
+                        <include>Defs_InfoList_OnBack</include>
+                        <content limit="25" target="videos">$INFO[Window.Property(Path.Year)]</content>
+                    </include>
+                    <include content="Info_Widget_Poster" condition="!Skin.HasSetting(DisableInfoListGenre)" >
+                        <param name="id" value="5009" />
+                        <param name="groupid" value="5109" />
+                        <param name="visible" value="!String.IsEmpty(Window.Property(Genre))" />
+                        <param name="label" value="$INFO[Window.Property(Genre)]" />
+                        <param name="hideisupdating" value="true" />
+                        <movement>3</movement>
+                        <include>Defs_InfoList_OnClick</include>
+                        <include>Defs_InfoList_OnBack</include>
+                        <content limit="25" target="videos">$INFO[Window.Property(Path.Genre)]</content>
+                    </include>
+                    <include content="Info_Widget_Poster" condition="!Skin.HasSetting(DisableInfoListCastFeature)" >
+                        <param name="id" value="5010" />
+                        <param name="groupid" value="5110" />
+                        <param name="visible" value="String.IsEqual(Window.Property(DBType),movie) + !String.IsEmpty(Window.Property(Cast.0.Name))" />
+                        <param name="label" value="$LOCALIZE[31055]" />
+                        <param name="hideisupdating" value="true" />
+                        <movement>3</movement>
+                        <include>Defs_InfoList_OnClick</include>
+                        <include>Defs_InfoList_OnBack</include>
+                        <content limit="25" target="videos">$INFO[Window.Property(Path.CastFeature)]</content>
+                    </include>
+                    <include content="Info_Widget_Poster" condition="!Skin.HasSetting(DisableInfoListPosters)" >
+                        <param name="id" value="5099" />
+                        <param name="groupid" value="5199" />
+                        <param name="label" value="Posters" />
+                        <param name="visible" value="String.IsEqual(Window.Property(DBType),movie) | String.IsEqual(Window.Property(DBType),tvshow) | String.IsEqual(Window.Property(DBType),season) | String.IsEqual(Window.Property(DBType),episode)" />
+                        <param name="hideisupdating" value="true" />
+                        <movement>3</movement>
+                        <onclick>SetFocus(6299)</onclick>
+                        <include>Defs_InfoList_OnBack</include>
+                        <content target="images">$INFO[Window.Property(Path.Posters)]</content>
+                    </include>
+                    <include content="Info_Widget_Poster" condition="!Skin.HasSetting(DisableInfoListFanart)" >
+                        <param name="id" value="6000" />
+                        <param name="groupid" value="6100" />
+                        <param name="label" value="Gallery" />
+                        <param name="viewtype-include" value="Viewtype_Landscape" />
+                        <param name="icon" value="$INFO[ListItem.Icon]" />
+                        <param name="visible" value="String.IsEqual(Window.Property(DBType),movie) | String.IsEqual(Window.Property(DBType),tvshow) | String.IsEqual(Window.Property(DBType),season) | String.IsEqual(Window.Property(DBType),episode)" />
+                        <param name="hideisupdating" value="true" />
+                        <param name="specialicon" value="false" />
+                        <onclick>SetFocus(6200)</onclick>
+                        <include>Defs_InfoList_OnBack</include>
+                        <movement>1</movement>
+                        <content target="images">$INFO[Window.Property(Path.Fanart)]</content>
+                    </include>
                 </include>
             </include>
         </control>
+        <include>DialogVideoInfo_ImageViewer</include>
     </controls>
 </window>

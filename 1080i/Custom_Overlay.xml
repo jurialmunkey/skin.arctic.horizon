@@ -6,9 +6,6 @@
 
         <control type="group">
             <visible>Skin.HasSetting(DebugInfo) | Skin.HasSetting(DebugGrid)</visible>
-
-
-
             <control type="grouplist">
                 <left>80</left>
                 <itemgap>79</itemgap>

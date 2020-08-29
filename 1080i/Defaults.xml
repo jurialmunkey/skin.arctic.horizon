@@ -218,7 +218,7 @@
 
     <expression name="Exp_InfoActive">[Window.IsActive(DialogVideoInfo.xml) | Window.IsActive(DialogMusicInfo.xml) | Window.IsActive(DialogAddonInfo.xml) | Window.IsActive(1140) | Window.IsActive(DialogPVRInfo.xml)]</expression>
 
-    <expression name="Exp_ShowPlotOverlay">[Control.HasFocus(9601) | Control.HasFocus(9602)]</expression>
+    <expression name="Exp_ShowPlotOverlay">[Window.IsVisible(1141)]</expression>
 
     <expression name="Exp_GlobalBackground">[!Player.HasMedia | [Player.HasVideo + !Skin.HasSetting(global.showvideo)] | [Player.HasAudio + !Skin.HasSetting(global.showvisualisation)] | [Player.HasAudio + !String.IsEmpty(Window(Home).Property(PlayingBackgroundMedia))]]</expression>
 

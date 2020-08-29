@@ -119,6 +119,6 @@
                 <param name="listanimation" value="false" />
             </include>
         </control>
-        <include>Object_PlotOverlay</include>
+
     </controls>
 </window>

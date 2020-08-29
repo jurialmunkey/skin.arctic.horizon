@@ -92,7 +92,7 @@
                 <param name="icon" value="special://skin/extras/icons/settings.png" />
                 <param name="visible" value="!String.IsEmpty(ListItem.Property(Addon.ID)) + String.IsEqual(ListItem.Label2,$LOCALIZE[449]) + !String.IsEqual(Container.FolderPath,addons://repos/) + Window.IsVisible(AddonBrowser.xml) + !Skin.HasSetting(KioskMode)" />
                 <onclick>Addon.OpenSettings($INFO[ListItem.Property(Addon.ID)])</onclick>
-                <onup>SetFocus(9601)</onup>
+                <include>Info_Button_OnUp</include>
                 <ondown>50</ondown>
             </include>
             <include content="Object_Info_Button" description="Install">
@@ -102,7 +102,7 @@
                 <param name="icon" value="special://skin/extras/icons/download.png" />
                 <param name="visible" value="!String.IsEmpty(ListItem.Property(Addon.ID)) + !String.IsEqual(ListItem.Label2,$LOCALIZE[449]) + !String.IsEqual(ListItem.Label2,$LOCALIZE[24023]) + !String.IsEqual(Container.FolderPath,addons://repos/) + Window.IsVisible(AddonBrowser.xml) + !Skin.HasSetting(KioskMode)" />
                 <onclick>InstallAddon($INFO[ListItem.Property(Addon.ID)])</onclick>
-                <onup>SetFocus(9601)</onup>
+                <include>Info_Button_OnUp</include>
                 <ondown>50</ondown>
             </include>
             <include content="Object_Info_Button" description="Play">
@@ -113,7 +113,7 @@
                 <param name="visible" value="[String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,episode) | String.IsEqual(ListItem.DBType,video)] + Integer.IsEqual(Window(Home).Property(SelectAction),3)" />
                 <onclick>SetFocus(50)</onclick>
                 <onclick>Action(Play)</onclick>
-                <onup>SetFocus(9601)</onup>
+                <include>Info_Button_OnUp</include>
                 <ondown>50</ondown>
             </include>
 
@@ -125,7 +125,7 @@
                 <param name="visible" value="[[String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,episode) | String.IsEqual(ListItem.DBType,video)] + !Integer.IsEqual(Window(Home).Property(SelectAction),3)] | [String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,season) | ListItem.IsCollection | String.IsEqual(ListItem.DBType,album) | String.IsEqual(ListItem.DBType,artist) | String.IsEqual(ListItem.DBType,song)]" />
                 <onclick>SetFocus(50)</onclick>
                 <onclick>Action(Info)</onclick>
-                <onup>SetFocus(9601)</onup>
+                <include>Info_Button_OnUp</include>
                 <ondown>50</ondown>
             </include>
 
@@ -137,7 +137,7 @@
                 <param name="visible" value="!String.IsEmpty(ListItem.Trailer) | !String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Trailer))" />
                 <onclick condition="!String.IsEmpty(ListItem.Trailer)">PlayMedia($INFO[ListItem.Trailer])</onclick>
                 <onclick condition="String.IsEmpty(ListItem.Trailer)">PlayMedia($INFO[Window(Home).Property(TMDbHelper.ListItem.Trailer)])</onclick>
-                <onup>SetFocus(9601)</onup>
+                <include>Info_Button_OnUp</include>
                 <ondown>50</ondown>
             </include>
 
@@ -151,7 +151,7 @@
                 <onclick>RunScript(plugin.video.themoviedb.helper,split_value=$INFO[ListItem.Director],property=ListItem.Director)</onclick>
                 <onclick>RunScript(plugin.video.themoviedb.helper,split_value=$INFO[ListItem.Studio],property=ListItem.Studio)</onclick>
                 <onclick>SetFocus(9200)</onclick>
-                <onup>SetFocus(9601)</onup>
+                <include>Info_Button_OnUp</include>
                 <ondown>50</ondown>
             </include>
 
@@ -161,8 +161,8 @@
                 <param name="label" value="$LOCALIZE[31208]" />
                 <param name="icon" value="special://skin/extras/icons/infobubble.png" />
                 <param name="visible" value="Skin.HasSetting(DisableWallScroll)" />
-                <onclick>SetFocus(9601)</onclick>
-                <onup>SetFocus(9601)</onup>
+                <onclick>ActivateWindow(1141)</onclick>
+                <include>Info_Button_OnUp</include>
                 <ondown>50</ondown>
             </include>
 
@@ -175,7 +175,7 @@
                 <onclick condition="Container.CanFilterAdvanced">SetProperty(advancedfilter,1,home)</onclick>
                 <onclick>SetFocus(50)</onclick>
                 <onclick>Filter</onclick>
-                <onup>SetFocus(9601)</onup>
+                <include>Info_Button_OnUp</include>
                 <ondown>50</ondown>
             </include>
 
@@ -186,7 +186,7 @@
                 <param name="icon" value="special://skin/extras/icons/playlist.png" />
                 <param name="visible" value="true" />
                 <onclick>SetFocus(9000)</onclick>
-                <onup>SetFocus(9601)</onup>
+                <include>Info_Button_OnUp</include>
                 <ondown>50</ondown>
             </include>
 

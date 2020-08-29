@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window type="dialog" id="1141">
+    <defaultcontrol always="true">9601</defaultcontrol>
+    <onload>SetProperty(Header_Left_Text,$LOCALIZE[14116])</onload>
+    <onunload>ClearProperty(Title,1141)</onunload>
+    <onunload>ClearProperty(Critics,1141)</onunload>
+    <onunload>ClearProperty(Plot,1141)</onunload>
+    <onunload>ClearProperty(DBType,1141)</onunload>
+    <onunload>ClearProperty(Path.Posters,1141)</onunload>
+    <onunload>ClearProperty(Path.Fanart,1141)</onunload>
+    <onunload>ClearProperty(GlobalBackground,1141)</onunload>
+    <controls>
+        <control type="group">
+            <include content="DialogVideoInfo_Left">
+                <include>Animation_Left_Delay</include>
+                <include>Defs_InfoDialog_Visible</include>
+                <visible>[Control.HasFocus(9601) | Control.HasFocus(9602)]</visible>
+                <visible>[String.IsEqual(Window.Property(DBType),movie) | String.IsEqual(Window.Property(DBType),tvshow) | String.IsEqual(Window.Property(DBType),episode) | String.IsEqual(Window.Property(DBType),set) | String.IsEqual(Window.Property(DBType),actor) | String.IsEqual(Window.Property(DBType),season)]</visible>
+            </include>
+            <include content="DialogVideoInfo_Left">
+                <param name="poster" value="false" />
+                <include>Animation_Left_Delay</include>
+                <include>Defs_InfoDialog_Visible</include>
+                <visible>[Control.HasFocus(9601) | Control.HasFocus(9602)]</visible>
+                <visible>![String.IsEqual(Window.Property(DBType),movie) | String.IsEqual(Window.Property(DBType),tvshow) | String.IsEqual(Window.Property(DBType),episode) | String.IsEqual(Window.Property(DBType),set) | String.IsEqual(Window.Property(DBType),actor) | String.IsEqual(Window.Property(DBType),season)]</visible>
+                <control type="group">
+                    <top>view_top</top>
+                    <left>view_pad</left>
+                    <bottom>view_pad</bottom>
+                    <control type="image">
+                        <bottom>40</bottom>
+                        <left>-15</left>
+                        <texture background="true">$VAR[Image_ClearLogo]</texture>
+                        <aspectratio aligny="bottom">keep</aspectratio>
+                        <height>150</height>
+                        <width>view_poster_width</width>
+                    </control>
+                    <include content="View_50_Poster">
+                        <param name="visible" value="true" />
+                        <param name="diffuse" value="diffuse/poster-big.png" />
+                        <param name="height" value="view_poster_width" />
+                    </include>
+                </control>
+            </include>
+            <control type="group">
+                <left>view_pad</left>
+                <right>view_pad</right>
+                <top>view_top</top>
+                <bottom>view_pad</bottom>
+                <visible>[Control.HasFocus(9601) | Control.HasFocus(9602)]</visible>
+                <include>Animation_Right_Delay</include>
+                <control type="group">
+                    <include condition="Skin.HasSetting(DisablePanelDivider)">Defs_View_Info_Left_NoPanel</include>
+                    <left>view_info_left</left>
+                    <control type="grouplist">
+                        <include content="Defs_Pad">
+                            <param name="pad" value="-20" />
+                        </include>
+                        <orientation>horizontal</orientation>
+                        <itemgap>20</itemgap>
+                        <usecontrolcoords>true</usecontrolcoords>
+                        <control type="group">
+                            <height>840</height>
+                            <width>1100</width>
+                            <control type="group">
+                                <include content="Defs_Pad">
+                                    <param name="pad" value="20" />
+                                </include>
+
+                                <control type="scrollbar" id="9601">
+                                    <onleft>Back</onleft>
+                                    <onright condition="Control.IsVisible(9602)">SetFocus(9602,0,absolute)</onright>
+                                    <onright condition="!Control.IsVisible(9602)">Back</onright>
+                                    <top>100</top>
+                                    <left>-1000</left>
+                                    <bottom>200</bottom>
+                                    <showonepage>true</showonepage>
+                                    <width>8</width>
+                                    <orientation>vertical</orientation>
+                                    <animation effect="fade" condition="true" time="0" start="100" end="0">Conditional</animation>
+                                </control>
+                                <control type="group">
+                                    <top>-60</top>
+                                    <visible>Container(9609).HasPrevious</visible>
+                                    <include>Animation_FadeIn</include>
+                                    <include>Animation_FadeOut</include>
+                                    <include>Object_DoubleArrow_Up</include>
+                                </control>
+                                <control type="group">
+                                    <top>20</top>
+                                    <bottom>30</bottom>
+                                    <visible>Container(9609).HasNext</visible>
+                                    <include>Animation_FadeIn</include>
+                                    <include>Animation_FadeOut</include>
+                                    <include>Object_DoubleArrow_Down</include>
+                                </control>
+                                <control type="label">
+                                    <top>20</top>
+                                    <description>header label</description>
+                                    <left>0</left>
+                                    <right>0</right>
+                                    <height>45</height>
+                                    <font>font_overlay_title</font>
+                                    <textcolor>main_fg_100</textcolor>
+                                    <label>$VAR[Label_OverlayTitle]</label>
+                                </control>
+                                <control type="textbox" id="9609">
+                                    <description>textarea</description>
+                                    <left>0</left>
+                                    <right>0</right>
+                                    <top>150</top>
+                                    <bottom>70</bottom>
+                                    <align>left</align>
+                                    <textcolor>main_fg_70</textcolor>
+                                    <font>font_overlay_plotbox</font>
+                                    <label fallback="19055">$VAR[Label_OverlayPlot]$VAR[Label_OverlayCritics]</label>
+                                    <pagecontrol>9601</pagecontrol>
+                                    <autoscroll delay="8000" time="4000" repeat="12000">false</autoscroll>
+                                </control>
+                            </control>
+                        </control>
+                    </control>
+                </control>
+            </control>
+        </control>
+        <control type="group">
+            <visible>[Control.HasFocus(9601) | Control.HasFocus(9602)]</visible>
+            <visible>String.IsEqual(Window.Property(DBType),movie) | String.IsEqual(Window.Property(DBType),tvshow)</visible>
+            <animation effect="slide" start="0" end="-1920" reversible="false" condition="Control.HasFocus(9602)" time="400" tween="quadratic">Conditional</animation>
+            <animation effect="slide" end="0" start="-1920" reversible="false" condition="!Control.HasFocus(9602)" time="400" tween="quadratic">Conditional</animation>
+            <left>1920</left>
+            <width>1920</width>
+            <height>1080</height>
+            <control type="image">
+                <texture colordiffuse="black">common/white.png</texture>
+            </control>
+            <control type="list" id="9602">
+                <orientation>horizontal</orientation>
+                <preloaditems>2</preloaditems>
+                <onup>9601</onup>
+                <ondown>9601</ondown>
+                <onright>noop</onright>
+                <onleft>9601</onleft>
+                <onback>9601</onback>
+                <scrolltime tween="quadratic">400</scrolltime>
+                <itemlayout width="1920" height="1080">
+                    <control type="image">
+                        <aspectratio>keep</aspectratio>
+                        <texture background="true">$INFO[ListItem.Icon]</texture>
+                    </control>
+                </itemlayout>
+                <focusedlayout width="1920" height="1080">
+                    <control type="image">
+                        <aspectratio>keep</aspectratio>
+                        <texture background="true">$INFO[ListItem.Icon]</texture>
+                    </control>
+                </focusedlayout>
+                <!-- <include>Items_Info_Gallery</include> -->
+                <content target="images">$INFO[Window.Property(Path.Fanart)]</content>
+                <content target="images">$INFO[Window.Property(Path.Posters)]</content>
+            </control>
+        </control>
+    </controls>
+</window>

@@ -103,8 +103,6 @@
     </variable>
 
     <variable name="Label_InfoLine">
-        <value condition="Window.IsVisible(1140)">$INFO[Container(5002).ListItemAbsolute(0).Year,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.Year,[COLOR=main_fg_100] - ,[/COLOR]]$INFO[Container(5002).NumItems,  |  [COLOR=main_fg_100], $LOCALIZE[342][/COLOR]]</value>
-
         <value condition="[String.IsEqual(ListItem.DBType,set) | ListItem.IsCollection] + !String.IsEmpty(ListItem.DBID) + Window.IsMedia">$INFO[Container(56561).ListItemAbsolute(0).Year,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.Year,[COLOR=main_fg_100] - ,[/COLOR]]$INFO[Container(56561).NumItems,  |  [COLOR=main_fg_100], $LOCALIZE[342][/COLOR]]</value>
 
         <value condition="[String.IsEqual(ListItem.DBType,set) | ListItem.IsCollection] + !String.IsEmpty(Window(Home).Property(TMDBHelper.ListItem.Set.Years))">$INFO[Window(Home).Property(TMDBHelper.ListItem.Set.Years),  |  [COLOR=main_fg_100],[/COLOR]]$INFO[Window(Home).Property(TMDBHelper.ListItem.Set.NumItems),  |  [COLOR=main_fg_100], $LOCALIZE[342][/COLOR]]</value>
@@ -160,7 +158,8 @@
 
     <variable name="Label_Hub_InfoTitle">
         <value condition="[String.IsEqual(Container(5610).ListItem.DBType,tvshow) | String.IsEqual(Container(5610).ListItem.DBType,season) | String.IsEqual(Container(5610).ListItem.DBType,episode)] + !String.IsEmpty(Container(5610).ListItem.TvShowTitle)">$INFO[Container(5610).ListItem.TvShowTitle]</value>
-        <value>$INFO[Container(5610).ListItem.Title]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem.Title)">$INFO[Container(5610).ListItem.Title]</value>
+        <value>$INFO[System.Date]</value>
     </variable>
 
     <variable name="Label_Hub_WidgetName">
@@ -474,8 +473,8 @@
     </variable>
 
     <variable name="Label_SetName">
-        <value condition="!String.IsEmpty(ListItem.Set)">$INFO[ListItem.Set]</value>
-        <value condition="!String.IsEmpty(ListItem.Title)">$INFO[ListItem.Title]</value>
+        <value condition="!String.IsEmpty(Window.Property(Set))">$INFO[Window.Property(Set)]</value>
+        <value condition="!String.IsEmpty(Window.Property(Title))">$INFO[Window.Property(Title)]</value>
     </variable>
 
     <variable name="Label_Sets_Count">
@@ -483,6 +482,7 @@
     </variable>
 
     <variable name="Label_OverlayTitle">
+        <value condition="!String.IsEmpty(Window.Property(Title))">$INFO[Window.Property(Title)]</value>
         <value condition="!String.IsEmpty(ListItem.Title)">$INFO[ListItem.Title]</value>
         <value condition="!String.IsEmpty(ListItem.Label)">$INFO[ListItem.Label]</value>
         <value condition="!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Title))">$INFO[Window(Home).Property(TMDbHelper.ListItem.Title)]</value>
@@ -491,10 +491,12 @@
     </variable>
 
     <variable name="Label_OverlayCritics">
+        <value condition="!String.IsEmpty(Window.Property(Critics))">$INFO[Window.Property(Critics)]</value>
         <value condition="!String.IsEmpty(Window(Home).Property(TMDBHelper.ListItem.rottentomatoes_consensus)) | !String.IsEmpty(Window(Home).Property(TMDBHelper.ListItem.awards))">[CR][CR][B]Critics Consensus[/B][CR]$INFO[Window(Home).Property(TMDBHelper.ListItem.rottentomatoes_consensus),, ]$INFO[Window(Home).Property(TMDBHelper.ListItem.rottentomatoes_reviewsfresh),Liked by , out of ]$INFO[Window(Home).Property(TMDBHelper.ListItem.rottentomatoes_reviewstotal),, critics. ]$INFO[Window(Home).Property(TMDBHelper.ListItem.awards)]</value>
     </variable>
 
     <variable name="Label_OverlayPlot">
+        <value condition="!String.IsEmpty(Window.Property(Plot))">$INFO[Window.Property(Plot)]</value>
         <value condition="!String.IsEmpty(ListItem.AddonDescription) | !String.IsEmpty(ListItem.AddonDisclaimer) | !String.IsEmpty(ListItem.AddonNews)">$INFO[ListItem.AddonDisclaimer,[B]$LOCALIZE[24052][/B][CR],[CR][CR]]$INFO[ListItem.AddonDescription,[B]$LOCALIZE[21821][/B][CR],[CR][CR]]$INFO[ListItem.AddonNews,[B]$LOCALIZE[31303][/B][CR],[CR][CR]]</value>
         <value condition="!String.IsEmpty(ListItem.Plot)">$INFO[ListItem.Tagline,[B],[/B][CR]]$INFO[ListItem.Artist,[B],[/B][CR]]$INFO[ListItem.Plot]</value>
         <value condition="!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Plot))">$INFO[Window(Home).Property(TMDbHelper.ListItem.Tagline),[B],[/B][CR]]$INFO[Window(Home).Property(TMDbHelper.ListItem.Artist),[B],[/B][CR]]$INFO[Window(Home).Property(TMDbHelper.ListItem.Plot)]</value>

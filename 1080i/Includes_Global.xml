@@ -146,6 +146,8 @@
     </variable>
 
     <variable name="Global_Background_Image">
+        <value condition="!String.IsEmpty(Window(1141).Property(GlobalBackground))">$INFO[Window(1141).Property(GlobalBackground)]</value>
+        <value condition="!String.IsEmpty(Window(1142).Property(GlobalBackground))">$INFO[Window(1142).Property(GlobalBackground)]</value>
         <value condition="!Skin.HasSetting(DisableBlur)">$INFO[Window(Home).Property(TMDbHelper.ListItem.BlurImage)]</value>
         <value condition="Skin.HasSetting(NoFanart)">$VAR[Global_Background_Image_NoFanart]</value>
         <value>$VAR[Global_Background_Image_Var]</value>
