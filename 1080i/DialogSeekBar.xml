@@ -98,7 +98,7 @@
                 <texturenofocus>common/shadowspot.png</texturenofocus>
                 <textcolor>panel_fg_100</textcolor>
                 <font>font_tiny</font>
-                <label>Seek to $INFO[Player.SeekNumeric]</label>
+                <label>$LOCALIZE[31189] $INFO[Player.SeekNumeric]</label>
                 <width>auto</width>
                 <aligny>center</aligny>
                 <visible>!String.IsEmpty(Player.SeekNumeric)</visible>

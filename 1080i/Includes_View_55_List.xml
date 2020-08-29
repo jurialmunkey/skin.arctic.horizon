@@ -62,7 +62,7 @@
             <include content="Viewtype_FileList">
                 <param name="id" value="55" />
                 <param name="itemlayout-width" value="724" />
-                <param name="viewtype-label" value="Landscape List" />
+                <param name="viewtype-label" value="$LOCALIZE[31288]" />
                 <onfocus condition="Skin.HasSetting(NoFanart)">SetProperty(TMDbHelper.Blur.SourceImage,Art(fallback),Home)</onfocus>
 
                 <onfocus condition="!Skin.HasSetting(NoFanart)">SetProperty(TMDbHelper.Blur.SourceImage,poster,Home)</onfocus>
@@ -174,7 +174,7 @@
                 <include content="Viewtype_FileList">
                     <param name="id" value="500" />
                     <param name="itemlayout-width" value="1160" />
-                    <param name="viewtype-label" value="Square List" />
+                    <param name="viewtype-label" value="$LOCALIZE[31289]" />
                     <param name="altid" value="5090" />
                     <onfocus condition="Skin.HasSetting(NoFanart)">SetProperty(TMDbHelper.Blur.SourceImage,Art(fallback),Home)</onfocus>
                     <onfocus condition="!Skin.HasSetting(NoFanart)">SetProperty(TMDbHelper.Blur.SourceImage,poster,Home)</onfocus>

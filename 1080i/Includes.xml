@@ -8,7 +8,6 @@
     <include file="script-skinshortcuts-includes.xml"/>
     <include file="script-skinvariables-includes.xml" />
 
-    <include file="Includes_Home.xml" />
     <include file="Includes_View_50_Tags.xml" />
     <include file="Includes_View_51_Addons.xml" />
     <include file="Includes_View_52_Posters.xml" />

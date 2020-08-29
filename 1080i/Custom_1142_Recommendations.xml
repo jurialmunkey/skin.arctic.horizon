@@ -49,7 +49,7 @@
                     <include content="Info_Widget_Poster">
                         <param name="id" value="5000" />
                         <param name="groupid" value="5100" />
-                        <param name="label" value="$VAR[Label_OverlayTitle,Cast of ,]" />
+                        <param name="label" value="$VAR[Label_OverlayTitle,$LOCALIZE[206] $LOCALIZE[20163] ,]" />
                         <param name="castlabel" value="true" />
                         <param name="label2" value="ListItem.Property(character)" />
                         <param name="hideisupdating" value="true" />
@@ -245,7 +245,7 @@
                     <include content="Info_Widget_Poster" condition="!Skin.HasSetting(DisableInfoListCrew)" >
                         <param name="id" value="5050" />
                         <param name="groupid" value="5150" />
-                        <param name="label" value="$VAR[Label_OverlayTitle,Crew of ,]" />
+                        <param name="label" value="$VAR[Label_OverlayTitle,$LOCALIZE[31251] $LOCALIZE[20163] ,]" />
                         <param name="castlabel" value="true" />
                         <param name="label2" value="ListItem.Property(job)" />
                         <param name="hideisupdating" value="true" />
@@ -265,21 +265,6 @@
                         <include>Defs_InfoList_OnBack</include>
                         <content limit="25" target="videos" sortby="year" sortorder="ascending">$INFO[Window.Property(Path.Sets)]</content>
                     </include>
-                    <include content="Info_Widget_Poster" condition="!Skin.HasSetting(DisableInfoListSets)">
-                        <param name="id" value="5003" />
-                        <param name="groupid" value="5103" />
-                        <param name="castlabel" value="true" />
-                        <param name="label2" value="ListItem.Property(character)" />
-                        <param name="label" value="$INFO[Container(5002).ListItem.Label,Cast of ,]" />
-                        <param name="visible" value="!String.IsEmpty(Container(5002).ListItem.Property(tmdb_id)) + !Container(5002).IsUpdating + !String.IsEmpty(Window.Property(isCollection))" />
-                        <param name="hideisupdating" value="true" />
-                        <movement>3</movement>
-                        <onclick>SetFocus(5000)</onclick>
-                        <onclick>SetFocus(300)</onclick>
-                        <onclick>RunScript(plugin.video.themoviedb.helper,add_query=$INFO[Container(5077).ListItem.Label],type=person,call_auto=1190)</onclick>
-                        <include>Defs_InfoList_OnBack</include>
-                        <content limit="25" target="videos">plugin://plugin.video.themoviedb.helper/?info=cast&amp;type=movie&amp;tmdb_id=$INFO[Container(5002).ListItem.Property(tmdb_id)]</content>
-                    </include>
                     <include content="Info_Widget_Poster" condition="!Skin.HasSetting(DisableInfoListDirector)" >
                         <param name="id" value="5004" />
                         <param name="groupid" value="5104" />
@@ -294,7 +279,7 @@
                     <include content="Info_Widget_Poster" condition="!Skin.HasSetting(DisableInfoListStudio)" >
                         <param name="id" value="5005" />
                         <param name="groupid" value="5105" />
-                        <param name="label" value="$INFO[Window.Property(Studio),From ,]" />
+                        <param name="label" value="$INFO[Window.Property(Studio),$LOCALIZE[31073] ,]" />
                         <param name="hideisupdating" value="true" />
                         <movement>3</movement>
                         <include>Defs_InfoList_OnClick</include>
@@ -304,7 +289,7 @@
                     <include content="Info_Widget_Poster" condition="!Skin.HasSetting(DisableInfoListRecommended)" >
                         <param name="id" value="5006" />
                         <param name="groupid" value="5106" />
-                        <param name="label" value="Recommended" />
+                        <param name="label" value="$LOCALIZE[31252]" />
                         <param name="hideisupdating" value="true" />
                         <movement>3</movement>
                         <include>Defs_InfoList_OnClick</include>
@@ -325,7 +310,7 @@
                         <param name="id" value="5008" />
                         <param name="groupid" value="5108" />
                         <param name="visible" value="!String.IsEmpty(Window.Property(year))" />
-                        <param name="label" value="$INFO[Window.Property(year),From ,]" />
+                        <param name="label" value="$INFO[Window.Property(year),$LOCALIZE[31073] ,]" />
                         <param name="hideisupdating" value="true" />
                         <movement>3</movement>
                         <include>Defs_InfoList_OnClick</include>
@@ -357,7 +342,7 @@
                     <include content="Info_Widget_Poster" condition="!Skin.HasSetting(DisableInfoListPosters)" >
                         <param name="id" value="5099" />
                         <param name="groupid" value="5199" />
-                        <param name="label" value="Posters" />
+                        <param name="label" value="$LOCALIZE[31232]" />
                         <param name="visible" value="String.IsEqual(Window.Property(DBType),movie) | String.IsEqual(Window.Property(DBType),tvshow) | String.IsEqual(Window.Property(DBType),season) | String.IsEqual(Window.Property(DBType),episode)" />
                         <param name="hideisupdating" value="true" />
                         <movement>3</movement>
@@ -368,7 +353,7 @@
                     <include content="Info_Widget_Poster" condition="!Skin.HasSetting(DisableInfoListFanart)" >
                         <param name="id" value="6000" />
                         <param name="groupid" value="6100" />
-                        <param name="label" value="Gallery" />
+                        <param name="label" value="$LOCALIZE[31184]" />
                         <param name="viewtype-include" value="Viewtype_Landscape" />
                         <param name="icon" value="$INFO[ListItem.Icon]" />
                         <param name="visible" value="String.IsEqual(Window.Property(DBType),movie) | String.IsEqual(Window.Property(DBType),tvshow) | String.IsEqual(Window.Property(DBType),season) | String.IsEqual(Window.Property(DBType),episode)" />

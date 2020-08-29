@@ -5,12 +5,8 @@
     </variable>
 
     <variable name="Label_SkinSettings_HomeStyle">
-        <value condition="Skin.HasSetting(EnableHorizontalHome)">Horizontal</value>
-        <value>Vertical</value>
-    </variable>
-    <variable name="Label_SkinSettings_FullScreenWidgetStyle">
-        <value condition="Skin.HasSetting(FullscreenWidgetShowcase)">Showcase</value>
-        <value>Standard</value>
+        <value condition="Skin.HasSetting(EnableHorizontalHome)">$LOCALIZE[31261]</value>
+        <value>$LOCALIZE[31263]</value>
     </variable>
 
     <variable name="Label_ColorValue">
@@ -18,7 +14,7 @@
         <value condition="String.IsEqual(Window(Home).Property(colorpick),Gradient) + !String.IsEmpty(Skin.String(gradientcolor.name))">$INFO[Skin.String(gradientcolor.name)]</value>
         <value condition="String.IsEqual(Window(Home).Property(colorpick),Overlay) + !String.IsEmpty(Skin.String(overlaycolor.name))">$INFO[Skin.String(overlaycolor.name)]</value>
         <value condition="String.IsEqual(Window(Home).Property(colorpick),Watched) + !String.IsEmpty(Skin.String(watchedprogresscolor.name))">$INFO[Skin.String(watchedprogresscolor.name)]</value>
-        <value>Default</value>
+        <value>$LOCALIZE[571]</value>
     </variable>
 
     <variable name="Label_BusyWaves">
@@ -170,30 +166,24 @@
         <value>$LOCALIZE[31105]</value>
     </variable>
 
-    <variable name="Label_Settings_ColorHighlight">
-        <value condition="!Skin.HasSetting(EnableMonochromeHighlight)">Color</value>
-        <value>Monochrome</value>
-    </variable>
-
     <variable name="Label_Settings_ColorMode">
-        <value condition="!Skin.HasSetting(EnableMonochromeFlags)">Color</value>
-        <value>Monochrome</value>
+        <value condition="!Skin.HasSetting(EnableMonochromeFlags)">$LOCALIZE[737]</value>
+        <value>$LOCALIZE[31264]</value>
     </variable>
 
     <variable name="Label_Setting_BackgroundStyle">
-        <value condition="!Skin.HasSetting(DisableBlur)">Blur</value>
-        <value condition="!Skin.HasSetting(DisableOverlay)">Overlay</value>
-        <value>Vignette</value>
+        <value condition="!Skin.HasSetting(DisableBlur)">$LOCALIZE[31265]</value>
+        <value condition="!Skin.HasSetting(DisableOverlay)">$LOCALIZE[31179]</value>
+        <value>$LOCALIZE[31266]</value>
     </variable>
 
     <variable name="Label_Setting_DividerStyle">
-        <value condition="Skin.HasSetting(DisablePanelDivider)">None</value>
-        <value condition="Skin.HasSetting(ShadowLines)">Shadow</value>
-        <value>Flat</value>
+        <value condition="Skin.HasSetting(DisablePanelDivider)">$LOCALIZE[16018]</value>
+        <value condition="Skin.HasSetting(ShadowLines)">$LOCALIZE[31273]</value>
+        <value>$LOCALIZE[31277]</value>
     </variable>
 
     <variable name="Label_NowPlaying_Mainlabel">
-        <!-- <value condition="!String.IsEmpty(VideoPlayer.TvShowTitle) + !String.IsEmpty(VideoPlayer.Season) + !String.IsEmpty(VideoPlayer.Episode) + !String.IsEqual(VideoPlayer.TvShowTitle,Player.Title)">$INFO[VideoPlayer.TvShowTitle,,  •  ]$INFO[VideoPlayer.Season,S,]$INFO[VideoPlayer.Episode,E,  •  ]$INFO[Player.Title]</value> -->
         <value condition="!String.IsEmpty(VideoPlayer.TvShowTitle) + !String.IsEqual(VideoPlayer.TvShowTitle,Player.Title)">$INFO[VideoPlayer.TvShowTitle,,  •  ]$INFO[Player.Title]</value>
         <value condition="!String.IsEmpty(Player.Title)">$INFO[Player.Title]</value>
         <value condition="!String.IsEmpty(VideoPlayer.ChannelName)">$INFO[VideoPlayer.ChannelName]</value>
@@ -206,30 +196,10 @@
         <value>$INFO[System.Time,$LOCALIZE[555] ,]</value>
     </variable>
 
-    <variable name="Label_Showcase_Title">
-        <value condition="!String.IsEmpty(ListItem.TvShowTitle) + Container.Content(seasons)">$INFO[ListItem.TvShowTitle]</value>
-        <value condition="!String.IsEmpty(ListItem.Title)">$INFO[ListItem.Title]</value>
-        <value condition="!String.IsEmpty(ListItem.Label)">$INFO[ListItem.Label]</value>
-    </variable>
-
-    <variable name="Label_HideWatched">
-        <value condition="!System.Setting(hidewatched)">Watched: On</value>
-        <value>Watched: Off</value>
-    </variable>
-
-    <variable name="Label_SortDirection">
-        <value condition="Container.SortDirection(ascending)">Ascending</value>
-        <value>Descending</value>
-    </variable>
-
     <variable name="Label_PVRGuide_Title">
         <value condition="Control.HasFocus(9400) + !String.IsEmpty(ListItem.NextTitle)">$INFO[ListItem.NextTitle]</value>
         <value condition="!Control.HasFocus(9400) + !String.IsEmpty(ListItem.Title)">$INFO[ListItem.Title]</value>
         <value condition="!String.IsEmpty(ListItem.ChannelName)">$INFO[ListItem.ChannelName]</value>
-    </variable>
-
-    <variable name="Label_PVRGuide_SubTitle">
-        <value condition="!String.IsEmpty(ListItem.Genre)">$INFO[ListItem.StartTime,[COLOR main_fg_100],[/COLOR]]$INFO[ListItem.EndTime,[COLOR main_fg_100]  -  ,[/COLOR]]$INFO[ListItem.Genre,  |  [COLOR main_fg_100],[/COLOR]]</value>
     </variable>
 
     <variable name="Label_PVRGuide_ChannelName">
@@ -240,31 +210,8 @@
         <value condition="Skin.HasSetting(PVRGuide.ChannelNumber)">$INFO[ListItem.ChannelNumberLabel]</value>
     </variable>
 
-    <variable name="Label_Studio">
-        <value condition="!String.IsEmpty(ListItem.Studio)">$INFO[ListItem.Studio]</value>
-    </variable>
-
     <variable name="Label_Country">
         <value condition="!String.IsEmpty(ListItem.Country)">$INFO[ListItem.Country]</value>
-    </variable>
-
-    <variable name="Label_Info_PlayButton">
-        <value condition="String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,season)">$LOCALIZE[1024]</value>
-        <value>$LOCALIZE[208]</value>
-    </variable>
-
-    <variable name="Label_SmallLandscapeWidget_Sublabel2">
-        <value condition="!String.IsEmpty(ListItem.Rating)">$INFO[ListItem.Rating]</value>
-        <value>$INFO[ListItem.Premiered]</value>
-    </variable>
-
-    <variable name="Label_Player_Plot">
-        <value condition="!String.IsEmpty(VideoPlayer.Plot)">$INFO[VideoPlayer.Plot]</value>
-    </variable>
-
-    <variable name="Label_SkinSettings_CornerIcon">
-        <value condition="!String.IsEmpty(Skin.String(CornerIcon))">$INFO[Skin.String(CornerIcon)]</value>
-        <value>Search</value>
     </variable>
 
     <variable name="Label_AudioChannels">
@@ -300,11 +247,6 @@
     <variable name="Label_List_Right">
         <value condition="String.IsEqual(Container.SortMethod,$LOCALIZE[562]) | String.IsEqual(Container.SortMethod,$LOCALIZE[556]) | String.IsEqual(Container.SortMethod,$LOCALIZE[552])">$INFO[ListItem.Rating]</value>
         <value>$INFO[ListItem.Label2]</value>
-    </variable>
-
-    <variable name="Label_IconWall">
-        <value condition="Container.Content(directors)">$INFO[ListItem.Appearances,, item(s)]</value>
-        <value>$INFO[ListItem.Label]</value>
     </variable>
 
     <variable name="Label_Header_Center">
@@ -352,9 +294,9 @@
         <!-- <value condition="Window.IsVisible(Home.xml)">$LOCALIZE[10000]</value> -->
         <value condition="Window.IsVisible(Home.xml)">$INFO[Container(301).ListItem.Label]</value>
         <value condition="Window.IsVisible(DialogPVRInfo.xml)">$LOCALIZE[19180]</value>
-        <value condition="Window.IsVisible(script-NextAired-TVGuide.xml) | Window.IsVisible(script-NextAired-TVGuide2.xml)">Next Aired</value>
-        <value condition="Window.IsVisible(DialogPVRChannelsOSD.xml)">TV Channels</value>
-        <value condition="Window.IsVisible(1138)">Search</value>
+        <value condition="Window.IsVisible(script-NextAired-TVGuide.xml) | Window.IsVisible(script-NextAired-TVGuide2.xml)">$LOCALIZE[31046]</value>
+        <value condition="Window.IsVisible(DialogPVRChannelsOSD.xml)">$LOCALIZE[10700]</value>
+        <value condition="Window.IsVisible(1138)">$LOCALIZE[137]</value>
         <value condition="Window.IsVisible(1110)">$INFO[Container(301).ListItem.Label]</value>
     </variable>
 
@@ -399,33 +341,9 @@
     </variable>
 
 
-
-
-    <variable name="Label_Premiered">
-        <value condition="!String.IsEmpty(ListItem.Premiered) + !String.IsEqual(ListItem.DBType,movie) + !String.IsEqual(ListItem.DBType,set) + !String.IsEqual(ListItem.DBType,tvshow) + !String.IsEqual(ListItem.DBType,season)">$INFO[ListItem.Premiered]</value>
-        <value condition="!String.IsEmpty(ListItem.Year)">$INFO[ListItem.Year]</value>
-    </variable>
-
     <variable name="Label_Duration">
         <value condition="!String.IsEmpty(ListItem.Duration) + Integer.IsGreater(ListItem.Duration(h),0)">$INFO[ListItem.Duration(h),, $LOCALIZE[31036] ]$INFO[ListItem.Duration(mm),, $LOCALIZE[31020]]</value>
         <value condition="!String.IsEmpty(ListItem.Duration)">$INFO[ListItem.Duration(mins),, $LOCALIZE[31020]]</value>
-    </variable>
-
-    <variable name="Label_AddonInfo_Enable">
-        <value condition="String.IsEqual(Control.GetLabel(7),$LOCALIZE[24021])">$LOCALIZE[449]</value>
-        <value>$LOCALIZE[24023]</value>
-    </variable>
-
-    <variable name="Label_Settings_Header">
-        <value condition="Window.IsActive(systeminfo)">[CAPITALIZE]$LOCALIZE[10007][/CAPITALIZE]</value>
-        <value condition="Window.IsActive(systemsettings)">[CAPITALIZE]$LOCALIZE[13000][/CAPITALIZE]</value>
-        <value condition="Window.IsActive(pvrsettings)">[CAPITALIZE]$LOCALIZE[31343] &amp; $LOCALIZE[31103][/CAPITALIZE]</value>
-        <value condition="Window.IsActive(skinsettings)">[CAPITALIZE]$LOCALIZE[166][/CAPITALIZE]</value>
-        <value condition="Window.IsActive(profiles)">[CAPITALIZE]$LOCALIZE[13200][/CAPITALIZE]</value>
-        <value condition="Window.IsActive(servicesettings)">[CAPITALIZE]$LOCALIZE[14036][/CAPITALIZE]</value>
-        <value condition="Window.IsActive(interfacesettings)">[CAPITALIZE]$LOCALIZE[14206][/CAPITALIZE]</value>
-        <value condition="Window.IsActive(mediasettings)">[CAPITALIZE]$LOCALIZE[14211] &amp; $LOCALIZE[14022][/CAPITALIZE]</value>
-        <value condition="Window.IsActive(playersettings)">[CAPITALIZE]$LOCALIZE[14200][/CAPITALIZE]</value>
     </variable>
 
     <variable name="Label_MainTitle">
@@ -464,21 +382,9 @@
         <value>[COLOR=main_fg_100]$LOCALIZE[19055][/COLOR]</value>
     </variable>
 
-    <variable name="Label_Title">
-        <value condition="[Window.IsVisible(MyPVRChannels.xml) | Window.IsVisible(MyPVRSearch.xml) | Window.IsVisible(MyPVRRecordings.xml) | Window.IsVisible(MyPVRTimers.xml)] + !String.IsEmpty(ListItem.Title)">$INFO[ListItem.Title]</value>
-        <value condition="Container.Content(artists) | Container.Content(albums) | Container.Content(songs)">$INFO[ListItem.Artist]</value>
-        <value condition="Container.Content(episodes)">$INFO[ListItem.Season,,x]$INFO[ListItem.Episode,,. ]$INFO[ListItem.Title]</value>
-        <value condition="!ListItem.IsParentFolder">$INFO[ListItem.Label]</value>
-        <value condition="!String.IsEmpty(Container(50).ListItem.Label) + !Container(50).ListItem.IsParentFolder">$INFO[Container(50).ListItem.Label]</value>
-    </variable>
-
     <variable name="Label_SetName">
         <value condition="!String.IsEmpty(Window.Property(Set))">$INFO[Window.Property(Set)]</value>
         <value condition="!String.IsEmpty(Window.Property(Title))">$INFO[Window.Property(Title)]</value>
-    </variable>
-
-    <variable name="Label_Sets_Count">
-        <value>$INFO[Window(Home).Property(TMDbHelper.ListItem.WatchedCount),, $LOCALIZE[20163] ]$INFO[Window(Home).Property(TMDbHelper.ListItem.Count),, [LOWERCASE]$LOCALIZE[16102][/LOWERCASE]]</value>
     </variable>
 
     <variable name="Label_OverlayTitle">

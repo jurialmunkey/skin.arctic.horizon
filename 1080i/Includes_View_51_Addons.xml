@@ -6,7 +6,7 @@
             <include>Animation_Down</include>
             <include content="Viewtype_Square">
                 <param name="id" value="51" />
-                <param name="viewtype-label" value="Square Row" />
+                <param name="viewtype-label" value="$LOCALIZE[31282]" />
                 <left>-80</left>
                 <right>-80</right>
                 <bottom>view_bottom</bottom>
@@ -32,7 +32,7 @@
             <include content="Viewtype_WallSwitch">
                 <param name="id" value="51" />
                 <param name="include" value="Viewtype_Square" />
-                <param name="viewtype-label" value="Square Row" />
+                <param name="viewtype-label" value="$LOCALIZE[31282]" />
             </include>
         </control>
         <include content="Viewtype_WallSwitch_Furniture">
@@ -52,7 +52,7 @@
                 </include>
                 <include content="Viewtype_Square">
                     <param name="id" value="501" />
-                    <param name="viewtype-label" value="Square Wall" />
+                    <param name="viewtype-label" value="$LOCALIZE[31360]" />
                     <param name="control-type" value="panel" />
                     <param name="orientation" value="horizontal" />
                     <param name="height" value="800" />

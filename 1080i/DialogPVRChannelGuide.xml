@@ -57,7 +57,7 @@
                                 <aligny>top</aligny>
                                 <textcolor>panel_fg_100</textcolor>
                                 <selectedcolor>panel_fg_100</selectedcolor>
-                                <label>Now Playing</label>
+                                <label>$LOCALIZE[31188]</label>
                                 <visible>Integer.IsGreater(Control.GetLabel(9912),0) + Integer.IsLess(Control.GetLabel(9912),100)</visible>
                             </control>
                             <control type="label">
@@ -139,7 +139,7 @@
                                 <aligny>top</aligny>
                                 <textcolor>panel_fg_100</textcolor>
                                 <selectedcolor>panel_fg_100</selectedcolor>
-                                <label>Now Playing</label>
+                                <label>$LOCALIZE[31188]</label>
                                 <visible>Integer.IsGreater(Control.GetLabel(9911),0) + Integer.IsLess(Control.GetLabel(9911),100)</visible>
                             </control>
                             <control type="label">

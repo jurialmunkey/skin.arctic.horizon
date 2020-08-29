@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window type="window" id="1190">
     <defaultcontrol always="true">9999</defaultcontrol>
-    <onload>SetProperty(Header_Center_Text,Information)</onload>
-    <onload>SetProperty(Header_Left_Text,Movies)</onload>
+    <onload>SetProperty(Header_Left_Text,$LOCALIZE[19033])</onload>
     <controls>
         <include content="Viewtype_Main">
             <control type="list" id="9999">

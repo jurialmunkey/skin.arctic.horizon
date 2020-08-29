@@ -7,7 +7,7 @@
             <include>Animation_Down</include>
             <include content="Viewtype_Landscape">
                 <param name="id" value="54" />
-                <param name="viewtype-label" value="Landscape Row" />
+                <param name="viewtype-label" value="$LOCALIZE[31287]" />
                 <left>-80</left>
                 <right>-80</right>
                 <bottom>view_bottom</bottom>
@@ -37,7 +37,7 @@
             <include content="Viewtype_WallSwitch">
                 <param name="id" value="54" />
                 <param name="include" value="Viewtype_Landscape" />
-                <param name="viewtype-label" value="Landscape Row" />
+                <param name="viewtype-label" value="$LOCALIZE[31287]" />
                 <visible>!Window.IsVisible(MyPlaylist.xml)</visible>
                 <visible>!String.IsEqual(Container.Property(Param.Info),details)</visible>
             </include>
@@ -62,7 +62,7 @@
 
                 <include content="Viewtype_Landscape">
                     <param name="id" value="504" />
-                    <param name="viewtype-label" value="Landscape Wall" />
+                    <param name="viewtype-label" value="$LOCALIZE[31359]" />
                     <param name="control-type" value="panel" />
                     <param name="orientation" value="horizontal" />
                     <param name="height" value="800" />

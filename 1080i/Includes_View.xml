@@ -234,20 +234,6 @@
         <orientation>horizontal</orientation>
     </include>
 
-    <include name="View_Vertical_Cast">
-        <onback>8000</onback>
-        <orientation>vertical</orientation>
-    </include>
-    <include name="View_Vertical_Back">
-        <onback>8000</onback>
-        <orientation>vertical</orientation>
-    </include>
-    <include name="View_Horizontal_Back">
-        <onback>SetFocus(5050)</onback>
-        <onback>8000</onback>
-        <orientation>horizontal</orientation>
-    </include>
-
     <include name="View_Settings">
         <param name="top-id" default="5100" />
         <param name="bottom-id" default="5000" />

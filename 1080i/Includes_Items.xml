@@ -1438,7 +1438,7 @@
                 <onclick>SendClick(9)</onclick>
             </item>
             <item>
-                <label>Dependencies</label>
+                <label>$LOCALIZE[39024]</label>
                 <visible>Control.IsEnabled(10)</visible>
                 <onclick>SendClick(10)</onclick>
             </item>
@@ -1568,44 +1568,44 @@
             <item>
                 <icon>$INFO[ListItem.Art(fanart)]</icon>
                 <visible>!String.IsEmpty(ListItem.Art(fanart))</visible>
-                <label>Fanart 1</label>
-                <label2>Artwork</label2>
+                <label>$LOCALIZE[20445] 1</label>
+                <label2>$LOCALIZE[31203]</label2>
             </item>
             <item>
                 <icon>$INFO[ListItem.Art(fanart1)]</icon>
                 <visible>!String.IsEmpty(ListItem.Art(fanart1))</visible>
-                <label>Fanart 2</label>
-                <label2>Artwork</label2>
+                <label>$LOCALIZE[20445] 2</label>
+                <label2>$LOCALIZE[31203]</label2>
             </item>
             <item>
                 <icon>$INFO[ListItem.Art(fanart2)]</icon>
                 <visible>!String.IsEmpty(ListItem.Art(fanart2))</visible>
-                <label>Fanart 3</label>
-                <label2>Artwork</label2>
+                <label>$LOCALIZE[20445] 3</label>
+                <label2>$LOCALIZE[31203]</label2>
             </item>
             <item>
                 <icon>$INFO[ListItem.Art(fanart3)]</icon>
                 <visible>!String.IsEmpty(ListItem.Art(fanart3))</visible>
-                <label>Fanart 4</label>
-                <label2>Artwork</label2>
+                <label>$LOCALIZE[20445] 4</label>
+                <label2>$LOCALIZE[31203]</label2>
             </item>
             <item>
                 <icon>$INFO[ListItem.Art(fanart4)]</icon>
                 <visible>!String.IsEmpty(ListItem.Art(fanart4))</visible>
-                <label>Fanart 5</label>
-                <label2>Artwork</label2>
+                <label>$LOCALIZE[20445] 5</label>
+                <label2>$LOCALIZE[31203]</label2>
             </item>
             <item>
                 <icon>$INFO[ListItem.Art(fanart5)]</icon>
                 <visible>!String.IsEmpty(ListItem.Art(fanart5))</visible>
-                <label>Fanart 6</label>
-                <label2>Artwork</label2>
+                <label>$LOCALIZE[20445] 6</label>
+                <label2>$LOCALIZE[31203]</label2>
             </item>
             <item>
                 <visible>!String.IsEmpty(ListItem.Art(discart))</visible>
                 <icon>$INFO[ListItem.Art(discart)]</icon>
-                <label>Discart</label>
-                <label2>Artwork</label2>
+                <label>$LOCALIZE[31205]</label>
+                <label2>$LOCALIZE[31203]</label2>
                 <property name="discart">$INFO[ListItem.Art(discart)]</property>
                 <property name="clearlogo">$INFO[ListItem.Art(clearlogo)]</property>
                 <property name="tagline">$INFO[ListItem.Tagline]</property>
@@ -1959,88 +1959,6 @@
         </content>
     </include>
 
-    <include name="Items_NextAired">
-        <content>
-            <!-- Viewmode -->
-            <item>
-                <label>$INFO[Skin.String(NextAired.View)]</label>
-                <icon>special://skin/extras/icons/viewmode.png</icon>
-                <onclick condition="Skin.String(NextAired.View,Default)">Skin.SetString(NextAired.View,Poster)</onclick>
-                <onclick condition="Skin.String(NextAired.View,Poster)">Skin.SetString(NextAired.View,Landscape)</onclick>
-                <onclick condition="Skin.String(NextAired.View,Landscape)">Skin.SetString(NextAired.View,Default)</onclick>
-                <visible>!Skin.HasSetting(KioskMode)</visible>
-            </item>
-            <!-- Settings -->
-            <item>
-                <label>$LOCALIZE[5]</label>
-                <icon>special://skin/extras/icons/settings.png</icon>
-                <onclick>Addon.OpenSettings(script.tv.show.next.aired)</onclick>
-                <visible>!Skin.HasSetting(KioskMode)</visible>
-            </item>
-        </content>
-    </include>
-
-    <include name="Items_PVRQuickJump">
-        <content>
-            <!-- Channels -->
-            <item>
-                <label>TV Channels</label>
-                <icon>special://skin/extras/icons/livetv.png</icon>
-                <onclick>ActivateWindow(tvchannels)</onclick>
-                <visible>!Window.IsVisible(MyPVRChannels.xml)</visible>
-            </item>
-            <!-- Guide -->
-            <item>
-                <label>TV Guide</label>
-                <icon>special://skin/extras/icons/tvguide.png</icon>
-                <onclick>ActivateWindow(tvguide)</onclick>
-                <visible>!Window.IsVisible(MyPVRGuide.xml)</visible>
-            </item>
-            <!-- Recordings -->
-            <item>
-                <label>TV Recordings</label>
-                <icon>special://skin/extras/icons/database.png</icon>
-                <onclick>ActivateWindow(tvrecordings)</onclick>
-                <visible>!Window.IsVisible(MyPVRRecordings.xml)</visible>
-            </item>
-            <!-- Timers -->
-            <item>
-                <label>TV Timers</label>
-                <icon>special://skin/extras/icons/alarm.png</icon>
-                <onclick>ActivateWindow(tvtimers)</onclick>
-                <visible>!Window.IsVisible(MyPVRTimers.xml)</visible>
-            </item>
-            <!-- Search -->
-            <item>
-                <label>TV Search</label>
-                <icon>special://skin/extras/icons/search.png</icon>
-                <onclick>ActivateWindow(tvsearch)</onclick>
-                <visible>!Window.IsVisible(MyPVRSearch.xml)</visible>
-            </item>
-        </content>
-    </include>
-
-    <include name="Items_PVRGuide">
-        <content>
-            <!-- Info -->
-            <item>
-                <label>Show Info</label>
-                <icon>special://skin/extras/icons/infobubble.png</icon>
-                <onclick>Skin.ToggleSetting(PVRGuide.Info)</onclick>
-                <onclick>ReloadSkin()</onclick>
-                <visible>!Skin.HasSetting(KioskMode)</visible>
-            </item>
-            <!-- Numbers -->
-            <item>
-                <label>Channel Numbers</label>
-                <icon>special://skin/extras/icons/years.png</icon>
-                <onclick>Skin.ToggleSetting(PVRGuide.ChannelNumber)</onclick>
-                <onclick>ReloadSkin()</onclick>
-                <visible>!Skin.HasSetting(KioskMode)</visible>
-            </item>
-        </content>
-    </include>
-
     <include name="Items_Random">
         <content>
             <item>
@@ -2294,10 +2212,6 @@
                 <onclick>Fullscreen</onclick>
             </item>
         </content>
-    </include>
-
-    <include name="Items_MainMenu">
-        <content><include>skinshortcuts-mainmenu</include></content>
     </include>
 
     <include name="Items_SubMenu">

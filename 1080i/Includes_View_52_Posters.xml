@@ -8,7 +8,7 @@
                 <param name="id" value="52" />
                 <param name="castlabel" value="Container.Content(actors)" />
                 <param name="label2" value="ListItem.Property(role)" />
-                <param name="viewtype-label" value="Poster Row" />
+                <param name="viewtype-label" value="$LOCALIZE[31284]" />
                 <bottom>view_bottom</bottom>
                 <left>-80</left>
                 <right>-80</right>
@@ -37,7 +37,7 @@
             <include content="Viewtype_WallSwitch">
                 <param name="id" value="52" />
                 <param name="include" value="Viewtype_Poster" />
-                <param name="viewtype-label" value="Poster Row" />
+                <param name="viewtype-label" value="$LOCALIZE[31284]" />
                 <visible>!Window.IsVisible(MyPlaylist.xml)</visible>
                 <visible>!String.IsEqual(Container.Property(Param.Info),details)</visible>
             </include>
@@ -63,7 +63,7 @@
                     <param name="id" value="502" />
                     <param name="castlabel" value="Container.Content(actors)" />
                     <param name="label2" value="ListItem.Property(role)" />
-                    <param name="viewtype-label" value="Poster Wall" />
+                    <param name="viewtype-label" value="$LOCALIZE[31358]" />
                     <param name="control-type" value="panel" />
                     <param name="orientation" value="horizontal" />
                     <param name="height" value="800" />

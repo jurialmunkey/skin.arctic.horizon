@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window type="window" id="1139">
     <defaultcontrol always="true">4100</defaultcontrol>
-    <onload>SetProperty(Header_Left_Text,Trending Lists)</onload>
+    <onload>SetProperty(Header_Left_Text,$LOCALIZE[31045])</onload>
     <onload>SetProperty(1139_SortBy,random,Home)</onload>
     <onload>SetProperty(1139_FolderPath,plugin://plugin.video.themoviedb.helper/?fanarttv=True&amp;info=trakt_trendinglists&amp;nextpage=True&amp;type=both,Home)</onload>
     <!-- <onload>SetProperty(1139_FolderPath,plugin://plugin.video.themoviedb.helper/?fanarttv=True&amp;info=genres&amp;nextpage=True&amp;type=movie&amp;widget=True,Home)</onload> -->
@@ -107,7 +107,7 @@
             <include>Animation_FadeIn_SlideUp</include>
             <include content="Dialog_PowerMenu">
                 <param name="id" value="9000" />
-                <param name="header" value="Options" />
+                <param name="header" value="$LOCALIZE[33063]" />
                 <param name="items" value="Items_Random" />
                 <param name="visible" value="Control.HasFocus(9000)" />
                 <param name="icon-visible" value="true" />

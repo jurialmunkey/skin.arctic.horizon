@@ -96,13 +96,6 @@
         <value>monochrome</value>
     </variable>
 
-    <variable name="Defs_TMDB_Details">
-        <value condition="String.IsEqual(ListItem.DBType,movie) + !String.IsEmpty(ListItem.Title)">plugin://plugin.video.themoviedb.helper/?info=details&amp;type=movie&amp;query=$INFO[ListItem.Title]&amp;year=$INFO[ListItem.Year]</value>
-        <value condition="[Container.Content(actors) | Container.Content(directors)] + String.IsEqual(Container.Property(Param.Info),details)">plugin://plugin.video.themoviedb.helper/?info=details&amp;type=person&amp;query=$INFO[Container.ListItemAbsolute(0).Label]</value>
-        <value condition="[Container.Content(actors) | Container.Content(directors)] + !String.IsEmpty(ListItem.Label)">plugin://plugin.video.themoviedb.helper/?info=details&amp;type=person&amp;query=$INFO[ListItem.Label]</value>
-        <value>noop</value>
-    </variable>
-
     <include name="Defs_Texture">
         <texture colordiffuse="$PARAM[colordiffuse]">$PARAM[texture]</texture>
     </include>
@@ -128,15 +121,6 @@
     <include name="Defs_Global_Fade_Blur">
         <fadetime>3000</fadetime>
     </include>
-
-    <variable name="Defs_SettingsPanel_NF">
-        <!-- <value condition="Skin.HasSetting(DisableGeometric) + !String.IsEqual(Skin.CurrentColorTheme,SKINDEFAULT)">panel_fg_30</value> -->
-        <value>panel_fg_70</value>
-    </variable>
-
-    <variable name="Defs_ThemeSwitcher_StartTime">
-        <value>06:00</value>
-    </variable>
 
     <include name="Defs_PauseAtEnd_Value">
         <pauseatend>$PARAM[time]</pauseatend>
@@ -328,11 +312,6 @@
         </include>
     </include>
 
-    <variable name="Defs_Widget_Target">
-        <value condition="String.IsEqual(Skin.String(widgetTarget),video)">videos</value>
-        <value>$INFO[Skin.String(widgetTarget)]</value>
-    </variable>
-
     <include name="Defs_InfoList_OnBack">
         <onback>SetFocus(5001)</onback>
         <onback>SetFocus(5000)</onback>
@@ -354,16 +333,6 @@
     </include>
 
     <include name="Defs_Null"><description>Nothing</description></include>
-
-    <variable name="Defs_Target">
-        <value condition="String.IsEqual(ListItem.DBType,album) | String.IsEqual(ListItem.DBType,artist) | String.IsEqual(ListItem.DBType,song)">music</value>
-        <value>videos</value>
-    </variable>
-
-    <variable name="Defs_5610_Target">
-        <value condition="String.IsEqual(Container(5610).ListItemAbsolute(0).DBType,album) | String.IsEqual(Container(5610).ListItemAbsolute(0).DBType,artist) | String.IsEqual(Container(5610).ListItemAbsolute(0).DBType,song)">music</value>
-        <value>videos</value>
-    </variable>
 
     <include name="Defs_InfoButtonList">
         <left>80</left>

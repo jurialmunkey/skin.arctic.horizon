@@ -747,10 +747,6 @@
                     </include>
                 </control>
 
-                <!-- <include condition="!Skin.HasSetting(DisableWatchedOverlay) + $PARAM[textpanel]" content="View_WatchedOverlay">
-                    <param name="affix" value="$PARAM[affix]" />
-                    <param name="listitem" value="$PARAM[listitem]" />
-                </include> -->
                 <include condition="$PARAM[selectbox] + $PARAM[textpanel]" content="View_Selectbox">
                     <param name="focusbounce" value="true" />
                     <param name="affix" value="$PARAM[affix]" />

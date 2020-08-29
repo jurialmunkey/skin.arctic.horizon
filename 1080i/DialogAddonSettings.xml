@@ -73,9 +73,6 @@
             <control type="group">
                 <top>dialog_top</top>
                 <include>Dialog_Standard_Right_Group</include>
-                <!-- <include content="Dialog_Standard_Right_Buttons_Gradient">
-                    <visible>Control.HasFocus(28)</visible>
-                </include> -->
                 <control type="image">
                     <bottom>0</bottom>
                     <height>dialog_right_iconwidth</height>

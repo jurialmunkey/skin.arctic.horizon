@@ -679,26 +679,6 @@
         <texture fallback="DefaultAddonNone.png" background="true">$INFO[Listitem.Icon]</texture>
     </include>
 
-    <include name="Dialog_Standard_List_Left_Label">
-        <centertop>35%</centertop>
-        <left>170</left>
-        <right>30</right>
-        <height>30</height>
-        <font>font_small_bold</font>
-        <textcolor>dialog_fg_70</textcolor>
-        <info>ListItem.Label</info>
-    </include>
-
-    <include name="Dialog_Standard_List_Left_Label2">
-        <centerbottom>35%</centerbottom>
-        <left>170</left>
-        <right>30</right>
-        <height>30</height>
-        <font>font_tiny</font>
-        <textcolor>dialog_fg_70</textcolor>
-        <label>$INFO[ListItem.Label2]</label>
-    </include>
-
     <include name="Dialog_Standard_Right_Buttons_Gradient">
         <control type="group">
             <nested />
@@ -720,14 +700,6 @@
         <include content="Defs_ButtonType"><param name="texturefocus" value="true" /></include>
         <include content="Defs_ButtonType"><param name="alttexturefocus" value="true" /></include>
         <alttexturenofocus />
-    </include>
-
-    <include name="Dialog_Standard_Right_Grouplist">
-        <top>120</top>
-        <width>300</width>
-        <itemgap>10</itemgap>
-        <centerright>190</centerright>
-        <orientation>vertical</orientation>
     </include>
 
     <include name="Dialog_Standard_Right_Group">
@@ -813,15 +785,6 @@
         <textcolor>dialog_fg_70</textcolor>
     </include>
 
-    <include name="Dialog_Standard_ListButton">
-        <align>left</align>
-        <height>item_list_height</height>
-        <texturenofocus colordiffuse="dialog_fg_12" border="8">common/box.png</texturenofocus>
-        <texturefocus colordiffuse="$VAR[ColorHighlight]" border="8">common/box.png</texturefocus>
-        <alttexturenofocus colordiffuse="dialog_fg_12" border="8">common/box.png</alttexturenofocus>
-        <alttexturefocus colordiffuse="$VAR[ColorHighlight]" border="8">common/box.png</alttexturefocus>
-    </include>
-
     <include name="Dialog_Standard_OkCancel">
         <align>center</align>
         <font>font_button</font>
@@ -888,25 +851,6 @@
                 </control>
             </control>
         </definition>
-    </include>
-
-    <!-- ============ -->
-    <!-- Info Dialogs -->
-    <!-- ============ -->
-
-    <include name="Dialog_Info_Buttons">
-        <width>320</width>
-        <font>font_button</font>
-        <texturefocus colordiffuse="$VAR[ColorHighlight]" border="5">common/box.png</texturefocus>
-        <texturenofocus colordiffuse="dialog_fg_12" border="5">common/box.png</texturenofocus>
-    </include>
-
-    <include name="Dialog_Info_Details_Grouplist">
-        <left>910</left>
-        <right>sidepad</right>
-        <top>106</top>
-        <orientation>vertical</orientation>
-        <usecontrolcoords>true</usecontrolcoords>
     </include>
 
     <!-- Ok Cancel Progress Yes No Dialog -->
@@ -1137,11 +1081,6 @@
             <param name="animation" value="false" />
             <param name="centertop" value="view_list_center" />
         </include>
-
-        <!-- <control type="label">
-            <label>$INFO[Container(300).ListItem.Label]</label>
-            <include>Dialog_Standard_Header</include>
-        </control> -->
     </include>
 
     <include name="Dialog_Standard_List_Itemlayout_Simple">
@@ -1253,77 +1192,6 @@
                         <info>ListItem.Label2</info>
                         <selectedcolor>$PARAM[color_highlight]</selectedcolor>
                     </control>
-                </control>
-            </control>
-        </definition>
-    </include>
-
-    <include name="Dialog_Standard_List_Itemlayout_ChannelGuide">
-        <definition>
-            <control type="group">
-                <control type="image">
-                    <top>2</top>
-                    <bottom>2</bottom>
-                    <texture colordiffuse="dialog_fg_12">common/selected.png</texture>
-                    <aspectratio aligny="top">center</aspectratio>
-                    <visible>ListItem.IsPlaying</visible>
-                </control>
-                <control type="progress">
-                    <top>2</top>
-                    <bottom>2</bottom>
-                    <texturebg>pvr/progressline-back.png</texturebg>
-                    <lefttexture border="5" colordiffuse="bf777777">pvr/progressline-left.png</lefttexture>
-                    <midtexture border="5" colordiffuse="bf777777">pvr/progressline-mid.png</midtexture>
-                    <righttexture border="5" colordiffuse="bf777777">pvr/progressline-right.png</righttexture>
-                    <info>ListItem.Progress</info>
-                    <visible>Window.IsVisible(pvrosdchannels)</visible>
-                </control>
-                <control type="label">
-                    <centertop>25%</centertop>
-                    <left>30</left>
-                    <right>30</right>
-                    <font>font_small_bold</font>
-                    <textcolor>$PARAM[color_70]</textcolor>
-                    <aligny>center</aligny>
-                    <align>right</align>
-                    <label>$INFO[ListItem.StartTime]</label>
-                    <selectedcolor>$PARAM[color_highlight]</selectedcolor>
-                </control>
-                <control type="label">
-                    <centertop>25%</centertop>
-                    <left>30</left>
-                    <right>30</right>
-                    <font>font_small_bold</font>
-                    <textcolor>$PARAM[color_70]</textcolor>
-                    <aligny>center</aligny>
-                    <align>left</align>
-                    <label>$VAR[Label_List_Title]</label>
-                    <selectedcolor>$PARAM[color_highlight]</selectedcolor>
-                    <visible>!Window.IsVisible(pvrosdchannels)</visible>
-                </control>
-                <control type="label">
-                    <centertop>25%</centertop>
-                    <left>30</left>
-                    <right>30</right>
-                    <font>font_small_bold</font>
-                    <textcolor>$PARAM[color_70]</textcolor>
-                    <aligny>center</aligny>
-                    <align>left</align>
-                    <label>$INFO[ListItem.ChannelNumberLabel,,. ]$INFO[ListItem.ChannelName,, - ]$VAR[Label_List_Title]</label>
-                    <selectedcolor>$PARAM[color_highlight]</selectedcolor>
-                    <visible>Window.IsVisible(pvrosdchannels)</visible>
-                </control>
-                <control type="textbox">
-                    <top>65</top>
-                    <bottom>20</bottom>
-                    <left>30</left>
-                    <right>30</right>
-                    <font>font_tiny</font>
-                    <textcolor>$PARAM[color_70]</textcolor>
-                    <aligny>center</aligny>
-                    <autoscroll>false</autoscroll>
-                    <label>$INFO[ListItem.Plot]</label>
-                    <selectedcolor>$PARAM[color_highlight]</selectedcolor>
                 </control>
             </control>
         </definition>

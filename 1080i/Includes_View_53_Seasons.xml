@@ -3,7 +3,7 @@
     <include name="View_53_Seasons">
         <param name="id" default="53" />
         <param name="include" default="Viewtype_Landscape" />
-        <param name="viewtype-label" default="Landscape Integrated" />
+        <param name="viewtype-label" default="$LOCALIZE[31285]" />
         <definition>
             <control type="group">
                 <visible>Control.Isvisible($PARAM[id])</visible>

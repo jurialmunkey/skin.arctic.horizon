@@ -79,25 +79,6 @@
         </definition>
     </include>
 
-    <include name="Object_FocusLabel">
-        <param name="textcolor" default="main_fg" />
-        <param name="isfocused" default="true" />
-        <definition>
-            <control type="label">
-                <textcolor>$PARAM[textcolor]_100</textcolor>
-                <label>$PARAM[label]</label>
-                <visible>$PARAM[isfocused]</visible>
-                <nested />
-            </control>
-            <control type="label">
-                <textcolor>$PARAM[textcolor]_30</textcolor>
-                <label>$PARAM[label]</label>
-                <visible>!$PARAM[isfocused]</visible>
-                <nested />
-            </control>
-        </definition>
-    </include>
-
     <include name="Object_Info_TextPair">
         <control type="grouplist">
             <height>80</height>
@@ -187,39 +168,6 @@
         </definition>
     </include>
 
-    <include name="Object_Icon_Details">
-        <param name="haspath" default="false" />
-        <definition>
-            <control type="group">
-                <left>view_pad</left>
-                <height>view_pad</height>
-                <bottom>0</bottom>
-                <right>500</right>
-                <visible>$PARAM[visible]</visible>
-                <include>Animation_FadeIn_Delay</include>
-                <include>Animation_FadeOut</include>
-                <visible>!Window.IsVisible(DialogNotification.xml)</visible>
-                <visible>!Window.IsVisible(DialogExtendedProgressBar.xml)</visible>
-                <include condition="!Skin.HasSetting(DisableCodecs)">Object_Languages_Right</include>
-                <control type="image">
-                    <centertop>50%</centertop>
-                    <width>24</width>
-                    <height>24</height>
-                    <texture colordiffuse="main_fg_90">$PARAM[icon]</texture>
-                </control>
-                <control type="label">
-                    <centertop>50%</centertop>
-                    <left>48</left>
-                    <height>24</height>
-                    <label>$PARAM[label]</label>
-                    <haspath>$PARAM[haspath]</haspath>
-                    <font>font_statusbar</font>
-                    <textcolor>main_fg_70</textcolor>
-                </control>
-            </control>
-        </definition>
-    </include>
-
     <include name="Object_Settings_Info">
         <param name="id" default="6" />
         <param name="visible" default="!Control.HasFocus(300)" />
@@ -304,10 +252,6 @@
                 <param name="label2" value="$VAR[Label_NowPlaying_Sublabel]" />
             </include>
         </control>
-    </include>
-
-    <include name="Object_Widget_ContentPath">
-        <content target="$PARAM[target]" sortby="$PARAM[sortby]" sortorder="$PARAM[sortorder]" limit="$PARAM[limit]">$PARAM[content]</content>
     </include>
 
     <include name="Object_PVR_Icon">
@@ -433,37 +377,6 @@
         </definition>
     </include>
 
-    <include name="Object_Info_Artwork">
-        <control type="group">
-            <include>Animation_Info_Fade_Delay</include>
-            <visible>$PARAM[visible]</visible>
-            <width>1920</width>
-            <height>1080</height>
-            <control type="button" id="$PARAM[id]">
-                <include>Defs_Hidden_Button</include>
-                <onleft>$PARAM[onleft]</onleft>
-                <onright>$PARAM[onright]</onright>
-                <onback>SetFocus(5000)</onback>
-                <onback>8000</onback>
-                <onclick condition="!System.HasAddon(script.artwork.beef) | ![String.IsEqual(ListItem.DBType,episode) | String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,movie)]">SendClick(10)</onclick>
-                <onclick condition="String.IsEqual(ListItem.DBType,episode) + System.HasAddon(script.artwork.beef)">RunScript(script.artwork.beef, mode=gui, mediatype=episode, dbid=$INFO[ListItem.DBID])</onclick>
-                <onclick condition="String.IsEqual(ListItem.DBType,tvshow) + System.HasAddon(script.artwork.beef)">RunScript(script.artwork.beef, mode=gui, mediatype=tvshow, dbid=$INFO[ListItem.DBID])</onclick>
-                <onclick condition="String.IsEqual(ListItem.DBType,movie) + System.HasAddon(script.artwork.beef)">RunScript(script.artwork.beef, mode=gui, mediatype=movie, dbid=$INFO[ListItem.DBID])</onclick>
-                <nested />
-            </control>
-            <control type="group">
-                <include>View_Pad</include>
-                <include content="Object_PosterBack">
-                    <param name="pad" value="-15" />
-                </include>
-                <control type="image">
-                    <texture background="true">$PARAM[artwork]</texture>
-                    <aspectratio>scale</aspectratio>
-                </control>
-            </control>
-        </control>
-    </include>
-
     <include name="Object_Languages_Items">
         <control type="image">
             <top>5</top>
@@ -564,24 +477,6 @@
             <height>32</height>
             <visible>!String.IsEmpty($PARAM[container]ListItem.Country)</visible>
         </control>
-
-
-
-    </include>
-
-    <include name="Object_Info_Languages">
-        <control type="grouplist">
-            <nested />
-            <top>32</top>
-            <height>32</height>
-            <align>left</align>
-            <itemgap>40</itemgap>
-            <orientation>horizontal</orientation>
-            <usecontrolcoords>true</usecontrolcoords>
-            <include content="Object_Languages_Items">
-                <param name="container" value="$PARAM[container]" />
-            </include>
-        </control>
     </include>
 
     <include name="Object_Languages_Right"><right>600</right></include>
@@ -612,97 +507,6 @@
                 </control>
             </control>
         </definition>
-    </include>
-
-    <include name="Object_Info_Details_Addons">
-        <include content="Object_Info_TextPairs">
-            <param name="pad" value="32" />
-            <param name="name" value="Addon ID" />
-            <param name="label" value="ListItem.Property(Addon.ID)" />
-        </include>
-        <include content="Object_Info_TextPairs">
-            <param name="pad" value="16" />
-            <param name="name" value="Path" />
-            <param name="label" value="ListItem.FileNameAndPath" />
-        </include>
-        <include content="Object_Info_TextPairs">
-            <param name="pad" value="16" />
-            <param name="name" value="Status" />
-            <param name="label" value="ListItem.Property(Addon.Status)" />
-        </include>
-    </include>
-
-    <include name="Object_Info_Details_PVR">
-        <include content="Object_Info_TextPairs">
-            <param name="pad" value="24" />
-            <param name="name" value="Date" />
-            <param name="label" value="ListItem.StartDate" />
-        </include>
-        <include content="Object_Info_TextPairs">
-            <param name="pad" value="24" />
-            <param name="name" value="Time" />
-            <param name="label" value="ListItem.StartTime" />
-            <param name="label2" value="$INFO[ListItem.EndTime,  -  ,]" />
-        </include>
-        <!-- <include content="Object_Info_TextPairs">
-            <param name="pad" value="24" />
-            <param name="name" value="Channel" />
-            <param name="label" value="ListItem.ChannelName" />
-            <param name="label2" value="$INFO[ListItem.ChannelNumberLabel,  -  Ch.,]" />
-        </include> -->
-    </include>
-
-    <include name="Object_Info_Details">
-        <include content="Object_Info_TextPairs">
-            <param name="pad" value="32" />
-            <param name="name" value="Genre" />
-            <param name="label" value="ListItem.Genre" />
-        </include>
-        <include content="Object_Info_TextPairs">
-            <param name="pad" value="20" />
-            <param name="name" value="Studio" />
-            <param name="label" value="ListItem.Studio" />
-        </include>
-        <include content="Object_Info_TextPairs">
-            <param name="pad" value="20" />
-            <param name="name" value="Director" />
-            <param name="label" value="ListItem.Director" />
-        </include>
-        <include content="Object_Info_TextPairs">
-            <param name="pad" value="20" />
-            <param name="name" value="Writer" />
-            <param name="label" value="ListItem.Writer" />
-        </include>
-        <include content="Object_Info_TextPairs">
-            <param name="pad" value="20" />
-            <param name="name" value="Revenue" />
-            <param name="label" value="ListItem.Property(Revenue)" />
-            <param name="label2" value="$INFO[ListItem.Property(Budget), from a , budget]" />
-        </include>
-    </include>
-
-    <include name="Object_InfoSets_Details">
-        <include content="Object_Info_TextPairs">
-            <param name="pad" value="32" />
-            <param name="name" value="Genre" />
-            <param name="label" value="Window(Home).Property(TMDbHelper.ListItem.Genre)" />
-        </include>
-        <include content="Object_Info_TextPairs">
-            <param name="pad" value="14" />
-            <param name="name" value="Director" />
-            <param name="label" value="Window(Home).Property(TMDbHelper.ListItem.Director)" />
-        </include>
-        <include content="Object_Info_TextPairs">
-            <param name="pad" value="14" />
-            <param name="name" value="Writer" />
-            <param name="label" value="Window(Home).Property(TMDbHelper.ListItem.Writer)" />
-        </include>
-        <include content="Object_Info_TextPairs">
-            <param name="pad" value="14" />
-            <param name="height" default="90" />
-            <param name="name" value="Titles" />
-            <param name="label" value="Window(Home).Property(TMDbHelper.ListItem.Titles)" />
-        </include>
     </include>
 
     <include name="Object_Info_Ratings">
@@ -846,25 +650,6 @@
         </definition>
     </include>
 
-    <include name="Object_Info_Label">
-        <param name="label" default="$INFO[ListItem.Genre]" />
-        <param name="font" default="font_small_bold" />
-        <param name="titleheight" default="10" />
-        <param name="top" default="40" />
-        <param name="textcolor" default="main_fg_90" />
-        <definition>
-            <control type="label">
-                <top>$PARAM[top]</top>
-                <label>$PARAM[label]</label>
-                <height>$PARAM[titleheight]</height>
-                <aligny>top</aligny>
-                <textcolor>$PARAM[textcolor]</textcolor>
-                <font>$PARAM[font]</font>
-                <nested />
-            </control>
-        </definition>
-    </include>
-
     <include name="Object_Info_Plot">
         <param name="height" default="80" />
         <param name="title" default="" />
@@ -882,22 +667,6 @@
                 <scroll>true</scroll>
                 <scrollout>false</scrollout>
                 <autoscroll delay="6000" time="3000" repeat="10000">Skin.HasSetting(EnablePlotAutoScroll)</autoscroll>
-            </control>
-        </definition>
-    </include>
-
-    <include name="Object_DefaultIcon">
-        <param name="icon" default="$INFO[ListItem.Icon]" />
-        <param name="visible" default="$EXP[Exp_DefaultIcon]" />
-        <param name="fallback" default="$INFO[ListItem.Icon]" />
-        <definition>
-            <control type="image">
-                <centertop>50%</centertop>
-                <centerleft>50%</centerleft>
-                <width>160</width>
-                <height>160</height>
-                <texture background="true" fallback="$PARAM[fallback]">$PARAM[icon]</texture>
-                <visible>$PARAM[visible]</visible>
             </control>
         </definition>
     </include>
@@ -958,38 +727,6 @@
         </definition>
     </include>
 
-    <include name="Object_Info_TextPairs">
-        <param name="haspath" default="false" />
-        <param name="height" default="30" />
-        <definition>
-            <control type="group">
-                <visible>!String.IsEmpty($PARAM[label])</visible>
-                <top>$PARAM[pad]</top>
-                <height>$PARAM[height]</height>
-                <control type="label">
-                    <left>0</left>
-                    <width>148</width>
-                    <align>left</align>
-                    <aligny>top</aligny>
-                    <font>font_tiny_bold</font>
-                    <textcolor>main_fg_100</textcolor>
-                    <label>$PARAM[name]</label>
-                    <height>$PARAM[height]</height>
-                </control>
-                <control type="label">
-                    <left>176</left>
-                    <align>left</align>
-                    <aligny>top</aligny>
-                    <font>font_tiny</font>
-                    <textcolor>main_fg_70</textcolor>
-                    <label>$INFO[$PARAM[label]]$PARAM[label2]</label>
-                    <height>$PARAM[height]</height>
-                    <haspath>$PARAM[haspath]</haspath>
-                </control>
-            </control>
-        </definition>
-    </include>
-
     <include name="Object_Info_Button_Left">
         <control type="group">
             <visible>$PARAM[visible]</visible>
@@ -1047,34 +784,6 @@
                 <textcolor>main_fg_70</textcolor>
                 <focusedcolor>panel_bg</focusedcolor>
                 <nested />
-            </control>
-        </definition>
-    </include>
-
-    <include name="Object_VideoInfo_InfoSection">
-        <param name="haspath" default="false" />
-        <param name="label3" default="" />
-        <definition>
-            <control type="group">
-                <height>32</height>
-                <visible>!String.IsEmpty($PARAM[label2])</visible>
-                <control type="label">
-                    <width>150</width>
-                    <align>left</align>
-                    <font>font_tiny</font>
-                    <textcolor>main_fg_30</textcolor>
-                    <label>$PARAM[label]</label>
-                    <scroll>true</scroll>
-                </control>
-                <control type="label">
-                    <left>150</left>
-                    <align>left</align>
-                    <font>font_tiny</font>
-                    <textcolor>main_fg_70</textcolor>
-                    <label>$INFO[$PARAM[label2],, ]$PARAM[label3]</label>
-                    <haspath>$PARAM[haspath]</haspath>
-                    <scroll>true</scroll>
-                </control>
             </control>
         </definition>
     </include>
@@ -1238,272 +947,6 @@
                 </control>
             </control>
         </definition>
-    </include>
-
-    <include name="Object_StarRating_Music">
-        <param name="align" default="center" />
-        <param name="colordiffuse" default="main_fg" />
-        <param name="rating_prop" default="ListItem.Rating" />
-        <param name="visible" default="Window.IsVisible(DialogMusicInfo.xml) | Window.IsVisible(MyMusicNav.xml) | Window.IsVisible(musicplaylist) | Container.Content(musicvideos) | Window.IsVisible(script-globalsearch.xml)" />
-        <definition>
-            <control type="group">
-                <height>64</height>
-                <visible>$PARAM[visible]</visible>
-                <control type="grouplist">
-                    <top>24</top>
-                    <orientation>horizontal</orientation>
-                    <align>$PARAM[align]</align>
-                    <height>64</height>
-                    <itemgap>-16</itemgap>
-                    <control type="image">
-                        <height>64</height>
-                        <width>64</width>
-                        <texture colordiffuse="$PARAM[colordiffuse]_30">flags/star10.png</texture>
-                    </control>
-                    <control type="image">
-                        <height>64</height>
-                        <width>64</width>
-                        <texture colordiffuse="$PARAM[colordiffuse]_30">flags/star10.png</texture>
-                    </control>
-                    <control type="image">
-                        <height>64</height>
-                        <width>64</width>
-                        <texture colordiffuse="$PARAM[colordiffuse]_30">flags/star10.png</texture>
-                    </control>
-                    <control type="image">
-                        <height>64</height>
-                        <width>64</width>
-                        <texture colordiffuse="$PARAM[colordiffuse]_30">flags/star10.png</texture>
-                    </control>
-                    <control type="image">
-                        <height>64</height>
-                        <width>64</width>
-                        <texture colordiffuse="$PARAM[colordiffuse]_30">flags/star10.png</texture>
-                    </control>
-                </control>
-                <control type="grouplist">
-                    <top>24</top>
-                    <orientation>horizontal</orientation>
-                    <align>$PARAM[align]</align>
-                    <height>64</height>
-                    <itemgap>-16</itemgap>
-                    <control type="image">
-                        <height>64</height>
-                        <width>64</width>
-                        <include content="Defs_Texture" condition="!Skin.HasSetting(EnableMonochromeFlags)">
-                            <param name="texture" value="flags/star10.png" />
-                            <param name="colordiffuse" value="ffeebb00" />
-                        </include>
-                        <texture colordiffuse="$PARAM[colordiffuse]_100">flags/star10.png</texture>
-                        <animation effect="fade" start="100" end="0" condition="!Integer.IsGreater($PARAM[rating_prop],0)">Conditional</animation>
-                    </control>
-                    <control type="image">
-                        <height>64</height>
-                        <width>64</width>
-                        <include content="Defs_Texture" condition="!Skin.HasSetting(EnableMonochromeFlags)">
-                            <param name="texture" value="flags/star10.png" />
-                            <param name="colordiffuse" value="ffeebb00" />
-                        </include>
-                        <texture colordiffuse="$PARAM[colordiffuse]_100">flags/star10.png</texture>
-                        <animation effect="fade" start="100" end="0" condition="!Integer.IsGreater($PARAM[rating_prop],1)">Conditional</animation>
-                    </control>
-                    <control type="image">
-                        <height>64</height>
-                        <width>64</width>
-                        <include content="Defs_Texture" condition="!Skin.HasSetting(EnableMonochromeFlags)">
-                            <param name="texture" value="flags/star10.png" />
-                            <param name="colordiffuse" value="ffeebb00" />
-                        </include>
-                        <texture colordiffuse="$PARAM[colordiffuse]_100">flags/star10.png</texture>
-                        <animation effect="fade" start="100" end="0" condition="!Integer.IsGreater($PARAM[rating_prop],2)">Conditional</animation>
-                    </control>
-                    <control type="image">
-                        <height>64</height>
-                        <width>64</width>
-                        <include content="Defs_Texture" condition="!Skin.HasSetting(EnableMonochromeFlags)">
-                            <param name="texture" value="flags/star10.png" />
-                            <param name="colordiffuse" value="ffeebb00" />
-                        </include>
-                        <texture colordiffuse="$PARAM[colordiffuse]_100">flags/star10.png</texture>
-                        <animation effect="fade" start="100" end="0" condition="!Integer.IsGreater($PARAM[rating_prop],3)">Conditional</animation>
-                    </control>
-                    <control type="image">
-                        <height>64</height>
-                        <width>64</width>
-                        <include content="Defs_Texture" condition="!Skin.HasSetting(EnableMonochromeFlags)">
-                            <param name="texture" value="flags/star10.png" />
-                            <param name="colordiffuse" value="ffeebb00" />
-                        </include>
-                        <texture colordiffuse="$PARAM[colordiffuse]_100">flags/star10.png</texture>
-                        <animation effect="fade" start="100" end="0" condition="!Integer.IsGreater($PARAM[rating_prop],4)">Conditional</animation>
-                    </control>
-                </control>
-            </control>
-        </definition>
-    </include>
-    <include name="Object_PVR_Info">
-        <control type="grouplist">
-            <visible>!Control.HasFocus(9000)</visible>
-            <height>282</height>
-            <top>-15</top>
-            <right>0</right>
-            <left>0</left>
-            <orientation>vertical</orientation>
-            <usecontrolcoords>true</usecontrolcoords>
-            <itemgap>0</itemgap>
-            <include>Object_PVR_Info_Content</include>
-        </control>
-        <control type="grouplist">
-            <visible>Control.HasFocus(9000)</visible>
-            <height>282</height>
-            <top>-15</top>
-            <right>0</right>
-            <left>0</left>
-            <orientation>vertical</orientation>
-            <usecontrolcoords>true</usecontrolcoords>
-            <itemgap>0</itemgap>
-            <include content="Object_PVR_Info_Content">
-                <param name="listitem" value="ListItem.Next" />
-            </include>
-        </control>
-    </include>
-
-    <include name="Object_PVR_Info_Content">
-        <param name="listitem" default="ListItem." />
-        <definition>
-            <control type="group">
-                <height>60</height>
-                <control type="label">
-                    <label>$INFO[$PARAM[listitem]EpgEventTitle]$INFO[$PARAM[listitem]EpisodeName, - ,]</label>
-                    <aligny>top</aligny>
-                    <textcolor>main_fg_100</textcolor>
-                    <font>font_title</font>
-                    <visible>!String.IsEmpty($PARAM[listitem]EpgEventTitle)</visible>
-                </control>
-                <control type="label">
-                    <label>$INFO[$PARAM[listitem]Title]</label>
-                    <aligny>top</aligny>
-                    <textcolor>main_fg_100</textcolor>
-                    <font>font_title</font>
-                    <visible>String.IsEmpty($PARAM[listitem]EpgEventTitle) + !String.IsEmpty($PARAM[listitem]Title)</visible>
-                </control>
-                <control type="label">
-                    <label>$INFO[$PARAM[listitem]Label]</label>
-                    <aligny>top</aligny>
-                    <textcolor>main_fg_100</textcolor>
-                    <font>font_title</font>
-                    <visible>String.IsEmpty($PARAM[listitem]EpgEventTitle) + String.IsEmpty($PARAM[listitem]Title) + !String.IsEmpty($PARAM[listitem]Label)</visible>
-                </control>
-                <control type="label">
-                    <label>$INFO[ListItem.ChannelName]</label>
-                    <aligny>top</aligny>
-                    <textcolor>main_fg_100</textcolor>
-                    <font>font_title</font>
-                    <visible>String.IsEmpty($PARAM[listitem]EpgEventTitle) + String.IsEmpty($PARAM[listitem]Title) + String.IsEmpty($PARAM[listitem]Label)</visible>
-                </control>
-            </control>
-            <control type="label">
-                <label>$INFO[ListItem.ChannelName,[COLOR=main_fg_100],[/COLOR]]$INFO[$PARAM[listitem]Genre,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[$PARAM[listitem]StartTime,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[$PARAM[listitem]EndTime,[COLOR=main_fg_100] - ,[/COLOR]]</label>
-                <height>60</height>
-                <aligny>top</aligny>
-                <textcolor>$VAR[ColorHighlight]</textcolor>
-                <font>font_small</font>
-                <visible>!String.IsEmpty($PARAM[listitem]Title) | !String.IsEmpty($PARAM[listitem]ChannelNumber)</visible>
-            </control>
-            <control type="textbox">
-                <label fallback="19055">$INFO[$PARAM[listitem]Plot]</label>
-                <height>260</height>
-                <aligny>top</aligny>
-                <textcolor>main_fg_70</textcolor>
-                <font>font_plotbox</font>
-            </control>
-        </definition>
-    </include>
-
-    <include name="Object_UpDownInfoArrows">
-        <param name="id" default="9000" />
-        <param name="hasprevious" default="true" />
-        <param name="hasnext" default="true" />
-        <definition>
-            <control type="grouplist">
-                <left>20</left>
-                <right>20</right>
-                <height>view_pad</height>
-                <align>center</align>
-                <orientation>horizontal</orientation>
-                <itemgap>10</itemgap>
-                <visible>$PARAM[hasprevious]</visible>
-                <visible>Container($PARAM[id]).HasPrevious</visible>
-                <include>Animation_FadeIn</include>
-                <include>Animation_FadeOut</include>
-                <usecontrolcoords>true</usecontrolcoords>
-                <control type="group">
-                    <width>22</width>
-                    <bottom>10</bottom>
-                    <control type="image">
-                        <bottom>17</bottom>
-                        <width>16</width>
-                        <height>16</height>
-                        <texture colordiffuse="panel_fg_30" flipy="true">common/arrow-small.png</texture>
-                    </control>
-                    <control type="image">
-                        <bottom>7</bottom>
-                        <width>16</width>
-                        <height>16</height>
-                        <texture colordiffuse="panel_fg_30" flipy="true">common/arrow-small.png</texture>
-                    </control>
-                </control>
-            </control>
-
-            <control type="grouplist">
-                <left>20</left>
-                <right>20</right>
-                <bottom>0</bottom>
-                <height>view_pad</height>
-                <align>center</align>
-                <orientation>horizontal</orientation>
-                <itemgap>10</itemgap>
-                <visible>$PARAM[hasnext]</visible>
-                <visible>Container($PARAM[id]).HasNext</visible>
-                <include>Animation_FadeIn</include>
-                <include>Animation_FadeOut</include>
-                <usecontrolcoords>true</usecontrolcoords>
-                <control type="group">
-                    <width>22</width>
-                    <bottom>10</bottom>
-                    <control type="image">
-                        <bottom>17</bottom>
-                        <width>16</width>
-                        <height>16</height>
-                        <texture colordiffuse="panel_fg_30" flipy="false">common/arrow-small.png</texture>
-                    </control>
-                    <control type="image">
-                        <bottom>7</bottom>
-                        <width>16</width>
-                        <height>16</height>
-                        <texture colordiffuse="panel_fg_30" flipy="false">common/arrow-small.png</texture>
-                    </control>
-                </control>
-            </control>
-        </definition>
-    </include>
-
-    <include name="Object_DownArrows">
-        <control type="group">
-            <width>22</width>
-            <control type="image">
-                <bottom>17</bottom>
-                <width>16</width>
-                <height>16</height>
-                <texture colordiffuse="$VAR[ColorHighlight]">common/arrow-small.png</texture>
-            </control>
-            <control type="image">
-                <bottom>7</bottom>
-                <width>16</width>
-                <height>16</height>
-                <texture colordiffuse="$VAR[ColorHighlight]">common/arrow-small.png</texture>
-            </control>
-        </control>
     </include>
 
     <include name="Object_Ratings_Content">

@@ -1,55 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
-
-    <include name="OSD_LeftSide"><left>view_pad</left></include>
-    <include name="OSD_RightSide"><right>view_pad</right></include>
-    <include name="OSD_Right340"><right>340</right></include>
-    <include name="OSD_Right580"><right>580</right></include>
-    <include name="OSD_Right0"><right>0</right></include>
-
-    <include name="OSD_Music_Info_Image_Circle">
-        <param name="artwork" default="Player.Art(albumartist.thumb)" />
-        <param name="fallback" default="DefaultArtist.png" />
-        <param name="side" default="OSD_RightSide" />
-        <definition>
-            <control type="group">
-                <include>$PARAM[side]</include>
-                <bottom>view_pad</bottom>
-                <width>218</width>
-                <height>218</height>
-                <control type="image">
-                    <right>-15</right>
-                    <bottom>-15</bottom>
-                    <left>-15</left>
-                    <top>-15</top>
-                    <bordersize>15</bordersize>
-                    <bordertexture colordiffuse="Shadow">diffuse/circle-shadow.png</bordertexture>
-                    <texture diffuse="diffuse/circle.png" colordiffuse="PosterBack">common/geometric.png</texture>
-                </control>
-                <control type="image">
-                    <right>-15</right>
-                    <bottom>-15</bottom>
-                    <left>-15</left>
-                    <top>-15</top>
-                    <bordersize>45</bordersize>
-                    <texture>$PARAM[fallback]</texture>
-                    <visible>String.IsEmpty($PARAM[artwork])</visible>
-                </control>
-                <control type="image">
-                    <right>-15</right>
-                    <bottom>-15</bottom>
-                    <left>-15</left>
-                    <top>-15</top>
-                    <bordersize>15</bordersize>
-                    <texture diffuse="diffuse/circle.png">$INFO[$PARAM[artwork]]</texture>
-                    <visible>!String.IsEmpty($PARAM[artwork])</visible>
-                </control>
-            </control>
-        </definition>
-    </include>
-
     <include name="OSD_Music_Info_Image_Square">
-        <param name="side" default="OSD_LeftSide" />
         <definition>
             <control type="group">
                 <centertop>50%</centertop>
@@ -136,14 +87,6 @@
         <orientation>horizontal</orientation>
         <usecontrolcoords>true</usecontrolcoords>
         <itemgap>32</itemgap>
-    </include>
-    <include name="OSD_LiveTVPosition">
-        <align>center</align>
-        <height>48</height>
-        <centerbottom>121</centerbottom>
-        <left>331</left>
-        <width>723</width>
-        <itemgap>36</itemgap>
     </include>
     <include name="OSD_MusicPosition">
         <align>center</align>
@@ -386,7 +329,7 @@
         </control>
     </include>
 
-     <include name="OSD_Menubar_Items">
+    <include name="OSD_Menubar_Items">
         <font>font_small</font>
         <textcolor>panel_fg_100</textcolor>
         <aligny>center</aligny>

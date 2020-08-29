@@ -119,7 +119,7 @@
                             <bottom>-26</bottom>
                             <left>110</left>
                             <align>left</align>
-                            <label>Press down for cast, crew, recommendations and more</label>
+                            <label>$LOCALIZE[31191]</label>
                         </control>
                     </control>
                 </control>
@@ -650,7 +650,7 @@
                             <aligny>center</aligny>
                             <width>auto</width>
                             <height>29</height>
-                            <label>Audio</label>
+                            <label>$LOCALIZE[292]</label>
                             <visible>!String.IsEmpty(ListItem.Property(AudioLanguage.1))</visible>
                         </control>
                         <control type="image">
@@ -699,7 +699,7 @@
                             <aligny>center</aligny>
                             <width>auto</width>
                             <height>29</height>
-                            <label>Subtitles</label>
+                            <label>$LOCALIZE[287]</label>
                             <visible>!String.IsEmpty(ListItem.Property(SubtitleLanguage.1))</visible>
                         </control>
                         <control type="image">

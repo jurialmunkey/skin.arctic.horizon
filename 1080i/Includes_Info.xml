@@ -100,27 +100,6 @@
         <value condition="[String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,season) | String.IsEqual(ListItem.DBType,episode)] + Skin.HasSetting(EnableExtendedInfo) + System.HasAddon(plugin.video.themoviedb.helper)">plugin://plugin.video.themoviedb.helper/?info=recommendations&amp;$VAR[Info_Param_Type]&amp;$VAR[Info_Param_IMDB_or_QUERY]</value>
     </variable>
 
-    <variable name="Info_Cast_List01">
-        <value condition="!Container(9999).IsUpdating + Integer.IsGreater(Container(9999).NumItems,0)">$INFO[Container(9999).ListItemAbsolute(1).FolderPath]</value>
-        <value>videodb://</value>
-    </variable>
-    <variable name="Info_Cast_List02">
-        <value condition="!Container(9999).IsUpdating + Integer.IsGreater(Container(9999).NumItems,0)">$INFO[Container(9999).ListItemAbsolute(2).FolderPath]</value>
-        <value>videodb://</value>
-    </variable>
-    <variable name="Info_Cast_List03">
-        <value condition="!Container(9999).IsUpdating + Integer.IsGreater(Container(9999).NumItems,0)">$INFO[Container(9999).ListItemAbsolute(3).FolderPath]</value>
-        <value>videodb://</value>
-    </variable>
-    <variable name="Info_Cast_List04">
-        <value condition="!Container(9999).IsUpdating + Integer.IsGreater(Container(9999).NumItems,0)">$INFO[Container(9999).ListItemAbsolute(4).FolderPath]</value>
-        <value>videodb://</value>
-    </variable>
-    <variable name="Info_Cast_List05">
-        <value condition="!Container(3100).IsUpdating + Integer.IsGreater(Container(3100).NumItems,0)">$INFO[Container(3100).ListItemAbsolute(5).FolderPath]</value>
-        <value>videodb://</value>
-    </variable>
-
     <include name="Info_Widget_Poster">
         <param name="id" default="5001" />
         <param name="groupid" default="7001" />

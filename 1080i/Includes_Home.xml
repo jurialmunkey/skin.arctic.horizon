@@ -1472,7 +1472,7 @@
                         <aligny>center</aligny>
                         <font>font_tiny_bold</font>
                         <textcolor>main_fg_30</textcolor>
-                        <label>Information</label>
+                        <label>$LOCALIZE[19033]</label>
                     </control>
                     <control type="group">
                         <height>30</height>

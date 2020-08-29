@@ -317,7 +317,7 @@
                     <control type="button" id="307">
                         <description>IP</description>
                         <width>180</width>
-                        <label>IP</label>
+                        <label>$LOCALIZE[31256]</label>
                         <onup>303</onup>
                         <ondown>300</ondown>
                         <include>Defs_Keyboard_Button</include>
