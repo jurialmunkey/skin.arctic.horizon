@@ -61,10 +61,12 @@
                             <top>-320</top>
                             <height>320</height>
                             <width>600</width>
-                            <fadetime>200</fadetime>
+                            <fadetime>400</fadetime>
                             <texture background="true">$VAR[Image_Home_ClearArt]</texture>
                             <aspectratio align="right" aligny="bottom" scalediffuse="false">keep</aspectratio>
                             <visible>$PARAM[clearart]</visible>
+                            <visible>Control.HasFocus($PARAM[id])</visible>
+                            <animation effect="fade" start="0" end="100" time="400" tween="cubic" easing="inout" reversible="false" delay="800">Visible</animation>
                         </include>
                     </include>
                     <control type="group">

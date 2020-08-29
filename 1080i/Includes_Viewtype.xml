@@ -98,6 +98,7 @@
                         <texture background="true">$VAR[Image_ClearArt]</texture>
                         <aspectratio align="right" aligny="bottom" scalediffuse="false">keep</aspectratio>
                         <visible>!Control.IsVisible(51)</visible>
+                        <fadetime>400</fadetime>
                         <right>0</right>
                         <bottom>400</bottom>
                         <height>320</height>
@@ -107,6 +108,7 @@
                         <texture background="true">$VAR[Image_DiscArt]</texture>
                         <aspectratio align="right" aligny="bottom" scalediffuse="false">keep</aspectratio>
                         <visible>Control.IsVisible(51)</visible>
+                        <fadetime>400</fadetime>
                         <right>0</right>
                         <bottom>480</bottom>
                         <height>320</height>

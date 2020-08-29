@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
-
     <variable name="Defs_Showcase_Recs">
         <value condition="Window.IsVisible(1141) + String.IsEqual(Container(1297).ListItem.DBType,movie)">plugin://plugin.video.themoviedb.helper/?info=recommendations&amp;type=movie&amp;query=$INFO[Container(1297).ListItem.Title]</value>
         <value condition="Window.IsVisible(1141) + String.IsEqual(Container(1297).ListItem.DBType,tvshow)">plugin://plugin.video.themoviedb.helper/?info=recommendations&amp;type=tv&amp;query=$INFO[Container(1297).ListItem.Title]</value>

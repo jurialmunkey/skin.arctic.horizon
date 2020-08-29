@@ -1094,7 +1094,8 @@
 
     <include name="Home_Menu_Horizontal_Texture">
         <animation effect="slide" end="$PARAM[slide]" condition="$PARAM[visible]">Conditional</animation>
-        <control type="group">
+        <include content="Object_Control">
+            <param name="type" value="group" />
             <width>$PARAM[width]</width>
             <visible>$PARAM[visible]</visible>
             <control type="image">
@@ -1104,7 +1105,12 @@
             <control type="image">
                 <texture colordiffuse="AltPosterBack" border="40,40,40,40">common/button-view-base.png</texture>
             </control>
-        </control>
+        </include>
+    </include>
+
+    <include name="Home_Menu_Horizontal_IconicMovement">
+        <focusposition>3</focusposition>
+        <movement>4</movement>
     </include>
 
     <include name="Home_Menu_Horizontal">
@@ -1261,11 +1267,12 @@
                     </control>
 
 
-                    <control type="list" id="$PARAM[mainmenu-id]">
+                    <control type="fixedlist" id="$PARAM[mainmenu-id]">
                         <orientation>horizontal</orientation>
                         <left>100</left>
                         <include>Home_Movement_OnFocus</include>
                         <include>Home_Movement_LeftRight</include>
+                        <include condition="Skin.HasSetting(HomeIconicMenu)">Home_Menu_Horizontal_IconicMovement</include>
                         <focusposition>1</focusposition>
                         <movement>2</movement>
                         <itemlayout width="100" condition="Skin.HasSetting(HomeIconicMenu)">
