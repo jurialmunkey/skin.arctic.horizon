@@ -473,11 +473,11 @@
                 <right>0</right>
                 <height>item_widget_details_height</height>
                 <control type="grouplist">
-                    <top>-20</top>
+                    <top>7</top>
                     <width>410</width>
                     <left>100</left>
                     <orientation>vertical</orientation>
-                    <itemgap>21</itemgap>
+                    <itemgap>13</itemgap>
                     <usecontrolcoords>true</usecontrolcoords>
                     <!-- Studio -->
                     <include content="DialogVideoInfo_Widget_Details_Label">
@@ -533,7 +533,7 @@
                     <include content="DialogVideoInfo_Widget_Details_Label">
                         <param name="label" value="$LOCALIZE[31115]" />
                         <param name="infolabel" value="$INFO[Window(Home).Property(TMDbHelper.ListItem.Last_Aired.Season),,x]$INFO[Window(Home).Property(TMDbHelper.ListItem.Last_Aired.Episode),,. ]$INFO[Window(Home).Property(TMDbHelper.ListItem.Last_Aired.Day),,$COMMA ]$INFO[Window(Home).Property(TMDbHelper.ListItem.Last_Aired)]" />
-                        <param name="visible" value="!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Last_Aired))" />
+                        <param name="visible" value="!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Last_Aired)) + String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Next_Aired))" />
                         <param name="align" value="left" />
                     </include>
 
@@ -546,11 +546,11 @@
                     </include>
                 </control>
                 <control type="grouplist">
-                    <top>-20</top>
+                    <top>7</top>
                     <right>100</right>
                     <left>550</left>
                     <orientation>vertical</orientation>
-                    <itemgap>21</itemgap>
+                    <itemgap>13</itemgap>
                     <!-- Director -->
                     <include content="DialogVideoInfo_Widget_Details_Label">
                         <param name="label" value="$LOCALIZE[20339]" />
