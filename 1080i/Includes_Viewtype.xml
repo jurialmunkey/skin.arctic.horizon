@@ -859,7 +859,7 @@
         <definition>
             <include content="Viewtype_Poster">
                 <param name="height" value="$PARAM[height]" />
-                <param name="control-type" value="panel" />
+                <param name="control-type" value="$PARAM[control-type]" />
                 <param name="orientation" value="$PARAM[orientation]" />
                 <param name="itemlayout-width" value="$PARAM[itemlayout-width]" />
                 <param name="itemlayout-height" value="$PARAM[itemlayout-height]" />
@@ -880,11 +880,11 @@
         <param name="itemlayout-width" default="item_square_width" />
         <param name="itemlayout-height" default="180" />
         <param name="orientation" default="horizontal" />
-        <param name="controltype" default="panel" />
+        <param name="control-type" default="panel" />
         <definition>
             <include content="Viewtype_Poster">
                 <param name="height" value="$PARAM[height]" />
-                <param name="control-type" value="$PARAM[controltype]" />
+                <param name="control-type" value="$PARAM[control-type]" />
                 <param name="orientation" value="$PARAM[orientation]" />
                 <param name="itemlayout-width" value="$PARAM[itemlayout-width]" />
                 <param name="itemlayout-height" value="$PARAM[itemlayout-height]" />

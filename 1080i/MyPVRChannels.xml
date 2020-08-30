@@ -50,7 +50,7 @@
                                 <param name="itemlayout" value="View_PVR_ItemLayout" />
                                 <param name="itemheight" value="item_list_height" />
                                 <param name="controllayout" value="View_PVR_Channels" />
-                                <param name="controltype" value="fixedlist" />
+                                <param name="control-type" value="fixedlist" />
                                 <focusposition>2</focusposition>
                                 <movement>2</movement>
                                 <bottom>0</bottom>
@@ -67,7 +67,7 @@
                                 <param name="itemlayout" value="View_PVR_ItemLayout" />
                                 <param name="itemheight" value="item_list_height" />
                                 <param name="controllayout" value="View_PVR_Channels" />
-                                <param name="controltype" value="fixedlist" />
+                                <param name="control-type" value="fixedlist" />
                                 <focusposition>4</focusposition>
                                 <movement>4</movement>
                                 <bottom>0</bottom>

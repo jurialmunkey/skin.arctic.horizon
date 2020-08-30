@@ -875,7 +875,7 @@
                         <animation effect="fade" start="0" end="100" delay="300" time="300" reversible="false" condition="!Container(302).IsUpdating">Conditional</animation>
                         <include content="Viewtype_Keywords">
                             <param name="id" value="302" />
-                            <param name="controltype" value="fixedlist" />
+                            <param name="control-type" value="fixedlist" />
                             <param name="movement" value="5" />
                             <bottom>view_bottom</bottom>
                             <left>-80</left>

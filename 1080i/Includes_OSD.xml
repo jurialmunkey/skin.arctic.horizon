@@ -117,16 +117,17 @@
                 <bottom>0</bottom>
                 <top>0</top>
                 <texture>common/dim-gradient.png</texture>
-                <visible>Window.IsVisible(1143) | [[!String.IsEmpty(Window(Home).Property(OSDInfo)) | Player.ShowInfo | Window.IsActive(DialogFullScreenInfo.xml) | [Skin.HasSetting(ShowInfoPaused) + [Player.Paused | Window.IsVisible(videoosd)]]] + !Window.IsVisible(DialogPlayerProcessInfo.xml) + !Skin.HasSetting(DisableOSDInfo)]</visible>
+                <visible>Window.IsVisible(1143) | [$EXP[Exp_VideoOSD_LargeInfo] + !Skin.HasSetting(DisableOSDInfo)]</visible>
+                <visible>!Window.IsVisible(DialogPlayerProcessInfo.xml)</visible>
                 <include>Animation_FadeIn</include>
                 <include>Animation_FadeOut</include>
             </control>
 
             <!-- Large Info OSD -->
             <control type="group">
-                <visible>!String.IsEmpty(Window(Home).Property(OSDInfo)) | Player.ShowInfo | Window.IsActive(DialogFullScreenInfo.xml) | [Skin.HasSetting(ShowInfoPaused) + [Player.Paused | Window.IsVisible(videoosd)]]</visible>
-                <visible>!Window.IsVisible(DialogPlayerProcessInfo.xml)</visible>
+                <visible>$EXP[Exp_VideoOSD_LargeInfo]</visible>
                 <visible>!Skin.HasSetting(DisableOSDInfo)</visible>
+                <visible>!Window.IsVisible(DialogPlayerProcessInfo.xml)</visible>
                 <visible>!Window.IsVisible(1143)</visible>
                 <include>Animation_FadeIn</include>
                 <include>Animation_FadeOut</include>
@@ -154,7 +155,7 @@
                     <control type="grouplist">
                         <include condition="!String.IsEmpty(Player.Art(poster)) | !String.IsEmpty(Player.Art(tvshow.poster)) | !String.IsEmpty(MusicPlayer.Cover)">OSD_Video_Seekbar_Left</include>
                         <usecontrolcoords>true</usecontrolcoords>
-                        <bottom>-10</bottom>
+                        <bottom>-7</bottom>
                         <right>0</right>
                         <align>bottom</align>
                         <itemgap>0</itemgap>
@@ -272,7 +273,7 @@
 
                         <control type="textbox">
                             <top>15</top>
-                            <height max="120">auto</height>
+                            <height max="125">auto</height>
                             <font>font_plotbox</font>
                             <textcolor>panel_fg_70</textcolor>
                             <label>$INFO[VideoPlayer.Plot,, ]$INFO[MusicPlayer.Property(Artist_Description),, ]$INFO[MusicPlayer.Property(Album_Description)]</label>
@@ -285,9 +286,8 @@
 
             <!-- Small Info OSD -->
             <control type="group">
-                <visible>!String.IsEmpty(Window(Home).Property(OSDInfo)) | Player.ShowInfo | Window.IsActive(DialogFullScreenInfo.xml) | Skin.HasSetting(ShowInfoPaused)</visible>
+                <visible>$EXP[Exp_VideoOSD_SmallInfo]</visible>
                 <visible>!Window.IsVisible(DialogPlayerProcessInfo.xml)</visible>
-                <visible>Skin.HasSetting(DisableOSDInfo)</visible>
                 <visible>!Window.IsVisible(1143)</visible>
                 <include>Animation_FadeIn</include>
                 <include>Animation_FadeOut</include>
@@ -298,7 +298,7 @@
                     <!-- Info -->
                     <control type="grouplist">
                         <usecontrolcoords>true</usecontrolcoords>
-                        <bottom>-10</bottom>
+                        <bottom>-7</bottom>
                         <right>0</right>
                         <align>bottom</align>
                         <include content="Object_Info_Title">

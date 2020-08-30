@@ -29,9 +29,8 @@
 
                 <control type="grouplist" id="9000">
                     <include>OSD_VideoPosition</include>
-                    <onup condition="String.IsEmpty(Window(Home).Property(OSDInfo))">SetProperty(OSDInfo,1,Home)</onup>
-                    <!-- <onup condition="!String.IsEmpty(Window(Home).Property(OSDInfo))">ClearProperty(OSDInfo,Home)</onup> -->
-                    <onup condition="!String.IsEmpty(Window(Home).Property(OSDInfo))">ActivateWindow(1143)</onup>
+                    <onup condition="String.IsEmpty(Window(Home).Property(OSDInfo)) + !Skin.HasSetting(DisableOSDInfo) + !Skin.HasSetting(ShowInfoPaused)">SetProperty(OSDInfo,1,Home)</onup>
+                    <onup condition="!String.IsEmpty(Window(Home).Property(OSDInfo)) | Skin.HasSetting(DisableOSDInfo) | Skin.HasSetting(ShowInfoPaused)">ActivateWindow(1143)</onup>
                     <ondown condition="String.IsEmpty(Window(Home).Property(OSDInfo))">Close</ondown>
                     <ondown condition="!String.IsEmpty(Window(Home).Property(OSDInfo))">ClearProperty(OSDInfo,Home)</ondown>
                     <include>OSD_Controls</include>

@@ -762,7 +762,7 @@
 
     <include name="Object_Info_Button">
         <param name="visible" default="true" />
-        <param name="controltype" default="button" />
+        <param name="control-type" default="button" />
         <param name="width" default="auto" />
         <param name="focused" default="false" />
         <definition>
@@ -786,7 +786,7 @@
                     <param name="colordiffuse-texture" value="main_fg_12" />
                 </include>
             </control>
-            <control type="$PARAM[controltype]" id="$PARAM[id]">
+            <control type="$PARAM[control-type]" id="$PARAM[id]">
                 <left>-14</left>
                 <width>$PARAM[width]</width>
                 <visible>$PARAM[visible]</visible>

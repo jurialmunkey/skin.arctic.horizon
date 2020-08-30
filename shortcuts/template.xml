@@ -242,6 +242,7 @@
             <property name="widgetInclude" tag="property" attribute="name|widgetAspect" value="Icon">Viewtype_Keywords</property>
             <property name="widgetInclude">Viewtype_Poster</property>
 
+
             <!-- Widget Aspect -->
             <property name="widgetAspect" tag="property" attribute="name|widgetAspect" />
             <property name="widgetAspect">Poster</property>
@@ -250,6 +251,8 @@
             <property name="widgetMovement" tag="property" attribute="name|widgetAspect" value="Banner">Defs_Movement_Banner</property>
             <property name="widgetMovement" tag="property" attribute="name|widgetAspect" value="Square">Defs_Movement_Square</property>
             <property name="widgetMovement" tag="property" attribute="name|widgetAspect" value="Small Square">Defs_Movement_Square</property>
+            <property name="widgetMovement" tag="property" attribute="name|widgetAspect" value="Icon">Defs_Movement_Square</property>
+            <property name="widgetMovement" tag="property" attribute="name|list" value="Submenu">Defs_Movement_Square</property>
             <property name="widgetMovement" tag="property" attribute="name|widgetAspect" value="Landscape">Defs_Movement_Landscape</property>
             <property name="widgetMovement" tag="property" attribute="name|widgetAspect" value="Small Landscape">Defs_Movement_Landscape</property>
             <property name="widgetMovement">Defs_Movement_Poster</property>
@@ -296,10 +299,12 @@
 
             <!-- Widget Submenu Property -->
             <property name="widgetConstant" tag="property" attribute="name|list" value="Submenu">widgets_submenu</property>
+            <property name="widgetConstant" tag="property" attribute="name|widgetAspect" value="Icon">widgets_submenu</property>
             <property name="widgetConstant">widgets</property>
 
             <!-- Widget Height Property -->
             <property name="widgetTop" tag="property" attribute="name|list" value="Submenu">widgets_submenu_item_top</property>
+            <property name="widgetTop" tag="property" attribute="name|widgetAspect" value="Icon">widgets_submenu_item_top</property>
             <property name="widgetTop" tag="property" attribute="name|widgetInfo" value="True">widgets_info_item_top</property>
             <property name="widgetTop" tag="property" attribute="name|id" value="$NUMBER[2]">widgets_info_item_top</property>
             <property name="widgetTop">widgets_item_top</property>
@@ -401,6 +406,7 @@
                     <param name="infoslide" value="!$SKINSHORTCUTS[widgetSubmenu] + [$SKINSHORTCUTS[widgetInfo] | $SKINSHORTCUTS[isSecondPosition]]" />
                     <param name="backpanel" value="!$SKINSHORTCUTS[widgetSubmenu] + [$SKINSHORTCUTS[widgetInfo] | [$SKINSHORTCUTS[isSecondPosition] + String.IsEqual(Container(3700).ListItemAbsolute(0).Property(list),Background)]] + [Control.HasFocus($PYTHON[30000 + int(mainmenuid) * 100 + int(id)]) | Integer.IsEqual(Window(Home).Property(HW_$PYTHON[50000 + int(mainmenuid) * 100]_InfoWidget),$PYTHON[30000 + int(mainmenuid) * 100 + int(id)])]" />
                     <param name="clearart" value="$SKINSHORTCUTS[widgetInfo] | [$SKINSHORTCUTS[isSecondPosition] + String.IsEqual(Container(3700).ListItemAbsolute(0).Property(list),Background)]" />
+                    <param name="control-type" value="fixedlist" />
                     <top>$SKINSHORTCUTS[widgetTop]</top>
                     <onback>SetFocus($PYTHON[30000 + int(mainmenuid) * 100 + 1])</onback>
                     <onback>301</onback>
@@ -1234,7 +1240,7 @@
                     <param name="groupid" value="$PYTHON[80000 + int(mainmenuid) * 100 + int(id)]" />
                     <param name="label" value="$INFO[Container(302).ListItemAbsolute($PYTHON[int(id) - 1]).Label]" />
                     <param name="icon" value="$INFO[Container(302).ListItemAbsolute($PYTHON[int(id) - 1]).Icon]" />
-                    <param name="controltype" value="togglebutton" />
+                    <param name="control-type" value="togglebutton" />
                     <param name="visible" value="[String.IsEqual(Container(301).ListItem.Property(submenuVisibility),num-$SKINSHORTCUTS[submenuVisibility]) | String.IsEqual(Container(301).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility])] + !String.IsEmpty(Container(302).ListItemAbsolute($PYTHON[int(id) - 1]).Label)" />
                     <param name="focused" value="String.IsEqual(Container(302).ListItemAbsolute($PYTHON[int(id) - 1]).Label,Container(302).ListItem.Label) + Control.HasFocus(302)" />
                     <ondown>5610</ondown>

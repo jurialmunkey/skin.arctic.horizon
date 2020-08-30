@@ -222,5 +222,10 @@
 
     <expression name="Exp_GlobalBackground">[!Player.HasMedia | [Player.HasVideo + !Skin.HasSetting(global.showvideo)] | [Player.HasAudio + !Skin.HasSetting(global.showvisualisation)] | [Player.HasAudio + !String.IsEmpty(Window(Home).Property(PlayingBackgroundMedia))]]</expression>
 
+    <expression name="Exp_VideoOSD_Info">[!String.IsEmpty(Window(Home).Property(OSDInfo)) | Player.ShowInfo | Window.IsActive(DialogFullScreenInfo.xml)]</expression>
+
+    <expression name="Exp_VideoOSD_LargeInfo">[$EXP[Exp_VideoOSD_Info] | [Skin.HasSetting(ShowInfoPaused) + [Player.Paused | Window.IsVisible(videoosd)]]]</expression>
+
+    <expression name="Exp_VideoOSD_SmallInfo">[Skin.HasSetting(DisableOSDInfo) | [!Skin.HasSetting(DisableOSDInfo) + !$EXP[Exp_VideoOSD_LargeInfo]]]</expression>
 
 </includes>

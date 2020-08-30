@@ -227,12 +227,12 @@
         <param name="height" default="view_list_height" />
         <param name="top" default="0" />
         <param name="controllayout" default="View_Vertical" />
-        <param name="controltype" default="panel" />
+        <param name="control-type" default="panel" />
         <param name="viewtype" default="$LOCALIZE[535]" />
         <param name="viewtypename" default="list" />
         <param name="flipsides" default="false" />
         <definition>
-            <control type="$PARAM[controltype]" id="$PARAM[id]">
+            <control type="$PARAM[control-type]" id="$PARAM[id]">
                 <nested />
                 <scrolltime tween="quadratic">400</scrolltime>
                 <top>$PARAM[top]</top>
