@@ -161,7 +161,7 @@
                 <param name="label" value="$LOCALIZE[31208]" />
                 <param name="icon" value="special://skin/extras/icons/infobubble.png" />
                 <param name="visible" value="Skin.HasSetting(DisableWallScroll)" />
-                <onclick>ActivateWindow(1141)</onclick>
+                <include>Info_Button_Overview_Onclick</include>
                 <include>Info_Button_OnUp</include>
                 <ondown>50</ondown>
             </include>

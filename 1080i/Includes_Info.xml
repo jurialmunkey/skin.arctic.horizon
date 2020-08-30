@@ -440,8 +440,7 @@
             <param name="groupid" value="3205" />
             <param name="label" value="$LOCALIZE[31208]" />
             <param name="icon" value="special://skin/extras/icons/infobubble.png" />
-            <!-- <onclick>ActivateWindow(1141)</onclick> -->
-            <onclick>Action(Up)</onclick>
+            <include>Info_Button_Overview_Onclick</include>
             <include>Info_Button_OnUp</include>
             <ondown>5000</ondown>
         </include>
@@ -512,6 +511,17 @@
         <onup>SetProperty(Path.Posters,"$VAR[Info_Posters]",1141)</onup>
         <onup>SetProperty(Path.Fanart,"$VAR[Info_Fanart]",1141)</onup>
         <onup>ActivateWindow(1141)</onup>
+    </include>
+    <include name="Info_Button_Overview_Onclick">
+        <onclick>SetProperty(GlobalBackground,"$VAR[Global_Background_Image]",1141)</onclick>
+        <onclick>SetProperty(Title,"$VAR[Label_OverlayTitle]",1141)</onclick>
+        <onclick>SetProperty(DBTYpe,"$INFO[ListItem.DBType]",1141)</onclick>
+        <onclick>SetProperty(Title,"$VAR[Label_OverlayTitle]",1141)</onclick>
+        <onclick>SetProperty(Plot,"$VAR[Label_OverlayPlot]",1141)</onclick>
+        <onclick>SetProperty(Critics,"$VAR[Label_OverlayCritics]",1141)</onclick>
+        <onclick>SetProperty(Path.Posters,"$VAR[Info_Posters]",1141)</onclick>
+        <onclick>SetProperty(Path.Fanart,"$VAR[Info_Fanart]",1141)</onclick>
+        <onclick>ActivateWindow(1141)</onclick>
     </include>
 
     <include name="Info_Button_Grouplist">
