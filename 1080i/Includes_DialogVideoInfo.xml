@@ -140,7 +140,7 @@
                         <movement>3</movement>
                         <include>Defs_InfoList_OnClick</include>
                         <include>Defs_InfoList_OnBack</include>
-                        <content limit="25" target="videos" sortby="year" sortorder="ascending">$VAR[Info_Sets]</content>
+                        <content target="videos" sortby="year" sortorder="ascending">$VAR[Info_Sets]</content>
                     </include>
                     <include content="DialogVideoInfo_Widget_Details" condition="!ListItem.IsCollection">
                         <param name="id" value="5000" />
@@ -235,7 +235,7 @@
                     <include>Defs_InfoList_OnClick</include>
                     <include>Defs_InfoList_OnBack</include>
                     <movement>3</movement>
-                    <content limit="25" target="videos">plugin://plugin.video.themoviedb.helper?info=stars_in_movies&amp;type=person&amp;tmdb_id=$INFO[ListItem.Property(tmdb_id)]</content>
+                    <content target="videos">plugin://plugin.video.themoviedb.helper?info=stars_in_movies&amp;type=person&amp;tmdb_id=$INFO[ListItem.Property(tmdb_id)]</content>
                 </include>
                 <!-- List 02 -->
                 <include content="Info_Widget_Poster">
@@ -247,7 +247,7 @@
                     <include>Defs_InfoList_OnClick</include>
                     <include>Defs_InfoList_OnBack</include>
                     <movement>3</movement>
-                    <content limit="25" target="videos">plugin://plugin.video.themoviedb.helper?info=stars_in_tvshows&amp;type=person&amp;tmdb_id=$INFO[ListItem.Property(tmdb_id)]</content>
+                    <content target="videos">plugin://plugin.video.themoviedb.helper?info=stars_in_tvshows&amp;type=person&amp;tmdb_id=$INFO[ListItem.Property(tmdb_id)]</content>
                 </include>
                 <!-- List 03 -->
                 <include content="Info_Widget_Poster">
@@ -259,7 +259,7 @@
                     <include>Defs_InfoList_OnClick</include>
                     <include>Defs_InfoList_OnBack</include>
                     <movement>3</movement>
-                    <content limit="25" target="videos">plugin://plugin.video.themoviedb.helper?info=crew_in_movies&amp;type=person&amp;tmdb_id=$INFO[ListItem.Property(tmdb_id)]</content>
+                    <content target="videos">plugin://plugin.video.themoviedb.helper?info=crew_in_movies&amp;type=person&amp;tmdb_id=$INFO[ListItem.Property(tmdb_id)]</content>
                 </include>
                 <!-- List 05 -->
                 <include content="Info_Widget_Poster">
@@ -271,7 +271,7 @@
                     <include>Defs_InfoList_OnClick</include>
                     <include>Defs_InfoList_OnBack</include>
                     <movement>3</movement>
-                    <content limit="25" target="videos">plugin://plugin.video.themoviedb.helper?info=crew_in_tvshows&amp;type=person&amp;tmdb_id=$INFO[ListItem.Property(tmdb_id)]</content>
+                    <content target="videos">plugin://plugin.video.themoviedb.helper?info=crew_in_tvshows&amp;type=person&amp;tmdb_id=$INFO[ListItem.Property(tmdb_id)]</content>
                 </include>
                 <!-- List 06 -->
                 <include content="Info_Widget_Poster">
@@ -281,7 +281,7 @@
                     <onclick>SetFocus(9506)</onclick>
                     <include>Defs_InfoList_OnBack</include>
                     <movement>3</movement>
-                    <content limit="25" target="videos">plugin://plugin.video.themoviedb.helper?info=images&amp;type=person&amp;tmdb_id=$INFO[ListItem.Property(tmdb_id)]</content>
+                    <content target="videos">plugin://plugin.video.themoviedb.helper?info=images&amp;type=person&amp;tmdb_id=$INFO[ListItem.Property(tmdb_id)]</content>
                 </include>
             </include>
         </include>

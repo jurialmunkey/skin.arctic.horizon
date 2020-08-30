@@ -65,7 +65,7 @@
                     <onclick condition="Window.IsVisible(MyMusicNav.xml)">Container.Update($INFO[ListItem.FolderPath])</onclick>
                     <onclick condition="!Window.IsVisible(MyMusicNav.xml)">ActivateWindow(music,$INFO[ListItem.FolderPath],return)</onclick>
                     <movement>2</movement>
-                    <content limit="25" target="music">musicdb://artists/$INFO[ListItem.DBID]</content>
+                    <content target="music">musicdb://artists/$INFO[ListItem.DBID]</content>
                 </include>
                 <include content="Info_Widget_Poster">
                     <param name="id" value="5002" />
@@ -78,7 +78,7 @@
                     <onclick condition="Window.IsVisible(MyMusicNav.xml)">Container.Update($INFO[ListItem.FolderPath])</onclick>
                     <onclick condition="!Window.IsVisible(MyMusicNav.xml)">ActivateWindow(music,$INFO[ListItem.FolderPath],return)</onclick>
                     <movement>2</movement>
-                    <content limit="25" target="music">musicdb://albums/?xsp=%7b%22rules%22%3a%7b%22and%22%3a%5b%7b%22field%22%3a%22artist%22%2c%22operator%22%3a%22is%22%2c%22value%22%3a%5b%22$INFO[ListItem.AlbumArtist]%22%5d%7d%2c%7b%22field%22%3a%22album%22%2c%22operator%22%3a%22isnot%22%2c%22value%22%3a%5b%22$INFO[ListItem.Album]%22%5d%7d%5d%7d%2c%22type%22%3a%22albums%22%7d</content>
+                    <content target="music">musicdb://albums/?xsp=%7b%22rules%22%3a%7b%22and%22%3a%5b%7b%22field%22%3a%22artist%22%2c%22operator%22%3a%22is%22%2c%22value%22%3a%5b%22$INFO[ListItem.AlbumArtist]%22%5d%7d%2c%7b%22field%22%3a%22album%22%2c%22operator%22%3a%22isnot%22%2c%22value%22%3a%5b%22$INFO[ListItem.Album]%22%5d%7d%5d%7d%2c%22type%22%3a%22albums%22%7d</content>
                 </include>
             </include>
         </include>

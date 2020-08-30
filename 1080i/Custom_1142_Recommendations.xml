@@ -240,7 +240,7 @@
                                 <visible>!String.IsEmpty(Window(1142).Property(Cast.29.Name))</visible>
                             </item>
                         </content>
-                        <content limit="25">$INFO[Window.Property(Path.Cast)]</content>
+                        <content>$INFO[Window.Property(Path.Cast)]</content>
                     </include>
                     <include content="Info_Widget_Poster" condition="!Skin.HasSetting(DisableInfoListCrew)" >
                         <param name="id" value="5050" />
@@ -252,7 +252,7 @@
                         <movement>3</movement>
                         <include>Defs_InfoList_OnClick</include>
                         <include>Defs_InfoList_OnBack</include>
-                        <content limit="25" target="videos">$INFO[Window.Property(Path.Crew)]</content>
+                        <content target="videos">$INFO[Window.Property(Path.Crew)]</content>
                     </include>
                     <include content="Info_Widget_Poster" condition="!Skin.HasSetting(DisableInfoListSets)">
                         <param name="id" value="5002" />
@@ -263,7 +263,7 @@
                         <movement>3</movement>
                         <include>Defs_InfoList_OnClick</include>
                         <include>Defs_InfoList_OnBack</include>
-                        <content limit="25" target="videos" sortby="year" sortorder="ascending">$INFO[Window.Property(Path.Sets)]</content>
+                        <content target="videos" sortby="year" sortorder="ascending">$INFO[Window.Property(Path.Sets)]</content>
                     </include>
                     <include content="Info_Widget_Poster" condition="!Skin.HasSetting(DisableInfoListDirector)" >
                         <param name="id" value="5004" />
@@ -274,7 +274,7 @@
                         <movement>3</movement>
                         <include>Defs_InfoList_OnClick</include>
                         <include>Defs_InfoList_OnBack</include>
-                        <content limit="25" target="videos" sortby="year" sortorder="descending">$INFO[Window.Property(Path.Director)]</content>
+                        <content target="videos" sortby="year" sortorder="descending">$INFO[Window.Property(Path.Director)]</content>
                     </include>
                     <include content="Info_Widget_Poster" condition="!Skin.HasSetting(DisableInfoListStudio)" >
                         <param name="id" value="5005" />
@@ -284,7 +284,7 @@
                         <movement>3</movement>
                         <include>Defs_InfoList_OnClick</include>
                         <include>Defs_InfoList_OnBack</include>
-                        <content limit="25" target="videos">$INFO[Window.Property(Path.Studio)]</content>
+                        <content target="videos">$INFO[Window.Property(Path.Studio)]</content>
                     </include>
                     <include content="Info_Widget_Poster" condition="!Skin.HasSetting(DisableInfoListRecommended)" >
                         <param name="id" value="5006" />
@@ -294,7 +294,7 @@
                         <movement>3</movement>
                         <include>Defs_InfoList_OnClick</include>
                         <include>Defs_InfoList_OnBack</include>
-                        <content limit="25" target="videos">$INFO[Window.Property(Path.Recommended)]</content>
+                        <content target="videos">$INFO[Window.Property(Path.Recommended)]</content>
                     </include>
                     <include content="Info_Widget_Poster" condition="!Skin.HasSetting(DisableInfoListSimilar)" >
                         <param name="id" value="5007" />
@@ -304,7 +304,7 @@
                         <movement>3</movement>
                         <include>Defs_InfoList_OnClick</include>
                         <include>Defs_InfoList_OnBack</include>
-                        <content limit="25" target="videos">$INFO[Window.Property(Path.Similar)]</content>
+                        <content target="videos">$INFO[Window.Property(Path.Similar)]</content>
                     </include>
                     <include content="Info_Widget_Poster" condition="!Skin.HasSetting(DisableInfoListYear)" >
                         <param name="id" value="5008" />
@@ -315,7 +315,7 @@
                         <movement>3</movement>
                         <include>Defs_InfoList_OnClick</include>
                         <include>Defs_InfoList_OnBack</include>
-                        <content limit="25" target="videos">$INFO[Window.Property(Path.Year)]</content>
+                        <content target="videos">$INFO[Window.Property(Path.Year)]</content>
                     </include>
                     <include content="Info_Widget_Poster" condition="!Skin.HasSetting(DisableInfoListGenre)" >
                         <param name="id" value="5009" />
@@ -326,7 +326,7 @@
                         <movement>3</movement>
                         <include>Defs_InfoList_OnClick</include>
                         <include>Defs_InfoList_OnBack</include>
-                        <content limit="25" target="videos">$INFO[Window.Property(Path.Genre)]</content>
+                        <content target="videos">$INFO[Window.Property(Path.Genre)]</content>
                     </include>
                     <include content="Info_Widget_Poster" condition="!Skin.HasSetting(DisableInfoListCastFeature)" >
                         <param name="id" value="5010" />
@@ -337,7 +337,7 @@
                         <movement>3</movement>
                         <include>Defs_InfoList_OnClick</include>
                         <include>Defs_InfoList_OnBack</include>
-                        <content limit="25" target="videos">$INFO[Window.Property(Path.CastFeature)]</content>
+                        <content target="videos">$INFO[Window.Property(Path.CastFeature)]</content>
                     </include>
                     <include content="Info_Widget_Poster" condition="!Skin.HasSetting(DisableInfoListPosters)" >
                         <param name="id" value="5099" />
