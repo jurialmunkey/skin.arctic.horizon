@@ -446,6 +446,7 @@
                     <onfocus>SetProperty(DBType,"$INFO[ListItem.DBType]",1142)</onfocus>
                     <onfocus>SetProperty(Set,"$INFO[ListItem.Set]",1142)</onfocus>
                     <onfocus>SetProperty(Title,"$VAR[Label_OverlayTitle]",1142)</onfocus>
+                    <onfocus>SetProperty(Tagline,"$INFO[ListItem.Tagline]",1142)</onfocus>
                     <onfocus>SetProperty(Director,"$INFO[ListItem.Director]",1142)</onfocus>
                     <onfocus>SetProperty(Year,"$INFO[ListItem.Year]",1142)</onfocus>
                     <onfocus>SetProperty(Genre,"$INFO[ListItem.Genre]",1142)</onfocus>
@@ -463,6 +464,14 @@
                     <onfocus>SetProperty(Path.CastFeature,"$VAR[Info_CastFeature]",1142)</onfocus>
                     <onfocus>SetProperty(Path.Posters,"$VAR[Info_Posters]",1142)</onfocus>
                     <onfocus>SetProperty(Path.Fanart,"$VAR[Info_Fanart]",1142)</onfocus>
+                    <onfocus>SetProperty(Art.Fanart,"$INFO[ListItem.Art(fanart)]",1142)</onfocus>
+                    <onfocus>SetProperty(Art.Discart,"$INFO[ListItem.Art(discart)]",1142)</onfocus>
+                    <onfocus>SetProperty(Art.Clearlogo,"$INFO[ListItem.Art(clearlogo)]",1142)</onfocus>
+                    <onfocus>SetProperty(Art.Fanart1,"$INFO[ListItem.Art(fanart1)]",1142)</onfocus>
+                    <onfocus>SetProperty(Art.Fanart2,"$INFO[ListItem.Art(fanart2)]",1142)</onfocus>
+                    <onfocus>SetProperty(Art.Fanart3,"$INFO[ListItem.Art(fanart3)]",1142)</onfocus>
+                    <onfocus>SetProperty(Art.Fanart4,"$INFO[ListItem.Art(fanart4)]",1142)</onfocus>
+                    <onfocus>SetProperty(Art.Fanart5,"$INFO[ListItem.Art(fanart5)]",1142)</onfocus>
                     <onfocus condition="ListItem.IsCollection">SetProperty(isCollection,True,1142)</onfocus>
                     <onfocus condition="!ListItem.IsCollection">ClearProperty(isCollection,1142)</onfocus>
                     <onfocus>SetProperty(GlobalBackground,"$VAR[Global_Background_Image]",1142)</onfocus>

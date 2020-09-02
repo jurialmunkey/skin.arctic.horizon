@@ -17,6 +17,7 @@
 
     <variable name="Info_Fanart">
         <value condition="[String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,season) | String.IsEqual(ListItem.DBType,episode)] + Skin.HasSetting(EnableExtendedInfo) + System.HasAddon(plugin.video.themoviedb.helper)">plugin://plugin.video.themoviedb.helper/?info=fanart&amp;$VAR[Info_Param_Type]&amp;$VAR[Info_Param_IMDB_or_QUERY]</value>
+        <value>-</value>
     </variable>
 
     <include name="Info_Fanart_List"><content target="images">$VAR[Info_Fanart]</content></include>
@@ -510,6 +511,14 @@
         <onup>SetProperty(Critics,"$VAR[Label_OverlayCritics]",1141)</onup>
         <onup>SetProperty(Path.Posters,"$VAR[Info_Posters]",1141)</onup>
         <onup>SetProperty(Path.Fanart,"$VAR[Info_Fanart]",1141)</onup>
+        <onup>SetProperty(Art.Fanart,"$INFO[ListItem.Art(fanart)]",1141)</onup>
+        <onup>SetProperty(Art.Discart,"$INFO[ListItem.Art(discart)]",1141)</onup>
+        <onup>SetProperty(Art.Clearlogo,"$INFO[ListItem.Art(clearlogo)]",1141)</onup>
+        <onup>SetProperty(Art.Fanart1,"$INFO[ListItem.Art(fanart1)]",1141)</onup>
+        <onup>SetProperty(Art.Fanart2,"$INFO[ListItem.Art(fanart2)]",1141)</onup>
+        <onup>SetProperty(Art.Fanart3,"$INFO[ListItem.Art(fanart3)]",1141)</onup>
+        <onup>SetProperty(Art.Fanart4,"$INFO[ListItem.Art(fanart4)]",1141)</onup>
+        <onup>SetProperty(Art.Fanart5,"$INFO[ListItem.Art(fanart5)]",1141)</onup>
         <onup>ActivateWindow(1141)</onup>
     </include>
     <include name="Info_Button_Overview_Onclick">
@@ -521,6 +530,14 @@
         <onclick>SetProperty(Critics,"$VAR[Label_OverlayCritics]",1141)</onclick>
         <onclick>SetProperty(Path.Posters,"$VAR[Info_Posters]",1141)</onclick>
         <onclick>SetProperty(Path.Fanart,"$VAR[Info_Fanart]",1141)</onclick>
+        <onclick>SetProperty(Art.Fanart,"$INFO[ListItem.Art(fanart)]",1141)</onclick>
+        <onclick>SetProperty(Art.Discart,"$INFO[ListItem.Art(discart)]",1141)</onclick>
+        <onclick>SetProperty(Art.Clearlogo,"$INFO[ListItem.Art(clearlogo)]",1141)</onclick>
+        <onclick>SetProperty(Art.Fanart1,"$INFO[ListItem.Art(fanart1)]",1141)</onclick>
+        <onclick>SetProperty(Art.Fanart2,"$INFO[ListItem.Art(fanart2)]",1141)</onclick>
+        <onclick>SetProperty(Art.Fanart3,"$INFO[ListItem.Art(fanart3)]",1141)</onclick>
+        <onclick>SetProperty(Art.Fanart4,"$INFO[ListItem.Art(fanart4)]",1141)</onclick>
+        <onclick>SetProperty(Art.Fanart5,"$INFO[ListItem.Art(fanart5)]",1141)</onclick>
         <onclick>ActivateWindow(1141)</onclick>
     </include>
 

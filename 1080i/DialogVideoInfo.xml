@@ -48,7 +48,11 @@
         </control>
         <control type="list" id="50">
             <include>Defs_Hidden_List</include>
+            <orientation>horizontal</orientation>
+            <onfocus>Action(Select)</onfocus>
+            <onup>300</onup>
+            <ondown>SetFocus(5000)</ondown>
+            <onback>300</onback>
         </control>
-
     </controls>
 </window>

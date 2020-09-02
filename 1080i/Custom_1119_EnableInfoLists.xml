@@ -48,6 +48,7 @@
                     <include>Dialog_Standard_Button</include>
                     <onclick>Skin.ToggleSetting(DisableInfoListCrew)</onclick>
                     <selected>!Skin.HasSetting(DisableInfoListCrew)</selected>
+                    <enable>Skin.HasSetting(EnableExtendedInfo)</enable>
                 </control>
                 <control type="radiobutton" id="9003">
                     <label>$LOCALIZE[31006]</label>
@@ -76,6 +77,7 @@
                     <include>Dialog_Standard_Button</include>
                     <onclick>Skin.ToggleSetting(DisableInfoListRecommended)</onclick>
                     <selected>!Skin.HasSetting(DisableInfoListRecommended)</selected>
+                    <enable>Skin.HasSetting(EnableExtendedInfo)</enable>
                 </control>
                 <control type="radiobutton" id="9007">
                     <label>$LOCALIZE[31135]</label>
@@ -83,6 +85,7 @@
                     <include>Dialog_Standard_Button</include>
                     <onclick>Skin.ToggleSetting(DisableInfoListSimilar)</onclick>
                     <selected>!Skin.HasSetting(DisableInfoListSimilar)</selected>
+                    <enable>Skin.HasSetting(EnableExtendedInfo)</enable>
                 </control>
                 <control type="radiobutton" id="9008">
                     <label>$LOCALIZE[345]</label>
@@ -111,6 +114,7 @@
                     <include>Dialog_Standard_Button</include>
                     <onclick>Skin.ToggleSetting(DisableInfoListPosters)</onclick>
                     <selected>!Skin.HasSetting(DisableInfoListPosters)</selected>
+                    <enable>Skin.HasSetting(EnableExtendedInfo)</enable>
                 </control>
                 <control type="radiobutton" id="9012">
                     <label>$LOCALIZE[20445]</label>

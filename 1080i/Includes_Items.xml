@@ -1566,49 +1566,49 @@
     <include name="Items_Info_Gallery">
         <content>
             <item>
-                <icon>$INFO[ListItem.Art(fanart)]</icon>
-                <visible>!String.IsEmpty(ListItem.Art(fanart))</visible>
+                <icon>$INFO[Window.Property(art.fanart)]</icon>
+                <visible>!String.IsEmpty(Window.Property(art.fanart))</visible>
                 <label>$LOCALIZE[20445] 1</label>
                 <label2>$LOCALIZE[31203]</label2>
             </item>
             <item>
-                <icon>$INFO[ListItem.Art(fanart1)]</icon>
-                <visible>!String.IsEmpty(ListItem.Art(fanart1))</visible>
+                <icon>$INFO[Window.Property(art.fanart1)]</icon>
+                <visible>!String.IsEmpty(Window.Property(art.fanart1))</visible>
                 <label>$LOCALIZE[20445] 2</label>
                 <label2>$LOCALIZE[31203]</label2>
             </item>
             <item>
-                <icon>$INFO[ListItem.Art(fanart2)]</icon>
-                <visible>!String.IsEmpty(ListItem.Art(fanart2))</visible>
+                <icon>$INFO[Window.Property(art.fanart2)]</icon>
+                <visible>!String.IsEmpty(Window.Property(art.fanart2))</visible>
                 <label>$LOCALIZE[20445] 3</label>
                 <label2>$LOCALIZE[31203]</label2>
             </item>
             <item>
-                <icon>$INFO[ListItem.Art(fanart3)]</icon>
-                <visible>!String.IsEmpty(ListItem.Art(fanart3))</visible>
+                <icon>$INFO[Window.Property(art.fanart3)]</icon>
+                <visible>!String.IsEmpty(Window.Property(art.fanart3))</visible>
                 <label>$LOCALIZE[20445] 4</label>
                 <label2>$LOCALIZE[31203]</label2>
             </item>
             <item>
-                <icon>$INFO[ListItem.Art(fanart4)]</icon>
-                <visible>!String.IsEmpty(ListItem.Art(fanart4))</visible>
+                <icon>$INFO[Window.Property(art.fanart4)]</icon>
+                <visible>!String.IsEmpty(Window.Property(art.fanart4))</visible>
                 <label>$LOCALIZE[20445] 5</label>
                 <label2>$LOCALIZE[31203]</label2>
             </item>
             <item>
-                <icon>$INFO[ListItem.Art(fanart5)]</icon>
-                <visible>!String.IsEmpty(ListItem.Art(fanart5))</visible>
+                <icon>$INFO[Window.Property(art.fanart5)]</icon>
+                <visible>!String.IsEmpty(Window.Property(art.fanart5))</visible>
                 <label>$LOCALIZE[20445] 6</label>
                 <label2>$LOCALIZE[31203]</label2>
             </item>
             <item>
-                <visible>!String.IsEmpty(ListItem.Art(discart))</visible>
-                <icon>$INFO[ListItem.Art(discart)]</icon>
+                <visible>!String.IsEmpty(Window.Property(art.discart))</visible>
+                <icon>$INFO[Window.Property(art.discart)]</icon>
                 <label>$LOCALIZE[31205]</label>
                 <label2>$LOCALIZE[31203]</label2>
-                <property name="discart">$INFO[ListItem.Art(discart)]</property>
-                <property name="clearlogo">$INFO[ListItem.Art(clearlogo)]</property>
-                <property name="tagline">$INFO[ListItem.Tagline]</property>
+                <property name="discart">$INFO[Window.Property(art.discart)]</property>
+                <property name="clearlogo">$INFO[Window.Property(art.clearlogo)]</property>
+                <property name="tagline">$INFO[Window.Property(tagline)]</property>
             </item>
         </content>
     </include>

@@ -155,7 +155,7 @@
                         <texture background="true">$INFO[ListItem.Icon]</texture>
                     </control>
                 </focusedlayout>
-                <!-- <include>Items_Info_Gallery</include> -->
+                <include>Items_Info_Gallery</include>
                 <content target="images">$INFO[Window.Property(Path.Fanart)]</content>
                 <content target="images">$INFO[Window.Property(Path.Posters)]</content>
             </control>
