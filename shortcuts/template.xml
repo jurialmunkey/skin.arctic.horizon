@@ -453,6 +453,7 @@
                     <param name="onfocus" value="SetProperty(CG_$PYTHON[50000 + int(mainmenuid) * 100]_CurrentWidget,$PYTHON[30000 + int(mainmenuid) * 100 + int(id)],Home)" />
                     <param name="onfocus2" value="SetProperty(HW_$PYTHON[50000 + int(mainmenuid) * 100]_InfoWidget,$PYTHON[30000 + int(mainmenuid) * 100 + int(id)],Home)" />
                     <param name="onfocus3" value="SetProperty(PW_$PYTHON[50000 + int(mainmenuid) * 100]_InfoWidget,1,Home)" />
+                    <param name="clearlogo-visible" value="[Integer.IsEqual(Window(Home).Property(HW_$PYTHON[50000 + int(mainmenuid) * 100]_InfoWidget),$PYTHON[30000 + int(mainmenuid) * 100 + int(id)]) + Skin.HasSetting(EnableHorizontalHome)]" />
                     <include>Animation_FadeInOut_Common</include>
                     <top>740</top>
                     <height>30</height>

@@ -47,6 +47,9 @@
             <property name="clearart">$INFO[$PARAM[listitem].Art(clearart)]</property>
             <property name="tvshow.clearart">$INFO[$PARAM[listitem].Art(tvshow.clearart)]</property>
             <property name="artist.clearart">$INFO[$PARAM[listitem].Art(artist.clearart)]</property>
+            <property name="clearlogo">$INFO[$PARAM[listitem].Art(clearlogo)]</property>
+            <property name="tvshow.clearlogo">$INFO[$PARAM[listitem].Art(tvshow.clearlogo)]</property>
+            <property name="artist.clearlogo">$INFO[$PARAM[listitem].Art(artist.clearlogo)]</property>
             <nested />
         </item>
     </include>

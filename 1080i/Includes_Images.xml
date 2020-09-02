@@ -93,8 +93,19 @@
     </variable>
 
     <variable name="Image_Home_Clearlogo">
-        <value condition="!String.IsEmpty(Container(5610).ListItem.Art(tvshow.clearlogo))">$INFO[Container(5610).ListItem.Art(tvshow.clearlogo)]</value>
-        <value condition="!String.IsEmpty(Container(5610).ListItem.Art(clearlogo))">$INFO[Container(5610).ListItem.Art(clearlogo)]</value>
+        <value condition="!String.IsEmpty(Container(3001).ListItem.Art(tvshow.clearlogo))">$INFO[Container(3001).ListItem.Art(tvshow.clearlogo)]</value>
+        <value condition="!String.IsEmpty(Container(3001).ListItem.Art(clearlogo))">$INFO[Container(3001).ListItem.Art(clearlogo)]</value>
+        <value condition="!String.IsEmpty(Container(56560).ListItemAbsolute(0).Property(tvshow.clearlogo))">$INFO[Container(56560).ListItemAbsolute(0).Property(tvshow.clearlogo)]</value>
+        <value condition="!String.IsEmpty(Container(56560).ListItemAbsolute(0).Property(clearlogo))">$INFO[Container(56560).ListItemAbsolute(0).Property(clearlogo)]</value>
+        <value condition="!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.clearlogo))">$INFO[Window(Home).Property(TMDbHelper.ListItem.clearlogo)]</value>
+        <value condition="!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.tvshow.clearlogo))">$INFO[Window(Home).Property(TMDbHelper.ListItem.tvshow.clearlogo)]</value>
+    </variable>
+
+    <variable name="Image_Mirage_Clearlogo">
+        <value condition="!String.IsEmpty(Container(1297).ListItem.Art(tvshow.clearlogo))">$INFO[Container(1297).ListItem.Art(tvshow.clearlogo)]</value>
+        <value condition="!String.IsEmpty(Container(1297).ListItem.Art(clearlogo))">$INFO[Container(1297).ListItem.Art(clearlogo)]</value>
+        <value condition="!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.clearlogo))">$INFO[Window(Home).Property(TMDbHelper.ListItem.clearlogo)]</value>
+        <value condition="!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.tvshow.clearlogo))">$INFO[Window(Home).Property(TMDbHelper.ListItem.tvshow.clearlogo)]</value>
     </variable>
 
     <variable name="Image_AddonInfo_Enable">

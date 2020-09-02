@@ -146,7 +146,7 @@
                     <control type="button" id="19120" description="Orientation">
                         <visible>Integer.IsEqual(Window.Property(CurrentFocus),9001)</visible>
                         <include>Defs_Settings_Button</include>
-                        <label>Menu orientation</label>
+                        <label>$LOCALIZE[31060]</label>
                         <label2>$VAR[Label_SkinSettings_HomeStyle]</label2>
                         <onclick>Skin.ToggleSetting(EnableHorizontalHome)</onclick>
                     </control>
@@ -243,7 +243,7 @@
                     <control type="radiobutton" id="19204" description="Blur background fanart">
                         <visible>Integer.IsEqual(Window.Property(CurrentFocus),9002)</visible>
                         <include>Defs_Settings_Button</include>
-                        <label>Background style</label>
+                        <label>$LOCALIZE[31063]</label>
                         <label2>$VAR[Label_Setting_BackgroundStyle]</label2>
                         <include>Defs_RadioButton_NoTexture</include>
                         <onclick condition="!Skin.HasSetting(DisableBlur)">Skin.SetBool(DisableBlur)</onclick>
@@ -280,7 +280,7 @@
                     <control type="button" id="19208" description="Shadowlines">
                         <visible>Integer.IsEqual(Window.Property(CurrentFocus),9002)</visible>
                         <include>Defs_Settings_Button</include>
-                        <label>Divider style</label>
+                        <label>$LOCALIZE[31024]</label>
                         <label2>$VAR[Label_Setting_DividerStyle]</label2>
                         <onclick condition="Skin.HasSetting(DisablePanelDivider)">Skin.Reset(DisablePanelDivider)</onclick>
                         <onclick condition="!Skin.HasSetting(DisablePanelDivider)">Skin.ToggleSetting(ShadowLines)</onclick>
@@ -302,7 +302,7 @@
                     <control type="label" id="19301" description="LABEL">
                         <visible>Integer.IsEqual(Window.Property(CurrentFocus),9003)</visible>
                         <include>Dialog_Standard_HintLabel</include>
-                        <label>Colours</label>
+                        <label>$LOCALIZE[14078]</label>
                     </control>
                     <control type="button" id="19302" description="Color Highlight">
                         <visible>Integer.IsEqual(Window.Property(CurrentFocus),9003)</visible>
@@ -328,7 +328,7 @@
                     <control type="label" id="19304" description="LABEL">
                         <visible>Integer.IsEqual(Window.Property(CurrentFocus),9003)</visible>
                         <include>Dialog_Standard_HintLabel</include>
-                        <label>Furniture</label>
+                        <label>$LOCALIZE[31030]</label>
                     </control>
                     <control type="radiobutton" id="19305" description="Color Mode">
                         <visible>Integer.IsEqual(Window.Property(CurrentFocus),9003)</visible>
@@ -339,11 +339,12 @@
                         <selected>!Skin.HasSetting(EnableMonochromeFlags)</selected>
                         <onclick>Skin.ToggleSetting(EnableMonochromeFlags)</onclick>
                     </control>
-                    <control type="button" id="19306" description="Ratings">
+                    <control type="radiobutton" id="19306" description="Ratings">
                         <visible>Integer.IsEqual(Window.Property(CurrentFocus),9003)</visible>
                         <include>Defs_Settings_Button</include>
                         <label>$LOCALIZE[31116]</label>
                         <onclick>ActivateWindow(1118)</onclick>
+                        <selected>Skin.HasSetting(TMDbHelper.Service) + !Skin.HasSetting(DisableAllRatings)</selected>
                     </control>
                     <control type="radiobutton" id="19307" description="Clock Weather">
                         <visible>Integer.IsEqual(Window.Property(CurrentFocus),9003)</visible>
@@ -376,7 +377,7 @@
                     <control type="label" id="19401" description="LABEL">
                         <visible>Integer.IsEqual(Window.Property(CurrentFocus),9004)</visible>
                         <include>Dialog_Standard_HintLabel</include>
-                        <label>List Items</label>
+                        <label>$LOCALIZE[31138]</label>
                     </control>
                     <control type="button" id="19402" description="Disable watched indicators">
                         <visible>Integer.IsEqual(Window.Property(CurrentFocus),9004)</visible>
@@ -410,7 +411,7 @@
                     <control type="label" id="19406" description="LABEL">
                         <visible>Integer.IsEqual(Window.Property(CurrentFocus),9004)</visible>
                         <include>Dialog_Standard_HintLabel</include>
-                        <label>Viewtypes</label>
+                        <label>$LOCALIZE[31152]</label>
                     </control>
                     <control type="button" id="19407">
                         <visible>Integer.IsEqual(Window.Property(CurrentFocus),9004)</visible>
@@ -562,7 +563,7 @@
                     <control type="radiobutton" id="19611" description="Standard style">
                         <visible>Integer.IsEqual(Window.Property(CurrentFocus),9006)</visible>
                         <include>Defs_Settings_Button</include>
-                        <label>Large artwork replaces seekbar</label>
+                        <label>$LOCALIZE[31021]</label>
                         <selected>!Skin.HasSetting(StandardMusicOSD)</selected>
                         <onclick>Skin.ToggleSetting(StandardMusicOSD)</onclick>
                     </control>

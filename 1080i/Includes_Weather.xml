@@ -36,7 +36,7 @@
                         <align>left</align>
                         <font>font_weather_currenttemp</font>
                         <textcolor>main_fg_90</textcolor>
-                        <label fallback="N/A">$INFO[Window(Weather).Property(Current.Temperature),[B],[/B]°]</label>
+                        <label fallback="$LOCALIZE[10006]">$INFO[Window(Weather).Property(Current.Temperature),[B],[/B]°]</label>
                     </control>
                 </include>
                 <control type="label">
@@ -51,7 +51,7 @@
                 <control type="label">
                     <height>60</height>
                     <width>auto</width>
-                    <label>Weekly Forecast</label>
+                    <label>$LOCALIZE[31032]</label>
                     <aligny>top</aligny>
                     <textcolor>main_fg_70</textcolor>
                     <font>font_tiny</font>
@@ -68,7 +68,7 @@
                 <include>Animation_FadeInOut</include>
                 <control type="label">
                     <width>auto</width>
-                    <label>Current Conditions</label>
+                    <label>$LOCALIZE[31034]</label>
                     <aligny>top</aligny>
                     <align>left</align>
                     <height>45</height>
@@ -211,7 +211,7 @@
                 <align>center</align>
                 <font>font_plotbox</font>
                 <textcolor>main_fg_70</textcolor>
-                <label fallback="N/A">$PARAM[label]</label>
+                <label fallback="$LOCALIZE[10006]">$PARAM[label]</label>
             </control>
             <control type="label">
                 <top>140</top>
@@ -220,7 +220,7 @@
                 <align>center</align>
                 <font>font_weather_bold</font>
                 <textcolor>main_fg_90</textcolor>
-                <label fallback="N/A"> $INFO[Window(Weather).Property($PARAM[day].HighTemp),[B],[/B]°]$INFO[Window(Weather).Property($PARAM[day].LowTemp), ,°]</label>
+                <label fallback="$LOCALIZE[10006]"> $INFO[Window(Weather).Property($PARAM[day].HighTemp),[B],[/B]°]$INFO[Window(Weather).Property($PARAM[day].LowTemp), ,°]</label>
             </control>
         </control>
     </include>

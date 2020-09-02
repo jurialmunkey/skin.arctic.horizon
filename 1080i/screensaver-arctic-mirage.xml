@@ -45,9 +45,50 @@
 
         <control type="group">
             <visible>!Container(1297).IsUpdating</visible>
-            <include content="Home_Widget_Fullscreen_Info">
-                <param name="id" value="1297" />
-            </include>
+            <control type="group">
+                <visible>!Integer.IsEqual(Container(1297).NumItems,0)</visible>
+                <control type="image">
+                    <texture background="true" colordiffuse="cdffffff">common/vignette-home.png</texture>
+                </control>
+                <control type="grouplist">
+                    <left>view_pad</left>
+                    <top>65</top>
+                    <bottom>view_pad</bottom>
+                    <width>1100</width>
+                    <align>bottom</align>
+                    <orientation>vertical</orientation>
+                    <usecontrolcoords>true</usecontrolcoords>
+                    <itemgap>0</itemgap>
+                    <include content="Object_Info_Title">
+                        <param name="label" value="$INFO[Container(1297).ListItem.Title]" />
+                    </include>
+                    <include content="Object_Info_Line">
+                        <param name="label" value="$VAR[Label_InfoLine]" />
+                        <param name="image" value="$VAR[Image_VideoQuality]" />
+                    </include>
+                    <include content="Object_Info_Ratings" condition="!Skin.HasSetting(DisableAllRatings)">
+                        <param name="userrating" value="Container(1297).ListItem.UserRating" />
+                        <param name="starrating" value="Container(1297).ListItem.Rating" />
+                    </include>
+                    <include content="Object_Info_Plot" condition="!Skin.HasSetting(DisableAllRatings)">
+                        <param name="height" value="80" />
+                        <param name="label" value="$INFO[Container(1297).ListItem.Plot]" />
+                    </include>
+                    <include content="Object_Info_Plot" condition="Skin.HasSetting(DisableAllRatings)">
+                        <param name="height" value="80" />
+                        <param name="label" value="$INFO[Container(1297).ListItem.Plot]" />
+                        <top>10</top>
+                    </include>
+                </control>
+                <control type="image">
+                    <right>view_pad</right>
+                    <bottom>view_pad</bottom>
+                    <aspectratio align="right" aligny="bottom">keep</aspectratio>
+                    <height>120</height>
+                    <fadetime>200</fadetime>
+                    <texture background="true">$VAR[Image_Mirage_Clearlogo]</texture>
+                </control>
+            </control>
 
             <include content="Topbar_Left">
                 <param name="label" value="$INFO[Skin.String(screensaver.arctic.mirage.name)]" />

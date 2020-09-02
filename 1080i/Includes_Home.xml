@@ -537,17 +537,19 @@
 
     <include name="Home_Widget_Fullscreen_HubInfo">
         <param name="visible" default="true" />
+        <param name="clearlogo-visible" default="false" />
         <definition>
             <control type="group" id="$PARAM[group2-id]">
                 <nested />
+                <right>view_pad</right>
                 <left>view_pad</left>
                 <top>widgets_label_top</top>
                 <height>widgets_item_height</height>
-                <width>1100</width>
                 <control type="grouplist">
                     <left>20</left>
                     <height>widgets_item_height</height>
                     <bottom>-210</bottom>
+                    <right>660</right>
                     <orientation>vertical</orientation>
                     <usecontrolcoords>true</usecontrolcoords>
                     <align>bottom</align>
@@ -557,6 +559,17 @@
                         <param name="plotheight" value="80" />
                         <param name="plotheight-nr" value="120" />
                     </include>
+                </control>
+                <control type="image">
+                    <right>20</right>
+                    <bottom>-300</bottom>
+                    <height>80</height>
+                    <fadetime>200</fadetime>
+                    <aspectratio align="right" aligny="bottom">keep</aspectratio>
+                    <texture background="true">$VAR[Image_Home_Clearlogo]</texture>
+                    <visible>Control.HasFocus($PARAM[button-play-id]) | Control.HasFocus($PARAM[button-info-id]) | Integer.IsEqual(Window(Home).Property(TMDbHelper.WidgetContainer),3001) | $PARAM[clearlogo-visible]</visible>
+                    <animation reversible="false" effect="fade" start="100" end="0" delay="0" time="300" tween="cubic" easing="inout">Hidden</animation>
+                    <animation reversible="false" effect="fade" start="0" end="100" delay="200" time="400" tween="cubic" easing="inout">Visible</animation>
                 </control>
             </control>
             <control type="grouplist" id="$PARAM[group-id]" >
@@ -812,23 +825,6 @@
                             <height>55</height>
                         </control>
                     </control>
-                    <control type="image">
-                        <right>view_pad</right>
-                        <bottom>760</bottom>
-                        <aspectratio align="right" aligny="bottom">keep</aspectratio>
-                        <height>80</height>
-                        <fadetime>200</fadetime>
-                        <animation effect="slide" time="0" start="0" end="0,250" condition="Integer.IsEqual(Container(302).NumItems,0)">Conditional</animation>
-                        <animation effect="slide" end="-160" time="400" tween="quadratic" condition="!Skin.HasSetting(EnableHorizontalHome) + [Control.HasFocus(301) | Control.HasFocus(303) | [Control.HasFocus(3992) + String.IsEmpty(Window.Property(WidgetFocus))] | Skin.HasSetting(LockMainMenu)]">Conditional</animation>
-                        <texture background="true">$VAR[Image_Home_ClearLogo]</texture>
-                        <animation type="Hidden">
-                            <effect type="fade" start="100" end="0" delay="0" time="300" tween="cubic" easing="inout" />
-                        </animation>
-                        <animation type="Visible">
-                            <effect type="fade" start="0" end="100" delay="200" time="400" tween="cubic" easing="inout" />
-                        </animation>
-                        <visible>![Control.HasFocus(5610) | Control.HasFocus(60)]</visible>
-                    </control>
                 </control>
                 <control type="group">
                     <include>View_Pad</include>
@@ -840,12 +836,8 @@
                         <texture background="true">$VAR[Image_ClearArt]</texture>
                         <aspectratio align="right" aligny="bottom" scalediffuse="false">keep</aspectratio>
                         <bordersize>15</bordersize>
-                        <animation type="Hidden" reversible="false">
-                            <effect type="fade" start="100" end="0" delay="0" time="300" tween="cubic" easing="inout" />
-                        </animation>
-                        <animation type="Visible" reversible="false">
-                            <effect type="fade" start="0" end="100" delay="200" time="400" tween="cubic" easing="inout" />
-                        </animation>
+                        <animation reversible="false" effect="fade" start="100" end="0" delay="0" time="300" tween="cubic" easing="inout">Hidden</animation>
+                        <animation reversible="false" effect="fade" start="0" end="100" delay="200" time="400" tween="cubic" easing="inout">Visible</animation>
                         <visible>[Control.HAsFocus(5610) | Control.HasFocus(60)]</visible>
                     </control>
                     <include content="Viewtype_BackPanel">
@@ -903,54 +895,6 @@
                         <include>skinshortcuts-template-spotlight-mainmenu</include>
                     </control>
                 </control>
-            </control>
-        </control>
-    </include>
-
-    <include name="Home_Widget_Fullscreen_Info">
-        <control type="group">
-            <visible>!Integer.IsEqual(Container($PARAM[id]).NumItems,0)</visible>
-            <control type="image">
-                <texture background="true" colordiffuse="cdffffff">common/vignette-home.png</texture>
-            </control>
-            <control type="grouplist">
-                <left>view_pad</left>
-                <top>65</top>
-                <bottom>view_pad</bottom>
-                <width>1100</width>
-                <align>bottom</align>
-                <orientation>vertical</orientation>
-                <usecontrolcoords>true</usecontrolcoords>
-                <itemgap>0</itemgap>
-                <include content="Object_Info_Title">
-                    <param name="label" value="$INFO[Container($PARAM[id]).ListItem.Title]" />
-                </include>
-                <include content="Object_Info_Line">
-                    <param name="label" value="$VAR[Label_Home_InfoLine]" />
-                    <param name="image" value="$VAR[Image_Home_VideoQuality]" />
-                </include>
-                <include content="Object_Info_Ratings" condition="!Skin.HasSetting(DisableAllRatings)">
-                    <param name="userrating" value="Container($PARAM[id]).ListItem.UserRating" />
-                    <param name="starrating" value="Container($PARAM[id]).ListItem.Rating" />
-                </include>
-                <include content="Object_Info_Plot" condition="!Skin.HasSetting(DisableAllRatings)">
-                    <param name="height" value="80" />
-                    <param name="label" value="$INFO[Container($PARAM[id]).ListItem.Plot]" />
-                </include>
-                <include content="Object_Info_Plot" condition="Skin.HasSetting(DisableAllRatings)">
-                    <param name="height" value="80" />
-                    <param name="label" value="$INFO[Container($PARAM[id]).ListItem.Plot]" />
-                    <top>10</top>
-                </include>
-            </control>
-            <control type="image">
-                <right>view_pad</right>
-                <bottom>view_pad</bottom>
-                <aspectratio align="right" aligny="bottom">keep</aspectratio>
-                <height>80</height>
-                <fadetime>200</fadetime>
-                <animation effect="slide" end="-160" time="400" tween="quadratic" condition="!Skin.HasSetting(EnableHorizontalHome) + [Control.HasFocus(301) | Control.HasFocus(303) | [Control.HasFocus(3992) + String.IsEmpty(Window.Property(WidgetFocus))] | Skin.HasSetting(LockMainMenu)]">Conditional</animation>
-                <texture background="true">$VAR[Image_Home_ClearLogo]</texture>
             </control>
         </control>
     </include>

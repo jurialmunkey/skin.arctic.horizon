@@ -1962,19 +1962,19 @@
     <include name="Items_Random">
         <content>
             <item>
-                <label>Previous Page</label>
+                <label>$LOCALIZE[31031]</label>
                 <onclick>Control.Move(5001,-10)</onclick>
                 <onclick>SetFocus(3009)</onclick>
                 <visible>String.IsEqual(Window.Property(Direction),onup)</visible>
             </item>
             <item>
-                <label>Next Page</label>
+                <label>$LOCALIZE[33078]</label>
                 <onclick>Control.Move(5001,10)</onclick>
                 <onclick>SetFocus(3000)</onclick>
                 <visible>String.IsEqual(Window.Property(Direction),ondown)</visible>
             </item>
             <item>
-                <label>Cancel</label>
+                <label>$LOCALIZE[222]</label>
                 <onclick>SetFocus(4100)</onclick>
                 <visible>String.IsEmpty(Window.Property(Direction))</visible>
             </item>

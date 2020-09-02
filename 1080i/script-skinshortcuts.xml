@@ -27,7 +27,7 @@
             <control type="label">
                 <description>header label</description>
                 <include>Dialog_Standard_Header</include>
-                <label>Customize Widgets</label>
+                <label>$LOCALIZE[31043]</label>
                 <visible>[String.EndsWith(Window.Property(groupname),.1) | String.IsEqual(Window.Property(groupname),searchmenu)]</visible>
             </control>
 
@@ -39,7 +39,7 @@
                     <left>0</left>
                     <width>500</width>
                     <control type="label">
-                        <label>Shortcuts</label>
+                        <label>$LOCALIZE[111]</label>
                         <top>0</top>
                         <include>Dialog_Standard_HintLabel</include>
                     </control>
@@ -240,7 +240,7 @@
                         </control>
 
                         <control type="button" id="4101" description="Choose Search Item">
-                            <label>Default search items</label>
+                            <label>$LOCALIZE[31050]</label>
                             <onclick>SetProperty(custom-grouping,customsearchdefaultitems)</onclick>
                             <onclick>SendClick(401)</onclick>
                             <visible>!String.IsEqual(Container(211).ListItem.Property(skinshortcuts-disabled),True)</visible>
@@ -331,7 +331,7 @@
                         </control>
 
                         <control type="button" id="9916" description="Display Info">
-                            <label>Display info</label>
+                            <label>$LOCALIZE[31056]</label>
                             <visible>!String.IsEqual(Container(211).ListItem.Property(skinshortcuts-disabled),True)</visible>
                             <label2>$INFO[Container(211).ListItem.Property(widgetInfo)]</label2>
                             <include>Dialog_Standard_Button</include>
@@ -404,7 +404,7 @@
                     <control type="label">
                         <description>header label</description>
                         <include>Dialog_Standard_Header</include>
-                        <label>Customize Hub Widget</label>
+                        <label>$LOCALIZE[31058]</label>
                     </control>
 
                     <!-- Shortcuts List -->
