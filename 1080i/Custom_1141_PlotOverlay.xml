@@ -14,14 +14,12 @@
             <include content="DialogVideoInfo_Left">
                 <include>Animation_Left_Delay</include>
                 <include>Defs_InfoDialog_Visible</include>
-                <visible>[Control.HasFocus(9601) | Control.HasFocus(9602)]</visible>
                 <visible>[String.IsEqual(Window.Property(DBType),movie) | String.IsEqual(Window.Property(DBType),tvshow) | String.IsEqual(Window.Property(DBType),episode) | String.IsEqual(Window.Property(DBType),set) | String.IsEqual(Window.Property(DBType),actor) | String.IsEqual(Window.Property(DBType),season)]</visible>
             </include>
             <include content="DialogVideoInfo_Left">
                 <param name="poster" value="false" />
                 <include>Animation_Left_Delay</include>
                 <include>Defs_InfoDialog_Visible</include>
-                <visible>[Control.HasFocus(9601) | Control.HasFocus(9602)]</visible>
                 <visible>![String.IsEqual(Window.Property(DBType),movie) | String.IsEqual(Window.Property(DBType),tvshow) | String.IsEqual(Window.Property(DBType),episode) | String.IsEqual(Window.Property(DBType),set) | String.IsEqual(Window.Property(DBType),actor) | String.IsEqual(Window.Property(DBType),season)]</visible>
                 <control type="group">
                     <top>view_top</top>
@@ -47,7 +45,6 @@
                 <right>view_pad</right>
                 <top>view_top</top>
                 <bottom>view_pad</bottom>
-                <visible>[Control.HasFocus(9601) | Control.HasFocus(9602)]</visible>
                 <include>Animation_Right_Delay</include>
                 <control type="group">
                     <include condition="Skin.HasSetting(DisablePanelDivider)">Defs_View_Info_Left_NoPanel</include>
@@ -69,8 +66,8 @@
 
                                 <control type="scrollbar" id="9601">
                                     <onleft>Back</onleft>
-                                    <onright condition="Control.IsVisible(9602)">SetFocus(9602,0,absolute)</onright>
-                                    <onright condition="!Control.IsVisible(9602)">Back</onright>
+                                    <onright condition="!Integer.IsEqual(Container(9602).NumItems,0) | Container(9602).IsUpdating">SetFocus(9602,0,absolute)</onright>
+                                    <onright condition="Integer.IsEqual(Container(9602).NumItems,0) + !Container(9602).IsUpdating">Back</onright>
                                     <top>100</top>
                                     <left>-1000</left>
                                     <bottom>200</bottom>
@@ -124,8 +121,6 @@
             </control>
         </control>
         <control type="group">
-            <visible>[Control.HasFocus(9601) | Control.HasFocus(9602)]</visible>
-            <visible>String.IsEqual(Window.Property(DBType),movie) | String.IsEqual(Window.Property(DBType),tvshow)</visible>
             <animation effect="slide" start="0" end="-1920" reversible="false" condition="Control.HasFocus(9602)" time="400" tween="quadratic">Conditional</animation>
             <animation effect="slide" end="0" start="-1920" reversible="false" condition="!Control.HasFocus(9602)" time="400" tween="quadratic">Conditional</animation>
             <left>1920</left>
