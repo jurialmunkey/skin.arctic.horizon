@@ -1024,7 +1024,7 @@
             <control type="textbox">
                 <left>35</left>
                 <right>35</right>
-                <font>font_tiny_bold</font>
+                <font>font_tiny_bold_abs</font>
                 <selectedcolor>$PARAM[textcolor_100]</selectedcolor>
                 <textcolor>$PARAM[textcolor_100]</textcolor>
                 <top>-3</top>

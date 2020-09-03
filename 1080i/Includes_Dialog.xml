@@ -1442,7 +1442,7 @@
                     <height>70</height>
                     <align>center</align>
                     <aligny>center</aligny>
-                    <font>font_tiny</font>
+                    <font>font_tiny_abs</font>
                     <textcolor>panel_fg_100</textcolor>
                 </control>
                 <control type="fixedlist" id="11">

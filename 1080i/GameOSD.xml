@@ -35,7 +35,7 @@
                         <left>30</left>
                         <right>30</right>
                         <height>130</height>
-                        <font>font_tiny</font>
+                        <font>font_tiny_abs</font>
                         <textcolor>dialog_fg_70</textcolor>
                     </control>
                     <control type="gamecontroller" id="1102">
@@ -50,7 +50,7 @@
                         <right>30</right>
                         <height>40</height>
                         <aligny>top</aligny>
-                        <font>font_tiny</font>
+                        <font>font_tiny_abs</font>
                         <textcolor>dialog_fg_70</textcolor>
                         <label>$LOCALIZE[35236]</label>
                     </control>

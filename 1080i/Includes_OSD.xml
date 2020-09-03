@@ -327,7 +327,7 @@
     </variable>
 
     <include name="OSD_Menubar_Items">
-        <font>font_small</font>
+        <font>font_small_abs</font>
         <textcolor>panel_fg_100</textcolor>
         <aligny>center</aligny>
         <width>auto</width>

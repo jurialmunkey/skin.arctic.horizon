@@ -198,7 +198,7 @@
                         <right>30</right>
                         <height>60</height>
                         <textcolor>dialog_fg_70</textcolor>
-                        <font>font_statusbar</font>
+                        <font>font_statusbar_abs</font>
                         <aligny>center</aligny>
                         <label>$PARAM[label]</label>
                     </control>
@@ -643,7 +643,7 @@
                     <height>40</height>
                     <aligny>top</aligny>
                     <textcolor>$VAR[ColorHighlight]</textcolor>
-                    <font>font_small</font>
+                    <font>font_small_abs</font>
                 </control>
                 <nested />
                 <left>0</left>
