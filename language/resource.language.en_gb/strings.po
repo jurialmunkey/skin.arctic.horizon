@@ -182,7 +182,7 @@ msgstr ""
 
 #: /1080i/Includes_Weather.xml
 msgctxt "#31034"
-msgid "Current Cconditions"
+msgid "Current conditions"
 msgstr ""
 
 #: /1080i/SkinSettings.xml
@@ -227,7 +227,7 @@ msgstr ""
 
 #: /1080i/script-skinshortcuts.xml
 msgctxt "#31043"
-msgid "Customize widgets"
+msgid "Customise widgets"
 msgstr ""
 
 #: /1080i/SkinSettings.xml
@@ -302,7 +302,7 @@ msgstr ""
 
 #: /1080i/script-skinshortcuts.xml
 msgctxt "#31058"
-msgid "Customize hub widget"
+msgid "Customise hub widget"
 msgstr ""
 
 #: /1080i/DialogContextMenu.xml
