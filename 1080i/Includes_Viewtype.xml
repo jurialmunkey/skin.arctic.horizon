@@ -615,39 +615,71 @@
                         <texture border="10" colordiffuse="$VAR[ColorGradient]">common/box-gradient-vertical.png</texture>
                     </control>
                 </include>
+                <control type="image">
+                    <aspectratio scalediffuse="false">scale</aspectratio>
+                    <texture background="true" diffuse="diffuse/submenu-std.png" colordiffuse="ff999999">$INFO[ListItem.Property(background)]</texture>
+                    <visible>!String.IsEmpty(ListItem.Property(background))</visible>
+                    <bordersize>15</bordersize>
+                </control>
                 <control type="group">
-                    <height>72%</height>
-                    <include content="Object_Artwork">
-                        <param name="id" value="$PARAM[id]" />
-                        <param name="altid" value="$PARAM[altid]" />
-                        <param name="selectbox" value="$PARAM[selectbox]" />
-                        <param name="diffuse" value="diffuse/landscape-std.png" />
-                        <param name="icon" value="$VAR[Image_Keywords]" />
-                        <param name="aspectratio" value="keep" />
-                        <param name="bordersize" value="$PARAM[bordersize]" />
-                    </include>
+                    <visible>String.IsEqual(ListItem.Icon,special://skin/extras/icons/_none.png)</visible>
+                    <control type="label">
+                        <left>30</left>
+                        <right>30</right>
+                        <aligny>center</aligny>
+                        <align>center</align>
+                        <font>font_tiny_bold</font>
+                        <label>$INFO[ListITem.Label]</label>
+                        <textcolor>main_fg_70</textcolor>
+                        <visible>![$PARAM[selectbox] + [Control.HasFocus($PARAM[id]) | Control.HasFocus($PARAM[altid])]]</visible>
+                    </control>
+                    <control type="label">
+                        <aligny>center</aligny>
+                        <left>30</left>
+                        <right>30</right>
+                        <align>center</align>
+                        <font>font_tiny_bold</font>
+                        <label>$INFO[ListITem.Label]</label>
+                        <textcolor>panel_fg_100</textcolor>
+                        <visible>[$PARAM[selectbox] + [Control.HasFocus($PARAM[id]) | Control.HasFocus($PARAM[altid])]]</visible>
+                    </control>
                 </control>
-                <control type="label">
-                    <top>75%</top>
-                    <bottom>40</bottom>
-                    <left>30</left>
-                    <right>30</right>
-                    <align>center</align>
-                    <font>font_tiny_bold</font>
-                    <label>$INFO[ListITem.Label]</label>
-                    <textcolor>main_fg_70</textcolor>
-                    <visible>![$PARAM[selectbox] + [Control.HasFocus($PARAM[id]) | Control.HasFocus($PARAM[altid])]]</visible>
-                </control>
-                <control type="label">
-                    <top>75%</top>
-                    <bottom>40</bottom>
-                    <left>30</left>
-                    <right>30</right>
-                    <align>center</align>
-                    <font>font_tiny_bold</font>
-                    <label>$INFO[ListITem.Label]</label>
-                    <textcolor>panel_fg_100</textcolor>
-                    <visible>[$PARAM[selectbox] + [Control.HasFocus($PARAM[id]) | Control.HasFocus($PARAM[altid])]]</visible>
+                <control type="group">
+                    <visible>!String.IsEqual(ListItem.Icon,special://skin/extras/icons/_none.png)</visible>
+                    <control type="group">
+                        <height>72%</height>
+                        <include content="Object_Artwork">
+                            <param name="id" value="$PARAM[id]" />
+                            <param name="altid" value="$PARAM[altid]" />
+                            <param name="selectbox" value="$PARAM[selectbox]" />
+                            <param name="diffuse" value="diffuse/submenu-std.png" />
+                            <param name="icon" value="$VAR[Image_Keywords]" />
+                            <param name="aspectratio" value="keep" />
+                            <param name="bordersize" value="$PARAM[bordersize]" />
+                        </include>
+                    </control>
+                    <control type="label">
+                        <top>75%</top>
+                        <bottom>40</bottom>
+                        <left>30</left>
+                        <right>30</right>
+                        <align>center</align>
+                        <font>font_tiny_bold</font>
+                        <label>$INFO[ListITem.Label]</label>
+                        <textcolor>main_fg_70</textcolor>
+                        <visible>![$PARAM[selectbox] + [Control.HasFocus($PARAM[id]) | Control.HasFocus($PARAM[altid])]]</visible>
+                    </control>
+                    <control type="label">
+                        <top>75%</top>
+                        <bottom>40</bottom>
+                        <left>30</left>
+                        <right>30</right>
+                        <align>center</align>
+                        <font>font_tiny_bold</font>
+                        <label>$INFO[ListITem.Label]</label>
+                        <textcolor>panel_fg_100</textcolor>
+                        <visible>[$PARAM[selectbox] + [Control.HasFocus($PARAM[id]) | Control.HasFocus($PARAM[altid])]]</visible>
+                    </control>
                 </control>
             </control>
         </definition>

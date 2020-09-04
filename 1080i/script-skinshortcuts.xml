@@ -276,7 +276,7 @@
                         <control type="button" id="310" description="Background">
                             <label>31110</label>
                             <label2>$INFO[Container(211).ListItem.Property(background)]</label2>
-                            <visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
+                            <!-- <visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible> -->
                             <visible>!String.IsEqual(Container(211).ListItem.Property(skinshortcuts-disabled),True)</visible>
                             <include>Dialog_Standard_Button</include>
                             <visible>![String.EndsWith(Window.Property(groupname),.1) | String.IsEqual(Window.Property(groupname),searchmenu)]</visible>
