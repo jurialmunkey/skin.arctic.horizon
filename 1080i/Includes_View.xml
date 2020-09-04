@@ -65,7 +65,7 @@
                             <texture background="true">$VAR[Image_Home_ClearArt]</texture>
                             <aspectratio align="right" aligny="bottom" scalediffuse="false">keep</aspectratio>
                             <visible>$PARAM[clearart]</visible>
-                            <visible>Control.HasFocus($PARAM[id])</visible>
+                            <visible>Skin.HasSetting(EnableHorizontalHome) | [!Skin.HasSetting(LockMainMenu) + Control.HasFocus($PARAM[id])]</visible>
                             <animation effect="fade" start="0" end="100" time="400" tween="cubic" easing="inout" reversible="false" delay="800">Visible</animation>
                         </include>
                     </include>

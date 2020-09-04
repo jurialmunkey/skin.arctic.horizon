@@ -142,6 +142,7 @@
                 <param name="showonupdate" value="$PARAM[showonupdate]" />
                 <param name="infoslide" value="$PARAM[infoslide]" />
                 <param name="backpanel" value="$PARAM[backpanel]" />
+                <param name="clearart" value="$PARAM[clearart]" />
                 <visible>$PARAM[visible]</visible>
                 <visible>$PARAM[label-visible]</visible>
                 <left>85</left>
