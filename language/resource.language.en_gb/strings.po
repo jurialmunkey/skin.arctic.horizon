@@ -430,6 +430,21 @@ msgctxt "#31083"
 msgid "Hide all indicators"
 msgstr ""
 
+#: /1080i/Includes_Labels.xml
+msgctxt "#31084"
+msgid "Aquamarine"
+msgstr ""
+
+#: /1080i/Custom_1116_Wizard.xml
+msgctxt "#31085"
+msgid "Enable these options for the full Arctic Horizon experience.[CR][CR][B]~ Note ~[/B][CR]Other than the colour scheme options$COMMA some of these settings might have a slight impact on the performance of the skin. This wizard can be run again as needed from \"Skin Settings > Lists and Other > Skin Setup Wizard\""
+msgstr ""
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31086"
+msgid "Run skin setup wizard (WARNING: This will reset skin settings to defaults)"
+msgstr ""
+
 #: /1080i/SkinSettings.xml
 msgctxt "#31087"
 msgid "Colour overlay"

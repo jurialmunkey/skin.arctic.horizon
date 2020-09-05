@@ -735,10 +735,10 @@
                     <control type="button" id="19810" description="Reset">
                         <visible>Integer.IsEqual(Window.Property(CurrentFocus),9008)</visible>
                         <include>Defs_Settings_Button</include>
-                        <label>$LOCALIZE[31028]</label>
+                        <label>$LOCALIZE[31086]</label>
                         <onclick>Skin.ResetSettings</onclick>
                         <onclick>ClearProperty(SkinInitStarted,Home)</onclick>
-                        <onclick>RunScript(script.skinshortcuts,type=resetall)</onclick>
+                        <onclick>ActivateWindow(Home)</onclick>
                     </control>
 
                     <!-- ================ -->

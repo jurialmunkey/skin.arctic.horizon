@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Foundation -->
+<window type="dialog" id="1116">
+    <defaultcontrol always="true">9001</defaultcontrol>
+    <onunload>Skin.SetBool(TMDbHelper.DisablePersonStats)</onunload>
+    <onunload>Skin.SetBool(SkinInit)</onunload>
+    <controls>
+        <!-- <include>Home_Splash</include> -->
+        <include>Global_Overlay</include>
+        <control type="group">
+            <include content="Dialog_Standard_Group">
+                <param name="width" value="1200" />
+                <param name="height" value="880" />
+            </include>
+
+            <control type="label">
+                <description>Header Label</description>
+                <label>Skin Setup Wizard</label>
+                <include>Dialog_Standard_Header</include>
+            </control>
+
+
+            <control type="group">
+                <top>dialog_top</top>
+                <right>dialog_side_grouplist</right>
+                <control type="textbox">
+                    <left>30</left>
+                    <right>30</right>
+                    <font>font_plotbox</font>
+                    <textcolor>dialog_fg_70</textcolor>
+                    <label>$LOCALIZE[31085]</label>
+                </control>
+                <control type="group">
+                    <top>320</top>
+                    <include content="Defs_Settings_Gradient">
+                        <param name="id" value="9000" />
+                        <height>item_list_height</height>
+                        <visible>ControlGroup(9000).HasFocus()</visible>
+                    </include>
+
+                    <control type="grouplist" id="9000">
+                        <onright>61</onright>
+                        <description>Control Area</description>
+                        <itemgap>0</itemgap>
+                        <pagecontrol>61</pagecontrol>
+                        <orientation>vertical</orientation>
+                        <usecontrolcoords>true</usecontrolcoords>
+                        <control type="radiobutton" id="9001">
+                            <radioposx>740</radioposx>
+                            <include>Dialog_Standard_Button</include>
+                            <label>Online ratings</label>
+                            <onclick>Skin.Reset(DisableAllRatings)</onclick>
+                            <onclick>Skin.ToggleSetting(TMDbHelper.Service)</onclick>
+                            <selected>Skin.HasSetting(TMDbHelper.Service)</selected>
+                        </control>
+                        <control type="radiobutton" id="9002">
+                            <radioposx>740</radioposx>
+                            <include>Dialog_Standard_Button</include>
+                            <label>Online info dialog lists</label>
+                            <onclick>Skin.ToggleSetting(EnableExtendedInfo)</onclick>
+                            <selected>Skin.HasSetting(EnableExtendedInfo)</selected>
+                        </control>
+                        <control type="radiobutton" id="9003">
+                            <radioposx>740</radioposx>
+                            <include>Dialog_Standard_Button</include>
+                            <include>Defs_RadioButton_NoTexture</include>
+                            <label>$LOCALIZE[31063]</label>
+                            <label2>$VAR[Label_Setting_BackgroundStyle]</label2>
+                            <onclick condition="!Skin.HasSetting(DisableBlur)">Skin.SetBool(DisableBlur)</onclick>
+                            <onclick condition="Skin.HasSetting(DisableBlur)">Skin.ToggleSetting(DisableOverlay)</onclick>
+                            <onclick condition="Skin.HasSetting(DisableOverlay)">Skin.Reset(DisableBlur)</onclick>
+                        </control>
+                        <control type="radiobutton" id="9004">
+                            <radioposx>740</radioposx>
+                            <include>Dialog_Standard_Button</include>
+                            <include>Defs_RadioButton_NoTexture</include>
+                            <label>$LOCALIZE[31239]</label>
+                            <label2>$VAR[Label_BusyWaves]</label2>
+                            <onclick condition="System.HasAddon(resource.images.arctic.waves)">Skin.ToggleSetting(DisableBusyBackground)</onclick>
+                            <onclick condition="!System.HasAddon(resource.images.arctic.waves)">Skin.Reset(DisableBusyBackground)</onclick>
+                            <onclick condition="!System.HasAddon(resource.images.arctic.waves)">InstallAddon(resource.images.arctic.waves)</onclick>
+                        </control>
+                        <control type="radiobutton" id="9005">
+                            <radioposx>740</radioposx>
+                            <include>Dialog_Standard_Button</include>
+                            <include>Defs_RadioButton_NoTexture</include>
+                            <label>Colour scheme</label>
+                            <label2>$VAR[Label_ColourScheme]</label2>
+                            <onclick condition="Skin.String(overlaycolor.name) | Skin.String(focuscolor.name) | Skin.String(gradientcolor.name)">Skin.Reset(overlaycolor.name)</onclick>
+                            <onclick condition="Skin.String(overlaycolor.name) | Skin.String(focuscolor.name) | Skin.String(gradientcolor.name)">Skin.Reset(focuscolor.name)</onclick>
+                            <onclick condition="Skin.String(overlaycolor.name) | Skin.String(focuscolor.name) | Skin.String(gradientcolor.name)">Skin.Reset(gradientcolor.name)</onclick>
+
+                            <onclick condition="![Skin.String(overlaycolor.name) | Skin.String(focuscolor.name) | Skin.String(gradientcolor.name)]">Skin.SetString(overlaycolor.name,ff6200ea)</onclick>
+                            <onclick condition="![Skin.String(overlaycolor.name) | Skin.String(focuscolor.name) | Skin.String(gradientcolor.name)]">Skin.SetString(focuscolor.name,ffff5252)</onclick>
+                            <onclick condition="![Skin.String(overlaycolor.name) | Skin.String(focuscolor.name) | Skin.String(gradientcolor.name)]">Skin.SetString(gradientcolor.name,ff7c4dff)</onclick>
+                        </control>
+                    </control>
+                </control>
+            </control>
+
+            <include content="Dialog_Scrollbar">
+                <param name="onleft" value="9000" />
+            </include>
+
+
+            <control type="group">
+                <include>Dialog_Standard_Right_Group</include>
+                <control type="grouplist" id="8000">
+                    <onleft>61</onleft>
+                    <orientation>vertical</orientation>
+                    <itemgap>0</itemgap>
+                    <control type="button" id="8001" description="Close">
+                        <label>$LOCALIZE[186]</label>
+                        <onclick>Close</onclick>
+                        <include>Dialog_Standard_Right_Buttons</include>
+                    </control>
+                </control>
+            </control>
+        </control>
+    </controls>
+</window>

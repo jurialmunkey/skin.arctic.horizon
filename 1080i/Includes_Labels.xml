@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
+    <variable name="Label_ColourScheme">
+        <value condition="Skin.String(overlaycolor.name,ff6200ea) + Skin.String(focuscolor.name,ffff5252) + Skin.String(gradientcolor.name,ff7c4dff)">$LOCALIZE[33028]</value>
+        <value condition="Skin.String(overlaycolor.name) | Skin.String(focuscolor.name) | Skin.String(gradientcolor.name)">$LOCALIZE[636]</value>
+        <value>$LOCALIZE[31084]</value>
+    </variable>
+
     <variable name="Label_BackgroundPicture_InfoLine">
         <value>$INFO[System.FriendlyName,  |  [COLOR=main_fg_100],[/COLOR]]  |  [COLOR=main_fg_100]Arctic Horizon $INFO[System.AddonVersion(skin.arctic.horizon)][/COLOR]</value>
     </variable>

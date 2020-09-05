@@ -187,6 +187,7 @@
                             <param name="left" value="0" />
                             <param name="color" value="$LOCALIZE[31175]" />
                             <param name="label" value="$LOCALIZE[31175]" />
+                            <param name="color-var" value="ColorHighlight" />
                         </include>
                         <include content="Dialog_ColorPicker_SwatchPreview">
                             <param name="id" value="3022" />
@@ -195,6 +196,7 @@
                             <param name="left" value="106.67" />
                             <param name="color" value="$LOCALIZE[31178]" />
                             <param name="label" value="$LOCALIZE[31178]" />
+                            <param name="color-var" value="ColorGradient" />
                         </include>
                         <include content="Dialog_ColorPicker_SwatchPreview">
                             <param name="id" value="3023" />
@@ -203,6 +205,7 @@
                             <param name="left" value="213.33" />
                             <param name="color" value="$LOCALIZE[31179]" />
                             <param name="label" value="$LOCALIZE[31179]" />
+                            <param name="color-var" value="ColorOverlay" />
                         </include>
                     </control>
 

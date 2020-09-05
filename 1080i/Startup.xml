@@ -2,14 +2,6 @@
 <window>
     <onload>SetProperty(SkinInitStarted,1,home)</onload>
     <onload>ClearProperty(SkinSplashStarted,home)</onload>
-
-    <!-- Skin Init -->
-    <onload condition="!Skin.HasSetting(SkinInit)">Skin.SetString(widgetPath,special://skin/extras/playlists/RandomMovies.xsp)</onload>
-    <onload condition="!Skin.HasSetting(SkinInit)">Skin.SetString(widgetTarget,videos)</onload>
-    <onload condition="!Skin.HasSetting(SkinInit)">Skin.SetBool(TMDbHelper.DisablePersonStats)</onload>
-    <onload condition="!System.HasAddon(resource.images.arctic.waves) + !Skin.HasSetting(DisableBusyBackground) + !Skin.HasSetting(SkinInit)">InstallAddon(resource.images.arctic.waves)</onload>
-    <onload condition="!Skin.HasSetting(SkinInit)">Skin.SetBool(SkinInit)</onload>
-
     <onload condition="!String.IsEmpty(Skin.String(StartupPlaylist))">ReplaceWindow(1113)</onload>
     <onload condition="String.IsEmpty(Skin.String(StartupPlaylist))">ReplaceWindow($INFO[System.StartupWindow])</onload>
     <controls />
