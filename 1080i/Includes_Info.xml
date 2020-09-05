@@ -335,10 +335,81 @@
         </include> -->
     </include>
 
+    <include name="Info_Buttons_Video_Optional">
+        <param name="default-search" default="false" />
+        <param name="default-trailer" default="false" />
+        <param name="default-watchlist" default="false" />
+        <param name="default-userrating" default="false" />
+        <param name="default-overview" default="false" />
+        <definition>
+            <include content="$PARAM[buttoninclude]" condition="Skin.String($PARAM[skinstring],Search) | [!Skin.String($PARAM[skinstring]) + $PARAM[default-search]]">
+                <param name="id" value="$PARAM[id]" />
+                <param name="groupid" value="$PARAM[groupid]" />
+                <param name="label" value="$LOCALIZE[137]" />
+                <param name="icon" value="special://skin/extras/icons/search.png" />
+                <param name="visible" value="True" />
+                <onclick condition="!String.IsEmpty(ListItem.TvShowTitle)">Skin.SetString(SearchTerm,$INFO[ListItem.TvShowTitle])</onclick>
+                <onclick condition="String.IsEmpty(ListItem.TvShowTitle) + !String.IsEmpty(ListItem.Title)">Skin.SetString(SearchTerm,$INFO[ListItem.Title])</onclick>
+                <onclick condition="String.IsEmpty(ListItem.TvShowTitle) + String.IsEmpty(ListItem.Title) + !String.IsEmpty(ListItem.Label)">Skin.SetString(SearchTerm,$INFO[ListItem.Label])</onclick>
+                <onclick>RunScript(plugin.video.themoviedb.helper,close_dialog=1190,call_id=1138)</onclick>
+                <include>Info_Button_OnUp</include>
+                <ondown>5000</ondown>
+            </include>
+
+            <include content="$PARAM[buttoninclude]" condition="Skin.String($PARAM[skinstring],Trailer) | [!Skin.String($PARAM[skinstring]) + $PARAM[default-trailer]]">
+                <param name="id" value="$PARAM[id]" />
+                <param name="groupid" value="$PARAM[groupid]" />
+                <param name="label" value="$LOCALIZE[20410]" />
+                <param name="icon" value="special://skin/extras/icons/video.png" />
+                <param name="visible" value="!Window.IsVisible(1140) + [!String.IsEmpty(ListItem.Trailer) | !String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Trailer))]" />
+                <onclick condition="!String.IsEmpty(ListItem.Trailer)">SetProperty(HasTrailer,$INFO[ListItem.Trailer],Home)</onclick>
+                <onclick condition="!String.IsEmpty(ListItem.Trailer)">PlayMedia($INFO[ListItem.Trailer],False,1)</onclick>
+                <onclick condition="String.IsEmpty(ListItem.Trailer)">SetProperty(HasTrailer,$INFO[Window(Home).Property(TMDbHelper.ListItem.Trailer)],Home)</onclick>
+                <onclick condition="String.IsEmpty(ListItem.Trailer)">PlayMedia($INFO[Window(Home).Property(TMDbHelper.ListItem.Trailer)],False,1)</onclick>
+                <onclick>SetFocus(9608)</onclick>
+                <include>Info_Button_OnUp</include>
+                <ondown>5000</ondown>
+            </include>
+
+            <include content="$PARAM[buttoninclude]" condition="Skin.String($PARAM[skinstring],Watchlist) | [!Skin.String($PARAM[skinstring]) + $PARAM[default-watchlist]]">
+                <param name="id" value="$PARAM[id]" />
+                <param name="groupid" value="$PARAM[groupid]" />
+                <param name="label" value="$LOCALIZE[31065]" />
+                <param name="icon" value="special://skin/extras/icons/watchlist.png" />
+                <param name="visible" value="[!String.IsEmpty(ListItem.Property(tmdb_id)) | !String.IsEmpty(window(home).property(tmdbhelper.listitem.tmdb_id))] + [String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,tvshow)] + !String.IsEmpty(Window(Home).Property(TMDbHelper.TraktIsAuth))" />
+                <onclick condition="!String.IsEmpty(ListItem.Property(tmdb_id))">RunScript(plugin.video.themoviedb.helper,sync_trakt=watchlist,tmdb_id=$INFO[ListItem.Property(tmdb_id)],$VAR[Info_Param_Type],cache_refresh)</onclick>
+                <onclick condition="String.IsEmpty(ListItem.Property(tmdb_id))">RunScript(plugin.video.themoviedb.helper,sync_trakt=watchlist,tmdb_id=$INFO[window(home).property(tmdbhelper.listitem.tmdb_id)],$VAR[Info_Param_Type],cache_refresh)</onclick>
+                <include>Info_Button_OnUp</include>
+                <ondown>5000</ondown>
+            </include>
+
+            <include content="$PARAM[buttoninclude]" condition="Skin.String($PARAM[skinstring],User Rating) | [!Skin.String($PARAM[skinstring]) + $PARAM[default-userrating]]">
+                <param name="id" value="$PARAM[id]" />
+                <param name="groupid" value="$PARAM[groupid]" />
+                <param name="label" value="$LOCALIZE[563]" />
+                <param name="icon" value="special://skin/extras/icons/userrating.png" />
+                <param name="visible" value="Control.IsEnabled(7) + !ListItem.IsCollection" />
+                <onclick>SendClick(7)</onclick>
+                <include>Info_Button_OnUp</include>
+                <ondown>5000</ondown>
+            </include>
+
+            <include content="$PARAM[buttoninclude]" condition="Skin.String($PARAM[skinstring],Overview) | [!Skin.String($PARAM[skinstring]) + $PARAM[default-overview]]">
+                <param name="id" value="$PARAM[id]" />
+                <param name="groupid" value="$PARAM[groupid]" />
+                <param name="label" value="$LOCALIZE[31208]" />
+                <param name="icon" value="special://skin/extras/icons/infobubble.png" />
+                <include>Info_Button_Overview_Onclick</include>
+                <include>Info_Button_OnUp</include>
+                <ondown>5000</ondown>
+            </include>
+        </definition>
+    </include>
+
     <include name="Info_Buttons_Video">
         <include content="$PARAM[buttoninclude]">
-            <param name="id" value="3308" />
-            <param name="groupid" value="3008" />
+            <param name="id" value="3101" />
+            <param name="groupid" value="3201" />
             <param name="label" value="$LOCALIZE[208]" />
             <param name="icon" value="special://skin/extras/icons/play3.png" />
             <param name="visible" value="Control.IsEnabled(8) + !ListItem.IsFolder + !ListItem.IsCollection" />
@@ -358,8 +429,8 @@
         </include>
 
         <include content="$PARAM[buttoninclude]">
-            <param name="id" value="3104" />
-            <param name="groupid" value="3204" />
+            <param name="id" value="3102" />
+            <param name="groupid" value="3202" />
             <param name="label" value="$LOCALIZE[1024]" />
             <param name="icon" value="special://skin/extras/icons/folder.png" />
             <param name="visible" value="[ListItem.IsFolder | ListItem.IsCollection]" />
@@ -375,76 +446,28 @@
             <ondown>5000</ondown>
         </include>
 
-
-        <!-- <include content="$PARAM[buttoninclude]">
-            <param name="id" value="3105" />
-            <param name="groupid" value="3205" />
-            <param name="label" value="Cast" />
-            <param name="icon" value="special://skin/extras/icons/person.png" />
-            <param name="visible" value="!Window.IsVisible(1140)" />
-            <onclick>SetFocus(5000)</onclick>
-            <include>Info_Button_OnUp</include>
-            <ondown>5000</ondown>
-        </include> -->
-
-        <include content="$PARAM[buttoninclude]">
-            <param name="id" value="3101" />
-            <param name="groupid" value="3201" />
-            <param name="label" value="$LOCALIZE[137]" />
-            <param name="icon" value="special://skin/extras/icons/search.png" />
-            <param name="visible" value="True" />
-            <onclick condition="!String.IsEmpty(ListItem.TvShowTitle)">Skin.SetString(SearchTerm,$INFO[ListItem.TvShowTitle])</onclick>
-            <onclick condition="String.IsEmpty(ListItem.TvShowTitle) + !String.IsEmpty(ListItem.Title)">Skin.SetString(SearchTerm,$INFO[ListItem.Title])</onclick>
-            <onclick condition="String.IsEmpty(ListItem.TvShowTitle) + String.IsEmpty(ListItem.Title) + !String.IsEmpty(ListItem.Label)">Skin.SetString(SearchTerm,$INFO[ListItem.Label])</onclick>
-            <onclick>RunScript(plugin.video.themoviedb.helper,close_dialog=1190,call_id=1138)</onclick>
-            <include>Info_Button_OnUp</include>
-            <ondown>5000</ondown>
-        </include>
-
-        <include content="$PARAM[buttoninclude]">
-            <param name="id" value="3111" />
-            <param name="groupid" value="3011" />
-            <param name="label" value="$LOCALIZE[20410]" />
-            <param name="icon" value="special://skin/extras/icons/video.png" />
-            <param name="visible" value="!Window.IsVisible(1140) + [!String.IsEmpty(ListItem.Trailer) | !String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Trailer))]" />
-            <onclick condition="!String.IsEmpty(ListItem.Trailer)">SetProperty(HasTrailer,$INFO[ListItem.Trailer],Home)</onclick>
-            <onclick condition="!String.IsEmpty(ListItem.Trailer)">PlayMedia($INFO[ListItem.Trailer],False,1)</onclick>
-            <onclick condition="String.IsEmpty(ListItem.Trailer)">SetProperty(HasTrailer,$INFO[Window(Home).Property(TMDbHelper.ListItem.Trailer)],Home)</onclick>
-            <onclick condition="String.IsEmpty(ListItem.Trailer)">PlayMedia($INFO[Window(Home).Property(TMDbHelper.ListItem.Trailer)],False,1)</onclick>
-            <onclick>SetFocus(9608)</onclick>
-            <include>Info_Button_OnUp</include>
-            <ondown>5000</ondown>
-        </include>
-
-        <include content="$PARAM[buttoninclude]">
+        <include content="Info_Buttons_Video_Optional">
+            <param name="buttoninclude" value="$PARAM[buttoninclude]" />
+            <param name="skinstring" value="infobuttons02" />
             <param name="id" value="3103" />
             <param name="groupid" value="3203" />
-            <param name="label" value="$LOCALIZE[31065]" />
-            <param name="icon" value="special://skin/extras/icons/watchlist.png" />
-            <param name="visible" value="!String.IsEmpty(ListItem.Property(tmdb_id)) + [String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,tvshow)]" />
-            <onclick>RunScript(plugin.video.themoviedb.helper,sync_trakt=watchlist,tmdb_id=$INFO[ListItem.Property(tmdb_id)],$VAR[Info_Param_Type],cache_refresh)</onclick>
-            <include>Info_Button_OnUp</include>
-            <ondown>5000</ondown>
+            <param name="default-search" value="true" />
         </include>
 
-        <!-- <include content="$PARAM[buttoninclude]">
-            <param name="id" value="7" />
-            <param name="groupid" value="3007" />
-            <param name="label" value="$LOCALIZE[563]" />
-            <param name="icon" value="special://skin/extras/icons/userrating.png" />
-            <param name="visible" value="Control.IsEnabled(7) + !ListItem.IsCollection" />
-            <include>Info_Button_OnUp</include>
-            <ondown>5000</ondown>
-        </include> -->
+        <include content="Info_Buttons_Video_Optional">
+            <param name="buttoninclude" value="$PARAM[buttoninclude]" />
+            <param name="skinstring" value="infobuttons03" />
+            <param name="id" value="3104" />
+            <param name="groupid" value="3204" />
+            <param name="default-trailer" value="true" />
+        </include>
 
-        <include content="$PARAM[buttoninclude]">
+        <include content="Info_Buttons_Video_Optional">
+            <param name="buttoninclude" value="$PARAM[buttoninclude]" />
+            <param name="skinstring" value="infobuttons04" />
             <param name="id" value="3105" />
             <param name="groupid" value="3205" />
-            <param name="label" value="$LOCALIZE[31208]" />
-            <param name="icon" value="special://skin/extras/icons/infobubble.png" />
-            <include>Info_Button_Overview_Onclick</include>
-            <include>Info_Button_OnUp</include>
-            <ondown>5000</ondown>
+            <param name="default-watchlist" value="true" />
         </include>
 
         <include content="$PARAM[buttoninclude]">
@@ -452,7 +475,7 @@
             <param name="groupid" value="3206" />
             <param name="label" value="$LOCALIZE[31064]" />
             <param name="icon" value="special://skin/extras/icons/settings.png" />
-            <param name="visible" value="String.IsEmpty(ListItem.Property(tmdb_id)) + Control.IsEnabled(6) + !Skin.HasSetting(KioskMode)" />
+            <param name="visible" value="Control.IsEnabled(6) + !Skin.HasSetting(KioskMode)" />
             <onclick>SetFocus(3600)</onclick>
             <include>Info_Button_OnUp</include>
             <ondown>5000</ondown>

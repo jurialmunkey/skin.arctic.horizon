@@ -679,6 +679,13 @@
                         <onclick>ActivateWindow(1119)</onclick>
                     </control>
 
+                    <control type="button" id="19811" description="Info Buttons">
+                        <visible>Integer.IsEqual(Window.Property(CurrentFocus),9008)</visible>
+                        <include>Defs_Settings_Button</include>
+                        <label>$LOCALIZE[31090]</label>
+                        <onclick>ActivateWindow(1120)</onclick>
+                    </control>
+
                     <control type="button" id="19804" description="Search lists">
                         <visible>Integer.IsEqual(Window.Property(CurrentFocus),9008)</visible>
                         <include>Defs_Settings_Button</include>
@@ -692,7 +699,7 @@
                         <label>$LOCALIZE[31143]</label>
                     </control>
 
-                    <control type="button" id="198067" description="Set Timer Per Image">
+                    <control type="button" id="19806" description="Set Timer Per Image">
                         <visible>Integer.IsEqual(Window.Property(CurrentFocus),9008)</visible>
                         <include>Defs_Settings_Button</include>
                         <label>$LOCALIZE[31128]</label>

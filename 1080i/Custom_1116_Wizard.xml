@@ -48,7 +48,7 @@
                         <control type="radiobutton" id="9001">
                             <radioposx>740</radioposx>
                             <include>Dialog_Standard_Button</include>
-                            <label>Online ratings</label>
+                            <label>$LOCALIZE[31162]</label>
                             <onclick>Skin.Reset(DisableAllRatings)</onclick>
                             <onclick>Skin.ToggleSetting(TMDbHelper.Service)</onclick>
                             <selected>Skin.HasSetting(TMDbHelper.Service)</selected>
@@ -56,7 +56,7 @@
                         <control type="radiobutton" id="9002">
                             <radioposx>740</radioposx>
                             <include>Dialog_Standard_Button</include>
-                            <label>Online info dialog lists</label>
+                            <label>$LOCALIZE[31095]</label>
                             <onclick>Skin.ToggleSetting(EnableExtendedInfo)</onclick>
                             <selected>Skin.HasSetting(EnableExtendedInfo)</selected>
                         </control>
@@ -84,7 +84,7 @@
                             <radioposx>740</radioposx>
                             <include>Dialog_Standard_Button</include>
                             <include>Defs_RadioButton_NoTexture</include>
-                            <label>Colour scheme</label>
+                            <label>$LOCALIZE[31240]</label>
                             <label2>$VAR[Label_ColourScheme]</label2>
                             <onclick condition="Skin.String(overlaycolor.name) | Skin.String(focuscolor.name) | Skin.String(gradientcolor.name)">Skin.Reset(overlaycolor.name)</onclick>
                             <onclick condition="Skin.String(overlaycolor.name) | Skin.String(focuscolor.name) | Skin.String(gradientcolor.name)">Skin.Reset(focuscolor.name)</onclick>

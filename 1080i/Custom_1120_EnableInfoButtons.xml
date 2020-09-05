@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Foundation -->
+<window type="dialog" id="1120">
+    <defaultcontrol always="true">9000</defaultcontrol>
+    <onload condition="!Skin.String(infobuttons02)">Skin.SetString(infobuttons02,Search)</onload>
+    <onload condition="!Skin.String(infobuttons03)">Skin.SetString(infobuttons03,Trailer)</onload>
+    <onload condition="!Skin.String(infobuttons04)">Skin.SetString(infobuttons04,Watchlist)</onload>
+    <controls>
+        <include>Global_Overlay</include>
+        <control type="group">
+            <include content="Dialog_Standard_Group">
+                <param name="width" value="1200" />
+                <param name="height" value="400" />
+            </include>
+
+            <control type="label">
+                <description>Header Label</description>
+                <label>$LOCALIZE[31090]</label>
+                <include>Dialog_Standard_Header</include>
+            </control>
+
+            <include content="Defs_Settings_Gradient">
+                <param name="id" value="9000" />
+                <top>dialog_top</top>
+                <height>item_list_height</height>
+                <right>dialog_side_grouplist</right>
+                <visible>ControlGroup(9000).HasFocus()</visible>
+            </include>
+
+            <control type="grouplist" id="9000">
+                <onright>61</onright>
+                <description>Control Area</description>
+                <right>dialog_side_grouplist</right>
+                <top>dialog_top</top>
+                <itemgap>0</itemgap>
+                <pagecontrol>61</pagecontrol>
+                <orientation>vertical</orientation>
+                <usecontrolcoords>true</usecontrolcoords>
+                <include content="Object_EnableInfoButtons_Setting">
+                    <param name="id" value="9002" />
+                    <param name="label" value="$LOCALIZE[31250] 02" />
+                    <param name="skinstring" value="infobuttons02" />
+                </include>
+                <include content="Object_EnableInfoButtons_Setting">
+                    <param name="id" value="9003" />
+                    <param name="label" value="$LOCALIZE[31250] 03" />
+                    <param name="skinstring" value="infobuttons03" />
+                </include>
+                <include content="Object_EnableInfoButtons_Setting">
+                    <param name="id" value="9004" />
+                    <param name="label" value="$LOCALIZE[31250] 04" />
+                    <param name="skinstring" value="infobuttons04" />
+                </include>
+            </control>
+
+            <include content="Dialog_Scrollbar">
+                <param name="onleft" value="9000" />
+            </include>
+
+
+            <control type="group">
+                <include>Dialog_Standard_Right_Group</include>
+                <control type="grouplist" id="8000">
+                    <onleft>61</onleft>
+                    <orientation>vertical</orientation>
+                    <itemgap>0</itemgap>
+                    <control type="button" id="8001" description="Close">
+                        <label>$LOCALIZE[15067]</label>
+                        <onclick>Close</onclick>
+                        <include>Dialog_Standard_Right_Buttons</include>
+                    </control>
+                </control>
+            </control>
+        </control>
+    </controls>
+</window>

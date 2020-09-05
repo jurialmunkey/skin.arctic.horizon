@@ -258,6 +258,20 @@
         </control>
     </include>
 
+    <include name="Object_EnableInfoButtons_Setting">
+        <control type="button" id="$PARAM[id]">
+            <label>$PARAM[label]</label>
+            <label2>$INFO[Skin.String($PARAM[skinstring])]</label2>
+            <include>Dialog_Standard_Button</include>
+            <onclick condition="!Skin.String($PARAM[skinstring],Search) + !Skin.String($PARAM[skinstring],Trailer) + !Skin.String($PARAM[skinstring],Watchlist) + !Skin.String($PARAM[skinstring],User Rating) + !Skin.String($PARAM[skinstring],Overview)">Skin.SetString($PARAM[skinstring],Search)</onclick>
+            <onclick condition="Skin.String($PARAM[skinstring],Search)">Skin.SetString($PARAM[skinstring],Trailer)</onclick>
+            <onclick condition="Skin.String($PARAM[skinstring],Trailer)">Skin.SetString($PARAM[skinstring],Watchlist)</onclick>
+            <onclick condition="Skin.String($PARAM[skinstring],Watchlist)">Skin.SetString($PARAM[skinstring],User Rating)</onclick>
+            <onclick condition="Skin.String($PARAM[skinstring],User Rating)">Skin.SetString($PARAM[skinstring],Overview)</onclick>
+            <onclick condition="Skin.String($PARAM[skinstring],Overview)">Skin.SetString($PARAM[skinstring],None)</onclick>
+        </control>
+    </include>
+
     <include name="Object_PVR_Icon">
         <param name="bgcolor" default="main_bg" />
         <param name="fgcolor" default="main_fg" />

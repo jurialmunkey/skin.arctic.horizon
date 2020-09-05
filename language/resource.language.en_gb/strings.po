@@ -461,6 +461,11 @@ msgid "Pressing down opens wall view (replaces scrollbar)"
 msgstr ""
 
 #: /1080i/SkinSettings.xml
+msgctxt "#31090"
+msgid "Customise info dialog buttons"
+msgstr ""
+
+#: /1080i/SkinSettings.xml
 msgctxt "#31091"
 msgid "Trailer window"
 msgstr ""
@@ -478,6 +483,11 @@ msgstr ""
 #: /1080i/SkinSettings.xml
 msgctxt "#31094"
 msgid "Apply colour diffuse to icons"
+msgstr ""
+
+#: /1080i/Custom_1116_Wizard.xml
+msgctxt "#31095"
+msgid "Online info dialog lists"
 msgstr ""
 
 #: /1080i/SkinSettings.xml
@@ -792,6 +802,11 @@ msgstr ""
 #: /1080i/SkinSettings.xml
 msgctxt "#31161"
 msgid "Supported add-ons"
+msgstr ""
+
+#: /1080i/Custom_1116_Wizard.xml
+msgctxt "#31162"
+msgid "Online ratings"
 msgstr ""
 
 #: /shortcuts/overrides.xml
@@ -1169,6 +1184,11 @@ msgctxt "#31239"
 msgid "Busy animation"
 msgstr ""
 
+#: /1080i/Custom_1116_Wizard.xml
+msgctxt "#31240"
+msgid "Colour scheme"
+msgstr ""
+
 #: /1080i/SkinSettings.xml
 msgctxt "#31241"
 msgid "Autowidth submenu hub buttons (disable to fix hub scrolling issues)"
@@ -1212,6 +1232,11 @@ msgstr ""
 #: /1080i/SkinSettings.xml
 msgctxt "#31249"
 msgid "Clearart"
+msgstr ""
+
+#: /1080i/Custom_1120_EnableInfoButtons.xml
+msgctxt "#31250"
+msgid "Position"
 msgstr ""
 
 #: /1080i/Custom_1119_EnableInfoLists.xml
