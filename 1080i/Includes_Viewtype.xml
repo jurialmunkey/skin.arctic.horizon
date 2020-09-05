@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
     <include name="ViewIDs"><views>50,51,5151,501,55,500,52,5252,502,53,54,5454,504,56,57,58,59</views></include>
-    <include name="Viewtype_Info_Right"><right>700</right></include>
+    <include name="Viewtype_Info_Right"><right>600</right></include>
     <include name="Viewtype_Info_Right_FixedHome"><right>560</right></include>
 
     <include name="Viewtypes">
@@ -102,7 +102,7 @@
                         <right>0</right>
                         <bottom>400</bottom>
                         <height>320</height>
-                        <width>670</width>
+                        <width>560</width>
                     </control>
                     <control type="image">
                         <texture background="true">$VAR[Image_DiscArt]</texture>

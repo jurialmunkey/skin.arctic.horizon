@@ -832,7 +832,7 @@
                         <right>-15</right>
                         <bottom>385</bottom>
                         <height>350</height>
-                        <width>700</width>
+                        <width>590</width>
                         <texture background="true">$VAR[Image_ClearArt]</texture>
                         <aspectratio align="right" aligny="bottom" scalediffuse="false">keep</aspectratio>
                         <bordersize>15</bordersize>
