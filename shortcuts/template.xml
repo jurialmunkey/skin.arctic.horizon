@@ -1040,11 +1040,11 @@
     <other include="showcase-background">
         <property name="widgetTarget" tag="property" attribute="name|widgetTarget.showcaseBackground" />
         <property name="widgetTarget" tag="property" attribute="name|widgetTarget" />
-        <property name="widgetTarget">$INFO[Skin.String(screensaver.arctic.mirage.target)]</property>
+        <property name="widgetTarget">$VAR[Defs_ScreensaverWidget_Target]</property>
 
         <property name="widgetPath" tag="property" attribute="name|widgetPath.showcaseBackground" />
         <property name="widgetPath" tag="property" attribute="name|widgetPath" />
-        <property name="widgetPath">$INFO[Skin.String(screensaver.arctic.mirage.path)]</property>
+        <property name="widgetPath">$VAR[Defs_ScreensaverWidget]</property>
 
         <property name="widgetSortby" tag="property" attribute="name|widgetSortby.showcaseBackground" />
         <property name="widgetSortby" tag="property" attribute="name|widgetSortby" />
@@ -1084,6 +1084,7 @@
 
     <other include="spotlight-mainmenu">
         <property name="widgetTarget" tag="property" attribute="name|widgetTarget" />
+        <property name="widgetTarget">$VAR[Defs_ScreensaverWidget_Target]</property>
         <property name="widgetName" tag="property" attribute="name|widgetName" />
         <property name="widgetPath" tag="property" attribute="name|widgetPath" />
         <property name="widgetPath">$VAR[Defs_ScreensaverWidget]</property>
