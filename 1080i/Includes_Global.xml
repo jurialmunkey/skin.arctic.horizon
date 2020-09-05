@@ -250,7 +250,7 @@
         <value condition="!String.IsEmpty(Container.ListItem.Art(fanart)) + Window.IsVisible(Home)">$INFO[Container.ListItem.Art(fanart)]</value>
         <value condition="!String.IsEmpty(Container.ListItem.Property(Fanart_Image)) + Window.IsVisible(Home)">$INFO[Container.ListItem.Property(Fanart_Image)]</value>
         <value condition="!String.IsEmpty(Container.ListItem.Property(Fanart)) + Window.IsVisible(Home)">$INFO[Container.ListItem.Property(Fanart)]</value>
-        <value condition="!String.IsEmpty(Container(56560).ListItemAbsolute(0).Property(Fanart)) + Window.IsVisible(Home)">$INFO[Container(56560).ListItemAbsolute(0).Property(Fanart)]</value>
+        <value condition="!String.IsEmpty(Container(56560).ListItemAbsolute(0).Property(Fanart)) + Window.IsVisible(Home) + !Skin.HasSetting(DisablePersistentFanart)">$INFO[Container(56560).ListItemAbsolute(0).Property(Fanart)]</value>
 
         <!-- Submenu Hub -->
         <value condition="Window.IsVisible(1110) + !String.IsEmpty(Container(5610).ListItem.Art(fanart))">$INFO[Container(5610).ListItem.Art(fanart)]</value>

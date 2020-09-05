@@ -52,6 +52,15 @@
                             <texture fallback="DefaultAddonNone.png" background="true">$INFO[Listitem.Icon]</texture>
                             <visible>String.StartsWith(ListItem.Path,special://skin/extras/icons) | String.StartsWith(ListItem.Icon,Default)</visible>
                         </control>
+                        <control type="label">
+                            <height>32</height>
+                            <bottom>0</bottom>
+                            <aligny>center</aligny>
+                            <align>center</align>
+                            <font>font_fps</font>
+                            <label>[UPPERCASE]$INFO[ListITem.Label][/UPPERCASE]</label>
+                            <textcolor>dialog_fg_70</textcolor>
+                        </control>
                     </itemlayout>
                     <focusedlayout height="item_biglist_height" width="item_biglist_height" condition="[[String.StartsWith(ListItem.FolderPath,special://skin/extras/icons/) + !String.IsEqual(ListItem.Label,icons)]  | [String.StartsWith(Container(450).ListItem(1).FolderPath,special://skin/extras/icons/) + ListItem.IsParentFolder]]">
                         <control type="image">
@@ -64,6 +73,15 @@
                             <bordersize>15</bordersize>
                             <aspectratio scalediffuse="false">keep</aspectratio>
                             <texture fallback="DefaultAddonNone.png" background="true">$INFO[Listitem.Icon]</texture>
+                        </control>
+                        <control type="label">
+                            <height>32</height>
+                            <bottom>0</bottom>
+                            <aligny>center</aligny>
+                            <align>center</align>
+                            <font>font_fps</font>
+                            <label>[UPPERCASE]$INFO[ListITem.Label][/UPPERCASE]</label>
+                            <textcolor>Selected</textcolor>
                         </control>
                     </focusedlayout>
                 </include>

@@ -415,6 +415,11 @@ msgctxt "#31080"
 msgid "Pressing \"Back\" highlights group selector"
 msgstr ""
 
+#: /1080i/script-skinshortcuts.xml
+msgctxt "#31081"
+msgid "Fullscreen and Hub"
+msgstr ""
+
 #: /1080i/SkinSettings.xml
 msgctxt "#31082"
 msgid "Watched indicators"
