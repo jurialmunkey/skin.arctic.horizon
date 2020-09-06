@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window type="window" id="1112">
     <defaultcontrol always="true">4100</defaultcontrol>
-    <onload>SetProperty(Header_Left_Text,$LOCALIZE[31164])</onload>
+    <onload>SetProperty(Header_Left_Text,$LOCALIZE[31046])</onload>
     <controls>
         <include content="Viewtype_Calendar">
             <param name="viewtype-include" value="Viewtype_Landscape" />
