@@ -112,7 +112,7 @@
                         <texture background="true" diffuse="diffuse/landscape-big.png">$VAR[Image_Landscape]</texture>
                     </control>
                 </focusedlayout>
-                <content target="videos">$INFO[Container(55).ListItemAbsolute(0).FolderPath]</content>
+                <content target="videos">$VAR[Defs_DiscoverWidget]</content>
             </control>
             <control type="image">
                 <right>-20</right>
