@@ -66,7 +66,7 @@
             <control type="group">
                 <include>Animation_Down</include>
                 <control type="group">
-                    <left>-20</left>
+                    <right>-20</right>
                     <bottom>-20</bottom>
                     <height>600</height>
                     <width>1036</width>
@@ -98,9 +98,9 @@
                     </control>
                 </control>
                 <control type="group">
-                    <right>-20</right>
+                    <left>-20</left>
                     <bottom>-20</bottom>
-                    <left>1016</left>
+                    <right>1016</right>
                     <height>600</height>
                     <include>Object_PosterBack</include>
                 </control>
@@ -110,9 +110,10 @@
                     <param name="itemlayout" value="Viewtype_ListHub_Itemlayout" />
                     <width>724</width>
                     <movement>3</movement>
-                    <right>0</right>
+                    <left>0</left>
                     <bottom>0</bottom>
                     <height>560</height>
+                    <onright>5610</onright>
                     <onleft>5610</onleft>
                     <pagecontrol>64</pagecontrol>
                     <animation effect="slide" end="0,-80" condition="Integer.IsLess(Container(302).NumAllItems,7)">Conditional</animation>
@@ -125,24 +126,24 @@
                     <param name="label" value="$LOCALIZE[31293]" />
                     <param name="spinner-visible" value="false" />
                     <top>120</top>
-                    <left>1021</left>
+                    <!-- <left>1021</left> -->
                 </include>
                 <include content="Home_Hub_Widget_Label">
                     <param name="id" value="5610" />
                     <param name="label" value="$VAR[Label_Hub_WidgetName]" />
                     <param name="spinner-visible" value="false" />
                     <top>120</top>
-                    <!-- <left>749</left> -->
+                    <left>749</left>
                 </include>
 
                 <control type="group">
-                    <right>764</right>
+                    <left>764</left>
                     <include>skinshortcuts-template-classicspotlight-submenu</include>
                     <include>skinshortcuts-template-classicspotlight-mainmenu</include>
                 </control>
 
                 <control type="group">
-                    <left>-15</left>
+                    <right>-15</right>
                     <bottom>-15</bottom>
                     <height>590</height>
                     <width>1026</width>

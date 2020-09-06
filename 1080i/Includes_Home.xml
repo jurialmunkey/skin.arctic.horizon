@@ -976,6 +976,7 @@
             <width>996</width>
             <onback>302</onback>
             <onright>302</onright>
+            <onleft>302</onleft>
             <orientation>vertical</orientation>
             <onfocus condition="Skin.HasSetting(NoFanart)">SetProperty(TMDbHelper.Blur.SourceImage,Art(fallback),Home)</onfocus>
             <onfocus condition="!Skin.HasSetting(NoFanart)">SetProperty(TMDbHelper.Blur.SourceImage,landscape,Home)</onfocus>
