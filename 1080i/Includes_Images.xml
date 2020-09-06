@@ -199,6 +199,12 @@
         <value condition="!String.IsEmpty(ListItem.Art(artist.clearlogo))">$INFO[ListItem.Art(artist.clearlogo)]</value>
     </variable>
 
+    <variable name="Image_ClearLogo_C5610">
+        <value condition="!String.IsEmpty(Container(5610).ListItem.Art(clearlogo))">$INFO[Container(5610).ListItem.Art(clearlogo)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem.Art(tvshow.clearlogo))">$INFO[Container(5610).ListItem.Art(tvshow.clearlogo)]</value>
+        <value condition="!String.IsEmpty(Container(5610).ListItem.Art(artist.clearlogo))">$INFO[Container(5610).ListItem.Art(artist.clearlogo)]</value>
+    </variable>
+
     <variable name="Image_Watched">
         <value condition="System.Setting(hidewatched)">special://skin/extras/icons/watched-hide.png</value>
         <value>special://skin/extras/icons/watched-show.png</value>

@@ -1175,6 +1175,51 @@
         </controls>
     </submenuOther>
 
+
+    <other include="classicspotlight-mainmenu">
+        <property name="widgetTarget" tag="property" attribute="name|widgetTarget" />
+        <property name="widgetTarget">$VAR[Defs_ScreensaverWidget_Target]</property>
+        <property name="widgetName" tag="property" attribute="name|widgetName" />
+        <property name="widgetPath" tag="property" attribute="name|widgetPath" />
+        <property name="widgetPath">$VAR[Defs_ScreensaverWidget]</property>
+        <property name="widgetSortby" tag="property" attribute="name|widgetSortby" />
+        <property name="widgetSortorder" tag="property" attribute="name|widgetSortorder" />
+        <controls>
+            <include content="Home_ListHub_Widget">
+                <param name="id" value="5610" />
+                <content target="$SKINSHORTCUTS[widgetTarget]" sortby="$SKINSHORTCUTS[widgetSortby]" sortorder="$SKINSHORTCUTS[widgetSortorder]">$SKINSHORTCUTS[widgetPath]</content>
+                <skinshortcuts>visibility</skinshortcuts>
+                <visible>String.IsEmpty(Container(302).ListItem.Property(widgetPath))</visible>
+            </include>
+        </controls>
+    </other>
+
+    <submenuOther include="classicspotlight-submenu" container="302">
+        <property name="widgetTarget" tag="property" attribute="name|widgetTarget" />
+        <property name="widgetName" tag="property" attribute="name|widgetName" />
+        <property name="widgetPath" tag="property" attribute="name|widgetPath" />
+        <property name="submenuVisibility" tag="property" attribute="name|group" />
+        <property name="submenuVisibility">noMenu</property>
+        <property name="id" tag="property" attribute="name|id" />
+        <property name="widgetSortby" tag="property" attribute="name|widgetSortby" />
+        <property name="widgetSortorder" tag="property" attribute="name|widgetSortorder" />
+        <property name="widgetSourceArt" tag="property" attribute="name|widgetAspect" value="Banner">Art(tvshow.banner)|Art(banner)|Art(fanart)</property>
+        <property name="widgetSourceArt" tag="property" attribute="name|widgetAspect" value="Square">thumb</property>
+        <property name="widgetSourceArt" tag="property" attribute="name|widgetAspect" value="Small Square">thumb</property>
+        <property name="widgetSourceArt" tag="property" attribute="name|widgetAspect" value="Landscape">landscape</property>
+        <property name="widgetSourceArt" tag="property" attribute="name|widgetAspect" value="Small Landscape">landscape</property>
+        <property name="widgetSourceArt">poster</property>
+        <controls>
+            <include content="Home_ListHub_Widget">
+                <param name="id" value="5610" />
+                <content target="$SKINSHORTCUTS[widgetTarget]" sortby="$SKINSHORTCUTS[widgetSortby]" sortorder="$SKINSHORTCUTS[widgetSortorder]">$SKINSHORTCUTS[widgetPath]</content>
+                <visible>String.IsEqual(Container(301).ListItem.Property(submenuVisibility),num-$SKINSHORTCUTS[submenuVisibility]) | String.IsEqual(Container(301).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility])</visible>
+                <visible>Integer.IsEqual(Container(302).ListItem.Property(id),$SKINSHORTCUTS[id])</visible>
+                <visible>!String.IsEmpty(Container(302).ListItem.Property(widgetPath))</visible>
+            </include>
+        </controls>
+    </submenuOther>
+
     <submenu include="hubmenu">
         <property name="submenuVisibility" tag="property" attribute="name|submenuVisibility" />
         <property name="submenuVisibility">noMenu</property>

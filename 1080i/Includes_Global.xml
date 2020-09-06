@@ -253,7 +253,7 @@
         <value condition="!String.IsEmpty(Container(56560).ListItemAbsolute(0).Property(Fanart)) + Window.IsVisible(Home) + !Skin.HasSetting(DisablePersistentFanart)">$INFO[Container(56560).ListItemAbsolute(0).Property(Fanart)]</value>
 
         <!-- Submenu Hub -->
-        <value condition="Window.IsVisible(1110) + !String.IsEmpty(Container(5610).ListItem.Art(fanart))">$INFO[Container(5610).ListItem.Art(fanart)]</value>
+        <value condition="[Window.IsVisible(1110) | Window.IsVisible(1151)] + !String.IsEmpty(Container(5610).ListItem.Art(fanart))">$INFO[Container(5610).ListItem.Art(fanart)]</value>
 
         <!-- Pictures -->
         <value condition="Window.IsVisible(MyPics.xml) + !String.IsEmpty(ListItem.FileNameAndPath)">$INFO[ListItem.FileNameAndPath]</value>

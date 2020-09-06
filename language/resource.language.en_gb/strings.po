@@ -1353,6 +1353,11 @@ msgid "TvShow genres"
 msgstr ""
 
 #: /shortcuts/overrides.xml
+msgctxt "#31275"
+msgid "Classic hub"
+msgstr ""
+
+#: /shortcuts/overrides.xml
 msgctxt "#31276"
 msgid "IMDB top 250 movies"
 msgstr ""
@@ -1432,6 +1437,11 @@ msgstr ""
 #: /1080i/Includes_View_59_Sets.xml
 msgctxt "#31292"
 msgid "Poster integrated"
+msgstr ""
+
+#: /1080i/Custom_1151_ClassicHub.xml
+msgctxt "#31293"
+msgid "Categories"
 msgstr ""
 
 #: /shortcuts/overrides.xml

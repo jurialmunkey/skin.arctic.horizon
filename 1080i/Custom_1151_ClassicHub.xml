@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window type="window" id="1151">
+    <defaultcontrol always="true">302</defaultcontrol>
+    <onload>SetProperty(Header_Left_Text,$INFO[Window(Home).Property(Hub.Label)])</onload>
+    <onload>SetProperty(TMDbHelper.WidgetContainer,5610,Home)</onload>
+    <onunload>ClearProperty(TMDbHelper.WidgetContainer,Home)</onunload>
+    <controls>
+        <include>Global_Background</include>
+        <control type="list" id="56560">
+            <include>Defs_Offscreen</include>
+            <orientation>horizontal</orientation>
+            <itemlayout />
+            <focusedlayout />
+            <content>
+                <include content="Object_56560_Item">
+                    <param name="listitem" value="Container(5610).ListItem" />
+                </include>
+            </content>
+        </control>
+        <control type="list" id="301">
+            <include>Defs_Offscreen</include>
+            <onleft>302</onleft>
+            <onright>302</onright>
+            <onfocus>SetFocus(302)</onfocus>
+            <itemlayout />
+            <focusedlayout />
+            <content>
+                <item>
+                    <label>$INFO[Window(Home).Property(Hub.Label)]</label>
+                    <property name="submenuVisibility">$INFO[Window(Home).Property(Hub.submenuVisibility)]</property>
+                </item>
+            </content>
+        </control>
+
+        <control type="group">
+            <include>View_Pad</include>
+            <visible>!$EXP[Exp_CommonAnimation]</visible>
+            <include>Animation_Common</include>
+            <include>Animation_FadeInOut_Common</include>
+            <control type="group" description="List Height View">
+                <include content="Viewtype_BackPanel">
+                    <include>Animation_Down</include>
+                    <height>720</height>
+                </include>
+                <include content="View_Info_Grouplist">
+                    <param name="container" value="Container(5610)." />
+                    <param name="visible-details" value="false" />
+                    <param name="title" value="$VAR[Label_Hub_InfoTitle]" />
+                    <param name="infoline-label" value="$VAR[Label_56560_InfoLine]" />
+                    <param name="infoline-image" value="$VAR[Image_56560_VideoQuality]" />
+                    <top>-15</top>
+                    <height>285</height>
+                    <include>Viewtype_Info_Right</include>
+                </include>
+                <control type="group" description="Right Side Artwork">
+                    <right>0</right>
+                    <top>-15</top>
+                    <height>120</height>
+                    <width>420</width>
+                    <control type="image">
+                        <texture background="true">$VAR[Image_ClearLogo_C5610]</texture>
+                        <aspectratio align="right" aligny="top" scalediffuse="false">keep</aspectratio>
+                    </control>
+                </control>
+            </control>
+            <control type="group">
+                <include>Animation_Down</include>
+                <control type="group">
+                    <left>-20</left>
+                    <bottom>-20</bottom>
+                    <height>600</height>
+                    <width>1036</width>
+                    <control type="group">
+                        <include>Object_PosterBack</include>
+                        <control type="multiimage">
+                            <animation effect="fade" start="0" end="100" time="1000" tween="cubic" easing="inout" reversible="false">Visible</animation>
+                            <animation effect="fade" end="0" start="100" time="1000" tween="cubic" easing="inout">Hidden</animation>
+                            <animation effect="fade" start="100" end="10" condition="true">Conditional</animation>
+                            <timeperimage>50</timeperimage>
+                            <aspectratio align="center" aligny="center">stretch</aspectratio>
+                            <fadetime>10</fadetime>
+                            <imagepath diffuse="diffuse/landscape-big.png">$VAR[Global_BusyLoader]</imagepath>
+                            <include content="Defs_Pad">
+                                <param name="pad" value="20" />
+                            </include>
+                            <randomize>false</randomize>
+                            <visible>Container(5610).IsUpdating</visible>
+                            <visible>!Skin.HasSetting(DisableBusyBackground) + System.HasAddon(resource.images.arctic.waves)</visible>
+                        </control>
+                        <control type="group">
+                            <centerleft>50%</centerleft>
+                            <width>240</width>
+                            <visible>Container(5610).IsUpdating</visible>
+                            <include content="Defs_BusySpinner">
+                                <param name="label" value="$LOCALIZE[31428]..." />
+                            </include>
+                        </control>
+                    </control>
+                </control>
+                <control type="group">
+                    <right>-20</right>
+                    <bottom>-20</bottom>
+                    <left>1016</left>
+                    <height>600</height>
+                    <include>Object_PosterBack</include>
+                </control>
+                <include content="Viewtype_FileList">
+                    <param name="id" value="302" />
+                    <param name="itemlayout-width" value="724" />
+                    <param name="itemlayout" value="Viewtype_ListHub_Itemlayout" />
+                    <width>724</width>
+                    <movement>3</movement>
+                    <right>0</right>
+                    <bottom>0</bottom>
+                    <height>560</height>
+                    <onleft>5610</onleft>
+                    <pagecontrol>64</pagecontrol>
+                    <animation effect="slide" end="0,-80" condition="Integer.IsLess(Container(302).NumAllItems,7)">Conditional</animation>
+                    <animation effect="slide" end="0,-80" condition="Integer.IsLess(Container(302).NumAllItems,5)">Conditional</animation>
+                    <animation effect="slide" end="0,-80" condition="Integer.IsLess(Container(302).NumAllItems,3)">Conditional</animation>
+                    <include>Items_SubMenu</include>
+                </include>
+                <include content="Home_Hub_Widget_Label">
+                    <param name="id" value="302" />
+                    <param name="label" value="$LOCALIZE[31293]" />
+                    <param name="spinner-visible" value="false" />
+                    <top>120</top>
+                    <left>1021</left>
+                </include>
+                <include content="Home_Hub_Widget_Label">
+                    <param name="id" value="5610" />
+                    <param name="label" value="$VAR[Label_Hub_WidgetName]" />
+                    <param name="spinner-visible" value="false" />
+                    <top>120</top>
+                    <!-- <left>749</left> -->
+                </include>
+
+                <control type="group">
+                    <right>764</right>
+                    <include>skinshortcuts-template-classicspotlight-submenu</include>
+                    <include>skinshortcuts-template-classicspotlight-mainmenu</include>
+                </control>
+
+                <control type="group">
+                    <left>-15</left>
+                    <bottom>-15</bottom>
+                    <height>590</height>
+                    <width>1026</width>
+                    <include condition="!Skin.HasSetting(DisableWatchedOverlay)" content="View_WatchedOverlay">
+                        <param name="affix" value="_C5610" />
+                        <param name="listitem" value="Container(5610).ListItem" />
+                    </include>
+                    <include content="View_Selectbox">
+                        <visible>Control.HasFocus(5610)</visible>
+                    </include>
+                </control>
+            </control>
+        </control>
+
+
+        <control type="group">
+            <visible allowhiddenfocus="true">!$EXP[Exp_CommonAnimation]</visible>
+            <include>Animation_Common</include>
+            <include>Topbar_Left</include>
+        </control>
+        <include condition="!Skin.HasSetting(DisableClock)">Topbar_Right</include>
+        <include>Object_NowPlaying</include>
+    </controls>
+</window>

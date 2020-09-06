@@ -16,7 +16,7 @@
         <value condition="String.IsEqual({listitem}.Overlay,OverlayWatched.png) + !Skin.HasSetting(DisableIndicator.Watched)">100</value>
     </variable>
 
-    <variable name="Image_Overlay" containers="501,502,504,56" start="-15" end="17">
+    <variable name="Image_Overlay" containers="501,502,504,56,5610" start="-15" end="17">
         <value condition="[String.IsEqual({listitem}.DBType,tvshow) | String.IsEqual({listitem}.DBType,season)] + !Integer.IsEqual({listitem}.Property(UnWatchedEpisodes),0) + !Skin.HasSetting(DisableIndicator.Episodes)">common/null.png</value>
 
         <value condition="{listitem}.IsRecording">indicator/record.png</value>
@@ -47,7 +47,7 @@
         <value condition="Window.IsVisible(AddonBrowser.xml) + {listitem}.Property(addon.isinstalled)">indicator/library.png</value>
     </variable>
 
-    <variable name="Image_Overlay_Backing" containers="501,502,504,56" start="-15" end="17">
+    <variable name="Image_Overlay_Backing" containers="501,502,504,56,5610" start="-15" end="17">
         <value condition="[String.IsEqual({listitem}.DBType,tvshow) | String.IsEqual({listitem}.DBType,season)] + !Integer.IsEqual({listitem}.Property(UnWatchedEpisodes),0) + !Skin.HasSetting(DisableIndicator.Episodes)">$VAR[Image_IndicatorStyle]</value>
         <value condition="{listitem}.IsRecording">$VAR[Image_IndicatorStyle]</value>
         <value condition="{listitem}.HasTimer">$VAR[Image_IndicatorStyle]</value>
