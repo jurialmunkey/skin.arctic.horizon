@@ -578,16 +578,29 @@
                         <param name="plotheight-nr" value="120" />
                     </include>
                 </control>
-                <control type="image">
-                    <right>20</right>
-                    <bottom>-300</bottom>
-                    <height>80</height>
-                    <fadetime>200</fadetime>
-                    <aspectratio align="right" aligny="bottom">keep</aspectratio>
-                    <texture background="true">$VAR[Image_Home_Clearlogo]</texture>
-                    <visible>Control.HasFocus($PARAM[button-play-id]) | Control.HasFocus($PARAM[button-info-id]) | Integer.IsEqual(Window(Home).Property(TMDbHelper.WidgetContainer),3001) | $PARAM[clearlogo-visible]</visible>
+                <control type="group">
+                    <visible>Control.HasFocus($PARAM[button-play-id]) | Control.HasFocus($PARAM[button-info-id]) | Integer.IsEqual(Window(Home).Property(TMDbHelper.WidgetContainer),3001) | $PARAM[clearlogo-visible] | [Skin.HasSetting(EnableHorizontalHome) + Integer.IsEqual(Container(3700).NumItems,0)]</visible>
                     <animation reversible="false" effect="fade" start="100" end="0" delay="0" time="300" tween="cubic" easing="inout">Hidden</animation>
                     <animation reversible="false" effect="fade" start="0" end="100" delay="200" time="400" tween="cubic" easing="inout">Visible</animation>
+                    <control type="image">
+                        <right>20</right>
+                        <bottom>-260</bottom>
+                        <height>80</height>
+                        <fadetime>200</fadetime>
+                        <aspectratio align="right" aligny="bottom">keep</aspectratio>
+                        <texture background="true">$VAR[Image_Home_Clearlogo]</texture>
+                    </control>
+                    <control type="label">
+                        <right>20</right>
+                        <bottom>-300</bottom>
+                        <height>20</height>
+                        <fadetime>200</fadetime>
+                        <width>202</width>
+                        <align>center</align>
+                        <font>font_statusbar_bold</font>
+                        <label>$INFO[Container(3001).CurrentItem,, / ]$INFO[Container(3001).NumItems]</label>
+                        <textcolor>main_fg_70</textcolor>
+                    </control>
                 </control>
             </control>
             <control type="grouplist" id="$PARAM[group-id]" >

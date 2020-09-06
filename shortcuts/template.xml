@@ -911,6 +911,7 @@
                 <orientation>horizontal</orientation>
                 <scrolltime tween="quadratic">400</scrolltime>
                 <preloaditems>2</preloaditems>
+                <pagecontrol>9988</pagecontrol>
                 <include>Animation_FadeInOut_Common</include>
                 <onfocus>SetProperty(TMDbHelper.WidgetContainer,3001,Home)</onfocus>
                 <visible>Integer.IsEqual(Container(3700).NumItems,0) | String.IsEqual(Container(3700).ListItemAbsolute(0).Property(list),Background)</visible>
