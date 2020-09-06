@@ -127,7 +127,6 @@
                     <onleft>9000</onleft>
                     <onup>9999</onup>
                     <ondown>9999</ondown>
-                    <pagecontrol>61</pagecontrol>
                     <usecontrolcoords>true</usecontrolcoords>
                     <!-- ==== -->
                     <!-- Home -->
@@ -181,6 +180,13 @@
                         <label>- $LOCALIZE[31029]</label>
                         <selected>Skin.HasSetting(ProfilePicture)</selected>
                         <onclick>Skin.ToggleSetting(ProfilePicture)</onclick>
+                    </control>
+                    <control type="radiobutton" id="19111" description="Submenu">
+                        <visible>Integer.IsEqual(Window.Property(CurrentFocus),9001)</visible>
+                        <include>Defs_Settings_Button</include>
+                        <label>- Submenu on left/up</label>
+                        <selected>!Skin.HasSetting(DisableSideSubmenu)</selected>
+                        <onclick>Skin.ToggleSetting(DisableSideSubmenu)</onclick>
                     </control>
 
                     <control type="button" id="19103" description="Global Widget">
@@ -903,6 +909,9 @@
 
                 </control>
 
+                <include content="Dialog_Settings_Arrows">
+                    <param name="id" value="9999" />
+                </include>
 
 
                 <include content="Dialog_Separator">

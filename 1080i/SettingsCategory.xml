@@ -66,7 +66,6 @@
                     <include>Defs_Settings_OnLeft</include>
                 </control>
 
-
                 <control type="button" id="20">
                     <width>dialog_side_grouplist</width>
                     <bottom>item_list_height_half</bottom>
@@ -110,6 +109,10 @@
                     <pagecontrol>61</pagecontrol>
                     <usecontrolcoords>true</usecontrolcoords>
                 </control>
+
+                <include content="Dialog_Settings_Arrows">
+                    <param name="id" value="5" />
+                </include>
 
                 <include content="Dialog_Separator">
                     <param name="top" value="item_list_height_half" />

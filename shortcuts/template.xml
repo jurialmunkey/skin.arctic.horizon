@@ -95,10 +95,13 @@
                         <onup condition="!Skin.HasSetting(EnableHorizontalHome) + Skin.HasSetting(DisableHomeWrap)">SetProperty(CG_$PYTHON[50000 + int(mainmenuid) * 100]_CurrentWidget,$INFO[System.CurrentControlID])</onup>
                         <onup condition="!Skin.HasSetting(EnableHorizontalHome) + Skin.HasSetting(DisableHomeWrap)">301</onup>
                         <ondown condition="!Skin.HasSetting(EnableHorizontalHome) + Skin.HasSetting(DisableHomeWrap)">SetFocus(3991)</ondown>
-                        <onright condition="!Skin.HasSetting(EnableHorizontalHome)">SetFocus(3990)</onright>
+                        <onright condition="!Skin.HasSetting(EnableHorizontalHome) + !Skin.HasSetting(DisableSideSubmenu)">SetFocus(3990)</onright>
+                        <onright condition="!Skin.HasSetting(EnableHorizontalHome) + Skin.HasSetting(DisableSideSubmenu)">301</onright>
+                        <onright condition="!Skin.HasSetting(EnableHorizontalHome)">SetProperty(CurrentWidget,$INFO[System.CurrentControlID])</onright>
 
                         <!-- Movement to VMenu -->
                         <onleft condition="!Skin.HasSetting(EnableHorizontalHome)">SetProperty(CG_$PYTHON[50000 + int(mainmenuid) * 100]_CurrentWidget,$INFO[System.CurrentControlID])</onleft>
+                        <onleft condition="!Skin.HasSetting(EnableHorizontalHome)">SetProperty(CurrentWidget,$INFO[System.CurrentControlID])</onleft>
                         <onleft condition="!Skin.HasSetting(EnableHorizontalHome)">301</onleft>
 
                         <!-- Wrap Movement for VMenu -->
@@ -408,6 +411,7 @@
                     <param name="clearart" value="$SKINSHORTCUTS[widgetInfo] | [$SKINSHORTCUTS[isSecondPosition] + String.IsEqual(Container(3700).ListItemAbsolute(0).Property(list),Background)]" />
                     <param name="control-type" value="fixedlist" />
                     <top>$SKINSHORTCUTS[widgetTop]</top>
+                    <onback>ClearProperty(CurrentWidget,Home)</onback>
                     <onback>SetFocus($PYTHON[30000 + int(mainmenuid) * 100 + 1])</onback>
                     <onback>301</onback>
                     <onfocus condition="!$SKINSHORTCUTS[widgetSubmenu]">SetProperty(TMDbHelper.WidgetContainer,$NUMBER[$PYTHON[30000 + int(mainmenuid) * 100 + int(id)]],Home)</onfocus>
@@ -466,6 +470,7 @@
                     <param name="id" value="$PYTHON[30000 + int(mainmenuid) * 100 + int(id)]" />
                     <description>Special Widget Control</description>
                     <include>Defs_Hidden_Button</include>
+                    <onback>ClearProperty(CurrentWidget,Home)</onback>
                     <onback>301</onback>
                     <onclick condition="!$SKINSHORTCUTS[isSettings]">ActivateWindow(Weather)</onclick>
                     <onfocus>ClearProperty(TMDbHelper.WidgetContainer,Home)</onfocus>

@@ -1083,6 +1083,28 @@
         </include>
     </include>
 
+    <include name="Dialog_Settings_Arrows">
+        <control type="group">
+            <left>430</left>
+            <right>30</right>
+            <!-- <width>16</width> -->
+            <bottom>8</bottom>
+            <top>8</top>
+            <control type="group">
+                <visible>Container($PARAM[id]).HasPrevious</visible>
+                <include content="Object_DoubleArrow_Up">
+                    <param name="colordiffuse" value="dialog_fg_30" />
+                </include>
+            </control>
+            <control type="group">
+                <visible>Container($PARAM[id]).HasNext</visible>
+                <include content="Object_DoubleArrow_Down">
+                    <param name="colordiffuse" value="dialog_fg_30" />
+                </include>
+            </control>
+        </control>
+    </include>
+
     <include name="Dialog_Standard_List_Itemlayout_Simple">
         <param name="left_pad" default="54" />
         <param name="right_pad" default="0" />

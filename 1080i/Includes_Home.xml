@@ -19,29 +19,47 @@
     <include name="Home_Movement_UpDown">
         <onup condition="!Skin.HasSetting(EnableHorizontalHome)">SetProperty(WidgetMovement,OnUp)</onup>
         <onup condition="!Skin.HasSetting(EnableHorizontalHome)">Control.Move(301,-1)</onup>
+        <onup condition="!Skin.HasSetting(EnableHorizontalHome)">ClearProperty(CurrentWidget,Home)</onup>
         <ondown condition="!Skin.HasSetting(EnableHorizontalHome)">SetProperty(WidgetMovement,OnDown)</ondown>
         <ondown condition="!Skin.HasSetting(EnableHorizontalHome)">Control.Move(301,1)</ondown>
+        <ondown condition="!Skin.HasSetting(EnableHorizontalHome)">ClearProperty(CurrentWidget,Home)</ondown>
 
         <onleft condition="Skin.HasSetting(EnableHorizontalHome)">SetProperty(WidgetMovement,OnUp)</onleft>
         <onleft condition="Skin.HasSetting(EnableHorizontalHome)">Control.Move(301,-1)</onleft>
+        <onleft condition="Skin.HasSetting(EnableHorizontalHome)">ClearProperty(CurrentWidget,Home)</onleft>
         <onright condition="Skin.HasSetting(EnableHorizontalHome)">SetProperty(WidgetMovement,OnDown)</onright>
         <onright condition="Skin.HasSetting(EnableHorizontalHome)">Control.Move(301,1)</onright>
+        <onright condition="Skin.HasSetting(EnableHorizontalHome)">ClearProperty(CurrentWidget,Home)</onright>
     </include>
 
     <include name="Home_Movement_LeftRight">
-        <onright condition="!Skin.HasSetting(EnableHorizontalHome) + !Integer.IsEqual(Container(3700).NumItems,0)">SetFocus(3000)</onright>
+        <!-- Towards Widgets -->
+        <!-- VMenu -->
+        <onright condition="!Skin.HasSetting(EnableHorizontalHome) + !Integer.IsEqual(Container(3700).NumItems,0) + [String.IsEmpty(Window(Home).Property(CurrentWidget)) | !Skin.HasSetting(DisableSideSubmenu) | Integer.IsEqual(Window(Home).Property(CurrentWidget),3001)]">SetFocus(3000)</onright>
+        <onright condition="!Skin.HasSetting(EnableHorizontalHome) + !Integer.IsEqual(Container(3700).NumItems,0) + !String.IsEmpty(Window(Home).Property(CurrentWidget)) + Skin.HasSetting(DisableSideSubmenu) + !Integer.IsEqual(Window(Home).Property(CurrentWidget),3001)">SetFocus($INFO[Window(Home).Property(CurrentWidget)],0,absolute)</onright>
+
+        <!-- HMenu -->
         <ondown condition="Skin.HasSetting(EnableHorizontalHome) + !Integer.IsEqual(Container(3700).NumItems,0)">SetFocus(3000)</ondown>
+
+        <!-- Focus -->
         <include>skinshortcuts-template-onmovement</include>
         <onright condition="!Skin.HasSetting(EnableHorizontalHome)">ClearProperty(WidgetMovement)</onright>
         <ondown condition="Skin.HasSetting(EnableHorizontalHome)">ClearProperty(WidgetMovement)</ondown>
 
-        <!-- Submenu Move -->
+        <!-- SubMenu onInfo -->
         <oninfo condition="!Integer.IsEqual(Container(303).NumItems,0)">ClearProperty(WidgetFocus)</oninfo>
         <oninfo condition="!Integer.IsEqual(Container(303).NumItems,0)">SetFocus(303,0,absolute)</oninfo>
-        <onup condition="Skin.HasSetting(EnableHorizontalHome) + !Integer.IsEqual(Container(303).NumItems,0)">ClearProperty(WidgetFocus)</onup>
-        <onup condition="Skin.HasSetting(EnableHorizontalHome) + !Integer.IsEqual(Container(303).NumItems,0)">SetFocus(303,0,absolute)</onup>
-        <onleft condition="!Skin.HasSetting(EnableHorizontalHome) + !Integer.IsEqual(Container(303).NumItems,0)">ClearProperty(WidgetFocus)</onleft>
-        <onleft condition="!Skin.HasSetting(EnableHorizontalHome) + !Integer.IsEqual(Container(303).NumItems,0)">SetFocus(303,0,absolute)</onleft>
+
+        <!-- Towards Menu -->
+        <!-- HMenu -->
+        <onup condition="Skin.HasSetting(EnableHorizontalHome) + !Integer.IsEqual(Container(303).NumItems,0) + !Skin.HasSetting(DisableSideSubmenu)">ClearProperty(WidgetFocus)</onup>
+        <onup condition="Skin.HasSetting(EnableHorizontalHome) + !Integer.IsEqual(Container(303).NumItems,0) + !Skin.HasSetting(DisableSideSubmenu)">SetFocus(303,0,absolute)</onup>
+
+        <!-- VMenu -->
+        <onleft condition="!Skin.HasSetting(EnableHorizontalHome) + !Integer.IsEqual(Container(3700).NumItems,0) + !String.IsEmpty(Window(Home).Property(CurrentWidget)) + Skin.HasSetting(DisableSideSubmenu) + !Integer.IsEqual(Window(Home).Property(CurrentWidget),3001)">SetFocus($INFO[Window(Home).Property(CurrentWidget)],9999,absolute)</onleft>
+        <onleft condition="!Skin.HasSetting(EnableHorizontalHome) + !String.IsEmpty(Window(Home).Property(CurrentWidget)) + Skin.HasSetting(DisableSideSubmenu) + Integer.IsEqual(Window(Home).Property(CurrentWidget),3001)">Control.Move(3001,-1)</onleft>
+        <onleft condition="!Skin.HasSetting(EnableHorizontalHome) + !Integer.IsEqual(Container(303).NumItems,0) + !Skin.HasSetting(DisableSideSubmenu)">ClearProperty(WidgetFocus)</onleft>
+        <onleft condition="!Skin.HasSetting(EnableHorizontalHome) + !Integer.IsEqual(Container(303).NumItems,0) + !Skin.HasSetting(DisableSideSubmenu)">SetFocus(303,0,absolute)</onleft>
     </include>
 
     <include name="Home_Movement_Widgets_Wrap">
@@ -583,6 +601,7 @@
                 <itemgap>-10</itemgap>
                 <onup condition="Skin.HasSetting(EnableHorizontalHome)">301</onup>
                 <onleft condition="!Skin.HasSetting(EnableHorizontalHome)">301</onleft>
+                <onleft condition="!Skin.HasSetting(EnableHorizontalHome)">SetProperty(CurrentWidget,3001)</onleft>
                 <onleft condition="Skin.HasSetting(EnableHorizontalHome)">$PARAM[button-play-id]</onleft>
                 <onleft condition="Skin.HasSetting(EnableHorizontalHome)">Control.Move(3001,-1)</onleft>
                 <onright>$PARAM[button-info-id]</onright>
