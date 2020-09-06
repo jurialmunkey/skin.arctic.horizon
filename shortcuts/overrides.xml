@@ -96,6 +96,7 @@
     <property property="widgetAspect">Landscape</property>
     <property property="widgetAspect">Banner</property>
     <property property="widgetAspect">Icon</property>
+    <property property="widgetAspect">Lovefilm</property>
     <propertySettings property="widgetAspect" buttonID="9901" title="Widget Aspect Ratio" />
     <propertySettings property="widgetAspect" buttonID="9911" title="Widget Aspect Ratio" />
 

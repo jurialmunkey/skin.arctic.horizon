@@ -67,6 +67,12 @@
         <value>$INFO[System.Date]</value>
     </variable>
 
+    <variable name="Label_Title">
+        <value condition="!String.IsEmpty(ListItem.TVShowTitle)">$INFO[ListItem.TVShowTitle]</value>
+        <value condition="!String.IsEmpty(ListItem.Title)">$INFO[ListItem.Title]</value>
+        <value>$INFO[ListItem.Label]</value>
+    </variable>
+
     <variable name="Label_Home_InfoLine">
         <value condition="Control.IsVisible(56560)">$VAR[Label_56560_InfoLine]</value>
         <value>$VAR[Label_InfoLine]</value>
@@ -106,6 +112,26 @@
         <value condition="Window.IsVisible(VideoFullScreen.xml)">$INFO[Container(56560).ListItemAbsolute(0).Property(Year),  |  [COLOR=main_fg_100],[/COLOR]]$INFO[Container(56560).ListItemAbsolute(0).Property(MPAA),  |  [COLOR=main_fg_100],[/COLOR]]$VAR[Label_56560_Duration,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[Container(56560).ListItemAbsolute(0).Property(EndTime),  |  [COLOR=main_fg_100]$LOCALIZE[31207] ,[/COLOR]]</value>
 
         <value condition="String.IsEmpty(Container(56560).ListItem.Property(DBType))">$INFO[System.FriendlyName,  |  [COLOR=main_fg_100],[/COLOR]]  |  [COLOR=main_fg_100]Arctic Horizon $INFO[System.AddonVersion(skin.arctic.horizon)][/COLOR]</value>
+
+        <value>  |  [COLOR=main_fg_100]$LOCALIZE[19055][/COLOR]</value>
+    </variable>
+
+    <variable name="Label_Lovefilm_InfoLine">
+        <value condition="String.IsEqual(ListItem.DBType,movie)">$INFO[ListItem.Year,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.MPAA,  |  [COLOR=main_fg_100],[/COLOR]]$VAR[Label_Duration,  |  [COLOR=main_fg_100],[/COLOR]]</value>
+
+        <value condition="String.IsEqual(ListItem.DBType,tvshow)">$INFO[ListItem.Year,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.MPAA,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.Property(WatchedEpisodes),  |  [COLOR=main_fg_100]$LOCALIZE[16102] , $LOCALIZE[20163] [/COLOR]]$INFO[ListItem.Property(TotalEpisodes),[COLOR=main_fg_100],[/COLOR]]</value>
+
+        <value condition="String.IsEqual(ListItem.DBType,season)">$INFO[ListItem.Season,  |  [COLOR=main_fg_100]$LOCALIZE[20373] ,[/COLOR]]$INFO[ListItem.Year,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.MPAA,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.Property(WatchedEpisodes),  |  [COLOR=main_fg_100]$LOCALIZE[16102] , $LOCALIZE[20163] [/COLOR]]$INFO[ListItem.Property(TotalEpisodes),[COLOR=main_fg_100],[/COLOR]]</value>
+
+        <value condition="String.IsEqual(ListItem.DBType,episode) | String.IsEqual(ListItem.DBType,video)">$INFO[ListItem.Season,  |  [COLOR=main_fg_100]$LOCALIZE[20373] ,[/COLOR]]$INFO[ListItem.Episode,  |  [COLOR=main_fg_100]$LOCALIZE[20359] ,[/COLOR]]$INFO[ListItem.MPAA,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.Premiered,  |  [COLOR=main_fg_100],[/COLOR]]</value>
+
+        <value condition="String.IsEqual(ListItem.DBType,artist) + [!String.IsEmpty(ListItem.Property(Artist_Genre)) | !String.IsEmpty(ListItem.Property(Artist_YearsActive)) | !String.IsEmpty(ListItem.Property(Artist_Born))]">$INFO[ListItem.Property(Artist_Genre),  |  [COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.Property(Artist_YearsActive),  |  [COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.Property(Artist_Born),  |  [COLOR=main_fg_100],[/COLOR]]</value>
+
+        <value condition="[String.IsEqual(ListItem.DBType,album) | String.IsEqual(ListItem.DBType,song)] + [!String.IsEmpty(ListItem.AlbumArtist) | !String.IsEmpty(ListItem.Year) | !String.IsEmpty(ListItem.Property(Album_Label))]">$INFO[ListItem.AlbumArtist,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.Year,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.Property(Album_Label),  |  [COLOR=main_fg_100],[/COLOR]]</value>
+
+        <value condition="!String.IsEmpty(ListItem.AddonVersion)">$INFO[ListItem.AddonVersion,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.AddonType,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.AddonCreator,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.Label2,  |  [COLOR=main_fg_100],[/COLOR]]</value>
+
+        <value condition="[!String.IsEmpty(ListItem.ChannelNumberLabel)] + [!String.IsEmpty(ListItem.ChannelName) | !String.IsEmpty(ListITem.StartTime)]">$INFO[ListItem.ChannelName,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.Season,  |  [COLOR=main_fg_100]S,[/COLOR]]$INFO[ListItem.Episode,  |  [COLOR=main_fg_100]E,[/COLOR]]$VAR[Label_PVR_EpisodeName,  |  [COLOR=main_fg_100],[/COLOR]]$VAR[Label_PVR_EPGEventTitle,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.Year,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.MPAA,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.StartTime,  |  [COLOR=main_fg_100],[/COLOR]]$INFO[ListItem.EndTime,[COLOR=main_fg_100] - ,[/COLOR]]</value>
 
         <value>  |  [COLOR=main_fg_100]$LOCALIZE[19055][/COLOR]</value>
     </variable>

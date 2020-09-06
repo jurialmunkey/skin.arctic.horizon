@@ -47,6 +47,10 @@
         <include condition="![Skin.HasSetting(LockMainMenu) + !Skin.HasSetting(EnableHorizontalHome)]">Defs_Movement_Landscape_Normal</include>
     </include>
 
+    <include name="Defs_Movement_Lovefilm">
+        <movement>0</movement>
+    </include>
+
     <include name="Defs_Movement_Poster_Locked">
         <movement>5</movement>
     </include>

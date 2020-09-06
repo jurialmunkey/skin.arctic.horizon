@@ -243,6 +243,7 @@
             <property name="widgetInclude" tag="property" attribute="name|widgetAspect" value="Landscape">Viewtype_Landscape</property>
             <property name="widgetInclude" tag="property" attribute="name|widgetAspect" value="Small Landscape">Viewtype_Landscape</property>
             <property name="widgetInclude" tag="property" attribute="name|widgetAspect" value="Icon">Viewtype_Keywords</property>
+            <property name="widgetInclude" tag="property" attribute="name|widgetAspect" value="Lovefilm">Viewtype_Lovefilm</property>
             <property name="widgetInclude">Viewtype_Poster</property>
 
 
@@ -258,6 +259,7 @@
             <property name="widgetMovement" tag="property" attribute="name|list" value="Submenu">Defs_Movement_Square</property>
             <property name="widgetMovement" tag="property" attribute="name|widgetAspect" value="Landscape">Defs_Movement_Landscape</property>
             <property name="widgetMovement" tag="property" attribute="name|widgetAspect" value="Small Landscape">Defs_Movement_Landscape</property>
+            <property name="widgetMovement" tag="property" attribute="name|widgetAspect" value="Lovefilm">Defs_Movement_Lovefilm</property>
             <property name="widgetMovement">Defs_Movement_Poster</property>
 
             <!-- Widget Blur Source Artwork -->
@@ -265,6 +267,7 @@
             <property name="widgetSourceArt" tag="property" attribute="name|widgetAspect" value="Square">thumb</property>
             <property name="widgetSourceArt" tag="property" attribute="name|widgetAspect" value="Small Square">thumb</property>
             <property name="widgetSourceArt" tag="property" attribute="name|widgetAspect" value="Landscape">landscape</property>
+            <property name="widgetSourceArt" tag="property" attribute="name|widgetAspect" value="Lovefilm">landscape</property>
             <property name="widgetSourceArt" tag="property" attribute="name|widgetAspect" value="Small Landscape">landscape</property>
             <property name="widgetSourceArt">poster</property>
 
@@ -303,6 +306,7 @@
             <!-- Widget Submenu Property -->
             <property name="widgetConstant" tag="property" attribute="name|list" value="Submenu">widgets_submenu</property>
             <property name="widgetConstant" tag="property" attribute="name|widgetAspect" value="Icon">widgets_submenu</property>
+            <property name="widgetConstant" tag="property" attribute="name|widgetAspect" value="Lovefilm">widgets_lovefilm</property>
             <property name="widgetConstant">widgets</property>
 
             <!-- Widget Height Property -->

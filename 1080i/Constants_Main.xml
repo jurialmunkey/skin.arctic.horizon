@@ -25,6 +25,10 @@
     <constant name="widgets_submenu_label_top">370</constant>
     <constant name="widgets_submenu_item_top">230</constant>
 
+    <constant name="widgets_lovefilm_item_height">600</constant>
+    <constant name="widgets_lovefilm_label_top">370</constant>
+    <constant name="widgets_lovefilm_item_top">230</constant>
+
     <constant name="widgets_settings_top_item_height">500</constant>
     <constant name="widgets_settings_top_label_top">370</constant>
     <constant name="widgets_settings_top_item_top">230</constant>
