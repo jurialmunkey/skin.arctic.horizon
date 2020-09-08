@@ -300,6 +300,8 @@
             <property name="widgetName">$LOCALIZE[31105]</property>
 
             <!-- Widget Submenu Property -->
+            <property name="widgetIcon" tag="property" attribute="name|widgetAspect" value="Icon">True</property>
+            <property name="widgetIcon">False</property>
             <property name="widgetSubmenu" tag="property" attribute="name|list" value="Submenu">True</property>
             <property name="widgetSubmenu">False</property>
 
@@ -390,7 +392,7 @@
             <property name="id">50</property>
             <controls>
 
-                <include content="Home_Vertical_Info" condition="$SKINSHORTCUTS[isWidget] + !$SKINSHORTCUTS[widgetSubmenu] + $SKINSHORTCUTS[widgetInfo]">
+                <include content="Home_Vertical_Info" condition="$SKINSHORTCUTS[isWidget] + ![$SKINSHORTCUTS[widgetIcon] | $SKINSHORTCUTS[widgetSubmenu]] + $SKINSHORTCUTS[widgetInfo]">
                     <param name="font" value="font_title" />
                     <param name="titleheight" value="60" />
                     <param name="groupid" value="$PYTHON[60000 + int(mainmenuid) * 100 + int(id)]" />
@@ -413,8 +415,8 @@
                     <param name="label-widgetname" value="$SKINSHORTCUTS[widgetLabelName]" />
                     <param name="label-widgetstart" value="$SKINSHORTCUTS[widgetLabelStart]" />
                     <param name="label-widgetend" value="$SKINSHORTCUTS[widgetLabelEnd]" />
-                    <param name="infoslide" value="!$SKINSHORTCUTS[widgetSubmenu] + [$SKINSHORTCUTS[widgetInfo] | $SKINSHORTCUTS[isSecondPosition]]" />
-                    <param name="backpanel" value="!$SKINSHORTCUTS[widgetSubmenu] + [$SKINSHORTCUTS[widgetInfo] | [$SKINSHORTCUTS[isSecondPosition] + String.IsEqual(Container(3700).ListItemAbsolute(0).Property(list),Background)]] + [Control.HasFocus($PYTHON[30000 + int(mainmenuid) * 100 + int(id)]) | Integer.IsEqual(Window(Home).Property(HW_$PYTHON[50000 + int(mainmenuid) * 100]_InfoWidget),$PYTHON[30000 + int(mainmenuid) * 100 + int(id)])]" />
+                    <param name="infoslide" value="![$SKINSHORTCUTS[widgetIcon] | $SKINSHORTCUTS[widgetSubmenu]] + [$SKINSHORTCUTS[widgetInfo] | $SKINSHORTCUTS[isSecondPosition]]" />
+                    <param name="backpanel" value="![$SKINSHORTCUTS[widgetIcon] | $SKINSHORTCUTS[widgetSubmenu]] + [$SKINSHORTCUTS[widgetInfo] | [$SKINSHORTCUTS[isSecondPosition] + String.IsEqual(Container(3700).ListItemAbsolute(0).Property(list),Background)]] + [Control.HasFocus($PYTHON[30000 + int(mainmenuid) * 100 + int(id)]) | Integer.IsEqual(Window(Home).Property(HW_$PYTHON[50000 + int(mainmenuid) * 100]_InfoWidget),$PYTHON[30000 + int(mainmenuid) * 100 + int(id)])]" />
                     <param name="clearart" value="$SKINSHORTCUTS[widgetInfo] | [$SKINSHORTCUTS[isSecondPosition] + String.IsEqual(Container(3700).ListItemAbsolute(0).Property(list),Background)]" />
                     <param name="control-type" value="fixedlist" />
                     <top>$SKINSHORTCUTS[widgetTop]</top>
@@ -445,7 +447,7 @@
                     </content>
                 </include>
 
-                <include content="Object_Control" condition="!$SKINSHORTCUTS[widgetSubmenu] + $SKINSHORTCUTS[isSecondPosition] + !$SKINSHORTCUTS[widgetInfo]">
+                <include content="Object_Control" condition="![$SKINSHORTCUTS[widgetIcon] | $SKINSHORTCUTS[widgetSubmenu]] + $SKINSHORTCUTS[isSecondPosition] + !$SKINSHORTCUTS[widgetInfo]">
                     <param name="type" value="group" />
                     <param name="id" value="$PYTHON[35000 + int(mainmenuid) * 100 + int(id)]" />
                     <top>-20</top>
