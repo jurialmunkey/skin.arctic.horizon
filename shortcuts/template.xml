@@ -318,6 +318,8 @@
 
             <!-- Widget Info Property -->
             <property name="widgetInfo" tag="property" attribute="name|list" value="Submenu">False</property>
+            <property name="widgetInfo" tag="property" attribute="name|widgetAspect" value="Icon">False</property>
+            <property name="widgetInfo" tag="property" attribute="name|widgetAspect" value="Lovefilm">False</property>
             <property name="widgetInfo" tag="property" attribute="name|widgetInfo" value="True">True</property>
             <property name="widgetInfo">False</property>
 
@@ -396,6 +398,7 @@
                     <param name="visible" value="Control.HasFocus($PYTHON[30000 + int(mainmenuid) * 100 + int(id)]) | Integer.IsEqual(Window(Home).Property(CG_$PYTHON[50000 + int(mainmenuid) * 100]_CurrentWidget),$NUMBER[$PYTHON[30000 + int(mainmenuid) * 100 + int(id)]])" />
                     <top>-60</top>
                     <height>470</height>
+                    <right>100</right>
                     <visible>Integer.IsGreater(Container($PYTHON[30000 + int(mainmenuid) * 100 + int(id)]).NumAllItems,0) | Container($PYTHON[30000 + int(mainmenuid) * 100 + int(id)]).IsUpdating</visible>
                 </include>
 
