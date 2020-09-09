@@ -1444,6 +1444,11 @@ msgctxt "#31293"
 msgid "Categories"
 msgstr ""
 
+#: /1080i/SkinSettings.xml
+msgctxt "#31294"
+msgid "Icon only"
+msgstr ""
+
 #: /shortcuts/overrides.xml
 msgctxt "#31295"
 msgid "Random artists"
@@ -1457,6 +1462,11 @@ msgstr ""
 #: /shortcuts/overrides.xml
 msgctxt "#31297"
 msgid "TV nodes"
+msgstr ""
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31298"
+msgid "Submenu on left/up"
 msgstr ""
 
 #: /shortcuts/overrides.xml

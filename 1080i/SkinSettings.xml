@@ -152,7 +152,7 @@
                     <control type="radiobutton" id="19121" description="Iconic Horizontal Menu">
                         <visible>Integer.IsEqual(Window.Property(CurrentFocus),9001)</visible>
                         <include>Defs_Settings_Button</include>
-                        <label>- Icon only</label>
+                        <label>- $LOCALIZE[31294]</label>
                         <selected>Skin.HasSetting(HomeIconicMenu)</selected>
                         <onclick>Skin.ToggleSetting(HomeIconicMenu)</onclick>
                         <onclick>ReloadSkin()</onclick>
@@ -184,7 +184,7 @@
                     <control type="radiobutton" id="19111" description="Submenu">
                         <visible>Integer.IsEqual(Window.Property(CurrentFocus),9001)</visible>
                         <include>Defs_Settings_Button</include>
-                        <label>- Submenu on left/up</label>
+                        <label>- $LOCALIZE[31298]</label>
                         <selected>!Skin.HasSetting(DisableSideSubmenu)</selected>
                         <onclick>Skin.ToggleSetting(DisableSideSubmenu)</onclick>
                     </control>
