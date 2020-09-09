@@ -1584,11 +1584,6 @@ msgctxt "#31384"
 msgid "Grouped deleted recordings"
 msgstr ""
 
-#: /1080i/SkinSettings.xml
-msgctxt "#31386"
-msgid "Auto close OSD controls after delay (in seconds)"
-msgstr ""
-
 #: /1080i/Includes_Topbar.xml
 msgctxt "#31391"
 msgid "Page"
