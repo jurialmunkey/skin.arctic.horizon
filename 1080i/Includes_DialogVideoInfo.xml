@@ -89,13 +89,13 @@
             <include content="DialogVideoInfo_MainGroup">
                 <include>Animation_Right_Delay</include>
                 <visible>!$EXP[Exp_TrailerWindow]</visible>
-                <animation type="Conditional" reversible="false" condition="!Window.IsVisible(1142)">
-                    <effect type="fade" start="0" end="100" time="300" tween="sine" easing="out"/>
-                    <effect type="slide" start="0,-320" end="0" time="400" tween="cubic" easing="out" />
+                <animation type="Conditional" reversible="false" condition="!Window.IsActive(1142)">
+                    <effect type="fade" start="0" end="100" time="200" tween="sine" easing="out"/>
+                    <effect type="slide" start="0,-900" end="0" time="400" tween="cubic" easing="out" />
                 </animation>
-                <animation type="Conditional" reversible="false" condition="Window.IsVisible(1142)">
-                    <effect type="fade" start="100" end="0" time="300" tween="sine" easing="out" />
-                    <effect type="slide" start="0" end="0,-320" time="300" tween="cubic" easing="out" />
+                <animation type="Conditional" reversible="false" condition="Window.IsActive(1142)">
+                    <effect type="fade" start="100" end="0" delay="200" time="200" tween="sine" easing="out" />
+                    <effect type="slide" start="0" end="0,-900" time="400" tween="cubic" easing="out" />
                 </animation>
                 <control type="group">
                     <top>-53</top>

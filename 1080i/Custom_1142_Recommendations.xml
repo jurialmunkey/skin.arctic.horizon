@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window type="dialog" id="1142">
-    <defaultcontrol always="true">5000</defaultcontrol>
+    <defaultcontrol always="true">4100</defaultcontrol>
     <onload>SetProperty(Header_Left_Text,$LOCALIZE[14116])</onload>
     <onload>ClearProperty(MovePos,1142)</onload>
+    <onload condition="!String.IsEmpty(Window(1142).Property(Cast.0.Name))">SetFocus(5000)</onload>
     <onunload>ClearProperty(GlobalBackground,1142)</onunload>
     <onunload condition="!String.IsEmpty(Window(1142).Property(MovePos))">SetFocus(50,$INFO[Window(1142).Property(MovePos)],absolute)</onunload>
     <onunload>ClearProperty(MovePos,1142)</onunload>
