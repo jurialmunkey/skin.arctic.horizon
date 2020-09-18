@@ -37,6 +37,7 @@
     </include>
 
     <include name="Global_Background">
+        <include condition="!Skin.HasSetting(global.showvideo)">Global_Videowindow_Hidden</include>
         <include>Global_Background_Main</include>
     </include>
 
@@ -53,7 +54,6 @@
                 <visible>!$EXP[Exp_GlobalBackground]</visible>
                 <visible>String.IsEmpty(Window(Home).Property(HasTrailer))</visible>
                 <include condition="Skin.HasSetting(global.showvideo)">Global_Videowindow</include>
-                <include condition="!Skin.HasSetting(global.showvideo)">Global_Videowindow_Hidden</include>
                 <include content="Global_VideoWindow_Fade" condition="Skin.HasSetting(global.showvideo) + !Skin.HasSetting(DisableBlur)">
                     <param name="fade" value="70" />
                 </include>
