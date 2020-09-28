@@ -5,7 +5,7 @@
     <controls>
 
         <control type="group">
-            <visible>Skin.HasSetting(DebugInfo) | Skin.HasSetting(DebugGrid)</visible>
+            <visible>Skin.HasSetting(DebugGrid)</visible>
             <control type="grouplist">
                 <left>80</left>
                 <itemgap>79</itemgap>
@@ -983,14 +983,15 @@
                 <left>0</left>
                 <bottom>60</bottom>
                 <height>410</height>
-                <control type="textbox">
-                    <left>30</left>
+                <visible>Skin.HasSetting(debugart)</visible>
+                <control type="label">
+                    <right>15</right>
                     <top>30</top>
                     <textcolor>FFFF00FF</textcolor>
                     <font>font_small_mono</font>
                     <shadowcolor>ff000000</shadowcolor>
-                    <align>left</align>
-                    <label>[COLOR=FFFFFF00]II  [/COLOR]$INFO[ListItem.Icon][CR][COLOR=FFFFFF00]AI  [/COLOR]$INFO[ListItem.ActualIcon][CR][COLOR=FFFFFF00]IT  [/COLOR]$INFO[ListItem.Art(thumb)][CR][COLOR=FFFFFF00]IP  [/COLOR]$INFO[ListItem.Art(poster)][CR][COLOR=FFFFFF00]IF  [/COLOR]$INFO[ListItem.Art(fanart)][CR][COLOR=FFFFFF00]TP  [/COLOR]$INFO[ListItem.Art(tvshow.poster)][CR][COLOR=FFFFFF00]TF  [/COLOR]$INFO[ListItem.Art(tvshow.fanart)][CR][COLOR=FFFFFF00]BI  [/COLOR]$INFO[Window(Home).Property(TMDbHelper.ListItem.BlurImage)][CR][COLOR=FFFFFF00]BS  [/COLOR]$INFO[Window(Home).Property(TMDbHelper.Blur.SourceImage)][CR][COLOR=FFFFFF00]BF  [/COLOR]$INFO[Window(Home).Property(TMDbHelper.Blur.Fallback)]</label>
+                    <align>right</align>
+                    <label>$INFO[ListItem.Icon][COLOR=FFFFFF00]  II[/COLOR][CR]$INFO[ListItem.ActualIcon][COLOR=FFFFFF00]  IT[/COLOR][CR]$INFO[ListItem.Art(thumb)][COLOR=FFFFFF00]  AI[/COLOR][CR]$INFO[ListItem.Art(poster)][COLOR=FFFFFF00]  IP[/COLOR][CR]$INFO[ListItem.Art(fanart)][COLOR=FFFFFF00]  IF[/COLOR][CR]$INFO[ListItem.Art(tvshow.poster)][COLOR=FFFFFF00]  TP[/COLOR][CR]$INFO[ListItem.Art(tvshow.fanart)][COLOR=FFFFFF00]  TF[/COLOR][CR]$INFO[Window(Home).Property(TMDbHelper.ListItem.BlurImage)][COLOR=FFFFFF00]  BI[/COLOR][CR]$INFO[Window(Home).Property(TMDbHelper.Blur.SourceImage)][COLOR=FFFFFF00]  BS[/COLOR][CR]$INFO[Window(Home).Property(TMDbHelper.Blur.Fallback)][COLOR=FFFFFF00]  BF[/COLOR]</label>
                 </control>
             </control>
 
@@ -1019,7 +1020,7 @@
                     $INFO[ListItem.VideoCodec,[COLOR=FFFF00FF]CODEC  [/COLOR],]$INFO[ListItem.VideoAspect,[COLOR=FFFF00FF]  ASPECT  [/COLOR],]$INFO[ListItem.VideoResolution,[COLOR=FFFF00FF]  RES  [/COLOR],]$INFO[ListItem.AudioCodec,[COLOR=FFFF00FF]  CODEC  [/COLOR],]$INFO[ListItem.AudioChannels,[COLOR=FFFF00FF]  CHANNELS  [/COLOR],]
                     $INFO[ListItem.Property(NumItems.TMDB.Cast),[COLOR=FFFF00FF]CASTIN  [/COLOR],]$INFO[ListItem.Property(NumItems.TMDB.Crew),[COLOR=FFFF00FF]  CREWIN  [/COLOR],]$INFO[ListItem.Property(NumItems.TMDB.Total),[COLOR=FFFF00FF]  TOTAL  [/COLOR],]$INFO[ListItem.Label,[COLOR=FFFF00FF]  LABEL  [/COLOR],]$INFO[ListItem.TITLE,[COLOR=FFFF00FF]  TITLE  [/COLOR],]
                     $INFO[Skin.String(Testing),[COLOR=FFFF00FF]  SS-TEST  [/COLOR],]
-                    $INFO[ListItem.DBID,[COLOR=FFFF00FF]DBID  [/COLOR],]$INFO[ListItem.IMDBNumber,[COLOR=FFFF00FF]  IMDB  [/COLOR],]$INFO[ListItem.Property(tmdb_id),[COLOR=FFFF00FF]  TMDB  [/COLOR],]$INFO[ListItem.Property(tvshow.tmdb_id),[COLOR=FFFF00FF]  TMDB TV  [/COLOR],]$INFO[ListItem.Property(tvdb_id),[COLOR=FFFF00FF]  TVDB  [/COLOR],]$INFO[ListItem.Property(tvshow.tvdb_id),[COLOR=FFFF00FF]  TVDB TV  [/COLOR],]$INFO[ListItem.Property(imdb_id),[COLOR=FFFF00FF]  IMDB  [/COLOR],]$INFO[ListItem.Property(tvshow.imdb_id),[COLOR=FFFF00FF]  IMDB TV  [/COLOR],]
+                    $INFO[ListItem.DBID,[COLOR=FFFF00FF]DBID  [/COLOR],]$INFO[ListItem.IMDBNumber,[COLOR=FFFF00FF]  IMDBNUMBER  [/COLOR],]$INFO[ListItem.Property(tmdb_id),[COLOR=FFFF00FF]  TMDB  [/COLOR],]$INFO[ListItem.Property(tvshow.tmdb_id),[COLOR=FFFF00FF]  TMDB TV  [/COLOR],]$INFO[ListItem.Property(tvdb_id),[COLOR=FFFF00FF]  TVDB  [/COLOR],]$INFO[ListItem.Property(tvshow.tvdb_id),[COLOR=FFFF00FF]  TVDB TV  [/COLOR],]$INFO[ListItem.Property(imdb_id),[COLOR=FFFF00FF]  IMDB  [/COLOR],]$INFO[ListItem.Property(tvshow.imdb_id),[COLOR=FFFF00FF]  IMDB TV  [/COLOR],]
                     $INFO[Container.NumItems,[COLOR=FFFF00FF]NUM ITEMS:  [/COLOR],]$INFO[Container.Property(NumItems.DBID),  [COLOR=FFFF00FF]KODI:  [/COLOR],]$INFO[Container.Property(NumItems.TMDB),[COLOR=FFFF00FF]  TMDB:  [/COLOR],]
                     $INFO[ListItem.Season,[COLOR=FFFF00FF]SEASON  [/COLOR],]$INFO[ListItem.Episode,[COLOR=FFFF00FF]  EPISODE  [/COLOR],]
                     $INFO[ListItem.Property(UnWatchedEpisodes),[COLOR=FFFF00FF]U  [/COLOR],]$INFO[ListItem.Property(WatchedEpisodes),  [COLOR=FFFF00FF]W  [/COLOR],]$INFO[ListItem.PlayCount,  [COLOR=FFFF00FF]P  [/COLOR],]$INFO[ListItem.LastPlayed,   [COLOR=FFFF00FF]LP  [/COLOR],]$INFO[ListItem.Overlay,  [COLOR=FFFF00FF]O  [/COLOR],]$INFO[ListItem.AddonName,[COLOR=FFFF00FF]ADDON  [/COLOR],]

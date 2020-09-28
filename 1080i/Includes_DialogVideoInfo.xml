@@ -188,9 +188,7 @@
     </include>
 
     <include name="DialogPersonInfo">
-        <include content="DialogVideoInfo_Left">
-            <include>Animation_Left_Delay</include>
-        </include>
+
 
         <include content="DialogVideoInfo_MainGroup">
             <include content="DialogVideoInfo_WidgetGroupList">
@@ -285,6 +283,11 @@
                 </include>
             </include>
         </include>
+
+        <include content="DialogVideoInfo_Left">
+            <include>Animation_Left_Delay</include>
+        </include>
+
         <include>Info_ImageViewer</include>
 
     </include>

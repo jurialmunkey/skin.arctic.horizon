@@ -158,6 +158,7 @@
                 <param name="icon" value="$PARAM[icon]" />
                 <param name="control-type" value="$PARAM[control-type]" />
                 <param name="specialicon" value="$PARAM[specialicon]" />
+                <param name="offset" value="$PARAM[offset]" />
                 <nested />
                 <top>$PARAM[widget-type]_item_top</top>
                 <left>20</left>
