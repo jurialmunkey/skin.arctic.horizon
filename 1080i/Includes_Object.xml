@@ -700,7 +700,7 @@
                 <font>font_plotbox</font>
                 <scroll>true</scroll>
                 <scrollout>false</scrollout>
-                <autoscroll delay="6000" time="3000" repeat="10000">Skin.HasSetting(EnablePlotAutoScroll)</autoscroll>
+                <autoscroll delay="6000" time="3000" repeat="10000">!Skin.HasSetting(DisablePlotAutoScroll)</autoscroll>
             </control>
         </definition>
     </include>
