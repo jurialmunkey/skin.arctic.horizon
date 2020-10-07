@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
+    <variable name="Defs_Divider_ColorDiffuse">
+        <value condition="Skin.HasSetting(OpaqueDivider)">ffffffff</value>
+        <value>7fffffff</value>
+    </variable>
     <variable name="Defs_DiscoverWidget">
         <value condition="Container(55).ListItemAbsolute(0).IsParentFolder">$INFO[Container(55).ListItemAbsolute(1).FolderPath]</value>
         <value>$INFO[Container(55).ListItemAbsolute(0).FolderPath]</value>

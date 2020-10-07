@@ -7,7 +7,7 @@
                 <width>view_info_left</width>
                 <control type="image">
                     <aspectratio align="left">scale</aspectratio>
-                    <texture colordiffuse="7fffffff">common/panel.png</texture>
+                    <texture colordiffuse="$VAR[Defs_Divider_ColorDiffuse]">common/panel.png</texture>
                     <visible>!Skin.HasSetting(DisablePanelDivider)</visible>
                 </control>
 

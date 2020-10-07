@@ -210,6 +210,7 @@
 
     <variable name="Label_Setting_DividerStyle">
         <value condition="Skin.HasSetting(DisablePanelDivider)">$LOCALIZE[16018]</value>
+        <value condition="Skin.HasSetting(OpaqueDivider)">$LOCALIZE[31299]</value>
         <value condition="Skin.HasSetting(ShadowLines)">$LOCALIZE[31273]</value>
         <value>$LOCALIZE[31277]</value>
     </variable>

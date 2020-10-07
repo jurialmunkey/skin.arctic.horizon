@@ -288,10 +288,20 @@
                         <include>Defs_Settings_Button</include>
                         <label>$LOCALIZE[31024]</label>
                         <label2>$VAR[Label_Setting_DividerStyle]</label2>
+
+                        <!-- Reset Back to Default Flat Setting -->
                         <onclick condition="Skin.HasSetting(DisablePanelDivider)">Skin.Reset(DisablePanelDivider)</onclick>
-                        <onclick condition="!Skin.HasSetting(DisablePanelDivider)">Skin.ToggleSetting(ShadowLines)</onclick>
-                        <onclick condition="Skin.HasSetting(ShadowLines)">Skin.SetBool(DisablePanelDivider)</onclick>
-                        <onclick condition="Skin.HasSetting(ShadowLines)">Skin.Reset(ShadowLines)</onclick>
+                        <onclick condition="Skin.HasSetting(DisablePanelDivider)">Skin.Reset(ShadowLines)</onclick>
+                        <onclick condition="Skin.HasSetting(DisablePanelDivider)">Skin.Reset(OpaqueDivider)</onclick>
+
+                        <!-- Turn on Shadow -->
+                        <onclick condition="!Skin.HasSetting(DisablePanelDivider) + !Skin.HasSetting(ShadowLines)">Skin.SetBool(ShadowLines)</onclick>
+
+                        <!-- Turn on Opaque -->
+                        <onclick condition="!Skin.HasSetting(DisablePanelDivider) + Skin.HasSetting(ShadowLines) + !Skin.HasSetting(OpaqueDivider)">Skin.SetBool(OpaqueDivider)</onclick>
+
+                        <!-- Turn off Divider -->
+                        <onclick condition="!Skin.HasSetting(DisablePanelDivider) + Skin.HasSetting(ShadowLines) + Skin.HasSetting(OpaqueDivider)">Skin.SetBool(DisablePanelDivider)</onclick>
                     </control>
                     <control type="radiobutton" id="19209">
                         <visible>Integer.IsEqual(Window.Property(CurrentFocus),9002)</visible>

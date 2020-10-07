@@ -172,7 +172,7 @@
         <control type="group">
             <control type="image">
                 <aspectratio align="left">scale</aspectratio>
-                <texture colordiffuse="7fffffff">common/panel.png</texture>
+                <texture colordiffuse="$VAR[Defs_Divider_ColorDiffuse]">common/panel.png</texture>
                 <visible>!Skin.HasSetting(DisablePanelDivider)</visible>
             </control>
             <control type="image">
@@ -194,7 +194,7 @@
             <right>-80</right>
             <control type="image">
                 <aspectratio align="left">scale</aspectratio>
-                <texture colordiffuse="7fffffff">common/panel.png</texture>
+                <texture colordiffuse="$VAR[Defs_Divider_ColorDiffuse]">common/panel.png</texture>
                 <visible>!Skin.HasSetting(DisablePanelDivider)</visible>
             </control>
             <control type="image">
