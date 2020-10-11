@@ -98,6 +98,7 @@
     </include>
 
     <include name="OSD_Video_Seekbar_Left"><left>360</left></include>
+    <include name="OSD_Video_Seekbar_Right"><right>360</right></include>
 
     <include name="OSD_Video_Seekbar">
         <control type="group">
@@ -137,6 +138,7 @@
                     <bottom>200</bottom>
                     <!-- Artwork -->
                     <control type="group">
+                        <!-- <right>0</right> -->
                         <bottom>0</bottom>
                         <width>320</width>
                         <height>480</height>
@@ -301,6 +303,7 @@
                         <bottom>-7</bottom>
                         <right>0</right>
                         <align>bottom</align>
+                        <itemgap>0</itemgap>
                         <include content="Object_Info_Title">
                             <param name="label" value="$VAR[Label_OSD_Title]" />
                             <param name="textcolor" value="panel_fg_100" />

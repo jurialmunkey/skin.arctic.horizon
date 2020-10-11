@@ -1247,8 +1247,8 @@
                     <height>28</height>
                     <align>right</align>
                     <font>font_tiny</font>
-                    <label>$INFO[Window(Home).Property(TMDbHelper.$PARAM[tmdbtype].IMDB.Top250),#,]</label>
-                    <visible>Integer.IsGreater(Window(home).Property(TMDbHelper.$PARAM[tmdbtype].IMDB.Top250),0)</visible>
+                    <label>$INFO[Window(Home).Property(TMDbHelper.$PARAM[tmdbtype].Top250), #,]</label>
+                    <visible>Integer.IsGreater(Window(home).Property(TMDbHelper.$PARAM[tmdbtype].Top250),0)</visible>
                 </include>
             </control>
         </definition>

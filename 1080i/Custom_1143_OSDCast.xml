@@ -2,9 +2,42 @@
 <window type="dialog" id="1143">
     <defaultcontrol always="true">5000</defaultcontrol>
     <controls>
+        <control type="list" id="56560">
+            <include>Defs_Offscreen</include>
+            <orientation>horizontal</orientation>
+            <itemlayout />
+            <focusedlayout />
+            <content>
+                <include content="Object_56560_Item">
+                    <param name="listitem" value="VideoPlayer" />
+                </include>
+            </content>
+        </control>
         <control type="group">
             <animation effect="fade" start="0" end="100" time="400" tween="cubic" easing="inout" reversible="false" delay="400">Visible</animation>
             <animation effect="fade" start="0" end="100" time="400" tween="cubic" easing="inout" reversible="false" delay="400">WindowOpen</animation>
+            <control type="group" description="info">
+                <left>view_pad</left>
+                <right>view_pad</right>
+                <bottom>600</bottom>
+                <!-- Info -->
+                <control type="grouplist">
+                    <usecontrolcoords>true</usecontrolcoords>
+                    <bottom>-7</bottom>
+                    <right>0</right>
+                    <align>bottom</align>
+                    <itemgap>0</itemgap>
+                    <include content="Object_Info_Title">
+                        <param name="label" value="$VAR[Label_OSD_Title]" />
+                        <param name="textcolor" value="panel_fg_100" />
+                    </include>
+                    <include content="Object_Info_Line">
+                        <param name="label" value="$VAR[Label_56560_InfoLine]" />
+                        <param name="image" value="$VAR[Image_56560_VideoQuality]" />
+                        <param name="textcolor" value="panel_fg_100" />
+                    </include>
+                </control>
+            </control>
             <include content="Viewtype_Poster">
                 <param name="id" value="5000" />
                 <param name="castlabel" value="true" />
