@@ -288,12 +288,12 @@
             <property name="widgetLabelName">False</property>
 
             <!-- Widget Label Renaming Strings -->
-            <property name="widgetLabelStart" tag="property" attribute="name|labelID" value="basedonrecentlywatchedmovies">Similar to </property>
+            <!-- <property name="widgetLabelStart" tag="property" attribute="name|labelID" value="basedonrecentlywatchedmovies">Similar to </property>
             <property name="widgetLabelStart" tag="property" attribute="name|labelID" value="basedonrecentlywatchedtvshows">Similar to </property>
             <property name="widgetLabelStart" tag="property" attribute="name|labelID" value="basedonrecentlywatched">Similar to </property>
             <property name="widgetLabelStart" tag="property" attribute="name|labelID" value="basedonmostwatchedmovies">Similar to </property>
             <property name="widgetLabelStart" tag="property" attribute="name|labelID" value="basedonmostwatchedtvshows">Similar to </property>
-            <property name="widgetLabelStart" tag="property" attribute="name|labelID" value="basedonmostwatched">Similar to </property>
+            <property name="widgetLabelStart" tag="property" attribute="name|labelID" value="basedonmostwatched">Similar to </property> -->
 
             <!-- Widget Label -->
             <property name="widgetName" tag="label" />
@@ -332,7 +332,6 @@
             <property name="widgetSortby" tag="property" attribute="name|widgetSortby" />
             <property name="widgetSortorder" tag="property" attribute="name|widgetSortorder" />
             <property name="widgetLimit" tag="property" attribute="name|widgetLimit" />
-            <property name="widgetLimit">20</property>
 
             <!-- Is Second Position -->
             <property name="isSecondPosition" tag="property" attribute="name|id" value="$NUMBER[2]">true</property>
