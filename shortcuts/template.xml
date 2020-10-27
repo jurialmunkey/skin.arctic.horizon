@@ -333,6 +333,10 @@
             <property name="widgetSortorder" tag="property" attribute="name|widgetSortorder" />
             <property name="widgetLimit" tag="property" attribute="name|widgetLimit" />
 
+            <!-- Widget Show More -->
+            <property name="widgetShowMore" tag="property" attribute="name|widgetLimit">true</property>
+            <property name="widgetShowMore">false</property>
+
             <!-- Is Second Position -->
             <property name="isSecondPosition" tag="property" attribute="name|id" value="$NUMBER[2]">true</property>
             <property name="isSecondPosition">false</property>
@@ -436,7 +440,7 @@
                     <content><include condition="$SKINSHORTCUTS[widgetSubmenu]">skinshortcuts-submenu</include></content>
                     <content target="$SKINSHORTCUTS[widgetTarget]" limit="$SKINSHORTCUTS[widgetLimit]" sortby="$SKINSHORTCUTS[widgetSortby]" sortorder="$SKINSHORTCUTS[widgetSortorder]">$SKINSHORTCUTS[widgetPath]</content>
                     <content>
-                        <include content="Object_Item" condition="Skin.HasSetting(EnableShowMore) + !$SKINSHORTCUTS[widgetSubmenu]">
+                        <include content="Object_Item" condition="Skin.HasSetting(EnableShowMore) + !$SKINSHORTCUTS[widgetSubmenu] + $SKINSHORTCUTS[widgetShowMore]">
                             <label>$LOCALIZE[31061]...</label>
                             <label2>$LOCALIZE[31062]</label2>
                             <icon>common/nextitem.png</icon>
