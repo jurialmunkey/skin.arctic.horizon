@@ -456,7 +456,7 @@
                     <onfocus>SetProperty(Studio,"$INFO[Window(Home).Property(TMDBHelper.ListItem.Studio.1.Name)]",1142)</onfocus>
                     <onfocus>SetProperty(Path.Crew,"$VAR[Info_CrewMembers]",1142)</onfocus>
                     <onfocus condition="Integer.IsEqual(Container(50).NumItems,0)">SetProperty(Path.Cast,"$VAR[Info_CastMembers]",1142)</onfocus>
-                    <onfocus condition="!Integer.IsEqual(Container(50).NumItems,0)">ClearProperty(Path.Cast,1142)</onfocus>
+                    <onfocus condition="!Integer.IsEqual(Container(50).NumItems,0)">SetProperty(Path.Cast,-,1142)</onfocus>
                     <onfocus>SetProperty(Path.Sets,"$VAR[Info_Sets]",1142)</onfocus>
                     <onfocus>SetProperty(Path.Director,"$VAR[Info_FromDirector]",1142)</onfocus>
                     <onfocus>SetProperty(Path.Studio,"$VAR[Info_FromStudio]",1142)</onfocus>
