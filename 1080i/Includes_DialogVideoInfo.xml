@@ -488,6 +488,7 @@
                     <top>7</top>
                     <width>410</width>
                     <left>100</left>
+                    <bottom>90</bottom>
                     <orientation>vertical</orientation>
                     <itemgap>13</itemgap>
                     <usecontrolcoords>true</usecontrolcoords>
@@ -561,6 +562,7 @@
                     <top>7</top>
                     <right>100</right>
                     <left>550</left>
+                    <bottom>90</bottom>
                     <orientation>vertical</orientation>
                     <itemgap>13</itemgap>
                     <!-- Director -->

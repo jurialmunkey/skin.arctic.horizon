@@ -236,7 +236,7 @@
 
         <value condition="String.IsEqual(ListItem.Overlay,OverlayUnwatched.png) + String.IsEqual(ListItem.DBType,episode) + [String.IsEqual(Window(Home).Property(LatestEpisode.1.EpisodeTitle),ListItem.Title) | String.IsEqual(Window(Home).Property(LatestEpisode.2.EpisodeTitle),ListItem.Title) | String.IsEqual(Window(Home).Property(LatestEpisode.3.EpisodeTitle),ListItem.Title) | String.IsEqual(Window(Home).Property(LatestEpisode.4.EpisodeTitle),ListItem.Title) | String.IsEqual(Window(Home).Property(LatestEpisode.5.EpisodeTitle),ListItem.Title) | String.IsEqual(Window(Home).Property(LatestEpisode.6.EpisodeTitle),ListItem.Title) | String.IsEqual(Window(Home).Property(LatestEpisode.7.EpisodeTitle),ListItem.Title) | String.IsEqual(Window(Home).Property(LatestEpisode.8.EpisodeTitle),ListItem.Title) | String.IsEqual(Window(Home).Property(LatestEpisode.9.EpisodeTitle),ListItem.Title) | String.IsEqual(Window(Home).Property(LatestEpisode.10.EpisodeTitle),ListItem.Title)] + !Skin.HasSetting(DisableIndicator.New)">indicator/new-fo.png</value>
 
-        <value condition="!String.IsEmpty(ListItem.Property(Container.Info)) + !String.IsEmpty(ListItem.DBID) + !Skin.HasSetting(DisableIndicator.Library)">indicator/library.png</value>
+        <value condition="!String.IsEmpty(ListItem.Property(Item.Info)) + !String.IsEmpty(ListItem.DBID) + !Skin.HasSetting(DisableIndicator.Library)">indicator/library.png</value>
         <value condition="ListItem.IsCollection + !Skin.HasSetting(DisableIndicator.MovieSet)">indicator/movieset.png</value>
         <value condition="ListItem.IsFolder">indicator/folder.png</value>
 
