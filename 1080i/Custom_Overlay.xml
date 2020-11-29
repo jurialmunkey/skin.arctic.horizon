@@ -960,7 +960,7 @@
                 <width>780</width>
                 <height>42</height>
                 <textcolor>FFff00FF</textcolor>
-                <font>font_tiny</font>
+                <font>font_statusbar</font>
                 <shadowcolor>ff000000</shadowcolor>
                 <align>right</align>
                 <label>$INFO[System.CurrentControl][CR][COLOR=FF00FF00]$INFO[System.CurrentWindow][/COLOR]</label>
@@ -972,7 +972,7 @@
                 <posy>80</posy>
                 <height>110</height>
                 <textcolor>FF00FFFF</textcolor>
-                <font>font_tiny</font>
+                <font>font_statusbar</font>
                 <shadowcolor>ff000000</shadowcolor>
                 <align>right</align>
                 <label>$INFO[ListItem.FolderPath]</label>
@@ -995,6 +995,20 @@
                 </control>
             </control>
 
+            <control type="textbox">
+                <posx>15</posx>
+                <posy>40</posy>
+                <width>900</width>
+                <height>500</height>
+                <textcolor>FFFFFF00</textcolor>
+                <shadowcolor>ff000000</shadowcolor>
+                <font>font_fps</font>
+                <shadowcolor>ff000000</shadowcolor>
+                <align>left</align>
+                <aligny>top</aligny>
+                <label>$INFO[Window(Home).Property(TMDbHelper.ListItem.Plot)]</label>
+            </control>
+
             <!-- Path label -->
 
             <control type="label">
@@ -1005,7 +1019,7 @@
                 <textcolor>FFFFFF00</textcolor>
                 <shadowcolor>ff000000</shadowcolor>
 
-                <font>font_tiny</font>
+                <font>font_statusbar</font>
                 <shadowcolor>ff000000</shadowcolor>
                 <align>right</align>
                 <aligny>top</aligny>
@@ -1013,12 +1027,15 @@
                 <label>[COLOR=FF00FF00]$INFO[System.CurrentControlID,ID  ]$INFO[Window(Home).Property(CG_50100_CurrentWidget),  CW  ][/COLOR]
                     $INFO[Container.Content(),[COLOR=FFFF00FF]CONTENT  [/COLOR],]$INFO[ListItem.DBType,[COLOR=FFFF00FF]  DBTYPE  [/COLOR],]$INFO[ListItem.Property(dbtype),[COLOR=FFFF00FF]  PROP_DBTYPE  [/COLOR],]$INFO[Container.SortMethod,[COLOR=FFFF00FF]  SORT  [/COLOR],]
                     $INFO[ListItem.Property(Container.Info),[COLOR=FFFF00FF]  C.INFO  [/COLOR],]$INFO[ListItem.Property(Container.Type),[COLOR=FFFF00FF]  C.TYPE  [/COLOR],]$INFO[ListItem.Property(Item.Info),[COLOR=FFFF00FF]  I.INFO  [/COLOR],]$INFO[ListItem.Property(Item.Type),[COLOR=FFFF00FF]  I.TYPE  [/COLOR],]
-                    $INFO[Window(Home).Property(TMDbHelper.ListItem.Oscar_Wins),[COLOR=FFFF00FF]  OSCARS_W  [/COLOR],]$INFO[Window(Home).Property(TMDbHelper.ListItem.Oscar_Nominations),[COLOR=FFFF00FF]  OSCARS_N  [/COLOR],]$INFO[Window(Home).Property(TMDbHelper.ListItem.Award_Wins),[COLOR=FFFF00FF]  AWARDS_W  [/COLOR],]$INFO[Window(Home).Property(TMDbHelper.ListItem.Award_Nominations),[COLOR=FFFF00FF]  AWARDS_N  [/COLOR],]$INFO[ListItem.Rating,[COLOR=FFFF00FF]  RATING  [/COLOR],]$INFO[ListItem.UserRating,[COLOR=FFFF00FF]  USER RATING  [/COLOR],]$INFO[ListItem.Top250,[COLOR=FFFF00FF]  TOP250  [/COLOR],]
+                    $INFO[Window(Home).Property(TMDbHelper.ListItem.Oscar_Wins),[COLOR=FFFF00FF]  OSCARS_W  [/COLOR],]$INFO[Window(Home).Property(TMDbHelper.ListItem.Oscar_Nominations),[COLOR=FFFF00FF]  OSCARS_N  [/COLOR],]$INFO[Window(Home).Property(TMDbHelper.ListItem.Award_Wins),[COLOR=FFFF00FF]  AWARDS_W  [/COLOR],]$INFO[Window(Home).Property(TMDbHelper.ListItem.Award_Nominations),[COLOR=FFFF00FF]  AWARDS_N  [/COLOR],]$INFO[ListItem.Rating,[COLOR=FFFF00FF]  RATING  [/COLOR],]$INFO[ListItem.UserRating,[COLOR=FFFF00FF]  USER RATING  [/COLOR],]$INFO[ListItem.Top250,[COLOR=FFFF00FF]  TOP250-DB  [/COLOR],]$INFO[Window(Home).Property(TMDbHelper.ListItem.Top250),[COLOR=FFFF00FF]  TOP250-SM  [/COLOR],]
                      $INFO[ListItem.Duration,[COLOR=FFFF00FF]  DURATION  [/COLOR],]$INFO[ListItem.Property(air_time),[COLOR=FFFF00FF]  AIRTIME  [/COLOR],]$INFO[ListItem.Property(air_date),[COLOR=FFFF00FF]  AIRDATE  [/COLOR],]
                      $INFO[Window(Home).Property(TMDBHelper.ListItem.Studio.1.TMDB_ID),[COLOR=FFFF00FF]  INFO  [/COLOR],]
+                     $INFO[Window(Home).Property(TMDbHelper.ListItem.Trailer),[COLOR=FFFF00FF]  SM.TRAILER  [/COLOR],]
                     $INFO[Window(Home).Property(TMDbHelper.IsUpdating),[COLOR=FFFF00FF]  SM.ISUPDATING  [/COLOR],]
                     $INFO[ListItem.VideoCodec,[COLOR=FFFF00FF]CODEC  [/COLOR],]$INFO[ListItem.VideoAspect,[COLOR=FFFF00FF]  ASPECT  [/COLOR],]$INFO[ListItem.VideoResolution,[COLOR=FFFF00FF]  RES  [/COLOR],]$INFO[ListItem.AudioCodec,[COLOR=FFFF00FF]  CODEC  [/COLOR],]$INFO[ListItem.AudioChannels,[COLOR=FFFF00FF]  CHANNELS  [/COLOR],]
-                    $INFO[ListItem.Property(NumItems.TMDB.Cast),[COLOR=FFFF00FF]CASTIN  [/COLOR],]$INFO[ListItem.Property(NumItems.TMDB.Crew),[COLOR=FFFF00FF]  CREWIN  [/COLOR],]$INFO[ListItem.Property(NumItems.TMDB.Total),[COLOR=FFFF00FF]  TOTAL  [/COLOR],]$INFO[ListItem.Label,[COLOR=FFFF00FF]  LABEL  [/COLOR],]$INFO[ListItem.TITLE,[COLOR=FFFF00FF]  TITLE  [/COLOR],]
+                    $INFO[ListItem.Property(NumItems.TMDB.Cast),[COLOR=FFFF00FF]CASTIN  [/COLOR],]$INFO[ListItem.Property(NumItems.TMDB.Crew),[COLOR=FFFF00FF]  CREWIN  [/COLOR],]$INFO[ListItem.Property(NumItems.TMDB.Total),[COLOR=FFFF00FF]  TOTAL  [/COLOR],]
+                    $INFO[ListItem.Label,[COLOR=FFFF00FF]  LABEL  [/COLOR],]
+                    $INFO[ListItem.TITLE,[COLOR=FFFF00FF]  TITLE  [/COLOR],]
                     $INFO[Skin.String(Testing),[COLOR=FFFF00FF]  SS-TEST  [/COLOR],]
                     $INFO[ListItem.DBID,[COLOR=FFFF00FF]DBID  [/COLOR],]$INFO[ListItem.IMDBNumber,[COLOR=FFFF00FF]  IMDBNUMBER  [/COLOR],]$INFO[ListItem.Property(tmdb_id),[COLOR=FFFF00FF]  TMDB  [/COLOR],]$INFO[ListItem.Property(tvshow.tmdb_id),[COLOR=FFFF00FF]  TMDB TV  [/COLOR],]$INFO[ListItem.Property(tvdb_id),[COLOR=FFFF00FF]  TVDB  [/COLOR],]$INFO[ListItem.Property(tvshow.tvdb_id),[COLOR=FFFF00FF]  TVDB TV  [/COLOR],]$INFO[ListItem.Property(imdb_id),[COLOR=FFFF00FF]  IMDB  [/COLOR],]$INFO[ListItem.Property(tvshow.imdb_id),[COLOR=FFFF00FF]  IMDB TV  [/COLOR],]
                     $INFO[Container.NumItems,[COLOR=FFFF00FF]NUM ITEMS:  [/COLOR],]$INFO[Container.Property(NumItems.DBID),  [COLOR=FFFF00FF]KODI:  [/COLOR],]$INFO[Container.Property(NumItems.TMDB),[COLOR=FFFF00FF]  TMDB:  [/COLOR],]
@@ -1036,7 +1053,7 @@
                 <height>160</height>
                 <textcolor>FF00FFFF</textcolor>
                 <scroll>true</scroll>
-                <font>font_tiny</font>
+                <font>font_statusbar</font>
                 <shadowcolor>ff000000</shadowcolor>
                 <align>left</align>
                 <aligny>center</aligny>
@@ -1051,7 +1068,7 @@
                 <height>80</height>
                 <textcolor>FFFF0000</textcolor>
                 <scroll>true</scroll>
-                <font>font_tiny</font>
+                <font>font_statusbar</font>
                 <shadowcolor>ff000000</shadowcolor>
                 <align>left</align>
                 <aligny>center</aligny>

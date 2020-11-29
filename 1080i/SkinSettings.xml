@@ -76,6 +76,14 @@
                         <label>$LOCALIZE[31147]</label>
                         <altlabel>[COLOR=Selected]$LOCALIZE[31147][/COLOR]</altlabel>
                     </control>
+                    <control type="togglebutton" id="9008" description="Lists and Other">
+                        <onfocus>SetProperty(CurrentFocus,$NUMBER[9008])</onfocus>
+                        <usealttexture>!Control.HasFocus(300) + Integer.IsEqual(Window.Property(CurrentFocus),9008)</usealttexture>
+                        <width>550</width>
+                        <include>Defs_Settings_Button</include>
+                        <label>$LOCALIZE[31148]</label>
+                        <altlabel>[COLOR=Selected]$LOCALIZE[31148][/COLOR]</altlabel>
+                    </control>
                     <control type="togglebutton" id="9005" description="Fullscreen Video">
                         <onfocus>SetProperty(CurrentFocus,$NUMBER[9005])</onfocus>
                         <usealttexture>!Control.HasFocus(300) + Integer.IsEqual(Window.Property(CurrentFocus),9005)</usealttexture>
@@ -99,14 +107,6 @@
                         <include>Defs_Settings_Button</include>
                         <label>$LOCALIZE[31422]</label>
                         <altlabel>[COLOR=Selected]$LOCALIZE[31422][/COLOR]</altlabel>
-                    </control>
-                    <control type="togglebutton" id="9008" description="Miscellaneous">
-                        <onfocus>SetProperty(CurrentFocus,$NUMBER[9008])</onfocus>
-                        <usealttexture>!Control.HasFocus(300) + Integer.IsEqual(Window.Property(CurrentFocus),9008)</usealttexture>
-                        <width>550</width>
-                        <include>Defs_Settings_Button</include>
-                        <label>$LOCALIZE[31148]</label>
-                        <altlabel>[COLOR=Selected]$LOCALIZE[31148][/COLOR]</altlabel>
                     </control>
                     <control type="togglebutton" id="9009" description="Supported Addons">
                         <onfocus>SetProperty(CurrentFocus,$NUMBER[9009])</onfocus>
@@ -695,27 +695,27 @@
                         <onclick>ActivateWindow(1119)</onclick>
                     </control>
 
-                    <control type="button" id="19811" description="Info Buttons">
+                    <control type="button" id="19804" description="Info Buttons">
                         <visible>Integer.IsEqual(Window.Property(CurrentFocus),9008)</visible>
                         <include>Defs_Settings_Button</include>
                         <label>$LOCALIZE[31090]</label>
                         <onclick>ActivateWindow(1120)</onclick>
                     </control>
 
-                    <control type="button" id="19804" description="Search lists">
+                    <control type="button" id="19805" description="Search lists">
                         <visible>Integer.IsEqual(Window.Property(CurrentFocus),9008)</visible>
                         <include>Defs_Settings_Button</include>
                         <label>$LOCALIZE[31166]</label>
                         <onclick>RunScript(script.skinshortcuts,type=manage&amp;group=searchmenu)</onclick>
                     </control>
 
-                    <control type="label" id="19805" description="LABEL">
+                    <control type="label" id="19806" description="LABEL">
                         <visible>Integer.IsEqual(Window.Property(CurrentFocus),9008)</visible>
                         <include>Dialog_Standard_HintLabel</include>
                         <label>$LOCALIZE[31143]</label>
                     </control>
 
-                    <control type="button" id="19806" description="Set Timer Per Image">
+                    <control type="button" id="19807" description="Set Timer Per Image">
                         <visible>Integer.IsEqual(Window.Property(CurrentFocus),9008)</visible>
                         <include>Defs_Settings_Button</include>
                         <label>$LOCALIZE[31128]</label>
@@ -738,7 +738,7 @@
                         <onclick>RunScript(script.toolbox,info=selectdialog,header=$LOCALIZE[31128])</onclick>
                     </control>
 
-                    <control type="radiobutton" id="19807" description="Kiosk Mode">
+                    <control type="radiobutton" id="19808" description="Kiosk Mode">
                         <visible>Integer.IsEqual(Window.Property(CurrentFocus),9008)</visible>
                         <include>Defs_Settings_Button</include>
                         <label>$LOCALIZE[31199]</label>
@@ -755,7 +755,15 @@
                         <onclick condition="!String.IsEmpty(Skin.String(StartupPlaylist))">Skin.Reset(StartupPlaylist)</onclick>
                     </control>
 
-                    <control type="button" id="19810" description="Reset">
+                    <control type="radiobutton" id="19810" description="Wait for TMDbHelper">
+                        <visible>Integer.IsEqual(Window.Property(CurrentFocus),9008)</visible>
+                        <include>Defs_Settings_Button</include>
+                        <label>$LOCALIZE[31309]</label>
+                        <selected>!Skin.HasSetting(DisableTMDbHelperSplash)</selected>
+                        <onclick>Skin.ToggleSetting(DisableTMDbHelperSplash)</onclick>
+                    </control>
+
+                    <control type="button" id="19811" description="Reset">
                         <visible>Integer.IsEqual(Window.Property(CurrentFocus),9008)</visible>
                         <include>Defs_Settings_Button</include>
                         <label>$LOCALIZE[31086]</label>
@@ -763,6 +771,8 @@
                         <onclick>ClearProperty(SkinInitStarted,Home)</onclick>
                         <onclick>ActivateWindow(Home)</onclick>
                     </control>
+
+
 
                     <!-- ================ -->
                     <!-- Supported Addons -->

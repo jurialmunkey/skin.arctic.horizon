@@ -419,8 +419,8 @@
                     <param name="label-widgetstart" value="$SKINSHORTCUTS[widgetLabelStart]" />
                     <param name="label-widgetend" value="$SKINSHORTCUTS[widgetLabelEnd]" />
                     <param name="infoslide" value="![$SKINSHORTCUTS[widgetIcon] | $SKINSHORTCUTS[widgetSubmenu]] + [$SKINSHORTCUTS[widgetInfo] | $SKINSHORTCUTS[isSecondPosition]]" />
-                    <param name="backpanel" value="![$SKINSHORTCUTS[widgetIcon] | $SKINSHORTCUTS[widgetSubmenu]] + [$SKINSHORTCUTS[widgetInfo] | [$SKINSHORTCUTS[isSecondPosition] + String.IsEqual(Container(3700).ListItemAbsolute(0).Property(list),Background)]] + [Control.HasFocus($PYTHON[30000 + int(mainmenuid) * 100 + int(id)]) | Integer.IsEqual(Window(Home).Property(HW_$PYTHON[50000 + int(mainmenuid) * 100]_InfoWidget),$PYTHON[30000 + int(mainmenuid) * 100 + int(id)])]" />
-                    <param name="clearart" value="$SKINSHORTCUTS[widgetInfo] | [$SKINSHORTCUTS[isSecondPosition] + String.IsEqual(Container(3700).ListItemAbsolute(0).Property(list),Background)]" />
+                    <param name="backpanel" value="![$SKINSHORTCUTS[widgetIcon] | $SKINSHORTCUTS[widgetSubmenu]] + [$SKINSHORTCUTS[widgetInfo] | [$SKINSHORTCUTS[isSecondPosition] + String.IsEqual(Container(3700).ListItemAbsolute(0).Property(list),Background) + !Integer.IsEqual(Container(3001).NumItems,0)]] + [Control.HasFocus($PYTHON[30000 + int(mainmenuid) * 100 + int(id)]) | Integer.IsEqual(Window(Home).Property(HW_$PYTHON[50000 + int(mainmenuid) * 100]_InfoWidget),$PYTHON[30000 + int(mainmenuid) * 100 + int(id)])]" />
+                    <param name="clearart" value="$SKINSHORTCUTS[widgetInfo] | [$SKINSHORTCUTS[isSecondPosition] + String.IsEqual(Container(3700).ListItemAbsolute(0).Property(list),Background) + !Integer.IsEqual(Container(3001).NumItems,0)]" />
                     <param name="control-type" value="fixedlist" />
                     <top>$SKINSHORTCUTS[widgetTop]</top>
                     <onback>ClearProperty(CurrentWidget,Home)</onback>
@@ -455,6 +455,7 @@
                     <param name="id" value="$PYTHON[35000 + int(mainmenuid) * 100 + int(id)]" />
                     <top>-20</top>
                     <height>0</height>
+                    <!-- <visible>!Integer.IsEqual(Container(3001).NumItems,0)</visible> -->
                     <visible>Integer.IsGreater(Container($PYTHON[30000 + int(mainmenuid) * 100 + int(id)]).NumAllItems,0) | Container($PYTHON[30000 + int(mainmenuid) * 100 + int(id)]).IsUpdating</visible>
                 </include>
 
@@ -470,6 +471,7 @@
                     <param name="onfocus2" value="SetProperty(HW_$PYTHON[50000 + int(mainmenuid) * 100]_InfoWidget,$PYTHON[30000 + int(mainmenuid) * 100 + int(id)],Home)" />
                     <param name="onfocus3" value="SetProperty(PW_$PYTHON[50000 + int(mainmenuid) * 100]_InfoWidget,1,Home)" />
                     <param name="clearlogo-visible" value="[Integer.IsEqual(Window(Home).Property(HW_$PYTHON[50000 + int(mainmenuid) * 100]_InfoWidget),$PYTHON[30000 + int(mainmenuid) * 100 + int(id)]) + Skin.HasSetting(EnableHorizontalHome)]" />
+                    <param name="group-visible" value="!Integer.IsEqual(Container(3001).NumItems,0)" />
                     <include>Animation_FadeInOut_Common</include>
                     <top>740</top>
                     <height>30</height>

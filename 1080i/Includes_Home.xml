@@ -555,6 +555,7 @@
 
     <include name="Home_Widget_Fullscreen_HubInfo">
         <param name="visible" default="true" />
+        <param name="group-visible" default="true" />
         <param name="clearlogo-visible" default="false" />
         <definition>
             <control type="group" id="$PARAM[group2-id]">
@@ -563,6 +564,7 @@
                 <left>view_pad</left>
                 <top>widgets_label_top</top>
                 <height>widgets_item_height</height>
+                <visible>$PARAM[group-visible]</visible>
                 <control type="grouplist">
                     <left>20</left>
                     <height>widgets_item_height</height>
@@ -604,6 +606,7 @@
                 </control>
             </control>
             <control type="grouplist" id="$PARAM[group-id]" >
+                <visible>$PARAM[group-visible]</visible>
                 <top>630</top>
                 <left>view_pad</left>
                 <right>-26</right>
@@ -1510,7 +1513,7 @@
                     <height>60</height>
                     <align>center</align>
                     <aligny>top</aligny>
-                    <label>$LOCALIZE[31349]...</label>
+                    <label>$VAR[Label_Splash]</label>
                     <font>font_tiny</font>
                     <textcolor>7FFFFFFF</textcolor>
                 </control>

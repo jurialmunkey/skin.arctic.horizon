@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
+    <variable name="Label_Splash">
+        <value condition="String.IsEmpty(Window(Home).Property(TMDbHelper.ServiceStarted)) + !Skin.HasSetting(DisableTMDbHelperSplash)">$LOCALIZE[31306]...</value>
+        <value condition="String.IsEmpty(Window(Home).Property(SkinSplashStarted)) | Window.IsVisible(1116)">$LOCALIZE[31349]...</value>
+        <value condition="Integer.IsEqual(Container(301).NumItems,0) | Container(301).IsUpdating">$LOCALIZE[31305]...</value>
+        <value>$LOCALIZE[31307]</value>
+    </variable>
+
     <variable name="Label_ColourScheme">
         <value condition="Skin.String(overlaycolor.name,ff6200ea) + Skin.String(focuscolor.name,ffff5252) + Skin.String(gradientcolor.name,ff7c4dff)">$LOCALIZE[33028]</value>
         <value condition="Skin.String(overlaycolor.name) | Skin.String(focuscolor.name) | Skin.String(gradientcolor.name)">$LOCALIZE[636]</value>
