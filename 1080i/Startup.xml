@@ -3,8 +3,8 @@
     <onload>SetProperty(SkinInitStarted,1,home)</onload>
     <onload>ClearProperty(SkinSplashStarted,home)</onload>
     <onload condition="!String.IsEmpty(Skin.String(StartupPlaylist))">ReplaceWindow(1113)</onload>
-    <onload condition="String.IsEmpty(Skin.String(StartupPlaylist)) + !Skin.HasSetting(DisableTMDbHelperSplash)">SetFocus(9001)</onload>
-    <onload condition="String.IsEmpty(Skin.String(StartupPlaylist)) + Skin.HasSetting(DisableTMDbHelperSplash)">ReplaceWindow($INFO[System.StartupWindow])</onload>
+    <onload condition="String.IsEmpty(Skin.String(StartupPlaylist)) + Skin.HasSetting(EnableTMDBHelperSplash)">SetFocus(9001)</onload>
+    <onload condition="String.IsEmpty(Skin.String(StartupPlaylist)) + !Skin.HasSetting(EnableTMDBHelperSplash)">ReplaceWindow($INFO[System.StartupWindow])</onload>
     <controls>
         <include>Home_Splash</include>
         <control type="button" id="9001">
