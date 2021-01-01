@@ -428,8 +428,8 @@
                     <onback>301</onback>
                     <onfocus condition="!$SKINSHORTCUTS[widgetSubmenu]">SetProperty(TMDbHelper.WidgetContainer,$NUMBER[$PYTHON[30000 + int(mainmenuid) * 100 + int(id)]],Home)</onfocus>
                     <onfocus>SetProperty(CG_$PYTHON[50000 + int(mainmenuid) * 100]_CurrentWidget,$NUMBER[$PYTHON[30000 + int(mainmenuid) * 100 + int(id)]],Home)</onfocus>
-                    <onfocus condition="!Skin.HasSetting(NoFanart) + !$SKINSHORTCUTS[widgetSubmenu]">SetProperty(TMDbHelper.Blur.SourceImage,$SKINSHORTCUTS[widgetSourceArt],Home)</onfocus>
-                    <onfocus condition="Skin.HasSetting(NoFanart) + !$SKINSHORTCUTS[widgetSubmenu]">SetProperty(TMDbHelper.Blur.SourceImage,Art(fallback),Home)</onfocus>
+                    <onfocus condition="!Skin.HasSetting(DisableBlur) + !Skin.HasSetting(NoFanart) + !$SKINSHORTCUTS[widgetSubmenu]">SetProperty(TMDbHelper.Blur.SourceImage,$SKINSHORTCUTS[widgetSourceArt],Home)</onfocus>
+                    <onfocus condition="!Skin.HasSetting(DisableBlur) + Skin.HasSetting(NoFanart) + !$SKINSHORTCUTS[widgetSubmenu]">SetProperty(TMDbHelper.Blur.SourceImage,Art(fallback),Home)</onfocus>
                     <onfocus>SetProperty(WidgetFocus,1)</onfocus>
                     <onfocus condition="![$SKINSHORTCUTS[isSecondPosition] + String.IsEqual(Container(3700).ListItemAbsolute(0).Property(list),Background)]">ClearProperty(PW_$PYTHON[50000 + int(mainmenuid) * 100]_InfoWidget,Home)</onfocus>
                     <onfocus condition="!$SKINSHORTCUTS[widgetSubmenu]">SetProperty(HW_$PYTHON[50000 + int(mainmenuid) * 100]_InfoWidget,$PYTHON[30000 + int(mainmenuid) * 100 + int(id)],Home)</onfocus>
@@ -489,8 +489,8 @@
                     <onclick condition="!$SKINSHORTCUTS[isSettings]">ActivateWindow(Weather)</onclick>
                     <onfocus>ClearProperty(TMDbHelper.WidgetContainer,Home)</onfocus>
                     <onfocus>SetProperty(CG_$PYTHON[50000 + int(mainmenuid) * 100]_CurrentWidget,$NUMBER[$PYTHON[30000 + int(mainmenuid) * 100 + int(id)]],Home)</onfocus>
-                    <onfocus condition="!Skin.HasSetting(NoFanart)">SetProperty(TMDbHelper.Blur.SourceImage,$SKINSHORTCUTS[widgetSourceArt],Home)</onfocus>
-                    <onfocus condition="Skin.HasSetting(NoFanart)">SetProperty(TMDbHelper.Blur.SourceImage,Art(fallback),Home)</onfocus>
+                    <onfocus condition="!Skin.HasSetting(DisableBlur) + !Skin.HasSetting(NoFanart)">SetProperty(TMDbHelper.Blur.SourceImage,$SKINSHORTCUTS[widgetSourceArt],Home)</onfocus>
+                    <onfocus condition="!Skin.HasSetting(DisableBlur) + Skin.HasSetting(NoFanart)">SetProperty(TMDbHelper.Blur.SourceImage,Art(fallback),Home)</onfocus>
                     <onfocus>SetProperty(HW_$PYTHON[50000 + int(mainmenuid) * 100]_InfoWidget,$PYTHON[30000 + int(mainmenuid) * 100 + int(id)],Home)</onfocus>
                     <onfocus>SetProperty(WidgetFocus,1)</onfocus>
                     <onfocus condition="$SKINSHORTCUTS[isSettings] + String.IsEmpty(Window(Home).Property(SpecialWidgetControl))">SetFocus(5200)</onfocus>
@@ -1135,8 +1135,8 @@
                 <ondown condition="Window.IsVisible(Home) + !Skin.HasSetting(EnableHorizontalHome)">Control.Move(301,1)</ondown>
                 <onback condition="!Window.IsVisible(Home)">302</onback>
                 <onback condition="Window.IsVisible(Home)">3101</onback>
-                <onfocus condition="!Skin.HasSetting(NoFanart)">SetProperty(TMDbHelper.Blur.SourceImage,$SKINSHORTCUTS[widgetSourceArt],Home)</onfocus>
-                <onfocus condition="Skin.HasSetting(NoFanart)">SetProperty(TMDbHelper.Blur.SourceImage,Art(fallback),Home)</onfocus>
+                <onfocus condition="!Skin.HasSetting(DisableBlur) + !Skin.HasSetting(NoFanart)">SetProperty(TMDbHelper.Blur.SourceImage,$SKINSHORTCUTS[widgetSourceArt],Home)</onfocus>
+                <onfocus condition="!Skin.HasSetting(DisableBlur) + Skin.HasSetting(NoFanart)">SetProperty(TMDbHelper.Blur.SourceImage,Art(fallback),Home)</onfocus>
                 <pagecontrol>60</pagecontrol>
                 <content target="$SKINSHORTCUTS[widgetTarget]" sortby="$SKINSHORTCUTS[widgetSortby]" sortorder="$SKINSHORTCUTS[widgetSortorder]">$SKINSHORTCUTS[widgetPath]</content>
                 <skinshortcuts>visibility</skinshortcuts>
@@ -1179,8 +1179,8 @@
                 <ondown condition="Window.IsVisible(Home) + !Skin.HasSetting(EnableHorizontalHome)">Control.Move(301,1)</ondown>
                 <onback condition="!Window.IsVisible(Home)">302</onback>
                 <onback condition="Window.IsVisible(Home)">3101</onback>
-                <onfocus condition="!Skin.HasSetting(NoFanart)">SetProperty(TMDbHelper.Blur.SourceImage,$SKINSHORTCUTS[widgetSourceArt],Home)</onfocus>
-                <onfocus condition="Skin.HasSetting(NoFanart)">SetProperty(TMDbHelper.Blur.SourceImage,Art(fallback),Home)</onfocus>
+                <onfocus condition="!Skin.HasSetting(DisableBlur) + !Skin.HasSetting(NoFanart)">SetProperty(TMDbHelper.Blur.SourceImage,$SKINSHORTCUTS[widgetSourceArt],Home)</onfocus>
+                <onfocus condition="!Skin.HasSetting(DisableBlur) + Skin.HasSetting(NoFanart)">SetProperty(TMDbHelper.Blur.SourceImage,Art(fallback),Home)</onfocus>
                 <pagecontrol>60</pagecontrol>
                 <content target="$SKINSHORTCUTS[widgetTarget]" sortby="$SKINSHORTCUTS[widgetSortby]" sortorder="$SKINSHORTCUTS[widgetSortorder]">$SKINSHORTCUTS[widgetPath]</content>
                 <visible>String.IsEqual(Container(301).ListItem.Property(submenuVisibility),num-$SKINSHORTCUTS[submenuVisibility]) | String.IsEqual(Container(301).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility])</visible>
@@ -1484,8 +1484,8 @@
                     <param name="viewtype-include" value="$SKINSHORTCUTS[widgetInclude]" />
                     <param name="widget-type" value="widgets" />
                     <movement>$SKINSHORTCUTS[widgetMovement]</movement>
-                    <onfocus condition="!Skin.HasSetting(NoFanart)">SetProperty(TMDbHelper.Blur.SourceImage,$SKINSHORTCUTS[widgetSourceArt],Home)</onfocus>
-                    <onfocus condition="Skin.HasSetting(NoFanart)">SetProperty(TMDbHelper.Blur.SourceImage,Art(fallback),Home)</onfocus>
+                    <onfocus condition="!Skin.HasSetting(DisableBlur) + !Skin.HasSetting(NoFanart)">SetProperty(TMDbHelper.Blur.SourceImage,$SKINSHORTCUTS[widgetSourceArt],Home)</onfocus>
+                    <onfocus condition="!Skin.HasSetting(DisableBlur) + Skin.HasSetting(NoFanart)">SetProperty(TMDbHelper.Blur.SourceImage,Art(fallback),Home)</onfocus>
                     <content target="$SKINSHORTCUTS[widgetTarget]" limit="$SKINSHORTCUTS[widgetLimit]" >$SKINSHORTCUTS[widgetPath]$INFO[Skin.String(SearchTerm)]$SKINSHORTCUTS[widgetPath2]</content>
                 </include>
             </controls>

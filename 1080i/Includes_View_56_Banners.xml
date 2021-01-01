@@ -23,8 +23,8 @@
                     <include>Viewtype_Movement</include>
                     <onup>SetFocus(9000)</onup>
                     <ondown>60</ondown>
-                    <onfocus condition="!Skin.HasSetting(NoFanart)">SetProperty(TMDbHelper.Blur.SourceImage,Art(banner)|Art(tvshow.banner)|Art(fanart)|Art(tvshow.fanart),Home)</onfocus>
-                    <onfocus condition="Skin.HasSetting(NoFanart)">SetProperty(TMDbHelper.Blur.SourceImage,Art(fallback),Home)</onfocus>
+                    <onfocus condition="!Skin.HasSetting(DisableBlur) + !Skin.HasSetting(NoFanart)">SetProperty(TMDbHelper.Blur.SourceImage,Art(banner)|Art(tvshow.banner)|Art(fanart)|Art(tvshow.fanart),Home)</onfocus>
+                    <onfocus condition="!Skin.HasSetting(DisableBlur) + Skin.HasSetting(NoFanart)">SetProperty(TMDbHelper.Blur.SourceImage,Art(fallback),Home)</onfocus>
                     <pagecontrol>60</pagecontrol>
                     <onfocus>ClearProperty(TMDbHelper.WidgetContainer,Home)</onfocus>
                     <visible>$EXP[Exp_View_56]</visible>

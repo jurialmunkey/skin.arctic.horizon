@@ -20,13 +20,13 @@
                     <onup>SetFocus(9000)</onup>
                     <ondown>$PARAM[id]0</ondown>
                     <ondown>SetProperty(TMDbHelper.WidgetContainer,$PARAM[id]0,Home)</ondown>
-                    <ondown condition="Skin.HasSetting(NoFanart)">RunScript(plugin.video.themoviedb.helper,blur_image=$VAR[Global_Background_Image_NoFanart_Fallback])</ondown>
-                    <ondown condition="Skin.HasSetting(NoFanart)">SetProperty(TMDbHelper.Blur.SourceImage,Art(fallback),Home)</ondown>
-                    <ondown condition="!Skin.HasSetting(NoFanart)">SetProperty(TMDbHelper.Blur.SourceImage,thumb,Home)</ondown>
+                    <ondown condition="Skin.HasSetting(NoFanart) + !Skin.HasSetting(DisableBlur)">RunScript(plugin.video.themoviedb.helper,blur_image=$VAR[Global_Background_Image_NoFanart_Fallback])</ondown>
+                    <ondown condition="Skin.HasSetting(NoFanart) + !Skin.HasSetting(DisableBlur)">SetProperty(TMDbHelper.Blur.SourceImage,Art(fallback),Home)</ondown>
+                    <ondown condition="!Skin.HasSetting(NoFanart) + !Skin.HasSetting(DisableBlur)">SetProperty(TMDbHelper.Blur.SourceImage,thumb,Home)</ondown>
                     <onfocus condition="[Container.Content(seasons) | Container.Content(artists) | Container.Content(sets) | Container.Content(tvshows)]">ClearProperty(TMDbHelper.WidgetContainer,Home)</onfocus>
                     <onfocus condition="![Container.Content(seasons) | Container.Content(artists) | Container.Content(sets) | Container.Content(tvshows)]">SetProperty(TMDbHelper.WidgetContainer,$PARAM[id]0,Home)</onfocus>
-                    <onfocus condition="Skin.HasSetting(NoFanart)">SetProperty(TMDbHelper.Blur.SourceImage,Art(fallback),Home)</onfocus>
-                    <onfocus condition="!Skin.HasSetting(NoFanart)">SetProperty(TMDbHelper.Blur.SourceImage,poster,Home)</onfocus>
+                    <onfocus condition="Skin.HasSetting(NoFanart) + !Skin.HasSetting(DisableBlur)">SetProperty(TMDbHelper.Blur.SourceImage,Art(fallback),Home)</onfocus>
+                    <onfocus condition="!Skin.HasSetting(NoFanart) + !Skin.HasSetting(DisableBlur)">SetProperty(TMDbHelper.Blur.SourceImage,poster,Home)</onfocus>
 
                     <left>-20</left>
                     <bottom>400</bottom>

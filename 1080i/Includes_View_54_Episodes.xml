@@ -12,9 +12,9 @@
                 <right>-80</right>
                 <bottom>view_bottom</bottom>
                 <include>Viewtype_Movement</include>
-                <onfocus condition="!Skin.HasSetting(NoFanart) + ![Container.Content(episodes) | Container.Content(videos)]">SetProperty(TMDbHelper.Blur.SourceImage,landscape,Home)</onfocus>
-                <onfocus condition="!Skin.HasSetting(NoFanart) + [Container.Content(episodes) | Container.Content(videos)]">SetProperty(TMDbHelper.Blur.SourceImage,thumb,Home)</onfocus>
-                <onfocus condition="Skin.HasSetting(NoFanart)">SetProperty(TMDbHelper.Blur.SourceImage,Art(fallback),Home)</onfocus>
+                <onfocus condition="!Skin.HasSetting(DisableBlur) + !Skin.HasSetting(NoFanart) + ![Container.Content(episodes) | Container.Content(videos)]">SetProperty(TMDbHelper.Blur.SourceImage,landscape,Home)</onfocus>
+                <onfocus condition="!Skin.HasSetting(DisableBlur)+ !Skin.HasSetting(NoFanart) + [Container.Content(episodes) | Container.Content(videos)]">SetProperty(TMDbHelper.Blur.SourceImage,thumb,Home)</onfocus>
+                <onfocus condition="!Skin.HasSetting(DisableBlur) + Skin.HasSetting(NoFanart)">SetProperty(TMDbHelper.Blur.SourceImage,Art(fallback),Home)</onfocus>
                 <onfocus>ClearProperty(TMDbHelper.WidgetContainer,Home)</onfocus>
                 <ondown condition="!Skin.HasSetting(DisableWallScroll) + [Container(54).HasNext | Container(54).HasPrevious]">SetProperty(WallMode,$INFO[Container.FolderPath])</ondown>
                 <ondown condition="!Skin.HasSetting(DisableWallScroll) + [Container(54).HasNext | Container(54).HasPrevious]">Container.SetViewMode(5454)</ondown>
@@ -73,9 +73,9 @@
                     <width>450</width>
                     <bottom>-100</bottom>
                     <include>Viewtype_Movement</include>
-                    <onfocus condition="!Skin.HasSetting(NoFanart) + ![Container.Content(episodes) | Container.Content(videos)]">SetProperty(TMDbHelper.Blur.SourceImage,landscape,Home)</onfocus>
-                    <onfocus condition="!Skin.HasSetting(NoFanart) + [Container.Content(episodes) | Container.Content(videos)]">SetProperty(TMDbHelper.Blur.SourceImage,thumb,Home)</onfocus>
-                    <onfocus condition="Skin.HasSetting(NoFanart)">SetProperty(TMDbHelper.Blur.SourceImage,Art(fallback),Home)</onfocus>
+                    <onfocus condition="!Skin.HasSetting(DisableBlur)+ !Skin.HasSetting(NoFanart) + ![Container.Content(episodes) | Container.Content(videos)]">SetProperty(TMDbHelper.Blur.SourceImage,landscape,Home)</onfocus>
+                    <onfocus condition="!Skin.HasSetting(DisableBlur) + !Skin.HasSetting(NoFanart) + [Container.Content(episodes) | Container.Content(videos)]">SetProperty(TMDbHelper.Blur.SourceImage,thumb,Home)</onfocus>
+                    <onfocus condition="!Skin.HasSetting(DisableBlur) + Skin.HasSetting(NoFanart)">SetProperty(TMDbHelper.Blur.SourceImage,Art(fallback),Home)</onfocus>
                     <ondown>60</ondown>
                     <onup>SetFocus(9000)</onup>
                     <pagecontrol>60</pagecontrol>

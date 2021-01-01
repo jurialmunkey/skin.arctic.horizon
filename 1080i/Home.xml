@@ -18,9 +18,9 @@
     <onload>SetProperty(TMDbHelper.Colors.Fallback,$VAR[Global_Background_Image_NoFanart_Fallback],Home)</onload>
     <onload>SetProperty(TMDbHelper.Colors.SourceImage,poster,Home)</onload> -->
 
-    <onload>SetProperty(TMDbHelper.Blur.Fallback,$VAR[Global_Background_Image_NoFanart_Fallback],Home)</onload>
-    <onload condition="Skin.HasSetting(NoFanart)">SetProperty(TMDbHelper.Blur.SourceImage,Art(fallback),Home)</onload>
-    <onload condition="!Skin.HasSetting(NoFanart)">SetProperty(TMDbHelper.Blur.SourceImage,poster,Home)</onload>
+    <onload condition="!Skin.HasSetting(DisableBlur)">SetProperty(TMDbHelper.Blur.Fallback,$VAR[Global_Background_Image_NoFanart_Fallback],Home)</onload>
+    <onload condition="Skin.HasSetting(NoFanart) + !Skin.HasSetting(DisableBlur)">SetProperty(TMDbHelper.Blur.SourceImage,Art(fallback),Home)</onload>
+    <onload condition="!Skin.HasSetting(NoFanart) + !Skin.HasSetting(DisableBlur)">SetProperty(TMDbHelper.Blur.SourceImage,poster,Home)</onload>
     <onload condition="Skin.HasSetting(DisableBlur)">Skin.Reset(TMDbHelper.EnableBlur)</onload>
     <onload condition="!Skin.HasSetting(DisableBlur)">Skin.SetBool(TMDbHelper.EnableBlur)</onload>
 

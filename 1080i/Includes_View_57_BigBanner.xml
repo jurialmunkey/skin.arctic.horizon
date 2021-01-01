@@ -16,9 +16,9 @@
                 <oninfo condition="Container.Content(actors) | Container.Content(directors)">RunScript(plugin.video.themoviedb.helper,add_query=$INFO[Container.ListItem.Label],type=person,call_auto=1190,return)</oninfo>
                 <include>Viewtype_Movement</include>
                 <ondown>60</ondown>
-                <onfocus condition="!Skin.HasSetting(NoFanart)">SetProperty(TMDbHelper.Blur.SourceImage,Art(banner)|Art(tvshow.banner)|Art(fanart)|Art(tvshow.fanart),Home)</onfocus>
+                <onfocus condition="!Skin.HasSetting(DisableBlur) + !Skin.HasSetting(NoFanart)">SetProperty(TMDbHelper.Blur.SourceImage,Art(banner)|Art(tvshow.banner)|Art(fanart)|Art(tvshow.fanart),Home)</onfocus>
 
-                <onfocus condition="Skin.HasSetting(NoFanart)">SetProperty(TMDbHelper.Blur.SourceImage,Art(fallback),Home)</onfocus>
+                <onfocus condition="!Skin.HasSetting(DisableBlur) + Skin.HasSetting(NoFanart)">SetProperty(TMDbHelper.Blur.SourceImage,Art(fallback),Home)</onfocus>
 
                 <pagecontrol>60</pagecontrol>
                 <onfocus>ClearProperty(TMDbHelper.WidgetContainer,Home)</onfocus>

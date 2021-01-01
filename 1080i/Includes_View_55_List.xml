@@ -63,9 +63,9 @@
                 <param name="id" value="55" />
                 <param name="itemlayout-width" value="724" />
                 <param name="viewtype-label" value="$LOCALIZE[31288]" />
-                <onfocus condition="Skin.HasSetting(NoFanart)">SetProperty(TMDbHelper.Blur.SourceImage,Art(fallback),Home)</onfocus>
+                <onfocus condition="!Skin.HasSetting(DisableBlur) + Skin.HasSetting(NoFanart)">SetProperty(TMDbHelper.Blur.SourceImage,Art(fallback),Home)</onfocus>
 
-                <onfocus condition="!Skin.HasSetting(NoFanart)">SetProperty(TMDbHelper.Blur.SourceImage,poster,Home)</onfocus>
+                <onfocus condition="!Skin.HasSetting(DisableBlur) + !Skin.HasSetting(NoFanart)">SetProperty(TMDbHelper.Blur.SourceImage,poster,Home)</onfocus>
                 <width>724</width>
                 <movement>3</movement>
                 <left>0</left>
@@ -94,9 +94,9 @@
                 <onleft>55</onleft>
                 <onright>Down</onright>
                 <orientation>vertical</orientation>
-                <onfocus condition="Skin.HasSetting(NoFanart)">SetProperty(TMDbHelper.Blur.SourceImage,Art(fallback),Home)</onfocus>
+                <onfocus condition="!Skin.HasSetting(DisableBlur) + Skin.HasSetting(NoFanart)">SetProperty(TMDbHelper.Blur.SourceImage,Art(fallback),Home)</onfocus>
 
-                <onfocus condition="!Skin.HasSetting(NoFanart)">SetProperty(TMDbHelper.Blur.SourceImage,landscape,Home)</onfocus>
+                <onfocus condition="!Skin.HasSetting(DisableBlur) + !Skin.HasSetting(NoFanart)">SetProperty(TMDbHelper.Blur.SourceImage,landscape,Home)</onfocus>
                 <visible>String.IsEqual(Container.Property(Param.Info),user_discover)</visible>
                 <animation effect="fade" start="100" end="0" time="300" condition="Container(550).IsUpdating">Conditional</animation>
                 <include content="Defs_AutoScroll"><param name="condition" value="!Control.HasFocus(550)" /></include>
@@ -176,8 +176,8 @@
                     <param name="itemlayout-width" value="1160" />
                     <param name="viewtype-label" value="$LOCALIZE[31289]" />
                     <param name="altid" value="5090" />
-                    <onfocus condition="Skin.HasSetting(NoFanart)">SetProperty(TMDbHelper.Blur.SourceImage,Art(fallback),Home)</onfocus>
-                    <onfocus condition="!Skin.HasSetting(NoFanart)">SetProperty(TMDbHelper.Blur.SourceImage,poster,Home)</onfocus>
+                    <onfocus condition="!Skin.HasSetting(DisableBlur) + Skin.HasSetting(NoFanart)">SetProperty(TMDbHelper.Blur.SourceImage,Art(fallback),Home)</onfocus>
+                    <onfocus condition="!Skin.HasSetting(DisableBlur) + !Skin.HasSetting(NoFanart)">SetProperty(TMDbHelper.Blur.SourceImage,poster,Home)</onfocus>
 
                     <movement>3</movement>
                     <width>1160</width>
