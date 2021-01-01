@@ -434,7 +434,6 @@
                             <ondown condition="!Skin.HasSetting(EnableHorizontalHome)">AlarmClock(refocusit,SetFocus(3992),00:00,silent)</ondown>
                             <onright condition="Skin.HasSetting(EnableHorizontalHome)">AlarmClock(refocusit,SetFocus(3992),00:00,silent)</onright>
                             <onclick>ClearProperty(WidgetMovement)</onclick>
-                            <onfocus condition="!Skin.HasSetting(DisableBlur)">RunScript(plugin.video.themoviedb.helper,blur_image=$VAR[Global_Background_Image_NoFanart_Fallback])</onfocus>
                             <onclick condition="!String.IsEmpty(Window.Property(WidgetFocus)) + [!Integer.IsEqual(Container(3700).NumItems,0) | String.IsEmpty(Container(301).ListItem.Property(background))]">SetFocus(3000)</onclick>
                             <onclick condition="!String.IsEmpty(Window.Property(WidgetFocus)) + Integer.IsEqual(Container(3700).NumItems,0) + !String.IsEmpty(Container(301).ListItem.Property(background))">ClearProperty(WidgetFocus)</onclick>
                             <onclick condition="String.IsEmpty(Window.Property(WidgetFocus)) | [Integer.IsEqual(Container(3700).NumItems,0) + !String.IsEmpty(Container(301).ListItem.Property(background))]">SetProperty(301Click,1)</onclick>
@@ -1407,7 +1406,6 @@
     </include>
 
     <include name="Home_Movement_OnFocus">
-        <onfocus condition="!Skin.HasSetting(DisableBlur)">RunScript(plugin.video.themoviedb.helper,blur_image=$VAR[Global_Background_Image_NoFanart_Fallback])</onfocus>
         <onfocus>ClearProperty(TMDbHelper.WidgetContainer,Home)</onfocus>
         <onback>3000</onback>
         <onfocus>ClearProperty(WidgetMovement)</onfocus>
