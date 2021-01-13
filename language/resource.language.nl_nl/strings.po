@@ -4,31 +4,37 @@
 # Addon Provider: jurialmunkey
 msgid ""
 msgstr ""
+"Language: nl_NL\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: sk_SK\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"X-Generator: Poedit 2.2.3\n"
 
 #: /1080i/Custom_1118_EnableRatings.xml
 msgctxt "#31000"
 msgid "Prefer numeric star rating"
-msgstr "Preferovať číselné hodnotenie"
+msgstr "Geef de voorkeur aan numerieke sterren"
 
 #: /1080i/DialogGameControllers.xml
 msgctxt "#31001"
 msgid "Controllers"
-msgstr "Ovládače"
+msgstr "Controllers"
 
 #: /1080i/Includes_OSD.xml
 msgctxt "#31002"
 msgid "Finishes at"
-msgstr "Končí"
+msgstr "Eindigt op"
 
 #: /1080i/Custom_1118_EnableRatings.xml
 msgctxt "#31003"
 msgid "Oscars"
-msgstr "Oskary"
+msgstr "Oscars"
 
 #: /1080i/Custom_1118_EnableRatings.xml
 msgctxt "#31004"
@@ -38,27 +44,27 @@ msgstr "Metacritic"
 #: /1080i/Custom_1118_EnableRatings.xml
 msgctxt "#31005"
 msgid "RottenTomatoes user meter"
-msgstr "Hodnotenia užívateľov RottenTomatoes"
+msgstr "RottenTomatoes user meter"
 
 #: /1080i/Custom_1119_EnableInfoLists.xml
 msgctxt "#31006"
 msgid "Collection"
-msgstr "Kolekcie"
+msgstr "Collectie"
 
 #: /1080i/Custom_1119_EnableInfoLists.xml
 msgctxt "#31007"
 msgid "Use online information"
-msgstr "Použiť online informácie"
+msgstr "Gebruik online informatie"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31008"
 msgid "Install weather fanart"
-msgstr "Nainštalovať fanart počasia"
+msgstr "Installeer weer fanart"
 
 #: /1080i/Custom_1118_EnableRatings.xml
 msgctxt "#31009"
 msgid "RottenTomatoes critics"
-msgstr "Kritici RottenTomatoes"
+msgstr "RottenTomatoes critici"
 
 #: /1080i/Custom_1118_EnableRatings.xml
 msgctxt "#31010"
@@ -68,17 +74,17 @@ msgstr "Trakt"
 #: /1080i/script-skinshortcuts.xml
 msgctxt "#31011"
 msgid "Aspect"
-msgstr "Štýl zobrazenia"
+msgstr "Aspect"
 
 #: /1080i/MyWeather.xml
 msgctxt "#31012"
 msgid "Weather fanart installed"
-msgstr "Fanart počasia nainštalovaný"
+msgstr "Weer fanart geïnstalleerd"
 
 #: /1080i/VideoOSD.xml
 msgctxt "#31013"
 msgid "Cast of"
-msgstr "Obsadenie"
+msgstr "Cast van"
 
 #: /1080i/MyVideoNav.xml
 msgctxt "#31014"
@@ -88,7 +94,7 @@ msgstr "Extra fanart"
 #: /1080i/SkinSettings.xml
 msgctxt "#31015"
 msgid "Customise info dialog lists"
-msgstr "Prispôsobiť zoznam info dialógu"
+msgstr "Pas infodialooglijsten aan"
 
 #: /1080i/Custom_1118_EnableRatings.xml
 msgctxt "#31016"
@@ -98,47 +104,47 @@ msgstr "TheMovieDb"
 #: /shortcuts/overrides.xml
 msgctxt "#31017"
 msgid "Smart shortcuts"
-msgstr "Inteligentné skratky"
+msgstr "Slimme snelkoppelingen"
 
 #: /shortcuts/overrides.xml
 msgctxt "#31018"
 msgid "Common shortcut"
-msgstr "Všeobecné skratky"
+msgstr "Veel voorkomende snelkoppeling"
 
 #: /1080i/Custom_1118_EnableRatings.xml
 msgctxt "#31019"
 msgid "Hide all ratings"
-msgstr "Skryť všetky hodnotenia"
+msgstr "Verberg alle beoordelingen"
 
 #: /1080i/script-globalsearch-main.xml
 msgctxt "#31020"
 msgid "mins"
-msgstr "mins"
+msgstr "minuten"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31021"
 msgid "Large artwork replaces seekbar"
-msgstr "Velký artwork nahradí vyhľadávaciu lištu"
+msgstr "Grote illustraties vervangen de zoekbalk"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31022"
 msgid "Autoscroll widgets"
-msgstr "Automaticky posun widgetov"
+msgstr "Widgets automatisch scrollen"
 
 #: /1080i/Includes_Items.xml
 msgctxt "#31023"
 msgid "Fullscreen"
-msgstr "Celá obrazovka"
+msgstr "Volledig scherm"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31024"
 msgid "Divider style"
-msgstr "Štýl rozdeľovača"
+msgstr "Divider stijl"
 
 #: /1080i/Includes_Labels.xml
 msgctxt "#31025"
 msgid "Items"
-msgstr "Položky"
+msgstr "Items"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31026"
@@ -148,376 +154,394 @@ msgstr "Logo"
 #: /1080i/SkinSettings.xml
 msgctxt "#31027"
 msgid "Customise power menu"
-msgstr "Upraviť Menu napájania"
+msgstr "Pas het powermenu aan"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31028"
-msgid "Reset skin settings to defaults (WARNING: This will reset your home menu to skin defaults)"
-msgstr "Obnoviť predvolené nastavenia vzhľadu (UPOZORNENIE: Týmto sa obnovia predvolené nastavenia ponuky na domovskej obrazovke)"
+msgid ""
+"Reset skin settings to defaults (WARNING: This will reset your home menu to "
+"skin defaults)"
+msgstr ""
+"Reset skin-instellingen naar standaardwaarden (WAARSCHUWING: hiermee wordt "
+"uw startmenu teruggezet naar de standaardinstellingen van skin)"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31029"
 msgid "Profile picture"
-msgstr "Profilový obrázok"
+msgstr "Profielfoto"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31030"
 msgid "Furniture"
-msgstr "Zariadenie"
+msgstr "Meubilair"
 
 #: /1080i/Includes_Items.xml
 msgctxt "#31031"
 msgid "Previous page"
-msgstr "Predchádzajúca stránka"
+msgstr "Vorige pagina"
 
 #: /1080i/Includes_Weather.xml
 msgctxt "#31032"
 msgid "Weekly forecast"
-msgstr "Týždenná predpoveď"
+msgstr "Wekelijkse prognose"
 
 #: /1080i/Includes_Items.xml
 msgctxt "#31033"
 msgid "Audio settings"
-msgstr "Nastavenia zvuku"
+msgstr "Audio-instellingen"
 
 #: /1080i/Includes_Weather.xml
 msgctxt "#31034"
 msgid "Current conditions"
-msgstr "Aktuálne podmienky"
+msgstr "De huidige omstandigheden"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31035"
 msgid "Lock position"
-msgstr "Zamknúť pozíciu"
+msgstr "Vergrendel positie"
 
 #: /1080i/Includes_Labels.xml
 msgctxt "#31036"
 msgid "hr"
-msgstr "hr"
+msgstr "uur"
 
 #: /1080i/DialogSubtitles.xml
 msgctxt "#31037"
 msgid "Download subtitles"
-msgstr "Stiahnuť titulky"
+msgstr "Download ondertitels"
 
 #: /1080i/Includes_Labels.xml
 msgctxt "#31038"
 msgid "Hub widget"
-msgstr "Hub widget"
+msgstr "Hub-widget"
 
 #: /1080i/script-skinshortcuts.xml
 msgctxt "#31039"
 msgid "Fullscreen widget"
-msgstr "Widget Celej obrazovky"
+msgstr "Volledig scherm widget"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31040"
 msgid "Menu and logo"
-msgstr "Menu a logo"
+msgstr "Menu en logo"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31041"
 msgid "Media flags"
-msgstr "Vlajky médií"
+msgstr "Media vlaggen"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31042"
 msgid "Invert colours"
-msgstr "Invertovať farby"
+msgstr "Keer kleuren om"
 
 #: /1080i/script-skinshortcuts.xml
 msgctxt "#31043"
 msgid "Customise widgets"
-msgstr "Prispôsobiť widgety"
+msgstr "Pas widgets aan"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31044"
 msgid "Clock / Weather"
-msgstr "Hodiny / Počasie"
+msgstr "Klok / weer"
 
 #: /shortcuts/overrides.xml
 msgctxt "#31045"
 msgid "Trending lists"
-msgstr "Trendy listy"
+msgstr "Trending lijsten"
 
 #: /shortcuts/overrides.xml
 msgctxt "#31046"
 msgid "Next aired"
-msgstr "Ďalej vysielané"
+msgstr "Volgende uitzending"
 
 #: /shortcuts/overrides.xml
 msgctxt "#31047"
 msgid "Next aired (Trakt)"
-msgstr "Ďalej vysielané (Trakt)"
+msgstr "Volgende uitzending (Trakt)"
 
 #: /shortcuts/overrides.xml
 msgctxt "#31048"
 msgid "Next aired (library)"
-msgstr "Ďalej vysielané (knižnica)"
+msgstr "Volgende uitzending (bibliotheek)"
 
 #: /1080i/script-skinshortcuts.xml
 msgctxt "#31049"
 msgid "Customise"
-msgstr "Prispôsobiť"
+msgstr "Aanpassen"
 
 #: /1080i/script-skinshortcuts.xml
 msgctxt "#31050"
 msgid "Default search items"
-msgstr "Predvolené položky hľadania"
+msgstr "Standaard zoekitems"
 
 #: /1080i/DialogVideoInfo.xml
 msgctxt "#31051"
 msgid "Similar to"
-msgstr "Podobné ako"
+msgstr "Gelijkend op"
 
 #: /1080i/DialogVideoInfo.xml
 msgctxt "#31052"
 msgid "By director"
-msgstr "Podla režiséra"
+msgstr "Door regisseur"
 
 #: /1080i/script-skinshortcuts.xml
 msgctxt "#31053"
 msgid "Choose hub widget"
-msgstr "Vybrať Hub widget"
+msgstr "Kies hub-widget"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31054"
 msgid "Hide channel name if icon is available"
-msgstr "Skryť názov kanála ak je ikona k dispozícii"
+msgstr "Verberg de kanaalnaam als het pictogram beschikbaar is"
 
 #: /1080i/DialogVideoInfo.xml
 msgctxt "#31055"
 msgid "Cast members also feature in"
-msgstr "Herci sú tiež obsadený v"
+msgstr "Castleden spelen ook een rol in"
 
 #: /1080i/script-skinshortcuts.xml
 msgctxt "#31056"
 msgid "Display info"
-msgstr "Zobraziť informácie"
+msgstr "Display info"
 
 #: /1080i/DialogVideoInfo.xml
 msgctxt "#31057"
 msgid "Films in the"
-msgstr "Filmy v"
+msgstr "Films in de"
 
 #: /1080i/script-skinshortcuts.xml
 msgctxt "#31058"
 msgid "Customise hub widget"
-msgstr "Prispôsobiť Hub widget"
+msgstr "Pas de hub-widget aan"
 
 #: /1080i/DialogContextMenu.xml
 msgctxt "#31059"
 msgid "Context menu"
-msgstr "Kontext menu"
+msgstr "Contextmenu"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31060"
 msgid "Menu orientation"
-msgstr "Orientácia menu"
+msgstr "Menu oriëntatie"
 
 #: /shortcuts/template.xml
 msgctxt "#31061"
 msgid "Show more"
-msgstr "Zobraziť viac"
+msgstr "Toon meer"
 
 #: /shortcuts/template.xml
 msgctxt "#31062"
 msgid "Browse more items in this list"
-msgstr "Prehliadať viac položiek v tomto zozname"
+msgstr "Blader door meer items in deze lijst"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31063"
 msgid "Background style"
-msgstr "Štýl pozadia"
+msgstr "Achtergrondstijl"
 
 #: /1080i/Includes_Info.xml
 msgctxt "#31064"
 msgid "Manage"
-msgstr "Spravovať"
+msgstr "Beheren"
 
 #: /1080i/Includes_Info.xml
 msgctxt "#31065"
 msgid "Watchlist"
-msgstr "Zoznam sledovaných položiek"
+msgstr "Mijn volglijst"
 
 #: /1080i/script-skinshortcuts.xml
 msgctxt "#31066"
 msgid "Choose fullscreen widget"
-msgstr "Vybrať widget na Celú obrazovku"
+msgstr "Kies de widget voor volledig scherm"
 
 #: /1080i/Includes_Labels.xml
 msgctxt "#31067"
 msgid "Recommendations"
-msgstr "Odporúčania"
+msgstr "Aanbevelingen"
 
 #: /1080i/Includes_Weather.xml
 msgctxt "#31068"
 msgid "Cloud cover"
-msgstr "Oblačnosť"
+msgstr "Bedekkingsgraad"
 
 #: /1080i/Includes_Items.xml
 msgctxt "#31069"
 msgid "From studio"
-msgstr "Zo štúdia"
+msgstr "Van studio"
 
 #: /1080i/Includes_Items.xml
 msgctxt "#31070"
 msgid "In genre"
-msgstr "V žánri"
+msgstr "In genre"
 
 #: /1080i/Includes_Items.xml
 msgctxt "#31071"
 msgid "From year"
-msgstr "Z Roku"
+msgstr "Vanaf jaar"
 
 #: /1080i/DialogButtonMenu.xml
 msgctxt "#31072"
 msgid "Power menu"
-msgstr "Ponuka napájania"
+msgstr "Power menu"
 
 #: /1080i/Includes_Items.xml
 msgctxt "#31073"
 msgid "From"
-msgstr "Od"
+msgstr "Van"
 
 #: /1080i/Includes_Items.xml
 msgctxt "#31074"
 msgid "Starring cast members"
-msgstr "Hrajú herci"
+msgstr "Met castleden"
 
 #: /1080i/Includes_Items.xml
 msgctxt "#31075"
 msgid "Keywords for"
-msgstr "Kľúčové slová pre"
+msgstr "Sleutelwoorden voor"
 
 #: /1080i/Includes_Items.xml
 msgctxt "#31076"
 msgid "In lists"
-msgstr "V zoznamoch"
+msgstr "In lijsten"
 
 #: /1080i/Includes_Items.xml
 msgctxt "#31077"
 msgid "Lists containing"
-msgstr "Zoznamy obsahujú"
+msgstr "Lijsten met"
 
 #: /1080i/Includes_Home.xml
 msgctxt "#31078"
 msgid "More information"
-msgstr "Viac informácií"
+msgstr "Bekijk de mogelijkheden"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31079"
 msgid "Pause when opening info dialog"
-msgstr "Pozastaviť prehrávanie po otvorení info dialógu"
+msgstr "Pauzeer bij het openen van het informatievenster"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31080"
 msgid "Pressing \"Back\" highlights group selector"
-msgstr "Stlačenie \"Späť\"  zvýrazní výber skupiny"
+msgstr "Door op \"Terug\" te drukken, wordt de groepselector gemarkeerd"
 
 #: /1080i/script-skinshortcuts.xml
 msgctxt "#31081"
 msgid "Fullscreen and Hub"
-msgstr "Celá obrazovka a Hub"
+msgstr "Volledig scherm en Hub"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31082"
 msgid "Watched indicators"
-msgstr "Indikátory pozretých"
+msgstr "Bekeken indicatoren"
 
 #: /1080i/Custom_1121_EnableIndicators.xml
 msgctxt "#31083"
 msgid "Hide all indicators"
-msgstr "Skryť všetky indikátory"
+msgstr "Verberg alle indicatoren"
 
 #: /1080i/Includes_Labels.xml
 msgctxt "#31084"
 msgid "Aquamarine"
-msgstr "Aquamarín"
+msgstr "Aquamarine"
 
 #: /1080i/Custom_1116_Wizard.xml
 msgctxt "#31085"
-msgid "Enable these options for the full Arctic Horizon experience.[CR][CR][B]~ Note ~[/B][CR]Other than the colour scheme options$COMMA some of these settings might have a slight impact on the performance of the skin. This wizard can be run again as needed from \"Skin Settings > Lists and Other > Skin Setup Wizard\""
-msgstr "Zapnite tieto možnosti pre plný zážitok z Arctic Horizon.[CR][CR][B]~ Poznámka ~[/B][CR]Iné ako možnosti farebnej schémy$COMMA niektoré z nastavení môžu mať malý dopad na výkon skínu. Tento pomocník pri inštalácií môže byť opäť spustený, keď budete potrebovať \"Nastavenia skínu > Zoznamy a iné > Pomocník pri nastavení skínu\""
+msgid ""
+"Enable these options for the full Arctic Horizon experience.[CR][CR][B]~ "
+"Note ~[/B][CR]Other than the colour scheme options$COMMA some of these "
+"settings might have a slight impact on the performance of the skin. This "
+"wizard can be run again as needed from \"Skin Settings > Lists and Other > "
+"Skin Setup Wizard\""
+msgstr ""
+"Schakel deze opties in voor de volledige Arctic Horizon-ervaring. [CR] [CR] "
+"[B] ~ Opmerking ~ [/ B] [CR] Behalve de kleurenschema-opties$COMMA kunnen "
+"sommige van deze instellingen een kleine invloed hebben op de prestaties "
+"van de huid. Deze wizard kan indien nodig opnieuw worden uitgevoerd via "
+"\"Skin-instellingen > Lijsten en andere > Skin Setup-wizard\""
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31086"
-msgid "Run skin setup wizard (WARNING: This will reset skin settings to defaults)"
-msgstr "Spustiť pomocníka pre nastavenie skínu (UPOZORNENIE: Táto možnosť obnoví nastavenia skínu na pôvodné hodnoty)"
+msgid ""
+"Run skin setup wizard (WARNING: This will reset skin settings to defaults)"
+msgstr ""
+"Voer de skin setup wizard uit (WAARSCHUWING: hierdoor worden de skin-"
+"instellingen teruggezet naar de standaardwaarden)"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31087"
 msgid "Colour overlay"
-msgstr "Farebné prekrytie"
+msgstr "Kleuroverlay"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31088"
 msgid "Scrolling text effect"
-msgstr "Efekt rolovania textu"
+msgstr "Scrollend teksteffect"
 
 #: /1080i/Custom_1122_EnableWallViews.xml
 msgctxt "#31089"
 msgid "Pressing down opens wall view (replaces scrollbar)"
-msgstr "Stlačením dolu sa otvorí wall view (nahradí rolovaciu lištu)"
+msgstr ""
+"Als u omlaag drukt, wordt de muurweergave geopend (vervangt de schuifbalk)"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31090"
 msgid "Customise info dialog buttons"
-msgstr "Prispôsobiť tlačidlá info dialógu"
+msgstr "Pas knoppen voor het infodialoogvenster aan"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31091"
 msgid "Trailer window"
-msgstr "Upútavka v okne"
+msgstr "Trailer venster"
 
 #: /1080i/Includes_Items.xml
 msgctxt "#31092"
 msgid "View"
-msgstr "Zobraziť"
+msgstr "Bekijken"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31093"
 msgid "Customise viewtypes"
-msgstr "Prispôsobiť typy zobrazenia"
+msgstr "Pas weergavetypes aan"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31094"
 msgid "Apply colour diffuse to icons"
-msgstr "Použiť difúziu farby na ikony"
+msgstr "Kleur diffuus toepassen op pictogrammen"
 
 #: /1080i/Custom_1116_Wizard.xml
 msgctxt "#31095"
 msgid "Online info dialog lists"
-msgstr "Online zoznamy info dialógu"
+msgstr "Online infodialooglijsten"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31096"
 msgid "Use song track-naming template"
-msgstr "Použiť šablónu na pomenovanie skladby"
+msgstr "Gebruik een sjabloon voor het benoemen van nummers"
 
 #: /1080i/Includes_Home.xml
 msgctxt "#31097"
 msgid "Ends at"
-msgstr "Končí"
+msgstr "Eindigt om"
 
 #: /1080i/script-skinshortcuts.xml
 msgctxt "#31098"
 msgid "Choose widget"
-msgstr "Vybrať widget"
+msgstr "Kies widget"
 
 #: /1080i/script-skinshortcuts.xml
 msgctxt "#31099"
 msgid "Widgets"
-msgstr "Widgety"
+msgstr "Widgets"
 
 #: /1080i/script-skinshortcuts.xml
 msgctxt "#31100"
 msgid "Content type"
-msgstr "Typ obsahu"
+msgstr "Content-type"
 
 msgctxt "#31101"
 msgid "items"
-msgstr "položky"
+msgstr "producten"
 
 msgctxt "#31102"
 msgid "min"
@@ -525,181 +549,181 @@ msgstr "min"
 
 msgctxt "#31103"
 msgid "Live TV"
-msgstr "Live TV"
+msgstr "Live-uitzending"
 
 msgctxt "#31104"
 msgid "Used memory"
-msgstr "Použitá pamäť"
+msgstr "Gebruikt geheugen"
 
 msgctxt "#31105"
 msgid "Spotlight"
-msgstr "Spotlight"
+msgstr "Uitgelicht"
 
 msgctxt "#31106"
 msgid "Ends "
-msgstr "Končí "
+msgstr "Eindigt"
 
 #: /1080i/script-skinshortcuts.xml
 msgctxt "#31107"
 msgid "Item limit"
-msgstr "Limit položiek"
+msgstr "Item limiet"
 
 #: /1080i/Includes_View_56_Banners.xml
 msgctxt "#31108"
 msgid "Big banner"
-msgstr ""
+msgstr "Grote banner"
 
 msgctxt "#31109"
 msgid "Customise home menu"
-msgstr "Prispôsobiť domovskú obrazovku"
+msgstr "Pas het startmenu aan"
 
 msgctxt "#31110"
 msgid "Background"
-msgstr "Pozadie"
+msgstr "Achtergrond"
 
 msgctxt "#31111"
 msgid "Display now playing video in background"
-msgstr "Zobraziť teraz prehrávané video na pozadí"
+msgstr "Geef video weer op de achtergrond"
 
 msgctxt "#31112"
 msgid "Submenu"
-msgstr "Podmenu"
+msgstr "Submenu"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31113"
 msgid "Fullscreen widget path"
-msgstr "Cesta widgetu Celej obrazovky"
+msgstr "Pad naar volledig scherm"
 
 #: /1080i/Includes_Labels.xml
 msgctxt "#31114"
 msgid "on"
-msgstr "on"
+msgstr "aan"
 
 #: /1080i/Includes_Labels.xml
 msgctxt "#31115"
 msgid "Last aired"
-msgstr "Naposledy vysielané"
+msgstr "Laatst uitgezonden"
 
 #: /1080i/Custom_1118_EnableRatings.xml
 msgctxt "#31116"
 msgid "Additional ratings"
-msgstr "Dodatočné hodnotenia"
+msgstr "Aanvullende beoordelingen"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31117"
 msgid "10 seconds"
-msgstr "10 sekúnd"
+msgstr "10 seconden"
 
 msgctxt "#31118"
 msgid "Artist slideshow"
-msgstr "Prezentácia umelca"
+msgstr "Diavoorstelling van de artiest"
 
 msgctxt "#31119"
 msgid "Visualisation behind slideshow"
-msgstr "Vizualizácia za prezentáciou"
+msgstr "Visualisatie achter diavoorstelling"
 
 msgctxt "#31120"
 msgid "Animate artist slideshow"
-msgstr "Animovať prezentáciu umelca"
+msgstr "Animeer diavoorstelling van artiesten"
 
 msgctxt "#31121"
 msgid "Fanart"
-msgstr ""
+msgstr "Fanart"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31122"
 msgid "12 seconds"
-msgstr "12 sekúnd"
+msgstr "12 seconden"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31123"
 msgid "15 seconds"
-msgstr "15 sekúnd"
+msgstr "15 seconden"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31124"
 msgid "20 seconds"
-msgstr "20 sekúnd"
+msgstr "20 seconden"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31125"
 msgid "30 seconds"
-msgstr "30 sekúnd"
+msgstr "30 seconden"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31126"
 msgid "60 seconds"
-msgstr "60 sekúnd"
+msgstr "60 seconden"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31127"
 msgid "10 minutes"
-msgstr "10 minút"
+msgstr "10 minuten"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31128"
 msgid "Set autoscroll and time per image"
-msgstr "Nastaviť automatický posun obrázku a čas na jeden obrázok"
+msgstr "Stel autoscroll en tijd per afbeelding in"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31129"
 msgid "Gradient colour"
-msgstr "Prechod farieb"
+msgstr "Kleurverloop"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31130"
 msgid "Overlay colour"
-msgstr "Farba prekrytia"
+msgstr "Overlay kleur"
 
 #: /1080i/MusicOSD.xml
 msgctxt "#31131"
 msgid "Colour overlay"
-msgstr "Farebné prekrytie"
+msgstr "Kleuroverlay"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31132"
 msgid "Foreground"
-msgstr "Popredie"
+msgstr "Voorgrond"
 
 #: /1080i/Includes_Labels.xml
 msgctxt "#31133"
 msgid "Waves"
-msgstr "Vlny"
+msgstr "Golven"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31134"
 msgid "Supported addons"
-msgstr "Podporované pluginy"
+msgstr "Ondersteunde add-ons"
 
 #: /1080i/Custom_1119_EnableInfoLists.xml
 msgctxt "#31135"
 msgid "Similar"
-msgstr "Podobné"
+msgstr "Vergelijkbaar"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31136"
 msgid "Music visualisation"
-msgstr "Vizualizácia hudby"
+msgstr "Muziekvisualisatie"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31137"
 msgid "Fullscreen video"
-msgstr "Video na Celú obrazovku"
+msgstr "Video op volledig scherm"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31138"
 msgid "List items"
-msgstr "Zoznam položiek"
+msgstr "Lijst items"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31139"
 msgid "Widgets and layout"
-msgstr "Widgety a rozloženie"
+msgstr "Widgets en lay-out"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31140"
 msgid "Background images"
-msgstr "Obrázky pozadia"
+msgstr "Achtergrond Afbeeldingen"
 
 msgctxt "#31141"
 msgid "YouTube"
@@ -708,150 +732,152 @@ msgstr "YouTube"
 #: /1080i/MusicOSD.xml
 msgctxt "#31142"
 msgid "Scrolling text"
-msgstr "Rolovanie textu"
+msgstr "Scrollende tekst"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31143"
 msgid "Miscellaneous"
-msgstr "Rôzne"
+msgstr "Diversen"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31144"
 msgid "Fonts and artwork"
-msgstr "Písma a artwork"
+msgstr "Lettertypen en illustraties"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31145"
 msgid "Display additional on-screen information with controls or when paused"
-msgstr "Zobraziť dodatočné informácie aj s ovládacími prvkami keď je video pozastavené"
+msgstr ""
+"Geef aanvullende informatie op het scherm weer met bedieningselementen of "
+"wanneer gepauzeerd"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31146"
 msgid "General options"
-msgstr "Všeobecné nastavenia"
+msgstr "Algemene opties"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31147"
 msgid "Items and views"
-msgstr "Položky a zobrazenia"
+msgstr "Items en weergaven"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31148"
 msgid "Lists and other"
-msgstr "Zoznamy a iné"
+msgstr "Lijsten en andere"
 
 #: /1080i/Includes_View_59_Sets.xml
 msgctxt "#31149"
 msgid "Collections"
-msgstr "Kolekcie"
+msgstr "Verzamelingen"
 
 msgctxt "#31150"
 msgid "Fallback image"
-msgstr "Záložný obrázok pozadia"
+msgstr "Fallback afbeelding"
 
 #: /1080i/Custom_1121_EnableIndicators.xml
 msgctxt "#31151"
 msgid "Classic corner style indicators"
-msgstr "Klasický štýl rohových indikátorov"
+msgstr "Klassieke hoekindicatoren"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31152"
 msgid "Viewtypes"
-msgstr "Typy zobrazenia"
+msgstr "Weergavetypes"
 
 #: /1080i/Custom_1117_ColorPicker.xml
 msgctxt "#31153"
 msgid "Value"
-msgstr "Hodnota"
+msgstr "Waarde"
 
 #: /1080i/Custom_1117_ColorPicker.xml
 msgctxt "#31154"
 msgid "Colour"
-msgstr "Farebné"
+msgstr "Kleur"
 
 #: /1080i/Includes_DialogVideoInfo.xml
 msgctxt "#31155"
 msgid "Revenue / Budget"
-msgstr "Príjem / Rozpočet"
+msgstr "Opbrengst / budget"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31156"
 msgid "PVR Guide"
-msgstr "Sprievodca PVR"
+msgstr "PVR-gids"
 
 #: /1080i/Custom_1120_EnableSearchLists.xml
 msgctxt "#31157"
 msgid "Artist's albums"
-msgstr "Albumy umelcov"
+msgstr "Albums van de artiest"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31158"
 msgid "Automatically open visualisation after starting a song"
-msgstr "Automaticky otvoriť vizualizáciu po spustení skladby"
+msgstr "Automatisch visualisatie openen na het starten van een nummer"
 
 #: /1080i/Includes_Labels.xml
 msgctxt "#31159"
 msgid "Video sources"
-msgstr "Zdroje videa"
+msgstr "Videobronnen"
 
 #: /1080i/Includes_Labels.xml
 msgctxt "#31160"
 msgid "Music sources"
-msgstr "Zdroje hudby"
+msgstr "Muziekbronnen"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31161"
 msgid "Supported add-ons"
-msgstr "Podporované pluginy"
+msgstr "Ondersteunde add-ons"
 
 #: /1080i/Custom_1116_Wizard.xml
 msgctxt "#31162"
 msgid "Online ratings"
-msgstr "Online hodnotenie"
+msgstr "Online beoordelingen"
 
 #: /shortcuts/overrides.xml
 msgctxt "#31163"
 msgid "Submenu items"
-msgstr "Položky podmenu"
+msgstr "Submenu-items"
 
 #: /1080i/Includes_DialogVideoInfo.xml
 msgctxt "#31164"
 msgid "Awards"
-msgstr "Ocenenia"
+msgstr "Onderscheidingen"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31165"
 msgid "Lists and indicators"
-msgstr "Zoznamy a indikátory"
+msgstr "Lijsten en indicatoren"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31166"
 msgid "Customise search lists"
-msgstr "Prispôsobiť zoznamy hľadania"
+msgstr "Pas zoeklijsten aan"
 
 #: /1080i/Custom_1120_EnableSearchLists.xml
 msgctxt "#31167"
 msgid "Music video artists"
-msgstr "Hudobný umelci"
+msgstr "Muziekvideo-artiesten"
 
 msgctxt "#31168"
 msgid "Startup video or playlist"
-msgstr "Úvodné video alebo playlist"
+msgstr "Startvideo of afspeellijst"
 
 #: /1080i/Custom_1120_EnableSearchLists.xml
 msgctxt "#31169"
 msgid "Edit custom search lists"
-msgstr "Upraviť vlastné zoznamy hľadania"
+msgstr "Bewerk aangepaste zoeklijsten"
 
 #: /1080i/Includes_DialogVideoInfo.xml
 msgctxt "#31170"
 msgid "Creator"
-msgstr "Tvorca"
+msgstr "Maker"
 
 #: /1080i/Includes_DialogVideoInfo.xml
 msgctxt "#31171"
 msgid "Filename"
-msgstr "Názov súboru"
+msgstr "Bestandsnaam"
 
 #: /1080i/Includes_DialogVideoInfo.xml
 msgctxt "#31172"
@@ -860,156 +886,163 @@ msgstr "Plugin"
 
 msgctxt "#31173"
 msgid "Recently added"
-msgstr "Nedávno pridané"
+msgstr "Onlangs toegevoegd"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31174"
 msgid "Prefer landscape art over fanart"
-msgstr "Preferovať landscape art pred fanartom"
+msgstr "Geef de voorkeur aan landscape boven fanart"
 
 #: /1080i/Custom_1117_ColorPicker.xml
 msgctxt "#31175"
 msgid "Highlight"
-msgstr "Zvýraznenie"
+msgstr "Benadrukken"
 
 msgctxt "#31176"
 msgid "Delete settings shortcut"
-msgstr "Zmazať skratku nastavení"
+msgstr "Snelkoppeling voor instellingen verwijderen"
 
 msgctxt "#31177"
-msgid "Are you sure you want to remove the settings shortcut?[CR]Please ensure that you have an alternative method of accessing settings before you remove this shortcut."
-msgstr "Ste si istý, že chcete vymazať skratku nastavenia?[CR] Prosím uistite sa, že máte alternatívnu možnosť prístupu do nastavení pred vymazaním skratky."
+msgid ""
+"Are you sure you want to remove the settings shortcut?[CR]Please ensure "
+"that you have an alternative method of accessing settings before you remove "
+"this shortcut."
+msgstr ""
+"Weet u zeker dat u de instellingensnelkoppeling wilt verwijderen?[CR]Zorg "
+"ervoor dat u een alternatieve methode heeft om toegang te krijgen tot de "
+"instellingen voordat u deze snelkoppeling verwijdert."
 
 #: /1080i/Custom_1117_ColorPicker.xml
 msgctxt "#31178"
 msgid "Gradient"
-msgstr "Prechod"
+msgstr "Verloop"
 
 #: /1080i/Custom_1117_ColorPicker.xml
 msgctxt "#31179"
 msgid "Overlay"
-msgstr "Prekrytie"
+msgstr "Overlay"
 
 #: /1080i/Custom_1121_EnableIndicators.xml
 msgctxt "#31180"
 msgid "Watched progress colour"
-msgstr "Farba postupu pozretých"
+msgstr "Bekeken voortgangskleur"
 
 msgctxt "#31181"
 msgid "Select icon"
-msgstr "Výber ikony"
+msgstr "Icoon kiezen"
 
 #: /shortcuts/overrides.xml
 msgctxt "#31182"
 msgid "Additional widgets"
-msgstr "Dodatočné widgety"
+msgstr "Extra widgets"
 
 #: /shortcuts/overrides.xml
 msgctxt "#31183"
 msgid "Default widgets"
-msgstr "Predvolené widgety"
+msgstr "Standaard widgets"
 
 #: /1080i/Custom_1142_Recommendations.xml
 msgctxt "#31184"
 msgid "Gallery"
-msgstr "Galéria"
+msgstr "Galerij"
 
 #: /shortcuts/overrides.xml
 msgctxt "#31185"
 msgid "Recently added movies"
-msgstr "Nedávno pridané filmy"
+msgstr "Recent toegevoegde films"
 
 #: /1080i/Custom_1117_ColorPicker.xml
 msgctxt "#31186"
 msgid "Gradient preview"
-msgstr "Náhľad prechodu"
+msgstr "Verloopvoorbeeld"
 
 msgctxt "#31187"
 msgid "Random albums"
-msgstr "Náhodne albumy"
+msgstr "Willekeurige albums"
 
 #: /1080i/DialogPVRChannelGuide.xml
 msgctxt "#31188"
 msgid "Now playing"
-msgstr "Prehráva sa"
+msgstr "Nu aan het afspelen"
 
 #: /1080i/DialogSeekBar.xml
 msgctxt "#31189"
 msgid "Seek to"
-msgstr "Posunúť na"
+msgstr "Zoeken naar"
 
 #: /shortcuts/overrides.xml
 msgctxt "#31190"
 msgid "Recently played movies"
-msgstr "Nedávno spustené filmy"
+msgstr "Onlangs afgespeelde films"
 
 #: /1080i/Includes_DialogVideoInfo.xml
 msgctxt "#31191"
 msgid "Press down for cast, crew, recommendations and more"
-msgstr "Stlačením dolu zobrazíte hercov, odporúčania a iné"
+msgstr "Druk beneden voor cast, crew, aanbevelingen en meer"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31192"
 msgid "Numeric star rating"
-msgstr "Číselné hodnotenie"
+msgstr "Numerieke sterbeoordeling"
 
 #: /1080i/Includes_Items.xml
 msgctxt "#31193"
 msgid "Select Art (Kodi)"
-msgstr "Vybrať Art (Kodi)"
+msgstr "Selecteer Art (Kodi)"
 
 #: /shortcuts/overrides.xml
 msgctxt "#31194"
 msgid "Recently played TV shows"
-msgstr "Nedávno spustené TV seriály"
+msgstr "Onlangs afgespeelde tv-programma's"
 
 #: /1080i/Includes_Items.xml
 msgctxt "#31195"
 msgid "Select Art (Artwork Beef)"
-msgstr "Vybrať Art (Artwork Beef)"
+msgstr "Selecteer Art (Artwork Beef)"
 
 #: /shortcuts/overrides.xml
 msgctxt "#31196"
 msgid "In-progress TV shows"
-msgstr "Rozpozerané TV seriály"
+msgstr "Lopende tv-programma's"
 
 #: /1080i/Includes_Items.xml
 msgctxt "#31197"
 msgid "Download all art"
-msgstr "Stiahnuť všetky Art"
+msgstr "Download alle kunst"
 
 #: /shortcuts/overrides.xml
 msgctxt "#31198"
 msgid "Recently played episodes"
-msgstr "Nedávno spustené epizódy"
+msgstr "Recent afgespeelde afleveringen"
 
 msgctxt "#31199"
-msgid "Kiosk mode (removes access to management options in information dialog)"
-msgstr "Kiosk mode (vymaže prístup do možnosti riadenia v informačnom dialógu)"
+msgid ""
+"Kiosk mode (removes access to management options in information dialog)"
+msgstr "Kioskmodus (verwijdert toegang tot beheeropties in informatiedialoog)"
 
 #: /shortcuts/overrides.xml
 msgctxt "#31200"
 msgid "Random movies"
-msgstr "Náhodne filmy"
+msgstr "Willekeurige films"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31201"
 msgid "Simple on-screen info (hide poster and plot)"
-msgstr "Jednoduché zobrazenie informácií (skryť plagát a zápletku)"
+msgstr "Eenvoudige informatie op het scherm (poster en plot verbergen)"
 
 #: /shortcuts/overrides.xml
 msgctxt "#31202"
 msgid "Random episodes"
-msgstr "Náhodne epizódy"
+msgstr "Willekeurige afleveringen"
 
 msgctxt "#31203"
 msgid "Artwork"
-msgstr "Artwork"
+msgstr "Illustraties"
 
 #: /1080i/Includes_Items.xml
 msgctxt "#31204"
 msgid "Refresh info"
-msgstr "Obnoviť informácie"
+msgstr "Vernieuw info"
 
 #: /1080i/Includes_Items.xml
 msgctxt "#31205"
@@ -1019,141 +1052,141 @@ msgstr "Discart"
 #: /1080i/SkinSettings.xml
 msgctxt "#31206"
 msgid "Channel numbers"
-msgstr "Čísla kanálov"
+msgstr "Kanaalnummers"
 
 #: /1080i/Includes_OSD.xml
 msgctxt "#31207"
 msgid "Ends"
-msgstr "Končí"
+msgstr "Eindigt"
 
 #: /1080i/Includes_View_Info.xml
 msgctxt "#31208"
 msgid "Overview"
-msgstr "Popis"
+msgstr "Overzicht"
 
 #: /1080i/Includes_Labels.xml
 msgctxt "#31209"
 msgid "Screenshot"
-msgstr "Snímok obrazovky"
+msgstr "Schermafbeelding"
 
 #: /shortcuts/tvshows-1.DATA.xml
 msgctxt "#31210"
 msgid "In-progress"
-msgstr "Rozpozerané"
+msgstr "In-progress"
 
 #: /shortcuts/music-1.DATA.xml
 msgctxt "#31211"
 msgid "Recently played"
-msgstr "Nedávno spustené"
+msgstr "Onlangs afgespeeld"
 
 #: /shortcuts/tvshows-1.DATA.xml
 msgctxt "#31212"
 msgid "Random shows"
-msgstr "Náhodne seriály"
+msgstr "Willekeurige shows"
 
 #: /1080i/Includes_View_53_Seasons.xml
 msgctxt "#31213"
 msgid "Sort by"
-msgstr "Triedenie podľa"
+msgstr "Sorteren op"
 
 #: /shortcuts/overrides.xml
 msgctxt "#31214"
 msgid "Recently added episodes"
-msgstr "Nedávno pridané epizódy"
+msgstr "Recent toegevoegde afleveringen"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31215"
 msgid "Autoscroll plot"
-msgstr "Automatický posun zápletky"
+msgstr "Autoscroll-plot"
 
 #: /shortcuts/overrides.xml
 msgctxt "#31216"
 msgid "In-progress movies"
-msgstr "Rozpozerané filmy"
+msgstr "Lopende films"
 
 #: /1080i/Includes_Home.xml
 msgctxt "#31217"
 msgid "Change location"
-msgstr "Zmeniť polohu"
+msgstr "Verander locatie"
 
 #: /shortcuts/overrides.xml
 msgctxt "#31218"
 msgid "In-progress episodes"
-msgstr "Rozpozerané epizódy"
+msgstr "Lopende afleveringen"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31219"
 msgid "Seconds"
-msgstr "Sekundy"
+msgstr "Seconden"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31220"
 msgid "Minute"
-msgstr "Minúty"
+msgstr "Minuut"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31221"
 msgid "3 seconds"
-msgstr "3 sekundy"
+msgstr "3 seconden"
 
 #: /shortcuts/overrides.xml
 msgctxt "#31222"
 msgid "Top rated TV shows"
-msgstr "Najviac hodnotené TV seriály"
+msgstr "Best beoordeelde tv-programma's"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31223"
 msgid "5 seconds"
-msgstr "5 sekúnd"
+msgstr "5 seconden"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31224"
 msgid "1 Minute"
-msgstr "1 Minúta"
+msgstr "1 minuut"
 
 msgctxt "#31225"
 msgid "Top rated movies"
-msgstr "Najlepšie hodnotené filmy"
+msgstr "Best beoordeelde films"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31226"
 msgid "Select OSD timeout"
-msgstr "Vyberte časový limit OSD"
+msgstr "Selecteer OSD-time-out"
 
 #: /1080i/script-upnext-upnext.xml
 msgctxt "#31227"
 msgid "Up next in"
-msgstr "Ďalej v"
+msgstr "Volgende in"
 
 #: /1080i/script-upnext-stillwatching-simple.xml
 msgctxt "#31228"
 msgid "Continue watching in"
-msgstr "Pokračovať v sledovaní"
+msgstr "Blijf kijken naar"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31229"
 msgid "Panels behind text"
-msgstr "Panely za textom"
+msgstr "Panelen achter tekst"
 
 #: /shortcuts/overrides.xml
 msgctxt "#31230"
 msgid "Top rated episodes"
-msgstr "Najlepšie hodnotené epizódy"
+msgstr "Best beoordeelde afleveringen"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31231"
 msgid "Autoclose OSD"
-msgstr "Automaticky zavrieť OSD"
+msgstr "OSD automatisch sluiten"
 
 #: /1080i/Includes_View_52_Posters.xml
 msgctxt "#31232"
 msgid "Posters"
-msgstr "Plagáty"
+msgstr "Posters"
 
 #: /shortcuts/overrides.xml
 msgctxt "#31233"
 msgid "Random TV shows"
-msgstr "Náhodne TV seriály"
+msgstr "Willekeurige tv-programma's"
 
 #: /1080i/Includes_View_54_Episodes.xml
 msgctxt "#31234"
@@ -1167,57 +1200,59 @@ msgstr "Hub"
 
 msgctxt "#31236"
 msgid "Now playing..."
-msgstr "Prehráva sa..."
+msgstr "Nu aan het afspelen..."
 
 #: /1080i/Includes_View_51_Addons.xml
 msgctxt "#31237"
 msgid "Square"
-msgstr "Square"
+msgstr "Vierkant"
 
 #: /shortcuts/overrides.xml
 msgctxt "#31238"
 msgid "Recently added albums"
-msgstr "Nedávno pridané albumy"
+msgstr "Recent toegevoegde albums"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31239"
 msgid "Busy animation"
-msgstr "Animácia zaneprázdnenosti"
+msgstr "Drukke animatie"
 
 #: /1080i/Custom_1116_Wizard.xml
 msgctxt "#31240"
 msgid "Colour scheme"
-msgstr "Farebná schéma"
+msgstr "Kleurenschema"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31241"
 msgid "Autowidth submenu hub buttons (disable to fix hub scrolling issues)"
-msgstr "Automaticky nastaviť šírku Hub tlačidiel (vypnúť pri problémoch s rolovaním Hub-u)"
+msgstr ""
+"Autowidth submenu hub-knoppen (uitschakelen om problemen met scrollen door "
+"hub op te lossen)"
 
 #: /shortcuts/overrides.xml
 msgctxt "#31242"
 msgid "Recently played albums"
-msgstr "Nedávno hrane albumy"
+msgstr "Recent afgespeelde albums"
 
 #: /shortcuts/overrides.xml
 msgctxt "#31243"
 msgid "Top 100 albums"
-msgstr "Top 100 albumov"
+msgstr "Top 100 albums"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31244"
 msgid "PVR channels"
-msgstr "PVR kanály"
+msgstr "PVR-kanalen"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31245"
 msgid "Display the \"Show More...\" widget item"
-msgstr "Zobraziť \"Zobraziť viac...\" na konci widgetu"
+msgstr "Geef het widget-item \"Meer weergeven…\" weer"
 
 #: /shortcuts/overrides.xml
 msgctxt "#31246"
 msgid "Submenu popup"
-msgstr "Vyskakovacie okno podmenu"
+msgstr "Submenu pop-up"
 
 #: /shortcuts/overrides.xml
 msgctxt "#31247"
@@ -1227,7 +1262,7 @@ msgstr "Showcase hub"
 #: /1080i/script-skinshortcuts.xml
 msgctxt "#31248"
 msgid "Edit shortcuts"
-msgstr "Upraviť skratky"
+msgstr "Bewerk snelkoppelingen"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31249"
@@ -1237,32 +1272,32 @@ msgstr "Clearart"
 #: /1080i/Custom_1120_EnableInfoButtons.xml
 msgctxt "#31250"
 msgid "Position"
-msgstr "Pozícia"
+msgstr "Positie"
 
 #: /1080i/Custom_1119_EnableInfoLists.xml
 msgctxt "#31251"
 msgid "Crew"
-msgstr "Štáb"
+msgstr "Crew"
 
 #: /1080i/Custom_1119_EnableInfoLists.xml
 msgctxt "#31252"
 msgid "Recommended"
-msgstr "Odporúčania"
+msgstr "Aanbevolen"
 
 #: /1080i/Custom_1119_EnableInfoLists.xml
 msgctxt "#31253"
 msgid "Features cast"
-msgstr "Obsadenie"
+msgstr "Cast leden"
 
 #: /1080i/Custom_1119_EnableInfoLists.xml
 msgctxt "#31254"
 msgid "Poster gallery"
-msgstr "Galéria plagátov"
+msgstr "Poster galerij"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31255"
 msgid "Lists and menus"
-msgstr "Zoznamy a munu"
+msgstr "Lijsten en menu's"
 
 #: /1080i/DialogKeyboard.xml
 msgctxt "#31256"
@@ -1272,247 +1307,249 @@ msgstr "IP"
 #: /shortcuts/overrides.xml
 msgctxt "#31257"
 msgid "Movie genres"
-msgstr "Žánre filmov"
+msgstr "Filmgenres"
 
 #: /1080i/GameOSD.xml
 msgctxt "#31258"
 msgid "Select + X"
-msgstr "Vybrať + X"
+msgstr "Selecteer + X"
 
 #: /1080i/GameOSD.xml
 msgctxt "#31259"
 msgid "Select + Start"
-msgstr "Vybrať + Štart"
+msgstr "Selecteer + Start"
 
 #: /shortcuts/overrides.xml
 msgctxt "#31260"
 msgid "Movie sets"
-msgstr "Kolekcie"
+msgstr "Filmsets"
 
 #: /1080i/Includes_Labels.xml
 msgctxt "#31261"
 msgid "Horizontal"
-msgstr "Horizontálne"
+msgstr "Horizontaal"
 
 msgctxt "#31262"
 msgid "Poster"
-msgstr "Plagát"
+msgstr "Poster"
 
 #: /1080i/Includes_Labels.xml
 msgctxt "#31263"
 msgid "Vertical"
-msgstr "Vertikálne"
+msgstr "Verticaal"
 
 #: /1080i/Includes_Labels.xml
 msgctxt "#31264"
 msgid "Monochrome"
-msgstr "Jednofarebné"
+msgstr "Monochroom"
 
 #: /1080i/Includes_Labels.xml
 msgctxt "#31265"
 msgid "Blur"
-msgstr "Rozostrenie"
+msgstr "Vervagen"
 
 #: /1080i/Includes_Labels.xml
 msgctxt "#31266"
 msgid "Vignette"
-msgstr "Vigneta"
+msgstr "Vignettering"
 
 msgctxt "#31267"
 msgid "Action"
-msgstr "Akcia"
+msgstr "Actie"
 
 msgctxt "#31268"
 msgid "Label"
-msgstr "Názov"
+msgstr "Label"
 
 msgctxt "#31269"
 msgid "Fallback widget"
-msgstr "Fallback widget"
+msgstr "Terugval-widget"
 
 msgctxt "#31270"
 msgid "Video / Music"
-msgstr "Video / Hudba"
+msgstr "Video / muziek"
 
 msgctxt "#31271"
 msgid "Single image"
-msgstr "Jeden obrázok"
+msgstr "Enkele afbeelding"
 
 msgctxt "#31272"
 msgid "Multi image"
-msgstr "Viac obrázkov"
+msgstr "Meerdere afbeeldingen"
 
 #: /1080i/Includes_Labels.xml
 msgctxt "#31273"
 msgid "Shadow"
-msgstr "Tieň"
+msgstr "Schaduw"
 
 #: /shortcuts/overrides.xml
 msgctxt "#31274"
 msgid "TvShow genres"
-msgstr "Žánre TV seriálov"
+msgstr "Tv-programma genres"
 
 #: /shortcuts/overrides.xml
 msgctxt "#31275"
 msgid "Classic hub"
-msgstr "Klasický Hub"
+msgstr "Klassieke hub"
 
 #: /shortcuts/overrides.xml
 msgctxt "#31276"
 msgid "IMDB top 250 movies"
-msgstr "Top 250 filmov na IMDB"
+msgstr "IMDB top 250 films"
 
 #: /1080i/Includes_Labels.xml
 msgctxt "#31277"
 msgid "Flat"
-msgstr "Hladký"
+msgstr "Vlak"
 
 #: /shortcuts/overrides.xml
 msgctxt "#31278"
 msgid "Unwatched movies"
-msgstr "Nevidené filmy"
+msgstr "Onbekeken films"
 
 msgctxt "#31279"
 msgid "Video decoder"
-msgstr "Video dekóder"
+msgstr "Videodecoder"
 
 msgctxt "#31280"
 msgid "Pixel format"
-msgstr "Format pixelov"
+msgstr "Pixel-formaat"
 
 #: /1080i/Includes_View_51_Addons.xml
 msgctxt "#31281"
 msgid "Row"
-msgstr ""
+msgstr "Rij"
 
 #: /1080i/Includes_View_51_Addons.xml
 msgctxt "#31282"
 msgid "Square row"
-msgstr ""
+msgstr "Vierkante rij"
 
 #: /shortcuts/overrides.xml
 msgctxt "#31283"
 msgid "Unwatched episodes"
-msgstr "Nevidené epizódy"
+msgstr "Onbekeken afleveringen"
 
 #: /1080i/Includes_View_52_Posters.xml
 msgctxt "#31284"
 msgid "Poster row"
-msgstr ""
+msgstr "Poster rij"
 
 #: /1080i/Includes_View_53_Seasons.xml
 msgctxt "#31285"
 msgid "Landscape integrated"
-msgstr ""
+msgstr "Landscape geïntegreerd"
 
 msgctxt "#31286"
 msgid "Highlight colour"
-msgstr "Farba zvýraznenia riadku"
+msgstr "Markeer kleur"
 
 #: /1080i/Includes_View_54_Episodes.xml
 msgctxt "#31287"
 msgid "Landscape row"
-msgstr ""
+msgstr "Landscape rij"
 
 #: /1080i/Includes_View_55_List.xml
 msgctxt "#31288"
 msgid "Landscape list"
-msgstr ""
+msgstr "Landscape lijst"
 
 #: /1080i/Includes_View_55_List.xml
 msgctxt "#31289"
 msgid "Square list"
-msgstr ""
+msgstr "Vierkante lijst"
 
 #: /1080i/Includes_View_57_BigBanner.xml
 msgctxt "#31290"
 msgid "Banner row"
-msgstr ""
+msgstr "Banner rij"
 
 #: /1080i/Includes_View_58_Artists.xml
 msgctxt "#31291"
 msgid "Square integrated"
-msgstr ""
+msgstr "Vierkant geïntegreerd"
 
 #: /1080i/Includes_View_59_Sets.xml
 msgctxt "#31292"
 msgid "Poster integrated"
-msgstr ""
+msgstr "Poster geïntegreerd"
 
 #: /1080i/Custom_1151_ClassicHub.xml
 msgctxt "#31293"
 msgid "Categories"
-msgstr "Kategórie"
+msgstr "Categorieën"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31294"
 msgid "Icon only"
-msgstr "Iba ikony"
+msgstr "Alleen icoon"
 
 #: /shortcuts/overrides.xml
 msgctxt "#31295"
 msgid "Random artists"
-msgstr "Náhodný umelec"
+msgstr "Willekeurige artiesten"
 
 #: /shortcuts/overrides.xml
 msgctxt "#31296"
 msgid "Movie nodes"
-msgstr "Uzly filmu"
+msgstr "Filmknooppunten"
 
 #: /shortcuts/overrides.xml
 msgctxt "#31297"
 msgid "TV nodes"
-msgstr "Uzly TV seriálu"
+msgstr "Tv-knooppunten"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31298"
 msgid "Submenu on left/up"
-msgstr "Podmenu naľavo/hore"
+msgstr "Submenu links / boven"
 
 #: /shortcuts/overrides.xml
 msgctxt "#31300"
 msgid "Music nodes"
-msgstr "Uzly hudby"
+msgstr "Muziekknooppunten"
 
 #: /shortcuts/overrides.xml
 msgctxt "#31301"
 msgid "TV shows"
-msgstr "TV seriály"
+msgstr "Tv-programma's"
 
 #: /shortcuts/overrides.xml
 msgctxt "#31302"
 msgid "Music sources"
-msgstr "Zdroje hudby"
+msgstr "Muziekbronnen"
 
 #: /1080i/DialogAddonInfo.xml
 msgctxt "#31303"
 msgid "Latest changes"
-msgstr "Posledné zmeny"
+msgstr "Laatste wijzigingen"
 
 #: /shortcuts/overrides.xml
 msgctxt "#31304"
 msgid "Picture sources"
-msgstr "Zdroje obrázkov"
+msgstr "Fotobronnen"
 
 #: /1080i/Includes_Labels.xml
 msgctxt "#31308"
 msgid "Player"
-msgstr "Prehrávač"
+msgstr "Speler"
 
 #: /1080i/Includes_Home.xml
 msgctxt "#31310"
 msgid "User rating"
-msgstr "Užívateľské hodnotenie"
+msgstr "Gebruikersbeoordeling"
 
 #: /1080i/Includes_OSD.xml
 msgctxt "#31311"
 msgid "Rate song"
-msgstr "Ohodnotiť skladbu"
+msgstr "Beoordeel nummer"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31314"
 msgid "Automatically display music video info at beginning and end of clip"
-msgstr "Automaticky zobraziť informácie o videu na začiatku a konci klipu"
+msgstr ""
+"Automatisch muziekvideo-informatie weergeven aan het begin en het einde van "
+"de clip"
 
 #: /1080i/Settings.xml
 msgctxt "#31343"
@@ -1527,102 +1564,102 @@ msgstr "Video OSD"
 #: /1080i/SkinSettings.xml
 msgctxt "#31347"
 msgid "Music OSD"
-msgstr "Hudobné OSD"
+msgstr "Muziek OSD"
 
 #: /1080i/Startup.xml
 msgctxt "#31349"
 msgid "Initialising Skin"
-msgstr "Prebieha načítavanie skinu"
+msgstr "Skin initialiseren"
 
 #: /1080i/Custom_1136_VideoInfo.xml
 msgctxt "#31356"
 msgid "years old"
-msgstr "rokov"
+msgstr "jaren oud"
 
 #: /1080i/Includes_View_Posters.xml
 msgctxt "#31358"
 msgid "Poster wall"
-msgstr ""
+msgstr "Poster muur"
 
 #: /1080i/Includes_View_Posters.xml
 msgctxt "#31359"
 msgid "Landscape wall"
-msgstr ""
+msgstr "Landscape muur"
 
 #: /1080i/Includes_View_Posters.xml
 msgctxt "#31360"
 msgid "Square wall"
-msgstr ""
+msgstr "Vierkant muur"
 
 #: /shortcuts/overrides.xml
 msgctxt "#31367"
 msgid "Recently added TV shows"
-msgstr "Nedávno pridané TV seriály"
+msgstr "Onlangs toegevoegde tv-programma`s"
 
 #: /1080i/EventLog.xml
 msgctxt "#31374"
 msgid "Order"
-msgstr "Poradie"
+msgstr "Bestelling"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31377"
 msgid "Video lyrics"
-msgstr "Texty skladieb"
+msgstr "Video songteksten"
 
 #: /1080i/Includes_Labels.xml
 msgctxt "#31380"
 msgid "Untitled"
-msgstr "Bez názvu"
+msgstr "Zonder titel"
 
 #: /shortcuts/overrides.xml
 msgctxt "#31381"
 msgid "Last played channels"
-msgstr "Naposledy spustené kanály"
+msgstr "Laatst afgespeelde kanalen"
 
 #: /shortcuts/overrides.xml
 msgctxt "#31382"
 msgid "Active recordings"
-msgstr "Aktívne nahrávky"
+msgstr "Actieve opnames"
 
 #: /shortcuts/overrides.xml
 msgctxt "#31383"
 msgid "Grouped active recordings"
-msgstr "Zoskupené aktívne nahrávky"
+msgstr "Gegroepeerde actieve opnames"
 
 #: /shortcuts/overrides.xml
 msgctxt "#31384"
 msgid "Grouped deleted recordings"
-msgstr "Zoskupené vymazané nahrávky"
+msgstr "Gegroepeerde verwijderde opnames"
 
 #: /1080i/Includes_Topbar.xml
 msgctxt "#31391"
 msgid "Page"
-msgstr "Stránka"
+msgstr "Pagina"
 
 #: /1080i/Includes_Items.xml
 msgctxt "#31395"
 msgid "Music playlist"
-msgstr "Hudobný playlist"
+msgstr "Muziek afspeellijst"
 
 #: /1080i/Includes_Items.xml
 msgctxt "#31396"
 msgid "Video playlist"
-msgstr "Video playlist"
+msgstr "Video-afspeellijst"
 
 #: /1080i/Includes_Items.xml
 msgctxt "#31408"
 msgid "Subtitle settings"
-msgstr "Nastavenia titulkov"
+msgstr "Ondertitelingsinstellingen"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31409"
 msgid "Subtitles button opens subtitle settings"
-msgstr "Tlačidlo titulkov otvorí nastavenia titulkov"
+msgstr "Ondertitelingsknop opent ondertitelinstellingen"
 
 #: /1080i/DialogPVRChannelManager.xml
 msgctxt "#31412"
 msgid "Apply"
-msgstr "Potvrdiť"
+msgstr "Toepassen"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31422"
@@ -1632,14 +1669,14 @@ msgstr "Live TV / PVR"
 #: /1080i/Includes_View.xml
 msgctxt "#31428"
 msgid "Loading"
-msgstr "Nahrávanie"
+msgstr "Wordt geladen"
 
 #: /shortcuts/overrides.xml
 msgctxt "#31429"
 msgid "Submenu hub"
-msgstr "Hub podmenu"
+msgstr "Submenu-hub"
 
 #: /1080i/script-skin_helper_service-ColorPicker.xml
 msgctxt "#31433"
 msgid "Switch palette"
-msgstr "Zmeniť paletu"
+msgstr "Wissel van palet"
