@@ -177,8 +177,18 @@
             "viewtypes": ["500", "54", "504", "52", "502", "51", "501"],
             "library": "500"
         },
+        "ael-launcher": {
+            "rule": "Container.Content() + [String.IsEqual(Container.FolderPath,plugin://plugin.program.advanced.emulator.launcher/) | String.IsEqual(Container.FolderPath,plugin://plugin.program.advanced.emulator.launcher/?content_type=executable)]",
+            "viewtypes": ["50", "500", "52", "55", "54", "57", "502", "501", "504"],
+            "plugins": "52"
+        },
+        "ael-rom": {
+            "rule": "Container.Content() + String.StartsWith(Container.FolderPath,plugin://plugin.program.advanced.emulator.launcher/) + ![String.IsEqual(Container.FolderPath,plugin://plugin.program.advanced.emulator.launcher/) | String.IsEqual(Container.FolderPath,plugin://plugin.program.advanced.emulator.launcher/?content_type=executable)]",
+            "viewtypes": ["50", "500", "52", "55", "54", "57", "502", "501", "504"],
+            "plugins": "50"
+        },
         "none": {
-            "rule": "Container.Content() + !Window.IsVisible(MyPVRTimers.xml) + !Window.IsVisible(MyPVRSearch.xml) + !Window.IsVisible(MyPVRRecordings.xml)",
+            "rule": "Container.Content() + !String.StartsWith(Container.FolderPath,plugin://plugin.program.advanced.emulator.launcher/) + !Window.IsVisible(MyPVRTimers.xml) + !Window.IsVisible(MyPVRSearch.xml) + !Window.IsVisible(MyPVRRecordings.xml)",
             "viewtypes": ["50", "500"],
             "library": "50",
             "plugins": "500"

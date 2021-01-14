@@ -1982,6 +1982,8 @@
     </include>
 
     <variable name="Items_ViewMode_Switch">
+        <value condition="String.IsEqual(Container.FolderPath,plugin://plugin.program.advanced.emulator.launcher/) | String.IsEqual(Container.FolderPath,plugin://plugin.program.advanced.emulator.launcher/?content_type=executable)">ael-launcher</value>
+        <value condition="String.StartsWith(Container.FolderPath,plugin://plugin.program.advanced.emulator.launcher/)">ael-rom</value>
         <value condition="String.IsEqual(Container.Content,genres) + Window.IsVisible(MyMusicNav.xml)">genres-music</value>
         <value condition="String.IsEqual(Container.Content,years) + Window.IsVisible(MyMusicNav.xml)">years-music</value>
         <value condition="!String.IsEmpty(Container.Content)">$INFO[Container.Content]</value>
