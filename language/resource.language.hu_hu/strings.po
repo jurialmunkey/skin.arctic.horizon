@@ -308,7 +308,7 @@ msgstr "Hub widget testreszabása"
 #: /1080i/DialogContextMenu.xml
 msgctxt "#31059"
 msgid "Context menu"
-msgstr "Kontzext menü"
+msgstr "Kontext menü"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31060"
