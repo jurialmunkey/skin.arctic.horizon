@@ -7,7 +7,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: es_ES\n"
+"Language: it_it\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: /1080i/Custom_1118_EnableRatings.xml
@@ -468,7 +468,7 @@ msgstr "Personalizza i pulsanti della finestra di dialogo delle informazioni"
 #: /1080i/SkinSettings.xml
 msgctxt "#31091"
 msgid "Trailer window"
-msgstr "Tráiler en modo ventana"
+msgstr "Tráiler in modalità finestra"
 
 #: /1080i/Includes_Items.xml
 msgctxt "#31092"
@@ -478,32 +478,32 @@ msgstr "Vista"
 #: /1080i/SkinSettings.xml
 msgctxt "#31093"
 msgid "Customise viewtypes"
-msgstr "Personalizar tipos de vista"
+msgstr "Personalizza i tipi di visualizzazione"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31094"
 msgid "Apply colour diffuse to icons"
-msgstr "Aplicar colores difusos a los iconos"
+msgstr "Applica la diffusione del colore alle icone"
 
 #: /1080i/Custom_1116_Wizard.xml
 msgctxt "#31095"
 msgid "Online info dialog lists"
-msgstr "Listas de diálogo de información online"
+msgstr "Elenchi di finestre di dialogo delle informazioni in linea"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31096"
 msgid "Use song track-naming template"
-msgstr "Usar una plantilla para nombrar pistas de canciones"
+msgstr "Usa song track-naming template"
 
 #: /1080i/Includes_Home.xml
 msgctxt "#31097"
 msgid "Ends at"
-msgstr "Finaliza en"
+msgstr "Finisce alle"
 
 #: /1080i/script-skinshortcuts.xml
 msgctxt "#31098"
 msgid "Choose widget"
-msgstr "Seleccionar widget"
+msgstr "Selezionare widget"
 
 #: /1080i/script-skinshortcuts.xml
 msgctxt "#31099"
@@ -513,7 +513,7 @@ msgstr "Widgets"
 #: /1080i/script-skinshortcuts.xml
 msgctxt "#31100"
 msgid "Content type"
-msgstr "Tipo de contenido"
+msgstr "Tipo di contenuto"
 
 msgctxt "#31101"
 msgid "items"
@@ -525,11 +525,11 @@ msgstr "min"
 
 msgctxt "#31103"
 msgid "Live TV"
-msgstr "TV en directo"
+msgstr "TV in diretta"
 
 msgctxt "#31104"
 msgid "Used memory"
-msgstr "Memoria usada"
+msgstr "Memoria usata"
 
 msgctxt "#31105"
 msgid "Spotlight"
@@ -537,12 +537,12 @@ msgstr "Destacadas"
 
 msgctxt "#31106"
 msgid "Ends "
-msgstr "Finaliza a las "
+msgstr "Finisce alle"
 
 #: /1080i/script-skinshortcuts.xml
 msgctxt "#31107"
 msgid "Item limit"
-msgstr "Límite de elementos"
+msgstr "Límite degli elementi"
 
 #: /1080i/Includes_View_56_Banners.xml
 msgctxt "#31108"
@@ -551,7 +551,7 @@ msgstr ""
 
 msgctxt "#31109"
 msgid "Customise home menu"
-msgstr "Personalizar menú de inicio"
+msgstr "Personalizzare menú home"
 
 msgctxt "#31110"
 msgid "Background"
@@ -559,7 +559,7 @@ msgstr "Fondo"
 
 msgctxt "#31111"
 msgid "Display now playing video in background"
-msgstr "Mostrar vídeo en reproducción como fondo"
+msgstr "Visualizza il video in riproduzione in background"
 
 msgctxt "#31112"
 msgid "Submenu"
@@ -568,27 +568,27 @@ msgstr "Submenú"
 #: /1080i/SkinSettings.xml
 msgctxt "#31113"
 msgid "Fullscreen widget path"
-msgstr "Ruta del widget de pantalla completa"
+msgstr "Percorso widget a schermo intero"
 
 #: /1080i/Includes_Labels.xml
 msgctxt "#31114"
 msgid "on"
-msgstr "en"
+msgstr "su"
 
 #: /1080i/Includes_Labels.xml
 msgctxt "#31115"
 msgid "Last aired"
-msgstr "Última emisión"
+msgstr "Ultima trasmissione"
 
 #: /1080i/Custom_1118_EnableRatings.xml
 msgctxt "#31116"
 msgid "Additional ratings"
-msgstr "Calificaciones adicionales"
+msgstr "Valutazioni aggiuntive"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31117"
 msgid "10 seconds"
-msgstr "10 segundos"
+msgstr "10 secondi"
 
 msgctxt "#31118"
 msgid "Artist slideshow"
@@ -596,11 +596,11 @@ msgstr ""
 
 msgctxt "#31119"
 msgid "Visualisation behind slideshow"
-msgstr "Mostrar presentación de diapositivas detrás de visualización"
+msgstr "Visualizzazione dietro la presentazione"
 
 msgctxt "#31120"
 msgid "Animate artist slideshow"
-msgstr "Mostrar animación en la presentación de diapositivas del artista"
+msgstr "Animare la presentazione dell'artista"
 
 msgctxt "#31121"
 msgid "Fanart"
@@ -609,57 +609,57 @@ msgstr ""
 #: /1080i/SkinSettings.xml
 msgctxt "#31122"
 msgid "12 seconds"
-msgstr "12 segundos"
+msgstr "12 secondi"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31123"
 msgid "15 seconds"
-msgstr "15 segundos"
+msgstr "15 secondi"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31124"
 msgid "20 seconds"
-msgstr "20 segundos"
+msgstr "20 secondi"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31125"
 msgid "30 seconds"
-msgstr "30 segundos"
+msgstr "30 secondi"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31126"
 msgid "60 seconds"
-msgstr "60 segundos"
+msgstr "60 secondi"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31127"
 msgid "10 minutes"
-msgstr "10 minutos"
+msgstr "10 minuti"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31128"
 msgid "Set autoscroll and time per image"
-msgstr "Establecer desplazamiento automático y tiempo para cada imagen"
+msgstr "Imposta lo scorrimento automatico e il tempo per immagine"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31129"
 msgid "Gradient colour"
-msgstr "Color de degradado"
+msgstr "Colore sfumato"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31130"
 msgid "Overlay colour"
-msgstr "Color de superposición"
+msgstr "Colore di sovrapposizione"
 
 #: /1080i/MusicOSD.xml
 msgctxt "#31131"
 msgid "Colour overlay"
-msgstr "Superposición de color"
+msgstr "Sovrapposizione di colore"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31132"
 msgid "Foreground"
-msgstr "Primer plano"
+msgstr "Primo piano"
 
 #: /1080i/Includes_Labels.xml
 msgctxt "#31133"
@@ -669,12 +669,12 @@ msgstr ""
 #: /1080i/SkinSettings.xml
 msgctxt "#31134"
 msgid "Supported addons"
-msgstr "Complementos compatibles"
+msgstr "addon supportati"
 
 #: /1080i/Custom_1119_EnableInfoLists.xml
 msgctxt "#31135"
 msgid "Similar"
-msgstr "Similar"
+msgstr "Simile"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31136"
