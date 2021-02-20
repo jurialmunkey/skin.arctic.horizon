@@ -679,27 +679,27 @@ msgstr "Simile"
 #: /1080i/SkinSettings.xml
 msgctxt "#31136"
 msgid "Music visualisation"
-msgstr "Visualización de música"
+msgstr "Visualizzazione della musica"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31137"
 msgid "Fullscreen video"
-msgstr "Vídeo a pantalla completa"
+msgstr "Vídeo a schermo intero"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31138"
 msgid "List items"
-msgstr "Lista de elementos"
+msgstr "Elementi della lista"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31139"
 msgid "Widgets and layout"
-msgstr "Widgets y diseño"
+msgstr "Widgets e layout"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31140"
 msgid "Background images"
-msgstr "Imágenes de fondo"
+msgstr "Immagine di sfondo"
 
 msgctxt "#31141"
 msgid "YouTube"
@@ -708,22 +708,22 @@ msgstr "YouTube"
 #: /1080i/MusicOSD.xml
 msgctxt "#31142"
 msgid "Scrolling text"
-msgstr "Texto en desplazamiento"
+msgstr "Testo scorrevole"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31143"
 msgid "Miscellaneous"
-msgstr "Misceláneo"
+msgstr "Miscellanea"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31144"
 msgid "Fonts and artwork"
-msgstr "Fuentes e ilustraciones"
+msgstr "Font e illlustrazioni"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31145"
 msgid "Display additional on-screen information with controls or when paused"
-msgstr "Mostrar información adicional en pantalla con controles o cuando se está en pausa"
+msgstr "Visualizza ulteriori informazioni sullo schermo con i controlli o quando è in pausa"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31146"
