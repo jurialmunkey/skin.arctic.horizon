@@ -728,51 +728,51 @@ msgstr "Visualizza ulteriori informazioni sullo schermo con i controlli o quando
 #: /1080i/SkinSettings.xml
 msgctxt "#31146"
 msgid "General options"
-msgstr "Opciones generales"
+msgstr "Opzioni generali"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31147"
 msgid "Items and views"
-msgstr "Elementos y vistas"
+msgstr "Elementi e visualizzazioni"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31148"
 msgid "Lists and other"
-msgstr "Listas y otros"
+msgstr "Liste e altro"
 
 #: /1080i/Includes_View_59_Sets.xml
 msgctxt "#31149"
 msgid "Collections"
-msgstr "Colecciones"
+msgstr "Collezioni"
 
 msgctxt "#31150"
 msgid "Fallback image"
-msgstr "Establecer imagen alternativa"
+msgstr "Immagine di alternativa"
 
 #: /1080i/Custom_1121_EnableIndicators.xml
 msgctxt "#31151"
 msgid "Classic corner style indicators"
-msgstr "Indicadores de estilo clásico de esquina"
+msgstr "Indicatori di stile classico ad angolo"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31152"
 msgid "Viewtypes"
-msgstr "Tipos de vista"
+msgstr "Tipo di vista"
 
 #: /1080i/Custom_1117_ColorPicker.xml
 msgctxt "#31153"
 msgid "Value"
-msgstr "Valor"
+msgstr "Valore"
 
 #: /1080i/Custom_1117_ColorPicker.xml
 msgctxt "#31154"
 msgid "Colour"
-msgstr "Color"
+msgstr "Colore"
 
 #: /1080i/Includes_DialogVideoInfo.xml
 msgctxt "#31155"
 msgid "Revenue / Budget"
-msgstr "Ingresos / Presupuesto"
+msgstr "Entrate / Budget"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31156"
