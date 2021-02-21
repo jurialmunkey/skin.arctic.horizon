@@ -32,9 +32,11 @@
         </control>
 
         <control type="group">
+            <!-- MOD qui si attiva il wall -->
             <visible>Control.IsVisible(5252)</visible>
             <include>Animation_Down</include>
-            <include content="Viewtype_WallSwitch">
+            <!-- MOD richiamo la vista modificata -->
+            <include content="Viewtype_WallSwitch_mod">
                 <param name="id" value="52" />
                 <param name="include" value="Viewtype_Poster" />
                 <param name="viewtype-label" value="$LOCALIZE[31284]" />
@@ -100,8 +102,6 @@
             </include>
         </control>
     </include>
-
-
 
 </includes>
 

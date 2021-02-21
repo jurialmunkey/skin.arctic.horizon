@@ -25,11 +25,12 @@
             </include>
         </definition>
     </include>
-
+    
+    <!-- qui visualizza titolo, rating e plot -->
     <include name="View_Info_Grouplist">
         <param name="container" default="" />
-        <param name="plotheight" default="80" />
-        <param name="plotheight-nr" default="120" />
+        <param name="plotheight" default="130" />
+        <param name="plotheight-nr" default="130" />
         <param name="codectop" default="20" />
         <param name="visible-details" default="true" />
         <param name="ratings" default="true" />
@@ -38,24 +39,29 @@
                 <orientation>vertical</orientation>
                 <usecontrolcoords>true</usecontrolcoords>
                 <itemgap>0</itemgap>
+                <!-- Titolo --> 
                 <include content="Object_Info_Title">
                     <param name="label" value="$PARAM[title]" />
                 </include>
+                <!-- info genere, anno, durata -->
                 <include content="Object_Info_Line">
                     <param name="label" value="$PARAM[infoline-label]" />
                     <param name="image" value="$PARAM[infoline-image]" />
                 </include>
+                <!-- ratings -->
                 <include content="Object_Info_Ratings" condition="$PARAM[visible-details] + $PARAM[ratings] + !Skin.HasSetting(DisableAllRatings)">
                     <param name="userrating" value="$PARAM[container]ListItem.UserRating" />
                     <param name="starrating" value="$PARAM[container]ListItem.Rating" />
                     <visible>$PARAM[visible-details]</visible>
                     <visible>String.IsEqual($PARAM[container]ListItem.DBType,movie) | String.IsEqual($PARAM[container]ListItem.DBType,episode) | String.IsEqual($PARAM[container]ListItem.DBType,tvshow) | String.IsEqual($PARAM[container]ListItem.DBType,season) | String.IsEqual($PARAM[container]ListItem.DBType,set)</visible>
+                    <top>-30</top>
                 </include>
+                <!-- Trama -->
                 <include content="View_Info_Grouplist_Plotbox" condition="$PARAM[visible-details] + $PARAM[ratings] + !Skin.HasSetting(DisableAllRatings)">
                     <param name="episodetitle" value="$INFO[$PARAM[container]ListItem.Title]" />
                     <param name="episodetitle-visible" value="!String.IsEmpty($PARAM[container]ListItem.Title) + String.IsEqual($PARAM[container]ListItem.DBType,episode)" />
                     <param name="plot" value="$PARAM[plot]" />
-                    <top>35</top>
+                    <top>15</top>
                     <height>$PARAM[plotheight]</height>
                     <visible>$PARAM[visible-details]</visible>
                     <visible>String.IsEqual($PARAM[container]ListItem.DBType,movie) | String.IsEqual($PARAM[container]ListItem.DBType,episode) | String.IsEqual($PARAM[container]ListItem.DBType,tvshow) | String.IsEqual($PARAM[container]ListItem.DBType,season) | String.IsEqual($PARAM[container]ListItem.DBType,set)</visible>
@@ -64,7 +70,7 @@
                     <param name="episodetitle" value="$INFO[$PARAM[container]ListItem.Title]" />
                     <param name="episodetitle-visible" value="!String.IsEmpty($PARAM[container]ListItem.Title) + String.IsEqual($PARAM[container]ListItem.DBType,episode)" />
                     <param name="plot" value="$PARAM[plot]" />
-                    <top>35</top>
+                    <top>15</top>
                     <height>$PARAM[plotheight-nr]</height>
                     <visible>![String.IsEqual($PARAM[container]ListItem.DBType,movie) | String.IsEqual($PARAM[container]ListItem.DBType,episode) | String.IsEqual($PARAM[container]ListItem.DBType,tvshow) | String.IsEqual($PARAM[container]ListItem.DBType,season) | String.IsEqual($PARAM[container]ListItem.DBType,set)] | ![$PARAM[ratings]] | Skin.HasSetting(DisableAllRatings)</visible>
                 </include>
@@ -80,7 +86,6 @@
             <include>skinshortcuts-template-hubmenu</include>
         </control>
     </include>
-
 
     <include name="View_Info_Buttons">
         <control type="grouplist" id="$PARAM[grouplistid]">

@@ -76,7 +76,12 @@
             </control>
 
             <control type="group" description="Standard Fixedlist Views">
+                <!-- MOD 
                 <visible>Control.IsVisible(51) | Control.IsVisible(52) | Control.IsVisible(53) | Control.IsVisible(54) | Control.IsVisible(57) | Control.IsVisible(58) | Control.IsVisible(59)</visible>
+                -->
+                
+                <visible>Control.IsVisible(51) | Control.IsVisible(53) | Control.IsVisible(54) | Control.IsVisible(57) | Control.IsVisible(58) | Control.IsVisible(59)</visible>
+                
                 <include content="Viewtype_BackPanel">
                     <include>Animation_Down</include>
                     <visible>Control.IsVisible(51) | Control.IsVisible(52) | Control.IsVisible(53) | Control.IsVisible(54) | Control.IsVisible(57) | Control.IsVisible(58) | Control.IsVisible(59)</visible>
@@ -121,6 +126,67 @@
                     <visible>!Control.IsVisible(56)</visible>
                     <visible>!Control.IsVisible(58)</visible>
                     <visible>!Control.IsVisible(59)</visible>
+                </include>
+            </control>
+            
+            <!-- MOD START qui la view con il titolo, rating e plot  spostai in alto per la view 52 -->
+            <control type="group" description="Standard Fixedlist Views_mod">
+                <visible>Control.IsVisible(52)</visible>
+                <width>2300</width>
+                <include content="Viewtype_BackPanel">
+                    <include>Animation_Down</include>
+                    <visible>!Control.IsVisible(5252) + Control.IsVisible(52)</visible>
+                    <height>580</height>
+                </include>
+                <include content="Viewtype_BackPanel">
+                    <include>Animation_Down</include>
+                    <visible>Control.IsVisible(5252)</visible>
+                    <height>740</height>
+                </include>
+                
+                <!-- MOD Qui posiziono titolo, rating, plot etc. -->
+                <include content="View_Info_Grouplist" description="Top Section Info">
+                    <param name="container" value="Container." />
+                    <top>-155</top>
+                    <left>130</left>
+                    <height>285</height>
+                    
+                    <visible>!Control.HasFocus(530)</visible>
+                    <visible>!Control.HasFocus(580)</visible>
+                    <visible>!Control.HasFocus(590)</visible>
+                    <visible>![Control.IsVisible(53) | Control.IsVisible(58) | Control.IsVisible(59)] | [Container.Content(seasons) | Container.Content(artists) | Container.Content(sets) | Container.Content(tvshows)]</visible>
+                    <include>Viewtype_Info_Right</include>
+                </include>
+                <control type="group" description="Right Side Artwork">
+                    <control type="image">
+                        <texture background="true">$VAR[Image_ClearArt]</texture>
+                        <aspectratio align="right" aligny="bottom" scalediffuse="false">keep</aspectratio>
+                        <visible>!Control.IsVisible(51)</visible>
+                        <fadetime>400</fadetime>
+                        <right>0</right>
+                        <bottom>400</bottom>
+                        <height>320</height>
+                        <width>560</width>
+                    </control>
+                    <control type="image">
+                        <texture background="true">$VAR[Image_DiscArt]</texture>
+                        <aspectratio align="right" aligny="bottom" scalediffuse="false">keep</aspectratio>
+                        <visible>Control.IsVisible(51)</visible>
+                        <fadetime>400</fadetime>
+                        <right>0</right>
+                        <bottom>480</bottom>
+                        <height>320</height>
+                        <width>670</width>
+                    </control>
+                </control>
+                <!-- qui vi sono i button INFO, TRAILER, SIMILAR, FILTO, OPZIONI -->
+                <include content="View_Info_Buttons">
+                    <param name="grouplistid" value="300" />
+                    <top>150</top>
+                    <visible>!Control.IsVisible(5252) + !Control.IsVisible(53)</visible>
+                    <visible>!Control.IsVisible(5252) + !Control.IsVisible(56)</visible>
+                    <visible>!Control.IsVisible(5252) + !Control.IsVisible(58)</visible>
+                    <visible>!Control.IsVisible(5252) + !Control.IsVisible(59)</visible>
                 </include>
             </control>
 
@@ -320,6 +386,7 @@
     </include>
 
     <!-- Posters -->
+    <!-- Vista wall MOD -->
     <include name="Viewtype_Poster">
         <param name="control-type" default="fixedlist" />
         <param name="orientation" default="horizontal" />
@@ -400,6 +467,7 @@
             </control>
         </definition>
     </include>
+    
     <include name="Viewtype_Poster_Itemlayout">
         <param name="selectbox" default="false" />
         <param name="focusbounce" default="true" />
@@ -1741,6 +1809,52 @@
             <nested />
         </include>
     </include>
+    <!-- MOD START -->
+    <include name="Viewtype_WallSwitch_mod">
+    <!-- questo include inserisce le info film nella vista wall modificata -->
+        <include content="Viewtype_Poster">
+                <param name="id" value="52" />
+                <param name="castlabel" value="Container.Content(actors)" />
+                <param name="label2" value="ListItem.Property(role)" />
+                <param name="viewtype-label" value="$LOCALIZE[31284]" />
+                <bottom>view_bottom</bottom>
+                <left>-80</left>
+                <right>-80</right>
+                <onfocus>ClearProperty(TMDbHelper.WidgetContainer,Home)</onfocus>
+                <include>Viewtype_Movement</include>
+                <onfocus condition="Skin.HasSetting(NoFanart)">SetProperty(TMDbHelper.Blur.SourceImage,Art(fallback),Home)</onfocus>
+                <onfocus condition="!Skin.HasSetting(NoFanart)">SetProperty(TMDbHelper.Blur.SourceImage,poster,Home)</onfocus>
+                <ondown condition="Skin.HasSetting(DisableWallScroll)">60</ondown>
+                <ondown condition="!Skin.HasSetting(DisableWallScroll) + [Container(52).HasNext | Container(52).HasPrevious]">SetProperty(WallMode,$INFO[Container.FolderPath])</ondown>
+                <ondown condition="!Skin.HasSetting(DisableWallScroll) + [Container(52).HasNext | Container(52).HasPrevious]">Container.SetViewMode(5252)</ondown>
+                <ondown condition="!Skin.HasSetting(DisableWallScroll) + [Container(52).HasNext | Container(52).HasPrevious]">SetFocus(25252)</ondown>
+                <visible>$EXP[Exp_View_$PARAM[id]]</visible>
+                <visible>!Window.IsVisible(MyPlaylist.xml)</visible>
+                <visible>!String.IsEqual(Container.Property(Param.Info),details)</visible>
+        </include>
+        <!-- qui c'è il wall vero e proprio -->
+        <include content="$PARAM[include]">
+            <param name="id" value="$PARAM[id]$PARAM[id]" />
+            <param name="castlabel" value="Container.Content(actors)" />
+            <param name="label2" value="ListItem.Property(role)" />
+            <param name="viewtype-label" value="$PARAM[viewtype-label]" />
+            <param name="control-type" value="panel" />
+            <param name="orientation" value="vertical" />
+            <param name="height" value="730" />
+            <param name="offsetv" value="0" />
+            <bottom>-80</bottom>
+            <left>-80</left>
+            <right>-80</right>
+            <onback>ClearProperty(WallMode)</onback>
+            <onback>Container.SetViewMode($PARAM[id])</onback>
+            <onback>1$PARAM[id]$PARAM[id]</onback>
+            <visible>$EXP[Exp_View_$PARAM[id]]</visible>
+            <visible>String.IsEqual(Window.Property(WallMode),Container.FolderPath)</visible>
+            <nested />
+        </include>
+    </include>
+    <!-- MOD END -->
+    
     <include name="Viewtype_WallSwitch_Furniture">
         <control type="group">
             <visible>Control.IsVisible($PARAM[id]$PARAM[id])</visible>
