@@ -264,7 +264,7 @@
                         <visible>Skin.HasSetting(DisableBlur) + !Skin.HasSetting(DisableOverlay)</visible>
                         <!-- <onclick condition="!System.HasAddon(script.skin.helper.colorpicker)">InstallAddon(script.skin.helper.colorpicker)</onclick>
                         <onclick>RunScript(script.skin.helper.colorpicker,skinstring=overlaycolor.name)</onclick> -->
-                        <onclick>SetProperty(colorpick,Overlay,Home)</onclick>
+                        <onclick>SetProperty(colorpick,$LOCALIZE[31179],Home)</onclick>
                         <onclick>ActivateWindow(1117)</onclick>
                     </control>
                     <control type="button" id="19206" description="Busy Loader">
@@ -327,7 +327,7 @@
                         <label2>$INFO[Skin.String(focuscolor.name)]</label2>
                         <!-- <onclick condition="!System.HasAddon(script.skin.helper.colorpicker)">InstallAddon(script.skin.helper.colorpicker)</onclick> -->
                         <!-- <onclick>RunScript(script.skin.helper.colorpicker,skinstring=focuscolor.name)</onclick> -->
-                        <onclick>SetProperty(colorpick,Highlight,Home)</onclick>
+                        <onclick>SetProperty(colorpick,$LOCALIZE[31175],Home)</onclick>
                         <onclick>ActivateWindow(1117)</onclick>
                     </control>
 
@@ -336,7 +336,7 @@
                         <include>Defs_Settings_Button</include>
                         <label>$LOCALIZE[31129]</label>
                         <label2>$INFO[Skin.String(gradientcolor.name)]</label2>
-                        <onclick>SetProperty(colorpick,Gradient,Home)</onclick>
+                        <onclick>SetProperty(colorpick,$LOCALIZE[31178],Home)</onclick>
                         <onclick>ActivateWindow(1117)</onclick>
                         <!-- <onclick condition="!System.HasAddon(script.skin.helper.colorpicker)">InstallAddon(script.skin.helper.colorpicker)</onclick>
                         <onclick>RunScript(script.skin.helper.colorpicker,skinstring=gradientcolor.name)</onclick> -->
