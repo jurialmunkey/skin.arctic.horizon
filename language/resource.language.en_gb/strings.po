@@ -1534,6 +1534,11 @@ msgctxt "#31311"
 msgid "Rate song"
 msgstr ""
 
+#: /1080i/Includes_View.xml
+msgctxt "#31312"
+msgid "Management"
+msgstr ""
+
 #: /1080i/SkinSettings.xml
 msgctxt "#31314"
 msgid "Automatically display music video info at beginning and end of clip"

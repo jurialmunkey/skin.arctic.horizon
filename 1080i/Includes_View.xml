@@ -240,7 +240,7 @@
         <definition>
             <include content="Home_Hub_Widget_Label">
                 <param name="id" value="$PARAM[top-id]" />
-                <param name="label" value="Management" />
+                <param name="label" value="$LOCALIZE[31312]" />
                 <top>-70</top>
             </include>
             <include content="Viewtype_Settings">
@@ -264,7 +264,7 @@
             </include>
             <include content="Home_Hub_Widget_Label">
                 <param name="id" value="$PARAM[bottom-id]" />
-                <param name="label" value="Settings" />
+                <param name="label" value="$LOCALIZE[5]" />
                 <top>240</top>
             </include>
             <include content="Viewtype_Settings">
