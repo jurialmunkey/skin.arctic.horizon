@@ -4,6 +4,7 @@
     <defaultcontrol always="true">300</defaultcontrol>
     <onunload>ClearProperty(OSD_Menu,Home)</onunload>
     <onload>ClearProperty(OSD_Menu,Home)</onload>
+    <onload>AlarmClock(defaultcontrol,SetFocus(300),00:00,silent)</onload>
     <controls>
 
         <control type="button" id="6"><include>Defs_Hidden_Button</include></control>
