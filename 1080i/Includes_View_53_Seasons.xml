@@ -263,7 +263,7 @@
                     <content target="videos" sortby="episode">$INFO[Container($PARAM[parentid]).ListItem.FolderPath]</content>
                     <visible>Container($PARAM[parentid]).ListItem.IsFolder + [!Container($PARAM[parentid]).ListItem.IsParentFolder + !Integer.IsEqual(Container($PARAM[parentid]).CurrentItem,1) + !Integer.IsEqual(Container($PARAM[parentid]).CurrentItem,2) + !Integer.IsEqual(Container($PARAM[parentid]).CurrentItem,3) + !Integer.IsEqual(Container($PARAM[parentid]).CurrentItem,4) + !Integer.IsEqual(Container($PARAM[parentid]).CurrentItem,5) + !Integer.IsEqual(Container($PARAM[parentid]).CurrentItem,6) + !Integer.IsEqual(Container($PARAM[parentid]).CurrentItem,7) + !Integer.IsEqual(Container($PARAM[parentid]).CurrentItem,8) + !Integer.IsEqual(Container($PARAM[parentid]).CurrentItem,9) + !Integer.IsEqual(Container($PARAM[parentid]).CurrentItem,10) + !Integer.IsEqual(Container($PARAM[parentid]).CurrentItem,11) + !Integer.IsEqual(Container($PARAM[parentid]).CurrentItem,12) + !Integer.IsEqual(Container($PARAM[parentid]).CurrentItem,13) + !Integer.IsEqual(Container($PARAM[parentid]).CurrentItem,14) + !Integer.IsEqual(Container($PARAM[parentid]).CurrentItem,15) + !Integer.IsEqual(Container($PARAM[parentid]).CurrentItem,16) + !Integer.IsEqual(Container($PARAM[parentid]).CurrentItem,17) + !Integer.IsEqual(Container($PARAM[parentid]).CurrentItem,18) + !Integer.IsEqual(Container($PARAM[parentid]).CurrentItem,19) + [!Integer.IsEqual(Container($PARAM[parentid]).CurrentItem,20) | Container($PARAM[parentid]).ListItemAbsolute(0).IsParentFolder]]</visible>
                 </include>
-                <include content="Viewtype_Poster">
+                <!-- <include content="Viewtype_Poster">
                     <param name="id" value="$PARAM[id]" />
                     <bottom>view_bottom</bottom>
                     <left>-80</left>
@@ -316,7 +316,7 @@
                     <visible>$PARAM[parent-visible-landscape]</visible>
                     <animation effect="fade" start="100" end="0" condition="Container($PARAM[id]).IsUpdating">Conditional</animation>
                     <content target="videos">$INFO[Container($PARAM[parentid]).FolderPath]</content>
-                </include>
+                </include> -->
                 <include content="Home_Hub_Widget_Label">
                     <param name="id" value="$PARAM[id]" />
                     <param name="label" value="$INFO[Container($PARAM[parentid]).ListItem.Label]" />
