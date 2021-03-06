@@ -88,8 +88,8 @@
 
     <variable name="Image_Landscape" containers="501,502,504,56" start="-15" end="17">
         <value condition="Container.Content(images)">$INFO[{listitem}.Icon]</value>
-        <value condition="!String.IsEmpty({listitem}.Art(thumb)) + String.IsEqual({listitem}.DBType,video) + !String.IsEqual({listitem}.Art(thumb),OverlaySpoiler.png)">$INFO[{listitem}.Art(thumb)]</value>
-        <value condition="!String.IsEmpty({listitem}.Art(thumb)) + String.IsEqual({listitem}.DBType,episode) + String.IsEmpty({listitem}.Property(airday)) + !String.IsEqual({listitem}.Art(thumb),OverlaySpoiler.png) + !String.IsEqual({listitem}.Art(thumb),{listitem}.Art(poster)) + !String.IsEqual({listitem}.Art(thumb),{listitem}.Art(tvshow.poster)) + !String.IsEqual({listitem}.Art(thumb),{listitem}.ActualIcon)">$INFO[{listitem}.Art(thumb)]</value>
+        <value condition="!String.IsEmpty({listitem}.Art(thumb)) + String.IsEqual({listitem}.DBType,video) + !String.IsEqual({listitem}.Art(thumb),{listitem}.Art(fanart)) + !String.IsEqual({listitem}.Art(thumb),OverlaySpoiler.png)">$INFO[{listitem}.Art(thumb)]</value>
+        <value condition="!String.IsEmpty({listitem}.Art(thumb)) + String.IsEqual({listitem}.DBType,episode) + String.IsEmpty({listitem}.Property(airday)) + !String.IsEqual({listitem}.Art(thumb),{listitem}.Art(fanart)) + !String.IsEqual({listitem}.Art(thumb),OverlaySpoiler.png) + !String.IsEqual({listitem}.Art(thumb),{listitem}.Art(poster)) + !String.IsEqual({listitem}.Art(thumb),{listitem}.Art(tvshow.poster)) + !String.IsEqual({listitem}.Art(thumb),{listitem}.ActualIcon)">$INFO[{listitem}.Art(thumb)]</value>
         <value condition="!String.IsEmpty({listitem}.Art(tvshow.landscape)) + !Skin.HasSetting(DisableLandscapeArt)">$INFO[{listitem}.Art(tvshow.landscape)]</value>
         <value condition="!String.IsEmpty({listitem}.Art(landscape)) + !Skin.HasSetting(DisableLandscapeArt)">$INFO[{listitem}.Art(landscape)]</value>
         <value condition="!String.IsEmpty({listitem}.Art(tvshow.fanart))">$INFO[{listitem}.Art(tvshow.fanart)]</value>
