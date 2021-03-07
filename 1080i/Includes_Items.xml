@@ -1450,9 +1450,14 @@
                 <onclick>SetFocus(3600)</onclick>
             </item>
             <item>
-                <label>$LOCALIZE[24069]</label>
+                <label>$LOCALIZE[24138]</label>
                 <visible>Control.IsEnabled(8)</visible>
                 <onclick>SendClick(8)</onclick>
+            </item>
+            <item>
+                <label>$LOCALIZE[24069]</label>
+                <visible>Control.IsEnabled(14)</visible>
+                <onclick>SendClick(14)</onclick>
             </item>
         </content>
     </include>

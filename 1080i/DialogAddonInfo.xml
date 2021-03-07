@@ -14,6 +14,7 @@
         <control type="button" id="10"><include>Defs_Hidden_Button</include></control>
         <control type="button" id="12"><include>Defs_Hidden_Button</include></control>
         <control type="radiobutton" id="13"><include>Defs_Hidden_Button</include></control>
+        <control type="button" id="14"><include>Defs_Hidden_Button</include></control>
 
 
         <include content="DialogVideoInfo_Left">
