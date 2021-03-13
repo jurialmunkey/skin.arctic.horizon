@@ -2,19 +2,12 @@
 <window>
     <onload>SetProperty(SkinInitStarted,1,home)</onload>
     <onload>ClearProperty(SkinSplashStarted,home)</onload>
-    <onload condition="!String.IsEmpty(Skin.String(StartupPlaylist))">ReplaceWindow(1113)</onload>
-    <onload condition="String.IsEmpty(Skin.String(StartupPlaylist)) + Skin.HasSetting(EnableTMDBHelperSplash)">SetFocus(9001)</onload>
-    <onload condition="String.IsEmpty(Skin.String(StartupPlaylist)) + !Skin.HasSetting(EnableTMDBHelperSplash)">ReplaceWindow($INFO[System.StartupWindow])</onload>
+
+    <onload condition="String.IsEmpty(Skin.String(StartupPlaylist)) | !String.IsEmpty(Window(Home).Property(StartupPlaylistStarted))">ReplaceWindow($INFO[System.StartupWindow])</onload>
+    <onload condition="!String.IsEmpty(Skin.String(StartupPlaylist)) + String.IsEmpty(Window(Home).Property(StartupPlaylistStarted))">AlarmClock(playit,PlayMedia($ESCINFO[Skin.String(StartupPlaylist)]),00:01,silent)</onload>
+    <onload condition="!String.IsEmpty(Skin.String(StartupPlaylist)) + String.IsEmpty(Window(Home).Property(StartupPlaylistStarted))">SetProperty(StartupPlaylistStarted,1,home)</onload>
+
     <controls>
         <include>Home_Splash</include>
-        <control type="button" id="9001">
-            <onfocus condition="!String.IsEmpty(Window(Home).Property(TMDbHelper.ServiceStarted))">ReplaceWindow($INFO[System.StartupWindow])</onfocus>
-            <onfocus condition="String.IsEmpty(Window(Home).Property(TMDbHelper.ServiceStarted))">SetFocus(9002)</onfocus>
-            <visible allowhiddenfocus="true">False</visible>
-        </control>
-        <control type="button" id="9002">
-            <onfocus>AlarmClock(refocus,SetFocus(9001),00:01,silent)</onfocus>
-            <visible allowhiddenfocus="true">False</visible>
-        </control>
     </controls>
 </window>

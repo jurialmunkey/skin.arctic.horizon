@@ -755,14 +755,6 @@
                         <onclick condition="!String.IsEmpty(Skin.String(StartupPlaylist))">Skin.Reset(StartupPlaylist)</onclick>
                     </control>
 
-                    <control type="radiobutton" id="19810" description="Wait for TMDbHelper">
-                        <visible>Integer.IsEqual(Window.Property(CurrentFocus),9008)</visible>
-                        <include>Defs_Settings_Button</include>
-                        <label>$LOCALIZE[31309]</label>
-                        <selected>Skin.HasSetting(EnableTMDBHelperSplash)</selected>
-                        <onclick>Skin.ToggleSetting(EnableTMDBHelperSplash)</onclick>
-                    </control>
-
                     <control type="button" id="19811" description="Reset">
                         <visible>Integer.IsEqual(Window.Property(CurrentFocus),9008)</visible>
                         <include>Defs_Settings_Button</include>
