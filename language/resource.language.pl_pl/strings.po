@@ -15,7 +15,7 @@ msgstr ""
 #: /1080i/Custom_1118_EnableRatings.xml
 msgctxt "#31000"
 msgid "Prefer numeric star rating"
-msgstr "Preferuj numeryczne ocen"
+msgstr "Preferuj numeryczne oceny"
 
 #: /1080i/DialogGameControllers.xml
 msgctxt "#31001"
@@ -105,7 +105,7 @@ msgstr "Inteligentne skróty"
 #: /shortcuts/overrides.xml
 msgctxt "#31018"
 msgid "Common shortcut"
-msgstr "Wspólny skrót"
+msgstr "Zwykły skrót"
 
 #: /1080i/Custom_1118_EnableRatings.xml
 msgctxt "#31019"
@@ -115,7 +115,7 @@ msgstr "Ukryj wszystkie oceny"
 #: /1080i/script-globalsearch-main.xml
 msgctxt "#31020"
 msgid "mins"
-msgstr "min"
+msgstr "minuty"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31021"
@@ -146,7 +146,7 @@ msgstr "Przedmioty"
 #: /1080i/SkinSettings.xml
 msgctxt "#31026"
 msgid "Logo"
-msgstr ""
+msgstr "Logo"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31027"
@@ -186,7 +186,7 @@ msgstr "Ustawienia audio"
 #: /1080i/Includes_Weather.xml
 msgctxt "#31034"
 msgid "Current conditions"
-msgstr "Obecne warunki pogodowe"
+msgstr "Aktualne warunki pogodowe"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31035"
@@ -196,7 +196,7 @@ msgstr "Zablokuj pozycję"
 #: /1080i/Includes_Labels.xml
 msgctxt "#31036"
 msgid "hr"
-msgstr ""
+msgstr "godz."
 
 #: /1080i/DialogSubtitles.xml
 msgctxt "#31037"
@@ -206,7 +206,7 @@ msgstr "Pobierz napisy"
 #: /1080i/Includes_Labels.xml
 msgctxt "#31038"
 msgid "Hub widget"
-msgstr "Widżet hub"
+msgstr "Hub widżet"
 
 #: /1080i/script-skinshortcuts.xml
 msgctxt "#31039"
@@ -251,12 +251,12 @@ msgstr "Następnie emitowany"
 #: /shortcuts/overrides.xml
 msgctxt "#31047"
 msgid "Next aired (Trakt)"
-msgstr "Następnie emitowany (Trakt)"
+msgstr "Następnie emitowany (info z Trakt)"
 
 #: /shortcuts/overrides.xml
 msgctxt "#31048"
 msgid "Next aired (library)"
-msgstr "Następnie emitowany (z biblioteki)"
+msgstr "Następnie emitowany (info z biblioteki)"
 
 #: /1080i/script-skinshortcuts.xml
 msgctxt "#31049"
@@ -281,7 +281,7 @@ msgstr "Po reżyseże"
 #: /1080i/script-skinshortcuts.xml
 msgctxt "#31053"
 msgid "Choose hub widget"
-msgstr "Wybież widżet hug"
+msgstr "Wybież widżet hub"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31054"
