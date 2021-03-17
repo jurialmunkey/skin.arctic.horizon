@@ -77,7 +77,7 @@
                 </control>
                 <control type="label">
                     <width>auto</width>
-                    <label>$INFO[Window(Weather).Property(Day0.HighTemp),[COLOR=main_fg_70]High ,°[/COLOR]]$INFO[Window(Weather).Property(Day0.LowTemp),  |  [COLOR=main_fg_70]Low ,°[/COLOR]]$INFO[Window(Weather).Property(Current.FeelsLike),  |  [COLOR=main_fg_70]Feels Like ,°[/COLOR]]$INFO[Window(Weather).Property(Current.DewPoint),  |  [COLOR=main_fg_70]Dew Point ,°[/COLOR]]$INFO[Window(Weather).Property(Current.Humidity),  |  [COLOR=main_fg_70]Humidity ,[/COLOR]]</label>
+                    <label>$INFO[Window(Weather).Property(Day0.HighTemp),[COLOR=main_fg_70]Maks ,°[/COLOR]]$INFO[Window(Weather).Property(Day0.LowTemp),  |  [COLOR=main_fg_70]Min ,°[/COLOR]]$INFO[Window(Weather).Property(Current.FeelsLike),  |  [COLOR=main_fg_70]Odczuwalna ,°[/COLOR]]$INFO[Window(Weather).Property(Current.DewPoint),  |  [COLOR=main_fg_70]Punkt Rosy ,°[/COLOR]]$INFO[Window(Weather).Property(Current.Humidity),  |  [COLOR=main_fg_70]Wilgotność ,[/COLOR]]</label>
                     <aligny>top</aligny>
                     <align>left</align>
                     <height>60</height>
@@ -86,7 +86,7 @@
                 </control>
                 <control type="label">
                     <width>auto</width>
-                    <label>$INFO[Weather.Conditions]$INFO[Window(Weather).Property(Current.Wind),$COMMA Wind ,]$INFO[Window(Weather).Property(Current.RainSince9),$COMMA ,mm of Rain]</label>
+                    <label>$INFO[Weather.Conditions]$INFO[Window(Weather).Property(Current.Wind),$COMMA Wiatr ,]$INFO[Window(Weather).Property(Current.RainSince9),$COMMA ,Deszcz mm]</label>
                     <align>left</align>
                     <aligny>top</aligny>
                     <height>35</height>
@@ -95,7 +95,7 @@
                 </control>
                 <control type="label">
                     <width>auto</width>
-                    <label>$VAR[Weather_Sunrise,[COLOR=main_fg_70]Sunrise ,[/COLOR]]$VAR[Weather_Sunset,  |  [COLOR=main_fg_70]Sunset ,[/COLOR]]$INFO[Window(Weather).Property(Current.UVIndex),  |  [COLOR=main_fg_70]UV Index ,[/COLOR]]</label>
+                    <label>$VAR[Weather_Sunrise,[COLOR=main_fg_70]Wschód ,[/COLOR]]$VAR[Weather_Sunset,  |  [COLOR=main_fg_70]Zachód ,[/COLOR]]$INFO[Window(Weather).Property(Current.UVIndex),  |  [COLOR=main_fg_70]Indeks UV ,[/COLOR]]</label>
                     <aligny>top</aligny>
                     <align>left</align>
                     <height>45</height>
