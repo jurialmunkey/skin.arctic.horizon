@@ -179,18 +179,18 @@
                 <font>font_statusbar</font>
                 <label>$INFO[ListItem.ChannelName]</label>
             </control>
-            <control type="label">
-				<visible>Skin.HasSetting(PVRGuide.ChannelNumber)</visible>
-				<left>30</left>
-				<right>30</right>
-				<align>right</align>
-				<centertop>35%</centertop>
-				<height>40</height>
+	    <control type="label">
+		<visible>Skin.HasSetting(PVRGuide.ChannelNumber)</visible>
+		<left>30</left>
+		<right>30</right>
+		<align>right</align>
+		<centertop>35%</centertop>
+		<height>40</height>
                 <textcolor>$PARAM[fgcolor]</textcolor>
                 <selectedcolor>$PARAM[fgcolor]</selectedcolor>
-				<font>font_small_bold</font>
-				<label>$INFO[ListItem.ChannelNumberLabel]</label>
-			</control>
+		<font>font_small_bold</font>
+		<label>$INFO[ListItem.ChannelNumberLabel]</label>
+	    </control>
             <control type="label">
                 <left>30</left>
                 <right>30</right>
