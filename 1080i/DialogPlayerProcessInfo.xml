@@ -35,7 +35,7 @@
                     <param name="label" value="$INFO[Player.Process(amlogic.displaymode),[COLOR panel_fg_100]Display mode: [/COLOR] ]" />
                 </include>
                 <include content="Object_ShadowSpot_Label" condition="System.HasAddon(service.coreelec.settings)">
-					<param name="label" value="$INFO[Player.Process(amlogic.eoft_gamut),[COLOR panel_fg_100]EOTF & Gamut: [/COLOR] ]" />
+		    <param name="label" value="$INFO[Player.Process(amlogic.eoft_gamut),[COLOR panel_fg_100]EOTF & Gamut: [/COLOR] ]" />
                 </include>
             </include>
         </include>
@@ -71,7 +71,7 @@
                     <param name="label" value="$INFO[Player.Process(amlogic.displaymode),[COLOR panel_fg_100]Display mode: [/COLOR] ]" />
                 </include>
                 <include content="Object_ShadowSpot_Label" condition="System.HasAddon(service.coreelec.settings)">
-					<param name="label" value="$INFO[Player.Process(amlogic.eoft_gamut),[COLOR panel_fg_100]EOTF & Gamut: [/COLOR] ]" />
+		    <param name="label" value="$INFO[Player.Process(amlogic.eoft_gamut),[COLOR panel_fg_100]EOTF & Gamut: [/COLOR] ]" />
                 </include>
                 <include content="Object_ShadowSpot_Label">
                     <param name="label" value="PVR Stream" />
