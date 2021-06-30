@@ -145,7 +145,7 @@
                     <height>120</height>
                     <width>420</width>
                     <control type="image">
-                        <texture background="true">$VAR[Image_ClearLogo]</texture>
+                        <texture background="true">$VAR[Image_View_ClearLogo]</texture>
                         <aspectratio align="right" aligny="top" scalediffuse="false">keep</aspectratio>
                     </control>
                 </control>
