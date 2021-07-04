@@ -1523,6 +1523,7 @@
                 <onclick>SetFocus(50)</onclick>
                 <onclick>Container.Update($VAR[Info_FromStudio]&amp;plugincategory=$INFO[Window(Home).Property(ListItem.Studio.0)])</onclick>
                 <visible>!String.IsEmpty(Window(Home).Property(ListItem.Studio.0))</visible>
+                <visible>String.IsEqual(ListItem.DBType,movie)</visible>
             </item>
         </content>
     </include>
