@@ -40,7 +40,7 @@
                     <radioposx>730</radioposx>
                     <include>Dialog_Standard_Button</include>
                     <label2>$INFO[Skin.String(watchedprogresscolor.name)]</label2>
-                    <onclick>SetProperty(colorpick,Watched,Home)</onclick>
+                    <onclick>SetProperty(colorpick,$LOCALIZE[16102],Home)</onclick>
                     <onclick>ActivateWindow(1117)</onclick>
                     <enable>!Skin.HasSetting(EnableClassicIndicators) + !Skin.HasSetting(DisableWatchedOverlay)</enable>
                 </control>
