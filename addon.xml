@@ -19,7 +19,7 @@
     <extension point="xbmc.addon.metadata">
         <summary lang="en">Minimal. Simple.</summary>
         <summary lang="es">Mínimo. Simple.</summary>
-		<summary lang="en">Minimal. Simple.</summary>
+		<summary lang="fr">Minimal. Simple.</summary>
         <description lang="en">Arctic Horizon is a minimalistic skin with an emphasis on simplicity.</description>
         <description lang="es">Arctic Horizon es un skin minimalista con énfasis en la simplicidad.</description>
 		<description lang="fr">Arctic Horizon est un habillage minimaliste mettant l'accent sur la simplicité..</description>
