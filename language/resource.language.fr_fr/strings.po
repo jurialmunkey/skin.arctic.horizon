@@ -610,7 +610,7 @@ msgstr "Animer le diaporama d'artiste"
 
 msgctxt "#31121"
 msgid "Fanart"
-msgstr "Oeuvre d'art"
+msgstr "Fanart"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31122"
