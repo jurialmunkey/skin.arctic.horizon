@@ -23,10 +23,10 @@
     </variable>
 
     <variable name="Label_ColorValue">
-        <value condition="String.IsEqual(Window(Home).Property(colorpick),Highlight) + !String.IsEmpty(Skin.String(focuscolor.name))">$INFO[Skin.String(focuscolor.name)]</value>
-        <value condition="String.IsEqual(Window(Home).Property(colorpick),Gradient) + !String.IsEmpty(Skin.String(gradientcolor.name))">$INFO[Skin.String(gradientcolor.name)]</value>
-        <value condition="String.IsEqual(Window(Home).Property(colorpick),Overlay) + !String.IsEmpty(Skin.String(overlaycolor.name))">$INFO[Skin.String(overlaycolor.name)]</value>
-        <value condition="String.IsEqual(Window(Home).Property(colorpick),Watched) + !String.IsEmpty(Skin.String(watchedprogresscolor.name))">$INFO[Skin.String(watchedprogresscolor.name)]</value>
+        <value condition="String.IsEqual(Window(Home).Property(colorpick),$LOCALIZE[31175]) + !String.IsEmpty(Skin.String(focuscolor.name))">$INFO[Skin.String(focuscolor.name)]</value>
+        <value condition="String.IsEqual(Window(Home).Property(colorpick),$LOCALIZE[31178]) + !String.IsEmpty(Skin.String(gradientcolor.name))">$INFO[Skin.String(gradientcolor.name)]</value>
+        <value condition="String.IsEqual(Window(Home).Property(colorpick),$LOCALIZE[31179]) + !String.IsEmpty(Skin.String(overlaycolor.name))">$INFO[Skin.String(overlaycolor.name)]</value>
+        <value condition="String.IsEqual(Window(Home).Property(colorpick),$LOCALIZE[16102]) + !String.IsEmpty(Skin.String(watchedprogresscolor.name))">$INFO[Skin.String(watchedprogresscolor.name)]</value>
         <value>$LOCALIZE[571]</value>
     </variable>
 
