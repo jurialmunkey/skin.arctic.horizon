@@ -414,6 +414,16 @@
                 <include content="Object_Provider"><param name="pos" value="8" /></include>
                 <include content="Object_Provider"><param name="pos" value="9" /></include>
                 <include content="Object_Provider"><param name="pos" value="10" /></include>
+
+                <control type="image">
+                    <width>140</width>
+                    <height>32</height>
+                    <centertop>50%</centertop>
+                    <aspectratio>keep</aspectratio>
+                    <texture background="True">flags/justwatch.png</texture>
+                    <visible>[String.IsEmpty(ListItem.VideoCodec) + String.IsEmpty(ListItem.AudioCodec)]</visible>
+                    <visible>!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Provider.1.Icon))</visible>
+                </control>
             </control>
         </definition>
     </include>
