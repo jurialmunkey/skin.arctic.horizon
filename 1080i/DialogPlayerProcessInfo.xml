@@ -5,7 +5,7 @@
     <controls>
 
         <include content="Object_ShadowSpot_Group">
-            <param name="width" value="800" />
+            <param name="width" value="1500" />
             <param name="height" value="450" />
             <visible>!VideoPlayer.Content(livetv)</visible>
             <include content="Object_ShadowSpot_Grouplist">
@@ -35,7 +35,7 @@
         </include>
 
         <include content="Object_ShadowSpot_Group">
-            <param name="width" value="800" />
+            <param name="width" value="1500" />
             <param name="height" value="1080" />
             <visible>VideoPlayer.Content(livetv)</visible>
             <include content="Object_ShadowSpot_Grouplist">
@@ -106,7 +106,7 @@
                     <height>40</height>
                     <control type="progress">
                         <top>5</top>
-                        <width>66%</width>
+                        <width>528</width>
                         <height>10</height>
                         <info>PVR.ActStreamProgrSignal</info>
                     </control>
@@ -119,7 +119,7 @@
                     <height>40</height>
                     <control type="progress">
                         <top>5</top>
-                        <width>66%</width>
+                        <width>528</width>
                         <height>10</height>
                         <info>PVR.ActStreamProgrSNR</info>
                     </control>
