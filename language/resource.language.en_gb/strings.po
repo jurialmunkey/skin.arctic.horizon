@@ -1539,6 +1539,11 @@ msgctxt "#31312"
 msgid "Management"
 msgstr ""
 
+#: /shortcuts/overrides.xml
+msgctxt "#31313"
+msgid "Reboot to eMMC/NAND"
+msgstr ""
+
 #: /1080i/SkinSettings.xml
 msgctxt "#31314"
 msgid "Automatically display music video info at beginning and end of clip"

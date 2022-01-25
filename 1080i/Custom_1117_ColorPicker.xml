@@ -240,7 +240,7 @@
                             <onclick condition="String.IsEqual(Window(Home).Property(colorpick),$LOCALIZE[31175])">Skin.SetString(focuscolor.name)</onclick>
                             <onclick condition="String.IsEqual(Window(Home).Property(colorpick),$LOCALIZE[31178])">Skin.SetString(gradientcolor.name)</onclick>
                             <onclick condition="String.IsEqual(Window(Home).Property(colorpick),$LOCALIZE[31179])">Skin.SetString(overlaycolor.name)</onclick>
-                            <onclick condition="String.IsEqual(Window(Home).Property(colorpick),$LOCALIZE[16102])">Skin.SetString(watchedprogress.name)</onclick>
+                            <onclick condition="String.IsEqual(Window(Home).Property(colorpick),$LOCALIZE[16102])">Skin.SetString(watchedprogresscolor.name)</onclick>
                         </control>
                         <!-- CHOOSE PALETTE -->
                         <control type="button" id="3030">

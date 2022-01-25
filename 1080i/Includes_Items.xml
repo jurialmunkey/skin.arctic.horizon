@@ -1477,25 +1477,6 @@
                 <visible>Skin.HasSetting(EnableExtendedInfo)</visible>
             </item>
             <item>
-                <label>$LOCALIZE[31052] $INFO[Window(Home).Property(ListItem.Director.0)]</label>
-                <onclick>SetFocus(50)</onclick>
-                <onclick>Container.Update($VAR[Info_FromDirector]&amp;plugincategory=$INFO[Window(Home).Property(ListItem.Director.0),Directed by ,])</onclick>
-                <visible>!String.IsEmpty(Window(Home).Property(ListItem.Director.0))</visible>
-                <visible>String.IsEqual(ListItem.DBType,movie)</visible>
-            </item>
-            <item>
-                <label>$LOCALIZE[31069] $INFO[Window(Home).Property(ListItem.Studio.0)]</label>
-                <onclick>SetFocus(50)</onclick>
-                <onclick>Container.Update($VAR[Info_FromStudio]&amp;plugincategory=$INFO[Window(Home).Property(ListItem.Studio.0)])</onclick>
-                <visible>!String.IsEmpty(Window(Home).Property(ListItem.Studio.0))</visible>
-            </item>
-            <item>
-                <label>$LOCALIZE[31070] $INFO[Window(Home).Property(ListItem.Genre.0)]</label>
-                <onclick>SetFocus(50)</onclick>
-                <onclick>Container.Update($VAR[Info_FromGenre]&amp;plugincategory=$INFO[Window(Home).Property(ListItem.Genre.0)])</onclick>
-                <visible>!String.IsEmpty(Window(Home).Property(ListItem.Genre.0))</visible>
-            </item>
-            <item>
                 <label>$LOCALIZE[31071] $INFO[ListItem.Year]</label>
                 <onclick>SetFocus(50)</onclick>
                 <onclick>Container.Update($VAR[Info_FromYear]&amp;plugincategory=$INFO[ListItem.Year,$LOCALIZE[31073] ,])</onclick>
@@ -1523,6 +1504,26 @@
                 <onclick>Container.Update(plugin://plugin.video.themoviedb.helper/?info=trakt_inlists&amp;imdb_id=$INFO[ListItem.IMDBNumber]&amp;type=movie&amp;plugincategory=$INFO[ListItem.Title,$LOCALIZE[31077] ,])</onclick>
                 <visible>String.IsEqual(ListItem.DBType,movie)</visible>
                 <visible>Skin.HasSetting(EnableExtendedInfo)</visible>
+            </item>
+            <item>
+                <label>$LOCALIZE[31070] $INFO[Window(Home).Property(ListItem.Genre.0)]</label>
+                <onclick>SetFocus(50)</onclick>
+                <onclick>Container.Update($VAR[Info_FromGenre]&amp;plugincategory=$INFO[Window(Home).Property(ListItem.Genre.0)])</onclick>
+                <visible>!String.IsEmpty(Window(Home).Property(ListItem.Genre.0))</visible>
+            </item>
+            <item>
+                <label>$LOCALIZE[31052] $INFO[Window(Home).Property(ListItem.Director.0)]</label>
+                <onclick>SetFocus(50)</onclick>
+                <onclick>Container.Update($VAR[Info_FromDirector]&amp;plugincategory=$INFO[Window(Home).Property(ListItem.Director.0),Directed by ,])</onclick>
+                <visible>!String.IsEmpty(Window(Home).Property(ListItem.Director.0))</visible>
+                <visible>String.IsEqual(ListItem.DBType,movie)</visible>
+            </item>
+            <item>
+                <label>$LOCALIZE[31069] $INFO[Window(Home).Property(ListItem.Studio.0)]</label>
+                <onclick>SetFocus(50)</onclick>
+                <onclick>Container.Update($VAR[Info_FromStudio]&amp;plugincategory=$INFO[Window(Home).Property(ListItem.Studio.0)])</onclick>
+                <visible>!String.IsEmpty(Window(Home).Property(ListItem.Studio.0))</visible>
+                <visible>String.IsEqual(ListItem.DBType,movie)</visible>
             </item>
         </content>
     </include>

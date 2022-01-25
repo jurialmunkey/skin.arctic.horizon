@@ -147,9 +147,12 @@
                 <param name="label" value="$LOCALIZE[31135]" />
                 <param name="icon" value="special://skin/extras/icons/fire2.png" />
                 <param name="visible" value="String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,season) | String.IsEqual(ListItem.DBType,episode)" />
+                <onclick>ClearProperty(ListItem.Genre.0,home)</onclick>
                 <onclick>RunScript(plugin.video.themoviedb.helper,split_value=$INFO[ListItem.Genre],property=ListItem.Genre)</onclick>
-                <onclick>RunScript(plugin.video.themoviedb.helper,split_value=$INFO[ListItem.Director],property=ListItem.Director)</onclick>
-                <onclick>RunScript(plugin.video.themoviedb.helper,split_value=$INFO[ListItem.Studio],property=ListItem.Studio)</onclick>
+                <onclick condition="String.IsEqual(ListItem.DBType,movie)">ClearProperty(ListItem.Director.0,home)</onclick>
+                <onclick condition="String.IsEqual(ListItem.DBType,movie)">RunScript(plugin.video.themoviedb.helper,split_value=$INFO[ListItem.Director],property=ListItem.Director)</onclick>
+                <onclick condition="String.IsEqual(ListItem.DBType,movie)">ClearProperty(ListItem.Studio.0,home)</onclick>
+                <onclick condition="String.IsEqual(ListItem.DBType,movie)">RunScript(plugin.video.themoviedb.helper,split_value=$INFO[ListItem.Studio],property=ListItem.Studio)</onclick>
                 <onclick>SetFocus(9200)</onclick>
                 <include>Info_Button_OnUp</include>
                 <ondown>50</ondown>

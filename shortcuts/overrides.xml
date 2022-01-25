@@ -56,6 +56,11 @@
         <action>ActivateWindow(1138)</action>
     </override>
 
+    <override action="RebootToAndroid">
+        <action>System.ExecWait("/usr/sbin/rebootfromnand")</action>
+        <action>Reboot()</action>
+   </override>
+
     <!-- Property defaults for widgets -->
     <!-- Movies -->
     <propertydefault labelID="31210" group="20342.1" property="widgetAspect">Landscape</propertydefault>
@@ -382,6 +387,7 @@
         </node>
         <node label="32054">
             <content>commands</content>
+            <shortcut label="31313" type="33060" icon="special://skin/extras/icons/android.png" condition="System.CanReboot">RebootToAndroid</shortcut>
         </node>
     </groupings>
 

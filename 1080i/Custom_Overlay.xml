@@ -1006,6 +1006,7 @@
                 <shadowcolor>ff000000</shadowcolor>
                 <align>left</align>
                 <aligny>top</aligny>
+                <label>$INFO[Window(Home).Property(TMDbHelper.ListItem.Awards)]</label>
                 <label>$INFO[Window(Home).Property(TMDbHelper.ListItem.Plot)]</label>
             </control>
 
