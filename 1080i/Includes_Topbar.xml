@@ -42,7 +42,7 @@
                 <visible>!Window.IsVisible(DialogNotification.xml)</visible>
                 <visible>!Window.IsVisible(DialogExtendedProgressBar.xml)</visible>
                 <visible>!Window.IsVisible(DialogVolumeBar.xml) | Player.Muted</visible>
-                <visible>!Player.HasMedia | Window.IsVisible(fullscreenvideo)</visible>
+                <visible>!Player.HasMedia | Window.IsVisible(fullscreenvideo) | Window.IsVisible(musicosd) | Window.IsVisible(visualisation)</visible>
                 <control type="grouplist">
                     <visible>[!Control.HasFocus(60) + !Control.HasFocus(64)] | String.IsEmpty(Container.NumItems)</visible>
                     <right>view_pad</right>
